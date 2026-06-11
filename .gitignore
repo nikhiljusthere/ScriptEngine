@@ -1,0 +1,96 @@
+# =========================
+# Node.js
+# =========================
+
+# Ignore node_modules at any depth
+**/node_modules/
+
+# npm/yarn/pnpm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Build / Output
+# =========================
+
+# Ignore build folders anywhere
+**/build/
+**/dist/
+**/out/
+
+# Common framework outputs
+**/.next/
+**/.nuxt/
+**/.svelte-kit/
+**/.parcel-cache/
+
+# =========================
+# Python
+# =========================
+
+__pycache__/
+**/__pycache__/
+
+*.pyc
+*.pyo
+*.pyd
+
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# IDEs
+# =========================
+
+.vscode/
+**/.vscode/
+
+.idea/
+**/.idea/
+
+# =========================
+# Environment Files
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# OS Files
+# =========================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Temporary Files
+# =========================
+
+*.tmp
+*.temp
+*.cache
+
+# =========================
+# Coverage / Testing
+# =========================
+
+coverage/
+**/coverage/
+
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Runtime Data
+# =========================
+
+logs/
+**/logs/
+
+*.log

@@ -1,0 +1,27 @@
+# MACOS: Install with: python3 -m pip install -r requirements.txt
+# Windows: pip install -r requirements.txt
+
+# Python dependencies for the crawler backend.
+beautifulsoup4>=4.12.3,<5.0.0
+curl-cffi>=0.7.0,<1.0.0
+lxml>=5.1.0,<6.0.0
+
+# ── Other dependencies ───────────────────────────────────────────────────────
+
+# Core
+torch>=2.2.0
+transformers>=4.40.0
+sentence-transformers>=3.0.0
+
+# Vector DB
+qdrant-client>=1.9.0
+
+# Graph DB
+neo4j>=5.18.0
+
+# BM25
+rank-bm25>=0.2.2
+
+# NLP
+spacy>=3.7.0
+en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.8.0/en_core_web_trf-3.8.0-py3-none-any.whl

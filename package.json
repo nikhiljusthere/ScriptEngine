@@ -1,0 +1,22 @@
+{
+  "name": "anime-script-ai",
+  "version": "1.0.0",
+  "description": "Anime Script AI - Local Desktop Application for YouTube Script Generation",
+  "main": "ui/electron/main.js",
+  "scripts": {
+  "start": "electron .",
+  "dev": "concurrently \"cd ui && set BROWSER=none&& npm start\" \"wait-on http://localhost:3000 && electron .\"",
+  "build-ui": "cd ui && npm run build"
+},
+  "dependencies": {
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^28.3.3",
+    "wait-on": "^7.2.0"
+  }
+}
