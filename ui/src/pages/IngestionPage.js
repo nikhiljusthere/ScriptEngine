@@ -21,7 +21,7 @@ const IngestionPage = () => {
 
   const [series, setSeries] = useState("");
   const [url, setUrl] = useState(
-    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Kaisen_Wiki",
+    "",
   );
   const [outputFormat, setOutputFormat] = useState("txt");
   const [status, setStatus] = useState("idle");
