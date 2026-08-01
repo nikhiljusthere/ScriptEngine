@@ -204,13 +204,25 @@ def extract_links(text: str) -> list[Link]:
         if not target or ":" in target.split("#")[0][:20] and _is_namespaced(target):
             continue
 
-        target = target.split("#")[0].strip()
+        target = normalise_title(target.split("#")[0])
         if not target:
             continue
 
         links.append(Link(target=target, display=strip_markup(display or target)))
 
     return links
+
+
+def normalise_title(title: str) -> str:
+    """Apply MediaWiki's own title rules so one page yields one node.
+
+    MediaWiki capitalises the first letter of every title and treats
+    underscores as spaces, so ``[[grade]]`` and ``[[Grade]]`` are the same page.
+    Without this the graph grows a duplicate node for every casing a link
+    happens to use — the real corpus produced both `Grade` and `grade`.
+    """
+    cleaned = title.replace("_", " ").strip()
+    return cleaned[:1].upper() + cleaned[1:] if cleaned else ""
 
 
 def _is_namespaced(target: str) -> bool:

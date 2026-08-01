@@ -184,6 +184,29 @@ def build_ontology(
     return ontology
 
 
+def build_ontology_from_transclusions(
+    wiki: str,
+    pages_templates: Iterable[Iterable[str]],
+    overrides: dict[str, Any] | None = None,
+) -> Ontology:
+    """Derive the vocabulary from what pages actually transclude.
+
+    A fallback for when the `Template:` namespace cannot be enumerated — the
+    wiki is rate-limiting, or the crawl predates the manifest. Every infobox in
+    use is by definition transcluded by the pages using it, so the result is the
+    same vocabulary reached from the other direction.
+    """
+    seen: set[str] = set()
+    for templates in pages_templates:
+        for template in templates:
+            if _is_module(template):
+                continue
+            normalised = _normalise_template(template)
+            if "infobox" in normalised and normalised not in _STRUCTURAL_INFOBOXES:
+                seen.add(template)
+    return build_ontology(wiki, sorted(seen), overrides)
+
+
 def learn_field_labels(
     ontology: Ontology, type_id: str, properties: dict[str, Any] | str | None
 ) -> None:

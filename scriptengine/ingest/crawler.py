@@ -58,6 +58,15 @@ PREFERRED_IMPERSONATIONS = (
 
 PAGE_PROPS = "wikitext|sections|categories|templates|properties|displaytitle|revid"
 
+# `list=allpages` is a far heavier query than `action=parse`, and Fandom
+# throttles it much sooner for anonymous clients. 500 per page is the documented
+# maximum and reliably triggers a 429; 100 does not.
+ENUMERATION_PAGE_SIZE = 100
+
+
+class EnumerationFailed(RuntimeError):
+    """The wiki would not return its page list. Distinct from an empty wiki."""
+
 # Only one crawl at a time. The Electron UI can deliver the same IPC message
 # twice, which previously produced two interleaved crawls writing the same files.
 _CRAWL_LOCK = asyncio.Lock()
@@ -97,6 +106,29 @@ class WikiCrawler:
         self._session: AsyncSession | None = None
         self._impersonation = select_impersonation()
         self._last_error: str | None = None
+        # When the wiki rate-limits, every worker waits — not just the one that
+        # was told to. Ten workers each independently retrying is what turns a
+        # single 429 into a sustained throttle.
+        self._resume_at = 0.0
+        self._throttle_lock = asyncio.Lock()
+
+    async def _await_throttle(self) -> None:
+        while True:
+            delay = self._resume_at - asyncio.get_running_loop().time()
+            if delay <= 0:
+                return
+            await asyncio.sleep(min(delay, 5.0))
+
+    async def _throttle(self, seconds: float) -> None:
+        # Some hosts answer 429 with an hour-long Retry-After. Honouring that
+        # literally would hang the crawl; capping it keeps the back-off polite
+        # without turning a transient limit into an overnight wait.
+        seconds = min(float(seconds), 120.0)
+        async with self._throttle_lock:
+            resume = asyncio.get_running_loop().time() + seconds
+            if resume > self._resume_at:
+                self._resume_at = resume
+                logger.warning("rate limited; pausing all workers for %.0fs", seconds)
 
     # ── session ──────────────────────────────────────────────────────────────
 
@@ -129,6 +161,7 @@ class WikiCrawler:
 
         for attempt in range(1, self.settings.crawl_max_retries + 1):
             try:
+                await self._await_throttle()
                 if attempt > 1:
                     await asyncio.sleep(random.uniform(1.0, 2.0) * attempt)
 
@@ -136,8 +169,7 @@ class WikiCrawler:
 
                 if response.status_code == 429:
                     wait = int(response.headers.get("Retry-After", 30))
-                    logger.warning("rate limited, sleeping %ss", wait)
-                    await asyncio.sleep(wait)
+                    await self._throttle(wait)
                     continue
 
                 if response.status_code >= 400:
@@ -160,6 +192,9 @@ class WikiCrawler:
     async def _enumerate(
         self, base: str, namespace: int, limit: int = 0, label: str = "titles"
     ) -> list[str]:
+        """See `list_all_pages`. Raises `EnumerationFailed` rather than returning
+        an empty list, because "the wiki has no pages" and "the wiki refused to
+        answer" must not look the same to the caller."""
         """Page through `allpages` in one namespace.
 
         `limit` stops the walk early. This matters more than it looks: Jujutsu
@@ -172,7 +207,8 @@ class WikiCrawler:
 
         while True:
             params = {
-                "action": "query", "list": "allpages", "aplimit": "500",
+                "action": "query", "list": "allpages",
+                "aplimit": str(ENUMERATION_PAGE_SIZE),
                 "apnamespace": str(namespace), "format": "json", "formatversion": "2",
             }
             if apcontinue:
@@ -180,7 +216,11 @@ class WikiCrawler:
 
             data = await self._get(base, params)
             if not data:
-                break
+                raise EnumerationFailed(
+                    f"the wiki stopped answering after {len(titles)} {label}. "
+                    "This is usually rate limiting; wait a few minutes and re-run "
+                    "(the crawl resumes from what is already on disk)."
+                )
 
             titles.extend(p["title"] for p in data.get("query", {}).get("allpages", []))
             logger.info("enumerated %s %s", len(titles), label)
@@ -241,9 +281,15 @@ class WikiCrawler:
         # convention, not a wiki-specific rule.
         if page_type == "unknown" and "/" in title:
             parent, _, leaf = title.rpartition("/")
-            if parent:
-                page_type = f"{ontology.page_types.get(parent, 'page')}_{_slug(leaf)}"
-                matched = matched or f"subpage of {parent}"
+            parent_type = ontology.page_types.get(parent, "")
+            if parent and parent_type and parent_type != "unknown":
+                page_type = f"{parent_type}_{_slug(leaf)}"
+            elif parent:
+                # An untyped parent gives the leaf nothing to qualify. Naming the
+                # type after the leaf anyway invents one type per subpage —
+                # "page_premature_death_vol_1" and friends.
+                page_type = "subpage"
+            matched = matched or f"subpage of {parent}"
 
         learn_field_labels(ontology, page_type, parse.get("properties"))
 
@@ -353,12 +399,13 @@ class WikiCrawler:
         paths: SeriesPaths,
         max_pages: int = 0,
         overrides: dict[str, Any] | None = None,
+        refresh: bool = False,
     ) -> dict[str, Any]:
         if _CRAWL_LOCK.locked():
             logger.warning("a crawl is already running; refusing to start a second")
             return {"status": "already_running", "pages": 0}
         async with _CRAWL_LOCK:
-            return await self._crawl(start_url, paths, max_pages, overrides)
+            return await self._crawl(start_url, paths, max_pages, overrides, refresh)
 
     async def _crawl(
         self,
@@ -366,6 +413,7 @@ class WikiCrawler:
         paths: SeriesPaths,
         max_pages: int,
         overrides: dict[str, Any] | None,
+        refresh: bool = False,
     ) -> dict[str, Any]:
         base = api_base(start_url)
         parsed = urlparse(start_url)
@@ -391,6 +439,26 @@ class WikiCrawler:
         enumeration_limit = max_pages * 3 if max_pages else 0
         all_titles = await self.list_all_pages(base, enumeration_limit)
         titles = all_titles[:max_pages] if max_pages else list(all_titles)
+
+        # Resume by default. A wiki can rate-limit or a run can be interrupted
+        # partway through several hundred pages; refetching everything to reach
+        # the point of failure is both slow and rude to the host.
+        already_have: set[str] = set()
+        if not refresh:
+            already_have = {
+                path.stem for path in paths.wikitext.glob("*.json")
+            }
+            remaining = [
+                title for title in titles
+                if sanitise_filename(title) not in already_have
+            ]
+            if len(remaining) < len(titles):
+                logger.info(
+                    "resuming: %s of %s pages already on disk",
+                    len(titles) - len(remaining), len(titles),
+                )
+            titles = remaining
+
         logger.info("crawling %s of %s enumerated pages", len(titles), len(all_titles))
 
         queue: asyncio.Queue[str] = asyncio.Queue()
@@ -469,7 +537,10 @@ class WikiCrawler:
             "wiki": wiki_url,
             "api": base,
             "crawled_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "pages_enumerated": len(titles),
+            "pages_enumerated": len(all_titles),
+            "pages_fetched_this_run": written,
+            # Total on disk, including anything a resumed run already had.
+            "pages_on_disk": len(list(paths.wikitext.glob("*.json"))),
             # Every article title on the wiki. The audit resolves wikilink
             # targets against this rather than against what was crawled, so a
             # capped sample does not report thousands of false dangling edges.
@@ -481,6 +552,19 @@ class WikiCrawler:
             "skipped": skipped[:200],
             "failed": failed[:200],
         }
+        # Never let a thin run overwrite a richer manifest. A resumed or
+        # interrupted crawl that enumerated less than a previous one would
+        # otherwise destroy the title list the audit resolves links against —
+        # which is exactly what happened when rate limiting emptied it.
+        previous = load_manifest(paths)
+        if len(previous.get("all_titles") or ()) > len(all_titles):
+            logger.warning(
+                "keeping the previous manifest: it lists %s titles, this run saw %s",
+                len(previous["all_titles"]), len(all_titles),
+            )
+            manifest["all_titles"] = previous["all_titles"]
+            manifest["pages_enumerated"] = len(previous["all_titles"])
+
         paths.manifest.write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
         )
@@ -490,6 +574,38 @@ class WikiCrawler:
             written, len(skipped), len(failed),
         )
         return manifest
+
+
+def reextract(page: WikiPage, ontology: Ontology) -> WikiPage:
+    """Re-run extraction on a page's stored wikitext.
+
+    Fetching a page is expensive; parsing it is not. Keeping the wikitext means
+    a parser fix can be applied to the whole corpus in seconds instead of
+    re-crawling several hundred pages — and it keeps the index honest, since
+    indexing always reflects the extraction code as it stands now rather than
+    as it stood on the day of the crawl.
+    """
+    if not page.wikitext:
+        return page
+
+    crawler = WikiCrawler.__new__(WikiCrawler)  # no session needed for parsing
+    parse = {
+        "title": page.title,
+        "wikitext": page.wikitext,
+        "pageid": page.pageid,
+        "revid": page.revid,
+        "sections": [
+            {"line": section.title, "level": section.level}
+            for section in page.sections
+        ],
+        "categories": [{"category": category} for category in page.categories],
+        "templates": page.templates,
+        "redirects": [{"from": name} for name in page.redirects],
+    }
+    wiki_url = page.url.split("/wiki/")[0] if "/wiki/" in page.url else ""
+    refreshed = crawler.build_page(parse, wiki_url, ontology)
+    refreshed.fetched_at = page.fetched_at
+    return refreshed
 
 
 def load_pages(paths: SeriesPaths) -> Iterable[WikiPage]:

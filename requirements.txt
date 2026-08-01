@@ -22,7 +22,14 @@ PyYAML>=6.0.1                # per-series overrides
 qdrant-client>=1.9.0         # used in local mode; no server process
 
 # ── Models ───────────────────────────────────────────────────────────────────
-torch>=2.2.0
+# PyPI ships a CPU-only torch. Everything works on CPU, just slowly. For an
+# NVIDIA GPU install the CUDA build first, matching your card:
+#
+#   Blackwell (RTX 50-series, sm_120) needs CUDA 12.8 or newer:
+#     pip install --index-url https://download.pytorch.org/whl/cu130 torch
+#
+# Verify with: python -c "import torch; print(torch.cuda.is_available())"
+torch>=2.7.0
 sentence-transformers>=3.0.0 # bge-large-en-v1.5 + bge-reranker-v2-m3
 
 # ── API ──────────────────────────────────────────────────────────────────────

@@ -48,6 +48,9 @@ def crawl(
     series: str = typer.Option(..., "--series", help="Short series id, e.g. 'jjk'."),
     start_url: str = typer.Option(..., "--start-url", help="Any page on the target wiki."),
     max_pages: int = typer.Option(0, "--max-pages", help="0 crawls the whole wiki."),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Refetch pages already on disk instead of resuming."
+    ),
     verbose: bool = typer.Option(False, "--verbose", help="Show per-request logging."),
 ) -> None:
     """Crawl a Fandom wiki into `series/<name>/`."""
@@ -66,19 +69,26 @@ def crawl(
     paths = series_paths(series, settings)
     overrides = _load_overrides(paths)
 
+    from scriptengine.ingest.crawler import EnumerationFailed
+
     async def run() -> dict:
         async with WikiCrawler(settings) as crawler:
-            return await crawler.crawl(start_url, paths, max_pages, overrides)
+            return await crawler.crawl(start_url, paths, max_pages, overrides, refresh)
 
-    manifest = asyncio.run(run())
+    try:
+        manifest = asyncio.run(run())
+    except EnumerationFailed as error:
+        console.print(f"\n[red]Crawl aborted:[/red] {error}")
+        raise typer.Exit(code=1) from error
 
     if manifest.get("status") == "already_running":
         console.print("[yellow]Another crawl is already running.[/yellow]")
         raise typer.Exit(code=1)
 
     console.print(
-        f"\n[green]Crawled {manifest['pages_written']} pages[/green] "
-        f"({manifest['pages_skipped']} skipped, {manifest['pages_failed']} failed)"
+        f"\n[green]Fetched {manifest['pages_written']} pages this run[/green] "
+        f"({manifest['pages_skipped']} skipped, {manifest['pages_failed']} failed) — "
+        f"{manifest['pages_on_disk']} of {manifest['pages_enumerated']} now on disk"
     )
     discovered = sorted(set(manifest["ontology"]["infobox_types"].values()))
     console.print(f"Discovered {len(discovered)} page types: {', '.join(discovered)}")
@@ -148,9 +158,56 @@ def audit(
 
 
 @app.command()
-def index(series: str = typer.Option(..., "--series")) -> None:
+def index(
+    series: str = typer.Option(..., "--series"),
+    no_embed: bool = typer.Option(
+        False, "--no-embed", help="Skip vectors. Facts, graph and BM25 still work."
+    ),
+) -> None:
     """Build the fact store, graph, BM25 index and vectors."""
-    _not_yet("Phase 2", "Indexing")
+    import logging
+
+    from rich.progress import Progress as RichProgress
+
+    from scriptengine.index.build import build_index, write_status
+
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s | %(levelname)-7s | %(message)s",
+        datefmt="%H:%M:%S",
+    )
+
+    paths = series_paths(series)
+
+    with RichProgress(transient=True) as bar:
+        tasks: dict[str, int] = {}
+
+        def on_progress(stage: str, done: int, total: int) -> None:
+            if stage not in tasks:
+                tasks[stage] = bar.add_task(stage, total=total)
+            bar.update(tasks[stage], completed=done, total=total)
+
+        report = build_index(paths, embed=not no_embed, progress=on_progress)
+
+    if "error" in report:
+        console.print(f"[red]{report['error']}[/red]")
+        raise typer.Exit(code=1)
+
+    stats = report["stats"]
+    table = Table(title=f"Index built — {series}")
+    table.add_column("store")
+    table.add_column("rows", justify="right")
+    for name in ("documents", "sections", "nodes", "edges", "facts", "chunks"):
+        table.add_row(name, f"{stats[name]:,}")
+    table.add_row("nodes with a page", f"{stats['resolved_nodes']:,}")
+    table.add_row("vectors", f"{report['embedded']:,}")
+    console.print(table)
+
+    console.print(f"\nStatus: {write_status(paths, report)}")
+    if no_embed:
+        console.print(
+            "[yellow]No vectors built. Lexical and graph retrieval work; "
+            "semantic search needs `index` without --no-embed.[/yellow]"
+        )
 
 
 @app.command()

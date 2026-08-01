@@ -129,12 +129,29 @@ copy it and the series moves. Nothing is shared but the code.
 | Phase | Work | Status |
 |---|---|---|
 | 0 | Rename, restructure, drop Docker, retire the dead stack | **done** |
-| 1 | Wikitext-first ingestion: ontology discovery, infobox and wikilink extraction | in progress |
-| 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | |
-| 3 | Hybrid retrieval, narrative ordering, 40-question gold eval set | |
+| 1 | Wikitext-first ingestion: ontology discovery, infobox and wikilink extraction | **done** |
+| 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | **done** |
+| 3 | Hybrid retrieval, narrative ordering, 40-question gold eval set | in progress |
 | 4 | FastAPI service, Electron UI wired to it | |
 | 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | |
 | 6 | Prove universality on Chainsaw Man and Marvel with no new code | |
+
+### Where it stands on the Jujutsu Kaisen wiki
+
+984 pages indexed out of 1,179 articles (the rest are galleries and maintenance
+pages, skipped deliberately).
+
+| | |
+|---|---|
+| Pages typed | 96.5% — into 19 types discovered from the wiki |
+| Sections per page | 7.67 |
+| Facts per page | 9.82 |
+| Wikilink edges resolved | 95.1% of 34,431 |
+| Citations captured | 8,539 |
+| Chunks / vectors | 10,177 / 6,402 |
+
+For comparison, the previous pipeline extracted **zero** facts and collapsed
+every page into a single unnamed section.
 
 ### What changed from the previous version
 
