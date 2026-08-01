@@ -31,6 +31,11 @@ _NON_WORD = re.compile(r"[^a-z0-9]+")
 # Infobox templates that describe presentation rather than a kind of subject.
 _STRUCTURAL_INFOBOXES = {"infobox scroll box", "infobox", "scroll box"}
 
+# The fewest named parameters a template must reach, on its best page, to be
+# believed to describe a subject rather than a layout. Sparse infoboxes exist,
+# so this is deliberately low; it only needs to exclude wrappers like `Tabs`.
+MIN_INFOBOX_FIELDS = 5
+
 # Categories that mark a page as maintenance or media rather than content.
 # These are MediaWiki-wide conventions, not per-wiki choices.
 _SKIP_CATEGORY_PATTERNS = (
@@ -236,10 +241,13 @@ def discover_infoboxes(
     from scriptengine.ingest.wikitext import infobox_candidates
 
     votes: Counter = Counter()
+    richest: dict[str, int] = {}
     for _, wikitext in pages:
         candidates = infobox_candidates(wikitext)
         if candidates:
-            votes[candidates[0][0]] += 1
+            name, params = candidates[0]
+            votes[name] += 1
+            richest[name] = max(richest.get(name, 0), params)
 
     overrides = overrides or {}
     ontology = Ontology(wiki=wiki)
@@ -251,6 +259,13 @@ def discover_infoboxes(
     for name, count in votes.items():
         normalised = _normalise_template(name)
         if count < min_pages or normalised in _STRUCTURAL_INFOBOXES:
+            continue
+        # A template that never describes more than a handful of fields on any
+        # page is layout, not a subject. `Tabs` peaks at three parameters
+        # (tab1/tab2/tab3); a real infobox reaches twenty. Electing layout
+        # wrappers pollutes the vocabulary and, worse, lets them shadow the
+        # actual infobox during extraction.
+        if richest.get(name, 0) < MIN_INFOBOX_FIELDS:
             continue
         ontology.infobox_types[normalised] = slugify_type(normalised)
 

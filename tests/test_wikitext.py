@@ -198,6 +198,22 @@ class TestInfobox:
         )
         assert found is not None and found[0] == "Character Sheet"
 
+    def test_the_richest_infobox_wins_not_the_first(self):
+        # JJK character pages open with a layout wrapper and only then the real
+        # infobox. Once `Tabs` entered the discovered vocabulary, taking the
+        # first match returned its three parameters instead of the infobox's
+        # twenty-one, and every character on the wiki lost its facts.
+        page = (
+            "{{Tabs|tab1 = Profile|tab2 = Synopsis|tab3 = Image Gallery}}\n"
+            "{{Character_Infobox|name = Aoi Todo|class = Grade 1|race = Human"
+            "|hair = Black|eye = Black|status = Alive}}\n"
+            "Prose follows."
+        )
+        found = find_infobox(page, known_templates={"Tabs", "Character Infobox"})
+        assert found is not None
+        assert found[0] == "Character Infobox"
+        assert "class" in found[1]
+
     def test_labels_from_the_wiki_schema_are_applied(self):
         _, params = find_infobox("{{Infobox|class = Grade 1}}")
         (fact,) = facts_from_infobox(params, labels={"class": "Grade"})

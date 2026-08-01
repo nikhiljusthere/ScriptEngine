@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -7,54 +7,61 @@
     <meta name="theme-color" content="#6C5CE7" />
     <meta
       name="description"
-      content="Anime Script AI - Generate YouTube scripts from anime content"
+      content="ScriptEngine - ordered, cited knowledge from Fandom wikis"
     />
-    <!-- Electron IPC Polyfill for standalone browser usage -->
+    <!--
+      Browser fallback. Opening http://localhost:3000 directly, outside Electron,
+      leaves window.electron undefined and every page crashes on first render.
+
+      This shim keeps the UI navigable in a browser, but it deliberately reports
+      that nothing is connected rather than inventing results. It previously
+      returned fabricated search hits ("Naruto", "One Piece") and a fake
+      generated script, which looks exactly like a working app and is worse than
+      an honest error.
+    -->
     <script>
-      (function() {
-        if (!window.electron) {
-          window.electron = {
-            ipcRenderer: {
-              invoke: async (channel, args) => {
-                const methods = {
-                  'run-setup': () => ({ success: true }),
-                  'health-check': () => ({ status: 'ok', services: {} }),
-                  'start-services': () => ({ success: true }),
-                  'stop-services': () => ({ success: true }),
-                  'crawl-series': () => {
-                    throw new Error(
-                      'crawl-series requires Electron. Start the desktop app, not npm start.'
-                    );
-                  },
-                  'ingest-document': (data) => ({ chunks_created: 10, message: 'Demo mode' }),
-                  'generate-script': (data) => ({ 
-                    script_text: '# Demo Script\n\nThis is a demo script generated in browser mode.\n\n## Introduction\n\nWelcome to Anime Script AI!\n\n## Main Content\n\nHere you would find the full documentary-style script with citations and references.\n\n## Conclusion\n\nThanks for watching!',
-                    citations: [],
-                    quality_score: 0.85,
-                    fact_check_score: 0.92
-                  }),
-                  'search': (data) => ({ 
-                    results: [
-                      { series: 'Naruto', content: 'Sample search result...', score: 0.9 },
-                      { series: 'One Piece', content: 'Another sample result...', score: 0.85 }
-                    ]
-                  })
-                };
-                if (methods[channel]) {
-                  return await methods[channel](args);
-                }
-                throw new Error('Unknown channel: ' + channel);
-              },
-              on: (channel, callback) => {},
-              removeAllListeners: () => {}
-            }
-          };
-        }
+      (function () {
+        if (window.electron) return;
+
+        const unavailable = (channel) => {
+          throw new Error(
+            channel +
+              " needs the desktop app. Run `npm run dev` instead of opening " +
+              "localhost:3000, and start the API with " +
+              "`python -m scriptengine.api.main`."
+          );
+        };
+
+        window.electron = {
+          ipcRenderer: {
+            invoke: async (channel) => {
+              // Health is the one channel with a truthful browser answer:
+              // there is no API connection from here.
+              if (channel === "health-check") {
+                return { status: null, device: null, version: null, series: [] };
+              }
+              return unavailable(channel);
+            },
+            on: () => {},
+            removeAllListeners: () => {},
+          },
+          healthCheck: async () => ({ status: null, series: [] }),
+          crawlSeries: async () => unavailable("crawl-series"),
+          stopCrawl: async () => ({ success: true }),
+          checkSeriesExists: async () => ({ exists: false }),
+          listSeries: async () => unavailable("list-series"),
+          search: async () => unavailable("search"),
+          getContext: async () => unavailable("get-context"),
+          getTimeline: async () => unavailable("get-timeline"),
+          getFacts: async () => unavailable("get-facts"),
+          onCrawlProgress: () => () => {},
+          removeCrawlProgressListeners: () => {},
+        };
       })();
     </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Anime Script AI</title>
+    <title>ScriptEngine</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

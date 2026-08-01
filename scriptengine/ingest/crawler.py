@@ -191,7 +191,12 @@ class WikiCrawler:
         return None
 
     async def _enumerate(
-        self, base: str, namespace: int, limit: int = 0, label: str = "titles"
+        self,
+        base: str,
+        namespace: int,
+        limit: int = 0,
+        label: str = "titles",
+        skip_redirects: bool = False,
     ) -> list[str]:
         """See `list_all_pages`. Raises `EnumerationFailed` rather than returning
         an empty list, because "the wiki has no pages" and "the wiki refused to
@@ -212,6 +217,8 @@ class WikiCrawler:
                 "aplimit": str(ENUMERATION_PAGE_SIZE),
                 "apnamespace": str(namespace), "format": "json", "formatversion": "2",
             }
+            if skip_redirects:
+                params["apfilterredir"] = "nonredirects"
             if apcontinue:
                 params["apcontinue"] = apcontinue
 
@@ -237,8 +244,18 @@ class WikiCrawler:
         return titles
 
     async def list_all_pages(self, base: str, limit: int = 0) -> list[str]:
-        """Article titles in the main namespace."""
-        return await self._enumerate(base, 0, limit, "articles")
+        """Real article titles in the main namespace.
+
+        Redirects are excluded. `allpages` lists them by default, and fetching
+        one just returns the article it points at — a page already on disk. On
+        Jujutsu Kaisen that inflated the wiki from 984 articles to 1,179
+        "pages", and made every resumed crawl re-fetch ~195 redirects to
+        rewrite files it already had.
+
+        Redirect titles are still valuable as aliases, but they come from
+        `prop=redirects` on the article, not from crawling them as pages.
+        """
+        return await self._enumerate(base, 0, limit, "articles", skip_redirects=True)
 
     async def list_templates(self, base: str, limit: int = 0) -> list[str]:
         """Pages in the `Template:` namespace — the wiki's own vocabulary."""
@@ -557,12 +574,16 @@ class WikiCrawler:
             "skipped": skipped[:200],
             "failed": failed[:200],
         }
-        # Never let a thin run overwrite a richer manifest. A resumed or
-        # interrupted crawl that enumerated less than a previous one would
-        # otherwise destroy the title list the audit resolves links against —
-        # which is exactly what happened when rate limiting emptied it.
+        # A capped run deliberately enumerates a slice, so it must not overwrite
+        # the full title list the audit resolves links against.
+        #
+        # An uncapped run is always trusted now, even when it sees fewer titles
+        # than before: failed enumeration raises `EnumerationFailed` and never
+        # reaches this point, so a smaller number here means a more accurate one.
+        # Guarding on size alone kept a stale count of 1,179 after redirects
+        # were excluded and the real article count turned out to be 1,089.
         previous = load_manifest(paths)
-        if len(previous.get("all_titles") or ()) > len(all_titles):
+        if max_pages and len(previous.get("all_titles") or ()) > len(all_titles):
             logger.warning(
                 "keeping the previous manifest: it lists %s titles, this run saw %s",
                 len(previous["all_titles"]), len(all_titles),

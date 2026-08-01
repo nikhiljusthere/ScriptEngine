@@ -1,5 +1,5 @@
 /**
- * Anime Script AI - Desktop Application Entry Point
+ * ScriptEngine - Desktop Application Entry Point
  *
  * This is the main launcher that handles:
  * 1. Environment detection (Windows/Mac/Linux)
@@ -574,7 +574,7 @@ function createWindow() {
     height: 900,
     minWidth: 1200,
     minHeight: 800,
-    title: "Anime Script AI",
+    title: "ScriptEngine",
     icon: path.join(UI_DIR, "public", "favicon.ico"),
     webPreferences: {
       nodeIntegration: true,

@@ -530,6 +530,7 @@ def find_infobox(
     name is matched on the word "infobox", which is the Fandom convention.
     """
     normalised = {t.lower().replace("_", " ") for t in (known_templates or set())}
+    matches: list[tuple[int, str, dict[str, str]]] = []
 
     for _, _, body in find_templates(text):
         name, named, _ = parse_template(body)
@@ -541,9 +542,19 @@ def find_infobox(
             clean = clean.split(":", 1)[1].strip()
 
         if (normalised and lowered in normalised) or "infobox" in lowered:
-            return clean, named
+            matches.append((len(named), clean, named))
 
-    return None
+    if not matches:
+        return None
+
+    # The richest match wins, not the first. A page commonly opens with a layout
+    # wrapper before its real infobox — Jujutsu Kaisen character pages start
+    # `{{Tabs|tab1=Profile|tab2=Synopsis|tab3=Image Gallery}}` and only then
+    # `{{Character_Infobox|...}}`. Once `Tabs` entered the discovered vocabulary,
+    # taking the first match returned three parameters instead of twenty-one,
+    # and every character on the wiki lost its facts.
+    matches.sort(key=lambda match: match[0], reverse=True)
+    return matches[0][1], matches[0][2]
 
 
 def facts_from_infobox(

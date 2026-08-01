@@ -10,6 +10,7 @@ from __future__ import annotations
 from scriptengine.ingest.ontology import (
     Ontology,
     build_ontology,
+    discover_infoboxes,
     learn_field_labels,
     slugify_type,
 )
@@ -118,6 +119,50 @@ class TestOverrides:
         assert ontology.is_skippable(["Aoi Todo Images"])
         assert ontology.is_skippable(["Candidates for deletion"])
         assert not ontology.is_skippable(["Jujutsu Sorcerers"])
+
+
+class TestStructuralDiscovery:
+    """Type discovery from page shape, which is what makes this wiki-agnostic."""
+
+    CHARACTER_PAGE = (
+        "{{Tabs|tab1 = Profile|tab2 = Synopsis|tab3 = Image Gallery}}\n"
+        "{{Character|name = Denji|race = Human|age = 16|status = Alive"
+        "|affiliation = [[Public Safety]]|debut = Chapter 1}}\n"
+        "==Appearance==\nText.\n"
+    )
+
+    def test_an_infobox_without_the_word_infobox_is_found(self):
+        # Chainsaw Man calls its infobox `Character`. Name matching finds
+        # Jujutsu Kaisen's twenty types and nothing at all here.
+        ontology = discover_infoboxes(
+            "https://example.fandom.com",
+            [("Denji", self.CHARACTER_PAGE), ("Power", self.CHARACTER_PAGE)],
+        )
+        assert "character" in ontology.types
+
+    def test_layout_wrappers_are_not_elected(self):
+        # `Tabs` wins the vote on any page lacking a real infobox, but peaks at
+        # three parameters. Electing it let it shadow the actual infobox during
+        # extraction and cost every character page its facts.
+        layout_only = "{{Tabs|tab1 = A|tab2 = B|tab3 = C}}\n==Section==\nText."
+        ontology = discover_infoboxes(
+            "https://example.fandom.com",
+            [("One", layout_only), ("Two", layout_only)],
+        )
+        assert "tabs" not in ontology.types
+
+    def test_a_template_used_once_is_not_a_type(self):
+        ontology = discover_infoboxes(
+            "https://example.fandom.com", [("Denji", self.CHARACTER_PAGE)]
+        )
+        assert ontology.types == []
+
+    def test_the_vote_tally_is_kept_for_the_audit(self):
+        ontology = discover_infoboxes(
+            "https://example.fandom.com",
+            [("Denji", self.CHARACTER_PAGE), ("Power", self.CHARACTER_PAGE)],
+        )
+        assert ontology.infobox_votes.get("Character") == 2
 
 
 class TestFieldLabels:
