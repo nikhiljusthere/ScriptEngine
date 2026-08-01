@@ -131,8 +131,8 @@ copy it and the series moves. Nothing is shared but the code.
 | 0 | Rename, restructure, drop Docker, retire the dead stack | **done** |
 | 1 | Wikitext-first ingestion: ontology discovery, infobox and wikilink extraction | **done** |
 | 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | **done** |
-| 3 | Hybrid retrieval, narrative ordering, 40-question gold eval set | in progress |
-| 4 | FastAPI service, Electron UI wired to it | |
+| 3 | Hybrid retrieval, narrative ordering, gold eval set | **done** |
+| 4 | FastAPI service, Electron UI wired to it | in progress |
 | 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | |
 | 6 | Prove universality on Chainsaw Man and Marvel with no new code | |
 
@@ -148,10 +148,16 @@ pages, skipped deliberately).
 | Facts per page | 9.82 |
 | Wikilink edges resolved | 95.1% of 34,431 |
 | Citations captured | 8,539 |
-| Chunks / vectors | 10,177 / 6,402 |
+| Chunks / vectors | 9,978 / 6,294 |
+| Retrieval eval | 21/21 |
 
 For comparison, the previous pipeline extracted **zero** facts and collapsed
 every page into a single unnamed section.
+
+The eval covers fact lookup, aliases, lexical and semantic search, multi-hop
+questions and narrative ordering. It is a regression suite, not a scoreboard:
+its value is that a change to chunking, fusion or reranking now moves a number
+you can argue about. Run it with `python -m scriptengine.cli eval --series jjk`.
 
 ### What changed from the previous version
 

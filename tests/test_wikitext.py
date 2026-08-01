@@ -58,6 +58,20 @@ class TestLinks:
     def test_category_and_file_links_are_not_relationships(self):
         assert extract_links("[[Category:Characters]] [[File:Todo.png|220px]]") == []
 
+    def test_an_interwiki_link_is_not_a_relationship(self):
+        assert extract_links("[[Wikipedia:Subaru Kimura|Subaru Kimura]]") == []
+
+    def test_an_interwiki_links_text_is_still_kept(self):
+        # It is not an edge, but it is prose: this is how the voice actor's name
+        # appears on the page, and dropping it lost the answer to
+        # "who voices Aoi Todo in Japanese?".
+        assert strip_markup("[[Wikipedia:Subaru Kimura|Subaru Kimura]]") == (
+            "Subaru Kimura"
+        )
+
+    def test_a_file_link_still_renders_nothing(self):
+        assert strip_markup("[[File:Todo.png|220px]]") == ""
+
 
 class TestCitations:
     def test_citation_parameters_are_kept_structured(self):
@@ -102,6 +116,18 @@ class TestMarkupStripping:
 
     def test_external_link_keeps_only_its_label(self):
         assert strip_markup("[https://example.com the label]") == "the label"
+
+    def test_gallery_contents_are_removed_not_just_its_tags(self):
+        # Stripping only the tags leaves the payload: a gallery body is a list
+        # of image files, and it surfaced verbatim inside a timeline beat as
+        # "NanamiP.png|Kento Nanami|link=Kento Nanami".
+        text = strip_markup(
+            "Teams deployed.\n"
+            "<gallery>\nNanamiP.png|Kento Nanami|link=Kento Nanami\n</gallery>\n"
+            "The operation began."
+        )
+        assert "NanamiP.png" not in text
+        assert "Teams deployed." in text and "The operation began." in text
 
 
 class TestTables:

@@ -214,9 +214,148 @@ def index(
 def query(
     question: str = typer.Argument(...),
     series: str = typer.Option(..., "--series"),
+    top_k: int = typer.Option(0, "--top-k", help="Passages to return."),
+    no_rerank: bool = typer.Option(False, "--no-rerank", help="Skip the cross-encoder."),
+    show_facts: bool = typer.Option(True, "--facts/--no-facts"),
 ) -> None:
     """Retrieve context for a question."""
-    _not_yet("Phase 3", "Querying")
+    import logging
+
+    from scriptengine.retrieve.hybrid import HybridRetriever
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with HybridRetriever(paths) as retriever:
+        result = retriever.search(
+            question, top_k=top_k or None, rerank=not no_rerank
+        )
+        retriever.release_models()
+
+    if result.entities:
+        console.print(f"[dim]Entities:[/dim] {', '.join(result.entities[:6])}")
+    if result.related:
+        console.print(f"[dim]Related:[/dim]  {', '.join(result.related[:8])}")
+
+    if show_facts and result.facts:
+        facts = Table(title="Facts")
+        facts.add_column("entity")
+        facts.add_column("field")
+        facts.add_column("value")
+        for fact in result.facts[:12]:
+            facts.add_row(fact["entity"], fact["label"], fact["value"][:60])
+        console.print(facts)
+
+    if not result.passages:
+        console.print("\n[yellow]Nothing retrieved.[/yellow]")
+        return
+
+    console.print()
+    for rank, passage in enumerate(result.passages, start=1):
+        console.print(
+            f"[bold]{rank}. {passage.doc_title}[/bold] "
+            f"[dim]— {passage.breadcrumb} "
+            f"(score {passage.score:.3f}, via {'+'.join(passage.sources)})[/dim]"
+        )
+        console.print(f"   {passage.text[:400]}\n")
+
+
+@app.command()
+def timeline(
+    subject: str = typer.Argument(..., help="An arc, event or battle."),
+    series: str = typer.Option(..., "--series"),
+    max_beats: int = typer.Option(20, "--max-beats"),
+) -> None:
+    """Retrieve an event as ordered beats, for writing a script."""
+    import logging
+
+    from scriptengine.retrieve.narrative import NarrativeRetriever
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with NarrativeRetriever(paths) as retriever:
+        narrative = retriever.timeline(subject, max_beats=max_beats)
+
+    if not narrative.beats:
+        console.print(f"[yellow]No narrative found for {subject!r}.[/yellow]")
+        raise typer.Exit(code=1)
+
+    console.print(f"[bold]{narrative.subject}[/bold] — {len(narrative.beats)} beats")
+    if narrative.participants:
+        console.print(f"[dim]Participants:[/dim] {', '.join(narrative.participants[:12])}")
+    console.print()
+
+    for beat in narrative.beats:
+        heading = f"[bold]{beat.order}. {beat.title}[/bold]"
+        if beat.time:
+            heading += f" [cyan]({beat.time})[/cyan]"
+        console.print(heading)
+        console.print(f"   [dim]{beat.breadcrumb}[/dim]")
+        console.print(f"   {beat.text[:280]}\n")
+
+
+@app.command("eval")
+def run_eval(
+    series: str = typer.Option(..., "--series"),
+    top_k: int = typer.Option(8, "--top-k"),
+    verbose: bool = typer.Option(False, "--verbose", help="Show every question."),
+) -> None:
+    """Score retrieval against the gold question set."""
+    import logging
+
+    from scriptengine.eval.harness import evaluate, write_report
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    try:
+        report = evaluate(paths, top_k=top_k)
+    except FileNotFoundError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    table = Table(title=f"Retrieval eval — {series}")
+    table.add_column("kind")
+    table.add_column("passed", justify="right")
+    table.add_column("score", justify="right")
+    for kind, scores in report["by_kind"].items():
+        colour = "green" if scores["score"] == 1.0 else "yellow" if scores["score"] >= 0.6 else "red"
+        table.add_row(
+            kind,
+            f"{scores['passed']}/{scores['total']}",
+            f"[{colour}]{scores['score']:.0%}[/{colour}]",
+        )
+    console.print(table)
+
+    failures = [outcome for outcome in report["results"] if not outcome["passed"]]
+    if verbose or failures:
+        console.print()
+        for outcome in (report["results"] if verbose else failures):
+            mark = "[green]PASS[/green]" if outcome["passed"] else "[red]FAIL[/red]"
+            console.print(f"  {mark}  [{outcome['id']}] {outcome['question']}")
+            if not outcome["passed"]:
+                detail = {
+                    key: value for key, value in outcome.items()
+                    if key not in {"id", "kind", "question", "passed", "seconds"}
+                }
+                console.print(f"        [dim]{detail}[/dim]")
+
+    console.print(
+        f"\n[bold]{report['passed']}/{report['questions']}[/bold] "
+        f"({report['score']:.0%})   report: {write_report(paths, report)}"
+    )
+    if report["score"] < 1.0:
+        raise typer.Exit(code=1)
 
 
 @app.command("list")

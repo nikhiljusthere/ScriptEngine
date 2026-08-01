@@ -93,7 +93,7 @@ class VectorStore:
         self,
         vector: Sequence[float],
         limit: int = 30,
-        level: int | None = 2,
+        levels: Iterable[int] | None = None,
         doc_titles: Iterable[str] | None = None,
     ) -> list[dict[str, Any]]:
         """Nearest chunks, optionally restricted to a level or a set of pages.
@@ -104,10 +104,18 @@ class VectorStore:
         query naming its subject. Restricting to graph-selected documents keeps
         the precision benefit without letting a tagging error erase content.
         """
+        # Only levels 0 and 2 are ever embedded, and both should be searchable.
+        # Filtering to level 2 — as this did — made every document card dead
+        # weight: they were embedded, stored, and then never looked at, which is
+        # precisely what a question like "what is a binding vow" needs, since a
+        # card carries the page's title, type, infobox facts and lead together.
         conditions = []
-        if level is not None:
+        wanted = list(levels) if levels is not None else []
+        if wanted:
             conditions.append(
-                FieldCondition(key="level", match=MatchValue(value=level))
+                FieldCondition(key="level", match=MatchAny(any=wanted))
+                if len(wanted) > 1
+                else FieldCondition(key="level", match=MatchValue(value=wanted[0]))
             )
         titles = list(doc_titles or ())
         if titles:

@@ -54,6 +54,15 @@ TRANSPARENT_TEMPLATES: dict[str, str] = {
 # Markup that carries no meaning once the text is extracted.
 _HTML_TAG = re.compile(r"<[^>]+>")
 _HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+
+# Blocks whose *contents* are markup, not prose. Stripping only the surrounding
+# tags leaves the payload behind — a <gallery> body is a list of image files,
+# and it surfaced inside a Shibuya Incident timeline beat as
+# "NanamiP.png|Kento Nanami|link=Kento Nanami".
+_MEDIA_BLOCK = re.compile(
+    r"<(gallery|imagemap|timeline|graph|poem|score)\b[^>]*>.*?</\1\s*>",
+    re.DOTALL | re.IGNORECASE,
+)
 _HEADING = re.compile(r"^(={2,6})\s*(.+?)\s*\1\s*$", re.MULTILINE)
 
 # Wikitable cell attributes precede the content after a single `|`, e.g.
@@ -225,13 +234,33 @@ def normalise_title(title: str) -> str:
     return cleaned[:1].upper() + cleaned[1:] if cleaned else ""
 
 
+# Links that render no text at all: on the page they become an image, or
+# nothing. Dropping them entirely is correct.
+_SILENT_NAMESPACES = frozenset({
+    "category", "file", "image", "media", "template", "module",
+    "special", "mediawiki",
+})
+
+# Links that render as ordinary text but point outside this wiki. They are not
+# relationships between pages here, yet their display text is real prose —
+# `[[Wikipedia:Subaru Kimura|Subaru Kimura]]` is how the voice actor's name
+# appears, and discarding it lost the answer to "who voices Aoi Todo".
+_TEXTUAL_NAMESPACES = frozenset({
+    "wikipedia", "w", "wikt", "wiktionary", "commons", "help",
+    "talk", "user", "project", "imdb", "mal",
+})
+
+
 def _is_namespaced(target: str) -> bool:
-    """True for links into non-article namespaces, which are not relationships."""
+    """True for links that are not a relationship to another article here."""
     prefix = target.split(":", 1)[0].strip().lower()
-    return prefix in {
-        "category", "file", "image", "media", "template", "help", "module",
-        "special", "talk", "user", "project", "mediawiki", "w", "wikipedia",
-    }
+    return prefix in _SILENT_NAMESPACES or prefix in _TEXTUAL_NAMESPACES
+
+
+def _renders_text(target: str) -> bool:
+    """True when a link contributes words to the prose."""
+    prefix = target.split(":", 1)[0].strip().lower()
+    return prefix not in _SILENT_NAMESPACES
 
 
 def extract_citations(text: str) -> list[Citation]:
@@ -275,6 +304,7 @@ def strip_markup(text: str) -> str:
         return ""
 
     text = _HTML_COMMENT.sub("", text)
+    text = _MEDIA_BLOCK.sub(" ", text)
     text = flatten_tables(text)
     text = _strip_templates(text)
     text = _flatten_links(text)
@@ -434,10 +464,11 @@ def _flatten_links(text: str) -> str:
 
         body = text[start + 2 : end - 2]
         target, _, display = body.partition("|")
-        if _is_namespaced(target.strip()):
-            pass  # category and file links render nothing inline
-        else:
-            out.append((display or target).strip())
+        if _renders_text(target.strip()):
+            # An interwiki link still shows its label; only its target is
+            # elsewhere. Strip the prefix when no label was given.
+            shown = (display or target.split(":", 1)[-1]).strip()
+            out.append(shown)
 
         i = end
 

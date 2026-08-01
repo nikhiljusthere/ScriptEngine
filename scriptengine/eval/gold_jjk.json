@@ -1,0 +1,162 @@
+{
+  "series": "jjk",
+  "note": "Answers are checked against the Jujutsu Kaisen wiki as crawled. 'expect_docs' lists pages any correct retrieval must surface; 'expect_text' lists substrings that must appear somewhere in the returned passages or facts. Questions are grouped by what they exercise, because a suite that only asks lookups cannot tell a good retriever from a lucky one.",
+  "questions": [
+    {
+      "id": "fact-01",
+      "kind": "fact",
+      "question": "What grade of sorcerer is Aoi Todo?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": ["Grade 1"]
+    },
+    {
+      "id": "fact-02",
+      "kind": "fact",
+      "question": "Which chapter does Aoi Todo first appear in?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": ["Chapter 16"]
+    },
+    {
+      "id": "fact-03",
+      "kind": "fact",
+      "question": "What school does Aoi Todo attend?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": ["Kyoto"]
+    },
+    {
+      "id": "fact-04",
+      "kind": "fact",
+      "question": "What is Aoi Todo's birthday?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": ["September 23"]
+    },
+    {
+      "id": "fact-05",
+      "kind": "fact",
+      "question": "How tall is Aoi Todo?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": ["190"]
+    },
+    {
+      "id": "fact-06",
+      "kind": "fact",
+      "question": "Who voices Aoi Todo in Japanese?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": ["Subaru Kimura"]
+    },
+
+    {
+      "id": "alias-01",
+      "kind": "alias",
+      "question": "What is Todo's technique?",
+      "expect_docs": ["Aoi Todo", "Boogie Woogie"],
+      "expect_text": ["Boogie Woogie"]
+    },
+    {
+      "id": "alias-02",
+      "kind": "alias",
+      "question": "Tell me about Todo Aoi.",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": []
+    },
+
+    {
+      "id": "semantic-01",
+      "kind": "semantic",
+      "question": "Which technique lets someone swap the positions of two people by clapping?",
+      "expect_docs": ["Boogie Woogie"],
+      "expect_text": ["Boogie Woogie"]
+    },
+    {
+      "id": "semantic-02",
+      "kind": "semantic",
+      "question": "What ability lets a sorcerer see the flow of cursed energy in perfect detail?",
+      "expect_docs": ["Six Eyes"],
+      "expect_text": []
+    },
+    {
+      "id": "semantic-03",
+      "kind": "semantic",
+      "question": "What is the strengthened punch that occurs when an attack lands within a fraction of a second of cursed energy?",
+      "expect_docs": ["Black Flash"],
+      "expect_text": ["Black Flash"]
+    },
+    {
+      "id": "semantic-04",
+      "kind": "semantic",
+      "question": "What is the contract a jujutsu user forms with themselves or another to gain power?",
+      "expect_docs": ["Binding Vow"],
+      "expect_text": [],
+      "note": "Originally phrased 'a promise made in exchange for a restriction', which retrieved Heavenly Restriction instead. That was a bad question, not a bad retrieval: in this series a Heavenly Restriction also trades a restriction for power, so the question had two correct answers. Rephrased rather than tuning the retriever to prefer one reading of an ambiguous prompt."
+    },
+    {
+      "id": "semantic-05",
+      "kind": "semantic",
+      "question": "What is the condition some people are born with that trades a physical limitation for extraordinary ability?",
+      "expect_docs": ["Heavenly Restriction"],
+      "expect_text": []
+    },
+
+    {
+      "id": "lexical-01",
+      "kind": "lexical",
+      "question": "Playful Cloud",
+      "expect_docs": ["Playful Cloud"],
+      "expect_text": []
+    },
+    {
+      "id": "lexical-02",
+      "kind": "lexical",
+      "question": "Malevolent Shrine",
+      "expect_docs": ["Malevolent Shrine"],
+      "expect_text": []
+    },
+    {
+      "id": "lexical-03",
+      "kind": "lexical",
+      "question": "Prison Realm",
+      "expect_docs": ["Prison Realm"],
+      "expect_text": []
+    },
+
+    {
+      "id": "multihop-01",
+      "kind": "multihop",
+      "question": "Which students attend Kyoto Jujutsu High?",
+      "expect_docs": ["Aoi Todo"],
+      "expect_text": []
+    },
+    {
+      "id": "multihop-02",
+      "kind": "multihop",
+      "question": "Who fought Hanami?",
+      "expect_docs": ["Hanami"],
+      "expect_text": []
+    },
+    {
+      "id": "multihop-03",
+      "kind": "multihop",
+      "question": "What happened to Nanami during the Shibuya Incident?",
+      "expect_docs": ["Kento Nanami", "Shibuya Incident"],
+      "expect_text": []
+    },
+
+    {
+      "id": "narrative-01",
+      "kind": "narrative",
+      "question": "Shibuya Incident",
+      "expect_docs": ["Shibuya Incident"],
+      "expect_text": [],
+      "expect_ordered_beats": 8,
+      "expect_times": true
+    },
+    {
+      "id": "narrative-02",
+      "kind": "narrative",
+      "question": "Fearsome Womb Arc",
+      "expect_docs": [],
+      "expect_text": [],
+      "expect_ordered_beats": 3
+    }
+  ]
+}
