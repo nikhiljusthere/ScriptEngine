@@ -43,8 +43,11 @@ const DashboardPage = () => {
   const checkHealth = async () => {
     try {
       const result = await window.electron.ipcRenderer.invoke('health-check');
-      setServiceStatus(result.services || {});
-      setIsRunning(Object.values(result.services || {}).some(s => s === 'ok'));
+      // /health reports the API itself, the resolved torch device and the
+      // indexed series. It has no `services` key — there are no services. The
+      // stores are files, so "running" means the API answered.
+      setServiceStatus(result);
+      setIsRunning(result.status === 'ok');
     } catch (error) {
       // Service not available
     }
@@ -105,33 +108,34 @@ const DashboardPage = () => {
       {isRunning && (
         <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
           <Typography variant="h6" gutterBottom>
-            Services Status
+            Engine Status
           </Typography>
           <Grid container spacing={2}>
             {[
-              { name: 'API Server', key: 'api' },
-              { name: 'PostgreSQL', key: 'postgres' },
-              { name: 'Qdrant', key: 'qdrant' },
-              { name: 'Neo4j', key: 'neo4j' },
-              { name: 'Elasticsearch', key: 'elasticsearch' },
-              { name: 'Redis', key: 'redis' },
+              { name: 'API Server', value: serviceStatus.status },
+              { name: 'Device', value: serviceStatus.device },
+              { name: 'Version', value: serviceStatus.version },
+              {
+                name: 'Series Indexed',
+                value: (serviceStatus.series || []).join(', '),
+              },
             ].map((service) => (
-              <Grid item xs={12} sm={6} md={4} lg={2} key={service.key}>
+              <Grid item xs={12} sm={6} md={3} key={service.name}>
                 <Paper elevation={1} sx={{ p: 2, textAlign: 'center' }}>
                   <Typography variant="body2" gutterBottom>
                     {service.name}
                   </Typography>
                   <Chip
                     icon={
-                      serviceStatus[service.key] === 'ok' ? (
+                      service.value ? (
                         <CheckCircleOutline fontSize="small" color="success" />
                       ) : (
                         <ErrorOutline fontSize="small" color="error" />
                       )
                     }
-                    label={serviceStatus[service.key] || 'stopped'}
+                    label={service.value || 'unavailable'}
                     size="small"
-                    color={serviceStatus[service.key] === 'ok' ? 'success' : 'default'}
+                    color={service.value ? 'success' : 'default'}
                     sx={{ mt: 1 }}
                   />
                 </Paper>
@@ -191,12 +195,12 @@ const DashboardPage = () => {
         </Typography>
         <Grid container spacing={2}>
           {[
-            { label: 'Architecture', value: 'Hybrid RAG + KG + LangGraph' },
-            { label: 'LLM', value: 'Qwen2.5-72B (Local)' },
-            { label: 'Embeddings', value: 'BGE-M3 (8192 context)' },
-            { label: 'Vector DB', value: 'Qdrant' },
-            { label: 'Knowledge Graph', value: 'Neo4j' },
-            { label: 'Search', value: 'Elasticsearch 8 + BM25' },
+            { label: 'Architecture', value: 'Wikitext ingestion + hybrid retrieval' },
+            { label: 'Embeddings', value: serviceStatus.embed_model || 'BAAI/bge-large-en-v1.5' },
+            { label: 'Reranker', value: serviceStatus.rerank_model || 'BAAI/bge-reranker-v2-m3' },
+            { label: 'Vector Store', value: 'Qdrant (embedded)' },
+            { label: 'Facts / Graph / BM25', value: 'SQLite + FTS5' },
+            { label: 'Generation', value: 'Downstream, in ComfyUI' },
           ].map((stat, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Typography variant="body2" color="text.secondary">
