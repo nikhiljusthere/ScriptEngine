@@ -482,6 +482,44 @@ def _flatten_links(text: str) -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
+def infobox_candidates(text: str, min_params: int = 3) -> list[tuple[str, int]]:
+    """Templates on this page that look structurally like an infobox.
+
+    Name matching is not enough. Jujutsu Kaisen calls its infoboxes
+    "Character Infobox", but Chainsaw Man calls the same thing "Character" and
+    Marvel uses "Marvel Database:Character Template" — searching for the word
+    "infobox" finds the first wiki's vocabulary and none of the others'.
+
+    What holds across wikis is the shape. An infobox is transcluded before the
+    first heading, carries several named parameters, and appears once. Layout
+    templates (tabs, navboxes, scroll boxes) fail at least one of those, and
+    inline templates like citations fail the position test.
+
+    Returns `(name, parameter_count)` richest first. The count is the tiebreak
+    that separates a real infobox from the layout wrapper beside it: `Tabs`
+    declares three parameters, `Character Infobox` declares twenty-one.
+    """
+    lead = text.split("\n==", 1)[0]
+
+    counts: dict[str, int] = {}
+    params: dict[str, int] = {}
+
+    for _, _, body in find_templates(lead):
+        name, named, _ = parse_template(body)
+        clean = normalise_title(name.strip().lstrip(":"))
+        if not clean:
+            continue
+        counts[clean] = counts.get(clean, 0) + 1
+        params[clean] = max(params.get(clean, 0), len(named))
+
+    candidates = [
+        (name, params[name])
+        for name, count in counts.items()
+        if count == 1 and params[name] >= min_params
+    ]
+    return sorted(candidates, key=lambda pair: pair[1], reverse=True)
+
+
 def find_infobox(
     text: str, known_templates: set[str] | None = None
 ) -> tuple[str, dict[str, str]] | None:

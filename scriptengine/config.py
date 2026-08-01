@@ -159,6 +159,21 @@ class SeriesPaths:
         return self
 
 
+def load_overrides(paths: "SeriesPaths") -> dict:
+    """Read `series/<name>/overrides.yaml`.
+
+    The only place a wiki-specific rule may live. If a fix names a series and
+    sits in a `.py` file, it is in the wrong place — the next wiki breaks.
+    """
+    if not paths.overrides.exists():
+        return {}
+
+    import yaml
+
+    loaded = yaml.safe_load(paths.overrides.read_text(encoding="utf-8"))
+    return loaded if isinstance(loaded, dict) else {}
+
+
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
     return Settings()

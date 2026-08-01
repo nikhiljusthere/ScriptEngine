@@ -144,6 +144,9 @@ def audit(
 
     console.print()
     for check in report["checks"]:
+        if check.get("skipped"):
+            console.print(f"  [dim]SKIP[/dim]  {check['name']}: {check['meaning']}")
+            continue
         mark = "[green]PASS[/green]" if check["passed"] else "[red]FAIL[/red]"
         console.print(
             f"  {mark}  {check['name']}: {check['value']} "

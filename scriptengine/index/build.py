@@ -13,12 +13,11 @@ import json
 import logging
 from typing import Any, Callable, Iterable
 
-from scriptengine.config import Settings, SeriesPaths, get_settings
+from scriptengine.config import Settings, SeriesPaths, get_settings, load_overrides
 from scriptengine.index.chunker import Chunk, chunk_page, embeddable
 from scriptengine.index.embedder import Embedder
-from scriptengine.ingest.crawler import load_manifest, load_pages, reextract
+from scriptengine.ingest.crawler import load_extracted, load_manifest
 from scriptengine.ingest.documents import WikiPage
-from scriptengine.ingest.ontology import Ontology, build_ontology_from_transclusions
 from scriptengine.stores.facts import FactStore
 from scriptengine.stores.vectors import VectorStore
 
@@ -41,24 +40,15 @@ def build_index(
     functional without them.
     """
     settings = settings or get_settings()
-    pages = list(load_pages(paths))
-    if not pages:
-        return {"error": "no crawled pages found; run `crawl` first"}
-
     manifest = load_manifest(paths)
 
-    # Re-parse from the stored wikitext so the index always reflects the current
-    # extraction code, not whatever it was on the day of the crawl.
-    ontology = Ontology.from_dict(manifest.get("ontology") or {})
-    if not ontology.infobox_types:
-        logger.info("no ontology in the manifest; deriving it from transclusions")
-        ontology = build_ontology_from_transclusions(
-            manifest.get("wiki", ""), (page.templates for page in pages)
-        )
-        logger.info("derived %s page types", len(ontology.types))
-
-    logger.info("re-extracting %s pages from stored wikitext", len(pages))
-    pages = [reextract(page, ontology) for page in pages]
+    # Loading, discovery and re-extraction all happen in `load_extracted`, so
+    # that `audit` and `index` can never disagree about what the corpus holds.
+    logger.info("loading and re-extracting the corpus")
+    pages, ontology = load_extracted(paths, load_overrides(paths))
+    if not pages:
+        return {"error": "no crawled pages found; run `crawl` first"}
+    logger.info("vocabulary: %s types across %s pages", len(ontology.types), len(pages))
 
     report: dict[str, Any] = {"series": paths.name, "pages": len(pages)}
 

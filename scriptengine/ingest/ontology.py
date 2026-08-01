@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 from dataclasses import dataclass, field
 from typing import Any, Iterable
 
@@ -70,6 +71,9 @@ class Ontology:
     # Title -> type, filled in as pages are typed, so a subpage can inherit from
     # its parent regardless of which order the two were crawled in.
     page_types: dict[str, str] = field(default_factory=dict)
+    # How many pages nominated each template as their infobox. Kept for the
+    # audit: it shows what discovery saw, including what it rejected.
+    infobox_votes: dict[str, int] = field(default_factory=dict)
 
     @property
     def types(self) -> list[str]:
@@ -128,6 +132,7 @@ class Ontology:
             "field_labels": self.field_labels,
             "categories": self.categories,
             "skip_categories": sorted(self.skip_categories),
+            "infobox_votes": self.infobox_votes,
         }
 
     @classmethod
@@ -138,6 +143,7 @@ class Ontology:
             field_labels=payload.get("field_labels", {}),
             categories=payload.get("categories", {}),
             skip_categories=set(payload.get("skip_categories", [])),
+            infobox_votes=payload.get("infobox_votes", {}),
         )
 
 
@@ -205,6 +211,57 @@ def build_ontology_from_transclusions(
             if "infobox" in normalised and normalised not in _STRUCTURAL_INFOBOXES:
                 seen.add(template)
     return build_ontology(wiki, sorted(seen), overrides)
+
+
+def discover_infoboxes(
+    wiki: str,
+    pages: Iterable[tuple[str, str]],
+    overrides: dict[str, Any] | None = None,
+    min_pages: int = 2,
+) -> Ontology:
+    """Derive the vocabulary from the *shape* of each page's wikitext.
+
+    This is what makes the engine universal. Searching template names for the
+    word "infobox" finds Jujutsu Kaisen's twenty types and nothing at all on
+    Chainsaw Man, whose infobox is called `Character`, or on Marvel, which uses
+    Lua modules and `Marvel Database:Character Template`.
+
+    Instead each page votes for its richest pre-heading template — see
+    `wikitext.infobox_candidates` — and any template winning on at least
+    `min_pages` pages becomes a type. Requiring more than one page keeps one-off
+    layout wrappers out of the vocabulary.
+
+    `pages` is an iterable of `(title, wikitext)`.
+    """
+    from scriptengine.ingest.wikitext import infobox_candidates
+
+    votes: Counter = Counter()
+    for _, wikitext in pages:
+        candidates = infobox_candidates(wikitext)
+        if candidates:
+            votes[candidates[0][0]] += 1
+
+    overrides = overrides or {}
+    ontology = Ontology(wiki=wiki)
+
+    # Deliberately not routed through `build_ontology`: that filters on the word
+    # "infobox", which is the very assumption this function exists to replace.
+    # A template elected by the pages themselves is an infobox whatever it is
+    # called.
+    for name, count in votes.items():
+        normalised = _normalise_template(name)
+        if count < min_pages or normalised in _STRUCTURAL_INFOBOXES:
+            continue
+        ontology.infobox_types[normalised] = slugify_type(normalised)
+
+    for template, type_id in (overrides.get("type_aliases") or {}).items():
+        ontology.infobox_types[_normalise_template(template)] = slugify_type(type_id)
+
+    ontology.skip_categories = {
+        str(c).lower() for c in (overrides.get("skip_categories") or [])
+    }
+    ontology.infobox_votes = dict(votes.most_common(40))
+    return ontology
 
 
 def learn_field_labels(

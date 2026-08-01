@@ -15,8 +15,8 @@ import json
 from collections import Counter
 from typing import Any
 
-from scriptengine.config import SeriesPaths
-from scriptengine.ingest.crawler import load_manifest, load_pages
+from scriptengine.config import SeriesPaths, load_overrides
+from scriptengine.ingest.crawler import load_extracted, load_manifest
 from scriptengine.ingest.documents import WikiPage
 
 # Thresholds worth failing over. Documented in docs/EXTRACTION_AUDIT.md.
@@ -27,7 +27,10 @@ MIN_RESOLVED_EDGE_RATIO = 0.70
 
 def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
     """Measure extraction quality for a crawled series."""
-    pages = list(load_pages(paths))
+    # Re-extracted the same way `index` does. Auditing the extraction stored at
+    # crawl time while indexing a freshly parsed one would make this a report on
+    # history rather than on what is about to be indexed.
+    pages, ontology = load_extracted(paths, load_overrides(paths))
     if sample:
         pages = pages[:sample]
 
@@ -103,8 +106,14 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
         "checks": [],
     }
 
-    report["checks"] = _run_checks(report)
+    report["checks"] = _run_checks(report, capped=bool(manifest.get("enumeration_capped")))
     report["passed"] = all(check["passed"] for check in report["checks"])
+
+    # What discovery saw, including what it rejected: a template with many
+    # votes that did not become a type is the first place to look when pages
+    # come back untyped.
+    report["infobox_votes"] = dict(list(ontology.infobox_votes.items())[:15])
+    report["vocabulary"] = sorted(ontology.types)
 
     if manifest:
         report["crawl"] = {
@@ -121,12 +130,12 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
     return report
 
 
-def _run_checks(report: dict[str, Any]) -> list[dict[str, Any]]:
+def _run_checks(report: dict[str, Any], capped: bool = False) -> list[dict[str, Any]]:
     """Turn the raw numbers into pass/fail verdicts with an explanation."""
     coverage = report["coverage"]
     graph = report["graph"]
 
-    return [
+    checks = [
         {
             "name": "pages typed",
             "value": coverage["typed"],
@@ -149,6 +158,21 @@ def _run_checks(report: dict[str, Any]) -> list[dict[str, Any]]:
             "meaning": "wikilink targets are not matching crawled titles; check redirects",
         },
     ]
+
+    if capped:
+        # On a --max-pages run most of the wiki was never enumerated, so links
+        # into it are unresolvable by construction. Failing here would measure
+        # the sample size and drown the checks that do mean something.
+        for check in checks:
+            if check["name"] == "edges resolved":
+                check["passed"] = True
+                check["skipped"] = True
+                check["meaning"] = (
+                    "not checked: the crawl was capped with --max-pages, so most "
+                    "link targets were never enumerated"
+                )
+
+    return checks
 
 
 def write_report(paths: SeriesPaths, report: dict[str, Any]) -> str:

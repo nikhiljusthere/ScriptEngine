@@ -37,6 +37,7 @@ from scriptengine.ingest.documents import Edge, WikiPage
 from scriptengine.ingest.ontology import (
     Ontology,
     build_ontology,
+    discover_infoboxes,
     learn_field_labels,
     slugify_type as _slug,
 )
@@ -538,6 +539,10 @@ class WikiCrawler:
             "api": base,
             "crawled_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "pages_enumerated": len(all_titles),
+            # A capped run never saw the whole wiki, so link targets pointing at
+            # pages it did not enumerate are not broken links. The audit needs
+            # to know the difference before it reports on graph integrity.
+            "enumeration_capped": bool(max_pages),
             "pages_fetched_this_run": written,
             # Total on disk, including anything a resumed run already had.
             "pages_on_disk": len(list(paths.wikitext.glob("*.json"))),
@@ -606,6 +611,39 @@ def reextract(page: WikiPage, ontology: Ontology) -> WikiPage:
     refreshed = crawler.build_page(parse, wiki_url, ontology)
     refreshed.fetched_at = page.fetched_at
     return refreshed
+
+
+def load_extracted(
+    paths: SeriesPaths, overrides: dict[str, Any] | None = None
+) -> tuple[list[WikiPage], Ontology]:
+    """Load a crawled corpus and re-extract it with the current parser.
+
+    The single entry point for everything downstream, so that `audit` and
+    `index` can never disagree about what the corpus contains — auditing the
+    extraction stored at crawl time while indexing a freshly parsed one would
+    make the audit a report on history.
+
+    The type vocabulary is merged from two directions: what the crawl found by
+    template name, and what page structure votes for. Name matching alone finds
+    Jujutsu Kaisen's "* Infobox" templates and nothing on a wiki that calls its
+    infobox `Character`.
+    """
+    manifest = load_manifest(paths)
+    pages = list(load_pages(paths))
+    if not pages:
+        return [], Ontology()
+
+    ontology = Ontology.from_dict(manifest.get("ontology") or {})
+    discovered = discover_infoboxes(
+        manifest.get("wiki", ""),
+        ((page.title, page.wikitext) for page in pages if page.wikitext),
+        overrides,
+    )
+    ontology.infobox_types.update(discovered.infobox_types)
+    ontology.infobox_votes = discovered.infobox_votes
+    ontology.skip_categories |= discovered.skip_categories
+
+    return [reextract(page, ontology) for page in pages], ontology
 
 
 def load_pages(paths: SeriesPaths) -> Iterable[WikiPage]:
