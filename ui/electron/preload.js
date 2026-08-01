@@ -7,10 +7,16 @@ contextBridge.exposeInMainWorld('electron', {
   startServices: () => ipcRenderer.invoke('start-services'),
   stopServices: () => ipcRenderer.invoke('stop-services'),
   
-  // API commands
-  ingestDocument: (data) => ipcRenderer.invoke('ingest-document', data),
-  generateScript: (data) => ipcRenderer.invoke('generate-script', data),
+  // API commands, backed by scriptengine/api/main.py
+  listSeries: () => ipcRenderer.invoke('list-series'),
   search: (data) => ipcRenderer.invoke('search', data),
+  // The bundle a script-writing model consumes: ordered passages, the facts
+  // behind them, and a citation each.
+  getContext: (data) => ipcRenderer.invoke('get-context', data),
+  getTimeline: (series, subject) =>
+    ipcRenderer.invoke('get-timeline', { series, subject }),
+  getFacts: (series, entity) =>
+    ipcRenderer.invoke('get-facts', { series, entity }),
   crawlSeries: (data) => ipcRenderer.invoke('crawl-series', data),
   healthCheck: () => ipcRenderer.invoke('health-check'),
   

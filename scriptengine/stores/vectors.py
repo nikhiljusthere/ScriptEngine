@@ -11,6 +11,7 @@ session fight over it.
 from __future__ import annotations
 
 import logging
+import shutil
 from pathlib import Path
 from typing import Any, Iterable, Sequence
 
@@ -58,8 +59,25 @@ class VectorStore:
     # ── writing ──────────────────────────────────────────────────────────────
 
     def recreate(self, dimensions: int) -> None:
-        """Start a fresh collection. Indexing is a rebuild, not an append."""
-        self.client.recreate_collection(
+        """Start genuinely empty. Indexing is a rebuild, not an append.
+
+        The storage directory is removed rather than the collection dropped.
+        Neither `recreate_collection` nor `delete_collection` cleared local-mode
+        storage here: a rebuild reported the right count while it held the
+        client open, and 3,216 vectors belonging to no current chunk reappeared
+        the moment a new client opened the same folder.
+
+        That is not a cosmetic leak. Point ids are SQLite rowids, and rowids
+        restart at 1 when the tables are dropped, so a stale vector for id 8000
+        resolves against whatever row holds id 8000 today — a search returns
+        confident, well-scored, entirely unrelated text.
+        """
+        self.close()
+        if self.path.exists():
+            shutil.rmtree(self.path, ignore_errors=True)
+        self.path.mkdir(parents=True, exist_ok=True)
+
+        self.client.create_collection(
             collection_name=COLLECTION,
             vectors_config=VectorParams(size=dimensions, distance=Distance.COSINE),
         )
@@ -85,7 +103,9 @@ class VectorStore:
             for chunk, vector in zip(chunks, vectors)
         ]
         if points:
-            self.client.upsert(collection_name=COLLECTION, points=points, wait=False)
+            # Waiting costs little next to the embedding itself, and makes the
+            # count reported after a build the real one.
+            self.client.upsert(collection_name=COLLECTION, points=points, wait=True)
 
     # ── reading ──────────────────────────────────────────────────────────────
 

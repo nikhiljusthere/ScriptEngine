@@ -132,8 +132,8 @@ copy it and the series moves. Nothing is shared but the code.
 | 1 | Wikitext-first ingestion: ontology discovery, infobox and wikilink extraction | **done** |
 | 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | **done** |
 | 3 | Hybrid retrieval, narrative ordering, gold eval set | **done** |
-| 4 | FastAPI service, Electron UI wired to it | in progress |
-| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | |
+| 4 | FastAPI service, Electron UI wired to it | **done** |
+| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | in progress |
 | 6 | Prove universality on Chainsaw Man and Marvel with no new code | |
 
 ### Where it stands on the Jujutsu Kaisen wiki

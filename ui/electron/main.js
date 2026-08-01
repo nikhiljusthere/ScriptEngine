@@ -17,6 +17,7 @@ const axios = require("axios");
 const ROOT_DIR = path.join(__dirname, "..", "..");
 const UI_DIR = path.join(__dirname, "..");
 const APP_PATHS = require(path.join(ROOT_DIR, "constants.json"));
+const API_BASE = APP_PATHS.api_base_url || "http://localhost:8000";
 
 let crawlerProcess = null;
 let crawlerStopRequested = false;
@@ -327,45 +328,64 @@ function setupIPC() {
       apiProcess = null;
     }
 
-    const os = await detectOS();
-    await execCommand(os, "docker-compose down");
-
+    // Nothing else to stop: the stores are files, not services.
     return { success: true };
   });
 
-  // Ingestion commands
-  ipcMain.handle("ingest-document", async (event, data) => {
+  // These call the FastAPI service in scriptengine/api/main.py. The paths here
+  // used to be /api/v1/... against a server that was never written, so every
+  // one of these buttons failed silently.
+
+  ipcMain.handle("list-series", async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/ingest/document",
-        data,
-      );
+      const response = await axios.get(`${API_BASE}/series`);
       return response.data;
     } catch (error) {
-      throw new Error(`Ingestion failed: ${error.message}`);
+      throw new Error(`Could not list series: ${error.message}`);
     }
   });
 
-  // Script generation
-  ipcMain.handle("generate-script", async (event, data) => {
+  // The bundle a script-writing model consumes: ordered passages, the facts
+  // behind them, and a citation each.
+  ipcMain.handle("get-context", async (event, data) => {
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/script/generate",
-        data,
-      );
+      const response = await axios.post(`${API_BASE}/context`, data, {
+        timeout: 300000,
+      });
       return response.data;
     } catch (error) {
-      throw new Error(`Script generation failed: ${error.message}`);
+      throw new Error(`Context request failed: ${error.message}`);
     }
   });
 
-  // Search
+  ipcMain.handle("get-timeline", async (event, { series, subject }) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE}/timeline/${encodeURIComponent(series)}/${encodeURIComponent(subject)}`,
+        { timeout: 300000 },
+      );
+      return response.data;
+    } catch (error) {
+      throw new Error(`Timeline request failed: ${error.message}`);
+    }
+  });
+
+  ipcMain.handle("get-facts", async (event, { series, entity }) => {
+    try {
+      const response = await axios.get(
+        `${API_BASE}/facts/${encodeURIComponent(series)}/${encodeURIComponent(entity)}`,
+      );
+      return response.data;
+    } catch (error) {
+      throw new Error(`Facts lookup failed: ${error.message}`);
+    }
+  });
+
   ipcMain.handle("search", async (event, data) => {
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/search",
-        data,
-      );
+      const response = await axios.post(`${API_BASE}/search`, data, {
+        timeout: 300000,
+      });
       return response.data;
     } catch (error) {
       throw new Error(`Search failed: ${error.message}`);
@@ -490,7 +510,7 @@ function setupIPC() {
   // Health check
   ipcMain.handle("health-check", async () => {
     try {
-      const response = await axios.get("http://localhost:8000/health");
+      const response = await axios.get(`${API_BASE}/health`);
       return response.data;
     } catch (error) {
       return { status: "unhealthy", services: {} };
@@ -501,8 +521,10 @@ function setupIPC() {
     "run-setup",
     "start-services",
     "stop-services",
-    "ingest-document",
-    "generate-script",
+    "list-series",
+    "get-context",
+    "get-timeline",
+    "get-facts",
     "search",
     "crawl-series",
     "health-check",

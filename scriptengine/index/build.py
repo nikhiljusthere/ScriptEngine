@@ -327,6 +327,17 @@ def _embed_chunks(
             if progress:
                 progress("embedding", done, len(chunks))
 
+        # A vector store holding more points than the chunks that produced them
+        # is corrupt, not merely untidy: point ids are SQLite rowids, and a
+        # stale one resolves against whatever row now holds that id.
+        stored = vectors.count()
+        if stored != done:
+            logger.error(
+                "vector store holds %s points but %s chunks were embedded; "
+                "delete %s and re-run `index`",
+                stored, done, paths.vectors,
+            )
+
     embedder.unload()
     return done
 
