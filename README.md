@@ -1,55 +1,161 @@
-## =========================== [One Time Installation] ===========================##
+# ScriptEngine
 
-1. Install Node (26.0.0)
-- winget install OpenJS.NodeJS.LTS
+A universal knowledge engine over Fandom wikis. Point it at a wiki, and it
+serves ordered, cited, structured knowledge over HTTP to whatever writes your
+scripts.
 
-2. Install Electron/ui dependencies:
-- npm install
-- cd ui
-- npm install
-- cd ..
+ScriptEngine does **not** write scripts. It feeds the model that does — a local
+Qwen or Gemma running in ComfyUI — with the one thing a script writer actually
+needs and a plain RAG cannot give it: events in the right order, with the right
+participants, traceable to a source.
 
-3.  Docker
-- winget install -e --id Docker.DockerDesktop
+**Status:** Phase 0 of 6 complete (rename and restructure). Ingestion is being
+rebuilt. See [Roadmap](#roadmap).
 
-4. Install Python dependencies:
-- cd python
-- powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-- uv python install 3.12
-- uv venv --python 3.12
-- .venv\Scripts\Activate.ps1
-- uv pip install -r requirements.txt 
+---
 
+## The idea
 
+Most wiki RAG pipelines throw away the thing that makes a wiki valuable. They
+render the page to prose, chunk the prose, embed the chunks, and then try to
+recover entities and relationships from that prose with NER and regex — usually
+with a hand-written table of character names per series.
 
+That work is unnecessary. **A Fandom wiki already publishes its own structure**,
+and the MediaWiki API hands it over directly:
 
-##  ===========================  [Daily Commands] =========================== ##
-0. Run Local Frontend (UI) Server
-- npm run dev
+| What you want | Where it already exists |
+|---|---|
+| The page's type | The infobox template it transcludes. JJK defines 20: `Character`, `Battle`, `Episode`, `Technique`, `Story Arcs`, `Location`, … |
+| Its attributes | Wikitext infobox parameters, literally `\|age = 18` |
+| Its relationships | Wikilinks, already resolved to canonical pages: `\|affiliation = [[Kyoto Metropolitan Curse Technical College\|Kyoto Jujutsu High]]` |
+| Its structure | `prop=sections` — the real heading tree, with levels |
+| Its labels | `prop=categories` — `Characters`, `Jujutsu_Sorcerers`, `Students` |
+| Its sources | `{{Ref\|vol=5\|page=26}}` — citations as structured parameters |
 
-1. Crawler
-- Run Crawler from ui
+So the entity taxonomy is **discovered per-wiki** rather than written per-series.
+That is the whole design, and it is why the same pipeline handles Jujutsu Kaisen,
+Chainsaw Man, and Marvel without a line of series-specific Python.
 
-2. Build Neo4j Graph
-- docker desktop start
-- docker run -p 7474:7474 -p 7687:7687 -e NEO4J_AUTH=neo4j/password neo4j:latest
-- docker run -p 6333:6333 qdrant/qdrant
-Check in docker app and start container manually if not started
-- cd python
-- python -m pipeline.step2_build_graph
+---
 
-3. Export entities from Neo4j to `entities.json`
--  cypher-shell -u neo4j -p password "MATCH (e:Entity) RETURN e.name" --format plain > raw.txt
-OR
-in Neo4j browser (http://localhost:7474) run:
-- MATCH (e:Entity) RETURN collect(e.name) AS names
-Save the result as entities.json
+## Requirements
 
-4. Chunk and embed all files
-- python step2_chunk_and_embed.py
+- **Python 3.12**
+- **Node 18+** (only for the optional desktop UI)
+- **An OpenAI-compatible LLM endpoint** — Ollama or LM Studio. Optional; used for
+  summarisation and eval scoring, not for retrieval.
+- A GPU is optional. Embedding and reranking fall back to CPU.
 
-5. Test retrieval
-- python step3_retrieval.py
+**No Docker. No database servers.** The graph, the facts, and the BM25 index all
+live in one SQLite file per series; vectors live in Qdrant's embedded local mode.
+There is nothing to start before you can work.
 
-6. Run full QA 
-- python step4_generation.py
+---
+
+## Install
+
+```powershell
+# Python environment
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+uv python install 3.12
+uv venv --python 3.12
+.venv\Scripts\Activate.ps1
+uv pip install -r requirements.txt
+
+# Desktop UI (optional)
+npm install
+cd ui; npm install; cd ..
+```
+
+---
+
+## Use
+
+```powershell
+# 1. Crawl a wiki. Types are discovered; nothing is configured per series.
+python -m scriptengine.cli crawl --series jjk --start-url https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Kaisen_Wiki
+
+# 2. Check what the extractor actually understood before trusting it
+python -m scriptengine.cli audit --series jjk
+
+# 3. Build the fact store, the graph, and the indexes
+python -m scriptengine.cli index --series jjk
+
+# 4. Ask it something
+python -m scriptengine.cli query --series jjk "How did the Shibuya Incident unfold?"
+
+# 5. Serve it to ComfyUI
+python -m scriptengine.api.main
+```
+
+Adding a second series is the same commands with a different `--series` and
+`--start-url`. See [docs/ADDING_A_SERIES.md](docs/ADDING_A_SERIES.md).
+
+### Feeding ComfyUI
+
+The script-writing model calls `POST /context`, which returns a token-budgeted
+bundle: passages **in narrative order**, the structured facts behind them, and a
+citation for each claim, so the finished script can be traced back to the wiki.
+Full reference in [docs/API.md](docs/API.md).
+
+---
+
+## Layout
+
+```
+scriptengine/
+  config.py       settings; every value here has a caller
+  ingest/         crawler, wikitext parser, ontology discovery
+  stores/         SQLite facts + graph + FTS5, Qdrant vectors
+  index/          section-driven chunking, embedding
+  retrieve/       hybrid search, narrative ordering, reranking
+  llm/            OpenAI-compatible client (Ollama / LM Studio)
+  api/            FastAPI service on :8000
+  eval/           gold question set and scoring harness
+series/           one self-contained folder per series (gitignored)
+legacy/           the previous pipeline, kept until Phase 5 proves the new one
+ui/               Electron + React desktop shell
+docs/             architecture, adding a series, API, audits
+```
+
+Each series is fully self-contained: delete the folder and the series is gone,
+copy it and the series moves. Nothing is shared but the code.
+
+---
+
+## Roadmap
+
+| Phase | Work | Status |
+|---|---|---|
+| 0 | Rename, restructure, drop Docker, retire the dead stack | **done** |
+| 1 | Wikitext-first ingestion: ontology discovery, infobox and wikilink extraction | in progress |
+| 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | |
+| 3 | Hybrid retrieval, narrative ordering, 40-question gold eval set | |
+| 4 | FastAPI service, Electron UI wired to it | |
+| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | |
+| 6 | Prove universality on Chainsaw Man and Marvel with no new code | |
+
+### What changed from the previous version
+
+The earlier pipeline crawled and cleaned successfully — 850 pages of the JJK wiki
+— but nothing downstream ever ran, and parts of it could not. Rebuilt because:
+
+- **Section detection never fired.** It matched a bare `appearance`; the corpus
+  emitted `## Appearance`. Every document collapsed into a single section, so the
+  chunk hierarchy, the parent pointers, and the section metadata were all inert.
+- **Citations were never stripped.** The regex removed `[1]`, but the cleaner had
+  already expanded citations to full text — 40 to 130 per page — straight into
+  the embeddings and the BM25 index.
+- **Four graph builders**, ~3,700 lines, rebuilt entities from prose with spaCy
+  and per-series alias tables. The wikitext already contained the answer.
+- **The generation step could not import its own retriever**, and referenced an
+  undefined constant.
+- **The graph query used `[r*1..$depth]`**, which Neo4j rejects.
+- **`config.py` described infrastructure nothing used** — Postgres, Redis,
+  Elasticsearch — while each stage hardcoded its own conflicting values.
+- **The UI called a FastAPI server that did not exist.**
+
+The good parts were kept: the MediaWiki API crawler with its concurrency and
+retry handling, the hybrid retrieval architecture, and the model choices. The old
+code is in `legacy/` until Phase 5 confirms the replacement.

@@ -38,9 +38,29 @@ __pycache__/
 *.pyd
 
 .venv/
+**/.venv/
 venv/
 env/
 ENV/
+
+# =========================
+# ScriptEngine data
+# =========================
+
+# Per-series corpora, stores and indexes. Large, regenerable from the
+# MediaWiki API, and never committed. `manifest.json` is the exception:
+# it records what was crawled and is small enough to track.
+series/*/raw/
+series/*/wikitext/
+series/*/vectors/
+series/*/audit/
+series/*/*.db
+series/*/*.db-wal
+series/*/*.db-shm
+
+# Model caches
+.cache/
+hf_cache/
 
 # =========================
 # IDEs

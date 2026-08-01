@@ -1,0 +1,51 @@
+# ScriptEngine Python dependencies.
+#
+#   uv venv --python 3.12
+#   .venv\Scripts\Activate.ps1
+#   uv pip install -r requirements.txt
+#
+# No database servers. SQLite ships with Python; Qdrant runs in local (embedded)
+# mode against a directory. There is nothing to `docker compose up`.
+
+# ── Ingestion ────────────────────────────────────────────────────────────────
+curl-cffi>=0.7.0,<1.0.0      # browser TLS impersonation; Fandom sits behind Cloudflare
+beautifulsoup4>=4.12.3,<5.0.0
+lxml>=5.1.0,<6.0.0
+
+# ── Configuration ────────────────────────────────────────────────────────────
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+PyYAML>=6.0.1                # per-series overrides
+
+# ── Stores ───────────────────────────────────────────────────────────────────
+# SQLite (stdlib) holds facts, the graph, and the FTS5 BM25 index.
+qdrant-client>=1.9.0         # used in local mode; no server process
+
+# ── Models ───────────────────────────────────────────────────────────────────
+torch>=2.2.0
+sentence-transformers>=3.0.0 # bge-large-en-v1.5 + bge-reranker-v2-m3
+
+# ── API ──────────────────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+httpx>=0.27.0                # OpenAI-compatible LLM client (Ollama / LM Studio)
+
+# ── CLI ──────────────────────────────────────────────────────────────────────
+typer>=0.12.0
+rich>=13.7.0
+
+# ── Tests ────────────────────────────────────────────────────────────────────
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# ── Optional ─────────────────────────────────────────────────────────────────
+# spaCy is a booster for prose-only relations, never a dependency: the factual
+# backbone comes from wikitext infoboxes and wikilinks, which need no NER.
+# Install explicitly if you want it:
+#   uv pip install spacy
+#   python -m spacy download en_core_web_trf
+#
+# Removed deliberately:
+#   neo4j       — graph moved into SQLite (no daemon, schemaless labels)
+#   rank-bm25   — replaced by SQLite FTS5 (on-disk BM25, no RAM scroll per query)
+#   transformers — sentence-transformers pulls what is needed; generation is remote

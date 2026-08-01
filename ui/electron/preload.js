@@ -1,4 +1,4 @@
-﻿// Electron preload script - exposes IPC methods to renderer
+// Electron preload script - exposes IPC methods to renderer
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {

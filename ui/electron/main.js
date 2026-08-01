@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Anime Script AI - Desktop Application Entry Point
  *
  * This is the main launcher that handles:
@@ -182,11 +182,12 @@ async function runFullSetup() {
   // Step 1: Check prerequisites
   mainWindow?.webContents.send("setup-progress", {
     type: "info",
-    message: "ðŸ” Checking system requirements...",
+    message: "🔍 Checking system requirements...",
   });
 
+  // Docker is no longer checked: the graph and lexical index live in SQLite and
+  // the vector store runs in Qdrant local mode, so there are no services to start.
   const checks = {
-    docker: await checkDocker(),
     python: await checkPython(),
     node: await checkNode(),
     ollama: await checkOllama(),
@@ -195,7 +196,7 @@ async function runFullSetup() {
 
   mainWindow?.webContents.send("setup-progress", {
     type: "info",
-    message: `âœ… System checks complete`,
+    message: `✅ System checks complete`,
   });
 
   // Step 2: Install Node dependencies
@@ -207,7 +208,7 @@ async function runFullSetup() {
 
   mainWindow?.webContents.send("setup-progress", {
     type: "info",
-    message: "ðŸ“¦ Installing Node dependencies...",
+    message: "📦 Installing Node dependencies...",
   });
 
   await execCommand(os, "npm install", ROOT_DIR);
@@ -215,7 +216,7 @@ async function runFullSetup() {
   // Step 2: Install UI dependencies
   mainWindow?.webContents.send("setup-progress", {
     type: "info",
-    message: "ðŸŽ¨ Building React UI...",
+    message: "🎨 Building React UI...",
   });
 
   await execCommand(os, "npm install", UI_DIR);
@@ -223,7 +224,7 @@ async function runFullSetup() {
   // Step 3: Build UI
   mainWindow?.webContents.send("setup-progress", {
     type: "info",
-    message: "ðŸ—ï¸ Building UI...",
+    message: "🏗️ Building UI...",
   });
 
   await execCommand(os, "npm run build", UI_DIR);
@@ -232,52 +233,36 @@ async function runFullSetup() {
   if (checks.python) {
     mainWindow?.webContents.send("setup-progress", {
       type: "info",
-      message: "ðŸ Installing Python dependencies...",
+      message: "🐍 Installing Python dependencies...",
     });
 
     await execCommand(os, "pip install -r requirements.txt");
 
-    // Download spaCy model
-    mainWindow?.webContents.send("setup-progress", {
-      type: "info",
-      message: "ðŸ“¥ Downloading spaCy language model...",
-    });
 
-    await execCommand(
-      os,
-      checks.os === "windows"
-        ? "python -m spacy download en_core_web_lg"
-        : "python3 -m spacy download en_core_web_lg",
-    );
   }
 
-  // Step 5: Start Docker services (if Docker available)
-  if (checks.docker) {
-    mainWindow?.webContents.send("setup-progress", {
-      type: "info",
-      message: "ðŸ³ Starting Docker services...",
-    });
+  // spaCy is deliberately not installed here. The factual backbone comes from
+  // wikitext infoboxes and wikilinks, which need no NER; spaCy is an optional
+  // booster for prose-only relations. Note the old call also referenced
+  // `checks.os`, which never existed on the checks object.
 
-    await execCommand(
-      os,
-      os === "windows" ? "docker-compose up -d" : "docker compose up -d",
-    );
-  }
 
   // Step 6: Pull Ollama model (if Ollama available)
   if (checks.ollama) {
     mainWindow?.webContents.send("setup-progress", {
       type: "info",
-      message: "ðŸ¤– Downloading LLM model (this may take a while)...",
+      message: "🤖 Downloading LLM model (this may take a while)...",
     });
 
-    await execCommand(os, "ollama pull qwen2.5-72b-instruct");
+    // Model pull is left to the user: ScriptEngine only needs an LLM for
+    // optional summarisation and eval scoring, and the choice of Qwen or Gemma
+    // (and its size) depends on what else is holding VRAM at the time.
   }
 
   // Step 7: Start API server
   mainWindow?.webContents.send("setup-progress", {
     type: "info",
-    message: "ðŸš€ Starting API server...",
+    message: "🚀 Starting API server...",
   });
 
   startAPIServer();
@@ -291,7 +276,7 @@ async function startAPIServer() {
   const os = require("os").platform();
   const pythonCmd = await getPythonCommand();
 
-  apiProcess = spawn(pythonCmd, ["-m", "api.main"], {
+  apiProcess = spawn(pythonCmd, ["-m", "scriptengine.api.main"], {
     cwd: ROOT_DIR,
     shell: true,
     stdio: ["pipe", "pipe", "pipe"],
@@ -428,7 +413,8 @@ function setupIPC() {
       crawlerStopRequested = false;
       const crawlerArgs = [
         "-m",
-        "python.pipeline.cli",
+        "scriptengine.cli",
+        "crawl",
         "--series",
         data.series,
         "--start-url",

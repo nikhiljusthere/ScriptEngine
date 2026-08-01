@@ -1,18 +1,17 @@
 {
-  "name": "anime-script-ai",
-  "version": "1.0.0",
-  "description": "Anime Script AI - Local Desktop Application for YouTube Script Generation",
+  "name": "scriptengine",
+  "version": "0.1.0",
+  "description": "ScriptEngine - a universal knowledge engine over Fandom wikis, serving ordered and cited context to a local script-writing model",
   "main": "ui/electron/main.js",
   "scripts": {
-  "start": "electron .",
-  "dev": "concurrently \"cd ui && set BROWSER=none&& npm start\" \"wait-on http://localhost:3000 && electron .\"",
-  "build-ui": "cd ui && npm run build"
-},
+    "start": "electron .",
+    "dev": "concurrently \"cd ui && set BROWSER=none&& npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build-ui": "cd ui && npm run build",
+    "api": "python -m scriptengine.api.main"
+  },
   "dependencies": {
     "axios": "^1.6.2",
-    "express": "^4.18.2",
-    "fs-extra": "^11.2.0",
-    "ws": "^8.14.2"
+    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
