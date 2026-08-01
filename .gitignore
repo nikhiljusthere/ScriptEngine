@@ -47,16 +47,16 @@ ENV/
 # ScriptEngine data
 # =========================
 
-# Per-series corpora, stores and indexes. Large, regenerable from the
-# MediaWiki API, and never committed. `manifest.json` is the exception:
-# it records what was crawled and is small enough to track.
-series/*/raw/
-series/*/wikitext/
-series/*/vectors/
-series/*/audit/
-series/*/*.db
-series/*/*.db-wal
-series/*/*.db-shm
+# Per-series corpora, stores and indexes: large, machine-generated, and fully
+# regenerable from the MediaWiki API. The manifest is excluded too — it carries
+# every title on the wiki, so it churns on each crawl.
+#
+# `overrides.yaml` is the exception. It is hand-written, it is the only place a
+# wiki-specific rule may live, and losing it means rediscovering that rule.
+series/*
+!series/*/
+series/*/*
+!series/*/overrides.yaml
 
 # Model caches
 .cache/
