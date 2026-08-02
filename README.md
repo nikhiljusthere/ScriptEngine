@@ -17,16 +17,27 @@ current numbers, which are generated from the stores rather than typed here:
 python -m scriptengine.cli catalogue
 ```
 
-| series | wiki | pages | typed | prose sourced to a chapter |
-|---|---|---|---|---|
-| `jjk` | Jujutsu Kaisen | 987 | 98.9% | 55% |
-| `bleach` | Bleach | 2,248 | 95.4% | 34% |
-| `hxh` | Hunterpedia | 2,014 | 96.0% | 50% |
-| `opm` | One-Punch Man | 1,565 | 98.0% | 30% |
-| `berserk` | Berserk | 762 | 90.4% | 0% |
-| `csm` | Chainsaw Man | 537 | 97.4% | 42% |
-| `db` | Dragon Ball | crawling | | |
-| `onepiece` | One Piece | queued | | |
+**8 series, 25,292 pages, 113 declared enumeration sets.**
+
+| series | wiki | pages | typed | inline refs | instalment pages |
+|---|---|---:|---:|---:|---:|
+| `db` | Dragon Ball | 9,242 | 89% | 3% | 0 |
+| `onepiece` | One Piece | 7,937 | 94% | 0% | 2,603 |
+| `bleach` | Bleach | 2,248 | 95% | 34% | 0 |
+| `hxh` | Hunterpedia | 2,014 | 96% | 50% | 455 |
+| `opm` | One-Punch Man | 1,565 | 98% | 30% | 263 |
+| `jjk` | Jujutsu Kaisen | 987 | 99% | 55% | 393 |
+| `berserk` | Berserk | 762 | 90% | 0% | 451 |
+| `csm` | Chainsaw Man | 537 | 97% | 42% | 268 |
+
+A script line gets its chapter one of two ways, and a series needs only one of
+them. **Inline refs** is the share of sentences the wiki footnotes itself.
+**Instalment pages** is the other route: One Piece footnotes almost nothing but
+writes 1,191 chapter pages and 1,172 episode pages, each with a full summary, so
+a claim retrieved from the page titled "Chapter 1015" is sourced to Chapter 1015.
+
+Berserk is the one to be careful with — it scores low on both, because its wiki
+cites cover art and interviews and titles nothing by number.
 
 Five of the six were added without a line of series-specific Python. What each
 one *did* need was a description of how it writes a citation, because no two of

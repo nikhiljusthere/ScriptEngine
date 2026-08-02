@@ -1,0 +1,101 @@
+# Per-wiki handling for the One Piece Wiki.
+
+# This wiki barely cites its own story. 2,978 `<ref>` tags across 7,937 pages,
+# and its most-referenced pages are video games, publishers and merchandise —
+# Super Grand Battle X, Madman Entertainment, Scholastic. A character page
+# typically carries none at all.
+#
+# What it has instead is 1,191 chapter pages and 1,172 episode pages, each with
+# a Short Summary and a Long Summary of the actual story. That is where One
+# Piece's prose lives, and the locator for those pages is the page title, which
+# `citations.locator_from_title` reads directly. Cite mode falls back to it when
+# a passage carries no reference of its own, so this series is sourceable
+# despite citing almost nothing inline.
+#
+# The rules below catch the handful of real inline references anyway, since a
+# reference the wiki did write is better evidence than the page it sits on:
+#
+#     ''One Piece'' Manga and Anime — [[Volume 61|Vol. 61]] [[Chapter 598]] and [[Episode 517]]
+#     ''One Piece Manga'' - Vol. 12 [[Chapter 105]] page 4.
+#
+# Chapter is matched before episode because the combined form names both and the
+# chapter is the more precise of the two.
+citation_ref_tags:
+  - match: '\[\[Chapter\s+(\d+)'
+    as: chapter
+  - match: 'Chapter\s+(\d+)'
+    as: chapter
+  - match: '\[\[Episode\s+(\d+)'
+    as: episode
+  - match: 'Episode\s+(\d+)'
+    as: episode
+
+# Deliberately unmatched: SBS volumes, novels, films, databooks and the long
+# tail of merchandise and publisher references. They cite a real source, but not
+# an instalment of the story a script can tag a line with.
+
+# The sets this wiki maintains. Every entry verified to return members.
+rosters:
+  - name: Devil Fruit Types
+    match: [devil fruit type, devil fruit types, type of devil fruit, types of devil fruit]
+    groups:
+      Paramecia: Paramecia
+      Zoan: Zoan
+      Logia: Logia
+
+  - name: Paramecia Users
+    match: [paramecia, paramecia user, paramecia users]
+    category: Paramecia Devil Fruit Users
+
+  - name: Logia Users
+    match: [logia, logia user, logia users]
+    category: Logia Devil Fruit Users
+
+  - name: Zoan Users
+    match: [zoan, zoan user, zoan users]
+    category: Zoan Devil Fruit Users
+
+  - name: Mythical Zoan Users
+    match: [mythical zoan, mythical zoan user, mythical zoan users]
+    category: Mythical Zoan Devil Fruit Users
+
+  - name: Seven Warlords of the Sea
+    match: [warlord, warlords, shichibukai, seven warlords, warlord of the sea]
+    category: Seven Warlords of the Sea
+
+  - name: Pirate Captains
+    match: [pirate captain, pirate captains]
+    category: Pirate Captains
+
+  - name: Marine Vice Admirals
+    match: [vice admiral, vice admirals, marine vice admiral]
+    category: Marine Vice Admirals
+
+  - name: Marine Rear Admirals
+    match: [rear admiral, rear admirals]
+    category: Marine Rear Admirals
+
+  - name: Swordsmen
+    match: [swordsman, swordsmen, swordfighter]
+    category: Swordsmen
+
+  - name: Swords
+    match: [sword, swords, blade, blades]
+    category: Swords
+
+  - name: Giants
+    match: [giant, giants]
+    category: Giants
+
+  - name: Revolutionary Army Commanders
+    match: [revolutionary, revolutionary army, revolutionary army commander]
+    category: Revolutionary Army Commanders
+
+  # Haki is three colours, and "every type of haki" wants the three with their
+  # users rather than a flat list of everyone who has any.
+  - name: Haki Types
+    match: [haki, haki type, haki types, type of haki, colour of haki, color of haki]
+    groups:
+      Observation Haki: Observation Haki Users
+      Armament Haki: Armament Haki Users
+      Conqueror's Haki: Supreme King Haki Users

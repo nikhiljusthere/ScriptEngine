@@ -75,3 +75,67 @@ citation_ref_tags:
 # not an instalment of the story, and a script cannot tag a line with a video
 # game. They render as nothing, which is the same answer Berserk's cover-art
 # references get.
+
+# The sets this wiki maintains. Every entry verified to return members.
+rosters:
+  - name: Saiyans
+    match: [saiyan, saiyans]
+    category: Saiyans
+
+  - name: Transformations
+    match: [transformation, transformations, form, forms]
+    category: Transformations
+
+  - name: Androids
+    match: [android, androids, artificial human]
+    category: Androids
+
+  - name: Deities
+    match: [deity, deities, god, gods, kai, kais]
+    category: Deities
+
+  - name: Demons
+    match: [demon, demons]
+    category: Demons
+
+  - name: Majin
+    match: [majin, majins, buu]
+    category: Majin
+
+  - name: Angels
+    match: [angel, angels]
+    category: Angels
+
+  - name: Fusions
+    match: [fusion, fusions, fused]
+    category: Fusion
+
+  - name: Z Fighters
+    match: [z fighter, z fighters]
+    category: Z Fighters
+
+  - name: Earthlings
+    match: [earthling, earthlings]
+    category: Earthlings
+
+  - name: Tournament Fighters
+    match: [tournament fighter, tournament fighters, tournament]
+    category: Tournament fighters
+
+  - name: Galactic Frieza Army
+    match: [frieza army, frieza force, galactic frieza army]
+    category: Galactic Frieza Army
+
+  - name: Energy Sphere Attacks
+    match: [energy sphere, energy sphere attack, ki blast, ki blasts]
+    category: Energy Sphere attacks
+
+  # The wiki files characters by which series they appear in, which is the
+  # cleanest handle on "every character in Z" versus "in Super".
+  - name: Characters by Series
+    match: [character by series, characters by series, cast]
+    groups:
+      Dragon Ball: DB Characters
+      Dragon Ball Z: DBZ Characters
+      Dragon Ball Super: DBS Characters
+      Dragon Ball Heroes: DBH Characters

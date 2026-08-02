@@ -131,10 +131,17 @@ def verify_script(text: str, paths: SeriesPaths) -> dict[str, Any]:
 
         issues: list[str] = []
         page = f"{work} {kind} {number}".strip()
-        if page not in corpus["titles"]:
+        exists = page in corpus["titles"]
+        if not exists:
             issues.append(f"no page {page!r} in the crawl")
-        if (work, number) not in corpus["cited"]:
-            issues.append(f"no reference in the corpus cites {page}")
+            # Only then does it matter whether anything cites it. A wiki that
+            # cites nothing inline is common — One Piece has 1,191 chapter pages
+            # and puts a reference on almost none of the prose — so demanding a
+            # reference as well failed correct tags on every such series. The
+            # instalment page existing is the evidence that the number is real;
+            # the point of this check is to catch invented ones.
+            if (work, number) not in corpus["cited"]:
+                issues.append(f"and no reference cites {page} either")
 
         if episode:
             if work:

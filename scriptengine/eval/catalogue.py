@@ -21,7 +21,7 @@ from scriptengine.config import Settings, get_settings, load_overrides, series_p
 
 def collect(settings: Settings | None = None) -> list[dict[str, Any]]:
     """One record per indexed series."""
-    from scriptengine.retrieve.citations import EpisodeIndex
+    from scriptengine.retrieve.citations import EpisodeIndex, locator_from_title
     from scriptengine.retrieve.roster import _declared_members, load_rosters
     from scriptengine.stores.facts import FactStore
     from scriptengine.stores.vectors import VectorStore
@@ -71,6 +71,14 @@ def collect(settings: Settings | None = None) -> list[dict[str, Any]]:
                          "groups": 0}
                     )
             record["rosters"] = rosters
+            # The other way a claim gets a locator. A wiki that never cites its
+            # own prose can still be sourced when its story is written one page
+            # per instalment, because the page title *is* the citation.
+            record["instalments"] = sum(
+                1
+                for row in store.connection.execute("SELECT title FROM documents")
+                if locator_from_title(row["title"])
+            )
 
         record["vectors"] = 0
         if paths.vectors.exists():
@@ -134,23 +142,29 @@ def render(records: list[dict[str, Any]]) -> str:
         "",
         "## Series",
         "",
-        "| series | wiki | pages | typed | prose → chapter | → episode | rosters |",
-        "|---|---|---:|---:|---:|---:|---:|",
+        "| series | wiki | pages | typed | prose → chapter | → episode | "
+        "instalment pages | rosters |",
+        "|---|---|---:|---:|---:|---:|---:|---:|",
     ]
     for r in sorted(records, key=lambda r: -r["documents"]):
         host = (r.get("wiki") or "").replace("https://", "").replace(".fandom.com", "")
         lines.append(
             f"| `{r['series']}` | {host} | {r['documents']:,} | "
             f"{_pct(r.get('typed'))} | {_pct(r.get('with_chapter'))} | "
-            f"{_pct(r.get('with_episode'))} | {len(r['rosters'])} |"
+            f"{_pct(r.get('with_episode'))} | {r.get('instalments', 0):,} | "
+            f"{len(r['rosters'])} |"
         )
 
     lines += [
         "",
-        "`prose → chapter` is the share of sentences a script can put a chapter on.",
-        "It is a fact about the wiki as much as about the pipeline: a wiki that",
-        "cites cover art rather than instalments cannot source a script, and the",
-        "audit says which of the two it is.",
+        "`prose → chapter` is the share of sentences carrying an inline reference.",
+        "`instalment pages` is the other route: a wiki that never cites its own",
+        "prose can still be sourced when its story is written one page per",
+        "chapter or episode, because the page title is the citation. A series",
+        "with a low percentage and a high instalment count is still sourceable;",
+        "one with both at zero is not, and that is a fact about the wiki rather",
+        "than about the pipeline. Wikis that title chapter pages by name rather",
+        "than by number show zero here even though they have chapters.",
         "",
         "## Stores",
         "",
