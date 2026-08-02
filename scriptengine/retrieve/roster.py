@@ -262,11 +262,20 @@ def build_roster(
 
     # Longest declared phrase wins, so a series can declare both "hero" and
     # "s-class hero" and the more specific topic gets the smaller set.
+    registry = load_rosters(overrides)
     declared = max(
-        (d for d in load_rosters(overrides) if d.matches(query)),
+        (d for d in registry if d.matches(query)),
         key=lambda d: d.matches(query),
         default=None,
     )
+    # Every word this series uses to name a set. A word in here cannot be what
+    # identifies a person, however many characters are named after it.
+    vocabulary = {
+        word
+        for definition in registry
+        for phrase in (*definition.match, definition.name)
+        for word in content_words(phrase)
+    }
 
     with FactStore(paths.facts_db) as store:
         episodes = cite.EpisodeIndex.from_store(store)
@@ -284,7 +293,7 @@ def build_roster(
         # kit, not all 38 innate techniques, and a phrase broad enough to be
         # worth declaring is broad enough to swallow that.
         if declared is not None and _names_a_character(
-            query, subject, subject_label, declared.matched_phrase(query)
+            query, subject, subject_label, vocabulary
         ):
             declared = None
 
@@ -335,21 +344,22 @@ def build_roster(
 
 
 def _names_a_character(
-    query: str, subject: str, subject_label: str, phrase: str
+    query: str, subject: str, subject_label: str, vocabulary: set[str]
 ) -> bool:
     """True when the topic names a person on top of the set it asked for.
 
-    The test is what the character contributes *beyond* the declared phrase,
-    because these wikis name characters after the sets they belong to. "Every
-    Monster" resolves to the character `TV Junkyard Monster` and "Every Public
-    Safety Devil Hunter" to `Devil Hunter`, and in both the only word shared
-    with the query is the phrase itself, so neither narrows anything. "Every
-    Cursed Technique of Sukuna" contributes `sukuna`, which does.
+    The test is what the character contributes beyond this series' own set
+    vocabulary, because these wikis name characters after the sets they belong
+    to. `TV Junkyard Monster`, `Devil Hunter` and `Dragon` are all character
+    pages, and all of them share only set words with the topics that reach
+    them, so none narrows anything. `Sukuna` shares `sukuna`, which is a name
+    and not a set, so "Every Cursed Technique of Sukuna" is his kit rather than
+    all 38 innate techniques.
     """
     if "character" not in (subject_label or "").lower():
         return False
     shared = set(content_words(subject)) & set(content_words(query))
-    return bool(shared - set(content_words(phrase)))
+    return bool(shared - vocabulary)
 
 
 def _declared_members(store: FactStore, declared: RosterDefinition) -> list[str]:

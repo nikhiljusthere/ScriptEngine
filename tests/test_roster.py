@@ -13,6 +13,7 @@ from scriptengine.config import SUBJECT_DEMOTE_TYPES, SUBJECT_TYPE_PRIORITY, sub
 from scriptengine.retrieve.roster import (
     _choose_set,
     _group_label,
+    _names_a_character,
     _grouping_field,
     _member_order,
     _work_words,
@@ -222,6 +223,40 @@ class TestDeclaredRosters:
 
     def test_a_series_declaring_nothing_is_fine(self):
         assert load_rosters({}) == []
+
+
+class TestCharacterTopicsFallThrough:
+    # A declared set is a general one, so a topic that narrows to a person has
+    # to reach that person instead. The hard part is that these wikis name
+    # characters after the sets they belong to.
+
+    vocabulary = {"monster", "devil", "hunter", "dragon", "level", "technique"}
+
+    def test_a_named_person_wins_over_a_declared_set(self):
+        # "Every Cursed Technique of Sukuna" wants his eight, not all 38.
+        assert _names_a_character(
+            "Every Cursed Technique of Sukuna", "Sukuna", "character", self.vocabulary
+        )
+
+    def test_a_character_named_after_the_set_does_not_count(self):
+        # `TV Junkyard Monster` is a character page, and "monster" is the word
+        # that asked for the set. It narrows nothing.
+        assert not _names_a_character(
+            "Every Monster in One-Punch Man", "TV Junkyard Monster",
+            "character", self.vocabulary,
+        )
+
+    def test_a_set_word_from_another_roster_does_not_count(self):
+        # "Every Dragon Level Monster" resolved to the character `Dragon`, and
+        # every word it shares with the topic names a set on this wiki.
+        assert not _names_a_character(
+            "Every Dragon Level Monster", "Dragon", "character", self.vocabulary
+        )
+
+    def test_a_set_topic_is_not_a_character_topic(self):
+        assert not _names_a_character(
+            "Every Espada in Bleach", "Espada", "organization", self.vocabulary
+        )
 
 
 class TestGroupLabels:

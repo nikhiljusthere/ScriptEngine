@@ -52,3 +52,42 @@ rosters:
   - name: Greed Island Cards
     match: [greed island card, greed island cards, card, cards]
     category: Greed Island Cards
+
+  # ── Sub-divisions ────────────────────────────────────────────────────────
+  # The Chimera Ant hierarchy is the point of that arc: King, Royal Guards,
+  # Squadron Leaders, then the rest.
+  - name: Chimera Ant Hierarchy
+    match: [
+      chimera ant hierarchy, ant hierarchy, chimera ant rank,
+      chimera ant ranks, rank of chimera ant, ranks of chimera ant,
+    ]
+    groups:
+      Squadron Leaders: Squadron Leaders
+      Chimera Ants: Chimera Ants
+
+  - name: Squadron Leaders
+    match: [squadron leader, squadron leaders]
+    category: Squadron Leaders
+
+  - name: Zodiac Twelve
+    match: [zodiac, zodiacs, zodiac twelve, twelve zodiacs]
+    category: Zodiac Twelve
+
+  - name: Nostrade Family
+    match: [nostrade, nostrade family]
+    category: Nostrade Family
+
+  - name: Kakin Royal Family
+    match: [kakin royal family, kakin prince, kakin princes, prince, princes]
+    category: Kakin Royal Family
+
+  - name: Hunter Ranks
+    match: [hunter rank, hunter ranks, kind of hunter, kinds of hunter, type of hunter]
+    groups:
+      Provisional Hunters: Provisional Hunters
+      Unclassified Hunters: Unclassified Hunters
+      Amateur Hunters: Amateur Hunters
+
+  - name: Wanted Criminals
+    match: [wanted criminal, wanted criminals, criminal, criminals]
+    category: Wanted Criminals

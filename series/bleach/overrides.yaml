@@ -80,3 +80,67 @@ rosters:
   - name: Shinigami
     match: [shinigami, soul reaper, soul reapers]
     category: Shinigami
+
+  # ── Sub-divisions ────────────────────────────────────────────────────────
+  # The Gotei 13 is thirteen divisions, and "every division" wants the thirteen
+  # with their members, not the 127 shinigami in one flat list. Declared in
+  # order, because `groups:` preserves it and 1st-through-13th is the order the
+  # series uses.
+  - name: Divisions of the Gotei 13
+    match: [
+      division, divisions, gotei division, gotei divisions,
+      division of the gotei 13, divisions of the gotei 13,
+      squad, squads,
+    ]
+    groups:
+      1st Division: 1st Division
+      2nd Division: 2nd Division
+      3rd Division: 3rd Division
+      4th Division: 4th Division
+      5th Division: 5th Division
+      6th Division: 6th Division
+      7th Division: 7th Division
+      8th Division: 8th Division
+      9th Division: 9th Division
+      10th Division: 10th Division
+      11th Division: 11th Division
+      12th Division: 12th Division
+      13th Division: 13th Division
+
+  # Hollows evolve through named stages, so "every type of hollow" is the
+  # ladder rather than the 82 individuals on it.
+  - name: Hollow Evolution
+    match: [
+      hollow evolution, type of hollow, types of hollow, hollow type,
+      hollow types, hollow stage, hollow stages,
+    ]
+    groups:
+      Menos Grande: Menos Grande
+      Adjuchas: Adjuchas
+      Vasto Lorde: Vasto Lorde
+      Arrancar: Arrancar
+      Espada: Espada
+
+  - name: Sternritter
+    match: [sternritter, quincy soldier, quincy soldiers]
+    category: Sternritter
+
+  - name: Fraccion
+    match: [fraccion, fraccions, fracción]
+    category: Fraccions
+
+  - name: Royal Guard
+    match: [royal guard, royal guards, zero division, squad zero]
+    category: Royal Guard
+
+  - name: Fullbringers
+    match: [fullbringer, fullbringers, fullbring]
+    category: Fullbringer
+
+  - name: Menos Grande
+    match: [menos, menos grande, gillian]
+    category: Menos Grande
+
+  - name: Adjuchas
+    match: [adjuchas]
+    category: Adjuchas

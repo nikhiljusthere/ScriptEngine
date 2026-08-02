@@ -59,3 +59,46 @@ rosters:
   - name: Students
     match: [student, students]
     category: Students
+
+  # ── Sub-divisions ────────────────────────────────────────────────────────
+  # The Big Three sorcerer families are a set the series leans on constantly,
+  # and each is its own category.
+  - name: The Big Three Families
+    match: [
+      big three, big three families, sorcerer family, sorcerer families,
+      great clan, great clans, jujutsu family, jujutsu families,
+    ]
+    groups:
+      Zenin Family: Zenin Family
+      Gojo Family: Gojo Family
+      Kamo Family: Kamo Family
+
+  - name: Zenin Family
+    match: [zenin, zenin family, zenin clan]
+    category: Zenin Family
+
+  - name: Gojo Family
+    match: [gojo family, gojo clan]
+    category: Gojo Family
+
+  - name: Kamo Family
+    match: [kamo family, kamo clan]
+    category: Kamo Family
+
+  - name: Ten Shadows Shikigami
+    match: [shikigami, ten shadows, ten shadows shikigami]
+    category: Ten Shadows Shikigami
+
+  - name: Incarnations
+    match: [incarnation, incarnations, incarnated sorcerer, incarnated sorcerers]
+    category: Incarnations
+
+  - name: Culling Game Players
+    match: [culling game player, culling game players]
+    category: Culling Game Players
+
+  - name: Schools
+    match: [school, schools, jujutsu high]
+    groups:
+      Tokyo Jujutsu High: Tokyo Jujutsu High
+      Kyoto Jujutsu High: Kyoto Jujutsu High

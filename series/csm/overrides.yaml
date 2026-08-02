@@ -41,3 +41,27 @@ rosters:
   - name: Humans
     match: [human, humans]
     category: Humans
+
+  # ── Sub-divisions ────────────────────────────────────────────────────────
+  # The Four Horsemen and the Primal Fear devils are the two tiers this series
+  # actually distinguishes; the rest of the devils are flat.
+  - name: Four Horsemen
+    match: [four horsemen, horseman, horsemen]
+    category: Four Horsemen
+
+  - name: Primal Fear Devils
+    match: [primal, primal fear, primal devil, primal devils]
+    category: Primal Fear
+
+  - name: Devil Tiers
+    match: [devil tier, devil tiers, tier of devil, kind of devil, kinds of devil]
+    groups:
+      Primal Fear: Primal Fear
+      Four Horsemen: Four Horsemen
+      Devils: Devils
+      Fiends: Fiends
+      Hybrids: Hybrids
+
+  - name: Groups
+    match: [group, groups, organisation, organization, organizations]
+    category: Groups

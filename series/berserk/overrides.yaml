@@ -51,3 +51,29 @@ rosters:
   - name: Armies
     match: [army, armies]
     category: Armies
+
+  # ── Sub-divisions ────────────────────────────────────────────────────────
+  # A Pseudo-Apostle is not an Apostle: no Behelit, no sacrifice, and the wiki
+  # keeps the six of them in their own category. Declaring only "apostle" would
+  # have answered "every pseudo-apostle" with the seventeen real ones.
+  - name: Pseudo-Apostles
+    match: [pseudo-apostle, pseudo apostle, pseudoapostle]
+    category: Pseudo-Apostles
+
+  - name: Apostle Kinds
+    match: [
+      kind of apostle, kinds of apostle, apostle type, apostle types,
+      type of apostle, types of apostle,
+    ]
+    groups:
+      Apostle: Apostles
+      Pseudo-Apostle: Pseudo-Apostles
+      God Hand: God Hand
+
+  - name: Holy See
+    match: [holy see, church]
+    category: Holy See
+
+  - name: Elves
+    match: [elf, elves]
+    category: Elves

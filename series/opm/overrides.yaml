@@ -65,3 +65,47 @@ rosters:
   - name: Martial Artists
     match: [martial artist, martial artists]
     category: Martial Artists
+
+  # ── Sub-divisions ────────────────────────────────────────────────────────
+  # The threat levels exist as categories as well as on the `level` field, and
+  # "every disaster level" wants the ladder rather than the 219 beings on it.
+  # God is absent on purpose: the wiki keeps no category for it, because
+  # essentially one being has ever been rated there.
+  - name: Disaster Levels
+    match: [
+      disaster level, disaster levels, threat level, threat levels,
+      monster level, monster levels,
+    ]
+    groups:
+      Wolf: Wolf
+      Tiger: Tiger
+      Demon: Demon
+      Dragon: Dragon
+
+  - name: Hero Classes
+    match: [hero class, hero classes, hero rank, hero ranks, class of hero]
+    groups:
+      C-Class: C-Class
+      B-Class: B-Class
+      A-Class: A-Class
+      S-Class: S-Class
+
+  - name: Monster Association Executives
+    match: [executive, executives, monster association executive]
+    category: Monster Association Executives
+
+  - name: Dragon Level Monsters
+    match: [dragon level, dragon-level]
+    category: Dragon
+
+  - name: Demon Level Monsters
+    match: [demon level, demon-level]
+    category: Demon
+
+  - name: Ninjas
+    match: [ninja, ninjas]
+    category: Ninjas
+
+  - name: Robots
+    match: [robot, robots, cyborg, cyborgs]
+    category: Robots
