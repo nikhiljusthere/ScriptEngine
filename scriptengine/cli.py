@@ -223,6 +223,51 @@ def index(
 
 
 @app.command()
+def catalogue(
+    output: str = typer.Option(
+        "docs/CATALOGUE.md", "--output", help="Where to write the catalogue."
+    ),
+    show: bool = typer.Option(False, "--show", help="Print it instead of writing."),
+) -> None:
+    """Write what is in the engine to a document, from the engine.
+
+    Every series brings its own wiki, citation grammar, roster registry and
+    sourcing rate, and nothing said so in one place. Generated rather than
+    hand-written so it cannot quietly go stale.
+    """
+    from scriptengine.eval.catalogue import collect, render
+
+    records = collect()
+    if not records:
+        console.print("[yellow]No indexed series found.[/yellow]")
+        raise typer.Exit(code=1)
+
+    text = render(records)
+    if show:
+        console.print(text)
+        return
+
+    destination = Path(output)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(text, encoding="utf-8")
+
+    table = Table(title="Catalogue")
+    table.add_column("series")
+    table.add_column("pages", justify="right")
+    table.add_column("prose → chapter", justify="right")
+    table.add_column("rosters", justify="right")
+    for record in sorted(records, key=lambda r: -r["documents"]):
+        chapter = record.get("with_chapter")
+        table.add_row(
+            record["series"], f"{record['documents']:,}",
+            "—" if chapter is None else f"{chapter * 100:.0f}%",
+            str(len(record["rosters"])),
+        )
+    console.print(table)
+    console.print(f"\nWrote {destination}")
+
+
+@app.command()
 def cite(
     script: str = typer.Argument(..., help="Path to a finished script."),
     series: str = typer.Option(..., "--series"),

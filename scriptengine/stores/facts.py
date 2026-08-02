@@ -304,12 +304,22 @@ class FactStore:
         tables = (
             "documents", "sections", "categories", "nodes", "edges", "facts", "chunks",
         )
-        return {
-            table: int(
-                self.connection.execute(f"SELECT COUNT(*) AS n FROM {table}").fetchone()["n"]
-            )
-            for table in tables
-        }
+        counts: dict[str, int] = {}
+        for table in tables:
+            try:
+                counts[table] = int(
+                    self.connection.execute(
+                        f"SELECT COUNT(*) AS n FROM {table}"
+                    ).fetchone()["n"]
+                )
+            except sqlite3.OperationalError:
+                # A store built by an older schema is missing tables added
+                # since. Reporting zero and carrying on is right: this is what
+                # `list`, `catalogue` and `/series` call to *describe* a series,
+                # and refusing to describe a stale index is how you end up
+                # unable to see that it is stale.
+                counts[table] = 0
+        return counts
 
     def node_by_name(self, name: str) -> sqlite3.Row | None:
         return self.connection.execute(
