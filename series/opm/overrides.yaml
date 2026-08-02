@@ -19,3 +19,49 @@ citation_params:
 # Deliberately unmapped: `cep`, which appears twice on the whole wiki alongside
 # `ch` and whose meaning is not recoverable from usage. Guessing it is an episode
 # would put a number nobody verified into a script.
+
+# The sets this wiki maintains. "Monster" is the one that matters most and the
+# one discovery could never find: the wiki files them under Mysterious Beings,
+# and scoring "monster" against category names picked Monster Association (71)
+# over the real set of 219.
+rosters:
+  - name: Mysterious Beings
+    match: [monster, monsters, mysterious being, mysterious beings]
+    category: Mysterious Beings
+    group_by: level          # Wolf, Tiger, Demon, Dragon: the threat levels
+
+  - name: Heroes
+    match: [hero, heroes]
+    category: Heroes
+
+  - name: S-Class Heroes
+    match: [s-class hero, s class hero, s rank hero, s-class]
+    category: S-Class
+
+  - name: A-Class Heroes
+    match: [a-class hero, a class hero, a-class]
+    category: A-Class
+
+  - name: B-Class Heroes
+    match: [b-class hero, b class hero, b-class]
+    category: B-Class
+
+  - name: C-Class Heroes
+    match: [c-class hero, c class hero, c-class]
+    category: C-Class
+
+  - name: Monster Association
+    match: [monster association]
+    category: Monster Association
+
+  - name: Neo Heroes
+    match: [neo hero, neo heroes]
+    category: Neo Heroes
+
+  - name: Villains
+    match: [villain, villains]
+    category: Villains
+
+  - name: Martial Artists
+    match: [martial artist, martial artists]
+    category: Martial Artists

@@ -71,6 +71,63 @@ subject_type_priority:
   - location
 ```
 
+### The roster registry
+
+Most scripts are enumerations, and roster mode finds the set by scoring the
+wiki's categories against the words in the topic. That works until the wiki's
+word is not the viewer's word. One-Punch Man files its monsters under
+`Mysterious Beings`, so "Every Monster" scored `Monster Association` (71) over
+the real set of 219. Worse, a category named for the pages a wiki *could not*
+classify wins by containing the query's words: "Every Nen Type" resolved to
+`Unknown Nen type users`, 247 of them, instead of the six Nen categories.
+
+So declare the sets that matter. A declared topic resolves the same way every
+time; anything undeclared still goes through discovery.
+
+```yaml
+rosters:
+  - name: Mysterious Beings
+    match: [monster, monsters, mysterious being]
+    category: Mysterious Beings
+    group_by: level             # optional: an infobox field to group members by
+
+  - name: S-Class Heroes
+    match: [s-class hero, s class hero, s-class]
+    category: S-Class
+
+  - name: Nen Types
+    match: [nen type, nen types, type of nen]
+    groups:                     # the members ARE the groups
+      Enhancer: Enhancers
+      Transmuter: Transmuters
+```
+
+A set is backed by `category:`, `label:` (a discovered page type), or
+`fact: {key, value}`. `groups:` is for a taxonomy — "Every Nen Type" wants the
+six types, each with its users, not a flat list of 111 people.
+
+Three rules worth knowing:
+
+- **The longest matching phrase wins**, so declaring both `hero` and
+  `s-class hero` sends the narrower topic to the smaller set. Declare compound
+  phrases when two sets collide: `captain of the gotei 13` had to be spelled out
+  or "Every Captain of the Gotei 13" answered with all 127 members.
+- **A topic that names a person falls through to discovery**, because a declared
+  set is a general one. "Every Cursed Technique of Sukuna" wants his eight, not
+  all 38 innate techniques. The test is what the character contributes beyond
+  the matched phrase, since these wikis name characters after the sets they
+  belong to (`Devil Hunter`, `TV Junkyard Monster`).
+- **Group by a field only when it has few repeated values.** Wikis qualify these
+  in prose — Chainsaw Man writes `Devil (80%) Fiend (20%, formerly)` in
+  `species` — so only the first clause is used, and a field where every member
+  answers differently is an attribute rather than a tier.
+
+Check what a series declares, and that every entry still returns members, with:
+
+```powershell
+python -m scriptengine.cli rosters --series opm
+```
+
 ### The citation grammar
 
 Every wiki invents its own, and the difference decides whether a script can put

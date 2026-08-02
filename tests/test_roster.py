@@ -12,11 +12,13 @@ import pytest
 from scriptengine.config import SUBJECT_DEMOTE_TYPES, SUBJECT_TYPE_PRIORITY, subject_ranking
 from scriptengine.retrieve.roster import (
     _choose_set,
+    _group_label,
     _grouping_field,
     _member_order,
     _work_words,
     Member,
     content_words,
+    load_rosters,
     looks_like_enumeration,
 )
 from scriptengine.stores.facts import FactStore, rank_subjects
@@ -166,6 +168,75 @@ class TestGrouping:
     def test_no_grouping_is_asked_for_and_none_is_invented(self, wiki):
         names = ["Jogo", "Hanami", "Dagon", "Ko-Guy", "Kuchisake-Onna"]
         assert _grouping_field(wiki, names, ["curse"]) == ("", "")
+
+
+class TestDeclaredRosters:
+    # Discovery cannot bridge the gap between what a viewer says and what an
+    # editor wrote: One-Punch Man files its monsters under `Mysterious Beings`,
+    # and scoring "monster" against category names picked `Monster Association`.
+    # So the sets that matter are declared per series.
+
+    registry = load_rosters({
+        "rosters": [
+            {"name": "Heroes", "match": ["hero"], "category": "Heroes"},
+            {"name": "S-Class Heroes", "match": ["s-class hero", "s-class"],
+             "category": "S-Class"},
+            {"name": "Mysterious Beings", "match": ["monster", "mysterious being"],
+             "category": "Mysterious Beings", "group_by": "level"},
+            {"name": "Nen Types", "match": ["nen type"],
+             "groups": {"Enhancer": "Enhancers", "Emitter": "Emitters"}},
+        ]
+    })
+
+    def pick(self, query):
+        found = [d for d in self.registry if d.matches(query)]
+        return max(found, key=lambda d: d.matches(query)).name if found else None
+
+    def test_a_declared_phrase_selects_its_set(self):
+        assert self.pick("Every Monster in One-Punch Man") == "Mysterious Beings"
+
+    def test_the_wikis_own_word_works_too(self):
+        assert self.pick("Every Mysterious Being") == "Mysterious Beings"
+
+    def test_the_longest_phrase_wins(self):
+        # Both "hero" and "s-class hero" match; the more specific set is meant.
+        assert self.pick("Every S-Class Hero in One-Punch Man") == "S-Class Heroes"
+        assert self.pick("Every Hero in One-Punch Man") == "Heroes"
+
+    def test_a_plural_matches_its_singular_declaration(self):
+        assert self.pick("Every Monsters") == "Mysterious Beings"
+
+    def test_an_undeclared_topic_matches_nothing(self):
+        # It is not an error: discovery still answers it.
+        assert self.pick("Every Greed Island Card") is None
+
+    def test_a_phrase_inside_a_longer_word_is_not_a_match(self):
+        assert self.pick("Every Heroic Deed") is None
+
+    def test_group_rosters_are_recognised(self):
+        nen = next(d for d in self.registry if d.name == "Nen Types")
+        assert nen.groups == {"Enhancer": "Enhancers", "Emitter": "Emitters"}
+
+    def test_a_definition_without_a_name_is_ignored(self):
+        assert load_rosters({"rosters": [{"match": ["x"], "category": "Y"}]}) == []
+
+    def test_a_series_declaring_nothing_is_fine(self):
+        assert load_rosters({}) == []
+
+
+class TestGroupLabels:
+    # Wikis qualify these values in prose, and grouping on the raw string gives
+    # one group per member, which is not a grouping at all.
+
+    def test_a_qualifier_is_dropped(self):
+        assert _group_label("Devil (80%)\nFiend (20%, formerly)") == "Devil"
+        assert _group_label("Demon (Hero Association rating) Dragon") == "Demon"
+
+    def test_a_clean_value_is_untouched(self):
+        assert _group_label("Special Grade 1") == "Special Grade 1"
+
+    def test_nothing_stays_nothing(self):
+        assert _group_label("") == ""
 
 
 class TestMemberOrdering:

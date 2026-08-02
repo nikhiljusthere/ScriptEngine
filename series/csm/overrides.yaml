@@ -15,3 +15,29 @@ citation_positional:
   mediums:
     m: {as: chapter}
     a: {as: episode}
+
+# The sets this wiki maintains, declared so an enumeration topic resolves the
+# same way every time instead of being scored against category names at query
+# time. Anything not declared here still goes through discovery.
+rosters:
+  # No `group_by: species` here on purpose: every member of this category
+  # answers "Devil", so grouping by it produces one group and says nothing.
+  - name: Devils
+    match: [devil, devils]
+    category: Devils
+
+  - name: Devil Hunters
+    match: [devil hunter, devil hunters, hunter]
+    category: Devil Hunters
+
+  - name: Hybrids
+    match: [hybrid, hybrids]
+    category: Hybrids
+
+  - name: Fiends
+    match: [fiend, fiends]
+    category: Fiends
+
+  - name: Humans
+    match: [human, humans]
+    category: Humans

@@ -75,7 +75,22 @@ _GROUPING_HINTS = {
     "class", "classes", "kind", "kinds", "type", "types", "stage", "stages",
 }
 
-MAX_MEMBERS = 40
+# Categories the wiki keeps for the pages it could not classify, or for material
+# outside the story. They are the opposite of what an enumeration wants, and
+# they win on name matching precisely because they are named after the thing
+# being asked for: "Every Nen Type" scored "Unknown Nen type users" (247 members)
+# above Enhancers, Transmuters and Conjurers, which share no word with the query.
+_ANTI_SET_WORDS = (
+    "unknown", "unnamed", "unidentified", "unconfirmed", "non-canon",
+    "noncanon", "outside", "possible", "former", "deceased", "list of",
+    "candidates", "images", "gallery",
+)
+
+# Chainsaw Man lists 88 devils and One-Punch Man 219 mysterious beings. A cap of
+# 40 silently answered "Every Devil" with half of them, which is a different
+# script rather than a shorter one. The token budget in `_roster_context` is what
+# actually decides how many fit; this only stops a runaway set.
+MAX_MEMBERS = 150
 # Generous on purpose: how much of each member a bundle can afford depends on
 # how many members there are and on the caller's budget, so the trimming is done
 # where the budget is known and this is only a ceiling.
@@ -84,6 +99,79 @@ MIN_MEMBERS = 3
 
 _TRAILING_NUMBER = re.compile(r"(\d+)\s*$")
 _WORD = re.compile(r"[A-Za-z']+")
+
+
+@dataclass(frozen=True)
+class RosterDefinition:
+    """A set this wiki declares, and the phrases that ask for it.
+
+    Discovery scores the wiki's own vocabulary against the words in a topic,
+    which is what let five wikis work with no code. It also cannot bridge the
+    gap between what a viewer says and what an editor wrote: One-Punch Man files
+    its monsters under `Mysterious Beings`, and no amount of scoring turns
+    "monster" into that. Worse, a category named for the pages the wiki *could
+    not* classify wins by containing the query's words — "Every Nen Type"
+    resolved to `Unknown Nen type users`, 247 of them, instead of the six Nen
+    categories.
+
+    So the sets that matter are declared per series instead of guessed at. A
+    declared topic resolves the same way every time; anything undeclared still
+    goes through discovery.
+    """
+
+    name: str
+    match: tuple[str, ...] = ()
+    category: str = ""
+    label: str = ""                                  # a discovered page type
+    fact: tuple[str, str] = ("", "")                 # (key, value)
+    group_by: str = ""
+    # Group name -> the category holding its members. When set, the roster's
+    # members *are* the groups: "Every Nen Type" is six types, not 111 users.
+    groups: dict[str, str] = field(default_factory=dict)
+
+    @classmethod
+    def parse(cls, raw: dict) -> "RosterDefinition | None":
+        name = str(raw.get("name") or "").strip()
+        if not name:
+            return None
+        fact = raw.get("fact") or {}
+        return cls(
+            name=name,
+            match=tuple(str(m).strip().lower() for m in (raw.get("match") or []) if m),
+            category=str(raw.get("category") or ""),
+            label=str(raw.get("label") or ""),
+            fact=(str(fact.get("key") or ""), str(fact.get("value") or "")),
+            group_by=str(raw.get("group_by") or ""),
+            groups={str(k): str(v) for k, v in (raw.get("groups") or {}).items()},
+        )
+
+    def matched_phrase(self, query: str) -> str:
+        """The longest declared phrase this topic contains, or ""."""
+        lowered = f" {query.lower()} "
+        best = ""
+        for phrase in self.match:
+            if re.search(rf"\b{re.escape(phrase)}s?\b", lowered) and len(phrase) > len(best):
+                best = phrase
+        return best
+
+    def matches(self, query: str) -> int:
+        """Length of the longest declared phrase this topic contains, else 0.
+
+        Length rather than a boolean so "s-class hero" beats "hero" when a
+        series declares both.
+        """
+        return len(self.matched_phrase(query))
+
+
+def load_rosters(overrides: dict | None) -> list[RosterDefinition]:
+    """The sets a series declares, from `series/<name>/overrides.yaml`."""
+    declared = []
+    for raw in (overrides or {}).get("rosters") or []:
+        if isinstance(raw, dict):
+            definition = RosterDefinition.parse(raw)
+            if definition is not None:
+                declared.append(definition)
+    return declared
 
 
 @dataclass
@@ -166,10 +254,19 @@ def build_roster(
     max_members: int = MAX_MEMBERS,
     member_chars: int = MEMBER_CHARS,
 ) -> Roster:
-    """Resolve `query` to a set the wiki declares, and render its members."""
+    """Resolve `query` to a set, declared if this series declares one."""
     settings = settings or get_settings()
-    demote, priority = subject_ranking(load_overrides(paths))
+    overrides = load_overrides(paths)
+    demote, priority = subject_ranking(overrides)
     words = content_words(query)
+
+    # Longest declared phrase wins, so a series can declare both "hero" and
+    # "s-class hero" and the more specific topic gets the smaller set.
+    declared = max(
+        (d for d in load_rosters(overrides) if d.matches(query)),
+        key=lambda d: d.matches(query),
+        default=None,
+    )
 
     with FactStore(paths.facts_db) as store:
         episodes = cite.EpisodeIndex.from_store(store)
@@ -181,6 +278,32 @@ def build_roster(
         subject_label = next(
             (row["label"] for row in entities if row["is_resolved"]), ""
         )
+
+        # A declared set is a general one. When the topic narrows to a person,
+        # the person wins: "Every Cursed Technique of Sukuna" wants Sukuna's
+        # kit, not all 38 innate techniques, and a phrase broad enough to be
+        # worth declaring is broad enough to swallow that.
+        if declared is not None and _names_a_character(
+            query, subject, subject_label, declared.matched_phrase(query)
+        ):
+            declared = None
+
+        if declared is not None:
+            if declared.groups:
+                return _group_roster(store, episodes, declared, member_chars)
+            names = _declared_members(store, declared)
+            if names:
+                members = _render_all(
+                    store, episodes, names[:max_members], declared.group_by, member_chars
+                )
+                roster = Roster(
+                    subject=declared.name, basis=declared.name, kind="declared",
+                    members=members,
+                )
+                roster.groups = _distinct(
+                    [m.group for m in members if m.group]
+                )
+                return roster
 
         work = _work_words(store)
         words = [word for word in words if word not in work]
@@ -211,6 +334,98 @@ def build_roster(
 # ── choosing which set the query means ───────────────────────────────────────
 
 
+def _names_a_character(
+    query: str, subject: str, subject_label: str, phrase: str
+) -> bool:
+    """True when the topic names a person on top of the set it asked for.
+
+    The test is what the character contributes *beyond* the declared phrase,
+    because these wikis name characters after the sets they belong to. "Every
+    Monster" resolves to the character `TV Junkyard Monster` and "Every Public
+    Safety Devil Hunter" to `Devil Hunter`, and in both the only word shared
+    with the query is the phrase itself, so neither narrows anything. "Every
+    Cursed Technique of Sukuna" contributes `sukuna`, which does.
+    """
+    if "character" not in (subject_label or "").lower():
+        return False
+    shared = set(content_words(subject)) & set(content_words(query))
+    return bool(shared - set(content_words(phrase)))
+
+
+def _declared_members(store: FactStore, declared: RosterDefinition) -> list[str]:
+    """The pages behind a declared set, however the wiki holds them."""
+    if declared.category:
+        return [
+            row["title"]
+            for row in store.documents_in_category(declared.category, limit=400)
+        ]
+    if declared.label:
+        return [row["name"] for row in store.nodes_by_label(declared.label, limit=400)]
+
+    key, value = declared.fact
+    if key:
+        wanted = value.strip().lower()
+        return [
+            row["name"]
+            for row in store.fact_groups(key, limit=4000)
+            # `startswith` because a wiki writes "Devil (formerly) Fiend" in the
+            # same field it writes "Devil".
+            if not wanted or row["value"].strip().lower().startswith(wanted)
+        ]
+    return []
+
+
+def _render_all(
+    store: FactStore,
+    episodes: cite.EpisodeIndex,
+    names: list[str],
+    group_by: str,
+    member_chars: int,
+) -> list[Member]:
+    members = [
+        _render_member(store, episodes, name, group_by, member_chars)
+        for name in names
+    ]
+    members = [member for member in members if member.text or member.facts]
+    members.sort(key=_member_order)
+    return members
+
+
+def _group_roster(
+    store: FactStore,
+    episodes: cite.EpisodeIndex,
+    declared: RosterDefinition,
+    member_chars: int,
+) -> Roster:
+    """A roster whose members are the groups themselves.
+
+    "Every Nen Type" wants the six types, each with the people who use it — not
+    a flat list of every Nen user. Hunterpedia holds the types only as
+    categories, with no field on a character saying which one they are, so the
+    set has to be assembled from the categories themselves.
+    """
+    members: list[Member] = []
+    for name, category in declared.groups.items():
+        rows = store.documents_in_category(category, limit=400)
+        if not rows:
+            continue
+        holders = [row["title"] for row in rows]
+        member = _render_member(store, episodes, name, "", member_chars)
+        member.name = name
+        member.group = declared.name
+        member.facts = [
+            {"field": "Members", "value": str(len(holders))},
+            {"field": "Includes", "value": ", ".join(holders[:12])},
+        ] + member.facts
+        members.append(member)
+
+    roster = Roster(
+        subject=declared.name, basis=declared.name, kind="declared", members=members
+    )
+    roster.groups = [member.name for member in members]
+    return roster
+
+
 def _work_words(store: FactStore) -> set[str]:
     """Words that name the work itself, not a set inside it."""
     words: set[str] = set()
@@ -236,6 +451,11 @@ def _score(basis: str, words: list[str], subject_words: list[str]) -> tuple[int,
     is entirely about the query beats a longer one that merely contains it.
     """
     matched = _overlap(basis, words) * 2 + _overlap(basis, subject_words)
+    lowered = (basis or "").lower()
+    if any(word in lowered for word in _ANTI_SET_WORDS):
+        # Halved rather than excluded: on a wiki where every set is named this
+        # way it is still better than nothing, but it must never beat a real one.
+        matched = matched // 2
     size = len(content_words(basis)) or 1
     return matched, matched / size
 
@@ -370,7 +590,7 @@ def _render_member(
             {"field": row["label"] or row["key"], "value": row["value"]}
         )
         if group_key and row["key"] == group_key:
-            member.group = row["value"]
+            member.group = _group_label(row["value"])
 
     member.debut = _debut(facts, episodes)
     member.text, member.breadcrumb = _member_prose(store, name, member_chars)
@@ -415,6 +635,19 @@ def _member_prose(store: FactStore, name: str, member_chars: int) -> tuple[str, 
     breadcrumb = body["breadcrumb"] if body is not None else ""
     text = "\n\n".join(part for part in (lead, body["text"] if body is not None else "") if part)
     return text[:member_chars], breadcrumb
+
+
+def _group_label(value: str) -> str:
+    """The tier a member belongs to, from a field that is often free text.
+
+    Wikis qualify these values in prose: Chainsaw Man writes "Devil (80%)
+    Fiend (20%, formerly)" in `species`, and One-Punch Man writes "Demon (Hero
+    Association rating) Dragon (Actual)" in `level`. Grouping on the raw string
+    gives one group per member, which is not a grouping at all. The first clause
+    is the answer the wiki leads with.
+    """
+    first = (value or "").splitlines()[0] if value else ""
+    return re.split(r"\s*[(\[]", first, maxsplit=1)[0].strip() or first.strip()
 
 
 def _member_order(member: Member) -> tuple[int, float, str, str]:

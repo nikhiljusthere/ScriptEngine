@@ -22,3 +22,32 @@ citation_ref_tags:
 # pages, and most of them point at cover art, calendars and interviews rather
 # than at an instalment. Expect this series to source a much smaller share of its
 # prose than Bleach or Hunterpedia, because that is what the wiki wrote.
+
+rosters:
+  - name: Apostles
+    match: [apostle, apostles]
+    category: Apostles
+
+  - name: God Hand
+    match: [god hand, godhand]
+    category: God Hand
+
+  - name: Kinds
+    match: [kind, kinds, race, races, species]
+    category: Kinds
+
+  - name: Magic
+    match: [magic, spell, spells, sorcery]
+    category: Magic
+
+  - name: Objects
+    match: [object, objects, artifact, artifacts, behelit, behelits]
+    category: Objects
+
+  - name: Groups
+    match: [group, groups, faction, factions]
+    category: Groups
+
+  - name: Armies
+    match: [army, armies]
+    category: Armies

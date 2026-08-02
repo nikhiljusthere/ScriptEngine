@@ -43,6 +43,21 @@ same contract with the reasoning and the samples attached.
 Most published scripts are rosters. A topic starting "Every…", "All…", "Each…"
 or naming ranks/levels/types is a roster; anything else is a narrative.
 
+**Check what a series can enumerate before promising a topic.** Each series
+declares the sets it maintains, and a declared set resolves the same way every
+time:
+
+```powershell
+python -m scriptengine.cli rosters --series opm
+```
+
+47 sets are declared across the six series — devils, hunters, hybrids and fiends
+on Chainsaw Man; apostles and the God Hand on Berserk; mysterious beings and
+each hero class on One-Punch Man; the six Nen types, the Phantom Troupe and the
+Zoldycks on Hunterpedia; espada, captains, hollows and quincy on Bleach; cursed
+spirits, sorcerers and domain expansions on Jujutsu Kaisen. A topic outside the
+list still works, it is just found by search rather than declared.
+
 ## The workflow (when the user says "start" or asks for a script)
 
 1. Read this file and `docs/SCRIPT_STYLE.md`. Skim the samples in

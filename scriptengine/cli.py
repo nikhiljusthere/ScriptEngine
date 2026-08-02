@@ -223,6 +223,53 @@ def index(
 
 
 @app.command()
+def rosters(
+    series: str = typer.Option(..., "--series"),
+) -> None:
+    """The enumeration sets this series declares.
+
+    Without this the registry is invisible to whoever writes the next script,
+    and they would go back to guessing which topics the engine answers well.
+    """
+    from scriptengine.config import load_overrides
+    from scriptengine.retrieve.roster import load_rosters
+    from scriptengine.stores.facts import FactStore
+
+    paths = series_paths(series)
+    declared = load_rosters(load_overrides(paths))
+    if not declared:
+        console.print(f"[yellow]{series} declares no rosters.[/yellow]")
+        return
+
+    table = Table(title=f"Declared rosters — {series}")
+    table.add_column("set")
+    table.add_column("members", justify="right")
+    table.add_column("grouped by")
+    table.add_column("asked for by")
+
+    with FactStore(paths.facts_db) as store:
+        for definition in declared:
+            if definition.groups:
+                size = sum(
+                    1 for c in definition.groups.values()
+                    if store.documents_in_category(c, limit=1)
+                )
+                count, grouped = f"{size} groups", "itself"
+            else:
+                from scriptengine.retrieve.roster import _declared_members
+
+                found = len(_declared_members(store, definition))
+                count = str(found)
+                grouped = definition.group_by or ""
+                if not found:
+                    count = "[red]0[/red]"
+            table.add_row(
+                definition.name, count, grouped, ", ".join(definition.match[:4])
+            )
+    console.print(table)
+
+
+@app.command()
 def verify(
     script: str = typer.Argument(..., help="Path to the finished script."),
     series: str = typer.Option(..., "--series"),

@@ -22,3 +22,40 @@ citation_works:
 # 18 references rendered nothing and their lines went unsourced.
 citation_instalments:
   movie: Movie
+
+# The sets this wiki maintains. Discovery already answers most of these
+# correctly; declaring them makes the answer the same every time.
+rosters:
+  - name: Cursed Spirits
+    match: [curse, curses, cursed spirit, cursed spirits]
+    category: Cursed Spirits
+    group_by: class          # the wiki labels this field "Grade"
+
+  - name: Curse Users
+    match: [curse user, curse users]
+    category: Curse Users
+
+  - name: Jujutsu Sorcerers
+    match: [sorcerer, sorcerers, jujutsu sorcerer, jujutsu sorcerers]
+    category: Jujutsu Sorcerers
+    group_by: class
+
+  - name: Domain Expansions
+    match: [domain, domains, domain expansion, domain expansions]
+    category: Domain Expansions
+
+  - name: Innate Techniques
+    match: [innate technique, innate techniques, cursed technique, cursed techniques]
+    category: Innate Techniques
+
+  - name: Extension Techniques
+    match: [extension technique, extension techniques]
+    category: Extension Techniques
+
+  - name: Cursed Tools
+    match: [cursed tool, cursed tools]
+    category: Cursed Tools
+
+  - name: Students
+    match: [student, students]
+    category: Students

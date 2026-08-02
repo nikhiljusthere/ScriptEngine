@@ -15,3 +15,40 @@ citation_ref_tags:
     as: episode
   - match: 'Chapter\s+([\d.\-]+)'
     as: chapter
+
+# Hunterpedia holds the six Nen types only as categories: no field on a
+# character says which type they are. So "Every Nen Type" is a roster whose
+# members are the groups themselves, which is why `groups:` exists. Discovery
+# scored this topic as `Unknown Nen type users` — 247 of them — because that
+# category name contains both "nen" and "type" while `Enhancers` contains
+# neither.
+rosters:
+  - name: Nen Types
+    match: [nen type, nen types, nen category, nen categories, type of nen]
+    groups:
+      Enhancer: Enhancers
+      Transmuter: Transmuters
+      Conjurer: Conjurers
+      Manipulator: Manipulators
+      Emitter: Emitters
+      Specialist: Specialists
+
+  - name: Phantom Troupe
+    match: [phantom troupe, spider, spiders, genei ryodan]
+    category: Phantom Troupe
+
+  - name: Zoldyck Family
+    match: [zoldyck, zoldyck family]
+    category: Zoldyck Family
+
+  - name: Chimera Ants
+    match: [chimera ant, chimera ants, ant, ants]
+    category: Chimera Ants
+
+  - name: Kurta Clan
+    match: [kurta, kurta clan]
+    category: Kurta Clan
+
+  - name: Greed Island Cards
+    match: [greed island card, greed island cards, card, cards]
+    category: Greed Island Cards

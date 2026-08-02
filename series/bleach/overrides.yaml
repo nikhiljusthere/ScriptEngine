@@ -22,3 +22,61 @@ citation_ref_tags:
   # chapters, and the digits after it are the ones the wiki means.
   - match: '[Cc]hapter\s+(?:imaginary number\s+)?([\d.\-]+)'
     as: chapter
+
+# The sets this wiki maintains.
+#
+# Note what is absent: there is no Bankai set. The wiki files 115 pages under
+# `Zanpakutō techniques` and leaves `Bankai` as a category of one, so "every
+# bankai" is answered with the technique set rather than a curated list that
+# does not exist. Discovery answered it with the `Bleach` series page.
+rosters:
+  - name: Espada
+    match: [espada]
+    category: Espada
+
+  - name: Gotei 13
+    match: [gotei 13, gotei thirteen, gotei]
+    category: Gotei 13
+
+  # The compound phrases are declared because the longest match wins, and
+  # "Every Captain of the Gotei 13" names both sets. Without them the topic
+  # resolved to all 127 members of the Gotei 13 rather than its 27 captains.
+  - name: Shinigami Captains
+    match: [
+      captain, captains, shinigami captain, shinigami captains,
+      captain of the gotei 13, captains of the gotei 13, gotei 13 captain,
+      gotei 13 captains,
+    ]
+    category: Shinigami captains
+
+  - name: Zanpakuto Techniques
+    match: [zanpakuto, zanpakutō, bankai, shikai, zanpakuto technique]
+    category: Zanpakutō techniques
+
+  - name: Kido
+    match: [kido, kidō, spell, spells]
+    category: Kidō
+
+  - name: Hollows
+    match: [hollow, hollows]
+    category: Hollow
+
+  - name: Arrancar
+    match: [arrancar]
+    category: Arrancar
+
+  - name: Visored
+    match: [visored, vizard, vizards]
+    category: Visored
+
+  - name: Quincy
+    match: [quincy, quincies]
+    category: Quincy
+
+  - name: Vasto Lorde
+    match: [vasto lorde]
+    category: Vasto Lorde
+
+  - name: Shinigami
+    match: [shinigami, soul reaper, soul reapers]
+    category: Shinigami
