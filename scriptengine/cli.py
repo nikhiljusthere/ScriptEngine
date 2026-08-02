@@ -223,6 +223,78 @@ def index(
 
 
 @app.command()
+def cite(
+    script: str = typer.Argument(..., help="Path to a finished script."),
+    series: str = typer.Option(..., "--series"),
+    top_k: int = typer.Option(6, "--top-k", help="Passages weighed per block."),
+    agreement: int = typer.Option(
+        2, "--agreement", help="Hits that must name a locator before it is used."
+    ),
+    min_score: float = typer.Option(
+        None, "--min-score", help="Ignore passages the reranker scored below this."
+    ),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Report without writing."),
+) -> None:
+    """Source a script that already exists, without changing a word of it.
+
+    Each block of prose is used as a query against the index; the passages that
+    come back carry the wiki's own references, and the locators on those become
+    the block's tag. A block whose hits disagree is left exactly as it was,
+    because an untagged line is honest where a guessed chapter is not.
+
+    The original is never opened for writing. The result goes to
+    `<name> (cited).md` beside it, so a bad run cannot damage a script.
+    """
+    from scriptengine.eval.verify import verify_script
+    from scriptengine.retrieve.annotate import annotate, unannotate
+
+    path = Path(script)
+    if not path.exists():
+        console.print(f"[red]No such script: {script}[/red]")
+        raise typer.Exit(code=1)
+
+    paths = series_paths(series)
+    original = path.read_text(encoding="utf-8")
+    result = annotate(
+        original, paths, top_k=top_k, min_agreement=agreement, min_score=min_score
+    )
+
+    # The guarantee, checked on every run rather than trusted: strip the tags
+    # back off and the input must be there, byte for byte.
+    if unannotate(result.text) != original:
+        console.print(
+            "[red]Refusing to write: the cited text does not reduce back to the "
+            "original. This is a bug in annotate, not in your script.[/red]"
+        )
+        raise typer.Exit(code=1)
+
+    summary = result.summary()
+    console.print(
+        f"[dim]{summary['prose_blocks']} blocks of prose, "
+        f"{summary['tagged']} tagged, {summary['untagged']} left alone[/dim]"
+    )
+
+    report = verify_script(result.text, paths)
+    if report["findings"]:
+        console.print(f"[red]{len(report['findings'])} tag(s) failed verification:[/red]")
+        for finding in report["findings"][:10]:
+            console.print(f"   {finding['tag']}: {finding['issues'][0]}")
+    else:
+        console.print(
+            f"[green]All {report['distinct']} distinct tags check out against "
+            f"the raw wiki pages.[/green]"
+        )
+
+    if dry_run:
+        console.print("[dim]--dry-run: nothing written.[/dim]")
+        return
+
+    destination = path.with_name(f"{path.stem} (cited){path.suffix}")
+    destination.write_text(result.text, encoding="utf-8")
+    console.print(f"\nWrote {destination}")
+
+
+@app.command()
 def rosters(
     series: str = typer.Option(..., "--series"),
 ) -> None:

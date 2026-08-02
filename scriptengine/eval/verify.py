@@ -88,15 +88,26 @@ def _load(paths: SeriesPaths) -> dict[str, Any]:
             for number in re.findall(r"Episode\s+([\d.\-]+)", body, re.IGNORECASE):
                 cited.add(("", number))
 
-        facts = {f["key"]: f["value"] for f in page.get("facts", [])}
-        if page.get("page_type") == "chapter" and "anime episode" in facts:
-            for episode in re.findall(r"Episode\s+([\d.\-]+)", facts["anime episode"]):
-                adapted[page["title"]].add(episode)
-        if page.get("page_type") == "episode" and "adapted from" in facts:
-            number = re.search(r"([\d.\-]+)", page["title"])
-            for chapter in re.findall(r"Chapter\s+([\d.\-]+)", facts["adapted from"]):
-                if number:
-                    adapted.setdefault(f"Chapter {chapter}", set()).add(number.group(1))
+        # Adaptation is read from the page's *links*, not from its infobox text.
+        # The text is written for humans: Chainsaw Man's Episode 8 says
+        # "Chapter 22, 23, 24, 25 (p.2-14)", where a regex for "Chapter N" finds
+        # only the first of the four and reports the other three as unverifiable.
+        # MediaWiki already resolved each one into a link, so the edges carry
+        # them individually and correctly.
+        #
+        # Keyed off the title rather than `page_type` for the same reason: the
+        # type is whatever the wiki named its infobox, and Chainsaw Man's
+        # chapter pages come back `unknown`.
+        title = page["title"]
+        number = re.search(r"([\d.\-]+)", title)
+        for edge in page.get("edges", []):
+            relation, target = edge.get("relation", ""), edge.get("target", "")
+            if relation == "anime episode" and title.startswith("Chapter "):
+                if target.startswith("Episode "):
+                    adapted[title].add(target[len("Episode "):].strip())
+            elif relation == "adapted from" and title.startswith("Episode "):
+                if target.startswith("Chapter ") and number:
+                    adapted[target].add(number.group(1))
 
     return {"titles": titles, "cited": cited, "paired": paired, "adapted": adapted}
 
