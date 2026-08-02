@@ -50,6 +50,26 @@ class TestLocators:
         assert index.complete(parse_locator("(Modulo Chapter 16)")).episode == ""
         assert index.complete(parse_locator("(Chapter 16)")).episode == "7"
 
+    @pytest.mark.parametrize(
+        "marker",
+        [
+            "(Chapter 145, Episode 50)",
+            "(Chapter 118)",
+            "(Modulo Chapter 16)",
+            "(Z Episode 130)",          # Dragon Ball numbers seven works from 1
+            "(Super Chapter 42)",
+            "(GT Episode 40)",
+            "(Anime Episode 1)",        # Berserk labels manga and anime apart
+            "(Manga Episode 137)",
+            "(Chapter 0-1)",
+        ],
+    )
+    def test_every_marker_survives_a_round_trip(self, marker):
+        # A work lost in parsing is a citation of the wrong series. Episodes
+        # carry a work as often as chapters do, and only chapters used to keep
+        # theirs — which silently dropped the Z, GT and Anime qualifiers.
+        assert parse_locator(marker).render() == marker
+
     def test_ordinary_prose_is_not_a_citation(self):
         assert parse_markers("They mention (the Chapter 5 fight) in passing.") == []
 
@@ -173,6 +193,16 @@ class TestSpan:
 
     def test_nothing_sourced_spans_nothing(self):
         assert span([]) == ""
+
+    def test_episodes_of_different_works_are_never_merged(self):
+        # "Episodes 40-131" across Dragon Ball GT and Z is a range containing
+        # neither of the episodes cited.
+        found = [
+            Locator(episode="130", work="Z"),
+            Locator(episode="131", work="Z"),
+            Locator(episode="40", work="GT"),
+        ]
+        assert span(found) == "GT Episode 40, Z Episodes 130 and 131"
 
     def test_each_work_is_ranged_separately(self):
         # Merging them gives "Chapters 16-235", a range spanning two manga that

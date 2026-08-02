@@ -1,0 +1,77 @@
+# Per-wiki handling for the Dragon Ball Wiki.
+
+# Dragon Ball is not one work, it is seven, and they all number from 1. The wiki
+# cites in prose inside an HTML `<ref>`, naming the work every time:
+#
+#     <ref>''[[Dragon Ball Z]]'' episode 130, "..."</ref>
+#     <ref>''[[Dragon Ball Super (manga)|Dragon Ball Super]]'' chapter 42</ref>
+#     <ref>''[[Dragon Ball GT]]'' episode 40</ref>
+#
+# Rendering all of those as "(Episode 130)" would be worse than useless: Z 130,
+# Super 130 and GT 130 are three unrelated scenes, and a script citing the wrong
+# one is confidently wrong. So each work carries its own label.
+#
+# Order matters. These are tried top to bottom and the first match wins, so the
+# longer names come first — "Dragon Ball Super" has to be matched before
+# "Dragon Ball", or every Super reference would be filed under the original.
+#
+# The original series is unprefixed, the same way the main series is on every
+# other wiki here: "(Episode 130)" means Dragon Ball, and anything else says so.
+citation_ref_tags:
+  # Super Dragon Ball Heroes and its mission subtitles, longest first.
+  - match: 'Super Dragon Ball Heroes[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+    work: Heroes
+  - match: 'Super Dragon Ball Heroes[^'']*?''*,?\s*chapter\s+(\d+)'
+    as: chapter
+    work: Heroes
+  - match: 'Dragon Ball Heroes[^'']*?''*,?\s*chapter\s+(\d+)'
+    as: chapter
+    work: Heroes
+
+  - match: 'Dragon Ball Z Kai[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+    work: Kai
+  - match: 'Dragon Ball Daima[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+    work: Daima
+
+  - match: 'Dragon Ball Super[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+    work: Super
+  - match: 'Dragon Ball Super[^'']*?''*,?\s*chapter\s+(\d+)'
+    as: chapter
+    work: Super
+  - match: 'Dragon Ball Super[^'']*?''*,?\s*volume\s+(\d+)'
+    as: volume
+    work: Super
+
+  - match: 'Dragon Ball GT[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+    work: GT
+
+  - match: 'Dragon Ball Z[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+    work: Z
+  - match: 'Dragon Ball Z[^'']*?''*,?\s*chapter\s+(\d+)'
+    as: chapter
+    work: Z
+
+  # The original series last, so it only catches what the others did not.
+  - match: 'Dragon Ball[^'']*?''*,?\s*episode\s+(\d+)'
+    as: episode
+  - match: 'Dragon Ball[^'']*?''*,?\s*chapter\s+(\d+)'
+    as: chapter
+
+  # A bare reference with no work named. The original series is the default
+  # everywhere else on this wiki, so it is the default here too.
+  - match: 'chapter\s+(\d+)'
+    as: chapter
+  - match: 'episode\s+(\d+)'
+    as: episode
+
+# Deliberately unmatched: Daizenshuu guidebooks, and the many game references
+# (Xenoverse, Budokai Tenkaichi, Legends, Kakarot). They cite a real source but
+# not an instalment of the story, and a script cannot tag a line with a video
+# game. They render as nothing, which is the same answer Berserk's cover-art
+# references get.

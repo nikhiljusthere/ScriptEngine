@@ -48,8 +48,13 @@ declares the sets it maintains, and a declared set resolves the same way every
 time:
 
 ```powershell
-python -m scriptengine.cli rosters --series opm
+python -m scriptengine.cli rosters --series opm     # one series' sets
+python -m scriptengine.cli catalogue                # every series, regenerated
 ```
+
+`docs/CATALOGUE.md` is the answer to "what is in the engine" — pages, typing,
+how much of each wiki's prose can carry a chapter, and every declared set with
+its size. It is generated, so run it rather than trusting the copy on disk.
 
 47 sets are declared across the six series — devils, hunters, hybrids and fiends
 on Chainsaw Man; apostles and the God Hand on Berserk; mysterious beings and
@@ -119,6 +124,24 @@ list still works, it is just found by search rather than declared.
    ```powershell
    python -m scriptengine.cli verify "<path to the script>" --series jjk
    ```
+
+## Sourcing a script you did not write here
+
+When the user brings a finished script that has no tags, do not re-derive them
+by hand and do not rewrite the script to fit the sources:
+
+```powershell
+python -m scriptengine.cli cite "<path to the script>" --series jjk
+```
+
+It reads each block, retrieves against the index, and appends the locator the
+retrieved passages agree on. It never changes a word — it checks that itself
+before writing, and refuses if the cited text does not reduce back to the input
+exactly. The result is written to `<name> (cited).md` beside the original, which
+is left untouched, so the two can be diffed.
+
+Blocks it leaves alone are blocks where the evidence disagreed. That is the
+correct outcome, not a gap to fill in by hand.
 
 ## Where the chapter and episode on each block come from
 

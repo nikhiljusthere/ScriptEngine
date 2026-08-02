@@ -44,8 +44,12 @@ _MARKER = re.compile(
     # "(the Chapter 5 fight)" is not mistaken for a citation.
     r"\((?:[A-Z][A-Za-z']*\s+)?(?:Chapter|Episode|Volume)\s+[\d.\-]+(?:,\s*[^)]*)?\)"
 )
+# Every kind takes the optional work prefix, not just chapters. Dragon Ball
+# numbers Z, Super, GT, Daima and Heroes separately and cites episodes far more
+# often than chapters, and Berserk labels manga and anime episodes apart — so an
+# episode that loses its work is an episode of the wrong series.
 _CHAPTER = re.compile(r"(?:([A-Z][A-Za-z']*)\s+)?Chapter\s+([\d.\-]+)")
-_EPISODE = re.compile(r"Episode\s+([\d.\-]+)", re.IGNORECASE)
+_EPISODE = re.compile(r"(?:([A-Z][A-Za-z']*)\s+)?Episode\s+([\d.\-]+)")
 _VOLUME = re.compile(r"(?:([A-Z][A-Za-z']*)\s+)?Volume\s+([\d.\-]+)")
 
 # Instalment titles as the graph stores them: "Chapter 143", "Episode 30".
@@ -70,15 +74,21 @@ class Locator:
         return bool(self.chapter or self.episode or self.volume)
 
     def render(self) -> str:
-        prefix = f"{self.work} " if self.work else ""
         parts = []
         if self.chapter:
-            parts.append(f"{prefix}Chapter {self.chapter}")
+            parts.append(f"Chapter {self.chapter}")
         if self.episode:
             parts.append(f"Episode {self.episode}")
         if self.volume and not parts:
-            parts.append(f"{prefix}Volume {self.volume}")
-        return f"({', '.join(parts)})" if parts else ""
+            parts.append(f"Volume {self.volume}")
+        if not parts:
+            return ""
+        # The work qualifies the whole citation, so it is said once at the
+        # front. "(Z Episode 130, Chapter 44)" reads correctly; prefixing every
+        # part would give "(Z Episode 130, Z Chapter 44)".
+        if self.work:
+            parts[0] = f"{self.work} {parts[0]}"
+        return f"({', '.join(parts)})"
 
 
 @dataclass
@@ -157,13 +167,13 @@ def parse_locator(marker: str) -> Locator:
     episode = _EPISODE.search(marker)
     volume = _VOLUME.search(marker)
     work = ""
-    if chapter and chapter.group(1):
-        work = chapter.group(1)
-    elif volume and volume.group(1):
-        work = volume.group(1)
+    for match in (chapter, episode, volume):
+        if match and match.group(1):
+            work = match.group(1)
+            break
     return Locator(
         chapter=chapter.group(2) if chapter else "",
-        episode=episode.group(1) if episode else "",
+        episode=episode.group(2) if episode else "",
         volume=volume.group(2) if volume else "",
         work=work,
     )
@@ -265,13 +275,16 @@ def span(found: Sequence[Locator]) -> str:
     parts: list[str] = []
     for work in _distinct_works(found):
         here = [locator for locator in found if locator.work == work]
-        prefix = f"{work} " if work else ""
         chapters = _numbers(locator.chapter for locator in here)
         episodes = _numbers(locator.episode for locator in here)
+        mine: list[str] = []
         if chapters:
-            parts.append(prefix + _range("Chapter", chapters))
+            mine.append(_range("Chapter", chapters))
         if episodes:
-            parts.append(_range("Episode", episodes))
+            mine.append(_range("Episode", episodes))
+        if mine and work:
+            mine[0] = f"{work} {mine[0]}"
+        parts.extend(mine)
     return ", ".join(parts)
 
 

@@ -10,16 +10,23 @@ with the one thing a script writer actually needs and a plain RAG cannot give
 it: events in the right order, with the right participants, traceable to a
 source.
 
-**Status:** Six wikis indexed, 8,113 pages. See [Roadmap](#roadmap).
+**Status:** Eight wikis. See [docs/CATALOGUE.md](docs/CATALOGUE.md) for the
+current numbers, which are generated from the stores rather than typed here:
+
+```powershell
+python -m scriptengine.cli catalogue
+```
 
 | series | wiki | pages | typed | prose sourced to a chapter |
 |---|---|---|---|---|
 | `jjk` | Jujutsu Kaisen | 987 | 98.9% | 55% |
 | `bleach` | Bleach | 2,248 | 95.4% | 34% |
 | `hxh` | Hunterpedia | 2,014 | 96.0% | 50% |
-| `opm` | One-Punch Man | 1,565 | 98.0% | 31% |
+| `opm` | One-Punch Man | 1,565 | 98.0% | 30% |
 | `berserk` | Berserk | 762 | 90.4% | 0% |
 | `csm` | Chainsaw Man | 537 | 97.4% | 42% |
+| `db` | Dragon Ball | crawling | | |
+| `onepiece` | One Piece | queued | | |
 
 Five of the six were added without a line of series-specific Python. What each
 one *did* need was a description of how it writes a citation, because no two of
@@ -167,6 +174,33 @@ Then check the script before calling it done:
 ```powershell
 python -m scriptengine.cli verify "<path to the script>" --series jjk
 ```
+
+### Sourcing a script that already exists
+
+The writing path gets its locators for free, because the research context
+arrives with them. A script written before this existed, or written somewhere
+else, needed sourcing by hand. `cite` runs the pipeline backwards:
+
+```powershell
+python -m scriptengine.cli cite "<path to the script>" --series jjk
+# 96 blocks of prose, 74 tagged, 22 left alone
+# All 39 distinct tags check out against the raw wiki pages.
+```
+
+Each block of prose becomes a query; the passages that come back carry the
+wiki's own references, and the locators on those become the block's tag.
+
+**It does not change a word.** `unannotate` reverses the operation, and `cite`
+runs that check on every invocation before writing: if the cited text does not
+reduce back to the input byte for byte, it refuses to write and says so. The
+original is never opened for writing either — output goes to
+`<name> (cited).md` beside it.
+
+Two rules keep it honest rather than merely productive. A block is tagged only
+when at least two retrieved passages name the same locator, so hits that
+disagree leave the block alone. And a tag may not span more than eight chapters,
+because reading references off a whole wiki section produces
+`(Chapters 1-171, Episodes 1-58)`, which is true and useless.
 
 `verify` reads every `(Chapter N, Episode M)` in the finished script and checks
 it against the raw crawl: the instalment page exists, some reference actually
