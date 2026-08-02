@@ -10,6 +10,7 @@ from scriptengine.retrieve.citations import (
     attribute,
     coverage,
     locators,
+    locator_from_title,
     parse_locator,
     parse_markers,
     span,
@@ -130,6 +131,38 @@ class TestEpisodeIndex:
     def test_an_episode_already_stated_is_left_alone(self):
         index = EpisodeIndex({"79": "99"})
         assert index.complete(Locator(chapter="79", episode="30")).episode == "30"
+
+
+class TestLocatorFromTitle:
+    # Not every wiki cites its own prose. One Piece writes 1,191 chapter pages
+    # and 1,172 episode pages, each with a full summary, and puts a reference on
+    # almost none of it — its <ref> tags point at video games and publishers.
+    # A claim retrieved from the page titled "Chapter 1015" is sourced to
+    # Chapter 1015, and reading the title is not an inference.
+
+    @pytest.mark.parametrize(
+        "title,expected",
+        [
+            ("Chapter 1015", "(Chapter 1015)"),
+            ("Episode 970", "(Episode 970)"),
+            ("Volume 5", "(Volume 5)"),
+            ("Modulo Chapter 16", "(Modulo Chapter 16)"),
+            ("Episode 0-1 (Manga)", "(Manga Episode 0-1)"),
+            ("Episode 1 (1997 Anime)", "(Anime Episode 1)"),
+        ],
+    )
+    def test_an_instalment_page_carries_its_own_locator(self, title, expected):
+        assert locator_from_title(title).render() == expected
+
+    @pytest.mark.parametrize(
+        "title",
+        ["Monkey D. Luffy", "Shibuya Incident", "Chapter 1015 Notes",
+         "Chapters and Volumes", "", "Devil Fruit"],
+    )
+    def test_an_ordinary_page_carries_none(self, title):
+        # Most pages are not instalments, and guessing one from a title that
+        # merely contains the word is how a script cites the wrong thing.
+        assert not locator_from_title(title)
 
 
 class TestUpgradeMarkers:

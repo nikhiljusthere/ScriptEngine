@@ -193,6 +193,13 @@ def _agree(
         if not found:
             body = getattr(passage, "parent_text", "") or ""
             found = cite.locators(cite.attribute(body, episodes))
+        if not found:
+            # The page may *be* the instalment. One Piece and Berserk write a
+            # summary page per chapter and cite almost none of it, so the title
+            # is the only locator their prose has — and it is a real one.
+            from_title = cite.locator_from_title(passage.doc_title)
+            if from_title:
+                found = [episodes.complete(from_title)]
         for locator in {locator.render() for locator in found if locator}:
             votes[locator] += 1
             seen[locator] = passage.doc_title

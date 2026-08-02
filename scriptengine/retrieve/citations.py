@@ -179,6 +179,43 @@ def parse_locator(marker: str) -> Locator:
     )
 
 
+# A page that *is* an instalment: "Chapter 1015", "Episode 970",
+# "Modulo Chapter 16", "Episode 0-1 (Manga)".
+_INSTALMENT_TITLE = re.compile(
+    r"^(?:([A-Z][A-Za-z']*)\s+)?(Chapter|Episode|Volume)\s+([\d.\-]+)"
+    r"(?:\s*\((?:(?:19|20)\d\d\s+)?(Manga|Anime)\))?$",
+    re.IGNORECASE,
+)
+
+
+def locator_from_title(title: str) -> Locator:
+    """The locator a page carries by being that instalment.
+
+    Not every wiki cites its own prose. One Piece writes 1,191 chapter pages and
+    1,172 episode pages, each with a full summary, and puts a `<ref>` on almost
+    none of it — its references point at video games and publishers. Berserk is
+    the same. But a claim retrieved from the page titled "Chapter 1015" is
+    sourced to Chapter 1015 as surely as if the sentence carried a footnote, and
+    reading the title is not an inference.
+
+    Returns an empty locator for an ordinary page, which is most of them.
+    """
+    match = _INSTALMENT_TITLE.match((title or "").strip())
+    if not match:
+        return Locator()
+    work, kind, number, medium = match.groups()
+    # "Episode 137 (Manga)" is Berserk saying which of its two numberings this
+    # is; the suffix is the qualifier, not part of the name.
+    work = (medium or work or "").strip()
+    kind = kind.lower()
+    return Locator(
+        chapter=number if kind == "chapter" else "",
+        episode=number if kind == "episode" else "",
+        volume=number if kind == "volume" else "",
+        work=work.title() if work else "",
+    )
+
+
 def parse_markers(text: str) -> list[tuple[int, int, Locator]]:
     """Every inline locator in `text` as ``(start, end, Locator)``."""
     found: list[tuple[int, int, Locator]] = []
