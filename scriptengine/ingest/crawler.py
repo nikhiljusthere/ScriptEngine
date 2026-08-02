@@ -42,6 +42,7 @@ from scriptengine.ingest.ontology import (
     slugify_type as _slug,
 )
 from scriptengine.ingest.wikitext import (
+    collect_ref_definitions,
     extract_citations,
     extract_links,
     facts_from_infobox,
@@ -311,13 +312,20 @@ class WikiCrawler:
 
         learn_field_labels(ontology, page_type, parse.get("properties"))
 
-        lead, sections = split_sections(wikitext, parse.get("sections", []))
+        lead, sections = split_sections(
+            wikitext, parse.get("sections", []), ontology.citation_works
+        )
+        # Named references are defined once per page and reused by name, so the
+        # map has to be built from the whole page before anything is stripped.
+        ref_names = collect_ref_definitions(wikitext)
 
         facts = []
         infobox = find_infobox(wikitext, set(ontology.infobox_types))
         if infobox:
             template_name, params = infobox
-            facts = facts_from_infobox(params, ontology.labels_for(page_type))
+            facts = facts_from_infobox(
+                params, ontology.labels_for(page_type), ref_names
+            )
             if page_type == "unknown":
                 page_type = ontology.infobox_types.get(
                     template_name.lower().replace("_", " "), "unknown"
@@ -337,7 +345,7 @@ class WikiCrawler:
             sections=sections,
             facts=facts,
             links=extract_links(wikitext),
-            citations=extract_citations(wikitext),
+            citations=extract_citations(wikitext, ref_names),
             redirects=[r.get("from", "") for r in parse.get("redirects", [])],
             wikitext=wikitext,
             fetched_at=datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -663,6 +671,11 @@ def load_extracted(
     ontology.infobox_types.update(discovered.infobox_types)
     ontology.infobox_votes = discovered.infobox_votes
     ontology.skip_categories |= discovered.skip_categories
+    # The manifest predates the overrides being read here, and re-extraction is
+    # the only place the citation vocabulary is used. Taking it from the freshly
+    # built ontology is what lets `overrides.yaml` reach a corpus that is being
+    # re-parsed rather than re-crawled.
+    ontology.citation_works = discovered.citation_works
 
     return [reextract(page, ontology) for page in pages], ontology
 

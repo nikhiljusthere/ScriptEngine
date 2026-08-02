@@ -1,8 +1,5 @@
 # API
 
-> The service lands in Phase 4. This page records the intended contract so the
-> ComfyUI side can be planned against it; the endpoints do not exist yet.
-
 ```powershell
 python -m scriptengine.api.main    # http://127.0.0.1:8000
 ```
@@ -14,94 +11,158 @@ Local-bound by default. Override with `SCRIPTENGINE_API_HOST` /
 
 ### `POST /context`
 
-Everything else is for inspection. This is what the script-writing model calls.
+Everything else is for inspection. This is what the script writer calls.
 
 ```jsonc
 {
   "series": "jjk",
-  "query": "the Shibuya Incident",
-  "mode": "narrative",      // "narrative" | "qa"
-  "token_budget": 6000
+  "query": "Shibuya Incident",
+  "mode": "auto",           // "auto" | "narrative" | "roster" | "qa"
+  "token_budget": 24000,
+  "top_k": 12,              // passages (qa) or beats (narrative)
+  "words": 3000,            // target script length, stated in the served rules
+  "intro": true,            // whether the script opens with a hook paragraph
+  "rules": true,            // append the style/voice/annotation rules
+  "as_prompt": true         // also return the bundle rendered as plain text
 }
 ```
 
-Returns passages **in narrative order** — not similarity order — with the
-structured facts behind them and a citation per claim:
+`mode` decides the shape of the answer, because the shape of a script topic
+varies more than its subject does:
+
+| Mode | Topic | Returns |
+|---|---|---|
+| `narrative` | an account — "Shibuya Incident" | beats in story order, across the subject's page and the pages it leans on |
+| `roster` | a set — "Every Rank of Curse" | every member of the set the wiki declares, grouped and ordered |
+| `qa` | a question | relevance-ranked passages after reranking |
+| `auto` | either | reads the topic; falls back to `narrative` if a roster comes back empty |
+
+Use `auto` unless you know better. The ordering *is* the value: a script written
+from relevance-ranked fragments reads like a wiki summary.
+
+#### A narrative bundle
 
 ```jsonc
 {
   "series": "jjk",
   "mode": "narrative",
+  "subject": "Shibuya Incident",           // the page the topic resolved to
   "beats": [
     {
       "order": 1,
-      "title": "Shibuya Incident / Early Stages",
-      "time": "7:00 P.M. - 8:31 P.M.",
-      "participants": ["Satoru Gojo", "Suguru Geto"],
-      "text": "...",
-      "citations": [{"source": "Jujutsu Kaisen Manga", "volume": 10, "page": 26}],
-      "doc": "Shibuya Incident",
-      "section": "Event / Early Stages"
+      "title": "Prologue",
+      "doc_title": "Shibuya Incident",
+      "breadcrumb": "Prologue",
+      "time": "7:00 PM",                   // when the heading carries a clock time
+      "text": "...(Chapter 145, Episode 50) ...",
+      "citations": ["(Chapter 145, Episode 50)", "(Chapter 10, Episode 5)"],
+      "source_span": "Chapters 10-145, Episodes 5-50"
     }
   ],
+  "participants": ["Satoru Gojo", "Kento Nanami"],
   "facts": [
-    {"entity": "Satoru Gojo", "key": "grade", "value": "Special Grade", "citation": {...}}
+    {"entity": "Shibuya Incident", "field": "Manga", "value": "Chapter 83 - 136", "citation": ""}
   ],
-  "tokens_used": 5840
+  "truncated": true,
+  "beats_available": 61,
+  "tokens_used": 23937
 }
 ```
 
-`mode: "narrative"` walks chronology edges and returns ordered beats.
-`mode: "qa"` returns relevance-ranked passages after reranking. Use narrative for
-scripts; the ordering *is* the value.
+`source_span` is the tag the script puts at the end of that block. It is never
+empty for prose the wiki cited: see "Sourcing" below.
 
-Citations are the point. A script whose claims cannot be traced back to the wiki
-is a script you have to fact-check by hand.
+#### A roster bundle
+
+```jsonc
+{
+  "mode": "roster",
+  "subject": "Cursed Spirit",
+  "basis": "Cursed Spirits (class)",       // the set, and the field it is grouped by
+  "kind": "category",                      // category | type
+  "groups": ["Grade 2", "Special Grade"],
+  "members": [
+    {
+      "name": "Jogo",
+      "label": "character",
+      "group": "Special Grade",
+      "debut": "(Chapter 10, Episode 5)",
+      "facts": [{"field": "Grade", "value": "Special Grade"}],
+      "text": "...",
+      "citations": ["(Chapter 10, Episode 5)"],
+      "source_span": "Chapters 10-122, Episodes 5-42"
+    }
+  ],
+  "members_available": 22,
+  "tokens_used": 12887
+}
+```
+
+Members are paid for out of an equal share of the budget, so a long biography at
+the top of the list cannot spend what the tail needed.
+
+#### `as_prompt`
+
+Adds a `prompt` field: the bundle as plain text, followed by the house style,
+voice and annotation rules from `scriptengine/api/rules.py`. Two things are
+deliberately absent from it — bare `[n]` order markers, which the house rules
+forbid in a script, and a repeated `source:` line under every beat.
+
+## Sourcing
+
+Every beat and member carries the chapters and episodes its prose comes from.
+Two lookups produce them, in `scriptengine/retrieve/citations.py`:
+
+- **A `{{Ref}}` covers the sentences before it**, back to the previous
+  reference — which is what putting it there means. Without this, 12.8% of the
+  sentences in a Shibuya Incident bundle carried a locator and 60 of its 128
+  beats carried none; with it the page reaches 99.6%.
+- **A chapter resolves to its episode through the graph**, via
+  `Chapter N -anime episode-> Episode M` and `Episode M -adapted from-> Chapter N`.
+  Half the corpus's references name a chapter and no episode. A chapter the
+  anime never adapted resolves to nothing and stays `(Chapter N)`.
+
+Nothing is inferred beyond that. `python -m scriptengine.cli audit --series jjk`
+reports the resulting coverage and fails a check when citations stop reaching
+the prose.
 
 ## Inspection endpoints
 
 | Method | Path | Purpose |
 |---|---|---|
-| `GET` | `/health` | Liveness, loaded models, resolved device |
-| `GET` | `/series` | Series on disk and what has been built for each |
+| `GET` | `/health` | Liveness, loaded models, resolved device, series on disk |
+| `GET` | `/series` | Series and what has been built for each |
 | `POST` | `/search` | Hybrid retrieval, ranked passages with scores |
-| `GET` | `/facts/{entity}` | Exact structured facts — infobox-derived, not retrieved |
-| `GET` | `/timeline/{arc}` | Ordered events within an arc |
+| `GET` | `/facts/{series}/{entity}` | Exact structured facts — infobox-derived, not retrieved |
+| `GET` | `/abilities/{series}/{entity}` | Every ability a character uses, walked from the graph |
+| `GET` | `/timeline/{series}/{subject}` | An event as ordered beats |
 
-`/facts/{entity}` is a lookup, not a search. Because infobox parameters are
-stored as facts rather than flattened into prose, the answer is exact. Ask for a
-character's grade or debut chapter here rather than hoping retrieval surfaces it.
+`/facts/{series}/{entity}` is a lookup, not a search. Because infobox parameters
+are stored as facts rather than flattened into prose, the answer is exact. Ask
+for a character's grade or debut chapter here rather than hoping retrieval
+surfaces it.
 
-## Wiring ComfyUI
+`/abilities/{series}/{entity}` exists because prose retrieval cannot answer
+"every ability of X" reliably — a multi-entity question ranks battle pages above
+ability pages. The graph does not care: `Black Flash -user-> Yuji Itadori` is an
+edge.
 
-The script-writing model needs one HTTP call. Sketch:
+## Budget
 
-```python
-import httpx
-
-bundle = httpx.post("http://127.0.0.1:8000/context", json={
-    "series": "jjk",
-    "query": arc_name,
-    "mode": "narrative",
-    "token_budget": 6000,
-}, timeout=60).json()
-
-prompt = "\n\n".join(
-    f"[{b['order']}] {b['title']}\n{b['text']}" for b in bundle["beats"]
-)
-```
-
-Keep `token_budget` under what the model can hold alongside its instructions.
+Keep `token_budget` under what the writer can hold alongside its instructions.
 The service truncates at beat boundaries, never mid-beat, so a smaller budget
-costs you later beats rather than a mangled one.
+costs you later beats rather than a mangled one. Oversized beats are split at
+sentence boundaries and each part is re-sourced, so no part loses the citation
+that covers it.
 
 **On VRAM:** ScriptEngine holds ~3.5 GB of embedding and reranking models while
-serving, and releases them after `SCRIPTENGINE_MODEL_IDLE_UNLOAD_SECONDS`. If
-ComfyUI is rendering on the same GPU, either set `SCRIPTENGINE_DEVICE=cpu` or
-call `/context` before the render starts.
+serving `qa` mode, and releases them after
+`SCRIPTENGINE_MODEL_IDLE_UNLOAD_SECONDS`. `narrative` and `roster` need neither
+model. If ComfyUI is rendering on the same GPU, either set
+`SCRIPTENGINE_DEVICE=cpu` or call `/context` before the render starts.
 
 ## Errors
 
-Standard codes. `404` for an unknown series or entity, `422` for a malformed
-body, `503` when a series exists but has not been indexed — with the command to
-fix it in the message body.
+Standard codes. `404` for an unknown entity or an event with no narrative, `422`
+for a malformed body or an invalid series name, `503` when a series exists but
+has not been indexed — with the command to fix it in the message body.

@@ -16,6 +16,7 @@ Nothing here knows what series it is reading.
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass, field
 
 from scriptengine.ingest.documents import Citation, Fact, Link, Section
 
@@ -23,6 +24,170 @@ from scriptengine.ingest.documents import Citation, Fact, Link, Section
 # so `Ref`, `Ref/contents` and `Reflist` are all recognised. This list is about
 # MediaWiki convention, not about any particular wiki.
 CITATION_TEMPLATES = ("ref", "cite", "sfn")
+
+# Citation parameters that locate a claim rather than qualify it. Everything
+# else a reference carries is either a page number, a name, or a statement about
+# which work the instalment belongs to — and the audit flags the last kind when
+# this module does not recognise it.
+LOCATOR_PARAMS = frozenset({"chap", "chap2", "ep", "ep2", "vol", "fan"})
+PAGE_PARAMS = frozenset({"page", "pages", "name"})
+
+# `{{cite web}}` and its relatives describe a source outside the work — an
+# interview, a shop listing, a cover image. A script cannot tag a line with a
+# URL, so these are dropped on purpose and must not read as a dropped locator.
+# The parameter names are the MediaWiki citation convention, not one wiki's.
+EXTERNAL_PARAMS = frozenset({
+    "url", "title", "publisher", "author", "date", "accessdate",
+    "lastaccess", "archiveurl", "archivedate", "language",
+    "website", "work", "quote", "isbn", "id", "transtitle", "format", "via",
+    # `{{References|note|box=yes}}` renders the footnote list. It is furniture,
+    # not a citation, even though its template name starts with "ref".
+    "box", "group", "colwidth", "liststyle", "refs", "note",
+})
+
+
+def _normalise_param(key: str) -> str:
+    """``access-date``, ``access date`` and ``accessdate`` are one parameter."""
+    return re.sub(r"[\s_-]+", "", key.strip().lower())
+
+
+def is_page_param(key: str) -> bool:
+    """True for a page-number parameter, including the wiki's misspellings.
+
+    `pagse` and `pagess` both appear on the Jujutsu Kaisen wiki. Page numbers
+    are never rendered into prose, so a typo in one is not a dropped fact — and
+    the audit that flags dropped parameters should not spend its signal on them.
+    """
+    lowered = _normalise_param(key)
+    return lowered in PAGE_PARAMS or lowered.startswith("pag")
+
+# Values a flag-style qualifier uses to mean "yes, this one".
+_TRUE_VALUES = frozenset({"y", "yes", "true", "1"})
+
+
+# The roles a citation can locate a claim by. `page` is recognised so it can be
+# ignored on purpose: a page number is retrieval noise inside prose.
+ROLES = frozenset({"chapter", "episode", "volume", "page"})
+
+# How each role is spoken in a finished script.
+_ROLE_LABEL = {"chapter": "Chapter", "episode": "Episode", "volume": "Volume"}
+
+
+@dataclass(frozen=True)
+class RefRole:
+    """What a citation parameter or pattern locates, and in which work."""
+
+    role: str = "chapter"
+    work: str = ""
+
+    @classmethod
+    def parse(cls, spec: object, default_role: str = "chapter") -> "RefRole":
+        if isinstance(spec, str):
+            return cls(role=spec.strip().lower() or default_role)
+        if isinstance(spec, dict):
+            role = str(spec.get("as") or spec.get("role") or default_role).lower()
+            return cls(role=role, work=str(spec.get("work") or ""))
+        return cls(role=default_role)
+
+
+@dataclass(frozen=True)
+class CitationGrammar:
+    """How one wiki writes a citation.
+
+    Every wiki invents its own, and the differences are not cosmetic — they
+    decide whether a script can put a chapter on a line at all. Five wikis, five
+    grammars:
+
+    * **flags** — ``{{Ref|modulo=y|chap=16}}`` on Jujutsu Kaisen. The parameter
+      says the chapter belongs to the sequel, whose numbering restarts at 1, so
+      the label prefixes the instalment: ``(Modulo Chapter 16)``.
+    * **instalments** — ``{{Ref|movie=0}}``. The parameter *is* the instalment.
+    * **params** — ``{{ref|ch = 20}}`` on One-Punch Man, whose ``wch`` means a
+      chapter of the webcomic rather than the manga. A map from this wiki's
+      parameter names to what they locate.
+    * **positional** — ``{{Ref|m|216|3-4}}`` on Chainsaw Man. No named
+      parameters at all: the first argument picks the medium, the second is the
+      number. 2,946 references, every one of them rendering nothing before this.
+    * **ref_tags** — ``<ref>''Bleach'' manga; Chapter 686, page 4</ref>`` on
+      Bleach, Hunterpedia and Berserk. The locator is prose inside an HTML tag,
+      and until it is read and replaced, that prose lands in the middle of the
+      sentence it was citing.
+
+    Empty by default, which is the previous behaviour. The vocabulary is per-wiki
+    and lives in `series/<name>/overrides.yaml`; only the mechanism is here.
+    """
+
+    flags: dict[str, str] = field(default_factory=dict)
+    instalments: dict[str, str] = field(default_factory=dict)
+    params: dict[str, RefRole] = field(default_factory=dict)
+    positional: dict[str, object] = field(default_factory=dict)
+    ref_tags: tuple = ()
+
+    @classmethod
+    def from_overrides(cls, overrides: dict | None) -> "CitationGrammar":
+        overrides = overrides or {}
+
+        positional = dict(overrides.get("citation_positional") or {})
+        if positional:
+            positional["mediums"] = {
+                str(k): RefRole.parse(v)
+                for k, v in (positional.get("mediums") or {}).items()
+            }
+
+        ref_tags = tuple(
+            (re.compile(str(rule["match"]), re.IGNORECASE), RefRole.parse(rule))
+            for rule in (overrides.get("citation_ref_tags") or [])
+            if rule.get("match")
+        )
+
+        return cls(
+            flags={
+                str(k).lower(): str(v)
+                for k, v in (overrides.get("citation_works") or {}).items()
+            },
+            instalments={
+                str(k).lower(): str(v)
+                for k, v in (overrides.get("citation_instalments") or {}).items()
+            },
+            params={
+                str(k).lower(): RefRole.parse(v)
+                for k, v in (overrides.get("citation_params") or {}).items()
+            },
+            positional=positional,
+            ref_tags=ref_tags,
+        )
+
+    @property
+    def known_params(self) -> set[str]:
+        return set(self.flags) | set(self.instalments) | set(self.params)
+
+    def prefix_for(self, named: dict[str, str]) -> str:
+        """``"Modulo "`` when this citation flags a different work, else ``""``."""
+        for key, label in self.flags.items():
+            if (named.get(key) or "").strip().lower() in _TRUE_VALUES:
+                return f"{label} "
+        return ""
+
+    def from_positional(self, named: dict[str, str]) -> list[tuple[RefRole, str]]:
+        """Read ``{{Ref|m|216|3-4}}`` through this wiki's positional schema."""
+        mediums = self.positional.get("mediums") or {}
+        if not mediums:
+            return []
+        select = int(self.positional.get("select", 0))
+        number = int(self.positional.get("number", 1))
+        role = mediums.get((named.get(f"_{select}") or "").strip())
+        value = (named.get(f"_{number}") or "").strip()
+        if role is None or not value:
+            return []
+        return [(role, value)]
+
+    def from_prose(self, body: str) -> list[tuple[RefRole, str]]:
+        """Read the locator out of a ``<ref>`` body, first rule that matches."""
+        for pattern, role in self.ref_tags:
+            match = pattern.search(body or "")
+            if match:
+                return [(role, match.group(1))]
+        return []
 
 # Templates that wrap or annotate text: the template disappears but its contents
 # are prose worth keeping. The value says which positional argument holds that
@@ -210,6 +375,10 @@ def extract_links(text: str) -> list[Link]:
 
         target, _, display = body.partition("|")
         target = target.strip()
+        # A leading colon escapes the namespace on the page — `[[:Category:X]]`
+        # renders as plain text — but the target is still a Category page, not
+        # an article. Strip it so the namespace check below does its job.
+        target = target.lstrip(":")
         if not target or ":" in target.split("#")[0][:20] and _is_namespaced(target):
             continue
 
@@ -263,8 +432,131 @@ def _renders_text(target: str) -> bool:
     return prefix not in _SILENT_NAMESPACES
 
 
-def extract_citations(text: str) -> list[Citation]:
-    """Collect citation templates, recursing so nested ones are not missed."""
+# `<ref>Bleach manga; Chapter 686, page 4</ref>` and its name-only reuse
+# `<ref name="c686"/>`. Three of the five wikis crawled cite this way, and until
+# these are read and replaced, `_HTML_TAG` deletes the tags and leaves the
+# bibliography sitting in the middle of the sentence it was citing:
+# "Ichigo fights. Bleach anime, Episode 179 He wins."
+_REF_TAG = re.compile(r"<ref([^>/]*?)(?:/\s*>|>(.*?)</ref\s*>)", re.S | re.IGNORECASE)
+_REF_NAME = re.compile(r"""name\s*=\s*["']?([^"'>\s]+)""", re.IGNORECASE)
+
+
+def collect_ref_tag_definitions(text: str) -> dict[str, str]:
+    """Named ``<ref>`` bodies, keyed by name.
+
+    Same convention as the template form: the source is written out once and
+    reused by name. Hunterpedia reuses 243 times across 19 sampled pages, so
+    reading only the definition site would leave most cited lines unsourced.
+    """
+    definitions: dict[str, str] = {}
+    for match in _REF_TAG.finditer(text or ""):
+        name = _REF_NAME.search(match.group(1) or "")
+        body = (match.group(2) or "").strip()
+        if name and body:
+            definitions.setdefault(name.group(1).strip().lower(), body)
+    return definitions
+
+
+def _strip_ref_tags(
+    text: str,
+    grammar: "CitationGrammar | None",
+    definitions: dict[str, str] | None,
+    inline_citations: bool = True,
+) -> str:
+    """Replace every ``<ref>`` with its locator, or with nothing.
+
+    Nothing is the right answer for the many references that cite an interview,
+    a cover image or a shop listing. Those carry no chapter, and leaving their
+    text in the prose is how a page's bibliography ends up embedded as content.
+    """
+    definitions = definitions or {}
+
+    def render(match: re.Match[str]) -> str:
+        body = (match.group(2) or "").strip()
+        if not body:
+            name = _REF_NAME.search(match.group(1) or "")
+            if name:
+                body = definitions.get(name.group(1).strip().lower(), "")
+        if not (body and inline_citations and grammar):
+            return ""
+        located = grammar.from_prose(body)
+        if not located:
+            return ""
+        role, value = located[0]
+        label = _ROLE_LABEL.get(role.role)
+        if not label:
+            return ""
+        work = f"{role.work} " if role.work else ""
+        return f"({work}{label} {value})"
+
+    return _REF_TAG.sub(render, text or "")
+
+
+def collect_ref_definitions(text: str) -> dict[str, dict[str, str]]:
+    """Named references that carry a locator, keyed by their name.
+
+    MediaWiki cites a source once and reuses it by name: ``{{Ref|name=c145p18|
+    chap=145|ep=50}}`` is the definition and every later ``{{Ref|name=c145p18}}``
+    means the same thing. Reading only the reuse loses the chapter — 538 of the
+    Jujutsu Kaisen corpus's references are name-only, and every one of them
+    rendered as nothing at all, leaving the line it cited unsourced.
+
+    Definitions are collected across the whole page, because the definition and
+    its reuses routinely sit in different sections.
+    """
+    definitions: dict[str, dict[str, str]] = {}
+
+    for _, _, body in find_templates(text):
+        name, named, _ = parse_template(body)
+        if name.strip().lower().startswith(CITATION_TEMPLATES):
+            key = (named.get("name") or "").strip().lower()
+            if key and key not in definitions and _has_locator(named):
+                definitions[key] = named
+        else:
+            # A citation is usually nested inside the parameter it annotates.
+            for key, value in collect_ref_definitions(body).items():
+                definitions.setdefault(key, value)
+
+    return definitions
+
+
+def _with_positional(named: dict[str, str], positional: list[str]) -> dict[str, str]:
+    """Fold a template's positional arguments in as ``_0``, ``_1``, ``_2``.
+
+    Chainsaw Man writes every reference positionally — ``{{Ref|m|216|3-4}}`` —
+    so a renderer that only reads named parameters sees an empty citation. All
+    2,946 of them rendered nothing.
+    """
+    merged = dict(named)
+    for index, value in enumerate(positional):
+        if value:
+            merged.setdefault(f"_{index}", value)
+    return merged
+
+
+def _has_locator(named: dict[str, str]) -> bool:
+    return any(named.get(key) for key in ("chap", "ep", "vol", "fan"))
+
+
+def _resolve_ref(
+    named: dict[str, str], ref_names: dict[str, dict[str, str]] | None
+) -> dict[str, str]:
+    """A reference's own parameters, or those of the definition it reuses."""
+    if not ref_names or _has_locator(named):
+        return named
+    definition = ref_names.get((named.get("name") or "").strip().lower())
+    return definition if definition else named
+
+
+def extract_citations(
+    text: str, ref_names: dict[str, dict[str, str]] | None = None
+) -> list[Citation]:
+    """Collect citation templates, recursing so nested ones are not missed.
+
+    ``ref_names`` resolves name-only reuses back to the definition's locator, so
+    a `Citation` carries the chapter whether it was written out here or once at
+    the top of the page.
+    """
     citations: list[Citation] = []
 
     for start, end, body in find_templates(text):
@@ -272,7 +564,7 @@ def extract_citations(text: str) -> list[Citation]:
         lowered = name.strip().lower()
 
         if lowered.startswith(CITATION_TEMPLATES):
-            params = dict(named)
+            params = dict(_resolve_ref(named, ref_names))
             for index, value in enumerate(positional):
                 if value:
                     params.setdefault(f"_{index}", value)
@@ -281,7 +573,7 @@ def extract_citations(text: str) -> list[Citation]:
             )
         else:
             # A citation is usually nested inside the parameter it annotates.
-            citations.extend(extract_citations(body))
+            citations.extend(extract_citations(body, ref_names))
 
     return citations
 
@@ -291,22 +583,36 @@ def extract_citations(text: str) -> list[Citation]:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def strip_markup(text: str) -> str:
+def strip_markup(
+    text: str,
+    inline_citations: bool = True,
+    ref_names: dict[str, dict[str, str]] | None = None,
+    works: CitationGrammar | None = None,
+    ref_tags: dict[str, str] | None = None,
+) -> str:
     """Reduce wikitext to readable prose.
 
-    Citations are removed rather than flattened. The previous pipeline expanded
-    them into the text — 40 to 130 per page of ``[Jujutsu Kaisen Manga: Vol. 5
-    (p. 26)]`` — and then embedded that, so a large share of every vector
-    encoded bibliography instead of content. Here they are captured as
-    structured `Citation` objects and stripped from the prose.
+    Citations are flattened to a short locator — ``(Chapter 143)`` — rather
+    than dropped or expanded in full. The previous pipeline expanded them into
+    the text — 40 to 130 per page of ``[Jujutsu Kaisen Manga: Vol. 5 (p. 26)]``
+    — and then embedded that, so a large share of every vector encoded
+    bibliography instead of content. Here they are captured as structured
+    `Citation` objects for exact lookups and kept in prose only as the brief
+    locator that the script's chapter annotations need. Infobox fact values
+    pass ``inline_citations=False``: a fact is key-value data, and the citation
+    already sits on the fact itself.
     """
     if not text:
         return ""
 
     text = _HTML_COMMENT.sub("", text)
     text = _MEDIA_BLOCK.sub(" ", text)
+    # Before `_HTML_TAG` gets to them, or their bodies become prose.
+    text = _strip_ref_tags(text, works, ref_tags, inline_citations)
     text = flatten_tables(text)
-    text = _strip_templates(text)
+    text = _strip_templates(
+        text, inline_citations=inline_citations, ref_names=ref_names, works=works
+    )
     text = _flatten_links(text)
     text = _HTML_TAG.sub(" ", text)
     text = _QUOTES.sub("", text)
@@ -405,7 +711,71 @@ def _flatten_one_table(body: str) -> str:
     return "\n" + "\n".join(line for line in lines if line.strip()) + "\n"
 
 
-def _strip_templates(text: str) -> str:
+def _citation_marker(named: dict[str, str], works: "CitationGrammar | None" = None) -> str:
+    """A compact locator for a citation, e.g. ``(Chapter 143, Episode 30)``.
+
+    Page numbers are deliberately left to the structured Citation objects —
+    this string travels inside prose that gets embedded, and a page number is
+    retrieval noise there. Named refs without a locator (``{{Ref|name=fan2}}``)
+    render nothing: their target already carries the marker.
+
+    A sequel or a spin-off numbers its chapters from 1 again, so a citation says
+    which work it means. On this wiki that is ``{{Ref|modulo=y|chap=16}}``, and
+    dropping the qualifier rendered it ``(Chapter 16)`` — the same string as the
+    main series' Chapter 16, and 427 references corpus-wide were affected. A
+    script written from that would state the wrong chapter with full confidence.
+    The qualifier vocabulary is per-wiki and comes from
+    `series/<name>/overrides.yaml`; only the mechanism lives here.
+    """
+    works = works or CitationGrammar()
+    parts: list[str] = []
+
+    prefix = works.prefix_for(named)
+    located: list[tuple[RefRole, str]] = []
+
+    # The parameter names this project has always understood, plus whatever this
+    # wiki calls them. A wiki-specific name wins, since it is the more precise
+    # statement: One-Punch Man's `wch` is a chapter of the webcomic, not the manga.
+    for key, role in (
+        ("chap", RefRole("chapter")), ("chap2", RefRole("chapter")),
+        ("ep", RefRole("episode")), ("ep2", RefRole("episode")),
+        ("vol", RefRole("volume")),
+    ):
+        if named.get(key):
+            located.append((role, named[key]))
+    for key, role in works.params.items():
+        if named.get(key) and role.role != "page":
+            located.append((role, named[key]))
+    if not located:
+        located = works.from_positional(named)
+
+    for role, value in located:
+        label = _ROLE_LABEL.get(role.role)
+        if not label:
+            continue
+        work = f"{role.work} " if role.work else prefix
+        parts.append(f"{work}{label} {value}".strip())
+
+    # A qualifier can also *be* the instalment rather than qualify one:
+    # `{{Ref|movie=0}}` cites the film, which has no chapter at all.
+    for key, label in works.instalments.items():
+        value = named.get(key)
+        if value:
+            parts.append(f"{label} {value}".strip())
+
+    if named.get("fan"):
+        parts.append(named["fan"].strip())
+    if not parts:
+        return ""
+    return "(" + ", ".join(parts) + ")"
+
+
+def _strip_templates(
+    text: str,
+    inline_citations: bool = True,
+    ref_names: dict[str, dict[str, str]] | None = None,
+    works: CitationGrammar | None = None,
+) -> str:
     """Remove templates, keeping the prose from the transparent ones."""
     out: list[str] = []
     i = 0
@@ -422,11 +792,16 @@ def _strip_templates(text: str) -> str:
             out.append(text[start:])
             break
 
-        name, _, positional = parse_template(text[start + 2 : end - 2])
+        name, named, positional = parse_template(text[start + 2 : end - 2])
         lowered = name.strip().lower()
 
         if lowered.startswith(CITATION_TEMPLATES):
-            pass  # captured separately; never inlined
+            if inline_citations:
+                marker = _citation_marker(
+                    _resolve_ref(_with_positional(named, positional), ref_names), works
+                )
+                if marker:
+                    out.append(marker)
         elif lowered in TRANSPARENT_TEMPLATES:
             candidates = [p for p in positional if p and not p.startswith("[[Category")]
             if candidates:
@@ -437,7 +812,14 @@ def _strip_templates(text: str) -> str:
                     kept = candidates[-1]
                 else:
                     kept = " ".join(candidates)
-                out.append(_strip_templates(kept))
+                out.append(
+                    _strip_templates(
+                        kept,
+                        inline_citations=inline_citations,
+                        ref_names=ref_names,
+                        works=works,
+                    )
+                )
         # Everything else — navboxes, infoboxes, tabs — contributes no prose.
 
         i = end
@@ -558,7 +940,9 @@ def find_infobox(
 
 
 def facts_from_infobox(
-    params: dict[str, str], labels: dict[str, str] | None = None
+    params: dict[str, str],
+    labels: dict[str, str] | None = None,
+    ref_names: dict[str, dict[str, str]] | None = None,
 ) -> list[Fact]:
     """Turn infobox parameters into facts, keeping links and citations attached.
 
@@ -576,7 +960,7 @@ def facts_from_infobox(
         if key in {"image", "image gallery", "imagesize", "caption", "bgcolor", "color"}:
             continue
 
-        value = strip_markup(raw)
+        value = strip_markup(raw, inline_citations=False)
         if not value:
             continue
 
@@ -586,7 +970,7 @@ def facts_from_infobox(
                 value=value,
                 label=labels.get(key, ""),
                 links=extract_links(raw),
-                citations=extract_citations(raw),
+                citations=extract_citations(raw, ref_names),
                 raw=raw,
             )
         )
@@ -599,7 +983,11 @@ def facts_from_infobox(
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def split_sections(text: str, api_sections: list[dict] | None = None) -> tuple[str, list[Section]]:
+def split_sections(
+    text: str,
+    api_sections: list[dict] | None = None,
+    works: CitationGrammar | None = None,
+) -> tuple[str, list[Section]]:
     """Split a page into its lead and its sections.
 
     ``api_sections`` is the section tree from ``prop=sections``, which carries
@@ -617,8 +1005,18 @@ def split_sections(text: str, api_sections: list[dict] | None = None) -> tuple[s
                 except (TypeError, ValueError):
                     levels[line] = 2
 
+    # Collected once for the whole page: a `{{Ref|name=x}}` reuse and the
+    # definition that gives it a chapter are routinely in different sections.
+    ref_names = collect_ref_definitions(text)
+    ref_tags = collect_ref_tag_definitions(text)
+
     matches = list(_HEADING.finditer(text))
-    lead = strip_markup(text[: matches[0].start()] if matches else text)
+    lead = strip_markup(
+        text[: matches[0].start()] if matches else text,
+        ref_names=ref_names,
+        works=works,
+        ref_tags=ref_tags,
+    )
 
     sections: list[Section] = []
     ancestors: list[tuple[int, str]] = []
@@ -641,10 +1039,12 @@ def split_sections(text: str, api_sections: list[dict] | None = None) -> tuple[s
             index=str(index + 1),
             anchor=title.replace(" ", "_"),
             path=[name for _, name in ancestors],
-            text=strip_markup(body),
+            text=strip_markup(
+                body, ref_names=ref_names, works=works, ref_tags=ref_tags
+            ),
             wikitext=body,
             links=extract_links(body),
-            citations=extract_citations(body),
+            citations=extract_citations(body, ref_names),
         )
         sections.append(section)
         ancestors.append((level, title))

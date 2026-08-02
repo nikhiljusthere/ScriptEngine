@@ -120,6 +120,13 @@ class TestOverrides:
         assert ontology.is_skippable(["Candidates for deletion"])
         assert not ontology.is_skippable(["Jujutsu Sorcerers"])
 
+    def test_articles_needing_cleanup_does_not_skip_a_real_page(self):
+        # The three main character pages carry "Articles needing cleanup";
+        # skipping on a maintenance banner throws away the most-linked content.
+        ontology = build_ontology("https://example.fandom.com", JJK_TEMPLATES)
+        assert not ontology.is_skippable(["Articles needing cleanup"])
+        assert not ontology.is_skippable(["Articles needing citation"])
+
 
 class TestStructuralDiscovery:
     """Type discovery from page shape, which is what makes this wiki-agnostic."""

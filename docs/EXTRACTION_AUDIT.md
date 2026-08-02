@@ -1,8 +1,5 @@
 # Extraction audits
 
-> Audits land in Phase 1. This page explains what they will measure and why
-> those numbers were chosen.
-
 An audit answers one question: **did the extractor actually understand this
 wiki, or did it just produce output?**
 
@@ -29,6 +26,30 @@ Writes `series/<name>/audit/report.json` and prints a summary.
 | Sections captured | >1 per page | Section extraction is broken — the exact bug that killed the old pipeline |
 | Facts per page | 10–40 for characters | Near zero means infoboxes are being read but not converted |
 | Citations extracted | >0 on prose pages | `{{Ref}}` variants unhandled; citation text will leak into chunks |
+
+### Sourcing
+
+What a script can actually put a chapter and episode on. Measured the way
+`/context` measures it, through `scriptengine/retrieve/citations.py`, so the
+number is the one the writer will see rather than a count of `{{Ref}}` templates
+that may not have survived extraction.
+
+| Metric | Healthy | What a bad number means |
+|---|---|---|
+| Cited directly | >5% | The wiki's references are not reaching the prose at all |
+| Sentences w/ chapter | ≥25% corpus-wide, ~99% on a narrative page | References are being captured and then dropped downstream |
+| Sentences w/ episode | close to the chapter figure | The chapter/episode map is empty; check the `anime episode` and `adapted from` edges |
+| Chapters mapped to episodes | most adapted chapters | Episode pages were skipped by the crawl, or their infobox changed |
+
+The gap between "cited directly" and "sentences w/ chapter" is the inheritance:
+a reference covers the sentences before it. On Jujutsu Kaisen that is 14.6%
+against 54.7% corpus-wide, and 12.7% against 99.6% on the Shibuya Incident page —
+reference lists, episode tables and trivia sections carry no citations and never
+will, which is why the corpus-wide threshold is low.
+
+This exists because the failure already happened once: `{{Ref|chap=143}}` became
+a structured `Citation` and then vanished from every downstream text, so scripts
+had nothing to cite and no number moved.
 
 ### Graph integrity
 
@@ -57,10 +78,17 @@ documentation, embedded and indexed alongside Jujutsu Kaisen.
   "types": {"character": 31, "technique": 8, "battle": 6, "arc": 3, "unknown": 2},
   "coverage": {
     "typed": 0.96,
-    "infobox_parsed": 0.97,
+    "with_infobox": 0.97,
     "mean_sections": 7.4,
     "mean_facts": 22.1,
     "citations": 1840
+  },
+  "sourcing": {
+    "sentences": 48752,
+    "chapter_episode_map": 181,
+    "cited_directly": 0.146,
+    "with_chapter": 0.547,
+    "with_episode": 0.389
   },
   "graph": {"edges": 1204, "resolved": 0.93, "dangling": 84, "orphans": 11},
   "rejected": [
@@ -90,6 +118,10 @@ Work in this order:
 4. **Wrongly rejected pages** → adjust `skip_categories` in
    `series/<name>/overrides.yaml`. Not in Python. See
    [ADDING_A_SERIES.md](ADDING_A_SERIES.md).
+5. **Low sourcing** → the wiki cites but the locators are not reaching the
+   prose. Check `wikitext._citation_marker` against this wiki's `{{Ref}}`
+   parameter names, and `collect_ref_definitions` if its references are defined
+   once and reused by name.
 
 Re-run the audit after each change. Iterate until the numbers stop improving,
 then index the full corpus.

@@ -40,10 +40,33 @@ app = FastAPI(
 class ContextRequest(BaseModel):
     series: str
     query: str
-    mode: Literal["qa", "narrative"] = "qa"
+    mode: Literal["qa", "narrative", "roster", "auto"] = "qa"
     token_budget: int = Field(default=6000, ge=200, le=100_000)
+    top_k: int | None = Field(
+        default=None,
+        ge=1,
+        le=50,
+        description=(
+            "Passages to retrieve before budgeting. Defaults to the engine's "
+            "tuned value; raise for multi-entity questions that need recall. In "
+            "narrative mode it sets how many beats are gathered."
+        ),
+    )
     as_prompt: bool = Field(
         default=False, description="Also return the bundle rendered as plain text."
+    )
+    # The two choices the user makes before a script is written. They belong on
+    # the request because the rendered prompt states them: the writing rules are
+    # served with the context, not left in a document the client may not read.
+    words: int = Field(
+        default=0, ge=0, le=20_000, description="Target script length, in words."
+    )
+    intro: bool = Field(
+        default=True, description="Whether the script opens with a hook paragraph."
+    )
+    rules: bool = Field(
+        default=True,
+        description="Append the house style, voice and annotation rules to the prompt.",
     )
 
 
@@ -116,13 +139,42 @@ def context(request: ContextRequest) -> dict[str, Any]:
 
     Returns passages in the right order — narrative order when asked for it,
     not similarity order — with the facts behind them and a citation each.
+
+    `mode="auto"` reads the topic: "Every Rank of Curse" is a set and comes back
+    as a roster, anything else comes back as a narrative. Most script topics are
+    one or the other, and asking the caller to classify its own topic is asking
+    it to know which mode exists.
     """
+    from scriptengine.retrieve.roster import looks_like_enumeration
+
     paths = _paths_or_404(request.series)
+    mode = request.mode
+    if mode == "auto":
+        mode = "roster" if looks_like_enumeration(request.query) else "narrative"
+
     bundle = build_context(
-        paths, request.query, mode=request.mode, token_budget=request.token_budget
+        paths,
+        request.query,
+        mode=mode,
+        token_budget=request.token_budget,
+        top_k=request.top_k,
     )
+    # A roster with nothing in it is not an answer. Falling back keeps a topic
+    # phrased as a list ("Every fight in Shibuya") from returning an empty
+    # bundle when the wiki has no such set.
+    if mode == "roster" and not bundle.get("members") and request.mode == "auto":
+        bundle = build_context(
+            paths,
+            request.query,
+            mode="narrative",
+            token_budget=request.token_budget,
+            top_k=request.top_k,
+        )
+
     if request.as_prompt:
-        bundle["prompt"] = render_prompt(bundle)
+        bundle["prompt"] = render_prompt(
+            bundle, intro=request.intro, words=request.words, rules=request.rules
+        )
     return bundle
 
 
@@ -187,6 +239,29 @@ def facts(series: str, entity: str) -> dict[str, Any]:
                 for row in relations
             ],
         }
+
+
+@app.get("/abilities/{series}/{entity}")
+def abilities(series: str, entity: str) -> dict[str, Any]:
+    """Every ability a character uses, straight from the knowledge graph.
+
+    Walks the `user` edges backwards from the character to its ability pages
+    (the retriever cannot do this — prose ranking misses abilities when the
+    character's own page is not indexed). Each ability comes with its debut
+    chapter, its `Usage / <character>` section, and the chapter refs inside
+    that section — where the character actually used it, not just where it is
+    mentioned.
+    """
+    from scriptengine.retrieve.abilities import collect_abilities
+
+    paths = _paths_or_404(series)
+    result = collect_abilities(paths, entity)
+    if result is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No entity matching {entity!r} in {series!r}.",
+        )
+    return result
 
 
 @app.get("/timeline/{series}/{subject}")

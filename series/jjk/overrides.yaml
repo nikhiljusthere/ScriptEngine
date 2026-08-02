@@ -1,0 +1,24 @@
+# Per-wiki handling for the Jujutsu Kaisen wiki.
+#
+# The only place a wiki-specific decision may live. If a fix names a series and
+# sits in a .py file, it is in the wrong place — the next wiki breaks.
+
+# Which works this wiki's citations distinguish between.
+#
+# `Jujutsu Kaisen: Modulo` is a sequel, and its chapters are numbered from 1
+# again. The wiki says so on the reference itself:
+#
+#     {{Ref|modulo=y|chap=16|page=1}}
+#
+# Without this mapping the qualifier was dropped and the marker rendered
+# "(Chapter 16)" — the same string as the main series' Chapter 16. 427
+# references on this wiki carry it, and a script written from them would state
+# the wrong chapter with complete confidence.
+citation_works:
+  modulo: Modulo
+
+# Qualifiers that *are* the instalment rather than qualify one. `{{Ref|movie=0}}`
+# cites Jujutsu Kaisen 0, which has no chapter number at all; before this those
+# 18 references rendered nothing and their lines went unsourced.
+citation_instalments:
+  movie: Movie

@@ -24,7 +24,18 @@ from dataclasses import dataclass, field
 
 from scriptengine.ingest.documents import WikiPage
 
-_SENTENCE = re.compile(r'(?<=[.!?])["\']?\s+(?=["\']?[A-Z0-9])')
+# A sentence ends at `.!?`, optionally followed by a closing quote and by the
+# citation locator the wiki put there. Without the locator branch the split
+# never fires after "…took over Geto's body.(Chapter 145, Episode 50) Now known
+# as…", because the character before the space is `)`, and two sentences merge
+# into one chunk — and, worse, into one citation, so the sentence the ref
+# actually covers cannot be told from the one after it.
+_SENTENCE_BREAK = re.compile(
+    r'(?<=[.!?])'
+    r'(?P<tail>["\']?(?:\((?:[A-Z][A-Za-z\']*\s)?(?:Chapter|Episode|Volume)'
+    r'\s[\d.\-]+(?:,\s*[^)]*)?\))?)'
+    r'\s+(?=["\']?[A-Z0-9])'
+)
 
 # Wiki prose is dense with abbreviations that end in a full stop — "Vol. 5",
 # "Ch. 12", "9:15 P.M. Shibuya". Splitting after them chops sentences in half.
@@ -63,8 +74,21 @@ class Chunk:
 
 
 def split_sentences(text: str) -> list[str]:
-    """Split into sentences, keeping abbreviations intact."""
-    parts = [part.strip() for part in _SENTENCE.split(text) if part.strip()]
+    """Split into sentences, keeping abbreviations and citation markers intact."""
+    pieces: list[str] = []
+    start = 0
+    for match in _SENTENCE_BREAK.finditer(text or ""):
+        # The locator belongs to the sentence it cites, so the cut is made after
+        # it, not before.
+        piece = text[start : match.end("tail")].strip()
+        if piece:
+            pieces.append(piece)
+        start = match.end()
+    tail = (text or "")[start:].strip()
+    if tail:
+        pieces.append(tail)
+
+    parts = [part for part in pieces if part]
     if not parts:
         return []
 

@@ -23,6 +23,8 @@ from collections import Counter
 from dataclasses import dataclass, field
 from typing import Any, Iterable
 
+from scriptengine.ingest.wikitext import CitationGrammar
+
 # Trailing words to drop when turning a template name into a type:
 # "Character Infobox" -> "character", "Infobox Person" -> "person".
 _INFOBOX_WORD = re.compile(r"\b(infobox|info box|template)\b", re.IGNORECASE)
@@ -38,9 +40,14 @@ MIN_INFOBOX_FIELDS = 5
 
 # Categories that mark a page as maintenance or media rather than content.
 # These are MediaWiki-wide conventions, not per-wiki choices.
+#
+# "articles needing" is deliberately absent. Maintenance banners like
+# "Articles needing cleanup" sit on real pages — on Jujutsu Kaisen the three
+# main character pages (Yuji Itadori, Satoru Gojo, Sukuna) all carry it — and
+# skipping on a maintenance banner throws away the wiki's most-linked content.
 _SKIP_CATEGORY_PATTERNS = (
     "images", "gallery", "galleries", "candidates for deletion",
-    "articles needing", "stubs", "disambiguation", "blog posts",
+    "stubs", "disambiguation", "blog posts",
     "browse", "site maintenance", "templates", "wiki",
 )
 
@@ -79,6 +86,11 @@ class Ontology:
     # How many pages nominated each template as their infobox. Kept for the
     # audit: it shows what discovery saw, including what it rejected.
     infobox_votes: dict[str, int] = field(default_factory=dict)
+    # Which works this wiki's citations distinguish between — a sequel restarts
+    # its chapter numbering, so `{{Ref|modulo=y|chap=16}}` is not Chapter 16.
+    # The names are per-wiki, so they come from overrides; see
+    # `wikitext.CitationGrammar`.
+    citation_works: CitationGrammar = field(default_factory=CitationGrammar)
 
     @property
     def types(self) -> list[str]:
@@ -192,6 +204,7 @@ def build_ontology(
     ontology.skip_categories = {
         str(c).lower() for c in (overrides.get("skip_categories") or [])
     }
+    ontology.citation_works = CitationGrammar.from_overrides(overrides)
     return ontology
 
 
@@ -275,6 +288,7 @@ def discover_infoboxes(
     ontology.skip_categories = {
         str(c).lower() for c in (overrides.get("skip_categories") or [])
     }
+    ontology.citation_works = CitationGrammar.from_overrides(overrides)
     ontology.infobox_votes = dict(votes.most_common(40))
     return ontology
 

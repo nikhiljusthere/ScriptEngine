@@ -1,0 +1,17 @@
+# Per-wiki handling for Hunterpedia.
+
+# Hunterpedia cites in prose inside an HTML `<ref>` tag, and reuses each one by
+# name heavily — 243 reuses against 141 definitions in a 19-page sample, so
+# reading only the definition sites would leave most cited lines unsourced:
+#
+#     <ref name="chap319">Hunter × Hunter - Volume 30, Chapter 319</ref>
+#     <ref name="chap319"></ref>
+#     <ref>Hunter × Hunter - Episode 58 (2011)</ref>
+#
+# The chapter is what a script tags with, so the volume in the same string is
+# deliberately not captured.
+citation_ref_tags:
+  - match: '-\s*Episode\s+([\d.\-]+)'
+    as: episode
+  - match: 'Chapter\s+([\d.\-]+)'
+    as: chapter

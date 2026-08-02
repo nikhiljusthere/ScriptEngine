@@ -1,0 +1,21 @@
+# Per-wiki handling for the One-Punch Man wiki.
+
+# One-Punch Man exists twice over: the webcomic ONE draws and the manga Murata
+# redraws from it. They share a story and not a numbering, and the wiki keeps
+# them apart on the reference itself:
+#
+#     {{ref|ch = 20|p = 27}}    manga chapter 20
+#     {{ref|wch = 44}}          webcomic chapter 44
+#
+# Rendering both as "(Chapter N)" would put two different scenes behind the same
+# tag, which is the same failure the Modulo qualifier fixes on Jujutsu Kaisen.
+citation_params:
+  ch: {as: chapter}
+  wch: {as: chapter, work: Webcomic}
+  p: {as: page}
+  wp: {as: page}          # the webcomic's page, and page numbers stay out of prose
+  vol: {as: volume}
+
+# Deliberately unmapped: `cep`, which appears twice on the whole wiki alongside
+# `ch` and whose meaning is not recoverable from usage. Guessing it is an episode
+# would put a number nobody verified into a script.

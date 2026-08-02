@@ -1,0 +1,106 @@
+{
+  "1": {
+    "inputs": {
+      "clip_name": "",
+      "type": "krea2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load LLM (pick your model)"
+    },
+    "pos": [
+      40,
+      100
+    ]
+  },
+  "2": {
+    "inputs": {
+      "query": [
+        "3",
+        0
+      ],
+      "series": "jjk",
+      "mode": "narrative",
+      "intro": true,
+      "token_budget": 6000,
+      "base_url": "http://127.0.0.1:8000",
+      "llm_max_length": 2048,
+      "temperature": 0.6,
+      "seed": 1,
+      "clip": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ScriptEngineAnswer",
+    "_meta": {
+      "title": "ScriptEngine RAG Answer"
+    },
+    "pos": [
+      380,
+      100
+    ]
+  },
+  "3": {
+    "inputs": {
+      "value": "Shibuya Incident"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "Question / Arc"
+    },
+    "pos": [
+      40,
+      320
+    ]
+  },
+  "4": {
+    "inputs": {
+      "source": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "Answer"
+    },
+    "pos": [
+      780,
+      20
+    ]
+  },
+  "5": {
+    "inputs": {
+      "source": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "RAG Context"
+    },
+    "pos": [
+      780,
+      260
+    ]
+  },
+  "6": {
+    "inputs": {
+      "source": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "LLM Prompt"
+    },
+    "pos": [
+      780,
+      500
+    ]
+  }
+}

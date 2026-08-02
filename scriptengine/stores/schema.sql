@@ -45,6 +45,19 @@ CREATE TABLE IF NOT EXISTS sections (
 
 CREATE INDEX IF NOT EXISTS idx_sections_document ON sections(document_id, ordinal);
 
+-- Category membership, as the wiki publishes it. A category is a set an editor
+-- assembled by hand — "Cursed Spirits", "Domain Expansions", "Curse Users" —
+-- which is what an enumeration script ("Every X") needs and what prose
+-- retrieval cannot produce: ranking eight similar passages never yields a
+-- complete set. Crawled all along on `WikiPage.categories`, never indexed.
+CREATE TABLE IF NOT EXISTS categories (
+    document_id  INTEGER NOT NULL REFERENCES documents(id) ON DELETE CASCADE,
+    category     TEXT NOT NULL,
+    PRIMARY KEY (document_id, category)
+);
+
+CREATE INDEX IF NOT EXISTS idx_categories_name ON categories(category);
+
 -- ── Graph ───────────────────────────────────────────────────────────────────
 
 -- A node may exist without a document behind it: a page can link somewhere that

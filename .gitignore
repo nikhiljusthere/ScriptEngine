@@ -130,3 +130,11 @@ logs/
 **/logs/
 
 *.log
+# =========================
+# ScriptEngine working output
+# =========================
+
+# Fetched research context: regenerable from the index in one command, and
+# nearly 100 KB of wiki prose per fetch. Finished scripts are filed into the
+# production tree (SCRIPTENGINE_SCRIPTS_ROOT), not here.
+scripts output/

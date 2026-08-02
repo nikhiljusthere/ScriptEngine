@@ -24,6 +24,18 @@ MIN_TYPED_RATIO = 0.90
 MIN_SECTIONS_PER_PAGE = 1.5      # at or below 1, section splitting has failed
 MIN_RESOLVED_EDGE_RATIO = 0.70
 
+# Share of prose sentences that must resolve to a chapter on a wiki that cites
+# at all. Deliberately low: reference lists, episode tables and trivia sections
+# carry no citations and never will. It exists to catch the failure this project
+# has already had once — citations captured as structured objects and then
+# dropped from every downstream text, so the scripts had nothing to cite.
+MIN_SOURCED_SENTENCE_RATIO = 0.25
+
+# Share of citation parameters the extractor must account for. Not 100%: wikis
+# carry one-off parameters nobody can identify, and inventing a meaning for one
+# is worse than ignoring it.
+MIN_UNDERSTOOD_PARAM_RATIO = 0.99
+
 
 def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
     """Measure extraction quality for a crawled series."""
@@ -63,6 +75,9 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
 
     edges = [edge for page in pages for edge in page.edges]
     resolved = sum(1 for edge in edges if edge.target in known_titles)
+    sourcing = _citation_coverage(pages, edges)
+    sourcing["unknown_qualifiers"] = _unknown_qualifiers(pages, ontology)
+    sourcing["refs_with_locator"] = _refs_with_locator(pages, ontology)
 
     empty_pages = [page.title for page in pages if not page.word_count]
     no_sections = [page.title for page in pages if not page.sections]
@@ -85,6 +100,9 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
             "mean_words": round(sum(p.word_count for p in pages) / len(pages)),
             "citations": total_citations,
         },
+        # What a script can actually cite. A citation that never reaches the
+        # prose is a citation the writer cannot use.
+        "sourcing": sourcing,
         "graph": {
             "edges": len(edges),
             "resolved": round(resolved / len(edges), 3) if edges else 0.0,
@@ -130,10 +148,124 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
     return report
 
 
+def _citation_coverage(pages: list[WikiPage], edges: list[Any]) -> dict[str, Any]:
+    """How much of the prose a script could put a chapter and episode on.
+
+    Measured the way the context builder measures it, through
+    `retrieve/citations.py`: a reference covers the sentences before it, and a
+    chapter resolves to its episode through the wiki's own adaptation edges. So
+    this number is the one the writer will actually see, not a count of
+    reference templates that may or may not have survived extraction.
+    """
+    from scriptengine.retrieve.citations import EpisodeIndex, coverage
+
+    mapping: dict[str, str] = {}
+    for edge in edges:
+        if edge.relation == "anime episode":
+            chapter, episode = edge.source, edge.target
+        elif edge.relation == "adapted from":
+            chapter, episode = edge.target, edge.source
+        else:
+            continue
+        chapter = _instalment(chapter, "Chapter")
+        episode = _instalment(episode, "Episode")
+        if chapter and episode:
+            mapping.setdefault(chapter, episode)
+
+    index = EpisodeIndex(mapping)
+    totals = {"sentences": 0, "with_chapter": 0, "with_episode": 0, "cited_directly": 0}
+    for page in pages:
+        for section in page.sections:
+            for key, value in coverage(section.text, index).items():
+                totals[key] += value
+
+    sentences = totals["sentences"] or 1
+    return {
+        "sentences": totals["sentences"],
+        "chapter_episode_map": len(mapping),
+        "with_chapter": round(totals["with_chapter"] / sentences, 3),
+        "with_episode": round(totals["with_episode"] / sentences, 3),
+        "cited_directly": round(totals["cited_directly"] / sentences, 3),
+    }
+
+
+def _unknown_qualifiers(pages: list[WikiPage], ontology: Any) -> dict[str, int]:
+    """Reference parameters the extractor does not know what to do with.
+
+    This is the audit that would have caught the Modulo bug on day one. The wiki
+    wrote ``{{Ref|modulo=y|chap=16}}``; the extractor understood `chap`, ignored
+    `modulo`, and rendered "(Chapter 16)" — indistinguishable from the main
+    series' Chapter 16, on 427 references. Nothing failed, and the wrong chapter
+    number was available to every script.
+
+    A parameter that is neither a locator, nor a page number, nor a configured
+    work qualifier is a statement about the citation that is being dropped. It
+    might be harmless. It might be renumbering the whole manga.
+    """
+    from scriptengine.ingest.wikitext import (
+        EXTERNAL_PARAMS,
+        LOCATOR_PARAMS,
+        _normalise_param,
+        is_page_param,
+    )
+
+    works = getattr(ontology, "citation_works", None)
+    known = {
+        _normalise_param(k)
+        for k in LOCATOR_PARAMS | EXTERNAL_PARAMS | (works.known_params if works else set())
+    }
+
+    counts: Counter = Counter()
+    total = 0
+    for page in pages:
+        citations = [
+            *page.citations,
+            *(citation for section in page.sections for citation in section.citations),
+            *(citation for fact in page.facts for citation in fact.citations),
+        ]
+        for citation in citations:
+            for key in citation.params:
+                total += 1
+                if (
+                    key.startswith("_")
+                    or _normalise_param(key) in known
+                    or is_page_param(key)
+                ):
+                    continue
+                counts[key] += 1
+    return {"params": dict(counts.most_common(10)), "total": total}
+
+
+def _refs_with_locator(pages: list[WikiPage], ontology: Any) -> int:
+    """How many of this wiki's references name an instalment at all.
+
+    The difference between a bug and a fact about the wiki. Berserk carries 36
+    citations across 491 pages and almost every one of them points at cover art,
+    a calendar or an interview — so 0% sourced prose there is the wiki's own
+    habit, not a locator this project failed to read. Bleach and Hunterpedia cite
+    a chapter on nearly every sentence, so 0% there would mean something broke.
+    """
+    from scriptengine.ingest.wikitext import _citation_marker
+
+    grammar = getattr(ontology, "citation_works", None)
+    found = 0
+    for page in pages:
+        for citation in page.citations:
+            if _citation_marker(citation.params, grammar):
+                found += 1
+    return found
+
+
+def _instalment(title: str, kind: str) -> str:
+    prefix = f"{kind} "
+    return title[len(prefix):].strip() if title.startswith(prefix) else ""
+
+
 def _run_checks(report: dict[str, Any], capped: bool = False) -> list[dict[str, Any]]:
     """Turn the raw numbers into pass/fail verdicts with an explanation."""
     coverage = report["coverage"]
     graph = report["graph"]
+    sourcing = report["sourcing"]
 
     checks = [
         {
@@ -157,7 +289,69 @@ def _run_checks(report: dict[str, Any], capped: bool = False) -> list[dict[str, 
             "passed": graph["resolved"] >= MIN_RESOLVED_EDGE_RATIO,
             "meaning": "wikilink targets are not matching crawled titles; check redirects",
         },
+        {
+            "name": "prose sentences sourced",
+            "value": sourcing["with_chapter"],
+            "threshold": MIN_SOURCED_SENTENCE_RATIO,
+            "passed": sourcing["with_chapter"] >= MIN_SOURCED_SENTENCE_RATIO,
+            "meaning": (
+                "the wiki cites its prose but the locators are not reaching it, "
+                "so scripts cannot tag a line with its chapter and episode"
+            ),
+        },
     ]
+
+    # Measured as a share rather than a count. A parameter this wiki reaches for
+    # constantly and the extractor ignores is the signal — `modulo` was 916 of
+    # Jujutsu Kaisen's references, renumbering a whole sequel. Two stray uses of
+    # something nobody can identify is not worth failing a corpus over, and
+    # guessing what they mean is how a wrong chapter reaches a script.
+    unknown = (sourcing.get("unknown_qualifiers") or {}).get("params") or {}
+    total = max((sourcing.get("unknown_qualifiers") or {}).get("total", 0), 1)
+    share = sum(unknown.values()) / total
+    checks.append(
+        {
+            "name": "citation parameters understood",
+            "value": round(1 - share, 3),
+            "threshold": MIN_UNDERSTOOD_PARAM_RATIO,
+            "passed": share <= 1 - MIN_UNDERSTOOD_PARAM_RATIO,
+            "meaning": (
+                "these reference parameters are dropped: "
+                + ", ".join(f"{key} ({count})" for key, count in unknown.items())
+                + ". If one names a sequel or a spin-off, its chapters are being "
+                "cited as if they belonged to the main series. Map it in "
+                "series/<name>/overrides.yaml under citation_params."
+            ),
+        }
+    )
+
+    if not coverage["citations"]:
+        # A wiki that cites nothing cannot fail a citation check.
+        for check in checks:
+            if check["name"] in {"prose sentences sourced", "citation parameters understood"}:
+                check["passed"] = True
+                check["skipped"] = True
+                check["meaning"] = "not checked: this wiki carries no citation templates"
+    elif not (
+        sourcing.get("refs_with_locator")
+        or sourcing.get("with_chapter")
+        or sourcing.get("with_episode")
+    ):
+        # It cites, but never with a chapter or an episode. Berserk cites cover
+        # art and interviews. Failing here would report the wiki's habits as
+        # this project's bug, and the number that matters is already visible.
+        #
+        # The measured coverage is part of the test on purpose: `<ref>` tags are
+        # not template citations, so a wiki that sources everything through them
+        # has `refs_with_locator == 0` and 84% of its prose sourced.
+        for check in checks:
+            if check["name"] == "prose sentences sourced":
+                check["passed"] = True
+                check["skipped"] = True
+                check["meaning"] = (
+                    "not checked: none of this wiki's references name a chapter "
+                    "or an episode, so its scripts cannot carry instalment tags"
+                )
 
     if capped:
         # On a --max-pages run most of the wiki was never enumerated, so links

@@ -10,12 +10,13 @@ from __future__ import annotations
 
 import json
 import sys
+from pathlib import Path
 
 import typer
 from rich.console import Console
 from rich.table import Table
 
-from scriptengine.config import get_settings, series_paths
+from scriptengine.config import get_settings, script_destination, series_paths
 
 app = typer.Typer(
     add_completion=False,
@@ -121,6 +122,7 @@ def audit(
         raise typer.Exit(code=1)
 
     coverage, graph = report["coverage"], report["graph"]
+    sourcing = report["sourcing"]
 
     summary = Table(title=f"Extraction audit — {series} ({report['sampled']} pages)")
     summary.add_column("metric")
@@ -133,6 +135,13 @@ def audit(
     summary.add_row("citations", f"{coverage['citations']}")
     summary.add_row("edges", f"{graph['edges']}")
     summary.add_row("edges resolved", f"{graph['resolved']:.1%}")
+    # What a script can put a tag on. `cited directly` is where the wiki wrote a
+    # reference; `sentences w/ chapter` is what those references cover once each
+    # one is read as covering the sentences before it.
+    summary.add_row("cited directly", f"{sourcing['cited_directly']:.1%}")
+    summary.add_row("sentences w/ chapter", f"{sourcing['with_chapter']:.1%}")
+    summary.add_row("sentences w/ episode", f"{sourcing['with_episode']:.1%}")
+    summary.add_row("chapters mapped to episodes", f"{sourcing['chapter_episode_map']}")
     console.print(summary)
 
     types = Table(title="Discovered page types")
@@ -214,23 +223,130 @@ def index(
 
 
 @app.command()
+def verify(
+    script: str = typer.Argument(..., help="Path to the finished script."),
+    series: str = typer.Option(..., "--series"),
+) -> None:
+    """Check a script's chapter and episode tags against the crawled wiki.
+
+    The engine offers locators; the writer picks which one goes on a line, and a
+    writer with ten thousand words of context in front of it is exactly the kind
+    of thing that produces a confident wrong number. Checked against the raw
+    crawl, not the index, so an indexing bug cannot make a bad tag look fine.
+    """
+    from scriptengine.eval.verify import verify_script
+
+    path = Path(script)
+    if not path.exists():
+        console.print(f"[red]No such script: {script}[/red]")
+        raise typer.Exit(code=1)
+
+    paths = series_paths(series)
+    report = verify_script(path.read_text(encoding="utf-8"), paths)
+
+    console.print(
+        f"[dim]{report['tags']} tags, {report['distinct']} distinct, "
+        f"checked against {series}[/dim]\n"
+    )
+    for finding in report["findings"]:
+        console.print(f"  [red]FAIL[/red]  {finding['tag']}")
+        for issue in finding["issues"]:
+            console.print(f"          [dim]{issue}[/dim]")
+
+    if report["passed"]:
+        console.print("[green]Every tag checks out against the raw wiki pages.[/green]")
+    else:
+        console.print(
+            f"\n[red]{len(report['findings'])} tag(s) failed verification.[/red]"
+        )
+        raise typer.Exit(code=1)
+
+
+@app.command()
+def script_path(
+    title: str = typer.Argument(..., help="The script's title line, without the ** **."),
+    create: bool = typer.Option(
+        False, "--create", help="Create the folder as well as printing the path."
+    ),
+) -> None:
+    """Where a finished script should be saved.
+
+    Finished scripts live in the production tree, one numbered folder per video,
+    beside that video's audio, images and storyboard. Asking rather than guessing
+    keeps a rewrite from landing in a second folder for the same script.
+    """
+    destination = script_destination(title)
+    if create:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+    console.print(str(destination))
+
+
+@app.command()
+def export(
+    series: str = typer.Option(..., "--series"),
+    min_confidence: float = typer.Option(
+        0.4, "--min-confidence", help="Drop edges below this confidence. 0.95 = infobox only."
+    ),
+    out: str = typer.Option(
+        "", "--out", help="Vault directory; defaults to series/<name>/obsidian/."
+    ),
+    no_documents: bool = typer.Option(
+        False, "--no-documents", help="Write node files only, skip readable pages."
+    ),
+) -> None:
+    """Export the series' graph to an Obsidian vault."""
+    from scriptengine.export import export_obsidian
+
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    report = export_obsidian(
+        paths,
+        out_dir=out or None,
+        min_confidence=min_confidence,
+        include_documents=not no_documents,
+    )
+    console.print(
+        f"[green]Wrote {report['nodes']:,} node files[/green] "
+        f"({report['stubs']:,} unresolved stubs), "
+        f"{report['documents']:,} document files, "
+        f"{report['edges']:,} edges at >= {min_confidence:g} confidence"
+    )
+    console.print(f"Vault: {report['vault']}")
+    console.print("Open it in Obsidian: Open folder as vault.")
+
+
+@app.command()
 def query(
     question: str = typer.Argument(...),
     series: str = typer.Option(..., "--series"),
     top_k: int = typer.Option(0, "--top-k", help="Passages to return."),
     no_rerank: bool = typer.Option(False, "--no-rerank", help="Skip the cross-encoder."),
     show_facts: bool = typer.Option(True, "--facts/--no-facts"),
+    mode: str = typer.Option(
+        "qa",
+        "--mode",
+        help="qa | narrative | roster | auto — the shape of the answer, as on /context.",
+    ),
 ) -> None:
     """Retrieve context for a question."""
     import logging
-
-    from scriptengine.retrieve.hybrid import HybridRetriever
 
     logging.disable(logging.INFO)
     paths = series_paths(series)
     if not paths.facts_db.exists():
         console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
         raise typer.Exit(code=1)
+
+    # A script topic is answered in whichever shape it needs, and checking that
+    # from the CLI has to mean the same thing it means over HTTP.
+    if mode != "qa":
+        _show_bundle(paths, question, mode, top_k)
+        return
+
+    from scriptengine.retrieve.hybrid import HybridRetriever
 
     with HybridRetriever(paths) as retriever:
         result = retriever.search(
@@ -264,6 +380,52 @@ def query(
             f"(score {passage.score:.3f}, via {'+'.join(passage.sources)})[/dim]"
         )
         console.print(f"   {passage.text[:400]}\n")
+
+
+def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
+    """Print a narrative or roster bundle the way `/context` assembles it."""
+    from scriptengine.api.context import build_context
+    from scriptengine.retrieve.roster import looks_like_enumeration
+
+    if mode == "auto":
+        mode = "roster" if looks_like_enumeration(question) else "narrative"
+
+    bundle = build_context(
+        paths, question, mode=mode, token_budget=24000, top_k=top_k or None
+    )
+    if mode == "roster" and not bundle["members"]:
+        console.print("[yellow]No such set on this wiki; falling back to narrative.[/yellow]")
+        bundle = build_context(paths, question, mode="narrative", token_budget=24000)
+
+    console.print(f"[dim]mode:[/dim] {bundle['mode']}   [dim]subject:[/dim] {bundle['subject']}")
+    if bundle.get("basis"):
+        console.print(f"[dim]set:[/dim] {bundle['basis']}")
+    console.print(f"[dim]tokens:[/dim] {bundle['tokens_used']}\n")
+
+    if bundle.get("members"):
+        table = Table(title=f"Members ({len(bundle['members'])})")
+        table.add_column("group")
+        table.add_column("member")
+        table.add_column("debut")
+        table.add_column("sourced")
+        for member in bundle["members"]:
+            table.add_row(
+                member.get("group", ""), member["name"],
+                member.get("debut", ""), member.get("source_span", ""),
+            )
+        console.print(table)
+        return
+
+    if not bundle["beats"]:
+        console.print("[yellow]Nothing retrieved.[/yellow]")
+        return
+
+    for beat in bundle["beats"]:
+        console.print(
+            f"[bold]{beat['title']}[/bold] [dim]— {beat['doc_title']}"
+            f"{'  sourced: ' + beat['source_span'] if beat.get('source_span') else ''}[/dim]"
+        )
+        console.print(f"   {beat['text'][:300]}\n")
 
 
 @app.command()

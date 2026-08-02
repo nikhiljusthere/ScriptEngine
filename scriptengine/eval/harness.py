@@ -58,18 +58,24 @@ def evaluate(
 ) -> dict[str, Any]:
     """Run every gold question and score it."""
     from scriptengine.retrieve.hybrid import HybridRetriever
-    from scriptengine.retrieve.narrative import NarrativeRetriever
 
     settings = settings or get_settings()
     gold = load_gold(paths.name)
     results: list[dict[str, Any]] = []
 
+    handlers = {
+        "narrative": _evaluate_narrative,
+        "roster": _evaluate_roster,
+        "sourcing": _evaluate_sourcing,
+    }
+
     with HybridRetriever(paths, settings) as retriever:
         for question in gold["questions"]:
             started = time.monotonic()
 
-            if question["kind"] == "narrative":
-                outcome = _evaluate_narrative(paths, question)
+            handler = handlers.get(question["kind"])
+            if handler is not None:
+                outcome = handler(paths, question)
             else:
                 outcome = _evaluate_retrieval(retriever, question, top_k)
 
@@ -162,6 +168,69 @@ def _evaluate_narrative(paths: SeriesPaths, question: dict[str, Any]) -> dict[st
         "in_order": in_order,
         "has_times": any(beat.time for beat in narrative.beats),
         "participants": narrative.participants[:5],
+    }
+
+
+def _evaluate_roster(paths: SeriesPaths, question: dict[str, Any]) -> dict[str, Any]:
+    """Did the topic come back as the set it names?
+
+    Scored on membership rather than on ranking, because a roster is only right
+    when it is complete: "Every Rank of Curse" returning eight of twenty-two
+    curses is a different script, not a slightly worse one.
+    """
+    from scriptengine.retrieve.roster import build_roster
+
+    roster = build_roster(paths, question["question"])
+    names = [member.name for member in roster.members]
+
+    members_ok = all(
+        expected in names for expected in question.get("expect_members") or []
+    )
+    groups_ok = all(
+        expected in roster.groups for expected in question.get("expect_groups") or []
+    )
+    enough = len(roster.members) >= question.get("expect_min_members", 1)
+
+    return {
+        "passed": members_ok and groups_ok and enough,
+        "subject": roster.subject,
+        "basis": roster.basis,
+        "members": len(roster.members),
+        "groups": roster.groups[:6],
+        "missing": [
+            expected
+            for expected in question.get("expect_members") or []
+            if expected not in names
+        ],
+    }
+
+
+def _evaluate_sourcing(paths: SeriesPaths, question: dict[str, Any]) -> dict[str, Any]:
+    """Can a script tag every block of this topic with a chapter and episode?
+
+    The regression guard for the failure that has already happened once here:
+    references captured as structured objects and then dropped from every
+    downstream text, so the scripts had nothing to cite and no number moved.
+    """
+    from scriptengine.retrieve.narrative import NarrativeRetriever
+
+    with NarrativeRetriever(paths) as retriever:
+        narrative = retriever.timeline(question["question"], max_beats=40)
+
+    if not narrative.beats:
+        return {"passed": False, "beats": 0, "sourced": 0}
+
+    sourced = sum(1 for beat in narrative.beats if beat.source_span)
+    ratio = sourced / len(narrative.beats)
+    with_episode = sum(1 for beat in narrative.beats if "Episode" in beat.source_span)
+
+    return {
+        "passed": ratio >= question.get("expect_sourced_ratio", 0.9),
+        "beats": len(narrative.beats),
+        "sourced": sourced,
+        "ratio": round(ratio, 3),
+        "with_episode": with_episode,
+        "subject": narrative.subject,
     }
 
 

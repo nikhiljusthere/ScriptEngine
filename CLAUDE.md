@@ -2,10 +2,12 @@
 
 A universal knowledge engine over Fandom wikis. It ingests a wiki, derives that
 wiki's own entity taxonomy from the wiki itself, and serves ordered, cited,
-structured context over HTTP to a local Qwen/Gemma running in ComfyUI, which is
-what actually writes the video scripts.
+structured context over HTTP to whatever writes the video scripts — an AI
+assistant driving `POST /context` directly, or the legacy ComfyUI node.
 
-**ScriptEngine does not write scripts.** It feeds the model that does.
+**ScriptEngine does not write scripts.** It feeds the model that does, and it
+serves the writing rules (`scriptengine/api/rules.py`) alongside the research so
+the contract travels with the context.
 
 ## Start here
 
@@ -40,7 +42,10 @@ python -m scriptengine.cli audit  --series jjk        # ALWAYS before indexing
 python -m scriptengine.cli index  --series jjk        # add --no-embed to skip the GPU
 python -m scriptengine.cli query  --series jjk "question"
 python -m scriptengine.cli timeline --series jjk "Shibuya Incident"
+python -m scriptengine.cli export --series jjk        # Obsidian vault in series/jjk/obsidian/
 python -m scriptengine.cli eval   --series jjk        # regression suite
+python -m scriptengine.cli script-path "Title" --create   # where a script goes
+python -m scriptengine.cli verify "<script>" --series jjk # check its tags
 python -m scriptengine.api.main                       # serve on :8000
 
 python -m pytest tests/ -q
@@ -57,12 +62,31 @@ re-crawling.
   the output, not by reading code. Tables being silently deleted, `{{Ruby}}`
   returning furigana, stale Qdrant vectors resolving to unrelated text — all
   found by looking at results.
+- **Scripts must not sound AI-written.** `docs/ANTI_AI_SCRIPTING.md` distills
+  Wikipedia:Signs of AI writing for spoken narration. Its rules live in
+  `scriptengine/api/rules.py` (`VOICE_RULES`) and are appended to every context
+  bundle; when reviewing or generating script output, apply the audit at the
+  bottom of that doc.
+- **Every line of a script must be traceable to a chapter.** The `sourced:`
+  header on each beat is computed in `scriptengine/retrieve/citations.py` by
+  reading each `{{Ref}}` as covering the sentences before it and resolving the
+  chapter to its episode through the graph. Numbers are looked up, never
+  inferred: a chapter the anime never adapted gets no episode. `cli audit`
+  reports the coverage and fails when citations stop reaching the prose.
 - **Run `eval` after touching chunking, fusion, retrieval or the parser.** It is
   a regression suite, not a scoreboard. If a gold question is wrong, fix the
   question and record why in `gold_jjk.json` — do not tune the retriever to make
   one ambiguous prompt go green.
 - **Run `audit` before `index`.** A broken extractor is silent; that is the
-  failure mode the audit exists to catch.
+  failure mode the audit exists to catch. On a new wiki, read `cited directly`
+  and `sentences w/ chapter` first: they are how you find out that this wiki
+  cites in a shape nothing here reads yet.
+- **Never guess what a citation parameter means.** One-Punch Man's `cep` appears
+  twice on the whole wiki and is deliberately left unmapped. A guessed mapping
+  puts a number nobody verified into a finished script, which is worse than an
+  untagged line.
+- **Verify a finished script's tags** with `cli verify` before calling it done.
+  It reads the raw crawl rather than the index.
 - **Comments explain why, not what.** Where a line exists because of a specific
   bug, the comment says which bug. Keep that.
 - **Do not add a dependency without a caller.** The previous `config.py`
@@ -74,10 +98,12 @@ re-crawling.
 scriptengine/
   config.py       settings; every value has a caller
   ingest/         crawler, wikitext parser, ontology discovery, audit
-  stores/         SQLite facts+graph+FTS5, Qdrant local vectors
+  stores/         SQLite facts+graph+FTS5+categories, Qdrant local vectors
   index/          section-driven chunking, embedding, build
-  retrieve/       hybrid (relevance) and narrative (chronological) retrieval
-  api/            FastAPI on :8000 — /context is the endpoint that matters
+  retrieve/       hybrid (relevance), narrative (chronological) and roster
+                  (enumeration) retrieval, plus citations (chapter/episode)
+  api/            FastAPI on :8000 — /context is the endpoint that matters,
+                  rules.py is the script-writing contract it serves
   eval/           gold question set and scoring harness
 series/<name>/    self-contained corpus + stores (gitignored)
 legacy/           the retired pipeline, kept for reference
@@ -96,9 +122,20 @@ cannot share VRAM.
 
 ## Status
 
-Phases 0–6 complete. On the Jujutsu Kaisen wiki: 984 pages, 98.9% typed,
-9,804 facts, 34,417 edges at 95.4% resolved, eval 21/21. Chainsaw Man reaches
-90.9% typed with no CSM-specific code.
+Six wikis indexed, 8,113 pages: Jujutsu Kaisen, Bleach, Hunterpedia,
+One-Punch Man, Berserk, Chainsaw Man. All six type above 90%; five of the six
+source a third to a half of their prose to a chapter. Eval 24/24 on `jjk`.
+
+Adding the five needed no series-specific Python. What each one *did* need was a
+description of how it writes a citation, because no two of these wikis agree —
+Chainsaw Man is positional, One-Punch Man numbers a webcomic and a manga apart,
+and Bleach, Hunterpedia and Berserk put the locator in prose inside an HTML
+`<ref>`. That vocabulary lives in `series/<name>/overrides.yaml`; the mechanism
+is `wikitext.CitationGrammar`.
+
+Berserk sources 0% and that is the wiki, not the pipeline: it cites cover art
+and interviews rather than instalments, so a Berserk script cannot carry
+chapter tags. `audit` says which of the two it is.
 
 Open: Marvel is a legacy wiki using Lua modules and `Marvel Database:Character
 Template`; structural discovery should reach it but has not been re-tested since

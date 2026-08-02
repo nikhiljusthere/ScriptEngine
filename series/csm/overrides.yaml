@@ -1,0 +1,17 @@
+# Per-wiki handling for the Chainsaw Man wiki.
+
+# Chainsaw Man writes every reference positionally, with no named parameters at
+# all:
+#
+#     {{Ref|m|216|3-4}}     manga, chapter 216, pages 3-4
+#     {{Ref|a|12|1}}        anime, episode 12
+#
+# The first argument picks the medium and the second holds the number. Before
+# this mapping existed, all 2,946 references on the wiki rendered as nothing and
+# the series scored 0.0% sourced prose.
+citation_positional:
+  select: 0
+  number: 1
+  mediums:
+    m: {as: chapter}
+    a: {as: episode}

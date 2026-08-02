@@ -36,6 +36,20 @@ class TestSentences:
         # Wiki prose is dense with "Vol. 5", "Ch. 12", "9:15 P.M.".
         assert len(split_sentences("He appears in Vol. 5 of the manga.")) == 1
 
+    def test_a_citation_marker_does_not_glue_two_sentences_together(self):
+        # The locator sits between the full stop and the space, so the split
+        # never fired and two sentences merged into one chunk — and into one
+        # citation, which loses which sentence the reference actually covers.
+        parts = split_sentences(
+            "He took the body.(Chapter 145, Episode 50) Now known as Pseudo-Geto."
+        )
+        assert len(parts) == 2
+        assert parts[0].endswith("(Chapter 145, Episode 50)")
+
+    def test_the_marker_stays_with_the_sentence_it_cites(self):
+        parts = split_sentences("Alpha.(Chapter 10) Beta.(Chapter 20)")
+        assert parts == ["Alpha.(Chapter 10)", "Beta.(Chapter 20)"]
+
 
 class TestPassageSplitting:
     def test_short_text_stays_whole(self):

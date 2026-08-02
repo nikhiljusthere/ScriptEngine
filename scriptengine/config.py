@@ -13,6 +13,7 @@ file at the repo root, and fall back to the defaults defined here.
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -38,6 +39,12 @@ class Settings(BaseSettings):
 
     # ── Paths ────────────────────────────────────────────────────────────────
     series_root: Path = Field(default=REPO_ROOT / "series")
+
+    # Where finished scripts land. Defaults inside the repo so a fresh clone
+    # works; set `SCRIPTENGINE_SCRIPTS_ROOT` in `.env` to file them straight
+    # into the production tree instead. The path is personal, so it lives in
+    # `.env` (gitignored) rather than here.
+    scripts_root: Path = Field(default=REPO_ROOT / "scripts output")
 
     # ── Crawler ──────────────────────────────────────────────────────────────
     # Concurrency and pacing carried over from the original crawler, which ran
@@ -103,6 +110,48 @@ class Settings(BaseSettings):
             return "cuda" if torch.cuda.is_available() else "cpu"
         except Exception:
             return "cpu"
+
+
+# ── Subject resolution ───────────────────────────────────────────────────────
+#
+# A script is about something that happens in the work, never about the work's
+# packaging. Asked for "Every Rank of Curse in Jujutsu Kaisen", entity linking
+# used to return the *series* page `Jujutsu Kaisen` — an exact alias match — and
+# the timeline came back as one beat from `Volume 0`.
+#
+# These are page-type ids as `ontology.slugify_type` produces them, not series
+# names, so a default is legitimate. Any wiki that disagrees overrides both
+# lists in `series/<name>/overrides.yaml`.
+
+# Types that package the work rather than appear in it. They can still be the
+# subject when the query names one outright ("Volume 5", "Episode 19"); they
+# just stop winning on an incidental mention.
+SUBJECT_DEMOTE_TYPES: tuple[str, ...] = (
+    "series", "anime", "manga", "novel", "game", "stage_play", "music",
+    "blu_ray_dvd", "volume", "chapter", "episode", "simple_box",
+)
+
+# Which kind of page a script is most likely about, best first. This is what
+# makes "Every Cursed Technique of Sukuna" resolve to `Sukuna` (a character)
+# rather than to `Cursed Technique`, the generic concept page that matched the
+# same query with a longer alias.
+SUBJECT_TYPE_PRIORITY: tuple[str, ...] = (
+    "character", "character_synopsis",
+    "battle", "event", "story_arcs", "arc",
+    "species", "organizations", "occupation", "location",
+    "technique", "item",
+)
+
+
+def subject_ranking(overrides: dict | None = None) -> tuple[list[str], list[str]]:
+    """``(demoted_types, type_priority)`` for this wiki."""
+    overrides = overrides or {}
+    demote = overrides.get("subject_demote_types")
+    priority = overrides.get("subject_type_priority")
+    return (
+        [str(t) for t in demote] if demote else list(SUBJECT_DEMOTE_TYPES),
+        [str(t) for t in priority] if priority else list(SUBJECT_TYPE_PRIORITY),
+    )
 
 
 @dataclass(frozen=True)
@@ -172,6 +221,47 @@ def load_overrides(paths: "SeriesPaths") -> dict:
 
     loaded = yaml.safe_load(paths.overrides.read_text(encoding="utf-8"))
     return loaded if isinstance(loaded, dict) else {}
+
+
+# A finished script is one video's worth of work, and the production tree gives
+# each video a numbered folder with the script's own title on it:
+#
+#     Video 1 - Every Fight Mahoraga Has Ever Been In/
+#         Script/  Audio/  Images/  Prompt File/  storyboard/  ...
+#
+# Only `Script/` is this project's business; the sibling folders are filled in
+# by the rest of the pipeline.
+_VIDEO_FOLDER = re.compile(r"^Video\s+(\d+)\s*-\s*(.+)$", re.IGNORECASE)
+
+# Characters Windows forbids in a folder name. A script title is a sentence, and
+# "What It's Like to be Every Rank of Curse" is fine while a colon is not.
+_UNSAFE = re.compile(r'[<>:"/\\|?*]')
+
+
+def script_destination(
+    title: str, settings: Settings | None = None, subfolder: str = "Script"
+) -> Path:
+    """Where a finished script goes, and under which video number.
+
+    Reuses the existing folder when one already carries this title, so
+    rewriting a script does not create `Video 4 - ...` beside `Video 1 - ...`.
+    Otherwise it takes the next free number.
+    """
+    settings = settings or get_settings()
+    root = settings.scripts_root
+    clean = _UNSAFE.sub("", title).strip().rstrip(".")
+
+    highest = 0
+    if root.exists():
+        for path in root.iterdir():
+            match = _VIDEO_FOLDER.match(path.name) if path.is_dir() else None
+            if not match:
+                continue
+            highest = max(highest, int(match.group(1)))
+            if match.group(2).strip().lower() == clean.lower():
+                return path / subfolder / f"{clean}.md"
+
+    return root / f"Video {highest + 1} - {clean}" / subfolder / f"{clean}.md"
 
 
 @lru_cache(maxsize=1)

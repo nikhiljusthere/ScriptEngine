@@ -1,0 +1,24 @@
+# Per-wiki handling for the Berserk wiki.
+
+# Berserk calls its manga chapters "Episodes". The wiki carries 352 manga-episode
+# pages against 42 anime-episode ones, titled "Episode 0-1 (Manga)" and
+# "Episode 1 (1997 Anime)", so an unqualified "(Episode 137)" in a finished
+# script would sound like anime and mean manga.
+#
+# Both sides are labelled rather than one, because the ambiguity runs in both
+# directions and the wiki already types the pages episode_manga / episode_anime.
+# Nothing is inferred: the qualifier comes from the page title the ref links to.
+citation_ref_tags:
+  - match: 'Episode\s+([\d.\-]+)\s*\((?:19|20)\d\d\s+Anime\)'
+    as: episode
+    work: Anime
+  - match: 'Episode\s+([\d.\-]+)\s*\(Manga\)'
+    as: episode
+    work: Manga
+  - match: 'Chapter\s+([\d.\-]+)'
+    as: chapter
+
+# Berserk cites sparsely by comparison: roughly 40 `<ref>` bodies across 491
+# pages, and most of them point at cover art, calendars and interviews rather
+# than at an instalment. Expect this series to source a much smaller share of its
+# prose than Bleach or Hunterpedia, because that is what the wiki wrote.

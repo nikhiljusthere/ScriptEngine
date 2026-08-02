@@ -91,6 +91,8 @@ def _load_documents(
             fetched_at=page.fetched_at,
         )
 
+        store.add_categories(document_id, page.categories)
+
         for ordinal, section in enumerate(page.sections):
             store.add_section(
                 document_id=document_id,

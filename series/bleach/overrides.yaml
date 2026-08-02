@@ -1,0 +1,24 @@
+# Per-wiki handling for the Bleach wiki.
+
+# Bleach cites in prose inside an HTML `<ref>` tag rather than through a
+# template:
+#
+#     <ref name="e179">''Bleach'' anime, Episode 179</ref>
+#     <ref>''Bleach'' manga; Chapter 686, pages 4-5</ref>
+#     <ref name="e179"/>                                  (a reuse, body empty)
+#
+# The rules below read the locator out of that prose. Whatever they do not match
+# renders as nothing, which is the right answer for the interviews, cover images
+# and shop listings the wiki also cites. Before this, `<ref>` bodies survived
+# into the prose and landed in the middle of the sentence they were citing:
+# "Ichigo fights. Bleach anime, Episode 179 He wins."
+#
+# The anime rule comes first because a ref naming an episode never also names a
+# chapter, while the reverse pattern would match the word "Chapter" anywhere.
+citation_ref_tags:
+  - match: 'anime,?\s*Episode\s+([\d.\-]+)'
+    as: episode
+  # "Chapter imaginary number 1" is a real Bleach numbering for its -1xx
+  # chapters, and the digits after it are the ones the wiki means.
+  - match: '[Cc]hapter\s+(?:imaginary number\s+)?([\d.\-]+)'
+    as: chapter

@@ -7,7 +7,10 @@ because a plausible-looking implementation got them wrong first.
 from __future__ import annotations
 
 from scriptengine.ingest.wikitext import (
+    CitationGrammar,
+    collect_ref_definitions,
     extract_citations,
+    is_page_param,
     extract_links,
     facts_from_infobox,
     find_infobox,
@@ -58,6 +61,14 @@ class TestLinks:
     def test_category_and_file_links_are_not_relationships(self):
         assert extract_links("[[Category:Characters]] [[File:Todo.png|220px]]") == []
 
+    def test_escaped_category_link_is_not_a_relationship(self):
+        # A leading colon makes the category render as text on the page, but it
+        # still points at a Category page — not an article. These produced
+        # 845 junk ':Category:...' edges on Jujutsu Kaisen.
+        assert extract_links(
+            "[[:Category:Megumi Fushiguro Techniques|'''Megumi's Techniques''']]"
+        ) == []
+
     def test_an_interwiki_link_is_not_a_relationship(self):
         assert extract_links("[[Wikipedia:Subaru Kimura|Subaru Kimura]]") == []
 
@@ -84,12 +95,210 @@ class TestCitations:
         citations = extract_citations("{{Infobox|age = 18{{Ref|chap=21|page=14}}}}")
         assert [c.params["chap"] for c in citations] == ["21"]
 
-    def test_citations_never_reach_the_prose(self):
-        # The previous pipeline expanded citations into the text and embedded
-        # them, so a large share of every vector encoded bibliography.
+    def test_citations_inline_a_compact_locator(self):
+        # Citations keep a short locator — (Volume 5) — not the verbose
+        # bibliography the old pipeline embedded, and not nothing: the chapter
+        # annotation rules need the locator in prose.
         text = strip_markup("Todo is tall.{{Ref|vol=5|page=26}} He is strong.")
         assert "Ref" not in text and "vol=5" not in text
-        assert text == "Todo is tall. He is strong."
+        assert text == "Todo is tall.(Volume 5) He is strong."
+
+    def test_citation_locator_prefers_chapter_and_episode(self):
+        assert strip_markup("{{Ref|chap=143|page=3-5}}") == "(Chapter 143)"
+        assert strip_markup("{{Ref|chap=64|page=16-17|ep=30}}") == (
+            "(Chapter 64, Episode 30)"
+        )
+        assert strip_markup("{{Ref|fan=Fanbook|page=4-7}}") == "(Fanbook)"
+
+    def test_named_citation_without_locator_stays_silent(self):
+        # `{{Ref|name=fan2}}` reuses a locator printed elsewhere; the prose
+        # must not invent one.
+        text = strip_markup("Todo is tall.{{Ref|name=fan2}}")
+        assert text == "Todo is tall."
+
+
+class TestNamedReferences:
+    # MediaWiki cites a source once and reuses it by name. 538 of the Jujutsu
+    # Kaisen corpus's references are name-only, and each one used to render as
+    # nothing at all, leaving the line it cited unsourced.
+
+    def test_a_definition_is_collected_by_name(self):
+        found = collect_ref_definitions("Text{{Ref|name=c145|chap=145|ep=50}}")
+        assert found["c145"]["chap"] == "145"
+
+    def test_a_reuse_is_not_mistaken_for_a_definition(self):
+        assert collect_ref_definitions("Text{{Ref|name=c145}}") == {}
+
+    def test_a_reuse_renders_the_locator_it_points_at(self):
+        page = (
+            "Intro.{{Ref|name=c145|chap=145|ep=50}}\n\n"
+            "==One==\nHe did a thing.{{Ref|name=c145}}\n"
+        )
+        _, sections = split_sections(page)
+        assert sections[0].text == "He did a thing.(Chapter 145, Episode 50)"
+
+    def test_a_definition_in_another_section_still_resolves(self):
+        # The definition and its reuses routinely sit in different sections, so
+        # the map has to be built from the whole page.
+        page = (
+            "==One==\nFirst.{{Ref|name=c9|chap=9}}\n\n"
+            "==Two==\nSecond.{{Ref|name=c9}}\n"
+        )
+        _, sections = split_sections(page)
+        assert "(Chapter 9)" in sections[1].text
+
+    def test_a_reused_citation_carries_the_locator_as_structured_data(self):
+        page = "Intro.{{Ref|name=c9|chap=9}}\n\n==One==\nHe did.{{Ref|name=c9}}\n"
+        _, sections = split_sections(page)
+        assert sections[0].citations[0].params["chap"] == "9"
+
+    def test_an_unknown_name_renders_nothing_rather_than_guessing(self):
+        assert strip_markup("He did.{{Ref|name=missing}}") == "He did."
+
+
+class TestCitationGrammar:
+    # A sequel numbers its chapters from 1 again. The wiki says which work a
+    # reference means; dropping that rendered `{{Ref|modulo=y|chap=16}}` as
+    # "(Chapter 16)", the same string as the main series' Chapter 16, on 427
+    # references — a wrong chapter number available to every script.
+
+    works = CitationGrammar.from_overrides({
+        "citation_works": {"modulo": "Modulo"},
+        "citation_instalments": {"movie": "Movie"},
+    })
+
+    def test_a_sequel_chapter_says_which_manga_it_is(self):
+        text = strip_markup("She fell.{{Ref|modulo=y|chap=15|page=10}}", works=self.works)
+        assert text == "She fell.(Modulo Chapter 15)"
+
+    def test_the_main_series_is_unprefixed(self):
+        text = strip_markup("He won.{{Ref|chap=119|ep=41}}", works=self.works)
+        assert text == "He won.(Chapter 119, Episode 41)"
+
+    def test_any_truthy_flag_value_counts(self):
+        for flag in ("y", "yes", "true", "1"):
+            text = strip_markup(f"X.{{{{Ref|modulo={flag}|chap=24}}}}", works=self.works)
+            assert text == "X.(Modulo Chapter 24)"
+
+    def test_a_qualifier_that_is_itself_the_instalment(self):
+        # `{{Ref|movie=0}}` cites the film, which has no chapter. It used to
+        # render nothing at all, leaving the line it cited unsourced.
+        assert strip_markup("X.{{Ref|movie=0}}", works=self.works) == "X.(Movie 0)"
+
+    def test_an_unmapped_wiki_is_left_as_it_was(self):
+        # No overrides means no qualifiers, which is the previous behaviour —
+        # a wiki without a sequel loses nothing.
+        assert strip_markup("X.{{Ref|modulo=y|chap=16}}") == "X.(Chapter 16)"
+
+    def test_page_typos_are_not_dropped_facts(self):
+        assert is_page_param("pages") and is_page_param("pagse") and is_page_param("pagess")
+        assert not is_page_param("modulo")
+
+
+class TestPositionalCitations:
+    # Chainsaw Man writes every reference positionally: {{Ref|m|216|3-4}} means
+    # manga, chapter 216, pages 3-4. All 2,946 of them rendered nothing until
+    # the grammar could read them, and the series scored 0.0% sourced prose.
+
+    grammar = CitationGrammar.from_overrides({
+        "citation_positional": {
+            "select": 0, "number": 1,
+            "mediums": {"m": {"as": "chapter"}, "a": {"as": "episode"}},
+        }
+    })
+
+    def test_the_medium_picks_what_the_number_means(self):
+        assert strip_markup("A.{{Ref|m|216|3-4}}", works=self.grammar) == "A.(Chapter 216)"
+        assert strip_markup("B.{{Ref|a|12|1}}", works=self.grammar) == "B.(Episode 12)"
+
+    def test_a_reference_without_pages_still_locates(self):
+        assert strip_markup("C.{{Ref|m|180}}", works=self.grammar) == "C.(Chapter 180)"
+
+    def test_an_unknown_medium_renders_nothing_rather_than_guessing(self):
+        assert strip_markup("D.{{Ref|x|9}}", works=self.grammar) == "D."
+
+    def test_a_wiki_without_the_schema_is_unaffected(self):
+        assert strip_markup("E.{{Ref|m|216|3-4}}") == "E."
+
+
+class TestAlternateParamNames:
+    # One-Punch Man exists as a webcomic and as a manga with separate numbering,
+    # and the wiki keeps them apart on the reference itself.
+
+    grammar = CitationGrammar.from_overrides({
+        "citation_params": {
+            "ch": {"as": "chapter"},
+            "wch": {"as": "chapter", "work": "Webcomic"},
+            "p": {"as": "page"},
+        }
+    })
+
+    def test_a_wikis_own_parameter_name_is_read(self):
+        assert strip_markup("A.{{ref|ch = 20|p = 27}}", works=self.grammar) == (
+            "A.(Chapter 20)"
+        )
+
+    def test_a_second_numbering_says_which_work_it_is(self):
+        assert strip_markup("B.{{ref|wch = 44}}", works=self.grammar) == (
+            "B.(Webcomic Chapter 44)"
+        )
+
+    def test_a_page_parameter_never_reaches_the_prose(self):
+        # A page number is retrieval noise inside a sentence.
+        assert "27" not in strip_markup("C.{{ref|ch = 20|p = 27}}", works=self.grammar)
+
+
+class TestRefTagCitations:
+    # Bleach, Hunterpedia and Berserk put the locator in prose inside an HTML
+    # <ref> tag. Until it is read and replaced, `_HTML_TAG` deletes the tags and
+    # leaves the bibliography sitting inside the sentence it was citing.
+
+    grammar = CitationGrammar.from_overrides({
+        "citation_ref_tags": [
+            {"match": r"anime,?\s*Episode\s+([\d.\-]+)", "as": "episode"},
+            {"match": r"Chapter\s+([\d.\-]+)", "as": "chapter"},
+        ]
+    })
+
+    def test_a_prose_locator_becomes_a_marker(self):
+        text = strip_markup(
+            "Ichigo fights.<ref>''Bleach'' manga; Chapter 686, pages 4-5</ref>",
+            works=self.grammar,
+        )
+        assert text == "Ichigo fights.(Chapter 686)"
+
+    def test_the_bibliography_never_lands_in_the_sentence(self):
+        # The regression guard: this used to read
+        # "Ichigo fights. Bleach anime, Episode 179 He wins."
+        page = (
+            "==S==\nIchigo fights.<ref name=\"e179\">''Bleach'' anime, "
+            "Episode 179</ref> He wins.\n"
+        )
+        _, sections = split_sections(page, works=self.grammar)
+        assert sections[0].text == "Ichigo fights.(Episode 179) He wins."
+        assert "Bleach" not in sections[0].text
+
+    def test_a_name_only_reuse_resolves_to_its_definition(self):
+        # Hunterpedia reuses 243 times against 141 definitions; reading only the
+        # definition sites would leave most cited lines unsourced.
+        page = (
+            "==S==\nOne.<ref name=\"c1\">''Bleach'' manga; Chapter 1</ref> "
+            "Two.<ref name=\"c1\"/> Three.<ref name=\"c1\"></ref>\n"
+        )
+        _, sections = split_sections(page, works=self.grammar)
+        assert sections[0].text == "One.(Chapter 1) Two.(Chapter 1) Three.(Chapter 1)"
+
+    def test_a_reference_that_locates_nothing_renders_nothing(self):
+        # Cover art, interviews and shop listings carry no chapter, and their
+        # text is not content.
+        text = strip_markup(
+            "Art.<ref>[[:File:Cover.png|Volume 23 cover art]]</ref>",
+            works=self.grammar,
+        )
+        assert text == "Art."
+
+    def test_ref_tags_are_removed_even_without_a_grammar(self):
+        assert strip_markup("A.<ref>''Bleach'' manga; Chapter 686</ref> B.") == "A. B."
 
 
 class TestMarkupStripping:

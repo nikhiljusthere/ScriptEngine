@@ -25,8 +25,15 @@ import re
 from dataclasses import dataclass, field
 from typing import Any
 
-from scriptengine.config import SeriesPaths, Settings, get_settings
-from scriptengine.stores.facts import FactStore
+from scriptengine.config import (
+    SeriesPaths,
+    Settings,
+    get_settings,
+    load_overrides,
+    subject_ranking,
+)
+from scriptengine.retrieve import citations as cite
+from scriptengine.stores.facts import FactStore, rank_subjects
 
 # Instalment numbers: "Chapter 16", "Episode 8", "Volume 5", "Chapter 0-1".
 _INSTALMENT = re.compile(
@@ -41,6 +48,89 @@ _TIME_HEADING = re.compile(
 # Page types that represent something that happens, rather than something that is.
 EVENT_TYPES = {"battle", "event", "story_arcs", "chapter", "episode", "arc"}
 
+# For the character fallback, individual instalment pages ("Chapter 5") are too
+# granular to tell a story: a character links to hundreds of them and the
+# timeline becomes a chapter list. Only pages that gather many events into one
+# narrative qualify.
+_CHARACTER_EVENT_TYPES = {"battle", "event", "story_arcs", "arc"}
+
+# Pages worth reaching for once the subject's own page is exhausted. Battles
+# describe the fights an event page only summarises, and technique pages carry
+# the usage chapters behind them. Character pages are excluded on purpose: a
+# biography is not a beat, and an event links dozens of them.
+NEIGHBOUR_TYPES = {"battle", "event", "story_arcs", "arc", "technique"}
+
+# Words that carry no information about what a script wants to hear about.
+_QUERY_STOPWORDS = {
+    "i", "want", "you", "to", "a", "the", "topic", "on", "about", "and", "or",
+    "with", "from", "that", "this", "like", "would", "have", "had", "has",
+    "make", "made", "making", "were", "was", "been", "being", "his", "her",
+    "their", "they", "them", "then", "than", "till", "until", "during", "over",
+    "into", "out", "off", "for", "against", "took", "take", "taken", "place",
+    "what", "which", "where", "when", "how", "who", "start", "ended", "end",
+    "begin", "before", "after", "between", "such", "some", "certain", "other",
+    "also", "very", "just", "only", "one", "two", "three", "will", "can",
+    "could", "should", "would", "shall", "may", "might", "must", "not", "no",
+    "yes", "write", "script", "scripts", "topic", "title", "word", "words",
+    "line", "lines", "section", "sections", "division", "divide", "divided",
+    "guess", "educated", "explain", "explanation", "instead", "along", "since",
+    "though", "through", "without", "happened", "happen", "happens", "days",
+    "day", "period", "time", "times", "major", "include", "including",
+}
+
+# "19 days" carries the story where "19" and "days" alone do not: Gojo was
+# sealed for nineteen days, and the phrase names that whole stretch of the
+# timeline. Numbers are dropped from the word tokens, so the phrase is kept
+# whole.
+_DURATION = re.compile(
+    r"\b(\d{1,3})\s+(days?|weeks?|months?|years?)\b", re.IGNORECASE
+)
+
+# List-style sections ("Chapters", "Battles & Events", "Characters Introduced")
+# make every arc page mention "chapter", "battles" and "events" — scoring
+# against them would make every event look relevant to every query.
+_LIST_SECTION_TITLES = {
+    "chapters", "episodes", "volumes", "characters introduced",
+    "characters in order of appearance", "terminology introduced", "terms",
+    "settings", "trivia", "navigation", "battles", "battles & events",
+    "locations", "media", "gallery", "references", "chapter navigation",
+    "volume navigation", "plot", "summary",
+}
+
+
+def _query_content_tokens(query: str, subject: str) -> set[str]:
+    """Content words in the query, minus stopwords and the subject's own name."""
+    ignored = _QUERY_STOPWORDS | {word.lower() for word in re.findall(r"\w+", subject)}
+    tokens = {
+        word.lower()
+        for word in re.findall(r"[A-Za-z']{4,}", query)
+        if word.lower() not in ignored
+    }
+    tokens.update(
+        f"{match.group(1)} {match.group(2).lower()}"
+        for match in _DURATION.finditer(query)
+        if f"{match.group(1)} {match.group(2).lower()}" not in ignored
+    )
+    return tokens
+
+
+def _event_token_hits(
+    candidate: dict[str, Any], store: "FactStore", tokens: set[str]
+) -> set[str]:
+    """Which of the query's content tokens appear in the event's prose."""
+    if not tokens:
+        return set()
+    sections = store.document_sections(candidate["name"])
+    prose = [
+        section
+        for section in sections
+        if section["title"].strip().lower() not in _LIST_SECTION_TITLES
+    ]
+    text = (
+        candidate["name"] + " " + " ".join(s["text"] for s in prose)
+    ).lower()
+    return {token for token in tokens if token in text}
+
 
 @dataclass
 class Beat:
@@ -53,7 +143,11 @@ class Beat:
     breadcrumb: str
     time: str = ""
     participants: list[str] = field(default_factory=list)
+    # Where this beat comes from, as the script says it out loud. `citations`
+    # lists every locator the beat's prose resolves to; `source_span` collapses
+    # them into the one tag that goes at the end of the block.
     citations: list[str] = field(default_factory=list)
+    source_span: str = ""
 
     def as_dict(self) -> dict[str, Any]:
         payload = {
@@ -67,6 +161,10 @@ class Beat:
             payload["time"] = self.time
         if self.participants:
             payload["participants"] = self.participants
+        if self.citations:
+            payload["citations"] = self.citations
+        if self.source_span:
+            payload["source_span"] = self.source_span
         return payload
 
 
@@ -127,6 +225,15 @@ class NarrativeRetriever:
         self.paths = paths
         self.settings = settings or get_settings()
         self.store = FactStore(paths.facts_db)
+        self.demote, self.priority = subject_ranking(load_overrides(paths))
+        self._episodes: cite.EpisodeIndex | None = None
+
+    @property
+    def episodes(self) -> cite.EpisodeIndex:
+        """Chapter -> episode, built once per retriever."""
+        if self._episodes is None:
+            self._episodes = cite.EpisodeIndex.from_store(self.store)
+        return self._episodes
 
     def __enter__(self) -> "NarrativeRetriever":
         return self
@@ -145,19 +252,50 @@ class NarrativeRetriever:
         Resolves the subject through the alias table first, so "Shibuya" and
         "The Shibuya Incident" reach the same page.
         """
-        entities = self.store.link_entities(subject)
-        node = None
-        for candidate in entities:
-            if candidate["label"] in EVENT_TYPES or not node:
-                node = candidate
-                if candidate["label"] in EVENT_TYPES:
-                    break
+        entities = rank_subjects(
+            self.store.link_entities(subject), self.demote, self.priority
+        )
+
+        # `rank_subjects` already put the likeliest subject first: pages that
+        # package the work (the series, a volume, an episode) go last, and among
+        # the rest the wiki's own page type decides. Before it existed, "Every
+        # Rank of Curse in Jujutsu Kaisen" resolved to the series page and came
+        # back as one beat from `Volume 0`, and "Every Cursed Technique of
+        # Sukuna" resolved to the generic `Cursed Technique` page.
+        #
+        # A resolved page still wins over an unresolved one at equal rank:
+        # there is nothing to say about a node with no article behind it.
+        node = next((row for row in entities if row["is_resolved"]), None)
+        if node is None and entities:
+            node = entities[0]
 
         if node is None:
             return Narrative(subject=subject)
 
         narrative = Narrative(subject=node["name"])
-        narrative.beats = self._beats_from_page(node["name"], max_beats)
+
+        # A character page is a biography, not an event list. A script wants
+        # what happened to the character, so the character's events and battles
+        # are the timeline even when the character page resolves (Gojo's own
+        # sections are Appearance, Personality, Cursed Technique — not a
+        # narrative). The biography sections are only a fallback when the
+        # character has no recorded events.
+        if node["label"] in {"character", "character_synopsis", "unknown"}:
+            beats = self._beats_from_character_events(node, max_beats, subject)
+            if len(beats) < 3:
+                beats = self._beats_from_page(node["name"], max_beats)
+        else:
+            beats = self._beats_from_page(node["name"], max_beats)
+            # A specific query names what the script is about: keep the
+            # sections that mention it, in order, so the budget reaches the
+            # story's end instead of running out in the middle of a giant
+            # page ("sealed and freed" lands on the sealing and the unsealing,
+            # not on the opening festival).
+            tokens = _query_content_tokens(subject, node["name"])
+            if len(tokens) >= 2:
+                beats = self._filter_matches(beats, tokens)
+
+        narrative.beats = beats
         narrative.participants = self._participants(int(node["id"]))
         narrative.related_pages = self._ordered_related(int(node["id"]))
 
@@ -168,10 +306,37 @@ class NarrativeRetriever:
             narrative.beats = self._beats_from_pages(
                 narrative.related_pages, max_beats
             )
+            tokens = _query_content_tokens(subject, node["name"])
+            if len(tokens) >= 2:
+                narrative.beats = self._filter_matches(narrative.beats, tokens)
+
+        if len(narrative.beats) < max_beats:
+            narrative.beats.extend(
+                self._beats_from_neighbours(
+                    node, max_beats - len(narrative.beats), narrative.beats, subject
+                )
+            )
+            for order, beat in enumerate(narrative.beats, start=1):
+                beat.order = order
 
         return narrative
 
     # ── ordering ─────────────────────────────────────────────────────────────
+
+    def annotate(self, beat: Beat) -> Beat:
+        """Attach the chapter and episode the beat's prose is sourced to.
+
+        Two steps, both lookups rather than guesses. Markers the wiki wrote as
+        a bare `(Chapter 79)` gain their episode from the graph's chapter/episode
+        edges; then every sentence is attributed to the ref that covers it, so a
+        beat whose only ref sits in its last paragraph still reports the span.
+        """
+        beat.text = cite.upgrade_markers(beat.text, self.episodes)
+        sentences = cite.attribute(beat.text, self.episodes)
+        found = cite.locators(sentences)
+        beat.citations = [locator.render() for locator in found]
+        beat.source_span = cite.span(found)
+        return beat
 
     def _beats_from_page(self, title: str, max_beats: int) -> list[Beat]:
         """A page's own sections, in the order the article presents them."""
@@ -181,13 +346,15 @@ class NarrativeRetriever:
             if not section["text"] or section["word_count"] < 20:
                 continue
             beats.append(
-                Beat(
-                    order=len(beats) + 1,
-                    title=section["title"],
-                    text=section["text"],
-                    doc_title=title,
-                    breadcrumb=section["breadcrumb"],
-                    time=extract_time(section["breadcrumb"]),
+                self.annotate(
+                    Beat(
+                        order=len(beats) + 1,
+                        title=section["title"],
+                        text=section["text"],
+                        doc_title=title,
+                        breadcrumb=section["breadcrumb"],
+                        time=extract_time(section["breadcrumb"]),
+                    )
                 )
             )
             if len(beats) >= max_beats:
@@ -212,18 +379,103 @@ class NarrativeRetriever:
                 continue
 
             beats.append(
-                Beat(
-                    order=len(beats) + 1,
-                    title=title,
-                    text=body["text"],
-                    doc_title=title,
-                    breadcrumb=body["breadcrumb"],
+                self.annotate(
+                    Beat(
+                        order=len(beats) + 1,
+                        title=title,
+                        text=body["text"],
+                        doc_title=title,
+                        breadcrumb=body["breadcrumb"],
+                    )
                 )
             )
             if len(beats) >= max_beats:
                 break
 
         return beats
+
+    def _beats_from_neighbours(
+        self,
+        node: dict[str, Any],
+        room: int,
+        existing: list[Beat],
+        query: str,
+    ) -> list[Beat]:
+        """The pages the subject's own page leans on, in instalment order.
+
+        A 3,000-word script written from one document reads like that document.
+        The Shibuya Incident bundle was 128 beats and every one of them came from
+        the `Shibuya Incident` page, while the battle pages it links — where the
+        fights are actually described, blow by blow, with their own refs — were
+        never reached. Only the strong (infobox) edges are followed, so this
+        picks up the pages the wiki itself says belong to the event rather than
+        everything the prose happens to mention.
+        """
+        if room <= 0:
+            return []
+
+        seen = {(beat.doc_title, beat.breadcrumb) for beat in existing}
+        tokens = _query_content_tokens(query, node["name"])
+
+        candidates: list[tuple[tuple[int, float], dict[str, Any]]] = []
+        named: set[str] = {node["name"]}
+        for row in self.store.edges_for([node["id"]], min_confidence=0.9, limit=200):
+            for name in (row["source"], row["target"]):
+                if name in named:
+                    continue
+                named.add(name)
+                candidate = self.store.node_by_name(name)
+                if (
+                    candidate is None
+                    or not candidate["is_resolved"]
+                    or candidate["label"] not in NEIGHBOUR_TYPES
+                ):
+                    continue
+                related = self._ordered_related(int(candidate["id"]))
+                key = instalment_number(related[0]) if related else (7, 0.0)
+                candidates.append((key, candidate))
+
+        beats: list[Beat] = []
+        for _, candidate in sorted(candidates, key=lambda pair: pair[0]):
+            if len(beats) >= room:
+                break
+            for beat in self._beats_from_page(candidate["name"], room - len(beats)):
+                identity = (beat.doc_title, beat.breadcrumb)
+                if identity in seen:
+                    continue
+                seen.add(identity)
+                beats.append(beat)
+                if len(beats) >= room:
+                    break
+
+        if len(tokens) >= 2:
+            beats = [
+                beat
+                for beat in beats
+                if any(token in f"{beat.title} {beat.text}".lower() for token in tokens)
+            ]
+        return beats
+
+    def _filter_matches(self, beats: list[Beat], tokens: set[str]) -> list[Beat]:
+        """Keep only beats that mention a query token, preserving their order.
+
+        A story beats budget, and the Shibuya Incident page alone runs eighty
+        thousand characters. For a specific query the beats that mention its
+        words are the story ("sealed", "freed"); the gaps are skipped rather
+        than letting a twenty-thousand-token budget run out before the
+        unsealing arrives. Order is untouched: skipped beats leave gaps, never
+        reorderings, and the survivors keep their place in the timeline.
+        """
+        if not tokens:
+            return beats
+        filtered = [
+            beat
+            for beat in beats
+            if any(
+                token in f"{beat.title} {beat.text}".lower() for token in tokens
+            )
+        ]
+        return filtered if filtered else beats
 
     def _ordered_related(self, node_id: int) -> list[str]:
         """Linked pages that are numbered instalments, in numeric order.
@@ -247,6 +499,106 @@ class NarrativeRetriever:
                 seen.add(name)
                 ordered.append(name)
         return ordered
+
+    def _beats_from_character_events(
+        self, node: dict[str, Any], max_beats: int, query: str = ""
+    ) -> list[Beat]:
+        """Events and battles the character participates in, chronologically.
+
+        Ordered by each event's earliest linked instalment ("Chapter 83" for
+        the Shibuya Incident, "Chapter 138" for the Culling Game Arc), so the
+        narrative reads in story order rather than alphabetically.
+
+        When the query names content, the events that match it most strongly
+        anchor the timeline: "sealed ... freed" scores the Shibuya Incident
+        highest, so the sealing and the unsealing-era events lead (in
+        instalment order within each score band), everything from the anchor's
+        instalment onward is kept, and his childhood is not. The strongest
+        events come first so the budget reaches the end of the story — a
+        twenty-thousand-token bundle that ate the Shibuya Incident page in
+        strict order would never reach the unsealing. Generic words
+        ("without") score every page equally and anchor nothing.
+        """
+        relevant_tokens = _query_content_tokens(query, node["name"])
+
+        events: list[tuple[tuple[int, float], dict[str, Any], set[str]]] = []
+        seen: set[str] = set()
+
+        for row in self.store.edges_for([node["id"]], min_confidence=0.3, limit=1000):
+            for name in (row["source"], row["target"]):
+                if name == node["name"] or name in seen:
+                    continue
+                seen.add(name)
+                candidate = self.store.node_by_name(name)
+                if (
+                    candidate is None
+                    or candidate["label"] not in _CHARACTER_EVENT_TYPES
+                    or not candidate["is_resolved"]
+                ):
+                    continue
+                related = self._ordered_related(int(candidate["id"]))
+                key = instalment_number(related[0]) if related else (7, 0.0)
+                events.append(
+                    (
+                        key,
+                        candidate,
+                        _event_token_hits(candidate, self.store, relevant_tokens),
+                    )
+                )
+
+        if not events:
+            return []
+
+        # The strongest matches anchor the timeline; the band below them is
+        # kept as context. For "sealed ... freed" the pages that mention both
+        # (the Shibuya Incident, the unsealing fight) anchor, and everything
+        # from their instalment onward is kept — his childhood is not. A weak
+        # query where nothing scores above 1 falls back to the full
+        # chronological timeline. A single rare phrase can still anchor
+        # ("19 days" matches only the Culling Game page, so it anchors there).
+        best = max(len(hits) for _, _, hits in events)
+        min_score = max(1, best - 1)
+        strong = [event for event in events if len(event[2]) >= min_score]
+        if strong:
+            best_events = [event for event in events if len(event[2]) == best]
+            threshold = min(event[0] for event in best_events)
+            events = [
+                event for event in events
+                if event[0] >= threshold or len(event[2]) == best
+            ]
+
+        # A query with two or more content words keeps only the sections that
+        # mention them, so the budget covers the whole arc instead of running
+        # out inside the first event page. A single phrase ("19 days", "origin")
+        # is not filtered: its era is the answer, not just the pages that
+        # spell the phrase out. Zero-hit events are dropped — a page that
+        # mentions none of the query's words contributes nothing to it.
+        filter_matches = len(relevant_tokens) >= 2
+        if filter_matches:
+            events = [event for event in events if event[2]]
+
+        beats: list[Beat] = []
+        for _, event, _ in sorted(
+            events,
+            key=lambda pair: (-len(pair[2]), pair[0]) if filter_matches else pair[0],
+        ):
+            if len(beats) >= max_beats:
+                break
+            event_beats = self._beats_from_page(
+                event["name"], max_beats - len(beats)
+            )
+            # Arc pages are tables of contents: "Culling Game Arc" links to
+            # Chapters 138-221 but writes no prose of its own. Fall back to
+            # the instalments it links, in numbered order.
+            if len(event_beats) < 3:
+                related = self._ordered_related(int(event["id"]))
+                event_beats = self._beats_from_pages(
+                    related, max_beats - len(beats)
+                )
+            if filter_matches:
+                event_beats = self._filter_matches(event_beats, relevant_tokens)
+            beats.extend(event_beats)
+        return beats
 
     def _participants(self, node_id: int) -> list[str]:
         """Characters involved, taken from the strong (infobox) edges."""

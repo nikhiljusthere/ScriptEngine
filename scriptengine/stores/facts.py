@@ -27,6 +27,70 @@ MAX_ALIAS_WORDS = 6
 
 _WORD = re.compile(r"[\w'’-]+", re.UNICODE)
 
+# Instalment-style aliases ("chapter 5", "episode 19") and bare numbers ("19")
+# are harvested from instalment page titles. They only count as mentions when
+# the query names the instalment kind: "19 Days without Satoru Gojo" contains
+# the n-gram "19", which links to "Episode 19" and hijacks the whole request.
+_INSTALMENT_ALIAS = re.compile(
+    r"^(chapter|episode|volume|ova|special|film|movie|arc)s?\s+[\d.\-]+$",
+    re.IGNORECASE,
+)
+_BARE_NUMBER_ALIAS = re.compile(r"^\d+([.\-]\d+)?$")
+_INSTALMENT_WORDS = {
+    "chapter", "episode", "volume", "ova", "special", "film", "movie", "arc",
+}
+
+
+# Infobox parameters that describe the page's presentation, its Japanese
+# rendering, or its place in a navigation chain rather than its subject.
+# Rendering them into a script's context spends budget on furniture: a narrative
+# bundle led with `prev`, `next`, `romaji` and `kanji` before it reached the
+# event's own chapter range.
+NOISE_FACT_KEYS = frozenset({
+    "romaji", "kanji", "japanese", "name", "image", "image gallery", "imagesize",
+    "caption", "cover", "bgcolor", "color", "pages", "issue", "next",
+    "previous", "prev", "chapter title", "opening song", "ending song",
+})
+
+
+def rank_subjects(
+    rows: Sequence[Any], demote: Sequence[str], priority: Sequence[str]
+) -> list[Any]:
+    """Re-rank linked entities by how likely each is to be a script's subject.
+
+    `link_entities` ranks by how confident the *match* is, which is the right
+    answer for search and the wrong one for "what is this script about". Asked
+    for "Every Rank of Curse in Jujutsu Kaisen" it returns the series page
+    `Jujutsu Kaisen` first — an exact alias match — and the timeline came back
+    as a single beat from `Volume 0`. Asked for "Every Cursed Technique of
+    Sukuna" it returns the generic `Cursed Technique` concept page ahead of
+    Sukuna, because "cursed technique" is the longer alias.
+
+    So the sort is: pages that package the work go last; among the rest the
+    wiki's own page type decides, since a script is about a person or an event
+    far more often than about a concept; and the match confidence `link_entities`
+    already computed breaks the remaining ties.
+
+    Type priority is checked before exactness deliberately. "Jujutsu" is an
+    exact match for the technique page on a query about curse ranks, and it is
+    still not what the script is about.
+    """
+    demoted = {t.lower() for t in demote}
+    order = {t.lower(): index for index, t in enumerate(priority)}
+    unranked = len(order)
+
+    def key(pair: tuple[int, Any]) -> tuple[int, int, int, int]:
+        index, row = pair
+        label = (row["label"] or "unknown").lower()
+        return (
+            1 if label in demoted else 0,
+            order.get(label, unranked),
+            0 if row["exact"] else 1,
+            index,
+        )
+
+    return [row for _, row in sorted(enumerate(rows), key=key)]
+
 
 class FactStore:
     """Read/write access to one series' `facts.db`."""
@@ -56,7 +120,7 @@ class FactStore:
         """Drop everything and recreate. Indexing is idempotent by rebuilding."""
         tables = [
             "chunk_nodes", "chunks_fts", "chunks", "facts", "edges",
-            "aliases", "nodes", "sections", "documents", "meta",
+            "aliases", "nodes", "categories", "sections", "documents", "meta",
         ]
         for table in tables:
             self.connection.execute(f"DROP TABLE IF EXISTS {table}")
@@ -126,6 +190,16 @@ class FactStore:
             (document_id, title, breadcrumb, level, ordinal, text, word_count),
         )
         return int(cursor.lastrowid)
+
+    def add_categories(self, document_id: int, categories: Iterable[str]) -> None:
+        self.connection.executemany(
+            "INSERT OR IGNORE INTO categories (document_id, category) VALUES (?, ?)",
+            [
+                (document_id, category.strip())
+                for category in categories
+                if category and category.strip()
+            ],
+        )
 
     def add_node(
         self, name: str, label: str = "unknown", document_id: int | None = None
@@ -227,7 +301,9 @@ class FactStore:
     # ── reading ──────────────────────────────────────────────────────────────
 
     def counts(self) -> dict[str, int]:
-        tables = ("documents", "sections", "nodes", "edges", "facts", "chunks")
+        tables = (
+            "documents", "sections", "categories", "nodes", "edges", "facts", "chunks",
+        )
         return {
             table: int(
                 self.connection.execute(f"SELECT COUNT(*) AS n FROM {table}").fetchone()["n"]
@@ -261,27 +337,48 @@ class FactStore:
             for start in range(len(lowered) - size + 1):
                 candidates.add(" ".join(lowered[start : start + size]))
 
+        mentions_instalment = any(word in _INSTALMENT_WORDS for word in lowered)
         placeholders = ",".join("?" * len(candidates))
         # Ranking, in order of how much the match is worth trusting:
         #   1. the matched phrase is the page's own title — unambiguous
         #   2. a page actually backs the entity, so there is something to say
         #   3. a longer matched phrase, which is the more specific reading
         #      ("Kyoto Jujutsu High" over "Kyoto")
+        #   4. the shortest node name — the entity itself rather than one of
+        #      its event pages. "Yuji" matches both "Yuji Itadori" and "Yuji
+        #      Itadori, Maki Zenin & Hana Kurusu vs. Sukuna" with the same
+        #      alias; the character page is the hub, and it should win.
         # Harvested aliases are useful but ambiguous: prose writes
         # `[[Sorcerer Clan|Gojo]]` as well as `[[Satoru Gojo|Gojo]]`, and the
         # named page should win over the incidental one.
-        return self.connection.execute(
+        rows = self.connection.execute(
             f"""
-            SELECT n.*, MAX(LENGTH(a.alias)) AS match_length,
-                   MAX(a.alias = LOWER(n.name)) AS exact
+            SELECT n.*,
+                   MAX(a.alias) AS matched_alias,
+                   MAX(a.alias = LOWER(n.name)) AS exact,
+                   MAX(LENGTH(a.alias)) AS match_length
             FROM nodes n
             JOIN aliases a ON a.node_id = n.id
             WHERE a.alias IN ({placeholders})
             GROUP BY n.id
-            ORDER BY exact DESC, n.is_resolved DESC, match_length DESC
+            ORDER BY exact DESC, n.is_resolved DESC, match_length DESC,
+                     MIN(LENGTH(n.name)) ASC
             """,
             tuple(candidates),
         ).fetchall()
+
+        # An instalment alias only counts when the query says the instalment
+        # kind; a bare number on its own is not a mention of "Episode 19".
+        if not mentions_instalment:
+            rows = [
+                row
+                for row in rows
+                if not (
+                    _INSTALMENT_ALIAS.match(row["matched_alias"] or "")
+                    or _BARE_NUMBER_ALIAS.match(row["matched_alias"] or "")
+                )
+            ]
+        return rows
 
     def neighbours(
         self, node_ids: Sequence[int], depth: int = 2, min_confidence: float = 0.5
@@ -371,13 +468,95 @@ class FactStore:
         if not node_ids:
             return []
         placeholders = ",".join("?" * len(node_ids))
+        # The order matters even though these rows are only a ranking input:
+        # reciprocal rank fusion weights position, and `LIMIT` without
+        # `ORDER BY` handed it whatever order SQLite happened to scan in. That
+        # made the graph retriever's contribution to the fused score arbitrary
+        # and non-reproducible across rebuilds.
         return self.connection.execute(
             f"SELECT DISTINCT c.* FROM chunks c"
             f" JOIN chunk_nodes cn ON cn.chunk_id = c.id"
             f" WHERE cn.node_id IN ({placeholders}) AND c.level = ?"
+            f" ORDER BY c.document_id, c.ordinal"
             f" LIMIT ?",
             (*node_ids, level, limit),
         ).fetchall()
+
+    # ── enumeration ──────────────────────────────────────────────────────────
+    #
+    # Three ways a wiki already states "these things belong together". A roster
+    # script needs a complete set, and retrieval ranks — it does not enumerate.
+
+    def nodes_by_label(self, label: str, limit: int = 200) -> list[sqlite3.Row]:
+        """Every resolved entity of one page type, e.g. every `technique`."""
+        return self.connection.execute(
+            "SELECT * FROM nodes WHERE label = ? COLLATE NOCASE AND is_resolved = 1"
+            " ORDER BY name LIMIT ?",
+            (label, limit),
+        ).fetchall()
+
+    def documents_in_category(self, category: str, limit: int = 200) -> list[sqlite3.Row]:
+        """Pages the wiki filed under one category."""
+        return self.connection.execute(
+            "SELECT d.* FROM documents d"
+            " JOIN categories c ON c.document_id = d.id"
+            " WHERE c.category = ? COLLATE NOCASE"
+            " ORDER BY d.title LIMIT ?",
+            (category, limit),
+        ).fetchall()
+
+    def categories_like(self, term: str, limit: int = 20) -> list[sqlite3.Row]:
+        """Categories whose name contains `term`, largest first."""
+        return self.connection.execute(
+            "SELECT c.category, COUNT(*) AS members FROM categories c"
+            " WHERE c.category LIKE ? COLLATE NOCASE"
+            " GROUP BY c.category ORDER BY members DESC LIMIT ?",
+            (f"%{term}%", limit),
+        ).fetchall()
+
+    def fact_groups(self, key: str, limit: int = 400) -> list[sqlite3.Row]:
+        """Who holds which value of one infobox field.
+
+        The wiki's own answer to "what are the ranks": the distinct values of
+        `grade` across every page that declares one, and who holds each. No
+        prose is involved, so nothing is missed and nothing is invented.
+        """
+        return self.connection.execute(
+            "SELECT f.value, n.name, n.label FROM facts f"
+            " JOIN nodes n ON n.id = f.node_id"
+            " WHERE f.key = ? COLLATE NOCASE AND n.is_resolved = 1"
+            " ORDER BY f.value, n.name LIMIT ?",
+            (key, limit),
+        ).fetchall()
+
+    def fact_keys(self, limit: int = 400) -> list[sqlite3.Row]:
+        """Infobox fields in use, with the wiki's label and how many declare each.
+
+        The label matters as much as the key: Jujutsu Kaisen stores a curse's
+        rank under `class` and renders it as "Grade", so a query asking about
+        grades only finds the field through the label.
+        """
+        return self.connection.execute(
+            "SELECT key, MAX(label) AS label, COUNT(DISTINCT node_id) AS holders"
+            " FROM facts GROUP BY key ORDER BY holders DESC LIMIT ?",
+            (limit,),
+        ).fetchall()
+
+    def edges_by_relation(self, relation: str, limit: int = 2000) -> list[sqlite3.Row]:
+        """Every edge of one kind, as ``(source, target)`` names."""
+        return self.connection.execute(
+            "SELECT s.name AS source, t.name AS target FROM edges e"
+            " JOIN nodes s ON s.id = e.source_id"
+            " JOIN nodes t ON t.id = e.target_id"
+            " WHERE e.relation = ? LIMIT ?",
+            (relation, limit),
+        ).fetchall()
+
+    def document_lead(self, title: str) -> str:
+        row = self.connection.execute(
+            "SELECT lead FROM documents WHERE title = ? COLLATE NOCASE", (title,)
+        ).fetchone()
+        return (row["lead"] or "") if row else ""
 
     def document_sections(self, title: str) -> list[sqlite3.Row]:
         """A document's sections in page order — the basis of narrative retrieval."""
