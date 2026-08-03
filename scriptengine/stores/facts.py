@@ -12,9 +12,11 @@ two concrete defects in the previous design:
 
 from __future__ import annotations
 
+import json
 import re
 import sqlite3
 from collections.abc import Iterable, Sequence
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -53,6 +55,24 @@ NOISE_FACT_KEYS = frozenset({
 })
 
 
+def _is_packaging(label: str) -> bool:
+    """Is this page type an episode, chapter, volume or other packaging?
+
+    `SUBJECT_DEMOTE_TYPES` lists literal infobox ids, and those ids are
+    per-wiki: it demotes `episode` on Dragon Ball and misses `episode_box` on
+    One Piece, `hunterpedia_episode_2011` on Hunterpedia,
+    `bleach_wiki_episode` on Bleach. Measured, the list matched 11 of its 12 ids
+    on Jujutsu Kaisen — where it was written — and 1 of 12 on One Piece, leaving
+    2,676 of its pages eligible to be chosen as the subject of a question.
+
+    So the id is folded into the shared vocabulary first, and the explicit list
+    is kept as an override for anything that fold gets wrong.
+    """
+    from scriptengine.retrieve.semantics import MEDIA, type_from_page_type
+
+    return type_from_page_type(label) == MEDIA
+
+
 def rank_subjects(
     rows: Sequence[Any], demote: Sequence[str], priority: Sequence[str]
 ) -> list[Any]:
@@ -83,7 +103,7 @@ def rank_subjects(
         index, row = pair
         label = (row["label"] or "unknown").lower()
         return (
-            1 if label in demoted else 0,
+            1 if (label in demoted or _is_packaging(label)) else 0,
             order.get(label, unranked),
             0 if row["exact"] else 1,
             index,
@@ -343,9 +363,22 @@ class FactStore:
 
         candidates: set[str] = set()
         lowered = [word.lower() for word in words]
-        for size in range(1, min(MAX_ALIAS_WORDS, len(lowered)) + 1):
-            for start in range(len(lowered) - size + 1):
-                candidates.add(" ".join(lowered[start : start + size]))
+        # The same words with possessives removed. `_WORD` keeps the apostrophe
+        # — deliberately, since names like `Zabuza's` and `O'Hara` both occur —
+        # so "Ichigo's" was one token that matched no alias, and
+        # "What is Ichigo's Zanpakuto?" linked *nothing at all*. Both spellings
+        # are offered rather than picking one, because the possessive form is
+        # occasionally the real title.
+        plain = [
+            word[:-2] if word.endswith("'s") or word.endswith("’s") else word.rstrip("'’")
+            for word in lowered
+        ]
+        for sequence in (lowered, plain):
+            for size in range(1, min(MAX_ALIAS_WORDS, len(sequence)) + 1):
+                for start in range(len(sequence) - size + 1):
+                    phrase = " ".join(sequence[start : start + size]).strip()
+                    if phrase:
+                        candidates.add(phrase)
 
         mentions_instalment = any(word in _INSTALMENT_WORDS for word in lowered)
         placeholders = ",".join("?" * len(candidates))
@@ -447,6 +480,29 @@ class FactStore:
             (*node_ids, *node_ids, min_confidence, limit),
         ).fetchall()
 
+    def linked_from(self, name: str, relations: Sequence[str]) -> list[str]:
+        """Pages this one points at through the named infobox fields.
+
+        The infobox rows arrive already resolved by MediaWiki, so `user` on
+        `Kaio-ken` is a list of pages — Goku, Krillin, Yamcha — rather than a
+        string to be parsed. Ability classification reads them to decide whether
+        something is race-exclusive or merely teachable.
+        """
+        if not relations:
+            return []
+        placeholders = ",".join("?" * len(relations))
+        return [
+            row["target"]
+            for row in self.connection.execute(
+                f"SELECT DISTINCT t.name AS target FROM edges e"
+                f" JOIN nodes s ON s.id = e.source_id"
+                f" JOIN nodes t ON t.id = e.target_id"
+                f" WHERE s.name = ? COLLATE NOCASE"
+                f"   AND LOWER(e.relation) IN ({placeholders})",
+                (name, *[r.lower() for r in relations]),
+            )
+        ]
+
     def facts_for(self, name: str) -> list[sqlite3.Row]:
         """Structured facts for one entity. A lookup, not a search."""
         return self.connection.execute(
@@ -456,6 +512,108 @@ class FactStore:
             " ORDER BY f.id",
             (name,),
         ).fetchall()
+
+    def ensure_semantics(self) -> None:
+        """Create the classification table if this store predates it.
+
+        Every other table is rebuilt by `index`, so a schema change reaches them
+        on the next run. This one deliberately survives `reset()` — it holds
+        minutes of local inference per wiki — which means an existing store has
+        to be able to grow it in place.
+        """
+        self.connection.execute(
+            "CREATE TABLE IF NOT EXISTS semantics ("
+            " title TEXT PRIMARY KEY, revid INTEGER, prompt_version TEXT,"
+            " semantic_type TEXT, properties TEXT, reason TEXT, model TEXT,"
+            " classified_at TEXT)"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS idx_semantics_type"
+            " ON semantics(semantic_type)"
+        )
+
+    def semantics_of(self, title: str) -> dict[str, Any] | None:
+        """The stored classification for one page, or ``None``.
+
+        Read on every roster query, so it must stay a keyed lookup — the whole
+        point of classifying at index time is that retrieval does no reasoning.
+        """
+        try:
+            row = self.connection.execute(
+                "SELECT semantic_type, properties, reason, revid, prompt_version"
+                " FROM semantics WHERE title = ? COLLATE NOCASE",
+                (title,),
+            ).fetchone()
+        except sqlite3.OperationalError:
+            # A store built before classification existed. Nothing is classified
+            # in it, which is a complete answer.
+            return None
+        if not row:
+            return None
+        try:
+            properties = json.loads(row["properties"] or "{}")
+        except json.JSONDecodeError:
+            properties = {}
+        return {
+            "semantic_type": row["semantic_type"] or "",
+            "properties": properties if isinstance(properties, dict) else {},
+            "reason": row["reason"] or "",
+            "revid": row["revid"],
+            "prompt_version": row["prompt_version"] or "",
+        }
+
+    def save_semantics(
+        self,
+        title: str,
+        revid: int | None,
+        prompt_version: str,
+        semantic_type: str,
+        properties: dict[str, Any],
+        reason: str,
+        model: str,
+    ) -> None:
+        self.connection.execute(
+            "INSERT INTO semantics"
+            " (title, revid, prompt_version, semantic_type, properties, reason,"
+            "  model, classified_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+            " ON CONFLICT(title) DO UPDATE SET"
+            "   revid = excluded.revid,"
+            "   prompt_version = excluded.prompt_version,"
+            "   semantic_type = excluded.semantic_type,"
+            "   properties = excluded.properties,"
+            "   reason = excluded.reason,"
+            "   model = excluded.model,"
+            "   classified_at = excluded.classified_at",
+            (
+                title,
+                revid,
+                prompt_version,
+                semantic_type,
+                json.dumps(properties, ensure_ascii=False),
+                reason,
+                model,
+                datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            ),
+        )
+
+    def categories_of(self, title: str) -> list[str]:
+        """Every category one page is filed under.
+
+        Membership validation reads these: the Dragon Ball wiki files
+        `Black Frieza` under both `Transformations` and `Frieza's race`, which
+        is what makes it answerable that it does not belong in a list of Saiyan
+        transformations.
+        """
+        return [
+            row["category"]
+            for row in self.connection.execute(
+                "SELECT c.category FROM categories c"
+                " JOIN documents d ON d.id = c.document_id"
+                " WHERE d.title = ? COLLATE NOCASE",
+                (title,),
+            )
+        ]
 
     def chunks_by_id(self, chunk_ids: Sequence[int]) -> list[sqlite3.Row]:
         if not chunk_ids:
