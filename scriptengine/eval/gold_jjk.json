@@ -6,149 +6,224 @@
       "id": "fact-01",
       "kind": "fact",
       "question": "What grade of sorcerer is Aoi Todo?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": ["Grade 1"]
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [
+        "Grade 1"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "fact-02",
       "kind": "fact",
       "question": "Which chapter does Aoi Todo first appear in?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": ["Chapter 16"]
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [
+        "Chapter 16"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "fact-03",
       "kind": "fact",
       "question": "What school does Aoi Todo attend?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": ["Kyoto"]
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [
+        "Kyoto"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "fact-04",
       "kind": "fact",
       "question": "What is Aoi Todo's birthday?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": ["September 23"]
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [
+        "September 23"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "fact-05",
       "kind": "fact",
       "question": "How tall is Aoi Todo?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": ["190"]
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [
+        "190"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "fact-06",
       "kind": "fact",
       "question": "Who voices Aoi Todo in Japanese?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": ["Subaru Kimura"]
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [
+        "Subaru Kimura"
+      ],
+      "expect_mode": "qa"
     },
-
     {
       "id": "alias-01",
       "kind": "alias",
       "question": "What is Todo's technique?",
-      "expect_docs": ["Aoi Todo", "Boogie Woogie"],
-      "expect_text": ["Boogie Woogie"]
+      "expect_docs": [
+        "Aoi Todo",
+        "Boogie Woogie"
+      ],
+      "expect_text": [
+        "Boogie Woogie"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "alias-02",
       "kind": "alias",
       "question": "Tell me about Todo Aoi.",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": []
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [],
+      "note": "No expect_mode: this case tests that the alias Todo Aoi resolves to Aoi Todo. Both qa and narrative are defensible, and asserting the one the router happened to pick would be fitting the test to the code."
     },
-
     {
       "id": "semantic-01",
       "kind": "semantic",
       "question": "Which technique lets someone swap the positions of two people by clapping?",
-      "expect_docs": ["Boogie Woogie"],
-      "expect_text": ["Boogie Woogie"]
+      "expect_docs": [
+        "Boogie Woogie"
+      ],
+      "expect_text": [
+        "Boogie Woogie"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "semantic-02",
       "kind": "semantic",
       "question": "What ability lets a sorcerer see the flow of cursed energy in perfect detail?",
-      "expect_docs": ["Six Eyes"],
-      "expect_text": []
+      "expect_docs": [
+        "Six Eyes"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
     {
       "id": "semantic-03",
       "kind": "semantic",
       "question": "What is the strengthened punch that occurs when an attack lands within a fraction of a second of cursed energy?",
-      "expect_docs": ["Black Flash"],
-      "expect_text": ["Black Flash"]
+      "expect_docs": [
+        "Black Flash"
+      ],
+      "expect_text": [
+        "Black Flash"
+      ],
+      "expect_mode": "qa"
     },
     {
       "id": "semantic-04",
       "kind": "semantic",
       "question": "What is the contract a jujutsu user forms with themselves or another to gain power?",
-      "expect_docs": ["Binding Vow"],
+      "expect_docs": [
+        "Binding Vow"
+      ],
       "expect_text": [],
-      "note": "Originally phrased 'a promise made in exchange for a restriction', which retrieved Heavenly Restriction instead. That was a bad question, not a bad retrieval: in this series a Heavenly Restriction also trades a restriction for power, so the question had two correct answers. Rephrased rather than tuning the retriever to prefer one reading of an ambiguous prompt."
+      "note": "Originally phrased 'a promise made in exchange for a restriction', which retrieved Heavenly Restriction instead. That was a bad question, not a bad retrieval: in this series a Heavenly Restriction also trades a restriction for power, so the question had two correct answers. Rephrased rather than tuning the retriever to prefer one reading of an ambiguous prompt.",
+      "expect_mode": "qa"
     },
     {
       "id": "semantic-05",
       "kind": "semantic",
       "question": "What is the condition some people are born with that trades a physical limitation for extraordinary ability?",
-      "expect_docs": ["Heavenly Restriction"],
-      "expect_text": []
+      "expect_docs": [
+        "Heavenly Restriction"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
-
     {
       "id": "lexical-01",
       "kind": "lexical",
       "question": "Playful Cloud",
-      "expect_docs": ["Playful Cloud"],
-      "expect_text": []
+      "expect_docs": [
+        "Playful Cloud"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
     {
       "id": "lexical-02",
       "kind": "lexical",
       "question": "Malevolent Shrine",
-      "expect_docs": ["Malevolent Shrine"],
-      "expect_text": []
+      "expect_docs": [
+        "Malevolent Shrine"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
     {
       "id": "lexical-03",
       "kind": "lexical",
       "question": "Prison Realm",
-      "expect_docs": ["Prison Realm"],
-      "expect_text": []
+      "expect_docs": [
+        "Prison Realm"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
-
     {
       "id": "multihop-01",
       "kind": "multihop",
       "question": "Which students attend Kyoto Jujutsu High?",
-      "expect_docs": ["Aoi Todo"],
-      "expect_text": []
+      "expect_docs": [
+        "Aoi Todo"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
     {
       "id": "multihop-02",
       "kind": "multihop",
       "question": "Who fought Hanami?",
-      "expect_docs": ["Hanami"],
-      "expect_text": []
+      "expect_docs": [
+        "Hanami"
+      ],
+      "expect_text": [],
+      "expect_mode": "qa"
     },
     {
       "id": "multihop-03",
       "kind": "multihop",
       "question": "What happened to Nanami during the Shibuya Incident?",
-      "expect_docs": ["Kento Nanami", "Shibuya Incident"],
-      "expect_text": []
+      "expect_docs": [
+        "Kento Nanami",
+        "Shibuya Incident"
+      ],
+      "expect_text": [],
+      "expect_mode": "narrative"
     },
-
     {
       "id": "narrative-01",
       "kind": "narrative",
       "question": "Shibuya Incident",
-      "expect_docs": ["Shibuya Incident"],
+      "expect_docs": [
+        "Shibuya Incident"
+      ],
       "expect_text": [],
       "expect_ordered_beats": 8,
-      "expect_times": true
+      "expect_times": true,
+      "expect_mode": "narrative"
     },
     {
       "id": "narrative-02",
@@ -156,7 +231,8 @@
       "question": "Fearsome Womb Arc",
       "expect_docs": [],
       "expect_text": [],
-      "expect_ordered_beats": 3
+      "expect_ordered_beats": 3,
+      "expect_mode": "narrative"
     },
     {
       "id": "roster-01",
@@ -164,8 +240,15 @@
       "question": "Every Rank of Curse in Jujutsu Kaisen",
       "note": "Resolved to the series page and returned a single beat from Volume 0 until subject ranking demoted the pages that package the work. The grades come from the parameter this wiki keys as `class` and labels 'Grade'.",
       "expect_min_members": 15,
-      "expect_members": ["Jogo", "Hanami", "Mahito"],
-      "expect_groups": ["Special Grade"]
+      "expect_members": [
+        "Jogo",
+        "Hanami",
+        "Mahito"
+      ],
+      "expect_groups": [
+        "Special Grade"
+      ],
+      "expect_mode": "roster"
     },
     {
       "id": "roster-02",
@@ -173,14 +256,19 @@
       "question": "Every Cursed Technique of Sukuna",
       "note": "Resolved to the generic `Cursed Technique` page rather than to Sukuna, because 'cursed technique' is the longer alias.",
       "expect_min_members": 5,
-      "expect_members": ["Malevolent Shrine", "Black Flash"]
+      "expect_members": [
+        "Malevolent Shrine",
+        "Black Flash"
+      ],
+      "expect_mode": "roster"
     },
     {
       "id": "sourcing-01",
       "kind": "sourcing",
       "question": "Shibuya Incident",
       "note": "The regression guard for citations captured and then dropped from the prose: every beat must carry the chapters and episodes a script tags its block with. 60 of 128 beats carried none.",
-      "expect_sourced_ratio": 0.9
+      "expect_sourced_ratio": 0.9,
+      "expect_mode": "narrative"
     }
   ]
 }

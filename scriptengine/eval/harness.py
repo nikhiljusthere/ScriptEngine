@@ -46,10 +46,22 @@ def _hit_docs(question: dict[str, Any], titles: list[str]) -> bool:
 
 
 def _hit_text(question: dict[str, Any], haystack: str) -> bool:
-    expected = question.get("expect_text") or []
-    if not expected:
-        return True
+    """`expect_text` is all-of; `expect_any_text` is any-of.
+
+    Both are needed. A grade and an affiliation must *both* appear, but Akainu
+    and Sakazuki are the same marine and no passage uses both names — requiring
+    them together failed a correct answer, and dropping one of them threw away
+    the fact that either would do.
+    """
     lowered = haystack.lower()
+
+    alternatives = question.get("expect_any_text") or []
+    if alternatives and not any(
+        fragment.lower() in lowered for fragment in alternatives
+    ):
+        return False
+
+    expected = question.get("expect_text") or []
     return all(fragment.lower() in lowered for fragment in expected)
 
 
@@ -79,6 +91,18 @@ def evaluate(
             else:
                 outcome = _evaluate_retrieval(retriever, question, top_k)
 
+            # Where a real caller's `auto` would have sent this question. The
+            # suite used to call each path directly, which is why a fact lookup
+            # that the router sent to `roster` — "What grade of sorcerer is Aoi
+            # Todo?", answered with a list of his battles — passed 24/24 while
+            # being broken through the CLI and the API alike.
+            outcome.update(_check_route(paths, question))
+            # A case that names its mode fails when the router disagrees, even
+            # if the path it was scored on answered correctly — because no real
+            # caller would have reached that path.
+            if outcome.get("route_ok") is False:
+                outcome["passed"] = False
+
             outcome["id"] = question["id"]
             outcome["kind"] = question["kind"]
             outcome["question"] = question["question"]
@@ -106,6 +130,27 @@ def evaluate(
             for kind, outcomes in sorted(by_kind.items())
         },
         "results": results,
+    }
+
+
+def _check_route(paths: SeriesPaths, question: dict[str, Any]) -> dict[str, Any]:
+    """Which mode `auto` picks, and whether the case expected that one.
+
+    A case without `expect_mode` records the route without judging it, so the
+    signal is available everywhere while only the cases that declare an
+    expectation can fail on it.
+    """
+    from scriptengine.retrieve.router import route
+
+    chosen = route(paths, question["question"])
+    expected = question.get("expect_mode")
+    if not expected:
+        return {"routed": chosen.mode, "route_why": chosen.why}
+    return {
+        "routed": chosen.mode,
+        "route_why": chosen.why,
+        "route_ok": chosen.mode == expected,
+        "expected_mode": expected,
     }
 
 
@@ -190,12 +235,20 @@ def _evaluate_roster(paths: SeriesPaths, question: dict[str, Any]) -> dict[str, 
         expected in roster.groups for expected in question.get("expect_groups") or []
     )
     enough = len(roster.members) >= question.get("expect_min_members", 1)
+    # What must *not* be in the set. A roster is wrong in two directions, and
+    # until membership validation existed only one of them was measurable:
+    # "Every Saiyan transformation" returned Black Frieza and still passed,
+    # because it contained everything it had been asked to contain.
+    intruders = [
+        unwanted for unwanted in question.get("expect_absent") or [] if unwanted in names
+    ]
 
     return {
-        "passed": members_ok and groups_ok and enough,
+        "passed": members_ok and groups_ok and enough and not intruders,
         "subject": roster.subject,
         "basis": roster.basis,
         "members": len(roster.members),
+        "intruders": intruders,
         "groups": roster.groups[:6],
         "missing": [
             expected

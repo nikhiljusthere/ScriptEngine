@@ -1,0 +1,182 @@
+{
+  "series": "db",
+  "note": "Answers are checked against the Dragon Ball wiki as crawled. 'expect_min_members' comes from the wiki's own category count, not from what the engine returned, so the eval measures the set rather than today's behaviour. Every question names the series on purpose: that phrasing is what used to hijack enumeration into 'Dragon Ball Z episodes'.",
+  "questions": [
+    {
+      "id": "fact-01",
+      "kind": "fact",
+      "question": "What race is Vegeta?",
+      "expect_mode": "qa",
+      "expect_docs": [
+        "Vegeta"
+      ],
+      "expect_text": [
+        "Saiyan"
+      ]
+    },
+    {
+      "id": "fact-02",
+      "kind": "fact",
+      "question": "Who taught Goku the Kaio-ken?",
+      "expect_mode": "qa",
+      "expect_docs": [
+        "Kaio-ken"
+      ],
+      "expect_text": [
+        "King Kai"
+      ]
+    },
+    {
+      "id": "roster-01",
+      "kind": "roster",
+      "question": "Every race in Dragon Ball",
+      "expect_members": [
+        "Saiyan",
+        "Namekian",
+        "Majin",
+        "Android"
+      ],
+      "expect_min_members": 100,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-02",
+      "kind": "roster",
+      "question": "All types of non-humans in Dragon Ball",
+      "expect_members": [
+        "Saiyan",
+        "Namekian"
+      ],
+      "expect_min_members": 100,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-03",
+      "kind": "roster",
+      "question": "All types of Dragon Balls",
+      "note": "`Dragon Ball (object)` sits in the same category but is the article about the object itself, not one of its variants.",
+      "expect_members": [
+        "Earth Dragon Ball",
+        "Namekian Dragon Ball",
+        "Super Dragon Ball",
+        "Black Star Dragon Ball"
+      ],
+      "expect_absent": [
+        "Dragon Ball (object)"
+      ],
+      "expect_min_members": 12,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-04",
+      "kind": "roster",
+      "question": "Every Dragon Ball movie",
+      "expect_members": [
+        "Dragon Ball Z: Battle of Gods"
+      ],
+      "expect_min_members": 20,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-05",
+      "kind": "roster",
+      "question": "Every Saiyan transformation",
+      "note": "The set is Transformations, 160 of them, of which these are Saiyan. A Saiyan transformation is one only Saiyans can reach — not merely one a Saiyan has used. Kaio-ken was invented by King Kai and Krillin knows it, so it is teachable rather than Saiyan; Black Frieza belongs to Frieza and Orange Piccolo to Piccolo.",
+      "expect_members": [
+        "Super Saiyan",
+        "Super Saiyan 2",
+        "Super Saiyan 3",
+        "Super Saiyan 4",
+        "Super Saiyan God",
+        "Super Saiyan Blue",
+        "Great Ape",
+        "Golden Great Ape",
+        "Ultra Ego",
+        "Beast"
+      ],
+      "expect_absent": [
+        "Black Frieza",
+        "Golden Frieza",
+        "Orange Piccolo",
+        "Great Namekian",
+        "Kaio-ken",
+        "Ultra Instinct (technique)",
+        "Dark Dragon Ball Enhancement",
+        "Evil Aura",
+        "Unlock Potential",
+        "Ultimate",
+        "Saiyan beyond God (Chapter 2)",
+        "Spirit Bomb Super Saiyan",
+        "Powerhouse",
+        "Fusion of Ki"
+      ],
+      "expect_min_members": 25,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-08",
+      "kind": "roster",
+      "question": "Every Namekian transformation",
+      "note": "The same reasoning as the Saiyan question, on a different race and with no rule naming either. Great Namekian and Orange Piccolo are Namekian forms; Super Saiyan is not.",
+      "expect_members": [
+        "Great Namekian",
+        "Orange Piccolo"
+      ],
+      "expect_absent": [
+        "Super Saiyan",
+        "Black Frieza",
+        "Kaio-ken"
+      ],
+      "expect_min_members": 2,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-09",
+      "kind": "roster",
+      "question": "Every Frieza Race transformation",
+      "note": "Frieza's forms, and only those. This one also guards the qualifier parser: `race` is a word naming the kind of set, not a constraint, and enforcing it rejected all 160 candidates.",
+      "expect_members": [
+        "Golden Frieza",
+        "Black Frieza"
+      ],
+      "expect_absent": [
+        "Super Saiyan",
+        "Great Ape",
+        "Orange Piccolo"
+      ],
+      "expect_min_members": 3,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-07",
+      "kind": "roster",
+      "question": "Every member of the Galactic Frieza Army",
+      "note": "The category holds 230 pages: 121 characters, but also the races it conquered, the planets it took, the armour it issues and the battles it fought. Only people are members.",
+      "expect_members": [
+        "Frieza",
+        "Appule",
+        "Zarbon"
+      ],
+      "expect_absent": [
+        "Attack Ball",
+        "Planet Vegeta",
+        "Arcosian",
+        "Battle Armor"
+      ],
+      "expect_min_members": 90,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-06",
+      "kind": "roster",
+      "question": "Every Fusion",
+      "note": "Android 1617 is a real EX-Fusion, but only in the Dragon Ball Fusions game, so it is out of scope until the topic asks for game content.",
+      "expect_absent": [
+        "Android 1617",
+        "Android 1718"
+      ],
+      "expect_min_members": 60,
+      "expect_mode": "roster"
+    }
+  ]
+}
