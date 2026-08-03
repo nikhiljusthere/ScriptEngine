@@ -164,6 +164,29 @@ class TestEndToEnd:
         roster = R.build_roster(paths, "Every technique of Ichigo Kurosaki")
         assert roster.confidence in ("partial", "weak", "")
 
+    def test_headings_and_prose_are_added_not_chosen_between(self):
+        """Luffy's Gears are split across the two readings of one page.
+
+        The headings on his abilities page are `Gear 2`, `Gear 3`, `Gear 4` and
+        `Gear 5 (Awakening)`; the prose under them names `Boundman`, `Tankman`
+        and `Snakeman`. Preferring either one scored 3 of 6 — the union scores
+        5, and no ordering of the two could have.
+        """
+        paths = store_for("onepiece")
+        roster = R.build_roster(paths, "Every Gear of Luffy")
+        names = " ".join(member.name for member in roster.members).lower()
+        if "boundman" not in names:
+            pytest.skip("prose abilities have not been extracted for this store")
+        assert "gear 2" in names and "gear 3" in names
+        assert "snakeman" in names and "tankman" in names
+        assert roster.confidence == "partial"
+
+    def test_extracted_abilities_never_claim_more_than_partial(self):
+        """A model read them; the wiki did not file them."""
+        paths = store_for("hxh")
+        roster = R.build_roster(paths, "Every Nen ability of Killua")
+        assert roster.confidence == "partial"
+
     @pytest.mark.parametrize(
         "series,query,basis",
         [

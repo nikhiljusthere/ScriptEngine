@@ -272,6 +272,73 @@ def _stated_count(name: str) -> int | None:
 
 
 @app.command()
+def abilities(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(0, "--limit", help="Stop after this many characters."),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Re-extract even where a current answer is stored."
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Show whose prose would be read, call no model."
+    ),
+) -> None:
+    """Extract the abilities this wiki writes only as prose.
+
+    Half of what a character-scoped question asks for is not an entity: Killua's
+    Godspeed, Saitama's Serious Punch and Genos' Incinerate have no page, no
+    category and no `users` field. They are named in a paragraph under
+    `Abilities & Powers`, and the chunk text carries no markup, so nothing
+    structural can pick them out.
+
+    A local model reads those sections once and the answer is stored, so
+    retrieval keeps reading a table rather than reasoning. Only the series that
+    declare `ability_sections:` are touched — Dragon Ball records ownership as
+    edges and needs none of this.
+
+    Cached on the page's revision, so running it twice costs nothing.
+    """
+    import logging
+
+    from scriptengine.ingest.abilities import extract_series, needs_extracting
+    from scriptengine.llm.client import LLMUnavailable
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    if dry_run:
+        with FactStore(paths.facts_db) as store:
+            names = needs_extracting(store, _load_overrides(paths))
+        console.print(f"[dim]{len(names)} characters would be read:[/dim]")
+        for name in names[:40]:
+            console.print(f"  {name}")
+        if len(names) > 40:
+            console.print(f"  [dim]… {len(names) - 40} more[/dim]")
+        return
+
+    def show(character: str, count: int) -> None:
+        console.print(f"  [dim]{count:3} found[/dim]  {character}")
+
+    try:
+        report = extract_series(
+            paths, limit=limit or None, refresh=refresh, progress=show
+        )
+    except LLMUnavailable as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    table = Table(title=f"Abilities extracted — {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in ("considered", "extracted", "cached", "failed", "abilities"):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+
+
+@app.command()
 def classify(
     series: str = typer.Option(..., "--series"),
     limit: int = typer.Option(0, "--limit", help="Stop after this many pages."),

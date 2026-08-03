@@ -473,16 +473,25 @@ def build_roster(
                 store, episodes, character, kinds, constraints, overrides,
                 max_members, member_chars,
             )
-            if owned is not None:
-                return owned
-            # No ownership recorded for them, or none of the kind asked. The
-            # wikis that keep no user fields are exactly the ones that write
-            # abilities as headings instead.
-            sectioned = _section_roster(
-                store, character, kinds, overrides, member_chars
+            # What the wiki wrote on its own page, read both ways: the headings
+            # it wrote, and the abilities named in the prose under them.
+            extracted = _combine(
+                _section_roster(store, character, kinds, overrides, member_chars),
+                _extracted_roster(store, character, kinds, member_chars),
             )
-            if sectioned is not None:
-                return sectioned
+            if owned is not None:
+                # Ownership normally wins — the wiki recorded it, a model read
+                # the other. Not when it is one accidental edge: Bleach records
+                # a single user field for Ichigo across the whole corpus, and
+                # answering his techniques with that one page while a full
+                # reading of his own page sits unused is the same failure in a
+                # new place.
+                thin = owned.confidence == "partial"
+                if not (thin and extracted is not None
+                        and len(extracted.members) > len(owned.members)):
+                    return owned
+            if extracted is not None:
+                return extracted
 
         if declared is not None:
             if declared.sections_of:
@@ -796,6 +805,74 @@ def _owned_roster(
         rejected=rejected,
         scope=constraints.scope,
         capped=len(names) if len(names) > max_members else 0,
+    )
+
+
+def _extracted_roster(
+    store: FactStore, character: str, kinds: set[str], member_chars: int
+) -> Roster | None:
+    """A character's kit as read out of prose at index time.
+
+    The last resort, and the only one that reaches half of what these questions
+    ask for. Killua's Godspeed has no page, no category and no user field — it
+    is a proper noun in a paragraph, and `cli abilities` is what turns it into
+    a row. Nothing is computed here: this is a keyed read of what that run
+    stored, so the same question answers the same way twice.
+
+    Capped at `partial` unconditionally. A model read these out of prose, and
+    however good the reading was it is not the wiki having filed something.
+    """
+    rows = store.abilities_of(character, sorted(kinds))
+    if not rows:
+        return None
+    members = [
+        Member(
+            name=row["name"],
+            group=(row["section"] or "").split("/")[-1].strip(),
+            text=(row["reason"] or "")[:member_chars],
+        )
+        for row in rows
+    ]
+    return Roster(
+        subject=character,
+        basis=f"{character}, from prose",
+        kind="extracted",
+        members=members[:MAX_MEMBERS],
+        confidence="partial",
+        candidates=len(rows),
+    )
+
+
+def _combine(first: Roster | None, second: Roster | None) -> Roster | None:
+    """Union two readings of the same character's page.
+
+    Headings and prose answer the same question from the same page and neither
+    contains the other. The headings on Luffy's abilities page are `Gear 2`,
+    `Gear 3`, `Gear 4` and `Gear 5 (Awakening)`; the prose under them names
+    `Boundman`, `Tankman` and `Snakeman`. Whichever was preferred, choosing lost
+    half the Gears — so both are kept.
+
+    Confidence stays `partial`, which is what both inputs already claim.
+    """
+    if first is None:
+        return second
+    if second is None:
+        return first
+    members = list(first.members)
+    seen = {member.name.strip().lower() for member in members}
+    for member in second.members:
+        key = member.name.strip().lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        members.append(member)
+    return Roster(
+        subject=first.subject,
+        basis=f"{first.subject}, by section and prose",
+        kind="section+extracted",
+        members=members[:MAX_MEMBERS],
+        confidence="partial",
+        candidates=first.candidates + second.candidates,
     )
 
 
