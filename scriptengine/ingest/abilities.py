@@ -35,7 +35,9 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Any
 
@@ -239,8 +241,13 @@ def extract_character(
                 passage=window,
                 kinds=", ".join(KINDS),
             )
+            # Generous, because the local models are thinking models. Gemma 4
+            # spends about 4,000 tokens reasoning over a 4,000-character
+            # passage before it writes a word of the answer; at 4,000 it hits
+            # the ceiling mid-thought and returns nothing, which looks exactly
+            # like "this passage names nothing".
             answer = client.complete(
-                prompt, system=SYSTEM, temperature=0.0, max_tokens=800
+                prompt, system=SYSTEM, temperature=0.0, max_tokens=_answer_budget()
             )
             for entry in parse_response(answer):
                 key = entry["name"].strip().lower()
@@ -250,10 +257,59 @@ def extract_character(
                     continue
                 if key in stopwords:
                     continue
+                # It has to be in the passage. Measured over 2,841 stored rows,
+                # the local model produced 91 names that appear nowhere in the
+                # text it was shown — `Fireball shooting`, `Sword fighting`,
+                # `Cero Barrage`, `Ghostly Wolf Summoning`. Several describe
+                # something the character really does; none is what the wiki
+                # calls it, and a name the source never uses cannot be cited.
+                if not _grounded_in(entry["name"], window, section):
+                    logger.info("ungrounded %r for %s", entry["name"], character)
+                    continue
                 seen.add(key)
                 entry["section"] = section
                 found.append(entry)
     return found
+
+
+def _answer_budget() -> int:
+    """Room for a thinking model to think *and* answer.
+
+    Gemma 4 spends about 4,000 tokens reasoning over a 4,000-character passage
+    and more on a dense one; at 4,000 it stopped mid-thought and returned
+    nothing, which is indistinguishable from "this passage names nothing".
+    Configurable because how much a model thinks is a property of the model.
+    """
+    return int(os.environ.get("SCRIPTENGINE_ANSWER_TOKENS", "32000"))
+
+
+def _grounded_in(name: str, passage: str, section: str) -> bool:
+    """Whether the passage actually calls it that.
+
+    The heading counts as much as the prose: `Equipment / Cannon Arm` names the
+    thing the paragraph under it describes, and reading only the body marked
+    every one of those as invented.
+
+    This is a citation test rather than a truth test. Coyote Starrk really does
+    summon wolves; the wiki simply never writes "Ghostly Wolf Summoning", so a
+    script quoting that phrase would be quoting the model rather than the
+    source.
+    """
+    return _fold(name) in _fold(f"{section} {passage}")
+
+
+def _fold(text: str) -> str:
+    """Compare on letters and digits, ignoring case, accents and punctuation.
+
+    Whitespace is collapsed rather than merely substituted. Stripping the
+    Japanese out of `Bang! (バン！)` leaves five spaces where it was, and a
+    padded string matches nothing — Makima's real named ability would have been
+    dropped as invented.
+    """
+    text = unicodedata.normalize("NFKD", text or "")
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = re.sub(r"[^a-z0-9 ]+", " ", text.lower())
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def _windows(text: str, size: int = 4000, overlap: int = 300) -> list[str]:

@@ -16,7 +16,18 @@ import subprocess
 
 import pytest
 
+from scriptengine.config import get_settings
 from scriptengine.llm import client as llm
+
+
+def opencode_client(tmp_path):
+    """A client pinned to the opencode backend.
+
+    The default backend is `local` now, so a test about how opencode is invoked
+    has to say so rather than inherit whatever the config prefers.
+    """
+    settings = get_settings().model_copy(update={"llm_backend": "opencode"})
+    return llm.LLMClient(settings=settings, workdir=str(tmp_path))
 
 
 def _event(kind: str, text: str = "") -> str:
@@ -87,7 +98,7 @@ class TestThrottling:
     def test_a_throttle_raises_its_own_error(self, monkeypatch, tmp_path):
         """So a batch stops on the first one instead of recording every
         remaining page as a failure and reporting the run as complete."""
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: "opencode"))
         monkeypatch.setattr(
             subprocess, "run",
@@ -112,7 +123,7 @@ class TestThrottling:
         like a quota message to a substring match. A throttle appears in a
         failure, never in a successful answer.
         """
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: "opencode"))
         monkeypatch.setattr(
             subprocess, "run",
@@ -126,7 +137,7 @@ class TestThrottling:
             _event("step_start"),
             json.dumps({"type": "error", "part": {"message": "429 too many requests"}}),
         ])
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: "opencode"))
         monkeypatch.setattr(
             subprocess, "run",
@@ -148,7 +159,7 @@ class TestInvocation:
             seen["command"] = command
             return subprocess.CompletedProcess(command, 0, _stream("ok"), "")
 
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: "opencode"))
         monkeypatch.setattr(subprocess, "run", fake_run)
 
@@ -165,7 +176,7 @@ class TestInvocation:
         assert "\n" not in command[-1]
 
     def test_a_missing_binary_is_reported_not_crashed(self, monkeypatch, tmp_path):
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: ""))
         assert client.available() is False
         with pytest.raises(llm.LLMUnavailable):
@@ -175,7 +186,7 @@ class TestInvocation:
         def fake_run(command, **kwargs):
             raise subprocess.TimeoutExpired(command, 1)
 
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: "opencode"))
         monkeypatch.setattr(subprocess, "run", fake_run)
         with pytest.raises(llm.LLMUnavailable):
@@ -183,7 +194,7 @@ class TestInvocation:
 
     def test_an_empty_answer_is_a_failure_not_an_empty_string(self, monkeypatch, tmp_path):
         """Silence read as success is how the newline bug survived a whole run."""
-        client = llm.LLMClient(workdir=str(tmp_path))
+        client = opencode_client(tmp_path)
         monkeypatch.setattr(client.__class__, "executable", property(lambda self: "opencode"))
         monkeypatch.setattr(
             subprocess, "run",
@@ -191,3 +202,70 @@ class TestInvocation:
         )
         with pytest.raises(llm.LLMUnavailable):
             client.complete("anything")
+
+
+class TestLocalBackend:
+    """The OpenAI-shaped path — Ollama on 11434, LM Studio on 1234."""
+
+    def _client(self, tmp_path, **over):
+        settings = get_settings().model_copy(
+            update={"llm_backend": "local", **over}
+        )
+        return llm.LLMClient(settings=settings, workdir=str(tmp_path))
+
+    def _reply(self, monkeypatch, payload):
+        class Response:
+            status_code = 200
+
+            def raise_for_status(self):
+                return None
+
+            def json(self):
+                return payload
+
+        monkeypatch.setattr(llm.httpx, "post", lambda *a, **k: Response())
+
+    def test_the_content_is_the_answer(self, monkeypatch, tmp_path):
+        self._reply(monkeypatch, {"choices": [{"message": {"content": " ok "}}]})
+        assert self._client(tmp_path).complete("anything") == "ok"
+
+    def test_a_thinking_model_that_never_answers_is_a_failure(self, monkeypatch, tmp_path):
+        """Gemma 4 and Qwen3.5 both put their thinking in `reasoning_content`
+        and leave `content` empty when the budget runs out mid-thought.
+
+        That reads as a successful call returning nothing, which is
+        indistinguishable from "this passage names no abilities" — it would
+        have stored zero rows for every page in the corpus and looked fine.
+        """
+        self._reply(monkeypatch, {
+            "choices": [{
+                "message": {"content": "", "reasoning_content": "let me think..."},
+                "finish_reason": "length",
+            }]
+        })
+        with pytest.raises(llm.LLMUnavailable, match="budget"):
+            self._client(tmp_path).complete("anything")
+
+    def test_an_empty_answer_that_simply_stopped_is_also_a_failure(self, monkeypatch, tmp_path):
+        self._reply(monkeypatch, {
+            "choices": [{"message": {"content": ""}, "finish_reason": "stop"}]
+        })
+        with pytest.raises(llm.LLMUnavailable):
+            self._client(tmp_path).complete("anything")
+
+    def test_a_dead_server_is_reported_not_crashed(self, monkeypatch, tmp_path):
+        def boom(*a, **k):
+            raise OSError("connection refused")
+
+        monkeypatch.setattr(llm.httpx, "post", boom)
+        with pytest.raises(llm.LLMUnavailable):
+            self._client(tmp_path).complete("anything")
+
+    def test_the_backend_decides_which_path_runs(self, monkeypatch, tmp_path):
+        """`local` must not shell out, whatever opencode is doing."""
+        monkeypatch.setattr(
+            subprocess, "run",
+            lambda *a, **k: pytest.fail("local backend must not spawn opencode"),
+        )
+        self._reply(monkeypatch, {"choices": [{"message": {"content": "ok"}}]})
+        assert self._client(tmp_path).complete("anything") == "ok"

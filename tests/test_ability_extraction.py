@@ -169,3 +169,29 @@ class TestStorage:
         with FactStore(tmp_path / "facts.db") as store:
             assert store.abilities_of("Anyone") == []
             assert store.extraction_state("Anyone") is None
+
+
+class TestGroundedness:
+    """A name the passage never uses cannot be cited.
+
+    Audited over 2,841 stored rows: a local model named 91 things its source
+    never says — `Fireball shooting`, `Sword fighting`, `Cero Barrage`,
+    `Ghostly Wolf Summoning` — against opencode's 1. Several describe something
+    the character really does. None is what the wiki calls it.
+    """
+
+    def test_a_name_in_the_prose_passes(self):
+        assert A._grounded_in("Godspeed", "Killua devised Godspeed in combat.", "Nen")
+
+    def test_a_name_only_in_the_heading_passes(self):
+        """`Equipment / Cannon Arm` names the thing its paragraph describes."""
+        assert A._grounded_in("Cannon Arm", "Rickert built it for him.", "Equipment / Cannon Arm")
+
+    def test_a_name_the_passage_never_uses_fails(self):
+        assert not A._grounded_in("Ghostly Wolf Summoning", "Starrk splits his soul.", "Abilities")
+
+    def test_matching_ignores_case_and_accents(self):
+        assert A._grounded_in("Getsuga Tensho", "he fires a Getsugā Tenshō", "Powers")
+
+    def test_punctuation_does_not_block_a_match(self):
+        assert A._grounded_in("Bang! (バン！)", "she says Bang and they die", "Abilities")

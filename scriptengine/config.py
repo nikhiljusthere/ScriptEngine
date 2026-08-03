@@ -96,10 +96,30 @@ class Settings(BaseSettings):
     # Nothing on the query path calls a model. Retrieval reads tables these two
     # passes wrote, which is what keeps a question answering the same way twice.
     #
-    # Spoken through opencode as a subprocess rather than over HTTP; the local
-    # Ollama endpoint this used to point at is gone. Named `provider/model`, as
-    # `opencode models` lists them.
-    llm_model: str = "opencode/deepseek-v4-flash-free"
+    # `local` speaks HTTP to whatever OpenAI-compatible server is running —
+    # Ollama on 11434, LM Studio on 1234. `opencode` shells out to the CLI.
+    #
+    # Measured on one known passage (Killua's Nen section, whose right answer is
+    # Godspeed, Whirlwind, Speed of Lightning and Rhythm Echo):
+    #
+    #   qwen3-vl:8b      Ollama       ~3.4s/window    4 of 4    not a thinker
+    #   opencode/deepseek CLI          8.0s/window    4 of 4
+    #   qwen3.5-9b       LM Studio    22.2s/window    2 of 4    3,380 reasoning tokens
+    #   gemma-4-12b      LM Studio    ~39s/window     2 of 4    4,027, often never finishes
+    #
+    # The two thinking models spend thousands of tokens deliberating over what
+    # is a pattern-spotting job, and answer no better for it. Extraction wants
+    # a fast instruct model, not a reasoner.
+    #
+    # Local models paraphrase, which is the one thing they do worse: measured
+    # over 2,841 stored rows, a local model named 91 things its source never
+    # says against opencode's 1. The groundedness gate in `ingest/abilities.py`
+    # is what makes the fast path safe — a name absent from the passage is
+    # dropped before it is stored.
+    llm_backend: str = "local"
+    llm_model: str = "qwen3-vl:8b-instruct-bf16"
+    llm_base_url: str = "http://localhost:11434/v1"
+    llm_api_key: str = "local"  # local servers ignore it; sent for shape
     llm_timeout_seconds: int = 300
 
     # ── API ──────────────────────────────────────────────────────────────────
