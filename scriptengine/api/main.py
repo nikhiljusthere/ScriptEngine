@@ -145,12 +145,14 @@ def context(request: ContextRequest) -> dict[str, Any]:
     one or the other, and asking the caller to classify its own topic is asking
     it to know which mode exists.
     """
-    from scriptengine.retrieve.roster import looks_like_enumeration
+    from scriptengine.retrieve.router import route
 
     paths = _paths_or_404(request.series)
     mode = request.mode
+    routed = None
     if mode == "auto":
-        mode = "roster" if looks_like_enumeration(request.query) else "narrative"
+        routed = route(paths, request.query)
+        mode = routed.mode
 
     bundle = build_context(
         paths,
@@ -170,6 +172,11 @@ def context(request: ContextRequest) -> dict[str, Any]:
             token_budget=request.token_budget,
             top_k=request.top_k,
         )
+
+    # Why this mode was chosen, so a misroute is visible to the caller rather
+    # than only in a trace.
+    if routed is not None:
+        bundle["routed"] = routed.as_dict()
 
     if request.as_prompt:
         bundle["prompt"] = render_prompt(
