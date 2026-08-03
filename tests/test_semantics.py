@@ -80,3 +80,27 @@ class TestExpectedType:
 # `_disagrees` lives in roster.py and is tested beside it, in
 # tests/test_roster_validation.py — importing it here made this module
 # uncollectable at any commit before roster.py grew the function.
+
+
+class TestStatedCount:
+    """A set whose name counts itself is a free assertion to check.
+
+    Most of what it finds is not a defect — `Gotei 13` holds 127 because the 13
+    counts divisions, and `Seven Warlords` holds 12 because twelve people held
+    seven seats. The check earns its place anyway: it also finds duplicate pages
+    for one entity, which is a real error.
+    """
+
+    def test_it_reads_digits_and_words(self):
+        from scriptengine.cli import _stated_count
+
+        assert _stated_count("Gotei 13") == 13
+        assert _stated_count("Seven Warlords of the Sea") == 7
+        assert _stated_count("Zodiac Twelve") == 12
+
+    def test_a_number_inside_a_word_is_not_a_count(self):
+        """`Extension Techniques` contains "ten" and states nothing."""
+        from scriptengine.cli import _stated_count
+
+        assert _stated_count("Extension Techniques") is None
+        assert _stated_count("Transformations") is None

@@ -246,6 +246,31 @@ def prune(
     )
 
 
+_COUNT_WORDS = {
+    "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+    "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+}
+
+
+def _stated_count(name: str) -> int | None:
+    """The size a set's own name claims, if it claims one.
+
+    `Seven Warlords of the Sea`, `Gotei 13`, `Zodiac Twelve`. A name that counts
+    itself is a free assertion to check the membership against — and the check
+    is worth having even though most of what it finds turns out to be a naming
+    convention rather than a defect.
+    """
+    import re as _re
+
+    digits = _re.search(r"\b(\d{1,3})\b", name or "")
+    if digits:
+        return int(digits.group(1))
+    for word, value in _COUNT_WORDS.items():
+        if _re.search(rf"\b{word}\b", name or "", _re.IGNORECASE):
+            return value
+    return None
+
+
 @app.command()
 def classify(
     series: str = typer.Option(..., "--series"),
@@ -532,6 +557,42 @@ def rosters(
             style = "yellow" if size >= 40 else ""
             table.add_row(f"[{style}]{phrase}[/{style}]" if style else phrase, name, str(size))
         console.print(table)
+
+        # A set whose *name* states a size, against what it actually holds.
+        # Reported, never corrected: of the seven found across the corpus, only
+        # some are defects. `Gotei 13` holds 127 because the 13 counts divisions
+        # and the category is the whole organisation; `Seven Warlords` holds 12
+        # because twelve people held seven seats over time. Both are correct
+        # data and a misleading name, and a tool that "fixed" them would be
+        # wrong. Which is which is a judgement for a person.
+        counted = Table(title=f"Sets whose name states a count — {series}")
+        counted.add_column("set")
+        counted.add_column("name says", justify="right")
+        counted.add_column("holds", justify="right")
+        counted.add_column("for review")
+        found = 0
+        with FactStore(paths.facts_db) as store:
+            for definition in declared:
+                stated = _stated_count(definition.name)
+                if stated is None:
+                    continue
+                size = (
+                    len(definition.groups)
+                    if definition.groups
+                    else len(_declared_members(store, definition))
+                )
+                if size == stated:
+                    continue
+                found += 1
+                counted.add_row(
+                    definition.name,
+                    str(stated),
+                    str(size),
+                    "seats vs holders, a broader category, or duplicate pages",
+                )
+        if found:
+            console.print(counted)
+        return
         console.print(
             f"[dim]{sum(1 for r in rows if r[2] >= 40)} of {len(rows)} single-word "
             "phrases claim a set of 40+ members. Each is a topic that cannot be "
