@@ -104,19 +104,25 @@ GOLD = [
         ("Omnidirectional Serious Punch", ["omnidirectional punch"]),
         ("Killer Move: Serious Series", ["serious series"]),
     ]),
+    # Corrected against the One-Punch Man wiki. `Blazing Charge` and `Arms
+    # Gatling` were in this list and are not his — nor anyone's. The engine was
+    # being marked down for not returning techniques that do not exist.
     ("opm", "Every technique of Genos", [
-        ("Incinerate", ["incineration cannon"]),
-        ("Machine Gun Blows", ["machine gun punch"]),
+        ("Incineration Cannon", ["incinerate"]),
+        ("Machinegun Blows", ["machine gun blows", "machine gun punch"]),
         ("Jet Drive Arrow", []),
-        ("Blazing Charge", []),
-        ("Arms Gatling", []),
+        ("Rocket Punch", []),
+        ("Rocket Stomp", []),
     ]),
     ("jjk", "How many 1v1 battles did Yuji Itadori have with named characters", [
         ("Yuji Itadori vs. Aoi Todo", ["yuji vs todo"]),
         ("Yuji Itadori vs. Junpei Yoshino", ["yuji vs junpei"]),
         ("Yuji Itadori vs. Mahito", ["yuji vs mahito"]),
         ("Yuji Itadori vs. Choso", ["yuji vs choso"]),
-        ("Yuji Itadori vs. Sukuna", ["yuji vs sukuna"]),
+        # `Yuji Itadori vs. Sukuna` was here and is not a page on this wiki.
+        # What exists is `Yuji, Maki & Hana vs. Sukuna` — three on one — and
+        # `Jujutsu Sorcerers vs. Sukuna`, a group raid. Neither is a 1v1, which
+        # is what this question asks for, so the item was never answerable.
         ("Yuji Itadori vs. Ko Guy", ["yuji vs ko guy"]),
         ("Yuji Itadori vs. Yuta Okkotsu", ["yuji vs yuta"]),
     ]),
@@ -171,8 +177,10 @@ GOLD = [
         ("Chainsaw Man", ["chainsaw man hybrid", "hybrid form"]),
         ("Chainsaw Devil", ["pochita", "full devil form", "true chainsaw man"]),
     ]),
+    # `Black Swordsman Armor` was here and is not a thing. "Black Swordsman" is
+    # Guts' epithet, not the name of a suit; the Berserker Armor is the only
+    # armour Berserk names. One item, and the engine already returns it.
     ("berserk", "Every armor of Guts", [
-        ("Black Swordsman Armor", ["black swordsman"]),
         ("Berserker Armor", ["berserk armor"]),
     ]),
 ]
