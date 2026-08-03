@@ -154,10 +154,17 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
             if not entities:
                 return "", ""
 
-            ranked = [row["name"] for row in entities if row["is_resolved"]] or [
-                row["name"] for row in entities
+            # Unresolved candidates are ranked below resolved ones but not
+            # discarded. `Luffy` is an alias with no page of its own, so
+            # filtering it out left "What is Luffy's Devil Fruit?" choosing
+            # between devil fruits and answering `Goe Goe no Mi`. Only the
+            # ordering changes — nothing here resolves aliases, which 13 of 14
+            # possessive questions already handle correctly.
+            resolved = {row["name"] for row in entities if row["is_resolved"]}
+            ranked = [row["name"] for row in entities]
+            typed = [
+                (name, sem.semantic_type(store, name, overrides)) for name in ranked[:8]
             ]
-            typed = [(name, sem.semantic_type(store, name, overrides)) for name in ranked[:6]]
 
             # `SUBJECT_DEMOTE_TYPES` matches raw infobox ids, so it demotes
             # `episode` on Dragon Ball and misses `episode_box` on One Piece —
@@ -186,6 +193,7 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
                     not names_owner,
                     not (words & asked),
                     semantic in _PACKAGING_SUBJECTS,
+                    name not in resolved,
                     index,
                 )
 

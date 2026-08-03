@@ -142,6 +142,32 @@ class TestSubjectPreference:
         assert chosen.signals["subject_type"] != semantics.MEDIA
         assert "Ace" in chosen.signals["subject"]
 
+    @pytest.mark.parametrize(
+        "series,query,owner",
+        [
+            ("onepiece", "What is Luffy's Devil Fruit?", "Luffy"),
+            ("onepiece", "What is Zoro's sword?", "Zoro"),
+            ("db", "What is Goku's technique?", "Goku"),
+            ("bleach", "What is Ichigo's power?", "Ichigo"),
+            ("hxh", "What is Killua's ability?", "Killua"),
+            ("jjk", "What is Sukuna's domain?", "Sukuna"),
+            ("csm", "What is Makima's ability?", "Makima"),
+        ],
+    )
+    def test_a_possessive_names_the_subject(self, series, query, owner):
+        """"What is Luffy's Devil Fruit?" answered `Goe Goe no Mi`.
+
+        `Luffy` is an alias with no page of its own, and unresolved candidates
+        were filtered out before the possessive could be read — leaving the
+        question to choose between devil fruits.
+        """
+        from scriptengine.config import series_paths
+
+        paths = series_paths(series)
+        if not paths.facts_db.exists():
+            pytest.skip(f"{series} is not indexed")
+        assert owner.lower() in str(route(paths, query).signals["subject"]).lower()
+
     def test_the_named_event_beats_the_place_it_happened(self):
         """`Shibuya Incident` must win over `Shibuya`, or the story question
         becomes a lookup about a location."""
