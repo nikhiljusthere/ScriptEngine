@@ -25,6 +25,22 @@ citation_instalments:
 
 # The sets this wiki maintains. Discovery already answers most of these
 # correctly; declaring them makes the answer the same every time.
+# Sukuna's `Dismantle` and `Cleave` are in his own
+# `Abilities and Powers / Cursed Energy` section and nowhere else on his
+# pages. This wiki answers from `Sukuna Techniques` and from `users` edges,
+# so extraction had never been asked to read any of it.
+ability_sections:
+  technique: [Abilities and Powers]
+  transformation: [Abilities and Powers]
+  item: [Equipment]
+
+# Cursed energy is the system, not an ability. Every sorcerer on the wiki has
+# a paragraph about it under the same heading.
+ability_stopwords: [
+  Cursed Energy, Cursed Technique, Cursed Energy Manipulation,
+  Reverse Cursed Technique Output, Jujutsu, Binding Vow,
+]
+
 rosters:
   - name: Cursed Spirits
     match: [curse, curses, cursed spirit, cursed spirits]

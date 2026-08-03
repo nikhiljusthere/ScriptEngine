@@ -100,13 +100,28 @@ class TestWindows:
 
 class TestGating:
     def test_a_series_declaring_no_sections_is_skipped(self):
-        """Dragon Ball records ownership as edges and needs no inference."""
+        """Extraction is opt-in per wiki, and costs nothing where unasked.
+
+        This used to assert that Dragon Ball declared none, which was true
+        until its `Power and Abilities` subpages turned out to hold every
+        Frieza form the engine was missing. The rule being tested is the
+        gating, not which wikis happen to use it.
+        """
         paths = series_paths("db")
         if not paths.facts_db.exists():
             pytest.skip("db is not indexed")
         with FactStore(paths.facts_db) as store:
-            assert A.needs_extracting(store, load_overrides(paths)) == []
             assert A.needs_extracting(store, {}) == []
+            assert A.needs_extracting(store, {"ability_sections": {}}) == []
+
+    def test_a_declared_series_finds_its_characters(self):
+        paths = series_paths("db")
+        if not paths.facts_db.exists():
+            pytest.skip("db is not indexed")
+        with FactStore(paths.facts_db) as store:
+            found = A.needs_extracting(store, load_overrides(paths))
+        # The three whose subpages hold the missing forms, ranked by prose.
+        assert {"Goku", "Vegeta", "Frieza"} <= set(found[:5])
 
     def test_the_characters_that_matter_come_first(self):
         """`--limit` must not mean "the first few alphabetically".
@@ -195,3 +210,30 @@ class TestGroundedness:
 
     def test_punctuation_does_not_block_a_match(self):
         assert A._grounded_in("Bang! (バン！)", "she says Bang and they die", "Abilities")
+
+
+class TestLeadSection:
+    """A page's own opening paragraph is about the character by definition."""
+
+    def test_the_lead_is_recognised(self):
+        assert A._is_lead("Kurapika", "Kurapika")
+        assert A._is_lead(" kurapika ", "Kurapika")
+
+    def test_a_subsection_is_not_the_lead(self):
+        assert not A._is_lead("Abilities & Powers / Nen", "Kurapika")
+        assert not A._is_lead("Plot / Yorknew City arc", "Kurapika")
+        assert not A._is_lead("", "Kurapika")
+
+    def test_kurapikas_chains_are_reachable_now(self):
+        """`Holy Chain`, `Steal Chain` and `Emperor Time` are named in his lead
+        and nowhere else on any page of his — three of his six canon abilities
+        sat outside every declared ability section."""
+        paths = series_paths("hxh")
+        if not paths.facts_db.exists():
+            pytest.skip("hxh is not indexed")
+        with FactStore(paths.facts_db) as store:
+            prose = " ".join(
+                text for _, text in A.passages(store, "Kurapika", load_overrides(paths))
+            ).lower()
+        for chain in ("holy chain", "steal chain", "emperor time"):
+            assert chain in prose

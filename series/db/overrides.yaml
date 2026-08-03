@@ -134,6 +134,35 @@ non_canon_works:
   - Dragon Ball Legends
   - Dragon Ball Super Card Game
 
+# Where this wiki writes a character's abilities in prose.
+#
+# Dragon Ball records ownership as `users` edges and answers most questions
+# from them, so extraction never ran here at all — and the forms it was
+# missing are all sitting in a subpage nothing was reading:
+#
+#     Frieza/Power and Abilities  §Abilities   first, second, third and final
+#                                              form, 100% full power, mecha
+#     Goku/Power and Abilities    208,360 chars — great ape, kaio-ken, base,
+#                                              super saiyan blue kaio-ken
+#     Vegeta/Power and Abilities  135,594 chars — and majin vegeta
+#
+# Twenty-three characters have one. They are long, so this is the most
+# expensive declaration in the project, and the only place those forms exist.
+# Only the subpage title. `Power` and `Abilities` on their own are section
+# headings on 900 pages here, and declaring them turned a 23-character read
+# into a 907-character one for nothing: `passages()` already matches on the
+# page title, so `Frieza/Power and Abilities` reaches its own §Power and
+# §Abilities sections without either being named.
+ability_sections:
+  transformation: [Power and Abilities]
+  technique: [Power and Abilities]
+  item: [Equipment]
+
+# Ki is the system every fighter uses, not one character's ability — the same
+# role Nen plays on Hunterpedia and Haki in One Piece. `Every technique Goku
+# uses` should not open with "Ki".
+ability_stopwords: [Ki, Ki Manipulation, Ki Sense, Energy, Aura]
+
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
   # Declared for the vocabulary rather than for the set: discovery finds `Races`

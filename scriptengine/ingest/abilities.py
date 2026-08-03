@@ -146,6 +146,21 @@ def _matches(section: str, breadcrumb: str, title: str) -> bool:
     return section in head or section in title.lower()
 
 
+def _is_lead(breadcrumb: str, title: str) -> bool:
+    """Whether this is the page's own opening section.
+
+    A wiki lead summarises the character, and on Hunterpedia that summary is
+    where three of Kurapika's four chains are named — `Holy Chain`,
+    `Steal Chain` and `Emperor Time` appear there and nowhere else on any page
+    of his. The lead is about the character by definition, which is what
+    separates it from the plot and synopsis sections deliberately left out:
+    those recap episodes, and an ability named in a fight recap is being
+    described rather than defined.
+    """
+    crumb = (breadcrumb or "").strip().lower()
+    return bool(crumb) and crumb == (title or "").strip().lower()
+
+
 def passages(store: FactStore, character: str, overrides: dict) -> list[tuple[str, str]]:
     """The ability prose for one character, one entry per section.
 
@@ -164,7 +179,8 @@ def passages(store: FactStore, character: str, overrides: dict) -> list[tuple[st
     for row in store.sections_of(character):
         breadcrumb = row["breadcrumb"] or ""
         title = row["title"] or ""
-        if not any(_matches(section, breadcrumb, title) for section in wanted):
+        if not (any(_matches(section, breadcrumb, title) for section in wanted)
+                or _is_lead(breadcrumb, title)):
             continue
         text = (row["text"] or "").strip()
         if len(text) < 120:

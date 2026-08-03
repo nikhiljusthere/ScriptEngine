@@ -492,16 +492,27 @@ def build_roster(
                 _extracted_roster(store, character, kinds, member_chars, overrides),
             )
             if owned is not None:
-                # Ownership normally wins — the wiki recorded it, a model read
-                # the other. Not when it is one accidental edge: Bleach records
-                # a single user field for Ichigo across the whole corpus, and
-                # answering his techniques with that one page while a full
-                # reading of his own page sits unused is the same failure in a
-                # new place.
-                thin = owned.confidence == "partial"
-                if not (thin and extracted is not None
-                        and len(extracted.members) > len(owned.members)):
-                    return owned
+                # Ownership and prose are added, not chosen between.
+                #
+                # Returning the owner roster whenever it had members hid every
+                # extracted row on the two wikis that record ownership well.
+                # Frieza's `users` edges give four Golden variants; his
+                # `Power and Abilities` subpage names the first, second, third
+                # and final forms, 100% Full Power and Mecha Frieza. Both are
+                # his, and only the union is the answer.
+                #
+                # Ownership leads, because the wiki recorded it and a model
+                # read the other, and it keeps its own confidence.
+                merged = _combine(owned, extracted)
+                if merged is not None:
+                    merged.subject = owned.subject
+                    merged.basis = owned.basis
+                    merged.kind = owned.kind
+                    merged.confidence = owned.confidence
+                    merged.rejected = owned.rejected
+                    merged.scope = owned.scope
+                    return merged
+                return owned
             if extracted is not None:
                 return extracted
 
