@@ -28,6 +28,14 @@ citation_ref_tags:
 # scored this topic as `Unknown Nen type users` — 247 of them — because that
 # category name contains both "nen" and "type" while `Enhancers` contains
 # neither.
+# Hunterpedia records no `users` field on any ability, so a character's Nen is
+# reachable only through their own page. The headings stop at
+# `Abilities & Powers / Nen` — the individual abilities are named in the prose
+# beneath, which is what the index-time extractor reads.
+ability_sections:
+  technique: [Abilities & Powers]
+  item: [Equipment]
+
 rosters:
   - name: Nen Types
     match: [nen type, nen types, nen category, nen categories, type of nen]

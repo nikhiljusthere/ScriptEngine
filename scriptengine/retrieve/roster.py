@@ -456,6 +456,34 @@ def build_roster(
 
         constraints = parse_constraints(query, declared, title, overrides)
 
+        # "Every form of Goku" is a question about Goku, not about
+        # `Transformations` narrowed by his name. Taken before the declared and
+        # discovered paths because both of them resolve to a set filed by kind,
+        # and no amount of filtering one turns it into the other.
+        kinds = _asked_kinds(words)
+        character = (
+            _character_subject(
+                store, words, overrides, race_vocabulary(store), vocabulary
+            )
+            if kinds
+            else ""
+        )
+        if character and kinds and not _files_by_character(store, character, kinds):
+            owned = _owned_roster(
+                store, episodes, character, kinds, constraints, overrides,
+                max_members, member_chars,
+            )
+            if owned is not None:
+                return owned
+            # No ownership recorded for them, or none of the kind asked. The
+            # wikis that keep no user fields are exactly the ones that write
+            # abilities as headings instead.
+            sectioned = _section_roster(
+                store, character, kinds, overrides, member_chars
+            )
+            if sectioned is not None:
+                return sectioned
+
         if declared is not None:
             if declared.sections_of:
                 roster = _sections_roster(store, declared, member_chars)
@@ -487,6 +515,14 @@ def build_roster(
                     roster.confidence = "weak"
                 elif roster.unverified:
                     # The set is the wiki's, but the topic asked for less of it.
+                    roster.confidence = "partial"
+                elif _narrowed_by_a_name(store, constraints, overrides):
+                    # `Transformations` is declared; "Frieza's transformations"
+                    # is not. What came back is the declared set narrowed by
+                    # whether his name appears on the page, which is a weaker
+                    # thing than the wiki saying these are his — and it came
+                    # back holding two of his eight canon forms while wearing
+                    # the same badge as a set that was actually checked.
                     roster.confidence = "partial"
                 roster.groups = _distinct(
                     [m.group for m in members if m.group]
@@ -562,6 +598,267 @@ def _names_a_character(
         return False
     shared = set(content_words(subject)) & set(content_words(query))
     return bool(shared - vocabulary)
+
+
+# ── a character's own kit ────────────────────────────────────────────────────
+#
+# A category is filed by kind, never by owner. `Transformations` holds every
+# transformation in Dragon Ball, so "Every form of Goku" answered with all of
+# them narrowed by whether the string "goku" appeared anywhere on the page —
+# which kept `Super Saiyan Rosé`, whose users field reads "Goku Black".
+#
+# The wiki does record ownership, as `users`/`wielder` edges, and inverting them
+# gives the character's kit directly: 240 pages for Goku, typed by the same
+# vocabulary as everything else — 194 techniques, 28 transformations, 15
+# power-ups, 3 fusions, nothing unclassified. Starting there rather than
+# filtering a category also lifts a cap nobody could see: a category read is
+# limited to 400 pages, and Goku's techniques do not all sort into the first
+# 400, which is why `Kamehameha` was missing from his own technique list.
+#
+# Not every wiki records it. Hunterpedia and the Chainsaw Man wiki have no user
+# fields at all; One-Punch Man points Saitama at ten battles and one item. Where
+# ownership yields nothing of the kind asked, this returns None and the ordinary
+# path runs unchanged.
+
+_KIND_WORDS: dict[str, frozenset[str]] = {
+    ontology.TRANSFORMATION: frozenset({
+        "form", "forms", "transformation", "transformations",
+        "gear", "gears", "state", "states", "mode", "modes",
+    }),
+    ontology.TECHNIQUE: frozenset({
+        "technique", "techniques", "ability", "abilities", "attack", "attacks",
+        "move", "moves", "skill", "skills", "power", "powers",
+    }),
+    ontology.ITEM: frozenset({
+        "armor", "armour", "weapon", "weapons", "sword", "swords",
+        "item", "items", "equipment",
+    }),
+}
+
+
+def _narrowed_by_a_name(
+    store: FactStore, constraints: Constraints, overrides: dict
+) -> bool:
+    """True when a qualifier is a person, so the filtering was done by name.
+
+    Kept separate from `_character_subject`, which refuses race words: this has
+    to fire precisely where that one declines, because `Frieza` is both a
+    character and the name of a race, and the answer is being narrowed by his
+    name either way.
+    """
+    for word in constraints.qualifier:
+        node = store.node_by_name(word)
+        if node is None:
+            continue
+        if ontology.semantic_type(store, node["name"], overrides) == ontology.CHARACTER:
+            return True
+    return False
+
+
+def _character_subject(
+    store: FactStore,
+    words: Sequence[str],
+    overrides: dict,
+    race_words: set[str],
+    vocabulary: set[str],
+) -> str:
+    """Which character a topic about abilities is about, if any.
+
+    The ordinary subject ranking is not usable here. It answered "Luffy" with
+    `Yamamoto Luffy`, "Zoro" with `Manjaro` and "Killua" with `Nen`, and its
+    character test reads the raw infobox id — so One Piece's `char_box` and
+    One-Punch Man's `parent_tab` are not characters as far as it is concerned,
+    though `semantics` maps the first of those to one.
+
+    So the leftover words are resolved directly: whatever is left of the topic
+    once the kind it asked for and this series' own set vocabulary are removed
+    is the name, and the largest page carrying that name is the character.
+
+    A race word can never be the character — otherwise "Every Saiyan
+    transformation" would become a question about the Saiyan article — and
+    neither can a word this series declares a set by.
+    """
+    kind_words = {word for vocab in _KIND_WORDS.values() for word in vocab}
+    for word in words:
+        # A race word is never the subject, even when the race is named after a
+        # person. `frieza` is in the race vocabulary through `Frieza's race`,
+        # and letting his own page win it was measured twice worse: "Every
+        # transformation of Frieza" went from two canon forms to one, losing
+        # Golden and Black Frieza to gain `100% Full Power`, and "Every Frieza
+        # Race transformation" stopped being a question about the race at all.
+        if word in kind_words or word in _SET_WORDS or word in race_words:
+            continue
+        # A word this series declares a set by may still be a character:
+        # Dragon Ball declares `Frieza Race transformation`, which made "Every
+        # transformation of Frieza" a question about a race rather than about
+        # him. Such a word has to type as a character outright — `Espada` is an
+        # organisation and `Captain` is nothing in particular, and neither may
+        # become the subject on the strength of a large page.
+        strict = word in vocabulary
+        for row in store.pages_named(word):
+            root = row["root"]
+            if not root or not store.node_by_name(root):
+                continue
+            semantic = ontology.semantic_type(store, root, overrides)
+            if semantic == ontology.CHARACTER:
+                return root
+            # `unknown` is allowed through because a wiki may type its
+            # character pages with something this vocabulary has never seen —
+            # One-Punch Man files Saitama as `parent_tab`. Never for a declared
+            # set word, where only an outright character will do.
+            if semantic == ontology.UNKNOWN and not strict:
+                return root
+            break
+    return ""
+
+
+def _asked_kinds(words: Sequence[str]) -> set[str]:
+    """Which kinds of thing the topic's nouns name.
+
+    `power_up` is deliberately not what "form" means. Goku owns fifteen —
+    Meditation, Pump Up, Howl, Hi-Tension — and one, Kaio-ken, that sources do
+    list among his forms. Admitting the type to gain that one costs the other
+    fourteen, so it stays out and Kaio-ken is a known, deliberate miss.
+    """
+    asked = {word.lower() for word in words}
+    return {kind for kind, vocab in _KIND_WORDS.items() if asked & vocab}
+
+
+def _files_by_character(store: FactStore, character: str, kinds: set[str]) -> bool:
+    """True when the wiki keeps this character's abilities under their own name.
+
+    `Sukuna Techniques` and `Yuji Itadori Battles` both name a character and
+    only the first is a set of abilities, so the rest of the category name has
+    to match the kind asked. Where such a category exists it beats ownership:
+    an editor curated it, every member belongs to the character by
+    construction, and it does not carry the game-only entries a users field
+    accumulates.
+    """
+    own = set(content_words(character))
+    for row in store.connection.execute(
+        "SELECT DISTINCT category FROM categories WHERE category LIKE ? COLLATE NOCASE",
+        (f"%{character}%",),
+    ):
+        rest = set(content_words(row["category"])) - own
+        if any(rest & _KIND_WORDS[kind] for kind in kinds):
+            return True
+    return False
+
+
+def _owned_roster(
+    store: FactStore,
+    episodes: cite.EpisodeIndex,
+    character: str,
+    kinds: set[str],
+    constraints: Constraints,
+    overrides: dict,
+    max_members: int,
+    member_chars: int,
+) -> Roster | None:
+    """The pages this character owns, of the kind the topic asked for."""
+    owned = store.owned_by(character, _BELONGS_RELATIONS)
+    if not owned:
+        return None
+    types = {name: ontology.semantic_type(store, name, overrides) for name in owned}
+    names = sorted(name for name in owned if types[name] in kinds)
+    if not names:
+        return None
+
+    candidates = len(names)
+    # The character's own name cannot also be a constraint on their kit: every
+    # one of these pages names them, which is how they were found.
+    own = set(content_words(character))
+    scoped = Constraints(
+        qualifier=tuple(word for word in constraints.qualifier if word not in own),
+        scope=constraints.scope,
+        canon=constraints.canon,
+    )
+    names, rejected = apply_constraints(
+        store, names, scoped, character, overrides=overrides
+    )
+    members = _render_all(store, episodes, names[:max_members], "", member_chars)
+    if not members:
+        return None
+    label = ", ".join(sorted(kinds))
+    # Ownership this thin is not the wiki's record of a character's kit, it is
+    # an accident of which page an editor happened to fill in. Ichigo has one
+    # user edge in a wiki holding 115 Zanpakutō techniques, and answering his
+    # techniques with that one page while reporting `exact` is the failure this
+    # whole pass exists to remove. Goku has 28 transformations and Guts 5.
+    confidence = "exact" if len(members) >= 3 else "partial"
+    return Roster(
+        subject=character,
+        basis=f"{character}'s {label}",
+        kind="owner",
+        members=members,
+        confidence=confidence,
+        candidates=candidates,
+        rejected=rejected,
+        scope=constraints.scope,
+        capped=len(names) if len(names) > max_members else 0,
+    )
+
+
+def _section_roster(
+    store: FactStore,
+    character: str,
+    kinds: set[str],
+    overrides: dict,
+    member_chars: int,
+) -> Roster | None:
+    """A character's kit where the wiki wrote it as headings rather than pages.
+
+    Four of these eight wikis give abilities no page of their own. Luffy's Gears
+    are `Devil Fruit / Gear 2` on `Monkey D. Luffy/Abilities and Powers`, and
+    Denji's forms are headings under `Appearance`. Nothing in the categories can
+    reach them, which is why "Every form of Luffy" answered with forty *people*.
+
+    Which headings hold abilities is series knowledge and lives in
+    `overrides.yaml`, keyed by the kind asked, exactly as category names do.
+
+    The confidence is capped at `partial` on purpose. A heading is where an
+    ability is described, not an entity the wiki curated, so `Zanpakutō` and
+    `Fighting Style` come back beside real ones — worth returning, never worth
+    claiming as an exact set.
+    """
+    wanted = [
+        str(section).strip().lower()
+        for kind in kinds
+        for section in ((overrides or {}).get("ability_sections") or {}).get(kind, [])
+        if str(section).strip()
+    ]
+    if not wanted:
+        return None
+
+    members: list[Member] = []
+    seen: set[str] = set()
+    for row in store.sections_of(character):
+        crumbs = [part.strip() for part in (row["breadcrumb"] or "").split("/")]
+        if len(crumbs) < 2:
+            continue
+        # The heading the topic asked about can be the top of the path or the
+        # subpage the wiki moved it onto — Zoro's abilities are a whole page.
+        head = " ".join((crumbs[0], row["title"] or "")).lower()
+        if not any(section in head for section in wanted):
+            continue
+        name = crumbs[-1]
+        if not name or name.lower() in seen:
+            continue
+        seen.add(name.lower())
+        members.append(
+            Member(name=name, group=crumbs[-2] if len(crumbs) > 2 else "",
+                   text=(row["text"] or "").strip()[:member_chars])
+        )
+    if not members:
+        return None
+    return Roster(
+        subject=character,
+        basis=f"{character}, by section",
+        kind="section",
+        members=members[:MAX_MEMBERS],
+        confidence="partial",
+        candidates=len(members),
+    )
 
 
 def _declared_members(store: FactStore, declared: RosterDefinition) -> list[str]:
@@ -909,15 +1206,33 @@ def _owner_race(store: FactStore, owners: Sequence[str]) -> set[str]:
     return races
 
 
+def _owned_pages(store: FactStore, word: str) -> frozenset[str]:
+    """Pages the wiki records as belonging to the character `word` names.
+
+    Empty for anything that is not a character, and empty for a character this
+    wiki records no ownership for at all — Hunterpedia and the Chainsaw Man
+    wiki keep no user fields on abilities, so Killua owns nothing here and the
+    caller has to fall back rather than reject every candidate.
+    """
+    node = store.node_by_name(word)
+    if node is None or "character" not in (node["label"] or "").lower():
+        return frozenset()
+    return frozenset(
+        name.lower() for name in store.owned_by(node["name"], _BELONGS_RELATIONS)
+    )
+
+
 def validate_member(
     store: FactStore,
     profile: Profile,
     constraints: Constraints,
     set_name: str,
     race_words: set[str] | None = None,
+    owned_by_word: dict[str, frozenset[str]] | None = None,
 ) -> str:
     """``""`` to keep the member, otherwise why it does not belong."""
     race_words = race_words if race_words is not None else set()
+    owned_by_word = owned_by_word or {}
     # `Tier Harribel/Expanded Universe` is a second view of `Tier Harribel`, not
     # a second Vasto Lorde. Across four wikis, 504 titles carry a slash and 97%
     # of them have their parent in the store: alternate continuities, anime-only
@@ -984,6 +1299,22 @@ def validate_member(
                 if acquisition.kind == TEACHABLE:
                     return f"teachable, not exclusive to {word}"
                 return f"not {word}"
+            # A character qualifier asks *whose* this is, and the wiki recorded
+            # that as edges. Matching the name against page text instead kept
+            # `Super Saiyan Rosé` among Goku's forms, because its users field
+            # reads "Goku Black" and "goku" is a substring of that. An edge to
+            # `Goku` and an edge to `Goku Black` are different rows, so the
+            # question the topic asked can finally be put to the data.
+            #
+            # Only when the wiki records ownership for this character at all.
+            # Where it records none — Hunterpedia keeps no user fields — this is
+            # empty and the old text test still runs, because rejecting every
+            # candidate would turn a padded answer into no answer.
+            owned = owned_by_word.get(word)
+            if owned:
+                if profile.name.lower() in owned:
+                    continue
+                return f"no field on this page names {word} as a user"
             if _mentions(haystack, word):
                 continue
             # For anyone other than a race — "techniques of Sukuna" — being used
@@ -1047,6 +1378,11 @@ def _mentions(haystack: str, word: str) -> bool:
 
 _INVENTOR_RELATIONS = ("inventor", "creator", "developer", "originator")
 _USER_RELATIONS = ("user", "users", "wielder", "wielders", "practitioner", "practitioners")
+
+# Whose a thing is. `inventor` is deliberately absent: King Kai invented the
+# Kaio-ken and never used it, so inventing something is not owning it — the
+# distinction the race path already depends on.
+_BELONGS_RELATIONS = (*_USER_RELATIONS, "owner")
 
 RACE_EXCLUSIVE = "race_exclusive"
 CHARACTER_SPECIFIC = "character_specific"
@@ -1268,6 +1604,14 @@ def apply_constraints(
         if any(True for _ in constraints.qualifier)
         else set()
     )
+    # Ownership is resolved once per qualifier word, not once per candidate: a
+    # character's pages are one indexed query, and asking it inside the loop
+    # would repeat it for all 400 members of a category.
+    owned_by_word = {
+        word: pages
+        for word in constraints.qualifier
+        if word not in race_words and (pages := _owned_pages(store, word))
+    }
 
     # What this set is mostly made of. A category is a filing decision, not a
     # membership one: `Galactic Frieza Army` holds 121 characters and also the
@@ -1289,7 +1633,8 @@ def apply_constraints(
     by_rule: dict[str, int] = {}
     for name in names:
         reason = _disagrees(types.get(name, ontology.UNKNOWN), wanted) or validate_member(
-            store, _profile(store, name), constraints, set_name, race_words
+            store, _profile(store, name), constraints, set_name, race_words,
+            owned_by_word,
         )
         if reason:
             rule = _rule_of(reason)

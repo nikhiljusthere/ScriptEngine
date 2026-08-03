@@ -42,6 +42,13 @@ prune_types:
 # the failure this whole pass exists to remove. Undeclared, the topic resolves
 # to `Zanpakutō`, seven pages, and reports `weak`. Seven flagged is not an
 # answer either, but it does not claim to be.
+# This wiki keeps one user edge for Ichigo across the whole corpus, so his
+# forms and techniques come from his own page. The headings are broad —
+# `Powers & Abilities / Zanpakutō` — and the named forms sit in the prose.
+ability_sections:
+  transformation: [Powers & Abilities, Former Powers & Abilities]
+  technique: [Powers & Abilities, Former Powers & Abilities]
+
 rosters:
   - name: Espada
     match: [espada]

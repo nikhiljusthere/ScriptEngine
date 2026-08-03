@@ -503,6 +503,81 @@ class FactStore:
             )
         ]
 
+    def owned_by(self, owner: str, relations: Sequence[str]) -> list[str]:
+        """Pages that name `owner` through the named infobox fields.
+
+        `linked_from` walks out of a page; this walks into one. Having only the
+        outward direction is why a character qualifier was tested against page
+        *text* rather than against the ownership the wiki actually recorded:
+
+            Super Saiyan Rosé   users = Goku Black, Fused Zamasu, …
+
+        "goku" is a substring of that string, so it was kept as one of Goku's
+        forms. The edge rows are already resolved to one row per user, so asking
+        which pages name `Goku` cannot match `Goku Black` — they are different
+        nodes. No flat-text test can make that distinction, because the wiki
+        writes every user of a page into a single field.
+        """
+        if not relations:
+            return []
+        placeholders = ",".join("?" * len(relations))
+        return [
+            row["source"]
+            for row in self.connection.execute(
+                f"SELECT DISTINCT s.name AS source FROM edges e"
+                f" JOIN nodes s ON s.id = e.source_id"
+                f" JOIN nodes t ON t.id = e.target_id"
+                f" WHERE t.name = ? COLLATE NOCASE"
+                f"   AND LOWER(e.relation) IN ({placeholders})",
+                (owner, *[r.lower() for r in relations]),
+            )
+        ]
+
+    def sections_of(self, page: str) -> list[sqlite3.Row]:
+        """Every section of a page and of its subpages, once each.
+
+        `DISTINCT` is not cosmetic: chunks carry both a level-1 and a level-2
+        row for the same breadcrumb, so counting them raw doubles every member
+        derived from a heading.
+
+        Subpages are included because the wikis that keep abilities as prose
+        also tend to move them off the character's page —
+        `Monkey D. Luffy/Abilities and Powers` is where the Gears are, and
+        Luffy's own page has no ability section at all.
+        """
+        return self.connection.execute(
+            "SELECT c.breadcrumb AS breadcrumb, d.title AS title,"
+            "       c.text AS text, MIN(c.ordinal) AS ordinal"
+            " FROM chunks c JOIN documents d ON d.id = c.document_id"
+            " WHERE d.title = ? COLLATE NOCASE OR d.title LIKE ? COLLATE NOCASE"
+            " GROUP BY d.title, c.breadcrumb"
+            " ORDER BY d.title, ordinal",
+            (page, f"{page}/%"),
+        ).fetchall()
+
+    def pages_named(self, word: str, limit: int = 12) -> list[sqlite3.Row]:
+        """Root pages whose title contains `word`, largest first.
+
+        Rolled up to the root page because these wikis split a major character
+        across subpages, and the parts outweigh the whole: the four largest
+        pages matching "luffy" are `Monkey D. Luffy/History/Non-Canon`,
+        `/Relationships/Citizens`, `/Relationships/Pirates` and
+        `/Relationships/Emperors`, none of which is Luffy. Summing them onto
+        `Monkey D. Luffy` puts the character first, which is what asking about
+        "Luffy" means — and stops `Yamamoto Luffy`, a different character
+        entirely, from being the answer.
+        """
+        return self.connection.execute(
+            "SELECT CASE WHEN instr(d.title, '/') > 0"
+            "            THEN substr(d.title, 1, instr(d.title, '/') - 1)"
+            "            ELSE d.title END AS root,"
+            "       COUNT(c.id) AS size"
+            " FROM documents d LEFT JOIN chunks c ON c.document_id = d.id"
+            " WHERE d.title LIKE ? COLLATE NOCASE"
+            " GROUP BY root ORDER BY size DESC LIMIT ?",
+            (f"%{word}%", limit),
+        ).fetchall()
+
     def facts_for(self, name: str) -> list[sqlite3.Row]:
         """Structured facts for one entity. A lookup, not a search."""
         return self.connection.execute(

@@ -42,6 +42,19 @@ prune_types:
   - album_box
 
 # The sets this wiki maintains. Every entry verified to return members.
+# Where this wiki writes a character's abilities when it gives them no page.
+#
+# Luffy's Gears are not entities here: they are headings —
+# `Devil Fruit / Gear 2` on `Monkey D. Luffy/Abilities and Powers`. Asked for
+# his forms, category retrieval reached `Former Pirates` and answered with
+# forty people, because nothing filed by kind can reach a heading.
+#
+# Keyed by the kind a topic asks for, the same way category names are.
+ability_sections:
+  transformation: [Devil Fruit]
+  technique: [Abilities and Powers, Swordsmanship, Haki, Physical Abilities]
+  item: [Weapons]
+
 rosters:
   # Races span two categories the wiki keeps apart, and discovery can only pick
   # one of them: `Races and Tribes` has 21 and leaves out every artificial race.

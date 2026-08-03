@@ -19,6 +19,14 @@ citation_positional:
 # The sets this wiki maintains, declared so an enumeration topic resolves the
 # same way every time instead of being scored against category names at query
 # time. Anything not declared here still goes through discovery.
+# Denji's forms are headings under `Appearance` — Hybrid Form, Devil Form,
+# Combined Form — because this wiki gives them no pages and records no `users`
+# field on anything. Asked for his forms, the engine answered with five other
+# characters' devil transformations.
+ability_sections:
+  transformation: [Appearance]
+  technique: [Abilities]
+
 rosters:
   # No `group_by: species` here on purpose: every member of this category
   # answers "Devil", so grouping by it produces one group and says nothing.
