@@ -203,6 +203,12 @@ def parse_response(text: str) -> list[dict[str, str]]:
         # the string carries the distinction the instruction could not.
         if not name[0].isupper():
             continue
+        # A sentence also starts with a capital. "Sleeping with a larger part of
+        # his brain awake" and "Holding his breath for some minutes even if
+        # fatigued" both cleared the rule above; the longest ability name
+        # measured is four words.
+        if len(name.split()) > 5:
+            continue
         kind = str(entry.get("kind") or "").strip().lower()
         found.append({
             "name": name,

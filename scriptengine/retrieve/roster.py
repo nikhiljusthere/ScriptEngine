@@ -827,14 +827,21 @@ def _extracted_roster(
     rows = store.abilities_of(character, sorted(kinds))
     if not rows:
         return None
-    members = [
+    members = _named_not_described([
         Member(
             name=row["name"],
             group=(row["section"] or "").split("/")[-1].strip(),
             text=(row["reason"] or "")[:member_chars],
         )
         for row in rows
-    ]
+    ])
+    # Deliberately *not* filtered for template headings. `Bankai` heads a
+    # section on most Bleach captain pages and is also one of Ichigo's forms;
+    # dropping it from prose cost a real canon item to remove a duplicate. A
+    # repeated heading is a container, but the same word named in a sentence is
+    # the model asserting it, which is a different claim.
+    if not members:
+        return None
     return Roster(
         subject=character,
         basis=f"{character}, from prose",
@@ -843,6 +850,42 @@ def _extracted_roster(
         confidence="partial",
         candidates=len(rows),
     )
+
+
+# A heading this many character pages share is the wiki's article skeleton, not
+# one character's ability. Measured: the ability headings sit at one to four
+# pages (`Gear 5 (Awakening)` 1, `Gear 2` 2, `Nine Sword Style` 3,
+# `Berserker Armor` 4) and the skeleton at forty-four and up (`Hero Rating` 44,
+# `Zanpakutō` 210, `Physical Abilities` 216, `Nen` 258). Ten sits in the gap.
+_TEMPLATE_HEADING_PAGES = 10
+
+# Longest real ability name measured is four words — `Killer Move: Serious
+# Series`, `Santoryu Ogi: Sanzen Sekai`, `Super Saiyan Blue Kaio-ken`. What runs
+# longer is the model describing rather than naming: "Sleeping with a larger
+# part of his brain awake" survived the proper-noun filter because a sentence
+# also starts with a capital.
+_MAX_ABILITY_WORDS = 5
+
+
+def _drop_templates(store: FactStore, members: list[Member]) -> list[Member]:
+    """Remove the members that are the wiki's own article skeleton."""
+    if not members:
+        return members
+    counts = store.pages_per_section([member.name for member in members])
+    return [
+        member
+        for member in members
+        if counts.get(member.name.strip().lower(), 0) <= _TEMPLATE_HEADING_PAGES
+    ]
+
+
+def _named_not_described(members: list[Member]) -> list[Member]:
+    """Remove the members that are a description rather than a name."""
+    return [
+        member
+        for member in members
+        if len(member.name.split()) <= _MAX_ABILITY_WORDS
+    ]
 
 
 def _combine(first: Roster | None, second: Roster | None) -> Roster | None:
@@ -928,6 +971,9 @@ def _section_roster(
             Member(name=name, group=crumbs[-2] if len(crumbs) > 2 else "",
                    text=(row["text"] or "").strip()[:member_chars])
         )
+    # `Physical Abilities` and `Nen` are headings on hundreds of character
+    # pages. They are where an ability is described, never one themselves.
+    members = _drop_templates(store, members)
     if not members:
         return None
     return Roster(

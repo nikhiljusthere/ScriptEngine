@@ -555,6 +555,32 @@ class FactStore:
             (page, f"{page}/%"),
         ).fetchall()
 
+    def pages_per_section(self, leaves: Sequence[str]) -> dict[str, int]:
+        """How many pages carry each of these section headings.
+
+        The wiki's own templates repeat: `Physical Abilities` heads a section on
+        216 One-Punch Man pages and `Nen` on 258 Hunterpedia ones, because every
+        character article is built from the same skeleton. A heading that names
+        an actual ability does not repeat — `Gear 2` appears on two pages,
+        `Gear 5 (Awakening)` on one, `Berserker Armor` on four.
+
+        That gap is what separates a container from a member, and it is a
+        property of the corpus rather than of any series, so it needs no
+        declaration.
+        """
+        if not leaves:
+            return {}
+        counts: dict[str, int] = {}
+        for leaf in {name.strip().lower() for name in leaves if name.strip()}:
+            row = self.connection.execute(
+                "SELECT COUNT(DISTINCT c.document_id) AS pages FROM chunks c"
+                " WHERE LOWER(TRIM(c.breadcrumb)) = ?"
+                "    OR LOWER(TRIM(c.breadcrumb)) LIKE ?",
+                (leaf, f"%/ {leaf}"),
+            ).fetchone()
+            counts[leaf] = int(row["pages"] if row else 0)
+        return counts
+
     def pages_named(self, word: str, limit: int = 12) -> list[sqlite3.Row]:
         """Root pages whose title contains `word`, largest first.
 
