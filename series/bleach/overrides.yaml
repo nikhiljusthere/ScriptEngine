@@ -23,6 +23,14 @@ citation_ref_tags:
   - match: '[Cc]hapter\s+(?:imaginary number\s+)?([\d.\-]+)'
     as: chapter
 
+# Pages that never belong in a script: video games, soundtrack pages and the
+# wiki's own music pages. Removed by `prune`; brought back only by an explicit
+# `crawl --refresh`.
+prune_types:
+  - games
+  - music
+  - bleach_wiki_music
+
 # The sets this wiki maintains.
 #
 # Note what is absent: there is no Bankai set. The wiki files 115 pages under

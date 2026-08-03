@@ -34,8 +34,41 @@ citation_ref_tags:
 # tail of merchandise and publisher references. They cite a real source, but not
 # an instalment of the story a script can tag a line with.
 
+# Pages that never belong in a script: the wiki's video game and soundtrack
+# pages. Removed by `prune`; brought back only by an explicit `crawl --refresh`.
+prune_types:
+  - game_box
+  - song_box
+  - album_box
+
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
+  # Races span two categories the wiki keeps apart, and discovery can only pick
+  # one of them: `Races and Tribes` has 21 and leaves out every artificial race.
+  - name: Races and Tribes
+    match: [race, races, tribe, tribes, species, non-human, non-humans, nonhuman, nonhumans]
+    categories:
+      - Races and Tribes
+      - Artificial Races
+
+  # Not a category on this wiki: no rank has its own article, so asking by
+  # category returns `Marine Officers` — fourteen people rather than the ladder.
+  # The page writes all twenty-two as sections, grouped by division.
+  - name: Marine Ranks
+    match: [marine rank, marine ranks, officer rank, officer ranks, rank in the marines, ranks in the marines]
+    sections_of: Marine Ranks
+
+  - name: Movies
+    match: [movie, movies, film, films]
+    category: One Piece Movies
+
+  # The wiki calls them the Four Emperors; viewers say Yonko, and no scoring
+  # turns one into the other. Seven pages sit in the category — more than the
+  # four seats, because the title has changed hands.
+  - name: Four Emperors
+    match: [yonko, yonkou, emperor of the sea, emperors of the sea, four emperors]
+    category: Four Emperors
+
   - name: Devil Fruit Types
     match: [devil fruit type, devil fruit types, type of devil fruit, types of devil fruit]
     groups:

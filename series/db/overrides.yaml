@@ -76,8 +76,52 @@ citation_ref_tags:
 # game. They render as nothing, which is the same answer Berserk's cover-art
 # references get.
 
+# The audit flags reference parameters it does not understand. These are the
+# wiki's own misspellings of `accessdate`, `publisher` and `language` inside
+# {{cite web}} references — none carries a locator, so each is mapped to the
+# ignored `page` role rather than polluting the unknown-parameter report.
+citation_params:
+  acessdate: page
+  accesdate: page
+  pubisher: page
+  pulbisher: page
+  pubilsher: page
+  datae: page
+  lanuage: page
+
+# Pages that never belong in a script: video games, soundtrack pages, and the
+# tail of pages no infobox could type (dubs, publishers, companies, staff).
+# Removed by `prune`; brought back only by an explicit `crawl --refresh`.
+prune_types:
+  - cvg
+  - music
+  - unknown
+
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
+  # Declared for the vocabulary rather than for the set: discovery finds `Races`
+  # on its own, but "non-humans" prefix-matched `Non-english dubs` and returned
+  # twenty-two dub pages.
+  - name: Races
+    match: [race, races, species, non-human, non-humans, nonhuman, nonhumans]
+    category: Races
+
+  # The wiki files these under `Films`; a viewer asks for movies. Split three
+  # ways by series, which is also how anyone naming them would group them.
+  - name: Films
+    match: [movie, movies, film, films]
+    categories:
+      - Dragon Ball films
+      - Dragon Ball Z films
+      - Dragon Ball Super films
+
+  # The one set whose name is also the series' name. Only the qualified
+  # phrasings are declared: matching a bare "dragon ball" made every enumeration
+  # on this wiki resolve here, because every one of them says the series' name.
+  - name: Dragon Balls
+    match: [type of dragon ball, types of dragon ball, kind of dragon ball, kinds of dragon ball]
+    category: Balls
+
   - name: Saiyans
     match: [saiyan, saiyans]
     category: Saiyans
@@ -90,9 +134,32 @@ rosters:
     match: [android, androids, artificial human]
     category: Androids
 
+  # `kai` and `kais` are deliberately absent from `Deities`. They used to be
+  # there, and because a declared phrase consumes the whole topic, "Every Kai"
+  # resolved here and answered with 169 deities at full confidence — with no
+  # qualifier left over for the validator to notice.
   - name: Deities
-    match: [deity, deities, god, gods, kai, kais]
+    match: [deity, deities, god, gods]
     category: Deities
+
+  # The wiki keeps no Kai category, and left to discovery "Every Kai" matched
+  # the *anime series* `Dragon Ball Z Kai` and returned four of its songs. Named
+  # outright instead, as the Gods of Destruction are.
+  - name: Kais
+    match: [kai, kais, kaioshin, supreme kai, supreme kais]
+    members: [King Kai, East Kai, West Kai, South Kai, Grand Kai, Old Kai,
+              Kibito Kai, Grand Supreme Kai, Demon Supreme Kai]
+
+  # Twelve, one per universe, and the wiki keeps no category for them — only
+  # `God of Destruction Beerus Saga`, which is a story arc. Without this the
+  # topic fell through to `Deities` and answered with all 168.
+  - name: Gods of Destruction
+    match: [god of destruction, gods of destruction, destroyer god, destroyer gods]
+    # `Mule` is this wiki's title for Universe 3's, whom other sources call
+    # Mosco — names are checked against the store, so the wrong one would show
+    # up as an eleven-member set rather than as a silent gap.
+    members: [Beerus, Champa, Belmod, Quitela, Sidra, Iwan, Heles,
+              Mule, Arak, Liquiir, Rumsshi, Giin]
 
   - name: Demons
     match: [demon, demons]

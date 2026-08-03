@@ -90,8 +90,18 @@ rosters:
       A-Class: A-Class
       S-Class: S-Class
 
+  # The word-order variants are the point. Longest declared phrase wins, so
+  # "Every executive of the Monster Association" matched `monster association`
+  # — 19 characters, the whole 71-member organisation — and never reached
+  # `executive` at 9. Declaring the phrase the way a viewer says it is what
+  # returns the nine executives.
   - name: Monster Association Executives
-    match: [executive, executives, monster association executive]
+    match: [
+      executive, executives, monster association executive,
+      monster association executives,
+      executive of the monster association,
+      executives of the monster association,
+    ]
     category: Monster Association Executives
 
   - name: Dragon Level Monsters
