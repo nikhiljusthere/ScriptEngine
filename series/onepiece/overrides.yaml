@@ -55,6 +55,22 @@ ability_sections:
   technique: [Abilities and Powers, Swordsmanship, Haki, Physical Abilities]
   item: [Weapons]
 
+# Haki is the system, not one character's ability.
+#
+# Every notable fighter in the second half of the series uses Armament and
+# Observation, and each character's ability section names them again — 23 of
+# 412 extracted rows across 15 characters, which pushed `Armament Haki` and
+# `Supreme King Haki` ahead of Zoro's actual sword techniques.
+#
+# The named advances are deliberately absent: `Ryuo` and `Nigori-Zake` are
+# things Zoro does, not the system he does them with, and `Every type of Haki`
+# still answers from the declared `Haki Types` set.
+ability_stopwords: [
+  Haki, Armament Haki, Observation Haki, Conqueror's Haki, Supreme King Haki,
+  Busoshoku Haki, Kenbunshoku Haki, Haoshoku Haki,
+  Advanced Armament Haki, Advanced Observation Haki, Advanced Conqueror's Haki,
+]
+
 rosters:
   # Races span two categories the wiki keeps apart, and discovery can only pick
   # one of them: `Races and Tribes` has 21 and leaves out every artificial race.
