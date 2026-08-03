@@ -97,6 +97,43 @@ prune_types:
   - music
   - unknown
 
+# Works whose entries are not the story, however the wiki files them.
+#
+# `canon_media` cannot see these, because it reads the medium out of the debut
+# string and Super Dragon Ball Heroes has its own manga *and* its own
+# promotional anime. `Super Saiyan (Berserk)` declares
+#
+#     Game: Dragon Ball Heroes  Manga: "Evil Saiyan"  Anime: "Goku Goes Berserk!"
+#
+# and so reads as canon on two counts out of three. What settles it is that the
+# debut *edges* point at the work, and every one of them here is Heroes:
+#
+#     Evil Saiyan (chapter)                [Dragon Ball Heroes manga chapters]
+#     Goku Goes Berserk! ...               [Dragon Ball Heroes episodes]
+#     Dragon Ball Heroes                   [the game]
+#
+# A member is dropped only when *every* debut work is one of these. Super Saiyan
+# Blue also names Dragon Ball Heroes and debuted in Resurrection 'F', so "names
+# one of these" would have thrown away half the canon forms.
+#
+# Matched on the whole title or a title prefix, never as a substring: `Dr. Hedo`
+# debuts in `Super Heroes are Born`, a Dragon Ball Super chapter, and a bare
+# "heroes" test dropped him. The prefixes also reach the works' own categories,
+# which is what catches every Heroes chapter without naming any of them.
+#
+# A question that names one of these gets them back — see `_ALL_SCOPE`.
+non_canon_works:
+  # Quoted where a title contains a colon: unquoted, YAML reads
+  # `Dragon Ball Z: Dokkan Battle` as a mapping, not a string.
+  - Dragon Ball Heroes           # also "Dragon Ball Heroes: Victory Mission"
+  - Super Dragon Ball Heroes
+  - Dark Demon Realm
+  - Dragon Ball Xenoverse
+  - "Dragon Ball Z: Dokkan Battle"
+  - Dragon Ball FighterZ
+  - Dragon Ball Legends
+  - Dragon Ball Super Card Game
+
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
   # Declared for the vocabulary rather than for the set: discovery finds `Races`

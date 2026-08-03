@@ -188,6 +188,75 @@ class TestEndToEnd:
         assert roster.confidence == "partial"
 
     @pytest.mark.parametrize(
+        "name",
+        [
+            # Debuts in `Super Heroes are Born`, a Dragon Ball Super chapter.
+            # A bare "heroes" substring test threw him out of the Red Ribbon
+            # Army, along with Gamma 1 and Cell Max.
+            "Dr. Hedo",
+            "Gamma 1",
+            "Cell Max",
+            # Names Dragon Ball Heroes among its debuts and first appeared in
+            # Resurrection 'F'. An any-test would drop it.
+            "Super Saiyan Blue",
+            # Names Heroes: Victory Mission and debuted in GT.
+            "Super Saiyan 4",
+            "Ultra Ego",
+            "Perfected Ultra Instinct",
+        ],
+    )
+    def test_a_canon_page_naming_a_game_survives(self, name):
+        paths = store_for("db")
+        overrides = load_overrides(paths)
+        with FactStore(paths.facts_db) as store:
+            profile = R._profile(store, name)
+            if not profile.works:
+                pytest.skip(f"{name} has no debut edges in this store")
+            assert not R._game_only(store, profile, R.non_canon_works(overrides))
+
+    @pytest.mark.parametrize(
+        "name",
+        [
+            "Super Saiyan (Berserk)",
+            "Super Saiyan God Super Saiyan (Universe Tree Power)",
+            "Super Saiyan Rosé 2",
+            "Evil Saiyan",
+            "Xeno Cell",
+            "Villainous Mode",          # Xenoverse, not Heroes
+        ],
+    )
+    def test_a_page_only_a_game_ever_showed_is_dropped(self, name):
+        paths = store_for("db")
+        overrides = load_overrides(paths)
+        with FactStore(paths.facts_db) as store:
+            assert R._game_only(
+                store, R._profile(store, name), R.non_canon_works(overrides)
+            )
+
+    def test_goku_keeps_his_forms_and_loses_the_games(self):
+        paths = store_for("db")
+        names = {m.name for m in R.build_roster(paths, "Every form of Goku").members}
+        assert "Super Saiyan Blue" in names and "Super Saiyan 4" in names
+        assert "Super Saiyan (Berserk)" not in names
+        assert "Super Saiyan God Super Saiyan (Universe Tree Power)" not in names
+
+    @pytest.mark.parametrize(
+        "query,scope",
+        [
+            ("Every Saiyan transformation", "canon"),
+            ("Every form of Goku", "canon"),
+            ("Every Super Dragon Ball Heroes transformation", "all"),
+            ("Every Xenoverse transformation", "all"),
+            ("Every Dokkan Battle character", "all"),
+        ],
+    )
+    def test_naming_the_work_asks_for_it_back(self, query, scope):
+        """Without this the exclusion is a deletion, not an exclusion."""
+        paths = store_for("db")
+        overrides = load_overrides(paths)
+        assert R.parse_constraints(query, None, "Dragon Ball", overrides).scope == scope
+
+    @pytest.mark.parametrize(
         "series,query,basis",
         [
             ("db", "Every Saiyan transformation", "Transformations"),

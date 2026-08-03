@@ -557,6 +557,7 @@ def build_roster(
             ),
             scope=constraints.scope,
             canon=constraints.canon,
+            works=constraints.works,
         )
         candidates = len(names)
         names, rejected = apply_constraints(
@@ -781,6 +782,7 @@ def _owned_roster(
         qualifier=tuple(word for word in constraints.qualifier if word not in own),
         scope=constraints.scope,
         canon=constraints.canon,
+        works=constraints.works,
     )
     names, rejected = apply_constraints(
         store, names, scoped, character, overrides=overrides
@@ -1144,6 +1146,9 @@ class Constraints:
     qualifier: tuple[str, ...] = ()
     scope: str = "canon"                             # canon | all
     canon: frozenset[str] = frozenset(_CANON_MEDIA)  # what this wiki counts as story
+    # Works this series keeps but does not count as its story. Empty for every
+    # wiki that declares none, which is all of them but Dragon Ball.
+    works: tuple[str, ...] = ()
     # Words the topic narrowed by that nothing in the wiki can be checked
     # against — "apocalypse level", "instant kill", "way to die".
     unverified: tuple[str, ...] = ()
@@ -1166,6 +1171,16 @@ def parse_constraints(
     satisfy.
     """
     scope = "all" if _ALL_SCOPE.search(query or "") else "canon"
+    works = non_canon_works(overrides)
+    # Naming the work asks for it back. Without this the exclusion is a
+    # deletion: "Every Super Dragon Ball Heroes transformation" would answer
+    # with the forms that are not from it.
+    #
+    # The wiki's own name is stripped off as an alternative, because nobody
+    # asks for "Dragon Ball Xenoverse forms" — they ask for Xenoverse.
+    lowered = (query or "").lower()
+    if any(name and name in lowered for name in _work_aliases(works, title)):
+        scope = "all"
     remainder = strip_work_title(query or "", title)
     if declared is not None:
         phrase = declared.matched_phrase(query)
@@ -1185,7 +1200,10 @@ def parse_constraints(
         if word not in _GROUPING_HINTS and word not in _SET_WORDS
     )
     return Constraints(
-        qualifier=qualifier, scope=scope, canon=frozenset(canon_media(overrides))
+        qualifier=qualifier,
+        scope=scope,
+        canon=frozenset(canon_media(overrides)),
+        works=works,
     )
 
 
@@ -1199,6 +1217,11 @@ class Profile:
     owners: tuple[str, ...] = ()
     media: tuple[str, ...] = ()
     debut: str = ""
+    # The works the debut edges point at, by name. The medium is already read
+    # off these; the names were being thrown away, and they are the only thing
+    # that separates a Super Dragon Ball Heroes manga chapter from a Dragon Ball
+    # Super one — both of which say "manga".
+    works: tuple[str, ...] = ()
 
     def haystack(self) -> str:
         """Only the fields that say what this *is*, never every fact.
@@ -1236,7 +1259,9 @@ def _profile(store: FactStore, name: str) -> Profile:
     # `anime debut`, so the field text calls Omokage's debut anime — but the
     # target is `Hunter × Hunter: Phantom Rouge`, typed `movie`, which is the
     # truth the string was hiding.
+    works: list[str] = []
     for target in store.linked_from(name, ("debut", "manga debut", "anime debut", "first appearance")):
+        works.append(target)
         row = store.connection.execute(
             "SELECT page_type FROM documents WHERE title = ? COLLATE NOCASE", (target,)
         ).fetchone()
@@ -1255,6 +1280,78 @@ def _profile(store: FactStore, name: str) -> Profile:
         owners=tuple(owner.strip() for owner in owners if owner.strip()),
         media=tuple(dict.fromkeys(media)),
         debut=debut,
+        works=tuple(dict.fromkeys(works)),
+    )
+
+
+def _work_aliases(works: Sequence[str], title: str) -> set[str]:
+    """How a question is likely to name a work, as well as its full title.
+
+    Every Dragon Ball game is called `Dragon Ball <something>`, and a question
+    asks for "Xenoverse" or "Dokkan", never "Dragon Ball Xenoverse forms". The
+    wiki's own name is the only thing stripped, so `Dark Demon Realm` and
+    `Super Dragon Ball Heroes` keep theirs.
+    """
+    aliases: set[str] = set()
+    prefix = (title or "").strip().lower()
+    for work in works:
+        aliases.add(work)
+        if not (prefix and work.startswith(prefix)):
+            continue
+        rest = work[len(prefix):].strip(" :-")
+        # And the sub-series marker after it, so `Dragon Ball Z: Dokkan Battle`
+        # reaches the "Dokkan Battle" a question actually says.
+        for marker in ("z", "gt", "super", "daima"):
+            if rest.startswith(f"{marker}:") or rest.startswith(f"{marker} "):
+                rest = rest[len(marker):].strip(" :-")
+                break
+        # `Dragon Ball Heroes` minus `Dragon Ball` is `Heroes`, which is too
+        # common a word to flip the scope on its own.
+        if len(rest) > 5:
+            aliases.add(rest)
+    return aliases
+
+
+def non_canon_works(overrides: dict | None) -> tuple[str, ...]:
+    """Works this series keeps but does not count as its story."""
+    declared = (overrides or {}).get("non_canon_works") or []
+    return tuple(
+        str(work).strip().lower() for work in declared if str(work).strip()
+    )
+
+
+def _is_non_canon_work(store: FactStore, title: str, works: tuple[str, ...]) -> bool:
+    """Whether one debut target belongs to a work the series does not count.
+
+    Matched on the whole title or a title prefix, and on the work's own
+    categories. Never as a substring anywhere in the string: `Dr. Hedo` debuts
+    in `Super Heroes are Born`, a Dragon Ball Super chapter, and a bare "heroes"
+    test threw him out of the Red Ribbon Army along with Gamma 1 and Cell Max.
+
+    The category hop is what reaches `Evil Saiyan (chapter)` — a page whose own
+    title says nothing, filed under `Dragon Ball Heroes manga chapters`.
+    """
+    lowered = (title or "").strip().lower()
+    if any(lowered == work or lowered.startswith(work) for work in works):
+        return True
+    for category in store.categories_of(title):
+        folded = category.strip().lower()
+        if any(folded == work or folded.startswith(work) for work in works):
+            return True
+    return False
+
+
+def _game_only(store: FactStore, profile: Profile, works: tuple[str, ...]) -> bool:
+    """True when every work this page debuted in is one the series discounts.
+
+    Every, not any. `Super Saiyan Blue` names `Dragon Ball Heroes` among its
+    debuts and first appeared in *Resurrection 'F'*; an any-test would have
+    thrown away half of Goku's canon forms to catch the Berserk ones.
+    """
+    if not works or not profile.works:
+        return False
+    return all(
+        _is_non_canon_work(store, target, works) for target in profile.works
     )
 
 
@@ -1330,6 +1427,12 @@ def validate_member(
     if constraints.scope == "canon" and profile.media:
         if not (set(profile.media) & set(constraints.canon)):
             return f"outside the story ({profile.debut})" if profile.debut else "outside the story"
+
+    # A work the series does not count, even though its manga is a manga and its
+    # anime is an anime. Read from the debut edges rather than the debut string,
+    # which is the only place the difference is recorded.
+    if constraints.scope == "canon" and _game_only(store, profile, constraints.works):
+        return f"outside the story ({', '.join(profile.works[:3])})"
 
     if constraints.qualifier:
         haystack = profile.haystack()
@@ -1606,6 +1709,7 @@ def _grounded(store: FactStore, constraints: Constraints) -> Constraints:
         ),
         scope=constraints.scope,
         canon=constraints.canon,
+        works=constraints.works,
         # The words that had to be dropped. "Every Apocalypse Level Devil"
         # narrows `Devils` by a property no page records, so the qualifier
         # cannot be enforced — and the answer that comes back is all 88 devils.
