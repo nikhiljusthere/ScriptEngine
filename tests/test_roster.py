@@ -139,7 +139,8 @@ class TestChoosingTheSet:
     def test_a_category_the_wiki_curated_is_the_set(self, wiki):
         chosen = _choose_set(wiki, ["rank", "curse"], "Cursed Spirit", "species")
         assert chosen is not None
-        kind, basis, names = chosen
+        kind, basis, names, confidence, _ = chosen
+        assert confidence == "exact"
         assert (kind, basis) == ("category", "Cursed Spirits")
         assert "Jogo" in names and len(names) == 5
 
