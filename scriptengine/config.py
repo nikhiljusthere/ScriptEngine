@@ -92,13 +92,15 @@ class Settings(BaseSettings):
     rrf_k: int = 60
     final_top_k: int = 8
 
-    # ── LLM (optional: summarisation and eval judging only) ──────────────────
-    # Script writing happens downstream in ComfyUI. ScriptEngine only needs a
-    # model for corpus-side summarisation and for scoring the eval set.
-    llm_base_url: str = "http://localhost:11434/v1"
-    llm_model: str = "qwen3:8b"
-    llm_api_key: str = "ollama"  # Ollama ignores this; kept for API compatibility.
-    llm_timeout_seconds: int = 120
+    # ── LLM (index-time only: classification and ability extraction) ─────────
+    # Nothing on the query path calls a model. Retrieval reads tables these two
+    # passes wrote, which is what keeps a question answering the same way twice.
+    #
+    # Spoken through opencode as a subprocess rather than over HTTP; the local
+    # Ollama endpoint this used to point at is gone. Named `provider/model`, as
+    # `opencode models` lists them.
+    llm_model: str = "opencode/deepseek-v4-flash-free"
+    llm_timeout_seconds: int = 300
 
     # ── API ──────────────────────────────────────────────────────────────────
     api_host: str = "127.0.0.1"

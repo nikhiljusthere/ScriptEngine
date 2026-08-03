@@ -408,6 +408,18 @@ def build_roster(
     """Resolve `query` to a set, declared if this series declares one."""
     settings = settings or get_settings()
     overrides = load_overrides(paths)
+
+    # Order is not membership. "Every arc in order" is set-shaped, so it reached
+    # the discovery path and answered with the 84 chapters of a single arc.
+    # Imported here rather than at module scope because chronology builds
+    # `Roster` and `Member`, which live in this module.
+    from scriptengine.retrieve import chronology
+
+    if chronology.wants_chronology(query):
+        ordered = chronology.build_chronology(paths, query, max_members)
+        if ordered is not None:
+            return ordered
+
     demote, priority = subject_ranking(overrides)
     # Scored on the query with the wiki's own name taken out, so "Every race in
     # Dragon Ball" competes for sets the way "Every race" does. The declared

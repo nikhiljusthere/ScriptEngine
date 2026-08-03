@@ -30,6 +30,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from scriptengine.config import SeriesPaths, load_overrides, subject_ranking
+from scriptengine.retrieve import chronology
 from scriptengine.retrieve import semantics as sem
 from scriptengine.retrieve.roster import content_words, looks_like_enumeration
 from scriptengine.stores.facts import FactStore, rank_subjects
@@ -105,11 +106,18 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
         "subject_type": subject_type,
     }
 
-    # 1. A count is a set even though it opens like a question.
+    # 1. Order beats every other reading. "Every arc in order" is set-shaped and
+    #    "Timeline of Dragon Ball" opens like a question, so both were being
+    #    answered by something that cannot express order at all — the first with
+    #    one arc's 84 chapters, the second with eight loose beats.
+    if chronology.wants_chronology(query):
+        return Route("roster", "asks for the story in order", signals)
+
+    # 2. A count is a set even though it opens like a question.
     if counting:
         return Route("roster", "asks how many, which wants the set", signals)
 
-    # 2. A wh-question about a thing is a lookup — this is the case the regex
+    # 3. A wh-question about a thing is a lookup — this is the case the regex
     #    got wrong, and it has to win over the enumeration cue.
     if interrogative and not story_verb and subject_type not in _STORY_TYPES:
         if subject:
@@ -123,7 +131,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
         # nothing to walk.
         return Route("qa", "a question with no page to walk", signals)
 
-    # 3. Otherwise the enumeration test decides, and on 154 real topics it was
+    # 4. Otherwise the enumeration test decides, and on 154 real topics it was
     #    right every time.
     if set_shaped:
         return Route("roster", "asks for a set", signals)
