@@ -848,7 +848,19 @@ def _extracted_roster(
     Capped at `partial` unconditionally. A model read these out of prose, and
     however good the reading was it is not the wiki having filed something.
     """
-    rows = store.abilities_of(character, sorted(kinds))
+    # A technique and a transformation are one bucket here, deliberately.
+    #
+    # On a page the wiki types the thing itself and the type can be trusted. On
+    # an extracted row the kind is the model's guess between three words, and
+    # the guess moves: `Whirlwind` and `Speed of Lightning` came back as
+    # transformations, so "Every Nen ability of Killua" — which asks for
+    # techniques — filtered out two of the four right answers that were sitting
+    # in the table. An item is still distinguishable from a move; these two are
+    # not, and the character scoping has already done the real work.
+    wanted = set(kinds)
+    if wanted & {ontology.TECHNIQUE, ontology.TRANSFORMATION}:
+        wanted |= {ontology.TECHNIQUE, ontology.TRANSFORMATION}
+    rows = store.abilities_of(character, sorted(wanted))
     if not rows:
         return None
     # Ten and Ren are how Nen works, not what Killua can do.
