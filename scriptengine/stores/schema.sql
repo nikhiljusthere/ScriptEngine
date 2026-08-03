@@ -169,3 +169,29 @@ CREATE TABLE IF NOT EXISTS meta (
     key    TEXT PRIMARY KEY,
     value  TEXT
 );
+
+-- ── Semantic classification ─────────────────────────────────────────────────
+--
+-- What a page *is*, where the wiki's own fields cannot say. `Class =
+-- Transformation` plus a `Saiyans` category describes Spirit Bomb Super Saiyan
+-- and Great Ape identically, and only one of them is a form a Saiyan body
+-- reaches. Separating them needs "stacked on another form" or "caused from
+-- outside", which no wiki records. A local model decides that once, at index
+-- time, and the answer is stored here so retrieval stays deterministic.
+--
+-- Deliberately **not** dropped by `FactStore.reset()`. Everything else in this
+-- file is derived from the crawl and cheap to rebuild; this costs minutes of
+-- local inference per wiki, and it is keyed on `revid`, so it stays valid until
+-- the page itself changes.
+CREATE TABLE IF NOT EXISTS semantics (
+    title           TEXT PRIMARY KEY,
+    revid           INTEGER,          -- what the classification was made from
+    prompt_version  TEXT,             -- bump to invalidate every row
+    semantic_type   TEXT,             -- the vocabulary in retrieve/semantics.py
+    properties      TEXT,             -- JSON: race_exclusive, teachable, …
+    reason          TEXT,             -- one line, so a bad call can be argued with
+    model           TEXT,
+    classified_at   TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_semantics_type ON semantics(semantic_type);

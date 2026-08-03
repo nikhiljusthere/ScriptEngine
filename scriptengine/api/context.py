@@ -263,6 +263,20 @@ def _roster_context(
         "facts": [],
         "truncated": len(members) < len(roster.members),
         "members_available": len(roster.members),
+        # How well the set the wiki gave back matches the set that was asked
+        # for. A caller writing a script off this bundle needs to know when the
+        # answer is `Straw Hat Pirates' Creations` for "Every Straw Hat Pirate".
+        "confidence": roster.confidence,
+        "unmatched": roster.unmatched,
+        "warning": roster.warning,
+        # Membership validation. `candidates` is what the wiki's set held before
+        # the topic's own constraints were applied, and `rejected` says which
+        # ones did not survive and why — so a list dropping from 160 to 75 is
+        # inspectable rather than mysterious.
+        "candidates": roster.candidates,
+        "rejected": roster.rejected,
+        "scope": roster.scope,
+        "capped": roster.capped,
         "tokens_used": used,
     }
 

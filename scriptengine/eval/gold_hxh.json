@@ -1,0 +1,95 @@
+{
+  "series": "hxh",
+  "note": "Every expectation here was checked against canon sources, not against what the engine happened to return. Three of these were wrong at the time of writing: Hunter ranks answered on the wrong axis, the Royal Guards came back as all 64 Chimera Ants, and the Phantom Troupe contained Omokage, an original character from the non-canon film Phantom Rouge.",
+  "questions": [
+    {
+      "id": "fact-01",
+      "kind": "fact",
+      "question": "What Nen type is Killua?",
+      "expect_mode": "qa",
+      "expect_docs": [
+        "Killua Zoldyck"
+      ],
+      "expect_text": [
+        "Transmut"
+      ]
+    },
+    {
+      "id": "roster-01",
+      "kind": "roster",
+      "question": "Every Nen type",
+      "expect_members": [
+        "Enhancer",
+        "Transmuter",
+        "Conjurer",
+        "Manipulator",
+        "Emitter",
+        "Specialist"
+      ],
+      "expect_min_members": 6,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-02",
+      "kind": "roster",
+      "question": "Every Chimera Ant Royal Guard",
+      "note": "Three. Hunterpedia's `Royal Guards` page names them in prose only, so asking by category returned all 64 Chimera Ants.",
+      "expect_members": [
+        "Neferpitou",
+        "Shaiapouf",
+        "Menthuthuyoupi"
+      ],
+      "expect_absent": [
+        "Meruem",
+        "Cheetu",
+        "Chimera Ant Queen"
+      ],
+      "expect_min_members": 3,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-03",
+      "kind": "roster",
+      "question": "Every Hunter rank",
+      "note": "The star licences. This used to answer Provisional / Unclassified / Amateur, which is employment status.",
+      "expect_groups": [
+        "Single Star",
+        "Double Star",
+        "Triple Star"
+      ],
+      "expect_min_members": 3,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-04",
+      "kind": "roster",
+      "question": "Every member of the Phantom Troupe",
+      "note": "Omokage is from Phantom Rouge, which is not canon. Hunterpedia files that film under `anime debut`, so only the debut target's page type — `movie` — reveals it.",
+      "expect_members": [
+        "Chrollo Lucilfer",
+        "Feitan Portor",
+        "Machi Komacine",
+        "Nobunaga Hazama"
+      ],
+      "expect_absent": [
+        "Omokage",
+        "Phantom Troupe"
+      ],
+      "expect_min_members": 12,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-05",
+      "kind": "roster",
+      "question": "Every Zoldyck",
+      "expect_members": [
+        "Killua Zoldyck",
+        "Illumi Zoldyck",
+        "Silva Zoldyck",
+        "Zeno Zoldyck"
+      ],
+      "expect_min_members": 8,
+      "expect_mode": "roster"
+    }
+  ]
+}

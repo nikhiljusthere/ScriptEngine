@@ -1,5 +1,11 @@
 # Per-wiki handling for Hunterpedia.
 
+# The films are not canon here — Togashi did not write them — so an answer about
+# the story should not contain Omokage, an original character from *Phantom
+# Rouge* whom the wiki files with the Phantom Troupe. Dragon Ball's films are
+# canon, which is why the default includes them and this wiki overrides it.
+canon_media: [manga, anime]
+
 # Hunterpedia cites in prose inside an HTML `<ref>` tag, and reuses each one by
 # name heavily — 243 reuses against 141 definitions in a 19-page sample, so
 # reading only the definition sites would leave most cited lines unsourced:
@@ -81,12 +87,21 @@ rosters:
     match: [kakin royal family, kakin prince, kakin princes, prince, princes]
     category: Kakin Royal Family
 
+  # The star licences, which is what "Hunter rank" means. This pointed at
+  # `Provisional`, `Unclassified` and `Amateur Hunters` — employment status, not
+  # rank — and so answered the question on the wrong axis entirely.
   - name: Hunter Ranks
     match: [hunter rank, hunter ranks, kind of hunter, kinds of hunter, type of hunter]
     groups:
-      Provisional Hunters: Provisional Hunters
-      Unclassified Hunters: Unclassified Hunters
-      Amateur Hunters: Amateur Hunters
+      Single Star: Single Star Hunters
+      Double Star: Double Star Hunters
+      Triple Star: Triple Star Hunters
+
+  # Three of them, and the wiki files them nowhere: the `Royal Guards` page
+  # names them in prose only, so asking by category returned all 64 Chimera Ants.
+  - name: Chimera Ant Royal Guards
+    match: [royal guard, royal guards, chimera ant royal guard, chimera ant royal guards]
+    members: [Neferpitou, Shaiapouf, Menthuthuyoupi]
 
   - name: Wanted Criminals
     match: [wanted criminal, wanted criminals, criminal, criminals]

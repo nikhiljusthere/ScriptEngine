@@ -17,13 +17,13 @@ current numbers, which are generated from the stores rather than typed here:
 python -m scriptengine.cli catalogue
 ```
 
-**8 series, 25,292 pages, 113 declared enumeration sets.**
+**8 series, 23,656 pages, 119 declared enumeration sets.**
 
 | series | wiki | pages | typed | inline refs | instalment pages |
 |---|---|---:|---:|---:|---:|
-| `db` | Dragon Ball | 9,242 | 89% | 3% | 0 |
-| `onepiece` | One Piece | 7,937 | 94% | 0% | 2,603 |
-| `bleach` | Bleach | 2,248 | 95% | 34% | 0 |
+| `db` | Dragon Ball | 8,052 | 100% | 4% | 0 |
+| `onepiece` | One Piece | 7,613 | 94% | 0% | 2,603 |
+| `bleach` | Bleach | 2,126 | 95% | 34% | 0 |
 | `hxh` | Hunterpedia | 2,014 | 96% | 50% | 455 |
 | `opm` | One-Punch Man | 1,565 | 98% | 30% | 263 |
 | `jjk` | Jujutsu Kaisen | 987 | 99% | 55% | 393 |
@@ -112,21 +112,45 @@ cd ui; npm install; cd ..
 # 1. Crawl a wiki. Types are discovered; nothing is configured per series.
 python -m scriptengine.cli crawl --series jjk --start-url https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Kaisen_Wiki
 
-# 2. Check what the extractor actually understood before trusting it
+# 2. Drop what no script will cite — video games, soundtracks, dub credits.
+#    Driven by `prune_types` in the series' overrides; --dry-run lists first.
+python -m scriptengine.cli prune --series jjk --dry-run
+
+# 3. Check what the extractor actually understood before trusting it
 python -m scriptengine.cli audit --series jjk
 
-# 3. Build the fact store, the graph, and the indexes
+# 4. Build the fact store, the graph, and the indexes
 python -m scriptengine.cli index --series jjk
 
-# 4. Export the graph to an Obsidian vault and explore it in graph view
+# 5. Export the graph to an Obsidian vault and explore it in graph view
 python -m scriptengine.cli export --series jjk
 
-# 5. Ask it something
+# 6. Ask it something
 python -m scriptengine.cli query --series jjk "How did the Shibuya Incident unfold?"
 
-# 6. Serve it to ComfyUI
+# 7. Classify the ability pages the wiki's own fields cannot settle.
+#    A local model, once, at index time — retrieval only ever reads the result.
+python -m scriptengine.cli classify --series jjk --dry-run
+
+# 8. Check the sets it can enumerate, and score them against the wiki
+python -m scriptengine.cli rosters --series jjk
+python -m scriptengine.cli eval --series jjk
+
+# 9. Serve it to ComfyUI
 python -m scriptengine.api.main
 ```
+
+The crawler asks for **50 pages per request** — MediaWiki's cap for anonymous
+callers — which is the difference between 112 and ~2,500 pages a minute. One
+Piece's 7,937 pages take three minutes. Concurrency is not the lever and raising
+it does not help: Fandom limits per request, so more workers are served more
+slowly. See [docs/CORPUS_REPORT.md](docs/CORPUS_REPORT.md).
+
+Pruning changes the stored wikitext, so `audit` and `index` have to follow it;
+until they do, the store still answers with the pages that were removed. Be
+careful pruning the `unknown` type — it is everything no infobox could classify,
+not a known category of junk, and on Dragon Ball it deleted the wiki's own
+`Dragon Ball` article.
 
 Or start the API by double-clicking `start_scriptengine.bat` (or
 `python start_scriptengine.py`) — both resolve the `.venv` interpreter
@@ -234,10 +258,64 @@ nearest the query, which is a sample of a set and not the set.
 | `qa` | a question | passages nearest the query |
 
 `mode="auto"` reads the topic and picks. The set behind a roster is the wiki's
-own: a curated category, a discovered page type, or the distinct values of one
-infobox field — whichever answers the topic best. Grouping is found through the
-wiki's label for a field, so "Every Rank of Curse" reaches the parameter Jujutsu
-Kaisen keys as `class` and labels "Grade" without a line of series-specific code.
+own: a curated category, a union of several, the sections of a single page, a
+discovered page type, or the distinct values of one infobox field — whichever
+answers the topic best. Grouping is found through the wiki's label for a field,
+so "Every Rank of Curse" reaches the parameter Jujutsu Kaisen keys as `class`
+and labels "Grade" without a line of series-specific code.
+
+The sections source exists because some sets are never a category: One Piece
+gives no Marine rank its own article, so asking by category returns `Marine
+Officers` — fourteen people rather than the twenty-two-rank ladder the wiki
+writes as one page.
+
+**A topic that named its series used to be answered by the series.** Both large
+wikis name most of their categories after themselves, so "Every race in Dragon
+Ball" handed two free words to `Dragon Ball Z episodes` and came back as 150
+episode titles — while "Every race", the same question four words shorter,
+returned `Races` correctly. The wiki's own name is now read from the manifest
+host and removed from both sides of the comparison.
+
+What survives that fix is a set that is wrong but not empty, so every roster now
+reports **how well it matched**: `declared`, `exact`, `partial` or `weak`, with
+the words the topic never asked for. "Every Straw Hat Pirate" still answers with
+`Straw Hat Pirates' Creations` — the crew's weapons — but it comes back
+`partial`, naming *creations* as the reason, and the bundle carries a `warning`
+a caller can act on.
+
+What that cannot catch is a set whose name matches perfectly and whose category
+the wiki barely fills: `Grand Line Islands` has four members and reports
+`exact`. `docs/RETRIEVAL_SCENARIOS.md` records ten scored scenarios, twenty-one
+adversarial probes, and what is still known to fail.
+
+### A category is not an answer
+
+"Every Saiyan transformation" returned Black Frieza, because the Dragon Ball
+wiki files it under `Transformations` — correctly, it is one — and nothing
+downstream ever asked the second half of the question. No embedding was
+involved: a roster is a category read, not a search.
+
+So candidates are now **validated against the topic** before they are returned.
+Ownership and race come from fields the extractor already stored (`Users`,
+`Inventor`, and one graph hop to the owner's own `Race`), medium from the
+`Debut` field that already names it. Each rejection is reported with its reason:
+
+```
+Every Saiyan transformation   160 candidates → 75 kept
+  - Black Frieza   not saiyan
+  - Class-up       outside the story (Game: Dragon Ball Heroes)
+  - Android 1617   outside the story (Dragon Ball Fusions)
+```
+
+Scope is **canon by default** — manga, anime, film — and game and spin-off
+material is never deleted, only held back until a topic asks for it ("every
+transformation ever"). A qualifier only constrains when the wiki has an article
+about it, which is what stops "Every Cursed Technique of Sukuna" from filtering
+on *cursed*, a word every technique on that wiki would fail. And if validation
+would empty a set, it is skipped: a visibly broad list beats a blank one.
+
+Full account, including the 28-point review that prompted it:
+[docs/RAG_DESIGN_REVIEW.md](docs/RAG_DESIGN_REVIEW.md).
 
 ### Every line can be sourced
 
@@ -365,11 +443,12 @@ scriptengine/
                   roster (enumeration), citations (chapter/episode locators)
   llm/            OpenAI-compatible client (Ollama / LM Studio)
   api/            FastAPI service on :8000, plus the script writing rules
-  eval/           gold question set and scoring harness
+  eval/           gold question sets (jjk, db, onepiece), scoring, catalogue
 series/           one self-contained folder per series (gitignored)
 legacy/           the previous pipeline, kept until Phase 5 proves the new one
 ui/               Electron + React desktop shell
-docs/             architecture, adding a series, API, audits, script style
+docs/             architecture, adding a series, API, audits, script style,
+                  CATALOGUE (generated), CORPUS_REPORT, RETRIEVAL_SCENARIOS
 STARTME.md        session entry point for the direct script-writing path
 script_writer.ps1 interactive request builder + context fetcher
 scripts output/   finished scripts + current request context
@@ -396,6 +475,17 @@ copy it and the series moves. Nothing is shared but the code.
 | 8 | Direct AI script-writing path: `STARTME.md`, `script_writer.ps1`, house style guide (`docs/SCRIPT_STYLE.md`) | **done** |
 | 9 | Subject resolution, roster mode, per-sentence sourcing, rules served with the context | **done** |
 | 10 | Five more wikis, and the per-wiki citation grammar they each needed | **done** |
+| 11 | Dragon Ball and One Piece, cite mode, generated catalogue | **done** |
+| 12 | Batched crawling (50 pages/request), type-level pruning | **done** |
+| 13 | Enumeration scored against the wikis: series-name defect fixed, `sections_of:` and `categories:` sources, eval sets for both large wikis | **done** |
+| 14 | A roster reports how well it matched, so a wrong set says so instead of looking certain | **done** |
+| 15 | Membership validation: candidates checked against the topic's own constraints, canon by default, rejections reported | **done** |
+| 16 | Ability ontology: race-exclusive vs teachable vs character-specific, derived from users and inventors so it self-corrects | **done** |
+| 17 | Semantic types: a set admits only what it is made of, so an army stops containing planets | **done** |
+| 18 | Index-time semantic classification for what structure cannot settle — properties, cached, never in the query path | **done** |
+| 19 | Audited against canon sources: subpage folding, per-series canon media, declared members for sets no wiki files | **done** |
+| 20 | Tell a current member from a former one — the Espada holds 18 pages for ten seats | |
+| 21 | Detect an *incomplete* set — one whose name matches exactly but whose category the wiki barely fills | |
 
 ### Where it stands on the Jujutsu Kaisen wiki
 

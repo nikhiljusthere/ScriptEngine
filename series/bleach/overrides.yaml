@@ -23,12 +23,25 @@ citation_ref_tags:
   - match: '[Cc]hapter\s+(?:imaginary number\s+)?([\d.\-]+)'
     as: chapter
 
+# Pages that never belong in a script: video games, soundtrack pages and the
+# wiki's own music pages. Removed by `prune`; brought back only by an explicit
+# `crawl --refresh`.
+prune_types:
+  - games
+  - music
+  - bleach_wiki_music
+
 # The sets this wiki maintains.
 #
 # Note what is absent: there is no Bankai set. The wiki files 115 pages under
-# `Zanpakutō techniques` and leaves `Bankai` as a category of one, so "every
-# bankai" is answered with the technique set rather than a curated list that
-# does not exist. Discovery answered it with the `Bleach` series page.
+# `Zanpakutō techniques` and leaves `Bankai` as a category of one.
+#
+# `bankai` and `shikai` used to be declared here so the topic reached the
+# technique set. Measured, that answered "Every Bankai" with all 115 techniques
+# and called it `declared` — a wrong answer wearing full confidence, which is
+# the failure this whole pass exists to remove. Undeclared, the topic resolves
+# to `Zanpakutō`, seven pages, and reports `weak`. Seven flagged is not an
+# answer either, but it does not claim to be.
 rosters:
   - name: Espada
     match: [espada]
@@ -50,7 +63,7 @@ rosters:
     category: Shinigami captains
 
   - name: Zanpakuto Techniques
-    match: [zanpakuto, zanpakutō, bankai, shikai, zanpakuto technique]
+    match: [zanpakuto, zanpakutō, zanpakuto technique]
     category: Zanpakutō techniques
 
   - name: Kido

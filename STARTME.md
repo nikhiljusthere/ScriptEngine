@@ -56,12 +56,66 @@ python -m scriptengine.cli catalogue                # every series, regenerated
 how much of each wiki's prose can carry a chapter, and every declared set with
 its size. It is generated, so run it rather than trusting the copy on disk.
 
-47 sets are declared across the six series — devils, hunters, hybrids and fiends
-on Chainsaw Man; apostles and the God Hand on Berserk; mysterious beings and
-each hero class on One-Punch Man; the six Nen types, the Phantom Troupe and the
-Zoldycks on Hunterpedia; espada, captains, hollows and quincy on Bleach; cursed
-spirits, sorcerers and domain expansions on Jujutsu Kaisen. A topic outside the
-list still works, it is just found by search rather than declared.
+119 sets are declared across the eight series — devils, hunters, hybrids and
+fiends on Chainsaw Man; apostles, pseudo-apostles and the God Hand on Berserk;
+mysterious beings and each hero class on One-Punch Man; the six Nen types, the
+Phantom Troupe and the Zoldycks on Hunterpedia; espada, quincy and all thirteen
+Gotei divisions on Bleach; cursed spirits, sorcerers and domain expansions on
+Jujutsu Kaisen; races, transformations and films on Dragon Ball; races, Devil
+Fruit types and the Marine rank ladder on One Piece. A topic outside the list
+still works, it is just found by search rather than declared.
+
+**A set that comes back is not automatically the right set.** Enumeration
+returns the best-scoring candidate on the wiki, so a topic the wiki does not
+keep as a set can still come back as a populated list. Every roster bundle
+therefore carries `confidence` — and **read it before writing**:
+
+| `confidence` | means | do |
+|---|---|---|
+| `declared` | the series declares this set by name | trust it |
+| `exact` | every word of the set's name was asked for | trust it, check the count |
+| `partial` | the set is narrower than the topic; `unmatched` names the extra word | **stop** — usually the wrong set |
+| `weak` | nothing in the topic matched the set's name | **stop** — almost certainly wrong |
+
+`warning` spells it out in words. "Every Straw Hat Pirate" returns 14 members,
+`partial`, *"Straw Hat Pirates' Creations is narrower than the topic: creations
+was not asked for"* — those are the crew's weapons, not the crew.
+
+`confidence` cannot see an **incomplete** set, so still check the count against
+what you expect: `Every island in the Grand Line` reports `exact` and returns
+four, and there are hundreds. `docs/RETRIEVAL_SCENARIOS.md` has the full list.
+
+**Members are validated against the topic before you see them.** A category is
+what the wiki keeps, not what was asked for — `Transformations` holds Black
+Frieza because it *is* one — so each candidate is checked against the topic's
+constraints and what fails comes back in `rejected` with a reason:
+
+```
+Every Saiyan transformation   candidates 160 → 75 kept
+  - Black Frieza   not saiyan
+  - Class-up       outside the story (Game: Dragon Ball Heroes)
+```
+
+`scope` is **canon by default**: manga, anime and film. Game and spin-off
+entries are still in the store and return when the topic asks — "every
+transformation **ever**", "**including games**". Nothing is ever deleted.
+
+Ability pages the wiki's own fields cannot settle are classified once at index
+time by a local model (`cli classify --series <name>`) and the answer is stored,
+so retrieval still just reads a table. That is what keeps Spirit Bomb Super
+Saiyan out of the Saiyan forms — *"granted externally by absorbing a Spirit
+Bomb"* — while keeping Great Ape, which needs a full moon but only works on a
+Saiyan.
+
+**A race set means what only that race can reach**, not what a member of it has
+used. Kaio-ken is out of "Every Saiyan transformation" because King Kai invented
+it and Krillin knows it; Ultra Ego is in, because Vegeta is its only user. Each
+member carries how it is acquired — `race_exclusive`, `character_specific`,
+`teachable` or `unknown` — and it is computed from users and inventors, so a
+second race learning something reclassifies it on its own.
+
+If validation would empty a set it is skipped instead, so a list is never blank
+because a wiki labels its fields unusually.
 
 ## The workflow (when the user says "start" or asks for a script)
 
@@ -181,7 +235,9 @@ number that is not in the context, and never write a bare `[1]`-style marker
 | API | `POST http://127.0.0.1:8000/context` |
 | Payload | `{"series","query","mode":"auto","token_budget","top_k","words","intro","as_prompt":true}` |
 | Modes | `auto`, `narrative`, `roster`, `qa` |
-| Series | `jjk`, `db`, `csm` |
+| Series | `jjk`, `db`, `onepiece`, `bleach`, `hxh`, `opm`, `berserk`, `csm` |
+| What each can answer | `docs/CATALOGUE.md`, regenerate with `cli catalogue` |
+| Known wrong answers | `docs/RETRIEVAL_SCENARIOS.md` |
 | Context budget | auto = words × 8, clamped 6,000–60,000 |
 | Request file | `scripts output/current_request.json` |
 | Scripts | `scripts output/<Title>.md` |
@@ -189,3 +245,11 @@ number that is not in the context, and never write a bare `[1]`-style marker
 | Rule blocks | `scriptengine/api/rules.py` |
 | Samples | `sample scripts/` |
 | Server | `python start_scriptengine.py` (repo root) |
+
+**The server holds its code in memory.** Retrieval fixes do not reach a running
+server — a live one was still answering "Every race in Dragon Ball" with 150
+episode titles hours after that was fixed on disk. Restart it after any change
+under `scriptengine/`.
+
+A series' `overrides.yaml` is the exception: it is read from disk on every
+request, so a newly declared set answers immediately without a restart.

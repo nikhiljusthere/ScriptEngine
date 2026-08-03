@@ -43,6 +43,11 @@ class Passage:
     score: float = 0.0
     parent_text: str = ""
     sources: list[str] = field(default_factory=list)   # which retrievers found it
+    # The fused rank before the cross-encoder overwrote `score`. Kept because
+    # losing it makes "the right chunk was retrieved and then buried"
+    # indistinguishable from "it was never retrieved", which are different bugs
+    # in different halves of the pipeline.
+    rrf_score: float = 0.0
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -62,6 +67,10 @@ class Retrieved:
 
     query: str
     passages: list[Passage] = field(default_factory=list)
+    # Shortlisted, reranked, and then cut by `top_k`. Diagnostic only — nothing
+    # downstream reads it — but it is the only place a fusion or rerank loss is
+    # visible after the fact.
+    dropped: list[Passage] = field(default_factory=list)
     entities: list[str] = field(default_factory=list)
     related: list[str] = field(default_factory=list)
     facts: list[dict[str, Any]] = field(default_factory=list)
@@ -224,6 +233,7 @@ class HybridRetriever:
                     breadcrumb=row["breadcrumb"],
                     ordinal=row["ordinal"],
                     score=score,
+                    rrf_score=score,
                     sources=sources,
                 )
             )
@@ -236,7 +246,8 @@ class HybridRetriever:
                 passage.score = score
             passages.sort(key=lambda p: p.score, reverse=True)
 
-        passages = _deduplicate(passages)[:top_k]
+        deduplicated = _deduplicate(passages)
+        passages, result.dropped = deduplicated[:top_k], deduplicated[top_k:]
 
         # 7. Expand each survivor to its section, so a quoted passage carries the
         #    context around it rather than arriving as an orphaned fragment.

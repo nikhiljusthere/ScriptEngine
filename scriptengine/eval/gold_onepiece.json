@@ -1,0 +1,101 @@
+{
+  "series": "onepiece",
+  "note": "Answers are checked against the One Piece wiki as crawled. 'expect_min_members' comes from the wiki's own counts. The races question spans two categories the wiki keeps apart, and the Marine ranks question is not a category at all — it is one page's sections — so between them they cover both of the ways a set is declared here.",
+  "questions": [
+    {
+      "id": "fact-01",
+      "kind": "fact",
+      "question": "What is Zoro's sword called?",
+      "expect_mode": "qa",
+      "expect_docs": [
+        "Roronoa Zoro"
+      ],
+      "expect_text": [
+        "Wado Ichimonji"
+      ]
+    },
+    {
+      "id": "fact-02",
+      "kind": "fact",
+      "question": "Who killed Ace?",
+      "note": "Akainu and Sakazuki are the same marine; the wiki prose uses one name per passage, so either satisfies this.",
+      "expect_mode": "qa",
+      "expect_any_text": [
+        "Akainu",
+        "Sakazuki"
+      ]
+    },
+    {
+      "id": "roster-01",
+      "kind": "roster",
+      "question": "Every race in One Piece",
+      "expect_members": [
+        "Fish-Men",
+        "Giants",
+        "Mink Tribe",
+        "Lunarians",
+        "Cyborgs"
+      ],
+      "expect_min_members": 30,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-02",
+      "kind": "roster",
+      "question": "All officer ranks in the Marines",
+      "expect_members": [
+        "Fleet Admiral",
+        "Admiral",
+        "Vice Admiral",
+        "Rear Admiral",
+        "Ensign"
+      ],
+      "expect_groups": [
+        "Commissioned Marine Officers"
+      ],
+      "expect_min_members": 20,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-03",
+      "kind": "roster",
+      "question": "Every One Piece movie",
+      "expect_members": [
+        "One Piece Film: Gold",
+        "One Piece Film: Z"
+      ],
+      "expect_min_members": 14,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-04",
+      "kind": "roster",
+      "question": "Every type of Devil Fruit",
+      "expect_members": [
+        "Paramecia",
+        "Zoan",
+        "Logia"
+      ],
+      "expect_groups": [
+        "Paramecia",
+        "Zoan",
+        "Logia"
+      ],
+      "expect_min_members": 3,
+      "expect_mode": "roster"
+    },
+    {
+      "id": "roster-05",
+      "kind": "roster",
+      "question": "Every Warlord of the Sea",
+      "expect_members": [
+        "Dracule Mihawk",
+        "Boa Hancock",
+        "Crocodile",
+        "Jinbe"
+      ],
+      "expect_min_members": 10,
+      "expect_mode": "roster"
+    }
+  ]
+}

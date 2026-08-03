@@ -170,6 +170,175 @@ def audit(
 
 
 @app.command()
+def prune(
+    series: str = typer.Option(..., "--series"),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="List the pages that would be removed, write nothing."
+    ),
+) -> None:
+    """Drop a series' low-quality pages, per `prune_types` in its overrides.yaml.
+
+    Every wiki is crawled whole and filtered later, so a video game or
+    soundtrack page the engine will never cite still costs a slot in the
+    corpus and in the vector store. The blocklist lives in
+    `series/<name>/overrides.yaml` — the only place a series-specific decision
+    is allowed to live — and this command deletes the stored wikitext those
+    pages produced. A page is matched by its type family, so pruning
+    `song_box` also removes a subpage typed `song_box_other_versions`. Bring
+    what was removed back with `crawl --refresh`.
+    """
+    from collections import Counter
+
+    from scriptengine.ingest.crawler import load_extracted, sanitise_filename
+
+    paths = series_paths(series)
+    overrides = _load_overrides(paths)
+    blocklist = {
+        str(entry).strip().lower() for entry in (overrides.get("prune_types") or [])
+    }
+    if not blocklist:
+        console.print(f"[yellow]{series} declares no prune_types; nothing to do.[/yellow]")
+        return
+
+    # Classify the way `audit` and `index` do. The type stored on disk at
+    # crawl time can be stale — a crawl whose template enumeration was
+    # rate-limited typed everything "unknown", and the types only appear once
+    # re-extraction runs. Pruning on the stored field would remove nothing
+    # from that corpus while the engine itself knows what the pages are.
+    pages, _ = load_extracted(paths, overrides)
+
+    matched: list[tuple[Path, str]] = []
+    seen: set[Path] = set()
+    for page in pages:
+        kind = (page.page_type or "").lower()
+        if kind in blocklist or any(kind.startswith(f"{entry}_") for entry in blocklist):
+            destination = paths.wikitext / f"{sanitise_filename(page.title)}.json"
+            if destination.exists() and destination not in seen:
+                seen.add(destination)
+                matched.append((destination, kind))
+
+    by_type = Counter(kind for _, kind in matched)
+    total = len(list(paths.wikitext.glob("*.json")))
+    kept = total - len(matched)
+
+    table = Table(
+        title=f"Prune — {series} "
+        f"({'dry run, ' if dry_run else ''}{len(matched)} of {total} pages)"
+    )
+    table.add_column("type")
+    table.add_column("pages", justify="right")
+    for kind, count in by_type.most_common():
+        table.add_row(kind, str(count))
+    console.print(table)
+
+    if dry_run:
+        console.print(
+            f"[dim]{len(matched)} pages would be removed, {kept} kept. "
+            "Re-run without --dry-run to delete.[/dim]"
+        )
+        return
+
+    for path, _ in matched:
+        path.unlink()
+    console.print(
+        f"[green]Removed {len(matched)} pages, kept {kept}.[/green] "
+        f"Next: `audit --series {series}`, then `index --series {series}`."
+    )
+
+
+_COUNT_WORDS = {
+    "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+    "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+}
+
+
+def _stated_count(name: str) -> int | None:
+    """The size a set's own name claims, if it claims one.
+
+    `Seven Warlords of the Sea`, `Gotei 13`, `Zodiac Twelve`. A name that counts
+    itself is a free assertion to check the membership against — and the check
+    is worth having even though most of what it finds turns out to be a naming
+    convention rather than a defect.
+    """
+    import re as _re
+
+    digits = _re.search(r"\b(\d{1,3})\b", name or "")
+    if digits:
+        return int(digits.group(1))
+    for word, value in _COUNT_WORDS.items():
+        if _re.search(rf"\b{word}\b", name or "", _re.IGNORECASE):
+            return value
+    return None
+
+
+@app.command()
+def classify(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(0, "--limit", help="Stop after this many pages."),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Reclassify even where a current answer is stored."
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Show what would be classified, call no model."
+    ),
+) -> None:
+    """Classify the ability pages the wiki's own fields cannot settle.
+
+    `Class = Transformation` and a `Saiyans` category describe Spirit Bomb Super
+    Saiyan and Great Ape identically, and only one is a form a Saiyan body
+    reaches. A local model decides that once and the answer is stored, so
+    retrieval keeps reading a table rather than reasoning.
+
+    Cached on the page's revision, so running it twice costs nothing and a
+    re-crawl only pays for what changed.
+    """
+    import logging
+
+    from scriptengine.ingest.classify import classify_series, needs_classifying
+    from scriptengine.llm.client import LLMUnavailable
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    if dry_run:
+        with FactStore(paths.facts_db) as store:
+            titles = needs_classifying(store, _load_overrides(paths))
+        console.print(f"[dim]{len(titles)} pages would be classified:[/dim]")
+        for title in titles[:40]:
+            console.print(f"  {title}")
+        if len(titles) > 40:
+            console.print(f"  [dim]… {len(titles) - 40} more[/dim]")
+        return
+
+    def show(title: str, result) -> None:
+        console.print(f"  [dim]{result.semantic_type:16}[/dim] {title}")
+
+    try:
+        report = classify_series(
+            paths, limit=limit or None, refresh=refresh, progress=show
+        )
+    except LLMUnavailable as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    table = Table(title=f"Classified — {series}")
+    table.add_column("outcome")
+    table.add_column("pages", justify="right")
+    for key in ("considered", "classified", "cached", "failed"):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+    if report["types"]:
+        console.print(
+            "[dim]types:[/dim] "
+            + ", ".join(f"{k} {v}" for k, v in sorted(report["types"].items()))
+        )
+
+
+@app.command()
 def index(
     series: str = typer.Option(..., "--series"),
     no_embed: bool = typer.Option(
@@ -342,6 +511,11 @@ def cite(
 @app.command()
 def rosters(
     series: str = typer.Option(..., "--series"),
+    audit: bool = typer.Option(
+        False,
+        "--audit",
+        help="List declarations that can swallow a narrower topic.",
+    ),
 ) -> None:
     """The enumeration sets this series declares.
 
@@ -349,13 +523,81 @@ def rosters(
     and they would go back to guessing which topics the engine answers well.
     """
     from scriptengine.config import load_overrides
-    from scriptengine.retrieve.roster import load_rosters
+    from scriptengine.retrieve.roster import _declared_members, load_rosters
     from scriptengine.stores.facts import FactStore
 
     paths = series_paths(series)
     declared = load_rosters(load_overrides(paths))
     if not declared:
         console.print(f"[yellow]{series} declares no rosters.[/yellow]")
+        return
+
+    if audit:
+        # A one-word phrase claims the whole topic, so anything narrower that
+        # contains the word answers with the parent set: `Deities` declared
+        # `kai`, and "Every Kai" came back as 169 deities with nothing left over
+        # for the validator to notice. The bigger the set, the worse the
+        # swallow, so they are listed largest first.
+        table = Table(title=f"Swallow surface — {series}")
+        table.add_column("word")
+        table.add_column("claims", overflow="fold")
+        table.add_column("members", justify="right")
+        rows: list[tuple[str, str, int]] = []
+        with FactStore(paths.facts_db) as store:
+            for definition in declared:
+                size = (
+                    len(definition.groups)
+                    if definition.groups
+                    else len(_declared_members(store, definition))
+                )
+                for phrase in definition.match:
+                    if " " not in phrase:
+                        rows.append((phrase, definition.name, size))
+        for phrase, name, size in sorted(rows, key=lambda row: -row[2]):
+            style = "yellow" if size >= 40 else ""
+            table.add_row(f"[{style}]{phrase}[/{style}]" if style else phrase, name, str(size))
+        console.print(table)
+
+        # A set whose *name* states a size, against what it actually holds.
+        # Reported, never corrected: of the seven found across the corpus, only
+        # some are defects. `Gotei 13` holds 127 because the 13 counts divisions
+        # and the category is the whole organisation; `Seven Warlords` holds 12
+        # because twelve people held seven seats over time. Both are correct
+        # data and a misleading name, and a tool that "fixed" them would be
+        # wrong. Which is which is a judgement for a person.
+        counted = Table(title=f"Sets whose name states a count — {series}")
+        counted.add_column("set")
+        counted.add_column("name says", justify="right")
+        counted.add_column("holds", justify="right")
+        counted.add_column("for review")
+        found = 0
+        with FactStore(paths.facts_db) as store:
+            for definition in declared:
+                stated = _stated_count(definition.name)
+                if stated is None:
+                    continue
+                size = (
+                    len(definition.groups)
+                    if definition.groups
+                    else len(_declared_members(store, definition))
+                )
+                if size == stated:
+                    continue
+                found += 1
+                counted.add_row(
+                    definition.name,
+                    str(stated),
+                    str(size),
+                    "seats vs holders, a broader category, or duplicate pages",
+                )
+        if found:
+            console.print(counted)
+        return
+        console.print(
+            f"[dim]{sum(1 for r in rows if r[2] >= 40)} of {len(rows)} single-word "
+            "phrases claim a set of 40+ members. Each is a topic that cannot be "
+            "narrowed, because the phrase consumes the whole question.[/dim]"
+        )
         return
 
     table = Table(title=f"Declared rosters — {series}")
@@ -549,10 +791,12 @@ def query(
 def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
     """Print a narrative or roster bundle the way `/context` assembles it."""
     from scriptengine.api.context import build_context
-    from scriptengine.retrieve.roster import looks_like_enumeration
+    from scriptengine.retrieve.router import route
 
     if mode == "auto":
-        mode = "roster" if looks_like_enumeration(question) else "narrative"
+        chosen = route(paths, question)
+        mode = chosen.mode
+        console.print(f"[dim]routed to[/dim] {mode} [dim]— {chosen.why}[/dim]")
 
     bundle = build_context(
         paths, question, mode=mode, token_budget=24000, top_k=top_k or None
@@ -564,6 +808,19 @@ def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
     console.print(f"[dim]mode:[/dim] {bundle['mode']}   [dim]subject:[/dim] {bundle['subject']}")
     if bundle.get("basis"):
         console.print(f"[dim]set:[/dim] {bundle['basis']}")
+    if bundle.get("warning"):
+        console.print(f"[yellow]{bundle['warning']}[/yellow]")
+    rejected = bundle.get("rejected") or []
+    if rejected:
+        kept = len(bundle.get("members") or [])
+        console.print(
+            f"[dim]validated:[/dim] {kept} of {bundle.get('candidates', kept)} "
+            f"({bundle.get('scope', 'canon')} scope)"
+        )
+        for entry in rejected[:5]:
+            console.print(f"  [dim]-[/dim] {entry['name']} — [dim]{entry['reason']}[/dim]")
+        if len(rejected) > 5:
+            console.print(f"  [dim]… {len(rejected) - 5} more[/dim]")
     console.print(f"[dim]tokens:[/dim] {bundle['tokens_used']}\n")
 
     if bundle.get("members"):
