@@ -489,7 +489,7 @@ def build_roster(
             # it wrote, and the abilities named in the prose under them.
             extracted = _combine(
                 _section_roster(store, character, kinds, overrides, member_chars),
-                _extracted_roster(store, character, kinds, member_chars),
+                _extracted_roster(store, character, kinds, member_chars, overrides),
             )
             if owned is not None:
                 # Ownership normally wins — the wiki recorded it, a model read
@@ -822,8 +822,20 @@ def _owned_roster(
     )
 
 
+def ability_stopwords(overrides: dict | None) -> frozenset[str]:
+    """Words that name a series' power system rather than anyone's ability."""
+    declared = (overrides or {}).get("ability_stopwords") or []
+    return frozenset(
+        str(word).strip().lower() for word in declared if str(word).strip()
+    )
+
+
 def _extracted_roster(
-    store: FactStore, character: str, kinds: set[str], member_chars: int
+    store: FactStore,
+    character: str,
+    kinds: set[str],
+    member_chars: int,
+    overrides: dict | None = None,
 ) -> Roster | None:
     """A character's kit as read out of prose at index time.
 
@@ -839,6 +851,12 @@ def _extracted_roster(
     rows = store.abilities_of(character, sorted(kinds))
     if not rows:
         return None
+    # Ten and Ren are how Nen works, not what Killua can do.
+    stopwords = ability_stopwords(overrides)
+    if stopwords:
+        rows = [row for row in rows if row["name"].strip().lower() not in stopwords]
+        if not rows:
+            return None
     members = _named_not_described([
         Member(
             name=row["name"],

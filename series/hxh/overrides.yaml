@@ -36,6 +36,20 @@ ability_sections:
   technique: [Abilities & Powers]
   item: [Equipment]
 
+# The Nen system itself is not any one character's ability.
+#
+# Every Hunter uses Ten, Ren and Zetsu the way every swordsman uses a stance,
+# and each character's ability section names them again in turn. The extractor
+# is told not to return the system an ability belongs to, and for Killua it did
+# not — but measured across the whole wiki, 129 of 345 extracted rows are these
+# ten words, 37% of everything stored. Gon, Biscuit and Uvogin each came back
+# with nine of them listed ahead of anything that is actually theirs.
+#
+# Declared rather than inferred: which words name the system is exactly what a
+# series knows about itself, and `Every Nen type` still answers from the
+# declared `Nen Types` set below.
+ability_stopwords: [Ten, Zetsu, Ren, Gyo, In, En, Shu, Ko, Ken, Ryu, Hatsu, Nen]
+
 rosters:
   - name: Nen Types
     match: [nen type, nen types, nen category, nen categories, type of nen]

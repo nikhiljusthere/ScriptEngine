@@ -222,6 +222,12 @@ def extract_character(
     client: LLMClient, store: FactStore, series: str, character: str, overrides: dict
 ) -> list[dict[str, str]]:
     """Every named ability the wiki's prose gives this character."""
+    from scriptengine.retrieve.roster import ability_stopwords
+
+    # The power system a series runs on is not one character's ability. The
+    # prompt says so and the model mostly obeys, but "mostly" left 129 of 345
+    # Hunter x Hunter rows reading Ten, Ren, Zetsu, Gyo.
+    stopwords = ability_stopwords(overrides)
     found: list[dict[str, str]] = []
     seen: set[str] = set()
     for section, text in passages(store, character, overrides):
@@ -237,10 +243,12 @@ def extract_character(
                 prompt, system=SYSTEM, temperature=0.0, max_tokens=800
             )
             for entry in parse_response(answer):
-                key = entry["name"].lower()
+                key = entry["name"].strip().lower()
                 # The character's own name is not one of their abilities, and a
                 # section heading repeated back is not one either.
                 if key in seen or key == character.lower() or key in section.lower():
+                    continue
+                if key in stopwords:
                     continue
                 seen.add(key)
                 entry["section"] = section
