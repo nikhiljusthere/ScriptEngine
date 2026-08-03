@@ -99,17 +99,21 @@ class Settings(BaseSettings):
     # `local` speaks HTTP to whatever OpenAI-compatible server is running —
     # Ollama on 11434, LM Studio on 1234. `opencode` shells out to the CLI.
     #
-    # Measured on one known passage (Killua's Nen section, whose right answer is
-    # Godspeed, Whirlwind, Speed of Lightning and Rhythm Echo):
+    # Measured per character on Killua, whose right answer is known — Godspeed,
+    # Whirlwind, Speed of Lightning, Rhythm Echo:
     #
-    #   qwen3-vl:8b      Ollama       ~3.4s/window    4 of 4    not a thinker
-    #   opencode/deepseek CLI          8.0s/window    4 of 4
-    #   qwen3.5-9b       LM Studio    22.2s/window    2 of 4    3,380 reasoning tokens
-    #   gemma-4-12b      LM Studio    ~39s/window     2 of 4    4,027, often never finishes
+    #   qwen3.5-9b  LM Studio, no-thinking   25.3s   4 of 4
+    #   qwen3-vl:8b Ollama                   30.0s   4 of 4
+    #   deepseek    opencode                 89.0s   4 of 4
+    #   qwen3.5-9b  LM Studio, thinking      22.2s/window, 2 of 4, 3,380 reasoning tokens
+    #   gemma-4-12b LM Studio, thinking      ~39s/window,  2 of 4, often never answers
     #
-    # The two thinking models spend thousands of tokens deliberating over what
-    # is a pattern-spotting job, and answer no better for it. Extraction wants
-    # a fast instruct model, not a reasoner.
+    # Extraction wants a fast instruct model, not a reasoner: with thinking on,
+    # the same model spends thousands of tokens deliberating over what is a
+    # pattern-spotting job and answers worse for it, returning the Nen system
+    # ahead of anything a character owns. Thinking is disabled by the LM Studio
+    # preset at `~/.lmstudio/config-presets/No thinking.preset.json`; the API
+    # flags (`/no_think`, `chat_template_kwargs`, `reasoning`) are all ignored.
     #
     # Local models paraphrase, which is the one thing they do worse: measured
     # over 2,841 stored rows, a local model named 91 things its source never
@@ -117,8 +121,8 @@ class Settings(BaseSettings):
     # is what makes the fast path safe — a name absent from the passage is
     # dropped before it is stored.
     llm_backend: str = "local"
-    llm_model: str = "qwen3-vl:8b-instruct-bf16"
-    llm_base_url: str = "http://localhost:11434/v1"
+    llm_model: str = "qwen/qwen3.5-9b"
+    llm_base_url: str = "http://localhost:1234/v1"
     llm_api_key: str = "local"  # local servers ignore it; sent for shape
     llm_timeout_seconds: int = 300
 
