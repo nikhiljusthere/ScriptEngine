@@ -47,7 +47,7 @@ logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored extraction. Anything that changes what the
 # model is asked changes this.
-PROMPT_VERSION = "2026-08-03.1"
+PROMPT_VERSION = "2026-08-03.2-opencode"
 
 # What an extracted ability may be called, in the vocabulary `semantics` speaks
 # so the retrieval side can filter on the same words it filters pages by.

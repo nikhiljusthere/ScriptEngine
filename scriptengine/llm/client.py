@@ -143,15 +143,21 @@ class LLMClient:
         except Exception as error:  # noqa: BLE001 - surfaced as one failure mode
             raise LLMUnavailable(f"Could not run opencode ({error})") from error
 
-        combined = f"{done.stdout}\n{done.stderr}"
-        if _looks_throttled(combined):
-            raise LLMRateLimited(
-                f"{self.settings.llm_model} is rate limited. "
-                "Stopping so the run is not filled with failures."
-            )
-        if done.returncode != 0:
+        # Throttling is only ever looked for in a *failure*. Scanning the whole
+        # output caught the model's own words instead: an ability described as
+        # "beyond human capacity" tripped the check and stopped a batch that
+        # was working, on the first page, twice.
+        failed = done.returncode != 0 or _error_event(done.stdout)
+        if failed:
+            trouble = f"{_error_event(done.stdout)}\n{done.stderr}"
+            if _looks_throttled(trouble):
+                raise LLMRateLimited(
+                    f"{self.settings.llm_model} is rate limited. "
+                    "Stopping so the run is not filled with failures."
+                )
             raise LLMUnavailable(
-                f"opencode exited {done.returncode}: {done.stderr.strip()[:300]}"
+                f"opencode exited {done.returncode}: "
+                f"{(trouble.strip() or 'no detail')[:300]}"
             )
 
         answer = _text_of(done.stdout)
@@ -179,7 +185,35 @@ def _flatten(message: str) -> str:
     return re.sub(r"[ \t]+", " ", text).strip()
 
 
+def _error_event(stdout: str) -> str:
+    """What opencode reported as an error, if anything.
+
+    A run can exit 0 and still have failed — the failure arrives as an event in
+    the stream like everything else.
+    """
+    trouble: list[str] = []
+    for line in (stdout or "").splitlines():
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        kind = str(event.get("type") or "")
+        if "error" not in kind.lower():
+            continue
+        trouble.append(json.dumps(event.get("part") or event))
+    return "\n".join(trouble)
+
+
 def _looks_throttled(output: str) -> bool:
+    """Whether a *failure* was a throttle.
+
+    Only ever called on stderr and on error events. Called on the whole output
+    it matches the assistant's own prose — "beyond human capacity" is an
+    ability description, not a rate limit.
+    """
     lowered = (output or "").lower()
     return any(marker in lowered for marker in _RATE_LIMITED)
 
