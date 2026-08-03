@@ -47,10 +47,14 @@ class Settings(BaseSettings):
     scripts_root: Path = Field(default=REPO_ROOT / "scripts output")
 
     # ── Crawler ──────────────────────────────────────────────────────────────
-    # Concurrency and pacing carried over from the original crawler, which ran
-    # ~850 pages against Fandom without tripping rate limits.
+    # Ten workers, each requesting 50 pages at a time, is what pulled One
+    # Piece's 7,937 pages in three minutes with no rate limiting. Raising these
+    # does not help: Fandom limits per request, so more connections are served
+    # more slowly rather than in parallel. Lowering them does not protect you
+    # either — what triggers a 429 is the number of requests, and batching
+    # already cut that by fifty.
     crawl_concurrency: int = 10
-    crawl_delay_seconds: float = 0.2
+    crawl_delay_seconds: float = 0.25
     crawl_max_retries: int = 4
     crawl_timeout_seconds: int = 30
     user_agent: str = (

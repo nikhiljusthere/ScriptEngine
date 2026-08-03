@@ -7,10 +7,25 @@ honest 429 handling. All of that is kept.
 
 Two things changed.
 
-**One request per page instead of two.** `action=parse` accepts
-`prop=wikitext|sections|categories|templates|links|properties`, so the wikitext,
-the section tree, the categories, the transclusions and the infobox schema all
-arrive together.
+**Fifty pages per request, not one.** This is the default and the only path;
+there is no single-page fetch left to fall back to. Fandom rate-limits per
+request rather than per page, which is why concurrency cannot buy speed here —
+measured, raising workers from 3 to 10 and cutting the delay fourfold moved a
+crawl from 112 pages/min to 117, because the extra connections were simply
+served more slowly. `action=query` returns up to 50 pages of wikitext,
+categories and templates in one call, and the same wiki then answers at over
+2,000 pages/min. One Piece's 7,937 pages took three minutes.
+
+What `action=query` withholds is recovered rather than lost, and both
+compensations are cheap:
+
+* the **section tree** is not needed, because `split_sections` locates headings
+  in the wikitext anyway — byte offsets shift once templates expand, so the API
+  only ever supplied the levels, and counting `=` signs agrees with it on 3,113
+  of 3,114 sections across a 400-page sample;
+* the **infobox schema** in `properties` describes a page *type*, so it is
+  fetched once per newly seen type instead of once per page — roughly twenty
+  requests per wiki rather than nine thousand.
 
 **No link-following.** `allpages` already enumerates every article, so walking
 links only re-discovers pages that are already queued. Wikilinks are still
@@ -57,8 +72,6 @@ PREFERRED_IMPERSONATIONS = (
     "chrome136", "chrome131", "chrome124", "chrome120",
     "chrome116", "chrome110", "firefox135", "firefox133",
 )
-
-PAGE_PROPS = "wikitext|sections|categories|templates|properties|displaytitle|revid"
 
 # Titles per `action=query` request. MediaWiki caps this at 50 for anonymous
 # callers and rejects the whole request past it, so this is the API's number
@@ -359,20 +372,6 @@ class WikiCrawler:
         )
         if data and "error" not in data:
             learn_field_labels(ontology, page_type, (data.get("parse") or {}).get("properties"))
-
-    async def fetch_page(self, base: str, title: str) -> dict[str, Any] | None:
-        data = await self._get(
-            base,
-            {
-                "action": "parse", "page": title, "prop": PAGE_PROPS,
-                "format": "json", "formatversion": "2", "redirects": "1",
-            },
-        )
-        if not data or "error" in data:
-            if data and data.get("error", {}).get("code") not in {"missingtitle", None}:
-                logger.warning("API error on %s: %s", title, data["error"].get("code"))
-            return None
-        return data.get("parse")
 
     # ── extraction ───────────────────────────────────────────────────────────
 

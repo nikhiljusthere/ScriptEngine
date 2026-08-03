@@ -37,8 +37,8 @@ PAGE_PARAMS = frozenset({"page", "pages", "name"})
 # URL, so these are dropped on purpose and must not read as a dropped locator.
 # The parameter names are the MediaWiki citation convention, not one wiki's.
 EXTERNAL_PARAMS = frozenset({
-    "url", "title", "publisher", "author", "date", "accessdate",
-    "lastaccess", "archiveurl", "archivedate", "language",
+    "url", "title", "publisher", "author", "first", "last", "date", "accessdate",
+    "lastaccess", "archiveurl", "archivedate", "language", "url-status",
     "website", "work", "quote", "isbn", "id", "transtitle", "format", "via",
     # `{{References|note|box=yes}}` renders the footnote list. It is furniture,
     # not a citation, even though its template name starts with "ref".
