@@ -329,10 +329,52 @@ TOPIC_QUESTIONS = {
     ],
 }
 
+# Sets scoped to one character rather than to a race or a category — "every form
+# of Goku", "every Saitama technique". A different axis from the other sheets:
+# the qualifier is a person, so the answer has to be what *they* have rather
+# than everything of that kind in the series.
+CHARACTER_QUESTIONS = {
+    "db": [
+        "Every form of Goku",
+        "Every form of Vegeta",
+        "Every technique Goku uses",
+        "Every transformation of Frieza",
+    ],
+    "onepiece": [
+        "Every form of Luffy",
+        "Every Gear of Luffy",
+        "Every technique of Zoro",
+    ],
+    "opm": [
+        "Every Saitama technique",
+        "Every technique of Genos",
+    ],
+    "jjk": [
+        "How many 1v1 battles did Yuji Itadori have with named characters",
+        "Every battle of Yuji Itadori",
+        "Every cursed technique of Sukuna",
+    ],
+    "bleach": [
+        "Every form of Ichigo Kurosaki",
+        "Every technique of Ichigo Kurosaki",
+    ],
+    "hxh": [
+        "Every Nen ability of Killua",
+        "Every Nen ability of Kurapika",
+    ],
+    "csm": [
+        "Every form of Denji",
+    ],
+    "berserk": [
+        "Every armor of Guts",
+    ],
+}
+
 SHEETS = {
     "default": (QUESTIONS, "Engine Answer Sheet 2.md"),
     "ontology": (ONTOLOGY_QUESTIONS, "Engine Answer Sheet 3 - Ontology.md"),
     "topics": (TOPIC_QUESTIONS, "Engine Answer Sheet 4 - Real Topics.md"),
+    "character": (CHARACTER_QUESTIONS, "Engine Answer Sheet 5 - Character Scoped.md"),
 }
 
 
