@@ -79,7 +79,16 @@ empty for prose the wiki cited: see "Sourcing" below.
   "mode": "roster",
   "subject": "Cursed Spirit",
   "basis": "Cursed Spirits (class)",       // the set, and the field it is grouped by
-  "kind": "category",                      // category | type
+  "kind": "category",                      // category | type | sections | declared
+  "confidence": "declared",                // declared | exact | partial | weak
+  "unmatched": [],                         // words in the set's name the topic never asked for
+  "warning": "",                           // populated when confidence is partial or weak
+  "candidates": 160,                       // what the wiki's set held before validation
+  "scope": "canon",                        // canon | all
+  "rejected": [                            // and why each one does not belong
+    {"name": "Black Frieza", "reason": "not saiyan"},
+    {"name": "Class-up", "reason": "outside the story (Game: Dragon Ball Heroes)"}
+  ],
   "groups": ["Grade 2", "Special Grade"],
   "members": [
     {
@@ -97,6 +106,28 @@ empty for prose the wiki cited: see "Sourcing" below.
   "tokens_used": 12887
 }
 ```
+
+`confidence` says how well the set the wiki gave back matches the set that was
+asked for, because discovery cannot decline to answer. `declared` and `exact`
+are trustworthy; `partial` means the set carries a word the topic never
+mentioned — "Every Straw Hat Pirate" returns `Straw Hat Pirates' Creations`,
+`partial` on *creations*, which is the crew's weapons rather than the crew — and
+`weak` means nothing in the topic matched the set's name at all.
+
+It does not detect an *incomplete* set: `Grand Line Islands` reports `exact` and
+returns four members where the wiki has hundreds of islands filed elsewhere. Use
+`members_available` against the size you expect.
+
+`candidates` and `rejected` are membership validation. A category is what the
+wiki keeps, not what the topic asked for: `Transformations` holds Black Frieza
+because it is one, and only the topic knows that "Saiyan" was the point. Each
+candidate is checked against the topic's constraints — ownership, race, media —
+and what fails is reported rather than dropped quietly.
+
+`scope` is `canon` by default: film, manga and anime material only. Game and
+spin-off entries stay in the store and come back when the topic asks for them
+("every transformation **ever**", "**including games**"), which sets
+`scope: "all"`.
 
 Members are paid for out of an equal share of the budget, so a long biography at
 the top of the list cannot spend what the tail needed.

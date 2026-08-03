@@ -102,16 +102,39 @@ rosters:
       Transmuter: Transmuters
 ```
 
-A set is backed by `category:`, `label:` (a discovered page type), or
-`fact: {key, value}`. `groups:` is for a taxonomy — "Every Nen Type" wants the
-six types, each with its users, not a flat list of 111 people.
+A set is backed by `category:`, `categories:` (several that together make one
+set), `sections_of:` (a page whose sections are the members), `label:` (a
+discovered page type), or `fact: {key, value}`. `groups:` is for a taxonomy —
+"Every Nen Type" wants the six types, each with its users, not a flat list of
+111 people.
 
-Three rules worth knowing:
+Pick between the two multi-category shapes by what the answer should list:
+
+```yaml
+  - name: Races and Tribes        # 34 races, in one list
+    categories: [Races and Tribes, Artificial Races]
+
+  - name: Devil Fruit Types       # 3 members: Paramecia, Zoan, Logia
+    groups: {Paramecia: Paramecia, Zoan: Zoan, Logia: Logia}
+```
+
+Declaring races with `groups:` returns two members — the names of the two
+categories.
+
+`sections_of:` is for a set no member has an article for. One Piece writes all
+twenty-two Marine ranks as sections of `Marine Ranks`; by category the same
+question returns `Marine Officers`, fourteen people rather than the ladder.
+
+Four rules worth knowing:
 
 - **The longest matching phrase wins**, so declaring both `hero` and
   `s-class hero` sends the narrower topic to the smaller set. Declare compound
   phrases when two sets collide: `captain of the gotei 13` had to be spelled out
   or "Every Captain of the Gotei 13" answered with all 127 members.
+- **Never declare a phrase that contains the series' name.** Every question about
+  a wiki says the wiki's name, so `match: [dragon ball]` captured every
+  enumeration on that wiki. Declare the qualified phrasings instead —
+  `types of dragon ball`.
 - **A topic that names a person falls through to discovery**, because a declared
   set is a general one. "Every Cursed Technique of Sukuna" wants his eight, not
   all 38 innate techniques. The test is what the character contributes beyond
