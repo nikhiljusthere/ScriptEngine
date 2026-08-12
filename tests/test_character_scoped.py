@@ -135,7 +135,16 @@ class TestEndToEnd:
         # nothing in the data marks one user's use of a page as non-canon while
         # another's is. Removing it needs per-user scope the wiki does not
         # store, so it stays and is reported as a known miss.
-        assert len(names) < 42, "the unfiltered category answer was 42"
+        # The bound here used to be 42, the size of the unfiltered
+        # `Transformations` category, because that category was the source.
+        # It is not any more: the answer is now Goku's own
+        # `Power and Abilities` page — whose 36 `;`-marked forms became real
+        # headings — unioned with the pages he owns. More members, and more of
+        # them right: canon recall on this question went 8 of 12 to 11 of 12.
+        #
+        # What still has to hold is that it is *his* list and not the series':
+        # the category path offered 160 candidates.
+        assert len(names) < 80, "this is Goku's page, not the series' category"
 
     def test_luffys_gears_come_from_headings(self):
         """They are `Devil Fruit / Gear 2`, not pages, and not `Former Pirates`."""
@@ -226,12 +235,24 @@ class TestEndToEnd:
         ],
     )
     def test_a_page_only_a_game_ever_showed_is_dropped(self, name):
+        """These are no longer filtered at query time — they are not indexed.
+
+        `_game_only` used to be the assertion here. It cannot be any more:
+        the page is gone from the store, so `_profile` returns nothing to
+        judge. Absence is the stronger guarantee, and the one the declaration
+        in `series/db/overrides.yaml` now buys.
+
+        Checked against `documents` rather than `nodes`. A page other pages
+        link to keeps a bare, unresolved node so the link is not silently
+        lost — that is the graph working as designed, and it carries no text,
+        no sections and no edges of its own.
+        """
         paths = store_for("db")
-        overrides = load_overrides(paths)
         with FactStore(paths.facts_db) as store:
-            assert R._game_only(
-                store, R._profile(store, name), R.non_canon_works(overrides)
-            )
+            row = store.connection.execute(
+                "SELECT id FROM documents WHERE title = ? COLLATE NOCASE", (name,)
+            ).fetchone()
+            assert row is None
 
     def test_goku_keeps_his_forms_and_loses_the_games(self):
         paths = store_for("db")

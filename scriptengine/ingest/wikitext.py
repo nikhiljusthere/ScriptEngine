@@ -230,6 +230,46 @@ _MEDIA_BLOCK = re.compile(
 )
 _HEADING = re.compile(r"^(={2,6})\s*(.+?)\s*\1\s*$", re.MULTILINE)
 
+# Headings a wiki writes without writing a heading.
+#
+# `Goku/Power and Abilities` has exactly three `==` headings — `Power`,
+# `Abilities`, `References` — and inside `==Abilities==` it names seventy-five
+# forms as `;Kaio-ken`, `;Super Saiyan 4`, one definition term each. Bleach and
+# One-Punch Man use a standalone `'''Bold'''` line for the same job. Both
+# markers were being deleted by `_LIST_PREFIX` and `_QUOTES` below, which left
+# every form name as an unmarked line of prose in a 113,000-character section,
+# and left "Every form of Goku" with nothing structural to read.
+#
+# The group marker above them says what kind of thing the list holds —
+# `'''<big>Forms and Transformations</big>'''`, or the tabber separator
+# `|-|Techniques=` that introduces it.
+_ITEM_GROUP = re.compile(
+    r"^(?:<center>)?\s*'''\s*<big>\s*(?P<name>[^<>'\n]{1,60}?)\s*</big>\s*'''"
+    r"\s*(?:</center>)?\s*$"
+    r"|^\|-\|\s*(?P<tab>[^=\n|]{1,60}?)\s*=\s*$",
+    re.MULTILINE,
+)
+_ITEM_MARKER = re.compile(
+    # `;Kaio-ken` — a definition term on its own line. Dragon Ball.
+    r"^;\s*(?P<def>[^:\n]{1,60}?)\s*$"
+    # `'''Godspeed'''` alone on a line.
+    r"|^'''\s*\[?\[?\s*(?P<bold>[^'\[\]|<>\n]{1,60}?)\s*\]?\]?\s*'''\s*$"
+    # `'''Getsuga Tenshō''': a crescent of energy…` — the same definition
+    # shape written with bold instead of `;`, and the dominant one on Bleach,
+    # One-Punch Man and Chainsaw Man. The name is the bold part; the rest of
+    # the line is the start of its body. The inner capture is deliberately
+    # permissive so `'''[[Hohō|Shunpo Master]]'''` survives — `strip_markup`
+    # in `_item_name` reduces it to the display text.
+    r"|^[*:#]{0,3}\s*'''(?P<lead>[^'\n]{1,80}?)'''\s*:",
+    re.MULTILINE,
+)
+
+# A name longer than this is a sentence someone emphasised, not an ability.
+_MAX_ITEM_WORDS = 6
+# One bold line is emphasis; several in a row are a list. Below this the
+# section is left exactly as it was.
+_MIN_ITEM_MARKERS = 3
+
 # Wikitable cell attributes precede the content after a single `|`, e.g.
 # `| colspan="2" style="..." |Binding Vows`. Only the content is wanted.
 _CELL_ATTRS = re.compile(r'^[^|\[{]*?(?:=|colspan|rowspan|style|align|width)[^|]*\|(?!\|)')
@@ -983,10 +1023,71 @@ def facts_from_infobox(
 # ─────────────────────────────────────────────────────────────────────────────
 
 
+def _item_name(match: re.Match) -> str:
+    """The name a marker carries, or empty when it is not usable as one."""
+    raw = ""
+    for group in ("name", "tab", "def", "bold", "lead"):
+        try:
+            raw = match.group(group) or ""
+        except IndexError:
+            raw = ""
+        if raw:
+            break
+    name = strip_markup(raw).strip(" : ")
+    if not name or len(name.split()) > _MAX_ITEM_WORDS:
+        return ""
+    return name
+
+
+def split_items(body: str) -> tuple[str, list[tuple[str, str, str]]]:
+    """Split one section body on its item markers.
+
+    Returns the text before the first marker, and one ``(group, name, body)``
+    per marker. ``group`` is the `<big>` or tabber heading the item sits under,
+    and is empty both for the group's own entry and for an ungrouped list.
+
+    A group gets an entry of its own rather than being skipped. Skipping it
+    dropped whatever sat between the group marker and the first item under it,
+    which measured as 144,345 characters — a fifth of the text — across Dragon
+    Ball's 23 `Power and Abilities` pages.
+
+    Returns no items at all below `_MIN_ITEM_MARKERS`, which is what keeps an
+    ordinary paragraph with one bold phrase in it from becoming a heading.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    for match in _ITEM_GROUP.finditer(body):
+        name = _item_name(match)
+        if name:
+            marks.append((match.start(), match.end(), "group", name))
+    for match in _ITEM_MARKER.finditer(body):
+        name = _item_name(match)
+        if name:
+            marks.append((match.start(), match.end(), "item", name))
+    marks.sort()
+
+    if sum(1 for mark in marks if mark[2] == "item") < _MIN_ITEM_MARKERS:
+        return body, []
+
+    preamble = body[: marks[0][0]]
+    items: list[tuple[str, str, str]] = []
+    group = ""
+    for position, (_, end, kind, name) in enumerate(marks):
+        stop = marks[position + 1][0] if position + 1 < len(marks) else len(body)
+        piece = body[end:stop]
+        if kind == "group":
+            group = name
+            items.append(("", name, piece))
+        else:
+            items.append((group, name, piece))
+    return preamble, items
+
+
 def split_sections(
     text: str,
     api_sections: list[dict] | None = None,
     works: CitationGrammar | None = None,
+    item_sections: set[str] | None = None,
+    title: str = "",
 ) -> tuple[str, list[Section]]:
     """Split a page into its lead and its sections.
 
@@ -994,6 +1095,10 @@ def split_sections(
     authoritative levels. Headings are still located in the wikitext itself
     because byte offsets shift once templates are expanded; the API supplies the
     hierarchy, the wikitext supplies the content.
+
+    ``item_sections`` names the sections whose `;term` and `'''term'''` markers
+    are real headings — see `Ontology.item_sections`. Scoped rather than global
+    because the same markers carry chapter listings elsewhere.
     """
     levels: dict[str, int] = {}
     if api_sections:
@@ -1021,24 +1126,40 @@ def split_sections(
     sections: list[Section] = []
     ancestors: list[tuple[int, str]] = []
 
+    wanted = {name.strip().lower() for name in (item_sections or []) if name.strip()}
+    page = (title or "").lower()
+
     for index, match in enumerate(matches):
-        title = strip_markup(match.group(2)).strip()
-        if not title:
+        heading = strip_markup(match.group(2)).strip()
+        if not heading:
             continue
 
-        level = levels.get(title, len(match.group(1)))
+        level = levels.get(heading, len(match.group(1)))
         end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
         body = text[match.end() : end]
 
         while ancestors and ancestors[-1][0] >= level:
             ancestors.pop()
 
+        path = [name for _, name in ancestors]
+
+        # Read this section's markers only where the series declared it holds
+        # abilities. Matched on the heading or on the page title, because a
+        # wiki may put them either way round: Jujutsu Kaisen writes
+        # `==Abilities and Powers==` on the character's page, Dragon Ball moves
+        # the whole thing to a `X/Power and Abilities` subpage whose headings
+        # are the bare words `Power` and `Abilities`.
+        haystack = f"{heading.lower()} {page}"
+        items: list[tuple[str, str, str]] = []
+        if wanted and any(name in haystack for name in wanted):
+            body, items = split_items(body)
+
         section = Section(
-            title=title,
+            title=heading,
             level=level,
             index=str(index + 1),
-            anchor=title.replace(" ", "_"),
-            path=[name for _, name in ancestors],
+            anchor=heading.replace(" ", "_"),
+            path=path,
             text=strip_markup(
                 body, ref_names=ref_names, works=works, ref_tags=ref_tags
             ),
@@ -1047,6 +1168,29 @@ def split_sections(
             citations=extract_citations(body, ref_names),
         )
         sections.append(section)
-        ancestors.append((level, title))
+        ancestors.append((level, heading))
+
+        # The item's level is computed from its parent and never from `levels`.
+        # `reextract` feeds the previously stored section titles back in as
+        # authoritative API levels, so a title that came from a marker on one
+        # run would otherwise be read as a real heading on the next and drift.
+        for position, (group, name, item_body) in enumerate(items):
+            item_path = [*path, heading] + ([group] if group else [])
+            sections.append(
+                Section(
+                    title=name,
+                    level=level + (2 if group else 1),
+                    index=f"{index + 1}.{position + 1}",
+                    anchor=name.replace(" ", "_"),
+                    path=item_path,
+                    text=strip_markup(
+                        item_body, ref_names=ref_names, works=works, ref_tags=ref_tags
+                    ),
+                    wikitext=item_body,
+                    links=extract_links(item_body),
+                    citations=extract_citations(item_body, ref_names),
+                    is_item=True,
+                )
+            )
 
     return lead, sections

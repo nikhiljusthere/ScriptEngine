@@ -27,6 +27,13 @@ ability_sections:
   transformation: [Appearance]
   technique: [Abilities]
 
+# What this wiki calls a kind of ability. A devil hunter's power *is* their
+# contract, so "Every devil contract of Aki Hayakawa" is a question about what
+# Aki can do — but `contract` matched no kind word, and `devil` is a declared
+# set, so the topic resolved to the wiki's devils instead of to Aki.
+ability_kinds:
+  technique: [contract, contracts]
+
 rosters:
   # No `group_by: species` here on purpose: every member of this category
   # answers "Devil", so grouping by it produces one group and says nothing.

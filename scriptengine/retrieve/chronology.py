@@ -198,7 +198,18 @@ def _counted(store: FactStore, arc: str, kind: str) -> str:
     return f"{total} {kind.lower()}" if total else ""
 
 
-_NAMES_AN_ARC = re.compile(r"\b(arc|saga)s?\b", re.IGNORECASE)
+# A *set* of arcs, which is what wants ordering. Plural on its own qualifies;
+# the singular only when something asks for all of them.
+#
+# `\b(arc|saga)s?\b` was the whole test, and it made every topic that names an
+# arc a chronology: `Fearsome Womb Arc` is one arc's story and was answered
+# with the ordered list of arcs. Naming an arc is naming a subject — the thing
+# a script gets written about — and asking for arcs is asking for the set.
+_NAMES_AN_ARC = re.compile(r"\b(arc|saga)s\b", re.IGNORECASE)
+_ASKS_FOR_ARCS = re.compile(
+    r"\b(every|all|each|list|how many)\b[^.?!]{0,40}?\b(arc|saga)s?\b",
+    re.IGNORECASE,
+)
 
 
 def build_chronology(paths: SeriesPaths, query: str, max_members: int = 200) -> Roster | None:
@@ -270,5 +281,5 @@ def wants_chronology(query: str) -> bool:
     if any(word in lowered for word in ("in order", "chronolog", "timeline", "sequence")):
         return True
     # "Every arc of One Punch Man" is a list of arcs, and the useful list of
-    # arcs is the ordered one.
-    return bool(_NAMES_AN_ARC.search(lowered))
+    # arcs is the ordered one. One arc by name is not a list of anything.
+    return bool(_NAMES_AN_ARC.search(lowered) or _ASKS_FOR_ARCS.search(lowered))

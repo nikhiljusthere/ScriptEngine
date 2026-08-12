@@ -15,6 +15,11 @@ from typing import Any, Callable, Iterable
 
 from scriptengine.config import Settings, SeriesPaths, get_settings, load_overrides
 from scriptengine.index.chunker import Chunk, chunk_page, embeddable
+from scriptengine.ingest.canon import (
+    discounted_works,
+    keep_sections,
+    page_is_discounted,
+)
 from scriptengine.index.embedder import Embedder
 from scriptengine.ingest.crawler import load_extracted, load_manifest
 from scriptengine.ingest.documents import WikiPage
@@ -52,12 +57,56 @@ def build_index(
 
     report: dict[str, Any] = {"series": paths.name, "pages": len(pages)}
 
+    # The works this series does not count are dropped here rather than
+    # filtered later, so nothing downstream can reach them at all.
+    works = discounted_works(load_overrides(paths))
+    if works:
+        before = len(pages)
+        # A debut target is judged on its own title *and* its own categories,
+        # so the whole corpus has to be to hand before any page is judged.
+        categories_by_title = {
+            page.title.lower(): page.categories for page in pages
+        }
+        dropped = {
+            page.title
+            for page in pages
+            if page_is_discounted(page, works, categories_by_title)
+        }
+        # A subpage goes with its parent. `Xeno Trunks` was dropped on its own
+        # title while `Xeno Trunks/Biography` and `/Power and Abilities` stayed,
+        # because a subpage carries neither the categories nor the debut that
+        # settled the parent.
+        pages = [
+            page
+            for page in pages
+            if page.title not in dropped
+            and page.title.split("/", 1)[0] not in dropped
+        ]
+        report["dropped_pages"] = before - len(pages)
+        report["pages"] = len(pages)
+        logger.info(
+            "dropped %s pages belonging only to %s discounted works",
+            before - len(pages), len(works),
+        )
+    else:
+        dropped = set()
+
     with FactStore(paths.facts_db) as store:
         store.reset()
-        chunks_by_page = _load_documents(store, pages, progress)
-        _load_graph(store, pages, progress)
+        chunks_by_page = _load_documents(store, pages, progress, works, dropped)
+        _load_graph(store, pages, progress, dropped)
         chunk_rows = _load_chunks(store, pages, chunks_by_page, progress)
         store.rebuild_fts()
+        # What was removed, recorded for the query path.
+        #
+        # Retrieval cannot re-derive it: the page is gone, so there is no
+        # debut left to judge, and a name with no page is exactly the shape
+        # prose extraction exists to keep (`Dismantle` has no page either).
+        # The `abilities` table also survives `reset()` by design, so it still
+        # holds rows read out of prose before the removal — `Goku` had
+        # `Super Saiyan (Berserk)` among his forms with the page, the heading
+        # and the edge all already gone.
+        store.set_meta("dropped_titles", json.dumps(sorted(dropped)))
         store.set_meta("wiki", manifest.get("wiki") or "")
         store.set_meta("embed_model", settings.embed_model)
         store.commit()
@@ -73,7 +122,11 @@ def build_index(
 
 
 def _load_documents(
-    store: FactStore, pages: Iterable[WikiPage], progress: Progress | None
+    store: FactStore,
+    pages: Iterable[WikiPage],
+    progress: Progress | None,
+    works: tuple[str, ...] = (),
+    dropped: set[str] | None = None,
 ) -> dict[str, list[Chunk]]:
     """Insert documents and sections, and chunk each page."""
     chunks_by_page: dict[str, list[Chunk]] = {}
@@ -92,6 +145,11 @@ def _load_documents(
         )
 
         store.add_categories(document_id, page.categories)
+
+        # A kept page may still have a discounted work's corner in it —
+        # `Goku/Biography` carries a seven-saga Super Dragon Ball Heroes
+        # subtree. Dropped once, so sections and chunks agree.
+        page.sections = keep_sections(page.sections, works, dropped)
 
         for ordinal, section in enumerate(page.sections):
             store.add_section(
@@ -114,7 +172,10 @@ def _load_documents(
 
 
 def _load_graph(
-    store: FactStore, pages: Iterable[WikiPage], progress: Progress | None
+    store: FactStore,
+    pages: Iterable[WikiPage],
+    progress: Progress | None,
+    dropped: set[str] | None = None,
 ) -> None:
     """Insert nodes, aliases, facts and edges.
 
@@ -125,6 +186,7 @@ def _load_graph(
     even when that something has no page here.
     """
     pages = list(pages)
+    dropped = dropped or set()
     node_ids: dict[str, int] = {}
 
     for page in pages:
@@ -153,6 +215,13 @@ def _load_graph(
             )
 
         for edge in page.edges:
+            # An edge to a page this series does not count is not an unresolved
+            # target, it is a removed one. `Goku` still lists
+            # `Super Saiyan (Berserk)` among his users, and ownership reads
+            # those edges — so leaving them put the form back in "Every form of
+            # Goku" after the page and the heading had both gone.
+            if edge.target in dropped:
+                continue
             target_id = node_ids.get(edge.target)
             if target_id is None:
                 target_id = store.add_node(edge.target)

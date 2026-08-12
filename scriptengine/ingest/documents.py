@@ -104,6 +104,10 @@ class Section:
     wikitext: str = ""                              # original, for re-parsing
     links: list[Link] = field(default_factory=list)
     citations: list[Citation] = field(default_factory=list)
+    # True when the heading came from an item marker (`;Kaio-ken`) rather than
+    # from `==`. The chunker keeps these however short they are: the name is
+    # the point, and an ability described in one sentence is still an ability.
+    is_item: bool = False
 
     @property
     def breadcrumb(self) -> str:

@@ -177,3 +177,54 @@ class TestSubjectPreference:
         if not paths.facts_db.exists():
             pytest.skip("jjk is not indexed")
         assert route(paths, "Shibuya Incident").signals["subject"] == "Shibuya Incident"
+
+
+class TestArcsAreASetOnlyWhenAsked:
+    """Naming an arc is naming a subject; asking for arcs is asking for a set.
+
+    `wants_chronology` tested `\b(arc|saga)s?\b`, so every topic that mentioned
+    an arc was answered with the ordered list of arcs. `Fearsome Womb Arc` is
+    one arc's story — the shape a script about it needs — and it was coming
+    back as a roster, which is the gold case `narrative-02` asserts against.
+    """
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Every arc in order",
+            "Every arc of One Punch Man",
+            "All arcs",
+            "How many arcs are there",
+            "Every saga in Dragon Ball",
+            "Timeline of Dragon Ball",
+            "list the arcs",
+        ],
+    )
+    def test_asking_for_the_set_wants_order(self, query):
+        from scriptengine.retrieve.chronology import wants_chronology
+
+        assert wants_chronology(query)
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Fearsome Womb Arc",
+            "Shibuya Incident Arc",
+            "Cell Saga",
+            "Every Rank of Curse in Jujutsu Kaisen",
+        ],
+    )
+    def test_naming_one_arc_is_a_subject_not_a_set(self, query):
+        from scriptengine.retrieve.chronology import wants_chronology
+
+        assert not wants_chronology(query)
+
+    def test_the_gold_narrative_case_routes_narrative(self):
+        """`narrative-02` in gold_jjk.json. It failed through the router while
+        every path-level test passed, which is the failure this catches."""
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert route(paths, "Fearsome Womb Arc").mode == "narrative"

@@ -48,8 +48,12 @@ from scriptengine.stores.facts import FactStore
 logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored extraction. Anything that changes what the
-# model is asked changes this.
-PROMPT_VERSION = "2026-08-03.2-opencode"
+# model is asked changes this — including what it is asked *about*: reading the
+# page lead (`_is_lead`) widened the passages without touching the prompt, and
+# the seven already-extracted series would have kept their cached answers
+# through it. The `-opencode` suffix is dropped because extraction runs against
+# LM Studio now; the model each row was produced by is stored on the row.
+PROMPT_VERSION = "2026-08-04.1"
 
 # What an extracted ability may be called, in the vocabulary `semantics` speaks
 # so the retrieval side can filter on the same words it filters pages by.

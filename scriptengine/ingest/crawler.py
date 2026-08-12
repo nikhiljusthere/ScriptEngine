@@ -410,7 +410,11 @@ class WikiCrawler:
         learn_field_labels(ontology, page_type, parse.get("properties"))
 
         lead, sections = split_sections(
-            wikitext, parse.get("sections", []), ontology.citation_works
+            wikitext,
+            parse.get("sections", []),
+            ontology.citation_works,
+            item_sections=ontology.item_sections,
+            title=title,
         )
         # Named references are defined once per page and reused by name, so the
         # map has to be built from the whole page before anything is stripped.
@@ -783,6 +787,9 @@ def load_extracted(
     # built ontology is what lets `overrides.yaml` reach a corpus that is being
     # re-parsed rather than re-crawled.
     ontology.citation_works = discovered.citation_works
+    # Same reason: the manifest was written before `ability_sections` existed,
+    # and re-extraction is the only place the item markers are read.
+    ontology.item_sections = discovered.item_sections
 
     return [reextract(page, ontology) for page in pages], ontology
 

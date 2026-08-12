@@ -63,6 +63,21 @@ def slugify_type(name: str) -> str:
     return cleaned or "unknown"
 
 
+def item_section_names(overrides: dict[str, Any] | None) -> set[str]:
+    """The sections whose `;term` and `'''term'''` markers name real things.
+
+    Read from the same `ability_sections:` declaration retrieval and extraction
+    already use, so a series states this once. Nothing here names a series.
+    """
+    declared = (overrides or {}).get("ability_sections") or {}
+    return {
+        str(section).strip().lower()
+        for sections in declared.values()
+        for section in sections
+        if str(section).strip()
+    }
+
+
 @dataclass
 class Ontology:
     """What a wiki says it contains.
@@ -91,6 +106,16 @@ class Ontology:
     # The names are per-wiki, so they come from overrides; see
     # `wikitext.CitationGrammar`.
     citation_works: CitationGrammar = field(default_factory=CitationGrammar)
+    # The sections whose item markers are worth reading as headings. A wiki
+    # writes each of a character's forms as `;Super Saiyan 4` or `'''Godspeed'''`
+    # rather than as a real `==` heading, and the marker is the only thing
+    # saying where one ends and the next begins.
+    #
+    # Scoped to the declared ability sections rather than applied everywhere,
+    # because the same markers carry unrelated content elsewhere: One Piece
+    # writes 7,491 of them, and its heaviest pages are `Chapter 1161` and
+    # `Chapters and Volumes`, which are listings and not abilities.
+    item_sections: set[str] = field(default_factory=set)
 
     @property
     def types(self) -> list[str]:
@@ -205,6 +230,7 @@ def build_ontology(
         str(c).lower() for c in (overrides.get("skip_categories") or [])
     }
     ontology.citation_works = CitationGrammar.from_overrides(overrides)
+    ontology.item_sections = item_section_names(overrides)
     return ontology
 
 
@@ -289,6 +315,7 @@ def discover_infoboxes(
         str(c).lower() for c in (overrides.get("skip_categories") or [])
     }
     ontology.citation_works = CitationGrammar.from_overrides(overrides)
+    ontology.item_sections = item_section_names(overrides)
     ontology.infobox_votes = dict(votes.most_common(40))
     return ontology
 

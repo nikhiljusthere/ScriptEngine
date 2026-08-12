@@ -207,7 +207,11 @@ def chunk_page(
     for index, section in enumerate(page.sections):
         if section.title.strip().lower() in BOILERPLATE_SECTIONS:
             continue
-        if section.word_count < min_words:
+        # A section headed by an item marker is kept however short it is. The
+        # name is what the question asks for — "Every form of Goku" wants
+        # `Super Saiyan 4`, not the paragraph under it — and `_section_roster`
+        # reads chunks, so dropping the chunk drops the member with it.
+        if section.word_count < min_words and not getattr(section, "is_item", False):
             continue
 
         parent_ordinal = ordinal

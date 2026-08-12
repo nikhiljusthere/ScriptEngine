@@ -465,3 +465,138 @@ class TestSections:
         # corpus contained "## Appearance", so every page became one section.
         _, sections = split_sections(self.PAGE)
         assert len(sections) > 1
+
+
+class TestItemMarkers:
+    """Headings a wiki writes without writing a heading.
+
+    `Goku/Power and Abilities` has three `==` headings and names seventy-five
+    forms as `;Kaio-ken` definition terms inside one of them. The markers were
+    stripped by `_LIST_PREFIX`/`_QUOTES`, so every form was an unmarked line in
+    a 113,000-character section and "Every form of Goku" had nothing to read.
+    """
+
+    ABILITIES = (
+        "==Abilities==\n"
+        "He fights well.\n"
+        "<center>'''<big>Techniques</big>'''</center>\n"
+        ";Kamehameha\nA blue energy blast.\n"
+        ";Kaio-ken\nA multiplier learned from King Kai.\n"
+        ";Spirit Bomb\nBorrowed energy.\n"
+        "<center>'''<big>Forms and Transformations</big>'''</center>\n"
+        ";Super Saiyan\nGolden hair.\n"
+        ";Super Saiyan 4\nRed fur.\n"
+    )
+
+    def _split(self, text, title="Goku/Power and Abilities"):
+        from scriptengine.ingest.wikitext import split_sections
+
+        return split_sections(
+            text, [], None, item_sections={"power and abilities"}, title=title
+        )
+
+    def test_definition_terms_become_sections(self):
+        _, sections = self._split(self.ABILITIES)
+        titles = [section.title for section in sections]
+        assert "Kamehameha" in titles
+        assert "Kaio-ken" in titles
+        assert "Super Saiyan 4" in titles
+
+    def test_the_group_marker_becomes_the_parent(self):
+        _, sections = self._split(self.ABILITIES)
+        crumbs = {s.title: s.breadcrumb for s in sections}
+        assert crumbs["Kaio-ken"] == "Abilities / Techniques / Kaio-ken"
+        assert crumbs["Super Saiyan 4"] == (
+            "Abilities / Forms and Transformations / Super Saiyan 4"
+        )
+
+    def test_the_parent_keeps_only_its_preamble(self):
+        """Otherwise every item's text is stored twice, once under its own
+        heading and once under the section it came from."""
+        _, sections = self._split(self.ABILITIES)
+        abilities = next(s for s in sections if s.title == "Abilities")
+        assert "He fights well" in abilities.text
+        assert "Golden hair" not in abilities.text
+
+    def test_items_are_marked_so_the_chunker_keeps_them(self):
+        _, sections = self._split(self.ABILITIES)
+        assert all(s.is_item for s in sections if s.title == "Kaio-ken")
+        assert not next(s for s in sections if s.title == "Abilities").is_item
+
+    def test_a_section_the_series_did_not_declare_is_untouched(self):
+        """One Piece writes 7,491 of these markers, and its heaviest pages are
+        `Chapter 1161` and `Chapters and Volumes` — listings, not abilities."""
+        _, sections = self._split(self.ABILITIES, title="Chapter 1161")
+        assert [s.title for s in sections] == ["Abilities"]
+
+    def test_one_marker_is_emphasis_rather_than_a_list(self):
+        text = "==Abilities==\nHe is strong.\n;Note\nA single stray term.\n"
+        _, sections = self._split(text)
+        assert [s.title for s in sections] == ["Abilities"]
+
+    def test_a_long_marker_line_is_not_an_ability(self):
+        text = (
+            "==Abilities==\nLead.\n"
+            ";This is a whole sentence someone chose to emphasise for effect\n"
+            "Body.\n;Also\nBody.\n;Third\nBody.\n"
+        )
+        _, sections = self._split(text)
+        assert "This is a whole sentence someone chose to emphasise for effect" not in [
+            s.title for s in sections
+        ]
+
+    def test_standalone_bold_lines_are_items_too(self):
+        """Bleach and One-Punch Man use `'''Bold'''` where Dragon Ball uses `;`."""
+        text = (
+            "==Powers & Abilities==\nLead.\n"
+            "'''Getsuga Tensho'''\nA crescent of energy.\n"
+            "'''[[Shunpo]]'''\nFlash step.\n"
+            "'''Blut Vene'''\nQuincy defence.\n"
+        )
+        _, sections = split_sections_for_bleach(text)
+        titles = [s.title for s in sections]
+        assert "Getsuga Tensho" in titles
+        assert "Shunpo" in titles
+        assert "Blut Vene" in titles
+
+
+def split_sections_for_bleach(text):
+    from scriptengine.ingest.wikitext import split_sections
+
+    return split_sections(
+        text, [], None, item_sections={"powers & abilities"}, title="Ichigo Kurosaki"
+    )
+
+
+class TestItemMarkersKeepTheText:
+    """Splitting must move text, never lose it.
+
+    The first version skipped the group marker's own span, which dropped
+    whatever sat between `'''<big>Techniques</big>'''` and the first `;item`
+    under it — 144,345 characters, a fifth of the text, across Dragon Ball's
+    23 `Power and Abilities` pages. Citations went with it.
+    """
+
+    BODY = (
+        "==Abilities==\nLead sentence.\n"
+        "<center>'''<big>Techniques</big>'''</center>\n"
+        "A paragraph that belongs to the group and not to any item.\n"
+        ";Kamehameha\nBlue blast.\n"
+        ";Kaio-ken\nA multiplier.\n"
+        ";Spirit Bomb\nBorrowed energy.\n"
+    )
+
+    def test_no_prose_is_dropped(self):
+        from scriptengine.ingest.wikitext import split_sections
+
+        _, plain = split_sections(self.BODY, [], None)
+        _, split = split_sections(
+            self.BODY, [], None,
+            item_sections={"abilities"}, title="Goku/Power and Abilities",
+        )
+        joined = " ".join(section.text for section in split)
+        assert "A paragraph that belongs to the group" in joined
+        assert "Borrowed energy" in joined
+        assert "Lead sentence" in joined
+        # Only the marker lines themselves become titles rather than body text.
+        assert len(" ".join(s.text for s in plain)) - len(joined) < 60
