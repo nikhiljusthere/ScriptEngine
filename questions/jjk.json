@@ -1567,17 +1567,17 @@
     },
     {
       "id": "jjk-set-14",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many grades of jujutsu sorcerers exist?",
       "subject": "Jujutsu sorcerer grades",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Grade"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. 6 grades including Special Grade",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. 6 grades including Special Grade Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "6 grades",
@@ -1587,21 +1587,22 @@
             "six grades"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "jjk-set-15",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many Big Three Sorcerer Families exist?",
       "subject": "Big Three Families",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three major sorcerer families",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three major sorcerer families Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "3 families",
@@ -1611,21 +1612,22 @@
             "three families"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "jjk-set-16",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many special grade jujutsu sorcerers are there?",
       "subject": "Special grade sorcerers",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Grade"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Four special grade sorcerers",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Four special grade sorcerers Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "4 special grade sorcerers",
@@ -1635,21 +1637,22 @@
             "four special grade sorcerers"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "jjk-set-17",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many fingers of Sukuna exist?",
       "subject": "Sukuna's fingers",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Ryomen_Sukuna%27s_Fingers"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Sukuna has 20 fingers",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Sukuna has 20 fingers Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "20 fingers",
@@ -1659,7 +1662,8 @@
             "twenty fingers"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "jjk-set-18",

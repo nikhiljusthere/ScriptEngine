@@ -1425,17 +1425,17 @@
     },
     {
       "id": "onepiece-set-13",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many members are in the Straw Hat Pirates crew in One Piece?",
       "subject": "One Piece",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Ten named crew members listed in the members table",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Ten named crew members listed in the members table Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "10 members",
@@ -1445,7 +1445,8 @@
             "members"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "onepiece-set-14",

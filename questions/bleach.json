@@ -1612,17 +1612,17 @@
     },
     {
       "id": "bleach-set-14",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many divisions are in the Gotei 13?",
       "subject": "Bleach",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://bleach.fandom.com/wiki/Gotei_13"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Thirteen divisions listed in the Gotei 13 infobox",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Thirteen divisions listed in the Gotei 13 infobox Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "13 divisions",
@@ -1632,21 +1632,22 @@
             "thirteen divisions"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "bleach-set-15",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many Espada members are there?",
       "subject": "Bleach",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://bleach.fandom.com/wiki/Espada"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Ten numbered Espada ranks (0-9) plus Cero makes 11, but 10 distinct ranks 1-10 plus Cero",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Ten numbered Espada ranks (0-9) plus Cero makes 11, but 10 distinct ranks 1-10 plus Cero Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "10 Espada",
@@ -1656,21 +1657,22 @@
             "ten Espada"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "bleach-set-16",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many Schutzstaffel members are in the current generation?",
       "subject": "Bleach",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://bleach.fandom.com/wiki/Schutzstaffel"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Five current Schutzstaffel members: Lille Barro, Gerard Valkyrie, Pernida Parnkgjas, Askin Nakk Le Vaar, Uryū Ishida",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Five current Schutzstaffel members: Lille Barro, Gerard Valkyrie, Pernida Parnkgjas, Askin Nakk Le Vaar, Uryū Ishida Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "5 members",
@@ -1680,21 +1682,22 @@
             "five members"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "bleach-set-17",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many Sternritter letters are there?",
       "subject": "Bleach",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://bleach.fandom.com/wiki/Sternritter"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Each Sternritter is designated by a letter of the alphabet (A-Z)",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Each Sternritter is designated by a letter of the alphabet (A-Z) Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "26 letters",
@@ -1703,21 +1706,22 @@
             "letters"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "bleach-set-18",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many captains are in the Gotei 13?",
       "subject": "Bleach",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://bleach.fandom.com/wiki/Gotei_13"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. One captain per division, thirteen divisions total",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. One captain per division, thirteen divisions total Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "13 captains",
@@ -1727,7 +1731,8 @@
             "thirteen captains"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "bleach-set-19",

@@ -1663,17 +1663,17 @@
     },
     {
       "id": "opm-set-15",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many S-Class heroes were there before the Monster Association Arc in One Punch Man?",
       "subject": "Hero Association",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://onepunchman.fandom.com/wiki/Hero_Association"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. While total is 546, the S-Class count is commonly known as 17 from the wiki (Blast, Tornado, Bang, Atomic Samurai, Child Emperor, Metal Knight, King, Zombieman, Drive Knight, Pig God, Superalloy Darkshine, Watchdog Man, Flashy Flash, Tanktop Master, Metal Bat, Genos, Sweet Mask)",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. While total is 546, the S-Class count is commonly known as 17 from the wiki (Blast, Tornado, Bang, Atomic Samurai, Child Emperor, Metal Knight, King, Zombieman, Drive Knight, Pig God, Superalloy Darkshine, Watchdog Man, Flashy Flash, Tanktop Master, Metal Bat, Genos, Sweet Mask) Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "17 S-Class heroes",
@@ -1682,21 +1682,22 @@
             "S-Class heroes"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "opm-set-16",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many members are in the Blizzard Group in One Punch Man?",
       "subject": "One Punch Man",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://onepunchman.fandom.com/wiki/Hero_Association"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Blizzard Group size referenced in databook as 38 members",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Blizzard Group size referenced in databook as 38 members Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "38 members",
@@ -1705,7 +1706,8 @@
             "members"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "opm-set-17",

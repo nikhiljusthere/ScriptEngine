@@ -1072,17 +1072,17 @@
     },
     {
       "id": "hxh-set-14",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many members are in the Phantom Troupe?",
       "subject": "Phantom Troupe",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. The Troupe has 13 members including Chrollo",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. The Troupe has 13 members including Chrollo Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "13 members",
@@ -1092,21 +1092,22 @@
             "thirteen members"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "hxh-set-15",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many Zodiacs are in the Hunter Association?",
       "subject": "Zodiacs",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Zodiacs"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. There are 12 Zodiacs",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. There are 12 Zodiacs Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "12 Zodiacs",
@@ -1116,21 +1117,22 @@
             "twelve Zodiacs"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "hxh-set-16",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many phases are in the Hunter Exam?",
       "subject": "Hunter Exam",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Hunter_Exam"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. The exam has 4 main phases",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. The exam has 4 main phases Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "4 phases",
@@ -1140,21 +1142,22 @@
             "four phases"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "hxh-set-17",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many floors does Heavens Arena have?",
       "subject": "Heavens Arena",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Heavens_Arena"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Heavens Arena has 200 floors",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Heavens Arena has 200 floors Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "200 floors",
@@ -1164,21 +1167,22 @@
             "two hundred floors"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "hxh-set-18",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many Nen categories exist?",
       "subject": "Nen categories",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Nen"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Nen has six aura types",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Nen has six aura types Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "6 categories",
@@ -1188,7 +1192,8 @@
             "six categories"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "hxh-set-19",

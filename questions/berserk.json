@@ -992,17 +992,17 @@
     },
     {
       "id": "berserk-set-14",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many members are in the God Hand?",
       "subject": "Berserk",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://berserk.fandom.com/wiki/God_Hand"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Femto is explicitly stated to be the fifth member of the God Hand",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Femto is explicitly stated to be the fifth member of the God Hand Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "5 members",
@@ -1012,7 +1012,8 @@
             "five members"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     },
     {
       "id": "berserk-set-15",
@@ -1182,17 +1183,17 @@
     },
     {
       "id": "berserk-set-18",
-      "kind": "set",
+      "kind": "fact",
       "question": "How many notable members are in the Black Swordsman Party?",
       "subject": "Berserk",
       "scope": "closed",
-      "expect_mode": "roster",
+      "expect_mode": "qa",
       "tier": "wiki",
       "verified": "2026-08-15",
       "sources": [
         "https://berserk.fandom.com/wiki/Black_Swordsman_Party"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Twelve notable members listed in the Black Swordsman Party infobox",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Twelve notable members listed in the Black Swordsman Party infobox Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
       "answer": [
         {
           "item": "12 members",
@@ -1202,7 +1203,8 @@
             "twelve members"
           ]
         }
-      ]
+      ],
+      "accept": "any"
     }
   ],
   "retired": []
