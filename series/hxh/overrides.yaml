@@ -48,8 +48,41 @@ ability_sections:
 # Declared rather than inferred: which words name the system is exactly what a
 # series knows about itself, and `Every Nen type` still answers from the
 # declared `Nen Types` set below.
-ability_stopwords: [Ten, Zetsu, Ren, Gyo, In, En, Shu, Ko, Ken, Ryu, Hatsu, Nen]
-
+ability_stopwords:
+  - Ten
+  - Zetsu
+  - Ren
+  - Gyo
+  - In
+  - En
+  - Shu
+  - Ko
+  - Ken
+  - Ryu
+  - Hatsu
+  - Nen
+  - Advanced Durability
+  - Advanced Hearing
+  - Assassination Skills
+  - Enhanced Agility
+  - Enhanced Endurance
+  - Enhanced Stamina
+  - Enhanced Strength
+  - Expert in Tailing
+  - Genius-Level Intellect
+  - Healing Factor
+  - Immense Agility
+  - Immense Poison Resistance
+  - Immense Speed and Reflexes
+  - Master Hand-to-Hand Combatant
+  - Master of Stealth
+  - Master Strategist
+  - Master Weapon Specialist
+  - Masterful Darts Player
+  - Masterful Skater
+  - Muscle and Joint Control
+  - Preternatural Perception
+  - Resistance to Electricity
 rosters:
   - name: Nen Types
     match: [nen type, nen types, nen category, nen categories, type of nen]

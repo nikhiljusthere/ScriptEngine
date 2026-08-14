@@ -44,11 +44,18 @@ ability_kinds:
 
 # Cursed energy is the system, not an ability. Every sorcerer on the wiki has
 # a paragraph about it under the same heading.
-ability_stopwords: [
-  Cursed Energy, Cursed Technique, Cursed Energy Manipulation,
-  Reverse Cursed Technique Output, Jujutsu, Binding Vow,
-]
-
+ability_stopwords:
+  - Cursed Energy
+  - Cursed Technique
+  - Cursed Energy Manipulation
+  - Reverse Cursed Technique Output
+  - Jujutsu
+  - Binding Vow
+  - Cursed Spirit
+  - Fly Heads
+  - Hanako of the Toilet
+  - Phantom Cursed Spirit
+  - Rozetsu
 rosters:
   - name: Cursed Spirits
     match: [curse, curses, cursed spirit, cursed spirits]

@@ -125,3 +125,72 @@ rosters:
   - name: Robots
     match: [robot, robots, cyborg, cyborgs]
     category: Robots
+
+# Names an extraction pass stored as this character's ability that are not one:
+# generic descriptors the wiki gives every strong character, and entries that
+# belong to a work outside the story. Added by the 2026-08-14 bank audit, which
+# classified every returned-but-unmatched member against the raw wikitext of the
+# page its question cites.
+#
+# Matched exactly and lowercased against a stored row's name, and applied to the
+# whole series, so anything canon for *any* question on this wiki is excluded --
+# checked against the bank before writing, which is what kept `Immense Strength`
+# (bleach), `Nigh-Immortality` (csm) and `Time Travel` (opm) out of this list.
+# The check can only see the questions the bank asks today; a later question
+# whose answer is named here would need the entry removed.
+ability_stopwords:
+  - Accelerated Development
+  - Acid Resistance
+  - Afterimage Creation
+  - Agility
+  - Augmented Adaptability
+  - Augmented Stamina and Endurance
+  - Augmented Strength
+  - Carnivorous Consumption
+  - Cosmic Knowledge and Energy Projection
+  - Culinary Skills
+  - Dual-Wielding Martial Arts
+  - Electricity Manipulation
+  - Energy Projection
+  - Enhanced Adaptability
+  - Enhanced Instincts
+  - Enhanced Senses
+  - Expert Swordsmanship
+  - Explosive Growth Rate
+  - Extreme Temperature Resistance
+  - Fire Manipulation
+  - Half-Monster
+  - Heat Resistance
+  - Indomitable Will
+  - Intimidating Presence
+  - Invulnerability
+  - Keen Observation
+  - Keen Perception
+  - Martial Arts Mastery
+  - Massive Appetite
+  - Medium Awareness
+  - Mimicry
+  - Ninjutsu
+  - Ninjutsu Master
+  - Non-Physical Interaction
+  - Power Control
+  - Psychic Resistance
+  - Radiation Durability
+  - Regeneration
+  - Serious Punch²
+  - Shockwave Generation
+  - Spatial Interaction
+  - Spiritual Interaction
+  - Strong Teeth
+  - Super Learning Ability
+  - Superhuman Leap
+  - Superhuman Physical Prowess
+  - Superhuman Speed
+  - Surfing Skills
+  - Technique Mimicry
+  - Transformation
+  - Unparalleled Physical Prowess
+  - Unparalleled Strength
+  - Vacuum Adaptation
+  - Vacuum Survival
+  - Water Running

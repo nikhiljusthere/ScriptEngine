@@ -164,3 +164,34 @@ rosters:
   - name: Adjuchas
     match: [adjuchas]
     category: Adjuchas
+
+# Names an extraction pass stored as this character's ability that are not one:
+# generic descriptors the wiki gives every strong character, and entries that
+# belong to a work outside the story. Added by the 2026-08-14 bank audit, which
+# classified every returned-but-unmatched member against the raw wikitext of the
+# page its question cites.
+#
+# Matched exactly and lowercased against a stored row's name, and applied to the
+# whole series, so anything canon for *any* question on this wiki is excluded --
+# checked against the bank before writing, which is what kept `Immense Strength`
+# (bleach), `Nigh-Immortality` (csm) and `Time Travel` (opm) out of this list.
+# The check can only see the questions the bank asks today; a later question
+# whose answer is named here would need the entry removed.
+ability_stopwords:
+  - Bilingual
+  - Enhanced Bankai Duration
+  - Enhanced Durability
+  - Enhanced Hierro
+  - Enhanced Pesquisa
+  - Enhanced Reflexes
+  - Enhanced Speed
+  - Enhanced Spiritual Power
+  - Greater Enhanced Sonido
+  - Greater Enhanced Strength
+  - Hollow Combat
+  - Hyper-Speed Combat
+  - Master Hand-to-Hand Combatant
+  - Power Augmentation
+  - Reiatsu
+  - Sonído Master
+  - Way of Onmitsu

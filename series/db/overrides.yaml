@@ -172,8 +172,88 @@ ability_sections:
 # Ki is the system every fighter uses, not one character's ability — the same
 # role Nen plays on Hunterpedia and Haki in One Piece. `Every technique Goku
 # uses` should not open with "Ki".
-ability_stopwords: [Ki, Ki Manipulation, Ki Sense, Energy, Aura]
-
+ability_stopwords:
+  - Ki
+  - Ki Manipulation
+  - Ki Sense
+  - Energy
+  - Aura
+  - Baby Gohan
+  - Barlot
+  - Blue Berserk
+  - Brainwashed Great Ape Gohan
+  - Broku
+  - Cell (Perfect, Powerhouse)
+  - Cell 17
+  - Cell X
+  - Cell X (Dark Dragon Ball)
+  - Cell, Overloaded
+  - Cellin
+  - Celluza
+  - Cell•Supervillain
+  - Change
+  - Coohan
+  - Coolieza
+  - Dark Dragon Ball Fighter
+  - Den-Goku
+  - EX Gogeta
+  - EX Gohanks
+  - EX-Trunks
+  - Frieza (Evil Energy absorbed)
+  - Full Armor Mecha Frieza
+  - Ginyuman
+  - Ginyuza
+  - God Fusion Goku
+  - Goku's Change
+  - Gokule
+  - Golden Great Ape
+  - Gomas
+  - Gorillin
+  - Gorus
+  - Great Ape Baby
+  - Great Jaco
+  - Great Saiyaman #12
+  - Great Satanman
+  - GT Super Saiyan
+  - Jacunks
+  - Kallohan
+  - Karoly
+  - Krigohan
+  - Little
+  - Little Goku
+  - Majin Cell
+  - Majin Frieza
+  - Neko Majin
+  - Nuova Goku
+  - Overloaded
+  - Overloaded Form
+  - Perfect 16
+  - Pinita
+  - Power Pole Pro
+  - Powered Up Form
+  - Powerhouse
+  - Pseudo Super Saiyan
+  - Psycho Frieza
+  - Pure Gold Frieza
+  - Saiyan beyond God
+  - Spirit Bomb Super Saiyan
+  - Strongest Form 1
+  - Strongest Form 2
+  - Super Full Power Saiyan 4
+  - Super Little Goku
+  - Super Saiyan 2 (Enraged)
+  - Super Saiyan Blue Evil Aura
+  - Tanks
+  - Tuffleized
+  - Tuffleized Super Saiyan
+  - Ultimate Ultra Fusion
+  - Ultra Fusion
+  - Vegecell
+  - Vegenks
+  - Villainous Mode (Super Saiyan 2)
+  - Villanous Mode
+  - Xeno Golden Frieza
+  - Yamta
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
   # Declared for the vocabulary rather than for the set: discovery finds `Races`
