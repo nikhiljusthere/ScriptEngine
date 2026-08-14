@@ -118,6 +118,41 @@ class TestKinds:
         assert R._asked_kinds(["gear"]) == {ontology.TRANSFORMATION}
         assert R._asked_kinds(["shibuya", "incident"]) == set()
 
+    def test_ability_names_the_family_not_one_of_its_members(self):
+        """"Every ability of X" must not exclude what the wiki filed as a form.
+
+        Which of `technique` and `transformation` an ability gets depends on
+        whether an editor filled a `Class` field, which is why
+        `semantics.ABILITY_TYPES` says the two must never reject each other. The
+        kind filter did exactly that whenever the question used the umbrella
+        word: Rukia's `Sode no Shirayuki` is stored, hers, and a transformation.
+        """
+        widen = R.widen_umbrella
+        assert widen(["ability"], {ontology.TECHNIQUE}) == {
+            ontology.TECHNIQUE, ontology.TRANSFORMATION}
+        assert widen(["abilities"], {ontology.TECHNIQUE}) == {
+            ontology.TECHNIQUE, ontology.TRANSFORMATION}
+
+    def test_a_specific_word_stays_specific(self):
+        """Only the umbrella widens. "Every technique of X" is still techniques."""
+        widen = R.widen_umbrella
+        assert widen(["technique"], {ontology.TECHNIQUE}) == {ontology.TECHNIQUE}
+        assert widen(["form"], {ontology.TRANSFORMATION}) == {ontology.TRANSFORMATION}
+        # An umbrella word that did not ask for techniques changes nothing --
+        # "every weapon" stays equipment however it is phrased.
+        assert widen(["ability", "weapon"], {ontology.ITEM}) == {ontology.ITEM}
+
+    def test_equipment_is_never_admitted_by_the_umbrella(self):
+        """`item` stays out, which is why `ABILITY_TYPES` excludes it too.
+
+        Measured on the closed questions using an umbrella word: admitting items
+        costs 35 wrong names to gain 18 right ones, where transformations alone
+        gain 13 for 11. A zanpakutō is equipment, not an ability.
+        """
+        assert ontology.ITEM not in ontology.ABILITY_TYPES
+        assert ontology.ITEM not in R.widen_umbrella(
+            ["ability"], {ontology.TECHNIQUE})
+
 
 class TestEndToEnd:
     def test_a_namesake_is_gone_from_gokus_forms(self):

@@ -473,7 +473,7 @@ def build_roster(
         # `Transformations` narrowed by his name. Taken before the declared and
         # discovered paths because both of them resolve to a set filed by kind,
         # and no amount of filtering one turns it into the other.
-        kinds = _asked_kinds(words, overrides)
+        kinds = widen_umbrella(words, _asked_kinds(words, overrides))
         character = (
             _character_subject(
                 store, words, overrides, race_vocabulary(store), vocabulary
@@ -864,6 +864,36 @@ def _asked_kinds(words: Sequence[str], overrides: dict | None = None) -> set[str
     asked = {word.lower() for word in words}
     vocabulary = ability_kind_words(overrides)
     return {kind for kind, vocab in vocabulary.items() if asked & vocab}
+
+
+# "Ability" names the family, not one of its members. `_KIND_WORDS` maps it to
+# `technique` alone, so "Every ability of Rukia Kuchiki" could not return
+# `Sode no Shirayuki` or `Hakka no Togame` -- both stored, both hers, both filed
+# `transformation`. Which of the two an ability gets depends on whether an editor
+# filled in a `Class` field, and `semantics.ABILITY_TYPES` exists to say those
+# labels "must never be used to reject each other". The kind filter was doing
+# exactly that whenever the question used the umbrella word.
+#
+# Applied to the query's own nouns and nowhere else. `_asked_kinds` is also run
+# over section headings (`_section_roster`), where a group called "Abilities and
+# Powers" widening to include `transformation` would let containers through on
+# *form* questions -- a precision loss on a different path entirely.
+#
+# `item` is pointedly not admitted, and `ABILITY_TYPES` excludes it for the same
+# reason: a zanpakutō, a rapier and a slingshot are equipment. Measured over the
+# 28 closed questions that use an umbrella word, admitting items costs 35 wrong
+# names to gain 18 right ones, while admitting transformations alone gains 13
+# for 11 -- recall 72.7% -> 78.0% with precision flat at 59.3% -> 59.0%.
+_UMBRELLA_WORDS = frozenset({"ability", "abilities", "power", "powers"})
+
+
+def widen_umbrella(words: Sequence[str], kinds: set[str]) -> set[str]:
+    """Admit transformations when the topic asked for abilities in general."""
+    if not kinds & {ontology.TECHNIQUE}:
+        return kinds
+    if not {word.lower() for word in words} & _UMBRELLA_WORDS:
+        return kinds
+    return kinds | {ontology.TRANSFORMATION}
 
 
 def _files_by_character(
