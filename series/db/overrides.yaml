@@ -256,6 +256,19 @@ ability_stopwords:
   - Yamta
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
+  # Deliberately NOT declared: `Majin Buu forms`. His forms are filed as separate
+  # characters -- Innocent Buu, Evil Buu, Super Buu, Kid Buu, Good Buu -- and a
+  # roster naming those five does resolve (`cli rosters` shows it at 5 members),
+  # but it never gets used. `build_roster` resolves the subject first and lets a
+  # person beat a declared set on purpose (roster.py:461): "Every form of Majin
+  # Buu" narrows to a character, so the query answers from
+  # `basis='Kid Buu's transformation'` and still scores 0/7.
+  #
+  # That precedence is right in general -- it is what makes "Every Cursed
+  # Technique of Sukuna" answer about Sukuna rather than about cursed techniques
+  # -- so the fix is in subject resolution, not here. Declaring the roster anyway
+  # would leave config that reads as working and is inert.
+
   # Declared for the vocabulary rather than for the set: discovery finds `Races`
   # on its own, but "non-humans" prefix-matched `Non-english dubs` and returned
   # twenty-two dub pages.

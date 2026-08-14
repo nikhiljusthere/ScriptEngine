@@ -29,6 +29,42 @@ ability_sections:
   technique: [Abilities]
 
 rosters:
+  # The band's own page carries a `== Members ==` list and a `notable members`
+  # infobox field, and the engine reached neither: `notable members` runs
+  # group -> member and the roster path only ever walks the other way
+  # (`owned_by`, roster.py:904). Both questions scored 0/14 and 0/10.
+  #
+  # Six of the fourteen are transcribed from that list and will not resolve:
+  # Dante, Errol, Riguel, Dillos, Kim and Sam are sections of `Minor
+  # Characters`, not pages, and `_declared_members` (roster.py:1309) keeps only
+  # names the store has a node for. They stay declared deliberately -- the wiki
+  # names them, and a roster that comes back short is visible in `cli rosters`,
+  # where a quietly trimmed list would not be.
+  - name: Band of the Falcon
+    match: [band of the falcon, original band of the falcon]
+    members: [Griffith, Guts, Casca, Judeau, Pippin, Corkus, Rickert, Gaston,
+              Dante, Errol, Riguel, Dillos, Kim, Sam]
+
+  # Declared separately rather than as a variant: `matches()` scores the longest
+  # declared phrase, so "reborn band of the falcon" (25) beats the shared
+  # "band of the falcon" (18) and the two questions cannot collide.
+  - name: Band of the Falcon (Reborn)
+    match: [reborn band of the falcon, band of the falcon (reborn)]
+    members: [Griffith, Zodd, Grunbeld, Locus, Irvine, Rakshas, Borkoff, Sonia,
+              Mule Wolflame, Jarif]
+
+  # Only the ordinary Beherit has a page; `Crimson Beherit` is described on it
+  # rather than filed as its own article, so this answers one of the two types.
+  # Half of a question that currently scores nothing.
+  - name: Beherit types
+    match: [type of beherit, types of beherit, beherit]
+    members: [Beherit]
+
+  # Deliberately not declared: the Four Kings of the World. The wiki names all
+  # four in a `notable members` field -- King of the East, West, South and North
+  # -- as plain text with no links, so none of them is a page and a declaration
+  # would resolve to an empty roster. It needs pageless members to work at all.
+
   - name: Apostles
     match: [apostle, apostles]
     category: Apostles

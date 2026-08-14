@@ -57,6 +57,16 @@ ability_stopwords:
   - Phantom Cursed Spirit
   - Rozetsu
 rosters:
+  # The only "confident and wrong" answer in the whole run: it reported
+  # `declared` confidence and returned none of the three. Following `affiliation`
+  # from the school reaches 22 people -- every student, teacher and assistant
+  # manager the wiki files there -- so the relation alone cannot answer a
+  # question scoped to one year group. Stated instead.
+  - name: Tokyo Jujutsu High first-years (2018)
+    match: [first-year student of tokyo jujutsu high, first year student of tokyo jujutsu high,
+            first-year student, first year student]
+    members: [Yuji Itadori, Megumi Fushiguro, Nobara Kugisaki]
+
   - name: Cursed Spirits
     match: [curse, curses, cursed spirit, cursed spirits]
     category: Cursed Spirits

@@ -35,6 +35,33 @@ ability_kinds:
   technique: [contract, contracts]
 
 rosters:
+  # Every member carries `affiliation = Tokyo Special Division 4` on their own
+  # page, which is an edge the wiki wrote and the roster path does not follow --
+  # `affiliation` is not one of the seven names in `_BELONGS_RELATIONS`. The
+  # question scored 0/14 with the answer sitting in the store the whole time.
+  #
+  # `Angel Devil` is the page title; the bank lists the member as `Angel` and
+  # already carries `angel devil` as an alias, so the page name is what belongs
+  # here. The two generic `Division 4 Male/Female Member` pages are left out.
+  - name: Tokyo Special Division 4
+    match: [tokyo special division 4, special division 4, public safety division 4,
+            division 4]
+    members: [Makima, Kishibe, Denji, Aki Hayakawa, Power, Himeno,
+              Kobeni Higashiyama, Hirokazu Arai, Angel Devil, Beam, Galgali,
+              Princi, Fushi, Madoka]
+
+  # "Every Weapon Devil" resolved to the whole `Devils` category and returned 88
+  # members for 7 canon items -- the worst precision in the run, and 0% recall
+  # with it. The wiki keeps the set on one page, but its Members gallery links
+  # to the *human* each devil later fused with, so these are the page titles:
+  # Katana Man is the Katana Devil, Reze the Bomb Devil, and so on. The bank
+  # already aliases five of the seven that way; `Whip Hybrid` and `Spear Hybrid`
+  # needed the alias adding.
+  - name: Weapon Devils
+    match: [weapon devil, weapon devils]
+    members: [Katana Man, Reze, Quanxi, Miri Sugo, Barem Bridge, Whip Hybrid,
+              Spear Hybrid]
+
   # No `group_by: species` here on purpose: every member of this category
   # answers "Devil", so grouping by it produces one group and says nothing.
   - name: Devils

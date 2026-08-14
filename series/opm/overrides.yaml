@@ -31,6 +31,20 @@ ability_sections:
   technique: [Abilities and Powers]
 
 rosters:
+  # Asked for disciples, the engine matched `Atomic Samurai Fights` and answered
+  # with nine battle pages -- `Atomic Samurai vs. Black Sperm`, `King vs. Atomic
+  # Samurai` -- for 0 of 3. The wiki states it three separate ways and none is
+  # reachable: his infobox tags each disciple `(Disciple)` under `relationship`,
+  # each disciple's page carries a `relationship` edge back, and there is a whole
+  # page called `Atomic Samurai and His Disciples`. `relationship` is not a
+  # membership relation the roster path follows, and it would be a poor one to
+  # add -- the same field holds family and rivals. Worse, those edges point at
+  # `Kamikaze`, his real name, not at `Atomic Samurai`.
+  - name: Atomic Samurai's disciples
+    match: [disciple of atomic samurai, disciples of atomic samurai,
+            atomic samurai's disciples]
+    members: [Iaian, Okamaitachi, Bushidrill]
+
   - name: Mysterious Beings
     match: [monster, monsters, mysterious being, mysterious beings]
     category: Mysterious Beings
