@@ -136,6 +136,25 @@ def test_question_texts_are_unique(banks):
             seen[q.question] = q.id
 
 
+def test_diagnosis_knows_the_subject_of_every_question(banks):
+    """`diagnose_misses.SUBJECT` must cover the bank, not a snapshot of it.
+
+    It was a 37-entry literal keyed on question text. When the bank grew to 135
+    every new question diagnosed with `character = ""`, and with no subject the
+    ownership, stored-row and heading checks all read empty -- so those misses
+    could only ever bucket as `unlinked page` or `corpus gap`. The run's bucket
+    table reported `corpus gap` at 31% and `extraction gap` at 2%; with the
+    subject actually resolving they are 10% and 27%. The bug inverted the
+    remediation ordering the report exists to produce, while every test passed.
+    """
+    from scriptengine.eval.diagnose_misses import SUBJECT
+
+    for q in (q for b in banks for q in b.questions):
+        assert q.question in SUBJECT, \
+            f"{q.id} is not in diagnose_misses.SUBJECT -- it would diagnose " \
+            f"with no subject and mis-bucket every miss"
+
+
 def test_retired_items_carry_a_reason(banks):
     for b in banks:
         for row in b.retired:

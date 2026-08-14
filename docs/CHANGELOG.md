@@ -104,6 +104,38 @@ commit.
   parenthetical before matching, and `Every current Espada (…)` scoring 7/10
   suggests the failure is specific to a subject that is already ambiguous
   rather than to parentheses as such.
+- **`diagnose_misses.SUBJECT` was a 37-entry literal and had silently stopped
+  covering the bank, inverting the report's remediation ordering.** It maps a
+  question to whose ability prose the question is about, and every check that
+  distinguishes one miss bucket from another reads from it — ownership edges,
+  extracted rows, and the subject's own section headings. Once the bank grew to
+  135 questions, the 99 new ones resolved to `character = ""`, all three checks
+  read empty, and those misses could only ever land in `unlinked page` or
+  `corpus gap`. Now read from the bank's `subject` field via
+  `questions.subjects()`, and `GOLD_ERRORS` from `questions.retired()` (which
+  had been an empty dict, so no retired item was ever excluded from the score).
+
+  Re-bucketing the same run's scores with the subject resolving moves 40% of
+  every item in the table:
+
+  | bucket | as published | with the subject resolving |
+  |---|---:|---:|
+  | retrieval gap | 52 (21%) | **78 (31%)** |
+  | unlinked page | 116 (46%) | 80 (32%) |
+  | extraction gap | 6 (2%) | **68 (27%)** |
+  | corpus gap | 78 (31%) | **26 (10%)** |
+
+  The conclusion reverses. `corpus gap` — "the wiki does not support this claim,
+  and a script must not make it" — was the second-largest bucket at 31% and is
+  actually 10%, of which only **3 items in the whole bank** are `nowhere on this
+  wiki`. What looked like a data-coverage problem is an extraction and retrieval
+  problem: 68 items are named in prose the extractor read and did not emit, and
+  78 are reachable in the store and were not returned. The recall ceiling is
+  about 99.7%, not the 71.3% recorded.
+
+  `tests/test_question_bank.py` now asserts `SUBJECT` covers every question in
+  the bank, which is the guard that was missing — the literal drifted out of
+  coverage without a single test failing.
 - `question_sheet.py` now resolves its destination through
   `Settings().reports_root` instead of the CWD-relative `Path("scripts output")`.
   It only worked from the repo root, and it wrote measurement output into a

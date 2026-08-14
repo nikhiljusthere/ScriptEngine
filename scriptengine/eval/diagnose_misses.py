@@ -29,62 +29,40 @@ from collections import Counter
 sys.path.insert(0, ".")
 
 from scriptengine.config import series_paths, load_overrides  # noqa: E402
+from scriptengine.eval import questions as _questions  # noqa: E402
 from scriptengine.eval.canon_gold import GOLD, norm  # noqa: E402
 from scriptengine.ingest.abilities import passages  # noqa: E402
 from scriptengine.retrieve import roster  # noqa: E402
 from scriptengine.stores.facts import FactStore  # noqa: E402
 
-# Items a human has checked and found to be wrong in the gold set itself.
-# Keyed by "<question> :: <item>". Kept here rather than deleted from GOLD so
-# the reason survives and the item is not silently re-added by a later pass.
-GOLD_ERRORS: dict[str, str] = {}
+_BANKS = _questions.load_all()
 
-# Whose ability prose each question is about.
+# Items a human has checked and found to be wrong in the bank itself.
+# Keyed by "<question> :: <item>". Read from each series file's `retired[]`
+# rather than restated here, so the reason lives beside the item it retires and
+# a retired item is bucketed as a gold error rather than counted against the
+# engine.
+GOLD_ERRORS: dict[str, str] = _questions.retired(_BANKS)
+
+# Whose ability prose each question is about, read from the bank's `subject`
+# field.
 #
 # Stated rather than parsed out of the question. The distinction that matters
 # is between "this name appears somewhere on this wiki" and "this name appears
 # in the passages the extraction pass actually read", and only the second is
 # evidence about extraction. Searching the whole wiki credited `Tatsumaki` to
 # a Sanji page and Killua's `Lightning Palm` to `Bomber`.
-SUBJECT = {
-    "Every form of Goku": "Goku",
-    "Every form of Vegeta": "Vegeta",
-    "Every transformation of Frieza": "Frieza",
-    "Every technique Goku uses": "Goku",
-    "Every form of Gohan": "Gohan",
-    "Every form of Cell": "Cell",
-    "Every form of Majin Buu": "Majin Buu",
-    "Every form of Trunks": "Future Trunks",
-    "Every form of Luffy": "Monkey D. Luffy",
-    "Every Gear of Luffy": "Monkey D. Luffy",
-    "Every technique of Zoro": "Roronoa Zoro",
-    "Every sword style of Zoro": "Roronoa Zoro",
-    "Every technique of Sanji": "Sanji",
-    "Every Saitama technique": "Saitama",
-    "Every technique of Genos": "Genos",
-    "Every technique of Garou": "Garou",
-    "Every technique of Speed-o'-Sound Sonic": "Speed-o'-Sound Sonic",
-    "How many 1v1 battles did Yuji Itadori have with named characters": "Yuji Itadori",
-    "Every cursed technique of Sukuna": "Sukuna",
-    "Every cursed technique of Satoru Gojo": "Satoru Gojo",
-    "Every shikigami of Megumi Fushiguro": "Megumi Fushiguro",
-    "Every cursed technique of Yuta Okkotsu": "Yuta Okkotsu",
-    "Every form of Ichigo Kurosaki": "Ichigo Kurosaki",
-    "Every technique of Ichigo Kurosaki": "Ichigo Kurosaki",
-    "Every technique of Byakuya Kuchiki": "Byakuya Kuchiki",
-    "Every form of Ulquiorra Cifer": "Ulquiorra Cifer",
-    "Every Nen ability of Killua": "Killua Zoldyck",
-    "Every Nen ability of Kurapika": "Kurapika",
-    "Every Nen ability of Gon": "Gon Freecss",
-    "Every Nen ability of Meruem": "Meruem",
-    "Every Nen ability of Chrollo": "Chrollo Lucilfer",
-    "Every Nen ability of Hisoka": "Hisoka Morow",
-    "Every form of Denji": "Denji",
-    "Every ability of Power": "Power",
-    "Every devil contract of Aki Hayakawa": "Aki Hayakawa",
-    "Every armor of Guts": "Guts",
-    "Every weapon of Guts": "Guts",
-}
+#
+# This was a 37-entry literal keyed on question text, which silently stopped
+# covering the bank the moment it grew: every question added after it was
+# written diagnosed with `character = ""`, and with no subject the buckets below
+# can only ever return `unlinked page` or `corpus gap` -- the ownership, stored-
+# row and heading checks all read from the character. That produced a run whose
+# bucket table said `unlinked page` had overtaken `retrieval gap`, which was an
+# artifact of the missing subject and not a measurement of anything.
+SUBJECT: dict[str, str] = _questions.subjects(
+    [q for bank in _BANKS for q in bank.questions]
+)
 
 
 def _series_of(question: str) -> str:
