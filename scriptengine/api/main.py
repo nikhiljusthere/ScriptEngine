@@ -40,6 +40,36 @@ app = FastAPI(
 )
 
 
+@app.on_event("startup")
+def _sweep_idle_models() -> None:
+    """Return the GPU to ComfyUI once the models have gone idle.
+
+    The models now stay resident between requests, which is what makes a second
+    query fast. Something still has to free them when the server goes quiet, and
+    it cannot be the request path -- an idle server serves no requests. A daemon
+    thread checks every 30s and unloads whatever has passed
+    `model_idle_unload_seconds`.
+    """
+    import threading
+    import time
+
+    from scriptengine.index.embedder import sweep_idle
+
+    settings = get_settings()
+    if not settings.model_idle_unload_seconds:
+        return
+
+    def loop() -> None:
+        while True:
+            time.sleep(30)
+            try:
+                sweep_idle()
+            except Exception:  # noqa: BLE001 - a sweep must never kill the server
+                logger.exception("idle model sweep failed")
+
+    threading.Thread(target=loop, name="model-idle-sweep", daemon=True).start()
+
+
 # ── requests ─────────────────────────────────────────────────────────────────
 
 

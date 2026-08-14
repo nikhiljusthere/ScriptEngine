@@ -23,10 +23,15 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from scriptengine.config import Settings, SeriesPaths, get_settings
-from scriptengine.index.embedder import Embedder, Reranker
+from scriptengine.index.embedder import (
+    Embedder,
+    Reranker,
+    shared_embedder,
+    shared_reranker,
+)
 from scriptengine.stores import lexical
 from scriptengine.stores.facts import FactStore
-from scriptengine.stores.vectors import VectorStore
+from scriptengine.stores.vectors import VectorStore, shared_reader
 
 logger = logging.getLogger(__name__)
 
@@ -118,9 +123,16 @@ class HybridRetriever:
         self.paths = paths
         self.settings = settings or get_settings()
         self.store = FactStore(paths.facts_db)
-        self.vectors = VectorStore(paths.vectors) if paths.vectors.exists() else None
-        self.embedder = embedder or Embedder(self.settings)
-        self.reranker = reranker or Reranker(self.settings)
+        # Shared, for the same reason the models are: opening a local Qdrant
+        # collection reads every vector off disk, which was 3.15 of the 3.87
+        # seconds a warm `qa` request spent.
+        self.vectors = shared_reader(paths.vectors) if paths.vectors.exists() else None
+        # Shared across requests by default. Constructing a fresh pair here gave
+        # every query a cold model: `_model` starts at None, so the first use
+        # reloaded 3.6 GB of weights. An explicit instance still wins, which is
+        # what indexing and the tests pass.
+        self.embedder = embedder or shared_embedder(self.settings)
+        self.reranker = reranker or shared_reranker(self.settings)
 
     def __enter__(self) -> "HybridRetriever":
         return self
@@ -129,14 +141,30 @@ class HybridRetriever:
         self.close()
 
     def close(self) -> None:
+        """Close what this retriever owns, and nothing that outlives it.
+
+        The vector store is shared between requests now, so closing it here
+        would make every request pay the 3.15s reload the sharing exists to
+        avoid — and the second request would be closing a handle the third is
+        about to use. `recreate()` drops the shared reader itself, which is the
+        one case where the handle must not survive.
+        """
         self.store.close()
-        if self.vectors is not None:
-            self.vectors.close()
 
     def release_models(self) -> None:
-        """Give the GPU back — ComfyUI may be waiting for it."""
-        self.embedder.unload()
-        self.reranker.unload()
+        """Give the GPU back once nothing has used it for a while.
+
+        This used to unload unconditionally, which meant every request reloaded
+        both models: two consecutive `qa` requests measured 16.8s and 18.9s on a
+        warm CUDA server, with no warm-up between them. ComfyUI still gets the
+        VRAM back -- `model_idle_unload_seconds` decides when, and the API sweeps
+        on a timer so an idle server frees the GPU without waiting for a request.
+
+        A long-running job that wants the GPU back *now* can still call
+        `unload()` on the models directly.
+        """
+        self.embedder.unload_if_idle()
+        self.reranker.unload_if_idle()
 
     # ── the pipeline ─────────────────────────────────────────────────────────
 

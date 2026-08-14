@@ -26,6 +26,55 @@ logger = logging.getLogger(__name__)
 QUERY_PREFIX = "Represent this question for searching relevant passages: "
 PASSAGE_PREFIX = "Represent this passage: "
 
+# One of each model per process, so a second request reuses the first one's
+# weights instead of reading 3.6 GB off disk again.
+#
+# The policy this file's docstring describes -- "load on first use, release the
+# GPU after an idle period" -- was only half built. `unload_if_idle()` existed
+# on both classes and had no callers anywhere in the repo, and every retrieval
+# entry point instead called `release_models()`, which unloads unconditionally
+# the moment a request finishes. So each query paid the full load again:
+# measured on a warm CUDA server, two consecutive `qa` requests took 16.8s and
+# 18.9s, with no warm-up between them.
+#
+# Sharing the instances is what makes the idle timeout mean anything. Freeing
+# the GPU for ComfyUI is still the point -- `sweep_idle()` below does it on a
+# timer rather than after every single request.
+_SHARED_LOCK = threading.RLock()
+_SHARED: dict[str, object] = {}
+
+
+def shared_embedder(settings: Settings | None = None) -> "Embedder":
+    with _SHARED_LOCK:
+        found = _SHARED.get("embedder")
+        if found is None:
+            found = Embedder(settings)
+            _SHARED["embedder"] = found
+        return found  # type: ignore[return-value]
+
+
+def shared_reranker(settings: Settings | None = None) -> "Reranker":
+    with _SHARED_LOCK:
+        found = _SHARED.get("reranker")
+        if found is None:
+            found = Reranker(settings)
+            _SHARED["reranker"] = found
+        return found  # type: ignore[return-value]
+
+
+def sweep_idle() -> bool:
+    """Unload whichever shared model has gone idle. Returns whether any did.
+
+    Called on a timer by the API so the GPU comes back to ComfyUI without a
+    request having to arrive to trigger it.
+    """
+    freed = False
+    with _SHARED_LOCK:
+        for model in _SHARED.values():
+            if model.unload_if_idle():  # type: ignore[attr-defined]
+                freed = True
+    return freed
+
 
 class Embedder:
     """Lazily-loaded sentence-transformer with an idle timeout."""

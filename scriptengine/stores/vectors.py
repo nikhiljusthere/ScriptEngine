@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import logging
 import shutil
+import threading
 from pathlib import Path
 from typing import Any, Iterable, Sequence
 
@@ -29,6 +30,36 @@ from qdrant_client.models import (
 logger = logging.getLogger(__name__)
 
 COLLECTION = "chunks"
+
+
+# One reader per series directory, because opening a local Qdrant collection
+# reads every vector off disk. Measured on a warm `qa` request against Dragon
+# Ball: 3.15 of 3.87 seconds went to `QdrantClient.__init__` loading all 42,012
+# vectors, and the retriever built a fresh `VectorStore` for every request.
+#
+# Keyed by resolved path so the eight series keep their own reader, and only for
+# reading — `recreate()` deliberately drops the shared handle, since indexing
+# removes the directory underneath it.
+_READERS: dict[str, "VectorStore"] = {}
+_READERS_LOCK = threading.RLock()
+
+
+def shared_reader(path: Path | str) -> "VectorStore":
+    key = str(Path(path).resolve())
+    with _READERS_LOCK:
+        found = _READERS.get(key)
+        if found is None:
+            found = VectorStore(path)
+            _READERS[key] = found
+        return found
+
+
+def _forget_reader(path: Path | str) -> None:
+    key = str(Path(path).resolve())
+    with _READERS_LOCK:
+        stale = _READERS.pop(key, None)
+    if stale is not None:
+        stale.close()
 
 
 class VectorStore:
@@ -73,6 +104,10 @@ class VectorStore:
         confident, well-scored, entirely unrelated text.
         """
         self.close()
+        # Any shared reader is holding a handle on the directory about to be
+        # removed, and would otherwise go on answering from vectors that no
+        # longer exist — the exact stale-rowid hazard described above.
+        _forget_reader(self.path)
         if self.path.exists():
             shutil.rmtree(self.path, ignore_errors=True)
         self.path.mkdir(parents=True, exist_ok=True)

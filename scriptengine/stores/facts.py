@@ -112,6 +112,27 @@ def rank_subjects(
     return [row for _, row in sorted(enumerate(rows), key=key)]
 
 
+def _tail_pattern(leaf: str) -> re.Pattern[str]:
+    """SQLite's ``breadcrumb LIKE '%/ ' || leaf``, as a regex.
+
+    Needed because `%` and `_` are wildcards to LIKE and real headings contain
+    them — `100% Full Power` is one of Frieza's forms, and its pattern
+    `%/ 100% full power` has a wildcard in the middle. A plain `endswith` would
+    match fewer pages than the query it replaces, which is a behaviour change
+    dressed up as an optimisation.
+
+    LIKE folds case for ASCII only, which `IGNORECASE | ASCII` reproduces; its
+    wildcards match newlines, which `DOTALL` does.
+    """
+    body = "".join(
+        "." if character == "_" else ".*" if character == "%" else re.escape(character)
+        for character in leaf
+    )
+    return re.compile(
+        ".*" + re.escape("/ ") + body, re.IGNORECASE | re.ASCII | re.DOTALL
+    )
+
+
 class FactStore:
     """Read/write access to one series' `facts.db`."""
 
@@ -567,19 +588,54 @@ class FactStore:
         That gap is what separates a container from a member, and it is a
         property of the corpus rather than of any series, so it needs no
         declaration.
+
+        One scan, not one per heading. This used to run
+
+            WHERE LOWER(TRIM(c.breadcrumb)) = ? OR LOWER(TRIM(c.breadcrumb)) LIKE ?
+
+        once per leaf. Wrapping the column in `LOWER(TRIM(...))` puts every
+        index out of reach, so each of those was a full scan of all 68,904 chunk
+        rows at ~72ms, and a Goku roster passes 64 headings: 4.6s of a 7.5s
+        request. The same two predicates evaluated over a single pass of the
+        34,011 distinct (heading, page) pairs cost 0.15s — 30x less, and flat in
+        the number of headings rather than linear in it.
         """
         if not leaves:
             return {}
-        counts: dict[str, int] = {}
-        for leaf in {name.strip().lower() for name in leaves if name.strip()}:
-            row = self.connection.execute(
-                "SELECT COUNT(DISTINCT c.document_id) AS pages FROM chunks c"
-                " WHERE LOWER(TRIM(c.breadcrumb)) = ?"
-                "    OR LOWER(TRIM(c.breadcrumb)) LIKE ?",
-                (leaf, f"%/ {leaf}"),
-            ).fetchone()
-            counts[leaf] = int(row["pages"] if row else 0)
-        return counts
+        wanted = {name.strip().lower() for name in leaves if name.strip()}
+        found: dict[str, set[int]] = {leaf: set() for leaf in wanted}
+        # `LIKE '%/ ' || leaf` says the crumb *ends* at this heading, so the
+        # leaves a crumb answers to are its own tail segments — a dict lookup
+        # each, for as many `/ ` as the crumb has (three, at the deepest
+        # measured). Only headings holding a LIKE wildcard need the pattern.
+        plain = {leaf for leaf in wanted if "%" not in leaf and "_" not in leaf}
+        wildcards = [(leaf, _tail_pattern(leaf)) for leaf in wanted - plain]
+
+        # The crumb is still normalised by SQLite rather than by Python, because
+        # the two disagree: SQLite's LOWER folds ASCII only, so `Hiroshi Ōtake`
+        # keeps its `Ō` and does not match a Python-lowered `ōtake`. Folding it
+        # here instead would quietly change which headings match.
+        pages: dict[str, set[int]] = {}
+        for row in self.connection.execute(
+            "SELECT DISTINCT LOWER(TRIM(c.breadcrumb)) AS crumb,"
+            "       c.document_id AS document_id"
+            " FROM chunks c WHERE c.breadcrumb IS NOT NULL"
+        ):
+            pages.setdefault(row["crumb"], set()).add(row["document_id"])
+
+        for crumb, documents in pages.items():
+            if crumb in found:                       # the `=` arm
+                found[crumb] |= documents
+            cut = crumb.find("/ ")
+            while cut != -1:                         # the LIKE arm
+                tail = crumb[cut + 2:]
+                if tail in plain:
+                    found[tail] |= documents
+                cut = crumb.find("/ ", cut + 1)
+            for leaf, pattern in wildcards:
+                if pattern.fullmatch(crumb):
+                    found[leaf] |= documents
+        return {leaf: len(documents) for leaf, documents in found.items()}
 
     def pages_named(self, word: str, limit: int = 12) -> list[sqlite3.Row]:
         """Root pages whose title contains `word`, largest first.
