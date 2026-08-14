@@ -1,7 +1,7 @@
 {
   "series": "db",
   "wiki": "https://dragonball.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "db-set-01",
@@ -885,6 +885,746 @@
           "aliases": [
             "tsuibi kienzan"
           ]
+        }
+      ]
+    },
+    {
+      "id": "db-fact-05",
+      "kind": "fact",
+      "question": "Who is Goku's adoptive grandfather?",
+      "subject": "Goku",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Son_Goku"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Grandpa Gohan adopted and raised Goku",
+      "answer": [
+        {
+          "item": "Grandpa Gohan",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-fact-06",
+      "kind": "fact",
+      "question": "What is Goku's Saiyan birth name?",
+      "subject": "Goku",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Son_Goku"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Goku was born as Kakarot",
+      "answer": [
+        {
+          "item": "Kakarot",
+          "aliases": [
+            "Kakarotto"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-set-09",
+      "kind": "set",
+      "question": "Every mentor who trained Goku",
+      "subject": "Goku",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Son_Goku"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Eleven mentors listed for Goku",
+      "answer": [
+        {
+          "item": "Grandpa Gohan",
+          "aliases": []
+        },
+        {
+          "item": "Master Roshi",
+          "aliases": []
+        },
+        {
+          "item": "Korin",
+          "aliases": []
+        },
+        {
+          "item": "Mr. Popo",
+          "aliases": []
+        },
+        {
+          "item": "Kami",
+          "aliases": []
+        },
+        {
+          "item": "King Kai",
+          "aliases": []
+        },
+        {
+          "item": "Pybara",
+          "aliases": []
+        },
+        {
+          "item": "Yuzukar",
+          "aliases": []
+        },
+        {
+          "item": "Whis",
+          "aliases": []
+        },
+        {
+          "item": "Merus",
+          "aliases": []
+        },
+        {
+          "item": "Grand Minister",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-fact-07",
+      "kind": "fact",
+      "question": "Who is Vegeta's father?",
+      "subject": "Vegeta",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Vegeta"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. King Vegeta is Vegeta's father",
+      "answer": [
+        {
+          "item": "King Vegeta",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-fact-08",
+      "kind": "fact",
+      "question": "What is Vegeta's royal title?",
+      "subject": "Vegeta",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Vegeta"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Vegeta is the Saiyan Prince",
+      "answer": [
+        {
+          "item": "Prince of the Saiyans",
+          "aliases": [
+            "Saiyan Prince"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-set-10",
+      "kind": "set",
+      "question": "Every transformation Vegeta has achieved",
+      "subject": "Vegeta",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Vegeta"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Six major transformations listed",
+      "answer": [
+        {
+          "item": "Super Saiyan",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan 2",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan God",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Blue",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Blue Evolved",
+          "aliases": []
+        },
+        {
+          "item": "Ultra Ego",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-fact-09",
+      "kind": "fact",
+      "question": "Who is Gohan's mentor and surrogate uncle?",
+      "subject": "Gohan",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Son_Gohan"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Piccolo is Gohan's primary mentor",
+      "answer": [
+        {
+          "item": "Piccolo",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-fact-10",
+      "kind": "fact",
+      "question": "What is Gohan's ultimate form called?",
+      "subject": "Gohan",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Son_Gohan"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Gohan's ultimate form is called Ultimate Gohan",
+      "answer": [
+        {
+          "item": "Ultimate Gohan",
+          "aliases": [
+            "Potential Unleashed",
+            "Gohan Beast"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-set-11",
+      "kind": "set",
+      "question": "Every mentor who trained Gohan",
+      "subject": "Gohan",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Son_Gohan"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four mentors listed for Gohan",
+      "answer": [
+        {
+          "item": "Piccolo",
+          "aliases": []
+        },
+        {
+          "item": "Goku",
+          "aliases": []
+        },
+        {
+          "item": "Shin",
+          "aliases": []
+        },
+        {
+          "item": "Old Kai",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-fact-11",
+      "kind": "fact",
+      "question": "Who is Piccolo's father/previous incarnation?",
+      "subject": "Piccolo",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Piccolo"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. King Piccolo is Piccolo's parent/past self",
+      "answer": [
+        {
+          "item": "King Piccolo",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-fact-12",
+      "kind": "fact",
+      "question": "What race is Piccolo?",
+      "subject": "Piccolo",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Piccolo"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Piccolo is a Namekian",
+      "answer": [
+        {
+          "item": "Namekian",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-set-12",
+      "kind": "set",
+      "question": "Every student Piccolo has trained",
+      "subject": "Piccolo",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Piccolo"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four students trained by Piccolo",
+      "answer": [
+        {
+          "item": "Gohan",
+          "aliases": []
+        },
+        {
+          "item": "Goten",
+          "aliases": []
+        },
+        {
+          "item": "Trunks",
+          "aliases": []
+        },
+        {
+          "item": "Pan",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-fact-13",
+      "kind": "fact",
+      "question": "Who is Frieza's father?",
+      "subject": "Frieza",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Frieza"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. King Cold is Frieza's father",
+      "answer": [
+        {
+          "item": "King Cold",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-fact-14",
+      "kind": "fact",
+      "question": "What is Frieza's race called?",
+      "subject": "Frieza",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Frieza"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Frieza belongs to the Frieza Clan",
+      "answer": [
+        {
+          "item": "Frieza Clan",
+          "aliases": [
+            "Frieza Race"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-set-13",
+      "kind": "set",
+      "question": "Every transformation form of Frieza",
+      "subject": "Frieza",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Frieza"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Eight forms listed for Frieza",
+      "answer": [
+        {
+          "item": "First Form",
+          "aliases": []
+        },
+        {
+          "item": "Second Form",
+          "aliases": []
+        },
+        {
+          "item": "Third Form",
+          "aliases": []
+        },
+        {
+          "item": "Final Form",
+          "aliases": []
+        },
+        {
+          "item": "Mecha Frieza",
+          "aliases": []
+        },
+        {
+          "item": "Golden Frieza",
+          "aliases": []
+        },
+        {
+          "item": "True Golden Frieza",
+          "aliases": []
+        },
+        {
+          "item": "Black Frieza",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-set-14",
+      "kind": "set",
+      "question": "Which arcs of Dragon Ball Z start at which chapter?",
+      "subject": "Dragon Ball",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Dragon_Ball_Z"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `arcspan`. Six major sagas in Dragon Ball Z",
+      "answer": [
+        {
+          "item": "Saiyan Saga",
+          "aliases": []
+        },
+        {
+          "item": "Namek Saga",
+          "aliases": []
+        },
+        {
+          "item": "Frieza Saga",
+          "aliases": []
+        },
+        {
+          "item": "Androids Saga",
+          "aliases": []
+        },
+        {
+          "item": "Cell Saga",
+          "aliases": []
+        },
+        {
+          "item": "Majin Buu Saga",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-set-15",
+      "kind": "set",
+      "question": "How many canonical Super Saiyan forms exist in Dragon Ball?",
+      "subject": "Super Saiyan forms",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Super_Saiyan"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Nine Super Saiyan forms listed",
+      "answer": [
+        {
+          "item": "Super Saiyan",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan 2",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan 3",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan God",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Blue",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Blue Evolved",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Rose",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Rage",
+          "aliases": []
+        },
+        {
+          "item": "Legendary Super Saiyan",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-set-16",
+      "kind": "set",
+      "question": "How many Gods of Destruction exist across the multiverse?",
+      "subject": "Universe 7 Gods of Destruction",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/God_of_Destruction"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Twelve Gods of Destruction, one per universe",
+      "answer": [
+        {
+          "item": "Beerus (Universe 7)",
+          "aliases": []
+        },
+        {
+          "item": "Champa (Universe 6)",
+          "aliases": []
+        },
+        {
+          "item": "Belmod (Universe 11)",
+          "aliases": []
+        },
+        {
+          "item": "Quitela (Universe 4)",
+          "aliases": []
+        },
+        {
+          "item": "Arack (Universe 5)",
+          "aliases": []
+        },
+        {
+          "item": "Liquiir (Universe 8)",
+          "aliases": []
+        },
+        {
+          "item": "Heles (Universe 2)",
+          "aliases": []
+        },
+        {
+          "item": "Gin (Universe 12)",
+          "aliases": []
+        },
+        {
+          "item": "Mule (Universe 3)",
+          "aliases": []
+        },
+        {
+          "item": "Rumsshi (Universe 10)",
+          "aliases": []
+        },
+        {
+          "item": "Sidra (Universe 9)",
+          "aliases": []
+        },
+        {
+          "item": "Ivan (Universe 1)",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-set-17",
+      "kind": "set",
+      "question": "Who are the members of Team Universe 7 in the Tournament of Power?",
+      "subject": "Team Universe 7",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Team_Universe_7"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Ten members of Team Universe 7",
+      "answer": [
+        {
+          "item": "Goku",
+          "aliases": []
+        },
+        {
+          "item": "Vegeta",
+          "aliases": []
+        },
+        {
+          "item": "Gohan",
+          "aliases": []
+        },
+        {
+          "item": "Piccolo",
+          "aliases": []
+        },
+        {
+          "item": "Android 17",
+          "aliases": []
+        },
+        {
+          "item": "Android 18",
+          "aliases": []
+        },
+        {
+          "item": "Krillin",
+          "aliases": []
+        },
+        {
+          "item": "Tien Shinhan",
+          "aliases": []
+        },
+        {
+          "item": "Master Roshi",
+          "aliases": []
+        },
+        {
+          "item": "Frieza",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-fact-15",
+      "kind": "fact",
+      "question": "Who leads the Frieza Force?",
+      "subject": "Frieza Force",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Frieza"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Frieza is the emperor and leader of the Frieza Force",
+      "answer": [
+        {
+          "item": "Frieza",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "db-set-18",
+      "kind": "set",
+      "question": "How many major sagas are in Dragon Ball Z?",
+      "subject": "Dragon Ball Z sagas",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Dragon_Ball_Z"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Six major sagas in Dragon Ball Z",
+      "answer": [
+        {
+          "item": "Saiyan Saga",
+          "aliases": []
+        },
+        {
+          "item": "Namek Saga",
+          "aliases": []
+        },
+        {
+          "item": "Frieza Saga",
+          "aliases": []
+        },
+        {
+          "item": "Androids Saga",
+          "aliases": []
+        },
+        {
+          "item": "Cell Saga",
+          "aliases": []
+        },
+        {
+          "item": "Majin Buu Saga",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-set-19",
+      "kind": "set",
+      "question": "Who are the members of the Ginyu Force?",
+      "subject": "Ginyu Force",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Ginyu_Force"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Five members of the Ginyu Force",
+      "answer": [
+        {
+          "item": "Captain Ginyu",
+          "aliases": []
+        },
+        {
+          "item": "Jeice",
+          "aliases": []
+        },
+        {
+          "item": "Burter",
+          "aliases": []
+        },
+        {
+          "item": "Recoome",
+          "aliases": []
+        },
+        {
+          "item": "Guldo",
+          "aliases": []
         }
       ]
     }

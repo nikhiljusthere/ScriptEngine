@@ -1,7 +1,7 @@
 {
   "series": "csm",
   "wiki": "https://chainsaw-man.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "csm-set-01",
@@ -829,6 +829,605 @@
           "aliases": []
         }
       ]
+    },
+    {
+      "id": "csm-fact-05",
+      "kind": "fact",
+      "question": "Who is Denji's devil partner that became his heart?",
+      "subject": "Denji",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Pochita became Denji's heart after Denji was killed",
+      "answer": [
+        {
+          "item": "Pochita",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-06",
+      "kind": "fact",
+      "question": "What is Denji's hybrid transformation trigger?",
+      "subject": "Denji",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Denji transforms by pulling the cord on his chest",
+      "answer": [
+        {
+          "item": "Pulling the cord on his chest",
+          "aliases": [
+            "ripcord"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-set-09",
+      "kind": "set",
+      "question": "Every devil contract Denji has made",
+      "subject": "Denji",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Three devil contracts listed on Denji's page",
+      "answer": [
+        {
+          "item": "Chainsaw Devil Contract",
+          "aliases": []
+        },
+        {
+          "item": "Blood Devil Contract",
+          "aliases": []
+        },
+        {
+          "item": "Aging Devil Contract",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-07",
+      "kind": "fact",
+      "question": "Who is Power's pet cat?",
+      "subject": "Power",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Power"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Power's pet cat is named Meowy",
+      "answer": [
+        {
+          "item": "Meowy",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-08",
+      "kind": "fact",
+      "question": "What is Power's devil classification?",
+      "subject": "Power",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Power"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Power is the Blood Fiend/Devil",
+      "answer": [
+        {
+          "item": "Blood Fiend",
+          "aliases": [
+            "Blood Devil"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-set-10",
+      "kind": "set",
+      "question": "Every blood weapon Power can create",
+      "subject": "Power",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Power"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Seven blood weapons listed on Power's page",
+      "answer": [
+        {
+          "item": "Blood Hammer",
+          "aliases": []
+        },
+        {
+          "item": "Blood Knife",
+          "aliases": []
+        },
+        {
+          "item": "Blood Spear",
+          "aliases": []
+        },
+        {
+          "item": "Blood Scythe",
+          "aliases": []
+        },
+        {
+          "item": "Blood Dagger",
+          "aliases": []
+        },
+        {
+          "item": "Blood Axe",
+          "aliases": []
+        },
+        {
+          "item": "Blood Chainsaw",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-09",
+      "kind": "fact",
+      "question": "Who is Aki Hayakawa's younger brother?",
+      "subject": "Aki Hayakawa",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Aki's younger brother is Taiyo Hayakawa",
+      "answer": [
+        {
+          "item": "Taiyo Hayakawa",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-10",
+      "kind": "fact",
+      "question": "What division was Aki Hayakawa assigned to in Public Safety?",
+      "subject": "Aki Hayakawa",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Aki was part of Tokyo Special Division 4",
+      "answer": [
+        {
+          "item": "Tokyo Special Division 4",
+          "aliases": [
+            "Division 4"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-set-11",
+      "kind": "set",
+      "question": "Every devil Aki Hayakawa contracted with",
+      "subject": "Aki Hayakawa",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four devil contracts listed for Aki",
+      "answer": [
+        {
+          "item": "Fox Devil",
+          "aliases": []
+        },
+        {
+          "item": "Curse Devil",
+          "aliases": []
+        },
+        {
+          "item": "Future Devil",
+          "aliases": []
+        },
+        {
+          "item": "Control Devil",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-11",
+      "kind": "fact",
+      "question": "Who is Makima's reincarnation?",
+      "subject": "Makima",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Makima reincarnated as Nayuta",
+      "answer": [
+        {
+          "item": "Nayuta",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-12",
+      "kind": "fact",
+      "question": "What is Makima's devil identity?",
+      "subject": "Makima",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Makima is the Control Devil",
+      "answer": [
+        {
+          "item": "Control Devil",
+          "aliases": [
+            "Conquest Devil",
+            "Devil of Domination"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-set-12",
+      "kind": "set",
+      "question": "Every devil whose power Makima can channel through her control ability",
+      "subject": "Makima",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Six devils whose powers Makima channels",
+      "answer": [
+        {
+          "item": "Angel Devil",
+          "aliases": []
+        },
+        {
+          "item": "Future Devil",
+          "aliases": []
+        },
+        {
+          "item": "Snake Devil",
+          "aliases": []
+        },
+        {
+          "item": "Punishment Devil",
+          "aliases": []
+        },
+        {
+          "item": "Spider Devil",
+          "aliases": []
+        },
+        {
+          "item": "Zombie Devil",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-13",
+      "kind": "fact",
+      "question": "Who is Himeno's devil contract partner?",
+      "subject": "Himeno",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Himeno"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Himeno contracted with the Ghost Devil",
+      "answer": [
+        {
+          "item": "Ghost Devil",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-14",
+      "kind": "fact",
+      "question": "What did Himeno sacrifice to the Ghost Devil for her contract?",
+      "subject": "Himeno",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Himeno"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Himeno sacrificed her right eye",
+      "answer": [
+        {
+          "item": "Her right eye",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-set-13",
+      "kind": "set",
+      "question": "Every division Himeno was affiliated with in Public Safety",
+      "subject": "Himeno",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Himeno"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Himeno was only in Tokyo Special Division 4",
+      "answer": [
+        {
+          "item": "Tokyo Special Division 4",
+          "aliases": [
+            "Division 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "csm-set-14",
+      "kind": "set",
+      "question": "How many special divisions exist in Public Safety Devil Hunters?",
+      "subject": "Public Safety Devil Hunters",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Two special divisions mentioned",
+      "answer": [
+        {
+          "item": "Tokyo Special Division 4",
+          "aliases": []
+        },
+        {
+          "item": "Tokyo Special Division 5",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-15",
+      "kind": "set",
+      "question": "How many members are in the Four Horsemen?",
+      "subject": "Four Horsemen",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Four Horsemen members listed",
+      "answer": [
+        {
+          "item": "Control Devil (Makima)",
+          "aliases": []
+        },
+        {
+          "item": "War Devil (Yoru)",
+          "aliases": []
+        },
+        {
+          "item": "Famine Devil",
+          "aliases": []
+        },
+        {
+          "item": "Death Devil",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-16",
+      "kind": "set",
+      "question": "How many devil hunter divisions are mentioned in Chainsaw Man?",
+      "subject": "Devil Hunter divisions",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three divisions mentioned across characters",
+      "answer": [
+        {
+          "item": "Tokyo Division 2",
+          "aliases": []
+        },
+        {
+          "item": "Tokyo Special Division 4",
+          "aliases": []
+        },
+        {
+          "item": "Tokyo Special Division 5",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-17",
+      "kind": "set",
+      "question": "Who are the members of Tokyo Special Division 4?",
+      "subject": "Tokyo Special Division 4",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Seven members of Division 4",
+      "answer": [
+        {
+          "item": "Makima",
+          "aliases": []
+        },
+        {
+          "item": "Aki Hayakawa",
+          "aliases": []
+        },
+        {
+          "item": "Denji",
+          "aliases": []
+        },
+        {
+          "item": "Power",
+          "aliases": []
+        },
+        {
+          "item": "Himeno",
+          "aliases": []
+        },
+        {
+          "item": "Kobeni Higashiyama",
+          "aliases": []
+        },
+        {
+          "item": "Hirokazu Arai",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-15",
+      "kind": "fact",
+      "question": "Who leads the Four Horsemen?",
+      "subject": "Four Horsemen",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Control Devil is a member of the Four Horsemen",
+      "answer": [
+        {
+          "item": "Control Devil (Makima)",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-16",
+      "kind": "fact",
+      "question": "What is the Chainsaw Devil's signature ability?",
+      "subject": "Chainsaw Devil",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Devil erasure is Pochita's signature ability",
+      "answer": [
+        {
+          "item": "Devil erasure",
+          "aliases": [
+            "erasing devils by eating them"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-17",
+      "kind": "fact",
+      "question": "Who is the Chief Cabinet Secretary's Personal Devil Hunter in Chainsaw Man?",
+      "subject": "Public Safety Devil Hunters",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Makima was the Chief Cabinet Secretary's Personal Devil Hunter",
+      "answer": [
+        {
+          "item": "Makima",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "csm-fact-18",
+      "kind": "fact",
+      "question": "What concept does the Blood Devil embody?",
+      "subject": "Blood Devil",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Power"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Blood Devil embodies the concept of blood",
+      "answer": [
+        {
+          "item": "Blood",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
     }
   ],
   "retired": []

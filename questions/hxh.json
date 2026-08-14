@@ -1,7 +1,7 @@
 {
   "series": "hxh",
   "wiki": "https://hunterxhunter.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "hxh-set-01",
@@ -707,6 +707,687 @@
           ]
         }
       ]
+    },
+    {
+      "id": "hxh-fact-05",
+      "kind": "fact",
+      "question": "Who taught Gon Freecss Nen?",
+      "subject": "Gon Freecss",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Gon_Freecss"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Wing is Gon's Nen teacher",
+      "answer": [
+        {
+          "item": "Wing",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-06",
+      "kind": "fact",
+      "question": "What is Gon Freecss's Nen type?",
+      "subject": "Gon Freecss",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Gon_Freecss"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Gon's Nen type is Enhancement",
+      "answer": [
+        {
+          "item": "Enhancement",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-set-09",
+      "kind": "set",
+      "question": "What are Gon Freecss's named Nen techniques?",
+      "subject": "Gon Freecss",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Gon_Freecss"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Gon's three Jajanken techniques",
+      "answer": [
+        {
+          "item": "Rock",
+          "aliases": []
+        },
+        {
+          "item": "Paper",
+          "aliases": []
+        },
+        {
+          "item": "Scissors",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-fact-07",
+      "kind": "fact",
+      "question": "Who is Killua Zoldyck's father?",
+      "subject": "Killua Zoldyck",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Silva Zoldyck is Killua's father",
+      "answer": [
+        {
+          "item": "Silva Zoldyck",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-08",
+      "kind": "fact",
+      "question": "What is Killua Zoldyck's Nen type?",
+      "subject": "Killua Zoldyck",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Killua's Nen type is Transmutation",
+      "answer": [
+        {
+          "item": "Transmutation",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-set-10",
+      "kind": "set",
+      "question": "What are Killua Zoldyck's named Nen techniques?",
+      "subject": "Killua Zoldyck",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Killua's named electricity-based techniques",
+      "answer": [
+        {
+          "item": "Thunderbolt",
+          "aliases": []
+        },
+        {
+          "item": "Godspeed",
+          "aliases": []
+        },
+        {
+          "item": "Lightning Palm",
+          "aliases": []
+        },
+        {
+          "item": "Thunder Palm",
+          "aliases": []
+        },
+        {
+          "item": "Whirlwind",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-fact-09",
+      "kind": "fact",
+      "question": "Who taught Kurapika Nen?",
+      "subject": "Kurapika",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Kurapika"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Izunavi is Kurapika's Nen teacher",
+      "answer": [
+        {
+          "item": "Izunavi",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-10",
+      "kind": "fact",
+      "question": "What is Kurapika's Nen type?",
+      "subject": "Kurapika",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Kurapika"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Kurapika's base type is Conjuration; Specialist with Scarlet Eyes",
+      "answer": [
+        {
+          "item": "Conjuration",
+          "aliases": [
+            "Specialist when eyes are scarlet"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-set-11",
+      "kind": "set",
+      "question": "What are Kurapika's named Nen chains?",
+      "subject": "Kurapika",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Kurapika"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Kurapika's six named chain abilities",
+      "answer": [
+        {
+          "item": "Dowsing Chain",
+          "aliases": []
+        },
+        {
+          "item": "Chain Jail",
+          "aliases": []
+        },
+        {
+          "item": "Holy Chain",
+          "aliases": []
+        },
+        {
+          "item": "Judgment Chain",
+          "aliases": []
+        },
+        {
+          "item": "Steal Chain",
+          "aliases": []
+        },
+        {
+          "item": "Stealth Dolphin",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-fact-11",
+      "kind": "fact",
+      "question": "Who was Leorio Paradinight's close friend who died from illness?",
+      "subject": "Leorio Paradinight",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Leorio_Paradinight"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Pietro was Leorio's childhood friend whose death motivated him",
+      "answer": [
+        {
+          "item": "Pietro",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-12",
+      "kind": "fact",
+      "question": "What is Leorio Paradinight's Nen type?",
+      "subject": "Leorio Paradinight",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Leorio_Paradinight"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Leorio's Nen type is Emission",
+      "answer": [
+        {
+          "item": "Emission",
+          "aliases": [
+            "leaning toward Enhancement"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-set-12",
+      "kind": "set",
+      "question": "What are Leorio Paradinight's named Nen techniques?",
+      "subject": "Leorio Paradinight",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Leorio_Paradinight"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Leorio's only named Hatsu technique",
+      "answer": [
+        {
+          "item": "Remote Punch",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-fact-13",
+      "kind": "fact",
+      "question": "Who taught Hisoka Morow Nen?",
+      "subject": "Hisoka Morow",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Hisoka_Morow"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Moritonio was Hisoka's Nen teacher",
+      "answer": [
+        {
+          "item": "Moritonio",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-14",
+      "kind": "fact",
+      "question": "What is Hisoka Morow's Nen type?",
+      "subject": "Hisoka Morow",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Hisoka_Morow"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Hisoka's Nen type is Transmutation",
+      "answer": [
+        {
+          "item": "Transmutation",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-set-13",
+      "kind": "set",
+      "question": "What are Hisoka Morow's named Nen techniques?",
+      "subject": "Hisoka Morow",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Hisoka_Morow"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Hisoka's two named Hatsu abilities",
+      "answer": [
+        {
+          "item": "Bungee Gum",
+          "aliases": []
+        },
+        {
+          "item": "Texture Surprise",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-14",
+      "kind": "set",
+      "question": "How many members are in the Phantom Troupe?",
+      "subject": "Phantom Troupe",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. The Troupe has 13 members including Chrollo",
+      "answer": [
+        {
+          "item": "13 members",
+          "aliases": [
+            "thirteen",
+            "members",
+            "thirteen members"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-15",
+      "kind": "set",
+      "question": "How many Zodiacs are in the Hunter Association?",
+      "subject": "Zodiacs",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Zodiacs"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. There are 12 Zodiacs",
+      "answer": [
+        {
+          "item": "12 Zodiacs",
+          "aliases": [
+            "twelve",
+            "Zodiacs",
+            "twelve Zodiacs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-16",
+      "kind": "set",
+      "question": "How many phases are in the Hunter Exam?",
+      "subject": "Hunter Exam",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Hunter_Exam"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. The exam has 4 main phases",
+      "answer": [
+        {
+          "item": "4 phases",
+          "aliases": [
+            "four",
+            "phases",
+            "four phases"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-17",
+      "kind": "set",
+      "question": "How many floors does Heavens Arena have?",
+      "subject": "Heavens Arena",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Heavens_Arena"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Heavens Arena has 200 floors",
+      "answer": [
+        {
+          "item": "200 floors",
+          "aliases": [
+            "two hundred",
+            "floors",
+            "two hundred floors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-18",
+      "kind": "set",
+      "question": "How many Nen categories exist?",
+      "subject": "Nen categories",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Nen"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Nen has six aura types",
+      "answer": [
+        {
+          "item": "6 categories",
+          "aliases": [
+            "six",
+            "categories",
+            "six categories"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-19",
+      "kind": "set",
+      "question": "Who are the members of the Phantom Troupe?",
+      "subject": "Phantom Troupe",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. All 13 Phantom Troupe members",
+      "answer": [
+        {
+          "item": "Chrollo Lucilfer",
+          "aliases": []
+        },
+        {
+          "item": "Nobunaga Hazama",
+          "aliases": []
+        },
+        {
+          "item": "Machi Komacine",
+          "aliases": []
+        },
+        {
+          "item": "Feitan Portor",
+          "aliases": []
+        },
+        {
+          "item": "Phinks Magcub",
+          "aliases": []
+        },
+        {
+          "item": "Shalnark",
+          "aliases": []
+        },
+        {
+          "item": "Franklin Bordeau",
+          "aliases": []
+        },
+        {
+          "item": "Bonolenov Ndongo",
+          "aliases": []
+        },
+        {
+          "item": "Shizuku Murasaki",
+          "aliases": []
+        },
+        {
+          "item": "Kortopi",
+          "aliases": []
+        },
+        {
+          "item": "Pakunoda",
+          "aliases": []
+        },
+        {
+          "item": "Hisoka Morow",
+          "aliases": []
+        },
+        {
+          "item": "Kalluto Zoldyck",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-set-20",
+      "kind": "set",
+      "question": "Who are the Zodiacs of the Hunter Association?",
+      "subject": "Zodiacs",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Zodiacs"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. All 12 Zodiac members with their animal codenames",
+      "answer": [
+        {
+          "item": "Mizaistom Nana",
+          "aliases": []
+        },
+        {
+          "item": "Cheadle Yorkshire",
+          "aliases": []
+        },
+        {
+          "item": "Ging Freecss",
+          "aliases": []
+        },
+        {
+          "item": "Pariston Hill",
+          "aliases": []
+        },
+        {
+          "item": "Botobai Gigante",
+          "aliases": []
+        },
+        {
+          "item": "Kanzai",
+          "aliases": []
+        },
+        {
+          "item": "Cluck",
+          "aliases": []
+        },
+        {
+          "item": "Pyon",
+          "aliases": []
+        },
+        {
+          "item": "Gel",
+          "aliases": []
+        },
+        {
+          "item": "Saccho Kobayakawa",
+          "aliases": []
+        },
+        {
+          "item": "Ickshonpe Katocha",
+          "aliases": []
+        },
+        {
+          "item": "Leorio Paradinight",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "hxh-fact-15",
+      "kind": "fact",
+      "question": "Who is the leader of the Nostrade Family?",
+      "subject": "Nostrade Family",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Nostrade_Family"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Light Nostrade heads the family",
+      "answer": [
+        {
+          "item": "Light Nostrade",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-16",
+      "kind": "fact",
+      "question": "What is the highest rank in the Hunter Association?",
+      "subject": "Hunter Association",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Hunter_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Chairman is the top rank",
+      "answer": [
+        {
+          "item": "Chairman",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "hxh-fact-17",
+      "kind": "fact",
+      "question": "What is the weight of the first door of the Testing Gate on Kukuroo Mountain?",
+      "subject": "Testing Gate",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Testing_Gate"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. First door of Zoldyck Testing Gate is 4 tons",
+      "answer": [
+        {
+          "item": "4 tons",
+          "aliases": [
+            "four tons",
+            "four",
+            "tons"
+          ]
+        }
+      ],
+      "accept": "any"
     }
   ],
   "retired": [

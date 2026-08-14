@@ -1,7 +1,7 @@
 {
   "series": "bleach",
   "wiki": "https://bleach.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "bleach-set-01",
@@ -1225,6 +1225,717 @@
           ]
         }
       ]
+    },
+    {
+      "id": "bleach-fact-05",
+      "kind": "fact",
+      "question": "Who gave Ichigo his Substitute Shinigami Badge?",
+      "subject": "Ichigo Kurosaki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Ukitake gave Ichigo the badge before he left Soul Society for the first time",
+      "answer": [
+        {
+          "item": "Jūshirō Ukitake",
+          "aliases": [
+            "Ukitake"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-fact-06",
+      "kind": "fact",
+      "question": "What is Ichigo's Zanpakutō name?",
+      "subject": "Ichigo Kurosaki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Zangetsu is the name of Ichigo's Zanpakutō",
+      "answer": [
+        {
+          "item": "Zangetsu",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-set-09",
+      "kind": "set",
+      "question": "Every named technique Ichigo uses with Zangetsu",
+      "subject": "Ichigo Kurosaki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four named techniques Ichigo uses with his Zanpakutō",
+      "answer": [
+        {
+          "item": "Getsuga Tenshō",
+          "aliases": []
+        },
+        {
+          "item": "Chain",
+          "aliases": []
+        },
+        {
+          "item": "Deadly Darts",
+          "aliases": []
+        },
+        {
+          "item": "Ichigo Homerun",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "bleach-fact-07",
+      "kind": "fact",
+      "question": "Who is Rukia's adoptive brother?",
+      "subject": "Rukia Kuchiki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Rukia_Kuchiki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Byakuya Kuchiki is listed as Rukia's adoptive brother in her infobox",
+      "answer": [
+        {
+          "item": "Byakuya Kuchiki",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-fact-08",
+      "kind": "fact",
+      "question": "What is Rukia's Bankai name?",
+      "subject": "Rukia Kuchiki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Rukia_Kuchiki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Hakka no Togame is Rukia's Bankai, meaning Censure of the White Haze",
+      "answer": [
+        {
+          "item": "Hakka no Togame",
+          "aliases": [
+            "White Haze Punishment"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-set-10",
+      "kind": "set",
+      "question": "Every dance of Rukia's Shikai Sode no Shirayuki",
+      "subject": "Rukia Kuchiki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Rukia_Kuchiki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Three dances of Sode no Shirayuki's Shikai",
+      "answer": [
+        {
+          "item": "Some no mai, Tsukishiro",
+          "aliases": [
+            "First Dance, Moon White"
+          ]
+        },
+        {
+          "item": "Tsugi no mai, Hakuren",
+          "aliases": [
+            "Next Dance, White Ripple"
+          ]
+        },
+        {
+          "item": "San no mai, Shirafune",
+          "aliases": [
+            "Third Dance, White Sword"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-fact-09",
+      "kind": "fact",
+      "question": "Who is Byakuya's wife?",
+      "subject": "Byakuya Kuchiki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Byakuya_Kuchiki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Hisana Kuchiki was Byakuya's wife before her death",
+      "answer": [
+        {
+          "item": "Hisana Kuchiki",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-fact-10",
+      "kind": "fact",
+      "question": "What is Byakuya's Bankai name?",
+      "subject": "Byakuya Kuchiki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Byakuya_Kuchiki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Senbonzakura Kageyoshi is Byakuya's Bankai",
+      "answer": [
+        {
+          "item": "Senbonzakura Kageyoshi",
+          "aliases": [
+            "Vibrant Display of a Thousand Cherry Blossoms"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-set-11",
+      "kind": "set",
+      "question": "Every named Bankai technique Byakuya uses",
+      "subject": "Byakuya Kuchiki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Byakuya_Kuchiki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four named Bankai techniques of Senbonzakura Kageyoshi",
+      "answer": [
+        {
+          "item": "Gōkei",
+          "aliases": [
+            "Mawscape"
+          ]
+        },
+        {
+          "item": "Senkei",
+          "aliases": [
+            "Slaughterscape"
+          ]
+        },
+        {
+          "item": "Ikka Senjinka",
+          "aliases": [
+            "Flower of a Thousand Blades in a Single Bite"
+          ]
+        },
+        {
+          "item": "Shūkei: Hakuteiken",
+          "aliases": [
+            "Endscape: White Imperial Sword"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-fact-11",
+      "kind": "fact",
+      "question": "Who did Kenpachi name his adoptive daughter after?",
+      "subject": "Kenpachi Zaraki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Kenpachi_Zaraki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Kenpachi named Yachiru after Yachiru Unohana, the first Kenpachi",
+      "answer": [
+        {
+          "item": "Yachiru Unohana",
+          "aliases": [
+            "Retsu Unohana"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-fact-12",
+      "kind": "fact",
+      "question": "What is Kenpachi's Zanpakutō name?",
+      "subject": "Kenpachi Zaraki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Kenpachi_Zaraki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Nozarashi is the name of Kenpachi's Zanpakutō",
+      "answer": [
+        {
+          "item": "Nozarashi",
+          "aliases": [
+            "Weather-Beaten One"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-set-12",
+      "kind": "set",
+      "question": "Every release state of Kenpachi's Zanpakutō",
+      "subject": "Kenpachi Zaraki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Kenpachi_Zaraki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Two release states: Shikai Nozarashi and unnamed Bankai",
+      "answer": [
+        {
+          "item": "Shikai (Nozarashi)",
+          "aliases": []
+        },
+        {
+          "item": "Bankai (Unnamed)",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "bleach-fact-13",
+      "kind": "fact",
+      "question": "Who was Aizen's lieutenant?",
+      "subject": "Sosuke Aizen",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Sosuke_Aizen"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Gin Ichimaru served as Aizen's lieutenant in the 5th Division",
+      "answer": [
+        {
+          "item": "Gin Ichimaru",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-fact-14",
+      "kind": "fact",
+      "question": "What is Aizen's Zanpakutō name?",
+      "subject": "Sosuke Aizen",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Sosuke_Aizen"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Kyōka Suigetsu is Aizen's Zanpakutō with complete hypnosis ability",
+      "answer": [
+        {
+          "item": "Kyōka Suigetsu",
+          "aliases": [
+            "Mirror Flower Water Moon"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-set-13",
+      "kind": "set",
+      "question": "Every position Aizen has held",
+      "subject": "Sosuke Aizen",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Sosuke_Aizen"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four positions Aizen held in Soul Society and Hueco Mundo",
+      "answer": [
+        {
+          "item": "Captain of the 5th Division",
+          "aliases": []
+        },
+        {
+          "item": "Lieutenant of the 5th Division",
+          "aliases": []
+        },
+        {
+          "item": "Instructor at the Shin'ō Academy",
+          "aliases": []
+        },
+        {
+          "item": "Leader of the Arrancar Army",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-14",
+      "kind": "set",
+      "question": "How many divisions are in the Gotei 13?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Gotei_13"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Thirteen divisions listed in the Gotei 13 infobox",
+      "answer": [
+        {
+          "item": "13 divisions",
+          "aliases": [
+            "thirteen",
+            "divisions",
+            "thirteen divisions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-15",
+      "kind": "set",
+      "question": "How many Espada members are there?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Espada"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Ten numbered Espada ranks (0-9) plus Cero makes 11, but 10 distinct ranks 1-10 plus Cero",
+      "answer": [
+        {
+          "item": "10 Espada",
+          "aliases": [
+            "ten",
+            "Espada",
+            "ten Espada"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-16",
+      "kind": "set",
+      "question": "How many Schutzstaffel members are in the current generation?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Schutzstaffel"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Five current Schutzstaffel members: Lille Barro, Gerard Valkyrie, Pernida Parnkgjas, Askin Nakk Le Vaar, Uryū Ishida",
+      "answer": [
+        {
+          "item": "5 members",
+          "aliases": [
+            "five",
+            "members",
+            "five members"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-17",
+      "kind": "set",
+      "question": "How many Sternritter letters are there?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Sternritter"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Each Sternritter is designated by a letter of the alphabet (A-Z)",
+      "answer": [
+        {
+          "item": "26 letters",
+          "aliases": [
+            "twenty-six",
+            "letters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-18",
+      "kind": "set",
+      "question": "How many captains are in the Gotei 13?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Gotei_13"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. One captain per division, thirteen divisions total",
+      "answer": [
+        {
+          "item": "13 captains",
+          "aliases": [
+            "thirteen",
+            "captains",
+            "thirteen captains"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-19",
+      "kind": "set",
+      "question": "Who are the current Gotei 13 captains?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Gotei_13"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Thirteen current captains of the Gotei 13 divisions",
+      "answer": [
+        {
+          "item": "Shunsui Kyōraku",
+          "aliases": []
+        },
+        {
+          "item": "Suì-Fēng",
+          "aliases": []
+        },
+        {
+          "item": "Rōjūrō Ōtoribashi",
+          "aliases": []
+        },
+        {
+          "item": "Isane Kotetsu",
+          "aliases": []
+        },
+        {
+          "item": "Shinji Hirako",
+          "aliases": []
+        },
+        {
+          "item": "Byakuya Kuchiki",
+          "aliases": []
+        },
+        {
+          "item": "Tetsuzaemon Iba",
+          "aliases": []
+        },
+        {
+          "item": "Lisa Yadōmaru",
+          "aliases": []
+        },
+        {
+          "item": "Kensei Muguruma",
+          "aliases": []
+        },
+        {
+          "item": "Tōshirō Hitsugaya",
+          "aliases": []
+        },
+        {
+          "item": "Kenpachi Zaraki",
+          "aliases": []
+        },
+        {
+          "item": "Mayuri Kurotsuchi",
+          "aliases": []
+        },
+        {
+          "item": "Rukia Kuchiki",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-20",
+      "kind": "set",
+      "question": "Who are the Espada members?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Espada"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Eleven Espada members including Cero (0) through Diez (10th)",
+      "answer": [
+        {
+          "item": "Yammy Llargo",
+          "aliases": []
+        },
+        {
+          "item": "Coyote Starrk",
+          "aliases": []
+        },
+        {
+          "item": "Baraggan Louisenbairn",
+          "aliases": []
+        },
+        {
+          "item": "Nelliel Tu Odelschwanck",
+          "aliases": []
+        },
+        {
+          "item": "Tier Harribel",
+          "aliases": []
+        },
+        {
+          "item": "Ulquiorra Cifer",
+          "aliases": []
+        },
+        {
+          "item": "Nnoitra Gilga",
+          "aliases": []
+        },
+        {
+          "item": "Grimmjow Jaegerjaquez",
+          "aliases": []
+        },
+        {
+          "item": "Zommari Rureaux",
+          "aliases": []
+        },
+        {
+          "item": "Szayelaporro Granz",
+          "aliases": []
+        },
+        {
+          "item": "Aaroniero Arruruerie",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "bleach-set-21",
+      "kind": "set",
+      "question": "Who are the Schutzstaffel members?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Schutzstaffel"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Five members of Yhwach's elite Schutzstaffel",
+      "answer": [
+        {
+          "item": "Lille Barro",
+          "aliases": []
+        },
+        {
+          "item": "Gerard Valkyrie",
+          "aliases": []
+        },
+        {
+          "item": "Pernida Parnkgjas",
+          "aliases": []
+        },
+        {
+          "item": "Askin Nakk Le Vaar",
+          "aliases": []
+        },
+        {
+          "item": "Uryū Ishida",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "bleach-fact-15",
+      "kind": "fact",
+      "question": "What is the name of the Gotei 13's founding captain-commander?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Gotei_13"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Yamamoto founded the Gotei 13 and served as Captain-Commander for 1000 years",
+      "answer": [
+        {
+          "item": "Genryūsai Shigekuni Yamamoto",
+          "aliases": [
+            "Yamamoto"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "bleach-fact-16",
+      "kind": "fact",
+      "question": "What is the name of the Quincy emperor?",
+      "subject": "Bleach",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Sternritter"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Yhwach is the Quincy emperor and leader of the Wandenreich",
+      "answer": [
+        {
+          "item": "Yhwach",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
     }
   ],
   "retired": [

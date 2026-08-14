@@ -1,7 +1,7 @@
 {
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "jjk-set-01",
@@ -1087,6 +1087,676 @@
         },
         {
           "item": "Unique Body Structure",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-05",
+      "kind": "fact",
+      "question": "Who is Yuji Itadori's grandfather?",
+      "subject": "Yuji Itadori",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Wasuke Itadori is Yuji's grandfather",
+      "answer": [
+        {
+          "item": "Wasuke Itadori",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-06",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's jujutsu sorcerer grade?",
+      "subject": "Yuji Itadori",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Yuji's grade is Special Grade",
+      "answer": [
+        {
+          "item": "Special Grade",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-set-09",
+      "kind": "set",
+      "question": "What are Yuji Itadori's named cursed techniques?",
+      "subject": "Yuji Itadori",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Yuji's 10 named techniques",
+      "answer": [
+        {
+          "item": "Divergent Fist",
+          "aliases": []
+        },
+        {
+          "item": "Black Flash",
+          "aliases": []
+        },
+        {
+          "item": "Blood Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Piercing Blood",
+          "aliases": []
+        },
+        {
+          "item": "Convergence",
+          "aliases": []
+        },
+        {
+          "item": "Shrine",
+          "aliases": []
+        },
+        {
+          "item": "Dismantle",
+          "aliases": []
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Simple Domain",
+          "aliases": []
+        },
+        {
+          "item": "Domain Expansion",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-07",
+      "kind": "fact",
+      "question": "Who is Satoru Gojo's student?",
+      "subject": "Satoru Gojo",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Gojo's three first-year students",
+      "answer": [
+        {
+          "item": "Yuji Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Megumi Fushiguro",
+          "aliases": []
+        },
+        {
+          "item": "Nobara Kugisaki",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-08",
+      "kind": "fact",
+      "question": "What is Satoru Gojo's jujutsu sorcerer grade?",
+      "subject": "Satoru Gojo",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Gojo's grade is Special Grade",
+      "answer": [
+        {
+          "item": "Special Grade",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-set-10",
+      "kind": "set",
+      "question": "What are Satoru Gojo's named cursed techniques?",
+      "subject": "Satoru Gojo",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Gojo's 10 named techniques",
+      "answer": [
+        {
+          "item": "Limitless",
+          "aliases": []
+        },
+        {
+          "item": "Infinity",
+          "aliases": []
+        },
+        {
+          "item": "Blue",
+          "aliases": []
+        },
+        {
+          "item": "Red",
+          "aliases": []
+        },
+        {
+          "item": "Purple",
+          "aliases": []
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Six Eyes",
+          "aliases": []
+        },
+        {
+          "item": "Unlimited Void",
+          "aliases": []
+        },
+        {
+          "item": "Simple Domain",
+          "aliases": []
+        },
+        {
+          "item": "Falling Blossom Emotion",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-09",
+      "kind": "fact",
+      "question": "Who is Megumi Fushiguro's father?",
+      "subject": "Megumi Fushiguro",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Toji Fushiguro is Megumi's father",
+      "answer": [
+        {
+          "item": "Toji Fushiguro",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-10",
+      "kind": "fact",
+      "question": "What is Megumi Fushiguro's jujutsu sorcerer grade?",
+      "subject": "Megumi Fushiguro",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Megumi's grade is Grade 2",
+      "answer": [
+        {
+          "item": "Grade 2",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-set-11",
+      "kind": "set",
+      "question": "What are Megumi Fushiguro's named shikigami?",
+      "subject": "Megumi Fushiguro",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Megumi's 9 named shikigami",
+      "answer": [
+        {
+          "item": "Divine Dogs",
+          "aliases": []
+        },
+        {
+          "item": "Divine Dog: Totality",
+          "aliases": []
+        },
+        {
+          "item": "Nue",
+          "aliases": []
+        },
+        {
+          "item": "Great Serpent",
+          "aliases": []
+        },
+        {
+          "item": "Toad",
+          "aliases": []
+        },
+        {
+          "item": "The Well's Unknown Abyss",
+          "aliases": []
+        },
+        {
+          "item": "Max Elephant",
+          "aliases": []
+        },
+        {
+          "item": "Rabbit Escape",
+          "aliases": []
+        },
+        {
+          "item": "Mahoraga",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-11",
+      "kind": "fact",
+      "question": "Who is Nobara Kugisaki's teacher?",
+      "subject": "Nobara Kugisaki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Gojo is Nobara's teacher",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-12",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's jujutsu sorcerer grade?",
+      "subject": "Nobara Kugisaki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Nobara's grade is Grade 3",
+      "answer": [
+        {
+          "item": "Grade 3",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-set-12",
+      "kind": "set",
+      "question": "What are Nobara Kugisaki's named cursed techniques?",
+      "subject": "Nobara Kugisaki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Nobara's 4 named techniques",
+      "answer": [
+        {
+          "item": "Straw Doll Technique",
+          "aliases": []
+        },
+        {
+          "item": "Resonance",
+          "aliases": []
+        },
+        {
+          "item": "Hairpin",
+          "aliases": []
+        },
+        {
+          "item": "Black Flash",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-13",
+      "kind": "fact",
+      "question": "Who is Sukuna's vessel?",
+      "subject": "Sukuna",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Sukuna's two vessels",
+      "answer": [
+        {
+          "item": "Yuji Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Megumi Fushiguro",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-14",
+      "kind": "fact",
+      "question": "What is Sukuna's title?",
+      "subject": "Sukuna",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Sukuna's title is King of Curses",
+      "answer": [
+        {
+          "item": "King of Curses",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-set-13",
+      "kind": "set",
+      "question": "What are Sukuna's named cursed techniques?",
+      "subject": "Sukuna",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Sukuna's 10 named techniques",
+      "answer": [
+        {
+          "item": "Shrine",
+          "aliases": []
+        },
+        {
+          "item": "Dismantle",
+          "aliases": []
+        },
+        {
+          "item": "Cleave",
+          "aliases": []
+        },
+        {
+          "item": "Spiderweb",
+          "aliases": []
+        },
+        {
+          "item": "Divine Flame",
+          "aliases": []
+        },
+        {
+          "item": "Malevolent Shrine",
+          "aliases": []
+        },
+        {
+          "item": "Ten Shadows Technique",
+          "aliases": []
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Domain Amplification",
+          "aliases": []
+        },
+        {
+          "item": "Hollow Wicker Basket",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-14",
+      "kind": "set",
+      "question": "How many grades of jujutsu sorcerers exist?",
+      "subject": "Jujutsu sorcerer grades",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Grade"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. 6 grades including Special Grade",
+      "answer": [
+        {
+          "item": "6 grades",
+          "aliases": [
+            "six",
+            "grades",
+            "six grades"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-15",
+      "kind": "set",
+      "question": "How many Big Three Sorcerer Families exist?",
+      "subject": "Big Three Families",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three major sorcerer families",
+      "answer": [
+        {
+          "item": "3 families",
+          "aliases": [
+            "three",
+            "families",
+            "three families"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-16",
+      "kind": "set",
+      "question": "How many special grade jujutsu sorcerers are there?",
+      "subject": "Special grade sorcerers",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Grade"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Four special grade sorcerers",
+      "answer": [
+        {
+          "item": "4 special grade sorcerers",
+          "aliases": [
+            "four",
+            "special grade sorcerers",
+            "four special grade sorcerers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-17",
+      "kind": "set",
+      "question": "How many fingers of Sukuna exist?",
+      "subject": "Sukuna's fingers",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ryomen_Sukuna%27s_Fingers"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Sukuna has 20 fingers",
+      "answer": [
+        {
+          "item": "20 fingers",
+          "aliases": [
+            "twenty",
+            "fingers",
+            "twenty fingers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-18",
+      "kind": "set",
+      "question": "Who are the notable members of the Zenin Family?",
+      "subject": "Zenin Family",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Notable Zenin Family members",
+      "answer": [
+        {
+          "item": "Naobito Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Ogi Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Maki Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Mai Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Megumi Fushiguro",
+          "aliases": []
+        },
+        {
+          "item": "Touji Fushiguro",
+          "aliases": []
+        },
+        {
+          "item": "Naoya Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Noritoshi Kamo",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-19",
+      "kind": "set",
+      "question": "Who are the Death Painting Wombs?",
+      "subject": "Death Painting Wombs",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. All 9 Death Painting Wombs",
+      "answer": [
+        {
+          "item": "Eso",
+          "aliases": []
+        },
+        {
+          "item": "Kechizu",
+          "aliases": []
+        },
+        {
+          "item": "Choso",
+          "aliases": []
+        },
+        {
+          "item": "Noranso",
+          "aliases": []
+        },
+        {
+          "item": "Sho-oso",
+          "aliases": []
+        },
+        {
+          "item": "Tanso",
+          "aliases": []
+        },
+        {
+          "item": "Sanso",
+          "aliases": []
+        },
+        {
+          "item": "Kotsuso",
+          "aliases": []
+        },
+        {
+          "item": "Shoso",
           "aliases": []
         }
       ]

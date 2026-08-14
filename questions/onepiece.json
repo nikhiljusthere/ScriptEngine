@@ -1,7 +1,7 @@
 {
   "series": "onepiece",
   "wiki": "https://onepiece.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "onepiece-set-01",
@@ -1057,6 +1057,672 @@
           "aliases": []
         }
       ]
+    },
+    {
+      "id": "onepiece-fact-05",
+      "kind": "fact",
+      "question": "Who is Monkey D. Luffy's father in One Piece?",
+      "subject": "Monkey D. Luffy",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Dragon is explicitly named as Luffy's father in the opening paragraph",
+      "answer": [
+        {
+          "item": "Monkey D. Dragon",
+          "aliases": [
+            "Dragon"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-06",
+      "kind": "fact",
+      "question": "What is Monkey D. Luffy's current bounty in One Piece?",
+      "subject": "Monkey D. Luffy",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Current bounty after becoming an Emperor",
+      "answer": [
+        {
+          "item": "3,000,000,000 Belly",
+          "aliases": [
+            "3 billion Belly",
+            "three billion Belly"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-set-09",
+      "kind": "set",
+      "question": "Every Gear technique of Monkey D. Luffy in One Piece",
+      "subject": "Monkey D. Luffy",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four named Gear forms explicitly listed on the page",
+      "answer": [
+        {
+          "item": "Gear 2",
+          "aliases": [
+            "Gear Second"
+          ]
+        },
+        {
+          "item": "Gear 3",
+          "aliases": [
+            "Gear Third"
+          ]
+        },
+        {
+          "item": "Gear 4",
+          "aliases": [
+            "Gear Fourth",
+            "Boundman",
+            "Tankman",
+            "Snakeman"
+          ]
+        },
+        {
+          "item": "Gear 5",
+          "aliases": [
+            "Gear Fifth"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-07",
+      "kind": "fact",
+      "question": "Who gave Roronoa Zoro the sword Enma in One Piece?",
+      "subject": "Roronoa Zoro",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Hiyori explicitly named as the person who gave Zoro Enma",
+      "answer": [
+        {
+          "item": "Kouzuki Hiyori",
+          "aliases": [
+            "Hiyori"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-08",
+      "kind": "fact",
+      "question": "What is Roronoa Zoro's current bounty in One Piece?",
+      "subject": "Roronoa Zoro",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Current bounty after Wano",
+      "answer": [
+        {
+          "item": "1,111,000,000 Belly",
+          "aliases": [
+            "1.111 billion Belly"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-set-10",
+      "kind": "set",
+      "question": "Every named sword Roronoa Zoro has permanently wielded in One Piece",
+      "subject": "Roronoa Zoro",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Five named swords listed across his history: Wado Ichimonji (constant), Sandai Kitetsu, Yubashiri (destroyed), Shusui (returned), Enma (current)",
+      "answer": [
+        {
+          "item": "Wado Ichimonji",
+          "aliases": []
+        },
+        {
+          "item": "Sandai Kitetsu",
+          "aliases": []
+        },
+        {
+          "item": "Yubashiri",
+          "aliases": []
+        },
+        {
+          "item": "Shusui",
+          "aliases": []
+        },
+        {
+          "item": "Enma",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-09",
+      "kind": "fact",
+      "question": "Who raised Sanji after he fled the Vinsmoke Family in One Piece?",
+      "subject": "Sanji",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Zeff explicitly named as Sanji's caretaker after fleeing his family",
+      "answer": [
+        {
+          "item": "Zeff",
+          "aliases": [
+            "Red-Leg Zeff"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-10",
+      "kind": "fact",
+      "question": "What is Sanji's current bounty in One Piece?",
+      "subject": "Sanji",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Current bounty after Wano",
+      "answer": [
+        {
+          "item": "1,032,000,000 Belly",
+          "aliases": [
+            "1.032 billion Belly"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-set-11",
+      "kind": "set",
+      "question": "Every named variation of Sanji's Diable Jambe technique in One Piece",
+      "subject": "Sanji",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji/Abilities_and_Powers"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Two named Diable Jambe variations listed in the capabilities table Citation repointed to 'Sanji/Abilities and Powers', which is where this wiki keeps the detail.",
+      "answer": [
+        {
+          "item": "Diable Jambe",
+          "aliases": []
+        },
+        {
+          "item": "Ifrit Jambe",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-11",
+      "kind": "fact",
+      "question": "Who is Nami's adoptive sister in One Piece?",
+      "subject": "Nami",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nami"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Nojiko explicitly named as adoptive sister in opening paragraph",
+      "answer": [
+        {
+          "item": "Nojiko",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-12",
+      "kind": "fact",
+      "question": "What is Nami's current bounty in One Piece?",
+      "subject": "Nami",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nami"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Current bounty after Wano",
+      "answer": [
+        {
+          "item": "366,000,000 Belly",
+          "aliases": [
+            "366 million Belly"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-set-12",
+      "kind": "set",
+      "question": "Every named version of Nami's Clima-Tact weapon in One Piece",
+      "subject": "Nami",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nami"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four named versions: original Clima-Tact, Sorcery Clima-Tact, Grow Up version, and Zeus-merged version",
+      "answer": [
+        {
+          "item": "Clima-Tact",
+          "aliases": []
+        },
+        {
+          "item": "Sorcery Clima-Tact",
+          "aliases": []
+        },
+        {
+          "item": "Clima-Tact Grow Up",
+          "aliases": []
+        },
+        {
+          "item": "Zeus-merged Clima-Tact",
+          "aliases": [
+            "Zeus Clima-Tact"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-13",
+      "kind": "fact",
+      "question": "Who is Usopp's father in One Piece?",
+      "subject": "Usopp",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Usopp"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Yasopp explicitly named as Usopp's father in opening paragraph",
+      "answer": [
+        {
+          "item": "Yasopp",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-14",
+      "kind": "fact",
+      "question": "What is Usopp's current bounty in One Piece?",
+      "subject": "Usopp",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Usopp"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Current bounty after Wano",
+      "answer": [
+        {
+          "item": "500,000,000 Belly",
+          "aliases": [
+            "500 million Belly",
+            "half billion Belly"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-set-13",
+      "kind": "set",
+      "question": "How many members are in the Straw Hat Pirates crew in One Piece?",
+      "subject": "One Piece",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Ten named crew members listed in the members table",
+      "answer": [
+        {
+          "item": "10 members",
+          "aliases": [
+            "ten members",
+            "ten",
+            "members"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-set-14",
+      "kind": "set",
+      "question": "How many Sweet Commanders are in the Big Mom Pirates in One Piece?",
+      "subject": "One Piece",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Four_Emperors"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three current Sweet Commanders explicitly named",
+      "answer": [
+        {
+          "item": "Three Sweet Commanders",
+          "aliases": [
+            "three",
+            "Sweet Commanders"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-set-15",
+      "kind": "set",
+      "question": "How many All-Stars are in the Beasts Pirates in One Piece?",
+      "subject": "One Piece",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Four_Emperors"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three All-Stars explicitly stated",
+      "answer": [
+        {
+          "item": "Three All-Stars",
+          "aliases": [
+            "three All-Stars",
+            "Disasters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-set-16",
+      "kind": "set",
+      "question": "Who are the current members of the Straw Hat Pirates in One Piece?",
+      "subject": "Straw Hat Pirates",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Ten members listed in the crew table with their roles and epithets",
+      "answer": [
+        {
+          "item": "Monkey D. Luffy",
+          "aliases": [
+            "Luffy",
+            "Straw Hat"
+          ]
+        },
+        {
+          "item": "Roronoa Zoro",
+          "aliases": [
+            "Zoro",
+            "Pirate Hunter"
+          ]
+        },
+        {
+          "item": "Nami",
+          "aliases": [
+            "Cat Burglar"
+          ]
+        },
+        {
+          "item": "Usopp",
+          "aliases": [
+            "Sogeking",
+            "God Usopp"
+          ]
+        },
+        {
+          "item": "Sanji",
+          "aliases": [
+            "Black Leg"
+          ]
+        },
+        {
+          "item": "Tony Tony Chopper",
+          "aliases": [
+            "Chopper",
+            "Cotton Candy Lover"
+          ]
+        },
+        {
+          "item": "Nico Robin",
+          "aliases": [
+            "Robin",
+            "Devil Child"
+          ]
+        },
+        {
+          "item": "Franky",
+          "aliases": [
+            "Cyborg",
+            "Iron Man"
+          ]
+        },
+        {
+          "item": "Brook",
+          "aliases": [
+            "Soul King",
+            "Humming"
+          ]
+        },
+        {
+          "item": "Jinbe",
+          "aliases": [
+            "Knight of the Sea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-15",
+      "kind": "fact",
+      "question": "Who are the eleven pirates known as the Worst Generation in One Piece?",
+      "subject": "Worst Generation",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Worst_Generation"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Eleven members named throughout the page: the 11 Supernovas plus Blackbeard",
+      "answer": [
+        {
+          "item": "Monkey D. Luffy",
+          "aliases": []
+        },
+        {
+          "item": "Roronoa Zoro",
+          "aliases": []
+        },
+        {
+          "item": "Eustass Kid",
+          "aliases": []
+        },
+        {
+          "item": "Trafalgar Law",
+          "aliases": []
+        },
+        {
+          "item": "Killer",
+          "aliases": []
+        },
+        {
+          "item": "Basil Hawkins",
+          "aliases": []
+        },
+        {
+          "item": "Scratchmen Apoo",
+          "aliases": []
+        },
+        {
+          "item": "X Drake",
+          "aliases": []
+        },
+        {
+          "item": "Capone Bege",
+          "aliases": []
+        },
+        {
+          "item": "Jewelry Bonney",
+          "aliases": []
+        },
+        {
+          "item": "Urouge",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-16",
+      "kind": "fact",
+      "question": "Who are the current Four Emperors in One Piece?",
+      "subject": "Four Emperors",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Four_Emperors"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Current Four Emperors: Luffy, Buggy, Shanks, Blackbeard",
+      "answer": [
+        {
+          "item": "Monkey D. Luffy",
+          "aliases": [
+            "Straw Hat Luffy"
+          ]
+        },
+        {
+          "item": "Buggy",
+          "aliases": [
+            "Buggy the Clown"
+          ]
+        },
+        {
+          "item": "Shanks",
+          "aliases": [
+            "Red-Haired Shanks"
+          ]
+        },
+        {
+          "item": "Marshall D. Teach",
+          "aliases": [
+            "Blackbeard"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-17",
+      "kind": "fact",
+      "question": "What type of ship is the Thousand Sunny in One Piece?",
+      "subject": "Thousand Sunny",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Explicitly states brigantine-type",
+      "answer": [
+        {
+          "item": "Brigantine",
+          "aliases": [
+            "brigantine-type ship"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "onepiece-fact-18",
+      "kind": "fact",
+      "question": "What is the name of the treasure that the One Piece series is named after?",
+      "subject": "One Piece",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/One_Piece"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. The treasure is explicitly named One Piece",
+      "answer": [
+        {
+          "item": "One Piece",
+          "aliases": [
+            "the One Piece"
+          ]
+        }
+      ],
+      "accept": "any"
     }
   ],
   "retired": []

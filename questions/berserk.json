@@ -1,7 +1,7 @@
 {
   "series": "berserk",
   "wiki": "https://berserk.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "berserk-set-01",
@@ -611,6 +611,596 @@
         {
           "item": "Sylph Cloak",
           "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-05",
+      "kind": "fact",
+      "question": "Who taught Guts the basics of knife throwing?",
+      "subject": "Guts",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Judeau taught Guts knife throwing during the Golden Age Arc",
+      "answer": [
+        {
+          "item": "Judeau",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-fact-06",
+      "kind": "fact",
+      "question": "What was Guts' rank in the Band of the Falcon?",
+      "subject": "Guts",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Guts held this rank during the Golden Age Arc before the Eclipse",
+      "answer": [
+        {
+          "item": "Captain of the Band of the Falcon's raiders",
+          "aliases": [
+            "raiders captain"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-set-09",
+      "kind": "set",
+      "question": "Every weapon Guts wields in his arsenal",
+      "subject": "Guts",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. All six equipment items are listed in the Equipment section of Guts' page",
+      "answer": [
+        {
+          "item": "Dragon Slayer",
+          "aliases": []
+        },
+        {
+          "item": "Berserker Armor",
+          "aliases": []
+        },
+        {
+          "item": "Cannon Arm",
+          "aliases": []
+        },
+        {
+          "item": "Repeater Crossbow",
+          "aliases": []
+        },
+        {
+          "item": "Throwing Knives",
+          "aliases": []
+        },
+        {
+          "item": "Miniature Bombs",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-07",
+      "kind": "fact",
+      "question": "Who gave Griffith the Crimson Beherit?",
+      "subject": "Griffith",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Griffith"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. The fortune teller gave Griffith the Crimson Beherit in his youth",
+      "answer": [
+        {
+          "item": "An old fortune teller",
+          "aliases": [
+            "fortune teller"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-fact-08",
+      "kind": "fact",
+      "question": "What is Griffith's weapon of choice?",
+      "subject": "Griffith",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Griffith"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Griffith uses a sabre as his primary weapon throughout the series",
+      "answer": [
+        {
+          "item": "Sabre",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-set-10",
+      "kind": "set",
+      "question": "Every major title Griffith has held",
+      "subject": "Griffith",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Griffith"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Five major titles held by Griffith across the series",
+      "answer": [
+        {
+          "item": "Leader of the original Band of the Falcon",
+          "aliases": []
+        },
+        {
+          "item": "Viscount",
+          "aliases": []
+        },
+        {
+          "item": "White Phoenix General",
+          "aliases": []
+        },
+        {
+          "item": "Supreme Commander of the Midland Regular Army",
+          "aliases": []
+        },
+        {
+          "item": "Femto",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-09",
+      "kind": "fact",
+      "question": "Who did Puck meet while traveling with the troupe of performers?",
+      "subject": "Puck",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Puck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Puck met Rickert during his time with the traveling performers",
+      "answer": [
+        {
+          "item": "Rickert",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-fact-10",
+      "kind": "fact",
+      "question": "What is Puck's fighting style?",
+      "subject": "Puck",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Puck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Puck's self-proclaimed fighting style listed in his infobox",
+      "answer": [
+        {
+          "item": "Elf Dimension Style",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-set-11",
+      "kind": "set",
+      "question": "Every weapon Puck uses",
+      "subject": "Puck",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Puck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Puck's two weapons listed in his infobox",
+      "answer": [
+        {
+          "item": "Burdock",
+          "aliases": []
+        },
+        {
+          "item": "Puck Spark",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-11",
+      "kind": "fact",
+      "question": "Who is Serpico's half-sister?",
+      "subject": "Serpico",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Serpico"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Farnese is listed as Serpico's half-sister in his infobox",
+      "answer": [
+        {
+          "item": "Farnese",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-fact-12",
+      "kind": "fact",
+      "question": "What was Serpico's position in the Holy Iron Chain Knights?",
+      "subject": "Serpico",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Serpico"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Serpico served as herald of arms before joining Guts' party",
+      "answer": [
+        {
+          "item": "Herald of arms",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-set-12",
+      "kind": "set",
+      "question": "Every weapon Serpico wields",
+      "subject": "Serpico",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Serpico"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Serpico's two weapons listed in his infobox",
+      "answer": [
+        {
+          "item": "Rapier",
+          "aliases": []
+        },
+        {
+          "item": "Sylph Sword",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-13",
+      "kind": "fact",
+      "question": "Who rescued Casca from the lustful nobleman?",
+      "subject": "Casca",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Casca"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Griffith saved Casca from the nobleman when she was twelve years old",
+      "answer": [
+        {
+          "item": "Griffith",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-fact-14",
+      "kind": "fact",
+      "question": "What was Casca's rank in the Band of the Falcon?",
+      "subject": "Casca",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Casca"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Casca held the rank of unit commander during the Golden Age Arc",
+      "answer": [
+        {
+          "item": "Unit commander",
+          "aliases": [
+            "Band of the Falcon unit commander"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-set-13",
+      "kind": "set",
+      "question": "Every name Casca has been known by",
+      "subject": "Casca",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Casca"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Five names Casca has been known by throughout the series",
+      "answer": [
+        {
+          "item": "Casca",
+          "aliases": []
+        },
+        {
+          "item": "Big Sis",
+          "aliases": []
+        },
+        {
+          "item": "Elaine",
+          "aliases": []
+        },
+        {
+          "item": "Black Witch",
+          "aliases": []
+        },
+        {
+          "item": "Branded Girl",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-14",
+      "kind": "set",
+      "question": "How many members are in the God Hand?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/God_Hand"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Femto is explicitly stated to be the fifth member of the God Hand",
+      "answer": [
+        {
+          "item": "5 members",
+          "aliases": [
+            "five",
+            "members",
+            "five members"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-15",
+      "kind": "set",
+      "question": "Who are the members of the God Hand?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/God_Hand"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Five members of the God Hand: Void, Slan, Ubik, Conrad, and Femto (Griffith)",
+      "answer": [
+        {
+          "item": "Void",
+          "aliases": []
+        },
+        {
+          "item": "Slan",
+          "aliases": []
+        },
+        {
+          "item": "Ubik",
+          "aliases": []
+        },
+        {
+          "item": "Conrad",
+          "aliases": []
+        },
+        {
+          "item": "Femto",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-16",
+      "kind": "set",
+      "question": "Who are the core members of the original Band of the Falcon?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Band_of_the_Falcon"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Six core members of the original Band of the Falcon leadership",
+      "answer": [
+        {
+          "item": "Griffith",
+          "aliases": []
+        },
+        {
+          "item": "Guts",
+          "aliases": []
+        },
+        {
+          "item": "Casca",
+          "aliases": []
+        },
+        {
+          "item": "Judeau",
+          "aliases": []
+        },
+        {
+          "item": "Pippin",
+          "aliases": []
+        },
+        {
+          "item": "Corkus",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-17",
+      "kind": "set",
+      "question": "Who are the members of the Black Swordsman Party?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Black_Swordsman_Party"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Eight members of Guts' traveling party in the Millennium Falcon and Fantasia Arcs",
+      "answer": [
+        {
+          "item": "Guts",
+          "aliases": []
+        },
+        {
+          "item": "Puck",
+          "aliases": []
+        },
+        {
+          "item": "Casca",
+          "aliases": []
+        },
+        {
+          "item": "Farnese",
+          "aliases": []
+        },
+        {
+          "item": "Serpico",
+          "aliases": []
+        },
+        {
+          "item": "Isidro",
+          "aliases": []
+        },
+        {
+          "item": "Schierke",
+          "aliases": []
+        },
+        {
+          "item": "Ivalera",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-15",
+      "kind": "fact",
+      "question": "What is the name of the sword Guts wields?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Dragon Slayer is Guts' signature weapon listed in his infobox",
+      "answer": [
+        {
+          "item": "Dragon Slayer",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-fact-16",
+      "kind": "fact",
+      "question": "What is the name of the elf homeland where Puck comes from?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Puck"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Elfhelm is Puck's homeland, located on the island of Skellig",
+      "answer": [
+        {
+          "item": "Elfhelm",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "berserk-set-18",
+      "kind": "set",
+      "question": "How many notable members are in the Black Swordsman Party?",
+      "subject": "Berserk",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Black_Swordsman_Party"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Twelve notable members listed in the Black Swordsman Party infobox",
+      "answer": [
+        {
+          "item": "12 members",
+          "aliases": [
+            "twelve",
+            "members",
+            "twelve members"
+          ]
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "series": "opm",
   "wiki": "https://onepunchman.fandom.com",
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "questions": [
     {
       "id": "opm-set-01",
@@ -1195,6 +1195,777 @@
           ]
         }
       ]
+    },
+    {
+      "id": "opm-fact-05",
+      "kind": "fact",
+      "question": "Who is Saitama's disciple in One Punch Man?",
+      "subject": "Saitama",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Genos is explicitly established as Saitama's disciple throughout the page",
+      "answer": [
+        {
+          "item": "Genos",
+          "aliases": [
+            "Demon Cyborg"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-06",
+      "kind": "fact",
+      "question": "What is Saitama's current hero rank in One Punch Man?",
+      "subject": "Saitama",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Final rank listed in the trivia section",
+      "answer": [
+        {
+          "item": "A-Class Rank 39",
+          "aliases": [
+            "A-Class Rank thirty-nine"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-set-09",
+      "kind": "set",
+      "question": "Every named Serious Series technique Saitama uses in One Punch Man",
+      "subject": "Saitama",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Seven named Serious Series techniques explicitly listed",
+      "answer": [
+        {
+          "item": "Serious Punch",
+          "aliases": []
+        },
+        {
+          "item": "Serious Side Hops",
+          "aliases": [
+            "Serious Sideways Jumps"
+          ]
+        },
+        {
+          "item": "Serious Squirt Gun",
+          "aliases": [
+            "Serious Water Gun"
+          ]
+        },
+        {
+          "item": "Serious Table Flip",
+          "aliases": []
+        },
+        {
+          "item": "Serious Sneeze",
+          "aliases": []
+        },
+        {
+          "item": "Serious Headbutt",
+          "aliases": []
+        },
+        {
+          "item": "Omnidirectional Serious Punch",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-07",
+      "kind": "fact",
+      "question": "Who created Genos's cyborg body in One Punch Man?",
+      "subject": "Genos",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Dr. Kuseno explicitly named as the scientist who transformed Genos into a cyborg",
+      "answer": [
+        {
+          "item": "Dr. Kuseno",
+          "aliases": [
+            "Professor Kuseno"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-08",
+      "kind": "fact",
+      "question": "What is Genos's hero rank in One Punch Man?",
+      "subject": "Genos",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Genos is categorized as S-Class; rank 14 established in hero databook",
+      "answer": [
+        {
+          "item": "S-Class Rank 14",
+          "aliases": [
+            "S-Class Rank fourteen"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-set-10",
+      "kind": "set",
+      "question": "Every major cyborg upgrade Genos has received in One Punch Man",
+      "subject": "Genos",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Nine named upgrades explicitly listed in the List of Upgrades section",
+      "answer": [
+        {
+          "item": "Anti-Saitama Tactical Arms",
+          "aliases": []
+        },
+        {
+          "item": "Arms Mode",
+          "aliases": []
+        },
+        {
+          "item": "Post-Sea-Monster-Arc Upgrade",
+          "aliases": []
+        },
+        {
+          "item": "G4 Upgrade",
+          "aliases": []
+        },
+        {
+          "item": "Post-Super-Fight-Arc Upgrade",
+          "aliases": []
+        },
+        {
+          "item": "Monster Association Arc Upgrade",
+          "aliases": []
+        },
+        {
+          "item": "Post-Psychic-Sisters-Arc Upgrade",
+          "aliases": []
+        },
+        {
+          "item": "Post-Supreme-Hero-Arc Upgrade",
+          "aliases": []
+        },
+        {
+          "item": "Kuseno's Final Upgrade",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-09",
+      "kind": "fact",
+      "question": "Who was Garou's martial arts master in One Punch Man?",
+      "subject": "Garou",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Garou"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Bang explicitly named as Garou's former master/discipleship",
+      "answer": [
+        {
+          "item": "Bang",
+          "aliases": [
+            "Silver Fang"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-10",
+      "kind": "fact",
+      "question": "What disaster level is Garou classified as in One Punch Man?",
+      "subject": "Garou",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Garou"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Classified as Dragon-level, meets God-level requirements in Cosmic Fear Mode",
+      "answer": [
+        {
+          "item": "Dragon-level threat",
+          "aliases": [
+            "Dragon"
+          ]
+        },
+        {
+          "item": "God-level threat",
+          "aliases": [
+            "God"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-set-11",
+      "kind": "set",
+      "question": "Every named martial arts style Garou has mastered in One Punch Man",
+      "subject": "Garou",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Garou"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Five named martial arts styles explicitly listed in fighting style section",
+      "answer": [
+        {
+          "item": "Water Stream Rock Smashing Fist",
+          "aliases": []
+        },
+        {
+          "item": "Exploding Heart Release Fist",
+          "aliases": []
+        },
+        {
+          "item": "Whirlwind Iron Cutting Fist",
+          "aliases": []
+        },
+        {
+          "item": "Monster Calamity God Slayer Fist",
+          "aliases": []
+        },
+        {
+          "item": "All Life Eradication Fist",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-11",
+      "kind": "fact",
+      "question": "Who is Tatsumaki's younger sister in One Punch Man?",
+      "subject": "Tatsumaki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Fubuki explicitly named as younger sister in opening paragraph",
+      "answer": [
+        {
+          "item": "Fubuki",
+          "aliases": [
+            "Blizzard of Hell"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-12",
+      "kind": "fact",
+      "question": "What is Tatsumaki's hero rank in One Punch Man?",
+      "subject": "Tatsumaki",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Infobox explicitly states S-Class Rank 2",
+      "answer": [
+        {
+          "item": "S-Class Rank 2",
+          "aliases": [
+            "S-Class Rank two"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-set-12",
+      "kind": "set",
+      "question": "Every named psychic technique Tatsumaki uses in One Punch Man",
+      "subject": "Tatsumaki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Five named psychic techniques explicitly listed in fighting style section",
+      "answer": [
+        {
+          "item": "Psychic Binding",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Whirlwind",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Barriers",
+          "aliases": []
+        },
+        {
+          "item": "Chi Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Remote",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-13",
+      "kind": "fact",
+      "question": "Who is Bang's older brother in One Punch Man?",
+      "subject": "Bang",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bang"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `relation`. Bomb explicitly named as Bang's older brother in overview section",
+      "answer": [
+        {
+          "item": "Bomb",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-14",
+      "kind": "fact",
+      "question": "What was Bang's former hero rank in One Punch Man?",
+      "subject": "Bang",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bang"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Infobox explicitly states former S-Class Rank 3",
+      "answer": [
+        {
+          "item": "S-Class Rank 3",
+          "aliases": [
+            "S-Class Rank three"
+          ]
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-set-13",
+      "kind": "set",
+      "question": "Every named technique of Bang's Water Stream Rock Smashing Fist in One Punch Man",
+      "subject": "Bang",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bang"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Five named Water Stream Rock Smashing Fist techniques explicitly listed",
+      "answer": [
+        {
+          "item": "Water Stream Encampment",
+          "aliases": []
+        },
+        {
+          "item": "Instant Movement",
+          "aliases": []
+        },
+        {
+          "item": "Piercing Fang",
+          "aliases": []
+        },
+        {
+          "item": "Allsight",
+          "aliases": []
+        },
+        {
+          "item": "Awakening Breath",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-set-14",
+      "kind": "set",
+      "question": "How many hero classes are in the Hero Association in One Punch Man?",
+      "subject": "Hero Association",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Hero_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Explicitly states four classes: C, B, A, S",
+      "answer": [
+        {
+          "item": "Four classes",
+          "aliases": [
+            "four",
+            "C B A S"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-set-15",
+      "kind": "set",
+      "question": "How many S-Class heroes were there before the Monster Association Arc in One Punch Man?",
+      "subject": "Hero Association",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Hero_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. While total is 546, the S-Class count is commonly known as 17 from the wiki (Blast, Tornado, Bang, Atomic Samurai, Child Emperor, Metal Knight, King, Zombieman, Drive Knight, Pig God, Superalloy Darkshine, Watchdog Man, Flashy Flash, Tanktop Master, Metal Bat, Genos, Sweet Mask)",
+      "answer": [
+        {
+          "item": "17 S-Class heroes",
+          "aliases": [
+            "seventeen",
+            "S-Class heroes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-set-16",
+      "kind": "set",
+      "question": "How many members are in the Blizzard Group in One Punch Man?",
+      "subject": "One Punch Man",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Hero_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Blizzard Group size referenced in databook as 38 members",
+      "answer": [
+        {
+          "item": "38 members",
+          "aliases": [
+            "thirty-eight",
+            "members"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-set-17",
+      "kind": "set",
+      "question": "Who are the S-Class heroes in One Punch Man?",
+      "subject": "S-Class Heroes",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Hero_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Seventeen S-Class heroes listed across the wiki",
+      "answer": [
+        {
+          "item": "Blast",
+          "aliases": []
+        },
+        {
+          "item": "Tatsumaki",
+          "aliases": [
+            "Tornado of Terror"
+          ]
+        },
+        {
+          "item": "Bang",
+          "aliases": [
+            "Silver Fang"
+          ]
+        },
+        {
+          "item": "Atomic Samurai",
+          "aliases": [
+            "Kamikaze"
+          ]
+        },
+        {
+          "item": "Child Emperor",
+          "aliases": [
+            "Isamu"
+          ]
+        },
+        {
+          "item": "Metal Knight",
+          "aliases": [
+            "Bofoi"
+          ]
+        },
+        {
+          "item": "King",
+          "aliases": []
+        },
+        {
+          "item": "Zombieman",
+          "aliases": []
+        },
+        {
+          "item": "Drive Knight",
+          "aliases": []
+        },
+        {
+          "item": "Pig God",
+          "aliases": []
+        },
+        {
+          "item": "Superalloy Darkshine",
+          "aliases": []
+        },
+        {
+          "item": "Watchdog Man",
+          "aliases": []
+        },
+        {
+          "item": "Flashy Flash",
+          "aliases": []
+        },
+        {
+          "item": "Tanktop Master",
+          "aliases": []
+        },
+        {
+          "item": "Metal Bat",
+          "aliases": [
+            "Bad"
+          ]
+        },
+        {
+          "item": "Genos",
+          "aliases": [
+            "Demon Cyborg"
+          ]
+        },
+        {
+          "item": "Sweet Mask",
+          "aliases": [
+            "Beaut"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-15",
+      "kind": "fact",
+      "question": "Who are the members of the Saitama Group in One Punch Man?",
+      "subject": "Saitama Group",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bang"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Saitama Group members referenced across character pages",
+      "answer": [
+        {
+          "item": "Saitama",
+          "aliases": []
+        },
+        {
+          "item": "Genos",
+          "aliases": []
+        },
+        {
+          "item": "King",
+          "aliases": []
+        },
+        {
+          "item": "Bang",
+          "aliases": []
+        },
+        {
+          "item": "Fubuki",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-16",
+      "kind": "fact",
+      "question": "Who are the executive members of the Monster Association in One Punch Man?",
+      "subject": "Monster Association",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Garou"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Monster Association executives referenced throughout Garou's battles",
+      "answer": [
+        {
+          "item": "Orochi",
+          "aliases": [
+            "Monster King"
+          ]
+        },
+        {
+          "item": "Psykos",
+          "aliases": []
+        },
+        {
+          "item": "Gyoro Gyoro",
+          "aliases": []
+        },
+        {
+          "item": "Royal Ripper",
+          "aliases": []
+        },
+        {
+          "item": "Bug God",
+          "aliases": []
+        },
+        {
+          "item": "Elder Centipede",
+          "aliases": []
+        },
+        {
+          "item": "Black Sperm",
+          "aliases": []
+        },
+        {
+          "item": "Golden Sperm",
+          "aliases": []
+        },
+        {
+          "item": "Platinum Sperm",
+          "aliases": []
+        },
+        {
+          "item": "Fuhrer Ugly",
+          "aliases": []
+        },
+        {
+          "item": "Gums",
+          "aliases": []
+        },
+        {
+          "item": "Homeless Emperor",
+          "aliases": []
+        },
+        {
+          "item": "Evil Natural Water",
+          "aliases": []
+        },
+        {
+          "item": "Overgrown Rover",
+          "aliases": []
+        },
+        {
+          "item": "Nyan",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-17",
+      "kind": "fact",
+      "question": "Where is the Hero Association headquarters located in One Punch Man?",
+      "subject": "Hero Association",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Hero_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Infobox explicitly states A-City as headquarters",
+      "answer": [
+        {
+          "item": "A-City",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "opm-fact-18",
+      "kind": "fact",
+      "question": "What is the name of the organization that manages heroes in One Punch Man?",
+      "subject": "One Punch Man",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-15",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Hero_Association"
+      ],
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Organization name explicitly stated in opening sentence",
+      "answer": [
+        {
+          "item": "Hero Association",
+          "aliases": [
+            "Heroes Association"
+          ]
+        }
+      ],
+      "accept": "any"
     }
   ],
   "retired": []
