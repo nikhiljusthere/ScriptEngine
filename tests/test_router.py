@@ -111,6 +111,55 @@ class TestRoute:
             pytest.skip(f"{series} is not indexed")
         assert route(paths, query).mode == "roster"
 
+    @pytest.mark.parametrize(
+        "series,query",
+        [
+            ("hxh", "Who are the members of the Phantom Troupe?"),
+            ("bleach", "Who are the current Gotei 13 captains?"),
+            ("opm", "Who are the S-Class heroes in One Punch Man?"),
+            # No enumeration word at all -- the plural noun is the only cue.
+            ("jjk", "What are Sukuna's named cursed techniques?"),
+            ("onepiece", "Who are the current members of the Straw Hat Pirates?"),
+        ],
+    )
+    def test_a_plural_question_asks_for_the_list(self, series, query):
+        """"Who are the members of X" is "Every member of X" with a question mark.
+
+        Every one of these returned **zero** members before, because rule 3
+        claims any interrogative for `qa` before the enumeration test is
+        reached. Asked as a statement the same sets return 11 to 23. The bank
+        could not see it: all 103 of its set questions opened with "Every".
+        """
+        from scriptengine.config import series_paths
+
+        paths = series_paths(series)
+        if not paths.facts_db.exists():
+            pytest.skip(f"{series} is not indexed")
+        assert route(paths, query).mode == "roster"
+
+    @pytest.mark.parametrize(
+        "series,query",
+        [
+            ("jjk", "What is Sukuna's Domain Expansion?"),
+            ("db", "Who taught Goku the Kaio-ken?"),
+            ("onepiece", "Who killed Ace?"),
+            ("bleach", "Who is the current Captain-Commander of the Gotei 13?"),
+        ],
+    )
+    def test_a_singular_question_is_still_a_lookup(self, series, query):
+        """The verb's number is the whole discriminator.
+
+        Widening the plural rule to every wh-question would swallow the lookups
+        rule 3 exists to protect -- "what grade of sorcerer **is** Yuji" reads
+        as an enumeration and is not one.
+        """
+        from scriptengine.config import series_paths
+
+        paths = series_paths(series)
+        if not paths.facts_db.exists():
+            pytest.skip(f"{series} is not indexed")
+        assert route(paths, query).mode == "qa"
+
     def test_the_reason_is_reported(self):
         from scriptengine.config import series_paths
 

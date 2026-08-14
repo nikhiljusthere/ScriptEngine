@@ -42,6 +42,22 @@ _WH = re.compile(r"^\s*\W*(what|whats|what's|who|whos|who's|which|when|where|why
 # "How many X are there" opens with a wh-word and still wants the set.
 _COUNT = re.compile(r"\bhow many\b", re.I)
 
+# A wh-question whose verb is plural is asking for a list, however it is worded.
+# "Who are the members of the Phantom Troupe" and "What are Sukuna's cursed
+# techniques" are the same request as "Every member of the Phantom Troupe" and
+# "Every cursed technique of Sukuna", and the engine answered the first of each
+# pair with nothing at all: rule 3 below claims every interrogative for `qa`
+# before the enumeration test is reached.
+#
+# That went unseen because all 103 set questions in the bank opened with
+# "Every". Asked both ways, the same six sets returned 0 members as a question
+# and 11 to 23 as a statement.
+#
+# The number is the whole discriminator, which is what keeps this from undoing
+# the rule it sits in front of: "what grade of sorcerer **is** Yuji" stays a
+# lookup, and "who **are** the Zodiacs" does not.
+_PLURAL_WH = re.compile(r"^\s*\W*(who|what|which)\s+(are|were)\b", re.I)
+
 # "Sukuna's Domain Expansion" — whoever owns the attribute is the subject.
 _POSSESSIVE = re.compile(r"\b([A-Za-z][\w.-]*)['’]s\b")
 
@@ -86,6 +102,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     overrides = load_overrides(paths)
     set_shaped = looks_like_enumeration(query)
     interrogative = bool(_WH.match(query or ""))
+    plural_ask = bool(_PLURAL_WH.match(query or ""))
     counting = bool(_COUNT.search(query or ""))
     story_verb = bool(_NARRATIVE_VERBS.search(query or ""))
 
@@ -100,6 +117,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     signals = {
         "set_shaped": set_shaped,
         "interrogative": interrogative,
+        "plural_ask": plural_ask,
         "counting": counting,
         "story_verb": story_verb,
         "subject": subject,
@@ -118,8 +136,10 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
         return Route("roster", "asks how many, which wants the set", signals)
 
     # 3. A wh-question about a thing is a lookup — this is the case the regex
-    #    got wrong, and it has to win over the enumeration cue.
-    if interrogative and not story_verb and subject_type not in _STORY_TYPES:
+    #    got wrong, and it has to win over the enumeration cue. Except when its
+    #    verb is plural, which asks for the list rather than for one thing.
+    if (interrogative and not plural_ask and not story_verb
+            and subject_type not in _STORY_TYPES):
         if subject:
             return Route(
                 "qa",
@@ -135,6 +155,13 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     #    right every time.
     if set_shaped:
         return Route("roster", "asks for a set", signals)
+
+    # 5. A plural question with no enumeration word is still a plural question.
+    #    "What are Sukuna's named cursed techniques" carries none of `every`,
+    #    `all`, `members of` — the plural noun is the only cue — and without
+    #    this it falls past every test above and is answered as an account.
+    if plural_ask:
+        return Route("roster", "asks in the plural, which wants the list", signals)
 
     if interrogative and story_verb:
         return Route("narrative", "asks how something happened", signals)
