@@ -138,3 +138,17 @@ logs/
 # nearly 100 KB of wiki prose per fetch. Finished scripts are filed into the
 # production tree (SCRIPTENGINE_SCRIPTS_ROOT), not here.
 scripts output/
+
+# =========================
+# Measurement runs
+# =========================
+
+# Only the raw dump. `reports/` and `questions/` are deliberately tracked:
+# a run's whole value is comparison against the last one, the artefacts are
+# small, and the answer sheet this pipeline replaces was lost precisely
+# because it lived in a gitignored folder. `answers.md` is the exception --
+# every returned member of every question, regenerable, and long enough to
+# bury the report beside it.
+#
+# Nothing here may be named `out`: `**/out/` above would swallow it silently.
+reports/*/answers.md

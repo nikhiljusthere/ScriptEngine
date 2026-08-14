@@ -13,6 +13,13 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Runnable as a bare script as well as `python -m`, where there is no package
+# for the `scriptengine.config` import below to resolve against.
+if __package__ in (None, ""):  # pragma: no cover - only on the script path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from scriptengine.config import Settings  # noqa: E402
+
 BASE = "http://127.0.0.1:8000"
 BUDGET = 60000
 
@@ -465,7 +472,13 @@ def main() -> None:
         "",
     ]
 
-    destination = Path("scripts output") / filename
+    # Resolved through settings rather than as a CWD-relative literal. The
+    # previous `Path("scripts output")` only worked when this was run from the
+    # repo root, and it wrote measurement output into a gitignored folder --
+    # which is how six earlier answer sheets were lost. Measurement artifacts
+    # belong under `reports/`, with everything else that describes a run.
+    destination = Settings().reports_root / filename
+    destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text("\n".join(out), encoding="utf-8")
     print(f"\nwrote {destination}")
 

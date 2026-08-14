@@ -1,0 +1,971 @@
+{
+  "series": "opm",
+  "wiki": "https://onepunchman.fandom.com",
+  "updated": "2026-08-14",
+  "questions": [
+    {
+      "id": "opm-set-01",
+      "kind": "set",
+      "question": "Every Saitama technique",
+      "subject": "Saitama",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "note": "One of the original seventeen.",
+      "answer": [
+        {
+          "item": "Normal Punch",
+          "aliases": [
+            "ordinary punch"
+          ]
+        },
+        {
+          "item": "Consecutive Normal Punches",
+          "aliases": [
+            "normal punches"
+          ]
+        },
+        {
+          "item": "Serious Punch",
+          "aliases": [
+            "serious series serious punch"
+          ]
+        },
+        {
+          "item": "Serious Sideways Jumps",
+          "aliases": [
+            "sideways jumps"
+          ]
+        },
+        {
+          "item": "Serious Table Flip",
+          "aliases": [
+            "table flip"
+          ]
+        },
+        {
+          "item": "Omnidirectional Serious Punch",
+          "aliases": [
+            "omnidirectional punch"
+          ]
+        },
+        {
+          "item": "Killer Move: Serious Series",
+          "aliases": [
+            "serious series"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "opm-set-02",
+      "kind": "set",
+      "question": "Every technique of Genos",
+      "subject": "Genos",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "note": "One of the original seventeen, and the reason every list in this bank is re-checked against the wiki rather than trusted. `Blazing Charge` and `Arms Gatling` were in this list and are not his -- nor anyone's. The engine was being marked down for not returning techniques that do not exist. Also the case that motivated the plural fold in the scorer: the engine returned `Machine Gun Blow` for the wiki's `Machinegun Blows` and was scored a miss.",
+      "answer": [
+        {
+          "item": "Incineration Cannon",
+          "aliases": [
+            "incinerate"
+          ]
+        },
+        {
+          "item": "Machinegun Blows",
+          "aliases": [
+            "machine gun blows",
+            "machine gun punch"
+          ]
+        },
+        {
+          "item": "Jet Drive Arrow",
+          "aliases": []
+        },
+        {
+          "item": "Rocket Punch",
+          "aliases": []
+        },
+        {
+          "item": "Rocket Stomp",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "opm-set-03",
+      "kind": "set",
+      "question": "Every technique of Garou",
+      "subject": "Garou",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Garou",
+        "https://fandomwire.com/one-punch-man-every-garou-ability-ranked/"
+      ],
+      "note": "Added 2026-08-04. Scored 6/6.",
+      "answer": [
+        {
+          "item": "Water Stream Rock Smashing Fist",
+          "aliases": [
+            "water stream rock smashing"
+          ]
+        },
+        {
+          "item": "Whirlwind Iron Cutting Fist",
+          "aliases": [
+            "whirlwind iron cutting"
+          ]
+        },
+        {
+          "item": "Exploding Heart Release Fist",
+          "aliases": [
+            "exploding heart release"
+          ]
+        },
+        {
+          "item": "Roaring Aura Sky Ripping Fist",
+          "aliases": [
+            "sky ripping fist"
+          ]
+        },
+        {
+          "item": "Cross Fang Dragon Slayer Fist",
+          "aliases": [
+            "dragon slayer fist"
+          ]
+        },
+        {
+          "item": "Tiger Fang True Fist",
+          "aliases": [
+            "tiger fang"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "opm-set-04",
+      "kind": "set",
+      "question": "Every technique of Speed-o'-Sound Sonic",
+      "subject": "Speed-o'-Sound Sonic",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Speed-o%27-Sound_Sonic"
+      ],
+      "note": "Added 2026-08-04.",
+      "answer": [
+        {
+          "item": "Four Shadows Burial",
+          "aliases": [
+            "four shadows"
+          ]
+        },
+        {
+          "item": "Ten Shadows Burial",
+          "aliases": [
+            "ten shadows"
+          ]
+        },
+        {
+          "item": "Scattered Flash Slash",
+          "aliases": []
+        },
+        {
+          "item": "Wind Blade Kick",
+          "aliases": [
+            "wind blade"
+          ]
+        },
+        {
+          "item": "Exploding Shuriken",
+          "aliases": [
+            "explosive shuriken",
+            "bakuretsu shuriken"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "opm-set-05",
+      "kind": "set",
+      "question": "Every current S-Class hero",
+      "subject": "Heroes",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Heroes"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. The wiki's Heroes page states there used to be 17 S-Class heroes and that there are currently 13 after Silver Fang, Child Emperor, Metal Bat and Superalloy Darkshine resigned; the current thirteen are the answer and the four resigned are deliberately excluded.",
+      "absent": [
+        "Silver Fang",
+        "Child Emperor",
+        "Metal Bat",
+        "Superalloy Darkshine"
+      ],
+      "answer": [
+        {
+          "item": "Blast",
+          "aliases": []
+        },
+        {
+          "item": "Tornado of Terror",
+          "aliases": [
+            "tatsumaki"
+          ]
+        },
+        {
+          "item": "Atomic Samurai",
+          "aliases": [
+            "kamikaze"
+          ]
+        },
+        {
+          "item": "Metal Knight",
+          "aliases": [
+            "bofoi"
+          ]
+        },
+        {
+          "item": "King",
+          "aliases": []
+        },
+        {
+          "item": "Zombieman",
+          "aliases": []
+        },
+        {
+          "item": "Drive Knight",
+          "aliases": []
+        },
+        {
+          "item": "Pig God",
+          "aliases": []
+        },
+        {
+          "item": "Watchdog Man",
+          "aliases": []
+        },
+        {
+          "item": "Flashy Flash",
+          "aliases": []
+        },
+        {
+          "item": "Demon Cyborg",
+          "aliases": [
+            "genos"
+          ]
+        },
+        {
+          "item": "Tanktop Master",
+          "aliases": []
+        },
+        {
+          "item": "Puri-Puri Prisoner",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-set-06",
+      "kind": "set",
+      "question": "Every member of the Dark Matter Thieves",
+      "subject": "Dark Matter Thieves",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Dark_Matter_Thieves"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. Follows the wiki's Known Members table: Boros and his three generals plus the Dark Matter Gunner. The rank-and-file ship crew are unnamed and not counted.",
+      "answer": [
+        {
+          "item": "Boros",
+          "aliases": []
+        },
+        {
+          "item": "Geryuganshoop",
+          "aliases": []
+        },
+        {
+          "item": "Melzargard",
+          "aliases": [
+            "melzalgald"
+          ]
+        },
+        {
+          "item": "Groribas",
+          "aliases": []
+        },
+        {
+          "item": "Dark Matter Gunner",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-set-07",
+      "kind": "set",
+      "question": "Every disciple of Atomic Samurai",
+      "subject": "Atomic Samurai",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Kamikaze"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. Atomic Samurai's wiki page (titled Kamikaze) lists three disciples: Iaian, Okamaitachi and Bushidrill.",
+      "answer": [
+        {
+          "item": "Iaian",
+          "aliases": []
+        },
+        {
+          "item": "Okamaitachi",
+          "aliases": []
+        },
+        {
+          "item": "Bushidrill",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-set-08",
+      "kind": "set",
+      "question": "Every member of the House of Evolution",
+      "subject": "House of Evolution",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/House_of_Evolution"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. The wiki's Members table lists ten named members; Subject No. 66 is Zombieman, who left the organization. The Doctor's clone staff are not counted as distinct members.",
+      "answer": [
+        {
+          "item": "Dr. Genus",
+          "aliases": [
+            "genus"
+          ]
+        },
+        {
+          "item": "Carnage Kabuto",
+          "aliases": []
+        },
+        {
+          "item": "Beast King",
+          "aliases": []
+        },
+        {
+          "item": "Armored Gorilla",
+          "aliases": []
+        },
+        {
+          "item": "Kamakyuri",
+          "aliases": []
+        },
+        {
+          "item": "Ground Dragon",
+          "aliases": []
+        },
+        {
+          "item": "Frog Man",
+          "aliases": []
+        },
+        {
+          "item": "Slugerous",
+          "aliases": []
+        },
+        {
+          "item": "Mosquito Girl",
+          "aliases": []
+        },
+        {
+          "item": "Subject No. 66",
+          "aliases": [
+            "zombieman"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-01",
+      "kind": "fact",
+      "question": "Who is Saitama's disciple?",
+      "subject": "Saitama",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "accept": "any",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. Cross-entity relation: Saitama's wiki page lists Genos as his disciple.",
+      "answer": [
+        {
+          "item": "Genos",
+          "aliases": [
+            "demon cyborg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-02",
+      "kind": "fact",
+      "question": "Who gave Genos his cyborg body?",
+      "subject": "Genos",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "accept": "any",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Dr._Kuseno"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. Cross-entity relation: Dr. Kuseno performed surgery on Genos and turned him into a cyborg.",
+      "answer": [
+        {
+          "item": "Dr. Kuseno",
+          "aliases": [
+            "kuseno"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-03",
+      "kind": "fact",
+      "question": "Who is the S-Class Rank 1 hero?",
+      "subject": "Blast",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "accept": "any",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Blast"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. Blast is the S-Class Rank 1 hero, consistent with the wiki's Heroes page: 'The current highest-ranked S-Class hero is Blast'.",
+      "answer": [
+        {
+          "item": "Blast",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-fact-04",
+      "kind": "fact",
+      "question": "Who was the leader of the Dark Matter Thieves?",
+      "subject": "Dark Matter Thieves",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "accept": "any",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Dark_Matter_Thieves"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped. Cross-entity relation: the Dark Matter Thieves were a group of alien invaders led by Boros.",
+      "answer": [
+        {
+          "item": "Boros",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-char-01",
+      "kind": "set",
+      "question": "Every ability of Saitama",
+      "subject": "Saitama",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped, curated 'core': Saitama's page documents a large and open-ended ability set, so this lists the named combat techniques the manga attests. The two style umbrellas (Normal Series; Killer Move: Serious Series) are listed alongside their members, the same treatment hxh-set-03 gives Jajanken and its forms. Broader than opm-set-01, the closed 7-item baseline: this adds the Normal Series umbrella, Serious Side Hops, Serious Squirt Gun, Serious Sneeze, Zero Punch, Time Travel (both currently unusable, documented as such on the page) and Strong Farts (comedic but documented, ch 173). Excluded per manga scoping: webcomic-only names (Serious Headbutt, Serious Spin, Serious Whack-a-Mole, Serious Squat, Two-Handed Consecutive Normal Punches -- the page says the manga simply calls both-handed strikes Consecutive Normal Punches) and Serious Punch², which is a clash effect, not a move. No item here is a word-prefix of another despite the shared 'Serious'/'Normal' stems.",
+      "answer": [
+        {
+          "item": "Normal Series",
+          "aliases": []
+        },
+        {
+          "item": "Normal Punch",
+          "aliases": [
+            "ordinary punch"
+          ]
+        },
+        {
+          "item": "Consecutive Normal Punches",
+          "aliases": [
+            "normal punches"
+          ]
+        },
+        {
+          "item": "Killer Move: Serious Series",
+          "aliases": [
+            "serious series"
+          ]
+        },
+        {
+          "item": "Serious Punch",
+          "aliases": [
+            "serious series serious punch"
+          ]
+        },
+        {
+          "item": "Omnidirectional Serious Punch",
+          "aliases": [
+            "omnidirectional punch"
+          ]
+        },
+        {
+          "item": "Serious Side Hops",
+          "aliases": [
+            "serious sideways jumps",
+            "sideways jumps"
+          ]
+        },
+        {
+          "item": "Serious Squirt Gun",
+          "aliases": [
+            "serious water gun"
+          ]
+        },
+        {
+          "item": "Serious Table Flip",
+          "aliases": [
+            "table flip"
+          ]
+        },
+        {
+          "item": "Serious Sneeze",
+          "aliases": []
+        },
+        {
+          "item": "Zero Punch",
+          "aliases": [
+            "zero pan"
+          ]
+        },
+        {
+          "item": "Time Travel",
+          "aliases": []
+        },
+        {
+          "item": "Strong Farts",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-char-02",
+      "kind": "set",
+      "question": "Every ability of Genos",
+      "subject": "Genos",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped, curated 'core': Genos's page documents a very large ability set (named attacks plus cyborg modification features and upgrade cores), so this lists the named combat techniques the manga attests. Broader than opm-set-02, the closed 5-item baseline: it adds Maximum Gauge, Spiral, Super Spiral and True Spiral Incineration Cannon, Machine Gun Blow (the page's spelling; the baseline lists it as 'Machinegun Blows'), Boost Attack, Dual Blade Rush, Arm Lasers, Lightning Drill Cannon, Lightning Core, Tactical Combination: Promoted Rook and Self-Destruction. The Incineration Cannon family shares one name -- each variant is a separate named attack whose name contains (rather than starts with) 'Incineration Cannon' -- an intentional family relationship, not duplication. Excluded per manga scoping: webcomic-only moves (Super Incineration Cannon, High Voltage Tackle, the Scorching/Floating/Super Magnetic/Freezing/Roaring Dragon cores, Meteor Strike, Final Smash, Heat/Heavy Machine Gun Blow) and anime-only moves (Lightning Eye, High Voltage Fist). Cyborg equipment (Core, Hyper Sensors, Search Eye, Arms Mode, Instant Adhesive Gel, Arms for Chores) are body parts rather than named combat abilities and are not listed.",
+      "answer": [
+        {
+          "item": "Incineration Cannon",
+          "aliases": [
+            "incinerate"
+          ]
+        },
+        {
+          "item": "Maximum Gauge Incineration Cannon",
+          "aliases": [
+            "max gauge incineration cannon"
+          ]
+        },
+        {
+          "item": "Spiral Incineration Cannon",
+          "aliases": [
+            "rasen shokyakuho"
+          ]
+        },
+        {
+          "item": "Super Spiral Incineration Cannon",
+          "aliases": [
+            "ultra spiral incineration cannon"
+          ]
+        },
+        {
+          "item": "True Spiral Incineration Cannon",
+          "aliases": [
+            "shin rasen shokyakuho"
+          ]
+        },
+        {
+          "item": "Machine Gun Blow",
+          "aliases": [
+            "machinegun blows",
+            "mashingan buro"
+          ]
+        },
+        {
+          "item": "Rocket Punch",
+          "aliases": [
+            "rokketo panchi"
+          ]
+        },
+        {
+          "item": "Rocket Stomp",
+          "aliases": [
+            "rokketo sutonpu"
+          ]
+        },
+        {
+          "item": "Boost Attack",
+          "aliases": [
+            "busuto atakku"
+          ]
+        },
+        {
+          "item": "Jet Drive Arrow",
+          "aliases": []
+        },
+        {
+          "item": "Dual Blade Rush",
+          "aliases": [
+            "duaru buredo rasshu"
+          ]
+        },
+        {
+          "item": "Arm Lasers",
+          "aliases": []
+        },
+        {
+          "item": "Lightning Drill Cannon",
+          "aliases": [
+            "senten raiko ho",
+            "piercing lightning cannon"
+          ]
+        },
+        {
+          "item": "Lightning Core",
+          "aliases": [
+            "raiko kaku",
+            "lightning nucleus"
+          ]
+        },
+        {
+          "item": "Tactical Combination: Promoted Rook",
+          "aliases": [
+            "tactical combination dragon king",
+            "senjutsu gattai ryuo"
+          ]
+        },
+        {
+          "item": "Self-Destruction",
+          "aliases": [
+            "jibaku"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-char-03",
+      "kind": "set",
+      "question": "Every ability of Garou",
+      "subject": "Garou",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Garou"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped, curated 'core': Garou's page documents a very large ability set (37 named techniques across his human, monster and cosmic-fear forms), so this lists the named techniques and supernatural powers the manga attests. Broader than opm-set-03, the closed 6-item baseline: it adds Awakening Breath, Self-Styled Martial Arts, Tanktop Blow, Monster Calamity God Slayer Fist and its God Slayer Instant/Ascending Attacks, Great and Extreme Fa Jin, the cosmic-fear All Life Eradication Fist, Nuclear Fission, Nuclear Fission Gravity Knuckle, Gamma Ray Burst, Mode: Saitama and Time Travel, and the copied powers Copy Ability, Portal Creation, Gravity Manipulation and Radiation Emission. The two combined arts are spelled in the page's full 'Whirlwind Water Stream: ...' form. 'Nuclear Fission' is a deliberate word-prefix of 'Nuclear Fission Gravity Knuckle' -- separate attacks, not duplication. Excluded per manga scoping: webcomic-only absorbed techniques (Tiger Fang True Fist -- which opm-set-03 lists -- Purgatory Abyss Fist, Lake-Breaking Ice River Fist, Fool's Path Mountain Range Fist, Ultimate Fist of the Yatagarasu, Pressure Point Killer Fist, Poisonous Ogre Fist, Lone Fist of Prosperity, Fire Dance Bullet Trail Fist, Tanktop Tackle) and the Saitama moves Garou only uses via Mode: Saitama (Consecutive Normal Punches, Serious Punch), which are Saitama's techniques rather than his own. Forms (Cosmic Fear Mode) and generic physical descriptors are not abilities.",
+      "answer": [
+        {
+          "item": "Water Stream Rock Smashing Fist",
+          "aliases": [
+            "water stream rock smashing"
+          ]
+        },
+        {
+          "item": "Awakening Breath",
+          "aliases": [
+            "gousei kohou"
+          ]
+        },
+        {
+          "item": "Whirlwind Iron Cutting Fist",
+          "aliases": [
+            "whirlwind iron cutting"
+          ]
+        },
+        {
+          "item": "Self-Styled Martial Arts",
+          "aliases": [
+            "garyu bujutsu"
+          ]
+        },
+        {
+          "item": "Tanktop Blow",
+          "aliases": [
+            "tankutoppu buro"
+          ]
+        },
+        {
+          "item": "Exploding Heart Release Fist",
+          "aliases": [
+            "exploding heart release"
+          ]
+        },
+        {
+          "item": "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist",
+          "aliases": [
+            "roaring aura sky ripping fist"
+          ]
+        },
+        {
+          "item": "Whirlwind Water Stream: Cross Fang Dragon Slayer Fist",
+          "aliases": [
+            "cross fang dragon slayer fist"
+          ]
+        },
+        {
+          "item": "Monster Calamity God Slayer Fist",
+          "aliases": [
+            "kaigai shinsatsu ken",
+            "killing god fist of monster destruction"
+          ]
+        },
+        {
+          "item": "God Slayer Instant Attack",
+          "aliases": [
+            "shinsatsu shungeki",
+            "god killer swift strike"
+          ]
+        },
+        {
+          "item": "God Slayer Ascending Attack",
+          "aliases": [
+            "shinsatsu shogeki",
+            "god killer rising strike"
+          ]
+        },
+        {
+          "item": "Great Fa Jin",
+          "aliases": [
+            "dai hakkei",
+            "massive fa jin"
+          ]
+        },
+        {
+          "item": "Extreme Fa Jin",
+          "aliases": [
+            "goku hakkei",
+            "mega massive fa jin"
+          ]
+        },
+        {
+          "item": "All Life Eradication Fist",
+          "aliases": [
+            "zen seimeitai konzetsu ken"
+          ]
+        },
+        {
+          "item": "Nuclear Fission",
+          "aliases": [
+            "kakubunretsu"
+          ]
+        },
+        {
+          "item": "Nuclear Fission Gravity Knuckle",
+          "aliases": [
+            "kakubunretsu juryoku ken",
+            "nuclear fission fist of gravity"
+          ]
+        },
+        {
+          "item": "Gamma Ray Burst",
+          "aliases": [
+            "ganma sen basuto"
+          ]
+        },
+        {
+          "item": "Mode: Saitama",
+          "aliases": []
+        },
+        {
+          "item": "Copy Ability",
+          "aliases": []
+        },
+        {
+          "item": "Portal Creation",
+          "aliases": []
+        },
+        {
+          "item": "Gravity Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Radiation Emission",
+          "aliases": []
+        },
+        {
+          "item": "Time Travel",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "opm-char-04",
+      "kind": "set",
+      "question": "Every ability of Tatsumaki",
+      "subject": "Tatsumaki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped, closed. Tatsumaki's page documents a short bounded list of named powers: Psychokinesis with its four named uses (Flight, Psychic Barriers, Telepathy, Chi Manipulation) plus Psychic Remote and the fighting-style technique Psychic Binding. Psychic Whirlwind is excluded because the page describes it only via webcomic evidence ('In the webcomic, by making her psychic signals move in circles...') and the question is manga-scoped. Chi Manipulation is kept: the page presents it as her ability and only compares its effectiveness with the webcomic. Generic physical descriptors (immense speed and reflexes, enhanced stamina) are not named abilities and are excluded.",
+      "answer": [
+        {
+          "item": "Psychokinesis",
+          "aliases": [
+            "telekinesis"
+          ]
+        },
+        {
+          "item": "Flight",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Barriers",
+          "aliases": []
+        },
+        {
+          "item": "Telepathy",
+          "aliases": []
+        },
+        {
+          "item": "Chi Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Remote",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Binding",
+          "aliases": [
+            "nendo kanashibari"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm-char-05",
+      "kind": "set",
+      "question": "Every ability of Bang",
+      "subject": "Bang",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bang"
+      ],
+      "note": "Added 2026-08-14. Manga-scoped, closed. Bang's page documents a short bounded list of named techniques: Water Stream Rock Smashing Fist and its named sub-techniques (Water Stream Encampment, Instant Movement, Piercing Fang, Allsight, Awakening Breath), the separate Exploding Heart Release Fist, and the two combined arts he performs with Bomb (Whirlwind Water Stream: Roaring Aura Sky Ripping Fist and Whirlwind Water Stream: Cross Fang Dragon Slayer Fist) -- the sub-techniques are deliberately listed alongside their parent art, the same treatment hxh-set-03 gives Jajanken. No item here is a word-prefix of another. Water Stream Rock Smashing Fist and Exploding Heart Release Fist also appear in opm-set-03's Garou answer because Garou learned them from Bang; that is a cross-character overlap, not a duplicate.",
+      "answer": [
+        {
+          "item": "Water Stream Rock Smashing Fist",
+          "aliases": [
+            "water stream rock smashing",
+            "fist of flowing water crushed rock"
+          ]
+        },
+        {
+          "item": "Water Stream Encampment",
+          "aliases": [
+            "ryusui jin"
+          ]
+        },
+        {
+          "item": "Instant Movement",
+          "aliases": [
+            "shunshinko"
+          ]
+        },
+        {
+          "item": "Piercing Fang",
+          "aliases": [
+            "gasoshi"
+          ]
+        },
+        {
+          "item": "Allsight",
+          "aliases": [
+            "mikiri"
+          ]
+        },
+        {
+          "item": "Awakening Breath",
+          "aliases": [
+            "gousei kohou"
+          ]
+        },
+        {
+          "item": "Exploding Heart Release Fist",
+          "aliases": [
+            "exploding heart release"
+          ]
+        },
+        {
+          "item": "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist",
+          "aliases": [
+            "roaring aura sky ripping fist"
+          ]
+        },
+        {
+          "item": "Whirlwind Water Stream: Cross Fang Dragon Slayer Fist",
+          "aliases": [
+            "cross fang dragon slayer fist"
+          ]
+        }
+      ]
+    }
+  ],
+  "retired": []
+}

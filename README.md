@@ -138,7 +138,18 @@ python -m scriptengine.cli eval --series jjk
 
 # 9. Serve it to ComfyUI
 python -m scriptengine.api.main
+
+# 10. Measure it against the researched question bank and read the report.
+#     Needs the server from step 9 already running.
+python -m scriptengine.cli canon-run --dry-run     # validates the bank only
+python -m scriptengine.cli canon-run --skip-eval   # writes reports/<run-id>/REPORT.md
 ```
+
+`eval` and `canon-run` answer different questions. `eval` asks "did a change
+break what worked" against the crawl as it exists on disk, and gates the build.
+`canon-run` asks "is the engine right about the series" against answers
+researched online, and is allowed to say no for a long time — it never exits
+non-zero on a bad score.
 
 The crawler asks for **50 pages per request** — MediaWiki's cap for anonymous
 callers — which is the difference between 112 and ~2,500 pages a minute. One
@@ -443,7 +454,11 @@ scriptengine/
                   roster (enumeration), citations (chapter/episode locators)
   llm/            OpenAI-compatible client (Ollama / LM Studio)
   api/            FastAPI service on :8000, plus the script writing rules
-  eval/           gold question sets (jjk, db, onepiece), scoring, catalogue
+  eval/           gold question sets (jjk, db, onepiece), scoring, catalogue,
+                  the questions/ loader, canon scoring, diagnosis and the
+                  report renderer behind `canon-run`
+questions/        the online-canon question bank, one JSON per series (tracked)
+reports/          one folder per measurement run + index.md (tracked)
 series/           one self-contained folder per series (gitignored)
 legacy/           the previous pipeline, kept until Phase 5 proves the new one
 ui/               Electron + React desktop shell

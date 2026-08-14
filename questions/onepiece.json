@@ -1,0 +1,974 @@
+{
+  "series": "onepiece",
+  "wiki": "https://onepiece.fandom.com",
+  "updated": "2026-08-14",
+  "questions": [
+    {
+      "id": "onepiece-set-01",
+      "kind": "set",
+      "question": "Every form of Luffy",
+      "subject": "Monkey D. Luffy",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+      ],
+      "note": "One of the original seventeen. Paired deliberately with `Every Gear of Luffy`: the same set asked two ways, so a difference between them is the topic wording and not the corpus.",
+      "answer": [
+        {
+          "item": "Gear Second",
+          "aliases": [
+            "gear 2",
+            "gear second"
+          ]
+        },
+        {
+          "item": "Gear Third",
+          "aliases": [
+            "gear 3"
+          ]
+        },
+        {
+          "item": "Gear Fourth: Boundman",
+          "aliases": [
+            "boundman",
+            "gear 4 boundman"
+          ]
+        },
+        {
+          "item": "Gear Fourth: Snakeman",
+          "aliases": [
+            "snakeman"
+          ]
+        },
+        {
+          "item": "Gear Fourth: Tankman",
+          "aliases": [
+            "tankman"
+          ]
+        },
+        {
+          "item": "Gear Fifth",
+          "aliases": [
+            "gear 5",
+            "nika",
+            "sun god nika"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "onepiece-set-02",
+      "kind": "set",
+      "question": "Every Gear of Luffy",
+      "subject": "Monkey D. Luffy",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+      ],
+      "note": "The same set as `Every form of Luffy`, asked with the wiki's own word for it.",
+      "answer": [
+        {
+          "item": "Gear Second",
+          "aliases": [
+            "gear 2"
+          ]
+        },
+        {
+          "item": "Gear Third",
+          "aliases": [
+            "gear 3"
+          ]
+        },
+        {
+          "item": "Gear Fourth: Boundman",
+          "aliases": [
+            "boundman",
+            "gear 4"
+          ]
+        },
+        {
+          "item": "Gear Fourth: Snakeman",
+          "aliases": [
+            "snakeman"
+          ]
+        },
+        {
+          "item": "Gear Fourth: Tankman",
+          "aliases": [
+            "tankman"
+          ]
+        },
+        {
+          "item": "Gear Fifth",
+          "aliases": [
+            "gear 5"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "onepiece-set-03",
+      "kind": "set",
+      "question": "Every technique of Zoro",
+      "subject": "Roronoa Zoro",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro"
+      ],
+      "note": "One of the original seventeen, and the clearest corpus-gap case in the bank: scored 1/8, with five items -- Sanzen Sekai, Tatsumaki, Shishi Sonson, Yakkodori and Toro Nagashi -- appearing only on episode and chapter pages, never in his ability prose. No prompt recovers them and a script should not claim them. Compare `Every sword style of Zoro`, which scores 5/5 off the same page.",
+      "answer": [
+        {
+          "item": "Oni Giri",
+          "aliases": [
+            "onigiri"
+          ]
+        },
+        {
+          "item": "Santoryu Ogi: Sanzen Sekai",
+          "aliases": [
+            "sanzen sekai",
+            "three thousand worlds"
+          ]
+        },
+        {
+          "item": "Tatsumaki",
+          "aliases": [
+            "dragon twister"
+          ]
+        },
+        {
+          "item": "Shishi Sonson",
+          "aliases": []
+        },
+        {
+          "item": "Ashura",
+          "aliases": [
+            "asura"
+          ]
+        },
+        {
+          "item": "Yakkodori",
+          "aliases": []
+        },
+        {
+          "item": "Toro Nagashi",
+          "aliases": []
+        },
+        {
+          "item": "King of Hell",
+          "aliases": [
+            "enma"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "onepiece-set-04",
+      "kind": "set",
+      "question": "Every sword style of Zoro",
+      "subject": "Roronoa Zoro",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Three_Sword_Style"
+      ],
+      "note": "Added 2026-08-04, deliberately separate from `Every technique of Zoro`. Sheet 6 found the wiki names his styles in the headings and buries the named attacks, so asking for the styles and asking for the attacks should score very differently. They do -- 5/5 against 1/8 -- which means the miss is the corpus's shape and not the retriever's. This question is also what measured the fixed-English-kind-vocabulary defect: `style` was not in the list, so it scored 0 until series words moved into overrides.yaml.",
+      "answer": [
+        {
+          "item": "Three Sword Style",
+          "aliases": [
+            "santoryu",
+            "three swords style"
+          ]
+        },
+        {
+          "item": "Two Sword Style",
+          "aliases": [
+            "nitoryu",
+            "two swords style"
+          ]
+        },
+        {
+          "item": "One Sword Style",
+          "aliases": [
+            "ittoryu",
+            "one sword style"
+          ]
+        },
+        {
+          "item": "Nine Sword Style",
+          "aliases": [
+            "kyutoryu",
+            "asura"
+          ]
+        },
+        {
+          "item": "King of Hell Three Sword Style",
+          "aliases": [
+            "king of hell"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "onepiece-set-05",
+      "kind": "set",
+      "question": "Every technique of Sanji",
+      "subject": "Sanji",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji/Abilities_and_Powers",
+        "https://onepiece.fandom.com/wiki/Black_Leg_Style/Ifrit_Jambe"
+      ],
+      "note": "Added 2026-08-04.",
+      "answer": [
+        {
+          "item": "Black Leg Style",
+          "aliases": [
+            "black leg"
+          ]
+        },
+        {
+          "item": "Diable Jambe",
+          "aliases": []
+        },
+        {
+          "item": "Ifrit Jambe",
+          "aliases": []
+        },
+        {
+          "item": "Concasse",
+          "aliases": [
+            "concasse"
+          ]
+        },
+        {
+          "item": "Joue Shoot",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "onepiece-set-06",
+      "kind": "set",
+      "question": "Every current Yonko",
+      "subject": "Four Emperors",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Four_Emperors"
+      ],
+      "note": "A current-versus-former membership probe. The Four Emperors page carries the current four in its bounty box -- Shanks, Marshall D. Teach, Buggy and Monkey D. Luffy -- with the former three crossed out: Edward Newgate (dead) and Kaidou and Charlotte Linlin, both toppled at Onigashima. Luffy and Buggy are the two new Emperors. `absent` names the three former holders so a retriever cannot count them as current.",
+      "absent": [
+        "Edward Newgate",
+        "Kaidou",
+        "Charlotte Linlin"
+      ],
+      "answer": [
+        {
+          "item": "Shanks",
+          "aliases": [
+            "red haired shanks",
+            "red hair shanks"
+          ]
+        },
+        {
+          "item": "Marshall D. Teach",
+          "aliases": [
+            "blackbeard"
+          ]
+        },
+        {
+          "item": "Buggy",
+          "aliases": [
+            "buggy the clown",
+            "buggy the star clown"
+          ]
+        },
+        {
+          "item": "Monkey D. Luffy",
+          "aliases": [
+            "straw hat luffy",
+            "straw hat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-set-07",
+      "kind": "set",
+      "question": "Every member of the Straw Hat Pirates",
+      "subject": "Straw Hat Pirates",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates"
+      ],
+      "note": "A short complete crew roster: the Main Crew section asserts the crew currently consists of ten members and names Nefertari Vivi as the one former member, and the Bounties section enumerates all ten by name. `absent` lists Vivi so the former member does not count as current.",
+      "absent": [
+        "Nefertari Vivi"
+      ],
+      "answer": [
+        {
+          "item": "Monkey D. Luffy",
+          "aliases": [
+            "straw hat luffy",
+            "straw hat"
+          ]
+        },
+        {
+          "item": "Roronoa Zoro",
+          "aliases": [
+            "zoro",
+            "pirate hunter zoro"
+          ]
+        },
+        {
+          "item": "Nami",
+          "aliases": [
+            "cat burglar nami"
+          ]
+        },
+        {
+          "item": "Usopp",
+          "aliases": [
+            "god usopp",
+            "sogeking"
+          ]
+        },
+        {
+          "item": "Sanji",
+          "aliases": [
+            "vinsmoke sanji",
+            "black leg sanji",
+            "black leg"
+          ]
+        },
+        {
+          "item": "Tony Tony Chopper",
+          "aliases": [
+            "chopper",
+            "cotton candy lover chopper"
+          ]
+        },
+        {
+          "item": "Nico Robin",
+          "aliases": [
+            "robin",
+            "devil child robin"
+          ]
+        },
+        {
+          "item": "Franky",
+          "aliases": [
+            "iron man franky",
+            "cutty flam"
+          ]
+        },
+        {
+          "item": "Brook",
+          "aliases": [
+            "soul king brook",
+            "humming brook"
+          ]
+        },
+        {
+          "item": "Jinbe",
+          "aliases": [
+            "jimbei",
+            "jimbe",
+            "knight of the sea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-set-08",
+      "kind": "set",
+      "question": "Every member of the Worst Generation",
+      "subject": "Worst Generation",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Worst_Generation"
+      ],
+      "note": "A thinly-filled-category probe with a built-in underfill trap: the wiki defines the Worst Generation as the eleven Supernovas present at Sabaody plus Blackbeard (then a Warlord, soon an Emperor), twelve total, and its bounty box lists all twelve. The Eleven Supernovas page is that same list without Blackbeard, so a retriever that answers 'the supernovas' scores eleven of twelve.",
+      "answer": [
+        {
+          "item": "Marshall D. Teach",
+          "aliases": [
+            "blackbeard"
+          ]
+        },
+        {
+          "item": "Monkey D. Luffy",
+          "aliases": [
+            "straw hat luffy",
+            "straw hat"
+          ]
+        },
+        {
+          "item": "Trafalgar D. Water Law",
+          "aliases": [
+            "law",
+            "trafalgar law"
+          ]
+        },
+        {
+          "item": "Eustass Kid",
+          "aliases": [
+            "captain kid"
+          ]
+        },
+        {
+          "item": "Roronoa Zoro",
+          "aliases": [
+            "zoro",
+            "pirate hunter zoro"
+          ]
+        },
+        {
+          "item": "Scratchmen Apoo",
+          "aliases": [
+            "apoo"
+          ]
+        },
+        {
+          "item": "Capone Bege",
+          "aliases": [
+            "bege",
+            "capone gang bege"
+          ]
+        },
+        {
+          "item": "Jewelry Bonney",
+          "aliases": [
+            "bonney",
+            "jewelry bonnie"
+          ]
+        },
+        {
+          "item": "Basil Hawkins",
+          "aliases": [
+            "hawkins",
+            "the magician"
+          ]
+        },
+        {
+          "item": "X Drake",
+          "aliases": [
+            "xdrake",
+            "drake"
+          ]
+        },
+        {
+          "item": "Killer",
+          "aliases": [
+            "massacre soldier killer"
+          ]
+        },
+        {
+          "item": "Urouge",
+          "aliases": [
+            "mad monk urouge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-01",
+      "kind": "fact",
+      "question": "Who killed Ace?",
+      "subject": "Portgas D. Ace",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Portgas_D._Ace"
+      ],
+      "note": "A cross-entity relation and the alias case this bank was told to carry: the Ace page records that he died at the hands of Admiral Akainu, whose real name is Sakazuki (the wiki files his page under Sakazuki). Both names are accepted.",
+      "answer": [
+        {
+          "item": "Akainu",
+          "aliases": [
+            "sakazuki"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-02",
+      "kind": "fact",
+      "question": "Who gave Luffy his straw hat?",
+      "subject": "Monkey D. Luffy",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+      ],
+      "note": "A cross-entity relation: the Luffy page records that Shanks gifted him his signature straw hat as a symbol of their vow to reunite.",
+      "answer": [
+        {
+          "item": "Shanks",
+          "aliases": [
+            "red haired shanks",
+            "red hair shanks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-03",
+      "kind": "fact",
+      "question": "Who named Chopper?",
+      "subject": "Tony Tony Chopper",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Tony_Tony_Chopper/History"
+      ],
+      "note": "A cross-entity relation: Chopper's History page records that the quack doctor Dr. Hiriluk rescued him and named him, taking him in as his assistant.",
+      "answer": [
+        {
+          "item": "Dr. Hiriluk",
+          "aliases": [
+            "hiriluk",
+            "doctor hiriluk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-fact-04",
+      "kind": "fact",
+      "question": "What is the name of the Roger Pirates' ship?",
+      "subject": "Roger Pirates",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roger_Pirates"
+      ],
+      "note": "The Roger Pirates page names the Oro Jackson in its crew box as the crew's ship.",
+      "answer": [
+        {
+          "item": "Oro Jackson",
+          "aliases": [
+            "orojackson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-char-01",
+      "kind": "set",
+      "question": "Every ability of Monkey D. Luffy",
+      "subject": "Monkey D. Luffy",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+      ],
+      "note": "Scope is `core`: Luffy's named technique list is open-ended -- the Gomu Gomu no Mi technique pages (Gear 2/3/4/5 Techniques) enumerate dozens of named attacks -- so this records the headline abilities the Abilities and Powers page documents rather than every named attack. Differs from `onepiece-set-01` and `onepiece-set-02`, which ask only for the Gears/forms; this set is the full documented ability set: the Devil Fruit itself, the five Gears, the three Haki, Red Hawk and the Voice of All Things.",
+      "answer": [
+        {
+          "item": "Gomu Gomu no Mi",
+          "aliases": [
+            "gomu gomu",
+            "hito hito no mi model nika",
+            "hito hito no mi, model: nika",
+            "nika"
+          ]
+        },
+        {
+          "item": "Gear 2",
+          "aliases": [
+            "gear second"
+          ]
+        },
+        {
+          "item": "Gear 3",
+          "aliases": [
+            "gear third"
+          ]
+        },
+        {
+          "item": "Gear 4",
+          "aliases": [
+            "gear fourth"
+          ]
+        },
+        {
+          "item": "Gear 5",
+          "aliases": [
+            "gear fifth",
+            "sun god nika"
+          ]
+        },
+        {
+          "item": "Supreme King Haki",
+          "aliases": [
+            "conqueror's haki",
+            "conquerors haki",
+            "haoshoku haki"
+          ]
+        },
+        {
+          "item": "Observation Haki",
+          "aliases": [
+            "kenbunshoku haki"
+          ]
+        },
+        {
+          "item": "Armament Haki",
+          "aliases": [
+            "busoshoku haki"
+          ]
+        },
+        {
+          "item": "Red Hawk",
+          "aliases": [
+            "gomu gomu no red hawk"
+          ]
+        },
+        {
+          "item": "Voice of All Things",
+          "aliases": [
+            "voice of everything"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-char-02",
+      "kind": "set",
+      "question": "Every ability of Roronoa Zoro",
+      "subject": "Roronoa Zoro",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro/Abilities_and_Powers"
+      ],
+      "note": "Scope is `core`: Zoro's named attacks run to dozens across his style pages, so this records the named fighting styles and Haki the Abilities and Powers page documents rather than every named attack. Differs from `onepiece-set-03` (named techniques) and `onepiece-set-04` (the five sword styles only); this set adds No Sword Style, Foxfire Style and the three Haki.",
+      "answer": [
+        {
+          "item": "No Sword Style",
+          "aliases": []
+        },
+        {
+          "item": "Three Sword Style",
+          "aliases": [
+            "santoryu",
+            "three swords style"
+          ]
+        },
+        {
+          "item": "King of Hell Three Sword Style",
+          "aliases": [
+            "king of hell"
+          ]
+        },
+        {
+          "item": "Two Sword Style",
+          "aliases": [
+            "nitoryu",
+            "two swords style"
+          ]
+        },
+        {
+          "item": "One Sword Style",
+          "aliases": [
+            "ittoryu",
+            "one sword style"
+          ]
+        },
+        {
+          "item": "Nine Sword Style",
+          "aliases": [
+            "kyutoryu",
+            "asura"
+          ]
+        },
+        {
+          "item": "Foxfire Style",
+          "aliases": []
+        },
+        {
+          "item": "Supreme King Haki",
+          "aliases": [
+            "conqueror's haki",
+            "conquerors haki",
+            "haoshoku haki"
+          ]
+        },
+        {
+          "item": "Armament Haki",
+          "aliases": [
+            "busoshoku haki"
+          ]
+        },
+        {
+          "item": "Observation Haki",
+          "aliases": [
+            "kenbunshoku haki"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-char-03",
+      "kind": "set",
+      "question": "Every ability of Sanji",
+      "subject": "Sanji",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji/Abilities_and_Powers"
+      ],
+      "note": "Scope is `core`: Sanji's Black Leg Style and Ifrit Jambe pages list dozens of named attacks, so this records the named abilities the Abilities and Powers page documents -- the fighting styles, Haki, Hocho Sabaki, the Raid Suit and his genetic modifications. Differs from `onepiece-set-05`, which asks for the named techniques only.",
+      "answer": [
+        {
+          "item": "Black Leg Style",
+          "aliases": [
+            "black leg"
+          ]
+        },
+        {
+          "item": "Diable Jambe",
+          "aliases": []
+        },
+        {
+          "item": "Ifrit Jambe",
+          "aliases": []
+        },
+        {
+          "item": "Hocho Sabaki",
+          "aliases": []
+        },
+        {
+          "item": "Armament Haki",
+          "aliases": [
+            "busoshoku haki"
+          ]
+        },
+        {
+          "item": "Observation Haki",
+          "aliases": [
+            "kenbunshoku haki"
+          ]
+        },
+        {
+          "item": "Supreme King Haki",
+          "aliases": [
+            "conqueror's haki",
+            "conquerors haki",
+            "haoshoku haki"
+          ]
+        },
+        {
+          "item": "Raid Suit",
+          "aliases": [
+            "o soba mask"
+          ]
+        },
+        {
+          "item": "Genetic Modifications",
+          "aliases": [
+            "germa genes"
+          ]
+        },
+        {
+          "item": "Attack Cuisine",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "onepiece-char-04",
+      "kind": "set",
+      "question": "Every ability of Nami",
+      "subject": "Nami",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nami/Abilities_and_Powers"
+      ],
+      "note": "Scope is `closed`: the Abilities and Powers page documents a bounded, named list of weather techniques and Nami's other named abilities, all enumerated here. Word-prefix overlap is deliberate: `Mirage Tempo` is a word-prefix of `Mirage Tempo: Fata Morgana`, and both are separate documented techniques. Video-game-only techniques (Kyoda/Smash) are excluded as non-canon.",
+      "answer": [
+        {
+          "item": "Art of Weather",
+          "aliases": []
+        },
+        {
+          "item": "Clima-Tact",
+          "aliases": []
+        },
+        {
+          "item": "Perfect Clima-Tact",
+          "aliases": []
+        },
+        {
+          "item": "Sorcery Clima-Tact",
+          "aliases": []
+        },
+        {
+          "item": "Mirage Tempo",
+          "aliases": []
+        },
+        {
+          "item": "Thunderbolt Tempo",
+          "aliases": []
+        },
+        {
+          "item": "Mirage Tempo: Fata Morgana",
+          "aliases": [
+            "fata morgana"
+          ]
+        },
+        {
+          "item": "Thunder Lance Tempo",
+          "aliases": []
+        },
+        {
+          "item": "Gust Sword",
+          "aliases": []
+        },
+        {
+          "item": "Thunder Breed Tempo",
+          "aliases": []
+        },
+        {
+          "item": "Heat Egg",
+          "aliases": []
+        },
+        {
+          "item": "Shower Tempo",
+          "aliases": []
+        },
+        {
+          "item": "Milky Road",
+          "aliases": []
+        },
+        {
+          "item": "Shiawase Punch",
+          "aliases": [
+            "happiness punch"
+          ]
+        },
+        {
+          "item": "Impact",
+          "aliases": [
+            "impact shell"
+          ]
+        },
+        {
+          "item": "Mirai Kick",
+          "aliases": [
+            "future kick"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onepiece-char-05",
+      "kind": "set",
+      "question": "Every ability of Usopp",
+      "subject": "Usopp",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Usopp/Abilities_and_Powers"
+      ],
+      "note": "Scope is `closed`: the Abilities and Powers page documents a bounded, named list of Usopp's marksmanship, engineering and tactical skills, his Observation Haki, and his named weapons, all enumerated here. Joke miscellaneous skills (artistic skill, lying, hairdressing, arachnology) are documented but are gags, not combat abilities, so they are excluded.",
+      "answer": [
+        {
+          "item": "Marksmanship",
+          "aliases": []
+        },
+        {
+          "item": "Engineering Expertise",
+          "aliases": []
+        },
+        {
+          "item": "Tactical Skills",
+          "aliases": []
+        },
+        {
+          "item": "Observation Haki",
+          "aliases": [
+            "kenbunshoku haki"
+          ]
+        },
+        {
+          "item": "Ginga Pachinko",
+          "aliases": []
+        },
+        {
+          "item": "Kabuto",
+          "aliases": []
+        },
+        {
+          "item": "Kuro Kabuto",
+          "aliases": []
+        },
+        {
+          "item": "Grow Up Kuro Kabuto",
+          "aliases": [
+            "kuro kabuto chomping grass",
+            "super grow up kuro kabuto"
+          ]
+        },
+        {
+          "item": "Pop Greens",
+          "aliases": []
+        }
+      ]
+    }
+  ],
+  "retired": []
+}

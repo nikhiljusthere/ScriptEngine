@@ -22,6 +22,7 @@ Run against a scores file written by `canon_gold.py`:
 """
 
 import json
+import sqlite3
 import sys
 from collections import Counter
 
@@ -217,12 +218,25 @@ def diagnose(scores_path: str) -> None:
         # The edges the wiki itself wrote: `X -user-> Y`. This is what the
         # ownership path reads, and the difference between "the retriever
         # missed it" and "the wiki never linked it".
+        # `owned_by` returns page titles as plain strings. This read them as
+        # sqlite3.Row -- `row["name"]` on a `str` raises AttributeError, which
+        # the broad `except` below then swallowed, so `owned_names` was empty
+        # on every question of every series and `owned` was never once True.
+        #
+        # It cost less than it looks. The test below is `owned or mine or
+        # heading`, and everything ownership would have caught was already
+        # caught by one of the other two: re-running the 2026-08-04 scores with
+        # and without this fix moves **no** item between buckets and changes
+        # four evidence strings out of fifty. What was lost was the reason, not
+        # the verdict -- "reachable as a 'Megumi Fushiguro' ownership edge"
+        # names an edge the wiki itself wrote, which is a different and more
+        # actionable thing to be told than "reachable as an extracted row".
         try:
             owned_names = {
-                norm(row["name"] if "name" in row.keys() else row[0])
+                norm(row)
                 for row in store.owned_by(character, roster._BELONGS_RELATIONS)
             } if character else set()
-        except Exception:  # noqa: BLE001 - a character with no edges is normal
+        except sqlite3.Error:  # a character with no edges is normal
             owned_names = set()
         own_headings = _own_headings(store, character)
 
@@ -287,6 +301,15 @@ def diagnose(scores_path: str) -> None:
     for store in stores.values():
         store.close()
 
+    # Written before anything is printed. A run that reaches this point has
+    # done the work; a console that cannot render one of these names must not
+    # be able to throw it away. `Shukei: Hakuteiken` and every other title
+    # carrying a macron used to raise UnicodeEncodeError out of the print loop
+    # below on a cp1252 stdout, and the file was written after it.
+    out = scores_path.replace(".json", "_diagnosis.json")
+    with open(out, "w", encoding="utf-8") as handle:
+        json.dump({"buckets": dict(buckets), "items": lines}, handle, indent=2)
+
     width = max((len(line["item"]) for line in lines), default=10)
     current = ""
     for line in lines:
@@ -300,12 +323,14 @@ def diagnose(scores_path: str) -> None:
     print(f"{total} missing canon items")
     for bucket, count in buckets.most_common():
         print(f"  {bucket:15} {count:3}  ({count / total:.0%})")
-
-    out = scores_path.replace(".json", "_diagnosis.json")
-    with open(out, "w", encoding="utf-8") as handle:
-        json.dump({"buckets": dict(buckets), "items": lines}, handle, indent=2)
     print(f"\nwrote {out}")
+    return out
 
 
 if __name__ == "__main__":
+    # Windows stdout defaults to cp1252, and half these wikis romanise with
+    # macrons. Replacing an unrenderable character is right here: the artifact
+    # is already on disk and this is only the human-readable echo of it.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     diagnose(sys.argv[1] if len(sys.argv) > 1 else "canon_scores.json")

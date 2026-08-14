@@ -15,6 +15,8 @@ ScriptEngine/
   series/              one self-contained folder per series (gitignored)
   legacy/              the retired first-generation pipeline, kept for reference
   docs/                architecture and operational docs (this file included)
+  questions/           the online-canon question bank, one JSON per series (tracked)
+  reports/             one folder per measurement run, plus index.md (tracked)
   tests/               pytest suite, mirrors scriptengine/ module layout
   sample scripts/      published reference scripts defining the house style
   scripts output/      gitignored working dir: fetched context + finished scripts
@@ -39,7 +41,8 @@ servers — SQLite and embedded Qdrant only.
 
 | Command | What it does |
 |---|---|
-| `python -m scriptengine.cli <command>` | Typer CLI — `crawl`, `prune`, `audit`, `index`, `classify`, `export`, `query`, `timeline`, `rosters`, `eval`, `catalogue`, `script-path`, `verify`, `cite` |
+| `python -m scriptengine.cli <command>` | Typer CLI — `crawl`, `prune`, `audit`, `index`, `classify`, `export`, `query`, `timeline`, `rosters`, `eval`, `canon-run`, `catalogue`, `script-path`, `verify`, `cite` |
+| `python -m scriptengine.cli canon-run` | Measures the engine against `questions/` and writes a run folder under `reports/`. Refuses to start against a down or stale server; never exits non-zero on a bad score |
 | `python -m scriptengine.api.main` | FastAPI service on `:8000`; `POST /context` is the endpoint that matters |
 | `start_scriptengine.py` / `.bat` | Resolves the venv Python and launches the API without an activation step |
 | `script_writer.ps1` | Interactive or headless tool that calls `/context` and writes `scripts output/current_request.json` |
@@ -79,6 +82,11 @@ servers — SQLite and embedded Qdrant only.
 | `api/context.py` | Assembles the token-budgeted context bundle — the actual product |
 | `api/rules.py` | `VOICE_RULES` / `STYLE_RULES` / `ANNOTATION_RULES` — the script-writing contract shipped with every context bundle |
 | `eval/` | Gold-question regression suite, catalogue generator, canon-recall scoring, script-tag verification |
+| `eval/questions.py` | Loads and validates `questions/<series>.json`. Series are discovered from filenames, so no `.py` file names a series |
+| `eval/canon_gold.py` | Scores the bank against the live server — recall and precision per set question, presence-in-bundle per fact question |
+| `eval/diagnose_misses.py` | Buckets every missing canon item as retrieval gap / unlinked page / extraction gap / corpus gap / gold error |
+| `eval/canon_report.py` | Renders `REPORT.md`: headline, the wrong-answers list, bucket shares, and a generated remediation section that names a real file path per bucket |
+| `eval/canon_run.py` | Orchestrates a run into `reports/<run-id>/`. Owns the server up-check and the staleness guard |
 
 ## Data flow
 

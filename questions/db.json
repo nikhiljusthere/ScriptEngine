@@ -1,0 +1,882 @@
+{
+  "series": "db",
+  "wiki": "https://dragonball.fandom.com",
+  "updated": "2026-08-14",
+  "questions": [
+    {
+      "id": "db-set-01",
+      "kind": "set",
+      "question": "Every form of Goku",
+      "subject": "Goku",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Goku"
+      ],
+      "note": "One of the original seventeen, graded by eye on Sheet 6 before it was scored. The wiki page is the canonical source for the list; the transformations end at True Ultra Instinct, Super manga only.",
+      "answer": [
+        {
+          "item": "Base",
+          "aliases": []
+        },
+        {
+          "item": "Great Ape",
+          "aliases": [
+            "oozaru"
+          ]
+        },
+        {
+          "item": "Kaio-ken",
+          "aliases": [
+            "kaioken",
+            "kaio ken"
+          ]
+        },
+        {
+          "item": "Super Saiyan",
+          "aliases": [
+            "super saiyan 1",
+            "ssj"
+          ]
+        },
+        {
+          "item": "Super Saiyan 2",
+          "aliases": [
+            "super saiyan ii"
+          ]
+        },
+        {
+          "item": "Super Saiyan 3",
+          "aliases": [
+            "super saiyan iii"
+          ]
+        },
+        {
+          "item": "Super Saiyan God",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Blue",
+          "aliases": [
+            "super saiyan god super saiyan",
+            "ssgss"
+          ]
+        },
+        {
+          "item": "Super Saiyan Blue Kaio-ken",
+          "aliases": [
+            "super saiyan blue kaioken"
+          ]
+        },
+        {
+          "item": "Ultra Instinct -Sign-",
+          "aliases": [
+            "ultra instinct sign"
+          ]
+        },
+        {
+          "item": "Mastered Ultra Instinct",
+          "aliases": [
+            "perfected ultra instinct"
+          ]
+        },
+        {
+          "item": "True Ultra Instinct",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-02",
+      "kind": "set",
+      "question": "Every form of Vegeta",
+      "subject": "Vegeta",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Vegeta"
+      ],
+      "note": "One of the original seventeen.",
+      "answer": [
+        {
+          "item": "Base",
+          "aliases": []
+        },
+        {
+          "item": "Great Ape",
+          "aliases": [
+            "oozaru"
+          ]
+        },
+        {
+          "item": "Super Saiyan",
+          "aliases": [
+            "ssj"
+          ]
+        },
+        {
+          "item": "Super Saiyan Second Grade",
+          "aliases": [
+            "super vegeta",
+            "ascended super saiyan"
+          ]
+        },
+        {
+          "item": "Majin Vegeta",
+          "aliases": [
+            "majin"
+          ]
+        },
+        {
+          "item": "Super Saiyan 2",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan 3",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan 4",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan God",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Blue",
+          "aliases": [
+            "ssgss"
+          ]
+        },
+        {
+          "item": "Super Saiyan Blue Evolution",
+          "aliases": [
+            "perfected super saiyan blue",
+            "super saiyan blue evolved"
+          ]
+        },
+        {
+          "item": "Ultra Ego",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-03",
+      "kind": "set",
+      "question": "Every transformation of Frieza",
+      "subject": "Frieza",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Frieza"
+      ],
+      "note": "One of the original seventeen. This question was the measure of the race-vocabulary defect: `Frieza` is a race on this wiki, and the rule keeping race words out of the subject position kept him out of his own question. 2/8 to 7/8 once a race word was allowed to name the subject where the topic does not mark a race itself.",
+      "answer": [
+        {
+          "item": "First Form",
+          "aliases": [
+            "first form frieza"
+          ]
+        },
+        {
+          "item": "Second Form",
+          "aliases": [
+            "second form frieza"
+          ]
+        },
+        {
+          "item": "Third Form",
+          "aliases": [
+            "third form frieza"
+          ]
+        },
+        {
+          "item": "Final Form",
+          "aliases": [
+            "true form",
+            "fourth form"
+          ]
+        },
+        {
+          "item": "100% Full Power",
+          "aliases": [
+            "full power frieza",
+            "100% frieza",
+            "full power"
+          ]
+        },
+        {
+          "item": "Mecha Frieza",
+          "aliases": [
+            "cyborg frieza"
+          ]
+        },
+        {
+          "item": "Golden Frieza",
+          "aliases": [
+            "true golden frieza",
+            "fury golden frieza"
+          ]
+        },
+        {
+          "item": "Black Frieza",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-04",
+      "kind": "set",
+      "question": "Every technique Goku uses",
+      "subject": "Goku",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Goku"
+      ],
+      "note": "Scope is `core`, not `closed`: this is a curated list of eight signature techniques, and the Dragon Ball wiki really does record 194 techniques with Goku as a user. A correct answer scores about 4% precision, so precision is not aggregated over this question. Recall still counts.",
+      "answer": [
+        {
+          "item": "Kamehameha",
+          "aliases": []
+        },
+        {
+          "item": "Spirit Bomb",
+          "aliases": [
+            "genki dama",
+            "super spirit bomb"
+          ]
+        },
+        {
+          "item": "Instant Transmission",
+          "aliases": [
+            "shunkan ido"
+          ]
+        },
+        {
+          "item": "Kaio-ken",
+          "aliases": [
+            "kaioken"
+          ]
+        },
+        {
+          "item": "Dragon Fist",
+          "aliases": [
+            "dragon fist explosion"
+          ]
+        },
+        {
+          "item": "Solar Flare",
+          "aliases": [
+            "taiyoken"
+          ]
+        },
+        {
+          "item": "Afterimage Strike",
+          "aliases": [
+            "afterimage technique"
+          ]
+        },
+        {
+          "item": "Destructo Disc",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-05",
+      "kind": "set",
+      "question": "Every form of Gohan",
+      "subject": "Gohan",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Beast",
+        "https://gamerant.com/dragon-ball-gohan-transformations-explained/"
+      ],
+      "note": "Added 2026-08-04. This question exposed the race-vocabulary defect from the other side: `Gohan` entered the race vocabulary through two pages whose race field reads `1/2 Glind-1/2 Saiyan (Gohan Black)`, so the question stopped being about Gohan at all. A real race is declared by many pages and an accident by two. 0 to 5/6.",
+      "answer": [
+        {
+          "item": "Base",
+          "aliases": []
+        },
+        {
+          "item": "Great Ape",
+          "aliases": [
+            "oozaru"
+          ]
+        },
+        {
+          "item": "Super Saiyan",
+          "aliases": [
+            "ssj"
+          ]
+        },
+        {
+          "item": "Super Saiyan 2",
+          "aliases": [
+            "super saiyan ii"
+          ]
+        },
+        {
+          "item": "Ultimate",
+          "aliases": [
+            "mystic",
+            "potential unleashed",
+            "ultimate gohan"
+          ]
+        },
+        {
+          "item": "Beast",
+          "aliases": [
+            "gohan beast"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-06",
+      "kind": "set",
+      "question": "Every form of Cell",
+      "subject": "Cell",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Cell",
+        "https://www.cbr.com/dbz-cell-strongest-forms/"
+      ],
+      "note": "Added 2026-08-04.",
+      "answer": [
+        {
+          "item": "Imperfect Cell",
+          "aliases": [
+            "imperfect"
+          ]
+        },
+        {
+          "item": "Semi-Perfect Cell",
+          "aliases": [
+            "semi perfect",
+            "semi-perfect"
+          ]
+        },
+        {
+          "item": "Perfect Cell",
+          "aliases": [
+            "perfect"
+          ]
+        },
+        {
+          "item": "Super Perfect Cell",
+          "aliases": [
+            "super perfect"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-07",
+      "kind": "set",
+      "question": "Every form of Majin Buu",
+      "subject": "Majin Buu",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Majin_Buu",
+        "https://www.cbr.com/dragon-ball-majin-buu-forms/",
+        "https://gamerant.com/dragon-ball-all-of-buus-transformations-explained/"
+      ],
+      "note": "Added 2026-08-04, and scored 0/7. Five of the seven are unlinked pages: Innocent Buu, Evil Buu, Super Buu, Kid Buu and Good Buu all exist as their own articles, and nothing ties them to a page called `Majin Buu` -- there is no such page on this wiki. His forms are filed as separate characters, a data shape no character-scoped question can reach. Retrieval resolves the topic to `Kid Buu` and answers from there. Needs an overrides.yaml declaration, not a retriever fix.",
+      "answer": [
+        {
+          "item": "Innocent Buu",
+          "aliases": [
+            "fat buu",
+            "majin buu innocent"
+          ]
+        },
+        {
+          "item": "Evil Buu",
+          "aliases": []
+        },
+        {
+          "item": "Super Buu",
+          "aliases": []
+        },
+        {
+          "item": "Buutenks",
+          "aliases": [
+            "super buu gotenks absorbed"
+          ]
+        },
+        {
+          "item": "Buuhan",
+          "aliases": [
+            "super buu gohan absorbed"
+          ]
+        },
+        {
+          "item": "Kid Buu",
+          "aliases": [
+            "pure buu"
+          ]
+        },
+        {
+          "item": "Good Buu",
+          "aliases": [
+            "mr buu",
+            "majin buu good"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-set-08",
+      "kind": "set",
+      "question": "Every form of Trunks",
+      "subject": "Future Trunks",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Super_Saiyan_Rage",
+        "https://www.cbr.com/dragon-ball-trunks-transformations-ranked/"
+      ],
+      "note": "Added 2026-08-04. Scored 5/5.",
+      "answer": [
+        {
+          "item": "Super Saiyan",
+          "aliases": [
+            "ssj"
+          ]
+        },
+        {
+          "item": "Super Saiyan Second Grade",
+          "aliases": [
+            "ascended super saiyan",
+            "super trunks"
+          ]
+        },
+        {
+          "item": "Super Saiyan Third Grade",
+          "aliases": [
+            "ultra super saiyan"
+          ]
+        },
+        {
+          "item": "Super Saiyan 2",
+          "aliases": []
+        },
+        {
+          "item": "Super Saiyan Rage",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "db-fact-01",
+      "kind": "fact",
+      "question": "Who taught Goku the Kaio-ken?",
+      "subject": "Goku",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Kaio-ken"
+      ],
+      "note": "A cross-entity relation: the question is about a technique's teacher, not Goku's own page. The Kaio-ken page names King Kai as inventor and records that Goku learned it from him during his time in Other World.",
+      "answer": [
+        {
+          "item": "King Kai",
+          "aliases": [
+            "kaio",
+            "kaiō",
+            "north kai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-fact-02",
+      "kind": "fact",
+      "question": "Who created Cell?",
+      "subject": "Cell",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Cell"
+      ],
+      "note": "A cross-entity relation: the Cell page calls him the ultimate creation of Dr. Gero and lists Dr. Gero as creator. Dr. Gero's Supercomputer is named co-creator because it completed him after Gero's death; the creator attribution stays with Gero, which is what the page's own prose says.",
+      "answer": [
+        {
+          "item": "Dr. Gero",
+          "aliases": [
+            "android 20",
+            "doctor gero"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-fact-03",
+      "kind": "fact",
+      "question": "What is the name of Goku's father?",
+      "subject": "Goku",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Bardock"
+      ],
+      "note": "The Bardock page states plainly that he is the father of Raditz and Goku.",
+      "answer": [
+        {
+          "item": "Bardock",
+          "aliases": [
+            "burdock",
+            "badakku"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-fact-04",
+      "kind": "fact",
+      "question": "Who is Beerus's attendant?",
+      "subject": "Beerus",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Whis"
+      ],
+      "note": "A cross-entity relation: the Whis page names him the Guide Angel Attendant of Universe 7's God of Destruction, Beerus.",
+      "answer": [
+        {
+          "item": "Whis",
+          "aliases": [
+            "uisu",
+            "universe 7 angel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-char-01",
+      "kind": "set",
+      "question": "Every ability of Goku",
+      "subject": "Goku",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Goku/Power_and_Abilities"
+      ],
+      "note": "Scope is `core`: the Dragon Ball wiki records 194 techniques with Goku as a user, and the Power and Abilities page's Techniques tab is the curated shortlist this question records. Differs from `db-set-04` (`Every technique Goku uses`), a hand-picked eight from the main page; this set is the eight the abilities sub-page itself documents, replacing Solar Flare, Afterimage Strike and Destructo Disc with Rock, Scissors 'N' Paper, Evil Containment Wave and Autonomous Ultra Instinct. Differs from `db-set-01`, which asks for forms.",
+      "answer": [
+        {
+          "item": "Rock, Scissors 'N' Paper",
+          "aliases": [
+            "jan ken",
+            "janken"
+          ]
+        },
+        {
+          "item": "Kamehameha",
+          "aliases": []
+        },
+        {
+          "item": "Kaio-ken",
+          "aliases": [
+            "kaioken",
+            "kaiōken"
+          ]
+        },
+        {
+          "item": "Spirit Bomb",
+          "aliases": [
+            "genki dama",
+            "genki-dama"
+          ]
+        },
+        {
+          "item": "Instant Transmission",
+          "aliases": [
+            "shunkan ido",
+            "shunkan idō"
+          ]
+        },
+        {
+          "item": "Dragon Fist",
+          "aliases": [
+            "ryūken",
+            "ryuuken"
+          ]
+        },
+        {
+          "item": "Evil Containment Wave",
+          "aliases": [
+            "mafūba",
+            "mafuba"
+          ]
+        },
+        {
+          "item": "Autonomous Ultra Instinct",
+          "aliases": [
+            "migatte no goku'i",
+            "migatte no gokui"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-char-02",
+      "kind": "set",
+      "question": "Every ability of Vegeta",
+      "subject": "Vegeta",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Vegeta/Power_and_Abilities"
+      ],
+      "note": "Scope is `core`: the wiki's `List of techniques used by Vegeta` records 118 distinct techniques with Vegeta as a user, so the ten named in the Power and Abilities page's Techniques tab are a curated shortlist. Differs from `db-set-02`, which asks for forms.",
+      "answer": [
+        {
+          "item": "Galick Gun",
+          "aliases": [
+            "gyarikku hō"
+          ]
+        },
+        {
+          "item": "Lucora Gun",
+          "aliases": [
+            "renzoku energy dan"
+          ]
+        },
+        {
+          "item": "Big Bang Attack",
+          "aliases": [
+            "biggu ban atakku"
+          ]
+        },
+        {
+          "item": "Final Flash",
+          "aliases": [
+            "fainaru furasshu"
+          ]
+        },
+        {
+          "item": "Final Impact",
+          "aliases": [
+            "fainaru inpakuto",
+            "atomic flash"
+          ]
+        },
+        {
+          "item": "Gamma Burst Flash",
+          "aliases": [
+            "ganma bāsuto furasshu"
+          ]
+        },
+        {
+          "item": "Spirit Control",
+          "aliases": [
+            "supiritto no kontorōru"
+          ]
+        },
+        {
+          "item": "Hakai",
+          "aliases": []
+        },
+        {
+          "item": "Ultra Ego",
+          "aliases": [
+            "wagamama no gokui"
+          ]
+        },
+        {
+          "item": "Final Shine Attack",
+          "aliases": [
+            "fainaru shain atakku"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-char-03",
+      "kind": "set",
+      "question": "Every ability of Gohan",
+      "subject": "Gohan",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Gohan/Power_and_Abilities"
+      ],
+      "note": "Scope is `core`: the wiki's `List of techniques used by Gohan` records 91 distinct techniques with Gohan as a user, and the Power and Abilities page's Techniques tab documents a curated shortlist of three. Differs from `db-set-05`, which asks for forms.",
+      "answer": [
+        {
+          "item": "Masenko",
+          "aliases": [
+            "masenkō"
+          ]
+        },
+        {
+          "item": "Kamehameha",
+          "aliases": []
+        },
+        {
+          "item": "Special Beam Cannon",
+          "aliases": [
+            "makankōsappō",
+            "makankosappo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "db-char-04",
+      "kind": "set",
+      "question": "Every ability of Piccolo",
+      "subject": "Piccolo",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Piccolo/Power_and_Abilities"
+      ],
+      "note": "Scope is `core`: the wiki's `List of techniques used by Piccolo` records 55 distinct techniques with Piccolo as a user, so the seven named in the Power and Abilities page's Techniques tab are a curated shortlist. `Risking it all for a friend` is a defensive maneuver the wiki names as a technique on the same tab.",
+      "answer": [
+        {
+          "item": "Masenko",
+          "aliases": [
+            "masenkō"
+          ]
+        },
+        {
+          "item": "Regeneration",
+          "aliases": [
+            "sai sei"
+          ]
+        },
+        {
+          "item": "Hyper Explosive Demon Wave",
+          "aliases": [
+            "chōbakuretsumaha",
+            "chobakuretsumaha"
+          ]
+        },
+        {
+          "item": "Special Beam Cannon",
+          "aliases": [
+            "makankōsappō"
+          ]
+        },
+        {
+          "item": "Risking it all for a friend",
+          "aliases": []
+        },
+        {
+          "item": "Hellzone Grenade",
+          "aliases": [
+            "makūhōidan"
+          ]
+        },
+        {
+          "item": "Light Grenade",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "db-char-05",
+      "kind": "set",
+      "question": "Every ability of Frieza",
+      "subject": "Frieza",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Frieza/Power_and_Abilities"
+      ],
+      "note": "Scope is `core`: the wiki's `List of techniques used by Frieza` records 101 distinct techniques with Frieza as a user, so the six named in the Power and Abilities page's Techniques tab are a curated shortlist. `Psychokinesis` is the tab's heading for his telekinesis, which the page links to the Telekinesis article. Differs from `db-set-03`, which asks for transformations.",
+      "answer": [
+        {
+          "item": "Death Beam",
+          "aliases": [
+            "desubīmu"
+          ]
+        },
+        {
+          "item": "Death Ball",
+          "aliases": [
+            "desu bōru"
+          ]
+        },
+        {
+          "item": "Death Cannon",
+          "aliases": []
+        },
+        {
+          "item": "Psychokinesis",
+          "aliases": [
+            "telekinesis"
+          ]
+        },
+        {
+          "item": "Nova Strike",
+          "aliases": [
+            "nova sutoraiku"
+          ]
+        },
+        {
+          "item": "Death Saucer",
+          "aliases": [
+            "tsuibi kienzan"
+          ]
+        }
+      ]
+    }
+  ],
+  "retired": []
+}

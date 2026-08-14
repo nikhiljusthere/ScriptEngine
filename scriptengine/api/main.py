@@ -12,6 +12,7 @@ written, so every button on its dashboard was dead.
 from __future__ import annotations
 
 import logging
+from datetime import datetime, timezone
 from typing import Any, Literal
 
 from fastapi import FastAPI, HTTPException
@@ -23,6 +24,11 @@ from scriptengine.index.build import index_status
 from scriptengine.stores.facts import FactStore
 
 logger = logging.getLogger(__name__)
+
+# Import time is process start for this purpose: the module holding the code
+# being measured is loaded exactly once, and reloading it is what a restart
+# does. Reported by `/health` so a measurement can refuse a stale server.
+_STARTED = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 app = FastAPI(
     title="ScriptEngine",
@@ -116,6 +122,13 @@ def health() -> dict[str, Any]:
         "embed_model": settings.embed_model,
         "rerank_model": settings.rerank_model,
         "series": series,
+        # When this process started, so a caller can tell whether it predates
+        # the code it is about to measure. One run of the canon suite was
+        # taken against a stale server and reported no change from a fix that
+        # had in fact worked -- the replacement had exited on a bound port
+        # while the old process kept answering. `cli canon-run` compares this
+        # against the newest mtime under `scriptengine/` and refuses to start.
+        "started": _STARTED,
     }
 
 

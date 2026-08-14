@@ -1,0 +1,619 @@
+{
+  "series": "berserk",
+  "wiki": "https://berserk.fandom.com",
+  "updated": "2026-08-14",
+  "questions": [
+    {
+      "id": "berserk-set-01",
+      "kind": "set",
+      "question": "Every armor of Guts",
+      "subject": "Guts",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "One of the original seventeen. `Black Swordsman Armor` was in this list and is not a thing: `Black Swordsman` is Guts' epithet, not the name of a suit, and the Berserker Armor is the only armour Berserk names. One item, and the engine already returns it.",
+      "answer": [
+        {
+          "item": "Berserker Armor",
+          "aliases": [
+            "berserk armor"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "berserk-set-02",
+      "kind": "set",
+      "question": "Every weapon of Guts",
+      "subject": "Guts",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts",
+        "https://berserk.fandom.com/wiki/Cannon_Arm",
+        "https://berserk.fandom.com/wiki/Dragon_Slayer"
+      ],
+      "note": "Added 2026-08-04, deliberately separate from `Every armor of Guts`, which has one member the engine already answers. This asks for the equipment set instead. Scored 5/5. Note that the Berserk wiki cites cover art and interviews rather than instalments, so nothing here carries a chapter tag -- that is the wiki, not the pipeline, and must not be reported as a defect.",
+      "answer": [
+        {
+          "item": "Dragon Slayer",
+          "aliases": [
+            "dragonslayer"
+          ]
+        },
+        {
+          "item": "Cannon Arm",
+          "aliases": [
+            "arm cannon"
+          ]
+        },
+        {
+          "item": "Repeater Crossbow",
+          "aliases": [
+            "repeating crossbow",
+            "crossbow"
+          ]
+        },
+        {
+          "item": "Throwing Knives",
+          "aliases": [
+            "throwing knife"
+          ]
+        },
+        {
+          "item": "Berserker Armor",
+          "aliases": [
+            "berserk armor"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "berserk-set-03",
+      "kind": "set",
+      "question": "Every member of the God Hand",
+      "subject": "God Hand",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/God_Hand"
+      ],
+      "note": "Added 2026-08-14. The God Hand page's `Key members` section lists exactly these five. The page links Femto directly to /wiki/Griffith -- Femto is Griffith reborn after sacrificing the Band of the Falcon -- so `griffith` is carried as an alias on Femto. Golden Age through Fantasia; nothing here runs past Miura's run.",
+      "answer": [
+        {
+          "item": "Void",
+          "aliases": []
+        },
+        {
+          "item": "Slan",
+          "aliases": []
+        },
+        {
+          "item": "Ubik",
+          "aliases": []
+        },
+        {
+          "item": "Conrad",
+          "aliases": []
+        },
+        {
+          "item": "Femto",
+          "aliases": [
+            "griffith"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-04",
+      "kind": "set",
+      "question": "Every named member of the original Band of the Falcon",
+      "subject": "Band of the Falcon",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Band_of_the_Falcon"
+      ],
+      "note": "Added 2026-08-14. The `Members` section names exactly these fourteen. The wiki appends `Many other unnamed members`, and this roster deliberately asks for the named ones only -- a nameless rank-and-file count cannot be verified. Deaths at the Eclipse are marked with a dagger on the wiki but the names are kept clean. Golden Age arc.",
+      "answer": [
+        {
+          "item": "Griffith",
+          "aliases": []
+        },
+        {
+          "item": "Guts",
+          "aliases": []
+        },
+        {
+          "item": "Casca",
+          "aliases": []
+        },
+        {
+          "item": "Judeau",
+          "aliases": []
+        },
+        {
+          "item": "Pippin",
+          "aliases": []
+        },
+        {
+          "item": "Corkus",
+          "aliases": []
+        },
+        {
+          "item": "Rickert",
+          "aliases": []
+        },
+        {
+          "item": "Gaston",
+          "aliases": []
+        },
+        {
+          "item": "Dante",
+          "aliases": []
+        },
+        {
+          "item": "Errol",
+          "aliases": []
+        },
+        {
+          "item": "Riguel",
+          "aliases": []
+        },
+        {
+          "item": "Dillos",
+          "aliases": []
+        },
+        {
+          "item": "Kim",
+          "aliases": []
+        },
+        {
+          "item": "Sam",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-05",
+      "kind": "set",
+      "question": "Every named member of the reborn Band of the Falcon",
+      "subject": "Band of the Falcon (Reborn)",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Band_of_the_Falcon_(Reborn)"
+      ],
+      "note": "Added 2026-08-14. The `Members` section of the reborn band names exactly these ten; the wiki appends `Many other unnamed members`, excluded for the same reason as in set-04. The band spans the Conviction, Millennium Falcon and Fantasia arcs. `zodd` carries the alias `nosferatu zodd`, which is how the wiki styles him.",
+      "answer": [
+        {
+          "item": "Griffith",
+          "aliases": []
+        },
+        {
+          "item": "Zodd",
+          "aliases": [
+            "nosferatu zodd"
+          ]
+        },
+        {
+          "item": "Grunbeld",
+          "aliases": []
+        },
+        {
+          "item": "Locus",
+          "aliases": []
+        },
+        {
+          "item": "Irvine",
+          "aliases": []
+        },
+        {
+          "item": "Rakshas",
+          "aliases": []
+        },
+        {
+          "item": "Borkoff",
+          "aliases": []
+        },
+        {
+          "item": "Sonia",
+          "aliases": []
+        },
+        {
+          "item": "Mule Wolflame",
+          "aliases": []
+        },
+        {
+          "item": "Jarif",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-06",
+      "kind": "set",
+      "question": "Every member of the Black Swordsman Party",
+      "subject": "Black Swordsman Party",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Black_Swordsman_Party"
+      ],
+      "note": "Added 2026-08-14. The `Key members` infobox lists exactly these twelve. The page states in prose that the Skull Knight is NOT a member of the party -- he only aids the group -- so he is deliberately left out rather than guessed in. Conviction through Fantasia arcs.",
+      "answer": [
+        {
+          "item": "Guts",
+          "aliases": []
+        },
+        {
+          "item": "Casca",
+          "aliases": []
+        },
+        {
+          "item": "Puck",
+          "aliases": []
+        },
+        {
+          "item": "Isidro",
+          "aliases": []
+        },
+        {
+          "item": "Farnese",
+          "aliases": []
+        },
+        {
+          "item": "Serpico",
+          "aliases": []
+        },
+        {
+          "item": "Schierke",
+          "aliases": []
+        },
+        {
+          "item": "Ivalera",
+          "aliases": []
+        },
+        {
+          "item": "Roderick",
+          "aliases": []
+        },
+        {
+          "item": "Magnifico",
+          "aliases": []
+        },
+        {
+          "item": "Azan",
+          "aliases": []
+        },
+        {
+          "item": "Isma",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-07",
+      "kind": "set",
+      "question": "Every member of the Four Kings of the World",
+      "subject": "Four Kings of the World",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Four_Kings_of_the_World"
+      ],
+      "note": "Added 2026-08-14. The `Key members` infobox lists exactly these four; the incantation quoted on the page addresses each in turn, confirming the closed set. Millennium Falcon and Fantasia arcs. A short list, so this doubles as a precision probe.",
+      "answer": [
+        {
+          "item": "King of the East",
+          "aliases": []
+        },
+        {
+          "item": "King of the West",
+          "aliases": []
+        },
+        {
+          "item": "King of the South",
+          "aliases": []
+        },
+        {
+          "item": "King of the North",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-set-08",
+      "kind": "set",
+      "question": "Every type of beherit",
+      "subject": "Beherit",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Beherit"
+      ],
+      "note": "Added 2026-08-14. The Beherit page distinguishes the standard beherit from the Crimson Beherit, described as `unique among beherits` and falling only to those preordained to join the God Hand. The Man-Made Beherit is a separate article about a constructed vessel, not a type of beherit, so it is excluded. Two items is the complete, closed answer.",
+      "answer": [
+        {
+          "item": "Beherit",
+          "aliases": [
+            "behelit"
+          ]
+        },
+        {
+          "item": "Crimson Beherit",
+          "aliases": [
+            "egg of the king"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-01",
+      "kind": "fact",
+      "question": "What is the human identity of the God Hand member Femto?",
+      "subject": "Femto",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/God_Hand"
+      ],
+      "note": "Added 2026-08-14. Cross-entity. The God Hand page lists Femto as a key member and links the name straight to /wiki/Griffith; the Band of the Falcon page records Griffith sacrificing his band to be reborn as the God Hand member Femto. No instalment chapter because the wiki cites cover art and interviews rather than chapter numbers.",
+      "answer": [
+        {
+          "item": "Griffith",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-02",
+      "kind": "fact",
+      "question": "Who forged the Dragon Slayer?",
+      "subject": "Dragon Slayer",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "Added 2026-08-14. Cross-entity. The Guts page records that when his newly-forged sword broke against an apostle, Guts took up `Godot's long-forsaken Dragon Slayer`, naming Godot as the sword's maker. The Dragon Slayer page itself returned HTTP 403 on both fetch attempts, so the Guts page is the cited source.",
+      "answer": [
+        {
+          "item": "Godot",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-03",
+      "kind": "fact",
+      "question": "Who was the first apostle to pledge allegiance to the reborn Griffith?",
+      "subject": "Band of the Falcon (Reborn)",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Band_of_the_Falcon_(Reborn)"
+      ],
+      "note": "Added 2026-08-14. Cross-entity. The reborn band's page states that Zodd knelt before Griffith `in servitude, the first of the reborn band to pledge allegiance to the White Falcon`. Conviction arc.",
+      "answer": [
+        {
+          "item": "Zodd",
+          "aliases": [
+            "nosferatu zodd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "berserk-fact-04",
+      "kind": "fact",
+      "question": "Which member of the original Band of the Falcon was not present at the Eclipse?",
+      "subject": "Band of the Falcon",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Band_of_the_Falcon"
+      ],
+      "note": "Added 2026-08-14. Cross-entity. The page records the band as disbanded with every member dead `excluding Guts, Casca, and Rickert, who was not present for the Eclipse` -- Guts and Casca were present and survived, so Rickert is the unique answer. Golden Age arc.",
+      "answer": [
+        {
+          "item": "Rickert",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-char-01",
+      "kind": "set",
+      "question": "Every ability of Guts",
+      "subject": "Guts",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Guts"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the Abilities section is a bounded named list of five. The page documents Guts' abilities separately from his equipment: berserk-set-01 covers the armor and berserk-set-02 covers the weapons, so the Equipment subsections (Dragon Slayer, Berserker Armor, Cannon Arm, Repeater Crossbow, Throwing Knives, Miniature Bombs) are deliberately left out here. Golden Age through Fantasia arcs only; nothing from the continuation era published after Miura's death.",
+      "answer": [
+        {
+          "item": "Master Swordsman/Tactician",
+          "aliases": []
+        },
+        {
+          "item": "Peak-Human Conditioning",
+          "aliases": []
+        },
+        {
+          "item": "Indomitable Will",
+          "aliases": []
+        },
+        {
+          "item": "Death Defiance",
+          "aliases": []
+        },
+        {
+          "item": "Brand of Sacrifice",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-char-02",
+      "kind": "set",
+      "question": "Every ability of Griffith",
+      "subject": "Griffith",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Griffith"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the Abilities section names exactly these twelve. Spans human Griffith (Golden Age) and Femto (Millennium Falcon and Fantasia arcs), and every ability is established within those arcs, so nothing runs past Miura's run. The Femto abilities (Morality Transcendence, Nigh-Absoluteness, Causal Awareness, Spatial Manipulation, Intangibility, Flight, Communing) are documented on this same page. Equipment is excluded: the page's armors carry a hatnote that their names are conjectural and unestablished, and the sabre has no named variant. Charisma, Beauty and Leadership and Tactics are included because the wiki names them as ability headings.",
+      "answer": [
+        {
+          "item": "Swordsmanship",
+          "aliases": []
+        },
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        },
+        {
+          "item": "Charisma",
+          "aliases": []
+        },
+        {
+          "item": "Beauty",
+          "aliases": []
+        },
+        {
+          "item": "Leadership and Tactics",
+          "aliases": []
+        },
+        {
+          "item": "Morality Transcendence",
+          "aliases": []
+        },
+        {
+          "item": "Nigh-Absoluteness",
+          "aliases": []
+        },
+        {
+          "item": "Causal Awareness",
+          "aliases": []
+        },
+        {
+          "item": "Spatial Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Intangibility",
+          "aliases": []
+        },
+        {
+          "item": "Flight",
+          "aliases": []
+        },
+        {
+          "item": "Communing",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-char-04",
+      "kind": "set",
+      "question": "Every ability of Puck",
+      "subject": "Puck",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Puck"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page's Abilities section names exactly four species traits. All four are established by the Black Swordsman arc and used throughout, with nothing drawn from the continuation era. Elf Dust and Puck Spark are the wiki's own names, not invented entries.",
+      "answer": [
+        {
+          "item": "Flight",
+          "aliases": []
+        },
+        {
+          "item": "Empathy",
+          "aliases": []
+        },
+        {
+          "item": "Elf Dust",
+          "aliases": []
+        },
+        {
+          "item": "Puck Spark",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "berserk-char-05",
+      "kind": "set",
+      "question": "Every ability of Serpico",
+      "subject": "Serpico",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Serpico"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page documents Serpico's abilities through named equipment rather than a named ability list: the Physical Abilities and Tactical Abilities headings are prose with no bolded ability names, so the named entries are the Rapier, Sylph Sword and Sylph Cloak. The Sylph Cloak grants flight and superhuman jumps, and the Sylph Sword cuts with air currents, so the equipment is the ability here. Conviction through Millennium Falcon arcs (the sylph gear comes from Flora); nothing from the continuation era.",
+      "answer": [
+        {
+          "item": "Rapier",
+          "aliases": []
+        },
+        {
+          "item": "Sylph Sword",
+          "aliases": []
+        },
+        {
+          "item": "Sylph Cloak",
+          "aliases": []
+        }
+      ]
+    }
+  ],
+  "retired": []
+}

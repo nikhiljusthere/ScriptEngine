@@ -46,6 +46,14 @@ class Settings(BaseSettings):
     # `.env` (gitignored) rather than here.
     scripts_root: Path = Field(default=REPO_ROOT / "scripts output")
 
+    # The online-canon question bank, and where a measurement run files its
+    # report. Deliberately *not* under `scripts_root`: that one follows `.env`
+    # into the production tree, and a measurement belongs to the repo it
+    # measures. Six earlier answer sheets were lost because they were written
+    # somewhere gitignored; both of these are tracked.
+    questions_root: Path = Field(default=REPO_ROOT / "questions")
+    reports_root: Path = Field(default=REPO_ROOT / "reports")
+
     # ── Crawler ──────────────────────────────────────────────────────────────
     # Ten workers, each requesting 50 pages at a time, is what pulled One
     # Piece's 7,937 pages in three minutes with no rate limiting. Raising these

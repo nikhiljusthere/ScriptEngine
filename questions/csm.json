@@ -1,0 +1,792 @@
+{
+  "series": "csm",
+  "wiki": "https://chainsaw-man.fandom.com",
+  "updated": "2026-08-14",
+  "questions": [
+    {
+      "id": "csm-set-01",
+      "kind": "set",
+      "question": "Every form of Denji",
+      "subject": "Denji",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji"
+      ],
+      "note": "One of the original seventeen. Three items, so a useful precision probe.",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": [
+            "base",
+            "denji"
+          ]
+        },
+        {
+          "item": "Chainsaw Man",
+          "aliases": [
+            "chainsaw man hybrid",
+            "hybrid form"
+          ]
+        },
+        {
+          "item": "Chainsaw Devil",
+          "aliases": [
+            "pochita",
+            "full devil form",
+            "true chainsaw man"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "csm-set-02",
+      "kind": "set",
+      "question": "Every ability of Power",
+      "subject": "Power",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Power",
+        "https://www.cbr.com/power-chainsaw-man/"
+      ],
+      "note": "Added 2026-08-04, and the question that exposed a whole class of subject-resolution failure: Chainsaw Man has a character called Power, so `Every ability of Power` had both of its words struck out as kind words and returned nothing at all. A strict fallback accepting only an outright `character` page now runs when nothing else resolves. 0 to 4/6.",
+      "answer": [
+        {
+          "item": "Blood Manipulation",
+          "aliases": [
+            "blood control"
+          ]
+        },
+        {
+          "item": "Blood Weaponization",
+          "aliases": [
+            "blood weapon",
+            "blood weaponisation"
+          ]
+        },
+        {
+          "item": "Blood Spear",
+          "aliases": []
+        },
+        {
+          "item": "Blood Hammer",
+          "aliases": []
+        },
+        {
+          "item": "Blood Chainsaw",
+          "aliases": []
+        },
+        {
+          "item": "Thousand Tera Blood Rain",
+          "aliases": [
+            "blood rain"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "csm-set-03",
+      "kind": "set",
+      "question": "Every devil contract of Aki Hayakawa",
+      "subject": "Aki Hayakawa",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa",
+        "https://chainsaw-man.fandom.com/wiki/Future_Devil"
+      ],
+      "note": "Added 2026-08-04, and scored 0/3 for a structural reason rather than a retrieval one. The character path returns what his ability sections describe -- Precognition, Summoning, Bullet Projection -- which is what the contracts do. The wiki does not name Fox Devil, Curse Devil and Future Devil as his abilities; it records them as relationships to devils. Needs an overrides.yaml declaration.",
+      "answer": [
+        {
+          "item": "Fox Devil",
+          "aliases": [
+            "kon"
+          ]
+        },
+        {
+          "item": "Curse Devil",
+          "aliases": [
+            "curse"
+          ]
+        },
+        {
+          "item": "Future Devil",
+          "aliases": [
+            "future"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "csm-set-04",
+      "kind": "set",
+      "question": "Every member of the Four Horsemen",
+      "subject": "Four Horsemen",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Four_Horsemen"
+      ],
+      "note": "Precision probe: the wiki's Four Horsemen page lists exactly four members -- Control, War, Famine and Death. The Control Devil spans both parts: Makima (Part 1, killed in the Control Devil arc) and her reincarnation Nayuta (Part 2). The Death Devil initially posed as Famine under the alias Fami, but the Famine Devil is a separate sister.",
+      "answer": [
+        {
+          "item": "Control Devil",
+          "aliases": [
+            "makima",
+            "nayuta"
+          ]
+        },
+        {
+          "item": "War Devil",
+          "aliases": [
+            "yoru"
+          ]
+        },
+        {
+          "item": "Famine Devil",
+          "aliases": [
+            "fami"
+          ]
+        },
+        {
+          "item": "Death Devil",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-05",
+      "kind": "set",
+      "question": "Every Weapon Devil",
+      "subject": "Weapon Devils",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Weapon_Devils"
+      ],
+      "note": "The wiki's Weapon Devils page records exactly seven members, each later fused with a human to become a Hybrid (see csm-set-06). The Chainsaw Devil is deliberately NOT among them -- a common false positive, hence `absent`.",
+      "absent": [
+        "Chainsaw Devil"
+      ],
+      "answer": [
+        {
+          "item": "Katana Devil",
+          "aliases": [
+            "katana man"
+          ]
+        },
+        {
+          "item": "Bomb Devil",
+          "aliases": [
+            "reze"
+          ]
+        },
+        {
+          "item": "Bow Devil",
+          "aliases": [
+            "quanxi"
+          ]
+        },
+        {
+          "item": "Longsword Devil",
+          "aliases": [
+            "miri sugo"
+          ]
+        },
+        {
+          "item": "Flamethrower Devil",
+          "aliases": [
+            "barem bridge"
+          ]
+        },
+        {
+          "item": "Whip Devil",
+          "aliases": []
+        },
+        {
+          "item": "Spear Devil",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-06",
+      "kind": "set",
+      "question": "Every Hybrid",
+      "subject": "Hybrid",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Hybrid"
+      ],
+      "note": "The wiki's Hybrid page states there are currently eight known Hybrids and lists them all; four of them (Flamethrower, Longsword, Spear, Whip) call themselves the Weapons in the Chainsaw Man Church arc. Includes the Chainsaw Hybrid, which csm-set-05 deliberately excludes.",
+      "answer": [
+        {
+          "item": "Chainsaw Hybrid",
+          "aliases": [
+            "denji"
+          ]
+        },
+        {
+          "item": "Katana Hybrid",
+          "aliases": [
+            "katana man"
+          ]
+        },
+        {
+          "item": "Bomb Hybrid",
+          "aliases": [
+            "reze"
+          ]
+        },
+        {
+          "item": "Bow Hybrid",
+          "aliases": [
+            "quanxi"
+          ]
+        },
+        {
+          "item": "Longsword Hybrid",
+          "aliases": [
+            "miri sugo"
+          ]
+        },
+        {
+          "item": "Flamethrower Hybrid",
+          "aliases": [
+            "barem bridge"
+          ]
+        },
+        {
+          "item": "Spear Hybrid",
+          "aliases": []
+        },
+        {
+          "item": "Whip Hybrid",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-07",
+      "kind": "set",
+      "question": "Every Primal Fear Devil",
+      "subject": "Devil",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Devil"
+      ],
+      "note": "Drawn from the wiki's Primal Devils group, which names exactly Darkness, Falling, Aging and Death. The Death Devil is both a Primal Fear and a Horseman, so it deliberately overlaps csm-set-04. The dragon-like Devil in the Justice Devil arc is never confirmed as a Primal Fear and is excluded.",
+      "answer": [
+        {
+          "item": "Darkness Devil",
+          "aliases": []
+        },
+        {
+          "item": "Falling Devil",
+          "aliases": []
+        },
+        {
+          "item": "Aging Devil",
+          "aliases": []
+        },
+        {
+          "item": "Death Devil",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-set-08",
+      "kind": "set",
+      "question": "Every named member of Tokyo Special Division 4",
+      "subject": "Tokyo Special Division 4",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Tokyo_Special_Division_4"
+      ],
+      "note": "The wiki's Members section lists these fourteen named members with their fates; the unit went defunct after Makima's death in the Control Devil arc. The two generic unnamed pages are excluded and listed in `absent`. Part 1, Public Safety Saga.",
+      "absent": [
+        "Division 4 Female Member",
+        "Division 4 Male Member"
+      ],
+      "answer": [
+        {
+          "item": "Makima",
+          "aliases": []
+        },
+        {
+          "item": "Kishibe",
+          "aliases": []
+        },
+        {
+          "item": "Denji",
+          "aliases": []
+        },
+        {
+          "item": "Aki Hayakawa",
+          "aliases": []
+        },
+        {
+          "item": "Power",
+          "aliases": []
+        },
+        {
+          "item": "Himeno",
+          "aliases": []
+        },
+        {
+          "item": "Kobeni Higashiyama",
+          "aliases": []
+        },
+        {
+          "item": "Hirokazu Arai",
+          "aliases": []
+        },
+        {
+          "item": "Angel",
+          "aliases": [
+            "angel devil"
+          ]
+        },
+        {
+          "item": "Beam",
+          "aliases": [
+            "shark fiend"
+          ]
+        },
+        {
+          "item": "Galgali",
+          "aliases": [
+            "violence fiend"
+          ]
+        },
+        {
+          "item": "Princi",
+          "aliases": [
+            "spider devil"
+          ]
+        },
+        {
+          "item": "Fushi",
+          "aliases": []
+        },
+        {
+          "item": "Madoka",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-01",
+      "kind": "fact",
+      "question": "Who killed Makima?",
+      "subject": "Makima",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "accept": "any",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Part 1, Control Devil arc. Cross-entity relation: the wiki records that Denji killed Makima by cooking and eating her -- her dying request, which bypassed her contract with the Prime Minister. Makima is the Control Devil and reincarnated as Nayuta in Part 2.",
+      "answer": [
+        {
+          "item": "Denji",
+          "aliases": [
+            "chainsaw man"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-02",
+      "kind": "fact",
+      "question": "Who is the host of the War Devil?",
+      "subject": "Asa Mitaka",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "accept": "any",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Asa_Mitaka"
+      ],
+      "note": "Part 2, Academy Saga. Cross-entity relation: after dying, Asa Mitaka accepted the War Devil Yoru's offer to share her body; the wiki names her as the host of the War Devil and the War Fiend. Scoped to the Academy Saga, since the series' final chapters separate them again.",
+      "answer": [
+        {
+          "item": "Asa Mitaka",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-03",
+      "kind": "fact",
+      "question": "Who is the Chainsaw Devil?",
+      "subject": "Pochita",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "accept": "any",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Pochita"
+      ],
+      "note": "Part 1, Intro arc. Precision: the Chainsaw Devil is Pochita himself -- the original Chainsaw Man -- not Denji, who is the human fused with him as his heart.",
+      "answer": [
+        {
+          "item": "Pochita",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-fact-04",
+      "kind": "fact",
+      "question": "Who is the Gun Fiend?",
+      "subject": "Aki Hayakawa",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "accept": "any",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Part 1, Gun Devil arc. Cross-entity relation: Aki was killed and possessed by 20% of the Gun Devil, becoming the host of the Gun Fiend; the wiki lists Gun Fiend as one of his aliases and the Fiend nav points to him.",
+      "answer": [
+        {
+          "item": "Aki Hayakawa",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-char-01",
+      "kind": "set",
+      "question": "Every ability of Denji",
+      "subject": "Denji",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `core` because the page's Abilities section is sprawling -- Physical Prowess, Hybrid Powers and Skillset name seventeen abilities, with a Devil Contracts subsection and a Weapons subsection adding more, so a closed enumeration would drown the precision measurement. Records the named abilities proper; the Devil Contracts subsection (pacts with Pochita, Power and the Aging Devil) and the Weapons subsection (hatchet, Blood Chainsaw, Super Chainsaw Man Motorcycle, Bitterness Axe) are excluded as relationships and equipment rather than abilities. Spans both parts: the page documents him across the Public Safety Saga (Part 1) and the Academy Saga (Part 2), and no ability contradicts between them -- Part 2 adds Chain Grappling and the Aging Devil contract without revising any Part 1 ability. Differs from csm-set-01, which asks for his three forms (Human, Chainsaw Man, Chainsaw Devil).",
+      "answer": [
+        {
+          "item": "Enhanced Human Condition",
+          "aliases": []
+        },
+        {
+          "item": "Enhanced Endurance",
+          "aliases": []
+        },
+        {
+          "item": "Hybrid Transformation",
+          "aliases": []
+        },
+        {
+          "item": "Augmented Strength",
+          "aliases": []
+        },
+        {
+          "item": "Augmented Durability",
+          "aliases": []
+        },
+        {
+          "item": "Augmented Stamina",
+          "aliases": []
+        },
+        {
+          "item": "Chainsaw Manifestation",
+          "aliases": []
+        },
+        {
+          "item": "Chainsaw Retraction",
+          "aliases": []
+        },
+        {
+          "item": "Chain Entanglement",
+          "aliases": []
+        },
+        {
+          "item": "Chain Grappling",
+          "aliases": []
+        },
+        {
+          "item": "Devil Transformation",
+          "aliases": []
+        },
+        {
+          "item": "Blood Consumption",
+          "aliases": []
+        },
+        {
+          "item": "Nigh-Immortality",
+          "aliases": []
+        },
+        {
+          "item": "Body Duplication",
+          "aliases": []
+        },
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        },
+        {
+          "item": "Strategic Intelligence",
+          "aliases": []
+        },
+        {
+          "item": "Swimming",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-char-02",
+      "kind": "set",
+      "question": "Every documented ability of Power",
+      "subject": "Power",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Power"
+      ],
+      "note": "Renamed twice on 2026-08-14. The bare `Every ability of Power` collided word for word with csm-set-02, and the report picks its comparable-with-2026-08-04 subset by question text while diagnose_misses resolves an item's canon list the same way, so the duplicate corrupted both. The first replacement appended a parenthetical and cost the question 15/16 -- subject resolution dropped to `Character Subpage` and returned nothing canon -- so the wording is now a plain adjective. The report selects its comparable-with-2026-08-04 subset by question text and diagnose_misses resolves an item's canon list the same way, so two questions sharing a string corrupted both. Added 2026-08-14, per-character abilities batch. `core` because the page documents a large list -- sixteen named abilities across Physical Abilities, Devil Powers, Skillset and Other Abilities -- so a closed enumeration would drown the precision measurement. Broader than csm-set-02 (Every ability of Power, scored 0 to 4/6 on 2026-08-04), which recorded six core blood abilities; this question records the complete set the page documents, including Blood Knife, Blood Scythe, Blood Dagger, Blood Axe, Blood Transfer, Blood Empowerment and the skill entries. Blood Weaponization from csm-set-02 is not repeated here because the page does not name it. Spans both parts: the page records her Part 1 feats and her return in the Academy Saga War Devil arc, where the revived Blood Devil uses Blood Dagger, Blood Axe and Blood Chainsaw -- consistent, no contradiction. The existing set is deliberately left untouched (append-only).",
+      "answer": [
+        {
+          "item": "Enhanced Strength",
+          "aliases": []
+        },
+        {
+          "item": "Enhanced Speed",
+          "aliases": []
+        },
+        {
+          "item": "Blood Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Blood Hammer",
+          "aliases": []
+        },
+        {
+          "item": "Blood Knife",
+          "aliases": []
+        },
+        {
+          "item": "Blood Spear",
+          "aliases": []
+        },
+        {
+          "item": "Blood Scythe",
+          "aliases": []
+        },
+        {
+          "item": "Blood Dagger",
+          "aliases": []
+        },
+        {
+          "item": "Blood Axe",
+          "aliases": []
+        },
+        {
+          "item": "Blood Chainsaw",
+          "aliases": []
+        },
+        {
+          "item": "Thousand Tera Blood Rain",
+          "aliases": [
+            "Sauzando Tera Buraddo Rein"
+          ]
+        },
+        {
+          "item": "Blood Transfer",
+          "aliases": []
+        },
+        {
+          "item": "Blood Empowerment",
+          "aliases": []
+        },
+        {
+          "item": "Knifemanship",
+          "aliases": []
+        },
+        {
+          "item": "Acting Skills",
+          "aliases": []
+        },
+        {
+          "item": "Enhanced Smell",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-char-03",
+      "kind": "set",
+      "question": "Every ability of Aki Hayakawa",
+      "subject": "Aki Hayakawa",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page's Abilities section is a bounded named list. Part 1, Public Safety Saga: Aki dies in the Gun Devil arc and his Part 2 appearances are flashbacks, so nothing is drawn from the Academy Saga. Differs from csm-set-03 (Every devil contract of Aki Hayakawa): that question enumerates the pacts themselves (Fox, Curse, Future), whereas this records the named powers and skills his page documents, including the powers the contracts granted (Precognition, Summoning) but not the contracts. Postmortem abilities (Enhanced Durability, Enhanced Speed, Bullet Projection, Blood Consumption) are included because the page documents them on Aki's own page under Postmortem Abilities; they belong to his Gun Fiend state, which csm-fact-04 identifies. Cooking and Driving are named in his Skillset and are recorded as documented.",
+      "answer": [
+        {
+          "item": "Precognition",
+          "aliases": []
+        },
+        {
+          "item": "Summoning",
+          "aliases": []
+        },
+        {
+          "item": "Swordsmanship",
+          "aliases": []
+        },
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        },
+        {
+          "item": "Cooking",
+          "aliases": []
+        },
+        {
+          "item": "Driving",
+          "aliases": []
+        },
+        {
+          "item": "Strong Willpower",
+          "aliases": []
+        },
+        {
+          "item": "Enhanced Durability",
+          "aliases": []
+        },
+        {
+          "item": "Enhanced Speed",
+          "aliases": []
+        },
+        {
+          "item": "Bullet Projection",
+          "aliases": []
+        },
+        {
+          "item": "Blood Consumption",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-char-04",
+      "kind": "set",
+      "question": "Every ability of Makima",
+      "subject": "Makima",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Makima"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page's Abilities section is a bounded named list of eight entries. Part 1, Control Devil arc: Makima dies in the Control Devil arc and reincarnates as Nayuta in Part 2, so nothing recorded here carries into the Academy Saga. Control and Force Manipulation are the page's two supernatural ability headings; the Prime Minister Contract (the fatal-damage transfer pact) is recorded even though it appears in the section's prose rather than as a bolded heading, because it is her defining defensive ability. `Shihai` is the romanised Nihongo name recorded for Control.",
+      "answer": [
+        {
+          "item": "Immense Strength",
+          "aliases": []
+        },
+        {
+          "item": "Enhanced Smell",
+          "aliases": []
+        },
+        {
+          "item": "Control",
+          "aliases": [
+            "Shihai"
+          ]
+        },
+        {
+          "item": "Force Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Prime Minister Contract",
+          "aliases": [
+            "contract with the Prime Minister of Japan"
+          ]
+        },
+        {
+          "item": "High Alcohol Tolerance",
+          "aliases": []
+        },
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        },
+        {
+          "item": "High Intelligence",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "csm-char-05",
+      "kind": "set",
+      "question": "Every ability of Himeno",
+      "subject": "Himeno",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Himeno"
+      ],
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page documents exactly two abilities. Part 1, Public Safety Saga: Himeno dies in the Katana Man arc and her later appearances are flashbacks, so nothing is drawn from the Academy Saga. A two-item set doubles as a precision probe.",
+      "answer": [
+        {
+          "item": "Ghost Devil Contract",
+          "aliases": []
+        },
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        }
+      ]
+    }
+  ],
+  "retired": []
+}

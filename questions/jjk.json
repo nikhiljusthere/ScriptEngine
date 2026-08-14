@@ -1,0 +1,1084 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-14",
+  "questions": [
+    {
+      "id": "jjk-set-01",
+      "kind": "set",
+      "question": "How many 1v1 battles did Yuji Itadori have with named characters",
+      "subject": "Yuji Itadori",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "note": "One of the original seventeen. `Yuji Itadori vs. Sukuna` was in this list and is not a page on this wiki: what exists is `Yuji, Maki & Hana vs. Sukuna` -- three on one -- and `Jujutsu Sorcerers vs. Sukuna`, a group raid. Neither is a 1v1, which is what this question asks for, so the item was never answerable and was removed rather than counted against the engine.",
+      "answer": [
+        {
+          "item": "Yuji Itadori vs. Aoi Todo",
+          "aliases": [
+            "yuji vs todo"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Junpei Yoshino",
+          "aliases": [
+            "yuji vs junpei"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Mahito",
+          "aliases": [
+            "yuji vs mahito"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Choso",
+          "aliases": [
+            "yuji vs choso"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Ko Guy",
+          "aliases": [
+            "yuji vs ko guy"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Yuta Okkotsu",
+          "aliases": [
+            "yuji vs yuta"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "jjk-set-02",
+      "kind": "set",
+      "question": "Every cursed technique of Sukuna",
+      "subject": "Sukuna",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "note": "One of the original seventeen. Sukuna is the measured cost of running full membership validation on prose-extracted rows: doing so deletes Dismantle, Cleave and Shrine for `no field on this page names X as a user`, which is the exact condition prose extraction exists to work around.",
+      "answer": [
+        {
+          "item": "Shrine",
+          "aliases": [
+            "cursed technique shrine"
+          ]
+        },
+        {
+          "item": "Dismantle",
+          "aliases": [
+            "cleave dismantle"
+          ]
+        },
+        {
+          "item": "Cleave",
+          "aliases": []
+        },
+        {
+          "item": "Furnace",
+          "aliases": [
+            "fuga"
+          ]
+        },
+        {
+          "item": "Malevolent Shrine",
+          "aliases": [
+            "domain expansion malevolent shrine"
+          ]
+        },
+        {
+          "item": "Hollow Wicker Basket",
+          "aliases": []
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Ten Shadows Technique",
+          "aliases": [
+            "ten shadows"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "jjk-set-03",
+      "kind": "set",
+      "question": "Every cursed technique of Satoru Gojo",
+      "subject": "Satoru Gojo",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Limitless",
+        "https://www.cbr.com/jjk-gojo-every-cursed-technique/"
+      ],
+      "note": "Added 2026-08-04. Scored 7/7.",
+      "answer": [
+        {
+          "item": "Limitless",
+          "aliases": []
+        },
+        {
+          "item": "Infinity",
+          "aliases": [
+            "muryokusho"
+          ]
+        },
+        {
+          "item": "Cursed Technique Lapse: Blue",
+          "aliases": [
+            "blue",
+            "lapse blue"
+          ]
+        },
+        {
+          "item": "Cursed Technique Reversal: Red",
+          "aliases": [
+            "red",
+            "reversal red"
+          ]
+        },
+        {
+          "item": "Hollow Purple",
+          "aliases": [
+            "hollow technique purple",
+            "purple"
+          ]
+        },
+        {
+          "item": "Unlimited Void",
+          "aliases": [
+            "infinite void",
+            "domain expansion unlimited void"
+          ]
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "jjk-set-04",
+      "kind": "set",
+      "question": "Every shikigami of Megumi Fushiguro",
+      "subject": "Megumi Fushiguro",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shikigami",
+        "https://www.cbr.com/megumi-jjk-ten-shadows-shikigami-ranked/"
+      ],
+      "note": "Added 2026-08-04. `shikigami` was not in the fixed English kind vocabulary, so this question never became character-scoped at all and returned none of the nine sitting in the table; series words now live in overrides.yaml under `ability_kinds:`. 0 to 4/9. The remaining five are the largest single retrieval-gap cluster in the bank -- they are extracted rows that still do not come back.",
+      "answer": [
+        {
+          "item": "Divine Dogs",
+          "aliases": [
+            "divine dog",
+            "demon dogs",
+            "divine dogs totality"
+          ]
+        },
+        {
+          "item": "Nue",
+          "aliases": []
+        },
+        {
+          "item": "Toad",
+          "aliases": [
+            "gama"
+          ]
+        },
+        {
+          "item": "Great Serpent",
+          "aliases": [
+            "orochi"
+          ]
+        },
+        {
+          "item": "Max Elephant",
+          "aliases": [
+            "elephant"
+          ]
+        },
+        {
+          "item": "Rabbit Escape",
+          "aliases": [
+            "rabbit"
+          ]
+        },
+        {
+          "item": "Round Deer",
+          "aliases": [
+            "deer"
+          ]
+        },
+        {
+          "item": "Piercing Ox",
+          "aliases": [
+            "ox",
+            "bull"
+          ]
+        },
+        {
+          "item": "Mahoraga",
+          "aliases": [
+            "eight handled sword divergent sila divine general mahoraga"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "jjk-set-05",
+      "kind": "set",
+      "question": "Every cursed technique of Yuta Okkotsu",
+      "subject": "Yuta Okkotsu",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-04",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Copy",
+        "https://www.cbr.com/yuta-okkotsu-cursed-techniques/"
+      ],
+      "note": "Added 2026-08-04.",
+      "answer": [
+        {
+          "item": "Copy",
+          "aliases": [
+            "copy technique"
+          ]
+        },
+        {
+          "item": "Rika",
+          "aliases": [
+            "rika orimoto",
+            "cursed spirit manifestation"
+          ]
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Pure Love",
+          "aliases": [
+            "pure love beam"
+          ]
+        },
+        {
+          "item": "Authentic Mutual Love",
+          "aliases": [
+            "true and mutual love",
+            "domain expansion authentic mutual love"
+          ]
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "id": "jjk-set-06",
+      "kind": "set",
+      "question": "Every member of the Disaster Curses (Mahito's group of unregistered special-grade cursed spirits)",
+      "subject": "Mahito",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "note": "The wiki has no page titled `Disaster Curses`; the complete membership is documented on the Mahito page, which calls the four his own group -- Jogo, Hanami, Dagon, and Mahito as leader. The wiki's trivia calls them Mahito's `fellow disaster curses`; Mahito is the only one not born from a fear of natural disaster. absent lists other special-grade cursed spirits that must not pad the set.",
+      "absent": [
+        "Kurourushi",
+        "Smallpox Deity"
+      ],
+      "answer": [
+        {
+          "item": "Mahito",
+          "aliases": []
+        },
+        {
+          "item": "Jogo",
+          "aliases": []
+        },
+        {
+          "item": "Hanami",
+          "aliases": []
+        },
+        {
+          "item": "Dagon",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-07",
+      "kind": "set",
+      "question": "Every named Cursed Womb: Death Painting",
+      "subject": "Cursed Womb: Death Painting",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
+      ],
+      "note": "A thinly-filled set, which is the point: the wiki records nine Death Paintings and names only three of them. A retriever that returns more than three has invented the rest, and one that returns the number nine has answered a different question.",
+      "answer": [
+        {
+          "item": "Choso",
+          "aliases": [
+            "kamo choso"
+          ]
+        },
+        {
+          "item": "Eso",
+          "aliases": []
+        },
+        {
+          "item": "Kechizu",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-08",
+      "kind": "set",
+      "question": "Every first-year student of Tokyo Jujutsu High in 2018",
+      "subject": "Tokyo Metropolitan Curse Technical College",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tokyo_Metropolitan_Curse_Technical_College"
+      ],
+      "note": "The school page's 2018 roster lists exactly three 1st-year students. The same page lists the 2nd and 3rd years (Maki, Toge, Panda, Yuta / Hakari, Kirara); those are the padding this set guards against via absent.",
+      "absent": [
+        "Maki Zenin",
+        "Toge Inumaki",
+        "Panda",
+        "Yuta Okkotsu"
+      ],
+      "answer": [
+        {
+          "item": "Yuji Itadori",
+          "aliases": [
+            "yuji",
+            "itadori"
+          ]
+        },
+        {
+          "item": "Megumi Fushiguro",
+          "aliases": [
+            "megumi",
+            "fushiguro"
+          ]
+        },
+        {
+          "item": "Nobara Kugisaki",
+          "aliases": [
+            "nobara",
+            "kugisaki"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-01",
+      "kind": "fact",
+      "question": "Who sealed Satoru Gojo during the Shibuya Incident?",
+      "subject": "Satoru Gojo",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "note": "The Gojo page states Kenjaku used his past with Geto to distract Gojo long enough for the Prison Realm to seal him. The sealing was performed by Kenjaku inhabiting Suguru Geto's body; the Geto and Pseudo-Geto aliases cover the naming the story uses.",
+      "answer": [
+        {
+          "item": "Kenjaku",
+          "aliases": [
+            "Suguru Geto",
+            "Pseudo-Geto",
+            "Geto"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-02",
+      "kind": "fact",
+      "question": "Who killed Riko Amanai?",
+      "subject": "Riko Amanai",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai/Synopsis"
+      ],
+      "note": "The synopsis states Riko was ambushed by Toji Fushiguro at the college and later shot in the head by him; the image caption calls him Toji, the Sorcerer Killer. Cross-entity relation: the answer is a different page than the subject.",
+      "answer": [
+        {
+          "item": "Toji Fushiguro",
+          "aliases": [
+            "Toji",
+            "Toji Zenin",
+            "the Sorcerer Killer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-03",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's innate technique?",
+      "subject": "Nobara Kugisaki",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "note": "The technique itself is Straw Doll Technique; Hairpin and Resonance are extensions of it and are deliberately not separate items.",
+      "answer": [
+        {
+          "item": "Straw Doll Technique",
+          "aliases": [
+            "Straw Doll"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-fact-04",
+      "kind": "fact",
+      "question": "Who absorbed Mahito?",
+      "subject": "Mahito",
+      "scope": "closed",
+      "accept": "any",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "note": "The Kenjaku page states he absorbed Mahito with Cursed Spirit Manipulation; the Mahito synopsis describes Pseudo-Geto (Kenjaku in Geto's body) sealing and absorbing him. Cross-entity relation.",
+      "answer": [
+        {
+          "item": "Kenjaku",
+          "aliases": [
+            "Pseudo-Geto",
+            "Suguru Geto"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-char-01",
+      "kind": "set",
+      "question": "Every ability of Yuji Itadori",
+      "subject": "Yuji Itadori",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "note": "Scope core because the Itadori page documents his abilities in three groups and completeness needs all three: physical traits (poison resistance, weapon mastery, hand-to-hand), cursed energy traits (capacity, manipulation, reinforcement), and techniques (Divergent Fist, Black Flash, the Blood Manipulation line, Shrine). Distinct from jjk-set-01, which is a roster of named 1v1 battle pages, and from jjk-set-02's Sukuna techniques; neither lists Itadori's abilities.",
+      "answer": [
+        {
+          "item": "Poison Resistance",
+          "aliases": []
+        },
+        {
+          "item": "Weapon Mastery",
+          "aliases": []
+        },
+        {
+          "item": "Master Hand-to-Hand Combatant",
+          "aliases": []
+        },
+        {
+          "item": "Immense Strength",
+          "aliases": []
+        },
+        {
+          "item": "Immense Speed and Reflexes",
+          "aliases": []
+        },
+        {
+          "item": "Immense Durability",
+          "aliases": []
+        },
+        {
+          "item": "Immense Stamina",
+          "aliases": []
+        },
+        {
+          "item": "Proficient Learner",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Capacity",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Reinforcement",
+          "aliases": []
+        },
+        {
+          "item": "Divergent Fist",
+          "aliases": [
+            "keitei ken"
+          ]
+        },
+        {
+          "item": "Black Flash",
+          "aliases": [
+            "kokusen"
+          ]
+        },
+        {
+          "item": "Blood Poisoning",
+          "aliases": []
+        },
+        {
+          "item": "Blood Conversion",
+          "aliases": []
+        },
+        {
+          "item": "Blood Manipulation",
+          "aliases": [
+            "sekketsu sojutsu"
+          ]
+        },
+        {
+          "item": "Convergence",
+          "aliases": [
+            "byakuren"
+          ]
+        },
+        {
+          "item": "Piercing Blood",
+          "aliases": [
+            "senketsu"
+          ]
+        },
+        {
+          "item": "Shrine",
+          "aliases": [
+            "mizushi",
+            "cursed technique shrine"
+          ]
+        },
+        {
+          "item": "Dismantle",
+          "aliases": [
+            "kai"
+          ]
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": [
+            "hanten jutsushiki"
+          ]
+        },
+        {
+          "item": "New Shadow Style: Simple Domain",
+          "aliases": [
+            "simple domain"
+          ]
+        },
+        {
+          "item": "Hometown Domain",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-char-02",
+      "kind": "set",
+      "question": "Every ability of Satoru Gojo",
+      "subject": "Satoru Gojo",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "note": "Scope core because the Gojo page splits Abilities & Powers into physical combat traits, cursed energy traits, and techniques (the Limitless line plus Simple Domain, Falling Blossom Emotion and Unlimited Void). Distinct from jjk-set-03, which asks for cursed techniques only (7 items); this question enumerates everything the page calls an ability, including Six Eyes, Curtain and his physical traits.",
+      "answer": [
+        {
+          "item": "Master Hand-to-Hand Combatant",
+          "aliases": []
+        },
+        {
+          "item": "Immense Strength",
+          "aliases": []
+        },
+        {
+          "item": "Immense Speed & Reflexes",
+          "aliases": []
+        },
+        {
+          "item": "Immense Endurance",
+          "aliases": []
+        },
+        {
+          "item": "Great Tactical Intellect",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Capacity",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Output",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Reinforcement",
+          "aliases": []
+        },
+        {
+          "item": "Black Flash",
+          "aliases": []
+        },
+        {
+          "item": "Limitless",
+          "aliases": []
+        },
+        {
+          "item": "Infinity",
+          "aliases": [
+            "muryokusho"
+          ]
+        },
+        {
+          "item": "Cursed Technique Lapse: Blue",
+          "aliases": [
+            "blue",
+            "lapse blue"
+          ]
+        },
+        {
+          "item": "Cursed Technique Lapse - Maximum Cursed Energy Output: Blue",
+          "aliases": [
+            "maximum blue"
+          ]
+        },
+        {
+          "item": "Cursed Technique Reversal: Red",
+          "aliases": [
+            "red",
+            "reversal red"
+          ]
+        },
+        {
+          "item": "Hollow Technique: Purple",
+          "aliases": [
+            "hollow purple",
+            "purple"
+          ]
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Curtain",
+          "aliases": []
+        },
+        {
+          "item": "New Shadow Style: Simple Domain",
+          "aliases": [
+            "simple domain"
+          ]
+        },
+        {
+          "item": "Falling Blossom Emotion",
+          "aliases": []
+        },
+        {
+          "item": "Unlimited Void",
+          "aliases": [
+            "infinite void",
+            "domain expansion unlimited void"
+          ]
+        },
+        {
+          "item": "Six Eyes",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-char-03",
+      "kind": "set",
+      "question": "Every ability of Megumi Fushiguro",
+      "subject": "Megumi Fushiguro",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "note": "Scope closed because the Fushiguro page's Abilities & Powers section enumerates exactly these sixteen named abilities and nothing else: his combat traits, Ten Shadows Technique, the shikigami under it, Mahoraga and Chimera Shadow Garden. Distinct from jjk-set-04, which asks for shikigami only (9 items) and omits his combat and energy traits. Prefix pair Divine Dogs / Divine Dog: Totality is deliberate: the wiki treats the merged summon as its own named ability.",
+      "answer": [
+        {
+          "item": "Expert Hand-to-Hand Combatant",
+          "aliases": []
+        },
+        {
+          "item": "Expert Weapons Specialist",
+          "aliases": []
+        },
+        {
+          "item": "Advanced Endurance",
+          "aliases": []
+        },
+        {
+          "item": "Immense Tactical Intellect",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Capacity",
+          "aliases": []
+        },
+        {
+          "item": "Ten Shadows Technique",
+          "aliases": [
+            "ten shadows"
+          ]
+        },
+        {
+          "item": "Divine Dogs",
+          "aliases": [
+            "divine dog",
+            "demon dogs"
+          ]
+        },
+        {
+          "item": "Divine Dog: Totality",
+          "aliases": [
+            "divine dog totality",
+            "totality"
+          ]
+        },
+        {
+          "item": "Nue",
+          "aliases": []
+        },
+        {
+          "item": "Great Serpent",
+          "aliases": [
+            "orochi"
+          ]
+        },
+        {
+          "item": "Toad",
+          "aliases": [
+            "gama"
+          ]
+        },
+        {
+          "item": "The Well's Unknown Abyss",
+          "aliases": []
+        },
+        {
+          "item": "Max Elephant",
+          "aliases": [
+            "elephant"
+          ]
+        },
+        {
+          "item": "Rabbit Escape",
+          "aliases": [
+            "rabbit"
+          ]
+        },
+        {
+          "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+          "aliases": [
+            "mahoraga"
+          ]
+        },
+        {
+          "item": "Chimera Shadow Garden",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-char-04",
+      "kind": "set",
+      "question": "Every ability of Nobara Kugisaki",
+      "subject": "Nobara Kugisaki",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "note": "Scope closed because the Kugisaki page lists exactly these four named abilities. Distinct from jjk-fact-03, which asks for her innate technique only and names Straw Doll Technique; here Resonance and Hairpin are separate items because the page documents them as named extensions of it.",
+      "answer": [
+        {
+          "item": "Black Flash",
+          "aliases": []
+        },
+        {
+          "item": "Straw Doll Technique",
+          "aliases": [
+            "straw doll"
+          ]
+        },
+        {
+          "item": "Resonance",
+          "aliases": []
+        },
+        {
+          "item": "Hairpin",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-char-05",
+      "kind": "set",
+      "question": "Every ability of Sukuna",
+      "subject": "Sukuna",
+      "scope": "core",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-14",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "note": "Scope core because the Sukuna page's Abilities & Powers documents physical traits, cursed energy traits and techniques together, and completeness needs all three. The page has renamed Furnace to Divine Flame; jjk-set-02 still calls it Furnace, so both are aliases here. Distinct from jjk-set-02 (cursed techniques only, 8 items) and jjk-set-04 (shikigami). Binding vows under Cursed Restrictions are conditions, not abilities, and are excluded. Prefix pairs Divine Dogs / Divine Dog: Totality and Nue / Nue: Totality - Merged Beast Agito are deliberate: the wiki names each totalled or merged summon as its own ability.",
+      "answer": [
+        {
+          "item": "Master Hand-to-Hand Combatant",
+          "aliases": []
+        },
+        {
+          "item": "Immense Strength",
+          "aliases": []
+        },
+        {
+          "item": "Immense Speed",
+          "aliases": []
+        },
+        {
+          "item": "Immense Reflexes",
+          "aliases": []
+        },
+        {
+          "item": "Immense Durability",
+          "aliases": []
+        },
+        {
+          "item": "Great Tactical Intellect",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Capacity",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Output",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Energy Reinforcement",
+          "aliases": []
+        },
+        {
+          "item": "Black Flash",
+          "aliases": []
+        },
+        {
+          "item": "Shrine",
+          "aliases": [
+            "cursed technique shrine"
+          ]
+        },
+        {
+          "item": "Dismantle",
+          "aliases": [
+            "cleave dismantle"
+          ]
+        },
+        {
+          "item": "Cleave",
+          "aliases": []
+        },
+        {
+          "item": "Spiderweb",
+          "aliases": []
+        },
+        {
+          "item": "Divine Flame",
+          "aliases": [
+            "furnace",
+            "fuga"
+          ]
+        },
+        {
+          "item": "Ten Shadows Technique",
+          "aliases": [
+            "ten shadows"
+          ]
+        },
+        {
+          "item": "Divine Dogs",
+          "aliases": [
+            "divine dog",
+            "demon dogs"
+          ]
+        },
+        {
+          "item": "Divine Dog: Totality",
+          "aliases": [
+            "divine dog totality",
+            "totality"
+          ]
+        },
+        {
+          "item": "Nue",
+          "aliases": []
+        },
+        {
+          "item": "Max Elephant",
+          "aliases": [
+            "elephant"
+          ]
+        },
+        {
+          "item": "Rabbit Escape",
+          "aliases": [
+            "rabbit"
+          ]
+        },
+        {
+          "item": "Round Deer",
+          "aliases": [
+            "deer"
+          ]
+        },
+        {
+          "item": "Piercing Ox",
+          "aliases": [
+            "ox",
+            "bull"
+          ]
+        },
+        {
+          "item": "Tiger Funeral",
+          "aliases": []
+        },
+        {
+          "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+          "aliases": [
+            "mahoraga"
+          ]
+        },
+        {
+          "item": "Nue: Totality - Merged Beast Agito",
+          "aliases": [
+            "nue totality merged beast agito",
+            "agito"
+          ]
+        },
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Domain Amplification",
+          "aliases": []
+        },
+        {
+          "item": "Hollow Wicker Basket",
+          "aliases": []
+        },
+        {
+          "item": "Malevolent Shrine",
+          "aliases": [
+            "domain expansion malevolent shrine"
+          ]
+        },
+        {
+          "item": "Unique Body Structure",
+          "aliases": []
+        }
+      ]
+    }
+  ],
+  "retired": [
+    {
+      "question": "Every special-grade sorcerer (the four registered special-grade sorcerers in 2018)",
+      "item": "Satoru Gojo",
+      "reason": "The cited Grade page's wikitext does not contain 'Gojo' at all -- its Grade Registry transcludes names from elsewhere -- so the page does not document the four-sorcerer roster this set asserted."
+    },
+    {
+      "question": "Every special-grade sorcerer (the four registered special-grade sorcerers in 2018)",
+      "item": "Suguru Geto",
+      "reason": "The cited Grade page's wikitext does not contain 'Gojo' at all -- its Grade Registry transcludes names from elsewhere -- so the page does not document the four-sorcerer roster this set asserted."
+    },
+    {
+      "question": "Every special-grade sorcerer (the four registered special-grade sorcerers in 2018)",
+      "item": "Yuki Tsukumo",
+      "reason": "The cited Grade page's wikitext does not contain 'Gojo' at all -- its Grade Registry transcludes names from elsewhere -- so the page does not document the four-sorcerer roster this set asserted."
+    },
+    {
+      "question": "Every special-grade sorcerer (the four registered special-grade sorcerers in 2018)",
+      "item": "Yuta Okkotsu",
+      "reason": "The cited Grade page's wikitext does not contain 'Gojo' at all -- its Grade Registry transcludes names from elsewhere -- so the page does not document the four-sorcerer roster this set asserted."
+    }
+  ]
+}

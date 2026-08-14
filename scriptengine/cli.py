@@ -1011,6 +1011,71 @@ def run_eval(
         raise typer.Exit(code=1)
 
 
+@app.command("canon-run")
+def canon_run(
+    series: list[str] = typer.Option(
+        None, "--series",
+        help="Limit to these series. Repeat the flag or comma-separate. "
+             "Default: every series in questions/."),
+    skip_eval: bool = typer.Option(
+        False, "--skip-eval",
+        help="Skip the in-process gold suite. Use this while the server is "
+             "hot — it loads an embedder and a reranker here while the server "
+             "may still hold its own, which double-allocates on one GPU."),
+    dry_run: bool = typer.Option(
+        False, "--dry-run",
+        help="Validate the question bank and print what would be asked. "
+             "Calls nothing."),
+    out: Path = typer.Option(
+        None, "--out", help="Write the run folder here instead of reports/."),
+) -> None:
+    """Measure the engine against `questions/` and write a report.
+
+    Never exits non-zero on a bad score. A low number is the finding, and a
+    measurement command that fails the build is one nobody runs. Exit 1 is
+    reserved for the run being untrustworthy: no server, a server running
+    superseded code, or a bank that does not validate.
+    """
+    import logging
+
+    from scriptengine.eval.canon_run import CanonRunError
+    from scriptengine.eval.canon_run import run as canon_run_impl
+
+    logging.disable(logging.INFO)
+
+    wanted = [s.strip() for entry in (series or []) for s in entry.split(",") if s.strip()]
+
+    try:
+        result = canon_run_impl(
+            series=wanted or None, skip_eval=skip_eval, dry_run=dry_run,
+            out=out, log=console.print,
+        )
+    except CanonRunError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    if dry_run:
+        return
+
+    summary = result["summary"]
+    table = Table(title=f"Canon run — {result['meta']['run_id']}")
+    table.add_column("")
+    table.add_column("", justify="right")
+    table.add_row("canon items recovered",
+                  f"{summary['canon_found']}/{summary['canon_total']} "
+                  f"({summary['canon_recall']:.1%})")
+    table.add_row("precision, closed sets",
+                  f"{summary['precision_closed']:.1%} over {summary['precision_over']}")
+    table.add_row("questions at recall 0",
+                  f"{summary['at_recall_zero']}/{summary['questions']}")
+    table.add_row("confident and wrong", str(len(summary["confident_and_wrong"])))
+    if summary["fact_questions"]:
+        table.add_row("fact answers present in the bundle",
+                      f"{summary['fact_present']}/{summary['fact_questions']}")
+    console.print(table)
+    console.print(f"\n[bold]{result['folder'] / 'REPORT.md'}[/bold]")
+
+
 @app.command("list")
 def list_series() -> None:
     """Show every series present on disk and what has been built for it."""
