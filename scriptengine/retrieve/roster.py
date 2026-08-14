@@ -936,6 +936,7 @@ def _owned_roster(
         return None
     types = {name: ontology.semantic_type(store, name, overrides) for name in owned}
     names = sorted(name for name in owned if types[name] in kinds)
+    names = drop_stopwords(names, overrides)
     if not names:
         return None
 
@@ -981,6 +982,26 @@ def ability_stopwords(overrides: dict | None) -> frozenset[str]:
     return frozenset(
         str(word).strip().lower() for word in declared if str(word).strip()
     )
+
+
+def drop_stopwords(names: Sequence[str], overrides: dict | None) -> list[str]:
+    """Remove declared non-abilities from a list of member names.
+
+    `ability_stopwords` used to be consulted on the prose path alone
+    (`_extracted_roster`), so the same name could be declared "not anyone's
+    ability" and still come back as a heading or an ownership edge. It did:
+    `Physical Abilities` and `Other Abilities` arrived as headings, and Dragon
+    Ball's game-only fusions -- `Vegecell`, `Celluza`, `EX Gogeta` -- arrived
+    both ways. 65 members of one run, and not one of them a canon item on any
+    question.
+
+    Deliberately not applied to a declared roster. `rosters: … members:` is
+    someone stating the answer outright, and a stopword must not overrule it.
+    """
+    stop = ability_stopwords(overrides)
+    if not stop:
+        return list(names)
+    return [name for name in names if name.strip().lower() not in stop]
 
 
 # How many off-kind extracted rows still read as the model wavering between
@@ -1089,7 +1110,9 @@ def _extracted_roster(
             rows = list(rows) + list(off)
     if not rows:
         return None
-    # Ten and Ren are how Nen works, not what Killua can do.
+    # Ten and Ren are how Nen works, not what Killua can do. The same list now
+    # gates the heading and ownership paths too (`drop_stopwords`), so a name
+    # declared here cannot come back by another route.
     stopwords = ability_stopwords(overrides)
     if stopwords:
         rows = [row for row in rows if row["name"].strip().lower() not in stopwords]
@@ -1319,6 +1342,12 @@ def _section_roster(
     # `Physical Abilities` and `Nen` are headings on hundreds of character
     # pages. They are where an ability is described, never one themselves.
     members = _drop_templates(store, members)
+    # And the ones this series has already declared are not abilities at all.
+    # A heading is no more entitled to return `Other Abilities` or `Vegecell`
+    # than a prose row is.
+    stop = ability_stopwords(overrides)
+    if stop:
+        members = [m for m in members if m.name.strip().lower() not in stop]
     if not members:
         return None
     return Roster(

@@ -142,6 +142,24 @@ class TestKinds:
         # "every weapon" stays equipment however it is phrased.
         assert widen(["ability", "weapon"], {ontology.ITEM}) == {ontology.ITEM}
 
+    def test_a_stopword_is_dropped_whichever_path_found_it(self):
+        """A declared non-ability must not come back as a heading or an edge.
+
+        `ability_stopwords` gated the prose path alone, so `Other Abilities`
+        still arrived as a heading and Dragon Ball's game-only fusions arrived
+        both ways -- 65 members of one run, none of them canon anywhere.
+        """
+        overrides = {"ability_stopwords": ["Physical Abilities", "Vegecell"]}
+        kept = R.drop_stopwords(
+            ["Kamehameha", "Physical Abilities", "vegecell", "Instant Transmission"],
+            overrides,
+        )
+        assert kept == ["Kamehameha", "Instant Transmission"]
+
+    def test_a_series_with_no_stopwords_keeps_everything(self):
+        assert R.drop_stopwords(["Rasengan"], {}) == ["Rasengan"]
+        assert R.drop_stopwords(["Rasengan"], None) == ["Rasengan"]
+
     def test_equipment_is_never_admitted_by_the_umbrella(self):
         """`item` stays out, which is why `ABILITY_TYPES` excludes it too.
 
