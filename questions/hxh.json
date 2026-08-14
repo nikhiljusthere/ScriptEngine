@@ -56,11 +56,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Kurapika"
       ],
-      "note": "One of the original seventeen. Went 2/6 to 6/6 when the extractor was taught to read each page's lead: his chains are named there and nowhere else on the page.",
+      "note": "One of the original seventeen. Went 2/6 to 6/6 when the extractor was taught to read each page's lead: his chains are named there and nowhere else on the page. Bank audit 2026-08-14: added 1 item(s) the wiki documents and the bank omitted: Stealth Dolphin. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Chain Jail",
@@ -86,6 +86,10 @@
         },
         {
           "item": "Emperor Time",
+          "aliases": []
+        },
+        {
+          "item": "Stealth Dolphin",
           "aliases": []
         }
       ],
@@ -150,7 +154,7 @@
         "https://hunterxhunter.fandom.com/wiki/Chrollo_Lucilfer",
         "https://gamerant.com/hunter-x-hunter-hxh-chrollo-skill-hunter/"
       ],
-      "note": "Added 2026-08-04.",
+      "note": "Added 2026-08-04. Bank audit 2026-08-14: added the wiki's own spelling of Bookmark as an alias. The page's infobox gives the ability as {{Jap|Double Face|栞のテーマ|Daburu Feisu|lit. \"Bookmark Theme\"}} -- Double Face and Bookmark are one ability under two names, so it is an alias rather than a fourth item.",
       "answer": [
         {
           "item": "Skill Hunter",
@@ -161,7 +165,9 @@
         },
         {
           "item": "Bookmark",
-          "aliases": []
+          "aliases": [
+            "double face"
+          ]
         },
         {
           "item": "Borrowed Time",
@@ -528,7 +534,7 @@
       "sources": [
         "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck"
       ],
-      "note": "Added 2026-08-14. Closed set drawn from the Abilities & Powers section of Killua's page. Broader than hxh-set-01 (the Nen abilities only): this also includes the three named assassination arts the page documents -- The Snake Awakens (Jakatsu), Silent Gaits (Anpo) and Rhythm Echo (Shikyoku). Godspeed is the umbrella Hatsu whose two core functions are Whirlwind and Speed of Lightning, so all three are listed, matching how hxh-set-01 treats the pair. The page's own romanisations are used as aliases. Generic physical descriptors (preternatural senses, poison immunity, lightning resistance) are not named abilities and are excluded.",
+      "note": "Added 2026-08-14. Closed set drawn from the Abilities & Powers section of Killua's page. Broader than hxh-set-01 (the Nen abilities only): this also includes the three named assassination arts the page documents -- The Snake Awakens (Jakatsu), Silent Gaits (Anpo) and Rhythm Echo (Shikyoku). Godspeed is the umbrella Hatsu whose two core functions are Whirlwind and Speed of Lightning, so all three are listed, matching how hxh-set-01 treats the pair. The page's own romanisations are used as aliases. Generic physical descriptors (preternatural senses, poison immunity, lightning resistance) are not named abilities and are excluded. Bank audit 2026-08-14: added 1 item(s) the wiki documents and the bank omitted: Claws. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Lightning Palm",
@@ -578,6 +584,10 @@
           "aliases": [
             "shikyoku"
           ]
+        },
+        {
+          "item": "Claws",
+          "aliases": []
         }
       ]
     },

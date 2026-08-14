@@ -57,6 +57,25 @@ REMEDY: dict[str, tuple[str, str, int]] = {
 }
 
 
+# The mirror of REMEDY for the other half of the number: which candidate path
+# vouched for a member that matched no canon item, and what that implies about
+# where its filter belongs. `diagnose_intruders.py` assigns these.
+INTRUDER_SOURCES: dict[str, str] = {
+    "prose row": "Extracted from prose at index time. Skips `validate_member` "
+                 "by design; filtered only by `ability_stopwords` and a word "
+                 "count. The section it came from is the lever.",
+    "category page": "Arrived through a category or a declared roster rather "
+                     "than through the character, so the set itself is too "
+                     "broad — not the member.",
+    "heading": "A section heading on the character's page. Also skips "
+               "`validate_member`; `ability_sections` is what selects these.",
+    "ownership edge": "The wiki wrote `X -user-> Y`. The only path already "
+                      "validated, and correspondingly the smallest.",
+    "unattributed": "No page, no edge, no row, no heading. Nothing vouches "
+                    "for it at all.",
+}
+
+
 def _pct(n: float) -> str:
     return f"{n:.1%}"
 
@@ -104,7 +123,8 @@ def wrong_answers(scores: dict, buckets_by_item: dict) -> list[dict]:
 
 def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
            baseline: set[str] | None = None,
-           previous: dict | None = None) -> str:
+           previous: dict | None = None,
+           intruders: dict | None = None) -> str:
     summary = scores.get("summary", {})
     rows = scores.get("rows", [])
     facts = scores.get("facts", [])
@@ -148,6 +168,23 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
     w(f"| members returned | {summary.get('members_returned', 0)} |")
     w("")
 
+    # A delta is only a measurement of the engine when both runs were scored
+    # against the same bank. When the canon total moves, the target moved too,
+    # and every arrow above is partly the bank's doing -- which must be said
+    # here rather than left for a reader to infer from two folders.
+    canon_now = summary.get("canon_total", 0)
+    canon_before = prev.get("canon_total")
+    if canon_before and canon_now != canon_before:
+        direction = "grew" if canon_now > canon_before else "shrank"
+        w(f"> **The bank changed between these two runs.** Canon {direction} "
+          f"from {canon_before} to {canon_now} items "
+          f"({canon_now - canon_before:+d}), so the deltas above are *not* a "
+          f"clean measurement of the engine: part of any move belongs to the "
+          f"target. A correction that adds a name the engine was already "
+          f"returning raises precision without the retriever changing at all. "
+          f"Compare engine changes only across runs whose canon total matches.")
+        w("")
+
     if baseline:
         base_rows = [r for r in rows if r["query"] in baseline]
         found = sum(r["found"] for r in base_rows)
@@ -155,12 +192,21 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
         if total:
             w(f"**Comparable subset.** The {len(base_rows)} questions carried over "
               f"from the 2026-08-04 gold set score **{found}/{total}** "
-              f"({_pct(found / total)}). That is the only figure comparable with "
-              f"earlier runs -- the bank grew underneath every other number here, "
-              f"and the questions added since deliberately target known weak "
-              f"spots, so a lower headline is the expected and more honest "
-              f"result.")
+              f"({_pct(found / total)}). The bank grew underneath every other "
+              f"number here, and the questions added since deliberately target "
+              f"known weak spots, so a lower headline is the expected and more "
+              f"honest result.")
             w("")
+            if canon_before and canon_now != canon_before:
+                w(f"This subset is comparable with earlier runs *only* while its "
+                  f"own {total} items are unchanged. The 2026-08-14 bank audit "
+                  f"corrected questions inside it -- adding names the wiki "
+                  f"documents and the bank had omitted, and aliases for names it "
+                  f"had spelled differently -- so its denominator has moved and "
+                  f"this figure is no longer a like-for-like comparison with the "
+                  f"pre-migration 162/217 (74.7%). It remains a fixed set of "
+                  f"*questions*; it is no longer a fixed set of *items*.")
+                w("")
 
     # ── 2. what the engine gets wrong ───────────────────────────────────────
     w("## What the engine gets wrong")
@@ -262,6 +308,61 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
             w(f"| `{r['series']}` | {r['query']} | {r['canon']} | {r['returned']} | "
               f"{r['returned'] / r['canon']:.0f}x | {_pct(r['precision'])} |")
         w("")
+
+    # ── 5b. where the wrong names come from ─────────────────────────────────
+    # The mirror of "why each miss is missing". Without it the padded-roster
+    # table above states the defect and names no fix, which is how precision
+    # went unaddressed while recall got a remediation table every run.
+    intruders = intruders or {}
+    intruder_buckets = intruders.get("buckets") or {}
+    if intruder_buckets:
+        total_intruders = sum(intruder_buckets.values())
+        w("## Where the wrong names come from")
+        w("")
+        w(f"Every one of the {total_intruders} members returned on a closed set "
+          f"that matched no canon item, by the candidate path that vouched for "
+          f"it. `recall_only` questions are excluded: their gold is a curated "
+          f"core list, so a name outside it is usually right.")
+        w("")
+        w("| source | count | share | what it means |")
+        w("|---|---:|---:|---|")
+        for bucket, count in sorted(intruder_buckets.items(), key=lambda kv: -kv[1]):
+            w(f"| {bucket} | {count} | {count / total_intruders:.0%} | "
+              f"{INTRUDER_SOURCES.get(bucket, '')} |")
+        w("")
+        single = intruders.get("single_source", 0)
+        lead = intruders.get("lead_level", 0)
+        w(f"**{single} ({single / total_intruders:.0%}) are vouched for by one "
+          f"path only**, against {intruders.get('corroborated', 0)} backed by "
+          f"more than one. Corroboration is the signal the union discards when "
+          f"it deduplicates on lowercased name alone. "
+          f"{lead} ({lead / total_intruders:.0%}) are lead-level rows — the "
+          f"section they were extracted from is the bare page title, so they "
+          f"came from the article's opening rather than from any heading.")
+        w("")
+        sections = intruders.get("sections") or {}
+        if sections:
+            w("Sections supplying the most wrong names, from "
+              "`abilities.section` — the breadcrumb each row was read from.")
+            w("")
+            w("Worth knowing before acting on this table: `ability_sections` in "
+              "`series/<name>/overrides.yaml` does **not** filter these. In "
+              "`scriptengine/retrieve/` it is read in exactly one place "
+              "(`roster.py:1208`, inside `_section_roster`), so it selects "
+              "*headings*; `_extracted_roster` never consults it, and prose "
+              "rows are the majority of what is listed here. Its other reader "
+              "is `ingest/abilities.py`, which uses it to choose what to "
+              "extract — so narrowing it there shrinks the next extraction "
+              "rather than filtering what is already stored. Acting on this "
+              "table at query time means a section filter in "
+              "`_extracted_roster`, which is code and needs a server restart, "
+              "though not a re-extraction.")
+            w("")
+            w("| count | section |")
+            w("|---:|---|")
+            for section, count in list(sections.items())[:15]:
+                w(f"| {count} | `{section}` |")
+            w("")
 
     # ── 6. offline suite ────────────────────────────────────────────────────
     if evals:

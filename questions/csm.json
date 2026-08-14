@@ -11,17 +11,19 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://chainsaw-man.fandom.com/wiki/Denji"
       ],
-      "note": "One of the original seventeen. Three items, so a useful precision probe.",
+      "note": "One of the original seventeen. Three items, so a useful precision probe. Bank audit 2026-08-14: added 1 item(s) the wiki documents and the bank omitted: Combined Form; added 3 wiki-spelling alias(es): Human Form (Pre-Fusion) -> Human; Human Form (Post-Fusion) -> Human; Devil Form -> Chainsaw Devil. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Human",
           "aliases": [
             "base",
-            "denji"
+            "denji",
+            "human form (pre-fusion)",
+            "human form (post-fusion)"
           ]
         },
         {
@@ -36,8 +38,13 @@
           "aliases": [
             "pochita",
             "full devil form",
-            "true chainsaw man"
+            "true chainsaw man",
+            "devil form"
           ]
+        },
+        {
+          "item": "Combined Form",
+          "aliases": []
         }
       ],
       "baseline": true
@@ -50,12 +57,12 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://chainsaw-man.fandom.com/wiki/Power",
         "https://www.cbr.com/power-chainsaw-man/"
       ],
-      "note": "Added 2026-08-04, and the question that exposed a whole class of subject-resolution failure: Chainsaw Man has a character called Power, so `Every ability of Power` had both of its words struck out as kind words and returned nothing at all. A strict fallback accepting only an outright `character` page now runs when nothing else resolves. 0 to 4/6.",
+      "note": "Added 2026-08-04, and the question that exposed a whole class of subject-resolution failure: Chainsaw Man has a character called Power, so `Every ability of Power` had both of its words struck out as kind words and returned nothing at all. A strict fallback accepting only an outright `character` page now runs when nothing else resolves. 0 to 4/6. Bank audit 2026-08-14: added 8 item(s) the wiki documents and the bank omitted: Blood Knife, Blood Scythe, Blood Dagger, Blood Axe, Blood Transfer, Knifemanship, Acting Skills, Blood Empowerment. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Blood Manipulation",
@@ -87,6 +94,38 @@
           "aliases": [
             "blood rain"
           ]
+        },
+        {
+          "item": "Blood Knife",
+          "aliases": []
+        },
+        {
+          "item": "Blood Scythe",
+          "aliases": []
+        },
+        {
+          "item": "Blood Dagger",
+          "aliases": []
+        },
+        {
+          "item": "Blood Axe",
+          "aliases": []
+        },
+        {
+          "item": "Blood Transfer",
+          "aliases": []
+        },
+        {
+          "item": "Knifemanship",
+          "aliases": []
+        },
+        {
+          "item": "Acting Skills",
+          "aliases": []
+        },
+        {
+          "item": "Blood Empowerment",
+          "aliases": []
         }
       ],
       "baseline": true

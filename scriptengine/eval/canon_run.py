@@ -265,6 +265,15 @@ def run(series: list[str] | None = None, skip_eval: bool = False,
     diagnosis_path = Path(diagnose(str(scores_path)))
     diagnosis = json.loads(diagnosis_path.read_text(encoding="utf-8"))
 
+    # The other half of the number. A miss diagnosis alone gave precision work
+    # no remediation table, so the padded-roster section could state the defect
+    # without naming a fix.
+    log("diagnosing intruders…")
+    from scriptengine.eval.diagnose_intruders import diagnose as diagnose_in
+
+    intruders_path = Path(diagnose_in(str(scores_path)))
+    intruders = json.loads(intruders_path.read_text(encoding="utf-8"))
+
     evals = _run_eval(wanted, skip_eval, log)
     (folder / "eval.json").write_text(json.dumps(evals, indent=2), encoding="utf-8")
 
@@ -288,6 +297,7 @@ def run(series: list[str] | None = None, skip_eval: bool = False,
         diagnosis, evals, meta,
         baseline=baseline,
         previous=previous_summary(reports_root, run_id),
+        intruders=intruders,
     )
     (folder / "REPORT.md").write_text(report, encoding="utf-8")
     canon_report.append_index(reports_root, meta, summary)

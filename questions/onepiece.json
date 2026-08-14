@@ -122,11 +122,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://onepiece.fandom.com/wiki/Roronoa_Zoro"
       ],
-      "note": "One of the original seventeen, and the clearest corpus-gap case in the bank: scored 1/8, with five items -- Sanzen Sekai, Tatsumaki, Shishi Sonson, Yakkodori and Toro Nagashi -- appearing only on episode and chapter pages, never in his ability prose. No prompt recovers them and a script should not claim them. Compare `Every sword style of Zoro`, which scores 5/5 off the same page.",
+      "note": "One of the original seventeen, and the clearest corpus-gap case in the bank: scored 1/8, with five items -- Sanzen Sekai, Tatsumaki, Shishi Sonson, Yakkodori and Toro Nagashi -- appearing only on episode and chapter pages, never in his ability prose. No prompt recovers them and a script should not claim them. Compare `Every sword style of Zoro`, which scores 5/5 off the same page. Bank audit 2026-08-14: added 2 item(s) the wiki documents and the bank omitted: Nigori-Zake, Hana Arashi. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Oni Giri",
@@ -170,6 +170,14 @@
           "aliases": [
             "enma"
           ]
+        },
+        {
+          "item": "Nigori-Zake",
+          "aliases": []
+        },
+        {
+          "item": "Hana Arashi",
+          "aliases": []
         }
       ],
       "baseline": true
@@ -182,11 +190,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://onepiece.fandom.com/wiki/Three_Sword_Style"
       ],
-      "note": "Added 2026-08-04, deliberately separate from `Every technique of Zoro`. Sheet 6 found the wiki names his styles in the headings and buries the named attacks, so asking for the styles and asking for the attacks should score very differently. They do -- 5/5 against 1/8 -- which means the miss is the corpus's shape and not the retriever's. This question is also what measured the fixed-English-kind-vocabulary defect: `style` was not in the list, so it scored 0 until series words moved into overrides.yaml.",
+      "note": "Added 2026-08-04, deliberately separate from `Every technique of Zoro`. Sheet 6 found the wiki names his styles in the headings and buries the named attacks, so asking for the styles and asking for the attacks should score very differently. They do -- 5/5 against 1/8 -- which means the miss is the corpus's shape and not the retriever's. This question is also what measured the fixed-English-kind-vocabulary defect: `style` was not in the list, so it scored 0 until series words moved into overrides.yaml. Bank audit 2026-08-14: added 2 item(s) the wiki documents and the bank omitted: No Sword Style, Foxfire Style; added 1 wiki-spelling alias(es): Ashura -> Nine Sword Style. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Three Sword Style",
@@ -213,7 +221,8 @@
           "item": "Nine Sword Style",
           "aliases": [
             "kyutoryu",
-            "asura"
+            "asura",
+            "ashura"
           ]
         },
         {
@@ -221,6 +230,14 @@
           "aliases": [
             "king of hell"
           ]
+        },
+        {
+          "item": "No Sword Style",
+          "aliases": []
+        },
+        {
+          "item": "Foxfire Style",
+          "aliases": []
         }
       ],
       "baseline": true
@@ -233,12 +250,12 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://onepiece.fandom.com/wiki/Sanji/Abilities_and_Powers",
         "https://onepiece.fandom.com/wiki/Black_Leg_Style/Ifrit_Jambe"
       ],
-      "note": "Added 2026-08-04.",
+      "note": "Added 2026-08-04. Bank audit 2026-08-14: added 13 item(s) the wiki documents and the bank omitted: Hocho Sabaki, Sky Walk, Blue Walk, Mouton Shot, Anti-Manner Kick Course, Parage Shoot, Flambage Shot, Frites Assorties, Bien Cuit: Grill Shot, Poêle à Frire: Spectre, Crosse Strike, Epluchage, Hell Memories. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Black Leg Style",
@@ -262,6 +279,58 @@
         },
         {
           "item": "Joue Shoot",
+          "aliases": []
+        },
+        {
+          "item": "Hocho Sabaki",
+          "aliases": []
+        },
+        {
+          "item": "Sky Walk",
+          "aliases": []
+        },
+        {
+          "item": "Blue Walk",
+          "aliases": []
+        },
+        {
+          "item": "Mouton Shot",
+          "aliases": []
+        },
+        {
+          "item": "Anti-Manner Kick Course",
+          "aliases": []
+        },
+        {
+          "item": "Parage Shoot",
+          "aliases": []
+        },
+        {
+          "item": "Flambage Shot",
+          "aliases": []
+        },
+        {
+          "item": "Frites Assorties",
+          "aliases": []
+        },
+        {
+          "item": "Bien Cuit: Grill Shot",
+          "aliases": []
+        },
+        {
+          "item": "Poêle à Frire: Spectre",
+          "aliases": []
+        },
+        {
+          "item": "Crosse Strike",
+          "aliases": []
+        },
+        {
+          "item": "Epluchage",
+          "aliases": []
+        },
+        {
+          "item": "Hell Memories",
           "aliases": []
         }
       ],
@@ -924,7 +993,7 @@
       "sources": [
         "https://onepiece.fandom.com/wiki/Usopp/Abilities_and_Powers"
       ],
-      "note": "Scope is `closed`: the Abilities and Powers page documents a bounded, named list of Usopp's marksmanship, engineering and tactical skills, his Observation Haki, and his named weapons, all enumerated here. Joke miscellaneous skills (artistic skill, lying, hairdressing, arachnology) are documented but are gags, not combat abilities, so they are excluded.",
+      "note": "Scope is `closed`: the Abilities and Powers page documents a bounded, named list of Usopp's marksmanship, engineering and tactical skills, his Observation Haki, and his named weapons, all enumerated here. Joke miscellaneous skills (artistic skill, lying, hairdressing, arachnology) are documented but are gags, not combat abilities, so they are excluded. Bank audit 2026-08-14: added 5 item(s) the wiki documents and the bank omitted: Artistic Skill, Arachnology, Lying, Gardening, Weapon Crafting. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Marksmanship",
@@ -965,6 +1034,26 @@
         },
         {
           "item": "Pop Greens",
+          "aliases": []
+        },
+        {
+          "item": "Artistic Skill",
+          "aliases": []
+        },
+        {
+          "item": "Arachnology",
+          "aliases": []
+        },
+        {
+          "item": "Lying",
+          "aliases": []
+        },
+        {
+          "item": "Gardening",
+          "aliases": []
+        },
+        {
+          "item": "Weapon Crafting",
           "aliases": []
         }
       ]

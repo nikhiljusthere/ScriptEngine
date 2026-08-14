@@ -287,3 +287,60 @@ in the report, not absorbed silently.
 **Restart discipline.** Every phase here edits code under `scriptengine/`. The
 API holds its code in memory; `canon-run` will refuse to run against a stale
 server (verified — it fired correctly during this session's diagnosis fix).
+
+---
+
+## Measured corrections (2026-08-14, during Phase 0 execution)
+
+Four things above are wrong, found by building the intruder table the plan asks
+for and then measuring against it. The plan is otherwise unchanged; these are
+corrections to its arithmetic, not a change of direction.
+
+**1. "Drop lead-level rows" is worth 45 intruders, not 259.** The plan's rule —
+a row whose `section` is the bare page name — is right. Reading it as "the
+breadcrumb has no `/`" is not: breadcrumb depth is a property of the wiki, not
+of the lead. Dragon Ball files ability prose under a single-segment `Abilities`,
+so the depth test called all 26 of Cell's rows lead-level when none are. Against
+the page title, the run has **45 lead rows (5% of intruders)**, not 259 (29%).
+Guarded by `test_diagnose_intruders.py`.
+
+**2. Phase 1 is not data-only.** `ability_sections` is read in exactly one place
+under `retrieve/` — `roster.py:1208`, inside `_section_roster` — so it selects
+*headings*. `_extracted_roster` never consults it, and **prose rows are 56% of
+all intruders**. Its other reader is `ingest/abilities.py`, which uses it to
+choose what to extract, so narrowing it there shrinks the *next* extraction
+rather than filtering what is already stored. Acting on sections at query time
+means a section filter inside `_extracted_roster`: code, and a server restart —
+though still no re-extraction, since `abilities.section` is already stored.
+
+**3. The section lever is worth 36.5% → 43.2%, not 80%.** Measured over the
+closed sets where any canon item was found, keeping only the sections that hold
+canon, at **unchanged recall**. The gain is real but concentrated: Garou
+9%→25%, Killua 18%→45%, Gon 50%→100%, Kurapika 62%→100%, Ulquiorra 20%→50%.
+**Dragon Ball gains nothing at all** — its breadcrumbs are single-segment, so
+canon and junk share `Abilities`, and its junk is non-canon game forms (Cell X,
+Vegecell, Perfect 16) that want `non_canon_works:`/`prune_types:` instead. Note
+this was measured against the *uncorrected* bank and is therefore a floor:
+several sections counted as holding junk are holding canon the bank omitted.
+
+**4. Phase 0 is larger than "some measured junk is correct".** On
+`Every Saitama technique`, 8 of the 9 intruders under
+`Abilities and Powers / Fighting Style` are genuine `Killer Move: Serious
+Series` moves, and a ninth (`Serious Sneeze`) sits under `Physical Abilities`.
+One is a pure alias gap — the bank stores only the Viz name
+`Serious Sideways Jumps`, so the wiki's own `Serious Side Hops` scores as an
+error. Real precision on that question is ~35%, not the measured 14%.
+
+Two things the plan does not say, worth knowing before Phase 1:
+
+* **Dropping lead rows is not free.** Some canon items *are* in the lead —
+  Guts, Griffith, Denji and Byakuya each have canon in a bare-page-name
+  section. A blanket lead filter costs recall on berserk, csm and bleach.
+* **31 of the 42 audited questions are `baseline: true`.** Correcting them
+  changes the canon count of the only subset comparable with pre-migration
+  runs. Accepted deliberately: leaving 31 of the 42 worst questions wrong to
+  protect one historical percentage would defeat the audit. The alternative
+  considered and rejected was reclassifying them `scope: core`, which preserves
+  the comparison but pulls the worst questions out of the precision denominator
+  — collapsing the signal the whole plan exists to measure. The report must
+  state that the comparable subset moved.

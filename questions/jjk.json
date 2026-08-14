@@ -11,11 +11,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
       ],
-      "note": "One of the original seventeen. `Yuji Itadori vs. Sukuna` was in this list and is not a page on this wiki: what exists is `Yuji, Maki & Hana vs. Sukuna` -- three on one -- and `Jujutsu Sorcerers vs. Sukuna`, a group raid. Neither is a 1v1, which is what this question asks for, so the item was never answerable and was removed rather than counted against the engine.",
+      "note": "One of the original seventeen. `Yuji Itadori vs. Sukuna` was in this list and is not a page on this wiki: what exists is `Yuji, Maki & Hana vs. Sukuna` -- three on one -- and `Jujutsu Sorcerers vs. Sukuna`, a group raid. Neither is a 1v1, which is what this question asks for, so the item was never answerable and was removed rather than counted against the engine. Bank audit 2026-08-14: added 3 item(s) the wiki documents and the bank omitted: Yuji Itadori vs. Hiromi Higuruma, Yuji Itadori vs. Kinji Hakari, Yuji Itadori vs. Panda. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Yuji Itadori vs. Aoi Todo",
@@ -52,6 +52,18 @@
           "aliases": [
             "yuji vs yuta"
           ]
+        },
+        {
+          "item": "Yuji Itadori vs. Hiromi Higuruma",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Kinji Hakari",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Panda",
+          "aliases": []
         }
       ],
       "baseline": true
@@ -64,11 +76,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
       ],
-      "note": "One of the original seventeen. Sukuna is the measured cost of running full membership validation on prose-extracted rows: doing so deletes Dismantle, Cleave and Shrine for `no field on this page names X as a user`, which is the exact condition prose extraction exists to work around.",
+      "note": "One of the original seventeen. Sukuna is the measured cost of running full membership validation on prose-extracted rows: doing so deletes Dismantle, Cleave and Shrine for `no field on this page names X as a user`, which is the exact condition prose extraction exists to work around. Bank audit 2026-08-14: added 2 item(s) the wiki documents and the bank omitted: Domain Amplification, Spiderweb; added 1 wiki-spelling alias(es): Divine Flame -> Furnace. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Shrine",
@@ -89,7 +101,8 @@
         {
           "item": "Furnace",
           "aliases": [
-            "fuga"
+            "fuga",
+            "divine flame"
           ]
         },
         {
@@ -111,6 +124,14 @@
           "aliases": [
             "ten shadows"
           ]
+        },
+        {
+          "item": "Domain Amplification",
+          "aliases": []
+        },
+        {
+          "item": "Spiderweb",
+          "aliases": []
         }
       ],
       "baseline": true
@@ -123,12 +144,12 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-04",
+      "verified": "2026-08-14",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Limitless",
         "https://www.cbr.com/jjk-gojo-every-cursed-technique/"
       ],
-      "note": "Added 2026-08-04. Scored 7/7.",
+      "note": "Added 2026-08-04. Scored 7/7. Bank audit 2026-08-14: added 3 item(s) the wiki documents and the bank omitted: Curtain, Falling Blossom Emotion, New Shadow Style: Simple Domain. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Limitless",
@@ -170,6 +191,18 @@
         },
         {
           "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Curtain",
+          "aliases": []
+        },
+        {
+          "item": "Falling Blossom Emotion",
+          "aliases": []
+        },
+        {
+          "item": "New Shadow Style: Simple Domain",
           "aliases": []
         }
       ],
