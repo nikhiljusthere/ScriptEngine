@@ -256,18 +256,20 @@ ability_stopwords:
   - Yamta
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
-  # Deliberately NOT declared: `Majin Buu forms`. His forms are filed as separate
-  # characters -- Innocent Buu, Evil Buu, Super Buu, Kid Buu, Good Buu -- and a
-  # roster naming those five does resolve (`cli rosters` shows it at 5 members),
-  # but it never gets used. `build_roster` resolves the subject first and lets a
-  # person beat a declared set on purpose (roster.py:461): "Every form of Majin
-  # Buu" narrows to a character, so the query answers from
-  # `basis='Kid Buu's transformation'` and still scores 0/7.
+  # There is no `Majin Buu` page on this wiki: his forms are filed as separate
+  # characters. Without `subject:` this declaration is inert -- a declared set is
+  # discarded once the topic names a person, and "Majin Buu" resolves to Kid Buu,
+  # so the question answered from `basis='Kid Buu's transformation'` with one
+  # member and 0/7. Naming the subject is what makes it the answer.
   #
-  # That precedence is right in general -- it is what makes "Every Cursed
-  # Technique of Sukuna" answer about Sukuna rather than about cursed techniques
-  # -- so the fix is in subject resolution, not here. Declaring the roster anyway
-  # would leave config that reads as working and is inert.
+  # `Buutenks` and `Buuhan` have no articles of their own -- the wiki describes
+  # both on the `Super Buu` page -- and are kept anyway, because a declared
+  # member list is transcribed from the wiki rather than read out of the index.
+  - name: Majin Buu forms
+    match: [form of majin buu, forms of majin buu, majin buu]
+    subject: Majin Buu
+    members: [Innocent Buu, Evil Buu, Super Buu, Buutenks, Buuhan, Kid Buu,
+              Good Buu]
 
   # Declared for the vocabulary rather than for the set: discovery finds `Races`
   # on its own, but "non-humans" prefix-matched `Non-english dubs` and returned

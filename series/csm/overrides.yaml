@@ -62,6 +62,30 @@ rosters:
     members: [Katana Man, Reze, Quanxi, Miri Sugo, Barem Bridge, Whip Hybrid,
               Spear Hybrid]
 
+  # Aki's three contracts are stored, as `Fox Devil Contract`, `Curse Devil
+  # Contract` and `Future Devil Contract` under
+  # `Abilities / Antemortem Abilities / Devil Contracts`, and all three are
+  # filed `kind=transformation`. "Every devil contract of Aki Hayakawa" does not
+  # use an umbrella word, so it asks for techniques alone and got the four
+  # technique rows on the same page instead -- Precognition, Summoning, Bullet
+  # Projection, Blood Consumption. Named here against the devil pages, which is
+  # how the bank names them and what the wiki links.
+  - name: Aki Hayakawa's devil contracts
+    match: [devil contract of aki hayakawa, devil contracts of aki hayakawa,
+            contract of aki hayakawa, contracts of aki hayakawa]
+    subject: Aki Hayakawa
+    members: [Fox Devil, Curse Devil, Future Devil]
+
+  # Nothing at all was extracted for Himeno -- her `abilities` table is empty --
+  # so the character path could only return the headings `Past` and `Devil
+  # Contract`. Both members are named on her page and neither has an article:
+  # "'''Ghost Devil Contract''': Himeno had the ability to use the power of the
+  # Ghost Devil".
+  - name: Himeno's abilities
+    match: [ability of himeno, abilities of himeno]
+    subject: Himeno
+    members: [Ghost Devil Contract, Hand-to-Hand Combat]
+
   # No `group_by: species` here on purpose: every member of this category
   # answers "Devil", so grouping by it produces one group and says nothing.
   - name: Devils

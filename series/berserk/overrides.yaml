@@ -60,10 +60,29 @@ rosters:
     match: [type of beherit, types of beherit, beherit]
     members: [Beherit]
 
-  # Deliberately not declared: the Four Kings of the World. The wiki names all
-  # four in a `notable members` field -- King of the East, West, South and North
-  # -- as plain text with no links, so none of them is a page and a declaration
-  # would resolve to an empty roster. It needs pageless members to work at all.
+  # None of the four has a page: the wiki names them in a `notable members`
+  # field as plain text, and each is addressed in the joint incantation on that
+  # page ("Oh blessed King of the East, whose spirit rises over the mountain as
+  # a zephyr"). A declared roster keeps its members whether or not the wiki gave
+  # them articles, which is the only way this set can be answered at all.
+  - name: Four Kings of the World
+    match: [four kings of the world, four kings, four sacred kings,
+            four cardinal kings]
+    members: [King of the East, King of the West, King of the South,
+              King of the North]
+
+  # Serpico's kit is equipment, and the wiki files it that way -- `Sylph Sword`,
+  # `Sylph Cloak` and `Rapier` are all stored `kind=item`, so an "every ability"
+  # question, which asks for techniques and transformations, could never return
+  # them. The character path answered instead with the three section headings on
+  # his page: `Physical Abilities`, `Tactical Abilities`, `Equipment`.
+  #
+  # `subject:` is what lets this win. A declared set is normally discarded the
+  # moment the topic names a person; this one is about a person on purpose.
+  - name: Serpico's abilities
+    match: [ability of serpico, abilities of serpico]
+    subject: Serpico
+    members: [Rapier, Sylph Sword, Sylph Cloak]
 
   - name: Apostles
     match: [apostle, apostles]

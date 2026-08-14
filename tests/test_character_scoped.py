@@ -142,6 +142,56 @@ class TestKinds:
         # "every weapon" stays equipment however it is phrased.
         assert widen(["ability", "weapon"], {ontology.ITEM}) == {ontology.ITEM}
 
+    def test_a_declared_member_survives_having_no_page(self):
+        """`members:` is transcribed from the wiki, not read out of the index.
+
+        Requiring a node scored three whole questions 0: the Four Kings of the
+        World are plain text in a `notable members` field, six of the Band of
+        the Falcon are sections of `Minor Characters`, and Himeno's `Ghost Devil
+        Contract` is described on her page rather than filed as its own.
+        """
+        paths = store_for("berserk")
+        declared = R.RosterDefinition(
+            name="test", members=("Griffith", "King of the East"))
+        with FactStore(paths.facts_db) as store:
+            assert store.node_by_name("Griffith") is not None
+            assert store.node_by_name("King of the East") is None
+            assert R._declared_members(store, declared) == [
+                "Griffith", "King of the East"]
+
+    def test_a_category_read_still_drops_what_the_store_cannot_describe(self):
+        """`keep_bare` is for hand-written lists only.
+
+        A category read returning a name with no text is a stale index, not an
+        answer, so that path keeps its filter.
+        """
+        import inspect
+
+        source = inspect.getsource(R.build_roster)
+        assert "keep_bare=bool(declared.members)" in source
+
+    def test_a_roster_may_declare_the_person_it_is_about(self):
+        """`subject:` is the exception to "a person beats a declared set".
+
+        Without it "Every ability of Serpico" answers from his page's section
+        headings while the three items the wiki lists sit in the store filed as
+        equipment, which an ability question never asks for.
+        """
+        declared = R.RosterDefinition.parse({
+            "name": "Serpico's abilities",
+            "match": ["ability of serpico"],
+            "subject": "Serpico",
+            "members": ["Rapier", "Sylph Sword", "Sylph Cloak"],
+        })
+        assert declared.subject == "Serpico"
+        assert declared.members == ("Rapier", "Sylph Sword", "Sylph Cloak")
+
+        # Absent by default, so every existing declaration keeps the old
+        # behaviour and the general path still wins.
+        plain = R.RosterDefinition.parse({"name": "Apostles",
+                                          "category": "Apostles"})
+        assert plain.subject == ""
+
     def test_a_stopword_is_dropped_whichever_path_found_it(self):
         """A declared non-ability must not come back as a heading or an edge.
 

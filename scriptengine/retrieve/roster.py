@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import json
 import re
+import sqlite3
 from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass, field
@@ -183,6 +184,20 @@ class RosterDefinition:
     # Group name -> the category holding its members. When set, the roster's
     # members *are* the groups: "Every Nen Type" is six types, not 111 users.
     groups: dict[str, str] = field(default_factory=dict)
+    # The person this set is about, when it is deliberately about one.
+    #
+    # A declared set is normally a general one, so `build_roster` discards it the
+    # moment the topic narrows to a character -- "Every Cursed Technique of
+    # Sukuna" wants Sukuna's kit, not all 38 innate techniques. That rule is
+    # right and it also made a whole class of set undeclarable: "Every ability of
+    # Serpico" is *only* about a person, and the character path answers it with
+    # the three section headings on his page while the three items the wiki
+    # actually lists sit in the store filed as equipment.
+    #
+    # Naming the subject says "this one is about a person on purpose" and stops
+    # the fallthrough. It is the narrow exception, not a way around the rule:
+    # without it the general path still wins, as it should.
+    subject: str = ""
 
     @classmethod
     def parse(cls, raw: dict) -> "RosterDefinition | None":
@@ -203,6 +218,7 @@ class RosterDefinition:
             fact=(str(fact.get("key") or ""), str(fact.get("value") or "")),
             group_by=str(raw.get("group_by") or ""),
             groups={str(k): str(v) for k, v in (raw.get("groups") or {}).items()},
+            subject=str(raw.get("subject") or "").strip(),
         )
 
     def matched_phrase(self, query: str) -> str:
@@ -462,8 +478,14 @@ def build_roster(
         # the person wins: "Every Cursed Technique of Sukuna" wants Sukuna's
         # kit, not all 38 innate techniques, and a phrase broad enough to be
         # worth declaring is broad enough to swallow that.
-        if declared is not None and _names_a_character(
-            query, subject, subject_label, vocabulary
+        #
+        # Unless the set says outright that it is about that person. `subject:`
+        # is how a series declares the exception, and without it the general
+        # path still wins.
+        if (
+            declared is not None
+            and not declared.subject
+            and _names_a_character(query, subject, subject_label, vocabulary)
         ):
             declared = None
 
@@ -481,6 +503,15 @@ def build_roster(
             if kinds
             else ""
         )
+        # A declared set that names its subject *is* the answer for that person,
+        # so it runs instead of the character path rather than after it. The
+        # character path returns as soon as it finds anything, and on exactly
+        # these questions what it finds is wrong: Serpico's page yields its three
+        # section headings, and "Every form of Majin Buu" resolves to Kid Buu
+        # because no `Majin Buu` page exists to resolve to.
+        if declared is not None and declared.subject:
+            character = ""
+
         if character and kinds and not _files_by_character(
             store, character, kinds, overrides
         ):
@@ -540,7 +571,12 @@ def build_roster(
                     store, names, constraints, declared.name, overrides=overrides
                 )
                 members = _render_all(
-                    store, episodes, names[:max_members], declared.group_by, member_chars
+                    store, episodes, names[:max_members], declared.group_by,
+                    member_chars,
+                    # Only for a hand-written `members:` list. A category read
+                    # that returns a name the store knows nothing about is a
+                    # stale index, not an answer.
+                    keep_bare=bool(declared.members),
                 )
                 roster = Roster(
                     subject=declared.name, basis=declared.name, kind="declared",
@@ -1360,12 +1396,45 @@ def _section_roster(
     )
 
 
+def _mentioned_anywhere(store: FactStore, name: str) -> bool:
+    """Whether this wiki's prose names it at all, article or not.
+
+    Only ever used to tell a member the wiki never gave a page from a member
+    someone mistyped. Deliberately not a membership test -- being mentioned
+    somewhere proves nothing about whose ability a thing is, and nothing here
+    treats it as though it did.
+    """
+    if not name.strip():
+        return False
+    try:
+        row = store.connection.execute(
+            "SELECT 1 FROM chunks WHERE text LIKE ? COLLATE NOCASE LIMIT 1",
+            (f"%{name}%",),
+        ).fetchone()
+    except sqlite3.Error:  # a store built before chunks existed
+        return False
+    return row is not None
+
+
 def _declared_members(store: FactStore, declared: RosterDefinition) -> list[str]:
     """The pages behind a declared set, however the wiki holds them."""
     if declared.members:
-        # Checked against the store, so a typo or a renamed page shows up as a
-        # short roster in `cli rosters` rather than as a silent omission.
-        return [name for name in declared.members if store.node_by_name(name)]
+        # A page is not the only proof a member is real. Requiring one deleted
+        # answers the wiki states plainly: the Four Kings of the World are four
+        # plain-text entries in a `notable members` field, six of the Band of the
+        # Falcon are sections of `Minor Characters`, and Himeno's `Ghost Devil
+        # Contract` is a bolded line on her own page. None has an article and all
+        # eleven scored 0.
+        #
+        # The check the article test was really making is "did someone mistype
+        # this", and mentioned-anywhere answers that without discarding the
+        # pageless: a real member is named somewhere on the wiki, a typo is
+        # named nowhere. Kept in declaration order, since a hand-written list is
+        # usually written in a deliberate one.
+        return [
+            name for name in declared.members
+            if store.node_by_name(name) or _mentioned_anywhere(store, name)
+        ]
     if declared.sections_of:
         rows, depth = _section_levels(store, declared.sections_of)
         return [row["title"] for row in rows if row["level"] == depth]
@@ -1404,12 +1473,22 @@ def _render_all(
     names: list[str],
     group_by: str,
     member_chars: int,
+    keep_bare: bool = False,
 ) -> list[Member]:
+    """Render each name, dropping the ones the store can say nothing about.
+
+    `keep_bare` is for a roster whose members were declared by hand. A member
+    the wiki never gave an article has no text and no facts, so the filter below
+    removes it -- correct when the name came from a category read and wrong when
+    someone wrote it down deliberately. A bare name is still the answer to
+    "every member of the Four Kings of the World"; an empty roster is not.
+    """
     members = [
         _render_member(store, episodes, name, group_by, member_chars)
         for name in names
     ]
-    members = [member for member in members if member.text or member.facts]
+    if not keep_bare:
+        members = [member for member in members if member.text or member.facts]
     members.sort(key=_member_order)
     return members
 
