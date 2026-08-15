@@ -102,6 +102,43 @@ not `enemy`.
 
 ---
 
+## 2b. Ownership the wiki states in a sentence
+
+Some wikis put no `user` field on a technique page and say it in the first line
+instead:
+
+    "is a technique of Rukia Kuchiki's Zanpakutō, Sode no Shirayuki"
+
+```powershell
+python -m scriptengine.cli link --series <s>     # after index, which rebuilds the graph
+```
+
+Whether it is worth running is a property of the wiki, and the audit in step 1
+already tells you: **only a wiki that gives techniques their own pages can have
+this problem at all.**
+
+| wiki | technique pages | lead names an owner | net new edges |
+|---|---:|---:|---:|
+| bleach | 488 | 242 | 196 |
+| db | 2,123 | 347 | 302 |
+| jjk | 149 | 8 | 0 — all already had a field |
+| onepiece | 63 | 1 | 0 |
+| berserk, csm, hxh, opm | **0** | — | not applicable |
+
+The four zeros are not a fault. Those wikis give abilities no page at all, which
+is exactly why `ingest/abilities.py` exists -- Killua's `Godspeed` is prose and
+nothing else. Do not go looking for a classification bug there.
+
+Two properties to keep if this is ever extended:
+
+* **Write under a distinct relation.** `stated user` is not `user`. A claim read
+  out of prose must stay tellable from one the wiki wrote in a field, and
+  removable if the rule turns out to be wrong.
+* **A derived set may not call itself exact.** A test caught this immediately:
+  `_owned_roster` claimed exactness the moment the edges existed, and a set
+  assembled from sentences is not a set the wiki curated.
+
+
 ## 3. Extract
 
 See `EXTRACTION_RUNBOOK.md` for the model configuration, which matters more
