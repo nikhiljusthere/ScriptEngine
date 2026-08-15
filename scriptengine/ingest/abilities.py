@@ -480,6 +480,13 @@ def extract_series(
         # (1,640 characters) would be pointless when the pool can only be
         # working on `workers` of them. Saving per chunk also means an
         # interrupted run keeps everything it already paid for.
+        #
+        # Timeouts are retried once at the end, at a quarter of the width. They
+        # are a transient of asking a shared API for too much at once, not a
+        # property of the character: a first jjk pass at 16 workers lost 33 of
+        # 63 characters to `opencode timed out after 300s`, and losing a page
+        # for the run costs more than paying for it twice.
+        retry: list[tuple[str, str]] = []
         for start in range(0, len(todo), workers * 4):
             chunk = todo[start : start + workers * 4]
             work = [
@@ -506,9 +513,39 @@ def extract_series(
                         logger.warning(
                             "Extracting %r failed: %s", character, outcome
                         )
-                        report["failed"] += 1
+                        retry.append((character, revid))
                         continue
                     store_result(character, revid, outcome)
+
+        if retry:
+            logger.warning("Retrying %d character(s) that failed", len(retry))
+            narrow = max(1, workers // 4)
+            for start in range(0, len(retry), narrow * 4):
+                chunk = retry[start : start + narrow * 4]
+                work = [
+                    (character, revid, passages(store, character, overrides))
+                    for character, revid in chunk
+                ]
+
+                def run_again(job):
+                    character, _, found_passages = job
+                    return extract_from_passages(
+                        client, paths.name, character, found_passages, overrides
+                    )
+
+                with ThreadPoolExecutor(max_workers=narrow) as pool:
+                    for (character, revid, _), outcome in zip(
+                        work, pool.map(_guarded(run_again), work)
+                    ):
+                        if isinstance(outcome, BaseException):
+                            if isinstance(outcome, LLMRateLimited):
+                                raise outcome
+                            logger.warning(
+                                "Extracting %r failed twice: %s", character, outcome
+                            )
+                            report["failed"] += 1
+                            continue
+                        store_result(character, revid, outcome)
     return report
 
 
