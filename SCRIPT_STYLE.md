@@ -155,15 +155,30 @@ Three consequences for `ingest/relations.py`:
 
 ---
 
-## What is missing, in priority order
+## What has since been built
 
-1. **Arc-scoped character chronology.** Archetype A's whole spine. opm arcs
-   carry 172 `characters` edges; **jjk arcs carry none**, so "who was in the
-   Shibuya Incident" is answerable for one wiki and not the other. Without this
-   the engine cannot serve a character-life script at all.
-2. **Citation rendering.** Episode-led, italic. Small, and it makes every
-   returned bundle paste-ready.
-3. **Relations coverage on jjk.** jjk has no `Relationships` section — its
+**Arc-scoped chronology — done, and it needed no model.** These wikis already
+file a character's history under arc-named headings (1,093 such chunks in jjk,
+1,859 in opm), so `chronology.appearances()` is a keyed read ordered by the
+wiki's own `previous`/`next` chain. `cast()` answers the inverse — jjk arcs
+carry no `characters` edges at all, and reading it back off the character pages
+works on both wikis.
+
+**Section scaffolds — done.** `chronicle <character> --arc <arc>` returns the
+heading, the prose cut into beats at its citation boundaries, the character's
+abilities, and their relations filtered to that arc. Benchmarked against the
+hand-written Garou script, the engine's Hero Hunt Arc covers every beat the
+script does with **seven chapter-and-episode locators against the script's one
+timestamp**.
+
+**Battle-scoped answers — done.** "Which techniques did X use in <battle>" reads
+`combatant1`/`abilities1` off the battle page: 36.9% recall at 5.6% precision
+before, 100%/100% after. 130 of One Punch Man's 133 battle pages carry a chapter
+or episode.
+
+## What is still missing
+
+1. **Relations coverage on jjk.** jjk has no `Relationships` section — its
    relationship prose lives in `History` (174 chunks) and `Synopsis` (1,189).
    The default sections reach only 25 jjk characters. Whether `Synopsis` earns
    inclusion is a judgement to make on real output, not in advance: it is plot

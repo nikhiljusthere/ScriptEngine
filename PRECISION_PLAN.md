@@ -400,3 +400,78 @@ Two things the plan does not say, worth knowing before Phase 1:
   the comparison but pulls the worst questions out of the precision denominator
   — collapsing the signal the whole plan exists to measure. The report must
   state that the comparable subset moved.
+
+
+---
+
+# Outcome, 2026-08-16
+
+The plan's target was 33.5% precision. Where it finished, and what actually
+moved it — recorded because the causes were not the ones this document predicted.
+
+| | 2026-08-14 | 2026-08-16 |
+|---|---|---|
+| canon recovered | 626/878 (71.3%) | **1242/1362 (91.2%)** |
+| precision, closed sets | 33.5% | **60.0%** |
+| questions at recall 0 | — | 2/160 |
+| confident and wrong | — | 2 |
+
+The bank grew from 85 closed-set questions to 160, so the two rows are not the
+same measurement; the recall percentage is comparable and the absolute counts
+are not.
+
+## What moved it
+
+Almost none of it was scoring or ranking. In order of size:
+
+1. **A missing kind.** `ability` and `technique` are the same word to
+   `_KIND_WORDS`, so "Every ability of Gojo" and "Every cursed technique of
+   Yuta" asked for the same thing and the wiki's graded stat lines answered
+   both. Adding `trait`, admitted by `widen_umbrella` on the umbrella words
+   only, raised **recall and precision together** — +11 canon and +2.7pp — after
+   this document had recorded that trade as unavoidable. It was not
+   unavoidable; it was a distinction that did not exist yet.
+
+2. **Three classification faults**, each making real pages unreachable:
+   `fighting_style_box` folded to `event` (63 pages), `combat` folded to `event`
+   on One Punch Man (48 pages), and `parent_tab` folded to `unknown` (271 pages,
+   including Saitama and Garou). `event` is in `NEVER_MEMBERS`, so all of them
+   were barred from membership entirely.
+
+3. **Declarations that contradicted the bank.** Eight names sat in
+   `ability_stopwords` while the gold called them canon. `Every ability of
+   Roronoa Zoro` went 7/10 → 10/10 on their removal.
+
+4. **A re-extraction** under a prompt that keeps the wiki's graded stat lines.
+   The extraction-gap bucket had been stuck at 62–75 misses in *every* run.
+
+5. **Scoping a question to what it names.** A question naming a battle was
+   answered with the character's whole kit: 36.9% recall at 5.6% precision over
+   41 such questions, 100%/100% once the battle page was read.
+
+## What the ceiling is
+
+Of 120 remaining misses, **20 are not on the wiki at all**. No model, extractor
+or retriever returns what the corpus does not contain, so recall is capped at
+**98.5%** without new sources. Several more "misses" are gold errors — items
+taken from game pages, or a count transcribed from a single page rather than
+from the series.
+
+## Refuted here, do not rebuild
+
+Alongside the Phase 2 refutations above:
+
+- **Alias-aware scoring.** Accepting a member returned under any name the wiki's
+  alias table calls the same page. Written, measured, reverted: `divine dog`
+  maps to both `Divine Dogs` and `Divine Dog: Totality`, so it merged two
+  distinct shikigami. A scorer that reports a better number by being wrong is
+  worse than no change.
+- **Raising `_TEMPLATE_HEADING_PAGES` from 10 to 70** — measured worse, already
+  recorded above.
+- **Trimming the level-0 infobox card** from extraction passages: it looks like
+  waste and produces a third of berserk's and hxh's ability rows.
+
+## Where the process is written down
+
+`NEW_SERIES_PLAYBOOK.md` — the ordered checklist for a new wiki, with every trap
+and its measured cost.

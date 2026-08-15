@@ -140,6 +140,21 @@ is the *only* place the wiki records them.
 
 ## Operational traps
 
+**The API server and the model cannot share the GPU.** The server loads
+`bge-large` and `bge-reranker-v2-m3` onto the same card. With the 27B resident
+that exhausts 32GB and LM Studio answers `500 Internal Server Error` to every
+request: a csm run recorded three failures and no rows, and the only visible
+symptom was an idle GPU. Extraction runs fine only because no server is up —
+stop it first. The runner refuses to start while one is running.
+
+Measured: 23.3GB with the model alone at 8,192 context, 31.8GB with the server
+too, on a 32.6GB card.
+
+**A scoring run needs the server; an extraction run needs it gone.** They are
+mutually exclusive on one machine. Score the coverage banks through
+`build_roster` in-process instead — roster mode is pure SQLite and touches
+neither.
+
 **JIT auto-load silently undoes the preset.** Any stray API request will load
 the model with *default* config — context back to 262,144, thinking back on. A
 probe did this and cost a bogus 90.8s measurement. Disable auto-load in LM
@@ -213,6 +228,29 @@ Rows cache on page `revid` + `PROMPT_VERSION`. Bumping `PROMPT_VERSION`
 invalidates all eight wikis at once, which is what forces a full re-extraction.
 
 ---
+
+## When the answer field comes back empty
+
+The model answers without a field it was asked for if the JSON shape is split
+across lines. Adding `acquired` on a second line produced replies with no
+`acquired` at all — every row would have defaulted to `innate` and Yuta's copied
+techniques would have been indistinguishable from his own. On one line it
+answers correctly.
+
+Omitting a field where the passage says nothing about it is right, and the store
+defaults those. What is not right is never being asked.
+
+## What the cross-window limit costs
+
+A window is 4,000 characters, and the model only knows what is in the one it is
+shown. Yuta's page says `Copy: Yuta's innate technique allows him to copy the
+innate techniques of people who had their body parts consumed by Rika` in one
+section and names `Limitless` in another, so `acquired` came back `innate` for
+all 570 jjk rows. The field works — given a passage that states the copying, it
+returns `copied` with the right reason — but it cannot join two windows.
+
+Anything needing evidence from two places on a page needs either a wider passage
+or a second pass over what the first one stored.
 
 ## Related
 
