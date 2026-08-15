@@ -52,7 +52,7 @@ from scriptengine.stores.facts import FactStore
 logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored relation, exactly as `abilities` does.
-PROMPT_VERSION = "2026-08-15.2"
+PROMPT_VERSION = "2026-08-15.3"
 
 # Directional, read from the subject: `(Gojo, Yuji, mentor)` is Gojo mentoring
 # Yuji. Closed on purpose -- see the module docstring.
@@ -222,6 +222,56 @@ def _quoted_in(quote: str, passage: str) -> bool:
     return tidy(quote) in tidy(passage)
 
 
+def known_arcs(store: FactStore) -> dict[str, str]:
+    """This wiki's arc names, folded, for putting an era in story order.
+
+    A relationship is often true for part of a story and false for the rest.
+    Frieza is an enemy for the whole of Dragon Ball Z and an ally during the
+    Tournament of Power; a sorcerer is Grade 1 until they are promoted. Stored
+    without a period, both readings are equally true and a script cannot tell
+    which came first.
+
+    Measured over the first run, 20 Jujutsu Kaisen pairs and 64 One Punch Man
+    pairs already hold more than one relation -- `Choso <-> Noritoshi Kamo` is
+    both `family` and `enemy` -- so the readings are being captured. What was
+    missing is *when*.
+
+    Folded because the model writes the arc as the prose does. jjk matched 19 of
+    28 eras to an arc exactly and opm matched 0 of 21, while writing
+    `Monster Association arc` for `Monster Association Arc` -- a difference of
+    one capital letter.
+    """
+    from scriptengine.retrieve import chronology
+
+    return {arc.strip().lower(): arc for arc in chronology.arc_pages(store) if arc}
+
+
+def _era_for(said: str, section: str, arcs: dict[str, str]) -> str:
+    """The period a relation belongs to: what the model said, or where it sat.
+
+    An arc name is preferred over free text because it can be ordered against
+    the wiki's own `previous`/`next` chain. `during their student years` cannot.
+
+    Falling back to the section is not a guess: a relationship extracted from
+    the prose under `History / Gojo's Past Arc` belongs to that arc by
+    construction. 63 of 109 Jujutsu Kaisen rows sit under an arc-named section
+    while only 28 carried an era of their own.
+    """
+    said = (said or "").strip()
+    if said:
+        hit = arcs.get(said.lower())
+        if hit:
+            return hit
+        # `Monster Association arc` for `Monster Association Arc`.
+        loose = arcs.get(re.sub(r"\s+arc$", " arc", said.lower()))
+        if loose:
+            return loose
+    for part in (part.strip() for part in (section or "").split("/")):
+        if part.lower() in arcs:
+            return arcs[part.lower()]
+    return said
+
+
 def known_names(store: FactStore, overrides: dict | None = None) -> dict[str, str]:
     """Every name this wiki has an entity for, folded, to its canonical title.
 
@@ -269,6 +319,7 @@ def extract_from_passages(
     found_passages: list[tuple[str, str]],
     overrides: dict,
     known: dict[str, str],
+    arcs: dict[str, str] | None = None,
 ) -> list[dict[str, str]]:
     """Relationships stated for this character, over passages already read.
 
@@ -316,6 +367,7 @@ def extract_from_passages(
                     continue
                 seen.add(key)
                 entry["section"] = section
+                entry["era"] = _era_for(entry.get("era", ""), section, arcs or {})
                 found.append(entry)
     return found
 
@@ -361,6 +413,7 @@ def extract_series(
         store.ensure_relations()
         # Resolved here, on the thread that owns the connection.
         known = known_names(store, overrides)
+        arcs = known_arcs(store)
         characters = needs_relations(store, overrides)
         report["considered"] = len(characters)
         wanted = characters[:limit] if limit else characters
@@ -396,7 +449,7 @@ def extract_series(
                 try:
                     found = extract_from_passages(
                         client, paths.name, character,
-                        passages(store, character, overrides), overrides, known,
+                        passages(store, character, overrides), overrides, known, arcs,
                     )
                 except LLMUnavailable:
                     raise
@@ -417,7 +470,8 @@ def extract_series(
             def run(job):
                 character, _, found_passages = job
                 return extract_from_passages(
-                    client, paths.name, character, found_passages, overrides, known
+                    client, paths.name, character, found_passages, overrides, known,
+                    arcs,
                 )
 
             with ThreadPoolExecutor(max_workers=workers) as pool:

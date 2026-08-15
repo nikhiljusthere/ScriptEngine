@@ -1014,12 +1014,21 @@ _UMBRELLA_WORDS = frozenset({"ability", "abilities", "power", "powers"})
 
 
 def widen_umbrella(words: Sequence[str], kinds: set[str]) -> set[str]:
-    """Admit transformations when the topic asked for abilities in general."""
+    """Admit transformations and traits when the topic asked for abilities.
+
+    This is what separates "Every ability of Gojo" from "Every cursed technique
+    of Yuta". Both resolve to `technique` -- `ability` and `technique` are the
+    same word to `_KIND_WORDS` -- so without the umbrella there is no way for a
+    graded stat line to be canon for the first and an intruder in the second,
+    which is exactly what the bank says it is.
+
+    `item` stays out deliberately: a sword is not an ability.
+    """
     if not kinds & {ontology.TECHNIQUE}:
         return kinds
     if not {word.lower() for word in words} & _UMBRELLA_WORDS:
         return kinds
-    return kinds | {ontology.TRANSFORMATION}
+    return kinds | {ontology.TRANSFORMATION, ontology.TRAIT}
 
 
 def _files_by_character(

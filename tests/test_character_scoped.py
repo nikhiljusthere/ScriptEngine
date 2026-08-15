@@ -126,12 +126,20 @@ class TestKinds:
         `semantics.ABILITY_TYPES` says the two must never reject each other. The
         kind filter did exactly that whenever the question used the umbrella
         word: Rukia's `Sode no Shirayuki` is stored, hers, and a transformation.
+
+        Traits widen for the same reason and settle a second argument. The
+        bank's gold for "Every ability of Gojo" contains `Immense Strength` and
+        `Great Tactical Intellect`; its gold for "Every cursed technique of
+        Yuta Okkotsu" does not. Both resolve to `technique` -- `ability` and
+        `technique` are one word to `_KIND_WORDS` -- so the umbrella is the only
+        thing that can tell them apart, and without it Yuta's question answered
+        with Gojo's stat lines.
         """
         widen = R.widen_umbrella
         assert widen(["ability"], {ontology.TECHNIQUE}) == {
-            ontology.TECHNIQUE, ontology.TRANSFORMATION}
+            ontology.TECHNIQUE, ontology.TRANSFORMATION, ontology.TRAIT}
         assert widen(["abilities"], {ontology.TECHNIQUE}) == {
-            ontology.TECHNIQUE, ontology.TRANSFORMATION}
+            ontology.TECHNIQUE, ontology.TRANSFORMATION, ontology.TRAIT}
 
     def test_a_specific_word_stays_specific(self):
         """Only the umbrella widens. "Every technique of X" is still techniques."""

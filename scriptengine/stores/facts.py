@@ -706,14 +706,21 @@ class FactStore:
         """
         self.connection.execute(
             "CREATE TABLE IF NOT EXISTS abilities ("
-            " character TEXT, name TEXT, kind TEXT, section TEXT, revid INTEGER,"
-            " prompt_version TEXT, reason TEXT, model TEXT, extracted_at TEXT,"
+            " character TEXT, name TEXT, kind TEXT, acquired TEXT, section TEXT,"
+            " revid INTEGER, prompt_version TEXT, reason TEXT, model TEXT,"
+            " extracted_at TEXT,"
             " PRIMARY KEY (character, name))"
         )
         self.connection.execute(
             "CREATE INDEX IF NOT EXISTS abilities_by_character"
             " ON abilities (character COLLATE NOCASE)"
         )
+        # Added after the table existed, so a store built before it needs the
+        # column rather than a migration script.
+        if "acquired" not in {
+            row[1] for row in self.connection.execute("PRAGMA table_info(abilities)")
+        }:
+            self.connection.execute("ALTER TABLE abilities ADD COLUMN acquired TEXT")
         self.connection.commit()
 
     def abilities_of(self, character: str, kinds: Sequence[str] = ()) -> list[sqlite3.Row]:
@@ -726,7 +733,7 @@ class FactStore:
             if kinds:
                 placeholders = ",".join("?" * len(kinds))
                 return self.connection.execute(
-                    "SELECT name, kind, section, reason FROM abilities"
+                    "SELECT name, kind, acquired, section, reason FROM abilities"
                     f" WHERE character = ? COLLATE NOCASE AND kind IN ({placeholders})"
                     " ORDER BY rowid",
                     (character, *kinds),
@@ -772,14 +779,15 @@ class FactStore:
         )
         self.connection.executemany(
             "INSERT OR REPLACE INTO abilities"
-            " (character, name, kind, section, revid, prompt_version, reason,"
-            "  model, extracted_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            " (character, name, kind, acquired, section, revid, prompt_version,"
+            "  reason, model, extracted_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             [
                 (
                     character,
                     str(row.get("name") or "").strip(),
                     str(row.get("kind") or "").strip().lower(),
+                    (str(row.get("acquired") or "innate").strip().lower() or "innate"),
                     str(row.get("section") or "").strip(),
                     revid,
                     prompt_version,

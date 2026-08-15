@@ -61,11 +61,24 @@ logger = logging.getLogger(__name__)
 # name, not a description" rule read straight past them. They are named: the
 # wiki writes `Name: description` at the head of a paragraph, and that colon is
 # visible in the passage even after the bold markers are stripped.
-PROMPT_VERSION = "2026-08-15.1"
+PROMPT_VERSION = "2026-08-15.3"
 
 # What an extracted ability may be called, in the vocabulary `semantics` speaks
 # so the retrieval side can filter on the same words it filters pages by.
-KINDS = ("technique", "transformation", "item")
+KINDS = ("technique", "transformation", "trait", "item")
+
+# How a character came by an ability. `innate` is the default and the common
+# case; the rest exist because the wiki says so and a script needs the
+# difference. Yuta Okkotsu's technique *is* copying, so `Limitless` and
+# `Unlimited Void` are genuinely his to use and genuinely not his own -- stored
+# flat they answered "Every cursed technique of Yuta Okkotsu" with Gojo's kit.
+#
+# Recorded beside the name rather than folded into it. `Limitless` has its own
+# page, which is what the citation resolves against, and the extraction gate
+# requires the name to appear in the passage verbatim -- so a row called
+# `Copied Limitless` would be thrown away by the guard that keeps this store
+# honest, and lose its page link on the way.
+ACQUIRED = ("innate", "copied", "inherited", "granted")
 
 SYSTEM = (
     "You extract named abilities from fiction-wiki prose. You answer with JSON "
@@ -83,9 +96,12 @@ Passage:
 {passage}
 
 Answer with JSON exactly in this shape:
-{{"abilities": [{{"name": "...", "kind": "...", "reason": "one short clause"}}]}}
+{{"abilities": [{{"name": "...", "kind": "...", "acquired": "...",
+                 "reason": "one short clause"}}]}}
 
 `kind` must be one of: {kinds}.
+`acquired` must be one of: {acquired}. Use `innate` unless the passage says
+otherwise.
 
 Rules:
 - Only names that appear in the passage. If the passage names none, answer
@@ -94,6 +110,17 @@ Rules:
   still names the other person's abilities; those are not theirs.
 - A proper name for a specific ability, not a description of it. "Godspeed" is
   an ability; "extremely fast" is not, and neither is "his electric powers".
+- `trait` is for a graded capability the wiki names but does not treat as a
+  technique: `Immense Strength`, `Great Tactical Intellect`, `Cursed Energy
+  Capacity`, `Master Swordsman`. `technique` is for a named move or power with
+  its own identity: `Godspeed`, `Black Flash`, `Limitless`. If the name grades
+  something the character simply has, it is a `trait`.
+- `acquired` is `copied` when the passage says this character copied the ability
+  from someone else, `inherited` when it came down a family or clan, `granted`
+  when someone gave it to them, and `innate` otherwise. Yuta Okkotsu's page says
+  his technique "allows him to copy the innate techniques of people who had
+  their body parts consumed by Rika" -- everything he copies is `copied`, and
+  the copying itself is `innate`.
 - A line that opens with a name and a colon is the wiki naming an ability, and
   counts even when the name reads like a trait. "Immense Speed & Reflexes:
   Satoru is an extremely fast fighter" names `Immense Speed & Reflexes`;
@@ -295,6 +322,7 @@ def extract_from_passages(
                 section=section,
                 passage=window,
                 kinds=", ".join(KINDS),
+                acquired=", ".join(ACQUIRED),
             )
             # Generous, because the local models are thinking models. Gemma 4
             # spends about 4,000 tokens reasoning over a 4,000-character

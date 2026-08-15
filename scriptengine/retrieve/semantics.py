@@ -31,6 +31,12 @@ RACE = "race"
 ORGANIZATION = "organization"
 LOCATION = "location"
 TECHNIQUE = "technique"
+# A graded capability the wiki names but never gives a page:
+# `Immense Strength`, `Great Tactical Intellect`, `Cursed Energy
+# Capacity`. The bank counts these as abilities and not as
+# techniques, and until this existed they were stored as
+# `technique` and answered "Every cursed technique of X" wrongly.
+TRAIT = "trait"
 TRANSFORMATION = "transformation"
 POWER_UP = "power_up"
 FUSION = "fusion"
@@ -124,7 +130,7 @@ _CLASS_TOKENS: tuple[tuple[str, str], ...] = (
 ALL_TYPES = frozenset(
     {
         CHARACTER, RACE, ORGANIZATION, LOCATION, TECHNIQUE, TRANSFORMATION,
-        POWER_UP, FUSION, ITEM, EVENT, MEDIA, UNKNOWN,
+        POWER_UP, FUSION, ITEM, EVENT, MEDIA, TRAIT, UNKNOWN,
     }
 )
 
@@ -141,7 +147,7 @@ NEVER_MEMBERS = frozenset({MEDIA, EVENT, LOCATION})
 # whether the wiki filled in a `Class` field — so they must never be used to
 # reject each other. Only `is_power_up_only`, reading the field directly, is
 # allowed to separate them.
-ABILITY_TYPES = frozenset({TECHNIQUE, TRANSFORMATION, POWER_UP, FUSION})
+ABILITY_TYPES = frozenset({TECHNIQUE, TRANSFORMATION, POWER_UP, FUSION, TRAIT})
 
 _WORD_SPLIT = re.compile(r"[^a-z0-9]+")
 
