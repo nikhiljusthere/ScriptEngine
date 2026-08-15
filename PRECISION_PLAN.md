@@ -152,7 +152,63 @@ Optimising against a wrong target is worse than not optimising. Some measured
    where the wiki keeps a clean, short list is a candidate. This is the single
    highest-precision mechanism already in the codebase.
 
-## Phase 2 — Give every member a score and make `confidence` mean something
+## Phase 2 — REFUTED BY MEASUREMENT, 2026-08-15. Read this before building it.
+
+The premise below — "a member backed by an ownership edge *and* a heading *and*
+prose is near-certain; a single-source prose row is where the junk lives" — is
+not true. Measured over all 1,568 members returned on closed sets in
+`reports/2026-08-15-0935`:
+
+| paths backing a member | canon | junk | precision |
+|---:|---:|---:|---:|
+| 0 | 41 | 12 | **77.4%** |
+| 1 | 737 | 423 | 63.5% |
+| 2 | 177 | 112 | 61.2% |
+| 3 | 33 | 33 | **50.0%** |
+
+**Corroboration correlates with being wrong**, and the reason is visible once
+seen: a name recorded three ways is a prominent generic — `Bankai`, `Shikai`,
+`Physical Abilities`, filed as a heading *and* an edge *and* prose because it is
+structural. A specific named technique appears once, in prose. Building a score
+on source count would have ranked the junk above the answers.
+
+Nor does source *type* discriminate much: category 68.4%, prose 62.4%, ownership
+edge 56.2%, heading 51.8%. Ownership is the path `validate_member` trusts, and
+it is the second *worst*.
+
+Three other candidate signals were tested and are flat:
+
+- whether the member's page names the character back — 63.3% against 62.5%;
+- name length — 63.3% (2–4 words) against 63.1% (one word);
+- a leading grading word (`Enhanced`, `Immense`, `Master`) — 54.1% against 63.4%,
+  the only one with any signal, over 61 members.
+
+**What does discriminate is the section, which was the plan's original finding.**
+Per `abilities.section` leaf: `Devil Powers` 100%, `Fighting Style` 92.7% over
+124 members, `Cursed Technique` 79.2% — against `Powers & Abilities` 51.0%,
+`Former Powers & Abilities` 37.0%, `Abilities` 32.1%. Named leaves are good,
+generic containers are bad.
+
+**But filtering on it is still not worth doing**, which is the part that decides
+this phase. Dropping every prose row whose section leaf is a pure container:
+
+    all characters      -147 junk, -131 canon   precision 63.0% -> 66.4%
+    only where the character has a specific section available
+                         -81 junk,  -82 canon   precision 63.0% -> 64.5%
+
+Half of what it removes is the answer. The container sections genuinely hold
+half the canon — Rukia's abilities, Ichigo's techniques, Byakuya's, Kenpachi's
+are all filed under `Powers & Abilities` and nowhere better — so a filter that
+empties them buys a percentage point by deleting real answers.
+
+**Conclusion.** Do not build a per-member score on corroboration, and do not
+filter prose rows by section globally. The remaining precision is not recoverable
+by re-ranking what is already retrieved; it needs a different kind of evidence
+than any path currently produces. The honest next lever is the one Phase 4
+names — declaring the sets the wiki actually keeps, which measured 45.7% to
+77.7% precision per shape on the questions where it was applied.
+
+## Phase 2 (original, retained for the record) — Give every member a score
 
 This phase is the roadmap's own stated destination. `docs/ROADMAP.md:80-83`
 notes that phases 14, 15, 20 and 21 "are all variations on the same question —
