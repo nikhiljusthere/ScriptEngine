@@ -265,3 +265,16 @@ ability_stopwords:
   - Vacuum Adaptation
   - Vacuum Survival
   - Water Running
+
+# What this wiki calls its infoboxes, where the shared vocabulary reads them
+# wrong. `combat` is the whole reason this key exists here: 48 pages use it and
+# every one is an ability -- Fire Manipulation, Water Manipulation, Killer Move:
+# Serious Series, Roaring Aura Sky Ripping Fist. The token table maps `combat`
+# to `event` because on other wikis it means a fight, and `event` is in
+# `NEVER_MEMBERS`, so none of the 48 could be a member of anything. Two of them
+# are gold for `Every named technique of Bang's Water Stream Rock Smashing
+# Fist` and were being reported as unlinked pages.
+#
+# `battle` is left alone: its 133 pages really are fights.
+semantic_types:
+  combat: technique

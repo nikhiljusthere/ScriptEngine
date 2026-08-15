@@ -242,7 +242,7 @@ class RosterDefinition:
             categories=tuple(
                 str(c).strip() for c in (raw.get("categories") or []) if c
             ),
-            members=tuple(str(m).strip() for m in (raw.get("members") or []) if m),
+            members=tuple(_declared_name(m) for m in (raw.get("members") or []) if m),
             sections_of=str(raw.get("sections_of") or ""),
             label=str(raw.get("label") or ""),
             fact=(str(fact.get("key") or ""), str(fact.get("value") or "")),
@@ -1569,6 +1569,28 @@ def _mentioned_anywhere(store: FactStore, name: str) -> bool:
     except sqlite3.Error:  # a store built before chunks existed
         return False
     return row is not None
+
+
+
+def _declared_name(raw: object) -> str:
+    """One declared member, as written, even when YAML disagreed.
+
+    A member containing a colon inside an inline list is read by YAML as a
+    mapping, not a string: `[Allsight, Whirlwind Water Stream: Roaring Aura Sky
+    Ripping Fist]` yields a dict for the second entry. `str()` on that gives the
+    dict's repr, which matches no page and no alias, so the member vanished --
+    silently, with the declaration looking correct in the file.
+
+    Four members were lost this way across three wikis, and every one was a gold
+    item already being reported as missing: `Divine Dog: Totality`,
+    `Shūkei: Hakuteiken`, and both of Bang's Whirlwind Water Stream techniques.
+    Colons are common in these names, so this is put back rather than left to
+    whoever writes the next declaration.
+    """
+    if isinstance(raw, dict) and len(raw) == 1:
+        key, value = next(iter(raw.items()))
+        return f"{str(key).strip()}: {str(value).strip()}"
+    return str(raw).strip()
 
 
 def _declared_members(store: FactStore, declared: RosterDefinition) -> list[str]:

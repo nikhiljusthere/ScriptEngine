@@ -537,3 +537,43 @@ class TestEndToEnd:
         """The character path must not reach a question about a race or a set."""
         paths = store_for(series)
         assert R.build_roster(paths, query).basis == basis
+
+
+class TestDeclaredNamesWithColons:
+    """YAML reads `Name: Value` inside an inline list as a mapping.
+
+    `members: [Allsight, Whirlwind Water Stream: Roaring Aura Sky Ripping Fist]`
+    yields a dict for the second entry, `str()` gives its repr, and the member
+    matches no page and no alias. It vanishes silently, with the declaration
+    looking perfectly correct in the file.
+    """
+
+    def test_a_mis_parsed_member_is_put_back(self):
+        from scriptengine.retrieve.roster import _declared_name
+
+        assert _declared_name({"Divine Dog": "Totality"}) == "Divine Dog: Totality"
+        assert _declared_name(
+            {"Whirlwind Water Stream": "Roaring Aura Sky Ripping Fist"}
+        ) == "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist"
+
+    def test_an_ordinary_member_is_untouched(self):
+        from scriptengine.retrieve.roster import _declared_name
+
+        assert _declared_name("Allsight") == "Allsight"
+        assert _declared_name("  Piercing Fang  ") == "Piercing Fang"
+
+    def test_the_lost_members_come_back(self):
+        """Every one was already being reported as a missing gold item."""
+        import pytest
+
+        from scriptengine.config import series_paths
+        from scriptengine.retrieve.roster import build_roster
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        names = {
+            m.name for m in
+            build_roster(paths, "What are Megumi Fushiguro's named shikigami?").members
+        }
+        assert "Divine Dog: Totality" in names
