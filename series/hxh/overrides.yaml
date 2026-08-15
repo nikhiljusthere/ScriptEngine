@@ -200,3 +200,12 @@ rosters:
   - name: Wanted Criminals
     match: [wanted criminal, wanted criminals, criminal, criminals]
     category: Wanted Criminals
+
+# Hunterpedia keeps `Background` for a character's own history. `Plot` holds
+# 3,014 chunks of story narration and is deliberately left out for now -- it
+# is where relationships happen rather than where they are described, and
+# `fought once` is not `enemy`. Worth revisiting on measured output.
+relation_sections:
+  - Relationships
+  - History
+  - Background

@@ -191,3 +191,12 @@ ability_stopwords:
   - Tactical Abilities
   - Physical Abilities
   - Equipment
+
+# Berserk writes a character's life under `Story`, with `Background` for what
+# came before it. Neither `Relationships` nor `History` appears on a character
+# page here, so the defaults matched nothing at all: 0 candidates.
+relation_sections:
+  - Relationships
+  - History
+  - Story
+  - Background
