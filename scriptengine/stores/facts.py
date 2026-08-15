@@ -739,7 +739,7 @@ class FactStore:
                     (character, *kinds),
                 ).fetchall()
             return self.connection.execute(
-                "SELECT name, kind, section, reason FROM abilities"
+                "SELECT name, kind, acquired, section, reason FROM abilities"
                 " WHERE character = ? COLLATE NOCASE ORDER BY rowid",
                 (character,),
             ).fetchall()

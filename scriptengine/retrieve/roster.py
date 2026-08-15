@@ -779,6 +779,12 @@ _KIND_WORDS: dict[str, frozenset[str]] = {
         "armor", "armour", "weapon", "weapons", "sword", "swords",
         "item", "items", "equipment",
     }),
+    # A graded capability rather than a named move. No question asks for
+    # "every trait of X" in so many words, but the kind still needs an entry:
+    # anything walking the vocabulary by kind raises `KeyError` on a kind that
+    # is not in it, which is how a canon run died on the first question that
+    # reached `_files_by_character`.
+    ontology.TRAIT: frozenset({"trait", "traits", "stat", "stats"}),
 }
 
 
@@ -1050,7 +1056,7 @@ def _files_by_character(
     ):
         rest = set(content_words(row["category"])) - own
         vocabulary = ability_kind_words(overrides)
-        if any(rest & vocabulary[kind] for kind in kinds):
+        if any(rest & vocabulary.get(kind, frozenset()) for kind in kinds):
             return True
     return False
 
