@@ -36,6 +36,34 @@ ability_kinds:
 
 rosters:
 
+  # The Public Safety special divisions
+  # Declared 2026-08-15: the engine resolved `How many special divisions exist in
+  # Public Safety Devil Hunters?` to the basis `Devil Hunters`, a category of
+  # *people*, and returned 72 intruders at 3% precision -- one question carrying
+  # 12% of every intruder left in the bank. A question about divisions must not
+  # answer with devil hunters.
+  #
+  # Members are every division the wiki names as one, counted over all csm
+  # chunks: Division 5 (84 mentions, 17 pages), 4 (82/27), 7 (54/21), 6 (20/6),
+  # 1 (8/3). Only 4 and 5 have their own page; the rest exist in prose only, and
+  # `_declared_members` keeps pageless members deliberately.
+  #
+  # The bank's gold for this question lists only 4 and 5 and is wrong: its note
+  # reads "two special divisions mentioned" and its one source is the `Makima`
+  # page, so it counted what one page mentions rather than what exists. The wiki
+  # never states a total -- a `Division 2 Vice Captain` page implies a Division 2
+  # that is never named as one -- so the count is not answerable from this
+  # corpus. Left declared rather than retired because retiring deletes, and
+  # returning five divisions beats returning seventy-two people either way.
+  - name: The Public Safety special divisions
+    match:
+      - special divisions
+      - how many special divisions
+      - special divisions public safety
+      - public safety special divisions
+      - special divisions exist in public safety devil hunters
+    members: [Tokyo Special Division 1, Tokyo Special Division 4, Tokyo Special Division 5, Tokyo Special Division 6, Tokyo Special Division 7]
+
   # Every devil contract Denji has made
   # Declared 2026-08-15: the engine resolved this to `Listed in the Devil Contracts section on the Denji page` and returned the wrong set. Members transcribed from `Denji`.
   - name: Every devil contract Denji has made

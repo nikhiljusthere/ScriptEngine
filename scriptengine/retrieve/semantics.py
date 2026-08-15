@@ -75,6 +75,16 @@ _TYPE_TOKENS: tuple[tuple[str, str], ...] = (
     ("ship", ITEM),
     ("vehicle", ITEM),
     ("battle", EVENT),
+    # Before `fight`, which this contains. One Piece files 63 pages under
+    # `fighting_style_box` and its variants -- Three Sword Style, Black Leg
+    # Style, Foxfire Style, Art of Weather -- and `fight` was reading every one
+    # of them as a battle. `event` is in `NEVER_MEMBERS`, so a fighting style
+    # could not be a member of anything: Zoro's styles are gold for two bank
+    # questions and Nami's `Art of Weather` for a third, and all of them were
+    # dropped by `_owned_roster` before any filter got a say. Bleach's 192
+    # genuine `fight` pages are battles and stay as they are.
+    ("fighting_style", TECHNIQUE),
+    ("fighting style", TECHNIQUE),
     ("fight", EVENT),
     ("combat", EVENT),
     ("conflict", EVENT),
