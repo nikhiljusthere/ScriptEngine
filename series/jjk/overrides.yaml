@@ -84,8 +84,17 @@ rosters:
     match:
       - what are megumi fushiguro's named shikigami
       - megumi fushiguro's named shikigami
+      - every shikigami of megumi fushiguro
+      - shikigami of megumi fushiguro
     subject: Megumi Fushiguro
-    members: [Divine Dogs, Divine Dog: Totality, Nue, Great Serpent, Toad, Max Elephant, Rabbit Escape, Mahoraga, The Well's Unknown Abyss]
+    # All eleven, transcribed from `Ten Shadows Technique`, which names every
+    # one of them. The bank asks this twice and disagrees with itself: 
+    # `Every shikigami of Megumi Fushiguro` lists Piercing Ox and Round Deer and
+    # omits Divine Dog: Totality and The Well's Unknown Abyss, while
+    # `What are Megumi Fushiguro's named shikigami?` does the exact reverse.
+    # Both are subsets of what the wiki states, so the wiki is followed and each
+    # question pays two members the other one wants.
+    members: [Divine Dogs, "Divine Dog: Totality", Nue, Great Serpent, Toad, Max Elephant, Rabbit Escape, Round Deer, Piercing Ox, Mahoraga, The Well's Unknown Abyss]
 
   # Who are the notable members of the Zenin Family?
   # Declared 2026-08-15: the engine resolved this to `Gold includes Noritoshi Kamo (Kamo clan, not Zenin) and omits Jinichi, Ranta, Chojuro, Nobuaki. Wiki maintains 11 members in dedicated table.` and returned the wrong set. Members transcribed from `Sorcerer Clan`.
