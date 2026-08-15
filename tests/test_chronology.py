@@ -170,3 +170,60 @@ class TestNoRegression:
     )
     def test_set_questions_are_untouched(self, series, query, basis):
         assert build_roster(paths_for(series), query).basis == basis
+
+
+class TestHeading:
+    """The arc section heading a script writes, from what the wiki wrote.
+
+    `spans` is correct and returns four different shapes for the same idea --
+    measured across One Punch Man and Jujutsu Kaisen, one range arrives as
+    `30 • 31 • ... • 37`, as `Chapter 52 - 65` with the kind word inside the
+    value, as `21 - Ongoing`, and as `193 (Online)`. A heading has to read as
+    speech.
+    """
+
+    @pytest.mark.parametrize(
+        "value, kind, expected",
+        [
+            # A bulleted run is one span, not eight citations.
+            ("30 • 31 • 32 • 33 • 34 • 35 • 36 • 37", "MANGA CHAPTER",
+             "MANGA CHAPTERS 30-37"),
+            # The wiki already said "Chapter"; saying it twice reads badly.
+            ("Chapter 52 - 65", "MANGA CHAPTER", "MANGA CHAPTERS 52-65"),
+            # One instalment stays singular.
+            ("1", "EPISODE", "EPISODE 1"),
+            ("20", "MANGA CHAPTER", "MANGA CHAPTER 20"),
+            # A range plus a straggler is still one span in a heading.
+            ("Episode 22 - 24, 30", "EPISODE", "EPISODES 22-30"),
+            # An open end is kept as written rather than invented.
+            ("21 - Ongoing", "EPISODE", "EPISODES 21-Ongoing"),
+            ("Episode 48 - TBA", "EPISODE", "EPISODES 48-TBA"),
+            # Prequel chapters really are called `0-1` and `0-4`. Running them
+            # together gives `0-1-0-4`, which cannot be read.
+            ("Chapter 0-1 - 0-4", "MANGA CHAPTER", "MANGA CHAPTERS 0-1 to 0-4"),
+            # Nothing to say stays nothing, rather than becoming a bare label.
+            ("", "EPISODE", ""),
+            ("auto", "MANGA CHAPTER", ""),
+        ],
+    )
+    def test_says_one_span(self, value, kind, expected):
+        assert chronology._said(value, kind) == expected
+
+    def test_matches_the_sample_script(self):
+        """`Saitama Introduction Arc | MANGA CHAPTERS 1-4, EPISODE 1`.
+
+        The heading a hand-written One Punch Man script uses, verbatim.
+        """
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            assert chronology.heading(store, "Saitama Introduction Arc") == (
+                "Saitama Introduction Arc | MANGA CHAPTERS 1-4, EPISODE 1"
+            )
+
+    def test_unadapted_arc_claims_no_episode(self):
+        """An arc the anime has not reached must not be given an episode."""
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            said = chronology.heading(store, "Shinjuku Showdown Arc")
+        assert "MANGA CHAPTERS 222-271" in said
+        assert "EPISODE" not in said

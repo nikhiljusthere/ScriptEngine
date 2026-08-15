@@ -182,6 +182,58 @@ def spans(store: FactStore, arc: str) -> tuple[str, str]:
     return chapters, episodes
 
 
+def heading(store: FactStore, arc: str) -> str:
+    """The arc's section heading, in the shape a script writes it.
+
+        Saitama Introduction Arc | MANGA CHAPTERS 1-4, EPISODE 1
+
+    `spans` returns what the wiki wrote, which is correct and four different
+    shapes. Measured across the One Punch Man and Jujutsu Kaisen arcs, the same
+    range arrives as `30 • 31 • 32 • 33 • 34 • 35 • 36 • 37`, as
+    `Chapter 52 - 65` with the kind word already in the value, as
+    `21 - Ongoing`, and as `193 (Online)`. A heading has to read as speech, so
+    the run is collapsed to its bounds and the doubled kind word removed.
+
+    An open or unnumbered end is kept as the wiki wrote it -- `Episode 48 - TBA`
+    becomes `EPISODES 48-TBA`, not a number the anime has not reached. Inventing
+    an end is exactly the misrepresentation this heading exists to avoid.
+    """
+    chapters, episodes = spans(store, arc)
+    parts = [
+        _said(chapters, "MANGA CHAPTER"),
+        _said(episodes, "EPISODE"),
+    ]
+    tail = ", ".join(part for part in parts if part)
+    return f"{arc} | {tail}" if tail else arc
+
+
+def _said(value: str, kind: str) -> str:
+    """One span, as a heading says it. Empty when the wiki gives nothing."""
+    body = (value or "").strip()
+    if not body or body.lower() in _COMPUTED:
+        return ""
+    # `Chapter 52 - 65` already carries the word; saying it twice reads as
+    # "MANGA CHAPTERS Chapter 52 - 65".
+    body = re.sub(r"^(chapter|episode)s?\s*", "", body, flags=re.IGNORECASE).strip()
+    # `30 • 31 • 32 … 37` is a run, not a list of eight citations, and
+    # `22 - 24, 30` is a range with a straggler. Both are one span in a heading.
+    pieces = [piece.strip() for piece in re.split(r"[•,]", body) if piece.strip()]
+    # A *spaced* hyphen separates two bounds; an unspaced one belongs to the
+    # identifier. Jujutsu Kaisen's prequel chapters really are called `0-1` and
+    # `0-4`, so splitting on every hyphen would turn one range into four.
+    bounds = [b.strip() for b in re.split(r"\s+-\s+", pieces[0]) if b.strip()]
+    first = bounds[0] if bounds else pieces[0]
+    bounds = [b.strip() for b in re.split(r"\s+-\s+", pieces[-1]) if b.strip()]
+    last = bounds[-1] if bounds else pieces[-1]
+
+    if first == last:
+        return f"{kind} {first}"
+    # `0-1-0-4` cannot be read. When a bound carries its own hyphen, say the
+    # range in words instead of running two identifiers together.
+    joiner = " to " if "-" in first or "-" in last else "-"
+    return f"{kind}S {first}{joiner}{last}"
+
+
 def _counted(store: FactStore, arc: str, kind: str) -> str:
     """How many chapters or episodes the wiki files under this arc.
 
