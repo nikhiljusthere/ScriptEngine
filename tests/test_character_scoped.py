@@ -217,6 +217,18 @@ class TestKinds:
         # It must still not match an unrelated set.
         assert not declared.matches("Every member of the God Hand")
 
+    def test_the_template_threshold_stays_where_it_was_measured(self):
+        """Raising it looked right and measured worse.
+
+        25 canon items are dropped here, and the headings holding them run to
+        `Armament Haki` at 65 pages while the skeleton starts at `Haki` 80 — an
+        apparently clean gap. Seventy bought 9 canon items, cost 2.1 points of
+        precision and made 21 questions noisier against 3 improved, because the
+        gap only counted the headings a higher threshold would rescue and never
+        the junk it admits with them. Every band above ten is under 51% correct.
+        """
+        assert R._TEMPLATE_HEADING_PAGES == 10
+
     def test_a_set_of_battles_does_not_answer_a_question_about_abilities(self):
         """`NEVER_MEMBERS` applied to the set, not only to its members.
 

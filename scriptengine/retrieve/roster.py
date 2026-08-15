@@ -1290,10 +1290,36 @@ def _extracted_roster(
 
 
 # A heading this many character pages share is the wiki's article skeleton, not
-# one character's ability. Measured: the ability headings sit at one to four
-# pages (`Gear 5 (Awakening)` 1, `Gear 2` 2, `Nine Sword Style` 3,
-# `Berserker Armor` 4) and the skeleton at forty-four and up (`Hero Rating` 44,
-# `Zanpakutō` 210, `Physical Abilities` 216, `Nen` 258). Ten sits in the gap.
+# one character's ability. Measured originally on `Gear 5 (Awakening)` 1,
+# `Gear 2` 2, `Nine Sword Style` 3 and `Berserker Armor` 4 against `Hero Rating`
+# 44, `Zanpakutō` 210 and `Nen` 258, and ten sat in that gap.
+#
+# Raising it was tried on 2026-08-15 and measured worse; ten stands.
+#
+# The case for raising it looked strong: 25 canon items were being dropped here,
+# and the headings holding them run up to `Armament Haki` at 65 pages while the
+# skeleton starts at `Haki` 80 — an apparently clean gap. Seventy sat in it.
+# End to end that bought 9 canon items, cost 2.1 points of precision and made 21
+# questions noisier against 3 improved.
+#
+# The gap analysis was measuring one side. It counted the canon headings a
+# higher threshold would *rescue* and never counted the junk it would admit
+# alongside them. Counted properly, over every heading-derived member returned:
+#
+#   0-10 pages   +152 canon  +146 junk    51% of what it admits is right
+#   10-15        +  9        + 23         28%
+#   15-20        +  9        + 17         35%
+#   20-30        +  5        +  5         50%
+#   30-40        +  6        + 18         25%
+#   40-70        +  2        +  7         22%
+#
+# Every band above ten is worse than the population it joins, so each step up
+# dilutes. `Observation Haki` really is a canon answer sitting at 41 pages, and
+# there is no threshold that admits it without admitting more junk than answer.
+#
+# Container-versus-leaf was tried as the discriminator instead and does not work
+# either: `Zanpakutō` and `Nen` are childless leaves on 173 and 258 pages, so
+# nesting does not separate them from `Observation Haki`.
 _TEMPLATE_HEADING_PAGES = 10
 
 # Longest real ability name measured is four words — `Killer Move: Serious
