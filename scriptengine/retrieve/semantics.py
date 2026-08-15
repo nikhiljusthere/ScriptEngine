@@ -352,13 +352,24 @@ def _from_categories(store: FactStore, document_id: int, title: str) -> str:
     fight pages are in `Fights`.
 
     Deliberately narrow. Only `Characters` is trusted, and only when the page is
-    not itself a list of them: `List of Characters`, `Characters/Arrancar` and
-    `Miscellaneous Characters` all sit in that category and are indexes, not
-    people. A character page is not named after its own category. Measured
-    across the eight wikis, this rule types 84 One Punch Man pages and leaves
-    every other wiki untouched.
+    not itself an index of them. Three kinds of index sit in that category
+    across these wikis and none is a person:
+
+    * **The page is named after a category this wiki has.** `Heroes` is filed
+      under `Characters` and is the list of every hero; `Heroes` is also a
+      category here. Saitama is not a category, and neither is `Empty Void` or
+      `Beaut`, which are real characters filed the same way. This is the general
+      test -- an index is named after the group it indexes.
+    * **`List of ...`**, which says so.
+    * **Anything still naming `character`** -- `Miscellaneous Characters`,
+      `Characters/Arrancar` -- kept as a backstop for wikis whose index pages
+      are not categories.
+
+    Measured across the eight wikis, this types 84 One Punch Man pages and
+    leaves every other wiki untouched.
     """
-    if "character" in title.lower():
+    lowered = title.strip().lower()
+    if "character" in lowered or lowered.startswith("list of "):
         return UNKNOWN
     found = {
         (row["category"] or "").strip().lower()
@@ -366,7 +377,26 @@ def _from_categories(store: FactStore, document_id: int, title: str) -> str:
             "SELECT category FROM categories WHERE document_id = ?", (document_id,)
         )
     }
-    return CHARACTER if found & _CHARACTER_CATEGORIES else UNKNOWN
+    if not found & _CHARACTER_CATEGORIES:
+        return UNKNOWN
+    # An index is named after the group it indexes. Checked against this wiki's
+    # own category names rather than a word list, so it needs no upkeep.
+    if _is_a_category(store, lowered) or _is_a_category(store, lowered.split("/")[0]):
+        return UNKNOWN
+    return CHARACTER
+
+
+def _is_a_category(store: FactStore, name: str) -> bool:
+    """Whether this wiki has a category by exactly this name."""
+    if not name:
+        return False
+    return (
+        store.connection.execute(
+            "SELECT 1 FROM categories WHERE category = ? COLLATE NOCASE LIMIT 1",
+            (name,),
+        ).fetchone()
+        is not None
+    )
 
 
 def is_power_up_only(store: FactStore, name: str) -> bool:

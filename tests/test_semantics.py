@@ -340,3 +340,50 @@ class TestCategoryFallback:
             assert ontology.semantic_type(store, title, load_overrides(paths)) != (
                 ontology.CHARACTER
             )
+
+
+class TestIndexPagesAreNotPeople:
+    """An index is named after the group it indexes.
+
+    `Heroes` is filed under `Characters` and is the list of every hero. It is
+    also a category on that wiki, which is what tells it apart from
+    `Empty Void` and `Beaut` — real characters filed exactly the same way.
+    """
+
+    def paths_for(self, series):
+        from scriptengine.config import series_paths
+
+        paths = series_paths(series)
+        if not paths.facts_db.exists():
+            pytest.skip(f"{series} is not indexed")
+        return paths
+
+    def test_a_page_named_after_a_category_is_an_index(self):
+        from scriptengine.config import load_overrides
+        from scriptengine.retrieve import semantics as ontology
+        from scriptengine.stores.facts import FactStore
+
+        paths = self.paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            overrides = load_overrides(paths)
+            assert ontology.semantic_type(store, "Heroes", overrides) != (
+                ontology.CHARACTER
+            )
+            # Filed the same way, not named after a category, and real people.
+            for name in ("Empty Void", "Beaut"):
+                assert ontology.semantic_type(store, name, overrides) == (
+                    ontology.CHARACTER
+                )
+
+    def test_an_index_is_not_in_an_arc_cast(self):
+        from scriptengine.config import load_overrides
+        from scriptengine.retrieve import chronology
+        from scriptengine.stores.facts import FactStore
+
+        paths = self.paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            who = chronology.cast(
+                store, "Monster Association Arc", load_overrides(paths)
+            )
+        assert "Heroes" not in who
+        assert "Saitama" in who and "Garou" in who
