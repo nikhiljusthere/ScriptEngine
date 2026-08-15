@@ -729,17 +729,36 @@ class FactStore:
         Retrieval reads this table and nothing else, so the same question
         answers the same way twice and the eval sets stay a regression guard.
         """
+        # `acquired` was added after these stores were written, and a series
+        # that has not been re-extracted since does not have the column. Naming
+        # it unconditionally raised `OperationalError`, which the handler below
+        # turned into "this character has no abilities" -- silently, for every
+        # character of four wikis at once, and a canon run lost 152 items to it
+        # before anything said a word. Asked for rather than assumed.
+        columns = "name, kind, acquired, section, reason"
+        try:
+            present = {
+                row[1] for row in self.connection.execute(
+                    "PRAGMA table_info(abilities)")
+            }
+        except sqlite3.OperationalError:
+            return []
+        if not present:
+            return []
+        if "acquired" not in present:
+            columns = "name, kind, section, reason"
+
         try:
             if kinds:
                 placeholders = ",".join("?" * len(kinds))
                 return self.connection.execute(
-                    "SELECT name, kind, acquired, section, reason FROM abilities"
+                    f"SELECT {columns} FROM abilities"
                     f" WHERE character = ? COLLATE NOCASE AND kind IN ({placeholders})"
                     " ORDER BY rowid",
                     (character, *kinds),
                 ).fetchall()
             return self.connection.execute(
-                "SELECT name, kind, acquired, section, reason FROM abilities"
+                f"SELECT {columns} FROM abilities"
                 " WHERE character = ? COLLATE NOCASE ORDER BY rowid",
                 (character,),
             ).fetchall()
