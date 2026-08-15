@@ -631,3 +631,47 @@ class TestBattleScoped:
                 store, "Which techniques did Garou use in Garou vs. Golden Sperm (Webcomic)?"
             )
         assert found == "Garou vs. Golden Sperm (Webcomic)"
+
+
+class TestBattleRelationsAreDeclared:
+    """Three wikis, three names for the same two infobox fields.
+
+    One Punch Man writes `combatant1`/`abilities1`, Jujutsu Kaisen writes
+    `side1`/`powers1`, Bleach writes `forces1`. jjk had 190 `powers1` edges and
+    86 `powers2` sitting unread because the names were hard-coded.
+    """
+
+    def test_the_default_is_the_one_punch_man_vocabulary(self):
+        from scriptengine.retrieve.roster import battle_relations
+
+        assert battle_relations(None) == (
+            ("combatant1", "abilities1"), ("combatant2", "abilities2"))
+        assert battle_relations({}) == battle_relations(None)
+
+    def test_a_series_can_name_its_own(self):
+        from scriptengine.retrieve.roster import battle_relations
+
+        declared = {"battle_relations": [
+            {"side": "side1", "abilities": "powers1"},
+            {"side": "side2", "abilities": "powers2"},
+        ]}
+        assert battle_relations(declared) == (
+            ("side1", "powers1"), ("side2", "powers2"))
+
+    @pytest.mark.parametrize(
+        "question, expected",
+        [
+            ("Which techniques did Choso use in Choso vs. Naoya Zenin?",
+             {"Blood Manipulation", "Flowing Red Scale", "Hand-to-Hand Combat",
+              "Slicing Exorcism", "Supernova"}),
+            ("Which techniques did Naoya Zenin use in Choso vs. Naoya Zenin?",
+             {"Hand-to-Hand Combat", "Projection Sorcery"}),
+        ],
+    )
+    def test_jjk_reads_its_own_fields(self, question, expected):
+        from scriptengine.retrieve.roster import build_roster
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert {m.name for m in build_roster(paths, question).members} == expected

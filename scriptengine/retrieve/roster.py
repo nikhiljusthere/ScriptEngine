@@ -446,6 +446,28 @@ def _overlap(candidate: str, words: list[str]) -> int:
 
 
 
+# How a wiki names the two sides of a fight and what each side used. One Punch
+# Man writes `combatant1`/`abilities1`, Jujutsu Kaisen writes `side1`/`powers1`,
+# Bleach writes `forces1`. Same idea, three vocabularies, so the names are
+# declared rather than guessed -- `battle_relations:` in the series overrides.
+_BATTLE_SIDES: tuple[tuple[str, str], ...] = (
+    ("combatant1", "abilities1"),
+    ("combatant2", "abilities2"),
+)
+
+
+def battle_relations(overrides: dict | None) -> tuple[tuple[str, str], ...]:
+    """`(side, abilities)` pairs for this wiki's battle infoboxes."""
+    declared = (overrides or {}).get("battle_relations") or []
+    pairs = tuple(
+        (str(row.get("side") or "").strip().lower(),
+         str(row.get("abilities") or "").strip().lower())
+        for row in declared
+        if isinstance(row, dict) and row.get("side")
+    )
+    return pairs or _BATTLE_SIDES
+
+
 def battle_named(store: FactStore, query: str) -> str:
     """The battle page this question names, if it names one.
 
@@ -470,6 +492,7 @@ def _battle_roster(
     character: str,
     member_chars: int,
     query: str = "",
+    overrides: dict | None = None,
 ) -> "Roster | None":
     """What one fighter used in one fight, as the wiki's own infobox records it.
 
@@ -487,14 +510,18 @@ def _battle_roster(
     node = store.node_by_name(battle)
     if node is None:
         return None
+    pairs = battle_relations(overrides)
+    wanted_relations = [name for pair in pairs for name in pair if name]
+    if not wanted_relations:
+        return None
+    placeholders = ",".join("?" * len(wanted_relations))
     sides: dict[str, list[str]] = {}
     for row in store.connection.execute(
         "SELECT e.relation, n.name FROM edges e JOIN nodes n ON n.id = e.target_id"
-        " WHERE e.source_id = ? AND e.relation IN"
-        " ('combatant1', 'combatant2', 'abilities1', 'abilities2')",
-        (node["id"],),
+        f" WHERE e.source_id = ? AND LOWER(e.relation) IN ({placeholders})",
+        (node["id"], *wanted_relations),
     ):
-        sides.setdefault(row["relation"], []).append(row["name"])
+        sides.setdefault((row["relation"] or "").lower(), []).append(row["name"])
 
     # Which fighter the question is about. `_character_subject` picks the page
     # with the most written on it, and in a fight that is usually the famous
@@ -504,7 +531,7 @@ def _battle_roster(
     # matches.
     asked = _fold(query.replace(battle, " ")).lower() if query else ""
     if asked:
-        for side in ("combatant1", "combatant2"):
+        for side, _ in pairs:
             for name in sides.get(side, []):
                 if _fold(name).lower() in asked:
                     character = name
@@ -514,7 +541,7 @@ def _battle_roster(
             break
 
     wanted = _fold(character).lower()
-    for side, abilities in (("combatant1", "abilities1"), ("combatant2", "abilities2")):
+    for side, abilities in pairs:
         here = [_fold(n).lower() for n in sides.get(side, [])]
         if not any(wanted == n or wanted in n or n in wanted for n in here):
             continue
@@ -652,7 +679,8 @@ def build_roster(
             fight = battle_named(store, query)
             if fight:
                 in_battle = _battle_roster(
-                    store, episodes, fight, character, member_chars, query
+                    store, episodes, fight, character, member_chars, query,
+                    overrides,
                 )
                 if in_battle is not None:
                     return in_battle

@@ -198,3 +198,13 @@ rosters:
 # skeleton. Canon for the character questions in this series' bank.
 ability_headings:
   - Domain Expansion
+
+# How this wiki names the two sides of a fight and what each side used. One
+# Punch Man writes `combatant1`/`abilities1`, which is the default; Jujutsu
+# Kaisen writes `side1`/`powers1`. Same idea, different vocabulary -- 190
+# `powers1` edges and 86 `powers2` sat unread until this was declared.
+battle_relations:
+  - side: side1
+    abilities: powers1
+  - side: side2
+    abilities: powers2
