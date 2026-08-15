@@ -29,9 +29,15 @@ citation_instalments:
 # `Abilities and Powers / Cursed Energy` section and nowhere else on his
 # pages. This wiki answers from `Sukuna Techniques` and from `users` edges,
 # so extraction had never been asked to read any of it.
+# `Powers & Abilities` is the same heading with the words the other way round.
+# The wiki uses it on one page -- `Rika` -- and declaring only `Abilities and
+# Powers` skipped her entirely: Yuta's cursed spirit, with her abilities written
+# out, reached by nothing. Found 2026-08-15 by listing every top-level section
+# on a character page that no declaration matches, which is worth redoing
+# whenever a wiki is re-crawled.
 ability_sections:
-  technique: [Abilities and Powers]
-  transformation: [Abilities and Powers]
+  technique: [Abilities and Powers, Powers & Abilities]
+  transformation: [Abilities and Powers, Powers & Abilities]
   item: [Equipment]
 
 # What this wiki calls a kind of ability, on top of the English words every
