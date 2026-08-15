@@ -20,6 +20,8 @@ Nothing here names a series. `series/<name>/overrides.yaml` can add
 from __future__ import annotations
 
 import re
+import sqlite3
+from weakref import WeakKeyDictionary
 
 from scriptengine.stores.facts import FactStore
 
@@ -134,6 +136,120 @@ ABILITY_TYPES = frozenset({TECHNIQUE, TRANSFORMATION, POWER_UP, FUSION})
 _WORD_SPLIT = re.compile(r"[^a-z0-9]+")
 
 
+# Classification is asked the same question twice within one request. Building
+# "Every form of Goku" classifies each page Goku owns, classifies the survivors
+# again inside `apply_constraints`, and profiles several of them more than once:
+# measured, 233 calls to `semantic_type` for 216 distinct names and 75 calls to
+# `roster._profile` for 44. The repeats are worth removing on their own, and the
+# memo is also what makes the *distinct* calls affordable to batch later.
+#
+# *Where* the memo lives is the part that matters. A dict keyed on the database
+# path would be wrong: the path outlives the data, `index` rewrites `documents`
+# and `facts` from scratch, and the next request would be answered out of the
+# previous corpus — silently, and for as long as the process ran. Keyed on the
+# `FactStore` instance it cannot. Retrieval opens one store per request
+# (`build_roster` and `_qa_context` both do `with FactStore(paths.facts_db) as
+# store:`) and closes it on the way out, so an entry's life is bounded by the
+# connection it was read through, and nothing cached can be older than the
+# request that cached it.
+#
+# The keys are weak, and the store holds nothing on this module's behalf, so
+# `FactStore` needs no knowledge that its readers memoise and a closed store's
+# memo is collected with it rather than pinned here.
+_STORE_CACHES: "WeakKeyDictionary[FactStore, dict[str, dict]]" = WeakKeyDictionary()
+
+
+def request_cache(store: FactStore, bucket: str) -> dict:
+    """A named memo dict whose lifetime is exactly `store`'s.
+
+    Shared with `retrieve/roster.py`, which memoises `_profile` on the same
+    terms. Only ever for values derived from the store by reading: anything
+    that writes to it invalidates every bucket, and nothing here is told when
+    that happens.
+    """
+    caches = _STORE_CACHES.get(store)
+    if caches is None:
+        caches = {}
+        _STORE_CACHES[store] = caches
+    return caches.setdefault(bucket, {})
+
+
+# `documents.title` is `TEXT NOT NULL UNIQUE`, which builds a BINARY index that a
+# `COLLATE NOCASE` comparison cannot use — so the lookup in `_classify` is a
+# `SCAN documents`, 1.5ms apiece on `series/db/facts.db`, spent proving over and
+# over that 7,205 rows are not the one wanted. With this index EXPLAIN QUERY PLAN
+# reports `SEARCH documents USING INDEX idx_documents_title_nocase (title=?)` and
+# the lookup no longer measures.
+#
+# Adding an index rather than dropping the collation is the whole point. Dropping
+# `COLLATE NOCASE` would turn a case-insensitive lookup into a case-sensitive one
+# and silently stop matching wherever a caller's spelling differs from the stored
+# title. An index changes the plan and cannot change the answer — but "cannot"
+# was checked rather than assumed, because a plan change *can* reorder a query
+# that never said what order it wanted. Every `COLLATE NOCASE` query against
+# `documents` in this codebase (this one, `document_lead`, `categories_of`,
+# `sections_of`) was run over every title in all eight series with the index and
+# without it: identical, to the row. It is safe here because no wiki holds two
+# titles differing only in case, so there is one candidate row either way.
+#
+# The matching index on `nodes(name COLLATE NOCASE)` is deliberately *not* here,
+# though `facts_for` wants it far more badly — a `SCAN facts` at 4.2ms a call,
+# the single largest cost left in a roster. Bleach has two nodes called
+# `Memories in the Rain` and `Memories in the rain`, and with the index the
+# unordered `SELECT DISTINCT` in `owned_by` visits them the other way round and
+# hands back the same four names in a different order. `roster.classify` reads
+# `users[:12]`, so that is an answer change, not a plan change. Making it safe
+# means giving those queries the ORDER BY they always implied, which is
+# `stores/facts.py` and not this file.
+#
+# The permanent home for this one is `stores/schema.sql`, so that a store is born
+# with it. Created here as well, and idempotently, because every store that
+# already exists was not — `ensure_semantics` and `ensure_abilities` are the same
+# pattern, a schema addition an existing store has to grow in place.
+_LOOKUP_INDEXES = (
+    "CREATE INDEX IF NOT EXISTS idx_documents_title_nocase"
+    " ON documents(title COLLATE NOCASE)",
+)
+
+
+def ensure_lookup_indexes(store: FactStore) -> None:
+    """Give an existing store the case-insensitive index its lookups need.
+
+    Attempted once per store and never again, whether or not it worked. A
+    failure is not an error: the store may be open read-only, or `index` may
+    hold the write lock, and in both cases the right behaviour is the slow
+    answer rather than no answer.
+
+    Deliberately does not commit. A read path that commits would commit whatever
+    the caller happened to have pending, and DDL outside a transaction is
+    durable without it.
+    """
+    done = request_cache(store, "lookup_indexes")
+    if done:
+        return
+    done["attempted"] = True
+    for statement in _LOOKUP_INDEXES:
+        try:
+            store.connection.execute(statement)
+        except sqlite3.DatabaseError:
+            return
+
+
+def _declared_types(overrides: dict | None) -> tuple[tuple[str, str], ...]:
+    """The only part of `overrides` that can change a classification.
+
+    Part of the memo key rather than the identity of the dict: `id()` is reused
+    the moment a temporary is freed, and a caller passing one literal and then
+    another is exactly the shape a test has.
+    """
+    declared = (overrides or {}).get("semantic_types") or {}
+    if not isinstance(declared, dict):
+        return ()
+    return tuple(
+        sorted((str(key).lower(), str(value)) for key, value in declared.items())
+    )
+
+
 def type_from_page_type(page_type: str, overrides: dict | None = None) -> str:
     """Fold a wiki's own infobox name into the shared vocabulary."""
     lowered = (page_type or "").strip().lower()
@@ -167,7 +283,22 @@ def type_from_class(value: str) -> str:
 
 
 def semantic_type(store: FactStore, name: str, overrides: dict | None = None) -> str:
-    """What `name` is, from its infobox first and its `Class` field second."""
+    """What `name` is, from its infobox first and its `Class` field second.
+
+    Memoised for the life of `store` — see `request_cache`. The name is keyed
+    verbatim rather than case-folded: the lookup below matches `COLLATE NOCASE`,
+    which folds ASCII only, and `str.lower()` folds more than that. Two spellings
+    of one title cost two lookups; they never share a wrong answer.
+    """
+    ensure_lookup_indexes(store)
+    memo = request_cache(store, "semantic_type")
+    key = (name, _declared_types(overrides))
+    if key not in memo:
+        memo[key] = _classify(store, name, overrides)
+    return memo[key]
+
+
+def _classify(store: FactStore, name: str, overrides: dict | None) -> str:
     row = store.connection.execute(
         "SELECT page_type FROM documents WHERE title = ? COLLATE NOCASE", (name,)
     ).fetchone()

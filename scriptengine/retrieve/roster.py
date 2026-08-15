@@ -1734,6 +1734,27 @@ class Profile:
 
 
 def _profile(store: FactStore, name: str) -> Profile:
+    """What the store knows about one candidate, read once per request.
+
+    Four queries a call — categories, facts, debut edges and one page type per
+    edge — and the same candidate is profiled repeatedly: `apply_constraints`
+    builds a profile to validate each name and another to test the qualifier
+    against it, `_outside_the_story` builds one more, and `classify` asks for
+    each user's twice in a single expression. Measured on "Every form of Goku",
+    75 calls for 41 distinct names.
+
+    The memo lives with the `FactStore` instance rather than in this module —
+    `semantics.request_cache` explains why, and holds `semantic_type`'s on the
+    same terms. Handing the same `Profile` to every caller is safe because it is
+    read-only: every field is a string or a tuple, and nothing assigns to one.
+    """
+    memo = ontology.request_cache(store, "profile")
+    if name not in memo:
+        memo[name] = _read_profile(store, name)
+    return memo[name]
+
+
+def _read_profile(store: FactStore, name: str) -> Profile:
     categories = tuple(store.categories_of(name))
     identity: list[str] = []
     owners: list[str] = []

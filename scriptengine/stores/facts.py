@@ -595,10 +595,18 @@ class FactStore:
 
         once per leaf. Wrapping the column in `LOWER(TRIM(...))` puts every
         index out of reach, so each of those was a full scan of all 68,904 chunk
-        rows at ~72ms, and a Goku roster passes 64 headings: 4.6s of a 7.5s
+        rows at ~60ms, and a Goku roster passes 64 headings: 4.6s of a 7.5s
         request. The same two predicates evaluated over a single pass of the
-        34,011 distinct (heading, page) pairs cost 0.15s — 30x less, and flat in
-        the number of headings rather than linear in it.
+        34,011 distinct (heading, page) pairs are flat in the number of headings
+        instead of linear in it — measured on `series/db`, headings against
+        seconds:
+
+            1      0.059 → 0.098      64     3.869 → 0.099   (39x)
+            8      0.478 → 0.097     128     7.731 → 0.103   (75x)
+            32     1.878 → 0.100     174    10.492 → 0.098  (108x)
+
+        One heading is the only input this loses on, and nothing asks for one:
+        the sole caller, `roster._drop_templates`, hands over a whole roster.
         """
         if not leaves:
             return {}
