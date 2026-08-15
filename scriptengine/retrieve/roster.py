@@ -445,6 +445,94 @@ def _overlap(candidate: str, words: list[str]) -> int:
     return sum(1 for word in words if word[:5] in lowered)
 
 
+
+def battle_named(store: FactStore, query: str) -> str:
+    """The battle page this question names, if it names one.
+
+    Longest title first, so `Garou vs. Golden Sperm (Webcomic)` is preferred
+    over any shorter battle whose name it contains.
+    """
+    folded = _fold(query).lower()
+    best = ""
+    for row in store.connection.execute(
+        "SELECT title FROM documents WHERE page_type LIKE '%battle%' COLLATE NOCASE"
+    ):
+        title = (row["title"] or "").strip()
+        if title and _fold(title).lower() in folded and len(title) > len(best):
+            best = title
+    return best
+
+
+def _battle_roster(
+    store: FactStore,
+    episodes: "cite.EpisodeIndex",
+    battle: str,
+    character: str,
+    member_chars: int,
+    query: str = "",
+) -> "Roster | None":
+    """What one fighter used in one fight, as the wiki's own infobox records it.
+
+    A battle page lists each side and the abilities that side used --
+    `combatant1: Garou`, `abilities1: Regeneration, Transformation`. Without
+    reading it, "Which techniques did Garou use in Garou vs. Golden Sperm" was
+    answered with all 45 of his techniques: the question named a fight and the
+    engine heard only the name of a fighter. Measured over 41 such questions,
+    that shape scored 36.9% recall at 5.6% precision.
+
+    This is not inference. The side a character fought on and what they used on
+    it are two fields on one page, and 130 of the 133 One Punch Man battle pages
+    carry a chapter or episode besides.
+    """
+    node = store.node_by_name(battle)
+    if node is None:
+        return None
+    sides: dict[str, list[str]] = {}
+    for row in store.connection.execute(
+        "SELECT e.relation, n.name FROM edges e JOIN nodes n ON n.id = e.target_id"
+        " WHERE e.source_id = ? AND e.relation IN"
+        " ('combatant1', 'combatant2', 'abilities1', 'abilities2')",
+        (node["id"],),
+    ):
+        sides.setdefault(row["relation"], []).append(row["name"])
+
+    # Which fighter the question is about. `_character_subject` picks the page
+    # with the most written on it, and in a fight that is usually the famous
+    # one: "Which techniques did G4 use in Genos vs. G4?" resolved to Genos, so
+    # the G4 side was never read. With a battle named, the question's own words
+    # decide -- the battle title is removed first, or every combatant in it
+    # matches.
+    asked = _fold(query.replace(battle, " ")).lower() if query else ""
+    if asked:
+        for side in ("combatant1", "combatant2"):
+            for name in sides.get(side, []):
+                if _fold(name).lower() in asked:
+                    character = name
+                    break
+            else:
+                continue
+            break
+
+    wanted = _fold(character).lower()
+    for side, abilities in (("combatant1", "abilities1"), ("combatant2", "abilities2")):
+        here = [_fold(n).lower() for n in sides.get(side, [])]
+        if not any(wanted == n or wanted in n or n in wanted for n in here):
+            continue
+        names = _distinct(sides.get(abilities, []))
+        if not names:
+            return None
+        return Roster(
+            subject=character,
+            basis=f"{character} in {battle}",
+            kind="battle",
+            members=_render_all(store, episodes, names, "", member_chars,
+                                keep_bare=True),
+            confidence="declared",
+            candidates=len(names),
+        )
+    return None
+
+
 def build_roster(
     paths: SeriesPaths,
     query: str,
@@ -555,6 +643,19 @@ def build_roster(
         # because no `Majin Buu` page exists to resolve to.
         if declared is not None and declared.subject:
             character = ""
+
+        # A question that names a fight is asking about that fight. Before the
+        # character paths, because every one of them answers with the whole kit:
+        # "Which techniques did Garou use in Garou vs. Golden Sperm" came back
+        # with all 45 of his, where the battle page records two.
+        if character:
+            fight = battle_named(store, query)
+            if fight:
+                in_battle = _battle_roster(
+                    store, episodes, fight, character, member_chars, query
+                )
+                if in_battle is not None:
+                    return in_battle
 
         if character and kinds and not _files_by_character(
             store, character, kinds, overrides

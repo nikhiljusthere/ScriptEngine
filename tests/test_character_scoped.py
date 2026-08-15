@@ -577,3 +577,57 @@ class TestDeclaredNamesWithColons:
             build_roster(paths, "What are Megumi Fushiguro's named shikigami?").members
         }
         assert "Divine Dog: Totality" in names
+
+
+class TestBattleScoped:
+    """A question that names a fight is asking about that fight.
+
+    Measured over 41 such questions, the shape scored 36.9% recall at 5.6%
+    precision before this: every one resolved to a character and answered with
+    their whole kit. `Which techniques did Garou use in Garou vs. Golden Sperm`
+    came back with all 45 of his, where the battle page records two.
+    """
+
+    def opm(self):
+        paths = series_paths("opm")
+        if not paths.facts_db.exists():
+            pytest.skip("opm is not indexed")
+        return paths
+
+    def test_the_battle_page_decides_what_was_used(self):
+        from scriptengine.retrieve.roster import build_roster
+
+        roster = build_roster(
+            self.opm(),
+            "Which techniques did Garou use in Garou vs. Golden Sperm (Webcomic)?",
+        )
+        names = {m.name for m in roster.members}
+        assert names == {"Regeneration", "Transformation"}, names
+
+    def test_the_question_picks_the_fighter_not_the_famous_one(self):
+        """`_character_subject` prefers the page with the most written on it.
+
+        In a fight that is usually the wrong one: "Which techniques did G4 use
+        in Genos vs. G4?" resolved to Genos, and the G4 side was never read.
+        """
+        from scriptengine.retrieve.roster import build_roster
+
+        roster = build_roster(self.opm(), "Which techniques did G4 use in Genos vs. G4?")
+        assert roster.subject == "G4", roster.subject
+
+    def test_a_question_naming_no_battle_is_untouched(self):
+        """The whole kit is still the right answer when no fight is named."""
+        from scriptengine.retrieve.roster import build_roster
+
+        roster = build_roster(self.opm(), "Every technique of Garou")
+        assert len(roster.members) > 10
+
+    def test_battle_named_prefers_the_longer_title(self):
+        from scriptengine.retrieve.roster import battle_named
+        from scriptengine.stores.facts import FactStore
+
+        with FactStore(self.opm().facts_db) as store:
+            found = battle_named(
+                store, "Which techniques did Garou use in Garou vs. Golden Sperm (Webcomic)?"
+            )
+        assert found == "Garou vs. Golden Sperm (Webcomic)"
