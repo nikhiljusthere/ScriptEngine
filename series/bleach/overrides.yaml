@@ -58,7 +58,13 @@ rosters:
       - every dance of rukia's shikai sode no shirayuki
       - dance of rukia's shikai sode no shirayuki
     subject: Rukia Kuchiki
-    members: [Some no mai, Tsukishiro, Tsugi no mai, Hakuren, San no mai, Shirafune]
+    # Quoted because each name contains a comma. Unquoted in an inline list,
+    # YAML read these three dances as six members -- `Some no mai`,
+    # `Tsukishiro`, `Tsugi no mai` ... -- and the question scored zero with
+    # every member wrong. Unlike the colon case the loader cannot repair this:
+    # YAML really did produce six strings and nothing can tell it should be
+    # three.
+    members: ["Some no mai, Tsukishiro", "Tsugi no mai, Hakuren", "San no mai, Shirafune"]
 
   # Every named Bankai technique Byakuya uses
   # Declared 2026-08-15: the engine resolved this to `The Bankai section of the page lists all four named Bankai techniques in a structured format` and returned the wrong set. Members transcribed from `Byakuya Kuchiki`.
@@ -107,6 +113,8 @@ rosters:
       - ten active espada
       - espada of aizen's arrancar army
     members: [Yammy Llargo, Coyote Starrk, Baraggan Louisenbairn, Tier Harribel, Ulquiorra Cifer, Nnoitra Gilga, Grimmjow Jaegerjaquez, Zommari Rureaux, Szayelaporro Granz, Aaroniero Arruruerie]
+
+
 
   - name: Espada
     match: [espada]
