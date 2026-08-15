@@ -85,7 +85,6 @@ rosters:
       - who are the schutzstaffel members
       - the schutzstaffel members
       - schutzstaffel members
-    subject: Bleach
     members: [Lille Barro, Gerard Valkyrie, Pernida Parnkgjas, Askin Nakk Le Vaar, Uryū Ishida]
   - name: Espada
     match: [espada]
@@ -215,6 +214,11 @@ rosters:
 # The check can only see the questions the bank asks today; a later question
 # whose answer is named here would need the entry removed.
 ability_stopwords:
+  - Natural Abilities
+  - Quincy Powers & Abilities
+  - Bankai Special Ability
+  - Former Powers & Abilities
+  - Powers & Abilities
   - Bilingual
   - Enhanced Bankai Duration
   - Enhanced Durability

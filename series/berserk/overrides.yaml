@@ -64,7 +64,6 @@ rosters:
       - who are the members of the god hand
       - the members of the god hand
       - members of the god hand
-    subject: Berserk
     members: [Void, Slan, Ubik, Conrad, Femto]
 
   # Who are the members of the Black Swordsman Party?
@@ -74,7 +73,6 @@ rosters:
       - who are the members of the black swordsman party
       - the members of the black swordsman party
       - members of the black swordsman party
-    subject: Berserk
     members: [Guts, Casca, Puck, Isidro, Farnese, Serpico, Schierke, Ivalera, Roderick, Magnifico, Azan, Isma]
   # The band's own page carries a `== Members ==` list and a `notable members`
   # infobox field, and the engine reached neither: `notable members` runs
@@ -184,3 +182,12 @@ rosters:
   - name: Elves
     match: [elf, elves]
     category: Elves
+
+# Section labels that kept arriving as members. A heading is where an
+# ability is described, never one itself, and `_drop_templates` only
+# removes headings shared by ten or more pages -- these sit under that on
+# this wiki. Checked against every item and alias in this series' bank.
+ability_stopwords:
+  - Tactical Abilities
+  - Physical Abilities
+  - Equipment

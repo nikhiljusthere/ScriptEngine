@@ -28,6 +28,7 @@ wiki's own label for it ("Grade"), not through a table of field names.
 
 from __future__ import annotations
 
+import functools
 import json
 import re
 import sqlite3
@@ -142,6 +143,34 @@ _TRAILING_NUMBER = re.compile(r"(\d+)\s*$")
 _WORD = re.compile(r"[A-Za-z']+")
 
 
+@functools.lru_cache(maxsize=2048)
+def _number_flexible(phrase: str) -> "re.Pattern[str]":
+    """A declared phrase matched whichever way the question words its nouns.
+
+    The test used to be `\\b{phrase}s?\\b`, which pluralises the *last* word and
+    nothing else. So a declaration written from "Who are the members of the
+    Black Swordsman Party" could never match "Every member of the Black
+    Swordsman Party" -- same set, same page, and the second question fell
+    through to a category and answered with 21 arc characters at 10% precision
+    while the first scored 100%.
+
+    Every word gets the optional `s` instead, in both directions, so a
+    declaration matches the singular and plural of each noun in it. Irregular
+    plurals are still not handled -- `hero`/`heroes` needs both spellings
+    declared, as it always did.
+    """
+    words = [word for word in phrase.split() if word]
+    if not words:
+        return re.compile(r"(?!)")          # matches nothing
+    parts = []
+    for word in words:
+        escaped = re.escape(word)
+        if word.endswith("s"):
+            escaped = escaped[:-1]           # `s` is never escaped by `re.escape`
+        parts.append(escaped + "s?")
+    return re.compile(r"\b" + r"\s+".join(parts) + r"\b")
+
+
 @dataclass(frozen=True)
 class RosterDefinition:
     """A set this wiki declares, and the phrases that ask for it.
@@ -227,7 +256,7 @@ class RosterDefinition:
         lowered = f" {query.lower()} "
         best = ""
         for phrase in self.match:
-            if re.search(rf"\b{re.escape(phrase)}s?\b", lowered) and len(phrase) > len(best):
+            if re.search(_number_flexible(phrase), lowered) and len(phrase) > len(best):
                 best = phrase
         return best
 

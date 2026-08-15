@@ -192,6 +192,31 @@ class TestKinds:
                                           "category": "Apostles"})
         assert plain.subject == ""
 
+    def test_a_declared_phrase_matches_singular_and_plural(self):
+        """Same set, two phrasings, and only one of them used to match.
+
+        `\\b{phrase}s?\\b` pluralises the last word and nothing else, so a
+        declaration written as "members of the Black Swordsman Party" never
+        matched "Every member of the Black Swordsman Party". The second question
+        fell through to a category and answered with 21 arc characters at 10%
+        precision while the first scored 100%.
+        """
+        declared = R.RosterDefinition.parse({
+            "name": "Black Swordsman Party",
+            "match": ["members of the black swordsman party"],
+            "members": ["Guts"],
+        })
+        assert declared.matches("Every member of the Black Swordsman Party")
+        assert declared.matches("Who are the members of the Black Swordsman Party?")
+        # And the other direction, for a declaration written in the singular.
+        singular = R.RosterDefinition.parse({
+            "name": "x", "match": ["devil contract of aki hayakawa"],
+            "members": ["Fox Devil"]})
+        assert singular.matches("Every devil contract of Aki Hayakawa")
+        assert singular.matches("Every devil contracts of Aki Hayakawa")
+        # It must still not match an unrelated set.
+        assert not declared.matches("Every member of the God Hand")
+
     def test_a_set_of_battles_does_not_answer_a_question_about_abilities(self):
         """`NEVER_MEMBERS` applied to the set, not only to its members.
 

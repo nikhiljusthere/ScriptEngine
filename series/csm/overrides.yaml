@@ -185,3 +185,14 @@ rosters:
   - name: Groups
     match: [group, groups, organisation, organization, organizations]
     category: Groups
+
+# Section labels that kept arriving as members. A heading is where an
+# ability is described, never one itself, and `_drop_templates` only
+# removes headings shared by ten or more pages -- these sit under that on
+# this wiki. Checked against every item and alias in this series' bank.
+ability_stopwords:
+  - Physical Abilities
+  - Other Abilities
+  - Supernatural Abilities
+  - Antemortem Abilities
+  - Postmortem Abilities
