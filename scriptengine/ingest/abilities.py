@@ -96,8 +96,7 @@ Passage:
 {passage}
 
 Answer with JSON exactly in this shape:
-{{"abilities": [{{"name": "...", "kind": "...", "acquired": "...",
-                 "reason": "one short clause"}}]}}
+{{"abilities": [{{"name": "...", "kind": "...", "acquired": "...", "reason": "one short clause"}}]}}
 
 `kind` must be one of: {kinds}.
 `acquired` must be one of: {acquired}. Use `innate` unless the passage says
