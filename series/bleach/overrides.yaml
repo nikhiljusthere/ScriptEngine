@@ -236,3 +236,31 @@ ability_stopwords:
   - Reiatsu
   - Sonído Master
   - Way of Onmitsu
+
+
+# Headings that name a real ability even though many pages carry them.
+# `_drop_templates` removes any heading shared by more than ten pages, because
+# `Zanpakutō` and `Nen` are scaffolding on hundreds. These are not: a stat-line
+# is shared by 81 pages because 81 characters have enhanced strength, and every
+# name below is canon for at least one question in this series' bank. Nesting
+# cannot tell the two apart -- `Zanpakutō` is a childless leaf too -- so the
+# series declares them.
+ability_headings:
+  - Enhanced Strength
+  - Expert Swordsman
+  - Enhanced Endurance
+  - Immense Spiritual Power
+  - Master Swordsman
+  - Shunpo Expert
+  - Kidō Expert
+  - Keen Intellect
+  - Kidō Master
+  - Expert Hand-to-Hand Combatant
+  - Immeasurable Spiritual Power
+  - Immense Strength
+  - Shunpo Master
+  - Shunpo Practitioner
+  - Hakuda Master
+  - Highly Perceptive Combatant
+  - Immense Endurance
+  - Spiritual Awareness

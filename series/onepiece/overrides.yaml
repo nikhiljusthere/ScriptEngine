@@ -65,9 +65,16 @@ ability_sections:
 # The named advances are deliberately absent: `Ryuo` and `Nigori-Zake` are
 # things Zoro does, not the system he does them with, and `Every type of Haki`
 # still answers from the declared `Haki Types` set.
+# `Haki` alone is the power system, as `Nen` and `Jujutsu` are, and stays out.
+# The three *types* were taken out on 2026-08-15: they had been declared "not
+# anyone's ability" while the researched gold names them as canon for four
+# character questions -- `Armament Haki`, `Observation Haki` and
+# `Supreme King Haki` are Zoro's abilities as much as his sword styles are. The
+# stopword list and the bank disagreed, and the bank is the target. Their
+# romanisations go with them, being the same three things under other names.
+# The `Advanced` forms stay: no question asks for them.
 ability_stopwords: [
-  Haki, Armament Haki, Observation Haki, Conqueror's Haki, Supreme King Haki,
-  Busoshoku Haki, Kenbunshoku Haki, Haoshoku Haki,
+  Haki,
   Advanced Armament Haki, Advanced Observation Haki, Advanced Conqueror's Haki,
   Speed and Agility, Durability and Endurance, Durability, Endurance, Luck, Lack of Orientation, Current Swords, Former Swords, Situational Weapons, Other Weapons, Other Techniques
 ]
@@ -178,3 +185,15 @@ rosters:
       Observation Haki: Observation Haki Users
       Armament Haki: Armament Haki Users
       Conqueror's Haki: Supreme King Haki Users
+
+
+# Headings that name a real ability even though many pages carry them.
+# `Armament Haki` heads a section on 65 pages because 65 characters have Haki.
+# It is a childless leaf, exactly as `Zanpakutō` and `Nen` are, so neither the
+# page count nor nesting can separate them -- the series declares them instead.
+ability_headings:
+  - Armament Haki
+  - Observation Haki
+  - Supreme King Haki
+  - Tactical Skills
+  - Marksmanship

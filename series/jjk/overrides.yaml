@@ -50,7 +50,9 @@ ability_stopwords:
   - Physical Prowess
   - Cursed Energy
   - Cursed Technique
-  - Cursed Energy Manipulation
+  # `Cursed Energy Manipulation` was here until 2026-08-15, when it turned out
+  # to be gold for three character questions -- Yuji, Gojo and Sukuna all have
+  # it. `Cursed Energy` stays: that is the substance, not the handling of it.
   - Reverse Cursed Technique Output
   - Jujutsu
   - Binding Vow
@@ -184,3 +186,9 @@ rosters:
     groups:
       Tokyo Jujutsu High: Tokyo Jujutsu High
       Kyoto Jujutsu High: Kyoto Jujutsu High
+
+
+# A heading on 13 pages because 13 sorcerers have one, not because it is
+# skeleton. Canon for the character questions in this series' bank.
+ability_headings:
+  - Domain Expansion

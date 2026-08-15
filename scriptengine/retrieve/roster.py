@@ -1330,15 +1330,39 @@ _TEMPLATE_HEADING_PAGES = 10
 _MAX_ABILITY_WORDS = 5
 
 
-def _drop_templates(store: FactStore, members: list[Member]) -> list[Member]:
+def ability_headings(overrides: dict | None) -> frozenset[str]:
+    """Headings that name a real ability however many pages carry them.
+
+    The page-count rule cannot find these on its own, and neither can nesting.
+    `Armament Haki` is a heading on 65 One Piece pages because 65 characters
+    have Haki, not because it is scaffolding, and it is a childless leaf exactly
+    like `Zanpakutō` and `Nen` are -- which is why the container test was
+    measured and rejected. There is no structural signal left, so the series
+    says which ones are real.
+
+    Kept deliberately small. Anything declared here skips the filter that exists
+    to stop article skeleton coming back as abilities, so a wrong entry costs
+    precision on every character who has that heading.
+    """
+    declared = (overrides or {}).get("ability_headings") or []
+    return frozenset(
+        str(word).strip().lower() for word in declared if str(word).strip()
+    )
+
+
+def _drop_templates(
+    store: FactStore, members: list[Member], overrides: dict | None = None
+) -> list[Member]:
     """Remove the members that are the wiki's own article skeleton."""
     if not members:
         return members
+    keep = ability_headings(overrides)
     counts = store.pages_per_section([member.name for member in members])
     return [
         member
         for member in members
-        if counts.get(member.name.strip().lower(), 0) <= _TEMPLATE_HEADING_PAGES
+        if member.name.strip().lower() in keep
+        or counts.get(member.name.strip().lower(), 0) <= _TEMPLATE_HEADING_PAGES
     ]
 
 
@@ -1493,7 +1517,7 @@ def _section_roster(
         )
     # `Physical Abilities` and `Nen` are headings on hundreds of character
     # pages. They are where an ability is described, never one themselves.
-    members = _drop_templates(store, members)
+    members = _drop_templates(store, members, overrides)
     # And the ones this series has already declared are not abilities at all.
     # A heading is no more entitled to return `Other Abilities` or `Vegecell`
     # than a prose row is.
