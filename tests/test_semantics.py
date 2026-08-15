@@ -271,3 +271,72 @@ class TestStatedCount:
 
         assert _stated_count("Extension Techniques") is None
         assert _stated_count("Transformations") is None
+
+
+class TestCategoryFallback:
+    """One Punch Man wraps character pages in a tabber, so the infobox the
+    crawler finds is the tab container and `page_type` is `parent_tab`.
+
+    271 pages are like that, Saitama and Garou among them, and everything
+    filtering on "is this a character" dropped the entire main cast:
+    `Monster Association Arc` returned 119 names with no Saitama in it.
+    """
+
+    def paths_for(self, series):
+        from scriptengine.config import series_paths
+
+        paths = series_paths(series)
+        if not paths.facts_db.exists():
+            pytest.skip(f"{series} is not indexed")
+        return paths
+
+    @pytest.mark.parametrize(
+        "name", ["Saitama", "Garou", "Genos", "Bang", "Tatsumaki", "King"]
+    )
+    def test_tabbed_character_pages_are_characters(self, name):
+        from scriptengine.config import load_overrides
+        from scriptengine.retrieve import semantics as ontology
+        from scriptengine.stores.facts import FactStore
+
+        paths = self.paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            assert ontology.semantic_type(store, name, load_overrides(paths)) == (
+                ontology.CHARACTER
+            )
+
+    @pytest.mark.parametrize("name", ["Audiobooks", "Awakened Garou vs. S-Class Heroes (Webcomic)"])
+    def test_other_tabbed_pages_are_not_promoted(self, name):
+        """`Audiobooks` is in `Audiobooks`; the fight pages are in `Fights`."""
+        from scriptengine.config import load_overrides
+        from scriptengine.retrieve import semantics as ontology
+        from scriptengine.stores.facts import FactStore
+
+        paths = self.paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            assert ontology.semantic_type(store, name, load_overrides(paths)) != (
+                ontology.CHARACTER
+            )
+
+    @pytest.mark.parametrize(
+        "series, title",
+        [
+            ("jjk", "List of Characters"),
+            ("bleach", "Characters/Arrancar"),
+            ("berserk", "Miscellaneous Characters"),
+        ],
+    )
+    def test_an_index_of_characters_is_not_a_character(self, series, title):
+        """These sit in `Characters` and are indexes, not people.
+
+        A character page is not named after its own category, which is the
+        whole discriminator.
+        """
+        from scriptengine.config import load_overrides
+        from scriptengine.retrieve import semantics as ontology
+        from scriptengine.stores.facts import FactStore
+
+        paths = self.paths_for(series)
+        with FactStore(paths.facts_db) as store:
+            assert ontology.semantic_type(store, title, load_overrides(paths)) != (
+                ontology.CHARACTER
+            )

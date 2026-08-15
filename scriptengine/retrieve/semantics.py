@@ -310,7 +310,7 @@ def semantic_type(store: FactStore, name: str, overrides: dict | None = None) ->
 
 def _classify(store: FactStore, name: str, overrides: dict | None) -> str:
     row = store.connection.execute(
-        "SELECT page_type FROM documents WHERE title = ? COLLATE NOCASE", (name,)
+        "SELECT id, page_type FROM documents WHERE title = ? COLLATE NOCASE", (name,)
     ).fetchone()
     from_page = type_from_page_type(row["page_type"] if row else "", overrides)
 
@@ -323,7 +323,50 @@ def _classify(store: FactStore, name: str, overrides: dict | None) -> str:
                 refined = type_from_class(fact["value"] or "")
                 if refined != UNKNOWN:
                     return refined
+
+    if from_page == UNKNOWN and row is not None:
+        refined = _from_categories(store, row["id"], name)
+        if refined != UNKNOWN:
+            return refined
     return from_page
+
+
+# Category names a wiki files its people under. Matched whole, never as a
+# substring: `Monster Association Arc Fights` contains "arc" and is a fight.
+_CHARACTER_CATEGORIES = frozenset({"characters"})
+
+
+def _from_categories(store: FactStore, document_id: int, title: str) -> str:
+    """Last resort when the infobox says nothing, read from the categories.
+
+    One Punch Man wraps its character pages in a tabber -- Manga, Anime,
+    Webcomic -- so the infobox the crawler finds is the tab container and
+    `page_type` comes back `parent_tab`. 271 pages are like that, including
+    Saitama, Garou, Genos, Bang, Tatsumaki and King: every major character in
+    the series classified `unknown`. Anything filtering on "is this a
+    character" silently dropped the entire main cast, which is how
+    `Monster Association Arc` returned a 119-name roster with no Saitama in it.
+
+    The categories are unambiguous where the infobox is not — Saitama is in
+    `Characters`, `Heroes`, `A-Class`; `Audiobooks` is in `Audiobooks`; the
+    fight pages are in `Fights`.
+
+    Deliberately narrow. Only `Characters` is trusted, and only when the page is
+    not itself a list of them: `List of Characters`, `Characters/Arrancar` and
+    `Miscellaneous Characters` all sit in that category and are indexes, not
+    people. A character page is not named after its own category. Measured
+    across the eight wikis, this rule types 84 One Punch Man pages and leaves
+    every other wiki untouched.
+    """
+    if "character" in title.lower():
+        return UNKNOWN
+    found = {
+        (row["category"] or "").strip().lower()
+        for row in store.connection.execute(
+            "SELECT category FROM categories WHERE document_id = ?", (document_id,)
+        )
+    }
+    return CHARACTER if found & _CHARACTER_CATEGORIES else UNKNOWN
 
 
 def is_power_up_only(store: FactStore, name: str) -> bool:
