@@ -793,6 +793,118 @@ class FactStore:
         )
         self.connection.commit()
 
+    def ensure_relations(self) -> None:
+        """Create the extracted-relations table if this store predates it.
+
+        Survives `reset()` for the same reason `abilities` does: it holds local
+        inference an `index` run must not throw away.
+
+        Keyed on all three of subject, other and relation. Two characters can
+        hold more than one relation at once and the wiki says so -- Gojo and
+        Geto are classmates *and* enemies -- and keying on the pair alone would
+        keep whichever was written last.
+        """
+        self.connection.execute(
+            "CREATE TABLE IF NOT EXISTS relations ("
+            " character TEXT, other TEXT, relation TEXT, era TEXT, section TEXT,"
+            " quote TEXT, revid INTEGER, prompt_version TEXT, model TEXT,"
+            " extracted_at TEXT,"
+            " PRIMARY KEY (character, other, relation))"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS relations_by_character"
+            " ON relations (character COLLATE NOCASE)"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS relations_by_other"
+            " ON relations (other COLLATE NOCASE)"
+        )
+        self.connection.commit()
+
+    def relations_of(self, character: str, both_ways: bool = True) -> list[sqlite3.Row]:
+        """Relations extracted for one character. A keyed lookup, never a model.
+
+        `both_ways` also returns the rows where this character is the *other*
+        end, because the wiki writes a relationship on whichever page it feels
+        like: Geto's page carries the Gojo relationship and Gojo's may not carry
+        Geto's. A script asking "who is Gojo to" wants both.
+        """
+        try:
+            if both_ways:
+                return self.connection.execute(
+                    "SELECT character, other, relation, era, section, quote"
+                    " FROM relations WHERE character = ? COLLATE NOCASE"
+                    "    OR other = ? COLLATE NOCASE",
+                    (character, character),
+                ).fetchall()
+            return self.connection.execute(
+                "SELECT character, other, relation, era, section, quote"
+                " FROM relations WHERE character = ? COLLATE NOCASE",
+                (character,),
+            ).fetchall()
+        except sqlite3.OperationalError:
+            # A store built before relations existed. Nothing is extracted in
+            # it, which is a complete answer.
+            return []
+
+    def relation_state(self, character: str) -> sqlite3.Row | None:
+        """What prompt and revision this character's relations were read under."""
+        try:
+            return self.connection.execute(
+                "SELECT revid, prompt_version FROM relations"
+                " WHERE character = ? COLLATE NOCASE LIMIT 1",
+                (character,),
+            ).fetchone()
+        except sqlite3.OperationalError:
+            return None
+
+    def save_relations(
+        self,
+        character: str,
+        found: Sequence[dict[str, str]],
+        revid: int | None,
+        prompt_version: str,
+        model: str,
+    ) -> None:
+        """Replace everything stored for one character, in one transaction.
+
+        Replaced rather than merged, exactly as `save_abilities` is: a re-run
+        under a new prompt is the whole answer for that character, and keeping
+        the old rows would union two prompts' opinions.
+
+        Only rows where the subject is this character are deleted. A row naming
+        them as the *other* end belongs to whoever's page it was read from, and
+        deleting it here would throw away that page's reading.
+        """
+        stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        self.connection.execute(
+            "DELETE FROM relations WHERE character = ? COLLATE NOCASE", (character,)
+        )
+        self.connection.executemany(
+            "INSERT OR REPLACE INTO relations"
+            " (character, other, relation, era, section, quote, revid,"
+            "  prompt_version, model, extracted_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            [
+                (
+                    character,
+                    str(row.get("other") or "").strip(),
+                    str(row.get("relation") or "").strip().lower(),
+                    str(row.get("era") or "").strip(),
+                    str(row.get("section") or "").strip(),
+                    str(row.get("quote") or "").strip()[:400],
+                    revid,
+                    prompt_version,
+                    model,
+                    stamp,
+                )
+                for row in found
+                if str(row.get("other") or "").strip()
+                and str(row.get("relation") or "").strip()
+            ],
+        )
+        self.connection.commit()
+
     def semantics_of(self, title: str) -> dict[str, Any] | None:
         """The stored classification for one page, or ``None``.
 

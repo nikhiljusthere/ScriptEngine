@@ -362,6 +362,73 @@ def abilities(
 
 
 @app.command()
+def relations(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(0, "--limit", help="Stop after this many characters."),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Re-extract even where a current answer is stored."
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Show whose prose would be read, call no model."
+    ),
+    workers: int = typer.Option(
+        1, "--workers", help="Extract this many characters at once."
+    ),
+) -> None:
+    """Extract the relationships this wiki writes only as prose.
+
+    The infobox gives family and faction — `relatives`, `affiliation`. It does
+    not give what a script is built from: that Gojo and Geto were the strongest
+    duo until Geto defected. That is a sentence under `Relationships`, reachable
+    by no category and no edge.
+
+    Every row keeps the clause it came from, checked against the passage word
+    for word, and the other end must be somebody this wiki actually has.
+    """
+    import logging
+
+    from scriptengine.ingest.relations import extract_series as extract_relations
+    from scriptengine.ingest.relations import needs_relations
+    from scriptengine.llm.client import LLMUnavailable
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    if dry_run:
+        with FactStore(paths.facts_db) as store:
+            names = needs_relations(store, _load_overrides(paths))
+        console.print(f"[dim]{len(names)} characters would be read:[/dim]")
+        for name in names[:40]:
+            console.print(f"  {name}")
+        if len(names) > 40:
+            console.print(f"  [dim]… {len(names) - 40} more[/dim]")
+        return
+
+    def show(character: str, count: int) -> None:
+        console.print(f"  [dim]{count:3} found[/dim]  {character}")
+
+    try:
+        report = extract_relations(
+            paths, limit=limit or None, refresh=refresh, progress=show,
+            workers=max(1, workers),
+        )
+    except LLMUnavailable as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    table = Table(title=f"Relations extracted — {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in ("considered", "extracted", "cached", "failed", "relations"):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+
+
+@app.command()
 def classify(
     series: str = typer.Option(..., "--series"),
     limit: int = typer.Option(0, "--limit", help="Stop after this many pages."),
