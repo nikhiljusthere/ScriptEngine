@@ -96,7 +96,31 @@ class LLMClient:
 
     @property
     def executable(self) -> str:
-        return shutil.which("opencode") or ""
+        """The real binary, never the npm `.cmd` shim.
+
+        `shutil.which` finds `opencode.CMD` first on Windows, and Windows runs a
+        `.cmd` through `cmd.exe` however the arguments were passed — so every
+        `&` in the message becomes a command separator. Extraction sends whole
+        wiki passages, and these wikis write `Powers & Abilities` in almost every
+        one of them; the first prompt containing `Immense Speed & Reflexes` died
+        with `'Reflexes:' is not recognized as an internal or external command`.
+
+        The shim exists to launch a sibling `.exe`, so preferring that directly
+        keeps the arguments out of a shell. Falls back to whatever `which` found
+        when no `.exe` sits alongside, which is the situation on Linux and macOS.
+        """
+        found = shutil.which("opencode") or ""
+        if not found or not found.lower().endswith((".cmd", ".bat")):
+            return found
+        stem = os.path.dirname(found)
+        for candidate in (
+            os.path.join(stem, "opencode.exe"),
+            os.path.join(stem, "node_modules", "opencode-ai", "bin",
+                         "opencode.exe"),
+        ):
+            if os.path.isfile(candidate):
+                return candidate
+        return found
 
     def available(self) -> bool:
         """Whether opencode is installed. Never raises."""

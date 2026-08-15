@@ -38,11 +38,12 @@ import logging
 import os
 import re
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
-from scriptengine.llm.client import LLMClient, LLMUnavailable
+from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
 
 logger = logging.getLogger(__name__)
@@ -258,6 +259,26 @@ def extract_character(
     client: LLMClient, store: FactStore, series: str, character: str, overrides: dict
 ) -> list[dict[str, str]]:
     """Every named ability the wiki's prose gives this character."""
+    return extract_from_passages(
+        client, series, character, passages(store, character, overrides), overrides
+    )
+
+
+def extract_from_passages(
+    client: LLMClient,
+    series: str,
+    character: str,
+    found_passages: list[tuple[str, str]],
+    overrides: dict,
+) -> list[dict[str, str]]:
+    """The same extraction, over passages already read.
+
+    Split out from `extract_character` so the expensive part can run on a worker
+    thread. Everything here is prompt-building, network and string work — the
+    store is touched only to *fetch* the passages, which stays on the thread
+    that owns the connection, because a `sqlite3` connection belongs to one
+    thread and the run writes to the same file it is reading.
+    """
     from scriptengine.retrieve.roster import ability_stopwords
 
     # The power system a series runs on is not one character's ability. The
@@ -266,7 +287,7 @@ def extract_character(
     stopwords = ability_stopwords(overrides)
     found: list[dict[str, str]] = []
     seen: set[str] = set()
-    for section, text in passages(store, character, overrides):
+    for section, text in found_passages:
         for window in _windows(text):
             prompt = _TEMPLATE.format(
                 series=series,
@@ -378,11 +399,19 @@ def extract_series(
     limit: int | None = None,
     refresh: bool = False,
     progress: Any = None,
+    workers: int = 1,
 ) -> dict[str, Any]:
     """Extract this series' prose-only abilities, skipping what is current.
 
     Cached on `revid` and `PROMPT_VERSION` exactly as classification is, so a
     second run costs nothing and a re-crawl pays only for what changed.
+
+    `workers` runs that many extractions at once. It is worth setting only for
+    the `opencode` backend, where a call is a subprocess waiting on somebody
+    else's API: measured at 89s per character against a local model's 25s, but
+    3,365 characters is 83 hours in one line and the wait is not this machine's
+    to spend. A local backend should stay at 1 — it is one GPU, and asking it
+    for eight answers at once does not make it finish sooner.
     """
     settings = settings or get_settings()
     overrides = load_overrides(paths)
@@ -399,7 +428,12 @@ def extract_series(
         characters = needs_extracting(store, overrides)
         report["considered"] = len(characters)
 
-        for character in (characters[:limit] if limit else characters):
+        wanted = characters[:limit] if limit else characters
+
+        # What is still owed, after the cache. Settled up front so the pool is
+        # never handed work that a cache hit would have skipped.
+        todo: list[tuple[str, str]] = []
+        for character in wanted:
             revid = _revid(store, character)
             state = store.extraction_state(character)
             current = (
@@ -411,18 +445,9 @@ def extract_series(
             if current:
                 report["cached"] += 1
                 continue
+            todo.append((character, revid))
 
-            try:
-                found = extract_character(
-                    client, store, paths.name, character, overrides
-                )
-            except LLMUnavailable:
-                raise
-            except Exception as error:  # noqa: BLE001 - one page must not stop the run
-                logger.warning("Extracting %r failed: %s", character, error)
-                report["failed"] += 1
-                continue
-
+        def store_result(character: str, revid: str, found: list[dict[str, str]]):
             store.save_abilities(
                 character=character,
                 found=found,
@@ -434,4 +459,71 @@ def extract_series(
             report["abilities"] += len(found)
             if progress is not None:
                 progress(character, len(found))
+
+        if workers <= 1:
+            for character, revid in todo:
+                try:
+                    found = extract_character(
+                        client, store, paths.name, character, overrides
+                    )
+                except LLMUnavailable:
+                    raise
+                except Exception as error:  # noqa: BLE001 - one page must not stop the run
+                    logger.warning("Extracting %r failed: %s", character, error)
+                    report["failed"] += 1
+                    continue
+                store_result(character, revid, found)
+            return report
+
+        # A chunk at a time rather than one big submit: passages are read on
+        # this thread, and holding all of them for a wiki the size of One Piece
+        # (1,640 characters) would be pointless when the pool can only be
+        # working on `workers` of them. Saving per chunk also means an
+        # interrupted run keeps everything it already paid for.
+        for start in range(0, len(todo), workers * 4):
+            chunk = todo[start : start + workers * 4]
+            work = [
+                (character, revid, passages(store, character, overrides))
+                for character, revid in chunk
+            ]
+
+            def run(job):
+                character, _, found_passages = job
+                return extract_from_passages(
+                    client, paths.name, character, found_passages, overrides
+                )
+
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for (character, revid, _), outcome in zip(
+                    work, pool.map(_guarded(run), work)
+                ):
+                    if isinstance(outcome, BaseException):
+                        # Throttling means every later call fails too, so it
+                        # stops the run rather than filling the store with the
+                        # empty results of a provider saying no.
+                        if isinstance(outcome, LLMRateLimited):
+                            raise outcome
+                        logger.warning(
+                            "Extracting %r failed: %s", character, outcome
+                        )
+                        report["failed"] += 1
+                        continue
+                    store_result(character, revid, outcome)
     return report
+
+
+def _guarded(run):
+    """Run a job, returning the exception instead of raising it.
+
+    `ThreadPoolExecutor.map` re-raises on first failure and abandons the rest of
+    the batch. One character's page failing must cost that character only — the
+    same rule the serial path has always followed.
+    """
+
+    def attempt(job):
+        try:
+            return run(job)
+        except BaseException as error:  # noqa: BLE001 - handed back to the caller
+            return error
+
+    return attempt

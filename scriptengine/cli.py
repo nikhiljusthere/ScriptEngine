@@ -281,6 +281,9 @@ def abilities(
     dry_run: bool = typer.Option(
         False, "--dry-run", help="Show whose prose would be read, call no model."
     ),
+    workers: int = typer.Option(
+        1, "--workers", help="Extract this many characters at once (opencode only)."
+    ),
 ) -> None:
     """Extract the abilities this wiki writes only as prose.
 
@@ -324,7 +327,8 @@ def abilities(
 
     try:
         report = extract_series(
-            paths, limit=limit or None, refresh=refresh, progress=show
+            paths, limit=limit or None, refresh=refresh, progress=show,
+            workers=max(1, workers),
         )
     except LLMUnavailable as error:
         console.print(f"[red]{error}[/red]")
