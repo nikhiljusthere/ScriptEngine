@@ -31,6 +31,7 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
+import unicodedata
 from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass, field
@@ -626,6 +627,11 @@ def build_roster(
             return Roster(subject=subject)
 
         kind, basis, names, confidence, unmatched = best
+        # A set of battles is not an answer about abilities, however well its
+        # name scores. `Megumi Fushiguro Battles` matched on his name and came
+        # back as his shikigami.
+        if _is_packaging_set(store, names, words, overrides):
+            return Roster(subject=subject)
         # Discovery chose this set *using* the topic's words, so those words
         # cannot also be a constraint on its members: "Every Angel" picks
         # `Angels`, and nothing inside it has to say "angel" again.
@@ -855,6 +861,43 @@ def _character_subject(
     )
 
 
+def _fold(text: str) -> str:
+    """Lowercase with diacritics stripped, so `Shūsuke` and `Shusuke` compare."""
+    decomposed = unicodedata.normalize("NFKD", text or "")
+    return "".join(c for c in decomposed if not unicodedata.combining(c)).lower()
+
+
+def _starts_a_word(word: str, title: str) -> bool:
+    """Whether `word` begins a word in `title`, rather than sitting inside one.
+
+    `pages_named` matches with `LIKE '%word%'`, which is deliberate -- it is how
+    "luffy" reaches `Monkey D. Luffy`. It also means a query word can match the
+    middle of an unrelated name, and `_subject_from` takes the first word that
+    resolves, in query order, so a fragment early in the question beats the real
+    name later in it.
+
+    Measured: "Every named technique Ichigo uses with Zangetsu" resolved to the
+    character `Unnamed Female Arrancar`, because `named` sits inside `Unnamed`
+    and comes before `ichigo` in the sentence. The question then fell through to
+    the `Techniques` category and returned 200 members at 2% precision -- every
+    technique in Bleach, and 23% of all the wrong names in that run.
+
+    Only the leading edge is checked. A trailing one would reject a possessive
+    or a plural in a title, and the failures here are all of the `named` inside
+    `Unnamed`, `gon` inside `Dragon` shape.
+
+    Both sides have their diacritics folded first, and that is not cosmetic.
+    `content_words` tokenises with `[A-Za-z']+`, so `Sōsuke` arrives here as the
+    fragment `suke` -- and without folding, the `ū` in `Shūsuke Amagai` reads as
+    a word boundary, so "Every ability of Sōsuke Aizen" resolved to Amagai and
+    lost twelve of Aizen's abilities. Folded, `suke` sits inside `shusuke` and
+    `sousuke` alike, both are correctly refused, and `aizen` wins the subject.
+    """
+    return re.search(
+        rf"(?<![a-z0-9]){re.escape(_fold(word))}", _fold(title)
+    ) is not None
+
+
 def _subject_from(
     store: FactStore,
     words: Sequence[str],
@@ -889,6 +932,10 @@ def _subject_from(
         for row in store.pages_named(word):
             root = row["root"]
             if not root or not store.node_by_name(root):
+                continue
+            # The word has to start a word in the title, not sit inside one.
+            # Without this the first fragment in the sentence wins the subject.
+            if not _starts_a_word(word, root):
                 continue
             semantic = ontology.semantic_type(store, root, overrides)
             if semantic == ontology.CHARACTER:
@@ -2298,6 +2345,43 @@ def _rule_of(reason: str) -> str:
     if "this is a set of" in reason:
         return "type"
     return "qualifier"
+
+
+# Words that mean the question really is asking for battles, volumes or places.
+# Without them, a set typed `event` is packaging that got filed like an answer.
+_PACKAGING_WORDS = frozenset({
+    "battle", "battles", "fight", "fights", "duel", "duels", "war", "wars",
+    "arc", "arcs", "saga", "sagas", "episode", "episodes", "chapter",
+    "chapters", "volume", "volumes", "film", "films", "movie", "movies",
+    "location", "locations", "place", "places", "planet", "planets",
+})
+
+
+def _is_packaging_set(store: FactStore, names: list[str], words: Sequence[str],
+                      overrides: dict | None = None) -> bool:
+    """Whether a discovered set is packaging rather than an answer.
+
+    `_disagrees` rejects a member whose type disagrees with the set's, which
+    cannot help when the whole set is the wrong kind: every page in
+    `Megumi Fushiguro Battles` is an `event`, so the set is perfectly
+    self-consistent and "Every shikigami of Megumi Fushiguro" was answered with
+    `Megumi Fushiguro vs. Sukuna` and nine more like it.
+
+    `NEVER_MEMBERS` already states the rule -- "a volume, a battle and a planet
+    are setting and packaging, not membership" -- and it was only ever applied
+    one member at a time.
+
+    A question that asks for battles still gets them: the bank has "How many 1v1
+    battles did Yuji Itadori have", and rejecting that would be the same mistake
+    in the other direction.
+    """
+    if not names:
+        return False
+    if {word.lower() for word in words} & _PACKAGING_WORDS:
+        return False
+    types = {name: ontology.semantic_type(store, name, overrides) for name in names}
+    majority = ontology.expected_type(names, types)
+    return majority in ontology.NEVER_MEMBERS
 
 
 def _disagrees(semantic: str, wanted: str) -> str:

@@ -192,6 +192,75 @@ class TestKinds:
                                           "category": "Apostles"})
         assert plain.subject == ""
 
+    def test_a_set_of_battles_does_not_answer_a_question_about_abilities(self):
+        """`NEVER_MEMBERS` applied to the set, not only to its members.
+
+        `_disagrees` rejects a member whose type disagrees with the set's, which
+        cannot help when the whole set is the wrong kind: every page in
+        `Megumi Fushiguro Battles` is an event, so nothing disagrees and "Every
+        shikigami of Megumi Fushiguro" came back as `Megumi Fushiguro vs.
+        Sukuna` and nine more.
+        """
+        paths = store_for("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        overrides = load_overrides(paths)
+        with FactStore(paths.facts_db) as store:
+            battles = [
+                row["title"]
+                for row in store.documents_in_category(
+                    "Megumi Fushiguro Battles", limit=20)
+            ]
+            if not battles:
+                pytest.skip("no battle category in this store")
+            assert R._is_packaging_set(
+                store, battles, ["shikigami", "megumi"], overrides)
+            # The bank really does ask for battles, and must still get them.
+            assert not R._is_packaging_set(
+                store, battles, ["many", "battles", "yuji"], overrides)
+
+    def test_a_query_word_must_start_a_word_in_the_name(self):
+        """`named` must not resolve to `Unnamed Female Arrancar`.
+
+        `pages_named` matches with `LIKE '%word%'`, which is how "luffy" reaches
+        `Monkey D. Luffy`, and `_subject_from` takes the first word that
+        resolves in query order. So a fragment early in the sentence beat the
+        real name later in it: "Every named technique Ichigo uses with Zangetsu"
+        became a question about an unnamed Arrancar, fell through to the
+        `Techniques` category, and returned 200 members at 2% precision.
+        """
+        assert R._starts_a_word("ichigo", "Ichigo Kurosaki")
+        assert R._starts_a_word("luffy", "Monkey D. Luffy")
+        assert R._starts_a_word("zoro", "Roronoa Zoro")
+        # The failures this exists for.
+        assert not R._starts_a_word("named", "Unnamed Female Arrancar")
+        assert not R._starts_a_word("gon", "Dragon")
+        assert not R._starts_a_word("ace", "Space-Time")
+
+    def test_a_macron_is_not_a_word_boundary(self):
+        """`content_words` tokenises with `[A-Za-z']+`, so `Sōsuke` arrives as
+        `suke`. Unfolded, the `ū` in `Shūsuke Amagai` reads as a boundary and
+        "Every ability of Sōsuke Aizen" resolved to Amagai, losing twelve of
+        Aizen's abilities and taking precision from 56% to 8%.
+        """
+        assert not R._starts_a_word("suke", "Shūsuke Amagai")
+        assert not R._starts_a_word("suke", "Sousuke Aizen")
+        assert R._starts_a_word("aizen", "Sousuke Aizen")
+        # Folding must not stop a name matching its own accented spelling.
+        assert R._starts_a_word("sosuke", "Sōsuke Aizen")
+
+    def test_the_character_is_the_one_the_question_names(self):
+        paths = store_for("bleach")
+        if not paths.facts_db.exists():
+            pytest.skip("bleach is not indexed")
+        overrides = load_overrides(paths)
+        words = R.content_words("Every named technique Ichigo uses with Zangetsu")
+        with FactStore(paths.facts_db) as store:
+            found = R._character_subject(
+                store, words, overrides, R.race_vocabulary(store), set()
+            )
+        assert found == "Ichigo Kurosaki"
+
     def test_a_subject_roster_does_not_make_its_person_unnameable(self):
         """Declaring "…Saitama uses" must not stop `Saitama` naming a person.
 
