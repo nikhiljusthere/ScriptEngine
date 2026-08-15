@@ -86,6 +86,28 @@ rosters:
       - the schutzstaffel members
       - schutzstaffel members
     members: [Lille Barro, Gerard Valkyrie, Pernida Parnkgjas, Askin Nakk Le Vaar, Uryū Ishida]
+
+  # Every current Espada
+  # Declared 2026-08-16: the question says "the ten active Espada of Aizen's
+  # Arrancar army", and `Arrancar` and `Espada` are both declared with a
+  # one-word match, so `Arrancar` won on a tie and answered with nine of the
+  # wrong people. Falling back to the `Espada` category is no better -- it holds
+  # 25, including Privaron Espada and Expanded Universe pages.
+  #
+  # Members transcribed from the `Notable Members` table on `Espada`, which
+  # lists twelve entries for ten ranks because Tres and Sexta each name a former
+  # holder beside the current one: Nelliel Tu Odelschwanck was the third before
+  # Tier Harribel, and Luppi Antenor the sixth before Grimmjow reclaimed it
+  # (Chapter 229). Those two are what separate this set from `the Espada
+  # members`, which counts eleven.
+  - name: The current Espada
+    match:
+      - every current espada
+      - current espada
+      - ten active espada
+      - espada of aizen's arrancar army
+    members: [Yammy Llargo, Coyote Starrk, Baraggan Louisenbairn, Tier Harribel, Ulquiorra Cifer, Nnoitra Gilga, Grimmjow Jaegerjaquez, Zommari Rureaux, Szayelaporro Granz, Aaroniero Arruruerie]
+
   - name: Espada
     match: [espada]
     category: Espada
