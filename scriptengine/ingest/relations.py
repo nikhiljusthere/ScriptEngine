@@ -52,7 +52,7 @@ from scriptengine.stores.facts import FactStore
 logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored relation, exactly as `abilities` does.
-PROMPT_VERSION = "2026-08-15.1"
+PROMPT_VERSION = "2026-08-15.2"
 
 # Directional, read from the subject: `(Gojo, Yuji, mentor)` is Gojo mentoring
 # Yuji. Closed on purpose -- see the module docstring.
@@ -87,9 +87,13 @@ Answer with JSON exactly in this shape:
 `relation` must be one of: {relations}.
 
 Rules:
-- Read every relation from {character}'s side. If the passage says {character}
-  taught someone, that is `mentor`; if someone taught {character}, that is
-  `student`.
+- Read every relation from {character}'s side, and mind the direction. If the
+  passage says {character} taught someone, that is `mentor`; if someone taught
+  {character}, that is `student`. This holds however the sentence is worded:
+  "his top student being Garou" on Bang's page means Bang is the `mentor` of
+  Garou, not the student — the person named after "student" is the student, and
+  here that is Garou, not Bang. The same for `superior`/`subordinate` and
+  `creator`/`creation`.
 - `other` must be a character the passage names. Give the name as the passage
   writes it, without honorifics.
 - `quote` must be copied from the passage word for word — the clause that
@@ -131,8 +135,16 @@ def needs_relations(store: FactStore, overrides: dict | None = None) -> list[str
     from scriptengine.retrieve import semantics as ontology
 
     wanted = [s.lower() for s in relation_sections(overrides)]
-    clauses = " OR ".join(["c.breadcrumb LIKE ? COLLATE NOCASE"] * len(wanted))
-    values = [f"{section}%" for section in wanted]
+    # The title clause matters as much as the breadcrumb one: a wiki that moves
+    # relationships onto `<Character>/Relationships` writes the other people's
+    # names as its headings, so nothing in the breadcrumb says "Relationships".
+    clauses = " OR ".join(
+        ["c.breadcrumb LIKE ? COLLATE NOCASE"] * len(wanted)
+        + ["d.title LIKE ? COLLATE NOCASE"] * len(wanted)
+    )
+    values = [f"{section}%" for section in wanted] + [
+        f"%/{section}" for section in wanted
+    ]
     rows = store.connection.execute(
         "SELECT CASE WHEN instr(d.title, '/') > 0"
         "            THEN substr(d.title, 1, instr(d.title, '/') - 1)"
@@ -151,18 +163,29 @@ def needs_relations(store: FactStore, overrides: dict | None = None) -> list[str
 
 
 def passages(store: FactStore, character: str, overrides: dict) -> list[tuple[str, str]]:
-    """The relationship prose on this character's page and its subpages."""
+    """The relationship prose on this character's page and its subpages.
+
+    A section counts when the breadcrumb starts with a declared name *or* when
+    the wiki moved the whole thing onto a subpage of its own. One Punch Man does
+    the latter: `Saitama/Relationships` holds 51 chunks and its breadcrumbs read
+    `Hero Association / Genos`, `Hero Association / Bang`, `Hero Association /
+    King` -- the headings are the other people, not the word "Relationships".
+
+    Reading only the breadcrumb missed all of it, and with it the most important
+    relationship in the series: Saitama and Genos came back with nothing at all.
+    """
     wanted = [s.lower() for s in relation_sections(overrides)]
     found: list[tuple[str, str]] = []
     for row in store.connection.execute(
-        "SELECT c.breadcrumb, c.text FROM chunks c"
+        "SELECT d.title, c.breadcrumb, c.text FROM chunks c"
         " JOIN documents d ON c.document_id = d.id"
         " WHERE (d.title = ? COLLATE NOCASE OR d.title LIKE ? COLLATE NOCASE)",
         (character, f"{character}/%"),
     ):
         breadcrumb = (row["breadcrumb"] or "").strip()
         head = breadcrumb.split("/", 1)[0].strip().lower()
-        if head in wanted and (row["text"] or "").strip():
+        leaf = (row["title"] or "").split("/")[-1].strip().lower()
+        if (head in wanted or leaf in wanted) and (row["text"] or "").strip():
             found.append((breadcrumb, row["text"]))
     return found
 
