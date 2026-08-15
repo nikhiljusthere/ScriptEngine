@@ -400,6 +400,7 @@ def extract_series(
     refresh: bool = False,
     progress: Any = None,
     workers: int = 1,
+    only: set[str] | None = None,
 ) -> dict[str, Any]:
     """Extract this series' prose-only abilities, skipping what is current.
 
@@ -426,6 +427,20 @@ def extract_series(
     with FactStore(paths.facts_db) as store:
         store.ensure_abilities()
         characters = needs_extracting(store, overrides)
+
+        # Reading every character is mostly waste. One Piece alone has 1,640
+        # candidates at 12.5 windows each -- about 20,500 of the corpus's
+        # ~30,000 calls -- and the bank asks about a few dozen of them. The
+        # bank is what the engine is measured against, so a character no
+        # question reaches cannot change the number either way.
+        #
+        # Not the default: the store is also read by hand and by narrative
+        # retrieval, where a character outside the bank is still worth having.
+        if only:
+            wanted_names = {name.strip().lower() for name in only}
+            characters = [
+                name for name in characters if name.strip().lower() in wanted_names
+            ]
         report["considered"] = len(characters)
 
         wanted = characters[:limit] if limit else characters

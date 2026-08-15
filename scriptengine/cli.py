@@ -284,6 +284,10 @@ def abilities(
     workers: int = typer.Option(
         1, "--workers", help="Extract this many characters at once (opencode only)."
     ),
+    bank_only: bool = typer.Option(
+        False, "--bank-only",
+        help="Only characters this series' question bank asks about."
+    ),
 ) -> None:
     """Extract the abilities this wiki writes only as prose.
 
@@ -312,9 +316,24 @@ def abilities(
         console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
         raise typer.Exit(code=1)
 
+    only: set[str] | None = None
+    if bank_only:
+        from scriptengine.eval import questions as _bank
+
+        subjects = {q.subject.strip() for q in _bank.load_bank(series).questions
+                    if q.subject and q.subject.strip()}
+        if not subjects:
+            console.print(f"[red]No question in {series!r} names a subject.[/red]")
+            raise typer.Exit(code=1)
+        only = subjects
+        console.print(f"[dim]--bank-only: {len(only)} subjects in this bank[/dim]")
+
     if dry_run:
         with FactStore(paths.facts_db) as store:
             names = needs_extracting(store, _load_overrides(paths))
+        if only:
+            wanted = {n.lower() for n in only}
+            names = [n for n in names if n.strip().lower() in wanted]
         console.print(f"[dim]{len(names)} characters would be read:[/dim]")
         for name in names[:40]:
             console.print(f"  {name}")
@@ -328,7 +347,7 @@ def abilities(
     try:
         report = extract_series(
             paths, limit=limit or None, refresh=refresh, progress=show,
-            workers=max(1, workers),
+            workers=max(1, workers), only=only,
         )
     except LLMUnavailable as error:
         console.print(f"[red]{error}[/red]")
