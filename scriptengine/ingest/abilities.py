@@ -53,7 +53,14 @@ logger = logging.getLogger(__name__)
 # the seven already-extracted series would have kept their cached answers
 # through it. The `-opencode` suffix is dropped because extraction runs against
 # LM Studio now; the model each row was produced by is stored on the row.
-PROMPT_VERSION = "2026-08-04.1"
+#
+# 2026-08-15.1 adds the colon rule. The bank counts the wiki's graded stat lines
+# as abilities -- `Immense Speed & Reflexes`, `Great Tactical Intellect`,
+# `Cursed Energy Capacity` -- and 64 canon items were missing because the "a
+# name, not a description" rule read straight past them. They are named: the
+# wiki writes `Name: description` at the head of a paragraph, and that colon is
+# visible in the passage even after the bold markers are stripped.
+PROMPT_VERSION = "2026-08-15.1"
 
 # What an extracted ability may be called, in the vocabulary `semantics` speaks
 # so the retrieval side can filter on the same words it filters pages by.
@@ -86,6 +93,13 @@ Rules:
   still names the other person's abilities; those are not theirs.
 - A proper name for a specific ability, not a description of it. "Godspeed" is
   an ability; "extremely fast" is not, and neither is "his electric powers".
+- A line that opens with a name and a colon is the wiki naming an ability, and
+  counts even when the name reads like a trait. "Immense Speed & Reflexes:
+  Satoru is an extremely fast fighter" names `Immense Speed & Reflexes`;
+  "Great Tactical Intellect: Sukuna is an extremely intelligent individual"
+  names `Great Tactical Intellect`. The test is whether the passage gives it a
+  name of its own, not whether the name sounds generic. The same capability
+  mentioned only inside a sentence is still a description and stays out.
 - Not the general system the ability belongs to. On a wiki with Nen, Haki or
   Cursed Energy, the system itself is not one of the character's abilities.
 - Give the name as the passage writes it, without honorifics or the character's
