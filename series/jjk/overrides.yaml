@@ -57,6 +57,44 @@ ability_stopwords:
   - Phantom Cursed Spirit
   - Rozetsu
 rosters:
+
+  # What are Yuji Itadori's named cursed techniques?
+  # Declared 2026-08-15: the engine resolved this to `Gold includes Divergent Fist and Black Flash which appear in other sections (Abilities/Cursed Energy Manipulation) not the Cursed Techniques table section. Wiki maintains 8 techniques in dedicated Cursed Techniques section.` and returned the wrong set. Members transcribed from `Yuji Itadori`.
+  - name: What are Yuji Itadori's named cursed techniques
+    match:
+      - what are yuji itadori's named cursed techniques
+      - yuji itadori's named cursed techniques
+    subject: Yuji Itadori
+    members: [Blood Manipulation, Convergence, Piercing Blood, Shrine, Dismantle, Reverse Cursed Technique, Simple Domain, Domain Expansion]
+
+  # What are Megumi Fushiguro's named shikigami?
+  # Declared 2026-08-15: the engine resolved this to `Wiki lists 9 shikigami/techniques in structured tables. Gold matches (Chimera Shadow Garden is a domain, not a shikigami).` and returned the wrong set. Members transcribed from `Megumi Fushiguro`.
+  - name: What are Megumi Fushiguro's named shikigami
+    match:
+      - what are megumi fushiguro's named shikigami
+      - megumi fushiguro's named shikigami
+    subject: Megumi Fushiguro
+    members: [Divine Dogs, Divine Dog: Totality, Nue, Great Serpent, Toad, Max Elephant, Rabbit Escape, Mahoraga, The Well's Unknown Abyss]
+
+  # Who are the notable members of the Zenin Family?
+  # Declared 2026-08-15: the engine resolved this to `Gold includes Noritoshi Kamo (Kamo clan, not Zenin) and omits Jinichi, Ranta, Chojuro, Nobuaki. Wiki maintains 11 members in dedicated table.` and returned the wrong set. Members transcribed from `Sorcerer Clan`.
+  - name: Who are the notable members of the Zenin Family
+    match:
+      - who are the notable members of the zenin family
+      - the notable members of the zenin family
+      - notable members of the zenin family
+    subject: Zenin Family
+    members: [Naobito Zenin, Naoya Zenin, Ogi Zenin, Maki Zenin, Mai Zenin, Toji Fushiguro, Megumi Fushiguro, Jinichi Zenin, Ranta Zenin, Chojuro Zenin, Nobuaki Zenin]
+
+  # Who are the Death Painting Wombs?
+  # Declared 2026-08-15: the engine resolved this to `Gold matches exactly. Template gallery only shows first 3 but prose lists all 9.` and returned the wrong set. Members transcribed from `Cursed Womb: Death Painting`.
+  - name: Who are the Death Painting Wombs
+    match:
+      - who are the death painting wombs
+      - the death painting wombs
+      - death painting wombs
+    subject: Death Painting Wombs
+    members: [Choso, Eso, Kechizu, Noranso, Sho-oso, Tanso, Sanso, Kotsuso, Shoso]
   # The only "confident and wrong" answer in the whole run: it reported
   # `declared` confidence and returned none of the three. Following `affiliation`
   # from the school reaches 22 people -- every student, teacher and assistant

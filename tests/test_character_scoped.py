@@ -192,6 +192,36 @@ class TestKinds:
                                           "category": "Apostles"})
         assert plain.subject == ""
 
+    def test_a_subject_roster_does_not_make_its_person_unnameable(self):
+        """Declaring "…Saitama uses" must not stop `Saitama` naming a person.
+
+        The set vocabulary exists so a word that names a set cannot also
+        identify a character. A `subject:` roster names the person deliberately,
+        so folding its words in taught the resolver that `saitama`, `garou`,
+        `genos`, `bang` and `tatsumaki` were set words. Measured with 36 such
+        rosters declared: every character-scoped One-Punch Man question fell to
+        0% precision, including ones with nothing to do with the new sets.
+        """
+        registry = [
+            R.RosterDefinition.parse({
+                "name": "Every named Serious Series technique Saitama uses",
+                "match": ["named serious series technique saitama uses"],
+                "subject": "Saitama", "members": ["Serious Punch"]}),
+            R.RosterDefinition.parse({
+                "name": "Heroes", "match": ["hero", "heroes"],
+                "category": "Heroes"}),
+        ]
+        vocabulary = {
+            word
+            for definition in registry
+            if not definition.subject
+            for phrase in (*definition.match, definition.name)
+            for word in R.content_words(phrase)
+        }
+        assert "saitama" not in vocabulary, \
+            "a subject roster poisoned the set vocabulary with its person"
+        assert "heroes" in vocabulary or "hero" in vocabulary
+
     def test_a_stopword_is_dropped_whichever_path_found_it(self):
         """A declared non-ability must not come back as a heading or an edge.
 

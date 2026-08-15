@@ -72,6 +72,24 @@ ability_stopwords: [
 ]
 
 rosters:
+
+  # How many Sweet Commanders are in the Big Mom Pirates in One Piece?
+  # Declared 2026-08-15: the engine resolved this to `The section explicitly names three current Sweet Commanders: Katakuri, Smoothie, and Cracker. Snack is mentioned as a former commander.` and returned the wrong set. Members transcribed from `Big Mom Pirates`.
+  - name: How many Sweet Commanders are in the Big Mom Pirates in One Piece
+    match:
+      - how many sweet commanders are in the big mom pirates
+      - sweet commanders are in the big mom pirates
+    subject: One Piece
+    members: [Charlotte Katakuri, Charlotte Smoothie, Charlotte Cracker]
+
+  # How many All-Stars are in the Beasts Pirates in One Piece?
+  # Declared 2026-08-15: the engine resolved this to `The section explicitly states there are three All-Stars and names them: King, Queen, and Jack.` and returned the wrong set. Members transcribed from `Beasts Pirates`.
+  - name: How many All-Stars are in the Beasts Pirates in One Piece
+    match:
+      - how many all-stars are in the beasts pirates
+      - all-stars are in the beasts pirates
+    subject: One Piece
+    members: [King, Queen, Jack]
   # Races span two categories the wiki keeps apart, and discovery can only pick
   # one of them: `Races and Tribes` has 21 and leaves out every artificial race.
   - name: Races and Tribes

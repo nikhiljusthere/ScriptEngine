@@ -1272,34 +1272,6 @@
       ]
     },
     {
-      "id": "csm-set-16",
-      "kind": "set",
-      "question": "How many devil hunter divisions are mentioned in Chainsaw Man?",
-      "subject": "Devil Hunter divisions",
-      "scope": "closed",
-      "expect_mode": "roster",
-      "tier": "wiki",
-      "verified": "2026-08-15",
-      "sources": [
-        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa"
-      ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three divisions mentioned across characters",
-      "answer": [
-        {
-          "item": "Tokyo Division 2",
-          "aliases": []
-        },
-        {
-          "item": "Tokyo Special Division 4",
-          "aliases": []
-        },
-        {
-          "item": "Tokyo Special Division 5",
-          "aliases": []
-        }
-      ]
-    },
-    {
       "id": "csm-set-17",
       "kind": "set",
       "question": "Who are the members of Tokyo Special Division 4?",
@@ -1430,5 +1402,11 @@
       "accept": "any"
     }
   ],
-  "retired": []
+  "retired": [
+    {
+      "question": "How many devil hunter divisions are mentioned in Chainsaw Man?",
+      "item": "(whole question)",
+      "reason": "The wiki does not maintain a single comprehensive list of all devil hunter divisions. Divisions are scattered across multiple pages (Public Safety Devil Hunters page shows many divisions across Tokyo, Kyoto, Miyagi, and unspecified locations), and no page dedicates a section to enumerating all divisions mentioned in the series. Checked: Public Safety Devil Hunters, Devil Hunters, Tokyo Special Division 4, Tokyo Special Division 5. Retired 2026-08-15 by the bank-expansion triage."
+    }
+  ]
 }

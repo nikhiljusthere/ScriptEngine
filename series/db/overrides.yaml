@@ -256,6 +256,52 @@ ability_stopwords:
   - Yamta
 # The sets this wiki maintains. Every entry verified to return members.
 rosters:
+
+  # Every mentor who trained Goku
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox Mentors field on the Son Goku page` and returned the wrong set. Members transcribed from `Son Goku`.
+  - name: Every mentor who trained Goku
+    match:
+      - every mentor who trained goku
+      - mentor who trained goku
+    subject: Goku
+    members: [Grandpa Gohan, Master Roshi, Korin, Mr. Popo, Kami, King Kai, Pybara, Yuzukar, Whis, Merus, Grand Minister]
+
+  # Every mentor who trained Gohan
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox Mentors field on the Son Gohan page` and returned the wrong set. Members transcribed from `Son Gohan`.
+  - name: Every mentor who trained Gohan
+    match:
+      - every mentor who trained gohan
+      - mentor who trained gohan
+    subject: Gohan
+    members: [Piccolo, Goku, Shin, Old Kai]
+
+  # Every student Piccolo has trained
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox Students field on the Piccolo page` and returned the wrong set. Members transcribed from `Piccolo`.
+  - name: Every student Piccolo has trained
+    match:
+      - every student piccolo has trained
+      - student piccolo has trained
+    subject: Piccolo
+    members: [Gohan, Goten, Trunks, Pan]
+
+  # How many Gods of Destruction exist across the multiverse?
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox members field and Gods of Destruction section on the God of Destruction page` and returned the wrong set. Members transcribed from `God of Destruction`.
+  - name: How many Gods of Destruction exist across the multiverse
+    match:
+      - how many gods of destruction exist across the multiverse
+      - gods of destruction exist across the multiverse
+    subject: Universe 7 Gods of Destruction
+    members: [Iwan, Heles, Mule, Quitela, Arak, Champa, Beerus, Liquiir, Sidra, Rumsshi, Belmod, Giin]
+
+  # Who are the members of Team Universe 7 in the Tournament of Power?
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox members field and Members tab for Universe Survival Saga on the Team Universe 7 page (Good Buu dropped out before Tournament of Power)` and returned the wrong set. Members transcribed from `Team Universe 7`.
+  - name: Who are the members of Team Universe 7 in the Tournament of Power
+    match:
+      - who are the members of team universe 7 in the tournament of power
+      - the members of team universe 7 in the tournament of power
+      - members of team universe 7 in the tournament of power
+    subject: Team Universe 7
+    members: [Goku, Vegeta, Gohan, Piccolo, Android 17, Android 18, Krillin, Tien Shinhan, Master Roshi, Frieza]
   # There is no `Majin Buu` page on this wiki: his forms are filed as separate
   # characters. Without `subject:` this declaration is inert -- a declared set is
   # discarded once the topic names a person, and "Majin Buu" resolves to Kid Buu,

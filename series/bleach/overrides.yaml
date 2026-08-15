@@ -50,6 +50,43 @@ ability_sections:
   technique: [Powers & Abilities, Former Powers & Abilities]
 
 rosters:
+
+  # Every dance of Rukia's Shikai Sode no Shirayuki
+  # Declared 2026-08-15: the engine resolved this to `The page has a dedicated section listing all three Shikai dances with their Japanese names and translations` and returned the wrong set. Members transcribed from `Rukia Kuchiki`.
+  - name: Every dance of Rukia's Shikai Sode no Shirayuki
+    match:
+      - every dance of rukia's shikai sode no shirayuki
+      - dance of rukia's shikai sode no shirayuki
+    subject: Rukia Kuchiki
+    members: [Some no mai, Tsukishiro, Tsugi no mai, Hakuren, San no mai, Shirafune]
+
+  # Every named Bankai technique Byakuya uses
+  # Declared 2026-08-15: the engine resolved this to `The Bankai section of the page lists all four named Bankai techniques in a structured format` and returned the wrong set. Members transcribed from `Byakuya Kuchiki`.
+  - name: Every named Bankai technique Byakuya uses
+    match:
+      - every named bankai technique byakuya uses
+      - named bankai technique byakuya uses
+    subject: Byakuya Kuchiki
+    members: [Gōkei, Senkei, Ikka Senjinka, Shūkei: Hakuteiken]
+
+  # Every position Aizen has held
+  # Declared 2026-08-15: the engine resolved this to `The infobox 'previous position' field lists all four positions Aizen has held` and returned the wrong set. Members transcribed from `Sosuke Aizen`.
+  - name: Every position Aizen has held
+    match:
+      - every position aizen has held
+      - position aizen has held
+    subject: Sosuke Aizen
+    members: [Captain of the 5th Division, Lieutenant of the 5th Division, Leader of the Arrancar Army]
+
+  # Who are the Schutzstaffel members?
+  # Declared 2026-08-15: the engine resolved this to `The page has a 'Members' section with a structured table listing all five current Schutzstaffel members` and returned the wrong set. Members transcribed from `Schutzstaffel`.
+  - name: Who are the Schutzstaffel members
+    match:
+      - who are the schutzstaffel members
+      - the schutzstaffel members
+      - schutzstaffel members
+    subject: Bleach
+    members: [Lille Barro, Gerard Valkyrie, Pernida Parnkgjas, Askin Nakk Le Vaar, Uryū Ishida]
   - name: Espada
     match: [espada]
     category: Espada

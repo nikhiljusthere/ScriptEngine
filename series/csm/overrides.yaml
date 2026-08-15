@@ -35,6 +35,60 @@ ability_kinds:
   technique: [contract, contracts]
 
 rosters:
+
+  # Every devil contract Denji has made
+  # Declared 2026-08-15: the engine resolved this to `Listed in the Devil Contracts section on the Denji page` and returned the wrong set. Members transcribed from `Denji`.
+  - name: Every devil contract Denji has made
+    match:
+      - every devil contract denji has made
+      - devil contract denji has made
+    subject: Denji
+    members: [Chainsaw Devil Contract, Blood Devil Contract, Aging Devil Contract]
+
+  # Every blood weapon Power can create
+  # Declared 2026-08-15: the engine resolved this to `Listed in the Blood Manipulation section on the Power page` and returned the wrong set. Members transcribed from `Power`.
+  - name: Every blood weapon Power can create
+    match:
+      - every blood weapon power can create
+      - blood weapon power can create
+    subject: Power
+    members: [Blood Hammer, Blood Knife, Blood Spear, Blood Scythe, Blood Dagger, Blood Axe, Blood Chainsaw]
+
+  # Every devil Aki Hayakawa contracted with
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox contracted devils field on the Aki Hayakawa page` and returned the wrong set. Members transcribed from `Aki Hayakawa`.
+  - name: Every devil Aki Hayakawa contracted with
+    match:
+      - every devil aki hayakawa contracted with
+      - devil aki hayakawa contracted with
+    subject: Aki Hayakawa
+    members: [Fox Devil, Curse Devil, Future Devil, Control Devil]
+
+  # Every devil whose power Makima can channel through her control ability
+  # Declared 2026-08-15: the engine resolved this to `Listed in the Control ability description on the Makima page` and returned the wrong set. Members transcribed from `Makima`.
+  - name: Every devil whose power Makima can channel through her control ability
+    match:
+      - every devil whose power makima can channel through her control ability
+      - devil whose power makima can channel through her control ability
+    subject: Makima
+    members: [Angel Devil, Future Devil, Snake Devil, Punishment Devil, Spider Devil, Zombie Devil]
+
+  # Every division Himeno was affiliated with in Public Safety
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox affiliation field on the Himeno page` and returned the wrong set. Members transcribed from `Himeno`.
+  - name: Every division Himeno was affiliated with in Public Safety
+    match:
+      - every division himeno was affiliated with in public safety
+      - division himeno was affiliated with in public safety
+    subject: Himeno
+    members: [Tokyo Special Division 4]
+
+  # How many members are in the Four Horsemen?
+  # Declared 2026-08-15: the engine resolved this to `Listed in the infobox notable_members field and Members section on the Four Horsemen page` and returned the wrong set. Members transcribed from `Four Horsemen`.
+  - name: How many members are in the Four Horsemen
+    match:
+      - how many members are in the four horsemen
+      - members are in the four horsemen
+    subject: Four Horsemen
+    members: [Control Devil, War Devil, Famine Devil, Death Devil]
   # Every member carries `affiliation = Tokyo Special Division 4` on their own
   # page, which is an edge the wiki wrote and the roster path does not follow --
   # `affiliation` is not one of the seven names in `_BELONGS_RELATIONS`. The

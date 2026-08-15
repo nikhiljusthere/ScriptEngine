@@ -454,11 +454,25 @@ def build_roster(
         key=lambda d: d.matches(query),
         default=None,
     )
-    # Every word this series uses to name a set. A word in here cannot be what
-    # identifies a person, however many characters are named after it.
+    # Every word this series uses to name a *general* set. A word in here cannot
+    # be what identifies a person, however many characters are named after it.
+    #
+    # A `subject:` roster is excluded, and that exclusion is load-bearing. Those
+    # declarations name the person on purpose -- "Every named Serious Series
+    # technique Saitama uses" -- so folding their words in here taught the
+    # resolver that `saitama`, `garou`, `genos`, `bang` and `tatsumaki` name sets
+    # rather than people. Measured when 36 such rosters were declared at once:
+    # every character-scoped One-Punch Man question collapsed to 0% precision,
+    # `Every ability of Bang` and `Every technique of Garou` included, because
+    # the character path could no longer resolve its own subject.
+    #
+    # The rule reads the same either way -- these words *do* name a set -- but a
+    # set that has already told us which person it belongs to has no business
+    # making that person unnameable.
     vocabulary = {
         word
         for definition in registry
+        if not definition.subject
         for phrase in (*definition.match, definition.name)
         for word in content_words(phrase)
     }

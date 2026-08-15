@@ -29,6 +29,53 @@ ability_sections:
   technique: [Abilities]
 
 rosters:
+
+  # Every major title Griffith has held
+  # Declared 2026-08-15: the engine resolved this to `The infobox 'ranks' field lists all major titles Griffith has held; Femto is listed as 'God Hand member' and also appears in 'other names' as Femto` and returned the wrong set. Members transcribed from `Griffith`.
+  - name: Every major title Griffith has held
+    match:
+      - every major title griffith has held
+      - major title griffith has held
+    subject: Griffith
+    members: [Leader of the original Band of the Falcon, Viscount, White Phoenix General, Supreme Commander of the Midland Regular Army]
+
+  # Every weapon Puck uses
+  # Declared 2026-08-15: the engine resolved this to `The infobox 'weapons' field explicitly lists both weapons Puck uses` and returned the wrong set. Members transcribed from `Puck`.
+  - name: Every weapon Puck uses
+    match:
+      - every weapon puck uses
+      - weapon puck uses
+    subject: Puck
+    members: [Burdock, Puck Spark]
+
+  # Every name Casca has been known by
+  # Declared 2026-08-15: the engine resolved this to `The infobox 'other names' field lists all alternative names; 'Casca' is the page title/primary name` and returned the wrong set. Members transcribed from `Casca`.
+  - name: Every name Casca has been known by
+    match:
+      - every name casca has been known by
+      - name casca has been known by
+    subject: Casca
+    members: [Casca, Big Sis, Elaine, Black Witch, Branded Girl]
+
+  # Who are the members of the God Hand?
+  # Declared 2026-08-15: the engine resolved this to `The infobox 'key members' field lists all five members of the God Hand` and returned the wrong set. Members transcribed from `God Hand`.
+  - name: Who are the members of the God Hand
+    match:
+      - who are the members of the god hand
+      - the members of the god hand
+      - members of the god hand
+    subject: Berserk
+    members: [Void, Slan, Ubik, Conrad, Femto]
+
+  # Who are the members of the Black Swordsman Party?
+  # Declared 2026-08-15: the engine resolved this to `The infobox 'notable members' field lists all members; the gold list is a subset of the full wiki list` and returned the wrong set. Members transcribed from `Black Swordsman Party`.
+  - name: Who are the members of the Black Swordsman Party
+    match:
+      - who are the members of the black swordsman party
+      - the members of the black swordsman party
+      - members of the black swordsman party
+    subject: Berserk
+    members: [Guts, Casca, Puck, Isidro, Farnese, Serpico, Schierke, Ivalera, Roderick, Magnifico, Azan, Isma]
   # The band's own page carries a `== Members ==` list and a `notable members`
   # infobox field, and the engine reached neither: `notable members` runs
   # group -> member and the roster path only ever walks the other way

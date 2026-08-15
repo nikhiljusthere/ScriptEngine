@@ -31,6 +31,60 @@ ability_sections:
   technique: [Abilities and Powers]
 
 rosters:
+
+  # Every named Serious Series technique Saitama uses in One Punch Man
+  # Declared 2026-08-15: the engine resolved this to `The wiki maintains a complete list of 10 named Serious Series techniques in the 'Known Moves' section. The gold list (7 items) is incomplete - missing the three webcomic-only techniques (Serious Spin, Serious Whack-a-Mole, Serious Squat).` and returned the wrong set. Members transcribed from `Killer Move: Serious Series`.
+  - name: Every named Serious Series technique Saitama uses in One Punch Man
+    match:
+      - every named serious series technique saitama uses
+      - named serious series technique saitama uses
+    subject: Saitama
+    members: [Serious Punch, Omnidirectional Serious Punch, Serious Side Hops, Serious Squirt Gun, Serious Table Flip, Serious Sneeze, Serious Headbutt, Serious Spin, Serious Whack-a-Mole, Serious Squat]
+
+  # Every major cyborg upgrade Genos has received in One Punch Man
+  # Declared 2026-08-15: the engine resolved this to `The 'List of Upgrades' section on the Genos page explicitly enumerates all 9 major upgrades, matching the gold exactly.` and returned the wrong set. Members transcribed from `Genos`.
+  - name: Every major cyborg upgrade Genos has received in One Punch Man
+    match:
+      - every major cyborg upgrade genos has received
+      - major cyborg upgrade genos has received
+    subject: Genos
+    members: [Anti-Saitama Tactical Arms, Arms Mode, Post-Sea-Monster-Arc Upgrade, G4 Upgrade, Post-Super-Fight-Arc Upgrade, Monster Association Arc Upgrade, Post-Psychic-Sisters-Arc Upgrade, Post-Supreme-Hero-Arc Upgrade, Kuseno's Final Upgrade]
+
+  # Every named martial arts style Garou has mastered in One Punch Man
+  # Declared 2026-08-15: the engine resolved this to `The Garou page's 'Fighting Style' section and infobox maintain a comprehensive list of 20 named martial arts styles Garou has learned/copied/absorbed. The gold list (5 items) is incomplete - missing many styles including Self-Styled Martial Arts, Watchdog Man's movements, Tanktop Blow/Tackle, and the absorbed-but-unshown styles.` and returned the wrong set. Members transcribed from `Garou`.
+  - name: Every named martial arts style Garou has mastered in One Punch Man
+    match:
+      - every named martial arts style garou has mastered
+      - named martial arts style garou has mastered
+    subject: Garou
+    members: [Water Stream Rock Smashing Fist, Whirlwind Iron Cutting Fist, Exploding Heart Release Fist, Self-Styled Martial Arts, Watchdog Man's movements, Tanktop Blow, Monster Calamity God Slayer Fist, All Life Eradication Fist, Roaring Aura Sky Ripping Fist, Cross Fang Dragon Slayer Fist, Tiger Fang True Fist, Purgatory Abyss Fist, Lake-Breaking Ice River Fist, Fool's Path Mountain Range Fist, Ultimate Fist of the Yatagarasu, Pressure Point Killer Fist, Poisonous Ogre Fist, Lone Fist of Prosperity, Fire Dance Bullet Trail Fist, Tanktop Tackle]
+
+  # Every named psychic technique Tatsumaki uses in One Punch Man
+  # Declared 2026-08-15: the engine resolved this to `The Tatsumaki page's Abilities section lists 7 named psychic techniques. The gold (5 items) is missing Flight and Telepathy.` and returned the wrong set. Members transcribed from `Tatsumaki`.
+  - name: Every named psychic technique Tatsumaki uses in One Punch Man
+    match:
+      - every named psychic technique tatsumaki uses
+      - named psychic technique tatsumaki uses
+    subject: Tatsumaki
+    members: [Psychic Binding, Psychic Whirlwind, Psychic Barriers, Chi Manipulation, Psychic Remote, Flight, Telepathy]
+
+  # Every named technique of Bang's Water Stream Rock Smashing Fist in One Punch Man
+  # Declared 2026-08-15: the engine resolved this to `The 'Known Techniques' section lists 7 named techniques of the Water Stream Rock Smashing Fist style. The gold (5 items) includes only Bang's solo techniques, missing the two combination techniques with Bomb.` and returned the wrong set. Members transcribed from `Water Stream Rock Smashing Fist`.
+  - name: Every named technique of Bang's Water Stream Rock Smashing Fist in One Punch Man
+    match:
+      - every named technique of bang's water stream rock smashing fist
+      - named technique of bang's water stream rock smashing fist
+    subject: Bang
+    members: [Water Stream Encampment, Instant Movement, Piercing Fang, Allsight, Awakening Breath, Whirlwind Water Stream: Roaring Aura Sky Ripping Fist, Whirlwind Water Stream: Cross Fang Dragon Slayer Fist]
+
+  # How many hero classes are in the Hero Association in One Punch Man?
+  # Declared 2026-08-15: the engine resolved this to `The 'Classes' section explicitly states there are four classes and names them: C-Class, B-Class, A-Class, and S-Class.` and returned the wrong set. Members transcribed from `Hero Association`.
+  - name: How many hero classes are in the Hero Association in One Punch Man
+    match:
+      - how many hero classes are in the hero association
+      - hero classes are in the hero association
+    subject: Hero Association
+    members: [C-Class, B-Class, A-Class, S-Class]
   # Asked for disciples, the engine matched `Atomic Samurai Fights` and answered
   # with nine battle pages -- `Atomic Samurai vs. Black Sperm`, `King vs. Atomic
   # Samurai` -- for 0 of 3. The wiki states it three separate ways and none is

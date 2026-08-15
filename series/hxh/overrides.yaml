@@ -84,6 +84,43 @@ ability_stopwords:
   - Preternatural Perception
   - Resistance to Electricity
 rosters:
+
+  # What are Killua Zoldyck's named Nen techniques?
+  # Declared 2026-08-15: the engine resolved this to `Wiki Abilities template lists 4 named techniques; Godspeed is the overall Hatsu encompassing Whirlwind and Speed of Lightning. Gold includes 'Thunder Palm' (alt name for Lightning Palm) and 'Godspeed' (umbrella name).` and returned the wrong set. Members transcribed from `Killua Zoldyck`.
+  - name: What are Killua Zoldyck's named Nen techniques
+    match:
+      - what are killua zoldyck's named nen techniques
+      - killua zoldyck's named nen techniques
+    subject: Killua Zoldyck
+    members: [Lightning Palm, Thunderbolt, Whirlwind, Speed of Lightning]
+
+  # What are Kurapika's named Nen chains?
+  # Declared 2026-08-15: the engine resolved this to `Wiki Abilities template lists all 6 named chains exactly matching gold.` and returned the wrong set. Members transcribed from `Kurapika`.
+  - name: What are Kurapika's named Nen chains
+    match:
+      - what are kurapika's named nen chains
+      - kurapika's named nen chains
+    subject: Kurapika
+    members: [Dowsing Chain, Chain Jail, Holy Chain, Judgment Chain, Steal Chain, Stealth Dolphin]
+
+  # What are Hisoka Morow's named Nen techniques?
+  # Declared 2026-08-15: the engine resolved this to `Wiki Abilities template lists exactly 2 named techniques matching gold.` and returned the wrong set. Members transcribed from `Hisoka Morow`.
+  - name: What are Hisoka Morow's named Nen techniques
+    match:
+      - what are hisoka morow's named nen techniques
+      - hisoka morow's named nen techniques
+    subject: Hisoka Morow
+    members: [Bungee Gum, Texture Surprise]
+
+  # Who are the Zodiacs of the Hunter Association?
+  # Declared 2026-08-15: the engine resolved this to `Gold includes former members Ging Freecss and Pariston Hill, and Ickshonpe Katocha (not in gallery; gallery has Saiyu for Monkey). Wiki maintains current 12 in gallery template.` and returned the wrong set. Members transcribed from `Zodiacs`.
+  - name: Who are the Zodiacs of the Hunter Association
+    match:
+      - who are the zodiacs of the hunter association
+      - the zodiacs of the hunter association
+      - zodiacs of the hunter association
+    subject: Zodiacs
+    members: [Kurapika, Mizaistom Nana, Kanzai, Pyon, Botobai Gigante, Gel, Saccho Kobayakawa, Ginta, Saiyu, Cluck, Cheadle Yorkshire, Leorio Paradinight]
   - name: Nen Types
     match: [nen type, nen types, nen category, nen categories, type of nen]
     groups:

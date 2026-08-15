@@ -1037,46 +1037,6 @@
       "accept": "any"
     },
     {
-      "id": "db-set-10",
-      "kind": "set",
-      "question": "Every transformation Vegeta has achieved",
-      "subject": "Vegeta",
-      "scope": "closed",
-      "expect_mode": "roster",
-      "tier": "wiki",
-      "verified": "2026-08-15",
-      "sources": [
-        "https://dragonball.fandom.com/wiki/Vegeta"
-      ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Six major transformations listed",
-      "answer": [
-        {
-          "item": "Super Saiyan",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan 2",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan God",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan Blue",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan Blue Evolved",
-          "aliases": []
-        },
-        {
-          "item": "Ultra Ego",
-          "aliases": []
-        }
-      ]
-    },
-    {
       "id": "db-fact-09",
       "kind": "fact",
       "question": "Who is Gohan's mentor and surrogate uncle?",
@@ -1320,98 +1280,6 @@
       ]
     },
     {
-      "id": "db-set-14",
-      "kind": "set",
-      "question": "Which arcs of Dragon Ball Z start at which chapter?",
-      "subject": "Dragon Ball",
-      "scope": "closed",
-      "expect_mode": "roster",
-      "tier": "wiki",
-      "verified": "2026-08-15",
-      "sources": [
-        "https://dragonball.fandom.com/wiki/Dragon_Ball_Z"
-      ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `arcspan`. Six major sagas in Dragon Ball Z",
-      "answer": [
-        {
-          "item": "Saiyan Saga",
-          "aliases": []
-        },
-        {
-          "item": "Namek Saga",
-          "aliases": []
-        },
-        {
-          "item": "Frieza Saga",
-          "aliases": []
-        },
-        {
-          "item": "Androids Saga",
-          "aliases": []
-        },
-        {
-          "item": "Cell Saga",
-          "aliases": []
-        },
-        {
-          "item": "Majin Buu Saga",
-          "aliases": []
-        }
-      ]
-    },
-    {
-      "id": "db-set-15",
-      "kind": "set",
-      "question": "How many canonical Super Saiyan forms exist in Dragon Ball?",
-      "subject": "Super Saiyan forms",
-      "scope": "closed",
-      "expect_mode": "roster",
-      "tier": "wiki",
-      "verified": "2026-08-15",
-      "sources": [
-        "https://dragonball.fandom.com/wiki/Super_Saiyan"
-      ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Nine Super Saiyan forms listed",
-      "answer": [
-        {
-          "item": "Super Saiyan",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan 2",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan 3",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan God",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan Blue",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan Blue Evolved",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan Rose",
-          "aliases": []
-        },
-        {
-          "item": "Super Saiyan Rage",
-          "aliases": []
-        },
-        {
-          "item": "Legendary Super Saiyan",
-          "aliases": []
-        }
-      ]
-    },
-    {
       "id": "db-set-16",
       "kind": "set",
       "question": "How many Gods of Destruction exist across the multiverse?",
@@ -1423,7 +1291,7 @@
       "sources": [
         "https://dragonball.fandom.com/wiki/God_of_Destruction"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Twelve Gods of Destruction, one per universe",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Twelve Gods of Destruction, one per universe Gold corrected 2026-08-15 from `God of Destruction`: the wiki lists 12 members and the bank had 12; added Iwan, Arak, Giin.",
       "answer": [
         {
           "item": "Beerus (Universe 7)",
@@ -1471,6 +1339,18 @@
         },
         {
           "item": "Ivan (Universe 1)",
+          "aliases": []
+        },
+        {
+          "item": "Iwan",
+          "aliases": []
+        },
+        {
+          "item": "Arak",
+          "aliases": []
+        },
+        {
+          "item": "Giin",
           "aliases": []
         }
       ]
@@ -1553,46 +1433,6 @@
       "accept": "any"
     },
     {
-      "id": "db-set-18",
-      "kind": "set",
-      "question": "How many major sagas are in Dragon Ball Z?",
-      "subject": "Dragon Ball Z sagas",
-      "scope": "closed",
-      "expect_mode": "roster",
-      "tier": "wiki",
-      "verified": "2026-08-15",
-      "sources": [
-        "https://dragonball.fandom.com/wiki/Dragon_Ball_Z"
-      ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Six major sagas in Dragon Ball Z",
-      "answer": [
-        {
-          "item": "Saiyan Saga",
-          "aliases": []
-        },
-        {
-          "item": "Namek Saga",
-          "aliases": []
-        },
-        {
-          "item": "Frieza Saga",
-          "aliases": []
-        },
-        {
-          "item": "Androids Saga",
-          "aliases": []
-        },
-        {
-          "item": "Cell Saga",
-          "aliases": []
-        },
-        {
-          "item": "Majin Buu Saga",
-          "aliases": []
-        }
-      ]
-    },
-    {
       "id": "db-set-19",
       "kind": "set",
       "question": "Who are the members of the Ginyu Force?",
@@ -1629,5 +1469,26 @@
       ]
     }
   ],
-  "retired": []
+  "retired": [
+    {
+      "question": "Every transformation Vegeta has achieved",
+      "item": "(whole question)",
+      "reason": "The Vegeta page has no dedicated Transformations, Forms, or Abilities section listing his transformations. The page only contains Appearance, Personality, and Relationship with Bulma sections. Transformations are only mentioned in prose scattered throughout the page, not compiled in a single list. Checked: Vegeta. Retired 2026-08-15 by the bank-expansion triage."
+    },
+    {
+      "question": "Which arcs of Dragon Ball Z start at which chapter?",
+      "item": "(whole question)",
+      "reason": "The Dragon Ball Z page maintains two different saga naming conventions (Toei sagas with 11 entries, Funimation sagas with 17 entries) but no single canonical list of \"major sagas\" with exactly 6 entries. The gold answer's 6 sagas are a subset not explicitly delineated as \"major\" on the wiki. Checked: Dragon Ball Z. Retired 2026-08-15 by the bank-expansion triage."
+    },
+    {
+      "question": "How many canonical Super Saiyan forms exist in Dragon Ball?",
+      "item": "(whole question)",
+      "reason": "The Super Saiyan page lists many forms across multiple categories (main line, graded forms, hybrid forms, game variations, Demon Realm Race, etc.) with no single section titled \"canonical Super Saiyan forms\" containing exactly 9 entries. The wiki does not maintain a curated list of canonical forms distinct from non-canon/game-only forms. Checked: Super Saiyan. Retired 2026-08-15 by the bank-expansion triage."
+    },
+    {
+      "question": "How many major sagas are in Dragon Ball Z?",
+      "item": "(whole question)",
+      "reason": "Same as db-set-14. The Dragon Ball Z page has multiple saga lists (Toei 11, Funimation 17) but no single authoritative list of \"major sagas\" with exactly 6 entries. Checked: Dragon Ball Z. Retired 2026-08-15 by the bank-expansion triage."
+    }
+  ]
 }

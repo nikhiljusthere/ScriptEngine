@@ -1345,40 +1345,6 @@
       "accept": "any"
     },
     {
-      "id": "onepiece-set-12",
-      "kind": "set",
-      "question": "Every named version of Nami's Clima-Tact weapon in One Piece",
-      "subject": "Nami",
-      "scope": "closed",
-      "expect_mode": "roster",
-      "tier": "wiki",
-      "verified": "2026-08-15",
-      "sources": [
-        "https://onepiece.fandom.com/wiki/Nami"
-      ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Four named versions: original Clima-Tact, Sorcery Clima-Tact, Grow Up version, and Zeus-merged version",
-      "answer": [
-        {
-          "item": "Clima-Tact",
-          "aliases": []
-        },
-        {
-          "item": "Sorcery Clima-Tact",
-          "aliases": []
-        },
-        {
-          "item": "Clima-Tact Grow Up",
-          "aliases": []
-        },
-        {
-          "item": "Zeus-merged Clima-Tact",
-          "aliases": [
-            "Zeus Clima-Tact"
-          ]
-        }
-      ]
-    },
-    {
       "id": "onepiece-fact-13",
       "kind": "fact",
       "question": "Who is Usopp's father in One Piece?",
@@ -1460,7 +1426,7 @@
       "sources": [
         "https://onepiece.fandom.com/wiki/Four_Emperors"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three current Sweet Commanders explicitly named",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three current Sweet Commanders explicitly named Gold corrected 2026-08-15 from `Big Mom Pirates`: the wiki lists 3 members and the bank had 1; added Charlotte Katakuri, Charlotte Smoothie, Charlotte Cracker.",
       "answer": [
         {
           "item": "Three Sweet Commanders",
@@ -1468,6 +1434,18 @@
             "three",
             "Sweet Commanders"
           ]
+        },
+        {
+          "item": "Charlotte Katakuri",
+          "aliases": []
+        },
+        {
+          "item": "Charlotte Smoothie",
+          "aliases": []
+        },
+        {
+          "item": "Charlotte Cracker",
+          "aliases": []
         }
       ]
     },
@@ -1483,7 +1461,7 @@
       "sources": [
         "https://onepiece.fandom.com/wiki/Four_Emperors"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three All-Stars explicitly stated",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three All-Stars explicitly stated Gold corrected 2026-08-15 from `Beasts Pirates`: the wiki lists 3 members and the bank had 1; added King, Queen, Jack.",
       "answer": [
         {
           "item": "Three All-Stars",
@@ -1491,6 +1469,18 @@
             "three All-Stars",
             "Disasters"
           ]
+        },
+        {
+          "item": "King",
+          "aliases": []
+        },
+        {
+          "item": "Queen",
+          "aliases": []
+        },
+        {
+          "item": "Jack",
+          "aliases": []
         }
       ]
     },
@@ -1726,5 +1716,11 @@
       "accept": "any"
     }
   ],
-  "retired": []
+  "retired": [
+    {
+      "question": "Every named version of Nami's Clima-Tact weapon in One Piece",
+      "item": "(whole question)",
+      "reason": "The wiki does not maintain a single list of all Clima-Tact versions. Versions exist on separate pages (Clima-Tact, Perfect Clima-Tact, Sorcery Clima-Tact, Sorcery Clima-Tact/Grow Up, Sorcery Clima-Tact/Zeus) but no page aggregates them as a structured list. The Art of Weather page describes the upgrade history in prose but has no infobox field, table, or bulleted list naming all versions. Checked: Nami, Art of Weather, Clima-Tact, Perfect Clima-Tact, Sorcery Clima-Tact, Art of Weather/Sorcery Clima-Tact/Grow Up, Art of Weather/Sorcery Clima-Tact/Zeus. Retired 2026-08-15 by the bank-expansion triage."
+    }
+  ]
 }
