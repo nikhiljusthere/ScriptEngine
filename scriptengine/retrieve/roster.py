@@ -1204,6 +1204,11 @@ def _owned_roster(
     owned = store.owned_by(character, _BELONGS_RELATIONS)
     if not owned:
         return None
+    # What the wiki filed, separately from what was read out of a sentence.
+    # `stated user` is derived by `ingest/ownership.py`, and a set assembled
+    # from prose is not a set the wiki curated -- so it may be the answer, and
+    # it may not call itself exact.
+    declared_owned = set(store.owned_by(character, _USER_RELATIONS + ("owner",)))
     types = {name: ontology.semantic_type(store, name, overrides) for name in owned}
     names = sorted(name for name in owned if types[name] in kinds)
     names = drop_stopwords(names, overrides)
@@ -1232,7 +1237,8 @@ def _owned_roster(
     # user edge in a wiki holding 115 Zanpakutō techniques, and answering his
     # techniques with that one page while reporting `exact` is the failure this
     # whole pass exists to remove. Goku has 28 transformations and Guts 5.
-    confidence = "exact" if len(members) >= 3 else "partial"
+    inferred = any(member.name not in declared_owned for member in members)
+    confidence = "exact" if len(members) >= 3 and not inferred else "partial"
     return Roster(
         subject=character,
         basis=f"{character}'s {label}",
@@ -2388,7 +2394,12 @@ _USER_RELATIONS = ("user", "users", "wielder", "wielders", "practitioner", "prac
 # Whose a thing is. `inventor` is deliberately absent: King Kai invented the
 # Kaio-ken and never used it, so inventing something is not owning it — the
 # distinction the race path already depends on.
-_BELONGS_RELATIONS = (*_USER_RELATIONS, "owner")
+# `stated user` is derived by `ingest/ownership.py` from a technique page's
+# own lead -- "is a technique of Rukia Kuchiki's Zanpakutō". Bleach records
+# ownership that way and in no field at all, so without it 196 of its
+# technique pages belong to nobody. Kept as its own relation name so a derived
+# claim stays tellable from one the wiki wrote in an infobox.
+_BELONGS_RELATIONS = (*_USER_RELATIONS, "owner", "stated user")
 
 RACE_EXCLUSIVE = "race_exclusive"
 CHARACTER_SPECIFIC = "character_specific"

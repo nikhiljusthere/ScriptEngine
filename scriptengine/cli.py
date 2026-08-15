@@ -429,6 +429,40 @@ def relations(
 
 
 @app.command()
+def link(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(0, "--limit", help="Read only the first N pages."),
+) -> None:
+    """Write the ownership a wiki states in prose rather than in a field.
+
+    `owned_by` walks `user`/`owner` infobox edges. Bleach puts no such field on
+    a technique page and says it in the first line instead -- "is a technique of
+    Rukia Kuchiki's Zanpakutō, Sode no Shirayuki". 196 of its 488 technique
+    pages name their owner that way and belonged to nobody.
+
+    Rule-based, not a model: the sentence is formulaic. Run after `index`, which
+    rebuilds the graph.
+    """
+    import logging
+
+    from scriptengine.ingest.ownership import derive
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    report = derive(paths, limit)
+    table = Table(title=f"Stated ownership — {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in ("considered", "stated", "written", "unknown_owner"):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+
+
+@app.command()
 def classify(
     series: str = typer.Option(..., "--series"),
     limit: int = typer.Option(0, "--limit", help="Stop after this many pages."),
