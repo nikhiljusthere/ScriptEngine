@@ -209,13 +209,20 @@ class TestHeading:
     def test_says_one_span(self, value, kind, expected):
         assert chronology._said(value, kind) == expected
 
-    def test_matches_the_sample_script(self):
+    def test_says_what_the_wiki_recorded(self):
         """`Saitama Introduction Arc | MANGA CHAPTERS 1-4, EPISODE 1`.
 
-        The heading a hand-written One Punch Man script uses, verbatim.
+        Asserted because the One Punch Man wiki files the arc as chapters
+        1 • 2 • 3 • 4 and episode 1, and this is that said aloud. A
+        hand-written script happens to use the same line, which is a useful
+        sanity check and not the reason this passes -- the sample scripts are
+        written by a person and are a style reference, not a fact source. Where
+        one disagrees with the wiki, the wiki wins and this test moves with it.
         """
         paths = paths_for("opm")
         with FactStore(paths.facts_db) as store:
+            chapters, episodes = chronology.spans(store, "Saitama Introduction Arc")
+            assert "1" in chapters and "4" in chapters
             assert chronology.heading(store, "Saitama Introduction Arc") == (
                 "Saitama Introduction Arc | MANGA CHAPTERS 1-4, EPISODE 1"
             )
@@ -276,3 +283,44 @@ class TestAppearances:
         paths = paths_for("jjk")
         with FactStore(paths.facts_db) as store:
             assert chronology.appearances(store, "No Such Person At All") == []
+
+
+class TestCast:
+    """Who is in an arc, read back off the character pages.
+
+    The two wikis disagree about recording it: One Punch Man arcs carry 172
+    `characters` edges and Jujutsu Kaisen arcs carry none. Reading it off the
+    character pages works on both.
+    """
+
+    def test_jjk_arc_has_a_cast_despite_no_edges(self):
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            who = chronology.cast(store, "Shibuya Incident Arc")
+        assert len(who) > 20, "Shibuya is the largest arc in the series"
+        # Ordered by how much of the arc is written on their page, so the
+        # people it happened to come first.
+        assert who[0] == "Yuji Itadori"
+        for name in ("Satoru Gojo", "Megumi Fushiguro", "Mahito"):
+            assert name in who
+
+    def test_the_arc_itself_is_not_in_its_own_cast(self):
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            who = chronology.cast(store, "Shibuya Incident Arc")
+        assert "Shibuya Incident Arc" not in who
+
+    def test_only_characters(self):
+        """`History` is a heading on places too, and a place is not a cast."""
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            who = chronology.cast(store, "Monster Association Arc")
+            from scriptengine.retrieve import semantics as ontology
+
+            for name in who[:15]:
+                assert ontology.semantic_type(store, name) == "character"
+
+    def test_unknown_arc_is_empty_not_an_error(self):
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            assert chronology.cast(store, "No Such Arc At All") == []

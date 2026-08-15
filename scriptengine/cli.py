@@ -1044,6 +1044,67 @@ def timeline(
         console.print(f"   {beat.text[:280]}\n")
 
 
+@app.command()
+def chronicle(
+    subject: str = typer.Argument(..., help="A character, or an arc with --cast."),
+    series: str = typer.Option(..., "--series"),
+    cast_of: bool = typer.Option(
+        False, "--cast", help="Treat the subject as an arc and list who is in it."
+    ),
+    full: bool = typer.Option(False, "--full", help="Print the prose, not a summary."),
+) -> None:
+    """A character's story arc by arc, in the shape a life script is written.
+
+    `The Entire Life of Garou` runs one section per arc, each headed with the
+    chapters and episodes it covers. This is that spine: the arcs the wiki files
+    this character's history under, in the order its own `previous`/`next` chain
+    puts them, with the heading already rendered.
+
+    Reads the store and nothing else — no model, so the chronology is the same
+    every time it is asked.
+    """
+    import logging
+
+    from scriptengine.retrieve import chronology
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with FactStore(paths.facts_db) as store:
+        if cast_of:
+            who = chronology.cast(store, subject, _load_overrides(paths))
+            if not who:
+                console.print(f"[yellow]No character's history is filed under "
+                              f"{subject!r}.[/yellow]")
+                raise typer.Exit(code=1)
+            console.print(f"[bold]{chronology.heading(store, subject)}[/bold]")
+            console.print(f"[dim]{len(who)} characters, most-written first[/dim]\n")
+            for name in who:
+                console.print(f"  {name}")
+            return
+
+        found = chronology.appearances(store, subject)
+        if not found:
+            console.print(f"[yellow]No arc files any history for "
+                          f"{subject!r}.[/yellow]")
+            raise typer.Exit(code=1)
+        total = sum(appearance.words for appearance in found)
+        console.print(f"[bold]{subject}[/bold] — {len(found)} arcs, {total} words\n")
+        for appearance in found:
+            console.print(f"[bold]{appearance.heading}[/bold]")
+            if full:
+                for passage in appearance.passages:
+                    console.print(f"   {passage}\n")
+            else:
+                console.print(f"   [dim]{len(appearance.passages)} passages, "
+                              f"{appearance.words} words[/dim]")
+                console.print(f"   {appearance.passages[0][:200]}…\n")
+
+
 @app.command("eval")
 def run_eval(
     series: str = typer.Option(..., "--series"),

@@ -302,6 +302,43 @@ def appearances(store: FactStore, character: str) -> list[Appearance]:
     return out
 
 
+def cast(store: FactStore, arc: str, overrides: dict | None = None) -> list[str]:
+    """Which characters this arc's story is written on, busiest first.
+
+    The inverse of `appearances`, and it exists because the two wikis disagree
+    about recording it: One Punch Man arcs carry 172 `characters` edges and
+    Jujutsu Kaisen arcs carry none, so "who was in the Shibuya Incident" was
+    answerable on one wiki and not the other. Reading it back off the character
+    pages works on both, because both file history under arc-named headings.
+
+    `mentions` is deliberately not consulted. There are 1,517 of them on the
+    Jujutsu Kaisen arc pages, and being named in a paragraph is not being in the
+    arc -- a script built on that would put the whole cast in every arc.
+    """
+    from scriptengine.retrieve import semantics as ontology
+
+    counted: dict[str, int] = {}
+    for row in store.connection.execute(
+        "SELECT d.title, c.breadcrumb, LENGTH(c.text) AS weight FROM chunks c"
+        " JOIN documents d ON c.document_id = d.id"
+        " WHERE c.breadcrumb LIKE ? COLLATE NOCASE",
+        (f"%{arc}%",),
+    ):
+        breadcrumb = (row["breadcrumb"] or "").strip()
+        if arc not in [part.strip() for part in breadcrumb.split("/")]:
+            continue
+        page = (row["title"] or "").split("/")[0]
+        if not page or page == arc:
+            continue
+        counted[page] = counted.get(page, 0) + int(row["weight"] or 0)
+
+    return [
+        page
+        for page, _ in sorted(counted.items(), key=lambda kv: -kv[1])
+        if ontology.semantic_type(store, page, overrides) == "character"
+    ]
+
+
 def _undoubled(passages: list[str]) -> list[str]:
     """Drop the copies the chunker makes of the same prose.
 

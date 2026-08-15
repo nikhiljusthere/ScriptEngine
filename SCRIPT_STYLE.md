@@ -1,8 +1,44 @@
 # What the scripts look like, and what the engine owes them
 
-Derived by reading the 38 scripts in `sample scripts/` — measured, not guessed.
+Derived by reading the scripts in `sample scripts/` — measured, not guessed.
 This is the target the engine is building toward: the output has to serve these,
 and beat them where they are weakest.
+
+## The scripts are a style reference, not a fact source
+
+They are written by a person. They carry a person's judgement and a person's
+mistakes, and the wiki is the authority on what actually happened. Where the two
+disagree, the engine follows the wiki and the divergence is a finding, not a bug.
+
+Audited against the store, the divergences are of three kinds, and only the
+third is an error:
+
+**The writer invents sections the wiki has no arc for.** `The Entire Life of
+Garou` runs seven sections; three of them — `History`, `Saitama vs Garou Fight`,
+`Aftermath` — are not arcs. `Saitama vs Garou Fight` is a slice of the wiki's
+`Monster Association Arc`, split out because it is the climax. That is good
+writing and the engine must not try to reproduce it: it supplies the arc, the
+writer decides where to cut it.
+
+**The writer prunes arcs the character is barely in.** The wiki files Saitama's
+history under **17** arcs. `SAITAMA'S LIFE STORY` covers a handful and says so
+out loud, in a bracketed note:
+
+> `[Saitama hardly shows up and isn't directly involved in what goes down
+> during this arc]`
+
+That is a judgement the engine should inform rather than make, which is why
+`appearances()` returns the word count per arc. Garou's presence runs from 67
+words in `Alien Conquerors Arc` to 13,652 in `Monster Association Arc`; the
+writer needs that number to decide, not a pre-pruned list.
+
+**The writer omits arcs the character genuinely appears in.** Garou's script
+leaves out `Alien Conquerors`, `The Blizzard Group` and `Super Fight`, all of
+which carry his history on the wiki. This is the case where the engine being
+more complete is straightforwardly better.
+
+So: match the *voice* and the *shape* of these scripts. Do not inherit their
+coverage, their arc boundaries or their omissions.
 
 ---
 
