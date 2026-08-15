@@ -55,9 +55,19 @@ _STATES_OWNER = re.compile(
 )
 
 
+# A second shape: the page describes an occasion instead of declaring an owner.
+# "When used by Kenpachi Zaraki, this technique was sufficiently powerful to
+# overpower ..." attributes it as surely as "is a technique of" does, and Bleach
+# writes it both ways.
+_USED_BY = re.compile(
+    r"(?:[Ww]hen|[Aa]lso|[Ll]ater)\s+used by\s+"
+    r"([A-Z][\w'’\-À-ɏ]*(?:\s+[A-Z][\w'’\-À-ɏ]*){0,3})",
+)
+
+
 def stated_owner(text: str) -> str:
     """The character a technique page's lead says it belongs to, or ``""``."""
-    match = _STATES_OWNER.search(text or "")
+    match = _STATES_OWNER.search(text or "") or _USED_BY.search(text or "")
     if not match:
         return ""
     # `Rukia Kuchiki's Zanpakutō` -- the owner is the person, not the sword,
