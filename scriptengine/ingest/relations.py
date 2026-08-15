@@ -199,18 +199,59 @@ def _quoted_in(quote: str, passage: str) -> bool:
     return tidy(quote) in tidy(passage)
 
 
+def known_names(store: FactStore, overrides: dict | None = None) -> dict[str, str]:
+    """Every name this wiki has an entity for, folded, to its canonical title.
+
+    A map rather than a set so the stored row can say who the wiki calls this.
+    The prose writes `Geto` and `Suguru Geto` in the same paragraph, and stored
+    verbatim they become two people: the table stops joining, and a script
+    asking who Gojo fell out with gets the answer twice under different names.
+
+    Read once on the thread that owns the connection and handed to the workers
+    as a plain set. The first cut of this passed the `FactStore` itself so the
+    guard could call `node_by_name`, and every threaded extraction died with
+    `SQLite objects created in a thread can only be used in that same thread` --
+    25 characters considered, 22 failed, nothing stored. A connection belongs to
+    one thread, which is the same reason `passages()` is read by the caller.
+
+    Aliases are included: the prose says `Gojo` where the page is titled
+    `Satoru Gojo`, and a relationship naming the short form is not an invention.
+    """
+    from scriptengine.retrieve import semantics as ontology
+
+    canon: dict[str, str] = {}
+    for row in store.connection.execute("SELECT name FROM nodes"):
+        name = (row["name"] or "").strip()
+        # Characters only. Every fight has a page and therefore a node, so
+        # without this the other end of a relationship comes back as
+        # `Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin` -- a real
+        # entity on this wiki, and not a person anyone has a relationship with.
+        if name and ontology.semantic_type(store, name, overrides) == "character":
+            canon[name.lower()] = name
+    for row in store.connection.execute(
+        "SELECT a.alias, n.name FROM aliases a JOIN nodes n ON n.id = a.node_id"
+    ):
+        alias = (row["alias"] or "").strip().lower()
+        target = (row["name"] or "").strip()
+        # A page title always wins over an alias pointing elsewhere.
+        if alias and target and alias not in canon and target.lower() in canon:
+            canon[alias] = target
+    return canon
+
+
 def extract_from_passages(
     client: LLMClient,
     series: str,
     character: str,
     found_passages: list[tuple[str, str]],
     overrides: dict,
-    store: FactStore,
+    known: dict[str, str],
 ) -> list[dict[str, str]]:
     """Relationships stated for this character, over passages already read.
 
-    `store` is used read-only, to ask whether the other end is somebody this
-    wiki has. That is a keyed lookup on an index, not a scan.
+    `known` is the set of names this wiki has an entity for, resolved by the
+    caller. Everything here is prompt-building, network and string work, so it
+    is safe on a worker thread.
     """
     found: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
@@ -229,16 +270,23 @@ def extract_from_passages(
                 quote = str(entry.get("quote") or "").strip()
                 if not other or relation not in RELATIONS:
                     continue
+                # The other end has to be somebody this wiki has a page or an
+                # alias for. Without it a model supplies a plausible name from
+                # the series it has read and nothing in the row shows it.
+                #
+                # Resolved to the canonical title *before* the duplicate check,
+                # or `Geto` and `Suguru Geto` are two people: both survive, the
+                # table stops joining, and a script asking who Gojo fell out
+                # with is told twice under different names.
+                canonical = known.get(other.strip().lower())
+                if not canonical:
+                    logger.info("unknown other %r for %s", other, character)
+                    continue
+                other, entry["other"] = canonical, canonical
                 if other.lower() == character.lower():
                     continue
                 key = (other.lower(), relation)
                 if key in seen:
-                    continue
-                # The other end has to be somebody this wiki has a page or an
-                # alias for. Without it a model supplies a plausible name from
-                # the series it has read and nothing in the row shows it.
-                if not store.node_by_name(other):
-                    logger.info("unknown other %r for %s", other, character)
                     continue
                 if not _quoted_in(quote, window):
                     logger.info("unquoted %r->%r for %s", relation, other, character)
@@ -288,6 +336,8 @@ def extract_series(
     report = {"considered": 0, "extracted": 0, "cached": 0, "failed": 0, "relations": 0}
     with FactStore(paths.facts_db) as store:
         store.ensure_relations()
+        # Resolved here, on the thread that owns the connection.
+        known = known_names(store, overrides)
         characters = needs_relations(store, overrides)
         report["considered"] = len(characters)
         wanted = characters[:limit] if limit else characters
@@ -323,7 +373,7 @@ def extract_series(
                 try:
                     found = extract_from_passages(
                         client, paths.name, character,
-                        passages(store, character, overrides), overrides, store,
+                        passages(store, character, overrides), overrides, known,
                     )
                 except LLMUnavailable:
                     raise
@@ -344,7 +394,7 @@ def extract_series(
             def run(job):
                 character, _, found_passages = job
                 return extract_from_passages(
-                    client, paths.name, character, found_passages, overrides, store
+                    client, paths.name, character, found_passages, overrides, known
                 )
 
             with ThreadPoolExecutor(max_workers=workers) as pool:
