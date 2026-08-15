@@ -1052,6 +1052,9 @@ def chronicle(
         False, "--cast", help="Treat the subject as an arc and list who is in it."
     ),
     full: bool = typer.Option(False, "--full", help="Print the prose, not a summary."),
+    arc: str = typer.Option(
+        "", "--arc", help="One arc, cut into cited beats: a section to write from."
+    ),
 ) -> None:
     """A character's story arc by arc, in the shape a life script is written.
 
@@ -1085,6 +1088,28 @@ def chronicle(
             console.print(f"[dim]{len(who)} characters, most-written first[/dim]\n")
             for name in who:
                 console.print(f"  {name}")
+            return
+
+        if arc:
+            section = chronology.scaffold(store, subject, arc, _load_overrides(paths))
+            if section is None:
+                console.print(f"[yellow]{subject!r} has no history filed under "
+                              f"{arc!r}.[/yellow]")
+                raise typer.Exit(code=1)
+            console.print(f"[bold]{section.heading}[/bold]")
+            console.print(f"[dim]{len(section.beats)} beats, "
+                          f"{section.words} words[/dim]\n")
+            for order, beat in enumerate(section.beats, 1):
+                console.print(f"[bold]{order}.[/bold] [cyan]{beat.locator or '—'}[/cyan]")
+                console.print(f"   {beat.text}\n")
+            if section.abilities:
+                console.print(f"[dim]abilities on hand ({len(section.abilities)}):[/dim]"
+                              f" {', '.join(section.abilities[:14])}")
+            if section.relations:
+                console.print(f"\n[dim]relations in scope "
+                              f"({len(section.relations)}):[/dim]")
+                for tie in section.relations[:14]:
+                    console.print(f"   {tie}")
             return
 
         found = chronology.appearances(store, subject)

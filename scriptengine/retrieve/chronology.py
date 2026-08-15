@@ -302,6 +302,123 @@ def appearances(store: FactStore, character: str) -> list[Appearance]:
     return out
 
 
+@dataclass
+class Beat:
+    """One run of prose and the locator covering it."""
+
+    text: str
+    locator: str = ""
+
+    @property
+    def words(self) -> int:
+        return len(self.text.split())
+
+
+@dataclass
+class Scaffold:
+    """One section of a character-life script, ready to be written from.
+
+    Everything here is retrieved and citable. The writing is not done and is
+    not this module's job: the engine's half is the checkable claim, and the
+    voice sits on top of it.
+    """
+
+    character: str
+    arc: str
+    heading: str
+    beats: list[Beat]
+    abilities: list[str]
+    relations: list[str]
+
+    @property
+    def words(self) -> int:
+        return sum(beat.words for beat in self.beats)
+
+
+def beats(text: str, episodes: "cite.EpisodeIndex | None" = None) -> list[Beat]:
+    """Cut a passage where its citations change.
+
+    A wiki puts one ref at the end of the passage it supports, so a run of
+    sentences sharing a locator is a beat -- the same reading
+    `citations.attribute` already applies, reused rather than reinvented.
+
+    This is what a script wants. The Hero Hunt Arc comes back as 864 words in
+    two chunks; the hand-written script cuts the same material into eleven
+    beats, and re-cutting prose someone has already written is the tedious half
+    of the job.
+    """
+    from scriptengine.retrieve import citations as cite
+
+    out: list[Beat] = []
+    for sentence in cite.attribute(text or "", episodes):
+        said = sentence.locator.render() if sentence.locator else ""
+        body = _MARKER.sub("", sentence.text).strip()
+        if not body:
+            continue
+        if out and out[-1].locator == said:
+            out[-1].text = f"{out[-1].text} {body}".strip()
+        else:
+            out.append(Beat(text=body, locator=said))
+    return out
+
+
+# Refs are said in the locator, not repeated inside the prose.
+_MARKER = re.compile(r"\((?:Chapter|Episode|Volume)[^)]*\)", re.IGNORECASE)
+
+
+def scaffold(
+    store: FactStore, character: str, arc: str, overrides: dict | None = None
+) -> Scaffold | None:
+    """The retrieved half of one arc section, for one character.
+
+    Heading, beats with their locators, and the two things a writer reaches for
+    next: what this character can do, and who they are to other people in this
+    arc. Relations are filtered to the arc where they carry one -- Garou is
+    `rival`, `enemy` and `ally` to Saitama, and only the last belongs to the
+    Ominous Future.
+    """
+    from scriptengine.retrieve import citations as cite
+
+    found = next(
+        (one for one in appearances(store, character) if one.arc == arc), None
+    )
+    if found is None:
+        return None
+
+    episodes = cite.EpisodeIndex.from_store(store)
+    # `_undoubled` drops a passage wholly contained in another, but two cuts of
+    # the same section can overlap without either containing the other -- and
+    # then the second one's beats repeat the first one's tail, out of order.
+    # Garou's Hero Hunt Arc came back with `target Sweet Mask` twice and
+    # Chapter 49 after Chapter 50. Deduplicated on the prose, so the first
+    # telling keeps its place.
+    cut: list[Beat] = []
+    seen: set[str] = set()
+    for passage in found.passages:
+        for beat in beats(passage, episodes):
+            key = " ".join(beat.text.split())[:120].lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            cut.append(beat)
+
+    kit = [row["name"] for row in store.abilities_of(character)]
+    ties: list[str] = []
+    for row in store.relations_of(character):
+        era = (row["era"] or "").strip()
+        # An unscoped relation holds for the whole story, so it belongs to
+        # every arc. One scoped elsewhere does not belong to this one.
+        if era and era != arc:
+            continue
+        said = f"{row['character']} — {row['relation']} — {row['other']}"
+        ties.append(f"{said} [{era}]" if era else said)
+
+    return Scaffold(
+        character=character, arc=arc, heading=found.heading, beats=cut,
+        abilities=kit, relations=sorted(set(ties)),
+    )
+
+
 def cast(store: FactStore, arc: str, overrides: dict | None = None) -> list[str]:
     """Which characters this arc's story is written on, busiest first.
 

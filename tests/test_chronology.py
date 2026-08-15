@@ -324,3 +324,73 @@ class TestCast:
         paths = paths_for("jjk")
         with FactStore(paths.facts_db) as store:
             assert chronology.cast(store, "No Such Arc At All") == []
+
+
+class TestBeats:
+    """Prose cut where its citations change — the shape a script is written in.
+
+    The Hero Hunt Arc comes back as 864 words in two chunks; the hand-written
+    script cuts the same material into eleven beats. Re-cutting prose someone
+    has already written is the tedious half of the job.
+    """
+
+    def test_a_run_of_sentences_under_one_ref_is_one_beat(self):
+        said = chronology.beats(
+            "He arrives. He wins.(Chapter 4) Then he leaves.(Chapter 5)"
+        )
+        assert len(said) == 2
+        assert said[0].text == "He arrives. He wins."
+        assert "Chapter 4" in said[0].locator
+        assert said[1].text == "Then he leaves."
+        assert "Chapter 5" in said[1].locator
+
+    def test_the_marker_is_said_in_the_locator_not_the_prose(self):
+        """A beat's text is what gets read out; the ref is the tag on it."""
+        said = chronology.beats("He wins the fight.(Chapter 4)")
+        assert said[0].text == "He wins the fight."
+        assert "(Chapter" not in said[0].text
+
+    def test_unsourced_prose_still_becomes_a_beat(self):
+        said = chronology.beats("Something happens with no reference at all.")
+        assert len(said) == 1
+        assert said[0].locator == ""
+
+
+class TestScaffold:
+    def test_a_section_a_writer_can_work_from(self):
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            section = chronology.scaffold(store, "Garou", "Hero Hunt Arc")
+        assert section is not None
+        assert section.heading == (
+            "Hero Hunt Arc | MANGA CHAPTERS 46-51, EPISODE 15"
+        )
+        assert len(section.beats) >= 5
+        # Nearly every beat carries a locator; that is the whole point.
+        assert sum(1 for b in section.beats if b.locator) >= len(section.beats) - 1
+        assert "Water Stream Rock Smashing Fist" in section.abilities
+
+    def test_beats_do_not_repeat_themselves(self):
+        """Two cuts of one section overlap without either containing the other.
+
+        Garou's Hero Hunt Arc came back saying `target Sweet Mask` twice, and
+        with Chapter 49 after Chapter 50.
+        """
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            section = chronology.scaffold(store, "Garou", "Hero Hunt Arc")
+        keys = [" ".join(b.text.split())[:120].lower() for b in section.beats]
+        assert len(keys) == len(set(keys))
+
+    def test_a_relation_scoped_to_another_arc_is_out_of_scope(self):
+        """Garou is `ally` to Saitama only in the Ominous Future."""
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            section = chronology.scaffold(store, "Garou", "Hero Hunt Arc")
+        for tie in section.relations:
+            assert "Ominous Future" not in tie
+
+    def test_an_arc_the_character_is_not_in(self):
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            assert chronology.scaffold(store, "Garou", "No Such Arc") is None
