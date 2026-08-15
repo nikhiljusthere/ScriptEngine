@@ -227,3 +227,52 @@ class TestHeading:
             said = chronology.heading(store, "Shinjuku Showdown Arc")
         assert "MANGA CHAPTERS 222-271" in said
         assert "EPISODE" not in said
+
+
+class TestAppearances:
+    """A character's arcs, in story order — the spine of a life script.
+
+    `The Entire Life of Garou Explained` runs Garou Introduction, Hero Hunt,
+    Monster Raid, Monster Association. The wikis already file character history
+    under arc-named headings, so this needs no inference: 1,093 such chunks
+    across Jujutsu Kaisen, 1,859 across One Punch Man.
+    """
+
+    def test_arcs_come_back_in_story_order(self):
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            found = [a.arc for a in chronology.appearances(store, "Yuji Itadori")]
+        # Canon order, not alphabetical: Fearsome Womb opens the series and
+        # Shinjuku Showdown closes it.
+        assert found[0] == "Fearsome Womb Arc"
+        assert found[-1] == "Shinjuku Showdown Arc"
+        assert found.index("Shibuya Incident Arc") < found.index("Culling Game Arc")
+
+    def test_heading_is_script_ready(self):
+        paths = paths_for("opm")
+        with FactStore(paths.facts_db) as store:
+            found = chronology.appearances(store, "Saitama")
+        assert found, "Saitama appears in no arc"
+        # The opening heading of the hand-written One Punch Man script.
+        assert found[0].heading == (
+            "Saitama Introduction Arc | MANGA CHAPTERS 1-4, EPISODE 1"
+        )
+
+    def test_the_chunker_s_duplicates_are_dropped(self):
+        """A section is chunked at two levels, so the same prose arrives twice.
+
+        Counted raw, Yuji's part in the Shibuya Incident reads as 7,190 words
+        against a page holding about half that, and a script built on it would
+        say everything twice.
+        """
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            found = chronology.appearances(store, "Yuji Itadori")
+        for appearance in found:
+            keys = [" ".join(p.split())[:160] for p in appearance.passages]
+            assert len(keys) == len(set(keys)), f"{appearance.arc} repeats itself"
+
+    def test_a_character_in_no_arc_is_empty_not_an_error(self):
+        paths = paths_for("jjk")
+        with FactStore(paths.facts_db) as store:
+            assert chronology.appearances(store, "No Such Person At All") == []

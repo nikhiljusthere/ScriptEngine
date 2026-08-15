@@ -234,6 +234,99 @@ def _said(value: str, kind: str) -> str:
     return f"{kind}S {first}{joiner}{last}"
 
 
+@dataclass
+class Appearance:
+    """One character's part in one arc, with the heading a script writes."""
+
+    arc: str
+    heading: str
+    passages: list[str]
+
+    @property
+    def words(self) -> int:
+        return sum(len(passage.split()) for passage in self.passages)
+
+
+def appearances(store: FactStore, character: str) -> list[Appearance]:
+    """Which arcs this character appears in, in story order, with their part.
+
+    The spine of a character-life script -- `The Entire Life of Killua Zoldyck`
+    runs `Hunter Exam arc`, `Heavens Arena arc`, `Yorknew City arc`, one section
+    per arc -- and it needs no inference at all. These wikis already file a
+    character's history under arc-named headings: 1,093 chunks across the
+    Jujutsu Kaisen pages, 1,859 across One Punch Man, with `Shibuya Incident
+    Arc` appearing on 57 character pages.
+
+    So this is a keyed read, ordered by the arc chain `chains()` already walks.
+    Nothing here calls a model, which is what keeps a script's chronology the
+    same on Tuesday as it was on Monday.
+    """
+    known = arc_pages(store)
+    if not known:
+        return []
+
+    # Story order, from the wiki's own `previous`/`next` chain. Arcs the chain
+    # does not reach keep their alphabetical position at the end rather than
+    # being dropped -- an unlinked arc is still an arc the character was in.
+    order: dict[str, int] = {}
+    for chain in chains(store):
+        for arc in chain:
+            order.setdefault(arc, len(order))
+    for arc in known:
+        order.setdefault(arc, len(order))
+
+    found: dict[str, list[str]] = {}
+    for row in store.connection.execute(
+        "SELECT c.breadcrumb, c.text, c.ordinal FROM chunks c"
+        " JOIN documents d ON c.document_id = d.id"
+        " WHERE d.title = ? COLLATE NOCASE OR d.title LIKE ? COLLATE NOCASE"
+        " ORDER BY c.ordinal",
+        (character, f"{character}/%"),
+    ):
+        breadcrumb = (row["breadcrumb"] or "").strip()
+        text = (row["text"] or "").strip()
+        if not breadcrumb or not text:
+            continue
+        parts = [part.strip() for part in breadcrumb.split("/")]
+        for arc in parts:
+            if arc in order:
+                found.setdefault(arc, []).append(text)
+                break
+
+    out: list[Appearance] = []
+    for arc in sorted(found, key=lambda name: order[name]):
+        out.append(
+            Appearance(arc=arc, heading=heading(store, arc),
+                       passages=_undoubled(found[arc]))
+        )
+    return out
+
+
+def _undoubled(passages: list[str]) -> list[str]:
+    """Drop the copies the chunker makes of the same prose.
+
+    A section is chunked at more than one level, so the level-1 card and the
+    level-2 card under it carry the same sentences. Counted raw, Yuji's part in
+    the Shibuya Incident reads as 7,190 words when the page holds about half
+    that, and a script built on the doubled text would say everything twice.
+
+    Compared on a normalised prefix rather than the whole string, because the
+    two copies differ in trailing whitespace and in where the chunker cut them.
+    """
+    kept: list[str] = []
+    seen: set[str] = set()
+    for passage in passages:
+        key = re.sub(r"\s+", " ", passage)[:160].lower()
+        if key in seen:
+            continue
+        # A chunk wholly contained in one already kept is the shorter cut of it.
+        if any(passage in longer for longer in kept):
+            continue
+        seen.add(key)
+        kept.append(passage)
+    return kept
+
+
 def _counted(store: FactStore, arc: str, kind: str) -> str:
     """How many chapters or episodes the wiki files under this arc.
 
