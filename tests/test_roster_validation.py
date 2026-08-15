@@ -228,6 +228,53 @@ class TestValidateMember:
         assert "describes the set" in reason
 
 
+class TestProfileIsReadOnce:
+    """One candidate, one read of the store.
+
+    A profile costs four queries — categories, facts, debut edges, and the page
+    type behind each edge — and the same candidate is profiled several times over
+    in one request: `apply_constraints` builds one to validate a name and another
+    to test the qualifier against it, `_outside_the_story` builds a third, and
+    `classify` asks for a user's twice inside a single expression.
+    """
+
+    def test_the_same_candidate_is_not_read_twice(self, transformations):
+        from scriptengine.retrieve.roster import _profile
+
+        first = _profile(transformations, "Super Saiyan")
+        statements = []
+        transformations.connection.set_trace_callback(statements.append)
+        second = _profile(transformations, "Super Saiyan")
+        transformations.connection.set_trace_callback(None)
+
+        assert not statements, "a memoised profile must not query again"
+        assert second is first
+        assert second == first
+
+    def test_a_different_candidate_is_a_different_answer(self, transformations):
+        from scriptengine.retrieve.roster import _profile
+
+        assert _profile(transformations, "Super Saiyan").name == "Super Saiyan"
+        assert _profile(transformations, "Black Frieza").name == "Black Frieza"
+        assert "saiyans" in _profile(transformations, "Super Saiyan").haystack()
+        assert "saiyans" not in _profile(transformations, "Black Frieza").haystack()
+
+    def test_a_reopened_store_reads_the_corpus_again(self, transformations):
+        """The memo dies with the store, so `index` cannot be served stale."""
+        from scriptengine.retrieve.roster import _profile
+
+        path = transformations.path
+        assert "transformations" in _profile(transformations, "Class-up").haystack()
+        transformations.close()
+
+        with FactStore(path) as store:
+            store.connection.execute("DELETE FROM categories")
+            store.commit()
+
+        with FactStore(path) as store:
+            assert "transformations" not in _profile(store, "Class-up").haystack()
+
+
 class TestAcquisition:
     """How an ability is come by, derived from the data rather than declared.
 

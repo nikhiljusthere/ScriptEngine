@@ -7,14 +7,20 @@ techniques, 18 planets and 6 battles. A planet is not a member of an army.
 
 from __future__ import annotations
 
+import sqlite3
+
 import pytest
 
 from scriptengine.retrieve import semantics
 from scriptengine.retrieve.semantics import (
+    ensure_lookup_indexes,
     expected_type,
+    request_cache,
+    semantic_type,
     type_from_class,
     type_from_page_type,
 )
+from scriptengine.stores.facts import FactStore
 
 
 class TestTypeFromPageType:
@@ -80,6 +86,167 @@ class TestExpectedType:
 # `_disagrees` lives in roster.py and is tested beside it, in
 # tests/test_roster_validation.py — importing it here made this module
 # uncollectable at any commit before roster.py grew the function.
+
+
+def _page(store, title, page_type, facts=()):
+    document = store.add_document(
+        title=title, url="", page_type=page_type, infobox_template="",
+        lead=f"{title} is a thing.", word_count=4, revid=1, fetched_at="",
+    )
+    node = store.add_node(title, page_type, document)
+    for label, value in facts:
+        store.add_fact(
+            node_id=node, key=label.lower(), label=label, value=value, citation=""
+        )
+    store.commit()
+
+
+@pytest.fixture()
+def facts_db(tmp_path):
+    """A path with a store already written to it, ready to be opened again."""
+    path = tmp_path / "facts.db"
+    with FactStore(path) as store:
+        store.initialise()
+        _page(store, "Super Saiyan", "technique", [("Class", "Transformation")])
+        _page(store, "Widget", "weird_box")
+    return path
+
+
+@pytest.fixture()
+def store(facts_db):
+    store = FactStore(facts_db)
+    yield store
+    store.close()
+
+
+class Counter:
+    """How many statements a connection actually ran."""
+
+    def __init__(self, store):
+        self.count = 0
+        store.connection.set_trace_callback(self._seen)
+
+    def _seen(self, _statement):
+        self.count += 1
+
+
+class TestMemoisation:
+    """Classification is asked the same question repeatedly inside one request.
+
+    `roster.build_roster` classifies every page a character owns, then classifies
+    the survivors again inside `apply_constraints`. The answers are memoised per
+    store — the tests that matter are the ones about *when the memo dies*, since
+    a classification that outlives its corpus is a wrong answer served
+    confidently.
+    """
+
+    def test_the_second_answer_is_the_first_one(self, store):
+        first = semantic_type(store, "Super Saiyan")
+        counter = Counter(store)
+        second = semantic_type(store, "Super Saiyan")
+        assert first == second == semantics.TRANSFORMATION
+        assert counter.count == 0, "a memoised answer must not query again"
+
+    def test_a_reopened_store_reads_the_corpus_again(self, facts_db):
+        """The guard against a memo outliving the data it was read from.
+
+        `index` rewrites `documents` and `facts` wholesale. A cache keyed on the
+        database path would answer the next request out of the previous corpus;
+        keyed on the store instance it cannot, because the instance is gone.
+        """
+        with FactStore(facts_db) as store:
+            assert semantic_type(store, "Widget") == semantics.UNKNOWN
+
+        with FactStore(facts_db) as store:
+            store.connection.execute(
+                "UPDATE documents SET page_type = 'planet' WHERE title = 'Widget'"
+            )
+            store.commit()
+
+        with FactStore(facts_db) as store:
+            assert semantic_type(store, "Widget") == semantics.LOCATION
+
+    def test_two_stores_do_not_share_a_memo(self, facts_db, tmp_path):
+        other = tmp_path / "other.db"
+        with FactStore(other) as store:
+            store.initialise()
+            _page(store, "Widget", "planet")
+
+        with FactStore(facts_db) as first, FactStore(other) as second:
+            assert semantic_type(first, "Widget") == semantics.UNKNOWN
+            assert semantic_type(second, "Widget") == semantics.LOCATION
+            assert semantic_type(first, "Widget") == semantics.UNKNOWN
+
+    def test_a_declared_vocabulary_is_part_of_the_question(self, store):
+        """Two callers, two `overrides`, two answers — not whichever asked first."""
+        declared = {"semantic_types": {"weird_box": "item"}}
+        assert semantic_type(store, "Widget") == semantics.UNKNOWN
+        assert semantic_type(store, "Widget", declared) == semantics.ITEM
+        assert semantic_type(store, "Widget") == semantics.UNKNOWN
+
+    def test_the_same_declaration_written_twice_is_one_question(self, store):
+        """Keyed on what the overrides say, not on which dict object said it."""
+        assert semantic_type(store, "Widget", {"semantic_types": {"weird_box": "item"}})
+        counter = Counter(store)
+        assert semantic_type(
+            store, "Widget", {"semantic_types": {"Weird_Box": "item"}}
+        ) == semantics.ITEM
+        assert counter.count == 0
+
+    def test_buckets_do_not_collide(self, store):
+        """`roster._profile` keeps its own memo in the same store's cache."""
+        request_cache(store, "one")["k"] = 1
+        assert request_cache(store, "two") == {}
+        assert request_cache(store, "one") == {"k": 1}
+
+
+class TestLookupIndexes:
+    """`title = ? COLLATE NOCASE` against a BINARY unique index is a full scan.
+
+    Measured on `series/db/facts.db`: 1.5ms a lookup across 7,205 rows, and a
+    roster asks for hundreds. The collation stays — dropping it would silently
+    stop matching a caller whose spelling differs from the stored title — and
+    the index is what lets the same query use one.
+    """
+
+    def test_an_existing_store_grows_the_index(self, store):
+        ensure_lookup_indexes(store)
+        names = {
+            row[0]
+            for row in store.connection.execute(
+                "SELECT name FROM sqlite_master WHERE type = 'index'"
+            )
+        }
+        assert "idx_documents_title_nocase" in names
+
+    def test_the_query_actually_uses_it(self, store):
+        ensure_lookup_indexes(store)
+        plan = " ".join(
+            str(row[3])
+            for row in store.connection.execute(
+                "EXPLAIN QUERY PLAN"
+                " SELECT page_type FROM documents WHERE title = ? COLLATE NOCASE",
+                ("Widget",),
+            )
+        )
+        assert "idx_documents_title_nocase" in plan
+        assert "SCAN" not in plan
+
+    def test_it_is_attempted_once_and_is_idempotent(self, store):
+        ensure_lookup_indexes(store)
+        counter = Counter(store)
+        ensure_lookup_indexes(store)
+        assert counter.count == 0
+        # And creating it on a store that already has it is not an error either.
+        with FactStore(store.path) as again:
+            ensure_lookup_indexes(again)
+
+    def test_a_store_that_cannot_be_written_still_answers(self, store):
+        """A read-only or locked store gets the slow answer, never no answer."""
+        store.connection.close()
+        store.connection = sqlite3.connect(f"file:{store.path}?mode=ro", uri=True)
+        store.connection.row_factory = sqlite3.Row
+        assert semantic_type(store, "Super Saiyan") == semantics.TRANSFORMATION
 
 
 class TestStatedCount:
