@@ -94,7 +94,13 @@ rosters:
       - what are killua zoldyck's named nen techniques
       - killua zoldyck's named nen techniques
     subject: Killua Zoldyck
-    members: [Lightning Palm, Thunderbolt, Whirlwind, Speed of Lightning]
+    # Corrected 2026-08-16. The note above says the template lists four and
+    # that Godspeed is an umbrella name; the page's own Abilities line reads
+    # `Lightning Palm Thunderbolt Godspeed Whirlwind Speed of Lightning` --
+    # five, with Godspeed among them, not above them. `Thunder Palm` really
+    # is an alternate name for Lightning Palm and appears nowhere on the
+    # wiki, so it is recorded as an alias of that item in the bank instead.
+    members: [Lightning Palm, Thunderbolt, Godspeed, Whirlwind, Speed of Lightning]
 
   # What are Kurapika's named Nen chains?
   # Declared 2026-08-15: the engine resolved this to `Wiki Abilities template lists all 6 named chains exactly matching gold.` and returned the wrong set. Members transcribed from `Kurapika`.
