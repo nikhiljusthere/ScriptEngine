@@ -225,12 +225,73 @@ ability_stopwords:
   - Antemortem Abilities
   - Postmortem Abilities
 
+# Where this wiki keeps its relationships.
+#
+# The defaults, `Relationships` and `History`, reach 34 of this wiki's 155
+# characters. Chainsaw Man writes its story under `Plot` on the character page
+# and `Synopsis` on the `<Character>/History` subpage: 382,033 characters of
+# prose on character pages against 144,513 for `Relationships`. Berserk, whose
+# story sections *are* declared, reaches 114 characters against csm's 34, and
+# that gap is this declaration.
+#
+# Declared 2026-08-17, and kept on measurement rather than on the argument.
+# 1,226 windows, 31.6 minutes.
+#
+#   documented partners held   51/52 -> 51/52  (98.1%, unchanged, none lost)
+#   characters with relations     30 -> 108
+#   rows                         492 -> 748    (Plot contributes 264)
+#   outside the closed vocabulary  0 -> 0      empty quotes 0 -> 0
+#
+# Measured by `scriptengine.eval.relation_coverage` against
+# `questions/_csm_relations.json`, which exists because nothing else scores
+# this table: the canon bank has no relation-shaped set question on any wiki
+# and `build_roster` never reads relations.
+#
+# The playbook's warning is real and this is what it costs. Judged by whether
+# the stored quote names both parties, `Plot` rows are the *best* grounded of
+# the three sources, not the worst:
+#
+#                    rows   quote names both   names neither   co-presence only
+#   Relationships      98         20%               27%              1%
+#   Synopsis          365         30%               21%              4%
+#   Plot              264         42%               15%              9%
+#
+# So declaring `Plot` is not a new risk; it extends a source this wiki was
+# already reading -- `<Character>/History` pages carry `Synopsis` breadcrumbs
+# and matched by title leaf, which is why 390 of the 492 rows here were already
+# narration before this line existed. Rejecting `Plot` on quality grounds would
+# argue for dropping `Synopsis` too, and with it 650 of the 748 rows.
+#
+# The one real weakness is shared, not Plot's: 9% of its rows rest on a quote
+# that only places two characters in the same scene ("Nomo is first seen at the
+# Training Facility, with Aki Hayakawa and others" -> ally). The prompt already
+# forbids exactly that and is ignored, so it is a prompt problem across every
+# narration source rather than a reason to leave this section undeclared.
+#
+# jjk (`Synopsis`, 22 of 25 characters held) and opm (`Plot`, 88 of 144) have
+# the same shape and are the next candidates. db needs nothing: it declares
+# `Biography` already and holds 801 of 1,057.
+relation_sections: [Relationships, History, Plot, Synopsis]
+
 # Abilities this wiki only ever shows happening.
 #
-# Makima's contract with the Prime Minister of Japan is on `Chapter 216`, and
-# Power's blood weapons on `Chapter 90`. Neither appears on either character's
-# page in any form, and both were scored as items the corpus did not contain.
-# The corpus contained them the whole time; nothing was reading the chapters.
+# 232 chapter pages and 12 episode pages, 904 passages and 927 windows for the
+# series.
 #
-# 232 chapter pages and 12 episode pages, about 290 windows for the series.
+# The two items this was built for are **not** recoverable here, measured
+# 2026-08-17 rather than assumed, and the note it replaces was wrong on both:
+#
+# * `Makima`'s Prime Minister contract is on her own page, under the declared
+#   `Abilities` section, and the model returns `{"abilities": []}` for that
+#   window. The wiki gives the contract no name -- `Prime Minister Contract` is
+#   the bank's coinage for it -- so an extractor asked for *named* abilities is
+#   right to return nothing. `Chapter 216 / Trivia` mentions it only as a
+#   comparison for Yoru's contract with the Governor of California.
+# * `Power`'s blood weapons are on `Power/History`, a `character_history` page
+#   under `Synopsis / Public Safety Saga / Katana Man arc`, not a chapter page.
+#   On `Chapter 90 / Summary` the model names `Thousand Tera Blood Rain`, which
+#   her own page already records.
+#
+# Left declared because the pass is cheap on this wiki and its rows are
+# provenance-tagged, not because it recovered either item.
 ability_narrative_types: [chapter_box, episode]
