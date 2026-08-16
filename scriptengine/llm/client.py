@@ -192,22 +192,6 @@ class LLMClient:
                     "temperature": temperature,
                     "max_tokens": max_tokens,
                     "stream": False,
-                    # Thinking off at the request, not only at load time.
-                    #
-                    # The load-time config is the durable fix and it works, but
-                    # it is one JIT auto-load away from not being applied, and
-                    # a model that came back thinking still answers correctly
-                    # and quickly enough to pass every other check: it just
-                    # spends ~90% of the budget first. Measured on the 9B, this
-                    # parameter took 136 reasoning tokens to 0 and throughput
-                    # from 24.9 to 83.9 windows/min.
-                    #
-                    # `chat_template_kwargs` and `/no_think` were both tested
-                    # and are ignored by these models; this is the one that
-                    # works. Endpoints that do not know it ignore it, and the
-                    # 27B already reads 0 either way, so sending it always is
-                    # free insurance rather than a behaviour change.
-                    "reasoning_effort": "none",
                 },
                 headers={"Authorization": f"Bearer {self.settings.llm_api_key}"},
                 timeout=self.settings.llm_timeout_seconds,

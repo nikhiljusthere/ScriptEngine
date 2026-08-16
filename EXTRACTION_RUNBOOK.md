@@ -320,9 +320,28 @@ Free-model probe, same trivial prompt:
 | `opencode/hy3-free` | timeout >100s |
 | `opencode/deepseek-v4-flash-free` | timeout >400s |
 
-**Thinking cannot be turned off from the request.** All four request-side
-methods were measured on 2026-08-16 against the same prompt and **every one was
-ignored**:
+**`reasoning_effort` depends on how the model was packaged.** On a plain GGUF it
+is the only thing that works: measured on `qwen3.8-9b`, `reasoning_effort:
+"none"` took 136 reasoning tokens to 0 and throughput from 24.9 to 83.9
+windows/min, while `chat_template_kwargs` and `/no_think` did nothing. On the
+hub's virtual-model 27B the same value is **rejected**, because that model
+declares its own field with a fixed vocabulary:
+
+```
+[WARN][qwen/qwen3.8-27b] Reasoning setting 'off' is not a valid option for
+reasoning level field '...qwen3.827b.reasoningEffort'.
+Valid options are: xhigh, medium, low. Skipping this field.
+```
+
+Sending it anyway logged that warning **3,031 times in one run** and changed
+nothing, so the client does not send it. The 27B is handled at load time by
+`enableThinking: false`, which is what actually works there. Do not read the
+warning as a thinking regression: verify with `model_health`, which reads the
+usage.
+
+**Thinking cannot otherwise be turned off from the request.** All four
+request-side methods were measured on 2026-08-16 against the same prompt and
+**every one was ignored**:
 
 | attempt | reasoning tokens |
 |---|---|
