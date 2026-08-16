@@ -80,19 +80,19 @@ Assigned by a lookup against the store, not by eye.
 
 In order of items recovered per unit of effort.
 
-1. **retrieval gap — 52 items.** Already in the store and still not returned -- the retriever had every chance. Trace one query end to end before writing code; the diagnosis names the row it expected to find.
+1. **retrieval gap, 52 items.** Already in the store and still not returned -- the retriever had every chance. Trace one query end to end before writing code; the diagnosis names the row it expected to find.
    Fix lives in `scriptengine/retrieve/`.
    Biggest cluster: Every ability of Denji (5 items).
 
-2. **unlinked page — 116 items.** The page exists and nothing ties it to the subject. This is the wiki's shape, not a retriever bug -- declare the link rather than trying to infer it.
+2. **unlinked page, 116 items.** The page exists and nothing ties it to the subject. This is the wiki's shape, not a retriever bug -- declare the link rather than trying to infer it.
    Fix lives in `series/<name>/overrides.yaml`.
    Biggest cluster: Every named member of Tokyo Special Division 4 (14 items).
 
-3. **extraction gap — 6 items.** The prose names it and the extraction pass did not return it. Fix the prompt and bump PROMPT_VERSION, or the cached answers survive the change.
+3. **extraction gap, 6 items.** The prose names it and the extraction pass did not return it. Fix the prompt and bump PROMPT_VERSION, or the cached answers survive the change.
    Fix lives in `scriptengine/ingest/abilities.py`.
    Biggest cluster: Every form of Ichigo Kurosaki (1 items).
 
-4. **corpus gap — 78 items.** Not in the subject's prose at all. Check the crawl is not stale for that page; if it is current, the wiki does not support the claim and a script must not make it.
+4. **corpus gap, 78 items.** Not in the subject's prose at all. Check the crawl is not stale for that page; if it is current, the wiki does not support the claim and a script must not make it.
    Fix lives in `a crawl, or nothing`.
    Biggest cluster: Every ability of Sukuna (10 items).
 
@@ -124,14 +124,14 @@ A different measurement: `gold_*.json` checked against the crawl, in-process, bo
 
 | series | score |
 |---|---|
-| `berserk` | — --skip-eval |
-| `bleach` | — --skip-eval |
-| `csm` | — --skip-eval |
-| `db` | — --skip-eval |
-| `hxh` | — --skip-eval |
-| `jjk` | — --skip-eval |
-| `onepiece` | — --skip-eval |
-| `opm` | — --skip-eval |
+| `berserk` | n/a (--skip-eval) |
+| `bleach` | n/a (--skip-eval) |
+| `csm` | n/a (--skip-eval) |
+| `db` | n/a (--skip-eval) |
+| `hxh` | n/a (--skip-eval) |
+| `jjk` | n/a (--skip-eval) |
+| `onepiece` | n/a (--skip-eval) |
+| `opm` | n/a (--skip-eval) |
 
 ## Reproducing
 

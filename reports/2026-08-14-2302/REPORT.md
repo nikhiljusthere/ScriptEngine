@@ -136,19 +136,19 @@ Assigned by a lookup against the store, not by eye.
 
 In order of items recovered per unit of effort.
 
-1. **retrieval gap — 96 items.** Already in the store and still not returned -- the retriever had every chance. Trace one query end to end before writing code; the diagnosis names the row it expected to find.
+1. **retrieval gap, 96 items.** Already in the store and still not returned -- the retriever had every chance. Trace one query end to end before writing code; the diagnosis names the row it expected to find.
    Fix lives in `scriptengine/retrieve/`.
    Biggest cluster: Every blood weapon Power can create (7 items).
 
-2. **unlinked page — 100 items.** The page exists and nothing ties it to the subject. This is the wiki's shape, not a retriever bug -- declare the link rather than trying to infer it.
+2. **unlinked page, 100 items.** The page exists and nothing ties it to the subject. This is the wiki's shape, not a retriever bug -- declare the link rather than trying to infer it.
    Fix lives in `series/<name>/overrides.yaml`.
    Biggest cluster: Every mentor who trained Goku (11 items).
 
-3. **extraction gap — 75 items.** The prose names it and the extraction pass did not return it. Fix the prompt and bump PROMPT_VERSION, or the cached answers survive the change.
+3. **extraction gap, 75 items.** The prose names it and the extraction pass did not return it. Fix the prompt and bump PROMPT_VERSION, or the cached answers survive the change.
    Fix lives in `scriptengine/ingest/abilities.py`.
    Biggest cluster: Every ability of Sukuna (12 items).
 
-4. **corpus gap — 52 items.** Not in the subject's prose at all. Check the crawl is not stale for that page; if it is current, the wiki does not support the claim and a script must not make it.
+4. **corpus gap, 52 items.** Not in the subject's prose at all. Check the crawl is not stale for that page; if it is current, the wiki does not support the claim and a script must not make it.
    Fix lives in `a crawl, or nothing`.
    Biggest cluster: How many Gods of Destruction exist across the multiverse? (12 items).
 
@@ -180,17 +180,17 @@ Every one of the 2194 members returned on a closed set that matched no canon ite
 
 | source | count | share | what it means |
 |---|---:|---:|---|
-| category page | 1684 | 77% | Arrived through a category or a declared roster rather than through the character, so the set itself is too broad — not the member. |
+| category page | 1684 | 77% | Arrived through a category or a declared roster rather than through the character, so the set itself is too broad, rather than the member. |
 | prose row | 335 | 15% | Extracted from prose at index time. Skips `validate_member` by design; filtered only by `ability_stopwords` and a word count. The section it came from is the lever. |
 | heading | 126 | 6% | A section heading on the character's page. Also skips `validate_member`; `ability_sections` is what selects these. |
 | ownership edge | 31 | 1% | The wiki wrote `X -user-> Y`. The only path already validated, and correspondingly the smallest. |
 | unattributed | 18 | 1% | No page, no edge, no row, no heading. Nothing vouches for it at all. |
 
-**2024 (92%) are vouched for by one path only**, against 152 backed by more than one. Corroboration is the signal the union discards when it deduplicates on lowercased name alone. 25 (1%) are lead-level rows — the section they were extracted from is the bare page title, so they came from the article's opening rather than from any heading.
+**2024 (92%) are vouched for by one path only**, against 152 backed by more than one. Corroboration is the signal the union discards when it deduplicates on lowercased name alone. 25 (1%) are lead-level rows: the section they were extracted from is the bare page title, so they came from the article's opening rather than from any heading.
 
-Sections supplying the most wrong names, from `abilities.section` — the breadcrumb each row was read from.
+Sections supplying the most wrong names, from `abilities.section`, the breadcrumb each row was read from.
 
-Worth knowing before acting on this table: `ability_sections` in `series/<name>/overrides.yaml` does **not** filter these. In `scriptengine/retrieve/` it is read in exactly one place (`roster.py:1208`, inside `_section_roster`), so it selects *headings*; `_extracted_roster` never consults it, and prose rows are the majority of what is listed here. Its other reader is `ingest/abilities.py`, which uses it to choose what to extract — so narrowing it there shrinks the next extraction rather than filtering what is already stored. Acting on this table at query time means a section filter in `_extracted_roster`, which is code and needs a server restart, though not a re-extraction.
+Worth knowing before acting on this table: `ability_sections` in `series/<name>/overrides.yaml` does **not** filter these. In `scriptengine/retrieve/` it is read in exactly one place (`roster.py:1208`, inside `_section_roster`), so it selects *headings*; `_extracted_roster` never consults it, and prose rows are the majority of what is listed here. Its other reader is `ingest/abilities.py`, which uses it to choose what to extract, so narrowing it there shrinks the next extraction rather than filtering what is already stored. Acting on this table at query time means a section filter in `_extracted_roster`, which is code and needs a server restart, though not a re-extraction.
 
 | count | section |
 |---:|---|
@@ -216,14 +216,14 @@ A different measurement: `gold_*.json` checked against the crawl, in-process, bo
 
 | series | score |
 |---|---|
-| `berserk` | — --skip-eval |
-| `bleach` | — --skip-eval |
-| `csm` | — --skip-eval |
-| `db` | — --skip-eval |
-| `hxh` | — --skip-eval |
-| `jjk` | — --skip-eval |
-| `onepiece` | — --skip-eval |
-| `opm` | — --skip-eval |
+| `berserk` | n/a (--skip-eval) |
+| `bleach` | n/a (--skip-eval) |
+| `csm` | n/a (--skip-eval) |
+| `db` | n/a (--skip-eval) |
+| `hxh` | n/a (--skip-eval) |
+| `jjk` | n/a (--skip-eval) |
+| `onepiece` | n/a (--skip-eval) |
+| `opm` | n/a (--skip-eval) |
 
 ## Reproducing
 

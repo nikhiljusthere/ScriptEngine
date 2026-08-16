@@ -2,14 +2,14 @@
 
 This is the shape of the whole product. Everything upstream exists so that this
 function can return passages in the right order, the facts behind them, and a
-citation for each — inside a token budget the caller has to live within.
+citation for each, inside a token budget the caller has to live within.
 
 Three decisions matter here.
 
 **Ordering is story order, with the strongest matches leading.** In narrative
 mode the beats of an event come back in the order they happened. When the query
 names specific content ("sealed and freed"), the events that match it most
-strongly lead — instalment order within each score band — so the budget reaches
+strongly lead (instalment order within each score band) so the budget reaches
 the end of the story instead of running out inside the first event page. A
 script written from relevance-ordered fragments reads like a wiki summary; one
 written from ordered beats reads like a story.
@@ -23,7 +23,7 @@ citation that covers it.
 
 **Every beat states where it came from.** A script has to end each block with
 its chapter and episode, and the wiki cites once per paragraph, not once per
-sentence — 12.8% of the sentences in a fetched Shibuya Incident bundle carried
+sentence. 12.8% of the sentences in a fetched Shibuya Incident bundle carried
 a locator, and 60 of its 128 beats carried none at all. `retrieve/citations.py`
 resolves that: the beat header carries the span its prose is sourced to, so the
 writer never has to guess and never has to leave a block untagged.
@@ -38,7 +38,7 @@ from scriptengine.config import SeriesPaths, Settings, get_settings
 from scriptengine.retrieve import citations as cite
 
 # Rough conversion from characters to tokens for English prose. Deliberately
-# pessimistic — overshooting a context window costs a failed generation, while
+# pessimistic, because overshooting a context window costs a failed generation, while
 # undershooting costs a little unused room.
 CHARS_PER_TOKEN = 3.6
 
@@ -233,7 +233,7 @@ def _roster_context(
     roster = build_roster(paths, query, settings)
 
     # Every member gets an equal share of the budget. A roster is a list of
-    # equals — the twentieth entry deserves the same treatment as the first —
+    # equals, since the twentieth entry deserves the same treatment as the first,
     # and paying for them in order would let three long biographies at the top
     # spend everything the tail needed.
     share = int(token_budget * CHARS_PER_TOKEN / max(len(roster.members), 1) * 0.85)
@@ -271,7 +271,7 @@ def _roster_context(
         "warning": roster.warning,
         # Membership validation. `candidates` is what the wiki's set held before
         # the topic's own constraints were applied, and `rejected` says which
-        # ones did not survive and why — so a list dropping from 160 to 75 is
+        # ones did not survive and why, so a list dropping from 160 to 75 is
         # inspectable rather than mysterious.
         "candidates": roster.candidates,
         "rejected": roster.rejected,
@@ -358,7 +358,7 @@ def render_prompt(
     house rules forbid them in a script, the retired ComfyUI node stripped them
     before the model saw them, and leaving them in the served prompt only gave
     the writer something to copy. And a page's name is printed when it changes
-    rather than under every beat — the last Shibuya bundle repeated
+    rather than under every beat. The last Shibuya bundle repeated
     `source: Shibuya Incident` 128 times.
     """
     lines: list[str] = [f"# {bundle['subject']}", ""]
@@ -374,7 +374,7 @@ def render_prompt(
         for fact in bundle["facts"]:
             citation = f"  [{fact['citation']}]" if fact.get("citation") else ""
             value = _one_line(fact["value"])
-            lines.append(f"- {fact['entity']} — {fact['field']}: {value}{citation}")
+            lines.append(f"- {fact['entity']}, {fact['field']}: {value}{citation}")
         lines.append("")
 
     if bundle.get("participants"):
@@ -386,7 +386,7 @@ def render_prompt(
         lines.append("## Relationships")
         for relation in bundle["relations"]:
             lines.append(
-                f"- {relation['source']} — {relation['relation']} — {relation['target']}"
+                f"- {relation['source']} / {relation['relation']} / {relation['target']}"
             )
         lines.append("")
 
@@ -422,8 +422,8 @@ def _trim(text: str, limit: int) -> str:
 def _one_line(value: str, limit: int = 160) -> str:
     """Fact values render as one line.
 
-    An infobox list arrives with newlines in it — Naoya Zenin's `relatives` is
-    twelve names on twelve lines — and a labelled line that runs to twelve of
+    An infobox list arrives with newlines in it. Naoya Zenin's `relatives` is
+    twelve names on twelve lines, and a labelled line that runs to twelve of
     them stops looking like a fact and starts looking like prose the script
     might quote.
     """

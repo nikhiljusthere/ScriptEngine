@@ -66,7 +66,7 @@ INTRUDER_SOURCES: dict[str, str] = {
                  "count. The section it came from is the lever.",
     "category page": "Arrived through a category or a declared roster rather "
                      "than through the character, so the set itself is too "
-                     "broad — not the member.",
+                     "broad, rather than the member.",
     "heading": "A section heading on the character's page. Also skips "
                "`validate_member`; `ability_sections` is what selects these.",
     "ownership edge": "The wiki wrote `X -user-> Y`. The only path already "
@@ -277,7 +277,7 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
         for n, bucket in enumerate(sorted(present,
                                           key=lambda b: REMEDY.get(b, ("", "", 9))[2]), 1):
             where, action, _ = REMEDY.get(bucket, ("-", "No remedy recorded.", 9))
-            w(f"{n}. **{bucket} — {buckets[bucket]} items.** {action}")
+            w(f"{n}. **{bucket}, {buckets[bucket]} items.** {action}")
             w(f"   Fix lives in `{where}`.")
             worst = _worst_for(items, bucket)
             if worst:
@@ -336,14 +336,14 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
           f"path only**, against {intruders.get('corroborated', 0)} backed by "
           f"more than one. Corroboration is the signal the union discards when "
           f"it deduplicates on lowercased name alone. "
-          f"{lead} ({lead / total_intruders:.0%}) are lead-level rows — the "
+          f"{lead} ({lead / total_intruders:.0%}) are lead-level rows: the "
           f"section they were extracted from is the bare page title, so they "
           f"came from the article's opening rather than from any heading.")
         w("")
         sections = intruders.get("sections") or {}
         if sections:
             w("Sections supplying the most wrong names, from "
-              "`abilities.section` — the breadcrumb each row was read from.")
+              "`abilities.section`, the breadcrumb each row was read from.")
             w("")
             w("Worth knowing before acting on this table: `ability_sections` in "
               "`series/<name>/overrides.yaml` does **not** filter these. In "
@@ -352,7 +352,7 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
               "*headings*; `_extracted_roster` never consults it, and prose "
               "rows are the majority of what is listed here. Its other reader "
               "is `ingest/abilities.py`, which uses it to choose what to "
-              "extract — so narrowing it there shrinks the next extraction "
+              "extract, so narrowing it there shrinks the next extraction "
               "rather than filtering what is already stored. Acting on this "
               "table at query time means a section filter in "
               "`_extracted_roster`, which is code and needs a server restart, "
@@ -376,7 +376,7 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
         for series in sorted(evals):
             result = evals[series]
             if "skipped" in result:
-                w(f"| `{series}` | — {result['skipped']} |")
+                w(f"| `{series}` | n/a ({result['skipped']}) |")
             else:
                 w(f"| `{series}` | {result.get('passed', 0)}/"
                   f"{result.get('questions', 0)} |")

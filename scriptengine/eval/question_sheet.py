@@ -1,6 +1,6 @@
 """Ask the running engine a sheet of questions and write down what it said.
 
-Every answer is whatever the server returned — full member lists, the set it
+Every answer is whatever the server returned: full member lists, the set it
 resolved to, and its own confidence in that set. Nothing is filtered or
 corrected on the way out, because the point of the sheet is to show what a
 script writer would actually receive.
@@ -251,7 +251,7 @@ def render(series: str, label: str, query: str, body: dict) -> list[str]:
         lines += [f"> ⚠ {body['warning']}", ""]
 
     if not members and not beats:
-        lines += ["*No set and no narrative — the engine declined to answer.*", ""]
+        lines += ["*No set and no narrative. The engine declined to answer.*", ""]
         return lines
 
     if members:
@@ -266,20 +266,20 @@ def render(series: str, label: str, query: str, body: dict) -> list[str]:
         # it without counting commas.
         for group, names in grouped.items():
             if group:
-                lines += [f"**{group}** — {len(names)}", ""]
+                lines += [f"**{group}**: {len(names)}", ""]
             lines += [f"{index}. {name}" for index, name in enumerate(names, 1)]
             lines += [""]
 
         rejected = body.get("rejected") or []
         if rejected:
             lines += [
-                f"<details><summary>{len(rejected)} rejected — "
+                f"<details><summary>{len(rejected)} rejected: "
                 f"{body.get('candidates', 0)} candidates, "
                 f"{body.get('scope', 'canon')} scope</summary>",
                 "",
             ]
             lines += [
-                f"{index}. {entry['name']} — *{entry['reason']}*"
+                f"{index}. {entry['name']}: *{entry['reason']}*"
                 for index, entry in enumerate(rejected, 1)
             ]
             lines += ["", "</details>", ""]
@@ -294,8 +294,8 @@ def render(series: str, label: str, query: str, body: dict) -> list[str]:
 
 
 # Real script topics, written the way a video title is rather than the way a
-# database query is. Several are not enumerable sets at all — "Every Unsolved
-# Mystery", "Every Way Sorcerers Can Die", "Daily Life in Every City" — which is
+# database query is. Several are not enumerable sets at all ("Every Unsolved
+# Mystery", "Every Way Sorcerers Can Die", "Daily Life in Every City") which is
 # the point: the engine has to say so instead of answering anyway.
 TOPIC_QUESTIONS = {
     "db": [
@@ -336,7 +336,7 @@ TOPIC_QUESTIONS = {
     ],
 }
 
-# Sets scoped to one character rather than to a race or a category — "every form
+# Sets scoped to one character rather than to a race or a category: "every form
 # of Goku", "every Saitama technique". A different axis from the other sheets:
 # the qualifier is a person, so the answer has to be what *they* have rather
 # than everything of that kind in the series.
@@ -397,7 +397,7 @@ def main() -> None:
         "",
         f"Every question below was put to the running ScriptEngine server on "
         f"{stamp} through `POST /context` with `mode=\"auto\"` and a 60,000-token "
-        "budget, and the answers are exactly what came back — full member lists, "
+        "budget, and the answers are exactly what came back: full member lists, "
         "the set each question resolved to, and the engine's own confidence in "
         "that set. Nothing was corrected on the way out.",
         "",
@@ -405,12 +405,12 @@ def main() -> None:
         "declares that set by name and `exact` means every word of the set's name "
         "was asked for; `partial` and `weak` are flagged inline and are usually "
         "the wrong set. A count that looks too small is the one thing confidence "
-        "cannot see — see `docs/RETRIEVAL_SCENARIOS.md`.",
+        "cannot see; see `docs/RETRIEVAL_SCENARIOS.md`.",
         "",
         "Each answer also records what was **rejected** and why. A category is "
         "what the wiki keeps, not what the question asked for: `Transformations` "
         "holds Black Frieza because it is one, and only the question knows that "
-        "\"Saiyan\" was the point. Scope is canon by default — game and spin-off "
+        "\"Saiyan\" was the point. Scope is canon by default, so game and spin-off "
         "entries stay in the store and return when a question asks for them.",
         "",
         "---",
@@ -423,7 +423,7 @@ def main() -> None:
         if not questions:
             continue
         print(f"== {label}")
-        out += [f"## {label} — `{series}`", ""]
+        out += [f"## {label}: `{series}`", ""]
         answered = 0
         for query in questions:
             body = ask(series, query)
@@ -447,26 +447,26 @@ def main() -> None:
         "## Read these before using a list",
         "",
         "`declared` means the series declares that set by name. It does **not**",
-        "mean every member is what the question described — check the count",
+        "mean every member is what the question described; check the count",
         "against the size you expect, and open the rejections when it surprises",
         "you. Known limits, all visible above:",
         "",
         "- **A set can be short rather than wrong.** `Every island in the Grand",
         "  Line` returns four and reports `exact`, because the name matches",
         "  exactly; the wiki files most islands elsewhere. Confidence cannot see",
-        "  an incomplete category — only the count can.",
+        "  an incomplete category; only the count can.",
         "- **Every rank in the Chimera Ant hierarchy** returns two tiers, because",
         "  the wiki keeps categories for Squadron Leaders and Chimera Ants and",
         "  none for the King, the Queen or the Royal Guards.",
         "- **Every disaster level** returns four, not five: this wiki keeps no",
         "  `God` category, because essentially one being has ever been rated there.",
         "- **Ability classification needs user and inventor links.** Dragon Ball",
-        "  has them, so \"Saiyan transformation\" means one only Saiyans reach —",
+        "  has them, so \"Saiyan transformation\" means one only Saiyans reach,",
         "  Kaio-ken is excluded because King Kai taught it and Krillin knows it.",
         "  Bleach and One Piece record no such links for abilities, so the same",
         "  reasoning cannot run there and those sets are unfiltered.",
         "",
-        "None of these is a retrieval failure — each is the wiki's own shape",
+        "None of these is a retrieval failure; each is the wiki's own shape",
         "showing through. They are listed because a script written straight off a",
         "member count would get them wrong.",
         "",
