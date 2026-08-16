@@ -473,10 +473,13 @@ Alongside the Phase 2 refutations above:
 
 Added 2026-08-16, from tuning the extraction endpoint:
 
-- **`--parallel` above 4.** Measured on 48 identical real windows: 4 slots gave
-  27.5 windows/min, 6 slots gave **26.4** with median latency 7.6s → 12.3s. The
-  GPU is compute-saturated at 4 (82-98% utilisation), so more slots only queue
-  and cost the VRAM to widen the pool.
+- **`--parallel` above 4 — *only while the GPU is power-capped*.** Measured on 48
+  identical real windows at a 570 W cap: 4 slots gave 27.5 windows/min, 6 gave
+  **26.4**. Re-measured after raising the limit to the card's 600 W maximum, the
+  result **reversed**: 4 gave 32.6, 6 gave 34.1, 8 gave 35.2, and the real run
+  went 33.8 → 52.0 rows/min. Recorded here as a refutation of the *general* rule,
+  not of the number: check `clocks_throttle_reasons` before concluding a card is
+  saturated, because a power cap looks exactly like compute saturation.
 - **Disabling thinking from the request.** All four methods measured and all four
   ignored — a Jinja `enable_thinking` directive in the system message,
   `/no_think`, `chat_template_kwargs`, and the plain control were within 12

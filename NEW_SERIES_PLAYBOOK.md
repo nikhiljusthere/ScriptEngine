@@ -146,11 +146,12 @@ than the model choice.
 
 ```powershell
 # stop the API server first -- it and the 27B cannot share the card
-lms load qwen/qwen3.8-27b -c 20480 --parallel 4 --ttl 7200 --speculative-draft-mtp -y
+nvidia-smi -pl 600      # elevated; check the cap before tuning concurrency
+lms load qwen/qwen3.8-27b -c 36864 --parallel 8 --ttl 7200 --speculative-draft-mtp -y
 $env:SCRIPTENGINE_ANSWER_TOKENS = "3072"
 
-python -m scriptengine.cli abilities --series <name> --refresh --workers 4
-python -m scriptengine.cli relations --series <name> --refresh --workers 4
+python -m scriptengine.cli abilities --series <name> --refresh --workers 8
+python -m scriptengine.cli relations --series <name> --refresh --workers 8
 ```
 
 **Check `reasoning_tokens == 0` after every load, before starting a long run.**
@@ -158,10 +159,19 @@ python -m scriptengine.cli relations --series <name> --refresh --workers 4
 per-model default config is in place, and thinking spends ~90% of the output
 budget. `scriptengine.eval.model_health` probes this and the runner aborts on it.
 
-Keep `--parallel` and `--workers` equal at 4. Context is a *shared pool* across
-slots, so `parallel x (max_prompt + max_tokens) <= context` must hold — 115
-consecutive failures came from getting this backwards. Raising parallel past 4
-measured *slower*.
+Keep `--parallel` and `--workers` equal. Context is a *shared pool* across slots,
+so `parallel x (max_prompt + max_tokens) <= context` must hold — 115 consecutive
+failures came from getting this backwards.
+
+**Check the GPU power cap before choosing a concurrency.** A power-capped card
+looks exactly like a compute-saturated one, and the right answer flips: at a
+570 W cap, 6 slots measured *slower* than 4; at the card's 600 W maximum, 8 slots
+measured 54% faster in the real run. `nvidia-smi -q -d PERFORMANCE` reports
+whether `SW Power Cap` is active.
+
+Judge throughput in **rows/min, not characters/min** — window counts per
+character range from 2 to 332, so characters/min reported a 20% gain that
+rows/min showed as zero.
 
 Expect zero failures. Anything else means the endpoint is wrong, not the wiki.
 

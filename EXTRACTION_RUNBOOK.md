@@ -14,13 +14,15 @@ about the first.
 LM Studio serving `qwen/qwen3.8-27b` on `:1234`:
 
 ```powershell
-lms load qwen/qwen3.8-27b -c 20480 --parallel 4 --ttl 7200 --speculative-draft-mtp -y
+nvidia-smi -pl 600      # elevated; the card shipped capped below its own maximum
+lms load qwen/qwen3.8-27b -c 36864 --parallel 8 --ttl 7200 --speculative-draft-mtp -y
 ```
 
 | setting | wrong value | correct value |
 |---|---|---|
-| **context length** | 262,144 (default) / **8,192** | **20,480** |
-| **`--parallel`** | 6 | **4**, matched by `--workers 4` |
+| **context length** | 262,144 (default) / **8,192** | **36,864** (sized to parallel) |
+| **`--parallel`** | 4 while power-capped | **8**, matched by `--workers 8` |
+| **GPU power limit** | 570 W | **600 W** (the card's max) |
 | Enable Thinking | on | **off** (see below — the preset will not do it) |
 | Reasoning Effort | Extra High | **low** |
 | `SCRIPTENGINE_ANSWER_TOKENS` | 32,000 / 2,048 | **3,072** |
@@ -168,21 +170,65 @@ for both and is **not** usable for this — it ignores the KV growth. Measure wi
 
 ---
 
-## Concurrency: 4, and more is worse
+## Concurrency: 8 — but the answer depends on the power cap
 
-Measured 2026-08-16 on a fixed workload of 48 real relation windows, identical
-prompts for every config, `max_tokens 3072`:
+Measured twice on 2026-08-16, and **the two runs disagree**, which is the useful
+part. Both used a fixed workload of 48 real relation windows with identical
+prompts and `max_tokens 3072`.
 
-| config | windows/min | median latency | p95 | ok |
+**First, while the card was power-capped at 570 W with other GPU apps running:**
+
+| config | windows/min | median | p95 |
+|---|---|---|---|
+| 4 @ 20,480 | 27.5 | 7.6s | 14.6s |
+| 6 @ 28,672 | **26.4** | 12.3s | 23.5s |
+| 4 @ 20,480 + MTP | **27.9** | 7.2s | 11.8s |
+
+That said 4 was the ceiling and more slots only queued. It was true *under those
+conditions* and wrong as a general rule.
+
+**Then, after raising the power limit to 600 W and closing other GPU apps:**
+
+| config | windows/min | median | p95 | VRAM |
 |---|---|---|---|---|
-| 4 @ 20,480 | 27.5 | 7.6s | 14.6s | 48/48 |
-| 6 @ 28,672 | **26.4** | 12.3s | 23.5s | 48/48 |
-| 4 @ 20,480 + MTP | **27.9** | 7.2s | 11.8s | 48/48 |
+| 4 @ 20,480 | 32.6 | 7.0s | 11.3s | 20.5 GB |
+| 6 @ 28,672 | 34.1 | 10.2s | 16.4s | 23.1 GB |
+| **8 @ 36,864** | **35.2** | 12.9s | 21.4s | 24.5 GB |
+| 10 @ 46,080 | 35.6 | 16.8s | 27.3s | 26.0 GB |
 
-**Raising `--parallel` past 4 buys nothing.** The GPU is compute-saturated at 4
-(82-98% utilisation), so extra slots only queue: throughput fell 4% while median
-latency nearly doubled. It also costs the VRAM to widen the pool. Do not re-test
-this on this card.
+Every config ran 48/48 with zero truncations. 8 is the knee: 10 buys 1.1% for
+30% more latency.
+
+**Check `clocks_throttle_reasons` before concluding anything about concurrency.**
+While `SW Power Cap` is active the GPU cannot use extra slots and they only add
+latency; once it is not, they help. The whole reversal above is that one
+variable.
+
+**The benchmark understates the real gain.** In production the same change was
+worth far more than 8%:
+
+| | rows/min |
+|---|---|
+| 4 workers | 33.8 |
+| **8 workers** | **52.0** (+54%, sustained over 15 min) |
+
+The fixed-workload benchmark feeds a flat list of uniform windows. A real run
+also parallelises per-character work — `passages()`, window splitting, the store
+write — and overlaps characters whose sizes differ by two orders of magnitude,
+which more slots absorb. **Benchmark to compare configs; measure the real run to
+size the job.**
+
+**Measure throughput in rows/min, not characters/min.** Window counts per
+character run from 2 to 332, so characters/min swings with whatever the queue
+happens to be chewing. It reported a 20% gain from closing GPU apps that
+rows/min showed as zero.
+
+**`--workers` also sets the commit batch.** `relations.py` chunks the queue at
+`workers * 4`, and `pool.map` yields in order, so one heavy character at the head
+of a chunk holds back every commit behind it. At 8 workers that is 32 characters
+per commit: progress arrives in larger, less frequent jumps, and an abort loses
+up to 32 characters of work. A five-minute gap with no new rows is normal — check
+GPU utilisation, not the row count.
 
 **Speculative decoding (MTP) is free and slightly better.** Throughput is within
 noise but p95 improves 14.6s → 11.8s, so leave `--speculative-draft-mtp` on.
@@ -190,8 +236,49 @@ noise but p95 improves 14.6s → 11.8s, so leave `--speculative-draft-mtp` on.
 **CPU Thread Pool: 8-12, not 16.** The model is fully GPU-offloaded, so the CPU
 only tokenises and samples. The 9950X3D is dual-CCD — 8 cores with 3D V-Cache,
 8 without — and a pool above 8 spans both dies and pays cross-CCD latency on
-every sync. Threads above that also compete with the 4 extraction workers, since
+every sync. Threads above that also compete with the extraction workers, since
 llama.cpp thread pools spin-wait rather than sleep.
+
+---
+
+## The GPU settings that did and did not matter
+
+Measured on an ASTRAL LC RTX 5090, liquid-cooled, 41-57C throughout — thermals
+were never the limit.
+
+| change | rows/min | verdict |
+|---|---|---|
+| baseline | 30.25 | — |
+| closed other GPU apps | 29.8 | **no throughput gain** |
+| power limit 570 → 600 W | 33.2 | **+11%** |
+| memory clock +500 | 33.8 | +2%, noise |
+| 4 → 8 workers | **52.0** | **+54%** |
+
+**The power limit was set below the card's own maximum.** `power.limit 570 W`
+against `power.max_limit 600 W`, with `SW Power Capping` accumulating. Raising it
+needs an elevated shell:
+
+```powershell
+nvidia-smi -pl 600
+```
+
+After that the cap stopped engaging entirely and draw settled at 355-478 W —
+i.e. it then had headroom, which is what made 8 slots pay off. There is no 110%:
+`power.default_limit` and `power.max_limit` are both 600 W, so 100% in a tuning
+tool *is* the ceiling.
+
+**Closing other GPU applications freed 2.9 GB of VRAM but did not speed anything
+up.** Worth doing — it is what let the wider KV pool fit — but not a throughput
+change, and the apparent 20% gain was a characters/min artefact.
+
+**Memory overclocking is not worth chasing here.** +500 on the effective rate is
++250 MHz actual on 13,801, a 1.8% bandwidth increase, and it measured as noise.
+It was stable — 400 rows written under it, zero outside the closed vocabulary,
+zero empty quotes — so it does no harm. The lever is real for a bandwidth-bound
+workload; the magnitude available is too small to matter.
+
+**Do not raise GPU voltage.** While power-limited, more voltage spends more of a
+fixed budget per clock and makes throughput worse.
 
 ---
 
