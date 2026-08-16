@@ -302,8 +302,16 @@ def owned_passages(
 _JSON = re.compile(r"\{.*\}", re.S)
 
 
-def parse_response(text: str) -> list[dict[str, str]]:
-    """Read the model's JSON, tolerating the fences it was told not to use."""
+def parse_response(text: str, keep: tuple[str, ...] = ()) -> list[dict[str, str]]:
+    """Read the model's JSON, tolerating the fences it was told not to use.
+
+    `keep` names extra fields to carry through. The rows this builds are fresh
+    dicts rather than the model's, so a caller asking for a field this function
+    does not know about got an empty string and no error. `narrative_abilities`
+    asks for `owner`, and without it every one of its rows failed the
+    `if not name or not owner` guard: 927 windows, 0 rows, 0 failures, on a
+    pass that could never have stored anything on any wiki.
+    """
     match = _JSON.search(text or "")
     if not match:
         return []
@@ -337,11 +345,14 @@ def parse_response(text: str) -> list[dict[str, str]]:
         if len(name.split()) > 5:
             continue
         kind = str(entry.get("kind") or "").strip().lower()
-        found.append({
+        row = {
             "name": name,
             "kind": kind if kind in KINDS else "technique",
             "reason": str(entry.get("reason") or "").strip()[:200],
-        })
+        }
+        for field in keep:
+            row[field] = str(entry.get(field) or "").strip()
+        found.append(row)
     return found
 
 

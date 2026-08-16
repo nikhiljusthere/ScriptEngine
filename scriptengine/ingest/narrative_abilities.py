@@ -140,7 +140,7 @@ def extract_from_passage(
         answer = client.complete(
             prompt, system=SYSTEM, temperature=0.0, max_tokens=_answer_budget()
         )
-        for entry in parse_response(answer):
+        for entry in parse_response(answer, keep=("owner",)):
             name = str(entry.get("name") or "").strip()
             owner = str(entry.get("owner") or "").strip()
             if not name or not owner:
