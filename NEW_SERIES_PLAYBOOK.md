@@ -145,11 +145,30 @@ See `EXTRACTION_RUNBOOK.md` for the model configuration, which matters more
 than the model choice.
 
 ```powershell
+# stop the API server first -- it and the 27B cannot share the card
+lms load qwen/qwen3.8-27b -c 20480 --parallel 4 --ttl 7200 --speculative-draft-mtp -y
+$env:SCRIPTENGINE_ANSWER_TOKENS = "3072"
+
 python -m scriptengine.cli abilities --series <name> --refresh --workers 4
 python -m scriptengine.cli relations --series <name> --refresh --workers 4
 ```
 
+**Check `reasoning_tokens == 0` after every load, before starting a long run.**
+`lms load` has no preset flag, so the model comes up thinking unless the
+per-model default config is in place, and thinking spends ~90% of the output
+budget. `scriptengine.eval.model_health` probes this and the runner aborts on it.
+
+Keep `--parallel` and `--workers` equal at 4. Context is a *shared pool* across
+slots, so `parallel x (max_prompt + max_tokens) <= context` must hold — 115
+consecutive failures came from getting this backwards. Raising parallel past 4
+measured *slower*.
+
 Expect zero failures. Anything else means the endpoint is wrong, not the wiki.
+
+Before quoting a completion time, count the whole queue rather than sampling it.
+The heaviest characters come first and are wildly unrepresentative — db relations
+mean 7.1 windows, median 2 — so extrapolating the first few overestimated the job
+by 15x.
 
 ---
 
@@ -218,6 +237,20 @@ Each of these cost real time and none announced itself.
 the model answers `500` to everything. A csm run recorded three failures and no
 rows. Stop the server before extracting; the runner now refuses to start while
 it is up.
+
+**`Context size has been exceeded` means the pool is too small, not too big.**
+LM Studio's context is one KV pool shared by every concurrent slot, and the error
+reports *one slot's* usage — `n_tokens = 1199` against a 5,120 context, which
+reads as "context is not the problem" and argues for lowering it. It is not:
+6 slots x (1,735 prompt + 3,072 output) needed 28,842. Reasoning from the logged
+number instead of the arithmetic produced 115 consecutive failures.
+
+**A misconfigured extraction does not leave bad data.** Undersized context and
+truncation both *raise*, so the row is dropped rather than half-written, and the
+groundedness gate drops anything not present verbatim. A failed character stores
+no rows, so `needs_relations` returns it next run. Check with a vocabulary count
+(`SELECT relation, COUNT(*) ... GROUP BY relation`) before paying for a
+re-extraction — after the 115 failures all 1,700 surviving rows were valid.
 
 **`except OperationalError` turns a schema mismatch into a plausible empty
 answer.** Adding an `acquired` column and naming it unconditionally made

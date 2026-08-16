@@ -471,6 +471,24 @@ Alongside the Phase 2 refutations above:
 - **Trimming the level-0 infobox card** from extraction passages: it looks like
   waste and produces a third of berserk's and hxh's ability rows.
 
+Added 2026-08-16, from tuning the extraction endpoint:
+
+- **`--parallel` above 4.** Measured on 48 identical real windows: 4 slots gave
+  27.5 windows/min, 6 slots gave **26.4** with median latency 7.6s → 12.3s. The
+  GPU is compute-saturated at 4 (82-98% utilisation), so more slots only queue
+  and cost the VRAM to widen the pool.
+- **Disabling thinking from the request.** All four methods measured and all four
+  ignored — a Jinja `enable_thinking` directive in the system message,
+  `/no_think`, `chat_template_kwargs`, and the plain control were within 12
+  reasoning tokens of each other. `enableThinking` is resolved when the model
+  loads, so it can only be set by the per-model default config.
+- **Lowering context to fix `Context size has been exceeded`.** The context is a
+  pool shared by all slots and the error reports one slot's usage, so the logged
+  number always looks too small to be the cause. The fix is more total context.
+- **`lms load --estimate-only` for VRAM planning.** It reported 16.52 GiB for
+  both 20,480 and 28,672 context; the real difference was 24,435 vs 25,913 MiB.
+  It ignores KV growth — measure with `nvidia-smi` instead.
+
 ## Where the process is written down
 
 `NEW_SERIES_PLAYBOOK.md` — the ordered checklist for a new wiki, with every trap

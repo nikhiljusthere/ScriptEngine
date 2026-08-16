@@ -11,47 +11,92 @@ about the first.
 
 ## TL;DR — the working setup
 
-LM Studio serving `qwen/qwen3.8-27b` on `:1234`, loaded with the
-**`No thinking 27b`** preset:
+LM Studio serving `qwen/qwen3.8-27b` on `:1234`:
+
+```powershell
+lms load qwen/qwen3.8-27b -c 20480 --parallel 4 --ttl 7200 --speculative-draft-mtp -y
+```
 
 | setting | wrong value | correct value |
 |---|---|---|
-| **context length** | **262,144** (default) | **8,192** |
-| Enable Thinking | on | **off** |
+| **context length** | 262,144 (default) / **8,192** | **20,480** |
+| **`--parallel`** | 6 | **4**, matched by `--workers 4` |
+| Enable Thinking | on | **off** (see below — the preset will not do it) |
 | Reasoning Effort | Extra High | **low** |
-| `SCRIPTENGINE_ANSWER_TOKENS` | 32,000 | **2,048** |
+| `SCRIPTENGINE_ANSWER_TOKENS` | 32,000 / 2,048 | **3,072** |
+| speculative decoding | off | **MTP on** |
+| CPU Thread Pool | 16 | **8–12** |
 | seed | random | **fixed** |
 | Keep Model in Memory | — | **on** |
 | Offload KV Cache to GPU | — | **on** |
 | GPU Offload | — | 65 (all layers) |
-| Max Concurrent | — | 4, matched by `--workers 4` |
 
 ```powershell
 $env:SCRIPTENGINE_LLM_BACKEND  = "local"
 $env:SCRIPTENGINE_LLM_BASE_URL = "http://localhost:1234/v1"
 $env:SCRIPTENGINE_LLM_MODEL    = "qwen/qwen3.8-27b"
-$env:SCRIPTENGINE_ANSWER_TOKENS = "2048"
-$env:SCRIPTENGINE_LLM_TIMEOUT_SECONDS = "900"
+$env:SCRIPTENGINE_ANSWER_TOKENS = "3072"
+$env:SCRIPTENGINE_LLM_TIMEOUT_SECONDS = "1800"
 python -u -m scriptengine.cli abilities --series jjk --refresh --workers 4
 ```
 
-**Per call: 90.8s → 3.1s.** Two identical calls returned byte-identical output.
+**Per call: 90.8s → 3.1s** against the 262,144 default. Two identical calls
+returned byte-identical output.
 
-Preset lives at
-`C:\Users\Nikhil\.lmstudio\config-presets\No thinking 27b.preset.json`. The
-model-specific keys encode the model id with `/`→`.` and `-` dropped, so
-`qwen/qwen3.8-27b` becomes `qwen.qwen3.827b`:
+**8,192 was this document's own recommendation until 2026-08-16 and it is
+wrong for any run with `--parallel > 1`.** It cost 115 consecutive failures.
+See *Context is a shared pool* below, which supersedes it.
+
+---
+
+## Turning thinking off so it stays off
+
+**`lms load` has no preset flag.** Every CLI reload therefore comes up with
+thinking *on*, whatever the GUI last showed — the failure mode that silently
+returned after a reload on 2026-08-16 and burned 91% of the output budget:
+
+| | thinking on | thinking off |
+|---|---|---|
+| reasoning tokens | 82 of 90 completion tokens | **0** |
+| per call | 3.8s | **2.7s** |
+
+The durable fix is a **per-model default config**, which LM Studio applies at
+load time including from the CLI. Model-specific keys encode the model id with
+`/`→`.` and `-` dropped, so `qwen/qwen3.8-27b` becomes `qwen.qwen3.827b`:
+
+`C:\Users\Nikhil\.lmstudio\.internal\user-concrete-model-default-config\qwen\qwen3.8-27b.json`
 
 ```json
-"ext.virtualModel.customField.qwen.qwen3.827b.enableThinking": false,
-"ext.virtualModel.customField.qwen.qwen3.827b.reasoningEffort": "low",
-"llm.prediction.systemPrompt": "{%- set enable_thinking = false %}",
-"llm.load.contextLength": 8192
+{
+  "preset": "",
+  "operation": {
+    "fields": [
+      {"key": "ext.virtualModel.customField.qwen.qwen3.827b.enableThinking", "value": false},
+      {"key": "ext.virtualModel.customField.qwen.qwen3.827b.reasoningEffort", "value": "low"}
+    ]
+  },
+  "load": { "fields": [{"key": "llm.load.contextLength", "value": 20480}] }
+}
 ```
 
-The `systemPrompt` Jinja directive does **not** clobber the system message the
-client sends — verified, the reply still came back in the `{"abilities": [...]}`
-shape that only our own system prompt defines.
+Two fields from the `No thinking 27b` preset are deliberately **not** copied
+here:
+
+* **`llm.prediction.systemPrompt`** — the client sends its own system message
+  and a config-injected one is a needless risk to it. It also buys nothing; see
+  the refutation below.
+* **`llm.load.contextLength: 8192`** — that is the undersizing itself. `-c` on
+  the command line overrides whatever this file says, so the run stays
+  controllable per-invocation while thinking stays off.
+
+Verify after every load, because this is the setting that comes back:
+
+```python
+usage["completion_tokens_details"]["reasoning_tokens"]   # must be 0
+```
+
+The GUI's chat-panel thinking toggle reflects the *app's* UI state and does not
+govern API requests. Do not read it as the answer; probe the endpoint.
 
 ---
 
@@ -70,11 +115,83 @@ The prompts are small. Measured over 316 real extraction prompts:
 | max | 5,796 | ~1,656 |
 
 Windows are capped at 4,000 chars with 300 overlap (`_windows`), so no prompt
-can grow beyond that. 8,192 gives ~2x headroom over prompt + answer and leaves
-VRAM for concurrency.
+can grow beyond that. Confirmed again on 2026-08-16 over 48 real relation
+windows: **max prompt 1,463 tokens, max completion 1,306.**
 
-**Never raise context to "be safe".** It is the KV cache allocation, and this
-pass cannot use it.
+---
+
+## Context is a shared pool, not a per-slot budget
+
+This is the correction to "never raise context to be safe", which was the advice
+here and is only true at `--parallel 1`.
+
+**`-c` sets one KV pool that every concurrent slot draws from.** With
+`--parallel N` each slot gets roughly `context / N`, so the requirement is:
+
+```
+parallel x (max_prompt + max_tokens)  <=  context
+```
+
+At the settings above: `4 x (1463 + 3072) = 18,140 <= 20,480`. ✓
+
+Getting this wrong does not look like a sizing error. On 2026-08-16 a run at
+`-c 5120 --parallel 6` with `max_tokens 3072` needed `6 x (1735 + 3072) =
+28,842` and produced **115 consecutive failures**, logged as:
+
+```
+E srv send_error: task id = 1729, error: Context size has been exceeded.
+I slot release: id 1 | task 1729 | stop processing: n_tokens = 1199, truncated = 0
+```
+
+The trap is `n_tokens = 1199` — far *below* 5,120, which reads as "the context is
+not the problem" and argues for lowering it further. The number is one slot's
+usage; the pool was exhausted by the other five. **The fix for
+`Context size has been exceeded` is almost always more total context, not less.**
+The earlier thrash at `8192 --parallel 4` was the same fault (needed 15,132).
+
+Both bounds still hold, so size it, do not maximise it:
+
+* too small → `Context size has been exceeded`, in bulk;
+* too large → KV cache eats the card, prefill crawls, and the log fills with
+  `making room for prompt cache entry, removing oldest entry (823 MiB)`.
+
+VRAM cost measured on a 32,607 MiB card, weights 17.74 GB:
+
+| context | parallel | VRAM |
+|---|---|---|
+| 20,480 | 4 | 24,435 MiB |
+| 28,672 | 6 | 25,913 MiB |
+
+That is ~0.33 MiB per token of KV. `lms load --estimate-only` reported 16.52 GiB
+for both and is **not** usable for this — it ignores the KV growth. Measure with
+`nvidia-smi` after loading.
+
+---
+
+## Concurrency: 4, and more is worse
+
+Measured 2026-08-16 on a fixed workload of 48 real relation windows, identical
+prompts for every config, `max_tokens 3072`:
+
+| config | windows/min | median latency | p95 | ok |
+|---|---|---|---|---|
+| 4 @ 20,480 | 27.5 | 7.6s | 14.6s | 48/48 |
+| 6 @ 28,672 | **26.4** | 12.3s | 23.5s | 48/48 |
+| 4 @ 20,480 + MTP | **27.9** | 7.2s | 11.8s | 48/48 |
+
+**Raising `--parallel` past 4 buys nothing.** The GPU is compute-saturated at 4
+(82-98% utilisation), so extra slots only queue: throughput fell 4% while median
+latency nearly doubled. It also costs the VRAM to widen the pool. Do not re-test
+this on this card.
+
+**Speculative decoding (MTP) is free and slightly better.** Throughput is within
+noise but p95 improves 14.6s → 11.8s, so leave `--speculative-draft-mtp` on.
+
+**CPU Thread Pool: 8-12, not 16.** The model is fully GPU-offloaded, so the CPU
+only tokenises and samples. The 9950X3D is dual-CCD — 8 cores with 3D V-Cache,
+8 without — and a pool above 8 spans both dies and pays cross-CCD latency on
+every sync. Threads above that also compete with the 4 extraction workers, since
+llama.cpp thread pools spin-wait rather than sleep.
 
 ---
 
@@ -116,6 +233,22 @@ Free-model probe, same trivial prompt:
 | `opencode/hy3-free` | timeout >100s |
 | `opencode/deepseek-v4-flash-free` | timeout >400s |
 
+**Thinking cannot be turned off from the request.** All four request-side
+methods were measured on 2026-08-16 against the same prompt and **every one was
+ignored**:
+
+| attempt | reasoning tokens |
+|---|---|
+| plain (control) | 96 |
+| `{%- set enable_thinking = false %}` in the system message | 97 |
+| `/no_think` appended to the system message | 108 |
+| `"chat_template_kwargs": {"enable_thinking": false}` | 96 |
+
+`enableThinking` is a virtual-model field resolved when the model is **loaded**,
+so nothing sent per-call can reach it. This also means the preset's
+`llm.prediction.systemPrompt` Jinja directive is inert over the API — it is not
+what was disabling thinking. Use the per-model default config above.
+
 **Unloading/reloading the model between reads does not help.** Every extraction
 call is stateless — a fresh `messages` array with one system and one user
 message. No conversation history accumulates, so there is nothing to clear;
@@ -155,10 +288,12 @@ mutually exclusive on one machine. Score the coverage banks through
 `build_roster` in-process instead — roster mode is pure SQLite and touches
 neither.
 
-**JIT auto-load silently undoes the preset.** Any stray API request will load
-the model with *default* config — context back to 262,144, thinking back on. A
-probe did this and cost a bogus 90.8s measurement. Disable auto-load in LM
-Studio's developer/server settings.
+**JIT auto-load silently undoes the load settings.** Any stray API request will
+load the model with *default* config — context back to 262,144, thinking back
+on. A probe did this and cost a bogus 90.8s measurement. Disable auto-load in LM
+Studio's developer/server settings, and note that the per-model default config
+above fixes the thinking half of this but not the context: an auto-load takes no
+`-c`. Probe with `scriptengine.eval.model_health` rather than assuming.
 
 **Killing a run's python parent orphans its opencode children.** They keep
 running and keep consuming the provider's quota. 16 orphans starved a live run
@@ -172,12 +307,63 @@ Get-Process opencode | Where-Object { $_.StartTime -gt (Get-Date).AddHours(-6) }
   Stop-Process -Force
 ```
 
-**`Tee-Object` buffers until the process exits.** Every early run looked frozen
-because the per-series log was empty. Redirect with `>` instead; `python -u`
-then streams properly.
+**An empty log does not mean a stalled run.** `Tee-Object` buffers until the
+process exits, and `>` through `Start-Process` buffers too — so a healthy run
+can show a 0-byte log for many minutes even under `python -u`. On 2026-08-16
+this was misread as a stall on a run that was working correctly.
+
+Judge liveness from things that cannot buffer:
+
+```powershell
+nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader  # 80-98% while extracting
+```
+
+plus a row count against the series `facts.db` taken twice a few minutes apart.
+
+**Two python PIDs is normal, and the parent shows 0 CPU.**
+`.venv\Scripts\python.exe` is a shim that re-execs the real uv-managed
+interpreter, so `relations --series db` appears twice: the parent idles at zero
+CPU time waiting on its child, which does the work. Both have the *same* start
+time — that is how to tell this from a genuine orphan, which will be older. Do
+not kill the "idle" one thinking it is stuck.
 
 **`canon-run` refuses a server older than the newest `.py`.** Restart the API
 server before measuring, and use `--skip-eval`.
+
+---
+
+## A misconfigured run does not leave bad data
+
+Worth knowing before paying for a full re-extraction after any config mistake.
+Context size decides whether a call **succeeds**, not what a successful call
+**says**: at `temperature 0` the same prompt returns the same answer at 8,192 as
+at 20,480. Undersizing fails *loudly*, and every failure mode drops the row
+rather than storing a damaged one:
+
+* `Context size has been exceeded` → raises → nothing stored;
+* `finish_reason == "length"` → the truncation guard in `llm/client.py` raises
+  rather than storing half-parsed JSON;
+* a name or quote not present verbatim in the passage → dropped by the
+  groundedness gate.
+
+So a botched run costs **completeness, not correctness**, and completeness
+self-heals: rows cache on `revid` + `PROMPT_VERSION`, a failed character stored
+no rows, and `needs_relations` therefore hands it back on the next run.
+
+Verify rather than assume, with a vocabulary check — anything outside the closed
+set would be the signal to re-extract:
+
+```sql
+SELECT relation, COUNT(*) FROM relations GROUP BY relation ORDER BY 2 DESC;
+```
+
+After the 115 failures this returned 1,700 rows across exactly the 12 valid
+relations, so none of that work needed redoing.
+
+One caveat to record: `PROMPT_VERSION` does not encode the thinking setting, so
+rows extracted with thinking on and off coexist. Both passed the groundedness
+gate and are checkable against the source, and a `--refresh` re-extraction
+normalises them.
 
 ---
 
@@ -198,6 +384,30 @@ Calls scale with *windows*, not characters:
 | **total** | **3,365** | **~28,600 calls** |
 
 One Piece is ~20,500 of those — **70% of the whole corpus on one wiki**.
+
+**Never estimate a run from the head of its queue.** Window counts per character
+are extremely skewed, and `needs_relations` returns the biggest characters
+first, so a sample of the first N is a sample of the worst case. Measured on db
+relations, 1,057 characters remaining:
+
+| | windows |
+|---|---|
+| Goku | 332 |
+| Vegeta | 263 |
+| Gohan | 242 |
+| **mean** | **7.1** |
+| **median** | **2** |
+| **total** | **7,515** |
+
+Extrapolating the first 25 characters (109 windows each) gave ~115,000 windows
+and a **25-30 hour** estimate. Counting all of them gave 7,515 and **~4.5
+hours** — the real figure was off by 15x. Count the whole queue; it is one cheap
+pass over passages and needs no model:
+
+```python
+sum(len(_windows(t)) for who in needs_relations(store, ov)
+    for _s, t in passages(store, who, ov))
+```
 
 `--bank-only` restricts to the characters the question bank names: **65
 characters, ~353 calls, a 98.8% reduction**. Use it for a fast scoring loop

@@ -9,8 +9,16 @@ from the outside -- an idle GPU and a run producing nothing:
 * **The API server holds the GPU.** Its embedder and a 27B do not fit on one
   32GB card together, and the endpoint answers 500 to everything.
 
+A third was found on 2026-08-16, and it defeats a check on latency alone:
+
+* **Thinking comes back on its own.** `lms load` has no preset flag, so every
+  CLI reload restores it unless a per-model default config says otherwise. The
+  model then answers correctly and in about 3.8s — passing every timing
+  threshold — while spending 82 of 90 completion tokens on reasoning. It is
+  visible only in `usage.completion_tokens_details.reasoning_tokens`.
+
 So a run probes before it starts rather than discovering it in a log. Cheap:
-one short completion.
+one short completion, checked on time *and* on usage.
 """
 
 from __future__ import annotations
@@ -33,9 +41,9 @@ def probe(timeout: float = 120.0) -> tuple[bool, str]:
     client = LLMClient(settings)
     started = time.monotonic()
     try:
-        answer = client.complete(
+        answer, usage = client.complete_with_usage(
             "Reply with the single word OK.", system="", temperature=0.0,
-            max_tokens=16,
+            max_tokens=256,
         )
     except Exception as error:  # noqa: BLE001 - the reason is the whole point
         return False, f"{type(error).__name__}: {str(error)[:160]}"
@@ -46,9 +54,25 @@ def probe(timeout: float = 120.0) -> tuple[bool, str]:
         return False, (
             f"{elapsed:.1f}s for a one-word answer, healthy is ~3s. The model has "
             "most likely reverted to its default context with thinking on -- "
-            "reload it with the `No thinking 27b` preset."
+            "reload it and re-probe."
         )
-    return True, f"{elapsed:.1f}s"
+
+    # Latency alone does not catch this. A model reloaded with thinking on
+    # answers a trivial prompt in about 3.8s -- inside every threshold above --
+    # while spending 82 of 90 completion tokens on reasoning it was never asked
+    # for. On 2026-08-16 this probe reported `ok: 3.8s` with thinking fully on,
+    # and a long run went out under it. The usage is the only evidence.
+    reasoning = (usage.get("completion_tokens_details") or {}).get(
+        "reasoning_tokens"
+    )
+    if reasoning:
+        return False, (
+            f"{elapsed:.1f}s but {reasoning} reasoning tokens -- thinking is on. "
+            "`lms load` has no preset flag, so it comes back on every CLI reload "
+            "unless the per-model default config sets enableThinking false. See "
+            "EXTRACTION_RUNBOOK.md."
+        )
+    return True, f"{elapsed:.1f}s, no thinking"
 
 
 def main() -> int:

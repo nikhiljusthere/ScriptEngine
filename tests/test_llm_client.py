@@ -311,3 +311,64 @@ class TestTruncationIsNotSilent:
     def test_a_complete_answer_is_returned(self, monkeypatch):
         client = self._reply(monkeypatch, '{"abilities": []}', "stop")
         assert client.complete("x", system="", max_tokens=16) == '{"abilities": []}'
+
+
+class TestThinkingIsDetectable:
+    """The health probe has to see thinking, and only the usage shows it.
+
+    `lms load` has no preset flag, so a CLI reload brings thinking back. The
+    model then answers correctly, in about 3.8s, passing every check made on the
+    reply or on latency — while spending 82 of 90 completion tokens reasoning.
+    On 2026-08-16 the probe reported `ok: 3.8s` in exactly that state and a long
+    run went out under it.
+    """
+
+    def _endpoint(self, monkeypatch, reasoning):
+        import httpx
+
+        from scriptengine.config import Settings
+        from scriptengine.llm import client as C
+
+        class Fake:
+            status_code = 200
+
+            def raise_for_status(self):
+                return None
+
+            def json(self):
+                return {
+                    "choices": [{"message": {"content": "OK"},
+                                 "finish_reason": "stop"}],
+                    "usage": {"completion_tokens": 90,
+                              "completion_tokens_details":
+                                  {"reasoning_tokens": reasoning}},
+                }
+
+        monkeypatch.setattr(httpx, "post", lambda *a, **k: Fake())
+        return C.LLMClient(Settings(llm_backend="local"))
+
+    def test_usage_reaches_the_caller(self, monkeypatch):
+        client = self._endpoint(monkeypatch, 82)
+        answer, usage = client.complete_with_usage("x", system="", max_tokens=64)
+        assert answer == "OK"
+        assert usage["completion_tokens_details"]["reasoning_tokens"] == 82
+
+    def test_complete_still_returns_only_the_answer(self, monkeypatch):
+        client = self._endpoint(monkeypatch, 0)
+        assert client.complete("x", system="", max_tokens=64) == "OK"
+
+    def test_the_probe_fails_when_thinking_came_back(self, monkeypatch):
+        from scriptengine.eval import model_health
+
+        self._endpoint(monkeypatch, 82)
+        healthy, why = model_health.probe()
+        assert not healthy
+        assert "thinking is on" in why
+
+    def test_the_probe_passes_with_thinking_off(self, monkeypatch):
+        from scriptengine.eval import model_health
+
+        self._endpoint(monkeypatch, 0)
+        healthy, why = model_health.probe()
+        assert healthy
+        assert "no thinking" in why

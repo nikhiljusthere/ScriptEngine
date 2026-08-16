@@ -146,13 +146,32 @@ class LLMClient:
         max_tokens: int = 1024,
     ) -> str:
         """One turn, one answer, from whichever backend is configured."""
+        return self.complete_with_usage(prompt, system, temperature, max_tokens)[0]
+
+    def complete_with_usage(
+        self,
+        prompt: str,
+        system: str = "",
+        temperature: float = 0.2,
+        max_tokens: int = 1024,
+    ) -> tuple[str, dict]:
+        """The answer, and the endpoint's `usage` block alongside it.
+
+        Split out for `eval/model_health.py`. A model that has come back with
+        thinking on still answers correctly and still answers fast, so it passes
+        every check made on the reply itself — the only evidence is
+        `completion_tokens_details.reasoning_tokens`, which lives in the usage
+        and was being discarded here.
+
+        `opencode` reports no usage, so it returns `{}` rather than pretending.
+        """
         if (self.settings.llm_backend or "").lower() != "opencode":
             return self._local(prompt, system, temperature, max_tokens)
-        return self._opencode(prompt, system)
+        return self._opencode(prompt, system), {}
 
     def _local(
         self, prompt: str, system: str, temperature: float, max_tokens: int
-    ) -> str:
+    ) -> tuple[str, dict]:
         """An OpenAI-shaped endpoint — LM Studio on 1234, Ollama on 11434.
 
         Kept alongside opencode rather than replaced by it: local is about 2.4x
@@ -186,7 +205,8 @@ class LLMClient:
                 "SCRIPTENGINE_LLM_BACKEND=opencode."
             ) from error
         try:
-            choice = response.json()["choices"][0]
+            payload = response.json()
+            choice = payload["choices"][0]
             answer = (choice["message"].get("content") or "").strip()
         except (KeyError, IndexError, ValueError) as error:
             raise LLMUnavailable(f"Unexpected response from {base}") from error
@@ -218,7 +238,7 @@ class LLMClient:
                 f"({max_tokens}) mid-answer, so the reply is truncated and "
                 f"cannot be parsed. Raise SCRIPTENGINE_ANSWER_TOKENS."
             )
-        return answer
+        return answer, (payload.get("usage") or {})
 
     def _opencode(self, prompt: str, system: str) -> str:
         """`opencode run`, which exposes neither temperature nor max tokens."""
