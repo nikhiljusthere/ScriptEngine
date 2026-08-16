@@ -379,6 +379,39 @@ is the *only* place the wiki records them.
 
 ## Operational traps
 
+**`0 added, 0 failed` is not a measurement.** `narrative-abilities` read all 904
+of Chainsaw Man's chapter and episode passages, 927 windows, 12.7 minutes, and
+stored nothing. That reads as an answer -- "this wiki's chapters name no
+abilities" -- and it was a pass that could not have stored a row on any wiki:
+it reused `abilities.parse_response`, which builds fresh rows holding `name`,
+`kind` and `reason`, so the `owner` it then required was always `""` and every
+candidate fell out of `if not name or not owner`.
+
+Nothing reported it, because a *dropped candidate is not a failure*. The guards
+are meant to drop things, and a run that drops everything looks exactly like a
+run over text that names nothing. Before spending a wiki on a new pass, prove it
+can store one row: the fixed pass returned 37 on the same 927 windows.
+
+The generalisation: any extraction whose output is a filtered subset needs one
+counted probe -- rows offered by the model against rows kept -- or a clean zero
+is unfalsifiable.
+
+**A new pass's premise is worth checking against the corpus before it is
+written.** `narrative-abilities` exists for two Chainsaw Man gold items, and
+the corpus does not support either, measured on 2026-08-17:
+
+| the premise | what the store says |
+|---|---|
+| Makima's Prime Minister contract is on no character page | it is on `Makima`, under the declared `Abilities` section |
+| ...so reading `Chapter 216` recovers it | that page mentions it only as a comparison for *Yoru's* contract, and the model correctly answers `{"abilities": []}` to both windows |
+| Power's blood weapons are on `Chapter 90` | the gold phrasing is on `Power/History`, a `character_history` page the declaration does not read; `Chapter 90` yields `Thousand Tera Blood Rain`, already on her page |
+
+`Prime Minister Contract` is the bank's coinage for a contract the wiki never
+names. An extractor asked for *named* abilities is right to return nothing, and
+no reading strategy fixes a name that is not in the corpus. Check where an item
+actually sits before building a pass to reach it: two SQL queries against
+`chunks` would have answered this before 927 windows were spent.
+
 **The API server and the model cannot share the GPU.** The server loads
 `bge-large` and `bge-reranker-v2-m3` onto the same card. With the 27B resident
 that exhausts 32GB and LM Studio answers `500 Internal Server Error` to every

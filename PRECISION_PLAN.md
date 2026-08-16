@@ -457,6 +457,23 @@ or retriever returns what the corpus does not contain, so recall is capped at
 taken from game pages, or a count transcribed from a single page rather than
 from the series.
 
+**A third category, found 2026-08-17: on the wiki, but not as a name.** Makima's
+`Prime Minister Contract` was bucketed an extraction gap. The prose is on her
+own page, inside the declared `Abilities` section, and the model returns
+`{"abilities": []}` for that window -- correctly, because the wiki never names
+the contract. `Prime Minister Contract` is the bank's coinage for it, recorded
+in the gold's own note ("it appears in the section's prose rather than as a
+bolded heading"). Nothing in the extraction path can recover it without being
+told to name unnamed things, which is the junk generator this whole document is
+about.
+
+These are not extraction gaps and chasing them as such costs real time: the
+`narrative-abilities` pass was built for this item and one other, 927 windows on
+csm and 17,928 planned across five more wikis. The check that would have caught
+it is two SQL queries against `chunks` asking where the item actually sits.
+Bucket a miss as `unnamed in the corpus` when the prose is there and the name is
+the bank's, and count it against the ceiling rather than against the extractor.
+
 ## Refuted here, do not rebuild
 
 Alongside the Phase 2 refutations above:

@@ -100,6 +100,37 @@ relationships *happen* rather than where they are described. hxh's `Plot` is
 3,014 chunks. Judge them on measured output, not in advance. "fought once" is
 not `enemy`.
 
+**And until 2026-08-17 there was no measured output to judge.** `canon-run`
+cannot see this pass at all. Its bank holds no relation-shaped set question on
+any of the eight wikis -- twelve questions mention a relationship word and
+every one is a fact or a roster of people -- and the relations table is not a
+member source either: `build_roster` never reads it, and its only consumer is
+`chronology.scaffold`, the arc scaffold. So 22,700 rows across eight wikis sat
+outside every number the project quotes, and this declaration could be neither
+kept nor reverted on evidence.
+
+Score it with the coverage bank instead:
+
+```powershell
+python -m scriptengine.eval.build_relation_bank --series <name> --verified <date>
+python -m scriptengine.eval.relation_coverage --series <name>
+```
+
+The gold is every person the wiki heads a subsection for inside a character's
+`Relationships` section: structure rather than prose, so no judgement enters
+the transcription. **Recall-only**, deliberately -- the store is *supposed* to
+hold partners the wiki gives no heading, because reading the story is the point
+of the declaration, so scoring precision against that list would mark the
+intended gain as a defect. The extras are reported separately, split by whether
+narration is the only thing holding them.
+
+It needs neither the server nor a model, so it runs while an extraction is in
+flight, which is the opposite of `canon-run`.
+
+**This only works on a wiki that names the subheading after the other person.**
+Measured across all eight: csm 14 subjects, opm 3, the other six none. Where a
+wiki does not, the builder refuses rather than emitting gold it cannot justify.
+
 ---
 
 ## 2b. Ownership the wiki states in a sentence
