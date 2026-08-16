@@ -278,13 +278,18 @@ class TestOwnedPages:
 
     def test_a_series_that_does_not_declare_it_is_untouched(self):
         """Off by default. Most wikis keep the techniques on the character, and
-        reading owned pages there would only add noise."""
-        paths = series_paths("jjk")
+        reading owned pages there would only add noise.
+
+        Uses opm rather than jjk: jjk declared `ability_owner_sections` on
+        2026-08-16 to reach `Great Serpent / Related Techniques`, so it is no
+        longer an example of a series without the declaration.
+        """
+        paths = series_paths("opm")
         if not paths.facts_db.exists():
-            pytest.skip("jjk is not indexed")
+            pytest.skip("opm is not indexed")
         with FactStore(paths.facts_db) as store:
             assert A.owned_passages(
-                store, "Yuji Itadori", load_overrides(paths)) == []
+                store, "Saitama", load_overrides(paths)) == []
 
     def test_no_declaration_means_the_store_is_never_touched(self):
         """`None` as the store proves it: undeclared must not reach a query."""

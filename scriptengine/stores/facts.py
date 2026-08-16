@@ -820,6 +820,55 @@ class FactStore:
         )
         self.connection.commit()
 
+    def add_abilities(
+        self,
+        rows: Sequence[tuple[str, dict[str, str]]],
+        prompt_version: str,
+        model: str,
+    ) -> int:
+        """Add rows without removing what is already stored.
+
+        `save_abilities` replaces a character's whole set, which is right when
+        one pass owns the answer for that character. The narrative pass does not
+        own it: it reads chapter and episode pages, attributes what it finds to
+        whoever the prose names, and contributes to characters another pass has
+        already written. Replacing there would delete the section-derived rows.
+
+        `INSERT OR IGNORE` rather than `OR REPLACE`, so a name already read off
+        the character's own page keeps that provenance in `section`. A chapter
+        summary is the weaker source of the two, and it should not overwrite the
+        stronger one.
+        """
+        stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        before = self.connection.execute(
+            "SELECT COUNT(*) FROM abilities").fetchone()[0]
+        self.connection.executemany(
+            "INSERT OR IGNORE INTO abilities"
+            " (character, name, kind, acquired, section, revid, prompt_version,"
+            "  reason, model, extracted_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            [
+                (
+                    character,
+                    str(row.get("name") or "").strip(),
+                    str(row.get("kind") or "").strip().lower(),
+                    (str(row.get("acquired") or "innate").strip().lower() or "innate"),
+                    str(row.get("section") or "").strip(),
+                    None,
+                    prompt_version,
+                    str(row.get("reason") or "").strip()[:300],
+                    model,
+                    stamp,
+                )
+                for character, row in rows
+                if str(row.get("name") or "").strip() and character.strip()
+            ],
+        )
+        self.connection.commit()
+        after = self.connection.execute(
+            "SELECT COUNT(*) FROM abilities").fetchone()[0]
+        return after - before
+
     def ensure_relations(self) -> None:
         """Create the extracted-relations table if this store predates it.
 

@@ -212,6 +212,15 @@ def _said(value: str, kind: str) -> str:
     body = (value or "").strip()
     if not body or body.lower() in _COMPUTED:
         return ""
+    # A count is not a span. These wikis write both into the same field, and the
+    # 2026-08-16 re-crawl changed `Shinjuku Showdown Arc` from `222-271` to
+    # `50 chapters`, which rendered as `MANGA CHAPTER 50 chapters`: a heading
+    # naming no chapter while looking like it names one. A writer cannot cite
+    # that and cannot tell it from a real locator, which is the misrepresentation
+    # this function already refuses when it declines to invent the end of an
+    # open range.
+    if re.fullmatch(r"\d+\s+(chapters?|episodes?|volumes?)", body, re.IGNORECASE):
+        return ""
     # `Chapter 52 - 65` already carries the word; saying it twice reads as
     # "MANGA CHAPTERS Chapter 52 - 65".
     body = re.sub(r"^(chapter|episode)s?\s*", "", body, flags=re.IGNORECASE).strip()

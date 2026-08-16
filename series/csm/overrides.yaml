@@ -224,3 +224,13 @@ ability_stopwords:
   - Supernatural Abilities
   - Antemortem Abilities
   - Postmortem Abilities
+
+# Abilities this wiki only ever shows happening.
+#
+# Makima's contract with the Prime Minister of Japan is on `Chapter 216`, and
+# Power's blood weapons on `Chapter 90`. Neither appears on either character's
+# page in any form, and both were scored as items the corpus did not contain.
+# The corpus contained them the whole time; nothing was reading the chapters.
+#
+# 232 chapter pages and 12 episode pages, about 290 windows for the series.
+ability_narrative_types: [chapter_box, episode]

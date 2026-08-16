@@ -361,6 +361,70 @@ def abilities(
     console.print(table)
 
 
+@app.command("narrative-abilities")
+def narrative_abilities(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(0, "--limit", help="Stop after this many passages."),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Show what would be read, call no model."
+    ),
+    workers: int = typer.Option(
+        1, "--workers", help="Read this many passages at once."
+    ),
+) -> None:
+    """Read the abilities a wiki only shows happening, in a chapter summary.
+
+    `abilities` reads a character's own ability sections, which is where a wiki
+    lists what someone has. It cannot see what the wiki records only as
+    something that happened: Makima's contract with the Prime Minister of Japan
+    is on `Chapter 216`, Power's blood weapons on `Chapter 90`, and neither is on
+    either character's page in any form. Both were scored as items the corpus
+    did not contain, and the corpus contained them the whole time.
+
+    Pages are read once each and the model attributes the owner, because reading
+    per character would re-read the same chapter for everyone it names: Denji
+    alone appears in 664 chapter chunks of Chainsaw Man.
+
+    Only series declaring `ability_narrative_types:` are touched, and rows are
+    added without replacing what a character's own page already gave.
+    """
+    import logging
+
+    from scriptengine.ingest import narrative_abilities as narrative
+    from scriptengine.ingest.abilities import _windows
+    from scriptengine.llm.client import LLMUnavailable
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    if dry_run:
+        with FactStore(paths.facts_db) as store:
+            found = narrative.passages(store, _load_overrides(paths))
+        windows = sum(len(_windows(t)) for _p, _s, t in found)
+        console.print(
+            f"[dim]{len(found)} passages, {windows} windows would be read[/dim]")
+        for page, section, _text in found[:20]:
+            console.print(f"  {page}  [dim]{section}[/dim]")
+        return
+
+    try:
+        report = narrative.extract_series(paths, limit=limit, workers=max(1, workers))
+    except LLMUnavailable as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    table = Table(title=f"Narrative abilities: {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in ("passages", "windows", "added", "failed"):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+
+
 @app.command()
 def relations(
     series: str = typer.Option(..., "--series"),

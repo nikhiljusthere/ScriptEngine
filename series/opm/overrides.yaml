@@ -278,3 +278,16 @@ ability_stopwords:
 # `battle` is left alone: its 133 pages really are fights.
 semantic_types:
   combat: technique
+
+# Abilities this wiki only ever shows happening.
+#
+# A character page lists what someone has; a chapter or episode page records
+# what they did, and the two disagree more than expected. On Chainsaw Man,
+# Makima's contract with the Prime Minister of Japan is on `Chapter 216` and
+# Power's blood weapons on `Chapter 90`, neither anywhere on either
+# character's page, and both were scored as items the corpus did not contain.
+#
+# Read once per page with the owner attributed by the model, never per
+# character: reading per character re-reads the same chapter for everyone it
+# names. 403 chapter pages here.
+ability_narrative_types: [chapter]

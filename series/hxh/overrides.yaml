@@ -231,3 +231,16 @@ relation_sections:
   - Relationships
   - History
   - Background
+
+# Abilities this wiki only ever shows happening.
+#
+# A character page lists what someone has; a chapter or episode page records
+# what they did, and the two disagree more than expected. On Chainsaw Man,
+# Makima's contract with the Prime Minister of Japan is on `Chapter 216` and
+# Power's blood weapons on `Chapter 90`, neither anywhere on either
+# character's page, and both were scored as items the corpus did not contain.
+#
+# Read once per page with the owner attributed by the model, never per
+# character: reading per character re-reads the same chapter for everyone it
+# names. 420 chapter and 241 episode pages, across both anime adaptations here.
+ability_narrative_types: [hunterpedia_chapter, hunterpedia_episode_2011, hunterpedia_episode_1999]

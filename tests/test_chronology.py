@@ -228,12 +228,33 @@ class TestHeading:
             )
 
     def test_unadapted_arc_claims_no_episode(self):
-        """An arc the anime has not reached must not be given an episode."""
+        """An arc the anime has not reached must not be given an episode.
+
+        The chapter half of this assertion moved on 2026-08-16: the wiki now
+        writes `50 chapters` in the field where it used to write `222-271`, and
+        a count is not a span. Where the wiki disagrees with the test, the wiki
+        wins and the test moves with it.
+        """
         paths = paths_for("jjk")
         with FactStore(paths.facts_db) as store:
             said = chronology.heading(store, "Shinjuku Showdown Arc")
-        assert "MANGA CHAPTERS 222-271" in said
         assert "EPISODE" not in said
+
+    def test_a_count_is_not_said_as_a_span(self):
+        """`50 chapters` says how many, not which, so it is not a locator.
+
+        The re-crawl turned this arc's heading into
+        `MANGA CHAPTER 50 chapters`, which names no chapter while reading like
+        it does. A writer cannot cite it and cannot tell it from a real span,
+        which is the misrepresentation `_said` already refuses when it declines
+        to invent the end of an open range.
+        """
+        assert chronology._said("50 chapters", "MANGA CHAPTER") == ""
+        assert chronology._said("12 episodes", "EPISODE") == ""
+        # Real spans still survive, in the shapes these wikis actually write.
+        assert chronology._said("222 - 271", "MANGA CHAPTER") == "MANGA CHAPTERS 222-271"
+        assert chronology._said("Chapter 52 - 65", "MANGA CHAPTER") == "MANGA CHAPTERS 52-65"
+        assert chronology._said("1", "EPISODE") == "EPISODE 1"
 
 
 class TestAppearances:
