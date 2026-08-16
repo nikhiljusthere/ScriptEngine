@@ -24,9 +24,12 @@ citation_ref_tags:
 # prose than Bleach or Hunterpedia, because that is what the wiki wrote.
 
 # Guts' armour is `Equipment / Berserker Armor`, a heading on his own page.
+#
+# `Abilities and Skills` is the same heading under another name, 6,746
+# characters of it, and declaring only `Abilities` never reached it.
 ability_sections:
   item: [Equipment]
-  technique: [Abilities]
+  technique: [Abilities, Abilities and Skills]
 
 rosters:
 

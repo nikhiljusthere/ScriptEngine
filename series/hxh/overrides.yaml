@@ -32,8 +32,14 @@ citation_ref_tags:
 # reachable only through their own page. The headings stop at
 # `Abilities & Powers / Nen`, and the individual abilities are named in the prose
 # beneath, which is what the index-time extractor reads.
+# Hunterpedia spells the heading two ways: `Abilities & Powers` carries 967,457
+# characters of ability prose and `Abilities and Powers` another 65,153.
+# Declaring only the ampersand form left the second unreachable, which is the
+# defect that hid `Rika` on the Jujutsu Kaisen wiki. Found 2026-08-16 by listing
+# every top-level section on a character page that no declaration matches, worth
+# redoing whenever a wiki is re-crawled.
 ability_sections:
-  technique: [Abilities & Powers]
+  technique: [Abilities & Powers, Abilities and Powers]
   item: [Equipment]
 
 # The Nen system itself is not any one character's ability.
