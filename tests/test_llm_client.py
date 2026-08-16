@@ -11,6 +11,7 @@ that went wrong when the backend changed, none of which need a real call:
 
 from __future__ import annotations
 
+import pytest
 import json
 import subprocess
 
@@ -269,3 +270,44 @@ class TestLocalBackend:
         )
         self._reply(monkeypatch, {"choices": [{"message": {"content": "ok"}}]})
         assert self._client(tmp_path).complete("anything") == "ok"
+
+
+class TestTruncationIsNotSilent:
+    """A cut-off answer looks like valid JSON until it is parsed.
+
+    `parse_response` cannot load it and returns nothing, so the caller stores
+    zero rows for a passage that had some. Measured over 1,080 calls one hit the
+    ceiling — rare, and rare is what goes unnoticed. It must be a failure the
+    retry pass can see, not a quiet empty answer.
+    """
+
+    def _reply(self, monkeypatch, content, finish_reason):
+        import httpx
+
+        from scriptengine.config import Settings
+        from scriptengine.llm import client as C
+
+        class Fake:
+            status_code = 200
+
+            def raise_for_status(self):
+                return None
+
+            def json(self):
+                return {"choices": [{"message": {"content": content},
+                                     "finish_reason": finish_reason}]}
+
+        monkeypatch.setattr(httpx, "post", lambda *a, **k: Fake())
+        return C.LLMClient(Settings(llm_backend="local"))
+
+    def test_a_truncated_answer_raises(self, monkeypatch):
+        from scriptengine.llm.client import LLMUnavailable
+
+        client = self._reply(monkeypatch, '{"abilities": [{"name": "Godsp',
+                             "length")
+        with pytest.raises(LLMUnavailable, match="truncated"):
+            client.complete("x", system="", max_tokens=16)
+
+    def test_a_complete_answer_is_returned(self, monkeypatch):
+        client = self._reply(monkeypatch, '{"abilities": []}', "stop")
+        assert client.complete("x", system="", max_tokens=16) == '{"abilities": []}'

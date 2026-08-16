@@ -202,6 +202,22 @@ class LLMClient:
                     f"reasoning and never answered. Raise max_tokens."
                 )
             raise LLMUnavailable(f"{self.settings.llm_model} returned no content.")
+
+        # A *truncated* answer is worse than none, because it does not look like
+        # a failure. The reply is real JSON up to the cut, `parse_response`
+        # cannot load it, and the caller stores zero rows for a passage that had
+        # some -- silently, and only for the densest pages, which are the ones
+        # worth reading. Measured over 1,080 calls, one hit the ceiling: rare,
+        # and rare is exactly what goes unnoticed.
+        #
+        # Raised rather than salvaged. The pass already retries a failure, and a
+        # half-read passage is not something to guess the rest of.
+        if choice.get("finish_reason") == "length":
+            raise LLMUnavailable(
+                f"{self.settings.llm_model} hit max_tokens "
+                f"({max_tokens}) mid-answer, so the reply is truncated and "
+                f"cannot be parsed. Raise SCRIPTENGINE_ANSWER_TOKENS."
+            )
         return answer
 
     def _opencode(self, prompt: str, system: str) -> str:
