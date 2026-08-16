@@ -1,4 +1,4 @@
-# STARTME — ScriptEngine script writing
+# STARTME: ScriptEngine script writing
 
 > Read this file at the start of every session in which the user wants a script
 > written. Then read `docs/SCRIPT_STYLE.md`. Then follow the workflow below.
@@ -6,7 +6,7 @@
 ## What this project is
 
 ScriptEngine is a knowledge engine over Fandom wikis. It does **not** write
-scripts — it serves ordered, cited research context over HTTP (`POST /context`
+scripts. It serves ordered, cited research context over HTTP (`POST /context`
 on `http://127.0.0.1:8000`). The AI (you) writes the scripts.
 
 Six series are indexed:
@@ -36,8 +36,8 @@ same contract with the reasoning and the samples attached.
 
 | Mode | For | Returns |
 |---|---|---|
-| `narrative` | an account — "Shibuya Incident", "19 Days without Satoru Gojo" | beats in story order, each with the chapters and episodes it is sourced to |
-| `roster` | a set — "Every Rank of Curse", "Every Apostle", "Every Level of the Abyss" | every member of the set the wiki declares, grouped and ordered, each with its facts and debut |
+| `narrative` | an account: "Shibuya Incident", "19 Days without Satoru Gojo" | beats in story order, each with the chapters and episodes it is sourced to |
+| `roster` | a set: "Every Rank of Curse", "Every Apostle", "Every Level of the Abyss" | every member of the set the wiki declares, grouped and ordered, each with its facts and debut |
 | `qa` | a question, not a script | the passages nearest the query |
 
 Most published scripts are rosters. A topic starting "Every…", "All…", "Each…"
@@ -52,11 +52,11 @@ python -m scriptengine.cli rosters --series opm     # one series' sets
 python -m scriptengine.cli catalogue                # every series, regenerated
 ```
 
-`docs/CATALOGUE.md` is the answer to "what is in the engine" — pages, typing,
+`docs/CATALOGUE.md` is the answer to "what is in the engine": pages, typing,
 how much of each wiki's prose can carry a chapter, and every declared set with
 its size. It is generated, so run it rather than trusting the copy on disk.
 
-119 sets are declared across the eight series — devils, hunters, hybrids and
+119 sets are declared across the eight series: devils, hunters, hybrids and
 fiends on Chainsaw Man; apostles, pseudo-apostles and the God Hand on Berserk;
 mysterious beings and each hero class on One-Punch Man; the six Nen types, the
 Phantom Troupe and the Zoldycks on Hunterpedia; espada, quincy and all thirteen
@@ -68,26 +68,26 @@ still works, it is just found by search rather than declared.
 **A set that comes back is not automatically the right set.** Enumeration
 returns the best-scoring candidate on the wiki, so a topic the wiki does not
 keep as a set can still come back as a populated list. Every roster bundle
-therefore carries `confidence` — and **read it before writing**:
+therefore carries `confidence`, and **read it before writing**:
 
 | `confidence` | means | do |
 |---|---|---|
 | `declared` | the series declares this set by name | trust it |
 | `exact` | every word of the set's name was asked for | trust it, check the count |
-| `partial` | the set is narrower than the topic; `unmatched` names the extra word | **stop** — usually the wrong set |
-| `weak` | nothing in the topic matched the set's name | **stop** — almost certainly wrong |
+| `partial` | the set is narrower than the topic; `unmatched` names the extra word | **stop**, usually the wrong set |
+| `weak` | nothing in the topic matched the set's name | **stop**, almost certainly wrong |
 
 `warning` spells it out in words. "Every Straw Hat Pirate" returns 14 members,
 `partial`, *"Straw Hat Pirates' Creations is narrower than the topic: creations
-was not asked for"* — those are the crew's weapons, not the crew.
+was not asked for"*. Those are the crew's weapons, not the crew.
 
 `confidence` cannot see an **incomplete** set, so still check the count against
 what you expect: `Every island in the Grand Line` reports `exact` and returns
 four, and there are hundreds. `docs/RETRIEVAL_SCENARIOS.md` has the full list.
 
 **Members are validated against the topic before you see them.** A category is
-what the wiki keeps, not what was asked for — `Transformations` holds Black
-Frieza because it *is* one — so each candidate is checked against the topic's
+what the wiki keeps, not what was asked for. `Transformations` holds Black
+Frieza because it *is* one, so each candidate is checked against the topic's
 constraints and what fails comes back in `rejected` with a reason:
 
 ```
@@ -97,22 +97,22 @@ Every Saiyan transformation   candidates 160 → 75 kept
 ```
 
 `scope` is **canon by default**: manga, anime and film. Game and spin-off
-entries are still in the store and return when the topic asks — "every
+entries are still in the store and return when the topic asks: "every
 transformation **ever**", "**including games**". Nothing is ever deleted.
 
 Ability pages the wiki's own fields cannot settle are classified once at index
 time by a local model (`cli classify --series <name>`) and the answer is stored,
 so retrieval still just reads a table. That is what keeps Spirit Bomb Super
-Saiyan out of the Saiyan forms — *"granted externally by absorbing a Spirit
-Bomb"* — while keeping Great Ape, which needs a full moon but only works on a
+Saiyan out of the Saiyan forms (*"granted externally by absorbing a Spirit
+Bomb"*) while keeping Great Ape, which needs a full moon but only works on a
 Saiyan.
 
 **A race set means what only that race can reach**, not what a member of it has
 used. Kaio-ken is out of "Every Saiyan transformation" because King Kai invented
 it and Krillin knows it; Ultra Ego is in, because Vegeta is its only user. Each
-member carries how it is acquired — `race_exclusive`, `character_specific`,
-`teachable` or `unknown` — and it is computed from users and inventors, so a
-second race learning something reclassifies it on its own.
+member carries how it is acquired (`race_exclusive`, `character_specific`,
+`teachable` or `unknown`), computed from users and inventors, so a second race
+learning something reclassifies it on its own.
 
 If validation would empty a set it is skipped instead, so a list is never blank
 because a wiki labels its fields unusually.
@@ -122,12 +122,12 @@ because a wiki labels its fields unusually.
 1. Read this file and `docs/SCRIPT_STYLE.md`. Skim the samples in
    `sample scripts/` that match the requested topic's style.
 2. Ask the user, in order:
-   - **Topic** — what the script is about (e.g. "Shibuya Incident",
+   - **Topic**: what the script is about (e.g. "Shibuya Incident",
      "Every Rank of Curse").
-   - **Series** — `jjk`, `hxh`, `csm`, `bleach`, `opm`, `berserk` or `db`
+   - **Series**: `jjk`, `hxh`, `csm`, `bleach`, `opm`, `berserk` or `db`
      (default `jjk`).
-   - **Intro** — yes or no (the hook paragraph; see the style guide §3).
-   - **Length** — target word count (default 3,000 words ≈ 18,000 chars).
+   - **Intro**: yes or no (the hook paragraph; see the style guide §3).
+   - **Length**: target word count (default 3,000 words ≈ 18,000 chars).
 3. Make sure ScriptEngine is running: `http://127.0.0.1:8000/health` should
    return `{"status":"ok",...}`. If not, start it:
    ```powershell
@@ -146,7 +146,7 @@ because a wiki labels its fields unusually.
      6 budget, 7 mode, 8 API).
    Either way the rendered research context lands in
    `scripts output/current_request.json`.
-5. Read `scripts output/current_request.json` — it holds the settings, which
+5. Read `scripts output/current_request.json`. It holds the settings, which
    mode answered (`resolved_mode`), the subject the engine resolved to, and the
    `"prompt"` field: the ordered, cited research context plus the writing rules.
    Check `subject` before writing: if the engine resolved the wrong page, fix the
@@ -156,7 +156,7 @@ because a wiki labels its fields unusually.
      spoken paragraphs.
    - `VOICE_RULES` and `ANNOTATION_RULES` apply (style guide §5, §6).
    - Only facts in the context; never invent numbers or names.
-   - Hit the target length — full treatment per section, no padding.
+   - Hit the target length: full treatment per section, no padding.
 7. Save it into the production tree, not into the repo. Ask the engine where it
    goes rather than guessing, so a rewrite lands back in its own folder instead
    of opening a second one:
@@ -189,7 +189,7 @@ python -m scriptengine.cli cite "<path to the script>" --series jjk
 ```
 
 It reads each block, retrieves against the index, and appends the locator the
-retrieved passages agree on. It never changes a word — it checks that itself
+retrieved passages agree on. It never changes a word. It checks that itself
 before writing, and refuses if the cited text does not reduce back to the input
 exactly. The result is written to `<name> (cited).md` beside the original, which
 is left untouched, so the two can be diffed.
@@ -247,7 +247,7 @@ number that is not in the context, and never write a bare `[1]`-style marker
 | Server | `python start_scriptengine.py` (repo root) |
 
 **The server holds its code in memory.** Retrieval fixes do not reach a running
-server — a live one was still answering "Every race in Dragon Ball" with 150
+server. A live one was still answering "Every race in Dragon Ball" with 150
 episode titles hours after that was fixed on disk. Restart it after any change
 under `scriptengine/`.
 

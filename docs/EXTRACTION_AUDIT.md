@@ -4,8 +4,8 @@ An audit answers one question: **did the extractor actually understand this
 wiki, or did it just produce output?**
 
 The distinction matters because a broken extractor is silent. The previous
-pipeline's section detector never once matched a heading — it looked for a bare
-`appearance` while the corpus contained `## Appearance` — and it reported no
+pipeline's section detector never once matched a heading. It looked for a bare
+`appearance` while the corpus contained `## Appearance`, and it reported no
 error. Every document collapsed into a single unnamed section and the pipeline
 carried on. That is the failure mode audits exist to catch.
 
@@ -23,7 +23,7 @@ Writes `series/<name>/audit/report.json` and prints a summary.
 |---|---|---|
 | Pages typed | ≥95% | The infobox template map missed templates this wiki uses |
 | Infobox parsed | ≥95% of typed pages | The wikitext parser is failing on this wiki's syntax |
-| Sections captured | >1 per page | Section extraction is broken — the exact bug that killed the old pipeline |
+| Sections captured | >1 per page | Section extraction is broken: the exact bug that killed the old pipeline |
 | Facts per page | 10–40 for characters | Near zero means infoboxes are being read but not converted |
 | Citations extracted | >0 on prose pages | `{{Ref}}` variants unhandled; citation text will leak into chunks |
 
@@ -43,7 +43,7 @@ that may not have survived extraction.
 
 The gap between "cited directly" and "sentences w/ chapter" is the inheritance:
 a reference covers the sentences before it. On Jujutsu Kaisen that is 14.6%
-against 54.7% corpus-wide, and 12.7% against 99.6% on the Shibuya Incident page —
+against 54.7% corpus-wide, and 12.7% against 99.6% on the Shibuya Incident page,
 reference lists, episode tables and trivia sections carry no citations and never
 will, which is why the corpus-wide threshold is low.
 
@@ -55,9 +55,9 @@ had nothing to cite and no number moved.
 
 | Metric | Healthy | What a bad number means |
 |---|---|---|
-| Edges resolved | ≥90% | Wikilink targets are not matching crawled page titles — usually redirects |
+| Edges resolved | ≥90% | Wikilink targets are not matching crawled page titles, usually redirects |
 | Dangling edges | <10% | Links point outside the crawl. Some is normal; a lot means an incomplete crawl |
-| Orphan nodes | low | Entities appear in no relationship — extraction produced isolated names |
+| Orphan nodes | low | Entities appear in no relationship: extraction produced isolated names |
 
 ### Rejections
 
@@ -66,7 +66,7 @@ both kinds of error surface: real content wrongly discarded, and junk wrongly
 kept.
 
 The old corpus contained `LICENSES.chromium.txt`, `angular.txt`, `tslib.txt` and
-a `test.txt` that the crawler itself wrote on every run — Angular and Chromium
+a `test.txt` that the crawler itself wrote on every run: Angular and Chromium
 documentation, embedded and indexed alongside Jujutsu Kaisen.
 
 ## Reading a report
@@ -101,7 +101,7 @@ documentation, embedded and indexed alongside Jujutsu Kaisen.
 ```
 
 The single most important line is `mean_sections`. If it is at or near 1, section
-extraction has failed and nothing downstream is trustworthy — chunks will have no
+extraction has failed and nothing downstream is trustworthy: chunks will have no
 section metadata, parent expansion will return whole documents, and retrieval
 will degrade in a way that looks like a model problem rather than a parsing one.
 
@@ -128,6 +128,6 @@ then index the full corpus.
 
 ## Audit before you index
 
-Indexing is the expensive step — embedding runs over every chunk. Auditing 50
+Indexing is the expensive step, since embedding runs over every chunk. Auditing 50
 pages takes seconds and catches the failures that would otherwise surface as
 inexplicably poor answers hours later.

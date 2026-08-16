@@ -43,7 +43,7 @@ Every named technique Ichigo uses with Zangetsu
 ```
 
 Those are Espada and Arrancar techniques. The answer is every technique in
-Bleach. One question produces **196 intruders — 23% of every wrong name in the
+Bleach. One question produces **196 intruders, 23% of every wrong name in the
 run.**
 
 Same shape elsewhere:
@@ -75,7 +75,7 @@ Every shikigami of Megumi Fushiguro   basis `Megumi Fushiguro Battles`
 ```
 
 Every intruder is a battle page. `_files_by_character` (`roster.py:869`) exists
-for exactly this — its docstring names `Yuji Itadori Battles` as the case — and
+for exactly this (its docstring names `Yuji Itadori Battles` as the case) and
 it is not stopping it. Battle pages are `semantics.EVENT`, which
 `NEVER_MEMBERS` already declares can never be a member of anything
 (`semantics.py:125`); that rule is not being applied on this path.
@@ -96,11 +96,11 @@ Every sword style of Zoro                   basis `Intelligence / Luck`
 pages; these sit under that threshold on One Piece, so they survive. The
 `ability_stopwords` list would catch them and does not cover One Piece.
 
-**Fix:** cheapest is declaring them as stopwords — the mechanism already applies
+**Fix:** cheapest is declaring them as stopwords, since the mechanism already applies
 on every path since this session. A structural fix is to treat a heading with no
 prose of its own as a container.
 
-## 4. Two questions, one set, one of them declared — a bug I introduced
+## 4. Two questions, one set, one of them declared: a bug I introduced
 
 ```
 Every member of the Black Swordsman Party      -> no declared match  (21 members, 10%)
@@ -117,7 +117,7 @@ a word inside it. The declaration generated from the newer question carries
 36 declarations written this session are exposed to this.
 
 Related, and also mine: five declarations carry `subject: Berserk`,
-`subject: Bleach`, `subject: One Piece` — the *series*, not a person. `subject:`
+`subject: Bleach`, `subject: One Piece`: the *series*, not a person. `subject:`
 exists to say "this set is about this character"; a series name there is
 meaningless and, because a `subject:` roster is now excluded from the set
 vocabulary, it silently weakens character resolution for that whole wiki.
@@ -130,8 +130,8 @@ Every form of Cell   4/4 canon, 24 returned, 17%
 ```
 
 Cell absorbs Saiyan cells, so his page discusses Saiyan forms; the extraction
-attributes them to him. `validate_member` would reject them — no field on
-`Super Saiyan` names Cell as a user — but `_extracted_roster` skips validation by
+attributes them to him. `validate_member` would reject them, since no field on
+`Super Saiyan` names Cell as a user, but `_extracted_roster` skips validation by
 design (`roster.py:1069-1080`).
 
 **Fix:** this is the case for a per-member score. A row that only prose supports,
@@ -142,7 +142,7 @@ of evidence in the system and is currently indistinguishable from the strongest.
 
 `Every form of Cell` returns `Imperfect Form`, `Semi-Perfect Form`, `Perfect
 Form` **and** their `…Cell` spellings. The aliases are in the bank, so the canon
-item matches once — and the second spelling is then counted as a wrong name
+item matches once, and the second spelling is then counted as a wrong name
 (`canon_gold.py:148`, first alias wins).
 
 This is arithmetic, not a retrieval error, but it costs real precision points on

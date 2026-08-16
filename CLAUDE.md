@@ -2,7 +2,7 @@
 
 A universal knowledge engine over Fandom wikis. It ingests a wiki, derives that
 wiki's own entity taxonomy from the wiki itself, and serves ordered, cited,
-structured context over HTTP to whatever writes the video scripts — an AI
+structured context over HTTP to whatever writes the video scripts: an AI
 assistant driving `POST /context` directly, or the legacy ComfyUI node.
 
 **ScriptEngine does not write scripts.** It feeds the model that does, and it
@@ -11,17 +11,17 @@ the contract travels with the context.
 
 ## Start here
 
-1. Read `docs/ARCHITECTURE.md` — the design and why it is this way.
-2. Read `graphify-out/GRAPH_REPORT.md` — the knowledge graph of this codebase:
+1. Read `docs/ARCHITECTURE.md`, the design and why it is this way.
+2. Read `graphify-out/GRAPH_REPORT.md`, the knowledge graph of this codebase:
    god nodes, communities, and the legacy→current supersession map.
-3. `python -m scriptengine.cli list` — what series exist on disk.
+3. `python -m scriptengine.cli list`, what series exist on disk.
 
 ## The one idea everything follows from
 
 A Fandom wiki already publishes its own structure through the MediaWiki API.
 Infobox templates name the page types, categories label the pages, wikilinks are
 pre-resolved edges with canonical targets, and the section tree arrives with
-explicit levels. So **nothing about a series is hardcoded** — which is why the
+explicit levels. So **nothing about a series is hardcoded**, which is why the
 same pipeline handles Jujutsu Kaisen, Chainsaw Man and Marvel.
 
 Type discovery is *structural*, not name-based: an infobox is the template
@@ -51,7 +51,7 @@ python -m scriptengine.api.main                       # serve on :8000
 python -m pytest tests/ -q
 ```
 
-`crawl` resumes by default — pages already on disk are skipped. `index` re-parses
+`crawl` resumes by default, so pages already on disk are skipped. `index` re-parses
 from stored wikitext, so a parser fix reaches the whole corpus in seconds without
 re-crawling.
 
@@ -60,7 +60,7 @@ re-crawling.
 - **Verify against the live wiki, not just the tests.** Nearly every real defect
   in this project was found by running the pipeline against Fandom and reading
   the output, not by reading code. Tables being silently deleted, `{{Ruby}}`
-  returning furigana, stale Qdrant vectors resolving to unrelated text — all
+  returning furigana, stale Qdrant vectors resolving to unrelated text: all
   found by looking at results.
 - **Scripts must not sound AI-written.** `docs/ANTI_AI_SCRIPTING.md` distills
   Wikipedia:Signs of AI writing for spoken narration. Its rules live in
@@ -75,7 +75,7 @@ re-crawling.
   reports the coverage and fails when citations stop reaching the prose.
 - **Run `eval` after touching chunking, fusion, retrieval or the parser.** It is
   a regression suite, not a scoreboard. If a gold question is wrong, fix the
-  question and record why in `gold_jjk.json` — do not tune the retriever to make
+  question and record why in `gold_jjk.json`. Do not tune the retriever to make
   one ambiguous prompt go green.
 - **Run `audit` before `index`.** A broken extractor is silent; that is the
   failure mode the audit exists to catch. On a new wiki, read `cited directly`
@@ -102,7 +102,7 @@ scriptengine/
   index/          section-driven chunking, embedding, build
   retrieve/       hybrid (relevance), narrative (chronological) and roster
                   (enumeration) retrieval, plus citations (chapter/episode)
-  api/            FastAPI on :8000 — /context is the endpoint that matters,
+  api/            FastAPI on :8000; /context is the endpoint that matters,
                   rules.py is the script-writing contract it serves
   eval/           gold question set and scoring harness
 series/<name>/    self-contained corpus + stores (gitignored)
@@ -127,7 +127,7 @@ One-Punch Man, Berserk, Chainsaw Man. All six type above 90%; five of the six
 source a third to a half of their prose to a chapter. Eval 24/24 on `jjk`.
 
 Adding the five needed no series-specific Python. What each one *did* need was a
-description of how it writes a citation, because no two of these wikis agree —
+description of how it writes a citation, because no two of these wikis agree.
 Chainsaw Man is positional, One-Punch Man numbers a webcomic and a manga apart,
 and Bleach, Hunterpedia and Berserk put the locator in prose inside an HTML
 `<ref>`. That vocabulary lives in `series/<name>/overrides.yaml`; the mechanism

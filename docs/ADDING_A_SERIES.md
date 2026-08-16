@@ -18,16 +18,16 @@ it lowercase and filesystem-safe: `jjk`, `csm`, `jojo`, `dbz`, `marvel`.
 
 Nothing about the series is assumed. ScriptEngine asks the wiki what it contains:
 
-1. **Enumerate pages** — `list=allpages` in the main namespace, following
+1. **Enumerate pages.** `list=allpages` in the main namespace, following
    continuations.
-2. **Discover the type vocabulary** — every template matching `*Infobox*` in the
+2. **Discover the type vocabulary.** Every template matching `*Infobox*` in the
    `Template:` namespace. Jujutsu Kaisen defines 20 (`Character Infobox`,
    `Battle Infobox`, `Episode Infobox`, `Technique Infobox`, `Story Arcs
    Infobox`, …). Chainsaw Man and Marvel define their own; whatever they are,
    they become that wiki's page types.
-3. **Fetch each page** — rendered HTML, section tree, categories, transcluded
+3. **Fetch each page.** Rendered HTML, section tree, categories, transcluded
    templates, and raw wikitext, in one pass.
-4. **Type each page** — by the infobox it transcludes, refined by its categories.
+4. **Type each page**, by the infobox it transcludes, refined by its categories.
 
 ## Always audit before indexing
 
@@ -40,7 +40,7 @@ type, infobox coverage, facts per page, edges resolved versus dangling, sections
 captured, citations extracted, pages rejected as non-content.
 
 Index only once the audit looks right. Reading
-[EXTRACTION_AUDIT.md](EXTRACTION_AUDIT.md) first is worth the five minutes —
+[EXTRACTION_AUDIT.md](EXTRACTION_AUDIT.md) first is worth the five minutes,
 indexing a corpus you have not audited is how the previous pipeline ended up
 embedding Angular documentation alongside the wiki.
 
@@ -104,7 +104,7 @@ rosters:
 
 A set is backed by `category:`, `categories:` (several that together make one
 set), `sections_of:` (a page whose sections are the members), `label:` (a
-discovered page type), or `fact: {key, value}`. `groups:` is for a taxonomy —
+discovered page type), or `fact: {key, value}`. `groups:` is for a taxonomy:
 "Every Nen Type" wants the six types, each with its users, not a flat list of
 111 people.
 
@@ -118,7 +118,7 @@ Pick between the two multi-category shapes by what the answer should list:
     groups: {Paramecia: Paramecia, Zoan: Zoan, Logia: Logia}
 ```
 
-Declaring races with `groups:` returns two members — the names of the two
+Declaring races with `groups:` returns two members, the names of the two
 categories.
 
 `sections_of:` is for a set no member has an article for. One Piece writes all
@@ -133,7 +133,7 @@ Four rules worth knowing:
   or "Every Captain of the Gotei 13" answered with all 127 members.
 - **Never declare a phrase that contains the series' name.** Every question about
   a wiki says the wiki's name, so `match: [dragon ball]` captured every
-  enumeration on that wiki. Declare the qualified phrasings instead —
+  enumeration on that wiki. Declare the qualified phrasings instead,
   `types of dragon ball`.
 - **A topic that names a person falls through to discovery**, because a declared
   set is a general one. "Every Cursed Technique of Sukuna" wants his eight, not
@@ -141,8 +141,8 @@ Four rules worth knowing:
   the matched phrase, since these wikis name characters after the sets they
   belong to (`Devil Hunter`, `TV Junkyard Monster`).
 - **Group by a field only when it has few repeated values.** Wikis qualify these
-  in prose — Chainsaw Man writes `Devil (80%) Fiend (20%, formerly)` in
-  `species` — so only the first clause is used, and a field where every member
+  in prose (Chainsaw Man writes `Devil (80%) Fiend (20%, formerly)` in
+  `species`) so only the first clause is used, and a field where every member
   answers differently is an attribute rather than a tier.
 
 Check what a series declares, and that every entry still returns members, with:
@@ -232,5 +232,5 @@ regenerable. Delete the folder to remove a series; copy it to move one.
 
 The crawler runs 10 concurrent workers with a 0.2 s delay and honours HTTP 429
 `Retry-After`. That pacing pulled ~850 JJK pages without trouble. Raising
-`SCRIPTENGINE_CRAWL_CONCURRENCY` is not encouraged — Fandom is a free host, and
+`SCRIPTENGINE_CRAWL_CONCURRENCY` is not encouraged. Fandom is a free host, and
 the polite settings are also the ones that do not get you blocked.

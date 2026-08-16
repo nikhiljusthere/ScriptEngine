@@ -15,15 +15,15 @@ Both are gold sets. They measure different things and must not be merged.
 | | `questions/` | `scriptengine/eval/gold_*.json` |
 |---|---|---|
 | Where answers come from | researched online, from the wiki and elsewhere | checked against the crawl as it exists on disk |
-| Surface measured | `POST /context` over HTTP — the bundle a caller actually receives | retriever objects in-process |
+| Surface measured | `POST /context` over HTTP, the bundle a caller actually receives | retriever objects in-process |
 | Scoring | partial credit: recall and precision | boolean, all-or-nothing |
 | Coverage | all 8 series | 4 series |
-| Gates the build | no — it is a measurement | yes — `cli eval` exits 1 below 1.0 |
+| Gates the build | no, it is a measurement | yes, `cli eval` exits 1 below 1.0 |
 
 The distinction that matters: `gold_*.json` asks "did a change break what
 worked", and locks in today's crawl. `questions/` asks "is the engine right
 about the series", and is allowed to say no for a long time. A question here
-failing is information, not a broken build — which is why the runner never
+failing is information, not a broken build, which is why the runner never
 exits non-zero on a score.
 
 ## How a question gets researched
@@ -34,18 +34,18 @@ Reddit is good at telling you which questions people actually ask about a
 series. It is bad at answering them: the top comment is frequently an argument.
 So a thread is a legitimate way to *find* a question and never a way to answer
 one. If the best available answer is a debate, the question does not belong in
-this bank — the engine cannot be marked wrong against a disagreement.
+this bank, so the engine cannot be marked wrong against a disagreement.
 
 ### Source tiers
 
 | Tier | What | Rule |
 |---|---|---|
-| `wiki` | The series' own Fandom wiki, or official material — a databook, Viz, Shueisha | The only tier that can carry a **set** alone |
+| `wiki` | The series' own Fandom wiki, or official material such as a databook, Viz or Shueisha | The only tier that can carry a **set** alone |
 | `editorial` | A bylined article: CBR, GameRant, ScreenRant, FandomWire, ANN | May carry a **fact** alone. For a set, corroboration only |
 | `community` | Reddit, Quora, anime.stackexchange, forums | Never a sole source. Good for discovering questions; usable as corroboration when the comment cites a chapter, which must be recorded in `note` |
 | *banned* | VS Battles, powerscaling wikis, "who would win", tier lists, content farms | Never a source at all |
 
-A **set** asserts completeness, and only a wiki maintains a complete list — a
+A **set** asserts completeness, and only a wiki maintains a complete list. A
 "top 10 forms ranked" listicle omits and invents entries as a matter of format.
 A **fact** asserts one thing, so a bylined article can carry it.
 
@@ -57,7 +57,7 @@ says.
 
 `tests/test_question_bank.py` enforces all of this mechanically. A banned domain
 anywhere, a set without a wiki source, a missing date, a duplicate item after
-normalisation — each is a test failure, not a review comment.
+normalisation. Each is a test failure, not a review comment.
 
 ## Schema
 
@@ -94,8 +94,8 @@ normalisation — each is a test failure, not a review comment.
 
 | Field | Meaning |
 |---|---|
-| `kind` | `set` (an enumeration) or `fact` (one answer). A fact is a set of one — same structure, same matching; only the haystack differs |
-| `subject` | Whose page the question is about. Used to tell "this name is somewhere on the wiki" from "this name is in the prose the extractor read" — only the second is evidence about extraction |
+| `kind` | `set` (an enumeration) or `fact` (one answer). A fact is a set of one: same structure, same matching; only the haystack differs |
+| `subject` | Whose page the question is about. Used to tell "this name is somewhere on the wiki" from "this name is in the prose the extractor read"; only the second is evidence about extraction |
 | `scope` | `closed` (the complete set) or `core` (a curated shortlist). Precision is not aggregated over `core` questions |
 | `accept` | `all` (every item should come back) or `any` (one suffices) |
 | `absent` | Names that must **not** come back. Catches over-inclusion from the other side |
@@ -105,7 +105,7 @@ normalisation — each is a test failure, not a review comment.
 | `retired[]` | Items that stopped counting, with the reason. Kept rather than deleted so nothing silently re-adds them |
 
 Per-item `tier` and `sources` are optional and default to the question's. Set
-them when an item comes from somewhere other than the question's own source —
+them when an item comes from somewhere other than the question's own source,
 which is exactly the set of items most likely to be wrong, so the burden lands
 where it belongs.
 
@@ -114,13 +114,13 @@ where it belongs.
 1. Find it (reddit, a Q&A site, or what a script you are writing needed).
 2. Answer it on the wiki. Record the URL.
 3. Write it into the series file with an `id`, a `subject` and today's date.
-4. `python -m scriptengine.cli canon-run --dry-run` — validates without asking
+4. `python -m scriptengine.cli canon-run --dry-run` validates without asking
    the server anything.
 5. `python -m pytest tests/test_question_bank.py -q`.
 
 Weight new questions toward what the engine is known to be weak at rather than
-what it already answers. The measured defect is precision — closed sets come
-back padded, "Every form of Goku" returns 59 members against a canon 12 — so
+what it already answers. The measured defect is precision: closed sets come
+back padded, and "Every form of Goku" returns 59 members against a canon 12, so
 short complete sets where junk cannot hide are worth more than another long
 one. Current-versus-former membership and thinly-filled categories are roadmap
 phases 20 and 21 and currently have no question that can fail for those

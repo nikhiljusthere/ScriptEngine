@@ -1,4 +1,4 @@
-# Script style guide — the house format
+# Script style guide: the house format
 
 The one document that defines how every ScriptEngine script is written. It is the
 distillation of three things:
@@ -13,7 +13,7 @@ is the contract; the samples are the proof.
 
 The rules themselves live in code, in one file, and are served with the research
 context. They used to live in `custom_nodes/ScriptEngineRAG/nodes.py` inside the
-ComfyUI install — a file that is not in this repository — so the direct path
+ComfyUI install (a file that is not in this repository), so the direct path
 served research with no instructions attached and every client had to find this
 document first. Quote `rules.py`; do not re-copy it.
 
@@ -28,7 +28,7 @@ Two allowed shapes, identical except for the intro:
 ```
 **Every Level of the Abyss from Made in Abyss**        ← bold title line
 
-<hook paragraph — 2-4 sentences, fan voice>            ← THE INTRO
+<hook paragraph, 2-4 sentences, fan voice>            ← THE INTRO
 
 * **First Layer**                                      ← section heading
 
@@ -57,7 +57,7 @@ The script is saved as `<Title>.md` in `scripts output/`.
 
 ## 2. The title
 
-First line of the file, bold, on its own line. A clean name for the topic —
+First line of the file, bold, on its own line. A clean name for the topic,
 never a question, never a subtitle.
 
 ```
@@ -68,7 +68,7 @@ never a question, never a subtitle.
 
 The user picks **intro yes/no** before the script is written.
 
-**Intro ON** — a hook paragraph between the title and the first section.
+**Intro ON**: a hook paragraph between the title and the first section.
 2–4 sentences, spoken to a viewer who already knows the series. It names the
 angle and why it's worth watching. Real examples from the samples:
 
@@ -84,7 +84,7 @@ angle and why it's worth watching. Real examples from the samples:
 > entirely and living the curse life, grade by grade, from the absolute jokes
 > at the bottom all the way to the catastrophic nightmares at the top.
 
-**Intro OFF** — after the title, go straight into the first section heading.
+**Intro OFF**: after the title, go straight into the first section heading.
 No preamble of any kind:
 
 ```
@@ -101,7 +101,7 @@ No preamble of any kind:
   it is most often a bulleted bold line: `* **Zodd**`, `* **GRADE 4**`,
   `* **First Layer**`. Plain bold (`**The Five Successful Trips and the Five
   Threats**`) and plain bullets (`* First Trip: Begerossé Union and Pap`) also
-  appear — a bulleted bold heading is the default.
+  appear; a bulleted bold heading is the default.
 - A section is a self-contained spoken segment: name the thing, tell its story
   with specifics, end it cleanly. No filler transitions between sections
   ("moving on to...", "next up...").
@@ -110,15 +110,15 @@ No preamble of any kind:
 - Under the headings the narration is natural spoken prose: **no bullet lists,
   no sub-headers, no lists of facts**.
 - Sections are long. A finished section in the samples is one to three dense
-  paragraphs — often 800–1500 characters of specific detail, not a few lines.
+  paragraphs, often 800–1500 characters of specific detail, not a few lines.
 
-## 5. Voice — `VOICE_RULES`
+## 5. Voice: `VOICE_RULES`
 
 The anti-AI voice block, as served (source of truth:
 `scriptengine/api/rules.py`; full learning in `docs/ANTI_AI_SCRIPTING.md`):
 
 ```
-=== VOICE RULES — you are a person, not a writer-bot ===
+=== VOICE RULES: you are a person, not a writer-bot ===
 - Write like a fan explaining this arc to a friend out loud. Not like a wiki article, a trailer, or a summary.
 - Specificity is everything: name the chapter, the technique, the exact thing that happened. Never trade a fact from the context for a vague superlative ("legendary", "revolutionary", "unforgettable").
 - No significance inflation: no "a pivotal moment", "a crucial turning point", "changing everything". State what happened; the facts carry the weight.
@@ -129,7 +129,7 @@ The anti-AI voice block, as served (source of truth:
 - Avoid AI vocabulary: delve, realm, testament, pivotal, crucial, transformative, intricate, showcase, underscore, captivate, embark, unleash, tapestry, foster, seamless, empower, elevate, revolutionize, journey, nuanced, rich.
 - Use plain verbs: is, has, does, fights, says. Not "serves as", "stands as", "marks a", "boasts", "plays a role in".
 - No em dashes. Use periods and commas.
-- No weasel wording: "many fans believe", "some argue", "critics say" — if the context doesn't name them, the script doesn't either.
+- No weasel wording: "many fans believe", "some argue", "critics say". If the context doesn't name them, the script doesn't either.
 - Say the name again rather than inventing epithets ("the young sorcerer", "the vessel").
 - Don't repeat the same point twice. No "In conclusion"-style ending that recaps.
 - Test every sentence: could an AI writing about any anime have produced it? If yes, rewrite it with a fact only this wiki has.
@@ -140,12 +140,12 @@ Abyss levels) use a direct **second person** ("Let's paint you a picture. You
 are a Grade 4 curse."); the explainer scripts (Apostles, Dark Continent) use
 third person with the fan explaining to a friend. Match the topic.
 
-## 6. Chapter/episode annotations — `ANNOTATION_RULES`
+## 6. Chapter/episode annotations: `ANNOTATION_RULES`
 
 The pipeline rule, as served:
 
 ```
-=== CHAPTER/EPISODE ANNOTATION RULES — every line must be sourced ===
+=== CHAPTER/EPISODE ANNOTATION RULES: every line must be sourced ===
 - Each block of narration ends with the chapter and episode it came from, as a bracketed tag on the last line: e.g. "(Chapter 101, Episode 37)". When the context only gives a chapter, write "(Chapter 101)".
 - If several consecutive lines share the same chapter or episode, tag them once, at the end of that block. Never repeat the tag on every line.
 - Group by the story beat: when a beat spans several consecutive lines, put one tag on the last line of the beat.
@@ -175,7 +175,7 @@ So the `sourced:` header on a beat is the range that block may be tagged with,
 and it is never empty for prose the wiki cited.
 
 **Note on the finished form:** the published samples in `sample scripts/` do
-not carry inline tags — the same sourcing information appears as a
+not carry inline tags; the same sourcing information appears as a
 `*References:*` block at the end of each section:
 
 ```
@@ -199,7 +199,7 @@ Either way: never invent a number.
 
 ## 7. Closings
 
-No section titled "Final Thoughts" — ever (the user has explicitly banned the
+No section titled "Final Thoughts", ever (the user has explicitly banned the
 title). A short, plain closing paragraph that lands the topic is fine when it
 earns it; the Dark Continent script ends:
 
@@ -213,7 +213,7 @@ If the script doesn't need one, end on the last section's content.
 
 The whole point of writing scripts outside ComfyUI is length: scripts run to
 **18,000+ characters** (~3,000 words) when asked. Hit the user's target word
-count by giving every section full treatment — real specifics from the
+count by giving every section full treatment: real specifics from the
 context, not padding. Every section should add facts the others don't repeat.
 
 ## 9. The canonical samples
@@ -241,13 +241,13 @@ whichever shape the topic needs, and the fetched bundle says which it used in
 | "Every Apostle", "Every Rank of Curse", "Every Level of the Abyss" | `roster` | `## Members`, optionally under `### <group>` headings, each with its facts, `debut:` and `sourced:` lines |
 | "Shibuya Incident", "19 Days without Satoru Gojo" | `narrative` | `## Events in order`, beats in story order under the page they came from |
 
-A roster's `### <group>` headings are the wiki's own tiers — the distinct values
+A roster's `### <group>` headings are the wiki's own tiers: the distinct values
 of one infobox field, found through the wiki's label for it. They are the
 section order for the script; walk them in whichever direction the topic wants
 (the samples climb from weakest to strongest). Members inside a group keep their
 order.
 
-The engine states the set it used on a `Set:` line — `Cursed Spirits (class)`
+The engine states the set it used on a `Set:` line: `Cursed Spirits (class)`
 means the members are the wiki's `Cursed Spirits` category, grouped by the field
 it labels "Grade". If that set is wrong for the script, re-fetch with a sharper
 `-Question` rather than writing around it.

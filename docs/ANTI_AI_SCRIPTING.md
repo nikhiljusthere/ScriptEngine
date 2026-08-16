@@ -1,4 +1,4 @@
-# Anti-AI Scripting — learning from Wikipedia:Signs of AI writing
+# Anti-AI Scripting: learning from Wikipedia:Signs of AI writing
 
 **Source:** [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
 (also via `Wikipedia:AIDETECTION`). A field guide to the identifiable style of
@@ -15,7 +15,7 @@ whatever writes it. This document is the full learning: read it to understand
 LLMs pick the most statistically likely next word, so they **regress to the
 mean**: specific, unusual facts get replaced by generic positive descriptions.
 "The inventor of the first train-coupling device" becomes "a revolutionary
-titan of industry". The output is always fluent, always smooth — and always
+titan of industry". The output is always fluent, always smooth, and always
 about the category, never the thing.
 
 The corollary that makes the whole strategy work: **specificity is the moat.**
@@ -75,7 +75,7 @@ exaggerate how widely held an opinion is from one source.
 
 ### 9. Outline conclusions
 "Despite its power, the technique faces challenges…" then a vaguely positive
-assessment, then "Future Prospects". A script ends when the story ends — not
+assessment, then "Future Prospects". A script ends when the story ends, not
 with a summary paragraph repeating the point.
 
 ### 10. Elegant variation
@@ -92,7 +92,7 @@ no hollow reframes, no weasel wording, varied sentence rhythm.**
 
 ## The audit (apply before shipping a script)
 
-1. Does it name concrete facts — chapters, techniques, characters — or generic
+1. Does it name concrete facts (chapters, techniques, characters) or generic
    categories?
 2. Any "pivotal / crucial / testament / realm" doing PR? Cut.
 3. Any "It's not X, it's Y" or "Most people think X, but…"? Rewrite as a

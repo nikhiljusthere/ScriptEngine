@@ -1,6 +1,6 @@
 # What the scripts look like, and what the engine owes them
 
-Derived by reading the scripts in `sample scripts/` — measured, not guessed.
+Derived by reading the scripts in `sample scripts/`: measured, not guessed.
 This is the target the engine is building toward: the output has to serve these,
 and beat them where they are weakest.
 
@@ -14,8 +14,8 @@ Audited against the store, the divergences are of three kinds, and only the
 third is an error:
 
 **The writer invents sections the wiki has no arc for.** `The Entire Life of
-Garou` runs seven sections; three of them — `History`, `Saitama vs Garou Fight`,
-`Aftermath` — are not arcs. `Saitama vs Garou Fight` is a slice of the wiki's
+Garou` runs seven sections; three of them (`History`, `Saitama vs Garou Fight`,
+`Aftermath`) are not arcs. `Saitama vs Garou Fight` is a slice of the wiki's
 `Monster Association Arc`, split out because it is the climax. That is good
 writing and the engine must not try to reproduce it: it supplies the arc, the
 writer decides where to cut it.
@@ -44,7 +44,7 @@ coverage, their arc boundaries or their omissions.
 
 ## Referencing: the sample scripts' style is *not* the target
 
-The samples cite in italics — `(*Episode 47*)`, 261 of them — and the Jujutsu
+The samples cite in italics (`(*Episode 47*)`, 261 of them) and the Jujutsu
 Kaisen ones do not cite at all: `All 7 Levels of Curses` and `Cursed Techniques
 That Should Not Exist` carry **zero** references across ~17,000 words.
 
@@ -59,14 +59,14 @@ script, and its forms are:
 | `(Chapter N, Episode N)` | 11 |
 | `(Episode N)` | 1 |
 
-**That is exactly what `citations.Locator.render()` already emits** — plain
+**That is exactly what `citations.Locator.render()` already emits**: plain
 parentheses, chapter first, episode appended when the wiki supports it, and the
 work named once at the front so `(Modulo Chapter 16)` cannot be confused with
 main-series Chapter 16. Nothing about the renderer needs changing.
 
 Two properties of that style worth keeping deliberately:
 
-- **A citation covers the sentences before it, back to the previous one** — it
+- **A citation covers the sentences before it, back to the previous one.** It
   sits at the end of a paragraph, not on every clause. This matches how
   `citations.attribute()` already reads refs, and it is why the Mahoraga script
   reads as prose rather than as a bibliography.
@@ -75,7 +75,7 @@ Two properties of that style worth keeping deliberately:
   `adapted from` edges, so a missing episode means the anime never adapted it,
   not that the lookup failed. Do not invent one.
 
-The samples' timestamp form — `Episode N 12:30-14:05`, 18 uses — has no
+The samples' timestamp form (`Episode N 12:30-14:05`, 18 uses) has no
 supporting data in the store and is out of scope. Do not fake it.
 
 ---
@@ -84,7 +84,7 @@ supporting data in the store and is out of scope. Do not fake it.
 
 Everything in the folder is one of two shapes.
 
-### A. The character life — sectioned by arc
+### A. The character life: sectioned by arc
 
 `The Entire Life of Killua Zoldyck`:
 
@@ -101,20 +101,20 @@ appear in.
 
 What that needs from the engine, per arc: what this character did, who they did
 it with, what changed for them, and the episode range. Every one of those is a
-scoped query — *character × arc* — not a page lookup.
+scoped query (*character × arc*), not a page lookup.
 
-### B. The enumeration — sectioned by tier or member
+### B. The enumeration: sectioned by tier or member
 
 `All 7 Levels of Sorcerer in JJK`: `Grade 4 → Grade 3 → Grade 2 → Grade 1 →
 Special Grade 1 → Ungraded Powerhouses → Special Grade`.
 
 `Every Nen Vow`: `Chain Jail (Kurapika)`, `Emperor Time (Kurapika)`,
-`Adult Transformation (Gon)`, `Skill Hunter (Chrollo)` … — **ability plus owner**,
+`Adult Transformation (Gon)`, `Skill Hunter (Chrollo)` …: **ability plus owner**,
 which is exactly the `(member, owner)` shape `roster` mode already returns.
 
 Each entry then wants: the canonical description, a named example, and a feat
 that demonstrates it. `All 7 Levels of Curses` quotes the wiki's own wording
-directly — *"A wooden bat is enough"* — so canonical phrasing matters as much as
+directly (*"A wooden bat is enough"*), so canonical phrasing matters as much as
 the fact.
 
 **Archetype B is the one the engine already serves.** The question bank is full
@@ -150,35 +150,35 @@ Three consequences for `ingest/relations.py`:
 - **The vocabulary is right but thin at the edges.** `family, friend, ally,
   rival, enemy, mentor, student, superior, subordinate, romantic, creator,
   creation` covers all of the above. Watch for `captor`/`captive` and
-  `betrayer` — the Zoldyck material leans on both and currently flattens to
+  `betrayer`. The Zoldyck material leans on both and currently flattens to
   `family` and `enemy`.
 
 ---
 
 ## What has since been built
 
-**Arc-scoped chronology — done, and it needed no model.** These wikis already
+**Arc-scoped chronology: done, and it needed no model.** These wikis already
 file a character's history under arc-named headings (1,093 such chunks in jjk,
 1,859 in opm), so `chronology.appearances()` is a keyed read ordered by the
-wiki's own `previous`/`next` chain. `cast()` answers the inverse — jjk arcs
+wiki's own `previous`/`next` chain. `cast()` answers the inverse: jjk arcs
 carry no `characters` edges at all, and reading it back off the character pages
 works on both wikis.
 
-**Section scaffolds — done.** `chronicle <character> --arc <arc>` returns the
+**Section scaffolds: done.** `chronicle <character> --arc <arc>` returns the
 heading, the prose cut into beats at its citation boundaries, the character's
 abilities, and their relations filtered to that arc. Benchmarked against the
 hand-written Garou script, the engine's Hero Hunt Arc covers every beat the
 script does with **seven chapter-and-episode locators against the script's one
 timestamp**.
 
-**Battle-scoped answers — done.** "Which techniques did X use in <battle>" reads
+**Battle-scoped answers: done.** "Which techniques did X use in <battle>" reads
 `combatant1`/`abilities1` off the battle page: 36.9% recall at 5.6% precision
 before, 100%/100% after. 130 of One Punch Man's 133 battle pages carry a chapter
 or episode.
 
 ## What is still missing
 
-1. **Relations coverage on jjk.** jjk has no `Relationships` section — its
+1. **Relations coverage on jjk.** jjk has no `Relationships` section; its
    relationship prose lives in `History` (174 chunks) and `Synopsis` (1,189).
    The default sections reach only 25 jjk characters. Whether `Synopsis` earns
    inclusion is a judgement to make on real output, not in advance: it is plot
@@ -192,9 +192,9 @@ or episode.
 
 Worth recording because the engine's output should not fight it:
 
-- Second person and direct address — "congratulations, they've got at least a
+- Second person and direct address: "congratulations, they've got at least a
   bit of cursed perception".
-- Blunt register mixed with precision — "bottom-feeders" in the same paragraph
+- Blunt register mixed with precision: "bottom-feeders" in the same paragraph
   as "3,722 metres".
 - Facts are load-bearing and specific: heights, family positions, episode
   numbers, canonical quotes. The prose is casual; the underlying claims are not.
