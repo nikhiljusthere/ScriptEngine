@@ -273,25 +273,32 @@ ability_stopwords:
 # `Biography` already and holds 801 of 1,057.
 relation_sections: [Relationships, History, Plot, Synopsis]
 
-# Abilities this wiki only ever shows happening.
+# Abilities a wiki only shows happening: REFUTED 2026-08-17, do not re-declare.
 #
-# 232 chapter pages and 12 episode pages, 904 passages and 927 windows for the
-# series.
+# `ability_narrative_types` read chapter and episode pages instead of character
+# pages. It was built for two Chainsaw Man gold items and measured on csm, the
+# cheapest wiki that holds them: 904 passages, 927 windows, 37 rows.
 #
-# The two items this was built for are **not** recoverable here, measured
-# 2026-08-17 rather than assumed, and the note it replaces was wrong on both:
+#   csm recall     144/146 (98.6%) -> 144/146 (98.6%)   no item recovered
+#   csm precision            80.4% ->          74.5%    +28 members returned
 #
-# * `Makima`'s Prime Minister contract is on her own page, under the declared
-#   `Abilities` section, and the model returns `{"abilities": []}` for that
-#   window. The wiki gives the contract no name -- `Prime Minister Contract` is
-#   the bank's coinage for it -- so an extractor asked for *named* abilities is
-#   right to return nothing. `Chapter 216 / Trivia` mentions it only as a
-#   comparison for Yoru's contract with the Governor of California.
-# * `Power`'s blood weapons are on `Power/History`, a `character_history` page
-#   under `Synopsis / Public Safety Saga / Katana Man arc`, not a chapter page.
-#   On `Chapter 90 / Summary` the model names `Thousand Tera Blood Rain`, which
-#   her own page already records.
+# It cost 5.9 points of precision and recovered nothing, so the rows were
+# deleted and every declaration removed. Three separate reasons, any one of
+# which is enough:
 #
-# Left declared because the pass is cheap on this wiki and its rows are
-# provenance-tagged, not because it recovered either item.
-ability_narrative_types: [chapter_box, episode]
+# * **Both motivating items are somewhere else.** Makima's Prime Minister
+#   contract is on her own page under a declared `Abilities` section, where the
+#   model correctly answers `{"abilities": []}` because the wiki never names
+#   the contract -- `Prime Minister Contract` is the bank's coinage. Power's
+#   blood weapons are on `Power/History`, a page type this never read.
+# * **A story summary names the wrong things.** Chapter summaries gave Denji
+#   six namings of one transformation (`Chainsaw`, `Chainsaw form`,
+#   `Chainsaw Devil`, `Chainsaw Man`, `Denji Man`, and `Denji` itself), which
+#   is what took `Every form of Denji` from 57.1% to 28.6% precision.
+# * **Attribution is not safe in narration.** `Blood weapons` was stored
+#   against Makima, from a passage that names her while describing Power's.
+#
+# The pass itself stays in the tree, tested and working: it is one line of YAML
+# from being live if a wiki is ever found whose abilities genuinely exist only
+# in its story pages. Chainsaw Man is not that wiki, and it was chosen as the
+# best case.

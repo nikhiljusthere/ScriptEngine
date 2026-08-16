@@ -204,15 +204,32 @@ relation_sections:
   - Story
   - Background
 
-# Abilities this wiki only ever shows happening.
+# Abilities a wiki only shows happening: REFUTED 2026-08-17, do not re-declare.
 #
-# A character page lists what someone has; a chapter or episode page records
-# what they did, and the two disagree more than expected. On Chainsaw Man,
-# Makima's contract with the Prime Minister of Japan is on `Chapter 216` and
-# Power's blood weapons on `Chapter 90`, neither anywhere on either
-# character's page, and both were scored as items the corpus did not contain.
+# `ability_narrative_types` read chapter and episode pages instead of character
+# pages. It was built for two Chainsaw Man gold items and measured on csm, the
+# cheapest wiki that holds them: 904 passages, 927 windows, 37 rows.
 #
-# Read once per page with the owner attributed by the model, never per
-# character: reading per character re-reads the same chapter for everyone it
-# names. 402 manga and 52 anime episode pages here.
-ability_narrative_types: [episode_manga, episode_anime]
+#   csm recall     144/146 (98.6%) -> 144/146 (98.6%)   no item recovered
+#   csm precision            80.4% ->          74.5%    +28 members returned
+#
+# It cost 5.9 points of precision and recovered nothing, so the rows were
+# deleted and every declaration removed. Three separate reasons, any one of
+# which is enough:
+#
+# * **Both motivating items are somewhere else.** Makima's Prime Minister
+#   contract is on her own page under a declared `Abilities` section, where the
+#   model correctly answers `{"abilities": []}` because the wiki never names
+#   the contract -- `Prime Minister Contract` is the bank's coinage. Power's
+#   blood weapons are on `Power/History`, a page type this never read.
+# * **A story summary names the wrong things.** Chapter summaries gave Denji
+#   six namings of one transformation (`Chainsaw`, `Chainsaw form`,
+#   `Chainsaw Devil`, `Chainsaw Man`, `Denji Man`, and `Denji` itself), which
+#   is what took `Every form of Denji` from 57.1% to 28.6% precision.
+# * **Attribution is not safe in narration.** `Blood weapons` was stored
+#   against Makima, from a passage that names her while describing Power's.
+#
+# The pass itself stays in the tree, tested and working: it is one line of YAML
+# from being live if a wiki is ever found whose abilities genuinely exist only
+# in its story pages. Chainsaw Man is not that wiki, and it was chosen as the
+# best case.
