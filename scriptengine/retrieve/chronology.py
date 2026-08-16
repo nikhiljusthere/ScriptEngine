@@ -9,7 +9,7 @@ that is a linked list:
 
     Amazon Lily Arc --next--> Impel Down Arc
 
-Walked, restricted to arc pages, it reproduces canon exactly — One Piece from
+Walked, restricted to arc pages, it reproduces canon exactly: One Piece from
 Romance Dawn through Orange Town, Syrup Village, Baratie and Arlong Park; Dragon
 Ball from Emperor Pilaf through Tournament and Red Ribbon Army.
 
@@ -25,7 +25,7 @@ Luffy Historical Special`) and Super Dragon Ball Heroes (`Dark Demon Realm
 Saga`). The longest chain is the story, and the rest are reported beside it
 rather than mixed into it.
 
-Bleach has no arc pages at all — its arcs exist only inside episode titles — so
+Bleach has no arc pages at all (its arcs exist only inside episode titles) so
 this declines there instead of inventing an order it cannot read.
 """
 
@@ -51,7 +51,7 @@ _EPISODE_TOKENS = ("episode",)
 # range, and the webcomic numbering is a different work's.
 _SPAN_SKIP = ("volume", "webcomic")
 
-# One Piece stores the literal string `auto` — the wiki computes the range from
+# One Piece stores the literal string `auto`, and the wiki computes the range from
 # the chapters that link to the arc, so there is nothing to read.
 _COMPUTED = {"auto", "", "n/a", "none"}
 
@@ -108,7 +108,7 @@ def chains(store: FactStore) -> list[list[str]]:
     # `next` first and alone, then `previous` only where it fills a gap.
     # Folding both in together cost Dragon Ball two thirds of its story: a
     # backwards link inserted before the forward one wins, and the walk turns
-    # down a side branch and stops — 45 sagas became 21, with Cell and Buu
+    # down a side branch and stops: 45 sagas became 21, with Cell and Buu
     # stranded in fragments.
     following: dict[str, str] = {}
     for first, relation, second in rows:
@@ -125,7 +125,7 @@ def chains(store: FactStore) -> list[list[str]]:
         if name.lower() not in preceded:
             found.append(_walk(name, following))
     # A cycle has no head, so nothing above reaches it. Anything still unseen is
-    # walked from wherever it starts — an answer of unknown phase beats none.
+    # walked from wherever it starts, since an answer of unknown phase beats none.
     seen = {part.lower() for chain in found for part in chain}
     for name in arcs:
         if name.lower() not in seen:
@@ -133,7 +133,7 @@ def chains(store: FactStore) -> list[list[str]]:
             seen.update(part.lower() for part in chain)
             found.append(chain)
 
-    # Chains can overlap where two arcs both lack a predecessor and rejoin —
+    # Chains can overlap where two arcs both lack a predecessor and rejoin,
     # Berserk reported `Black Swordsman Arc` as its own run *and* as part of the
     # main one. A run wholly inside a longer run is not a separate run.
     found.sort(key=len, reverse=True)
@@ -410,7 +410,7 @@ def scaffold(
         # every arc. One scoped elsewhere does not belong to this one.
         if era and era != arc:
             continue
-        said = f"{row['character']} — {row['relation']} — {row['other']}"
+        said = f"{row['character']} / {row['relation']} / {row['other']}"
         ties.append(f"{said} [{era}]" if era else said)
 
     return Scaffold(
@@ -485,7 +485,7 @@ def _counted(store: FactStore, arc: str, kind: str) -> str:
     """How many chapters or episodes the wiki files under this arc.
 
     One Piece writes `chapter = auto` and lets the template count the pages that
-    link to the arc, so there is no range to read — but the category it files
+    link to the arc, so there is no range to read, but the category it files
     them under is populated (`Wano Country Arc Chapters` holds 149), and a count
     is a truer answer than the word "auto".
     """
@@ -502,8 +502,8 @@ def _counted(store: FactStore, arc: str, kind: str) -> str:
 #
 # `\b(arc|saga)s?\b` was the whole test, and it made every topic that names an
 # arc a chronology: `Fearsome Womb Arc` is one arc's story and was answered
-# with the ordered list of arcs. Naming an arc is naming a subject — the thing
-# a script gets written about — and asking for arcs is asking for the set.
+# with the ordered list of arcs. Naming an arc is naming a subject, the thing
+# a script gets written about, and asking for arcs is asking for the set.
 _NAMES_AN_ARC = re.compile(r"\b(arc|saga)s\b", re.IGNORECASE)
 _ASKS_FOR_ARCS = re.compile(
     r"\b(every|all|each|list|how many)\b[^.?!]{0,40}?\b(arc|saga)s?\b",
@@ -514,7 +514,7 @@ _ASKS_FOR_ARCS = re.compile(
 def build_chronology(paths: SeriesPaths, query: str, max_members: int = 200) -> Roster | None:
     """The story in order, or ``None`` where the wiki records no order.
 
-    Members are built directly rather than through `_render_all`, which sorts —
+    Members are built directly rather than through `_render_all`, which sorts,
     and sorting is the one thing that would destroy the only property this
     answer has.
     """
@@ -545,7 +545,7 @@ def build_chronology(paths: SeriesPaths, query: str, max_members: int = 200) -> 
         rejected = [
             {
                 "name": chain[0],
-                "reason": f"a separate run of {len(chain)} — filler or a spin-off",
+                "reason": f"a separate run of {len(chain)}: filler or a spin-off",
                 "rule": "chronology",
             }
             for chain in rest

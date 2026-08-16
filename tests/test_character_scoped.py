@@ -8,8 +8,8 @@ they are opposites:
   field into one string, so testing a character qualifier against it matched
   `Goku` inside `Goku Black` and kept `Super Saiyan Rosé` among Goku's forms.
 * **Recall.** Four of these eight wikis give abilities no page at all. Luffy's
-  Gears are headings on `Monkey D. Luffy/Abilities and Powers`, so a category —
-  which is filed by kind — can never reach them, and "Every form of Luffy"
+  Gears are headings on `Monkey D. Luffy/Abilities and Powers`, so a category
+  (which is filed by kind) can never reach them, and "Every form of Luffy"
   answered with forty *people*.
 
 The cases below are the specific ones that were wrong.
@@ -72,7 +72,7 @@ class TestSubject:
         "series,words,expected",
         [
             # Subject ranking answered these with `Yamamoto Luffy`, `Manjaro`
-            # and `Nen` — a different character, a different character, and an
+            # and `Nen`: a different character, a different character, and an
             # item.
             ("onepiece", ["form", "luffy"], "Monkey D. Luffy"),
             ("onepiece", ["technique", "zoro"], "Roronoa Zoro"),
@@ -229,7 +229,7 @@ class TestKinds:
         """Raising it looked right and measured worse.
 
         25 canon items are dropped here, and the headings holding them run to
-        `Armament Haki` at 65 pages while the skeleton starts at `Haki` 80 — an
+        `Armament Haki` at 65 pages while the skeleton starts at `Haki` 80, an
         apparently clean gap. Seventy bought 9 canon items, cost 2.1 points of
         precision and made 21 questions noisier against 3 improved, because the
         gap only counted the headings a higher threshold would rescue and never
@@ -377,7 +377,7 @@ class TestEndToEnd:
         # Goku Black's form, kept only because "goku" is inside "Goku Black".
         assert not any(name.startswith("Super Saiyan Ros") for name in names)
         # `Ultimate` is deliberately not asserted. It is Gohan's, and the wiki
-        # does record Goku as one of its eighteen users — through Xenoverse.
+        # does record Goku as one of its eighteen users, through Xenoverse.
         # The page's own debut is canon, because it is canon for Gohan, and
         # nothing in the data marks one user's use of a page as non-canon while
         # another's is. Removing it needs per-user scope the wiki does not
@@ -385,8 +385,8 @@ class TestEndToEnd:
         # The bound here used to be 42, the size of the unfiltered
         # `Transformations` category, because that category was the source.
         # It is not any more: the answer is now Goku's own
-        # `Power and Abilities` page — whose 36 `;`-marked forms became real
-        # headings — unioned with the pages he owns. More members, and more of
+        # `Power and Abilities` page, whose 36 `;`-marked forms became real
+        # headings, unioned with the pages he owns. More members, and more of
         # them right: canon recall on this question went 8 of 12 to 11 of 12.
         #
         # What still has to hold is that it is *his* list and not the series':
@@ -425,7 +425,7 @@ class TestEndToEnd:
 
         The headings on his abilities page are `Gear 2`, `Gear 3`, `Gear 4` and
         `Gear 5 (Awakening)`; the prose under them names `Boundman`, `Tankman`
-        and `Snakeman`. Preferring either one scored 3 of 6 — the union scores
+        and `Snakeman`. Preferring either one scored 3 of 6; the union scores
         5, and no ordering of the two could have.
         """
         paths = store_for("onepiece")
@@ -482,7 +482,7 @@ class TestEndToEnd:
         ],
     )
     def test_a_page_only_a_game_ever_showed_is_dropped(self, name):
-        """These are no longer filtered at query time — they are not indexed.
+        """These are no longer filtered at query time; they are not indexed.
 
         `_game_only` used to be the assertion here. It cannot be any more:
         the page is gone from the store, so `_profile` returns nothing to
@@ -491,7 +491,7 @@ class TestEndToEnd:
 
         Checked against `documents` rather than `nodes`. A page other pages
         link to keeps a bare, unresolved node so the link is not silently
-        lost — that is the graph working as designed, and it carries no text,
+        lost, and that is the graph working as designed. It carries no text,
         no sections and no edges of its own.
         """
         paths = store_for("db")

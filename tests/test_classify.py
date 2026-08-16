@@ -95,7 +95,7 @@ class TestSemanticReason:
         assert "stacks on another form" in reason
 
     def test_an_intrinsic_form_that_stacks_is_kept(self, store):
-        """Stacking alone is not disqualifying — Super Saiyan Blue stacks with
+        """Stacking alone is not disqualifying: Super Saiyan Blue stacks with
         Kaio-ken and is still a Saiyan form."""
         self._save(
             store, "Super Saiyan Blue",

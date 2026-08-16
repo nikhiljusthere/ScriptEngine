@@ -2,14 +2,14 @@
 
 Three levels:
 
-* **0 — document card.** Title, type, infobox facts and lead, rendered
+* **0, document card.** Title, type, infobox facts and lead, rendered
   compactly. Facts are stored as facts in SQLite *and* rendered here, so that a
   semantic query like "who is tall and blond" can still reach a height and hair
   colour that only exist as infobox parameters. Storing them twice is
   deliberate: one form is exact, the other is searchable.
-* **1 — section.** The whole section, kept as the parent used to expand context
+* **1, section.** The whole section, kept as the parent used to expand context
   around a hit. Not embedded.
-* **2 — passage.** The retrieval unit, split within a known section.
+* **2, passage.** The retrieval unit, split within a known section.
 
 Because sections are known rather than inferred, every chunk carries a real
 breadcrumb. The previous chunker inferred headings with a rule that never
@@ -28,7 +28,7 @@ from scriptengine.ingest.documents import WikiPage
 # citation locator the wiki put there. Without the locator branch the split
 # never fires after "…took over Geto's body.(Chapter 145, Episode 50) Now known
 # as…", because the character before the space is `)`, and two sentences merge
-# into one chunk — and, worse, into one citation, so the sentence the ref
+# into one chunk and, worse, into one citation, so the sentence the ref
 # actually covers cannot be told from the one after it.
 _SENTENCE_BREAK = re.compile(
     r'(?<=[.!?])'
@@ -37,7 +37,7 @@ _SENTENCE_BREAK = re.compile(
     r'\s+(?=["\']?[A-Z0-9])'
 )
 
-# Wiki prose is dense with abbreviations that end in a full stop — "Vol. 5",
+# Wiki prose is dense with abbreviations that end in a full stop: "Vol. 5",
 # "Ch. 12", "9:15 P.M. Shibuya". Splitting after them chops sentences in half.
 # Python's `re` only allows fixed-width lookbehind, so rather than encode this
 # in the pattern, candidate splits are re-joined when the left side ends with
@@ -109,7 +109,7 @@ def split_passage(
     """Split a section into overlapping passages at sentence boundaries.
 
     Overlap carries whole sentences rather than a fixed word count, so a passage
-    never begins mid-clause — a chunk starting "of his hands, Todo can swap"
+    never begins mid-clause: a chunk starting "of his hands, Todo can swap"
     embeds poorly and reads worse when quoted in a script.
     """
     sentences = split_sentences(text)
@@ -208,8 +208,8 @@ def chunk_page(
         if section.title.strip().lower() in BOILERPLATE_SECTIONS:
             continue
         # A section headed by an item marker is kept however short it is. The
-        # name is what the question asks for — "Every form of Goku" wants
-        # `Super Saiyan 4`, not the paragraph under it — and `_section_roster`
+        # name is what the question asks for: "Every form of Goku" wants
+        # `Super Saiyan 4`, not the paragraph under it, and `_section_roster`
         # reads chunks, so dropping the chunk drops the member with it.
         if section.word_count < min_words and not getattr(section, "is_item", False):
             continue

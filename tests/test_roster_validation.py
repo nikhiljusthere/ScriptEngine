@@ -1,7 +1,7 @@
 """Tests for the membership validator.
 
 The failure these exist for: "Every Saiyan transformation" returned Black
-Frieza. The wiki files it under `Transformations` — correctly, it is one — and
+Frieza. The wiki files it under `Transformations` (correctly, it is one) and
 nothing downstream ever asked the second half of the question. Retrieval was
 never the problem; no embedding is involved in a roster at all.
 """
@@ -62,7 +62,7 @@ def transformations(store):
     page("Goku", ["Saiyans"], [("Race", "Saiyan")])
     page("Frieza", ["Frieza's race"], [("Race", "Frieza Clan (mutant)")])
     # The race has its own article, which is what makes "Saiyan" a constraint
-    # rather than a genre word — see `_grounded`.
+    # rather than a genre word; see `_grounded`.
     page("Saiyan", ["Races"], [("Homeworld", "Planet Vegeta")])
     return store
 
@@ -231,8 +231,8 @@ class TestValidateMember:
 class TestProfileIsReadOnce:
     """One candidate, one read of the store.
 
-    A profile costs four queries — categories, facts, debut edges, and the page
-    type behind each edge — and the same candidate is profiled several times over
+    A profile costs four queries (categories, facts, debut edges, and the page
+    type behind each edge) and the same candidate is profiled several times over
     in one request: `apply_constraints` builds one to validate a name and another
     to test the qualifier against it, `_outside_the_story` builds a third, and
     `classify` asks for a user's twice inside a single expression.
@@ -404,7 +404,7 @@ class TestSubpages:
         assert "subpage of 'Super Saiyan'" in reason
 
     def test_a_slash_with_no_parent_is_left_alone(self, transformations):
-        """Some titles simply contain a slash — they are not subpages of
+        """Some titles simply contain a slash; they are not subpages of
         anything, and rejecting them would lose a real member."""
         from scriptengine.retrieve.roster import _profile
 
@@ -433,7 +433,7 @@ class TestCanonMedia:
 
     def test_the_declared_set_reaches_validation(self):
         """Omokage is from a non-canon film, and Hunterpedia files that film
-        under `anime debut` — only the target page's type gives it away."""
+        under `anime debut`; only the target page's type gives it away."""
         constraints = parse_constraints(
             "Every member of the Phantom Troupe", None, "",
             {"canon_media": ["manga", "anime"]},
@@ -479,7 +479,7 @@ class TestApplyConstraints:
         Returning the unfiltered set is wrong in a visible way; returning an
         empty one is wrong in a way that looks like the set does not exist.
         """
-        # `frieza` is grounded — the wiki has an article — but no member of this
+        # `frieza` is grounded (the wiki has an article) but no member of this
         # list satisfies it, so validation would empty the set entirely.
         names = ["Super Saiyan"]
         kept, rejected = apply_constraints(

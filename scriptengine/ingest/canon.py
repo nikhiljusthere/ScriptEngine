@@ -1,11 +1,11 @@
 """Which works a series counts, applied at index time.
 
 `non_canon_works:` in `series/<name>/overrides.yaml` has always existed, but it
-was only read on the query path — a game page was filtered out of a roster and
+was only read on the query path: a game page was filtered out of a roster and
 still sat in the index, reachable by search, by a citation, or by any caller
 that did not ask for canon. Dragon Ball carries 40 `Xeno*` pages, 23 `Heroes`
 pages, 169 rows of `Dragon Ball Heroes` categories, and 967 chunks that are
-Super Dragon Ball Heroes *sections inside otherwise canon pages* — `Goku/
+Super Dragon Ball Heroes *sections inside otherwise canon pages*: `Goku/
 Biography` has a seven-saga SDBH subtree.
 
 Dropping them here means they never reach `documents`, `sections`, `chunks`,
@@ -56,9 +56,9 @@ def page_is_discounted(
     """Whether this whole page belongs only to a work the series discounts.
 
     Read from the debut **edges**, not from the `Debut` fact. The fact is one
-    free-text string naming every medium at once — `Super Saiyan (Berserk)`
+    free-text string naming every medium at once: `Super Saiyan (Berserk)`
     reads `Game: Dragon Ball Heroes Manga: "Evil Saiyan" Anime: "Goku Goes
-    Berserk!..."` — because Heroes has its own manga and its own promotional
+    Berserk!..."`, because Heroes has its own manga and its own promotional
     anime, so it looks canon on two counts of three. The edges name one work
     each and can be judged one at a time.
     """
@@ -97,7 +97,7 @@ def _target_is_discounted(
 ) -> bool:
     """Whether one debut target belongs to a discounted work.
 
-    The category hop is what reaches `Evil Saiyan (chapter)` — a page whose own
+    The category hop is what reaches `Evil Saiyan (chapter)`, a page whose own
     title says nothing and which is filed under `Dragon Ball Heroes manga
     chapters`.
     """
@@ -117,11 +117,11 @@ def keep_sections(
     """The sections that are not a discounted work's corner of a kept page.
 
     Two shapes. `Goku/Biography` is canon and its `Super Dragon Ball Heroes`
-    subtree is not — matched on the breadcrumb, so a child goes with its
+    subtree is not, matched on the breadcrumb, so a child goes with its
     parent. And a heading may name a page that was itself dropped:
     `Goku/Power and Abilities` lists `;Super Saiyan (Berserk)` among his forms,
     and once the marker is a heading that is a member of "Every form of Goku".
-    The page is gone, so nothing downstream can tell it was ever a game's —
+    The page is gone, so nothing downstream can tell it was ever a game's,
     the only moment that knows is this one.
     """
     sections = list(sections)

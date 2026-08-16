@@ -1,5 +1,5 @@
 """
-Step 3: Hybrid retrieval — vector search + BM25 + graph traversal → rerank
+Step 3: Hybrid retrieval, vector search + BM25 + graph traversal → rerank
 This is where accuracy is won or lost.
 """
 
@@ -49,7 +49,7 @@ class Models:
     @classmethod
     def reranker(cls) -> CrossEncoder:
         if cls._reranker is None:
-            # CrossEncoder runs query+chunk together — much more accurate than bi-encoder
+            # CrossEncoder runs query+chunk together, much more accurate than bi-encoder
             cls._reranker = CrossEncoder(RERANK_MODEL, device="cuda", max_length=512)
         return cls._reranker
 
@@ -180,7 +180,7 @@ def vector_search(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 3D. Graph traversal — find related entities and their documents
+# 3D. Graph traversal: find related entities and their documents
 # ─────────────────────────────────────────────────────────────────────────────
 
 class GraphRetriever:
@@ -316,7 +316,7 @@ def reciprocal_rank_fusion(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 3G. Reranker — the most important accuracy step
+# 3G. Reranker: the most important accuracy step
 # ─────────────────────────────────────────────────────────────────────────────
 
 def rerank(query: str, chunks: List[Dict], top_k: int = FINAL_TOP_K) -> List[Dict]:
@@ -329,7 +329,7 @@ def rerank(query: str, chunks: List[Dict], top_k: int = FINAL_TOP_K) -> List[Dic
 
     pairs = []
     for chunk in chunks:
-        # use parent text if available — gives reranker more context
+        # use parent text if available; gives reranker more context
         context = chunk.get("parent_text", "") or chunk["text"]
         if chunk["text"] not in context:
             context = chunk["text"] + "\n\n" + context
@@ -359,7 +359,7 @@ def extract_query_entities(query: str, known_entities: List[str]) -> List[str]:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 3I. Main retrieval function — call this from your QA pipeline
+# 3I. Main retrieval function: call this from your QA pipeline
 # ─────────────────────────────────────────────────────────────────────────────
 
 class HybridRetriever:
@@ -370,7 +370,7 @@ class HybridRetriever:
         self.entity_list  = self._load_entities()
 
         # build BM25 index on startup (loads all chunks into RAM)
-        # for 10k files ~500k chunks this may use 2-4GB RAM — acceptable
+        # for 10k files ~500k chunks this may use 2-4GB RAM, which is acceptable
         self.bm25.build(self.qdrant)
 
     def _load_entities(self) -> List[str]:
@@ -389,7 +389,7 @@ class HybridRetriever:
         # 1. extract entities from query
         query_entities = extract_query_entities(query, self.entity_list)
 
-        # 2. graph traversal — find related entities
+        # 2. graph traversal: find related entities
         graph_relations = self.graph.get_related_entities(query_entities)
         related_entity_names = list({r["related"] for r in graph_relations})
         all_relevant_entities = list(set(query_entities + related_entity_names))
@@ -410,7 +410,7 @@ class HybridRetriever:
         # 6. BM25 search
         bm25_results = self.bm25.search(query, BM25_TOP_K)
 
-        # 7. graph-boosted search — fetch chunks from graph-identified docs
+        # 7. graph-boosted search: fetch chunks from graph-identified docs
         graph_boosted = []
         if graph_doc_titles:
             graph_boosted = self._fetch_chunks_by_doc_titles(

@@ -1,7 +1,7 @@
 # Per-wiki handling for the One Piece Wiki.
 
 # This wiki barely cites its own story. 2,978 `<ref>` tags across 7,937 pages,
-# and its most-referenced pages are video games, publishers and merchandise —
+# and its most-referenced pages are video games, publishers and merchandise,
 # Super Grand Battle X, Madman Entertainment, Scholastic. A character page
 # typically carries none at all.
 #
@@ -44,7 +44,7 @@ prune_types:
 # The sets this wiki maintains. Every entry verified to return members.
 # Where this wiki writes a character's abilities when it gives them no page.
 #
-# Luffy's Gears are not entities here: they are headings —
+# Luffy's Gears are not entities here: they are headings,
 # `Devil Fruit / Gear 2` on `Monkey D. Luffy/Abilities and Powers`. Asked for
 # his forms, category retrieval reached `Former Pirates` and answered with
 # forty people, because nothing filed by kind can reach a heading.
@@ -58,7 +58,7 @@ ability_sections:
 # Haki is the system, not one character's ability.
 #
 # Every notable fighter in the second half of the series uses Armament and
-# Observation, and each character's ability section names them again — 23 of
+# Observation, and each character's ability section names them again: 23 of
 # 412 extracted rows across 15 characters, which pushed `Armament Haki` and
 # `Supreme King Haki` ahead of Zoro's actual sword techniques.
 #
@@ -105,7 +105,7 @@ rosters:
       - Artificial Races
 
   # Not a category on this wiki: no rank has its own article, so asking by
-  # category returns `Marine Officers` — fourteen people rather than the ladder.
+  # category returns `Marine Officers`, fourteen people rather than the ladder.
   # The page writes all twenty-two as sections, grouped by division.
   - name: Marine Ranks
     match: [marine rank, marine ranks, officer rank, officer ranks, rank in the marines, ranks in the marines]
@@ -116,7 +116,7 @@ rosters:
     category: One Piece Movies
 
   # The wiki calls them the Four Emperors; viewers say Yonko, and no scoring
-  # turns one into the other. Seven pages sit in the category — more than the
+  # turns one into the other. Seven pages sit in the category, more than the
   # four seats, because the title has changed hands.
   - name: Four Emperors
     match: [yonko, yonkou, emperor of the sea, emperors of the sea, four emperors]

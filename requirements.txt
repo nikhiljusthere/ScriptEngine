@@ -53,6 +53,6 @@ pytest-asyncio>=0.23.0
 #   python -m spacy download en_core_web_trf
 #
 # Removed deliberately:
-#   neo4j       — graph moved into SQLite (no daemon, schemaless labels)
-#   rank-bm25   — replaced by SQLite FTS5 (on-disk BM25, no RAM scroll per query)
-#   transformers — sentence-transformers pulls what is needed; generation is remote
+#   neo4j:        graph moved into SQLite (no daemon, schemaless labels)
+#   rank-bm25:    replaced by SQLite FTS5 (on-disk BM25, no RAM scroll per query)
+#   transformers: sentence-transformers pulls what is needed; generation is remote

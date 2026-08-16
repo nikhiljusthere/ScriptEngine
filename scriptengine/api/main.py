@@ -180,8 +180,8 @@ def list_series() -> dict[str, Any]:
 def context(request: ContextRequest) -> dict[str, Any]:
     """The endpoint a script-writing model calls.
 
-    Returns passages in the right order — narrative order when asked for it,
-    not similarity order — with the facts behind them and a citation each.
+    Returns passages in the right order (narrative order when asked for it,
+    not similarity order) with the facts behind them and a citation each.
 
     `mode="auto"` reads the topic: "Every Rank of Curse" is a set and comes back
     as a roster, anything else comes back as a narrative. Most script topics are
@@ -296,10 +296,10 @@ def abilities(series: str, entity: str) -> dict[str, Any]:
     """Every ability a character uses, straight from the knowledge graph.
 
     Walks the `user` edges backwards from the character to its ability pages
-    (the retriever cannot do this — prose ranking misses abilities when the
+    (the retriever cannot do this: prose ranking misses abilities when the
     character's own page is not indexed). Each ability comes with its debut
     chapter, its `Usage / <character>` section, and the chapter refs inside
-    that section — where the character actually used it, not just where it is
+    that section, where the character actually used it, not just where it is
     mentioned.
     """
     from scriptengine.retrieve.abilities import collect_abilities

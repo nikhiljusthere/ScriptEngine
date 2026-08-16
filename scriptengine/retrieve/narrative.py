@@ -3,16 +3,16 @@
 Relevance ranking answers questions. It does not write scripts.
 
 Asked about the Shibuya Incident, a QA retriever returns the eight most similar
-fragments in similarity order — which is a fine answer to "what was the Shibuya
+fragments in similarity order, which is a fine answer to "what was the Shibuya
 Incident" and a useless basis for a twelve-minute video. A script needs the
 event in sequence: what happened, to whom, in what order, and what it caused.
 
 Two orderings are available, and both come from data already extracted:
 
-* **within a page** — sections carry their position in the article, and a wiki
+* **within a page**: sections carry their position in the article, and a wiki
   writes chronologically. The Shibuya Incident page is literally ordered
   "7:00 P.M. Shibuya", "8:31 P.M. Fukutoshin Line Platform", and so on.
-* **across pages** — chapter, episode and volume titles carry numbers, and arc
+* **across pages**: chapter, episode and volume titles carry numbers, and arc
   pages link to their chapters. Sorting on those numbers gives a real timeline.
 
 Nothing here is series-specific: numbered instalments and ordered sections are
@@ -87,7 +87,7 @@ _DURATION = re.compile(
 )
 
 # List-style sections ("Chapters", "Battles & Events", "Characters Introduced")
-# make every arc page mention "chapter", "battles" and "events" — scoring
+# make every arc page mention "chapter", "battles" and "events", so scoring
 # against them would make every event look relevant to every query.
 _LIST_SECTION_TITLES = {
     "chapters", "episodes", "volumes", "characters introduced",
@@ -277,7 +277,7 @@ class NarrativeRetriever:
         # A character page is a biography, not an event list. A script wants
         # what happened to the character, so the character's events and battles
         # are the timeline even when the character page resolves (Gojo's own
-        # sections are Appearance, Personality, Cursed Technique — not a
+        # sections are Appearance, Personality, Cursed Technique, not a
         # narrative). The biography sections are only a fallback when the
         # character has no recorded events.
         if node["label"] in {"character", "character_synopsis", "unknown"}:
@@ -405,8 +405,8 @@ class NarrativeRetriever:
 
         A 3,000-word script written from one document reads like that document.
         The Shibuya Incident bundle was 128 beats and every one of them came from
-        the `Shibuya Incident` page, while the battle pages it links — where the
-        fights are actually described, blow by blow, with their own refs — were
+        the `Shibuya Incident` page, while the battle pages it links (where the
+        fights are actually described, blow by blow, with their own refs) were
         never reached. Only the strong (infobox) edges are followed, so this
         picks up the pages the wiki itself says belong to the event rather than
         everything the prose happens to mention.
@@ -514,7 +514,7 @@ class NarrativeRetriever:
         highest, so the sealing and the unsealing-era events lead (in
         instalment order within each score band), everything from the anchor's
         instalment onward is kept, and his childhood is not. The strongest
-        events come first so the budget reaches the end of the story — a
+        events come first so the budget reaches the end of the story, and a
         twenty-thousand-token bundle that ate the Shibuya Incident page in
         strict order would never reach the unsealing. Generic words
         ("without") score every page equally and anchor nothing.
@@ -552,7 +552,7 @@ class NarrativeRetriever:
         # The strongest matches anchor the timeline; the band below them is
         # kept as context. For "sealed ... freed" the pages that mention both
         # (the Shibuya Incident, the unsealing fight) anchor, and everything
-        # from their instalment onward is kept — his childhood is not. A weak
+        # from their instalment onward is kept; his childhood is not. A weak
         # query where nothing scores above 1 falls back to the full
         # chronological timeline. A single rare phrase can still anchor
         # ("19 days" matches only the Culling Game page, so it anchors there).
@@ -571,7 +571,7 @@ class NarrativeRetriever:
         # mention them, so the budget covers the whole arc instead of running
         # out inside the first event page. A single phrase ("19 days", "origin")
         # is not filtered: its era is the answer, not just the pages that
-        # spell the phrase out. Zero-hit events are dropped — a page that
+        # spell the phrase out. Zero-hit events are dropped: a page that
         # mentions none of the query's words contributes nothing to it.
         filter_matches = len(relevant_tokens) >= 2
         if filter_matches:

@@ -27,12 +27,12 @@ CITATION_TEMPLATES = ("ref", "cite", "sfn")
 
 # Citation parameters that locate a claim rather than qualify it. Everything
 # else a reference carries is either a page number, a name, or a statement about
-# which work the instalment belongs to — and the audit flags the last kind when
+# which work the instalment belongs to, and the audit flags the last kind when
 # this module does not recognise it.
 LOCATOR_PARAMS = frozenset({"chap", "chap2", "ep", "ep2", "vol", "fan"})
 PAGE_PARAMS = frozenset({"page", "pages", "name"})
 
-# `{{cite web}}` and its relatives describe a source outside the work — an
+# `{{cite web}}` and its relatives describe a source outside the work: an
 # interview, a shop listing, a cover image. A script cannot tag a line with a
 # URL, so these are dropped on purpose and must not read as a dropped locator.
 # The parameter names are the MediaWiki citation convention, not one wiki's.
@@ -55,7 +55,7 @@ def is_page_param(key: str) -> bool:
     """True for a page-number parameter, including the wiki's misspellings.
 
     `pagse` and `pagess` both appear on the Jujutsu Kaisen wiki. Page numbers
-    are never rendered into prose, so a typo in one is not a dropped fact — and
+    are never rendered into prose, so a typo in one is not a dropped fact, and
     the audit that flags dropped parameters should not spend its signal on them.
     """
     lowered = _normalise_param(key)
@@ -94,21 +94,21 @@ class RefRole:
 class CitationGrammar:
     """How one wiki writes a citation.
 
-    Every wiki invents its own, and the differences are not cosmetic — they
+    Every wiki invents its own, and the differences are not cosmetic; they
     decide whether a script can put a chapter on a line at all. Five wikis, five
     grammars:
 
-    * **flags** — ``{{Ref|modulo=y|chap=16}}`` on Jujutsu Kaisen. The parameter
+    * **flags**: ``{{Ref|modulo=y|chap=16}}`` on Jujutsu Kaisen. The parameter
       says the chapter belongs to the sequel, whose numbering restarts at 1, so
       the label prefixes the instalment: ``(Modulo Chapter 16)``.
-    * **instalments** — ``{{Ref|movie=0}}``. The parameter *is* the instalment.
-    * **params** — ``{{ref|ch = 20}}`` on One-Punch Man, whose ``wch`` means a
+    * **instalments**: ``{{Ref|movie=0}}``. The parameter *is* the instalment.
+    * **params**: ``{{ref|ch = 20}}`` on One-Punch Man, whose ``wch`` means a
       chapter of the webcomic rather than the manga. A map from this wiki's
       parameter names to what they locate.
-    * **positional** — ``{{Ref|m|216|3-4}}`` on Chainsaw Man. No named
+    * **positional**: ``{{Ref|m|216|3-4}}`` on Chainsaw Man. No named
       parameters at all: the first argument picks the medium, the second is the
       number. 2,946 references, every one of them rendering nothing before this.
-    * **ref_tags** — ``<ref>''Bleach'' manga; Chapter 686, page 4</ref>`` on
+    * **ref_tags**: ``<ref>''Bleach'' manga; Chapter 686, page 4</ref>`` on
       Bleach, Hunterpedia and Berserk. The locator is prose inside an HTML tag,
       and until it is read and replaced, that prose lands in the middle of the
       sentence it was citing.
@@ -221,7 +221,7 @@ _HTML_TAG = re.compile(r"<[^>]+>")
 _HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 
 # Blocks whose *contents* are markup, not prose. Stripping only the surrounding
-# tags leaves the payload behind — a <gallery> body is a list of image files,
+# tags leaves the payload behind: a <gallery> body is a list of image files,
 # and it surfaced inside a Shibuya Incident timeline beat as
 # "NanamiP.png|Kento Nanami|link=Kento Nanami".
 _MEDIA_BLOCK = re.compile(
@@ -232,15 +232,15 @@ _HEADING = re.compile(r"^(={2,6})\s*(.+?)\s*\1\s*$", re.MULTILINE)
 
 # Headings a wiki writes without writing a heading.
 #
-# `Goku/Power and Abilities` has exactly three `==` headings — `Power`,
-# `Abilities`, `References` — and inside `==Abilities==` it names seventy-five
+# `Goku/Power and Abilities` has exactly three `==` headings (`Power`,
+# `Abilities`, `References`) and inside `==Abilities==` it names seventy-five
 # forms as `;Kaio-ken`, `;Super Saiyan 4`, one definition term each. Bleach and
 # One-Punch Man use a standalone `'''Bold'''` line for the same job. Both
 # markers were being deleted by `_LIST_PREFIX` and `_QUOTES` below, which left
 # every form name as an unmarked line of prose in a 113,000-character section,
 # and left "Every form of Goku" with nothing structural to read.
 #
-# The group marker above them says what kind of thing the list holds —
+# The group marker above them says what kind of thing the list holds:
 # `'''<big>Forms and Transformations</big>'''`, or the tabber separator
 # `|-|Techniques=` that introduces it.
 _ITEM_GROUP = re.compile(
@@ -250,15 +250,15 @@ _ITEM_GROUP = re.compile(
     re.MULTILINE,
 )
 _ITEM_MARKER = re.compile(
-    # `;Kaio-ken` — a definition term on its own line. Dragon Ball.
+    # `;Kaio-ken`, a definition term on its own line. Dragon Ball.
     r"^;\s*(?P<def>[^:\n]{1,60}?)\s*$"
     # `'''Godspeed'''` alone on a line.
     r"|^'''\s*\[?\[?\s*(?P<bold>[^'\[\]|<>\n]{1,60}?)\s*\]?\]?\s*'''\s*$"
-    # `'''Getsuga Tenshō''': a crescent of energy…` — the same definition
+    # `'''Getsuga Tenshō''': a crescent of energy…`, the same definition
     # shape written with bold instead of `;`, and the dominant one on Bleach,
     # One-Punch Man and Chainsaw Man. The name is the bold part; the rest of
     # the line is the start of its body. The inner capture is deliberately
-    # permissive so `'''[[Hohō|Shunpo Master]]'''` survives — `strip_markup`
+    # permissive so `'''[[Hohō|Shunpo Master]]'''` survives; `strip_markup`
     # in `_item_name` reduces it to the display text.
     r"|^[*:#]{0,3}\s*'''(?P<lead>[^'\n]{1,80}?)'''\s*:",
     re.MULTILINE,
@@ -288,7 +288,7 @@ def _scan_balanced(text: str, start: int, open_tok: str, close_tok: str) -> int:
     """Return the index just past the delimiter that closes the one at `start`.
 
     Returns -1 if the construct is never closed, which happens on malformed
-    pages and must not raise — a single bad page should not stop a crawl.
+    pages and must not raise: a single bad page should not stop a crawl.
     """
     depth = 0
     i = start
@@ -415,8 +415,8 @@ def extract_links(text: str) -> list[Link]:
 
         target, _, display = body.partition("|")
         target = target.strip()
-        # A leading colon escapes the namespace on the page — `[[:Category:X]]`
-        # renders as plain text — but the target is still a Category page, not
+        # A leading colon escapes the namespace on the page, so `[[:Category:X]]`
+        # renders as plain text, but the target is still a Category page, not
         # an article. Strip it so the namespace check below does its job.
         target = target.lstrip(":")
         if not target or ":" in target.split("#")[0][:20] and _is_namespaced(target):
@@ -437,7 +437,7 @@ def normalise_title(title: str) -> str:
     MediaWiki capitalises the first letter of every title and treats
     underscores as spaces, so ``[[grade]]`` and ``[[Grade]]`` are the same page.
     Without this the graph grows a duplicate node for every casing a link
-    happens to use — the real corpus produced both `Grade` and `grade`.
+    happens to use; the real corpus produced both `Grade` and `grade`.
     """
     cleaned = title.replace("_", " ").strip()
     return cleaned[:1].upper() + cleaned[1:] if cleaned else ""
@@ -451,7 +451,7 @@ _SILENT_NAMESPACES = frozenset({
 })
 
 # Links that render as ordinary text but point outside this wiki. They are not
-# relationships between pages here, yet their display text is real prose —
+# relationships between pages here, yet their display text is real prose,
 # `[[Wikipedia:Subaru Kimura|Subaru Kimura]]` is how the voice actor's name
 # appears, and discarding it lost the answer to "who voices Aoi Todo".
 _TEXTUAL_NAMESPACES = frozenset({
@@ -537,7 +537,7 @@ def collect_ref_definitions(text: str) -> dict[str, dict[str, str]]:
 
     MediaWiki cites a source once and reuses it by name: ``{{Ref|name=c145p18|
     chap=145|ep=50}}`` is the definition and every later ``{{Ref|name=c145p18}}``
-    means the same thing. Reading only the reuse loses the chapter — 538 of the
+    means the same thing. Reading only the reuse loses the chapter: 538 of the
     Jujutsu Kaisen corpus's references are name-only, and every one of them
     rendered as nothing at all, leaving the line it cited unsourced.
 
@@ -563,7 +563,7 @@ def collect_ref_definitions(text: str) -> dict[str, dict[str, str]]:
 def _with_positional(named: dict[str, str], positional: list[str]) -> dict[str, str]:
     """Fold a template's positional arguments in as ``_0``, ``_1``, ``_2``.
 
-    Chainsaw Man writes every reference positionally — ``{{Ref|m|216|3-4}}`` —
+    Chainsaw Man writes every reference positionally, as ``{{Ref|m|216|3-4}}``,
     so a renderer that only reads named parameters sees an empty citation. All
     2,946 of them rendered nothing.
     """
@@ -632,10 +632,10 @@ def strip_markup(
 ) -> str:
     """Reduce wikitext to readable prose.
 
-    Citations are flattened to a short locator — ``(Chapter 143)`` — rather
+    Citations are flattened to a short locator, ``(Chapter 143)``, rather
     than dropped or expanded in full. The previous pipeline expanded them into
-    the text — 40 to 130 per page of ``[Jujutsu Kaisen Manga: Vol. 5 (p. 26)]``
-    — and then embedded that, so a large share of every vector encoded
+    the text, 40 to 130 per page of ``[Jujutsu Kaisen Manga: Vol. 5 (p. 26)]``,
+    and then embedded that, so a large share of every vector encoded
     bibliography instead of content. Here they are captured as structured
     `Citation` objects for exact lookups and kept in prose only as the brief
     locator that the script's chapter annotations need. Infobox fact values
@@ -670,9 +670,9 @@ def flatten_tables(text: str) -> str:
     """Turn wikitables into readable lines instead of deleting them.
 
     On a Fandom wiki a table is not decoration. Technique lists, binding vows,
-    battle records and episode listings are all tables, and discarding them —
+    battle records and episode listings are all tables, and discarding them,
     as the previous cleaner did, and as the obvious ``\\{\\|.*?\\|\\}`` regex
-    does — silently removes some of the most factual content on the page.
+    does, silently removes some of the most factual content on the page.
 
     Nested tables are common (a technique table inside a layout table), so the
     scan is depth-aware and inner tables are flattened first.
@@ -740,28 +740,28 @@ def _flatten_one_table(body: str) -> str:
         for cell in stripped[1:].split(separator):
             cell = _CELL_ATTRS.sub("", cell.strip()).strip().lstrip("|").strip()
             # A cell holding only an image renders no text, so keeping it would
-            # leave an empty column and a stray " — " in the joined row.
+            # leave an empty column and a stray separator in the joined row.
             if cell and not _is_media_only(cell):
                 current.append(cell)
 
     if current:
         rows.append(current)
 
-    lines = [" — ".join(cell for cell in row if cell) for row in rows]
+    lines = [" | ".join(cell for cell in row if cell) for row in rows]
     return "\n" + "\n".join(line for line in lines if line.strip()) + "\n"
 
 
 def _citation_marker(named: dict[str, str], works: "CitationGrammar | None" = None) -> str:
     """A compact locator for a citation, e.g. ``(Chapter 143, Episode 30)``.
 
-    Page numbers are deliberately left to the structured Citation objects —
+    Page numbers are deliberately left to the structured Citation objects,
     this string travels inside prose that gets embedded, and a page number is
     retrieval noise there. Named refs without a locator (``{{Ref|name=fan2}}``)
     render nothing: their target already carries the marker.
 
     A sequel or a spin-off numbers its chapters from 1 again, so a citation says
     which work it means. On this wiki that is ``{{Ref|modulo=y|chap=16}}``, and
-    dropping the qualifier rendered it ``(Chapter 16)`` — the same string as the
+    dropping the qualifier rendered it ``(Chapter 16)``, the same string as the
     main series' Chapter 16, and 427 references corpus-wide were affected. A
     script written from that would state the wrong chapter with full confidence.
     The qualifier vocabulary is per-wiki and comes from
@@ -860,7 +860,7 @@ def _strip_templates(
                         works=works,
                     )
                 )
-        # Everything else — navboxes, infoboxes, tabs — contributes no prose.
+        # Everything else (navboxes, infoboxes, tabs) contributes no prose.
 
         i = end
 
@@ -909,7 +909,7 @@ def infobox_candidates(text: str, min_params: int = 3) -> list[tuple[str, int]]:
 
     Name matching is not enough. Jujutsu Kaisen calls its infoboxes
     "Character Infobox", but Chainsaw Man calls the same thing "Character" and
-    Marvel uses "Marvel Database:Character Template" — searching for the word
+    Marvel uses "Marvel Database:Character Template", so searching for the word
     "infobox" finds the first wiki's vocabulary and none of the others'.
 
     What holds across wikis is the shape. An infobox is transcluded before the
@@ -970,7 +970,7 @@ def find_infobox(
         return None
 
     # The richest match wins, not the first. A page commonly opens with a layout
-    # wrapper before its real infobox — Jujutsu Kaisen character pages start
+    # wrapper before its real infobox; Jujutsu Kaisen character pages start
     # `{{Tabs|tab1=Profile|tab2=Synopsis|tab3=Image Gallery}}` and only then
     # `{{Character_Infobox|...}}`. Once `Tabs` entered the discovered vocabulary,
     # taking the first match returned three parameters instead of twenty-one,
@@ -986,8 +986,8 @@ def facts_from_infobox(
 ) -> list[Fact]:
     """Turn infobox parameters into facts, keeping links and citations attached.
 
-    ``labels`` maps parameter names to the wiki's own human labels — ``class`` to
-    "Grade", ``race`` to "Species" — as published in the Portable Infobox
+    ``labels`` maps parameter names to the wiki's own human labels: ``class`` to
+    "Grade", ``race`` to "Species", as published in the Portable Infobox
     schema. Without it the keys still work; with it they are readable.
     """
     labels = labels or {}
@@ -1048,7 +1048,7 @@ def split_items(body: str) -> tuple[str, list[tuple[str, str, str]]]:
 
     A group gets an entry of its own rather than being skipped. Skipping it
     dropped whatever sat between the group marker and the first item under it,
-    which measured as 144,345 characters — a fifth of the text — across Dragon
+    which measured as 144,345 characters (a fifth of the text) across Dragon
     Ball's 23 `Power and Abilities` pages.
 
     Returns no items at all below `_MIN_ITEM_MARKERS`, which is what keeps an
@@ -1097,7 +1097,7 @@ def split_sections(
     hierarchy, the wikitext supplies the content.
 
     ``item_sections`` names the sections whose `;term` and `'''term'''` markers
-    are real headings — see `Ontology.item_sections`. Scoped rather than global
+    are real headings; see `Ontology.item_sections`. Scoped rather than global
     because the same markers carry chapter listings elsewhere.
     """
     levels: dict[str, int] = {}

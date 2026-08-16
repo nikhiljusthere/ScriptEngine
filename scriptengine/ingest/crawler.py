@@ -9,7 +9,7 @@ Two things changed.
 
 **Fifty pages per request, not one.** This is the default and the only path;
 there is no single-page fetch left to fall back to. Fandom rate-limits per
-request rather than per page, which is why concurrency cannot buy speed here —
+request rather than per page, which is why concurrency cannot buy speed here:
 measured, raising workers from 3 to 10 and cutting the delay fourfold moved a
 crawl from 112 pages/min to 117, because the extra connections were simply
 served more slowly. `action=query` returns up to 50 pages of wikitext,
@@ -20,16 +20,16 @@ What `action=query` withholds is recovered rather than lost, and both
 compensations are cheap:
 
 * the **section tree** is not needed, because `split_sections` locates headings
-  in the wikitext anyway — byte offsets shift once templates expand, so the API
+  in the wikitext anyway: byte offsets shift once templates expand, so the API
   only ever supplied the levels, and counting `=` signs agrees with it on 3,113
   of 3,114 sections across a 400-page sample;
 * the **infobox schema** in `properties` describes a page *type*, so it is
-  fetched once per newly seen type instead of once per page — roughly twenty
+  fetched once per newly seen type instead of once per page, roughly twenty
   requests per wiki rather than nine thousand.
 
 **No link-following.** `allpages` already enumerates every article, so walking
 links only re-discovers pages that are already queued. Wikilinks are still
-collected — from the wikitext, where they are canonical — but as graph edges
+collected (from the wikitext, where they are canonical) but as graph edges
 rather than as a crawl frontier.
 """
 
@@ -126,7 +126,7 @@ class WikiCrawler:
         self._session: AsyncSession | None = None
         self._impersonation = select_impersonation()
         self._last_error: str | None = None
-        # When the wiki rate-limits, every worker waits — not just the one that
+        # When the wiki rate-limits, every worker waits, not just the one that
         # was told to. Ten workers each independently retrying is what turns a
         # single 429 into a sustained throttle.
         self._resume_at = 0.0
@@ -199,7 +199,7 @@ class WikiCrawler:
 
                 return response.json()
 
-            except Exception as error:  # network, TLS, JSON — all retryable
+            except Exception as error:  # network, TLS, JSON, all retryable
                 self._last_error = str(error)
                 logger.warning(
                     "attempt %s/%s failed for %s: %s",
@@ -266,7 +266,7 @@ class WikiCrawler:
         """Real article titles in the main namespace.
 
         Redirects are excluded. `allpages` lists them by default, and fetching
-        one just returns the article it points at — a page already on disk. On
+        one just returns the article it points at, a page already on disk. On
         Jujutsu Kaisen that inflated the wiki from 984 articles to 1,179
         "pages", and made every resumed crawl re-fetch ~195 redirects to
         rewrite files it already had.
@@ -277,7 +277,7 @@ class WikiCrawler:
         return await self._enumerate(base, 0, limit, "articles", skip_redirects=True)
 
     async def list_templates(self, base: str, limit: int = 0) -> list[str]:
-        """Pages in the `Template:` namespace — the wiki's own vocabulary."""
+        """Pages in the `Template:` namespace, the wiki's own vocabulary."""
         return await self._enumerate(base, 10, limit, "templates")
 
     async def fetch_batch(
@@ -286,7 +286,7 @@ class WikiCrawler:
         """Fetch many pages in one request, shaped like `action=parse` output.
 
         Fandom throttles per request, not per page, so asking for one page at a
-        time is what makes a large wiki slow — measured at 51 pages/min against
+        time is what makes a large wiki slow, measured at 51 pages/min against
         686 for a batched call, a 14x difference that no amount of concurrency
         recovers, because extra connections are simply served more slowly.
 
@@ -392,7 +392,7 @@ class WikiCrawler:
         page_type, matched = ontology.type_for_templates(templates)
 
         # MediaWiki subpages ("Aoi Todo/Synopsis") carry no infobox of their own
-        # — they elaborate on their parent. Typing them from the parent keeps
+        # they elaborate on their parent. Typing them from the parent keeps
         # substantial prose out of the "unknown" bucket. This is MediaWiki
         # convention, not a wiki-specific rule.
         if page_type == "unknown" and "/" in title:
@@ -402,7 +402,7 @@ class WikiCrawler:
                 page_type = f"{parent_type}_{_slug(leaf)}"
             elif parent:
                 # An untyped parent gives the leaf nothing to qualify. Naming the
-                # type after the leaf anyway invents one type per subpage —
+                # type after the leaf anyway invents one type per subpage,
                 # "page_premature_death_vol_1" and friends.
                 page_type = "subpage"
             matched = matched or f"subpage of {parent}"
@@ -476,7 +476,7 @@ class WikiCrawler:
         """Relationships, strongest evidence first.
 
         An infobox parameter is an editor stating a fact and scores high. A link
-        in prose is weaker — it means the pages are related, not how — so it is
+        in prose is weaker (it means the pages are related, not how) so it is
         recorded as a generic mention and ranked accordingly.
         """
         edges: list[Edge] = []
@@ -726,7 +726,7 @@ def reextract(page: WikiPage, ontology: Ontology) -> WikiPage:
 
     Fetching a page is expensive; parsing it is not. Keeping the wikitext means
     a parser fix can be applied to the whole corpus in seconds instead of
-    re-crawling several hundred pages — and it keeps the index honest, since
+    re-crawling several hundred pages, and it keeps the index honest, since
     indexing always reflects the extraction code as it stands now rather than
     as it stood on the day of the crawl.
     """
@@ -759,7 +759,7 @@ def load_extracted(
     """Load a crawled corpus and re-extract it with the current parser.
 
     The single entry point for everything downstream, so that `audit` and
-    `index` can never disagree about what the corpus contains — auditing the
+    `index` can never disagree about what the corpus contains: auditing the
     extraction stored at crawl time while indexing a freshly parsed one would
     make the audit a report on history.
 

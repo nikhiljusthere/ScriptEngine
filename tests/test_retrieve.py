@@ -16,7 +16,7 @@ def passage(chunk_id: int, text: str, score: float = 0.0) -> Passage:
 class TestFusion:
     def test_a_chunk_found_by_two_retrievers_outranks_one_found_by_one(self):
         # The central property: agreement between independent retrievers is
-        # evidence, and RRF needs no score calibration to use it — cosine
+        # evidence, and RRF needs no score calibration to use it: cosine
         # similarity and BM25 are not comparable quantities.
         fused = reciprocal_rank_fusion({"vector": [1, 2], "lexical": [2, 3]})
         assert fused[2][0] > fused[1][0]

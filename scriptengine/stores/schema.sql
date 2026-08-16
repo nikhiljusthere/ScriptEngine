@@ -5,8 +5,8 @@
 -- that was rebuilt from a full vector-store scroll on every process start.
 --
 -- Node labels are values in a column, never table names. Every series brings
--- different entity types — Jujutsu Kaisen has `technique` and `story_arcs`,
--- another wiki will have neither — so a new series must never require a schema
+-- different entity types. Jujutsu Kaisen has `technique` and `story_arcs`,
+-- another wiki will have neither, so a new series must never require a schema
 -- migration. This is the reason SQLite was chosen over an embedded graph engine
 -- that wants a table per label.
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS sections (
 CREATE INDEX IF NOT EXISTS idx_sections_document ON sections(document_id, ordinal);
 
 -- Category membership, as the wiki publishes it. A category is a set an editor
--- assembled by hand — "Cursed Spirits", "Domain Expansions", "Curse Users" —
+-- assembled by hand ("Cursed Spirits", "Domain Expansions", "Curse Users")
 -- which is what an enumeration script ("Every X") needs and what prose
 -- retrieval cannot produce: ranking eight similar passages never yields a
 -- complete set. Crawled all along on `WikiPage.categories`, never indexed.

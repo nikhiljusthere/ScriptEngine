@@ -4,7 +4,7 @@ Same client API as the server, no process to manage. Each series gets its own
 storage directory, so deleting a series is deleting a folder.
 
 Qdrant's local mode holds an exclusive lock on its directory, so the store is
-opened lazily and closed explicitly — otherwise indexing and serving in the same
+opened lazily and closed explicitly; otherwise indexing and serving in the same
 session fight over it.
 """
 
@@ -38,7 +38,7 @@ COLLECTION = "chunks"
 # vectors, and the retriever built a fresh `VectorStore` for every request.
 #
 # Keyed by resolved path so the eight series keep their own reader, and only for
-# reading — `recreate()` deliberately drops the shared handle, since indexing
+# reading. `recreate()` deliberately drops the shared handle, since indexing
 # removes the directory underneath it.
 _READERS: dict[str, "VectorStore"] = {}
 _READERS_LOCK = threading.RLock()
@@ -100,13 +100,13 @@ class VectorStore:
 
         That is not a cosmetic leak. Point ids are SQLite rowids, and rowids
         restart at 1 when the tables are dropped, so a stale vector for id 8000
-        resolves against whatever row holds id 8000 today — a search returns
+        resolves against whatever row holds id 8000 today, so a search returns
         confident, well-scored, entirely unrelated text.
         """
         self.close()
         # Any shared reader is holding a handle on the directory about to be
         # removed, and would otherwise go on answering from vectors that no
-        # longer exist — the exact stale-rowid hazard described above.
+        # longer exist: the exact stale-rowid hazard described above.
         _forget_reader(self.path)
         if self.path.exists():
             shutil.rmtree(self.path, ignore_errors=True)
@@ -160,7 +160,7 @@ class VectorStore:
         the precision benefit without letting a tagging error erase content.
         """
         # Only levels 0 and 2 are ever embedded, and both should be searchable.
-        # Filtering to level 2 — as this did — made every document card dead
+        # Filtering to level 2, as this did, made every document card dead
         # weight: they were embedded, stored, and then never looked at, which is
         # precisely what a question like "what is a binding vow" needs, since a
         # card carries the page's title, type, infobox facts and lead together.

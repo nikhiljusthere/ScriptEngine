@@ -518,7 +518,7 @@ def extract_list_episodes(soup: BeautifulSoup) -> str:
             if num and title:
                 item = f"- Episode {num}: {title}"
                 if air:
-                    item += f" — {air}"
+                    item += f", {air}"
                 lines.append(item)
     return "\n".join(lines).strip() if lines else extract_body_text(soup)
 
@@ -617,7 +617,7 @@ def main() -> None:
     print(f"\nDone. {len(html_files) - len(errors)} OK, {len(errors)} errors.")
     if errors:
         for name, err in errors:
-            print(f"  FAILED: {name} — {err}")
+            print(f"  FAILED: {name}: {err}")
 
 if __name__ == "__main__":
     main()

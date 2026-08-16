@@ -1,8 +1,8 @@
 """Auditing what extraction actually understood.
 
 A broken extractor is silent. The previous pipeline's section detector never
-matched a single heading — it looked for a bare ``appearance`` while the corpus
-contained ``## Appearance`` — and reported no error at all. Every document
+matched a single heading. It looked for a bare ``appearance`` while the corpus
+contained ``## Appearance``, and reported no error at all. Every document
 collapsed into one unnamed section, and the pipeline carried on to embedding.
 
 This module exists so that failure mode cannot repeat unnoticed. Run it before
@@ -27,7 +27,7 @@ MIN_RESOLVED_EDGE_RATIO = 0.70
 # Share of prose sentences that must resolve to a chapter on a wiki that cites
 # at all. Deliberately low: reference lists, episode tables and trivia sections
 # carry no citations and never will. It exists to catch the failure this project
-# has already had once — citations captured as structured objects and then
+# has already had once: citations captured as structured objects and then
 # dropped from every downstream text, so the scripts had nothing to cite.
 MIN_SOURCED_SENTENCE_RATIO = 0.25
 
@@ -194,7 +194,7 @@ def _unknown_qualifiers(pages: list[WikiPage], ontology: Any) -> dict[str, int]:
 
     This is the audit that would have caught the Modulo bug on day one. The wiki
     wrote ``{{Ref|modulo=y|chap=16}}``; the extractor understood `chap`, ignored
-    `modulo`, and rendered "(Chapter 16)" — indistinguishable from the main
+    `modulo`, and rendered "(Chapter 16)", indistinguishable from the main
     series' Chapter 16, on 427 references. Nothing failed, and the wrong chapter
     number was available to every script.
 
@@ -241,7 +241,7 @@ def _refs_with_locator(pages: list[WikiPage], ontology: Any) -> int:
 
     The difference between a bug and a fact about the wiki. Berserk carries 36
     citations across 491 pages and almost every one of them points at cover art,
-    a calendar or an interview — so 0% sourced prose there is the wiki's own
+    a calendar or an interview, so 0% sourced prose there is the wiki's own
     habit, not a locator this project failed to read. Bleach and Hunterpedia cite
     a chapter on nearly every sentence, so 0% there would mean something broke.
     """
@@ -302,7 +302,7 @@ def _run_checks(report: dict[str, Any], capped: bool = False) -> list[dict[str, 
     ]
 
     # Measured as a share rather than a count. A parameter this wiki reaches for
-    # constantly and the extractor ignores is the signal — `modulo` was 916 of
+    # constantly and the extractor ignores is the signal: `modulo` was 916 of
     # Jujutsu Kaisen's references, renumbering a whole sequel. Two stray uses of
     # something nobody can identify is not worth failing a corpus over, and
     # guessing what they mean is how a wrong chapter reaches a script.

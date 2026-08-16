@@ -1,6 +1,6 @@
 """Rules the gold sets themselves have to obey.
 
-`expect_any_text` was added for a real case — Akainu and Sakazuki are one
+`expect_any_text` was added for a real case: Akainu and Sakazuki are one
 marine, and no passage uses both names, so requiring both failed a correct
 answer. It is also exactly the kind of permissive primitive that can absorb a
 future subject-resolution bug instead of catching it: listing two *different*

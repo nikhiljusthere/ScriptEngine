@@ -1,9 +1,9 @@
 """BM25 search over the chunk text, via SQLite FTS5.
 
 Lexical retrieval is not a fallback here. Character names, technique names and
-episode titles are exactly the queries where dense vectors are weakest — an
+episode titles are exactly the queries where dense vectors are weakest: an
 embedding of "Boogie Woogie" is not reliably nearer to the passage naming it
-than to a hundred other technique descriptions — and where term matching is
+than to a hundred other technique descriptions, and where term matching is
 strongest.
 
 FTS5 provides BM25 natively and on disk. The previous implementation scrolled

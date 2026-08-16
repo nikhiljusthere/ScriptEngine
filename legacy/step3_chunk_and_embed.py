@@ -107,7 +107,7 @@ def word_count(text: str) -> int:
 
 
 def split_into_sentences(text: str) -> List[str]:
-    """Simple sentence splitter — accurate enough for wiki text."""
+    """Simple sentence splitter, accurate enough for wiki text."""
     sentences = re.split(r'(?<=[.!?])\s+', text)
     return [s.strip() for s in sentences if s.strip()]
 
@@ -195,7 +195,7 @@ def build_hierarchical_chunks(doc_data: dict) -> List[Dict]:
 
         # ── Level 2: paragraph chunks (primary retrieval units) ───────────
         if word_count(content) <= CHUNK_SIZE:
-            # section is small enough — one chunk
+            # section is small enough: one chunk
             all_chunks.append({
                 "chunk_id":  str(uuid.uuid4()),
                 "level":     2,
@@ -224,7 +224,7 @@ def build_hierarchical_chunks(doc_data: dict) -> List[Dict]:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 2D. Entity tagging per chunk (lightweight — just string matching)
+# 2D. Entity tagging per chunk (lightweight, just string matching)
 # ─────────────────────────────────────────────────────────────────────────────
 
 def load_entity_list(neo4j_export_path: str = "entities.json") -> List[str]:

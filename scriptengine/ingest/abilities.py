@@ -2,7 +2,7 @@
 
 Half of what a character-scoped question asks for is not an entity anywhere.
 Measured across seventeen questions and their online canon, 47 of 113 items
-exist as pages and 20 more as section headings — the other 57 exist only inside
+exist as pages and 20 more as section headings; the other 57 exist only inside
 a paragraph:
 
     Killua Zoldyck   §Abilities & Powers / Nen
@@ -20,7 +20,7 @@ safe to trust:
 
 * **It never runs during a query.** Retrieval reads the `abilities` table. The
   same question answers the same way twice and the eval sets stay meaningful.
-* **It is asked only where the prose is the only source** — the character pages
+* **It is asked only where the prose is the only source.** The character pages
   a series declares `ability_sections` for, a few hundred per wiki at most.
 * **It may only name what the section names.** The prompt forbids recall from
   the model's own knowledge of the series, because a model that has read the
@@ -49,7 +49,7 @@ from scriptengine.stores.facts import FactStore
 logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored extraction. Anything that changes what the
-# model is asked changes this — including what it is asked *about*: reading the
+# model is asked changes this, including what it is asked *about*: reading the
 # page lead (`_is_lead`) widened the passages without touching the prompt, and
 # the seven already-extracted series would have kept their cached answers
 # through it. The `-opencode` suffix is dropped because extraction runs against
@@ -82,7 +82,7 @@ ACQUIRED = ("innate", "copied", "inherited", "granted")
 
 SYSTEM = (
     "You extract named abilities from fiction-wiki prose. You answer with JSON "
-    "only — no prose, no code fences. You never name anything the passage does "
+    "only: no prose, no code fences. You never name anything the passage does "
     "not name, however well you know the series."
 )
 
@@ -104,7 +104,7 @@ otherwise.
 
 Rules:
 - Only names that appear in the passage. If the passage names none, answer
-  {{"abilities": []}} — an empty answer is correct and useful.
+  {{"abilities": []}}. An empty answer is correct and useful.
 - Only what belongs to {character}. A passage comparing them to someone else
   still names the other person's abilities; those are not theirs.
 - A proper name for a specific ability, not a description of it. "Godspeed" is
@@ -144,7 +144,7 @@ def needs_extracting(store: FactStore, overrides: dict | None = None) -> list[st
     """The character pages whose abilities live in prose on this wiki.
 
     Driven by the same `ability_sections:` declaration retrieval uses, so a
-    series that declares none is skipped entirely — Dragon Ball records
+    series that declares none is skipped entirely; Dragon Ball records
     ownership as edges and needs no inference at all.
     """
     declared = (overrides or {}).get("ability_sections") or {}
@@ -170,7 +170,7 @@ def needs_extracting(store: FactStore, overrides: dict | None = None) -> list[st
     # `Abilities & Powers` heading and a sentence under it, and the ones a
     # question is ever going to ask about are the ones with paragraphs. This is
     # what makes `--limit` mean "the characters that matter" rather than "the
-    # first few alphabetically" — which is otherwise 288th Hunter Exam's 1st
+    # first few alphabetically", which is otherwise 288th Hunter Exam's 1st
     # Phase Examiner, Abaki, Abengane.
     rows = store.connection.execute(
         "SELECT CASE WHEN instr(d.title, '/') > 0"
@@ -195,7 +195,7 @@ def _is_lead(breadcrumb: str, title: str) -> bool:
     """Whether this is the page's own opening section.
 
     A wiki lead summarises the character, and on Hunterpedia that summary is
-    where three of Kurapika's four chains are named — `Holy Chain`,
+    where three of Kurapika's four chains are named: `Holy Chain`,
     `Steal Chain` and `Emperor Time` appear there and nowhere else on any page
     of his. The lead is about the character by definition, which is what
     separates it from the plot and synopsis sections deliberately left out:
@@ -260,7 +260,7 @@ def parse_response(text: str) -> list[dict[str, str]]:
         # A named ability is a proper noun. Told not to return descriptions,
         # the model returned "master swordsmanship", "combat pragmatism" and
         # "uses children to bait and distract enemies" for Guts, and "electric
-        # aura" for Killua — all lower case, while every real one it found is
+        # aura" for Killua, all lower case, while every real one it found is
         # not: Godspeed, Chain Jail, Whirlwind, Speed of Lightning, Rhythm
         # Echo. Wikis capitalise the things they have named, so the shape of
         # the string carries the distinction the instruction could not.
@@ -300,7 +300,7 @@ def extract_from_passages(
     """The same extraction, over passages already read.
 
     Split out from `extract_character` so the expensive part can run on a worker
-    thread. Everything here is prompt-building, network and string work — the
+    thread. Everything here is prompt-building, network and string work; the
     store is touched only to *fetch* the passages, which stays on the thread
     that owns the connection, because a `sqlite3` connection belongs to one
     thread and the run writes to the same file it is reading.
@@ -341,7 +341,7 @@ def extract_from_passages(
                     continue
                 # It has to be in the passage. Measured over 2,841 stored rows,
                 # the local model produced 91 names that appear nowhere in the
-                # text it was shown — `Fireball shooting`, `Sword fighting`,
+                # text it was shown: `Fireball shooting`, `Sword fighting`,
                 # `Cero Barrage`, `Ghostly Wolf Summoning`. Several describe
                 # something the character really does; none is what the wiki
                 # calls it, and a name the source never uses cannot be cited.
@@ -385,7 +385,7 @@ def _fold(text: str) -> str:
 
     Whitespace is collapsed rather than merely substituted. Stripping the
     Japanese out of `Bang! (バン！)` leaves five spaces where it was, and a
-    padded string matches nothing — Makima's real named ability would have been
+    padded string matches nothing; Makima's real named ability would have been
     dropped as invented.
     """
     text = unicodedata.normalize("NFKD", text or "")
@@ -399,7 +399,7 @@ def _windows(text: str, size: int = 4000, overlap: int = 300) -> list[str]:
 
     Killua's `Abilities & Powers` runs to 17,672 characters. Sending the first
     4,000 returned Whirlwind and Speed of Lightning and missed Godspeed,
-    Lightning Palm and Thunderbolt — not because the model could not find them
+    Lightning Palm and Thunderbolt, not because the model could not find them
     but because it was never shown them. The overlap keeps an ability named
     across a window boundary from falling between two requests.
     """
@@ -438,7 +438,7 @@ def extract_series(
     the `opencode` backend, where a call is a subprocess waiting on somebody
     else's API: measured at 89s per character against a local model's 25s, but
     3,365 characters is 83 hours in one line and the wait is not this machine's
-    to spend. A local backend should stay at 1 — it is one GPU, and asking it
+    to spend. A local backend should stay at 1: it is one GPU, and asking it
     for eight answers at once does not make it finish sooner.
     """
     settings = settings or get_settings()
@@ -595,7 +595,7 @@ def _guarded(run):
     """Run a job, returning the exception instead of raising it.
 
     `ThreadPoolExecutor.map` re-raises on first failure and abandons the rest of
-    the batch. One character's page failing must cost that character only — the
+    the batch. One character's page failing must cost that character only; the
     same rule the serial path has always followed.
     """
 

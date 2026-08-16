@@ -1,7 +1,7 @@
 """The writing contract, served with the context.
 
 Until now these three blocks lived in `custom_nodes/ScriptEngineRAG/nodes.py`,
-inside the ComfyUI install — a file that is not in this repository. Every
+inside the ComfyUI install, a file that is not in this repository. Every
 document referred to it as the source of truth, and the direct path (the
 assistant writing from `POST /context`) never saw a word of it: the served
 `prompt` was research with no instructions attached, so the rules only reached
@@ -10,10 +10,10 @@ the writer if it happened to read the docs first.
 They live here now, and `docs/SCRIPT_STYLE.md` quotes this module rather than
 the other way round. One copy, served to every client.
 
-* `STYLE_RULES` — the house format, from the finished scripts in `sample scripts/`.
-* `VOICE_RULES` — the anti-AI voice, distilled from Wikipedia:Signs of AI
+* `STYLE_RULES`: the house format, from the finished scripts in `sample scripts/`.
+* `VOICE_RULES`: the anti-AI voice, distilled from Wikipedia:Signs of AI
   writing. The full learning is `docs/ANTI_AI_SCRIPTING.md`.
-* `ANNOTATION_RULES` — how a line states the chapter and episode it came from.
+* `ANNOTATION_RULES`: how a line states the chapter and episode it came from.
 """
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ INTRO_OFF = """\
 """
 
 VOICE_RULES = """\
-=== VOICE RULES — you are a person, not a writer-bot ===
+=== VOICE RULES: you are a person, not a writer-bot ===
 - Write like a fan explaining this arc to a friend out loud. Not like a wiki article, a trailer, or a summary.
 - Specificity is everything: name the chapter, the technique, the exact thing that happened. Never trade a fact from the context for a vague superlative ("legendary", "revolutionary", "unforgettable").
 - No significance inflation: no "a pivotal moment", "a crucial turning point", "changing everything". State what happened; the facts carry the weight.
@@ -49,14 +49,14 @@ VOICE_RULES = """\
 - Avoid AI vocabulary: delve, realm, testament, pivotal, crucial, transformative, intricate, showcase, underscore, captivate, embark, unleash, tapestry, foster, seamless, empower, elevate, revolutionize, journey, nuanced, rich.
 - Use plain verbs: is, has, does, fights, says. Not "serves as", "stands as", "marks a", "boasts", "plays a role in".
 - No em dashes. Use periods and commas.
-- No weasel wording: "many fans believe", "some argue", "critics say" — if the context doesn't name them, the script doesn't either.
+- No weasel wording: "many fans believe", "some argue", "critics say". If the context doesn't name them, the script doesn't either.
 - Say the name again rather than inventing epithets ("the young sorcerer", "the vessel").
 - Don't repeat the same point twice. No "In conclusion"-style ending that recaps.
 - Test every sentence: could an AI writing about any anime have produced it? If yes, rewrite it with a fact only this wiki has.
 """
 
 ANNOTATION_RULES = """\
-=== CHAPTER/EPISODE ANNOTATION RULES — every line must be sourced ===
+=== CHAPTER/EPISODE ANNOTATION RULES: every line must be sourced ===
 - Each block of narration ends with the chapter and episode it came from, as a bracketed tag on the last line: e.g. "(Chapter 101, Episode 37)". When the context only gives a chapter, write "(Chapter 101)".
 - If several consecutive lines share the same chapter or episode, tag them once, at the end of that block. Never repeat the tag on every line.
 - Group by the story beat: when a beat spans several consecutive lines, put one tag on the last line of the beat.

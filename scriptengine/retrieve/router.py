@@ -4,8 +4,8 @@ This used to be one ternary, duplicated in the CLI and the API:
 
     mode = "roster" if looks_like_enumeration(query) else "narrative"
 
-Two things were wrong with it. `qa` — the hybrid BM25 + vector + graph path with
-a cross-encoder over the top of it, the most engineered part of the system — was
+Two things were wrong with it. `qa`, the hybrid BM25 + vector + graph path with
+a cross-encoder over the top of it, the most engineered part of the system, was
 **unreachable**: no caller asking for `auto` could ever land there. And the
 enumeration test is a regex, so `What grade of sorcerer is Aoi Todo?` matched
 `grades? of` and came back as a list of Todo's five battles.
@@ -16,7 +16,7 @@ enumeration topics. So the set-versus-not-set call is sound and stays; what was
 missing is any way to tell a fact lookup from a story question once the answer
 is "not a set".
 
-A bare wh-word cannot make that distinction either — the same measurement wanted
+A bare wh-word cannot make that distinction either; the same measurement wanted
 `How did the Shibuya Incident unfold?` in `qa`, which is wrong. What separates
 them is *what the subject is*: an event, battle or arc is a story; a character,
 item or technique with an attribute asked of it is a lookup. That is read from
@@ -58,7 +58,7 @@ _COUNT = re.compile(r"\bhow many\b", re.I)
 # lookup, and "who **are** the Zodiacs" does not.
 _PLURAL_WH = re.compile(r"^\s*\W*(who|what|which)\s+(are|were)\b", re.I)
 
-# "Sukuna's Domain Expansion" — whoever owns the attribute is the subject.
+# "Sukuna's Domain Expansion": whoever owns the attribute is the subject.
 _POSSESSIVE = re.compile(r"\b([A-Za-z][\w.-]*)['’]s\b")
 
 # Verbs that make a question about events rather than attributes. `unfold` and
@@ -73,7 +73,7 @@ _NARRATIVE_VERBS = re.compile(
 _STORY_TYPES = frozenset({sem.EVENT, sem.MEDIA})
 
 # Packaging only. Skipped when resolving *what a question is about*, because an
-# episode page is never the subject unless it is named — that is how "Who killed
+# episode page is never the subject unless it is named, which is how "Who killed
 # Ace?" became a question about an episode called `Legendary Hour`. Events are
 # deliberately not in here: `Shibuya Incident` really is the subject, and really
 # is a story.
@@ -126,7 +126,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
 
     # 1. Order beats every other reading. "Every arc in order" is set-shaped and
     #    "Timeline of Dragon Ball" opens like a question, so both were being
-    #    answered by something that cannot express order at all — the first with
+    #    answered by something that cannot express order at all: the first with
     #    one arc's 84 chapters, the second with eight loose beats.
     if chronology.wants_chronology(query):
         return Route("roster", "asks for the story in order", signals)
@@ -135,7 +135,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     if counting:
         return Route("roster", "asks how many, which wants the set", signals)
 
-    # 3. A wh-question about a thing is a lookup — this is the case the regex
+    # 3. A wh-question about a thing is a lookup; this is the case the regex
     #    got wrong, and it has to win over the enumeration cue. Except when its
     #    verb is plural, which asks for the list rather than for one thing.
     if (interrogative and not plural_ask and not story_verb
@@ -147,7 +147,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
                 signals,
             )
         # No subject resolved. qa is the path that searches rather than walking
-        # a page, so an unanchored question belongs there — narrative has
+        # a page, so an unanchored question belongs there, since narrative has
         # nothing to walk.
         return Route("qa", "a question with no page to walk", signals)
 
@@ -158,7 +158,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
 
     # 5. A plural question with no enumeration word is still a plural question.
     #    "What are Sukuna's named cursed techniques" carries none of `every`,
-    #    `all`, `members of` — the plural noun is the only cue — and without
+    #    `all`, `members of` (the plural noun is the only cue) and without
     #    this it falls past every test above and is answered as an account.
     if plural_ask:
         return Route("roster", "asks in the plural, which wants the list", signals)
@@ -168,7 +168,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     if subject_type in _STORY_TYPES:
         return Route("narrative", f"{subject!r} is an event rather than a thing", signals)
 
-    # A bare name — "Prison Realm", "Playful Cloud" — is a lookup, not a story.
+    # A bare name ("Prison Realm", "Playful Cloud") is a lookup, not a story.
     # Narrative would walk that page top to bottom; qa answers what it is.
     if subject and subject_type and len((query or "").split()) <= 4:
         return Route("qa", f"names {subject!r} and asks nothing of it", signals)
@@ -193,7 +193,7 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
             # discarded. `Luffy` is an alias with no page of its own, so
             # filtering it out left "What is Luffy's Devil Fruit?" choosing
             # between devil fruits and answering `Goe Goe no Mi`. Only the
-            # ordering changes — nothing here resolves aliases, which 13 of 14
+            # ordering changes; nothing here resolves aliases, which 13 of 14
             # possessive questions already handle correctly.
             resolved = {row["name"] for row in entities if row["is_resolved"]}
             ranked = [row["name"] for row in entities]
@@ -202,7 +202,7 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
             ]
 
             # `SUBJECT_DEMOTE_TYPES` matches raw infobox ids, so it demotes
-            # `episode` on Dragon Ball and misses `episode_box` on One Piece —
+            # `episode` on Dragon Ball and misses `episode_box` on One Piece,
             # which is how "Who killed Ace?" came to be *about* an episode
             # called `Legendary Hour`. The semantic type says the same thing in
             # one vocabulary, so packaging loses here regardless of the wiki.
@@ -214,7 +214,7 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
             # So the existing order is kept and only two things move a
             # candidate: a possessive names the subject outright ("Sukuna's X"
             # is a question about Sukuna), and a candidate sharing *no* word
-            # with the question sinks — which is what keeps `Legendary Hour`,
+            # with the question sinks, which is what keeps `Legendary Hour`,
             # a TV special that shares nothing with "Who killed Ace?", from
             # being the subject.
             asked = set(content_words(query))

@@ -1,6 +1,6 @@
 """Enumeration: every member of a set, not the eight passages nearest a query.
 
-Four of the five scripts in `sample scripts/` are rosters — "Every Apostle in
+Four of the five scripts in `sample scripts/` are rosters: "Every Apostle in
 Berserk", "Every Forbidden Jutsu in Naruto", "Every Level of the Abyss", "What
 It's Like to be Every Rank of Curse". They are lists by construction: one
 section per member, in a deliberate order.
@@ -14,11 +14,11 @@ from the `Volume 0` page.
 A wiki already states its sets three ways, and this module reads all three and
 keeps whichever answers the query best:
 
-* **category** — `Cursed Spirits`, `Domain Expansions`, `Curse Users`. An editor
+* **category**: `Cursed Spirits`, `Domain Expansions`, `Curse Users`. An editor
   put each page there by hand; that is a membership list.
-* **page type** — every page whose infobox is the `Technique Infobox`. The
+* **page type**: every page whose infobox is the `Technique Infobox`. The
   ontology discovers those per wiki, so this needs no configuration.
-* **infobox field** — the distinct values of one parameter across everything
+* **infobox field**: the distinct values of one parameter across everything
   that declares it. Grouping the 43 pages that declare `class` by its value is
   literally the list of curse grades, straight out of the infoboxes.
 
@@ -70,7 +70,7 @@ _STOPWORDS = {
 _NOISE_FACTS = NOISE_FACT_KEYS | {"date"}
 
 # Page types that name the work itself. Their titles supply the words a query
-# uses to say which wiki it means — "in Jujutsu Kaisen" — which say nothing
+# uses to say which wiki it means ("in Jujutsu Kaisen") which say nothing
 # about which set inside it is wanted. Left in, they matched every category the
 # wiki named after itself, and "Every Domain Expansion in Jujutsu Kaisen"
 # enumerated the Jujutsu Kaisen Modulo chapters.
@@ -83,8 +83,8 @@ _GROUPING_HINTS = {
 }
 
 # Words that name what *kind* of set is wanted rather than narrowing it. They
-# survive the set's own phrase — "Every Frieza Race transformation" leaves
-# `frieza` and `race` behind once `Transformations` is accounted for — and
+# survive the set's own phrase ("Every Frieza Race transformation" leaves
+# `frieza` and `race` behind once `Transformations` is accounted for) and
 # enforcing `race` against every member rejected all 160 of them, which the
 # never-empty guard then handed back whole. The constraint was `frieza`.
 _SET_WORDS = {
@@ -106,8 +106,8 @@ _ANTI_SET_WORDS = (
 )
 
 # Categories that name how the work was *published* rather than a set inside the
-# story. A wiki that prefixes those categories with its own title — most of them
-# do — hands them every word of any query that names the series, so they win an
+# story. A wiki that prefixes those categories with its own title (most of them
+# do) hands them every word of any query that names the series, so they win an
 # enumeration outright: "Every race in Dragon Ball" returned the 150 titles of
 # `Dragon Ball Z episodes`, and "Every race in One Piece" returned 116 volumes.
 #
@@ -115,8 +115,8 @@ _ANTI_SET_WORDS = (
 # one: it also deletes the query. "All types of Dragon Balls" is asking about an
 # object whose name *is* the series title, and it answers correctly today.
 #
-# So packaging is not banned, it is made to wait its turn. It can still win —
-# "Every One Piece movie" should return `One Piece Movies` — but only when the
+# So packaging is not banned, it is made to wait its turn. It can still win:
+# "Every One Piece movie" should return `One Piece Movies`, but only when the
 # query asked for packaging. Otherwise a set named after the story beats it.
 _PACKAGING_WORDS = (
     "episode", "volume", "chapter", "saga", "arc", "film", "movie",
@@ -180,7 +180,7 @@ class RosterDefinition:
     gap between what a viewer says and what an editor wrote: One-Punch Man files
     its monsters under `Mysterious Beings`, and no amount of scoring turns
     "monster" into that. Worse, a category named for the pages the wiki *could
-    not* classify wins by containing the query's words — "Every Nen Type"
+    not* classify wins by containing the query's words. "Every Nen Type"
     resolved to `Unknown Nen type users`, 247 of them, instead of the six Nen
     categories.
 
@@ -206,7 +206,7 @@ class RosterDefinition:
     # A page whose sections *are* the set. Some sets are never a category
     # because no member has its own article: One Piece writes all twenty-two
     # Marine ranks as sections of `Marine Ranks`, and asking for them by
-    # category returns `Marine Officers` — fourteen people, not the ladder.
+    # category returns `Marine Officers`, fourteen people, not the ladder.
     sections_of: str = ""
     label: str = ""                                  # a discovered page type
     fact: tuple[str, str] = ("", "")                 # (key, value)
@@ -322,7 +322,7 @@ class Roster:
     #
     # Discovery returns its best-scoring candidate and used to have no way to
     # say the best was weak, so "Every Straw Hat Pirate" answered with
-    # `Straw Hat Pirates' Creations` — the crew's weapons — and looked exactly
+    # `Straw Hat Pirates' Creations`, the crew's weapons, and looked exactly
     # like a set that matched perfectly. The score is reported rather than
     # enforced: on a wiki whose only category for something is oddly named, a
     # partial match is still the answer, and the caller is the one that knows
@@ -378,12 +378,12 @@ class Roster:
         if self.unfiltered:
             return (
                 f"nothing in {self.basis!r} satisfied the topic, so the whole set "
-                "is shown unfiltered — treat it as the wrong set"
+                "is shown unfiltered; treat it as the wrong set"
             )
         if self.capped:
             return (
                 f"{self.basis!r} has {self.capped} members and only "
-                f"{len(self.members)} were rendered — the rest were dropped"
+                f"{len(self.members)} were rendered; the rest were dropped"
             )
         if self.candidates and not self.members:
             return (
@@ -391,12 +391,12 @@ class Roster:
                 "satisfied the topic"
             )
         if self.unverified:
-            # Deliberately not "names nothing this wiki records" — that was the
+            # Deliberately not "names nothing this wiki records", since that was the
             # old, narrower reason, and reusing it told a caller that `quincy`
             # was unknown on a wiki with fifty-four of them. What is true in
             # every case reaching here is that the word changed nothing.
             return (
-                f"{self.unverified} did not narrow this set — every member was "
+                f"{self.unverified} did not narrow this set; every member was "
                 f"kept, so this is all of {self.basis!r}"
             )
         if self.confidence in {"declared", "exact"}:
@@ -404,7 +404,7 @@ class Roster:
         asked = ", ".join(self.unmatched)
         if self.confidence == "weak":
             return (
-                f"{self.basis!r} matched nothing the topic asked for — "
+                f"{self.basis!r} matched nothing the topic asked for, "
                 "this is probably not the set you meant"
             )
         return f"{self.basis!r} is narrower than the topic: {asked} was not asked for"
@@ -419,7 +419,7 @@ def content_words(text: str) -> list[str]:
     """The words that say which set is wanted.
 
     Possessives are stripped. `_WORD` keeps the apostrophe, so "Sukuna's"
-    tokenised as `sukuna's` and never matched `sukuna` — which meant that in
+    tokenised as `sukuna's` and never matched `sukuna`, which meant that in
     "What is Sukuna's Domain Expansion?" the entity scored zero against the
     question and `Domain Expansion` won the subject on two words to nothing.
     That is the most natural way to ask a fact question, and it lost every time.
@@ -738,7 +738,7 @@ def build_roster(
             if names:
                 # The category is what the wiki keeps; the topic may have asked
                 # for less of it. `Transformations` holds Black Frieza because
-                # it is one — "Saiyan" is the part only validation can enforce.
+                # it is one; "Saiyan" is the part only validation can enforce.
                 candidates = len(names)
                 names, rejected = apply_constraints(
                     store, names, constraints, declared.name, overrides=overrides
@@ -768,7 +768,7 @@ def build_roster(
                     # `Transformations` is declared; "Frieza's transformations"
                     # is not. What came back is the declared set narrowed by
                     # whether his name appears on the page, which is a weaker
-                    # thing than the wiki saying these are his — and it came
+                    # thing than the wiki saying these are his, and it came
                     # back holding two of his eight canon forms while wearing
                     # the same badge as a set that was actually checked.
                     roster.confidence = "partial"
@@ -820,7 +820,7 @@ def build_roster(
         # holds eight pages; his own `Abilities and Powers` names Dismantle,
         # Cleave, Divine Flame, Kamutoke and Hiten as well, and none of those
         # has a page to be filed under. The category wins the *shape* of the
-        # answer — it decided the basis and the confidence — and the prose adds
+        # answer (it decided the basis and the confidence) and the prose adds
         # what the wiki never gave a page to.
         if character and kinds:
             extra = _extracted_roster(
@@ -875,12 +875,12 @@ def _names_a_character(
 #
 # A category is filed by kind, never by owner. `Transformations` holds every
 # transformation in Dragon Ball, so "Every form of Goku" answered with all of
-# them narrowed by whether the string "goku" appeared anywhere on the page —
+# them narrowed by whether the string "goku" appeared anywhere on the page,
 # which kept `Super Saiyan Rosé`, whose users field reads "Goku Black".
 #
 # The wiki does record ownership, as `users`/`wielder` edges, and inverting them
 # gives the character's kit directly: 240 pages for Goku, typed by the same
-# vocabulary as everything else — 194 techniques, 28 transformations, 15
+# vocabulary as everything else: 194 techniques, 28 transformations, 15
 # power-ups, 3 fusions, nothing unclassified. Starting there rather than
 # filtering a category also lifts a cap nobody could see: a category read is
 # limited to 400 pages, and Goku's techniques do not all sort into the first
@@ -923,7 +923,7 @@ def ability_kind_words(overrides: dict | None) -> dict[str, frozenset[str]]:
     The vocabulary above is English, and these wikis are not. Jujutsu Kaisen
     keeps `shikigami`, Chainsaw Man keeps `contract`, and a question using the
     word the series itself uses was falling out of the character path before
-    it started — "Every shikigami of Megumi Fushiguro" returned none of the
+    it started. "Every shikigami of Megumi Fushiguro" returned none of the
     nine that were sitting in the `abilities` table.
 
     Declared per series so no wiki's vocabulary reaches another's:
@@ -973,7 +973,7 @@ def _character_subject(
 
     The ordinary subject ranking is not usable here. It answered "Luffy" with
     `Yamamoto Luffy`, "Zoro" with `Manjaro` and "Killua" with `Nen`, and its
-    character test reads the raw infobox id — so One Piece's `char_box` and
+    character test reads the raw infobox id, so One Piece's `char_box` and
     One-Punch Man's `parent_tab` are not characters as far as it is concerned,
     though `semantics` maps the first of those to one.
 
@@ -981,8 +981,8 @@ def _character_subject(
     once the kind it asked for and this series' own set vocabulary are removed
     is the name, and the largest page carrying that name is the character.
 
-    A race word can never be the character — otherwise "Every Saiyan
-    transformation" would become a question about the Saiyan article — and
+    A race word can never be the character, since otherwise "Every Saiyan
+    transformation" would become a question about the Saiyan article, and
     neither can a word this series declares a set by.
     """
     kind_words = {word for vocab in ability_kind_words(overrides).values() for word in vocab}
@@ -991,7 +991,7 @@ def _character_subject(
     )
     if found:
         return found
-    # Nothing was left over once the kind words were removed — which happens
+    # Nothing was left over once the kind words were removed, which happens
     # when the character *is* one. Chainsaw Man has a character called Power,
     # so "Every ability of Power" had both its words struck out and never
     # reached the character path, returning nothing at all while six of her
@@ -1009,7 +1009,7 @@ def _character_subject(
     # Last: a race named after the person it descends from. `Frieza` is both a
     # character and a race here, and the rule that correctly keeps "Every
     # Saiyan transformation" a question about Saiyans also stopped "Every
-    # transformation of Frieza" being one about him — his First, Second,
+    # transformation of Frieza" being one about him: his First, Second,
     # Third, Final and 100% Full Power forms sit in the `abilities` table and
     # were unreachable, the question answering with four Golden variants.
     #
@@ -1080,7 +1080,7 @@ def _subject_from(
         # Race transformation" stopped being a question about the race at all.
         if word in kind_words or word in race_words:
             continue
-        # A set word is not a subject — except on the strict pass, where only
+        # A set word is not a subject, except on the strict pass, where only
         # an outright `character` page is accepted anyway and that is the same
         # guarantee by a stronger test. `power` is both a set word and the
         # name of a Chainsaw Man character.
@@ -1089,7 +1089,7 @@ def _subject_from(
         # A word this series declares a set by may still be a character:
         # Dragon Ball declares `Frieza Race transformation`, which made "Every
         # transformation of Frieza" a question about a race rather than about
-        # him. Such a word has to type as a character outright — `Espada` is an
+        # him. Such a word has to type as a character outright; `Espada` is an
         # organisation and `Captain` is nothing in particular, and neither may
         # become the subject on the strength of a large page.
         strict = (word in vocabulary) or strict_character
@@ -1105,7 +1105,7 @@ def _subject_from(
             if semantic == ontology.CHARACTER:
                 return root
             # `unknown` is allowed through because a wiki may type its
-            # character pages with something this vocabulary has never seen —
+            # character pages with something this vocabulary has never seen,
             # One-Punch Man files Saitama as `parent_tab`. Never for a declared
             # set word, where only an outright character will do.
             if semantic == ontology.UNKNOWN and not strict:
@@ -1117,8 +1117,8 @@ def _subject_from(
 def _asked_kinds(words: Sequence[str], overrides: dict | None = None) -> set[str]:
     """Which kinds of thing the topic's nouns name.
 
-    `power_up` is deliberately not what "form" means. Goku owns fifteen —
-    Meditation, Pump Up, Howl, Hi-Tension — and one, Kaio-ken, that sources do
+    `power_up` is deliberately not what "form" means. Goku owns fifteen
+    (Meditation, Pump Up, Howl, Hi-Tension) and one, Kaio-ken, that sources do
     list among his forms. Admitting the type to gain that one costs the other
     fourteen, so it stays out and Kaio-ken is a known, deliberate miss.
     """
@@ -1320,7 +1320,7 @@ def _outside_the_story(
 
     A name the wiki never gave a page is kept. It has no debut to judge, and
     dropping what cannot be checked would remove exactly what prose extraction
-    exists to find — `Dismantle` and `Cleave` have no page on the Jujutsu
+    exists to find: `Dismantle` and `Cleave` have no page on the Jujutsu
     Kaisen wiki.
     """
     if name.strip().lower() in _dropped_titles(store):
@@ -1344,7 +1344,7 @@ def _extracted_roster(
     """A character's kit as read out of prose at index time.
 
     The last resort, and the only one that reaches half of what these questions
-    ask for. Killua's Godspeed has no page, no category and no user field — it
+    ask for. Killua's Godspeed has no page, no category and no user field, so it
     is a proper noun in a paragraph, and `cli abilities` is what turns it into
     a row. Nothing is computed here: this is a keyed read of what that run
     stored, so the same question answers the same way twice.
@@ -1352,15 +1352,15 @@ def _extracted_roster(
     Capped at `partial` unconditionally. A model read these out of prose, and
     however good the reading was it is not the wiki having filed something.
     """
-    # A technique and a transformation are one bucket here — but only when the
+    # A technique and a transformation are one bucket here, but only when the
     # off-kind rows look like the model wavering rather than a distinction it
     # actually drew.
     #
     # On a page the wiki types the thing itself and the type can be trusted. On
     # an extracted row the kind is the model's guess between three words, and
     # the guess moves: `Whirlwind` and `Speed of Lightning` came back as
-    # transformations, so "Every Nen ability of Killua" — which asks for
-    # techniques — filtered out two of the four right answers.
+    # transformations, so "Every Nen ability of Killua" (which asks for
+    # techniques) filtered out two of the four right answers.
     #
     # Folding them unconditionally is much worse elsewhere. Measured against
     # the canon lists, asked-kind only versus folded:
@@ -1371,7 +1371,7 @@ def _extracted_roster(
     #   Goku's forms             31 rows 10 of 12 -> 57 rows 11 of 12 +1 canon
     #
     # The fold buys two canon items on Killua and one across the other three,
-    # for fifty-two extra members — Kamehameha and Dragon Fist answering a
+    # for fifty-two extra members: Kamehameha and Dragon Fist answering a
     # question about *forms*. What separates them is proportion: Killua's
     # off-kind rows are three against sixteen, Goku's twenty-six against
     # thirty-one. A handful is noise; a comparable pile is a real distinction.
@@ -1396,15 +1396,15 @@ def _extracted_roster(
             return None
 
     # Extracted rows deliberately skip `validate_member`, whose decisive test
-    # asks whether a page's own fields name this character as a user — and the
+    # asks whether a page's own fields name this character as a user, and the
     # reason these rows exist is that no page does. Measured on the stored
     # table: running them through it drops Sukuna's `Dismantle`, `Cleave` and
     # `Shrine` and Goku's `Super Saiyan Blue Kaio-ken` and `Ultra Instinct`,
     # every one of them for "no field on this page names X as a user". The row
     # came from that character's own page, so ownership is not in question.
     #
-    # Canon is a different question — what work a thing debuted in, not who
-    # used it — and it still applies. Without it, reading Goku's prose puts
+    # Canon is a different question (what work a thing debuted in, not who
+    # used it) and it still applies. Without it, reading Goku's prose puts
     # `Super Saiyan (Berserk)` and `Blue Berserk` back among his forms, which
     # is the filter the category path had already got right.
     if constraints is not None and constraints.scope == "canon":
@@ -1448,7 +1448,7 @@ def _extracted_roster(
 #
 # The case for raising it looked strong: 25 canon items were being dropped here,
 # and the headings holding them run up to `Armament Haki` at 65 pages while the
-# skeleton starts at `Haki` 80 — an apparently clean gap. Seventy sat in it.
+# skeleton starts at `Haki` 80, an apparently clean gap. Seventy sat in it.
 # End to end that bought 9 canon items, cost 2.1 points of precision and made 21
 # questions noisier against 3 improved.
 #
@@ -1472,7 +1472,7 @@ def _extracted_roster(
 # nesting does not separate them from `Observation Haki`.
 _TEMPLATE_HEADING_PAGES = 10
 
-# Longest real ability name measured is four words — `Killer Move: Serious
+# Longest real ability name measured is four words: `Killer Move: Serious
 # Series`, `Santoryu Ogi: Sanzen Sekai`, `Super Saiyan Blue Kaio-ken`. What runs
 # longer is the model describing rather than naming: "Sleeping with a larger
 # part of his brain awake" survived the proper-noun filter because a sentence
@@ -1532,7 +1532,7 @@ def _combine(first: Roster | None, second: Roster | None) -> Roster | None:
     contains the other. The headings on Luffy's abilities page are `Gear 2`,
     `Gear 3`, `Gear 4` and `Gear 5 (Awakening)`; the prose under them names
     `Boundman`, `Tankman` and `Snakeman`. Whichever was preferred, choosing lost
-    half the Gears — so both are kept.
+    half the Gears, so both are kept.
 
     Confidence stays `partial`, which is what both inputs already claim.
     """
@@ -1578,7 +1578,7 @@ def _section_roster(
 
     The confidence is capped at `partial` on purpose. A heading is where an
     ability is described, not an entity the wiki curated, so `Zanpakutō` and
-    `Fighting Style` come back beside real ones — worth returning, never worth
+    `Fighting Style` come back beside real ones: worth returning, never worth
     claiming as an exact set.
     """
     wanted = [
@@ -1625,14 +1625,14 @@ def _section_roster(
         if len(crumbs) < 2:
             continue
         # The level-0 card carries the page title as its breadcrumb, which on
-        # a subpage splits into two and reads as a heading — `Goku/Power and
+        # a subpage splits into two and reads as a heading: `Goku/Power and
         # Abilities` was returning a member called `Power and Abilities`.
         if breadcrumb == (row["title"] or "").strip():
             continue
         if breadcrumb in parents:
             continue
         # The heading the topic asked about can be the top of the path or the
-        # subpage the wiki moved it onto — Zoro's abilities are a whole page.
+        # subpage the wiki moved it onto; Zoro's abilities are a whole page.
         head = " ".join((crumbs[0], row["title"] or "")).lower()
         if not any(section in head for section in wanted):
             continue
@@ -1645,7 +1645,7 @@ def _section_roster(
         # `Fusions` and `Equipment`; without reading that, "Every form of
         # Goku" answered with `Kamehameha` and `Attack Ball` as well.
         #
-        # Only when the group names a kind at all — `Fusions` names none, and
+        # Only when the group names a kind at all: `Fusions` names none, and
         # a group this vocabulary has never seen is not evidence against its
         # members.
         group = crumbs[-2] if len(crumbs) > 2 else ""
@@ -1655,7 +1655,7 @@ def _section_roster(
                 continue
         # A heading is not exempt from canon. Reading `;`-marked forms out of
         # `Goku/Power and Abilities` put `Super Saiyan (Berserk)` back among
-        # his forms — the page for it was dropped, but the heading naming it
+        # his forms: the page for it was dropped, but the heading naming it
         # sits on a page that stays.
         if constraints is not None and constraints.scope == "canon":
             if _outside_the_story(store, name, constraints):
@@ -1813,7 +1813,7 @@ def _group_roster(
 ) -> Roster:
     """A roster whose members are the groups themselves.
 
-    "Every Nen Type" wants the six types, each with the people who use it — not
+    "Every Nen Type" wants the six types, each with the people who use it, not
     a flat list of every Nen user. Hunterpedia holds the types only as
     categories, with no field on a character saying which one they are, so the
     set has to be assembled from the categories themselves.
@@ -1878,8 +1878,8 @@ def _section_levels(store: FactStore, page: str) -> tuple[list[Any], int]:
 # ── membership validation ────────────────────────────────────────────────────
 #
 # A category is what the wiki keeps, not what the topic asked for. The Dragon
-# Ball wiki files `Black Frieza` under `Transformations` — correctly, it is one
-# — so "Every Saiyan transformation" returned it, because nothing downstream
+# Ball wiki files `Black Frieza` under `Transformations` (correctly, it is one)
+# so "Every Saiyan transformation" returned it, because nothing downstream
 # ever asked the second half of the question.
 #
 # Everything needed to answer that half is already stored. `Black Frieza` sits
@@ -1911,7 +1911,7 @@ _GAME_TITLES = (
     "ultimate tenkaichi", "battle of z", "sparking",
 )
 # What counts as the story, unless a series says otherwise. Films are in by
-# default because Dragon Ball's are canon — Broly, Battle of Gods — but Hunter x
+# default because Dragon Ball's are canon (Broly, Battle of Gods) but Hunter x
 # Hunter's are not, which is how Omokage, an original character from a
 # non-canon film, reached the Phantom Troupe. A series overrides this with
 # `canon_media:` in its overrides.yaml.
@@ -1961,7 +1961,7 @@ class Constraints:
     # wiki that declares none, which is all of them but Dragon Ball.
     works: tuple[str, ...] = ()
     # Words the topic narrowed by that nothing in the wiki can be checked
-    # against — "apocalypse level", "instant kill", "way to die".
+    # against: "apocalypse level", "instant kill", "way to die".
     unverified: tuple[str, ...] = ()
 
     def __bool__(self) -> bool:
@@ -1988,7 +1988,7 @@ def parse_constraints(
     # with the forms that are not from it.
     #
     # The wiki's own name is stripped off as an alternative, because nobody
-    # asks for "Dragon Ball Xenoverse forms" — they ask for Xenoverse.
+    # asks for "Dragon Ball Xenoverse forms"; they ask for Xenoverse.
     lowered = (query or "").lower()
     if any(name and name in lowered for name in _work_aliases(works, title)):
         scope = "all"
@@ -2031,7 +2031,7 @@ class Profile:
     # The works the debut edges point at, by name. The medium is already read
     # off these; the names were being thrown away, and they are the only thing
     # that separates a Super Dragon Ball Heroes manga chapter from a Dragon Ball
-    # Super one — both of which say "manga".
+    # Super one, both of which say "manga".
     works: tuple[str, ...] = ()
 
     def haystack(self) -> str:
@@ -2048,14 +2048,14 @@ class Profile:
 def _profile(store: FactStore, name: str) -> Profile:
     """What the store knows about one candidate, read once per request.
 
-    Four queries a call — categories, facts, debut edges and one page type per
-    edge — and the same candidate is profiled repeatedly: `apply_constraints`
+    Four queries a call (categories, facts, debut edges and one page type per
+    edge) and the same candidate is profiled repeatedly: `apply_constraints`
     builds a profile to validate each name and another to test the qualifier
     against it, `_outside_the_story` builds one more, and `classify` asks for
     each user's twice in a single expression. Measured on "Every form of Goku",
     75 calls for 41 distinct names.
 
-    The memo lives with the `FactStore` instance rather than in this module —
+    The memo lives with the `FactStore` instance rather than in this module,
     `semantics.request_cache` explains why, and holds `semantic_type`'s on the
     same terms. Handing the same `Profile` to every caller is safe because it is
     read-only: every field is a string or a tuple, and nothing assigns to one.
@@ -2088,7 +2088,7 @@ def _read_profile(store: FactStore, name: str) -> Profile:
 
     # A debut edge points at the instalment itself, and the instalment's own
     # page type says which medium it is. Hunterpedia files its films under
-    # `anime debut`, so the field text calls Omokage's debut anime — but the
+    # `anime debut`, so the field text calls Omokage's debut anime, but the
     # target is `Hunter × Hunter: Phantom Rouge`, typed `movie`, which is the
     # truth the string was hiding.
     works: list[str] = []
@@ -2160,7 +2160,7 @@ def _is_non_canon_work(store: FactStore, title: str, works: tuple[str, ...]) -> 
     in `Super Heroes are Born`, a Dragon Ball Super chapter, and a bare "heroes"
     test threw him out of the Red Ribbon Army along with Gamma 1 and Cell Max.
 
-    The category hop is what reaches `Evil Saiyan (chapter)` — a page whose own
+    The category hop is what reaches `Evil Saiyan (chapter)`, a page whose own
     title says nothing, filed under `Dragon Ball Heroes manga chapters`.
     """
     lowered = (title or "").strip().lower()
@@ -2216,7 +2216,7 @@ def _owned_pages(store: FactStore, word: str) -> frozenset[str]:
     """Pages the wiki records as belonging to the character `word` names.
 
     Empty for anything that is not a character, and empty for a character this
-    wiki records no ownership for at all — Hunterpedia and the Chainsaw Man
+    wiki records no ownership for at all: Hunterpedia and the Chainsaw Man
     wiki keep no user fields on abilities, so Killua owns nothing here and the
     caller has to fall back rather than reject every candidate.
     """
@@ -2291,7 +2291,7 @@ def validate_member(
                 # Filed under three or more races *and* used by a crowd: that is
                 # something handed out, not something a body does. `Unlock
                 # Potential` reaches Earthlings, Majin and Saiyans across
-                # eighteen users. Breadth alone is not enough — `Golden Great
+                # eighteen users. Breadth alone is not enough: `Golden Great
                 # Ape` is filed under three because Baby is a Tuffle wearing a
                 # Saiyan, and it is still a Saiyan form.
                 filed = [
@@ -2319,7 +2319,7 @@ def validate_member(
             # question the topic asked can finally be put to the data.
             #
             # Only when the wiki records ownership for this character at all.
-            # Where it records none — Hunterpedia keeps no user fields — this is
+            # Where it records none (Hunterpedia keeps no user fields) this is
             # empty and the old text test still runs, because rejecting every
             # candidate would turn a padded answer into no answer.
             owned = owned_by_word.get(word)
@@ -2329,7 +2329,7 @@ def validate_member(
                 return f"no field on this page names {word} as a user"
             if _mentions(haystack, word):
                 continue
-            # For anyone other than a race — "techniques of Sukuna" — being used
+            # For anyone other than a race ("techniques of Sukuna") being used
             # by them is exactly the right test.
             if _mentions(" ".join(_owner_race(store, profile.owners)), word):
                 continue
@@ -2352,11 +2352,11 @@ def _semantic_reason(store: FactStore, name: str, race: str) -> str:
     if not stored:
         return ""
     properties = stored["properties"]
-    detail = f" — {stored['reason']}" if stored["reason"] else ""
+    detail = f", {stored['reason']}" if stored["reason"] else ""
 
     # Race-exclusivity outranks everything else here. A form can need a full
     # moon or a ritual of five Saiyans and still be something only a Saiyan
-    # body does — the classifier reads those external *triggers* as external
+    # body does: the classifier reads those external *triggers* as external
     # grants, and on their own they prove nothing.
     if properties.get("race_exclusive"):
         return ""
@@ -2392,7 +2392,7 @@ _INVENTOR_RELATIONS = ("inventor", "creator", "developer", "originator")
 _USER_RELATIONS = ("user", "users", "wielder", "wielders", "practitioner", "practitioners")
 
 # Whose a thing is. `inventor` is deliberately absent: King Kai invented the
-# Kaio-ken and never used it, so inventing something is not owning it — the
+# Kaio-ken and never used it, so inventing something is not owning it. The
 # distinction the race path already depends on.
 # `stated user` is derived by `ingest/ownership.py` from a technique page's
 # own lead -- "is a technique of Rukia Kuchiki's Zanpakutō". Bleach records
@@ -2441,8 +2441,8 @@ def classify(store: FactStore, name: str, race_words: set[str]) -> Acquisition:
     users = store.linked_from(name, _USER_RELATIONS)
     inventors = store.linked_from(name, _INVENTOR_RELATIONS)
 
-    # An inventor that *is* a race — the Dragon Ball wiki writes
-    # `inventor = Saiyan` on Super Saiyan — settles it outright.
+    # An inventor that *is* a race (the Dragon Ball wiki writes
+    # `inventor = Saiyan` on Super Saiyan) settles it outright.
     for inventor in inventors:
         if inventor.lower() in race_words:
             return Acquisition(RACE_EXCLUSIVE, (inventor.lower(),), tuple(users))
@@ -2519,7 +2519,7 @@ def race_vocabulary(store: FactStore) -> set[str]:
 
     Data-driven so it carries across series without a list: `Saiyan` qualifies
     on Dragon Ball for the same reason `Quincy` would on Bleach and `Mink` on
-    One Piece — a character page says so.
+    One Piece, because a character page says so.
     """
     counts: Counter[str] = Counter()
     placeholders = ",".join("?" * len(_RACE_FIELDS))
@@ -2531,23 +2531,23 @@ def race_vocabulary(store: FactStore) -> set[str]:
     for row in rows:
         counts.update(set(content_words(row["value"] or "")))
 
-    # Race fields are free text — "Saiyan (Super Saiyan God)", "1/2 Saiyan-1/2
-    # Human-type Earthling", "Frieza Clan (mutant)" — so the words alone include
+    # Race fields are free text: "Saiyan (Super Saiyan God)", "1/2 Saiyan-1/2
+    # Human-type Earthling", "Frieza Clan (mutant)", so the words alone include
     # `form`, `formerly` and `american`. A race the wiki takes seriously has an
     # article about it; the rest are punctuation with ambitions.
     #
     # Having an article is not enough on its own, because a *character* named
     # inside one of those parentheticals has one too. `Gohan` entered the race
     # vocabulary through two values reading "1/2 Glind-1/2 Saiyan (Gohan
-    # Black)", and a race word can never be the subject — so "Every form of
+    # Black)", and a race word can never be the subject, so "Every form of
     # Gohan" stopped being a question about Gohan and answered with one
     # loosely-filtered member of `Transformations`.
     #
     # A real race is declared by many pages and an accident by a couple.
     # Measured on Dragon Ball: saiyan 157, human 148, namekian 80, frieza 44,
-    # majin 43 — against gohan 2 and buu 2. Bleach agrees: quincy 47.
+    # majin 43, against gohan 2 and buu 2. Bleach agrees: quincy 47.
     # Scaled, so a wiki with four race facts is not held to a corpus-sized bar
-    # — on a small store one page declaring a race is all the evidence there
+    # on a small store, one page declaring a race is all the evidence there
     # is, and the parenthetical accidents this excludes only appear where
     # there are thousands of values for them to hide in.
     floor = min(_RACE_DECLARATIONS, max(1, len(rows) // 4))
@@ -2562,7 +2562,7 @@ def _grounded(store: FactStore, constraints: Constraints) -> Constraints:
     """Keep only the qualifier words that name something the wiki has a page for.
 
     "Every Cursed Technique of Sukuna" leaves `cursed` behind once the set
-    (`Sukuna Techniques`) has accounted for the rest — and `cursed` is not a
+    (`Sukuna Techniques`) has accounted for the rest, and `cursed` is not a
     thing, it is what this wiki calls every technique. Enforcing it threw away
     Malevolent Shrine, which is filed under `Sukuna Techniques` and says nothing
     about being cursed because on this wiki that goes without saying.
@@ -2582,7 +2582,7 @@ def _grounded(store: FactStore, constraints: Constraints) -> Constraints:
         works=constraints.works,
         # The words that had to be dropped. "Every Apocalypse Level Devil"
         # narrows `Devils` by a property no page records, so the qualifier
-        # cannot be enforced — and the answer that comes back is all 88 devils.
+        # cannot be enforced, and the answer that comes back is all 88 devils.
         # Reported, so the topic is not silently widened.
         unverified=tuple(
             word for word in constraints.qualifier if not store.node_by_name(word)
@@ -2644,15 +2644,15 @@ def _disagrees(semantic: str, wanted: str) -> str:
     """Why this candidate is not the kind of thing the set is made of.
 
     Only fires when the set has a clear majority type and the candidate has a
-    known, different one — an unclassified page is left alone rather than
+    known, different one; an unclassified page is left alone rather than
     guessed at.
     """
     if wanted == ontology.UNKNOWN or semantic == ontology.UNKNOWN:
         return ""
     if semantic == wanted:
         return ""
-    # Organisations are never rejected. They sit inside other organisations —
-    # a division of an army is a member of it — and wikis reach for a group
+    # Organisations are never rejected. They sit inside other organisations
+    # (a division of an army is a member of it) and wikis reach for a group
     # infobox for anything collective, so `Angel` and `Shadow Dragon` are typed
     # that way on a page about a race. Turning those away cost three real races
     # to catch nothing.
@@ -2683,7 +2683,7 @@ def apply_constraints(
 
     Never returns an empty set from a non-empty one. A wiki whose fields are
     named differently, or a qualifier nothing happens to record, would otherwise
-    turn a correct list into nothing at all — and a list that is visibly too
+    turn a correct list into nothing at all, and a list that is visibly too
     broad is more useful than a blank one, provided the caller is told.
     """
     constraints = _grounded(store, constraints)
@@ -2734,7 +2734,7 @@ def apply_constraints(
 
     if not kept:
         # Everything failed. Returning the unfiltered set is still better than a
-        # blank one — but it must not look like an answer. "Every Frieza Race
+        # blank one, but it must not look like an answer. "Every Frieza Race
         # transformation" came back as all 160 transformations wearing the same
         # `declared` badge as a set that was actually checked, which is the
         # worst of both. The caller is told by the empty `kept` flag.
@@ -2743,13 +2743,13 @@ def apply_constraints(
     # counts say. Testing `len(kept) == len(names)` instead was wrong in three
     # measured cases: "Every Way Sorcerers Can Die" went 68 → 67 and "Every
     # Kai" 218 → 169, but every one of those rejections came from the eponym,
-    # type and canon rules — the constraint itself did no work, and the answer
+    # type and canon rules: the constraint itself did no work, and the answer
     # was still the whole set wearing `declared`.
     if (constraints.qualifier or constraints.unverified) and not by_rule.get("qualifier"):
         # The qualifier rejected nobody. That has two very different causes and
         # conflating them downgraded three correct answers: "Every Quincy
         # Sternritter" is right *because* every Sternritter is a Quincy, and it
-        # was told that `quincy` "names nothing this wiki records" — on a wiki
+        # was told that `quincy` "names nothing this wiki records", on a wiki
         # with a 54-member Quincy set.
         #
         # So ask whether the members satisfy it. Redundant-but-true is a good
@@ -2757,7 +2757,7 @@ def apply_constraints(
         words = constraints.unverified or constraints.qualifier
         # Every word, not any. "Every Way Sorcerers Can Die in the Culling Game"
         # leaves `way`, `die`, `culling`, `game`, and most sorcerer pages do
-        # mention the Culling Game — so `any` called the constraint satisfied and
+        # mention the Culling Game, so `any` called the constraint satisfied and
         # handed back all 67 sorcerers as a confident answer about ways to die.
         satisfied = sum(
             1
@@ -2778,7 +2778,7 @@ def _sections_roster(
     """A set the wiki wrote as one page, one section per member.
 
     The level carrying the most sections is taken to be the members, and the
-    nearest shallower heading above each one is its group — which on a rank
+    nearest shallower heading above each one is its group, which on a rank
     ladder is exactly the structure the page already has: three divisions at
     level 2, twenty-two ranks at level 3.
     """
@@ -2825,7 +2825,7 @@ def _asks_for_packaging(words: list[str]) -> bool:
 def work_title(paths: SeriesPaths) -> str:
     """The wiki's own name, as one lowercase run of letters.
 
-    Read from the host in the manifest — `dragonball.fandom.com` — rather than
+    Read from the host in the manifest (`dragonball.fandom.com`) rather than
     from a page, because the page can be absent. Dragon Ball's own article was
     typed `unknown` and a prune deleted it, so anything that learns the series'
     name from its pages learns nothing on exactly the wiki that needs it most.
@@ -2843,7 +2843,7 @@ def rate_match(basis: str, words: list[str], subject_words: list[str]) -> tuple[
 
     Returns ``(confidence, unmatched_words)``. A set whose name is entirely
     explained by the topic is `exact`; one carrying a word the topic never
-    mentioned is `partial`, and that word is usually the whole problem —
+    mentioned is `partial`, and that word is usually the whole problem:
     `Straw Hat Pirates' Creations` is `partial` on "creations", which is exactly
     why it is the wrong answer to "Every Straw Hat Pirate".
 
@@ -2875,8 +2875,8 @@ def rate_match(basis: str, words: list[str], subject_words: list[str]) -> tuple[
 def strip_work_title(text: str, title: str) -> str:
     """Remove the wiki's own name from `text`, and nothing else.
 
-    Every category a wiki names after itself — `Dragon Ball media`, `One Piece
-    Volumes` — contains every word of any query that names the series, so it
+    Every category a wiki names after itself (`Dragon Ball media`, `One Piece
+    Volumes`) contains every word of any query that names the series, so it
     outscores the set that was actually asked for. Removing the title from both
     sides of the comparison is what makes "Every race in Dragon Ball" score the
     way "Every race" already did.
@@ -2916,7 +2916,7 @@ def _score(
     """How well a set's own name answers the query.
 
     The query's words count double: they are what was asked for. The subject's
-    words break the tie that the query cannot — "Every Rank of Curse" matches
+    words break the tie that the query cannot. "Every Rank of Curse" matches
     both `Cursed Spirits` and `Curse Users` equally, and the subject the query
     resolved to (`Cursed Spirit`) says which one it meant.
 
@@ -3012,8 +3012,8 @@ def _grouping_field(
     """The infobox field the members should be grouped by, if the query asks.
 
     "Every Rank of Curse" is a set of curses grouped by rank. The field that
-    holds a rank is found through the wiki's own label for it — Jujutsu Kaisen
-    stores it as `class` and labels it "Grade" — so nothing here needs to know
+    holds a rank is found through the wiki's own label for it. Jujutsu Kaisen
+    stores it as `class` and labels it "Grade", so nothing here needs to know
     what a grade is.
     """
     if not names or not words:
@@ -3146,8 +3146,8 @@ def _group_label(value: str) -> str:
 def _member_order(member: Member) -> tuple[int, float, str, str]:
     """Group first, then the member's name.
 
-    Numbered groups sort by their number — plain numeric order, ascending, with
-    no claim about which end is stronger — and groups the wiki did not number
+    Numbered groups sort by their number (plain numeric order, ascending, with
+    no claim about which end is stronger) and groups the wiki did not number
     ("Special Grade") come after them. The script decides which direction to
     walk the list; the engine only has to keep members of one group together.
     """

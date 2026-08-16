@@ -88,7 +88,7 @@ def crawl(
 
     console.print(
         f"\n[green]Fetched {manifest['pages_written']} pages this run[/green] "
-        f"({manifest['pages_skipped']} skipped, {manifest['pages_failed']} failed) — "
+        f"({manifest['pages_skipped']} skipped, {manifest['pages_failed']} failed), "
         f"{manifest['pages_on_disk']} of {manifest['pages_enumerated']} now on disk"
     )
     discovered = sorted(set(manifest["ontology"]["infobox_types"].values()))
@@ -124,7 +124,7 @@ def audit(
     coverage, graph = report["coverage"], report["graph"]
     sourcing = report["sourcing"]
 
-    summary = Table(title=f"Extraction audit — {series} ({report['sampled']} pages)")
+    summary = Table(title=f"Extraction audit: {series} ({report['sampled']} pages)")
     summary.add_column("metric")
     summary.add_column("value", justify="right")
     summary.add_row("pages typed", f"{coverage['typed']:.1%}")
@@ -181,8 +181,8 @@ def prune(
     Every wiki is crawled whole and filtered later, so a video game or
     soundtrack page the engine will never cite still costs a slot in the
     corpus and in the vector store. The blocklist lives in
-    `series/<name>/overrides.yaml` — the only place a series-specific decision
-    is allowed to live — and this command deletes the stored wikitext those
+    `series/<name>/overrides.yaml`, the only place a series-specific decision
+    is allowed to live, and this command deletes the stored wikitext those
     pages produced. A page is matched by its type family, so pruning
     `song_box` also removes a subpage typed `song_box_other_versions`. Bring
     what was removed back with `crawl --refresh`.
@@ -201,7 +201,7 @@ def prune(
         return
 
     # Classify the way `audit` and `index` do. The type stored on disk at
-    # crawl time can be stale — a crawl whose template enumeration was
+    # crawl time can be stale: a crawl whose template enumeration was
     # rate-limited typed everything "unknown", and the types only appear once
     # re-extraction runs. Pruning on the stored field would remove nothing
     # from that corpus while the engine itself knows what the pages are.
@@ -222,7 +222,7 @@ def prune(
     kept = total - len(matched)
 
     table = Table(
-        title=f"Prune — {series} "
+        title=f"Prune: {series} "
         f"({'dry run, ' if dry_run else ''}{len(matched)} of {total} pages)"
     )
     table.add_column("type")
@@ -256,7 +256,7 @@ def _stated_count(name: str) -> int | None:
     """The size a set's own name claims, if it claims one.
 
     `Seven Warlords of the Sea`, `Gotei 13`, `Zodiac Twelve`. A name that counts
-    itself is a free assertion to check the membership against — and the check
+    itself is a free assertion to check the membership against, and the check
     is worth having even though most of what it finds turns out to be a naming
     convention rather than a defect.
     """
@@ -299,7 +299,7 @@ def abilities(
 
     A local model reads those sections once and the answer is stored, so
     retrieval keeps reading a table rather than reasoning. Only the series that
-    declare `ability_sections:` are touched — Dragon Ball records ownership as
+    declare `ability_sections:` are touched; Dragon Ball records ownership as
     edges and needs none of this.
 
     Cached on the page's revision, so running it twice costs nothing.
@@ -353,7 +353,7 @@ def abilities(
         console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1) from error
 
-    table = Table(title=f"Abilities extracted — {series}")
+    table = Table(title=f"Abilities extracted: {series}")
     table.add_column("outcome")
     table.add_column("count", justify="right")
     for key in ("considered", "extracted", "cached", "failed", "abilities"):
@@ -377,7 +377,7 @@ def relations(
 ) -> None:
     """Extract the relationships this wiki writes only as prose.
 
-    The infobox gives family and faction — `relatives`, `affiliation`. It does
+    The infobox gives family and faction: `relatives`, `affiliation`. It does
     not give what a script is built from: that Gojo and Geto were the strongest
     duo until Geto defected. That is a sentence under `Relationships`, reachable
     by no category and no edge.
@@ -420,7 +420,7 @@ def relations(
         console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1) from error
 
-    table = Table(title=f"Relations extracted — {series}")
+    table = Table(title=f"Relations extracted: {series}")
     table.add_column("outcome")
     table.add_column("count", justify="right")
     for key in ("considered", "extracted", "cached", "failed", "relations"):
@@ -454,7 +454,7 @@ def link(
         raise typer.Exit(code=1)
 
     report = derive(paths, limit)
-    table = Table(title=f"Stated ownership — {series}")
+    table = Table(title=f"Stated ownership: {series}")
     table.add_column("outcome")
     table.add_column("count", justify="right")
     for key in ("considered", "stated", "written", "unknown_owner"):
@@ -516,7 +516,7 @@ def classify(
         console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1) from error
 
-    table = Table(title=f"Classified — {series}")
+    table = Table(title=f"Classified: {series}")
     table.add_column("outcome")
     table.add_column("pages", justify="right")
     for key in ("considered", "classified", "cached", "failed"):
@@ -565,7 +565,7 @@ def index(
         raise typer.Exit(code=1)
 
     stats = report["stats"]
-    table = Table(title=f"Index built — {series}")
+    table = Table(title=f"Index built: {series}")
     table.add_column("store")
     table.add_column("rows", justify="right")
     for name in ("documents", "sections", "nodes", "edges", "facts", "chunks"):
@@ -620,7 +620,7 @@ def catalogue(
         chapter = record.get("with_chapter")
         table.add_row(
             record["series"], f"{record['documents']:,}",
-            "—" if chapter is None else f"{chapter * 100:.0f}%",
+            "n/a" if chapter is None else f"{chapter * 100:.0f}%",
             str(len(record["rosters"])),
         )
     console.print(table)
@@ -729,7 +729,7 @@ def rosters(
         # `kai`, and "Every Kai" came back as 169 deities with nothing left over
         # for the validator to notice. The bigger the set, the worse the
         # swallow, so they are listed largest first.
-        table = Table(title=f"Swallow surface — {series}")
+        table = Table(title=f"Swallow surface: {series}")
         table.add_column("word")
         table.add_column("claims", overflow="fold")
         table.add_column("members", justify="right")
@@ -756,7 +756,7 @@ def rosters(
         # because twelve people held seven seats over time. Both are correct
         # data and a misleading name, and a tool that "fixed" them would be
         # wrong. Which is which is a judgement for a person.
-        counted = Table(title=f"Sets whose name states a count — {series}")
+        counted = Table(title=f"Sets whose name states a count: {series}")
         counted.add_column("set")
         counted.add_column("name says", justify="right")
         counted.add_column("holds", justify="right")
@@ -791,7 +791,7 @@ def rosters(
         )
         return
 
-    table = Table(title=f"Declared rosters — {series}")
+    table = Table(title=f"Declared rosters: {series}")
     table.add_column("set")
     table.add_column("members", justify="right")
     table.add_column("grouped by")
@@ -925,7 +925,7 @@ def query(
     mode: str = typer.Option(
         "qa",
         "--mode",
-        help="qa | narrative | roster | auto — the shape of the answer, as on /context.",
+        help="qa | narrative | roster | auto: the shape of the answer, as on /context.",
     ),
 ) -> None:
     """Retrieve context for a question."""
@@ -973,7 +973,7 @@ def query(
     for rank, passage in enumerate(result.passages, start=1):
         console.print(
             f"[bold]{rank}. {passage.doc_title}[/bold] "
-            f"[dim]— {passage.breadcrumb} "
+            f"[dim]- {passage.breadcrumb} "
             f"(score {passage.score:.3f}, via {'+'.join(passage.sources)})[/dim]"
         )
         console.print(f"   {passage.text[:400]}\n")
@@ -987,7 +987,7 @@ def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
     if mode == "auto":
         chosen = route(paths, question)
         mode = chosen.mode
-        console.print(f"[dim]routed to[/dim] {mode} [dim]— {chosen.why}[/dim]")
+        console.print(f"[dim]routed to[/dim] {mode} [dim]({chosen.why})[/dim]")
 
     bundle = build_context(
         paths, question, mode=mode, token_budget=24000, top_k=top_k or None
@@ -1009,7 +1009,7 @@ def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
             f"({bundle.get('scope', 'canon')} scope)"
         )
         for entry in rejected[:5]:
-            console.print(f"  [dim]-[/dim] {entry['name']} — [dim]{entry['reason']}[/dim]")
+            console.print(f"  [dim]-[/dim] {entry['name']}: [dim]{entry['reason']}[/dim]")
         if len(rejected) > 5:
             console.print(f"  [dim]… {len(rejected) - 5} more[/dim]")
     console.print(f"[dim]tokens:[/dim] {bundle['tokens_used']}\n")
@@ -1034,7 +1034,7 @@ def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
 
     for beat in bundle["beats"]:
         console.print(
-            f"[bold]{beat['title']}[/bold] [dim]— {beat['doc_title']}"
+            f"[bold]{beat['title']}[/bold] [dim]- {beat['doc_title']}"
             f"{'  sourced: ' + beat['source_span'] if beat.get('source_span') else ''}[/dim]"
         )
         console.print(f"   {beat['text'][:300]}\n")
@@ -1064,7 +1064,7 @@ def timeline(
         console.print(f"[yellow]No narrative found for {subject!r}.[/yellow]")
         raise typer.Exit(code=1)
 
-    console.print(f"[bold]{narrative.subject}[/bold] — {len(narrative.beats)} beats")
+    console.print(f"[bold]{narrative.subject}[/bold]: {len(narrative.beats)} beats")
     if narrative.participants:
         console.print(f"[dim]Participants:[/dim] {', '.join(narrative.participants[:12])}")
     console.print()
@@ -1097,7 +1097,7 @@ def chronicle(
     this character's history under, in the order its own `previous`/`next` chain
     puts them, with the heading already rendered.
 
-    Reads the store and nothing else — no model, so the chronology is the same
+    Reads the store and nothing else: no model, so the chronology is the same
     every time it is asked.
     """
     import logging
@@ -1134,7 +1134,7 @@ def chronicle(
             console.print(f"[dim]{len(section.beats)} beats, "
                           f"{section.words} words[/dim]\n")
             for order, beat in enumerate(section.beats, 1):
-                console.print(f"[bold]{order}.[/bold] [cyan]{beat.locator or '—'}[/cyan]")
+                console.print(f"[bold]{order}.[/bold] [cyan]{beat.locator or 'n/a'}[/cyan]")
                 console.print(f"   {beat.text}\n")
             if section.abilities:
                 console.print(f"[dim]abilities on hand ({len(section.abilities)}):[/dim]"
@@ -1152,7 +1152,7 @@ def chronicle(
                           f"{subject!r}.[/yellow]")
             raise typer.Exit(code=1)
         total = sum(appearance.words for appearance in found)
-        console.print(f"[bold]{subject}[/bold] — {len(found)} arcs, {total} words\n")
+        console.print(f"[bold]{subject}[/bold]: {len(found)} arcs, {total} words\n")
         for appearance in found:
             console.print(f"[bold]{appearance.heading}[/bold]")
             if full:
@@ -1187,7 +1187,7 @@ def run_eval(
         console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1) from error
 
-    table = Table(title=f"Retrieval eval — {series}")
+    table = Table(title=f"Retrieval eval: {series}")
     table.add_column("kind")
     table.add_column("passed", justify="right")
     table.add_column("score", justify="right")
@@ -1230,7 +1230,7 @@ def canon_run(
     skip_eval: bool = typer.Option(
         False, "--skip-eval",
         help="Skip the in-process gold suite. Use this while the server is "
-             "hot — it loads an embedder and a reranker here while the server "
+             "hot: it loads an embedder and a reranker here while the server "
              "may still hold its own, which double-allocates on one GPU."),
     dry_run: bool = typer.Option(
         False, "--dry-run",
@@ -1268,7 +1268,7 @@ def canon_run(
         return
 
     summary = result["summary"]
-    table = Table(title=f"Canon run — {result['meta']['run_id']}")
+    table = Table(title=f"Canon run: {result['meta']['run_id']}")
     table.add_column("")
     table.add_column("", justify="right")
     table.add_row("canon items recovered",

@@ -1,19 +1,19 @@
 """The model backend, either a local server or opencode.
 
 ScriptEngine does not need a model to retrieve. This client exists for the two
-index-time passes — `ingest/classify.py` and `ingest/abilities.py` — and for
+index-time passes (`ingest/classify.py` and `ingest/abilities.py`) and for
 nothing on the query path.
 
 Two backends, chosen by `llm_backend`:
 
-* **`local`** — an OpenAI-shaped endpoint. LM Studio serves one on 1234 and
+* **`local`**: an OpenAI-shaped endpoint. LM Studio serves one on 1234 and
   Ollama on 11434, and both take the same request. This is the fast path:
   roughly 2.4x quicker per window than the alternative, and it keeps the
   weights on this machine.
-* **`opencode`** — the CLI, driven as a subprocess.
+* **`opencode`**: the CLI, driven as a subprocess.
 
 Local models paraphrase more. Measured over 2,841 stored rows, one named 91
-things its source never says against opencode's 1 — `Fireball shooting`,
+things its source never says against opencode's 1: `Fireball shooting`,
 `Cero Barrage`, `Ghostly Wolf Summoning`. That is why extraction gates every
 answer on whether the passage actually contains the name, and it is what makes
 the fast backend safe to prefer.
@@ -99,7 +99,7 @@ class LLMClient:
         """The real binary, never the npm `.cmd` shim.
 
         `shutil.which` finds `opencode.CMD` first on Windows, and Windows runs a
-        `.cmd` through `cmd.exe` however the arguments were passed — so every
+        `.cmd` through `cmd.exe` however the arguments were passed, so every
         `&` in the message becomes a command separator. Extraction sends whole
         wiki passages, and these wikis write `Powers & Abilities` in almost every
         one of them; the first prompt containing `Immense Speed & Reflexes` died
@@ -159,7 +159,7 @@ class LLMClient:
 
         Split out for `eval/model_health.py`. A model that has come back with
         thinking on still answers correctly and still answers fast, so it passes
-        every check made on the reply itself — the only evidence is
+        every check made on the reply itself. The only evidence is
         `completion_tokens_details.reasoning_tokens`, which lives in the usage
         and was being discarded here.
 
@@ -172,7 +172,7 @@ class LLMClient:
     def _local(
         self, prompt: str, system: str, temperature: float, max_tokens: int
     ) -> tuple[str, dict]:
-        """An OpenAI-shaped endpoint — LM Studio on 1234, Ollama on 11434.
+        """An OpenAI-shaped endpoint: LM Studio on 1234, Ollama on 11434.
 
         Kept alongside opencode rather than replaced by it: local is about 2.4x
         faster per window, and with the groundedness gate in front of it that
@@ -213,7 +213,7 @@ class LLMClient:
 
         # A thinking model spends its budget before it answers. Gemma 4 returns
         # `content: ""` with the whole reply in `reasoning_content` and
-        # `finish_reason: length` — which reads as a successful call returning
+        # `finish_reason: length`, which reads as a successful call returning
         # nothing, and would quietly store zero abilities for every page.
         if not answer:
             if choice.get("finish_reason") == "length":
@@ -300,7 +300,7 @@ def _flatten(message: str) -> str:
 
     `run [message..]` is variadic and joins its arguments with spaces. A newline
     inside a single argument truncates the message there, and the model answers
-    the fragment it was given — which is why the first extraction attempt
+    the fragment it was given, which is why the first extraction attempt
     returned "Provide the passage and I'll return the named abilities as JSON"
     for every page: it had received the instructions and none of the passage.
 
@@ -317,7 +317,7 @@ def _flatten(message: str) -> str:
 def _error_event(stdout: str) -> str:
     """What opencode reported as an error, if anything.
 
-    A run can exit 0 and still have failed — the failure arrives as an event in
+    A run can exit 0 and still have failed; the failure arrives as an event in
     the stream like everything else.
     """
     trouble: list[str] = []
@@ -340,7 +340,7 @@ def _looks_throttled(output: str) -> bool:
     """Whether a *failure* was a throttle.
 
     Only ever called on stderr and on error events. Called on the whole output
-    it matches the assistant's own prose — "beyond human capacity" is an
+    it matches the assistant's own prose: "beyond human capacity" is an
     ability description, not a rate limit.
     """
     lowered = (output or "").lower()

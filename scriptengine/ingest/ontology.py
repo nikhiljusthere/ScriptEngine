@@ -7,7 +7,7 @@ produces nothing, because Marvel's concepts are not JJK's concepts.
 
 Every Fandom wiki already declares its own vocabulary. The `Template:` namespace
 holds one infobox per kind of thing the wiki tracks, and each article says which
-one it uses. Jujutsu Kaisen defines 20 — `Character Infobox`, `Battle Infobox`,
+one it uses. Jujutsu Kaisen defines 20: `Character Infobox`, `Battle Infobox`,
 `Episode Infobox`, `Technique Infobox`, `Story Arcs Infobox`, and so on. Reading
 that list is how a series gets its types, and it is why adding a series requires
 no code.
@@ -42,8 +42,8 @@ MIN_INFOBOX_FIELDS = 5
 # These are MediaWiki-wide conventions, not per-wiki choices.
 #
 # "articles needing" is deliberately absent. Maintenance banners like
-# "Articles needing cleanup" sit on real pages — on Jujutsu Kaisen the three
-# main character pages (Yuji Itadori, Satoru Gojo, Sukuna) all carry it — and
+# "Articles needing cleanup" sit on real pages: on Jujutsu Kaisen the three
+# main character pages (Yuji Itadori, Satoru Gojo, Sukuna) all carry it, and
 # skipping on a maintenance banner throws away the wiki's most-linked content.
 _SKIP_CATEGORY_PATTERNS = (
     "images", "gallery", "galleries", "candidates for deletion",
@@ -101,7 +101,7 @@ class Ontology:
     # How many pages nominated each template as their infobox. Kept for the
     # audit: it shows what discovery saw, including what it rejected.
     infobox_votes: dict[str, int] = field(default_factory=dict)
-    # Which works this wiki's citations distinguish between — a sequel restarts
+    # Which works this wiki's citations distinguish between: a sequel restarts
     # its chapter numbering, so `{{Ref|modulo=y|chap=16}}` is not Chapter 16.
     # The names are per-wiki, so they come from overrides; see
     # `wikitext.CitationGrammar`.
@@ -143,7 +143,7 @@ class Ontology:
 
         for template in templates:
             # Lua modules implement infoboxes on older wikis, but their names are
-            # implementation detail — Marvel transcludes `Module:CharacterInfobox‐
+            # implementation detail: Marvel transcludes `Module:CharacterInfobox‐
             # Origins`, which is not a page type. Only real templates may name one.
             if _is_module(template):
                 continue
@@ -241,7 +241,7 @@ def build_ontology_from_transclusions(
 ) -> Ontology:
     """Derive the vocabulary from what pages actually transclude.
 
-    A fallback for when the `Template:` namespace cannot be enumerated — the
+    A fallback for when the `Template:` namespace cannot be enumerated: the
     wiki is rate-limiting, or the crawl predates the manifest. Every infobox in
     use is by definition transcluded by the pages using it, so the result is the
     same vocabulary reached from the other direction.
@@ -270,8 +270,8 @@ def discover_infoboxes(
     Chainsaw Man, whose infobox is called `Character`, or on Marvel, which uses
     Lua modules and `Marvel Database:Character Template`.
 
-    Instead each page votes for its richest pre-heading template — see
-    `wikitext.infobox_candidates` — and any template winning on at least
+    Instead each page votes for its richest pre-heading template (see
+    `wikitext.infobox_candidates`) and any template winning on at least
     `min_pages` pages becomes a type. Requiring more than one page keeps one-off
     layout wrappers out of the vocabulary.
 
@@ -327,7 +327,7 @@ def learn_field_labels(
 
     Fandom's Portable Infobox extension publishes its schema in the page's
     ``properties.infoboxes`` blob: which parameter feeds which labelled row. That
-    turns ``class`` into "Grade" and ``race`` into "Species" — the difference
+    turns ``class`` into "Grade" and ``race`` into "Species", and the difference
     between a field a reader understands and one they have to guess at.
 
     Failures here are silent by design: labels are an enrichment, and a wiki that

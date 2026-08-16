@@ -63,7 +63,7 @@ class TestLinks:
 
     def test_escaped_category_link_is_not_a_relationship(self):
         # A leading colon makes the category render as text on the page, but it
-        # still points at a Category page — not an article. These produced
+        # still points at a Category page, not an article. These produced
         # 845 junk ':Category:...' edges on Jujutsu Kaisen.
         assert extract_links(
             "[[:Category:Megumi Fushiguro Techniques|'''Megumi's Techniques''']]"
@@ -96,7 +96,7 @@ class TestCitations:
         assert [c.params["chap"] for c in citations] == ["21"]
 
     def test_citations_inline_a_compact_locator(self):
-        # Citations keep a short locator — (Volume 5) — not the verbose
+        # Citations keep a short locator, (Volume 5), not the verbose
         # bibliography the old pipeline embedded, and not nothing: the chapter
         # annotation rules need the locator in prose.
         text = strip_markup("Todo is tall.{{Ref|vol=5|page=26}} He is strong.")
@@ -160,7 +160,7 @@ class TestCitationGrammar:
     # A sequel numbers its chapters from 1 again. The wiki says which work a
     # reference means; dropping that rendered `{{Ref|modulo=y|chap=16}}` as
     # "(Chapter 16)", the same string as the main series' Chapter 16, on 427
-    # references — a wrong chapter number available to every script.
+    # references: a wrong chapter number available to every script.
 
     works = CitationGrammar.from_overrides({
         "citation_works": {"modulo": "Modulo"},
@@ -186,7 +186,7 @@ class TestCitationGrammar:
         assert strip_markup("X.{{Ref|movie=0}}", works=self.works) == "X.(Movie 0)"
 
     def test_an_unmapped_wiki_is_left_as_it_was(self):
-        # No overrides means no qualifiers, which is the previous behaviour —
+        # No overrides means no qualifiers, which is the previous behaviour,
         # a wiki without a sequel loses nothing.
         assert strip_markup("X.{{Ref|modulo=y|chap=16}}") == "X.(Chapter 16)"
 
@@ -311,7 +311,7 @@ class TestMarkupStripping:
             assert token not in text
 
     def test_nihongo_keeps_the_english_name_not_the_japanese(self):
-        # Picking the longest argument — which looks reasonable — returns the
+        # Picking the longest argument, which looks reasonable, returns the
         # kanji here, and produced section text reading "の: A binding vow...".
         assert strip_markup("{{Nihongo|Revealing One's Hand|情報の開示|Jōhō}}") == (
             "Revealing One's Hand"
@@ -344,7 +344,7 @@ class TestTables:
 
     def test_table_content_is_kept(self):
         # Deleting tables with `\{\|.*?\|\}` silently dropped Todo's entire
-        # Cursed Technique section — 185 words of the page's most factual prose.
+        # Cursed Technique section: 185 words of the page's most factual prose.
         table = (
             '{| class="wikitable"\n'
             "! Technique !! Effect\n"
@@ -363,7 +363,7 @@ class TestTables:
 
     def test_image_only_cells_leave_no_empty_column(self):
         table = "{|\n||[[File:Boogie.gif|220px]]||Real content\n|}"
-        assert "—" not in flatten_tables(table)
+        assert " | " not in flatten_tables(table)
 
     def test_unclosed_table_keeps_its_content(self):
         assert "content" in flatten_tables("{|\n| content")
@@ -525,7 +525,7 @@ class TestItemMarkers:
 
     def test_a_section_the_series_did_not_declare_is_untouched(self):
         """One Piece writes 7,491 of these markers, and its heaviest pages are
-        `Chapter 1161` and `Chapters and Volumes` — listings, not abilities."""
+        `Chapter 1161` and `Chapters and Volumes`: listings, not abilities."""
         _, sections = self._split(self.ABILITIES, title="Chapter 1161")
         assert [s.title for s in sections] == ["Abilities"]
 
@@ -573,7 +573,7 @@ class TestItemMarkersKeepTheText:
 
     The first version skipped the group marker's own span, which dropped
     whatever sat between `'''<big>Techniques</big>'''` and the first `;item`
-    under it — 144,345 characters, a fifth of the text, across Dragon Ball's
+    under it: 144,345 characters, a fifth of the text, across Dragon Ball's
     23 `Power and Abilities` pages. Citations went with it.
     """
 

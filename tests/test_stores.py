@@ -192,7 +192,7 @@ class TestLexicalSearch:
 # `pages_per_section` used to issue one query per heading, each of them a full
 # scan because `LOWER(TRIM(breadcrumb))` hides the column from every index: 64
 # headings cost 3.9s on the Dragon Ball store. These tests hold both halves of
-# the fix — that it stays one query, and that one query still answers exactly
+# the fix: that it stays one query, and that one query still answers exactly
 # what the per-heading pair of predicates answered.
 _PER_HEADING_SQL = (
     "SELECT COUNT(DISTINCT c.document_id) AS pages FROM chunks c"
@@ -252,7 +252,7 @@ def sectioned(store):
 
 class TestPagesPerSection:
     def test_a_template_heading_counts_every_page_carrying_it(self, sectioned):
-        # `Abilities` is the article skeleton — four of the five pages have it,
+        # `Abilities` is the article skeleton: four of the five pages have it,
         # which is the signal `_drop_templates` reads.
         assert sectioned.pages_per_section(["Abilities"]) == {"abilities": 4}
 
@@ -283,7 +283,7 @@ class TestPagesPerSection:
     def test_a_percent_in_a_heading_keeps_its_LIKE_meaning(self, sectioned):
         # `100% Full Power` is a real Frieza form, and `%` is a LIKE wildcard, so
         # the query this replaced reached Cooler's `100 Percent, Full Power` too
-        # — only one of these two pages spells the heading literally. Inherited
+        # Only one of these two pages spells the heading literally. Inherited
         # behaviour, pinned here because the obvious way to write the
         # replacement, a plain `endswith`, would answer 1 instead.
         assert sectioned.pages_per_section(["100% Full Power"]) == {
@@ -347,7 +347,7 @@ class TestPagesPerSection:
         assert for_one == 1, f"one heading should be one query, got {statements}"
         assert for_many == for_one, (
             f"{len(many)} headings issued {for_many} queries, one heading issued"
-            f" {for_one} — the per-heading scan is back"
+            f" {for_one}: the per-heading scan is back"
         )
         assert counts["abilities"] == 4          # and the answer is still right
         assert counts["heading 7"] == 0

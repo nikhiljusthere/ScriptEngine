@@ -4,15 +4,15 @@ The knowledge graph already knows who uses what: every ability page carries a
 `user` edge (confidence 0.95, from the infobox) to every character that uses
 it, a `debut` edge to the chapter it first appeared in, and an `anime debut`
 edge to the episode. This module walks that graph *backwards* from a character
-instead of asking the retriever to rank prose — so "list Yuji's abilities"
+instead of asking the retriever to rank prose, so "list Yuji's abilities"
 returns the whole set even when the character's own page was never crawled
 (which is exactly why the retriever missed Black Flash for Yuji Itadori).
 
 For each ability found:
 
-- `debut` / `anime debut` — where the ability first appeared anywhere.
-- the `Usage / <character>` section of the ability's page — where *this*
-  character uses it — with the `{{Ref|chap=N}}` citations collected from that
+- `debut` / `anime debut`: where the ability first appeared anywhere.
+- the `Usage / <character>` section of the ability's page, where *this*
+  character uses it, with the `{{Ref|chap=N}}` citations collected from that
   section as the chapter list. That is "shown, not just talked about".
 """
 

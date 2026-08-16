@@ -1,20 +1,20 @@
 """Index-time extraction of the relationships a wiki only writes as prose.
 
 The infobox gives family and faction. `relatives`, `affiliation`, `occupation`,
-`partner` — 239, 92, 104 and 15 edges on the Jujutsu Kaisen wiki. What it does
+`partner`: 239, 92, 104 and 15 edges on the Jujutsu Kaisen wiki. What it does
 not give is the thing a script is actually built out of:
 
     Suguru Geto   §Relationships / Satoru Gojo
         "…the two were the strongest duo, until Geto defected…"
 
 Nothing in the categories reaches that, no `users` field encodes it, and no
-structural rule ever will — it is a sentence. This is the same gap
+structural rule ever will, because it is a sentence. This is the same gap
 `ingest/abilities.py` exists for, so this mirrors that module deliberately
 rather than inventing a second mechanism, and inherits the rules that make it
 safe to trust:
 
 * **It never runs during a query.** Retrieval reads the `relations` table.
-* **It is asked only where the prose is the only source** — the relationship
+* **It is asked only where the prose is the only source.** The relationship
   and history sections of character pages.
 * **It may only say what the passage says.** A model that has read the manga
   will happily supply a rivalry this wiki never mentions, and once stored that
@@ -33,7 +33,7 @@ recall rather than truth:
   vocabulary flattens is still there to read.
 
 Relationships change. Gojo and Geto are classmates and then enemies, and a flat
-triple would state something false for most of the story — so `era` carries the
+triple would state something false for most of the story, so `era` carries the
 arc or period when the passage names one, and the quote carries the rest.
 """
 
@@ -67,7 +67,7 @@ DEFAULT_SECTIONS = ("Relationships", "History")
 
 SYSTEM = (
     "You extract stated relationships between characters from fiction-wiki "
-    "prose. You answer with JSON only — no prose, no code fences. You never "
+    "prose. You answer with JSON only: no prose, no code fences. You never "
     "state a relationship the passage does not state, however well you know "
     "the series."
 )
@@ -91,20 +91,20 @@ Rules:
   passage says {character} taught someone, that is `mentor`; if someone taught
   {character}, that is `student`. This holds however the sentence is worded:
   "his top student being Garou" on Bang's page means Bang is the `mentor` of
-  Garou, not the student — the person named after "student" is the student, and
+  Garou, not the student; the person named after "student" is the student, and
   here that is Garou, not Bang. The same for `superior`/`subordinate` and
   `creator`/`creation`.
 - `other` must be a character the passage names. Give the name as the passage
   writes it, without honorifics.
-- `quote` must be copied from the passage word for word — the clause that
+- `quote` must be copied from the passage word for word: the clause that
   states the relationship. Do not paraphrase it, shorten it or tidy it.
-- If the passage states no relationship, answer {{"relations": []}} — an empty
+- If the passage states no relationship, answer {{"relations": []}}. An empty
   answer is correct and useful.
 - Only relationships the passage actually states. Two characters appearing in
   the same sentence are not thereby allies, and fighting once is not `enemy`
   unless the passage frames it that way.
 - `era` only when the passage names the period or arc the relationship belongs
-  to — "during their student years", "after the Shibuya Incident". Leave it
+  to: "during their student years", "after the Shibuya Incident". Leave it
   empty otherwise rather than guessing.
 - A relationship that changed is two entries, each with the quote that supports
   it, not one averaged guess."""
@@ -120,12 +120,12 @@ def needs_relations(store: FactStore, overrides: dict | None = None) -> list[str
     """The character pages whose relationships live in prose on this wiki.
 
     Ordered by how much relationship prose there is, so `--limit` means "the
-    characters that matter" rather than "the first few alphabetically" — the
+    characters that matter" rather than "the first few alphabetically": the
     same reason `abilities.needs_extracting` orders by weight.
 
     Restricted to pages that classify as characters. `History` is a heading on
-    places and organisations too — `Shibuya`, `Jujutsu Headquarters`,
-    `Ninja Village`, `Heroes` all reached this list on section name alone — and
+    places and organisations too. `Shibuya`, `Jujutsu Headquarters`,
+    `Ninja Village`, `Heroes` all reached this list on section name alone, and
     a relationship whose subject is a location is not a thing this table should
     hold. Abilities needs no such filter because only characters carry an
     `Abilities and Powers` section in the first place.
@@ -396,7 +396,7 @@ def extract_series(
     """Extract this series' prose-only relationships, skipping what is current.
 
     Chunked and threaded exactly as `abilities.extract_series` is, and for the
-    same reason — the store belongs to this thread, the network wait does not.
+    same reason: the store belongs to this thread, the network wait does not.
     """
     from concurrent.futures import ThreadPoolExecutor
 

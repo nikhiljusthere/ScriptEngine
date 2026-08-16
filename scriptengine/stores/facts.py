@@ -62,7 +62,7 @@ def _is_packaging(label: str) -> bool:
     per-wiki: it demotes `episode` on Dragon Ball and misses `episode_box` on
     One Piece, `hunterpedia_episode_2011` on Hunterpedia,
     `bleach_wiki_episode` on Bleach. Measured, the list matched 11 of its 12 ids
-    on Jujutsu Kaisen — where it was written — and 1 of 12 on One Piece, leaving
+    on Jujutsu Kaisen (where it was written) and 1 of 12 on One Piece, leaving
     2,676 of its pages eligible to be chosen as the subject of a question.
 
     So the id is folded into the shared vocabulary first, and the explicit list
@@ -81,7 +81,7 @@ def rank_subjects(
     `link_entities` ranks by how confident the *match* is, which is the right
     answer for search and the wrong one for "what is this script about". Asked
     for "Every Rank of Curse in Jujutsu Kaisen" it returns the series page
-    `Jujutsu Kaisen` first — an exact alias match — and the timeline came back
+    `Jujutsu Kaisen` first, an exact alias match, and the timeline came back
     as a single beat from `Volume 0`. Asked for "Every Cursed Technique of
     Sukuna" it returns the generic `Cursed Technique` concept page ahead of
     Sukuna, because "cursed technique" is the longer alias.
@@ -116,7 +116,7 @@ def _tail_pattern(leaf: str) -> re.Pattern[str]:
     """SQLite's ``breadcrumb LIKE '%/ ' || leaf``, as a regex.
 
     Needed because `%` and `_` are wildcards to LIKE and real headings contain
-    them — `100% Full Power` is one of Frieza's forms, and its pattern
+    them: `100% Full Power` is one of Frieza's forms, and its pattern
     `%/ 100% full power` has a wildcard in the middle. A plain `endswith` would
     match fewer pages than the query it replaces, which is a behaviour change
     dressed up as an optimisation.
@@ -248,7 +248,7 @@ class FactStore:
         """Create or update an entity.
 
         A node is often created as an unresolved link target before the page
-        backing it is indexed, so an existing row is only upgraded — a real
+        backing it is indexed, so an existing row is only upgraded: a real
         label and document never get overwritten by a later bare mention.
         """
         resolved = 1 if document_id is not None else 0
@@ -385,7 +385,7 @@ class FactStore:
         candidates: set[str] = set()
         lowered = [word.lower() for word in words]
         # The same words with possessives removed. `_WORD` keeps the apostrophe
-        # — deliberately, since names like `Zabuza's` and `O'Hara` both occur —
+        # deliberately, since names like `Zabuza's` and `O'Hara` both occur.
         # so "Ichigo's" was one token that matched no alias, and
         # "What is Ichigo's Zanpakuto?" linked *nothing at all*. Both spellings
         # are offered rather than picking one, because the possessive form is
@@ -404,11 +404,11 @@ class FactStore:
         mentions_instalment = any(word in _INSTALMENT_WORDS for word in lowered)
         placeholders = ",".join("?" * len(candidates))
         # Ranking, in order of how much the match is worth trusting:
-        #   1. the matched phrase is the page's own title — unambiguous
+        #   1. the matched phrase is the page's own title, unambiguous
         #   2. a page actually backs the entity, so there is something to say
         #   3. a longer matched phrase, which is the more specific reading
         #      ("Kyoto Jujutsu High" over "Kyoto")
-        #   4. the shortest node name — the entity itself rather than one of
+        #   4. the shortest node name, the entity itself rather than one of
         #      its event pages. "Yuji" matches both "Yuji Itadori" and "Yuji
         #      Itadori, Maki Zenin & Hana Kurusu vs. Sukuna" with the same
         #      alias; the character page is the hub, and it should win.
@@ -505,7 +505,7 @@ class FactStore:
         """Pages this one points at through the named infobox fields.
 
         The infobox rows arrive already resolved by MediaWiki, so `user` on
-        `Kaio-ken` is a list of pages — Goku, Krillin, Yamcha — rather than a
+        `Kaio-ken` is a list of pages (Goku, Krillin, Yamcha) rather than a
         string to be parsed. Ability classification reads them to decide whether
         something is race-exclusive or merely teachable.
         """
@@ -535,7 +535,7 @@ class FactStore:
 
         "goku" is a substring of that string, so it was kept as one of Goku's
         forms. The edge rows are already resolved to one row per user, so asking
-        which pages name `Goku` cannot match `Goku Black` — they are different
+        which pages name `Goku` cannot match `Goku Black`; they are different
         nodes. No flat-text test can make that distinction, because the wiki
         writes every user of a page into a single field.
         """
@@ -562,7 +562,7 @@ class FactStore:
         derived from a heading.
 
         Subpages are included because the wikis that keep abilities as prose
-        also tend to move them off the character's page —
+        also tend to move them off the character's page.
         `Monkey D. Luffy/Abilities and Powers` is where the Gears are, and
         Luffy's own page has no ability section at all.
         """
@@ -582,7 +582,7 @@ class FactStore:
         The wiki's own templates repeat: `Physical Abilities` heads a section on
         216 One-Punch Man pages and `Nen` on 258 Hunterpedia ones, because every
         character article is built from the same skeleton. A heading that names
-        an actual ability does not repeat — `Gear 2` appears on two pages,
+        an actual ability does not repeat: `Gear 2` appears on two pages,
         `Gear 5 (Awakening)` on one, `Berserker Armor` on four.
 
         That gap is what separates a container from a member, and it is a
@@ -598,7 +598,7 @@ class FactStore:
         rows at ~60ms, and a Goku roster passes 64 headings: 4.6s of a 7.5s
         request. The same two predicates evaluated over a single pass of the
         34,011 distinct (heading, page) pairs are flat in the number of headings
-        instead of linear in it — measured on `series/db`, headings against
+        instead of linear in it, measured on `series/db`, headings against
         seconds:
 
             1      0.059 → 0.098      64     3.869 → 0.099   (39x)
@@ -613,7 +613,7 @@ class FactStore:
         wanted = {name.strip().lower() for name in leaves if name.strip()}
         found: dict[str, set[int]] = {leaf: set() for leaf in wanted}
         # `LIKE '%/ ' || leaf` says the crumb *ends* at this heading, so the
-        # leaves a crumb answers to are its own tail segments — a dict lookup
+        # leaves a crumb answers to are its own tail segments, so a dict lookup
         # each, for as many `/ ` as the crumb has (three, at the deepest
         # measured). Only headings holding a LIKE wildcard need the pattern.
         plain = {leaf for leaf in wanted if "%" not in leaf and "_" not in leaf}
@@ -654,7 +654,7 @@ class FactStore:
         `/Relationships/Citizens`, `/Relationships/Pirates` and
         `/Relationships/Emperors`, none of which is Luffy. Summing them onto
         `Monkey D. Luffy` puts the character first, which is what asking about
-        "Luffy" means — and stops `Yamamoto Luffy`, a different character
+        "Luffy" means, and stops `Yamamoto Luffy`, a different character
         entirely, from being the answer.
         """
         return self.connection.execute(
@@ -682,8 +682,8 @@ class FactStore:
         """Create the classification table if this store predates it.
 
         Every other table is rebuilt by `index`, so a schema change reaches them
-        on the next run. This one deliberately survives `reset()` — it holds
-        minutes of local inference per wiki — which means an existing store has
+        on the next run. This one deliberately survives `reset()`: it holds
+        minutes of local inference per wiki, which means an existing store has
         to be able to grow it in place.
         """
         self.connection.execute(
@@ -935,7 +935,7 @@ class FactStore:
     def semantics_of(self, title: str) -> dict[str, Any] | None:
         """The stored classification for one page, or ``None``.
 
-        Read on every roster query, so it must stay a keyed lookup — the whole
+        Read on every roster query, so it must stay a keyed lookup: the whole
         point of classifying at index time is that retrieval does no reasoning.
         """
         try:
@@ -1053,7 +1053,7 @@ class FactStore:
     # ── enumeration ──────────────────────────────────────────────────────────
     #
     # Three ways a wiki already states "these things belong together". A roster
-    # script needs a complete set, and retrieval ranks — it does not enumerate.
+    # script needs a complete set, and retrieval ranks; it does not enumerate.
 
     def nodes_by_label(self, label: str, limit: int = 200) -> list[sqlite3.Row]:
         """Every resolved entity of one page type, e.g. every `technique`."""
@@ -1127,7 +1127,7 @@ class FactStore:
         return (row["lead"] or "") if row else ""
 
     def document_sections(self, title: str) -> list[sqlite3.Row]:
-        """A document's sections in page order — the basis of narrative retrieval."""
+        """A document's sections in page order, the basis of narrative retrieval."""
         return self.connection.execute(
             "SELECT s.* FROM sections s JOIN documents d ON d.id = s.document_id"
             " WHERE d.title = ? COLLATE NOCASE"

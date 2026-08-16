@@ -1,4 +1,4 @@
-"""ScriptEngine — a universal knowledge engine over Fandom wikis.
+"""ScriptEngine: a universal knowledge engine over Fandom wikis.
 
 ScriptEngine ingests a Fandom wiki, derives its entity taxonomy from the wiki
 itself, and serves ordered, cited, structured knowledge over HTTP. It does not

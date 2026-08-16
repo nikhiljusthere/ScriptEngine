@@ -2,7 +2,7 @@
 
 Obsidian's graph view is built from markdown files joined by ``[[wikilinks]]``,
 and the fact store already holds exactly that shape: directed, typed edges
-between named nodes. This module renders it read-only — no changes to
+between named nodes. This module renders it read-only: no changes to
 ingestion, retrieval, or the schema.
 
 Vault layout, one per series at ``series/<name>/obsidian/``:
@@ -34,7 +34,7 @@ from scriptengine.ingest.wikitext import extract_links
 from scriptengine.stores.facts import FactStore
 
 # A hub like "Yuji Itadori" points at hundreds of pages. The cap keeps one file
-# from becoming a wall of links — after 500 bullets a file stops being a graph
+# from becoming a wall of links; after 500 bullets a file stops being a graph
 # node and starts being a table of contents.
 MAX_EDGES_PER_NODE = 500
 
@@ -77,7 +77,7 @@ def _fact_properties(
     """Facts as frontmatter properties, plus a citation map keyed by property.
 
     The wiki's own label is the property name when it has one, else the
-    infobox key — both already in the store. A property that collides with an
+    infobox key, both already in the store. A property that collides with an
     earlier one (``type`` is a common infobox parameter and also the page's
     discovered type) is skipped: the file already says it.
     """
@@ -187,7 +187,7 @@ def _relink(text: str, links: Iterable[Link], filenames: dict[str, str]) -> str:
     Each link is rendered at the first occurrence of its display text at or
     after the previous match, so repeated displays consume separate spans.
     Targets with no vault file (interwiki links, links the crawl never saw)
-    stay plain — every ``[[link]]`` written resolves to a file.
+    stay plain: every ``[[link]]`` written resolves to a file.
     """
     spans: list[tuple[int, int, str]] = []
     cursor = 0
@@ -234,7 +234,7 @@ def export_obsidian(
 
     if not paths.facts_db.exists():
         raise FileNotFoundError(
-            f"Series {paths.name!r} is not indexed — no facts.db. Run `index` first."
+            f"Series {paths.name!r} is not indexed: no facts.db. Run `index` first."
         )
 
     with FactStore(paths.facts_db) as store:
@@ -341,19 +341,19 @@ def export_obsidian(
 
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     (out / "README.md").write_text(
-        f"# ScriptEngine export — {paths.name}\n\n"
+        f"# ScriptEngine export: {paths.name}\n\n"
         f"The wiki graph of series `{paths.name}`, exported read-only from "
         f"`facts.db` on {generated} (edges at confidence >= {min_confidence:g}).\n\n"
-        f"- **`nodes/`** — one file per node ({len(nodes):,}); files with "
+        f"- **`nodes/`**: one file per node ({len(nodes):,}); files with "
         f"`resolved: false` in the frontmatter are links the crawl never reached.\n"
-        f"- **`documents/`** — one readable page per crawled document "
+        f"- **`documents/`**: one readable page per crawled document "
         f"({doc_count:,}).\n\n"
         f"## Open this folder as a vault\n\n"
         f"1. Obsidian → **Open folder as vault**.\n"
         f"2. Pick `{out}`.\n"
         f"3. Graph view (`Ctrl`+`G` / `Cmd`+`G`) → enable *Links* under filters.\n\n"
         f"Notes: regenerating while Obsidian has this folder open rewrites every "
-        f"file — close Obsidian first, or accept the refresh.",
+        f"file; close Obsidian first, or accept the refresh.",
         encoding="utf-8",
     )
 

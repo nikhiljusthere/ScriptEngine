@@ -1,7 +1,7 @@
 # Per-wiki handling for the Jujutsu Kaisen wiki.
 #
 # The only place a wiki-specific decision may live. If a fix names a series and
-# sits in a .py file, it is in the wrong place — the next wiki breaks.
+# sits in a .py file, it is in the wrong place: the next wiki breaks.
 
 # Which works this wiki's citations distinguish between.
 #
@@ -11,7 +11,7 @@
 #     {{Ref|modulo=y|chap=16|page=1}}
 #
 # Without this mapping the qualifier was dropped and the marker rendered
-# "(Chapter 16)" — the same string as the main series' Chapter 16. 427
+# "(Chapter 16)", the same string as the main series' Chapter 16. 427
 # references on this wiki carry it, and a script written from them would state
 # the wrong chapter with complete confidence.
 citation_works:
@@ -42,7 +42,7 @@ ability_sections:
 
 # What this wiki calls a kind of ability, on top of the English words every
 # series shares. A shikigami is a summon, and the Ten Shadows Technique is the
-# only reason the word exists here — "Every shikigami of Megumi Fushiguro"
+# only reason the word exists here: "Every shikigami of Megumi Fushiguro"
 # matched no kind word, so it never became a question about Megumi and
 # returned none of the nine that were in the abilities table.
 ability_kinds:

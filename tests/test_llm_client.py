@@ -51,7 +51,7 @@ class TestFlatten:
 
         Every extraction prompt arrived as instructions with no passage, and the
         model answered "Provide the passage and I'll return the named abilities
-        as JSON" — for every page, silently, as a successful call.
+        as JSON", for every page, silently, as a successful call.
         """
         assert "\n" not in llm._flatten("first line\nsecond line")
 
@@ -206,7 +206,7 @@ class TestInvocation:
 
 
 class TestLocalBackend:
-    """The OpenAI-shaped path — Ollama on 11434, LM Studio on 1234."""
+    """The OpenAI-shaped path: Ollama on 11434, LM Studio on 1234."""
 
     def _client(self, tmp_path, **over):
         settings = get_settings().model_copy(
@@ -235,7 +235,7 @@ class TestLocalBackend:
         and leave `content` empty when the budget runs out mid-thought.
 
         That reads as a successful call returning nothing, which is
-        indistinguishable from "this passage names no abilities" — it would
+        indistinguishable from "this passage names no abilities", and it would
         have stored zero rows for every page in the corpus and looked fine.
         """
         self._reply(monkeypatch, {
@@ -277,7 +277,7 @@ class TestTruncationIsNotSilent:
 
     `parse_response` cannot load it and returns nothing, so the caller stores
     zero rows for a passage that had some. Measured over 1,080 calls one hit the
-    ceiling — rare, and rare is what goes unnoticed. It must be a failure the
+    ceiling: rare, and rare is what goes unnoticed. It must be a failure the
     retry pass can see, not a quiet empty answer.
     """
 
@@ -318,7 +318,7 @@ class TestThinkingIsDetectable:
 
     `lms load` has no preset flag, so a CLI reload brings thinking back. The
     model then answers correctly, in about 3.8s, passing every check made on the
-    reply or on latency — while spending 82 of 90 completion tokens reasoning.
+    reply or on latency, while spending 82 of 90 completion tokens reasoning.
     On 2026-08-16 the probe reported `ok: 3.8s` in exactly that state and a long
     run went out under it.
     """

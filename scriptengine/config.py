@@ -1,8 +1,8 @@
 """Configuration for ScriptEngine.
 
 Every value here is either read by running code or absent. The previous config
-module described an infrastructure that no module imported — Postgres, Redis,
-Elasticsearch, a different embedding model than the one actually loaded — while
+module described an infrastructure that no module imported (Postgres, Redis,
+Elasticsearch, a different embedding model than the one actually loaded) while
 each pipeline stage hardcoded its own conflicting values. Anything added below
 must have a caller.
 
@@ -59,7 +59,7 @@ class Settings(BaseSettings):
     # Piece's 7,937 pages in three minutes with no rate limiting. Raising these
     # does not help: Fandom limits per request, so more connections are served
     # more slowly rather than in parallel. Lowering them does not protect you
-    # either — what triggers a 429 is the number of requests, and batching
+    # either: what triggers a 429 is the number of requests, and batching
     # already cut that by fifty.
     crawl_concurrency: int = 10
     crawl_delay_seconds: float = 0.25
@@ -104,10 +104,10 @@ class Settings(BaseSettings):
     # Nothing on the query path calls a model. Retrieval reads tables these two
     # passes wrote, which is what keeps a question answering the same way twice.
     #
-    # `local` speaks HTTP to whatever OpenAI-compatible server is running —
+    # `local` speaks HTTP to whatever OpenAI-compatible server is running,
     # Ollama on 11434, LM Studio on 1234. `opencode` shells out to the CLI.
     #
-    # Measured per character on Killua, whose right answer is known — Godspeed,
+    # Measured per character on Killua, whose right answer is known: Godspeed,
     # Whirlwind, Speed of Lightning, Rhythm Echo:
     #
     #   qwen3.5-9b  LM Studio, no-thinking   25.3s   4 of 4
@@ -126,7 +126,7 @@ class Settings(BaseSettings):
     # Local models paraphrase, which is the one thing they do worse: measured
     # over 2,841 stored rows, a local model named 91 things its source never
     # says against opencode's 1. The groundedness gate in `ingest/abilities.py`
-    # is what makes the fast path safe — a name absent from the passage is
+    # is what makes the fast path safe: a name absent from the passage is
     # dropped before it is stored.
     llm_backend: str = "local"
     llm_model: str = "qwen/qwen3.5-9b"
@@ -154,7 +154,7 @@ class Settings(BaseSettings):
 #
 # A script is about something that happens in the work, never about the work's
 # packaging. Asked for "Every Rank of Curse in Jujutsu Kaisen", entity linking
-# used to return the *series* page `Jujutsu Kaisen` — an exact alias match — and
+# used to return the *series* page `Jujutsu Kaisen`, an exact alias match, and
 # the timeline came back as one beat from `Volume 0`.
 #
 # These are page-type ids as `ontology.slugify_type` produces them, not series
@@ -250,7 +250,7 @@ def load_overrides(paths: "SeriesPaths") -> dict:
     """Read `series/<name>/overrides.yaml`.
 
     The only place a wiki-specific rule may live. If a fix names a series and
-    sits in a `.py` file, it is in the wrong place — the next wiki breaks.
+    sits in a `.py` file, it is in the wrong place: the next wiki breaks.
     """
     if not paths.overrides.exists():
         return {}

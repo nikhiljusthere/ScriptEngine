@@ -3,7 +3,7 @@
 The writing path gets its locators for free: the research context arrives with
 `(Chapter N, Episode M)` markers in it, and the writer tags each block as it
 goes. A script written before this existed, or written somewhere else, has no
-such help — and re-deriving its sources by hand is the job nobody wants to do.
+such help, and re-deriving its sources by hand is the job nobody wants to do.
 
 So this runs the pipeline backwards. Each block of prose is used as a query
 against the index, the passages that come back carry the wiki's own references,
@@ -62,7 +62,7 @@ MIN_BLOCK_WORDS = 12
 
 # How far a tag may span before it stops being a citation. A section on a wiki
 # can carry references from across the whole manga, and rendering all of them
-# gives "(Chapters 1-171, Episodes 1-58)" — technically true, useless on screen,
+# gives "(Chapters 1-171, Episodes 1-58)": technically true, useless on screen,
 # and worse than saying nothing. Past this the single best-supported locator is
 # used instead, and if that cannot be picked the block is left alone.
 MAX_SPAN_CHAPTERS = 8
@@ -196,7 +196,7 @@ def _agree(
         if not found:
             # The page may *be* the instalment. One Piece and Berserk write a
             # summary page per chapter and cite almost none of it, so the title
-            # is the only locator their prose has — and it is a real one.
+            # is the only locator their prose has, and it is a real one.
             from_title = cite.locator_from_title(passage.doc_title)
             if from_title:
                 found = [episodes.complete(from_title)]

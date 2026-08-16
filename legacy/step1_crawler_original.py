@@ -1,4 +1,4 @@
-"""Fandom wiki crawler using MediaWiki API — bypasses Cloudflare entirely."""
+"""Fandom wiki crawler using MediaWiki API; bypasses Cloudflare entirely."""
 
 from __future__ import annotations
 
@@ -143,7 +143,7 @@ class AnimeCrawler:
 
                 if response.status_code == 429:
                     wait = int(response.headers.get("Retry-After", 30))
-                    logger.warning(f"Rate limited — sleeping {wait}s")
+                    logger.warning(f"Rate limited, sleeping {wait}s")
                     await asyncio.sleep(wait)
                     continue
 
@@ -326,7 +326,7 @@ class AnimeCrawler:
 
             await asyncio.sleep(0.3)
 
-        logger.info(f"Seed complete — {len(all_titles)} articles found")
+        logger.info(f"Seed complete: {len(all_titles)} articles found")
         return all_titles
 
     # ------------------------------------------------------------------
@@ -348,7 +348,7 @@ class AnimeCrawler:
         # ensures only one runs at a time; the second call waits then exits
         # immediately since results are already on disk.
         if _CRAWL_LOCK.locked():
-            logger.warning("crawl_series called while another crawl is running — skipping duplicate")
+            logger.warning("crawl_series called while another crawl is running, skipping duplicate")
             return []
 
         async with _CRAWL_LOCK:
@@ -504,7 +504,7 @@ class AnimeCrawler:
             raise RuntimeError(f"Crawl stopped with 0 pages with content. Last error: {detail}")
 
         logger.info(
-            f"Crawl complete — {len(results)} pages with content / "
+            f"Crawl complete: {len(results)} pages with content / "
             f"{pages_done} visited / {len(seen_urls)} unique URLs discovered"
         )
         return results

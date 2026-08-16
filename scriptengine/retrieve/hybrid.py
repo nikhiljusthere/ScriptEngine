@@ -5,8 +5,8 @@ though it never ran: retrieve three ways, fuse the rankings, rerank the
 shortlist with a cross-encoder, then expand each survivor to its section for
 context.
 
-What changed is what sits underneath — SQLite instead of Neo4j, FTS5 instead of
-an in-memory BM25 index — and two corrections:
+What changed is what sits underneath (SQLite instead of Neo4j, FTS5 instead of
+an in-memory BM25 index) and two corrections:
 
 * entity linking matches whole words against an alias table rather than asking
   whether one string appears inside another, so "Ryu" no longer matches inside
@@ -72,8 +72,8 @@ class Retrieved:
 
     query: str
     passages: list[Passage] = field(default_factory=list)
-    # Shortlisted, reranked, and then cut by `top_k`. Diagnostic only — nothing
-    # downstream reads it — but it is the only place a fusion or rerank loss is
+    # Shortlisted, reranked, and then cut by `top_k`. Diagnostic only, since nothing
+    # downstream reads it, but it is the only place a fusion or rerank loss is
     # visible after the fact.
     dropped: list[Passage] = field(default_factory=list)
     entities: list[str] = field(default_factory=list)
@@ -145,7 +145,7 @@ class HybridRetriever:
 
         The vector store is shared between requests now, so closing it here
         would make every request pay the 3.15s reload the sharing exists to
-        avoid — and the second request would be closing a handle the third is
+        avoid, and the second request would be closing a handle the third is
         about to use. `recreate()` drops the shared reader itself, which is the
         one case where the handle must not survive.
         """

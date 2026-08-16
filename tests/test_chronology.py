@@ -5,7 +5,7 @@ path, and answered with the 84 chapters of a single arc. Order was not
 something the engine could express.
 
 Arc pages carry `previous`/`next`, which is a linked list, so this needs no
-inference at all. What it needs is care about *which* edges to follow — there
+inference at all. What it needs is care about *which* edges to follow, because there
 are 4,847 of them across these wikis and most join songs, volumes and Blu-rays.
 """
 
@@ -142,7 +142,7 @@ class TestSpans:
         assert any(member.debut for member in roster.members)
 
     def test_one_piece_derives_rather_than_printing_auto(self):
-        """One Piece stores the literal string `auto` — the wiki counts the
+        """One Piece stores the literal string `auto`, and the wiki counts the
         chapters that link to the arc rather than recording a range."""
         roster = build_roster(paths_for("onepiece"), "Every arc in order")
         spans = " ".join(member.debut for member in roster.members)
@@ -237,7 +237,7 @@ class TestHeading:
 
 
 class TestAppearances:
-    """A character's arcs, in story order — the spine of a life script.
+    """A character's arcs, in story order: the spine of a life script.
 
     `The Entire Life of Garou Explained` runs Garou Introduction, Hero Hunt,
     Monster Raid, Monster Association. The wikis already file character history
@@ -327,7 +327,7 @@ class TestCast:
 
 
 class TestBeats:
-    """Prose cut where its citations change — the shape a script is written in.
+    """Prose cut where its citations change: the shape a script is written in.
 
     The Hero Hunt Arc comes back as 864 words in two chunks; the hand-written
     script cuts the same material into eleven beats. Re-cutting prose someone

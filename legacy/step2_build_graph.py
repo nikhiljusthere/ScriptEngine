@@ -106,7 +106,7 @@ def is_section_header(line: str) -> bool:
 # 1B. Extract entities and relationships from parsed file
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Known relationship patterns — expand this list for your wiki
+# Known relationship patterns; expand this list for your wiki
 RELATIONSHIP_PATTERNS = [
     # (regex pattern, relationship label)
     (r'(\w[\w\s]+)\s+uses?\s+([\w\s:]+(?:technique|domain|style|slash|moon|palm|output))',
@@ -153,7 +153,7 @@ def extract_entities(doc_data: dict) -> dict:
             for match in matches:
                 src = match[0].strip()
                 tgt = match[1].strip()
-                # filter noise — must be reasonable length
+                # filter noise: must be reasonable length
                 if 2 < len(src) < 60 and 2 < len(tgt) < 60:
                     relationships.append({
                         "source": src,
@@ -187,7 +187,7 @@ class GraphBuilder:
         self.driver.close()
 
     def create_indexes(self):
-        """Run once — creates indexes for fast lookup."""
+        """Run once; creates indexes for fast lookup."""
         with self.driver.session() as session:
             session.run("CREATE INDEX entity_name IF NOT EXISTS FOR (e:Entity) ON (e.name)")
             session.run("CREATE INDEX doc_title IF NOT EXISTS FOR (d:Document) ON (d.title)")

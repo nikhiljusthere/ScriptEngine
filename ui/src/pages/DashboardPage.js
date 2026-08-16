@@ -44,7 +44,7 @@ const DashboardPage = () => {
     try {
       const result = await window.electron.ipcRenderer.invoke('health-check');
       // /health reports the API itself, the resolved torch device and the
-      // indexed series. It has no `services` key — there are no services. The
+      // indexed series. It has no `services` key; there are no services. The
       // stores are files, so "running" means the API answered.
       setServiceStatus(result);
       setIsRunning(result.status === 'ok');

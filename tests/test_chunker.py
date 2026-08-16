@@ -38,7 +38,7 @@ class TestSentences:
 
     def test_a_citation_marker_does_not_glue_two_sentences_together(self):
         # The locator sits between the full stop and the space, so the split
-        # never fired and two sentences merged into one chunk — and into one
+        # never fired and two sentences merged into one chunk, and into one
         # citation, which loses which sentence the reference actually covers.
         parts = split_sentences(
             "He took the body.(Chapter 145, Episode 50) Now known as Pseudo-Geto."

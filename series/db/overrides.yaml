@@ -12,7 +12,7 @@
 # one is confidently wrong. So each work carries its own label.
 #
 # Order matters. These are tried top to bottom and the first match wins, so the
-# longer names come first — "Dragon Ball Super" has to be matched before
+# longer names come first: "Dragon Ball Super" has to be matched before
 # "Dragon Ball", or every Super reference would be filed under the original.
 #
 # The original series is unprefixed, the same way the main series is on every
@@ -78,7 +78,7 @@ citation_ref_tags:
 
 # The audit flags reference parameters it does not understand. These are the
 # wiki's own misspellings of `accessdate`, `publisher` and `language` inside
-# {{cite web}} references — none carries a locator, so each is mapped to the
+# {{cite web}} references; none carries a locator, so each is mapped to the
 # ignored `page` role rather than polluting the unknown-parameter report.
 citation_params:
   acessdate: page
@@ -121,7 +121,7 @@ prune_types:
 # "heroes" test dropped him. The prefixes also reach the works' own categories,
 # which is what catches every Heroes chapter without naming any of them.
 #
-# A question that names one of these gets them back — see `_ALL_SCOPE`.
+# A question that names one of these gets them back; see `_ALL_SCOPE`.
 non_canon_works:
   # Quoted where a title contains a colon: unquoted, YAML reads
   # `Dragon Ball Z: Dokkan Battle` as a mapping, not a string.
@@ -136,7 +136,7 @@ non_canon_works:
   # Not a work but a naming convention: the Heroes timeline prefixes its own
   # version of a character with `Xeno`, so `Xeno Goku` and `Xeno Trunks` are
   # Heroes-exclusive characters with canon namesakes. Matched as a title
-  # prefix, which reaches the 23 of them and nothing else — no category on
+  # prefix, which reaches the 23 of them and nothing else: no category on
   # this wiki begins with the word.
   #
   # The category `DBH Characters` is deliberately NOT here. It reads like the
@@ -148,14 +148,14 @@ non_canon_works:
 # Where this wiki writes a character's abilities in prose.
 #
 # Dragon Ball records ownership as `users` edges and answers most questions
-# from them, so extraction never ran here at all — and the forms it was
+# from them, so extraction never ran here at all, and the forms it was
 # missing are all sitting in a subpage nothing was reading:
 #
 #     Frieza/Power and Abilities  §Abilities   first, second, third and final
 #                                              form, 100% full power, mecha
-#     Goku/Power and Abilities    208,360 chars — great ape, kaio-ken, base,
+#     Goku/Power and Abilities    208,360 chars: great ape, kaio-ken, base,
 #                                              super saiyan blue kaio-ken
-#     Vegeta/Power and Abilities  135,594 chars — and majin vegeta
+#     Vegeta/Power and Abilities  135,594 chars, and majin vegeta
 #
 # Twenty-three characters have one. They are long, so this is the most
 # expensive declaration in the project, and the only place those forms exist.
@@ -169,7 +169,7 @@ ability_sections:
   technique: [Power and Abilities]
   item: [Equipment]
 
-# Ki is the system every fighter uses, not one character's ability — the same
+# Ki is the system every fighter uses, not one character's ability: the same
 # role Nen plays on Hunterpedia and Haki in One Piece. `Every technique Goku
 # uses` should not open with "Ki".
 ability_stopwords:
@@ -354,7 +354,7 @@ rosters:
 
   # `kai` and `kais` are deliberately absent from `Deities`. They used to be
   # there, and because a declared phrase consumes the whole topic, "Every Kai"
-  # resolved here and answered with 169 deities at full confidence — with no
+  # resolved here and answered with 169 deities at full confidence, with no
   # qualifier left over for the validator to notice.
   - name: Deities
     match: [deity, deities, god, gods]
@@ -368,13 +368,13 @@ rosters:
     members: [King Kai, East Kai, West Kai, South Kai, Grand Kai, Old Kai,
               Kibito Kai, Grand Supreme Kai, Demon Supreme Kai]
 
-  # Twelve, one per universe, and the wiki keeps no category for them — only
+  # Twelve, one per universe, and the wiki keeps no category for them: only
   # `God of Destruction Beerus Saga`, which is a story arc. Without this the
   # topic fell through to `Deities` and answered with all 168.
   - name: Gods of Destruction
     match: [god of destruction, gods of destruction, destroyer god, destroyer gods]
     # `Mule` is this wiki's title for Universe 3's, whom other sources call
-    # Mosco — names are checked against the store, so the wrong one would show
+    # Mosco. Names are checked against the store, so the wrong one would show
     # up as an eleven-member set rather than as a silent gap.
     members: [Beerus, Champa, Belmod, Quitela, Sidra, Iwan, Heles,
               Mule, Arak, Liquiir, Rumsshi, Giin]

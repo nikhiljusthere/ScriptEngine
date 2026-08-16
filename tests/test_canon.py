@@ -1,7 +1,7 @@
 """Dropping the works a series does not count, at index time.
 
 `non_canon_works:` was read only on the query path, so a game page was filtered
-out of a roster and still sat in the index — reachable by search, by a citation,
+out of a roster and still sat in the index: reachable by search, by a citation,
 or by any caller that did not ask for canon.
 
 Everything here runs without a store or a network.
@@ -33,8 +33,8 @@ WORKS = discounted_works(
 def page(title, categories=(), debuts=()):
     """A page with debut *edges*, which is what the predicate reads.
 
-    The `Debut` fact is one free-text string naming every medium at once —
-    `Game: Dragon Ball Heroes Manga: "..." Anime: "..."` — so a page belonging
+    The `Debut` fact is one free-text string naming every medium at once,
+    `Game: Dragon Ball Heroes Manga: "..." Anime: "..."`, so a page belonging
     wholly to Heroes reads canon on two counts of three. One edge per work is
     the only shape that can be judged.
     """
@@ -136,7 +136,7 @@ class TestCategoriesAreTheLastResort:
 
     `Super Dragon Ball` is filed under both `Dragon Ball Super` and
     `Dragon Ball Heroes`. Judging a page on its categories deleted it, and
-    `All types of Dragon Balls` lost a canon object — db eval 11/11 to 10/11.
+    `All types of Dragon Balls` lost a canon object: db eval 11/11 to 10/11.
     """
 
     def test_a_debut_outranks_a_category(self):

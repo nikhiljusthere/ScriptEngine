@@ -22,7 +22,7 @@ a model: the sentence is formulaic, a regular expression can be held to it, and
 a rule that fires 96 times is worth more when it is the same rule every time.
 
 **The edge is written under its own relation.** `stated user` is not `user`, so
-what the wiki declared and what was derived from prose stay distinguishable —
+what the wiki declared and what was derived from prose stay distinguishable:
 if this rule is ever wrong, the damage is visible and removable.
 
 `index` rebuilds the graph, so this runs after it.

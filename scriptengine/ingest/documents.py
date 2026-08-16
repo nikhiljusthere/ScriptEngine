@@ -1,7 +1,7 @@
 """The shapes that flow through ingestion.
 
 One rule governs this module: **structure extracted is structure kept**. An
-infobox parameter becomes a `Fact` and, where it links somewhere, an `Edge` —
+infobox parameter becomes a `Fact` and, where it links somewhere, an `Edge`,
 never a sentence of prose that a later stage has to parse back into a fact.
 """
 
@@ -36,7 +36,7 @@ class Citation:
 class Link:
     """A wikilink: ``[[Target|Display]]``.
 
-    The target is already canonical — MediaWiki resolved it when the page was
+    The target is already canonical, since MediaWiki resolved it when the page was
     written. This is why the factual backbone of the graph needs no NER and no
     per-series alias table.
     """

@@ -1,7 +1,7 @@
 """Tests for mode selection.
 
-Two bugs prompted this file. `qa` — the hybrid retriever with a cross-encoder
-over it — was unreachable from `auto`, because the router was
+Two bugs prompted this file. `qa`, the hybrid retriever with a cross-encoder
+over it, was unreachable from `auto`, because the router was
 `"roster" if looks_like_enumeration(q) else "narrative"`. And that test is a
 regex, so `What grade of sorcerer is Aoi Todo?` matched `grades? of` and came
 back as a list of Todo's five battles.
@@ -50,7 +50,7 @@ class TestSignals:
 
 
 class TestRoute:
-    """End to end, against the real stores — routing reads the ontology."""
+    """End to end, against the real stores; routing reads the ontology."""
 
     @pytest.mark.parametrize(
         "series,query",
@@ -207,7 +207,7 @@ class TestSubjectPreference:
         """"What is Luffy's Devil Fruit?" answered `Goe Goe no Mi`.
 
         `Luffy` is an alias with no page of its own, and unresolved candidates
-        were filtered out before the possessive could be read — leaving the
+        were filtered out before the possessive could be read, leaving the
         question to choose between devil fruits.
         """
         from scriptengine.config import series_paths
@@ -233,7 +233,7 @@ class TestArcsAreASetOnlyWhenAsked:
 
     `wants_chronology` tested `\b(arc|saga)s?\b`, so every topic that mentioned
     an arc was answered with the ordered list of arcs. `Fearsome Womb Arc` is
-    one arc's story — the shape a script about it needs — and it was coming
+    one arc's story, the shape a script about it needs, and it was coming
     back as a roster, which is the gold case `narrative-02` asserts against.
     """
 

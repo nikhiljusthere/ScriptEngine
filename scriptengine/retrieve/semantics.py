@@ -6,7 +6,7 @@ army's members, the engine returned all 230, because a category is a filing
 decision and membership is a semantic one. A planet is not a member of an army.
 
 The wiki already knows the difference and says so in the infobox it chose for
-each page — the crawler stores that as `page_type`. What it does not do is
+each page, and the crawler stores that as `page_type`. What it does not do is
 speak one vocabulary: a character is `character` on Dragon Ball, `char_box` on
 One Piece, `hunterpedia_character` on Hunterpedia and
 `bleach_wiki_character_arrancar` on Bleach. So the mapping is on the *tokens*
@@ -144,7 +144,7 @@ NEVER_MEMBERS = frozenset({MEDIA, EVENT, LOCATION})
 
 # Abilities are one family. `technique`, `transformation`, `power_up` and
 # `fusion` are distinctions *within* it, and which one a page gets depends on
-# whether the wiki filled in a `Class` field — so they must never be used to
+# whether the wiki filled in a `Class` field, so they must never be used to
 # reject each other. Only `is_power_up_only`, reading the field directly, is
 # allowed to separate them.
 ABILITY_TYPES = frozenset({TECHNIQUE, TRANSFORMATION, POWER_UP, FUSION, TRAIT})
@@ -162,7 +162,7 @@ _WORD_SPLIT = re.compile(r"[^a-z0-9]+")
 # *Where* the memo lives is the part that matters. A dict keyed on the database
 # path would be wrong: the path outlives the data, `index` rewrites `documents`
 # and `facts` from scratch, and the next request would be answered out of the
-# previous corpus — silently, and for as long as the process ran. Keyed on the
+# previous corpus, silently, and for as long as the process ran. Keyed on the
 # `FactStore` instance it cannot. Retrieval opens one store per request
 # (`build_roster` and `_qa_context` both do `with FactStore(paths.facts_db) as
 # store:`) and closes it on the way out, so an entry's life is bounded by the
@@ -191,7 +191,7 @@ def request_cache(store: FactStore, bucket: str) -> dict:
 
 
 # `documents.title` is `TEXT NOT NULL UNIQUE`, which builds a BINARY index that a
-# `COLLATE NOCASE` comparison cannot use — so the lookup in `_classify` is a
+# `COLLATE NOCASE` comparison cannot use, so the lookup in `_classify` is a
 # `SCAN documents`, 1.5ms apiece on `series/db/facts.db`, spent proving over and
 # over that 7,205 rows are not the one wanted. With this index EXPLAIN QUERY PLAN
 # reports `SEARCH documents USING INDEX idx_documents_title_nocase (title=?)` and
@@ -200,7 +200,7 @@ def request_cache(store: FactStore, bucket: str) -> dict:
 # Adding an index rather than dropping the collation is the whole point. Dropping
 # `COLLATE NOCASE` would turn a case-insensitive lookup into a case-sensitive one
 # and silently stop matching wherever a caller's spelling differs from the stored
-# title. An index changes the plan and cannot change the answer — but "cannot"
+# title. An index changes the plan and cannot change the answer, but "cannot"
 # was checked rather than assumed, because a plan change *can* reorder a query
 # that never said what order it wanted. Every `COLLATE NOCASE` query against
 # `documents` in this codebase (this one, `document_lead`, `categories_of`,
@@ -209,7 +209,7 @@ def request_cache(store: FactStore, bucket: str) -> dict:
 # titles differing only in case, so there is one candidate row either way.
 #
 # The matching index on `nodes(name COLLATE NOCASE)` is deliberately *not* here,
-# though `facts_for` wants it far more badly — a `SCAN facts` at 4.2ms a call,
+# though `facts_for` wants it far more badly: a `SCAN facts` at 4.2ms a call,
 # the single largest cost left in a roster. Bleach has two nodes called
 # `Memories in the Rain` and `Memories in the rain`, and with the index the
 # unordered `SELECT DISTINCT` in `owned_by` visits them the other way round and
@@ -220,7 +220,7 @@ def request_cache(store: FactStore, bucket: str) -> dict:
 #
 # The permanent home for this one is `stores/schema.sql`, so that a store is born
 # with it. Created here as well, and idempotently, because every store that
-# already exists was not — `ensure_semantics` and `ensure_abilities` are the same
+# already exists was not. `ensure_semantics` and `ensure_abilities` are the same
 # pattern, a schema addition an existing store has to grow in place.
 _LOOKUP_INDEXES = (
     "CREATE INDEX IF NOT EXISTS idx_documents_title_nocase"
@@ -285,7 +285,7 @@ def type_from_page_type(page_type: str, overrides: dict | None = None) -> str:
 def type_from_class(value: str) -> str:
     """`Class = Power Up` is a different thing from `Class = Transformation`.
 
-    A value naming both — "Power Up Transformation" — is read as the stronger
+    A value naming both ("Power Up Transformation") is read as the stronger
     of the two, because the page is still a form; `Powerhouse` writes
     "Transformation/Power Up" and means the same.
     """
@@ -301,7 +301,7 @@ def type_from_class(value: str) -> str:
 def semantic_type(store: FactStore, name: str, overrides: dict | None = None) -> str:
     """What `name` is, from its infobox first and its `Class` field second.
 
-    Memoised for the life of `store` — see `request_cache`. The name is keyed
+    Memoised for the life of `store`; see `request_cache`. The name is keyed
     verbatim rather than case-folded: the lookup below matches `COLLATE NOCASE`,
     which folds ASCII only, and `str.lower()` folds more than that. Two spellings
     of one title cost two lookups; they never share a wrong answer.
@@ -353,7 +353,7 @@ def _from_categories(store: FactStore, document_id: int, title: str) -> str:
     character" silently dropped the entire main cast, which is how
     `Monster Association Arc` returned a 119-name roster with no Saitama in it.
 
-    The categories are unambiguous where the infobox is not — Saitama is in
+    The categories are unambiguous where the infobox is not: Saitama is in
     `Characters`, `Heroes`, `A-Class`; `Audiobooks` is in `Audiobooks`; the
     fight pages are in `Fights`.
 
@@ -409,7 +409,7 @@ def is_power_up_only(store: FactStore, name: str) -> bool:
     """True when the wiki calls this a power-up and never a transformation.
 
     Dark Dragon Ball Enhancement and Evil Aura are both `Class = Power Up`, sit
-    in `Transformations`, and are not transformations of anything — they are
+    in `Transformations`, and are not transformations of anything; they are
     granted from outside and stack on whatever form you already had.
     """
     for fact in store.facts_for(name):
@@ -446,5 +446,5 @@ def expected_type(candidates: list[str], types: dict[str, str]) -> str:
 
 
 def article(semantic: str) -> str:
-    """`a planet`, `an event` — for rejection messages that read like English."""
+    """`a planet`, `an event`, for rejection messages that read like English."""
     return f"an {semantic}" if semantic[:1] in "aeiou" else f"a {semantic}"

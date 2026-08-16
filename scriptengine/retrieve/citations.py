@@ -11,7 +11,7 @@ the two:
   page already made: a ref covers the sentences before it, back to the previous
   ref. That is what placing it there means.
 * **Half the refs name a chapter and no episode.** Corpus-wide, 7,548 refs carry
-  ``chap`` and only 3,815 carry ``ep``. The missing half is not missing at all —
+  ``chap`` and only 3,815 carry ``ep``. The missing half is not missing at all:
   the wiki states it elsewhere, as ``Chapter N -anime episode-> Episode M`` and
   ``Episode M -adapted from-> Chapter N`` edges, which the graph already holds.
   Resolving through those two relations is a lookup, not a guess, and a chapter
@@ -46,7 +46,7 @@ _MARKER = re.compile(
 )
 # Every kind takes the optional work prefix, not just chapters. Dragon Ball
 # numbers Z, Super, GT, Daima and Heroes separately and cites episodes far more
-# often than chapters, and Berserk labels manga and anime episodes apart — so an
+# often than chapters, and Berserk labels manga and anime episodes apart, so an
 # episode that loses its work is an episode of the wrong series.
 _CHAPTER = re.compile(r"(?:([A-Z][A-Za-z']*)\s+)?Chapter\s+([\d.\-]+)")
 _EPISODE = re.compile(r"(?:([A-Z][A-Za-z']*)\s+)?Episode\s+([\d.\-]+)")
@@ -144,7 +144,7 @@ class EpisodeIndex:
         A chapter of another work is left alone. The map is built from the main
         series' `Chapter N -anime episode-> Episode M` edges, so completing
         Modulo Chapter 16 from it would hand the sequel an episode of the first
-        anime — a wrong number stated with the same confidence as a right one.
+        anime: a wrong number stated with the same confidence as a right one.
         """
         if locator.work or locator.episode or not locator.chapter:
             return locator
@@ -193,7 +193,7 @@ def locator_from_title(title: str) -> Locator:
 
     Not every wiki cites its own prose. One Piece writes 1,191 chapter pages and
     1,172 episode pages, each with a full summary, and puts a `<ref>` on almost
-    none of it — its references point at video games and publishers. Berserk is
+    none of it; its references point at video games and publishers. Berserk is
     the same. But a claim retrieved from the page titled "Chapter 1015" is
     sourced to Chapter 1015 as surely as if the sentence carried a footnote, and
     reading the title is not an inference.
@@ -248,7 +248,7 @@ def upgrade_markers(text: str, index: EpisodeIndex | None) -> str:
 def attribute(text: str, index: EpisodeIndex | None = None) -> list[SentenceCitation]:
     """Assign every sentence the reference that covers it.
 
-    The nearest ref *after* a sentence is the one that cites it — that is where
+    The nearest ref *after* a sentence is the one that cites it, and that is where
     an editor puts it. Sentences trailing the last ref fall back to it, since
     the alternative is leaving the tail of every section unsourced.
     """

@@ -11,7 +11,7 @@ rather than the index, so a bug in indexing cannot make a bad tag look fine:
 1. the instalment page exists on the wiki;
 2. some reference in the corpus actually cites that chapter;
 3. when the tag pairs a chapter with an episode, the wiki's own adaptation data
-   agrees — the `anime episode` field on the chapter page, or `adapted from` on
+   agrees: the `anime episode` field on the chapter page, or `adapted from` on
    the episode page.
 
 A tag failing 2 or 3 is a number the script invented.
@@ -135,8 +135,8 @@ def verify_script(text: str, paths: SeriesPaths) -> dict[str, Any]:
         if not exists:
             issues.append(f"no page {page!r} in the crawl")
             # Only then does it matter whether anything cites it. A wiki that
-            # cites nothing inline is common — One Piece has 1,191 chapter pages
-            # and puts a reference on almost none of the prose — so demanding a
+            # cites nothing inline is common: One Piece has 1,191 chapter pages
+            # and puts a reference on almost none of the prose, so demanding a
             # reference as well failed correct tags on every such series. The
             # instalment page existing is the evidence that the number is real;
             # the point of this check is to catch invented ones.

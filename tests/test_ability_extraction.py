@@ -84,7 +84,7 @@ class TestWindows:
         """Killua's `Abilities & Powers` is 17,672 characters.
 
         Sending the first 4,000 found Whirlwind and Speed of Lightning and
-        missed Godspeed — not because the model could not find it, but because
+        missed Godspeed, not because the model could not find it, but because
         it was never shown it.
         """
         text = "x" * 17_672
@@ -190,8 +190,8 @@ class TestGroundedness:
     """A name the passage never uses cannot be cited.
 
     Audited over 2,841 stored rows: a local model named 91 things its source
-    never says — `Fireball shooting`, `Sword fighting`, `Cero Barrage`,
-    `Ghostly Wolf Summoning` — against opencode's 1. Several describe something
+    never says: `Fireball shooting`, `Sword fighting`, `Cero Barrage`,
+    `Ghostly Wolf Summoning`, against opencode's 1. Several describe something
     the character really does. None is what the wiki calls it.
     """
 
@@ -226,7 +226,7 @@ class TestLeadSection:
 
     def test_kurapikas_chains_are_reachable_now(self):
         """`Holy Chain`, `Steal Chain` and `Emperor Time` are named in his lead
-        and nowhere else on any page of his — three of his six canon abilities
+        and nowhere else on any page of his: three of his six canon abilities
         sat outside every declared ability section."""
         paths = series_paths("hxh")
         if not paths.facts_db.exists():

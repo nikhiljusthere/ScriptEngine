@@ -68,7 +68,7 @@ class TestLocators:
     def test_every_marker_survives_a_round_trip(self, marker):
         # A work lost in parsing is a citation of the wrong series. Episodes
         # carry a work as often as chapters do, and only chapters used to keep
-        # theirs — which silently dropped the Z, GT and Anime qualifiers.
+        # theirs, which silently dropped the Z, GT and Anime qualifiers.
         assert parse_locator(marker).render() == marker
 
     def test_ordinary_prose_is_not_a_citation(self):
@@ -136,7 +136,7 @@ class TestEpisodeIndex:
 class TestLocatorFromTitle:
     # Not every wiki cites its own prose. One Piece writes 1,191 chapter pages
     # and 1,172 episode pages, each with a full summary, and puts a reference on
-    # almost none of it — its <ref> tags point at video games and publishers.
+    # almost none of it; its <ref> tags point at video games and publishers.
     # A claim retrieved from the page titled "Chapter 1015" is sourced to
     # Chapter 1015, and reading the title is not an inference.
 

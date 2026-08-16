@@ -2,7 +2,7 @@
 
 The point of this module is that nothing in it knows about any particular
 series. These tests use Jujutsu Kaisen and Marvel template names purely as
-fixtures — a change that makes one wiki work by naming it would fail here.
+fixtures, so a change that makes one wiki work by naming it would fail here.
 """
 
 from __future__ import annotations

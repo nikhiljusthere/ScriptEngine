@@ -113,7 +113,7 @@ def check_fresh(started: str, root: Path | None = None) -> None:
             f"server started {server_started:%Y-%m-%d %H:%M:%S%z}, but "
             f"{path.relative_to(REPO_ROOT)} was modified "
             f"{modified:%Y-%m-%d %H:%M:%S%z}. The API holds its code in "
-            f"memory — restart it (`{START_HINT}`) or this measures the old "
+            f"memory; restart it (`{START_HINT}`) or this measures the old "
             f"code."
         )
 
@@ -136,7 +136,7 @@ def check_series(payload: dict, wanted: list[str]) -> None:
 def git_sha() -> str:
     """The commit the measurement was taken at, or `?`.
 
-    Without it a moved number is an anecdote — there is no way to say which
+    Without it a moved number is an anecdote: there is no way to say which
     code produced it.
     """
     try:
@@ -185,9 +185,9 @@ def answers_markdown(scores: dict, facts: list[dict]) -> str:
             f"returned {row['returned']} of {row['available']} available",
             f"- recall {row['recall']:.0%} ({row['found']}/{row['canon']}), "
             f"precision {row['precision']:.0%}",
-            f"- **found**: {', '.join(entry.get('found') or []) or '—'}",
-            f"- **missing**: {', '.join(entry.get('missing') or []) or '—'}",
-            f"- **returned**: {', '.join(entry.get('members') or []) or '—'}",
+            f"- **found**: {', '.join(entry.get('found') or []) or 'none'}",
+            f"- **missing**: {', '.join(entry.get('missing') or []) or 'none'}",
+            f"- **returned**: {', '.join(entry.get('members') or []) or 'none'}",
             "",
         ]
     if facts:

@@ -166,7 +166,7 @@ rosters:
 
   # The word-order variants are the point. Longest declared phrase wins, so
   # "Every executive of the Monster Association" matched `monster association`
-  # — 19 characters, the whole 71-member organisation — and never reached
+  # (19 characters, the whole 71-member organisation) and never reached
   # `executive` at 9. Declaring the phrase the way a viewer says it is what
   # returns the nine executives.
   - name: Monster Association Executives

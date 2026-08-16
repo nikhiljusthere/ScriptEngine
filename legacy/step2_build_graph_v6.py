@@ -1195,7 +1195,7 @@ def chronology_key(title: str) -> Optional[Tuple[str, Tuple[int, int]]]:
 
 def build_graph(files_dir: Path, clear_existing: bool = False, dry_run: bool = False) -> BuildResult:
     logger.info("=" * 72)
-    logger.info("JJK Graph Build v6 — START")
+    logger.info("JJK Graph Build v6: START")
     logger.info("  Source dir : %s", files_dir)
     logger.info("  Clear graph: %s", clear_existing)
     logger.info("  Dry run    : %s", dry_run or GraphDatabase is None)

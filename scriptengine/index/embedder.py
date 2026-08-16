@@ -227,7 +227,7 @@ class Reranker:
         """Score each passage against the query.
 
         A cross-encoder reads the query and the passage together, which is why
-        it outranks the bi-encoder that retrieved them — and why it is only ever
+        it outranks the bi-encoder that retrieved them, and why it is only ever
         run over a shortlist.
         """
         if not passages:

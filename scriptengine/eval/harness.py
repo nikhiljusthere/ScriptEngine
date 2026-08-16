@@ -1,8 +1,8 @@
 """Scoring retrieval against a gold set.
 
-Nothing in the previous project could be verified. Its claims about accuracy —
+Nothing in the previous project could be verified. Its claims about accuracy,
 "this is where accuracy is won or lost", in a docstring above code that raised
-on import — were untestable, and so was any change anyone made to it.
+on import, were untestable, and so was any change anyone made to it.
 
 The point of this module is not the score. It is that a change to chunking,
 fusion or reranking now produces a number that moves, in a direction that can be
@@ -49,7 +49,7 @@ def _hit_text(question: dict[str, Any], haystack: str) -> bool:
     """`expect_text` is all-of; `expect_any_text` is any-of.
 
     Both are needed. A grade and an affiliation must *both* appear, but Akainu
-    and Sakazuki are the same marine and no passage uses both names — requiring
+    and Sakazuki are the same marine and no passage uses both names, so requiring
     them together failed a correct answer, and dropping one of them threw away
     the fact that either would do.
     """
@@ -93,12 +93,12 @@ def evaluate(
 
             # Where a real caller's `auto` would have sent this question. The
             # suite used to call each path directly, which is why a fact lookup
-            # that the router sent to `roster` — "What grade of sorcerer is Aoi
-            # Todo?", answered with a list of his battles — passed 24/24 while
+            # that the router sent to `roster`. "What grade of sorcerer is Aoi
+            # Todo?", answered with a list of his battles, passed 24/24 while
             # being broken through the CLI and the API alike.
             outcome.update(_check_route(paths, question))
             # A case that names its mode fails when the router disagrees, even
-            # if the path it was scored on answered correctly — because no real
+            # if the path it was scored on answered correctly, because no real
             # caller would have reached that path.
             if outcome.get("route_ok") is False:
                 outcome["passed"] = False

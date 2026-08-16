@@ -56,7 +56,7 @@ def test_release_keeps_a_model_that_was_just_used():
 
 
 def test_an_idle_model_is_released_for_comfyui():
-    """The GPU still goes back — on a timer rather than per request.
+    """The GPU still goes back, on a timer rather than per request.
 
     The clock is wound back rather than slept through: the setting is an int
     number of seconds, so the smallest honest timeout would make this test take

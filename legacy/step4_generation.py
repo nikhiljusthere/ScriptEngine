@@ -53,7 +53,7 @@ class QwenModel:
             output = model.generate(
                 **inputs,
                 max_new_tokens=max_new_tokens,
-                do_sample=False,          # greedy — more deterministic/accurate
+                do_sample=False,          # greedy, more deterministic/accurate
                 temperature=1.0,
                 pad_token_id=tokenizer.eos_token_id
             )
@@ -64,7 +64,7 @@ class QwenModel:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 4B. Query classifier — is this a simple or multi-hop question?
+# 4B. Query classifier: is this a simple or multi-hop question?
 # ─────────────────────────────────────────────────────────────────────────────
 
 MULTIHOP_SIGNALS = [
@@ -91,7 +91,7 @@ def is_multihop(query: str) -> bool:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 4C. Query decomposer — breaks complex query into sub-questions
+# 4C. Query decomposer: breaks complex query into sub-questions
 # ─────────────────────────────────────────────────────────────────────────────
 
 DECOMPOSE_PROMPT = """You are a query decomposition assistant for a Jujutsu Kaisen wiki.
@@ -122,7 +122,7 @@ def decompose_query(query: str) -> List[str]:
     except (json.JSONDecodeError, AttributeError):
         pass
 
-    # fallback — return original query
+    # fallback: return original query
     return [query]
 
 

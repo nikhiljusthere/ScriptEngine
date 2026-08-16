@@ -1,7 +1,7 @@
 """Tests for what an entity is, as distinct from where the wiki filed it.
 
 The failure these exist for: asked for the members of the Galactic Frieza Army,
-the engine returned 230 pages — 121 characters, but also 37 races, 24
+the engine returned 230 pages: 121 characters, but also 37 races, 24
 techniques, 18 planets and 6 battles. A planet is not a member of an army.
 """
 
@@ -84,7 +84,7 @@ class TestExpectedType:
 
 
 # `_disagrees` lives in roster.py and is tested beside it, in
-# tests/test_roster_validation.py — importing it here made this module
+# tests/test_roster_validation.py, and importing it here made this module
 # uncollectable at any commit before roster.py grew the function.
 
 
@@ -135,7 +135,7 @@ class TestMemoisation:
 
     `roster.build_roster` classifies every page a character owns, then classifies
     the survivors again inside `apply_constraints`. The answers are memoised per
-    store — the tests that matter are the ones about *when the memo dies*, since
+    store. The tests that matter are the ones about *when the memo dies*, since
     a classification that outlives its corpus is a wrong answer served
     confidently.
     """
@@ -178,7 +178,7 @@ class TestMemoisation:
             assert semantic_type(first, "Widget") == semantics.UNKNOWN
 
     def test_a_declared_vocabulary_is_part_of_the_question(self, store):
-        """Two callers, two `overrides`, two answers — not whichever asked first."""
+        """Two callers, two `overrides`, two answers, not whichever asked first."""
         declared = {"semantic_types": {"weird_box": "item"}}
         assert semantic_type(store, "Widget") == semantics.UNKNOWN
         assert semantic_type(store, "Widget", declared) == semantics.ITEM
@@ -204,8 +204,8 @@ class TestLookupIndexes:
     """`title = ? COLLATE NOCASE` against a BINARY unique index is a full scan.
 
     Measured on `series/db/facts.db`: 1.5ms a lookup across 7,205 rows, and a
-    roster asks for hundreds. The collation stays — dropping it would silently
-    stop matching a caller whose spelling differs from the stored title — and
+    roster asks for hundreds. The collation stays: dropping it would silently
+    stop matching a caller whose spelling differs from the stored title, and
     the index is what lets the same query use one.
     """
 
@@ -252,7 +252,7 @@ class TestLookupIndexes:
 class TestStatedCount:
     """A set whose name counts itself is a free assertion to check.
 
-    Most of what it finds is not a defect — `Gotei 13` holds 127 because the 13
+    Most of what it finds is not a defect: `Gotei 13` holds 127 because the 13
     counts divisions, and `Seven Warlords` holds 12 because twelve people held
     seven seats. The check earns its place anyway: it also finds duplicate pages
     for one entity, which is a real error.
@@ -347,7 +347,7 @@ class TestIndexPagesAreNotPeople:
 
     `Heroes` is filed under `Characters` and is the list of every hero. It is
     also a category on that wiki, which is what tells it apart from
-    `Empty Void` and `Beaut` — real characters filed exactly the same way.
+    `Empty Void` and `Beaut`, real characters filed exactly the same way.
     """
 
     def paths_for(self, series):

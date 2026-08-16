@@ -1,7 +1,7 @@
 """Building the index: crawled pages in, queryable stores out.
 
 Indexing is a rebuild rather than an append. Both stores are recreated from the
-pages on disk, which makes the result a pure function of the corpus — re-running
+pages on disk, which makes the result a pure function of the corpus, so re-running
 after an extraction fix produces exactly what a fresh run would, with no
 half-updated state to reason about. Re-crawling is the expensive step; this one
 is cheap enough to repeat.
@@ -103,7 +103,7 @@ def build_index(
         # debut left to judge, and a name with no page is exactly the shape
         # prose extraction exists to keep (`Dismantle` has no page either).
         # The `abilities` table also survives `reset()` by design, so it still
-        # holds rows read out of prose before the removal — `Goku` had
+        # holds rows read out of prose before the removal: `Goku` had
         # `Super Saiyan (Berserk)` among his forms with the page, the heading
         # and the edge all already gone.
         store.set_meta("dropped_titles", json.dumps(sorted(dropped)))
@@ -146,7 +146,7 @@ def _load_documents(
 
         store.add_categories(document_id, page.categories)
 
-        # A kept page may still have a discounted work's corner in it —
+        # A kept page may still have a discounted work's corner in it,
         # `Goku/Biography` carries a seven-saga Super Dragon Ball Heroes
         # subtree. Dropped once, so sections and chunks agree.
         page.sections = keep_sections(page.sections, works, dropped)
@@ -180,8 +180,8 @@ def _load_graph(
     """Insert nodes, aliases, facts and edges.
 
     Nodes are created for every page first, so that an edge pointing at a page
-    crawled later still resolves. Unresolved targets — links to pages the crawl
-    never reached — are created as bare nodes and flagged, rather than dropped:
+    crawled later still resolves. Unresolved targets (links to pages the crawl
+    never reached) are created as bare nodes and flagged, rather than dropped:
     knowing that Todo is affiliated with something is worth more than silence,
     even when that something has no page here.
     """
@@ -218,7 +218,7 @@ def _load_graph(
             # An edge to a page this series does not count is not an unresolved
             # target, it is a removed one. `Goku` still lists
             # `Super Saiyan (Berserk)` among his users, and ownership reads
-            # those edges — so leaving them put the form back in "Every form of
+            # those edges, so leaving them put the form back in "Every form of
             # Goku" after the page and the heading had both gone.
             if edge.target in dropped:
                 continue
@@ -248,7 +248,7 @@ def _harvest_link_aliases(
 ) -> dict[str, set[str]]:
     """Learn the names people actually use, from how they write their links.
 
-    A wiki's own redirects are thinner than they look — Jujutsu Kaisen redirects
+    A wiki's own redirects are thinner than they look: Jujutsu Kaisen redirects
     "Todo Aoi" to "Aoi Todo" but not the bare "Todo", so a question asking about
     Todo reaches nothing. Yet the prose is full of ``[[Aoi Todo|Todo]]``.
 

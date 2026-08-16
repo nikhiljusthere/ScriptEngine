@@ -13,8 +13,8 @@ A third was found on 2026-08-16, and it defeats a check on latency alone:
 
 * **Thinking comes back on its own.** `lms load` has no preset flag, so every
   CLI reload restores it unless a per-model default config says otherwise. The
-  model then answers correctly and in about 3.8s — passing every timing
-  threshold — while spending 82 of 90 completion tokens on reasoning. It is
+  model then answers correctly and in about 3.8s, passing every timing
+  threshold, while spending 82 of 90 completion tokens on reasoning. It is
   visible only in `usage.completion_tokens_details.reasoning_tokens`.
 
 So a run probes before it starts rather than discovering it in a log. Cheap:

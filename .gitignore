@@ -48,7 +48,7 @@ ENV/
 # =========================
 
 # Per-series corpora, stores and indexes: large, machine-generated, and fully
-# regenerable from the MediaWiki API. The manifest is excluded too — it carries
+# regenerable from the MediaWiki API. The manifest is excluded too; it carries
 # every title on the wiki, so it churns on each crawl.
 #
 # `overrides.yaml` is the exception. It is hand-written, it is the only place a

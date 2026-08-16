@@ -11,7 +11,7 @@ ones that belong:
 
 One is a form a Saiyan body reaches; the other is Super Saiyan with a Spirit
 Bomb absorbed into it. Telling them apart needs "stacked on another form",
-"caused from outside", "an energy state" — concepts no wiki has a field for.
+"caused from outside", "an energy state": concepts no wiki has a field for.
 
 So a local model is asked, **once, at index time**, and the answer is stored.
 Three rules keep that from costing anything at query time or in trust:
@@ -19,7 +19,7 @@ Three rules keep that from costing anything at query time or in trust:
 * **It never runs during a query.** Retrieval reads a table. The same question
   answers the same way twice, and the eval sets stay meaningful as a regression
   guard.
-* **It is asked only where the rules are uncertain** — a few hundred ability
+* **It is asked only where the rules are uncertain**, a few hundred ability
   pages per wiki, not all 23,656. A full-corpus pass is hours of inference for
   no extra benefit.
 * **It may reject or annotate, never add.** A wrong property costs precision on
@@ -45,7 +45,7 @@ from scriptengine.stores.facts import FactStore
 logger = logging.getLogger(__name__)
 
 # Bump to invalidate every stored classification. Anything that changes what the
-# model is asked — the vocabulary, the properties, the wording — changes this.
+# model is asked (the vocabulary, the properties, the wording) changes this.
 PROMPT_VERSION = "2026-08-03.2"
 
 # The properties a question can be validated against. Booleans rather than one
@@ -63,7 +63,7 @@ PROPERTIES = (
 )
 
 SYSTEM = (
-    "You classify entities from a fiction wiki. You answer with JSON only — no "
+    "You classify entities from a fiction wiki. You answer with JSON only: no "
     "prose, no code fences. You are precise about the difference between what a "
     "being *is* and what a being can be *given*."
 )
@@ -86,13 +86,13 @@ Answer with JSON exactly in this shape:
 
 The properties mean:
 - race_exclusive: only members of one species/race/clan can ever have this.
-  A form that needs a trigger — a full moon, a ritual — is still race_exclusive
+  A form that needs a trigger (a full moon, a ritual) is still race_exclusive
   if only that race responds to the trigger.
 - biologically_intrinsic: it comes from what the being is. Latent potential
   that another character draws out of them is still intrinsic: the power was
   already theirs.
 - externally_granted: the power itself comes from outside and would not exist
-  in the being otherwise — an artifact, a wish, a parasite, a serum, absorbing
+  in the being otherwise: an artifact, a wish, a parasite, a serum, absorbing
   another being's energy. A condition that merely *triggers* something the being
   already had is not an external grant.
 - teachable: another being can learn it given training or instruction.
@@ -145,7 +145,7 @@ def needs_classifying(store: FactStore, overrides: dict | None = None) -> list[s
             continue
         # An ability filed under no race at all never reaches a race-qualified
         # answer, so classifying it buys nothing. What is left is the middle
-        # where structure says "Saiyan form" and may be wrong — 400 pages on
+        # where structure says "Saiyan form" and may be wrong: 400 pages on
         # Dragon Ball rather than 2,500.
         if not any(
             category.lower().rstrip("s") in races

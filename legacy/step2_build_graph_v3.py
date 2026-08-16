@@ -200,7 +200,7 @@ NER_PERSON_BLOCKLIST: Set[str] = {
     "original soundtrack", "blu-ray", "dvd",
 }
 
-# Titles that are inherently locations — block spaCy from overriding to Character
+# Titles that are inherently locations; block spaCy from overriding to Character
 KNOWN_LOCATIONS: Set[str] = {
     "tokyo", "kyoto", "shibuya", "shinjuku", "sendai", "osaka", "aizu",
     "japan", "jujutsu high", "tokyo jujutsu high", "kyoto jujutsu high",
@@ -746,7 +746,7 @@ class GraphBuilder:
         self.driver.close()
 
     def clear_graph(self):
-        logger.info("Clearing existing graph — deleting all nodes and relationships...")
+        logger.info("Clearing existing graph: deleting all nodes and relationships...")
         with self.driver.session() as session:
             result = session.run("MATCH (n) RETURN count(n) AS total")
             total  = result.single()["total"]
@@ -799,7 +799,7 @@ class GraphBuilder:
         MERGE on base :Entity label only (avoids ConstraintValidationFailed
         when the node already exists with a different label set).
         Then SET the specific label as an additive operation.
-        Document nodes are NEVER written here — they go through upsert_document.
+        Document nodes are NEVER written here; they go through upsert_document.
         """
         if kind == "Document":
             return
@@ -937,7 +937,7 @@ class GraphBuilder:
 
 def build_graph(files_dir: Path, clear_existing: bool = False):
     logger.info("=" * 60)
-    logger.info("JJK Graph Build — START")
+    logger.info("JJK Graph Build: START")
     logger.info("  Source dir : %s", files_dir)
     logger.info("  Clear existing graph: %s", clear_existing)
     logger.info("  Min doc frequency   : %d", MIN_DOC_FREQ)

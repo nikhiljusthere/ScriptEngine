@@ -1,7 +1,7 @@
 """Tests for the scoring that decides which set a topic means.
 
 These cover the failure that made every enumeration on the two largest wikis
-wrong: a query naming the series — "Every race in Dragon Ball" — handed its
+wrong: a query naming the series, "Every race in Dragon Ball", handed its
 words to every category the wiki had named after itself, so `Dragon Ball Z
 episodes` outscored `Races` and the answer came back as 150 episode titles.
 One Piece did the same thing with `One Piece Volumes`.

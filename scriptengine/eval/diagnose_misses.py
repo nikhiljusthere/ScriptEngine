@@ -104,7 +104,7 @@ def _in_own_prose(passages: list[tuple[str, str]], raw: list[str]) -> str:
     """Whether the character's own ability passages name this.
 
     These are the exact passages `cli abilities` fed the model, so a hit here
-    means the model saw the name and did not return it — which is what makes
+    means the model saw the name and did not return it, which is what makes
     this an extraction gap rather than a corpus one.
     """
     for section, text in passages:
