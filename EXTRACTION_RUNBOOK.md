@@ -1,15 +1,15 @@
-# Extraction runbook — the model pass
+# Extraction runbook: the model pass
 
 Everything measured on 2026-08-15 while getting the ability-extraction pass to
 run at a sane speed. Written so none of it has to be discovered twice.
 
 Retrieval never calls a model. This document is only about the two index-time
-passes — `ingest/abilities.py` and `ingest/classify.py` — and almost entirely
+passes (`ingest/abilities.py` and `ingest/classify.py`) and almost entirely
 about the first.
 
 ---
 
-## TL;DR — the working setup
+## TL;DR: the working setup
 
 LM Studio serving `qwen/qwen3.8-27b` on `:1234`:
 
@@ -23,15 +23,15 @@ lms load qwen/qwen3.8-27b -c 36864 --parallel 8 --ttl 7200 --speculative-draft-m
 | **context length** | 262,144 (default) / **8,192** | **36,864** (sized to parallel) |
 | **`--parallel`** | 4 while power-capped | **8**, matched by `--workers 8` |
 | **GPU power limit** | 570 W | **600 W** (the card's max) |
-| Enable Thinking | on | **off** (see below — the preset will not do it) |
+| Enable Thinking | on | **off** (see below; the preset will not do it) |
 | Reasoning Effort | Extra High | **low** |
 | `SCRIPTENGINE_ANSWER_TOKENS` | 32,000 / 2,048 | **3,072** |
 | speculative decoding | off | **MTP on** |
 | CPU Thread Pool | 16 | **8–12** |
 | seed | random | **fixed** |
-| Keep Model in Memory | — | **on** |
-| Offload KV Cache to GPU | — | **on** |
-| GPU Offload | — | 65 (all layers) |
+| Keep Model in Memory | n/a | **on** |
+| Offload KV Cache to GPU | n/a | **on** |
+| GPU Offload | n/a | 65 (all layers) |
 
 ```powershell
 $env:SCRIPTENGINE_LLM_BACKEND  = "local"
@@ -39,7 +39,7 @@ $env:SCRIPTENGINE_LLM_BASE_URL = "http://localhost:1234/v1"
 $env:SCRIPTENGINE_LLM_MODEL    = "qwen/qwen3.8-27b"
 $env:SCRIPTENGINE_ANSWER_TOKENS = "3072"
 $env:SCRIPTENGINE_LLM_TIMEOUT_SECONDS = "1800"
-python -u -m scriptengine.cli abilities --series jjk --refresh --workers 4
+python -u -m scriptengine.cli abilities --series jjk --refresh --workers 8
 ```
 
 **Per call: 90.8s → 3.1s** against the 262,144 default. Two identical calls
@@ -54,7 +54,7 @@ See *Context is a shared pool* below, which supersedes it.
 ## Turning thinking off so it stays off
 
 **`lms load` has no preset flag.** Every CLI reload therefore comes up with
-thinking *on*, whatever the GUI last showed — the failure mode that silently
+thinking *on*, whatever the GUI last showed: the failure mode that silently
 returned after a reload on 2026-08-16 and burned 91% of the output budget:
 
 | | thinking on | thinking off |
@@ -84,10 +84,10 @@ load time including from the CLI. Model-specific keys encode the model id with
 Two fields from the `No thinking 27b` preset are deliberately **not** copied
 here:
 
-* **`llm.prediction.systemPrompt`** — the client sends its own system message
+* **`llm.prediction.systemPrompt`.** The client sends its own system message
   and a config-injected one is a needless risk to it. It also buys nothing; see
   the refutation below.
-* **`llm.load.contextLength: 8192`** — that is the undersizing itself. `-c` on
+* **`llm.load.contextLength: 8192`.** That is the undersizing itself. `-c` on
   the command line overrides whatever this file says, so the run stays
   controllable per-invocation while thinking stays off.
 
@@ -134,7 +134,7 @@ here and is only true at `--parallel 1`.
 parallel x (max_prompt + max_tokens)  <=  context
 ```
 
-At the settings above: `4 x (1463 + 3072) = 18,140 <= 20,480`. ✓
+At the settings above: `8 x (1463 + 3072) = 36,280 <= 36,864`. ✓
 
 Getting this wrong does not look like a sizing error. On 2026-08-16 a run at
 `-c 5120 --parallel 6` with `max_tokens 3072` needed `6 x (1735 + 3072) =
@@ -145,7 +145,7 @@ E srv send_error: task id = 1729, error: Context size has been exceeded.
 I slot release: id 1 | task 1729 | stop processing: n_tokens = 1199, truncated = 0
 ```
 
-The trap is `n_tokens = 1199` — far *below* 5,120, which reads as "the context is
+The trap is `n_tokens = 1199`, far *below* 5,120, which reads as "the context is
 not the problem" and argues for lowering it further. The number is one slot's
 usage; the pool was exhausted by the other five. **The fix for
 `Context size has been exceeded` is almost always more total context, not less.**
@@ -165,12 +165,12 @@ VRAM cost measured on a 32,607 MiB card, weights 17.74 GB:
 | 28,672 | 6 | 25,913 MiB |
 
 That is ~0.33 MiB per token of KV. `lms load --estimate-only` reported 16.52 GiB
-for both and is **not** usable for this — it ignores the KV growth. Measure with
+for both and is **not** usable for this: it ignores the KV growth. Measure with
 `nvidia-smi` after loading.
 
 ---
 
-## Concurrency: 8 — but the answer depends on the power cap
+## Concurrency: 8, but the answer depends on the power cap
 
 Measured twice on 2026-08-16, and **the two runs disagree**, which is the useful
 part. Both used a fixed workload of 48 real relation windows with identical
@@ -213,8 +213,8 @@ worth far more than 8%:
 | **8 workers** | **52.0** (+54%, sustained over 15 min) |
 
 The fixed-workload benchmark feeds a flat list of uniform windows. A real run
-also parallelises per-character work — `passages()`, window splitting, the store
-write — and overlaps characters whose sizes differ by two orders of magnitude,
+also parallelises per-character work (`passages()`, window splitting, the store
+write) and overlaps characters whose sizes differ by two orders of magnitude,
 which more slots absorb. **Benchmark to compare configs; measure the real run to
 size the job.**
 
@@ -227,15 +227,15 @@ rows/min showed as zero.
 `workers * 4`, and `pool.map` yields in order, so one heavy character at the head
 of a chunk holds back every commit behind it. At 8 workers that is 32 characters
 per commit: progress arrives in larger, less frequent jumps, and an abort loses
-up to 32 characters of work. A five-minute gap with no new rows is normal — check
+up to 32 characters of work. A five-minute gap with no new rows is normal: check
 GPU utilisation, not the row count.
 
 **Speculative decoding (MTP) is free and slightly better.** Throughput is within
 noise but p95 improves 14.6s → 11.8s, so leave `--speculative-draft-mtp` on.
 
 **CPU Thread Pool: 8-12, not 16.** The model is fully GPU-offloaded, so the CPU
-only tokenises and samples. The 9950X3D is dual-CCD — 8 cores with 3D V-Cache,
-8 without — and a pool above 8 spans both dies and pays cross-CCD latency on
+only tokenises and samples. The 9950X3D is dual-CCD (8 cores with 3D V-Cache,
+8 without) and a pool above 8 spans both dies and pays cross-CCD latency on
 every sync. Threads above that also compete with the extraction workers, since
 llama.cpp thread pools spin-wait rather than sleep.
 
@@ -243,12 +243,12 @@ llama.cpp thread pools spin-wait rather than sleep.
 
 ## The GPU settings that did and did not matter
 
-Measured on an ASTRAL LC RTX 5090, liquid-cooled, 41-57C throughout — thermals
+Measured on an ASTRAL LC RTX 5090, liquid-cooled, 41-57C throughout; thermals
 were never the limit.
 
 | change | rows/min | verdict |
 |---|---|---|
-| baseline | 30.25 | — |
+| baseline | 30.25 | n/a |
 | closed other GPU apps | 29.8 | **no throughput gain** |
 | power limit 570 → 600 W | 33.2 | **+11%** |
 | memory clock +500 | 33.8 | +2%, noise |
@@ -262,19 +262,19 @@ needs an elevated shell:
 nvidia-smi -pl 600
 ```
 
-After that the cap stopped engaging entirely and draw settled at 355-478 W —
+After that the cap stopped engaging entirely and draw settled at 355-478 W,
 i.e. it then had headroom, which is what made 8 slots pay off. There is no 110%:
 `power.default_limit` and `power.max_limit` are both 600 W, so 100% in a tuning
 tool *is* the ceiling.
 
 **Closing other GPU applications freed 2.9 GB of VRAM but did not speed anything
-up.** Worth doing — it is what let the wider KV pool fit — but not a throughput
+up.** Worth doing, since it is what let the wider KV pool fit, but not a throughput
 change, and the apparent 20% gain was a characters/min artefact.
 
 **Memory overclocking is not worth chasing here.** +500 on the effective rate is
 +250 MHz actual on 13,801, a 1.8% bandwidth increase, and it measured as noise.
-It was stable — 400 rows written under it, zero outside the closed vocabulary,
-zero empty quotes — so it does no harm. The lever is real for a bandwidth-bound
+It was stable (400 rows written under it, zero outside the closed vocabulary,
+zero empty quotes) so it does no harm. The lever is real for a bandwidth-bound
 workload; the magnitude available is too small to matter.
 
 **Do not raise GPU voltage.** While power-limited, more voltage spends more of a
@@ -291,7 +291,7 @@ fixed budget per clock and makes throughput worse.
 | parallelism | network-bound, 16 workers fine | GPU-bound, matched to Max Concurrent |
 | failure modes | rate limits, silent hangs, orphaned children | none seen |
 
-opencode wraps an agent around each call — process spawn, scaffolding, NDJSON
+opencode wraps an agent around each call: process spawn, scaffolding, NDJSON
 stream, teardown. With the model local there is nothing to buy with that
 overhead: the grounding that once justified opencode is enforced in
 `abilities.py`, not by opencode.
@@ -301,12 +301,12 @@ which local satisfies.
 
 ---
 
-## Dead ends — do not re-test
+## Dead ends: do not re-test
 
 **`opencode/deepseek-v4-flash-free` was dead on 2026-08-15.** A one-word probe
 ("Reply with the single word OK") returned nothing in **400s**; a jjk run
 finished **0 extracted, 8 timed out at 600s**. It *hangs* rather than erroring,
-so `LLMRateLimited` — which only inspects failed output — never fires. Probe it
+so `LLMRateLimited`, which only inspects failed output, never fires. Probe it
 before trusting it.
 
 Free-model probe, same trivial prompt:
@@ -333,17 +333,17 @@ ignored**:
 
 `enableThinking` is a virtual-model field resolved when the model is **loaded**,
 so nothing sent per-call can reach it. This also means the preset's
-`llm.prediction.systemPrompt` Jinja directive is inert over the API — it is not
+`llm.prediction.systemPrompt` Jinja directive is inert over the API: it is not
 what was disabling thinking. Use the per-model default config above.
 
 **Unloading/reloading the model between reads does not help.** Every extraction
-call is stateless — a fresh `messages` array with one system and one user
+call is stateless, a fresh `messages` array with one system and one user
 message. No conversation history accumulates, so there is nothing to clear;
 unloading frees VRAM, not "tokens". A 27B is 16-30GB off disk per load. The
 repeated loading seen in LM Studio was JIT + idle-TTL churn, and it cost time.
 
 **Do not trim the level-0 infobox/lead card from passages.** It looks like waste
-— 26.7% of hxh passage text, 14.2% of jjk — but it is load-bearing:
+(26.7% of hxh passage text, 14.2% of jjk) but it is load-bearing:
 
 | series | share of stored ability rows from that card |
 |---|---|
@@ -353,7 +353,7 @@ repeated loading seen in LM Studio was JIT + idle-TTL churn, and it cost time.
 | bleach | 10.2% |
 
 Killua's `Godspeed`, `Whirlwind` and `Speed of Lightning` come from exactly
-there. None has a page, a node, a category or a `users` edge — that infobox line
+there. None has a page, a node, a category or a `users` edge: that infobox line
 is the *only* place the wiki records them.
 
 ---
@@ -364,7 +364,7 @@ is the *only* place the wiki records them.
 `bge-large` and `bge-reranker-v2-m3` onto the same card. With the 27B resident
 that exhausts 32GB and LM Studio answers `500 Internal Server Error` to every
 request: a csm run recorded three failures and no rows, and the only visible
-symptom was an idle GPU. Extraction runs fine only because no server is up —
+symptom was an idle GPU. Extraction runs fine only because no server is up, so
 stop it first. The runner refuses to start while one is running.
 
 Measured: 23.3GB with the model alone at 8,192 context, 31.8GB with the server
@@ -372,11 +372,11 @@ too, on a 32.6GB card.
 
 **A scoring run needs the server; an extraction run needs it gone.** They are
 mutually exclusive on one machine. Score the coverage banks through
-`build_roster` in-process instead — roster mode is pure SQLite and touches
+`build_roster` in-process instead: roster mode is pure SQLite and touches
 neither.
 
 **JIT auto-load silently undoes the load settings.** Any stray API request will
-load the model with *default* config — context back to 262,144, thinking back
+load the model with *default* config: context back to 262,144, thinking back
 on. A probe did this and cost a bogus 90.8s measurement. Disable auto-load in LM
 Studio's developer/server settings, and note that the per-model default config
 above fixes the thinking half of this but not the context: an auto-load takes no
@@ -395,7 +395,7 @@ Get-Process opencode | Where-Object { $_.StartTime -gt (Get-Date).AddHours(-6) }
 ```
 
 **An empty log does not mean a stalled run.** `Tee-Object` buffers until the
-process exits, and `>` through `Start-Process` buffers too — so a healthy run
+process exits, and `>` through `Start-Process` buffers too, so a healthy run
 can show a 0-byte log for many minutes even under `python -u`. On 2026-08-16
 this was misread as a stall on a run that was working correctly.
 
@@ -411,7 +411,7 @@ plus a row count against the series `facts.db` taken twice a few minutes apart.
 `.venv\Scripts\python.exe` is a shim that re-execs the real uv-managed
 interpreter, so `relations --series db` appears twice: the parent idles at zero
 CPU time waiting on its child, which does the work. Both have the *same* start
-time — that is how to tell this from a genuine orphan, which will be older. Do
+time, and that is how to tell this from a genuine orphan, which will be older. Do
 not kill the "idle" one thinking it is stuck.
 
 **`canon-run` refuses a server older than the newest `.py`.** Restart the API
@@ -437,7 +437,7 @@ So a botched run costs **completeness, not correctness**, and completeness
 self-heals: rows cache on `revid` + `PROMPT_VERSION`, a failed character stored
 no rows, and `needs_relations` therefore hands it back on the next run.
 
-Verify rather than assume, with a vocabulary check — anything outside the closed
+Verify rather than assume, with a vocabulary check: anything outside the closed
 set would be the signal to re-extract:
 
 ```sql
@@ -470,7 +470,7 @@ Calls scale with *windows*, not characters:
 | **onepiece** | **1,640** | **12.5** |
 | **total** | **3,365** | **~28,600 calls** |
 
-One Piece is ~20,500 of those — **70% of the whole corpus on one wiki**.
+One Piece is ~20,500 of those, **70% of the whole corpus on one wiki**.
 
 **Never estimate a run from the head of its queue.** Window counts per character
 are extremely skewed, and `needs_relations` returns the biggest characters
@@ -488,7 +488,7 @@ relations, 1,057 characters remaining:
 
 Extrapolating the first 25 characters (109 windows each) gave ~115,000 windows
 and a **25-30 hour** estimate. Counting all of them gave 7,515 and **~4.5
-hours** — the real figure was off by 15x. Count the whole queue; it is one cheap
+hours**. The real figure was off by 15x. Count the whole queue; it is one cheap
 pass over passages and needs no model:
 
 ```python
@@ -498,7 +498,7 @@ sum(len(_windows(t)) for who in needs_relations(store, ov)
 
 `--bank-only` restricts to the characters the question bank names: **65
 characters, ~353 calls, a 98.8% reduction**. Use it for a fast scoring loop
-only. The bank is a benchmark, not the goal — full coverage is what the project
+only. The bank is a benchmark, not the goal: full coverage is what the project
 actually needs, so it is not the default. Note it also leaves the store on two
 prompt versions, since unscoped characters keep their existing rows.
 
@@ -508,18 +508,18 @@ prompt versions, since unscoped characters keep their existing rows.
 
 Reads one window of a character's declared ability sections, plus the section
 breadcrumb, character name, series, and the allowed `kinds`. Returns one line
-per ability: name, kind, evidence. That is all — it is span-selection, not
+per ability: name, kind, evidence. That is all: it is span-selection, not
 reasoning, which is why Reasoning Effort should be as low as the model allows.
 
 Four guards run *after* the reply, so a weak model costs recall rather than
 truth:
 
-- **the name must appear verbatim in the passage shown** (`_grounded_in`) —
+- **the name must appear verbatim in the passage shown** (`_grounded_in`),
   caught 91 invented names across 2,841 rows (`Cero Barrage`,
   `Ghostly Wolf Summoning`);
 - lower-case names dropped;
 - declared `ability_stopwords` dropped;
-- names longer than 5 words dropped — beyond that it is describing, not naming.
+- names longer than 5 words dropped; beyond that it is describing, not naming.
 
 Rows cache on page `revid` + `PROMPT_VERSION`. Bumping `PROMPT_VERSION`
 invalidates all eight wikis at once, which is what forces a full re-extraction.
@@ -530,7 +530,7 @@ invalidates all eight wikis at once, which is what forces a full re-extraction.
 
 The model answers without a field it was asked for if the JSON shape is split
 across lines. Adding `acquired` on a second line produced replies with no
-`acquired` at all — every row would have defaulted to `innate` and Yuta's copied
+`acquired` at all: every row would have defaulted to `innate` and Yuta's copied
 techniques would have been indistinguishable from his own. On one line it
 answers correctly.
 
@@ -543,14 +543,14 @@ A window is 4,000 characters, and the model only knows what is in the one it is
 shown. Yuta's page says `Copy: Yuta's innate technique allows him to copy the
 innate techniques of people who had their body parts consumed by Rika` in one
 section and names `Limitless` in another, so `acquired` came back `innate` for
-all 570 jjk rows. The field works — given a passage that states the copying, it
-returns `copied` with the right reason — but it cannot join two windows.
+all 570 jjk rows. The field works: given a passage that states the copying, it
+returns `copied` with the right reason, but it cannot join two windows.
 
 Anything needing evidence from two places on a page needs either a wider passage
 or a second pass over what the first one stored.
 
 ## Related
 
-- `PRECISION_PLAN.md` — what has been refuted by measurement
-- `ANSWER_QUALITY_REVIEW.md` — the retrieval-side causes
-- `RELATION_GAPS.md` — per-wiki inventory of discarded relations
+- `PRECISION_PLAN.md`: what has been refuted by measurement
+- `ANSWER_QUALITY_REVIEW.md`: the retrieval-side causes
+- `RELATION_GAPS.md`: per-wiki inventory of discarded relations

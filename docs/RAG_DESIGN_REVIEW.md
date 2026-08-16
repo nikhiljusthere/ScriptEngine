@@ -2,7 +2,7 @@
 
 A 28-point improvement plan was raised against this engine after "Every Saiyan
 transformation" returned Black Frieza. This document records what was found,
-what was built, and what was already there — so the same ground is not covered
+what was built, and what was already there, so the same ground is not covered
 twice.
 
 ## The finding
@@ -13,7 +13,7 @@ SQLite and returns its members; there is no embedding, no chunk, no reranker
 anywhere in that path.
 
 Black Frieza appeared because **the Dragon Ball wiki files it under
-`Transformations`** — correctly, it is one — and nothing downstream ever asked
+`Transformations`** (correctly, it is one) and nothing downstream ever asked
 the second half of the question: *is it Saiyan?*
 
 That distinction decides the fix. If similarity were the cause, the answer would
@@ -33,7 +33,7 @@ Two corrections worth recording:
 * **The structured metadata asked for in point 2 already existed and was already
   extracted.** Race, owner, class, media and debut are in `facts` and
   `categories` today. Rejecting Black Frieza needed no re-crawl and no new
-  extraction pass — only a stage that reads them.
+  extraction pass, only a stage that reads them.
 * **`Android 1617` was not a retrieval error.** The engine inferred nothing; the
   wiki states it is an EX-Fusion of 16 and 17 from *Dragon Ball Fusions*. The
   legitimate complaint was canon, not correctness.
@@ -42,23 +42,23 @@ Two corrections worth recording:
 
 `scriptengine/retrieve/roster.py`, between choosing a set and rendering it:
 
-1. **`parse_constraints`** — reads what the topic asked for beyond the set's
+1. **`parse_constraints`** reads what the topic asked for beyond the set's
    name. "Every Saiyan transformation" resolves to the declared `Transformations`
    set; what is left is `saiyan`. Also reads scope: canon by default, everything
    when the topic says "ever", "including games", "non-canon".
-2. **`_profile`** — assembles each candidate from the store: categories, owners
+2. **`_profile`** assembles each candidate from the store: categories, owners
    (`Users`, `Inventor`), identity fields, and media parsed from `Debut`, which
    already carries it verbatim.
-3. **`_grounded`** — keeps only qualifier words the wiki has an article about.
+3. **`_grounded`** keeps only qualifier words the wiki has an article about.
    This is what stops "Every Cursed Technique of Sukuna" from filtering on
    `cursed`: every technique on that wiki is cursed, the word is a genre, and
    enforcing it threw away Malevolent Shrine. `Saiyan` has an article and is a
    real constraint; `cursed` has none and is not.
-4. **`validate_member`** — rejects, with a reason: index pages (`List of …`),
+4. **`validate_member`** rejects, with a reason: index pages (`List of …`),
    the set's own article (`Dragon Ball (object)` inside `Dragon Balls`),
    out-of-scope media, and members the qualifier does not reach. The qualifier
-   is checked against title, categories and ownership fields, then — one graph
-   hop — against the owner's own race (`Super Saiyan Blue` → Goku → `Saiyan`).
+   is checked against title, categories and ownership fields, then, one graph
+   hop later, against the owner's own race (`Super Saiyan Blue` → Goku → `Saiyan`).
 5. **Never silently empty.** If validation would remove everything, the
    unfiltered set is returned. A visibly-too-broad list beats a blank one.
 6. **Reported, not applied quietly.** Rosters carry `candidates`, `rejected`
@@ -82,12 +82,12 @@ all survive; every non-Saiyan form is gone.
 
 ## The 28 points, mapped
 
-**Already in the engine before this review** — verified, with the code:
+**Already in the engine before this review**, verified, with the code:
 
 | # | asked for | where it lives |
 |---|---|---|
 | 1 | intent classification | `looks_like_enumeration()`; modes roster / narrative / qa / auto |
-| 3 | hybrid search | FTS5 BM25 + Qdrant, fused with RRF — `retrieve/hybrid.py` |
+| 3 | hybrid search | FTS5 BM25 + Qdrant, fused with RRF, in `retrieve/hybrid.py` |
 | 4, 18 | dynamic strategy / tool selection | four modes chosen per topic shape |
 | 5, 27 | recall, adaptive top-k | rosters return up to 150; qa returns 8 |
 | 6 | cross-encoder rerank | `bge-reranker-v2-m3` |
@@ -99,19 +99,19 @@ all survive; every non-Saiyan form is gone.
 | 26 | duplicate detection | `_distinct` on members, groups and categories |
 
 **Added by this work**: 2 (metadata filtering), 15 (self-query), 19 (coverage
-verification), 28 (confidence — `declared`/`exact`/`partial`/`weak`, plus
+verification), 28 (confidence: `declared`/`exact`/`partial`/`weak`, plus
 `candidates` and `rejected`).
 
 **Deliberately not done, with reasons:**
 
-* **7, 8 — query expansion and multi-query.** These widen a *search*. A roster is
+* **7, 8, query expansion and multi-query.** These widen a *search*. A roster is
   a category read, so expanding "transformation" into form/evolution/power-up
-  would not add a member — the set is already the wiki's own list. Where
+  would not add a member, since the set is already the wiki's own list. Where
   vocabulary genuinely differs (`movie` vs `Films`, `Yonko` vs `Four Emperors`)
   it is declared in `overrides.yaml`, which is exact rather than probabilistic.
-* **10 — chunk summaries.** Real, but it affects `qa` mode embeddings, not any
+* **10, chunk summaries.** Real, but it affects `qa` mode embeddings, not any
   of the reported failures. Worth doing on its own merits, not as a fix for this.
-* **20, 21 — answer and citation validation by an LLM.** ScriptEngine retrieves;
+* **20, 21, answer and citation validation by an LLM.** ScriptEngine retrieves;
   it does not generate. The writer is downstream, and `cli verify` already checks
   a finished script's citations against the raw crawl.
 
@@ -128,7 +128,7 @@ never declared per series:
 | class | when | example |
 |---|---|---|
 | `race_exclusive` | the inventor *is* a race, or the wiki files it under one | Super Saiyan, Great Ape, Super Saiyan Blue, Beast |
-| `character_specific` | exactly one user — and their race, until someone else has it | Ultra Ego (Vegeta) |
+| `character_specific` | exactly one user, and their race, until someone else has it | Ultra Ego (Vegeta) |
 | `teachable` | users span races, or an inventor of another race taught it | Kaio-ken, `Ultra Instinct (technique)` |
 | `unknown` | no users, no inventor, no race category | anything the wiki left bare |
 
@@ -139,13 +139,13 @@ Dragon Ball and `Quincy` or `Mink` would on their own wikis.
 
 **The classification corrects itself.** Because it is computed rather than
 stored, a second race acquiring an ability turns it from race-exclusive into
-teachable with no code and no config touched — there is a test asserting exactly
+teachable with no code and no config touched. There is a test asserting exactly
 that.
 
 Two refinements the real data forced:
 
 * **The wiki's own filing outranks inferred user races.** `Super Saiyan Blue` is
-  filed under `Saiyans`; letting the Xenoverse avatar — who can be any race —
+  filed under `Saiyans`; letting the Xenoverse avatar, who can be any race,
   vote turned it "teachable".
 * **Game-only users do not vote**, for the same reason game-only members are out
   of canon scope.
@@ -169,22 +169,22 @@ Verified, and worth being plain about:
 Sulong cannot be computed Mink-exclusive today: the wiki says so in prose and
 nothing structured records it. The classifier declines rather than guesses, so
 those series are unchanged. Coverage improves when those pages carry more
-structure — not by adding per-series rules here.
+structure, not by adding per-series rules here.
 
 ## The semantic type layer
 
 A category is a filing decision; membership is a semantic one. Asked for the
 members of the Galactic Frieza Army, the engine returned all 230 pages in that
-category — 121 characters, but also 37 races, 24 techniques, 23 factions, 18
+category: 121 characters, but also 37 races, 24 techniques, 23 factions, 18
 planets and 6 battles. **A planet is not a member of an army.**
 
 The wiki already says what each page is, in the infobox it chose, which the
 crawler stores as `page_type`. What it does not do is speak one vocabulary: a
 character is `character` on Dragon Ball, `char_box` on One Piece,
 `hunterpedia_character` on Hunterpedia, `bleach_wiki_character_arrancar` on
-Bleach. `scriptengine/retrieve/semantics.py` folds those into one set of types —
+Bleach. `scriptengine/retrieve/semantics.py` folds those into one set of types
 character, race, organization, location, technique, transformation, power_up,
-fusion, item, event, media — by matching **tokens inside the discovered id**
+(fusion, item, event, media) by matching **tokens inside the discovered id**
 rather than a table of ids, so a new wiki is covered as soon as it names its
 infoboxes in recognisable words.
 
@@ -196,8 +196,8 @@ and rejects the ones that disagree. Three rules keep it from over-reaching:
   letting the majority decide would have thrown out Super Saiyan for
   disagreeing with the techniques around it.
 * **Organisations are never rejected.** Wikis reach for a group infobox for
-  anything collective — `Angel` and `Shadow Dragon` are typed that way on pages
-  about races — and rejecting them cost three real races to catch nothing.
+  anything collective. `Angel` and `Shadow Dragon` are typed that way on pages
+  about races, and rejecting them cost three real races to catch nothing.
 * **A set without a clear majority is left alone**, rather than guessed at.
 
 ### Result, measured across the 88-question sheet
@@ -208,12 +208,12 @@ and rejects the ones that disagree. Three rules keep it from over-reaching:
 |---|---:|---:|---|
 | Galactic Frieza Army | 225 | **144** | planets, races, battle armour, conflicts |
 | Every Demon | 192 | **151** | techniques, power-ups, races |
-| Every member of the Royal Guard | 8 | **6** | `Ōken`, `Blood Oath's Seal` — items |
+| Every member of the Royal Guard | 8 | **6** | `Ōken`, `Blood Oath's Seal`, both items |
 | Every member of the Kurta Clan | 9 | **7** | `Lukso Province`, `Scarlet Eyes` |
 | All types of Dragon Balls | 15 | **14** | `Nameless Planet` |
 | Every Devil Hunter | 75 | **74** | `Tokyo Devil Detention Center` |
 
-Sets that are already homogeneous — Devils, Espada, Warlords — did not move.
+Sets that are already homogeneous (Devils, Espada, Warlords) did not move.
 
 ### Race qualifiers: two more structural tests
 
@@ -230,7 +230,7 @@ reported, seven are gone while every one of the ten that belong is kept.
 ### The four that structure cannot reach
 
 **Spirit Bomb Super Saiyan, Culture Fluid Absorption, Powerhouse, Fusion of Ki**
-— and `Mutation` — survive, because structurally they are identical to forms
+and `Mutation` survive, because structurally they are identical to forms
 that belong: `Class = Transformation`, filed under `Saiyans` alone. Telling them
 apart needs "stacked on another form", "externally caused", "an energy state",
 which no wiki field records. That is the boundary between structural and
@@ -254,13 +254,13 @@ wiki page → structured fields → deterministic rules
           → stored semantic metadata → retrieval reads the metadata
 ```
 
-* Scoped to **ability-like pages the rules cannot settle** — a few hundred per
+* Scoped to **ability-like pages the rules cannot settle**, a few hundred per
   wiki, not 23,656. A full-corpus pass is hours of local inference for no extra
   benefit.
 * Emits **properties, not one label**: `race_exclusive`,
   `biologically_intrinsic`, `externally_granted`, `teachable`, `stackable`,
-  `temporary`, `requires_artifact`, `requires_fusion` — so validation can
-  compose them per question — plus a one-line **reason**, stored so a
+  `temporary`, `requires_artifact`, `requires_fusion`, so validation can
+  compose them per question, plus a one-line **reason**, stored so a
   questionable classification can be argued with.
 * **Cached on `documents.revid` and a prompt version**, so a page is
   reclassified only when it or the prompt changes.
@@ -272,7 +272,7 @@ wiki page → structured fields → deterministic rules
 ### How narrow the scope actually is
 
 Ability pages only, minus the ones the wiki's own fields already settle, minus
-the ones filed under no race at all — those can never reach a race-qualified
+the ones filed under no race at all. Those can never reach a race-qualified
 answer, so classifying them buys nothing:
 
 | series | pages to classify |
@@ -286,7 +286,7 @@ records no ability structure at all. Selection is in `needs_classifying`.
 
 The store's `semantics` table is deliberately **not** dropped by
 `FactStore.reset()`, and `ensure_semantics()` grows it in place on a store built
-before it existed — everything else in the schema is rebuilt by `index` and
+before it existed. Everything else in the schema is rebuilt by `index` and
 cheap, this is the one thing that costs local inference.
 
 ### Measured
@@ -312,14 +312,14 @@ cases structure could not reach, and left one.
 ### What the first run got wrong, and what fixed it
 
 The first prompt marked **Great Ape**, **Super Saiyan God** and **Beast** as
-`externally_granted` — reading a full moon, a ritual and Piccolo's mentoring as
-external grants — which would have thrown out three forms that belong. Two
+`externally_granted`, reading a full moon, a ritual and Piccolo's mentoring as
+external grants, which would have thrown out three forms that belong. Two
 changes fixed it, and both are worth keeping in mind for any future prompt:
 
 * **`race_exclusive` outranks everything.** A form can need a trigger and still
   be something only one race's body does; only a Saiyan responds to a full moon.
 * **The prompt now distinguishes a trigger from a grant**, and says that latent
-  potential another character draws out is still intrinsic — the power was
+  potential another character draws out is still intrinsic: the power was
   already theirs.
 
 `PROMPT_VERSION` was bumped, which invalidated all 88 rows and reclassified
@@ -329,14 +329,14 @@ them, which is the cache-invalidation path working as intended.
 
 The twelve-user threshold in `validate_member` is still there and still
 arbitrary. It should now be removable, since the classifier judges the same
-pages on better evidence — worth testing by deleting it and re-running the
+pages on better evidence, worth testing by deleting it and re-running the
 evals.
 
 ## Audited against the web
 
 Twelve answers were checked against canon sources rather than against the
 engine's own confidence. **Six were right, six were wrong**, and every wrong one
-came back `declared` or `exact` — the confidently-wrong failure mode, in a place
+came back `declared` or `exact`, the confidently-wrong failure mode, in a place
 none of the previous work looked.
 
 | question | was | canon | now |
@@ -348,22 +348,22 @@ none of the previous work looked.
 | Every Vasto Lorde | 6, `Tier Harribel` twice | ~4 | **1, no duplicates** |
 | Every member of the Phantom Troupe | 16, incl. Omokage | 13 seats | **15, Omokage rejected** |
 
-The six that were right — Nen types 6, hero classes 4, God Hand 5, Primal Fears
-4, Namekian transformations 2, Frieza Race transformations 4 — are unchanged and
+The six that were right (Nen types 6, hero classes 4, God Hand 5, Primal Fears
+4, Namekian transformations 2, Frieza Race transformations 4) are unchanged and
 are now eval cases so they stay that way.
 
 ### Four defects, four fixes
 
 **Subpages were counted as members.** `Tier Harribel` and `Tier
 Harribel/Expanded Universe` are the same hollow. Across four wikis 504 titles
-carry a slash and 97% have their parent in the store — alternate continuities,
+carry a slash and 97% have their parent in the store: alternate continuities,
 anime-only variants, galleries. A title `X/Y` whose parent `X` exists is now a
 view of `X`, not a member. This is the single largest correction: it also took
 `Every Captain of the Gotei 13` from 27 to **13**, which is the number of
 divisions, by removing fourteen `/Anime Continuity` variants.
 
-**Films were canon everywhere.** Right for Dragon Ball — *Broly*, *Battle of
-Gods* — and wrong for Hunter × Hunter, whose films are not. `canon_media:` is
+**Films were canon everywhere.** Right for Dragon Ball (*Broly*, *Battle of
+Gods*) and wrong for Hunter × Hunter, whose films are not. `canon_media:` is
 now per series. The subtlety: Hunterpedia files its films under **`anime
 debut`**, so the field text says anime; only the debut edge's *target*
 (`Hunter × Hunter: Phantom Rouge`, page type `movie`) gives it away. Media is
@@ -372,7 +372,7 @@ now read from the instalment page's own type, not from the field string.
 **Some sets the wiki never filed anywhere.** There is no Gods of Destruction
 category, and Hunterpedia's `Royal Guards` page names its three only in prose.
 A `members:` list in `overrides.yaml` names them, checked against the store so a
-wrong name shows as a short roster rather than a silent gap — which is exactly
+wrong name shows as a short roster rather than a silent gap, which is exactly
 how `Mosco` was caught: this wiki titles him `Mule`.
 
 **One declaration was simply wrong.** `Hunter Ranks` pointed at employment
@@ -387,16 +387,16 @@ already existed as categories.
   whom One Piece files under `Straw Hat Pirates Members` and canon calls a
   former member. Nothing distinguishes current from historical.
 * **A set that is incomplete rather than mismatched.** `Every island in the Grand
-  Line` returns four and reports `exact`, because the name genuinely matches —
+  Line` returns four and reports `exact`, because the name genuinely matches;
   the wiki files most islands elsewhere. Only the count reveals it.
 * **Canon detection needs a `Debut` field.** Wikis that record debut differently
-  get no media filter — the validator is only as good as the field, and it
+  get no media filter: the validator is only as good as the field, and it
   correctly does nothing when the field is absent.
 * **Ability classification needs user and inventor links**, which Bleach and One
   Piece do not carry for abilities. See the coverage table above.
 
 Fixed since the first version of this document: the Ultra Instinct
-inconsistency (there is no page called `Ultra Instinct` at all —
+inconsistency (there is no page called `Ultra Instinct` at all,
 `Ultra Instinct (technique)` is teachable and rejected, while the Goku-only
 `True`/`Perfected` variants are character-specific and kept), and the 150-member
 cap, now 300 with a `capped` count reported when it still bites. "Every
