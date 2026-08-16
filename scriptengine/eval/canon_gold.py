@@ -154,12 +154,27 @@ def score_sets(gold: list | None = None) -> dict:
 
         recall = len(found) / len(canon) if canon else 0.0
         precision = len(matched_members) / len(members) if members else 0.0
+        # Did the question come back *right* -- every canon item and nothing
+        # else? Recall and precision each hide the other's failure. The bank
+        # reads 95.4% recall at 63.1% precision while only 38% of closed sets
+        # are actually correct, and 40% of them have perfect recall and are
+        # still wrong because of what came back beside the answer.
+        #
+        # Unlike precision this cannot be improved by returning less: dropping
+        # a canon item fails it exactly as hard as keeping an intruder. That is
+        # the property that makes it the number to drive.
+        #
+        # Meaningless on `scope: core`, where the gold is a curated subset and
+        # returning more is correct, so those are flagged by `recall_only` and
+        # excluded from the aggregate, exactly as precision already is.
+        exact = len(found) == len(canon) and len(members) == len(canon)
         rows.append({
             "series": series, "query": query, "set": chosen,
             "confidence": confidence, "returned": len(members),
             "available": available,
             "canon": len(canon), "found": len(found),
             "recall": round(recall, 3), "precision": round(precision, 3),
+            "exact": exact,
             "recall_only": query in RECALL_ONLY,
         })
         detail.append({
