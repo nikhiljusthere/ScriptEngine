@@ -232,6 +232,70 @@ def passages(store: FactStore, character: str, overrides: dict) -> list[tuple[st
             # A heading with nothing under it names nothing.
             continue
         out.append((breadcrumb or title, text))
+    return out + owned_passages(store, character, overrides)
+
+
+def owned_passages(
+    store: FactStore, character: str, overrides: dict
+) -> list[tuple[str, str]]:
+    """Ability prose on the pages a character *owns*, not on their own page.
+
+    One Piece nests one level deeper than the other wikis. The character page
+    names the fighting *styles*, each style has its own page, and the named
+    techniques are prose inside that page:
+
+        Roronoa Zoro        ->  Three Sword Style, Two Sword Style, ...
+        Three Sword Style   ->  Oni Giri, Shishi Sonson, Tatsumaki, Ashura, ...
+
+    Reading only character pages therefore returns the styles and stops.
+    Measured on `Every technique of Zoro`: 10 canon items and 1 found, while
+    `Three Sword Style` held most of the rest and had never been read by
+    anything -- it is a technique page, and extraction only ever asked about
+    characters.
+
+    The link is one the wiki already recorded, `Three Sword Style -user->
+    Roronoa Zoro`, so this walks that edge backwards and reads the declared
+    sections of what comes back. Nothing is inferred: a page is read only
+    because the wiki named this character in one of the declared fields.
+
+    Off unless a series declares it, since most wikis keep the techniques on the
+    character and this would only add noise there:
+
+        ability_owner_sections:
+          relations: [user, users]
+          sections: [Techniques]
+    """
+    declared = (overrides or {}).get("ability_owner_sections") or {}
+    sections = [
+        str(section).strip().lower()
+        for section in (declared.get("sections") or [])
+        if str(section).strip()
+    ]
+    if not sections:
+        return []
+    relations = [
+        str(relation).strip()
+        for relation in (declared.get("relations") or ["user", "users"])
+        if str(relation).strip()
+    ]
+
+    out: list[tuple[str, str]] = []
+    for page in store.owned_by(character, relations):
+        # The character's own pages are already covered by the caller.
+        if page.split("/")[0].strip().lower() == (character or "").strip().lower():
+            continue
+        for row in store.sections_of(page):
+            breadcrumb = row["breadcrumb"] or ""
+            title = row["title"] or ""
+            if not any(_matches(section, breadcrumb, title) for section in sections):
+                continue
+            text = (row["text"] or "").strip()
+            if len(text) < 120:
+                continue
+            # The page goes in the section label, so a stored row still says
+            # where it was read from. That is what `abilities.section` is for,
+            # and it keeps these rows tellable from ones read off the character.
+            out.append((f"{page} / {breadcrumb or title}", text))
     return out
 
 

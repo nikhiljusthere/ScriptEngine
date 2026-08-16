@@ -55,6 +55,25 @@ ability_sections:
   technique: [Abilities and Powers, Swordsmanship, Haki, Physical Abilities]
   item: [Weapons]
 
+# This wiki nests one level deeper than the others. A character page names the
+# fighting *styles*, each style has its own page, and the named techniques are
+# prose inside that page:
+#
+#     Roronoa Zoro       ->  Three Sword Style, Two Sword Style, ...
+#     Three Sword Style  ->  Oni Giri, Shishi Sonson, Tatsumaki, Ashura, ...
+#
+# Reading only character pages returned the styles and stopped there.
+# `Every technique of Zoro` scored 10 canon items with 1 found, and nine of the
+# missing nine sat in `Three Sword Style / Techniques`, a page nothing had ever
+# read: extraction asks about characters, and that is a technique page.
+#
+# The edge is the wiki's own, `Three Sword Style -user-> Roronoa Zoro`, so this
+# reads the declared sections of pages that name the character in a `user`
+# field. Nothing is inferred.
+ability_owner_sections:
+  relations: [user, users]
+  sections: [Techniques]
+
 # Haki is the system, not one character's ability.
 #
 # Every notable fighter in the second half of the series uses Armament and

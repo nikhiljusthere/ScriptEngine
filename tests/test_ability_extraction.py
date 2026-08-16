@@ -237,3 +237,56 @@ class TestLeadSection:
             ).lower()
         for chain in ("holy chain", "steal chain", "emperor time"):
             assert chain in prose
+
+
+class TestOwnedPages:
+    """Techniques on the page a character owns, not on their own page.
+
+    One Piece names the fighting *styles* on the character page and puts the
+    techniques inside each style's page. `Every technique of Zoro` scored 10
+    canon items with 1 found, and the rest sat in `Three Sword Style /
+    Techniques`, a page nothing had read: extraction asks about characters, and
+    that is a technique page.
+    """
+
+    def test_zoros_techniques_are_reachable_now(self):
+        paths = series_paths("onepiece")
+        if not paths.facts_db.exists():
+            pytest.skip("onepiece is not indexed")
+        with FactStore(paths.facts_db) as store:
+            prose = " ".join(
+                text for _, text in A.owned_passages(
+                    store, "Roronoa Zoro", load_overrides(paths))
+            ).lower()
+        # Named on `Three Sword Style`, and on no page of Zoro's own.
+        for technique in ("oni giri", "shishi sonson", "tatsumaki", "ashura"):
+            assert technique in prose
+
+    def test_the_page_is_named_in_the_section_label(self):
+        """A stored row has to say where it was read from, so these stay
+        tellable from rows read off the character's own page."""
+        paths = series_paths("onepiece")
+        if not paths.facts_db.exists():
+            pytest.skip("onepiece is not indexed")
+        with FactStore(paths.facts_db) as store:
+            labels = [
+                label for label, _ in A.owned_passages(
+                    store, "Roronoa Zoro", load_overrides(paths))
+            ]
+        assert labels
+        assert any(label.startswith("Three Sword Style / ") for label in labels)
+
+    def test_a_series_that_does_not_declare_it_is_untouched(self):
+        """Off by default. Most wikis keep the techniques on the character, and
+        reading owned pages there would only add noise."""
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        with FactStore(paths.facts_db) as store:
+            assert A.owned_passages(
+                store, "Yuji Itadori", load_overrides(paths)) == []
+
+    def test_no_declaration_means_the_store_is_never_touched(self):
+        """`None` as the store proves it: undeclared must not reach a query."""
+        assert A.owned_passages(None, "Anyone", {}) == []
+        assert A.owned_passages(None, "Anyone", {"ability_owner_sections": {}}) == []
