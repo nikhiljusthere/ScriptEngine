@@ -76,7 +76,20 @@ rosters:
       - what are yuji itadori's named cursed techniques
       - yuji itadori's named cursed techniques
     subject: Yuji Itadori
-    members: [Blood Manipulation, Convergence, Piercing Blood, Shrine, Dismantle, Reverse Cursed Technique, Simple Domain, Domain Expansion]
+    # Widened 2026-08-16. The line above records why it was eight: the wiki
+    # keeps a dedicated `Cursed Techniques` table, and `Divergent Fist` and
+    # `Black Flash` are not in it, they sit under
+    # `Abilities / Cursed Energy Manipulation`.
+    #
+    # That reasoning made this list the ceiling. The 2026-08-16 run scored it
+    # 8/10 and the diagnosis put both names in the `retrieval gap` bucket:
+    # already stored, and reachable as a `Yuji Itadori` ownership edge. The wiki
+    # records them as his. Which of its tables it files a technique in is not a
+    # claim about whose the technique is.
+    #
+    # Fifth time a declaration written to fix a question became the thing
+    # capping it once extraction improved.
+    members: [Blood Manipulation, Convergence, Piercing Blood, Shrine, Dismantle, Reverse Cursed Technique, Simple Domain, Domain Expansion, Divergent Fist, Black Flash]
 
   # What are Megumi Fushiguro's named shikigami?
   # Declared 2026-08-15: the engine resolved this to `Wiki lists 9 shikigami/techniques in structured tables. Gold matches (Chimera Shadow Garden is a domain, not a shikigami).` and returned the wrong set. Members transcribed from `Megumi Fushiguro`.

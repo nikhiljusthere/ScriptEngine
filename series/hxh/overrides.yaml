@@ -134,7 +134,17 @@ rosters:
       - the zodiacs of the hunter association
       - zodiacs of the hunter association
     subject: Zodiacs
-    members: [Kurapika, Mizaistom Nana, Kanzai, Pyon, Botobai Gigante, Gel, Saccho Kobayakawa, Ginta, Saiyu, Cluck, Cheadle Yorkshire, Leorio Paradinight]
+    # Widened 2026-08-16 from the gallery's current twelve to everyone the wiki
+    # documents as holding a seat. The question asks who the Zodiacs *are*, and
+    # Ging Freecss and Pariston Hill held one until they left; Ickshonpe Katocha
+    # holds one and is simply absent from the gallery template the first
+    # transcription was taken from. Declaring only the gallery scored 12/15.
+    #
+    # This is the current-versus-former distinction the roadmap tracks as phase
+    # 20, and until that exists the honest choice is the wider set: a former
+    # Zodiac is a real answer to the question, and omitting one is a silent
+    # miss, while including one is visible and correctable.
+    members: [Kurapika, Mizaistom Nana, Kanzai, Pyon, Botobai Gigante, Gel, Saccho Kobayakawa, Ginta, Saiyu, Cluck, Cheadle Yorkshire, Leorio Paradinight, Ging Freecss, Pariston Hill, Ickshonpe Katocha]
   - name: Nen Types
     match: [nen type, nen types, nen category, nen categories, type of nen]
     groups:

@@ -367,6 +367,24 @@ def render_prompt(
         lines.append(f"Set: {bundle['basis']}")
         if bundle.get("groups"):
             lines.append("Groups: " + ", ".join(bundle["groups"]))
+        # A roster knows its own size and was not saying it. "How many members
+        # are in the Phantom Troupe?" is answered by one number, and the bundle
+        # listed all thirteen without ever stating that there were thirteen, so
+        # the writer had to count the list themselves. Nine such questions
+        # measured as "the answer was not present in what was served" while the
+        # members sat right underneath.
+        #
+        # The count is reported with the confidence, because a set that is
+        # `partial` or `weak` is the wrong set and its size is then a
+        # confidently wrong number -- exactly the failure this engine tries not
+        # to hand a writer. `Grand Line Islands` returns four and reports
+        # `exact` while the wiki keeps hundreds, so the number is evidence about
+        # what was retrieved, never a claim about the series.
+        members = bundle.get("members") or []
+        if members:
+            confidence = bundle.get("confidence")
+            suffix = f" ({confidence})" if confidence else ""
+            lines.append(f"Size: {len(members)} members{suffix}")
         lines.append("")
 
     if bundle.get("facts"):
