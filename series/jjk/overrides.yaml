@@ -309,25 +309,71 @@ battle_relations:
 # Only a positively-typed member is ever rejected. `Dismantle`, `Cleave`,
 # `Hometown Domain` and `New Shadow Style: Simple Domain` have no page on this
 # wiki at all, so they carry no type and are kept untouched.
+#
+# Every value the field actually takes is mapped, deliberately, rather than the
+# handful that were in the way. An unmapped value classes nothing and is
+# therefore never rejected, so a partial map fails silently and looks like a
+# working one -- the counts below are the whole vocabulary, taken from the
+# store, and they are what a reviewer should re-derive when this changes.
 ability_class:
   field: type
   map:
+    # A technique the sorcerer possesses or learned. 43 + 36 + 5 + 3 + 2 + 5.
     Innate Technique: cursed_technique
     Inherited Technique: cursed_technique
     Extension Technique: cursed_technique
+    Maximum Technique: cursed_technique
     Cursed Technique: cursed_technique
     Reverse Cursed Technique: cursed_technique
+    Jujutsu: cursed_technique
+    # Domains and the counters to them are cursed techniques a question about
+    # techniques should return: `Unlimited Void` and `Malevolent Shrine` are
+    # gold on Gojo and Sukuna, `Falling Blossom Emotion` and `Curtain` on Gojo.
     Domain Expansion: cursed_technique
     Anti-Domain Technique: cursed_technique
     Barrier Technique: cursed_technique
-    Shikigami: cursed_technique
-    Jujutsu: cursed_technique
+    # A summon, not a technique, and this wiki keeps the distinction: Megumi's
+    # Ten Shadows *Technique* is `Inherited Technique` and the ten shikigami it
+    # summons are `Shikigami`. Gold agrees -- `Every cursed technique of Sukuna`
+    # lists `Ten Shadows Technique` and none of the ten, while
+    # `Every shikigami of Megumi Fushiguro` lists the shikigami and not the
+    # technique. Folding them together returned all seven of Sukuna's shikigami
+    # as his cursed techniques.
+    Shikigami: shikigami
+    # Physical martial arts. `Divergent Fist` and `Black Flash` are Taijutsu;
+    # `Iaijutsu` is the sword-drawing style behind `Batto Sword Drawing`.
     Taijutsu: physical
+    Iaijutsu: physical
+    # A property of the sorcerer rather than anything they do. `Six Eyes` is
+    # Gojo's and was arriving as one of his cursed techniques.
+    Jujutsu Trait: trait
+    Energy: trait
+    # Things, not abilities.
     Cursed Tool: item
     Cursed Object: item
+    Cursed Corpse: item
+    Cursed Corpse Mutation: item
+    # Not abilities at all. These pages share the `type` field because the wiki
+    # reuses one infobox, and leaving them unmapped would let a soundtrack or a
+    # prefecture through a question about techniques unchallenged.
+    Ending: media
+    Opening: media
+    Soundtrack: media
+    Insert Song: media
+    School: place
+    Building: place
+    Prefecture: place
+    Planet: place
+    Ward: place
+    Transit System: place
+    Barrier Colonies: place
   asks:
     # Longest phrase wins, so `ability` can stay wide while `technique`
     # narrows. Asked for his abilities, Divergent Fist and Black Flash are
     # correctly his; asked for his techniques, they are not.
     - phrases: [cursed technique, cursed techniques, technique, techniques]
       keep: [cursed_technique]
+    # Asked for shikigami, a technique is not one -- `The Well's Unknown Abyss`
+    # is an `Extension Technique` and was arriving among Megumi's ten.
+    - phrases: [shikigami]
+      keep: [shikigami]
