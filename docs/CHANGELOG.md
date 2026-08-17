@@ -6,6 +6,227 @@ record of code changes; this log exists to track intent and doc/workflow
 changes at a coarser grain, including things that don't map to a single
 commit.
 
+## 2026-08-17 (continuation session)
+
+### P0: jjk-set-10 gold corrected against the wiki — dedupe regression resolved
+
+- Corrected `jjk-set-10` (`What are Satoru Gojo's named cursed techniques?`) in
+  `questions/jjk.json` against the Satoru Gojo page's `Cursed Technique`
+  section, in the same family as the `jjk-set-09` / `jjk-set-12` corrections
+  (cited note added, `verified` bumped to 2026-08-17):
+  - Bare names replaced with the wiki's page titles: `Blue` ->
+    `Cursed Technique Lapse: Blue`, `Red` -> `Cursed Technique Reversal: Red`,
+    `Purple` -> `Hollow Technique: Purple`, `Simple Domain` ->
+    `New Shadow Style: Simple Domain`.
+  - `Six Eyes` dropped: the page files it under a separate `Special Abilities`
+    heading and its infobox types it `Jujutsu Trait`, not a cursed technique.
+  - `Curtain` (under `Barrier Techniques`) and `Cursed Technique Lapse -
+    Maximum Cursed Energy Output: Blue` (the wiki's own section heading) added,
+    which the old gold omitted. Gold is now 11 items.
+  - Carries the wiki's own section-heading names as aliases (e.g.
+    `maximum cursed energy output` for the Max Output form), matching how the
+    bank already aliases bare names elsewhere.
+- Full suite still **813 passed**; server restarted (staleness guard).
+- **Canon-run 2026-08-17-1157:** set-10 went from **5/10 -> 11/11 recall (85%
+  precision)** — the dedupe regression is gone and the question returns the
+  wiki's full set. Aggregate: **6/17 exact** (unchanged), canon items
+  **207/212 (97.6%)**, precision **63.0%** (from 60.2%). The two remaining
+  set-10 members are engine-side intruders (`Cursed Energy Reinforcement`, a
+  cursed-energy trait; `Hollow Purple`, a variant that survives dedupe), both
+  tracked by P5/P8 rather than the gold.
+
+### Parallel research agents (P1-P7): findings
+
+Dispatched five read-only research agents in parallel. Results:
+
+- **P1 (template transclusion resolver).** The real corpus has **18 curated
+  list templates / 26 transclusions / 14 host pages** (brief's per-template
+  counts were slightly off; e.g. `{{Shikigami}}` is 3 uses, not 6). Confirmed
+  live that `action=expandtemplates` (not `parse`) returns resolved wikitext
+  (a 14k-char table for `{{Ten Shadows Shikigami}}`). The wiki's canonical
+  shikigami list is the 10 base shikigami; the declared 11-member roster adds
+  `Divine Dog: Totality` and `The Well's Unknown Abyss`. Implementation plan:
+  rewrite the stored `wikitext` (post-crawl, pre-index) so `load_extracted` ->
+  `reextract` ingests the resolved list with zero changes to `index/build.py`.
+- **P2 (Yuta acquired column).** The `acquired` column is **degenerate**: every
+  row in the corpus is `innate`; the extraction prompt (which even special-cases
+  Yuta) wrote copy evidence into free-text `reason` instead. A filter on
+  `acquired == "copied"` is a strict no-op on current data — wiring it alone
+  changes nothing. Needs either re-extraction honoring the instruction or a
+  `reason`-language fallback (which would drop ~13 of Yuta's 21 returned
+  members, ~19% -> ~44-50% precision, recall unchanged at 4/5). Directionally
+  sound; data-blocked.
+- **P3 (Disaster Curses intruders).** The brief's prose-row hypothesis is
+  **wrong**: all 18 intruders arrived via the `Cursed Spirits` category through
+  discovery (no `Disaster Curses` category/page exists; the word "disaster"
+  matches no category). The wiki's own declaration is the Mahito page lead +
+  infobox `affiliation = Mahito's group` (names exactly Mahito, Jogo, Hanami,
+  Dagon; Ko-Guy also carries that affiliation — a wiki inconsistency). A
+  declared roster `match: [disaster curse, disaster curses]`, `subject: Mahito`,
+  `members: [Mahito, Jogo, Hanami, Dagon]` was validated in-process:
+  22 -> 4 members, all 20 other jjk questions byte-identical, canon-run expected
+  6/17 -> **7/17 exact**.
+- **P6 (Zenin Family / Noritoshi Kamo).** The wiki **never connects** the
+  student Noritoshi Kamo to the Zenin Family: his page is filed under
+  `Kamo Family`, affiliation/occupation are "Kamo Clan (Formerly)", and the only
+  Zenin-page mention calls him "the heir of the Kamo Clan". The Sorcerer Clan
+  page's Zenin Members table lists exactly 11 (no Noritoshi). So the gold's 12th
+  member is a canon-based judgment the wiki's pages don't support; the engine is
+  right at 11/11. Fix is a gold decision (remove him -> 11/11 exact, or document
+  the divergence), not an engine change.
+- **P7 (audit jjk gold bank vs wiki).** Swept every jjk set question against the
+  stored crawl. Correct (clean): set-01/02/03, set-06/08/12/13/19, char-01..05.
+  Additional gold-vs-wiki defects found (same correction family as set-10):
+  set-05 includes `Pure Love`, which the wiki never names as a technique (the
+  Rika page names the entry `Cursed Energy Blast` and marks it `(Unnamed)`;
+  "Pure Love" is a soundtrack/domain-train name) — strong; set-18 over-claims
+  Noritoshi Kamo (see P6) — strong; set-11 includes `The Well's Unknown Abyss`
+  (typed `Extension Technique`, not `Shikigami`) and omits Round Deer / Piercing
+  Ox / Tiger Funeral (typed `Shikigami`) — strong/medium; set-07 under-returns
+  (the page's prose names all nine Death Paintings, not three) — strong;
+  set-09's last item `Domain Expansion` is actually the wiki's `Hometown
+  Domain` (table-header vs technique name, also in the declared roster) —
+  medium; set-02 primary `Furnace` is `Divine Flame` on the wiki — weak naming;
+  set-03/set-10 consistency nit (`Hollow Purple` vs `Hollow Technique: Purple`)
+  — weak. None applied this session (P0 was the only gold change).
+
+### P1 implementation (in progress, NOT yet live)
+
+- `scriptengine/ingest/crawler.py`: added `WikiCrawler.expand_templates()`
+  (reuses the throttled `_get`; `action=expandtemplates`).
+- `scriptengine/ingest/templates.py` (new): `declared_lists()`,
+  `find_unresolved()`, `splice()`, `TemplateCache`, `resolve_series()` — splices
+  declared transclusions' expansions into the stored wikitext, incremental via
+  a per-template cache and idempotent because resolved transclusions disappear.
+- `scriptengine/cli.py`: added the `resolve-templates --series jjk [--refresh]`
+  command.
+- **Not yet done:** `template_lists:` block not added to
+  `series/jjk/overrides.yaml`, `tests/test_templates.py` not written, module
+  untested and unrun, no re-index/canon-run. P1 is intentionally paused here.
+
+## 2026-08-17
+
+### Session start: baseline re-established
+
+- Confirmed the working tree matches the continuation brief: branch
+  `character-scoped-questions`, ahead of origin by one commit (`edac08f`,
+  the 29-value `ability_class` map). The prior session log's "one further
+  commit" hash was confirmed as `edac08f`, local-only.
+- Installed missing deps (`pytest`, `lxml`, `httptools`, `watchfiles`) into
+  the active environment. Full suite: **790 passed**, matching the recorded
+  baseline, so nothing regressed before building.
+- Fresh canon-run (server restarted first, per the staleness guard):
+  **6/17 exact (35.3%)**, canon items recovered 205/211 (97.2%), precision
+  58.5% over 17/20. The `edac08f` class-map extension is confirmed neutral:
+  the number matches the last confirmed score exactly.
+  - Yuji's named cursed techniques: **8/8 exact (declared)** — the class filter
+    fix holds.
+  - Yuta's cursed techniques: 80% recall / 17% precision, 20 intruders — the
+    copied-technique problem (Open work item 3) is the single worst question.
+  - Disaster Curses: 4/4 canon but 18% precision — 18 intruders, mostly
+    `Abilities and Powers / Cursed Techniques` prose rows.
+  - Zenin Family remains the one under-return (11/12, Noritoshi Kamo unlinked).
+
+### Template transclusion gap (Open work item 1): investigated and confirmed
+
+- Grepped stored wikitext for `{{` markers on non-chapter/episode pages.
+  Confirmed the Ten Shadows Technique page's `List of Ten Shadows Technique
+  Shikigami` section is a bare `{{Ten Shadows Shikigami}}` transclusion — 28
+  characters, no links, as the brief described.
+- Resolved the template live via the MediaWiki `parse` API action. The
+  wiki's canonical curated list contains **10 shikigami**: Divine Dogs, Nue,
+  Toad, Great Serpent, Max Elephant, Rabbit Escape, Round Deer, Piercing Ox,
+  Tiger Funeral, and Mahoraga (full title `Eight-Handled Sword Divergent Sila
+  Divine General Mahoraga`). Also surfaced: `Shikigami` (6 uses), `Cursed
+  Corpses` / `Cursed Objects` / `Innate Techniques` / `Inherited
+  Techniques` / `Barrier Techniques` / `Cursed Tools` list templates on the
+  umbrella pages. The `parse` action resolves all of them; a resolver that
+  fetches transcluded template content before storage is feasible and is the
+  intended fix (not yet implemented — see work log).
+- This is the number the two existing Megumi shikigami golds (9 each, mutually
+  disagreeing) and the declared 11-member roster all have to be measured
+  against once the transclusion is ingested. The declared roster is still
+  blocked on that.
+
+### Dedupe module: tests written, wired, measured — and the direction is wrong
+
+- `scriptengine/retrieve/dedupe.py` (untracked survivor of last session's
+  killed "duplicate collapsing" agent) turned out to be complete. Its docstring
+  promised `tests/test_dedupe.py`; it did not exist. Wrote it: **23 tests**
+  covering `normalise`, `_fragments`, and `collapse_variants`, including the
+  load-bearing `Divine Dogs` vs `Divine Dog: Totality` non-merge safeguard.
+  All 23 pass. Full suite: **813 passed**.
+- Wired `collapse_variants` into `build_roster` on both return paths: a new
+  `_dedupe_roster` applied inside `_class_filtered`, and an inline pass on the
+  discovered-category path, both running **after** class filtering so a
+  class-rejected member cannot protect its variant. Rejections are recorded in
+  `roster.rejected` with rule `dedupe`.
+- Re-ran canon-run. Aggregate: still **6/17 exact**, precision 58.5% → 60.2%,
+  but canon items recovered **205/211 → 201/211 (95.3%)**. The regression is
+  one question: `What are Satoru Gojo's named cursed techniques?` went 9/10 →
+  5/10. The gold (jjk-set-10) names the **bare** forms — Blue, Red, Purple,
+  Simple Domain — while the dedupe keeps the **qualified** page titles
+  (Cursed Technique Lapse: Blue, Cursed Technique Reversal: Red, Hollow
+  Purple, New Shadow Style: Simple Domain). The pair appears in one answer and
+  the wrong half survives.
+- Key finding: the direction of the collapse is not decidable from the strings
+  alone — `Every cursed technique of Satoru Gojo` (jjk-set-03) uses the
+  **qualified** names in gold and improved 59% → 77% precision, while
+  `What are Satoru Gojo's named cursed techniques?` (jjk-set-10) uses the
+  **bare** names and broke. Two golds of the same wiki disagree on which half
+  of each pair is the answer. Next step: either the asks/phrasing must choose
+  the direction (short-form question → keep bare), or the golds must agree on
+  the wiki's own page titles, or the dedupe must be gated to only fire when
+  both members arrive from the same section. The wiring is in place; the
+  direction decision is open.
+
+### Gojo gold-vs-wiki audit: set-10's gold disagrees with the wiki's own page
+
+- Read the wiki's `[[Cursed Technique]]` section on `Satoru Gojo` directly
+  (stored wikitext). The wiki lists, in order: Limitless (Inherited
+  Technique), Infinity (neutral form), **Cursed Technique Lapse: Blue**
+  (Extension Technique), **Cursed Technique Lapse - Maximum Cursed Energy
+  Output: Blue**, **Cursed Technique Reversal: Red** (Extension Technique),
+  **Hollow Technique: Purple** (Extension Technique), Reverse Cursed
+  Technique, Curtain, Simple Domain, Falling Blossom Emotion (Anti-Domain
+  Technique), Unlimited Void (Domain Expansion) — and **Six Eyes under a
+  separate `Special Abilities` heading**, not under Cursed Technique.
+- The `type` field in the facts store agrees with the class map: Six Eyes =
+  `Jujutsu Trait` (mapped to `trait`), Cursed Technique Lapse: Blue /
+  Reversal: Red / Hollow Technique: Purple = `Extension Technique`,
+  Limitless = `Inherited Technique`, Falling Blossom Emotion =
+  `Anti-Domain Technique`, Unlimited Void = `Domain Expansion`. Bare
+  names (Blue, Red, Purple) and `Hollow Purple` have **no page and no type**;
+  the wiki's page titles are the qualified forms.
+- Verdict on the two golds:
+  - **jjk-set-03** (`Every cursed technique of Satoru Gojo`): correct against
+    the wiki. Uses qualified page titles, carries bare-name aliases
+    (`Cursed Technique Lapse: Blue` aliases `blue`, `lapse blue`), and
+    omits Six Eyes. The dedupe helped it 59% → 77% precision.
+  - **jjk-set-10** (`What are Satoru Gojo's named cursed techniques?`): wrong
+    on two counts per the wiki's own structure. (1) It uses bare names with
+    no aliases (Blue, Red, Purple, Simple Domain) where the wiki's page
+    titles are qualified; the dedupe keeps the qualified titles, so those
+    gold items now miss. (2) It includes **Six Eyes**, which the wiki files
+    under `Special Abilities` and types `Jujutsu Trait` — the exact shape
+    of gold-vs-wiki disagreement fixed for Yuji (Divergent Fist / Black
+    Flash = Taijutsu). This is a gold correction in the same family as
+    `jjk-set-09` / `jjk-set-12`, with the wiki's own page as the citation.
+- The dedupe itself is not at fault: its rule (keep the wiki's qualified page
+  title, drop the bare form) is the fidelity-correct direction. The failure
+  mode is the gold using bare names. Next step is to correct `jjk-set-10`
+  against the wiki (qualified titles, drop Six Eyes, add Curtain and the
+  Maximum Output variant as the wiki lists them), exactly as `jjk-set-09`
+  and `jjk-set-12` were corrected with cited notes.
+
+### Work log (in progress)
+
+- Todo list active: correct `jjk-set-10` against the wiki (qualified titles,
+  drop Six Eyes), then re-measure the dedupe; template resolver (next) to
+  ingest `{{Ten Shadows Shikigami}}` and fix Megumi's roster; Yuta
+  `acquired` column attribution; Disaster Curses prose-row intruders;
+  Zenin Family Noritoshi Kamo link; further canon fixes toward 100%.
+
 ## 2026-08-14
 
 - Added `questions/`, the online-canon question bank, one JSON file per

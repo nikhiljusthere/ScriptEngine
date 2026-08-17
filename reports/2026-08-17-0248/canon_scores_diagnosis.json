@@ -1,0 +1,52 @@
+{
+  "buckets": {
+    "corpus gap": 1,
+    "extraction gap": 2,
+    "retrieval gap": 2,
+    "unlinked page": 1
+  },
+  "items": [
+    {
+      "series": "jjk",
+      "question": "Every cursed technique of Yuta Okkotsu",
+      "item": "Pure Love",
+      "bucket": "corpus gap",
+      "evidence": "not in 'Yuta Okkotsu''s ability prose; appears on 'Chapter 183'"
+    },
+    {
+      "series": "jjk",
+      "question": "Every ability of Satoru Gojo",
+      "item": "Cursed Technique Lapse - Maximum Cursed Energy Output: Blue",
+      "bucket": "extraction gap",
+      "evidence": "named under 'Abilities and Powers / Cursed Technique' on 'Satoru Gojo', not extracted"
+    },
+    {
+      "series": "jjk",
+      "question": "Every ability of Sukuna",
+      "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "bucket": "retrieval gap",
+      "evidence": "reachable as a 'Sukuna' ownership edge"
+    },
+    {
+      "series": "jjk",
+      "question": "Every ability of Sukuna",
+      "item": "Nue: Totality - Merged Beast Agito",
+      "bucket": "extraction gap",
+      "evidence": "named under 'Abilities and Powers / Cursed Techniques' on 'Sukuna', not extracted"
+    },
+    {
+      "series": "jjk",
+      "question": "What are Satoru Gojo's named cursed techniques?",
+      "item": "Six Eyes",
+      "bucket": "retrieval gap",
+      "evidence": "reachable as a 'Satoru Gojo' ownership edge"
+    },
+    {
+      "series": "jjk",
+      "question": "Who are the notable members of the Zenin Family?",
+      "item": "Noritoshi Kamo",
+      "bucket": "unlinked page",
+      "evidence": "page 'Noritoshi Kamo' exists, nothing ties it to 'Zenin Family'"
+    }
+  ]
+}
