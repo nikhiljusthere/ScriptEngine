@@ -151,6 +151,89 @@ rosters:
       - death painting wombs
     subject: Death Painting Wombs
     members: [Choso, Eso, Kechizu, Noranso, Sho-oso, Tanso, Sanso, Kotsuso, Shoso]
+
+  # Every member of the Disaster Curses (Mahito's group)
+  # Declared 2026-08-17: the engine returned 22 for an answer of 4 -- the
+  # largest single gap in this series. All four gold names were in the 22, so
+  # nothing was missing; it was pure padding. Basis was `Cursed Spirits
+  # (Species)`, i.e. every cursed spirit on the wiki, because the question
+  # spells out "unregistered special-grade cursed spirits" and `cursed spirits`
+  # is one of the phrases the `Cursed Spirits` category roster below declares.
+  # Longest phrase wins, and at 14 characters nothing in the question beat it.
+  # The eighteen intruders are the category's own contents -- Kurourushi,
+  # Smallpox Deity, Rika, Rika Orimoto, Naoya Zenin, Ganesha, Kuchisake-Onna,
+  # Michizane Sugawara, Tamamo-no-Mae Incarnate, Akuro-o Otake, Rainbow Dragon,
+  # Finger Bearer, Ko-Guy and the rest -- not anything prose extraction found.
+  #
+  # Shortening the topic to `Every member of the Disaster Curses (Mahito's
+  # group)` does not help, it fails differently: the character path takes over
+  # and answers with eight of Mahito's *techniques* (Idle Transfiguration, Body
+  # Repel, Black Flash ...). That is why this entry carries `subject:` -- the
+  # question names a person, and without it a declared set is discarded.
+  #
+  # There is no `Disaster Curses` page on this wiki. Across all 987 crawled
+  # pages the phrase occurs three times and never as a heading or a list:
+  # `Mahito/Personality` says "even his fellow disaster curses" while
+  # contrasting him with Dagon and Jogo mourning Hanami's passing, and again
+  # "his fellow disaster curses" 68 years later; `Episode 38` calls Dagon "the
+  # disaster curse". The name is the wiki's own, but the wiki never files it as
+  # a set, which is why discovery had nothing to find and fell through.
+  #
+  # What the wiki does state is the group, and it states it four times over.
+  # `affiliation = Mahito's group` is an infobox field on Mahito's own page,
+  # and the three siblings enumerate each other in their leads:
+  #
+  #   Jogo    "an unregistered special grade cursed spirit aligned with
+  #            Mahito, Hanami, and Dagon"
+  #   Hanami  "an unregistered special grade cursed spirit aligned with
+  #            Jogo, Dagon, and Mahito"
+  #   Dagon   "an unregistered special grade cursed spirit aligned with
+  #            Mahito, Jogo, and Hanami"
+  #
+  # `Mahito/Abilities and Powers/Overview` calls him "an unregistered special
+  # grade cursed spirit", and `Mahito/Trivia` closes the set: he "is the only
+  # member of the group to not be born from a fear of natural disasters". Four
+  # names, each of them asserted by pages other than its own.
+  #
+  # The `affiliation` field on its own reaches seven, and that is the number
+  # worth arguing with rather than quietly dropping: `Ko-Guy`, `Choso` and
+  # `Kenjaku` also carry `Mahito's Group`. Each is excluded by what the wiki
+  # says about it, not by what the bank wants. Ko-Guy's lead calls him "a grade
+  # 2 cursed spirit born from humanity's hatred of the locust plague", and the
+  # question asks for the unregistered special grades. Choso and Kenjaku are
+  # both tagged `{{Sub|(Formerly)}}` and neither is a cursed spirit at all --
+  # Choso's `race` is `Death Painting Womb`/`Incarnation` and he is already the
+  # first member of the `Death Painting Wombs` declaration above; Kenjaku's
+  # `race` is `Human` and his categories are `Curse Users`. The battle page
+  # `Satoru Gojo vs. Mahito's Group` lists Choso in `side2`, but that is who
+  # fought on the Fukutoshin Line platform, not who was in the group.
+  #
+  # So the wiki agrees with `jjk-set-06`'s four, and the four below are read
+  # off the wiki rather than copied from the bank: the three sibling leads plus
+  # Mahito's Overview and Trivia say the same thing whether or not a question
+  # exists. `jjk-set-06`'s `absent` already names Kurourushi and Smallpox
+  # Deity, and the old 22 returned both.
+  - name: Disaster Curses (Mahito's group)
+    match:
+      - disaster curses
+      - member of the disaster curses
+      - every member of the disaster curses
+      - mahito's group
+      - "every member of the disaster curses (mahito's group"
+      - "every member of the disaster curses (mahito's group of unregistered special-grade cursed spirits"
+    subject: Mahito
+    # Known cosmetic wart, left alone deliberately. This answers 4/4 and is
+    # the only roster on this wiki that comes back `weak` rather than
+    # `declared`, so the bundle prints "probably not the set you meant" over a
+    # correct answer. The cause is `apply_constraints`: no member page contains
+    # the words `disaster`/`curses`/`group`, so the qualifier verifies against
+    # nothing, the whole set is handed back and `unfiltered` fires. The set is
+    # right and the label is wrong, but the fix is in shared confidence logic
+    # that eight wikis and 160 questions run through, and no other roster
+    # currently reports `weak` -- so it wants its own measurement, not a patch
+    # smuggled in beside a declaration.
+    members: [Mahito, Jogo, Hanami, Dagon]
+
   # The only "confident and wrong" answer in the whole run: it reported
   # `declared` confidence and returned none of the three. Following `affiliation`
   # from the school reaches 22 people -- every student, teacher and assistant
