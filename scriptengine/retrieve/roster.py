@@ -46,6 +46,7 @@ from scriptengine.config import (
     subject_ranking,
 )
 from scriptengine.retrieve import citations as cite
+from scriptengine.retrieve import dedupe
 from scriptengine.retrieve import semantics as ontology
 from scriptengine.stores.facts import NOISE_FACT_KEYS, FactStore, rank_subjects
 
@@ -844,6 +845,20 @@ def build_roster(
                 members = [m for m in members if m.name.lower() in allowed]
                 rejected = list(rejected) + class_rejected
 
+            # Deduplicate after class filtering, while the names are still in
+            # order and before the Roster is built.
+            member_names = [m.name for m in members]
+            deduped, dedupe_rejected = dedupe.collapse_variants(member_names)
+            if dedupe_rejected:
+                allowed_d = {name.lower() for name in deduped}
+                members = [m for m in members if m.name.lower() in allowed_d]
+                for entry in dedupe_rejected:
+                    rejected = list(rejected) + [{
+                        "name": entry["name"],
+                        "reason": f"duplicate of {entry['covered_by']!r} ({entry['rule']})",
+                        "rule": "dedupe",
+                    }]
+
     roster = Roster(
         subject=subject,
         basis=f"{basis} ({group_label})" if group_label else basis,
@@ -1406,11 +1421,37 @@ def _class_filtered(
         return roster
     names = [member.name for member in roster.members]
     kept, rejected = drop_off_class(store, names, query, overrides)
-    if not rejected:
+    if rejected:
+        allowed = {name.lower() for name in kept}
+        roster.members = [m for m in roster.members if m.name.lower() in allowed]
+        roster.rejected = list(roster.rejected) + rejected
+    return _dedupe_roster(roster)
+
+
+def _dedupe_roster(roster: "Roster") -> "Roster":
+    """Collapse variant names (Blue / Cursed Technique Lapse: Blue).
+
+    A roster is scored on membership, so two names for the same ability inflate
+    the count and appear as intruders. The dedupe is applied here, after class
+    filtering, so a member the wiki classes out of scope is already gone and
+    cannot protect its variant from a rule it would be caught by.
+
+    The guarantee: never returns empty from a non-empty roster.
+    """
+    if not roster.members:
+        return roster
+    names = [member.name for member in roster.members]
+    kept, dropped = dedupe.collapse_variants(names)
+    if not dropped:
         return roster
     allowed = {name.lower() for name in kept}
     roster.members = [m for m in roster.members if m.name.lower() in allowed]
-    roster.rejected = list(roster.rejected) + rejected
+    for entry in dropped:
+        roster.rejected = list(roster.rejected) + [{
+            "name": entry["name"],
+            "reason": f"duplicate of {entry['covered_by']!r} ({entry['rule']})",
+            "rule": "dedupe",
+        }]
     return roster
 
 
