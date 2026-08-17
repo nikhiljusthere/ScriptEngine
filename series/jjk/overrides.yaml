@@ -169,10 +169,25 @@ rosters:
   # Who are the Death Painting Wombs?
   # Declared 2026-08-15: the engine resolved this to `Gold matches exactly. Template gallery only shows first 3 but prose lists all 9.` and returned the wrong set. Members transcribed from `Cursed Womb: Death Painting`.
   - name: Who are the Death Painting Wombs
+    # `Every named Cursed Womb: Death Painting` asks this same question in the
+    # wiki's own page-title wording, reached none of the phrases above, and so
+    # fell through to the `Cursed Womb: Death Paintings` *category* and answered
+    # with three -- Choso, Eso and Kechizu, the only three with pages. The other
+    # six exist on this wiki in one sentence and nowhere else: "The identities
+    # of the other six Death Painting Wombs are as follows: Noranso, Sho-oso,
+    # Tanso, Sanso, Kotsuso, and Shoso." (Chapter 144). A category cannot hold a
+    # name that has no page, which is what this declaration is for.
+    #
+    # The three added phrases are quoted because they contain `: `, and an
+    # unquoted `a: b` inside an inline or block list is a YAML *mapping*. That
+    # has cost this project four members across three wikis already.
     match:
       - who are the death painting wombs
       - the death painting wombs
       - death painting wombs
+      - "every named cursed womb: death painting"
+      - "named cursed womb: death painting"
+      - "cursed womb: death painting"
     subject: Death Painting Wombs
     members: [Choso, Eso, Kechizu, Noranso, Sho-oso, Tanso, Sanso, Kotsuso, Shoso]
 
