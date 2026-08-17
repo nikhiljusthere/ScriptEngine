@@ -15,7 +15,7 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
       ],
-      "note": "One of the original seventeen. `Yuji Itadori vs. Sukuna` was in this list and is not a page on this wiki: what exists is `Yuji, Maki & Hana vs. Sukuna` -- three on one -- and `Jujutsu Sorcerers vs. Sukuna`, a group raid. Neither is a 1v1, which is what this question asks for, so the item was never answerable and was removed rather than counted against the engine. Bank audit 2026-08-14: added 3 item(s) the wiki documents and the bank omitted: Yuji Itadori vs. Hiromi Higuruma, Yuji Itadori vs. Kinji Hakari, Yuji Itadori vs. Panda. Each verified against the cited page's raw wikitext.",
+      "note": "One of the original seventeen. `Yuji Itadori vs. Sukuna` was in this list and is not a page on this wiki: what exists is `Yuji, Maki & Hana vs. Sukuna` -- three on one -- and `Jujutsu Sorcerers vs. Sukuna`, a group raid. Neither is a 1v1, which is what this question asks for, so the item was never answerable and was removed rather than counted against the engine. Bank audit 2026-08-14: added 3 item(s) the wiki documents and the bank omitted: Yuji Itadori vs. Hiromi Higuruma, Yuji Itadori vs. Kinji Hakari, Yuji Itadori vs. Panda. Each verified against the cited page's raw wikitext. Corrected 2026-08-17: naming only, no membership change. The gold item `Yuji Itadori vs. Ko Guy` is spelled without the hyphen the wiki uses; the page is `Yuji Itadori vs. Ko-Guy` (url `.../wiki/Yuji_Itadori_vs._Ko-Guy`), the opponent's page is `Ko-Guy`, and the store already carries `yuji itadori vs. ko-guy` and `yuji vs. ko-guy` as aliases of that node, none of which the gold could reach. Aliases added rather than the item renamed, so the item keeps the name the rest of the bank uses.",
       "answer": [
         {
           "item": "Yuji Itadori vs. Aoi Todo",
@@ -44,7 +44,9 @@
         {
           "item": "Yuji Itadori vs. Ko Guy",
           "aliases": [
-            "yuji vs ko guy"
+            "yuji vs ko guy",
+            "yuji itadori vs. ko-guy",
+            "yuji vs. ko-guy"
           ]
         },
         {
@@ -221,14 +223,20 @@
         "https://jujutsu-kaisen.fandom.com/wiki/Shikigami",
         "https://www.cbr.com/megumi-jjk-ten-shadows-shikigami-ranked/"
       ],
-      "note": "Added 2026-08-04. `shikigami` was not in the fixed English kind vocabulary, so this question never became character-scoped at all and returned none of the nine sitting in the table; series words now live in overrides.yaml under `ability_kinds:`. 0 to 4/9. The remaining five are the largest single retrieval-gap cluster in the bank -- they are extracted rows that still do not come back.",
+      "note": "Added 2026-08-04. `shikigami` was not in the fixed English kind vocabulary, so this question never became character-scoped at all and returned none of the nine sitting in the table; series words now live in overrides.yaml under `ability_kinds:`. 0 to 4/9. The remaining five are the largest single retrieval-gap cluster in the bank -- they are extracted rows that still do not come back. Corrected 2026-08-17 in both directions, so the count moved for reasons that have nothing to do with the score. Removed `Round Deer` and `Piercing Ox`: both pages carry `user = Sukuna` and name no other user, both debut in `Chapter 218`, and both Usage sections open with the same sentence -- `subjugated by Sukuna after he took control of Megumi Fushiguro's body`. They are shikigami of the Ten Shadows Technique that Megumi never summoned, and the `Megumi Fushiguro` page does not mention either one. Added `Divine Dog: Totality`, which the bank had only as a stray alias string on `Divine Dogs`: it is its own page, `type = Shikigami`, `user = Megumi Fushiguro Sukuna`, and the `Megumi Fushiguro` page lists it as a separate bolded entry beside Divine Dogs -- the same prefix pair jjk-char-03 and jjk-char-05 already treat as two abilities. The eight that remain are exactly the `type = Shikigami` pages whose `user` fact names Megumi, and exactly what his page enumerates. Now agrees item-for-item with jjk-set-11. `Round Deer` and `Piercing Ox` remain gold on `jjk-char-05`, `Every ability of Sukuna`, where they belong.",
       "answer": [
         {
           "item": "Divine Dogs",
           "aliases": [
             "divine dog",
-            "demon dogs",
-            "divine dogs totality"
+            "demon dogs"
+          ]
+        },
+        {
+          "item": "Divine Dog: Totality",
+          "aliases": [
+            "divine dog totality",
+            "totality"
           ]
         },
         {
@@ -260,21 +268,9 @@
           ]
         },
         {
-          "item": "Round Deer",
-          "aliases": [
-            "deer"
-          ]
-        },
-        {
-          "item": "Piercing Ox",
-          "aliases": [
-            "ox",
-            "bull"
-          ]
-        },
-        {
           "item": "Mahoraga",
           "aliases": [
+            "eight-handled sword divergent sila divine general mahoraga",
             "eight handled sword divergent sila divine general mahoraga"
           ]
         }
@@ -294,7 +290,7 @@
         "https://jujutsu-kaisen.fandom.com/wiki/Copy",
         "https://www.cbr.com/yuta-okkotsu-cursed-techniques/"
       ],
-      "note": "Added 2026-08-04.",
+      "note": "Added 2026-08-04. Corrected 2026-08-17: `Pure Love` removed. It was never a technique of Yuta's; the engine was right to return four. The string `Pure Love` does not occur once in the `Yuta Okkotsu` page's raw wikitext, and his `=== [[Cursed Technique]]s ===` section names Rika, Complete Manifestation, Copy, Cursed Speech, Shikigami, Sky Manipulation, Thin Ice Breaker, Technique Extinguishment, Maximum Output: Jacob's Ladder, G Warstaff, Shrine, Brain Transplant, Limitless, Infinity, Cursed Technique Lapse: Blue, Hollow Technique: Purple, Reverse Cursed Technique, Authentic Mutual Love and Unlimited Void -- no Pure Love among them. Where the phrase does appear it belongs to someone else or to nobody: the `Rika Orimoto` page gives the Jujutsu Kaisen 0 finisher the heading `Cursed Energy Blast`, tags it `(Unnamed)`, describes it as `an energy beam of \"Pure Love\", the strongest curse of all` fired by Rika, and attributes the beam to her; the `Yuta Okkotsu vs. Suguru Geto` and `Yuta Okkotsu/Synopsis` pages use it only as Yuta's line of dialogue answering Geto's `womanizer` taunt. The only place `Pure Love` is a proper-noun technique on this wiki is `Private Pure Love Train`, Kinji Hakari's `type = Innate Technique`, plus the pachinko manga it is named after. There is no node and no alias for `Pure Love` in the store because there is no page for it to be a name of. Same family as the jjk-set-09 / jjk-set-12 corrections: a phrase the prose uses descriptively was banked as if it were a named technique.",
       "answer": [
         {
           "item": "Copy",
@@ -312,12 +308,6 @@
         {
           "item": "Reverse Cursed Technique",
           "aliases": []
-        },
-        {
-          "item": "Pure Love",
-          "aliases": [
-            "pure love beam"
-          ]
         },
         {
           "item": "Authentic Mutual Love",
@@ -377,7 +367,7 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Womb:_Death_Painting"
       ],
-      "note": "A thinly-filled set, which is the point: the wiki records nine Death Paintings and names only three of them. A retriever that returns more than three has invented the rest, and one that returns the number nine has answered a different question.",
+      "note": "Was banked as a thinly-filled set on the claim that the wiki records nine Death Paintings and names only three of them, so that a retriever returning more than three had invented the rest. Corrected 2026-08-17: that claim is contradicted by the cited page's own prose, and the gold under-claimed. `Cursed Womb: Death Painting` names all nine. After the three incarnated brothers are introduced, the page says verbatim `The identities of the other six Death Painting Wombs are as follows:` and then gives six bolded Nihongo names with kanji and romaji -- `Noranso` (膿爛相), `Sho-oso` (青瘀相), `Tanso` (噉相), `Sanso` (散相), `Kotsuso` (骨相) and `Shoso` (焼相) -- cited to Chapter 144. The six were named in the manga after this question's premise was written; the six have no pages of their own and so no nodes in the store, which is why nothing in the structural tables contradicted the old gold. The bank also already knew this: `jjk-set-19` was verified against the same page on 2026-08-15 and golds all nine. Two questions on one page cannot answer three and nine, and the page says nine.",
       "answer": [
         {
           "item": "Choso",
@@ -391,6 +381,30 @@
         },
         {
           "item": "Kechizu",
+          "aliases": []
+        },
+        {
+          "item": "Noranso",
+          "aliases": []
+        },
+        {
+          "item": "Sho-oso",
+          "aliases": []
+        },
+        {
+          "item": "Tanso",
+          "aliases": []
+        },
+        {
+          "item": "Sanso",
+          "aliases": []
+        },
+        {
+          "item": "Kotsuso",
+          "aliases": []
+        },
+        {
+          "item": "Shoso",
           "aliases": []
         }
       ]
@@ -1239,11 +1253,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-15",
+      "verified": "2026-08-17",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Gojo's 10 named techniques",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Corrected 2026-08-17 against the wiki's own page, in the same family as the jjk-set-09 / jjk-set-12 corrections. The page's `Cursed Technique` section titles each technique with its qualified name, so the gold now uses the wiki's page titles: `Cursed Technique Lapse: Blue`, `Cursed Technique Reversal: Red`, `Hollow Technique: Purple`, `New Shadow Style: Simple Domain`, and `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue` (the wiki's own section heading). `Six Eyes` removed: the page files it under a separate `Special Abilities` heading and its infobox types it `Jujutsu Trait`, not a cursed technique. `Curtain` added, which the page lists under `Barrier Techniques`. Each verified against the cited page's raw wikitext.",
       "answer": [
         {
           "item": "Limitless",
@@ -1251,38 +1265,58 @@
         },
         {
           "item": "Infinity",
-          "aliases": []
+          "aliases": [
+            "muryokusho"
+          ]
         },
         {
-          "item": "Blue",
-          "aliases": []
+          "item": "Cursed Technique Lapse: Blue",
+          "aliases": [
+            "blue",
+            "lapse blue"
+          ]
         },
         {
-          "item": "Red",
-          "aliases": []
+          "item": "Cursed Technique Lapse - Maximum Cursed Energy Output: Blue",
+          "aliases": [
+            "maximum cursed energy output",
+            "maximum output blue"
+          ]
         },
         {
-          "item": "Purple",
-          "aliases": []
+          "item": "Cursed Technique Reversal: Red",
+          "aliases": [
+            "red",
+            "reversal red"
+          ]
+        },
+        {
+          "item": "Hollow Technique: Purple",
+          "aliases": [
+            "hollow purple",
+            "purple"
+          ]
         },
         {
           "item": "Reverse Cursed Technique",
           "aliases": []
         },
         {
-          "item": "Six Eyes",
+          "item": "Curtain",
+          "aliases": []
+        },
+        {
+          "item": "New Shadow Style: Simple Domain",
+          "aliases": [
+            "simple domain"
+          ]
+        },
+        {
+          "item": "Falling Blossom Emotion",
           "aliases": []
         },
         {
           "item": "Unlimited Void",
-          "aliases": []
-        },
-        {
-          "item": "Simple Domain",
-          "aliases": []
-        },
-        {
-          "item": "Falling Blossom Emotion",
           "aliases": []
         }
       ]
@@ -1341,7 +1375,7 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Megumi's 9 named shikigami",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Corrected 2026-08-17: `The Well's Unknown Abyss` removed, on the same structural evidence that carried jjk-set-09 and jjk-set-12. Its page's infobox reads `type = Extension Technique` while every other item on this list reads `type = Shikigami`, and its lead sentence says outright that it `is a Ten Shadows Technique extension technique that uses the Nue and Toad shikigami as a base` -- it is a move that fuses two shikigami into winged toads, not a shikigami Megumi has. Its own infobox agrees: `derived ability = Ten Shadows Technique / Toad / Nue`. It stays gold on `jjk-char-03`, `Every ability of Megumi Fushiguro`, where the wider claim is the right one. The remaining eight are exactly the `type = Shikigami` pages whose `user` fact names Megumi Fushiguro, and exactly the shikigami the `Megumi Fushiguro` page itself lists under `=== [[Cursed Technique]] ===`. `Mahoraga` gains the wiki page title as an alias rather than being renamed: the store holds both an unresolved stub node `Mahoraga` and the real page `Eight-Handled Sword Divergent Sila Divine General Mahoraga`, and the alias makes the gold reach the page that carries the facts. Now agrees item-for-item with jjk-set-04.",
       "answer": [
         {
           "item": "Divine Dogs",
@@ -1364,10 +1398,6 @@
           "aliases": []
         },
         {
-          "item": "The Well's Unknown Abyss",
-          "aliases": []
-        },
-        {
           "item": "Max Elephant",
           "aliases": []
         },
@@ -1377,7 +1407,9 @@
         },
         {
           "item": "Mahoraga",
-          "aliases": []
+          "aliases": [
+            "eight-handled sword divergent sila divine general mahoraga"
+          ]
         }
       ]
     },
@@ -1665,7 +1697,7 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Notable Zenin Family members Gold corrected 2026-08-15 from `Sorcerer Clan`: the wiki lists 11 members and the bank had 8; added Toji Fushiguro, Jinichi Zenin, Ranta Zenin, Chojuro Zenin, Nobuaki Zenin. Corrected 2026-08-16: `Touji Fushiguro` and `Toji Fushiguro` were both listed, one person counted twice. The wiki's page is `Toji Fushiguro` and `Touji Fushiguro` does not exist, so the duplicate is removed rather than aliased -- an alias would let two gold items resolve to one returned member and inflate recall.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `group`. Notable Zenin Family members Gold corrected 2026-08-15 from `Sorcerer Clan`: the wiki lists 11 members and the bank had 8; added Toji Fushiguro, Jinichi Zenin, Ranta Zenin, Chojuro Zenin, Nobuaki Zenin. Corrected 2026-08-16: `Touji Fushiguro` and `Toji Fushiguro` were both listed, one person counted twice. The wiki's page is `Toji Fushiguro` and `Touji Fushiguro` does not exist, so the duplicate is removed rather than aliased -- an alias would let two gold items resolve to one returned member and inflate recall. Corrected 2026-08-17: `Noritoshi Kamo` removed. He is a member of a different one of the Big Three Families, and the wiki files him there structurally, not narratively. The cited `Sorcerer Clan` page is a tabber; its Zenin tab's `====Members====` table holds exactly eleven rows -- Naobito, Naoya, Ogi, Maki, Mai, Toji Fushiguro, Megumi Fushiguro, Jinichi, Ranta, Chojuro, Nobuaki -- and Noritoshi Kamo appears instead in the same page's Kamo tab Members table, described there as the clan's heir through `Blood Manipulation`. The sub-page `Sorcerer Clan/Zenin Clan` agrees: its `==Members==` gallery lists the same nine plus Toji and Maki under `Outcasts`, and the only sentence on the whole page that mentions Noritoshi calls him `the heir of the Kamo Clan`, cited as the reason killing Megumi would cost the Zenin standing. His own page carries `Category:Kamo Family` and no Zenin category, infobox `affiliation = Kyoto Jujutsu High / Kamo Clan (Formerly)`, and infobox `occupation` including `Heir of the Kamo Clan`. The only Zenin-categorised page his name appears on is the battle `Maki Zenin & Noritoshi Kamo vs. Naoya Zenin`, which carries that category for Maki and Naoya. The gold over-claimed at 12; the wiki supports 11, which is what the engine returns.",
       "answer": [
         {
           "item": "Naobito Zenin",
@@ -1689,10 +1721,6 @@
         },
         {
           "item": "Naoya Zenin",
-          "aliases": []
-        },
-        {
-          "item": "Noritoshi Kamo",
           "aliases": []
         },
         {
