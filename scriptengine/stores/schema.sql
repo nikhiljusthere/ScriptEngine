@@ -195,3 +195,28 @@ CREATE TABLE IF NOT EXISTS semantics (
 );
 
 CREATE INDEX IF NOT EXISTS idx_semantics_type ON semantics(semantic_type);
+
+-- What each page *names*, as against what it mentions.
+--
+-- A wiki bolds a thing it is naming and leaves a passing reference in plain
+-- prose, and that distinction is the one an enumeration needs. Measured on
+-- Sukuna's page: every real technique it lists is a bolded wikilink or a
+-- bolded `{{Nihongo}}` argument, and none of the six names that were arriving
+-- as his cursed techniques -- `Metamorphosis`, `Enchain`, `Totality`,
+-- `Cursed Energy Reinforcement` among them -- is either.
+--
+-- Stored rather than derived on demand because `strip_markup` removes the
+-- emphasis along with the rest of the markup, so a chunk cannot be asked. Also
+-- not the same signal as "has a page of its own": `Cursed Technique Lapse -
+-- Maximum Cursed Energy Output: Blue` has no page anywhere on the wiki and is
+-- named in bold on Gojo's.
+--
+-- Rebuilt by `index` with the rest of the derived tables; it holds no
+-- inference and costs nothing to recompute.
+CREATE TABLE IF NOT EXISTS emphasis (
+    document_id     INTEGER NOT NULL,
+    name            TEXT    NOT NULL,
+    PRIMARY KEY (document_id, name)
+);
+
+CREATE INDEX IF NOT EXISTS idx_emphasis_name ON emphasis(name COLLATE NOCASE);

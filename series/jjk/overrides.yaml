@@ -499,3 +499,40 @@ ability_class:
     # is an `Extension Technique` and was arriving among Megumi's ten.
     - phrases: [shikigami]
       keep: [shikigami]
+
+# Curated lists this wiki keeps inside a transclusion.
+#
+# The crawler never fetches the `Template:` namespace, so a section whose whole
+# body is `{{Ten Shadows Shikigami}}` is stored as 28 characters holding no
+# links, and the wiki's own canonical list is invisible to the index. That one
+# expands to 14,248 characters naming all ten of Megumi's shikigami.
+#
+# 738 of this wiki's 7,601 stored sections are a single template call rendering
+# to nothing, but most are furniture: `{{Scroll box}}` 318, `{{Comment}}` 235,
+# `{{Section stub}}` 65, plus chapter and episode navigation boxes. Declared
+# here are only the 20 that hold entities -- galleries and set lists. `{{Q}}`
+# is left out as a one-off with no members.
+#
+# Re-derive the candidates with: for each stored section, a body matching
+# `^\{\{[^}|]+\}\}$` whose rendered text is empty.
+template_lists:
+  - Ten Shadows Shikigami
+  - Shikigami
+  - Death Painting Wombs Gallery
+  - Cursed Wombs
+  - Domain Expansions
+  - Cursed Tools
+  - Cursed Objects
+  - Cursed Corpses
+  - Cursed Victims
+  - Cursed Spirit Manipulation
+  - Cursed Spirits Gallery
+  - Curse Users Gallery
+  - Culling Game Players Gallery
+  - Jujutsu Sorcerers Gallery
+  - Tokyo Jujutsu High Gallery
+  - Kyoto Jujutsu High Gallery
+  - Simuria Gallery
+  - Gachinko Fight Club
+  - Time Vessel Association
+  - Shibuya Incident Timeline

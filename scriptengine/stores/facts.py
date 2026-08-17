@@ -161,7 +161,8 @@ class FactStore:
         """Drop everything and recreate. Indexing is idempotent by rebuilding."""
         tables = [
             "chunk_nodes", "chunks_fts", "chunks", "facts", "edges",
-            "aliases", "nodes", "categories", "sections", "documents", "meta",
+            "aliases", "nodes", "categories", "emphasis", "sections",
+            "documents", "meta",
         ]
         for table in tables:
             self.connection.execute(f"DROP TABLE IF EXISTS {table}")
@@ -696,6 +697,48 @@ class FactStore:
             "CREATE INDEX IF NOT EXISTS idx_semantics_type"
             " ON semantics(semantic_type)"
         )
+
+    def ensure_emphasis(self) -> None:
+        """Names each page puts in bold: what it names, not what it mentions.
+
+        Rebuilt by `index` like `documents` and `chunks`, because it is derived
+        from the stored wikitext and costs nothing to recompute -- unlike
+        `semantics`, `abilities` and `relations`, which hold local inference and
+        deliberately survive `reset()`.
+        """
+        self.connection.execute(
+            "CREATE TABLE IF NOT EXISTS emphasis ("
+            " document_id INTEGER NOT NULL, name TEXT NOT NULL,"
+            " PRIMARY KEY (document_id, name))"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS idx_emphasis_name"
+            " ON emphasis(name COLLATE NOCASE)"
+        )
+
+    def add_emphasis(self, document_id: int, names: Iterable[str]) -> None:
+        self.connection.executemany(
+            "INSERT OR IGNORE INTO emphasis (document_id, name) VALUES (?, ?)",
+            [(document_id, name.strip()) for name in names if name.strip()],
+        )
+
+    def emphasised_on(self, title: str) -> set[str]:
+        """The folded names this page bolds, or an empty set.
+
+        Empty when the page has none *and* when the table has not been built
+        yet, and the caller must treat those the same: a filter that fired on
+        an unbuilt table would empty every roster on a store indexed before
+        this existed.
+        """
+        try:
+            rows = self.connection.execute(
+                "SELECT e.name FROM emphasis e JOIN documents d"
+                " ON e.document_id = d.id WHERE d.title = ? COLLATE NOCASE",
+                (title,),
+            ).fetchall()
+        except sqlite3.OperationalError:
+            return set()
+        return {(row["name"] or "").strip().lower() for row in rows if row["name"]}
 
     def ensure_abilities(self) -> None:
         """Create the extracted-abilities table if this store predates it.

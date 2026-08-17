@@ -619,6 +619,75 @@ def extract_citations(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Emphasis: what the page names, as against what it mentions
+# ─────────────────────────────────────────────────────────────────────────────
+
+# A bolded wikilink -- `'''[[Name]]'''` or `'''[[Target|Name]]'''` -- and a
+# bolded first argument of `{{Nihongo}}`, which is how this wiki writes a name
+# it is about to gloss in Japanese.
+#
+# Plain `'''bold'''` is deliberately NOT one of these. Measured on Sukuna's
+# page, plain bold matches 59 strings and includes four of the six intruders
+# this signal exists to remove -- `Metamorphosis`, `Enma`, `Incarnation` and
+# `Cursed Energy Reinforcement` -- because a wiki also bolds for emphasis
+# mid-sentence. The two forms below match 0 of the 6 and all of the real
+# techniques.
+_BOLD_LINK = re.compile(r"'{3,5}\s*\[\[([^\]]+)\]\]\s*'{3,5}")
+_BOLD_NIHONGO = re.compile(r"\{\{\s*Nihongo\s*\|\s*'{3,5}(.+?)'{3,5}", re.IGNORECASE)
+
+
+def emphasised_names(text: str) -> list[str]:
+    """Every name the page puts in bold, in order, deduplicated.
+
+    A wiki bolds what it *names* and leaves what it merely mentions in plain
+    prose, and that distinction is the one an enumeration needs. Measured on
+    Sukuna's page: `Cleave`, `Dismantle`, `Divine Flame`, `Hiten`, `Kamutoke`,
+    `Malevolent Shrine`, `Shrine` and `Spiderweb` are bold, while
+    `Metamorphosis`, `Enchain`, `Enma`, `Totality`, `Incarnation` and
+    `Cursed Energy Reinforcement` -- all six of the intruders on
+    `Every cursed technique of Sukuna` -- are not.
+
+    It cannot be recovered later. `strip_markup` removes the quotes along with
+    everything else, so by the time a chunk is stored the page's own emphasis
+    is gone, which is why this runs at index time and the result is stored.
+
+    Having a page of its own is *not* the same signal and does not replace this
+    one. `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue` has no
+    page anywhere on the wiki and is bold on Gojo's, which is what makes it a
+    named technique rather than a phrase in a sentence.
+    """
+    body = text or ""
+    raw: list[str] = []
+    for match in _BOLD_LINK.finditer(body):
+        # A piped link names its *target* and renders its label. Both are kept,
+        # because the bank spells some entries one way and the page the other.
+        target = match.group(1)
+        raw.append(target.split("|")[0])
+        raw.append(target.split("|")[-1])
+    for match in _BOLD_NIHONGO.finditer(body):
+        inner = match.group(1)
+        raw.append(inner)
+        raw.extend(re.findall(r"\[\[([^\]|]+)", inner))
+        raw.extend(re.findall(r"\[\[[^\]|]+\|([^\]]+)", inner))
+
+    found: list[str] = []
+    seen: set[str] = set()
+    for candidate in raw:
+        cleaned = re.sub(r"\[\[|\]\]", "", _QUOTES.sub("", candidate))
+        cleaned = _HTML_TAG.sub("", cleaned).strip(" '\"\n\t·—-")
+        # A whole clause in bold is emphasis, not a name. The longest real one
+        # measured is `Cursed Technique Lapse - Maximum Cursed Energy Output:
+        # Blue` at eight words, so the cap only excludes prose.
+        if not cleaned or len(cleaned) > 90 or len(cleaned.split()) > 12:
+            continue
+        key = cleaned.lower()
+        if key not in seen:
+            seen.add(key)
+            found.append(cleaned)
+    return found
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Markup stripping
 # ─────────────────────────────────────────────────────────────────────────────
 

@@ -23,6 +23,7 @@ from scriptengine.ingest.canon import (
 from scriptengine.index.embedder import Embedder
 from scriptengine.ingest.crawler import load_extracted, load_manifest
 from scriptengine.ingest.documents import WikiPage
+from scriptengine.ingest.wikitext import emphasised_names
 from scriptengine.stores.facts import FactStore
 from scriptengine.stores.vectors import VectorStore
 
@@ -145,6 +146,17 @@ def _load_documents(
         )
 
         store.add_categories(document_id, page.categories)
+
+        # What this page *names*, as against what it merely mentions. Computed
+        # here because `strip_markup` removes the page's own emphasis along
+        # with everything else, so once a chunk is stored the distinction is
+        # unrecoverable. See `wikitext.emphasised_names`.
+        store.add_emphasis(
+            document_id,
+            emphasised_names(
+                "\n".join(section.wikitext or "" for section in page.sections)
+            ),
+        )
 
         # A kept page may still have a discounted work's corner in it,
         # `Goku/Biography` carries a seven-saga Super Dragon Ball Heroes
