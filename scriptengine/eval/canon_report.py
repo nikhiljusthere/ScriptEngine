@@ -150,6 +150,13 @@ def render(scores: dict, diagnosis: dict, evals: dict, meta: dict,
     w("")
     w("| | |")
     w("|---|---:|")
+    # First, because it is the one that says whether the questions were
+    # answered. Recall and precision can both look healthy while this does not
+    # move: 95.4% and 63.1% on a run where 54 of 142 questions were right.
+    w(f"| **answered exactly right** | **{summary.get('exact_answers', 0)}/"
+      f"{summary.get('exact_of', 0)}** "
+      f"({_pct(summary.get('exact_rate', 0))})"
+      f"{_delta(summary.get('exact_rate', 0), prev.get('exact_rate'))} |")
     w(f"| canon items recovered | **{summary.get('canon_found', 0)}/"
       f"{summary.get('canon_total', 0)}** "
       f"({_pct(summary.get('canon_recall', 0))})"

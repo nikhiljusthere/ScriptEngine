@@ -1335,6 +1335,11 @@ def canon_run(
     table = Table(title=f"Canon run: {result['meta']['run_id']}")
     table.add_column("")
     table.add_column("", justify="right")
+    # First row, because it is the one that says whether the questions were
+    # answered. The other two can both look healthy while it does not move.
+    table.add_row("answered exactly right",
+                  f"{summary.get('exact_answers', 0)}/{summary.get('exact_of', 0)} "
+                  f"({summary.get('exact_rate', 0):.1%})")
     table.add_row("canon items recovered",
                   f"{summary['canon_found']}/{summary['canon_total']} "
                   f"({summary['canon_recall']:.1%})")

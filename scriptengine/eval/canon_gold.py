@@ -238,12 +238,24 @@ def summarise(rows: list[dict], facts: list[dict] | None = None) -> dict:
     scored = [r for r in rows if not r["recall_only"]]
     scored_found = sum(r["found"] for r in scored)
     scored_returned = sum(r["returned"] for r in scored)
+    # How many questions came back *right*. Aggregated over the same subset
+    # precision uses, and for the same reason: a `scope: core` gold is a
+    # curated subset the engine is correct to exceed.
+    #
+    # This is the number to drive, because the other two can both look healthy
+    # while it does not move. Measured 2026-08-16: 95.4% recall at 63.1%
+    # precision, and 54 of 142 questions right -- with 57 more at *perfect*
+    # recall and still wrong, purely from what came back beside the answer.
+    exact_right = sum(1 for r in scored if r["exact"])
     return {
         "questions": len(rows),
         "canon_found": total_found,
         "canon_total": total_canon,
         "canon_recall": round(total_found / total_canon, 4) if total_canon else 0.0,
         "members_returned": total_returned,
+        "exact_answers": exact_right,
+        "exact_of": len(scored),
+        "exact_rate": round(exact_right / len(scored), 4) if scored else 0.0,
         "precision_closed": round(scored_found / scored_returned, 4) if scored_returned else 0.0,
         "precision_over": f"{len(scored)}/{len(rows)}",
         "at_recall_zero": sum(1 for r in rows if r["found"] == 0),
@@ -266,6 +278,8 @@ def main() -> None:
     summary = summarise(scores["rows"], facts)
 
     print("\n" + "=" * 78)
+    print(f"answered exactly right: {summary['exact_answers']}/{summary['exact_of']} "
+          f"({summary['exact_rate']:.1%})")
     print(f"canon items recovered : {summary['canon_found']}/{summary['canon_total']} "
           f"({summary['canon_recall']:.1%})")
     print(f"members returned      : {summary['members_returned']}, of which "
