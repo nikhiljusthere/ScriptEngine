@@ -123,14 +123,38 @@ rosters:
       - every shikigami of megumi fushiguro
       - shikigami of megumi fushiguro
     subject: Megumi Fushiguro
-    # All eleven, transcribed from `Ten Shadows Technique`, which names every
-    # one of them. The bank asks this twice and disagrees with itself: 
-    # `Every shikigami of Megumi Fushiguro` lists Piercing Ox and Round Deer and
-    # omits Divine Dog: Totality and The Well's Unknown Abyss, while
-    # `What are Megumi Fushiguro's named shikigami?` does the exact reverse.
-    # Both are subsets of what the wiki states, so the wiki is followed and each
-    # question pays two members the other one wants.
-    members: [Divine Dogs, "Divine Dog: Totality", Nue, Great Serpent, Toad, Max Elephant, Rabbit Escape, Round Deer, Piercing Ox, Mahoraga, The Well's Unknown Abyss]
+    # Eight, and the wiki computes them rather than a reader choosing: the
+    # pages it types `Shikigami` whose `user` field names Megumi. Re-derive with
+    #
+    #   SELECT n.name FROM facts f JOIN nodes n ON f.node_id = n.id
+    #    WHERE f.key = 'type' AND f.value LIKE '%Shikigami%'
+    #
+    # and keep those whose `user` fact contains `Megumi Fushiguro`.
+    #
+    # This was eleven, and the comment it replaces explained why: the bank asks
+    # the question twice and the two golds disagreed, each holding two members
+    # the other omitted, so the declaration took the union and each question
+    # paid for the other's two. That reasoning kept a wrong answer in place on
+    # both. The disagreement was a bank defect, not a wiki ambiguity, and
+    # `questions/jjk.json` has since been corrected on the wiki's own fields:
+    #
+    #  * `Piercing Ox`, `Round Deer` and `Tiger Funeral` carry `user = Sukuna`
+    #    alone. They debut in Chapter 218 and their Usage sections open
+    #    "subjugated by Sukuna after he took control of Megumi Fushiguro's
+    #    body" -- tamed by Sukuna while wearing Megumi, which is not Megumi
+    #    using them. None appears on Megumi's page.
+    #  * `The Well's Unknown Abyss` is typed `Extension Technique`, not
+    #    `Shikigami`, and its own lead calls it an extension technique that
+    #    "uses the Nue and Toad shikigami as a base". A combination technique,
+    #    not an eleventh shikigami.
+    #  * `Divine Dog: Totality` is typed `Shikigami` with `user` naming Megumi
+    #    and is bolded on his page. It belongs and one of the two golds had it.
+    #
+    # Both questions now agree with each other, with this list, and with the
+    # structural set. `Mahoraga` is spelled short here as the bank spells it;
+    # the page title is `Eight-Handled Sword Divergent Sila Divine General
+    # Mahoraga` and the alias table already carries the short form.
+    members: [Divine Dogs, "Divine Dog: Totality", Nue, Great Serpent, Toad, Max Elephant, Rabbit Escape, Mahoraga]
 
   # Who are the notable members of the Zenin Family?
   # Declared 2026-08-15: the engine resolved this to `Gold includes Noritoshi Kamo (Kamo clan, not Zenin) and omits Jinichi, Ranta, Chojuro, Nobuaki. Wiki maintains 11 members in dedicated table.` and returned the wrong set. Members transcribed from `Sorcerer Clan`.
