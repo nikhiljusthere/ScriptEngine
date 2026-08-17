@@ -722,10 +722,10 @@ def build_roster(
                     merged.confidence = owned.confidence
                     merged.rejected = owned.rejected
                     merged.scope = owned.scope
-                    return merged
-                return owned
+                    return _class_filtered(store, merged, query, overrides)
+                return _class_filtered(store, owned, query, overrides)
             if extracted is not None:
-                return extracted
+                return _class_filtered(store, extracted, query, overrides)
 
         if declared is not None:
             if declared.sections_of:
@@ -832,6 +832,17 @@ def build_roster(
                     member for member in extra.members
                     if member.name.strip().lower() not in seen
                 ][:max_members - len(members)]
+
+        # Judged here, inside the store's `with`, because the class is read
+        # from the wiki's own infobox and the connection closes below.
+        if members:
+            kept_names, class_rejected = drop_off_class(
+                store, [member.name for member in members], query, overrides
+            )
+            if class_rejected:
+                allowed = {name.lower() for name in kept_names}
+                members = [m for m in members if m.name.lower() in allowed]
+                rejected = list(rejected) + class_rejected
 
     roster = Roster(
         subject=subject,
@@ -1250,6 +1261,157 @@ def _owned_roster(
         scope=constraints.scope,
         capped=len(names) if len(names) > max_members else 0,
     )
+
+
+def ability_class_rules(overrides: dict | None) -> tuple[dict[str, str], str, list]:
+    """`(infobox value -> class, which field holds it, the asks table)`.
+
+    What an ability *is* is a property of the ability, not of the page that
+    happens to mention it, and the wiki says so in the infobox it gave that
+    ability its own page. Jujutsu Kaisen writes `type = Innate Technique` on
+    `Shrine`, `Extension Technique` on `Convergence`, and `Taijutsu` on both
+    `Divergent Fist` and `Black Flash`. That is exactly the distinction a
+    reader means by "cursed technique": something engraved or inherited, as
+    against a way of applying cursed energy.
+
+    The section an ability sits under cannot carry this, and measuring it says
+    so plainly. `Black Flash` is filed under four different headings across the
+    eight pages that name it -- `Cursed Energy` on four, `Physical Prowess` on
+    two, `Overview` and `Abilities and Powers` on one each -- and
+    `Reverse Cursed Technique` under four across thirteen. A section rule tuned
+    on one character misfiles it for every other, which is the shape of
+    declaration this project has been burned by five times.
+    """
+    declared = (overrides or {}).get("ability_class") or {}
+    field = str(declared.get("field") or "type").strip().lower()
+    mapping = {
+        str(key).strip().lower(): str(value).strip().lower()
+        for key, value in (declared.get("map") or {}).items()
+        if str(key).strip() and str(value).strip()
+    }
+    asks = list(declared.get("asks") or [])
+    return mapping, field, asks
+
+
+def ability_class(store: FactStore, name: str, overrides: dict | None) -> str:
+    """The class this wiki gives the ability, or `""` when it gives none.
+
+    Empty is the common answer and must stay usable as one. `Dismantle`,
+    `Cleave`, `Hometown Domain` and `New Shadow Style: Simple Domain` have no
+    page anywhere on the Jujutsu Kaisen wiki -- checked against the crawled
+    wikitext, not inferred from a missing row -- so they can never carry an
+    infobox field, and four wikis give abilities no pages at all. A rule that
+    needed every member classified would throw those away.
+    """
+    mapping, field, _ = ability_class_rules(overrides)
+    if not mapping or not name:
+        return ""
+    memo = ontology.request_cache(store, "ability_class")
+    key = name.lower()
+    if key in memo:
+        return memo[key]
+
+    found = ""
+    for row in store.connection.execute(
+        "SELECT f.value FROM facts f JOIN nodes n ON f.node_id = n.id"
+        " WHERE n.name = ? COLLATE NOCASE AND LOWER(f.key) = ?",
+        (name, field),
+    ):
+        # One page can name two: `Simple Domain` is
+        # `Anti-Domain Technique\nBarrier Technique`. Any recognised value is
+        # enough to class it, so the first that maps wins rather than the
+        # whole string having to.
+        for line in str(row["value"] or "").splitlines():
+            mapped = mapping.get(line.strip().lower())
+            if mapped:
+                found = mapped
+                break
+        if found:
+            break
+    memo[key] = found
+    return found
+
+
+def wanted_classes(query: str, overrides: dict | None) -> frozenset[str]:
+    """Which classes answer this question, per the series' `asks` table.
+
+    Empty means the question did not ask for a class, and nothing is filtered.
+    """
+    _, _, asks = ability_class_rules(overrides)
+    folded = _fold(query).lower()
+    best: frozenset[str] = frozenset()
+    longest = 0
+    for entry in asks:
+        if not isinstance(entry, dict):
+            continue
+        keep = frozenset(
+            str(c).strip().lower() for c in (entry.get("keep") or []) if str(c).strip()
+        )
+        for phrase in entry.get("phrases") or []:
+            text = _fold(str(phrase)).lower().strip()
+            # Longest phrase wins, so a wiki can declare `cursed technique`
+            # separately from `technique` and have the narrower one decide.
+            if text and text in folded and len(text) > longest:
+                best, longest = keep, len(text)
+    return best
+
+
+def drop_off_class(
+    store: FactStore, names: Sequence[str], query: str, overrides: dict | None
+) -> tuple[list[str], list[dict[str, str]]]:
+    """Remove members the wiki positively classes outside what was asked.
+
+    **Rejection needs positive evidence.** A member with no class is kept, not
+    dropped: the alternative empties the answer of everything the wiki writes in
+    prose, which is most of it. So this only ever removes a name the wiki has
+    filed under a class the question did not ask for, and it is silent on
+    everything else.
+
+    Like `apply_constraints`, it never returns an empty list from a non-empty
+    one -- a declaration whose vocabulary has drifted from the wiki's must
+    degrade to a set that is too broad rather than to nothing.
+    """
+    keep_classes = wanted_classes(query, overrides)
+    if not keep_classes or not names:
+        return list(names), []
+
+    kept: list[str] = []
+    rejected: list[dict[str, str]] = []
+    for name in names:
+        found = ability_class(store, name, overrides)
+        if found and found not in keep_classes:
+            rejected.append({
+                "name": name,
+                "reason": f"the wiki classes this {found!r}, not "
+                          f"{'/'.join(sorted(keep_classes))}",
+                "rule": "class",
+            })
+            continue
+        kept.append(name)
+    if not kept:
+        return list(names), []
+    return kept, rejected
+
+
+def _class_filtered(
+    store: FactStore, roster: "Roster", query: str, overrides: dict | None
+) -> "Roster":
+    """Apply `drop_off_class` to an assembled roster, keeping its rejections.
+
+    Applied here rather than inside each source, because a member reaching the
+    answer by two paths must be judged once and on the same evidence: the class
+    belongs to the ability, not to the path that found it.
+    """
+    if not roster.members:
+        return roster
+    names = [member.name for member in roster.members]
+    kept, rejected = drop_off_class(store, names, query, overrides)
+    if not rejected:
+        return roster
+    allowed = {name.lower() for name in kept}
+    roster.members = [m for m in roster.members if m.name.lower() in allowed]
+    roster.rejected = list(roster.rejected) + rejected
+    return roster
 
 
 def ability_stopwords(overrides: dict | None) -> frozenset[str]:

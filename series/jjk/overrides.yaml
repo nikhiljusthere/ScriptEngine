@@ -273,3 +273,51 @@ battle_relations:
 # from being live if a wiki is ever found whose abilities genuinely exist only
 # in its story pages. Chainsaw Man is not that wiki, and it was chosen as the
 # best case.
+
+# What an ability *is*, read from the page the wiki gave it.
+#
+# "Every technique of Yuji Itadori" returned 16 names for an answer of 8. Five
+# of the eight were there; the noise was `Manji Kick`, `Taido Martial Arts`,
+# `Knee Release`, `Divergent Fist` and `Black Flash`, and no section rule can
+# remove them: `Black Flash` is filed under `Cursed Energy` on four of the eight
+# pages that name it, `Physical Prowess` on two, `Overview` and `Abilities and
+# Powers` on one each. Where an ability is *filed* is an editor's decision;
+# what it *is* is a property of the ability.
+#
+# This wiki states it. 138 of its 149 technique pages carry `type`, and the
+# vocabulary is the distinction itself: Extension Technique 43, Innate
+# Technique 36, Shikigami 16, Domain Expansion 13, Taijutsu 6, Inherited
+# Technique 5, Anti-Domain Technique 3.
+#
+# A Cursed Technique is engraved or inherited and run on cursed energy --
+# Yuji's Blood Manipulation, Sukuna's Shrine. `Divergent Fist` is a way of
+# applying cursed energy to a punch, and `Black Flash` is a phenomenon any
+# sorcerer with precise enough timing can produce, belonging to nobody. Both
+# are Yuji's techniques in the ordinary sense and neither is a Cursed
+# Technique, which is why the wiki types both `Taijutsu`.
+#
+# Only a positively-typed member is ever rejected. `Dismantle`, `Cleave`,
+# `Hometown Domain` and `New Shadow Style: Simple Domain` have no page on this
+# wiki at all, so they carry no type and are kept untouched.
+ability_class:
+  field: type
+  map:
+    Innate Technique: cursed_technique
+    Inherited Technique: cursed_technique
+    Extension Technique: cursed_technique
+    Cursed Technique: cursed_technique
+    Reverse Cursed Technique: cursed_technique
+    Domain Expansion: cursed_technique
+    Anti-Domain Technique: cursed_technique
+    Barrier Technique: cursed_technique
+    Shikigami: cursed_technique
+    Jujutsu: cursed_technique
+    Taijutsu: physical
+    Cursed Tool: item
+    Cursed Object: item
+  asks:
+    # Longest phrase wins, so `ability` can stay wide while `technique`
+    # narrows. Asked for his abilities, Divergent Fist and Black Flash are
+    # correctly his; asked for his techniques, they are not.
+    - phrases: [cursed technique, cursed techniques, technique, techniques]
+      keep: [cursed_technique]
