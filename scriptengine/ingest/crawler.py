@@ -373,6 +373,30 @@ class WikiCrawler:
         if data and "error" not in data:
             learn_field_labels(ontology, page_type, (data.get("parse") or {}).get("properties"))
 
+    async def expand_templates(self, base: str, text: str) -> str:
+        """Expand one template call, returning the resolved wikitext.
+
+        `action=expandtemplates` is the only API call that returns wikitext:
+        `action=parse` with `prop=wikitext` leaves a transclusion unresolved and
+        `prop=text` renders HTML, and this engine parses wikitext. The crawler
+        skips the Template: namespace, so a page's canonical curated list can
+        be a bare `{{Ten Shadows Shikigami}}` with no links; resolution is what
+        makes that list visible to the index.
+        """
+        data = await self._get(
+            base,
+            {
+                "action": "expandtemplates",
+                "text": text,
+                "prop": "wikitext",
+                "format": "json",
+                "formatversion": "2",
+            },
+        )
+        if not data or "error" in data:
+            return ""
+        return (data.get("expandtemplates") or {}).get("wikitext", "") or ""
+
     # ── extraction ───────────────────────────────────────────────────────────
 
     def build_page(

@@ -246,6 +246,58 @@ def prune(
     )
 
 
+@app.command("resolve-templates")
+def resolve_templates(
+    series: str = typer.Option(..., "--series"),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Re-fetch cached template expansions."
+    ),
+) -> None:
+    """Splice declared list templates into stored wikitext, pre-index.
+
+    The crawler skips the Template: namespace, so a page whose "list" section
+    is a bare transclusion stores no links and the wiki's canonical curated
+    list is invisible to the index. The allowlist lives in
+    `series/<name>/overrides.yaml` under `template_lists:`; this command
+    fetches each declared template's expansion via the MediaWiki
+    `expandtemplates` action and splices it into the page's stored wikitext,
+    so the next `index` parses the real list.
+    """
+    import asyncio
+    import logging
+
+    from scriptengine.ingest.templates import resolve_series
+
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s | %(levelname)-7s | %(message)s",
+        datefmt="%H:%M:%S",
+    )
+
+    paths = series_paths(series)
+    overrides = _load_overrides(paths)
+    report = asyncio.run(resolve_series(paths, overrides, refresh=refresh))
+
+    if report["status"] != "ok":
+        if report["status"] == "no_template_lists":
+            console.print(
+                f"[yellow]{series} declares no template_lists; nothing to resolve.[/yellow]"
+            )
+        else:
+            console.print(
+                f"[yellow]Nothing resolved ({report['status']}). "
+                "Is the corpus crawled?[/yellow]"
+            )
+        return
+
+    console.print(
+        f"[green]Resolved {report['templates_declared']} declared templates[/green] "
+        f"({report['templates_fetched']} fetched), spliced into "
+        f"{report['pages_updated']} of {report['pages_with_unresolved']} pages "
+        f"carrying a transclusion."
+    )
+    console.print(f"\nNext: [bold]index --series {series}[/bold]")
+
+
 _COUNT_WORDS = {
     "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
     "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
