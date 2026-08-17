@@ -89,20 +89,30 @@ rosters:
       - what are yuji itadori's named cursed techniques
       - yuji itadori's named cursed techniques
     subject: Yuji Itadori
-    # Widened 2026-08-16. The line above records why it was eight: the wiki
-    # keeps a dedicated `Cursed Techniques` table, and `Divergent Fist` and
-    # `Black Flash` are not in it, they sit under
-    # `Abilities / Cursed Energy Manipulation`.
+    # Widened to ten 2026-08-16, back to eight 2026-08-17. Worth keeping the
+    # whole loop visible, because both moves were made for good reasons and one
+    # of them was wrong.
     #
-    # That reasoning made this list the ceiling. The 2026-08-16 run scored it
-    # 8/10 and the diagnosis put both names in the `retrieval gap` bucket:
-    # already stored, and reachable as a `Yuji Itadori` ownership edge. The wiki
-    # records them as his. Which of its tables it files a technique in is not a
-    # claim about whose the technique is.
+    # It was eight because the wiki keeps a dedicated `Cursed Techniques` table
+    # and neither `Divergent Fist` nor `Black Flash` is in it. It was widened to
+    # ten because that reasoning had made this list a ceiling: the run scored it
+    # 8/10, the diagnosis called both names a `retrieval gap`, and the argument
+    # was that which table a wiki files a technique in is not a claim about
+    # whose it is.
     #
-    # Fifth time a declaration written to fix a question became the thing
-    # capping it once extraction improved.
-    members: [Blood Manipulation, Convergence, Piercing Blood, Shrine, Dismantle, Reverse Cursed Technique, Simple Domain, Domain Expansion, Divergent Fist, Black Flash]
+    # True, and beside the point. The question does not ask which techniques are
+    # *his*, it asks which of them are *cursed techniques*, and that is a claim
+    # the wiki makes explicitly: `Divergent Fist` and `Black Flash` both carry
+    # `type = Taijutsu` on their own pages, against `Inherited Technique`,
+    # `Innate Technique` and `Extension Technique` on the eight below. Widening
+    # to ten was fitting the declaration to a gold that was itself wrong, and
+    # `questions/jjk.json` `jjk-set-09` has since been corrected to eight on the
+    # same evidence.
+    #
+    # So: eight, and this time the wiki says eight rather than a section layout
+    # implying it. The sixth and seventh times a declaration written to fix a
+    # question became the thing capping it are both recorded in this file.
+    members: [Blood Manipulation, Convergence, Piercing Blood, Shrine, Dismantle, Reverse Cursed Technique, Simple Domain, Domain Expansion]
 
   # What are Megumi Fushiguro's named shikigami?
   # Declared 2026-08-15: the engine resolved this to `Wiki lists 9 shikigami/techniques in structured tables. Gold matches (Chimera Shadow Garden is a domain, not a shikigami).` and returned the wrong set. Members transcribed from `Megumi Fushiguro`.
