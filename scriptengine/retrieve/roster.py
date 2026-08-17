@@ -962,6 +962,15 @@ def build_roster(
                 ]
                 members = duels
 
+        if members and character:
+            kept_names, owner_rejected = drop_off_owner(
+                store, [m.name for m in members], character, overrides
+            )
+            if owner_rejected:
+                allowed = {name.lower() for name in kept_names}
+                members = [m for m in members if m.name.lower() in allowed]
+                rejected = list(rejected) + owner_rejected
+
         # Judged here, inside the store's `with`, because the class is read
         # from the wiki's own infobox and the connection closes below.
         if members:
@@ -1581,6 +1590,70 @@ def _dedupe_roster(roster: "Roster") -> "Roster":
             "rule": "dedupe",
         }]
     return roster
+
+
+def stated_users(store: FactStore, name: str) -> str:
+    """The `user` field on this ability's own page, or `""` when it has none.
+
+    Empty is the usual answer and must stay usable as one: most abilities on
+    most of these wikis have no page at all.
+    """
+    memo = ontology.request_cache(store, "ability_users")
+    key = (name or "").lower()
+    if key in memo:
+        return memo[key]
+    row = store.connection.execute(
+        "SELECT f.value FROM facts f JOIN nodes n ON f.node_id = n.id"
+        " WHERE n.name = ? COLLATE NOCASE AND LOWER(f.key) IN ('user', 'users')"
+        " LIMIT 1",
+        (name,),
+    ).fetchone()
+    memo[key] = (row["value"] or "").strip() if row else ""
+    return memo[key]
+
+
+def drop_off_owner(
+    store: FactStore, names: Sequence[str], character: str, overrides: dict | None
+) -> tuple[list[str], list[dict[str, str]]]:
+    """Remove abilities whose own page names users, none of them this character.
+
+    Extraction reads a character's declared ability sections, and the comment
+    at `_extracted_roster` assumes what it finds there is therefore theirs.
+    For 28 of this wiki's 602 rows it is not: every row whose section ends in
+    `Related Techniques` was harvested from a *technique* page and attributed
+    to everyone listed as a user of the parent technique. That is how Yuka
+    Okkotsu's `Savage Jaw Strike` and `Biting Twist` -- both read off the
+    `Divine Dogs` page -- became Sukuna's and Megumi's, and Choso's
+    `Supernova` became Noritoshi Kamo's.
+
+    The wiki settles it on the ability's own page. `Savage Jaw Strike` says
+    `user = Yuka Okkotsu` and says nothing about Sukuna.
+
+    **Positive evidence only**, the same rule the class filter follows. A
+    member with no page, or a page with no `user` field, is kept untouched --
+    that is most of them, and a gate that required the field would delete the
+    answer. `Domain Expansion` lists nineteen users including Megumi and stays
+    for that reason rather than by exception.
+    """
+    if not character or not names:
+        return list(names), []
+    subject = _fold(character).lower()
+    kept: list[str] = []
+    rejected: list[dict[str, str]] = []
+    for name in names:
+        stated = stated_users(store, name)
+        if stated and subject and subject not in _fold(stated).lower():
+            rejected.append({
+                "name": name,
+                "reason": f"the wiki records its users as {' '.join(stated.split())!r},"
+                          f" which does not include {character}",
+                "rule": "owner",
+            })
+            continue
+        kept.append(name)
+    if not kept:
+        return list(names), []
+    return kept, rejected
 
 
 def ability_stopwords(overrides: dict | None) -> frozenset[str]:
