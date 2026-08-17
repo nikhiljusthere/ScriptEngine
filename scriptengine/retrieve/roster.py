@@ -1620,6 +1620,37 @@ def stated_users(store: FactStore, name: str) -> str:
     return memo[key]
 
 
+# A qualifier the wiki writes after a user's name to say how they came by the
+# technique. Only an outright copy disowns it.
+#
+# `(via ...)` deliberately does **not**, and that was measured rather than
+# assumed: `Ten Shadows Technique` reads `... Megumi Fushiguro Yuka Okkotsu
+# Sukuna (via Megumi)`, and it is gold on `Every cursed technique of Sukuna`.
+# Using a technique through the body he has taken is still him using it.
+# Including `via` here cost that canon item on two questions.
+#
+# `(Formerly)` also stays in: it says the technique was theirs and no longer
+# is, not that it was never theirs. `(Anime)` says which adaptation.
+_BORROWED = re.compile(r"\(\s*(copied|copy|borrowed)\s*\)", re.IGNORECASE)
+
+
+def _copied(stated: str, subject: str) -> bool:
+    """Whether the `user` field names this subject only as a borrower.
+
+    Read on the subject's own entry, not the whole field: `Shrine` reads
+    `Ryomen Sukuna Yuta Okkotsu (Copied) Yuji Itadori`, and the `(Copied)`
+    belongs to Yuta alone. Asking whether the string contains `(Copied)`
+    anywhere would disown it from Sukuna, whose technique it is.
+    """
+    folded = _fold(stated).lower()
+    start = folded.find(subject)
+    if start < 0:
+        return False
+    tail = folded[start + len(subject):]
+    match = _BORROWED.match(tail.lstrip())
+    return match is not None
+
+
 def drop_off_owner(
     store: FactStore, names: Sequence[str], character: str, overrides: dict | None
 ) -> tuple[list[str], list[dict[str, str]]]:
@@ -1650,6 +1681,20 @@ def drop_off_owner(
     rejected: list[dict[str, str]] = []
     for name in names:
         stated = stated_users(store, name)
+        # A qualifier after the subject's name says how they came by it, and
+        # `(Copied)` says it is not theirs. Yuta Okkotsu's whole innate
+        # technique is copying, so the wiki lists him as a user of six
+        # techniques he borrowed -- `Cursed Speech`, `Sky Manipulation`,
+        # `Technique Extinguishment`, `Thin Ice Breaker`, `G Warstaff`,
+        # `Shrine` -- and marks every one of them in the field itself.
+        if stated and subject and _copied(stated, subject):
+            rejected.append({
+                "name": name,
+                "reason": f"the wiki records {character} as a copied user of "
+                          f"this, not its owner",
+                "rule": "copied",
+            })
+            continue
         if stated and subject and subject not in _fold(stated).lower():
             rejected.append({
                 "name": name,

@@ -122,3 +122,50 @@ class TestDropOffOwner:
     def test_no_subject_means_no_opinion(self, store):
         names = ["Savage Jaw Strike", "Shrine"]
         assert drop_off_owner(store, names, "", None) == (names, [])
+
+
+class TestCopied:
+    """A qualifier after a user's name says how they came by the technique.
+
+    Yuta Okkotsu's innate technique *is* copying, so the wiki lists him as a
+    user of six techniques that are not his and marks each one in the field.
+    """
+
+    def test_a_copied_user_does_not_own_it(self, store):
+        kept, rejected = drop_off_owner(
+            store, ["Shrine", "Dismantle"], "Yuta Okkotsu", None
+        )
+        assert kept == ["Dismantle"]
+        assert rejected[0]["rule"] == "copied"
+
+    def test_the_marker_belongs_to_the_name_it_follows(self, store):
+        """`Shrine` is `Ryomen Sukuna Yuta Okkotsu (Copied) Yuji Itadori`.
+
+        The `(Copied)` is Yuta's. Asking whether the field contains it
+        anywhere would disown the technique from Sukuna, whose it is.
+        """
+        kept, rejected = drop_off_owner(store, ["Shrine"], "Sukuna", None)
+        assert kept == ["Shrine"]
+        assert rejected == []
+
+    @pytest.mark.parametrize("qualifier", ["(via Megumi)", "(Formerly)", "(Anime)"])
+    def test_only_an_outright_copy_disowns(self, store, qualifier):
+        """Measured, not assumed. `Ten Shadows Technique` reads
+        `... Yuka Okkotsu Sukuna (via Megumi)` and is gold on
+        `Every cursed technique of Sukuna` -- using a technique through the
+        body he has taken is still him using it. Treating `via` as a copy cost
+        that canon item on two questions.
+        """
+        store.connection.execute(
+            "INSERT INTO nodes (id, name) VALUES (50, 'Ten Shadows Technique')"
+        )
+        store.connection.execute(
+            "INSERT INTO facts (node_id, key, value) VALUES (50, 'user', ?)",
+            (f"Megumi Fushiguro Sukuna {qualifier}",),
+        )
+        store.connection.commit()
+        kept, rejected = drop_off_owner(
+            store, ["Ten Shadows Technique", "Dismantle"], "Sukuna", None
+        )
+        assert "Ten Shadows Technique" in kept
+        assert rejected == []

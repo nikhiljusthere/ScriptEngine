@@ -80,6 +80,18 @@ ability_stopwords:
   - Hanako of the Toilet
   - Phantom Cursed Spirit
   - Rozetsu
+  # Added 2026-08-17. The last two intruders on `Every cursed technique of
+  # Sukuna`, and the only two his page names in bold that are not techniques,
+  # so `drop_unnamed` correctly keeps them and nothing else can judge them:
+  # neither has a page, so `type` and `user` are both silent.
+  #
+  # What the wiki says each is, in the extractor's own quoted reason.
+  # `Enma`: "hand sign used to launch a slash" -- the gesture that fires
+  # `Dismantle`, not a technique beside it. `Incarnation`: "described as a
+  # chance to gain a physical body" -- how Sukuna returns, a state rather than
+  # something he does. Neither is gold on any question in this bank.
+  - Enma
+  - Incarnation
 rosters:
 
   # What are Yuji Itadori's named cursed techniques?
@@ -361,10 +373,25 @@ rosters:
       Kyoto Jujutsu High: Kyoto Jujutsu High
 
 
-# A heading on 13 pages because 13 sorcerers have one, not because it is
-# skeleton. Canon for the character questions in this series' bank.
-ability_headings:
-  - Domain Expansion
+# Emptied 2026-08-17, and worth recording that it changed nothing, because the
+# comment it replaces claimed more than was true. It read: "A heading on 13
+# pages because 13 sorcerers have one, not because it is skeleton. Canon for
+# the character questions in this series' bank."
+#
+# The first sentence is right. The second is not: `Domain Expansion` is gold on
+# exactly one question, `jjk-set-09`, and that one is answered by a declared
+# roster with explicit members, which never consults this list. Removing the
+# entry moved no question by a single member.
+#
+# It is left empty rather than restored so the next reader is not told this
+# list is load-bearing when it is not. `Domain Expansion` still reaches
+# `Every ability of Megumi Fushiguro` -- as an extracted row from his
+# `Abilities and Powers / Overview` section, and it has a page of its own, so
+# every gate correctly keeps it. Whether it belongs in that answer is a
+# question about the bank, not about this file: the wiki lists Megumi among the
+# nineteen users of `Domain Expansion`, while the gold counts only his own
+# domain, `Chimera Shadow Garden`. Unresolved on purpose.
+ability_headings: []
 
 # How this wiki names the two sides of a fight and what each side used. One
 # Punch Man writes `combatant1`/`abilities1`, which is the default; Jujutsu
