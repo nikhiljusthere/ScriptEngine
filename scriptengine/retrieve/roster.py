@@ -971,6 +971,14 @@ def build_roster(
                 members = [m for m in members if m.name.lower() in allowed]
                 rejected = list(rejected) + owner_rejected
 
+            kept_names, unnamed_rejected = drop_unnamed(
+                store, [m.name for m in members], character, query, overrides
+            )
+            if unnamed_rejected:
+                allowed = {name.lower() for name in kept_names}
+                members = [m for m in members if m.name.lower() in allowed]
+                rejected = list(rejected) + unnamed_rejected
+
         # Judged here, inside the store's `with`, because the class is read
         # from the wiki's own infobox and the connection closes below.
         if members:
@@ -1651,6 +1659,94 @@ def drop_off_owner(
             })
             continue
         kept.append(name)
+    if not kept:
+        return list(names), []
+    return kept, rejected
+
+
+def _has_page(store: FactStore, name: str) -> bool:
+    memo = ontology.request_cache(store, "has_page")
+    key = (name or "").lower()
+    if key not in memo:
+        memo[key] = store.connection.execute(
+            "SELECT 1 FROM documents WHERE title = ? COLLATE NOCASE LIMIT 1", (name,)
+        ).fetchone() is not None
+    return memo[key]
+
+
+def drop_unnamed(
+    store: FactStore,
+    names: Sequence[str],
+    character: str,
+    query: str,
+    overrides: dict | None,
+) -> tuple[list[str], list[dict[str, str]]]:
+    """Remove members the subject's page mentions but does not name.
+
+    Asked for a character's *techniques*, the answer should hold the things the
+    wiki names, and `Every cursed technique of Sukuna` was returning six it does
+    not: `Metamorphosis`, `Enchain`, `Enma`, `Totality`, `Incarnation` and
+    `Cursed Energy Reinforcement`. No field rejects them -- none has a page, so
+    `type` and `user` are both silent -- but the page's own formatting does.
+    See `wikitext.emphasised_names` and the `emphasis` table.
+
+    A member is kept when *either* the wiki gave it a page or the subject's page
+    names it in bold. Both halves are load-bearing and each covers the other's
+    blind spot: `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue`
+    has no page and is bolded on Gojo's, while a technique read off its own
+    page may never appear in bold on the character's.
+
+    Only runs where the question asked for a class of ability, which is what
+    makes it a question about *named* things. `Every ability of X` is left
+    alone: `Immense Strength` is nobody's named technique and is still gold
+    there.
+
+    Silent when the `emphasis` table has not been built -- an unindexed store
+    returns an empty set, and every member would otherwise fail the second
+    half at once.
+    """
+    if not character or not names or not wanted_classes(query, overrides):
+        return list(names), []
+    named = store.emphasised_on(character)
+    if not named:
+        return list(names), []
+
+    def is_named(name: str) -> bool:
+        folded = name.strip().lower()
+        if not folded or folded in named:
+            return True
+        # Also named when it is the whole core of a longer name the page gives.
+        # Extraction reads prose and shortens: the wiki writes
+        # `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue` and the
+        # stored row says `Maximum Cursed Energy Output`, which is gold on
+        # `jjk-set-10` through an alias. Requiring an exact match dropped it and
+        # cost a canon item.
+        #
+        # Multi-word only. A single word inside a longer name is a fragment,
+        # not the technique: `Totality` sits inside the bolded
+        # `Divine Dog: Totality` and is not one of Sukuna's cursed techniques,
+        # and `Blue` sits inside `Cursed Technique Lapse: Blue`. A phrase of
+        # two words or more that a name contains whole is that name's core.
+        if len(folded.split()) < 2:
+            return False
+        # Word-anchored, so a short core cannot match inside a longer word.
+        return any(
+            re.search(rf"(?<![a-z0-9]){re.escape(folded)}(?![a-z0-9])", candidate)
+            for candidate in named
+        )
+
+    kept: list[str] = []
+    rejected: list[dict[str, str]] = []
+    for name in names:
+        if _has_page(store, name) or is_named(name):
+            kept.append(name)
+            continue
+        rejected.append({
+            "name": name,
+            "reason": f"{character}'s page mentions this but does not name it, "
+                      "and the wiki gives it no page",
+            "rule": "unnamed",
+        })
     if not kept:
         return list(names), []
     return kept, rejected
