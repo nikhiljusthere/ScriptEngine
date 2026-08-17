@@ -469,6 +469,116 @@ def battle_relations(overrides: dict | None) -> tuple[tuple[str, str], ...]:
     return pairs or _BATTLE_SIDES
 
 
+# A question that asks for single combat. English rather than per-wiki, because
+# the phrasing is the reader's and the structure it selects on is the infobox's.
+_ONE_ON_ONE = re.compile(r"\b(1\s*v\s*1|1\s*vs\.?\s*1|one[\s-]on[\s-]one|solo duel)\b",
+                         re.IGNORECASE)
+
+# `Sukuna (16 Fingers)` and `Sukuna (2 Fingers)` are one fighter written twice.
+# The qualifier says which state he was in, not that a second person joined, so
+# it comes off before a side is counted.
+_PARENTHETICAL = re.compile(r"\([^)]*\)")
+
+
+def asks_one_on_one(query: str) -> bool:
+    """Whether the question restricts to single combat."""
+    return bool(_ONE_ON_ONE.search(query or ""))
+
+
+def _character_titles(store: FactStore) -> list[str]:
+    """Every page this wiki types as a character, longest first.
+
+    Longest first because sides are matched greedily: `Nobuaki Zenin` has to be
+    consumed before `Hei` can be, or `Maki Zenin vs. The Hei` reads as one
+    fighter and a stray word rather than the two it is.
+    """
+    memo = ontology.request_cache(store, "character_titles")
+    if "titles" not in memo:
+        titles = [
+            row["title"]
+            for row in store.connection.execute(
+                "SELECT title FROM documents WHERE page_type LIKE '%character%'"
+                " COLLATE NOCASE"
+            )
+            if (row["title"] or "").strip()
+        ]
+        memo["titles"] = sorted(titles, key=len, reverse=True)
+    return memo["titles"]
+
+
+def side_fighters(store: FactStore, value: str) -> tuple[list[str], str]:
+    """`(characters named on this side, whatever text is left over)`.
+
+    Resolved greedily against real page titles rather than split on a
+    delimiter, because the field is not delimited consistently: the same wiki
+    writes `'Yuji Itadori\\nMegumi Fushiguro'` on one page and
+    `'Yuji Itadori Aoi Todo'` on the next, so any split rule reads one of them
+    wrong.
+
+    The leftover matters as much as the count. `Maki Zenin vs. The Hei` has
+    `side2 = "Hei Nobuaki Zenin"`, which resolves to one character and leaves
+    `Hei` behind -- a second fighter with no page of its own. Returning the
+    residue lets the caller refuse that rather than counting it as single
+    combat.
+    """
+    text = _PARENTHETICAL.sub(" ", value or "")
+    found: list[str] = []
+    for title in _character_titles(store):
+        folded_title = _fold(title).lower()
+        if not folded_title:
+            continue
+        folded_text = _fold(text).lower()
+        if folded_title in folded_text:
+            # Remove by position in the folded text so the residue stays
+            # comparable, then keep the canonical title rather than the
+            # spelling the field happened to use.
+            start = folded_text.index(folded_title)
+            text = text[:start] + " " + text[start + len(folded_title):]
+            found.append(title)
+    return found, " ".join(text.split())
+
+
+def is_one_on_one(store: FactStore, title: str, overrides: dict | None) -> bool:
+    """Whether this battle page records exactly one fighter against one other.
+
+    Read off the infobox the wiki filled in, never off the page title. Two
+    genuine duels are titled `Satoru Gojo vs. Sukuna: First Fight` and
+    `Satoru Gojo vs. Toji Fushiguro: Rematch`, and a title-parsing rule
+    misreads both; conversely `Megumi Fushiguro vs. Reggie Star's Group` and
+    `Satoru Gojo vs. Mahito's Group` look like duels in the title and hold four
+    fighters in the field.
+
+    A side that resolves to no character at all -- `Cursed Spirits`,
+    `Transfigured Humans`, `Jujutsu Sorcerers` -- is not one named character
+    either, so it fails the same test without needing a rule of its own.
+    """
+    node = store.connection.execute(
+        "SELECT n.id FROM nodes n JOIN documents d ON n.document_id = d.id"
+        " WHERE d.title = ? COLLATE NOCASE",
+        (title,),
+    ).fetchone()
+    if not node:
+        return False
+    facts = {
+        (row["key"] or "").strip().lower(): (row["value"] or "")
+        for row in store.connection.execute(
+            "SELECT key, value FROM facts WHERE node_id = ?", (node["id"],)
+        )
+    }
+    sides = [side for side, _abilities in battle_relations(overrides)]
+    # A third side is a three-way fight whatever the first two hold.
+    if any(facts.get(f"side{n}", "").strip() for n in range(len(sides) + 1, 6)):
+        return False
+    for side in sides:
+        raw = facts.get(side, "")
+        if not raw.strip():
+            return False
+        fighters, leftover = side_fighters(store, raw)
+        if len(fighters) != 1 or leftover:
+            return False
+    return True
+
+
 def battle_named(store: FactStore, query: str) -> str:
     """The battle page this question names, if it names one.
 
@@ -833,6 +943,24 @@ def build_roster(
                     member for member in extra.members
                     if member.name.strip().lower() not in seen
                 ][:max_members - len(members)]
+
+        # Single combat, when the question asked for it. Read off each battle
+        # page's own side fields; see `is_one_on_one` for why the title cannot
+        # be parsed instead.
+        if members and asks_one_on_one(query):
+            duels = [m for m in members if is_one_on_one(store, m.name, overrides)]
+            if duels:
+                rejected = list(rejected) + [
+                    {
+                        "name": m.name,
+                        "reason": "not one fighter against one on the wiki's own "
+                                  "side fields",
+                        "rule": "arity",
+                    }
+                    for m in members
+                    if m not in duels
+                ]
+                members = duels
 
         # Judged here, inside the store's `with`, because the class is read
         # from the wiki's own infobox and the connection closes below.
