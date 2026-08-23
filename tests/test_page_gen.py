@@ -625,6 +625,25 @@ def test_merge_decl_appends_when_no_rosters_key(tmp_path):
     assert [r["name"] for r in rosters] == ["New Roster"]
 
 
+def test_prose_extra_sections_groups_by_section_path():
+    from scriptengine.eval.page_gen import prose_extra_sections
+
+    batch = {"questions": [
+        {"id": "1", "note": "prose:Trivia", "question": "q1"},
+        {"id": "2", "note": "prose:Appearance", "question": "q2"},
+        {"id": "3", "note": "prose:Trivia", "question": "q3"},
+        {"id": "4", "note": "page-gen:identity:status", "question": "q4"},
+        {"id": "5", "note": "S1: lead", "question": "q5"},
+    ]}
+    extra = prose_extra_sections(batch)
+    assert set(extra) == {"Trivia", "Appearance"}
+    assert [q["id"] for q in extra["Trivia"]] == ["1", "3"]
+    assert [q["id"] for q in extra["Appearance"]] == ["2"]
+    # A `prose:` note with no path, and an empty batch, contribute nothing.
+    assert prose_extra_sections({"questions": [{"note": "prose:", "question": "q"}]}) == {}
+    assert prose_extra_sections({}) == {}
+
+
 def _cli(tmp_path, monkeypatch):
     """Point the CLI's settings at the fixture's series tree + a fresh questions root."""
     import scriptengine.cli as cli
@@ -671,3 +690,43 @@ def test_page_merge_command_inserts_into_overrides(tmp_path, series_with_store, 
     assert result.exit_code == 0, result.output
     rosters = yaml.safe_load(paths.overrides.read_text(encoding="utf-8"))["rosters"]
     assert [r["name"] for r in rosters] == ["Existing", "Every battle involving Angel"]
+
+
+def test_page_gen_rerun_feeds_prose_questions_into_the_ledger(tmp_path, series_with_store, monkeypatch):
+    import json
+    from typer.testing import CliRunner
+
+    cli = _cli(tmp_path, monkeypatch)
+    result = CliRunner().invoke(cli.app, ["page-gen", "--series", "jjk", "--page", "Angel"])
+    assert result.exit_code == 0, result.output
+    batch_path = tmp_path / "questions" / "_jjk_page_angel.json"
+    coverage_path = tmp_path / "questions" / "_jjk_page_angel.coverage.json"
+    cov1 = json.loads(coverage_path.read_text(encoding="utf-8"))
+    assert "Trivia" in cov1["uncovered"]
+
+    # Phase 3 registered a prose question for Trivia, as the prose pass would.
+    batch = json.loads(batch_path.read_text(encoding="utf-8"))
+    batch["questions"].append({
+        "id": "jjk-pg-angel-900",
+        "kind": "fact",
+        "question": "What fan-poll result is recorded for Angel?",
+        "subject": "Angel",
+        "tier": "wiki",
+        "expect_mode": "qa",
+        "scope": "open",
+        "answer": [{"item": "Angel appears in fan polls.", "aliases": []}],
+        "sources": ["https://jujutsu-kaisen.fandom.com/wiki/Angel"],
+        "verified": "2026-08-24",
+        "note": "prose:Trivia",
+    })
+    batch_path.write_text(json.dumps(batch, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    # The re-run's ledger must see the prose question and keep it in the batch.
+    result = CliRunner().invoke(cli.app, ["page-gen", "--series", "jjk", "--page", "Angel"])
+    assert result.exit_code == 0, result.output
+    cov2 = json.loads(coverage_path.read_text(encoding="utf-8"))
+    assert "Trivia" not in cov2["uncovered"]
+    by_path = {s["path"]: s for s in cov2["sections"]}
+    assert "prose:Trivia" in by_path["Trivia"]["covered_by"]
+    batch2 = json.loads(batch_path.read_text(encoding="utf-8"))
+    assert any(q.get("note") == "prose:Trivia" for q in batch2["questions"])

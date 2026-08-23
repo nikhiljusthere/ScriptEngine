@@ -29,6 +29,7 @@ from scriptengine.retrieve.roster import MEMBER_CHARS, battle_relations, battles
 from scriptengine.stores.facts import FactStore
 
 PROV = "page-gen:"
+PROSE = "prose:"
 
 class PageGenError(Exception):
     """A page that cannot be generated: not crawled, not in the store, or a
@@ -689,6 +690,23 @@ _CLASS_ORDER = {
 def _class_of(note: str) -> str:
     key = note[len(PROV):] if note.startswith(PROV) else ""
     return key.split(":", 1)[0]
+
+def prose_extra_sections(batch: dict) -> dict:
+    """Group the batch's prose-pass questions by section path.
+
+    A re-run must see the prose the previous pass registered, or those
+    sections stay `uncovered` in the ledger and the section-coverage gate can
+    never pass: `note: "prose:<section-path>"` feeds `generate_structured`'s
+    `extra_sections`, which the coverage ledger merges into `covered_by`.
+    """
+    extra: dict[str, list[dict]] = {}
+    for q in (batch.get("questions") or []):
+        note = str(q.get("note", ""))
+        if note.startswith(PROSE):
+            path = note[len(PROSE):].strip()
+            if path:
+                extra.setdefault(path, []).append(q)
+    return extra
 
 def write_batch(
     batch_path: Path,

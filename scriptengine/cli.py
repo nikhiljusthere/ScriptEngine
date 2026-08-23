@@ -1605,7 +1605,8 @@ def page_gen(
     from scriptengine.config import load_overrides
     from scriptengine.eval import questions as Q
     from scriptengine.eval.page_gen import (
-        PageGenError, generate_structured, render_decl, slug_of, wiki_base, write_batch)
+        PageGenError, generate_structured, prose_extra_sections, render_decl,
+        slug_of, wiki_base, write_batch)
 
     logging.disable(logging.INFO)
 
@@ -1622,8 +1623,15 @@ def page_gen(
     verify_path = Path(verify_sheet) if verify_sheet else questions_root / f"{base}.verify.json"
 
     try:
-        result = generate_structured(paths, page, overrides, settings)
-        batch = write_batch(batch_path, series, slug, wiki_base(paths, page), result)
+        existing_batch = (
+            json.loads(batch_path.read_text(encoding="utf-8"))
+            if batch_path.exists() else {})
+        result = generate_structured(
+            paths, page, overrides, settings,
+            prose_extra_sections(existing_batch))
+        batch = write_batch(
+            batch_path, series, slug, wiki_base(paths, page), result,
+            existing=existing_batch)
         decl_path.write_text(
             render_decl(result, page, date.today().isoformat()), encoding="utf-8")
         if not no_prose_scaffold:
