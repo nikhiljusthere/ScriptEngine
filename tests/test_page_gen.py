@@ -598,3 +598,51 @@ def test_merge_decl_appends_when_no_rosters_key(tmp_path):
     assert merge_decl(decl, overrides, "# header") == 1
     rosters = yaml.safe_load(overrides.read_text(encoding="utf-8"))["rosters"]
     assert [r["name"] for r in rosters] == ["New Roster"]
+
+
+def _cli(tmp_path, monkeypatch):
+    """Point the CLI's settings at the fixture's series tree + a fresh questions root."""
+    import scriptengine.cli as cli
+    from scriptengine.config import Settings
+
+    settings = Settings(series_root=tmp_path / "series",
+                        questions_root=tmp_path / "questions")
+    monkeypatch.setattr(cli, "get_settings", lambda: settings)
+    return cli
+
+
+def test_page_gen_command_writes_all_four_artifacts(tmp_path, series_with_store, monkeypatch):
+    import json
+    from typer.testing import CliRunner
+
+    cli = _cli(tmp_path, monkeypatch)
+    result = CliRunner().invoke(cli.app, ["page-gen", "--series", "jjk", "--page", "Angel"])
+    assert result.exit_code == 0, result.output
+    q = tmp_path / "questions" / "_jjk_page_angel.json"
+    for name in ("_jjk_page_angel.decl.yaml", "_jjk_page_angel.coverage.json",
+                 "_jjk_page_angel.verify.json"):
+        assert (tmp_path / "questions" / name).exists()
+    batch = json.loads(q.read_text(encoding="utf-8"))
+    assert batch["questions"] and all(x["note"].startswith("page-gen:") for x in batch["questions"])
+
+
+def test_page_merge_command_inserts_into_overrides(tmp_path, series_with_store, monkeypatch):
+    from typer.testing import CliRunner
+    import yaml
+
+    cli = _cli(tmp_path, monkeypatch)
+    paths, _ = series_with_store
+    paths.overrides.write_text(
+        "rosters:\n  - name: Existing\n    match: [existing]\n", encoding="utf-8")
+    decl = tmp_path / "questions" / "_jjk_page_angel.decl.yaml"
+    decl.parent.mkdir(parents=True, exist_ok=True)
+    decl.write_text("rosters:\n"
+                    "  - name: Every battle involving Angel\n"
+                    "    match: [every battle involving angel]\n"
+                    "    subject: Angel\n"
+                    "    members: [Angel vs. Sukuna]\n", encoding="utf-8")
+
+    result = CliRunner().invoke(cli.app, ["page-merge", "--series", "jjk", "--batch", "angel"])
+    assert result.exit_code == 0, result.output
+    rosters = yaml.safe_load(paths.overrides.read_text(encoding="utf-8"))["rosters"]
+    assert [r["name"] for r in rosters] == ["Existing", "Every battle involving Angel"]

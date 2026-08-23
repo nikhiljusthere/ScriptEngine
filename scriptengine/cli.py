@@ -995,6 +995,107 @@ def script_path(
 
 
 @app.command()
+def script_gen(
+    subject: str = typer.Argument(..., help="The arc, character or set the script is about."),
+    series: str = typer.Option("jjk", "--series"),
+    words: int = typer.Option(6000, "--words", help="Target script length in words."),
+    intro: bool = typer.Option(True, "--intro/--no-intro"),
+    mode: str = typer.Option(
+        "auto", "--mode", help="auto | narrative | roster | qa: the shape of the context."
+    ),
+    budget: int = typer.Option(
+        0, "--budget", help="Context token budget; 0 = words * 8, clamped 6000-60000."
+    ),
+    max_attempts: int = typer.Option(3, "--max-attempts", help="Repair passes after the first draft."),
+    title: str = typer.Option(
+        None, "--title", help="Save under this title; default is the subject, so a regenerate reuses the video's folder."
+    ),
+    write: bool = typer.Option(True, "--write/--no-write"),
+) -> None:
+    """Write a script for a topic and verify its tags against the wiki.
+
+    Fetches the context bundle, asks the writer model for the script, checks
+    every chapter/episode tag against the raw crawl, and when a tag fails
+    sends only the findings back for a repair pass. The script is expanded
+    and trimmed until it lands within 500 words of the target. Saves under
+    `scripts output/Video N - <Title>/Script/`.
+    """
+    from scriptengine.llm.client import LLMUnavailable
+    from scriptengine.script.writer import generate_script
+
+    try:
+        result = generate_script(
+            subject,
+            series=series,
+            words=words,
+            intro=intro,
+            mode=mode,
+            token_budget=budget,
+            max_attempts=max_attempts,
+            write=write,
+            title=title,
+        )
+    except ValueError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1)
+    except LLMUnavailable as error:
+        console.print(
+            f"[red]The writer model could not answer:[/red] {error}\n"
+            "[dim]Start LM Studio and load the writer model (default "
+            "qwen/qwen3.8-27b), or set SCRIPTENGINE_WRITER_BACKEND=opencode.[/dim]"
+        )
+        raise typer.Exit(code=1)
+
+    bundle = result["bundle"]
+    report = result["report"]
+    routed = bundle.get("routed")
+    route_note = f" [dim](routed: {routed['mode']} - {routed.get('why', '')})[/dim]" if routed else ""
+    console.print(
+        f"[dim]mode:[/dim] {bundle.get('mode')}   [dim]subject:[/dim] "
+        f"{bundle['subject']}{route_note}"
+    )
+    beats = len(bundle.get("beats") or [])
+    members = len(bundle.get("members") or [])
+    console.print(
+        f"[dim]context: {bundle.get('tokens_used', 0)} tokens, "
+        f"{beats} beats, {members} members, "
+        f"{len(bundle.get('facts') or [])} facts[/dim]"
+    )
+    if result["attempts"] > 1:
+        console.print(
+            f"[yellow]{result['attempts'] - 1} repair pass(es) after the first draft.[/yellow]"
+        )
+    length_note = ""
+    if result["target_words"]:
+        length_note = (
+            f"   [dim]words:[/dim] {result['words']}/{result['target_words']}"
+            f" [dim]({result['length_passes']} length passes)[/dim]"
+            f"{' [yellow](expanded)[/yellow]' if result['expanded'] else ''}"
+            f"{' [yellow](trimmed)[/yellow]' if result['trimmed'] else ''}"
+        )
+    console.print(
+        f"[dim]{report['tags']} tags, {report['distinct']} distinct, "
+        f"checked against {series}[/dim]{length_note}\n"
+    )
+    for finding in report["findings"]:
+        console.print(f"  [red]FAIL[/red]  {finding['tag']}")
+        for issue in finding["issues"]:
+            console.print(f"          [dim]{issue}[/dim]")
+
+    if report["passed"]:
+        console.print("[green]Every tag checks out against the raw wiki pages.[/green]")
+        if result["path"]:
+            console.print(f"[green]Saved:[/green] {result['path']}")
+    else:
+        console.print(
+            f"\n[red]{len(report['findings'])} tag(s) failed verification. "
+            "The script was still written; fix the tags or raise --max-attempts.[/red]"
+        )
+        if not write:
+            raise typer.Exit(code=1)
+
+
+@app.command()
 def export(
     series: str = typer.Option(..., "--series"),
     min_confidence: float = typer.Option(
@@ -1405,6 +1506,209 @@ def canon_run(
                       f"{summary['fact_present']}/{summary['fact_questions']}")
     console.print(table)
     console.print(f"\n[bold]{result['folder'] / 'REPORT.md'}[/bold]")
+
+
+@app.command("page-run")
+def page_run(
+    series: str = typer.Option(..., "--series", help="The series the batch belongs to."),
+    slug: str = typer.Option(
+        ..., "--batch",
+        help="The page cluster's slug; loads questions/_<series>_page_<slug>.json "
+             "(e.g. --batch yuji_itadori)."),
+    dry_run: bool = typer.Option(
+        False, "--dry-run",
+        help="Validate the batch and print what would be asked. Calls nothing."),
+    out: Path = typer.Option(
+        None, "--out",
+        help="Write the run folder here instead of reports/page-campaign/."),
+) -> None:
+    """Score one page campaign's question batch against the live server.
+
+    The page-driven accuracy loop: author ~100 questions about one wiki page
+    and its siblings in `questions/_<series>_page_<slug>.json`, run this, triage
+    every failure (gold error vs engine gap), fix or declare, re-run until 100%.
+    Batches are excluded from the official bank by their `_` prefix.
+
+    Exit codes: 0 at 100%, 2 while questions still fail (the loop scripts on
+    this), 1 when the run is untrustworthy -- no server, a stale server, or a
+    batch that does not validate. A bad score never crashes the command.
+    """
+    import logging
+
+    from scriptengine.eval.canon_run import CanonRunError
+    from scriptengine.eval.page_campaign import run as page_run_impl
+
+    logging.disable(logging.INFO)
+
+    try:
+        result = page_run_impl(series=series, slug=slug, dry_run=dry_run,
+                               out=out, log=console.print)
+    except CanonRunError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    if result.get("dry_run"):
+        return
+
+    summary = result["summary"]
+    table = Table(title=f"Page run: {result['meta']['run_id']}")
+    table.add_column("")
+    table.add_column("", justify="right")
+    passed = sum(1 for r in result["results"] if r["passed"])
+    total = len(result["results"])
+    colour = "green" if result["complete"] else "red"
+    table.add_row("questions passed", f"[{colour}]{passed}/{total}[/{colour}]")
+    table.add_row("set questions exact",
+                  f"{summary.get('exact_answers', 0)}/{summary.get('exact_of', 0)} "
+                  f"({summary.get('exact_rate', 0):.1%})")
+    if summary["fact_questions"]:
+        table.add_row("fact answers present in the bundle",
+                      f"{summary['fact_present']}/{summary['fact_questions']}")
+    console.print(table)
+    console.print(f"\n[bold]{result['folder'] / 'REPORT.md'}[/bold]")
+    if not result["complete"]:
+        raise typer.Exit(code=2)
+
+
+@app.command("page-gen")
+def page_gen(
+    series: str = typer.Option(..., "--series", help="The series the page belongs to."),
+    page: str = typer.Option(..., "--page", help="The wiki page title, e.g. 'Angel'."),
+    out: Path = typer.Option(
+        None, "--out",
+        help="Write the batch there instead of questions/_<series>_page_<slug>.json."),
+    verify_sheet: Path = typer.Option(
+        None, "--verify-sheet",
+        help="Write the verify sheet there instead of alongside the batch."),
+    no_prose_scaffold: bool = typer.Option(
+        False, "--no-prose-scaffold",
+        help="Skip the coverage.json + verify.json scaffolds; keep the batch and decl."),
+) -> None:
+    """Generate the structured half of a page-campaign batch from `facts.db`.
+
+    The regular questions (infobox identity, the per-battle block, roster sets)
+    are a deterministic function of the store, so they are generated, numbered
+    into the campaign batch without touching a hand-authored question, and
+    paired with a decl fragment plus the prose pass's scaffolds:
+
+      questions/_<series>_page_<slug>.json        the reconciled batch
+      questions/_<series>_page_<slug>.decl.yaml   the roster declarations
+      questions/_<series>_page_<slug>.coverage.json  the section-coverage ledger
+      questions/_<series>_page_<slug>.verify.json    the verify sheet
+
+    Exit 0 on success, 1 when the page cannot be generated or the batch fails
+    validation.
+    """
+    import logging
+    from datetime import date
+
+    from scriptengine.config import load_overrides
+    from scriptengine.eval import questions as Q
+    from scriptengine.eval.page_gen import (
+        PageGenError, generate_structured, render_decl, slug_of, wiki_base, write_batch)
+
+    logging.disable(logging.INFO)
+
+    settings = get_settings()
+    paths = series_paths(series, settings)
+    overrides = load_overrides(paths)
+    slug = slug_of(page)
+    questions_root = settings.questions_root
+    questions_root.mkdir(parents=True, exist_ok=True)
+    base = f"_{series}_page_{slug}"
+    batch_path = Path(out) if out else questions_root / f"{base}.json"
+    decl_path = questions_root / f"{base}.decl.yaml"
+    coverage_path = questions_root / f"{base}.coverage.json"
+    verify_path = Path(verify_sheet) if verify_sheet else questions_root / f"{base}.verify.json"
+
+    try:
+        result = generate_structured(paths, page, overrides, settings)
+        batch = write_batch(batch_path, series, slug, wiki_base(paths, page), result)
+        decl_path.write_text(
+            render_decl(result, page, date.today().isoformat()), encoding="utf-8")
+        if not no_prose_scaffold:
+            coverage_path.write_text(
+                json.dumps(result.coverage, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+            verify_path.write_text(
+                json.dumps(result.verify, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+    except (PageGenError, Q.QuestionsError) as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    generated = [q for q in batch["questions"]
+                 if str(q.get("note", "")).startswith("page-gen:")]
+    by_class: dict[str, int] = {}
+    for question in generated:
+        cls = question["note"].split(":", 2)[1]
+        by_class[cls] = by_class.get(cls, 0) + 1
+    superseded = [r for r in batch["retired"] if "superseded" in str(r.get("reason", ""))]
+
+    table = Table(title=f"page-gen: {series} / {page}")
+    table.add_column("")
+    table.add_column("", justify="right")
+    for cls in sorted(by_class):
+        table.add_row(f"{cls} questions", str(by_class[cls]))
+    table.add_row("structured questions", str(len(generated)))
+    table.add_row("rosters declared", str(len(result.rosters)))
+    table.add_row("auto-retires", str(len(result.retires)))
+    table.add_row("hand-authored kept", str(len(batch["questions"]) - len(generated)))
+    table.add_row("collisions superseded", str(len(superseded)))
+    if not no_prose_scaffold:
+        table.add_row("uncovered sections", str(len(result.coverage.get("uncovered", []))))
+    console.print(table)
+    for retire in result.retires:
+        console.print(f"  [dim]retired: {retire['question']} -- {retire['reason']}[/dim]")
+    console.print(f"[bold]batch[/bold]: {batch_path}")
+    console.print(f"[bold]decl[/bold]: {decl_path}")
+    if not no_prose_scaffold:
+        console.print(f"[bold]coverage[/bold]: {coverage_path}")
+        console.print(f"[bold]verify[/bold]: {verify_path}")
+
+
+@app.command("page-merge")
+def page_merge(
+    series: str = typer.Option(..., "--series", help="The series the decl belongs to."),
+    batch: str = typer.Option(
+        ..., "--batch",
+        help="The page cluster's slug; merges questions/_<series>_page_<slug>.decl.yaml "
+             "(e.g. --batch angel)."),
+    decl: Path = typer.Option(
+        None, "--decl",
+        help="Merge this decl file instead of the cluster's default."),
+) -> None:
+    """Merge a page-gen decl fragment into `series/<series>/overrides.yaml`.
+
+    Text-insert only: the house comments in `overrides.yaml` survive, duplicate
+    roster names are skipped, and the result is re-parsed before it is written.
+    Exit 0 on success, 1 when the merge or its validation fails.
+    """
+    from datetime import date
+
+    from scriptengine.eval.page_gen import PageGenError, _decl_rosters, merge_decl
+
+    settings = get_settings()
+    paths = series_paths(series, settings)
+    decl_path = (Path(decl) if decl
+                 else settings.questions_root / f"_{series}_page_{batch}.decl.yaml")
+    if not decl_path.exists():
+        console.print(f"[red]no decl at {decl_path}[/red]")
+        raise typer.Exit(code=1)
+    try:
+        inserted = merge_decl(
+            decl_path, paths.overrides,
+            f"# ── page-gen: {batch} ({date.today().isoformat()}) ──")
+    except PageGenError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+    total = len(_decl_rosters(decl_path))
+    console.print(
+        f"merged {inserted}/{total} roster(s) from {decl_path.name} into {paths.overrides}")
+    if total - inserted:
+        console.print(f"[dim]{total - inserted} skipped (already declared)[/dim]")
+    console.print(
+        "[dim]overrides.yaml reloads per request -- no server restart needed.[/dim]")
 
 
 @app.command("list")

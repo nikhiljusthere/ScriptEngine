@@ -619,6 +619,19 @@ def _aliases_of(store: FactStore, paths: SeriesPaths, title: str) -> list[str]:
             pass  # best-effort: the store's alias rows stand alone
     return sorted(names)
 
+def wiki_base(paths: SeriesPaths, title: str) -> str:
+    """The wiki's base URL: the manifest's own record, else the crawl's source."""
+    manifest = load_manifest(paths)
+    wiki = (manifest.get("wiki") or "").rstrip("/")
+    if not wiki:
+        crawl = paths.wikitext / f"{sanitise_filename(title)}.json"
+        if crawl.exists():
+            url = json.loads(crawl.read_text(encoding="utf-8")).get("url", "")
+            wiki = url.split("/wiki/")[0] if "/wiki/" in url else ""
+    if not wiki:
+        raise PageGenError(f"no wiki base for {paths.name!r}: the manifest carries none")
+    return wiki
+
 def generate_structured(
     paths: SeriesPaths,
     title: str,
@@ -637,15 +650,7 @@ def generate_structured(
         if row is None:
             raise PageGenError(f"{title!r} is not in {paths.facts_db.name}: index the series first")
 
-        manifest = load_manifest(paths)
-        wiki = (manifest.get("wiki") or "").rstrip("/")
-        if not wiki:
-            crawl = paths.wikitext / f"{sanitise_filename(title)}.json"
-            if crawl.exists():
-                url = json.loads(crawl.read_text(encoding="utf-8")).get("url", "")
-                wiki = url.split("/wiki/")[0] if "/wiki/" in url else ""
-        if not wiki:
-            raise PageGenError(f"no wiki base for {paths.name!r}: the manifest carries none")
+        wiki = wiki_base(paths, title)
 
         out = PageGenOutput()
         verified = date.today().isoformat()
