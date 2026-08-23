@@ -245,6 +245,16 @@ def _page_type_is_battle(store, title: str) -> bool:
     ).fetchone()
     return bool(row and row["page_type"] and "battle" in row["page_type"].lower())
 
+def _roster_phrase_safe(title: str) -> bool:
+    """False when the title would put a banned word into a roster match phrase.
+
+    The guard (below) rejects any roster match phrase containing "arc"/"saga"
+    (a route trap); the roster phrases are built from the page title, so a
+    story-arc page like "Fearsome Womb Arc" would always trip it. Its
+    per-battle facts stay; only the 'every battle' set is withheld.
+    """
+    return not re.search(r"\b(arc|saga)s?\b", title.lower())
+
 def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified):
     pairs = battle_relations(overrides)
     if not pairs:
@@ -365,7 +375,7 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
                             f"page-gen:battle:{battle}:techniques")
 
     battle_titles = sorted(battles)
-    if not own_battle:
+    if not own_battle and _roster_phrase_safe(title):
         out.questions.append(_question(
             f"Every battle involving {title}", "set", title, battle_titles, wiki, title,
             "page-gen:battles", verified, expect_mode="roster",

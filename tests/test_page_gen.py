@@ -693,6 +693,18 @@ def test_run_page_gen_status(series_with_store, tmp_path):
     assert status["uncovered"]  # the fixture leaves prose sections uncovered
 
 
+def test_roster_phrase_safe_bans_arc_saga_words():
+    from scriptengine.eval.page_gen import _roster_phrase_safe
+
+    assert _roster_phrase_safe("Sukuna")
+    assert _roster_phrase_safe("Maki Zenin")
+    # a word "arc"/"saga" in the title lands in the roster match phrase -> unsafe
+    assert not _roster_phrase_safe("Fearsome Womb Arc")
+    assert not _roster_phrase_safe("Gojo's Past Arc")
+    assert not _roster_phrase_safe("Vs. Mahito Arc")
+    assert not _roster_phrase_safe("The Final Saga")
+
+
 def _cli(tmp_path, monkeypatch):
     """Point the CLI's settings at the fixture's series tree + a fresh questions root."""
     import scriptengine.cli as cli
