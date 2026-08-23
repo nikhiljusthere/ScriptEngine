@@ -450,12 +450,21 @@ def _relations_builder(store, paths, title, aliases, overrides, wiki, out, verif
     groups: dict[str, list[str]] = {}
     for row in store.relations_of(title):
         relation = (row["relation"] or "").strip().lower()
-        other = (row["other"] or "").strip()
-        if not relation or not other:
+        if not relation:
             continue
+        # `relations_of` returns the title as either endpoint: on a forward row
+        # the counterpart is `other`, on a reverse row -- the relationship
+        # recorded on the *other* character's page (`other` == title) -- it is
+        # `character`. Taking `other` unconditionally (the old code) put the
+        # title into its own roster and dropped the real counterpart.
+        counterpart = (row["other"] or "").strip()
+        if (row["character"] or "").strip().lower() != title.lower():
+            counterpart = (row["character"] or "").strip()
+        if not counterpart or counterpart.lower() == title.lower():
+            continue  # empty or a self-loop: never a member of its own roster
         members = groups.setdefault(relation, [])
-        if other not in members:
-            members.append(other)
+        if counterpart not in members:
+            members.append(counterpart)
     for relation in sorted(groups):
         members = groups[relation]
         if len(members) < 2:

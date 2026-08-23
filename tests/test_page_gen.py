@@ -423,6 +423,31 @@ def test_relation_rosters_group_by_relation(series_with_store):
     assert q and q[0]["kind"] == "set" and q[0]["expect_mode"] == "roster"
 
 
+def test_relation_rosters_exclude_self_and_take_reverse_counterparts(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    # The wiki writes a relationship on whichever page it feels like: Higuruma's
+    # page carries the Angel-ally row (character=Higuruma, other=Angel) and
+    # Kamo's / Yaga's pages carry Angel-enemy rows. `relations_of("Angel")`
+    # returns all of them (both_ways), so the roster builder must take the
+    # *counterpart* endpoint -- `other` on a forward row, `character` on a
+    # reverse one -- and never the title itself.
+    store.save_relations("Higuruma", [{"other": "Angel", "relation": "ally"}], 2, "v1", "test")
+    store.save_relations("Kamo", [{"other": "Angel", "relation": "enemy"}], 2, "v1", "test")
+    store.save_relations("Yaga", [{"other": "Angel", "relation": "enemy"}], 2, "v1", "test")
+    store.commit()
+
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    by_name = {r["name"]: r for r in out.rosters}
+    # the reverse Higuruma row must not add "Angel" to Angel's own roster
+    assert set(by_name["Every ally of Angel"]["members"]) == {"Higuruma", "Ino"}
+    # the reverse-row counterparts (Kamo, Yaga) are the real members
+    assert set(by_name["Every enemy of Angel"]["members"]) == {"Kamo", "Yaga"}
+    for r in out.rosters:
+        assert "Angel" not in r["members"]
+
+
 def test_coverage_marks_uncovered_and_retired(series_with_store):
     from scriptengine.eval.page_gen import generate_structured
 
