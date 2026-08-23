@@ -210,6 +210,11 @@ def _techniques_for(abilities: str, side: str, character: str) -> list[str]:
     """
     fighters = _split_list(side)
     lines = [line.strip() for line in abilities.splitlines() if line.strip()]
+    # The side cell can list several fighters that the store keeps
+    # space-flattened (the wiki's own `<br/>` separators, lost on parse), so
+    # the fighters never become markers on their own: a fighter line is any
+    # abilities line the side cell names. Technique lines never do.
+    side_folded = _fold(side)
 
     def is_marker(line: str) -> bool:
         fl = _fold(line)
@@ -217,7 +222,7 @@ def _techniques_for(abilities: str, side: str, character: str) -> list[str]:
             fl == _fold(fighter) or (
                 _fold(fighter).split() and _fold(fighter).split()[-1] == fl)
             for fighter in fighters
-        )
+        ) or (len(fl) > 2 and fl in side_folded)
 
     char = _fold(character)
     char_last = char.split()[-1] if char.split() else ""

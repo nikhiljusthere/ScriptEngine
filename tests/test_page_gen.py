@@ -180,15 +180,15 @@ def _add_battles(store):
         {
             "title": "Jujutsu Sorcerers vs. Sukuna",
             "facts": [
-                ("side1", "Side 1", "Hana Kurusu"),
+                ("side1", "Side 1", "Maki Zenin Hana Kurusu"),
                 ("side2", "Side 2", "Sukuna"),
                 ("outcome", "Outcome", "Inconclusive."),
                 ("chapters", "Chapters", "Chapter 204"),
-                ("powers1", "Powers 1", "Hana Kurusu\nFlight"),
+                ("powers1", "Powers 1", "Maki\nHand-to-Hand Combat\nHana Kurusu\nFlight"),
                 ("powers2", "Powers 2", "Sukuna\nCursed Speech"),
             ],
             "text": "Jujutsu Sorcerers vs. Sukuna is recorded in Chapter 204."
-                    " The outcome was Inconclusive.",
+                    " The outcome was Inconclusive. Hana Kurusu used Flight.",
         },
     ]
     for spec in specs:
@@ -367,9 +367,12 @@ def test_battle_technique_question_is_a_fact_not_a_roster(series_with_store):
     q = [x for x in out.questions if x["note"] == "page-gen:battle:Angel vs. Sukuna:techniques"]
     assert q and q[0]["kind"] == "fact" and q[0]["expect_mode"] == "qa"
     assert [a["item"] for a in q[0]["answer"]] == ["Flight, Jacob's Ladder"]
-    # the alias-matched battle names the character by alias in its question
+    # the alias-matched battle names the character by alias in its question,
+    # and its technique span is read from under her marker in a side cell that
+    # lists several fighters (the live JJK shape, `<br/>`-flattened to spaces)
     q2 = [x for x in out.questions if x["note"] == "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"]
     assert q2 and "Hana Kurusu" in q2[0]["question"]
+    assert [a["item"] for a in q2[0]["answer"]] == ["Flight"]
 
 
 def test_technique_roster_and_set(series_with_store):
