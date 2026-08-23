@@ -179,6 +179,60 @@ class TestRoute:
         assert route(broken, "What race is Vegeta?").mode in {"qa", "roster", "narrative"}
 
 
+class TestBattlesInRouting:
+    """A fighter's whole fight list routes to roster, however it is worded.
+
+    The set-shaped forms ("Every Fight Mahoraga Has Ever Been In") already reach
+    the roster via the enumeration test. Their question-worded twins -- "Who did
+    Mahoraga fight?" -- used to be claimed by rule 3 for `qa` before that test
+    was reached, so they got a prose lookup instead of the list of battles. The
+    guard probes whether this wiki actually holds a set of that fighter's fights;
+    only then does the question earn a roster route.
+    """
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            # Statement forms: the enumeration test claims these.
+            "Every Fight Mahoraga Has Ever Been In",
+            "All battles of Sukuna",
+            "Each duel Gojo was in",
+            # Question-worded twins: rule 2b must claim these before rule 3's qa.
+            "Who did Mahoraga fight?",
+            "What battles was Sukuna in?",
+        ],
+    )
+    def test_fight_lists_reach_roster(self, query):
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert route(paths, query).mode == "roster"
+
+    def test_a_fighter_with_no_battles_stays_a_lookup(self):
+        """A wh-fight question about a fighter on no battle page has no set to
+        list, so it falls through rule 2b and is answered from prose."""
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        # `Ko-Guy` has no battle page in the jjk corpus, so there is no list.
+        chosen = route(paths, "Who did Ko-Guy fight?")
+        assert chosen.mode != "roster"
+
+    def test_the_battles_in_signal_is_reported(self):
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        chosen = route(paths, "Who did Mahoraga fight?")
+        assert chosen.signals["battles_in_ask"] is True
+        assert chosen.mode == "roster"
+
+
 class TestSubjectPreference:
     def test_packaging_never_becomes_the_subject(self):
         """"Who killed Ace?" resolved to `Legendary Hour`, an episode."""
@@ -277,3 +331,72 @@ class TestArcsAreASetOnlyWhenAsked:
         if not paths.facts_db.exists():
             pytest.skip("jjk is not indexed")
         assert route(paths, "Fearsome Womb Arc").mode == "narrative"
+
+
+class TestPhrasingRobustFieldQuestions:
+    """A question naming an infobox field reaches qa in natural phrasing.
+
+    The campaign's motive (2026-08-24) is that a question is answerable in
+    any natural phrasing, so the bank keeps natural wording and the engine
+    carries it. Two engine defects kept the natural phrasings on `narrative`,
+    the one path that strips exactly these fields:
+
+    - the wh test only fired on a wh-word at position 0, so "In which arc
+      does X take place?" read as a statement; and
+    - the field vocabulary did not name the battle-infobox fields JJK's
+      battle pages record (arc, place, event, outcome, date), so even the
+      wh-worded twins ("Where did X take place?") fell through on a battle
+      subject, an event the story-type rule sends to narrative.
+
+    Battle questions are rescued only by rule 6 (`interrogative and
+    _asks_for_field`), so both halves of the fix live there: a robust opener
+    and a corpus-intersected field vocabulary.
+    """
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            # Prepositional wh-openers: the wh-word is not at position 0.
+            "In which arc does Yuji Itadori vs. Mahito take place?",
+            "In which episode is Satoru Gojo vs. Toji Fushiguro depicted?",
+            "In which manga chapter does Yuji Itadori vs. Choso take place?",
+            "During which arc does Yuji Itadori vs. Panda take place?",
+            # `whom` was missing from the wh set entirely.
+            "Whom did Toji Fushiguro kill?",
+            # Battle-infobox fields the old vocabulary did not name.
+            "Where did Yuji Itadori vs. Panda take place?",
+            "When did Satoru Gojo vs. Sukuna take place?",
+            "What was the result of Yuji Itadori vs. Mahito?",
+            "What is the outcome of Toji Fushiguro vs. Kenjaku?",
+            # Story-type subject (an event): rule 3 is off the table, so only
+            # rule 6 -- interrogative + a named field -- can reach qa. This is
+            # the field-vocabulary half of the fix in isolation.
+            "Where does the Shibuya Incident take place?",
+        ],
+    )
+    def test_battle_field_questions_reach_qa(self, query):
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert route(paths, query).mode == "qa"
+
+    def test_the_prepositional_opener_is_recognised(self):
+        from scriptengine.retrieve.router import _is_interrogative
+
+        for query in (
+            "In which arc does X take place?",
+            "On which event did X happen?",
+            "During which saga did X happen?",
+            "After which arc did X happen?",
+            "Whom did X kill?",
+        ):
+            assert _is_interrogative(query)
+        for query in (
+            "Every arc",
+            "Shibuya Incident",
+            "In order to win the battle",
+            "After the war, the story ends",
+        ):
+            assert not _is_interrogative(query)

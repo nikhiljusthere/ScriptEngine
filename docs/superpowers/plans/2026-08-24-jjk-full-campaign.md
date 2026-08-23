@@ -6,6 +6,16 @@ tiered-depth** strategy the user approved. The deterministic structured half
 sweeps every in-scope page; the subagent prose/verify pipeline runs as a
 tracked, sequential campaign on the characters.
 
+**Motive (2026-08-24 pivot, user directive):** a question must be answerable in
+**any natural phrasing**. The question banks keep natural question wording; when
+a phrasing routes to the wrong retriever or the answer is not surfaced, the
+*engine* is fixed (routing, retrieval, or the underlying data) — the question is
+never bent to fit the router. The end state is a corpus of correct data for the
+JJK wiki: every fact the wiki records is retrievable under the wording a person
+would actually use. Scope for now: JJK only. The 18 redo set is re-run under
+this motive (existing batches' router-bent rephrasings are restored to natural
+wording; the engine carries them).
+
 This plan builds on `2026-08-23-page-gen.md` (the `page-gen`/`page-merge`
 stack, tasks 0–10 done; Angel task 11 mid-flight). It supersedes the
 single-cluster scope of that plan's task 11.
@@ -33,7 +43,8 @@ single-cluster scope of that plan's task 11.
   `kenjaku`, `yuji_itadori`, `yuta_okkotsu`; non-characters `culling_game_arc`,
   `shibuya_incident`, `story_arcs`, `volumes_chapters`. All 18 are re-run
   through the current pipeline: structured half regenerated, hand-authored
-  questions retained, re-gated.
+  questions retained, router-bent phrasings restored to natural wording,
+  re-gated.
 
 Observed generator behavior per type (smoke-tested 2026-08-24):
 character → rich (Angel: 22 Qs); technique → decent (Antigravity System: 9);
@@ -101,8 +112,13 @@ near-empty (2–3 Qs, mostly prose). Subtask 0.2 tunes the battle case.
   (`graphify-out/GRAPH_REPORT.md` / `graph.json` before grepping). Both
   restated verbatim in every subagent prompt.
 - Every `.py` change: TDD first, then the gate triple.
-- Gold error → fix the question, never the retriever; record the why.
+- Gold error → fix the question's *gold* (the answer), never the retriever;
+  record the why.
+- **Phrasing discipline (2026-08-24 pivot):** the bank keeps natural phrasing.
+  A phrasing that routes to the wrong mode or lands on a retriever that does not
+  surface the answer is an **engine defect**: fix it (router, retrieval, or
+  data) with TDD + gate, then re-run the batch unchanged. Retire only what the
+  wiki itself does not record (a genuine data gap), with a reason. Never retire
+  or rephrase a question the wiki *can* answer.
 - Commit engine + tests only. Campaign state (`questions/_jjk_page_*`,
   `series/jjk/overrides.yaml`, `reports/page-campaign/`) stays uncommitted.
-- `page-run` to 100% means triaging every miss against the wikitext: rephrase
-  inside the routing contract or retire with a reason.

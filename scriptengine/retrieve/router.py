@@ -21,6 +21,14 @@ A bare wh-word cannot make that distinction either; the same measurement wanted
 them is *what the subject is*: an event, battle or arc is a story; a character,
 item or technique with an attribute asked of it is a lookup. That is read from
 the ontology rather than from another keyword list.
+
+The 2026-08-24 campaign -- "a question must be answerable in any natural
+phrasing" -- added two fixes for natural wordings this read as accounts:
+`_is_interrogative` accepts a wh-word behind one leading preposition ("In
+which arc does X take place?" opened like a statement), and `_FIELD_ASKERS`
+names the battle-infobox fields JJK records (arc, place, event, outcome,
+date), which rule 6 intersects with the corpus's own fact keys, so a wiki
+that records no such field cannot route on the word.
 """
 
 from __future__ import annotations
@@ -32,12 +40,47 @@ from typing import Any
 from scriptengine.config import SeriesPaths, load_overrides, subject_ranking
 from scriptengine.retrieve import chronology
 from scriptengine.retrieve import semantics as sem
-from scriptengine.retrieve.roster import content_words, looks_like_enumeration
+from scriptengine.retrieve.roster import (
+    asks_for_battle_result,
+    asks_for_battles_in,
+    battle_result,
+    battle_result_fighter,
+    battles_in,
+    build_roster,
+    content_words,
+    looks_like_enumeration,
+)
 from scriptengine.stores.facts import FactStore, rank_subjects
 
 MODES = ("roster", "qa", "narrative")
 
-_WH = re.compile(r"^\s*\W*(what|whats|what's|who|whos|who's|which|when|where|why|how)\b", re.I)
+_WH = re.compile(
+    r"^\s*\W*(what|whats|what's|who|whom|whos|who's|which|when|where|why|how)\b",
+    re.I,
+)
+
+# A wh-word behind one leading preposition still opens the question: "In
+# which arc does X take place?" and "After which saga did X happen?" are
+# the natural way to ask for a battle's infobox field, and the position-0
+# test read them as statements, so the question fell to narrative -- the
+# one path that strips exactly those fields. One preposition, not a free
+# walk: "in order to" and "after the war" stay statements.
+_LEADING_PREPS = frozenset({
+    "in", "on", "during", "after", "before", "at", "by", "for", "to",
+    "with", "within", "over", "under", "from", "since", "until", "upon",
+    "off", "across", "through", "around", "about", "between", "amid",
+})
+
+
+def _is_interrogative(query: str) -> bool:
+    """Whether the question opens with a wh-word, directly or behind a preposition."""
+    q = (query or "").strip()
+    if _WH.match(q):
+        return True
+    parts = q.split()
+    if len(parts) >= 2 and parts[0].lower() in _LEADING_PREPS:
+        return bool(_WH.match(" ".join(parts[1:])))
+    return False
 
 # "How many X are there" opens with a wh-word and still wants the set.
 _COUNT = re.compile(r"\bhow many\b", re.I)
@@ -58,6 +101,17 @@ _COUNT = re.compile(r"\bhow many\b", re.I)
 # lookup, and "who **are** the Zodiacs" does not.
 _PLURAL_WH = re.compile(r"^\s*\W*(who|what|which)\s+(are|were)\b", re.I)
 
+# An interrogative that asks for a fighter's whole fight list: "Who did Mahoraga
+# fight?", "What battles was Sukuna in?". The set-shaped forms ("Every Fight X
+# Has Ever Been In") already route to roster via the enumeration test; these are
+# the question-worded twins, and rule 3 below would claim them for `qa` before
+# that test is reached. They want the same list of battles, not a prose lookup.
+_BATTLES_IN_WH = re.compile(
+    r"\b(who|what|which)\s+(did|does|do|was|were|is|are)?\s*"
+    r"([A-Za-z][\w.-]*)?\s*(fight(ed|s)?|battle(d|s)?|duel(ed|s)?)\b",
+    re.I,
+)
+
 # "Sukuna's Domain Expansion": whoever owns the attribute is the subject.
 _POSSESSIVE = re.compile(r"\b([A-Za-z][\w.-]*)['’]s\b")
 
@@ -71,6 +125,50 @@ _NARRATIVE_VERBS = re.compile(
 
 # Subject types that mean the question is about a story, not a thing.
 _STORY_TYPES = frozenset({sem.EVENT, sem.MEDIA})
+
+# Words a question uses to name an infobox field, mapped to the fact key it
+# means. The directional verbs (`follows`, `precedes`) never appear as keys;
+# everything else is the key itself. Only words whose target this corpus
+# actually records count (the `_asks_for_field` intersection), which keeps
+# the vocabulary on the wiki rather than on this file. `arc` is here
+# because JJK's battle pages record it as a field -- "In which arc does X
+# take place?" names that field, and the corpus intersection is what keeps
+# a wiki that records no `arc` fact from routing on the word.
+_FIELD_ASKERS = {
+    "romaji": "romaji",
+    "kanji": "kanji",
+    "japanese": "japanese",
+    "name": "name",
+    "next": "next",
+    "follows": "next",
+    "follow": "next",
+    "previous": "previous",
+    "prev": "previous",
+    "precedes": "previous",
+    "precede": "previous",
+    "preceded": "previous",
+    "preceding": "previous",
+    "chapter": "chapters",
+    "chapters": "chapters",
+    "episode": "episodes",
+    "episodes": "episodes",
+    "anime": "anime",
+    "manga": "manga",
+    # Battle-infobox fields, added when the campaign's motive became
+    # "answerable in any natural phrasing": the campaign's natural wording
+    # ("In which arc / Where / When / What was the result") named fields
+    # this vocabulary did not, so on a story-type subject rule 6 could not
+    # rescue them and narrative -- which strips the fields -- answered.
+    "arc": "arc",
+    "place": "place",
+    "where": "place",
+    "event": "event",
+    "outcome": "outcome",
+    "result": "outcome",
+    "results": "outcome",
+    "when": "date",
+    "volume": "volumes",
+}
 
 # Packaging only. Skipped when resolving *what a question is about*, because an
 # episode page is never the subject unless it is named, which is how "Who killed
@@ -101,7 +199,7 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     """
     overrides = load_overrides(paths)
     set_shaped = looks_like_enumeration(query)
-    interrogative = bool(_WH.match(query or ""))
+    interrogative = _is_interrogative(query)
     plural_ask = bool(_PLURAL_WH.match(query or ""))
     counting = bool(_COUNT.search(query or ""))
     story_verb = bool(_NARRATIVE_VERBS.search(query or ""))
@@ -114,12 +212,39 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     story_verb = bool(_NARRATIVE_VERBS.search(head))
 
     subject, subject_type = _subject(paths, query, overrides)
+    # A count or a plural question wants a roster only if this wiki resolves a
+    # set for it; otherwise it asks for a number in prose ("how many wards did
+    # Kenjaku's chain reaction compromise?") and rule 3 answers from text. The
+    # probe runs the same resolution build_roster will, so router and retriever
+    # cannot disagree about whether the set exists.
+    has_set = _resolves_a_set(paths, query, settings) if (counting or plural_ask) else False
+
+    # An interrogative fight-list question ("Who did Mahoraga fight?") wants the
+    # same roster as its statement twin, but rule 3 would claim it for `qa` first.
+    # Probe only when the phrasing is a wh-question about fighting and a subject
+    # resolved; otherwise leave the existing rules to decide.
+    battles_in_ask = bool(_BATTLES_IN_WH.search(query or "")) and interrogative
+    has_battles = (
+        _resolves_battles_in(paths, subject, overrides) if battles_in_ask else False
+    )
+    # "What is the result of the battle between X and Y?" The win/loss is a
+    # `Result` cell in the subject's own battle table, a region the qa top-8
+    # never surfaces (it ranks the fighter's page first). Probe like 2b: the
+    # roster route is earned only when this wiki actually holds a row naming
+    # the fight; otherwise rule 3 answers from prose.
+    battle_result_ask = asks_for_battle_result(query) and interrogative
+    has_battle_result = (
+        _resolves_battle_result(paths, subject, query, overrides)
+        if battle_result_ask else False
+    )
     signals = {
         "set_shaped": set_shaped,
         "interrogative": interrogative,
         "plural_ask": plural_ask,
         "counting": counting,
         "story_verb": story_verb,
+        "battles_in_ask": battles_in_ask,
+        "battle_result_ask": battle_result_ask,
         "subject": subject,
         "subject_type": subject_type,
     }
@@ -131,14 +256,38 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     if chronology.wants_chronology(query):
         return Route("roster", "asks for the story in order", signals)
 
-    # 2. A count is a set even though it opens like a question.
-    if counting:
+    # 2. A count is a set even though it opens like a question -- when this
+    #    wiki holds one for it. An undeclared count falls through to rule 3,
+    #    which reads the number out of prose instead of listing techniques.
+    if counting and has_set:
         return Route("roster", "asks how many, which wants the set", signals)
+
+    # 2b. An interrogative fight-list question wants the roster of battles, not a
+    #     prose lookup. "Who did Mahoraga fight?" is the same request as "Every
+    #     Fight Mahoraga Has Ever Been In"; rule 3 below would claim it for `qa`
+    #     before the enumeration test is reached. Only when this wiki actually
+    #     holds a list of that fighter's battles -- otherwise fall through to 3,
+    #     which answers from prose when there is no set behind the question.
+    if has_battles:
+        return Route("roster", f"asks for {subject!r}'s fights, which wants the set", signals)
+
+    # 2c. A fight's result is read off the subject's own battle table, not from
+    #     passages. Same probe shape as 2b: the roster route is earned only
+    #     when the wiki holds a row naming the fight, otherwise fall through
+    #     to 3, which answers from prose.
+    if has_battle_result:
+        return Route(
+            "roster",
+            "asks for a fight's result, which the wiki records in its battle table",
+            signals,
+        )
 
     # 3. A wh-question about a thing is a lookup; this is the case the regex
     #    got wrong, and it has to win over the enumeration cue. Except when its
-    #    verb is plural, which asks for the list rather than for one thing.
-    if (interrogative and not plural_ask and not story_verb
+    #    verb is plural and the wiki holds the set it asks for, which wants the
+    #    list rather than one thing. A plural question with no set behind it is
+    #    a lookup too: "who are the current four emperors" reads prose.
+    if (interrogative and not (plural_ask and has_set) and not story_verb
             and subject_type not in _STORY_TYPES):
         if subject:
             return Route(
@@ -156,12 +305,30 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
     if set_shaped:
         return Route("roster", "asks for a set", signals)
 
-    # 5. A plural question with no enumeration word is still a plural question.
-    #    "What are Sukuna's named cursed techniques" carries none of `every`,
-    #    `all`, `members of` (the plural noun is the only cue) and without
-    #    this it falls past every test above and is answered as an account.
-    if plural_ask:
+    # 5. A plural question with no enumeration word is still a plural question --
+    #    when this wiki holds the set it asks for. "What are Sukuna's named
+    #    cursed techniques" carries none of `every`, `all`, `members of` (the
+    #    plural noun is the only cue) and without this it falls past every test
+    #    above and is answered as an account. A plural question with no set
+    #    behind it reaches here only when rule 3 could not anchor a subject, so
+    #    it keeps its old reading: an account of whatever the page holds.
+    if plural_ask and has_set:
         return Route("roster", "asks in the plural, which wants the list", signals)
+
+    # 6. A wh-question that names an infobox field is a lookup even when its
+    #    subject is an event or arc. "What is the romaji of the Cursed Child
+    #    Arc?" and "Which arc follows the Fearsome Womb Arc?" want one fact
+    #    row, and narrative strips exactly those: `NOISE_FACT_KEYS` drops
+    #    romaji, next and previous, and the infobox chunk is not a beat. qa
+    #    serves the subject's facts and passages, which is where the answers
+    #    live. The field vocabulary is read from the corpus's own fact keys,
+    #    so a wiki that records no `romaji` cannot be routed by the word. The
+    #    2026-08-24 campaign added the battle-infobox fields (arc, place,
+    #    event, outcome, date) to that vocabulary for the same reason: "In
+    #    which arc does X take place?" is a question about a battle -- an
+    #    event -- and only this rule rescues it from narrative.
+    if interrogative and _asks_for_field(paths, query):
+        return Route("qa", "asks for a specific infobox field", signals)
 
     if interrogative and story_verb:
         return Route("narrative", "asks how something happened", signals)
@@ -174,6 +341,99 @@ def route(paths: SeriesPaths, query: str, settings=None) -> Route:
         return Route("qa", f"names {subject!r} and asks nothing of it", signals)
 
     return Route("narrative", "an account rather than a set or a lookup", signals)
+
+
+def _asks_for_field(paths: SeriesPaths, query: str) -> bool:
+    """Whether `query` names an infobox field this corpus records.
+
+    `content_words` already strips stopwords and possessives, so the field
+    word survives any phrasing ("the Cursed Child Arc's romaji" leaves
+    `romaji`). A failure must never fail routing, so any error reads as "no
+    field" and the question falls through to the narrative rules.
+    """
+    try:
+        with FactStore(paths.facts_db) as store:
+            keys = {
+                row["key"].lower()
+                for row in store.connection.execute("SELECT DISTINCT key FROM facts")
+            }
+    except Exception:  # noqa: BLE001 - routing must never be the thing that fails
+        return False
+    wanted = {
+        _FIELD_ASKERS[word] for word in content_words(query) if word in _FIELD_ASKERS
+    }
+    return bool(wanted & keys)
+
+
+def _resolves_a_set(paths: SeriesPaths, query: str, settings=None) -> bool:
+    """Whether this wiki actually holds a set for `query` to enumerate.
+
+    Rules 2 and 5 used to trust the phrasing alone, so "how many wards did
+    Kenjaku's chain reaction compromise?" -- a number in prose -- was handed a
+    roster of Kenjaku techniques. The probe runs the same resolution
+    build_roster will run for real, one member rendered, and asks it how sure
+    it is: a declared phrase that claimed the topic (`matched`) or an exact
+    discovery is a set; partial and weak are guesses the prose can answer
+    better. A failure here must never fail routing, so any error reads as "no
+    set" and the question falls through to rule 3.
+    """
+    try:
+        roster = build_roster(paths, query, settings, max_members=1, member_chars=0)
+    except Exception:
+        return False
+    if roster.matched:
+        return True
+    return roster.confidence in ("exact", "declared")
+
+
+def _resolves_battles_in(paths: SeriesPaths, fighter: str, overrides: dict | None) -> bool:
+    """Whether `fighter` is on at least one battle page this wiki holds.
+
+    The interrogative twin of the set-shaped battles-in test. Rule 3 claims every
+    wh-question for `qa`, so "Who did Mahoraga fight?" never reaches the roster
+    path that answers it; this probe runs the same resolution `build_roster` will,
+    and only then does the question earn a roster route. A fighter on no battle
+    page returns False and falls through to rule 3, which is where "Who did X
+    fight?" belongs when there is no list of fights behind it. A failure must
+    never fail routing, so any error reads as "no battles".
+    """
+    if not fighter:
+        return False
+    try:
+        from scriptengine.retrieve.citations import EpisodeIndex
+
+        with FactStore(paths.facts_db) as store:
+            roster = battles_in(store, EpisodeIndex(), fighter, 600, overrides)
+    except Exception:  # noqa: BLE001 - routing must never be the thing that fails
+        return False
+    return roster is not None and bool(roster.members)
+
+
+def _resolves_battle_result(
+    paths: SeriesPaths, fighter: str, query: str, overrides: dict | None
+) -> bool:
+    """Whether this wiki holds a battle-table row naming the fight asked for.
+
+    The probe runs the same read `build_roster` will: the first-named
+    side's own `X/Battles` table (the wiki records the Result from the table
+    owner's perspective, so the mirror-image table holds the mirror image of
+    the answer -- the resolved subject is only the fallback when the question
+    names no `between` span), the fight rows it keeps, and whether any of
+    them names the question's opponent. A wiki that keeps no battle tables
+    (Jujutsu Kaisen files its fights as standalone pages, not subtables)
+    returns False and the question falls through to rule 3, which is where it
+    belongs when no table stands behind it. A failure must never fail
+    routing, so any error reads as "no result".
+    """
+    if not fighter:
+        return False
+    fighter = battle_result_fighter(query, fighter)
+    try:
+        with FactStore(paths.facts_db) as store:
+            roster = battle_result(store, fighter, query, 600, overrides)
+    except Exception:  # noqa: BLE001 - routing must never be the thing that fails
+        return False
+    return roster is not None
 
 
 def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]:
@@ -196,9 +456,30 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
             # ordering changes; nothing here resolves aliases, which 13 of 14
             # possessive questions already handle correctly.
             resolved = {row["name"] for row in entities if row["is_resolved"]}
-            ranked = [row["name"] for row in entities]
+            asked = set(content_words(query))
+            owners = {owner.lower() for owner in _POSSESSIVE.findall(query or "")}
+
+            # The type-priority order ranks every event page ahead of a
+            # technique that shares a word with the question, and slicing to
+            # the top eight *before* the overlap test could slice the subject
+            # the question names outright clean away: "Every Fight Mahoraga
+            # Has Ever Been In" was about `Sukuna vs. Yorozu` with
+            # `Eight-Handled Sword Divergent Sila Divine General Mahoraga` at
+            # rank nine. So the two tests that move a candidate -- a
+            # possessive owner, and any word shared with the question -- run
+            # over the whole pool first, and the slice only caps how many
+            # candidates get semantic typing, which is the expensive part.
+            preferred = sorted(
+                enumerate(entities),
+                key=lambda item: (
+                    not bool(set(content_words(item[1]["name"])) & owners),
+                    not bool(set(content_words(item[1]["name"])) & asked),
+                    item[0],
+                ),
+            )[:8]
             typed = [
-                (name, sem.semantic_type(store, name, overrides)) for name in ranked[:8]
+                (row["name"], sem.semantic_type(store, row["name"], overrides))
+                for _, row in preferred
             ]
 
             # `SUBJECT_DEMOTE_TYPES` matches raw infobox ids, so it demotes
@@ -217,9 +498,6 @@ def _subject(paths: SeriesPaths, query: str, overrides: dict) -> tuple[str, str]
             # with the question sinks, which is what keeps `Legendary Hour`,
             # a TV special that shares nothing with "Who killed Ace?", from
             # being the subject.
-            asked = set(content_words(query))
-            owners = {owner.lower() for owner in _POSSESSIVE.findall(query or "")}
-
             def rank(item: tuple[int, tuple[str, str]]) -> tuple:
                 index, (name, semantic) = item
                 words = set(content_words(name))
