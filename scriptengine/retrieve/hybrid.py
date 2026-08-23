@@ -201,13 +201,51 @@ class HybridRetriever:
                         "citation": fact["citation"],
                     }
                 )
-        result.relations = [
-            {
+
+        # 3b. A named battle page is the question's own subject even when
+        #     `link_entities` missed it: `vs.` tokenises apart from the
+        #     stored alias, so "Yuji Itadori vs. Panda" never links and the
+        #     fight's own infobox (arc, place, outcome, chapters) would stay
+        #     out of the bundle unless the rank happened to surface the page.
+        #     The phrasing-robustness requirement (2026-08-24) pays for those
+        #     facts up front, the way the entity facts above are paid for.
+        from scriptengine.retrieve.roster import battle_facts
+
+        battle = battle_facts(self.store, query)
+        if battle and battle[0]["entity"] not in result.entities:
+            result.facts = battle + result.facts
+            result.entities.insert(0, battle[0]["entity"])
+        # Graph edges say X is linked to Y; they carry no words. The
+        # LLM-extracted `relations` rows carry the verbatim `quote` and `era`
+        # that actually answer "who is X to Y" / "what is the relationship
+        # between X and Y", and they live in a separate table the edge walk
+        # above never touches. Both ways: the wiki writes a relationship on
+        # whichever page it feels like, so a question about the top entity
+        # wants the rows it owns and the rows that name it. A question can
+        # name several characters ("Who are Saitama and Genos to Bang?"), so
+        # the top three linked entities are unioned and duplicates dropped --
+        # the pair's row may be filed under either end. Edge rows keep their
+        # shape and gain empty quote/era so both kinds share one form.
+        for row in self.store.edges_for(entity_ids, min_confidence=0.9, limit=40):
+            result.relations.append({
                 "source": row["source"], "relation": row["relation"],
                 "target": row["target"], "confidence": row["confidence"],
-            }
-            for row in self.store.edges_for(entity_ids, min_confidence=0.9, limit=40)
-        ]
+                "quote": "", "era": "",
+            })
+        seen = {(r["source"], r["relation"], r["target"], r["quote"])
+                for r in result.relations}
+        for entity in entities[:3]:
+            for row in self.store.relations_of(entity["name"], both_ways=True):
+                key = (row["character"], row["relation"], row["other"],
+                       row["quote"] or "")
+                if key in seen:
+                    continue
+                seen.add(key)
+                result.relations.append({
+                    "source": row["character"], "relation": row["relation"],
+                    "target": row["other"], "confidence": 1.0,
+                    "quote": row["quote"] or "", "era": row["era"] or "",
+                })
 
         # 4. Three retrievers.
         rankings: dict[str, list[int]] = {}

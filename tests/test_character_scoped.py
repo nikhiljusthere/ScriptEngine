@@ -632,6 +632,37 @@ class TestBattleScoped:
             )
         assert found == "Garou vs. Golden Sperm (Webcomic)"
 
+    def jjk(self):
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        return paths
+
+    def test_the_named_battles_own_facts_are_reachable(self):
+        """`Where did Yuji Itadori vs. Panda take place?` needs the fight's
+        infobox, not a vector rank that may or may not surface the page.
+
+        `link_entities` tokenises `vs.` apart from the stored alias, so the
+        battle page never links from the query and its `place`/`arc`/`outcome`
+        facts stay out of every bundle about it. The phrasing-robustness
+        requirement (2026-08-24) pays for the named battle's own facts
+        instead of leaving them to the rank.
+        """
+        from scriptengine.retrieve.roster import battle_facts
+        from scriptengine.stores.facts import FactStore
+
+        with FactStore(self.jjk().facts_db) as store:
+            facts = battle_facts(store, "Where did Yuji Itadori vs. Panda take place?")
+        values = {f["key"]: f["value"] for f in facts}
+        assert values.get("place") == "Gachinko Fight Club", values
+
+    def test_a_question_naming_no_battle_gets_no_battle_facts(self):
+        from scriptengine.retrieve.roster import battle_facts
+        from scriptengine.stores.facts import FactStore
+
+        with FactStore(self.jjk().facts_db) as store:
+            assert battle_facts(store, "What is Yuji Itadori's grade?") == []
+
 
 class TestBattleRelationsAreDeclared:
     """Three wikis, three names for the same two infobox fields.

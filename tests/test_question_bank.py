@@ -199,3 +199,86 @@ def test_a_malformed_bank_is_refused(tmp_path):
 def test_an_empty_bank_is_refused(tmp_path):
     with pytest.raises(Q.QuestionsError):
         Q.load_all(tmp_path)
+
+
+# ── load_file: the campaign batches' loader ───────────────────────────────────
+
+
+def _campaign_batch_text() -> str:
+    return (
+        '{"series": "jjk", "updated": "2026-08-19", "questions": ['
+        '{"id": "jjk-pg-x-001", "kind": "fact", '
+        '"question": "What is the test question?", "subject": "Test Subject", '
+        '"scope": "closed", "expect_mode": "qa", "tier": "wiki", '
+        '"verified": "2026-08-19", '
+        '"sources": ["https://jujutsu-kaisen.fandom.com/wiki/Test_Page"], '
+        '"answer": [{"item": "Test Answer"}], "accept": "any"}'
+        ']}'
+    )
+
+
+def test_load_file_reads_an_underscore_prefixed_batch(tmp_path):
+    """Campaign batches sit under `_*.json` names that `load_all` skips.
+
+    `load_file` is how they get loaded instead: the declared `series` field
+    wins over the stem, so the file may live anywhere it says whose it is.
+    """
+    path = tmp_path / "_jjk_page_test.json"
+    path.write_text(_campaign_batch_text(), encoding="utf-8")
+
+    bank = Q.load_file(path)
+    assert bank.series == "jjk"
+    assert len(bank.questions) == 1
+    assert bank.questions[0].id == "jjk-pg-x-001"
+    Q.validate([bank])
+
+
+def test_load_all_still_skips_underscore_prefixed_files(tmp_path):
+    """A campaign in progress must never move the official bank's number."""
+    (tmp_path / "_jjk_page_test.json").write_text(
+        _campaign_batch_text(), encoding="utf-8")
+    with pytest.raises(Q.QuestionsError):
+        Q.load_all(tmp_path)  # no non-underscore bank at all
+
+
+def test_load_file_refuses_a_malformed_batch(tmp_path):
+    path = tmp_path / "_jjk_page_test.json"
+    path.write_text('{"series": "jjk", "questions": [{"id": "x"}]}',
+                    encoding="utf-8")
+    with pytest.raises(Q.QuestionsError):
+        Q.load_file(path)
+
+
+def test_load_file_refuses_a_missing_path(tmp_path):
+    with pytest.raises(Q.QuestionsError):
+        Q.load_file(tmp_path / "_jjk_page_absent.json")
+
+
+def test_load_bank_still_checks_the_declared_series(tmp_path):
+    """`load_bank` derives the filename from the series name, so a file that
+    declares a different one is filed wrong and must be refused as before."""
+    (tmp_path / "db.json").write_text(
+        '{"series": "opm", "questions": ['
+        '{"id": "x-1", "kind": "fact", "question": "q?", "subject": "s", '
+        '"tier": "wiki", "verified": "2026-08-19", '
+        '"sources": ["https://onepunchman.fandom.com/wiki/X"], '
+        '"answer": [{"item": "a"}]}]}' ,
+        encoding="utf-8",
+    )
+    with pytest.raises(Q.QuestionsError):
+        Q.load_bank("db", tmp_path)
+
+
+def test_norm_keeps_cjk_intact():
+    """A kanji gold must survive the fold.
+
+    The 2026-08-24 campaign retired every JJK kanji question ("the scorer's
+    normalization strips CJK, so it never passes in any phrasing"). The wiki
+    records the kanji and a corpus of correct data has to be able to answer
+    them: the ASCII-only character class in `norm` was erasing the answer
+    before scoring ever saw it.
+    """
+    assert norm("虎杖悠仁") == "虎杖悠仁"
+    # The ASCII folds the class was doing stay unchanged.
+    assert norm("Machine Gun Blows") == "machine gun blow"
+    assert norm("Shūsuke") == "shusuke"

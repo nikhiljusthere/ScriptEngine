@@ -318,6 +318,12 @@ class Roster:
     basis: str = ""                                  # what the set was read from
     kind: str = ""                                   # category | type | field
     members: list[Member] = field(default_factory=list)
+    # Rows the wiki recorded about this set rather than members of it -- the
+    # `Result` cells of a fighter's battle table. They are not members (the set
+    # is the fights; the rows are the wiki's own words about them), but they
+    # carry the answer text, so they travel in the bundle's `facts`, which is
+    # the one roster-bundle field a fact scorer reads.
+    facts: list[dict[str, str]] = field(default_factory=list)
     groups: list[str] = field(default_factory=list)
     # How much of the set's own name the topic actually asked for.
     #
@@ -349,6 +355,7 @@ class Roster:
             "subject": self.subject,
             "basis": self.basis,
             "kind": self.kind,
+            "facts": self.facts,
             "groups": self.groups,
             "confidence": self.confidence,
             "unmatched": self.unmatched,
@@ -583,17 +590,498 @@ def battle_named(store: FactStore, query: str) -> str:
     """The battle page this question names, if it names one.
 
     Longest title first, so `Garou vs. Golden Sperm (Webcomic)` is preferred
-    over any shorter battle whose name it contains.
+    over any shorter battle whose name it contains. The comparison is
+    dot-insensitive: a natural phrasing may write `vs` without the period the
+    wiki title carries, and the fight's facts must still reach the bundle.
     """
-    folded = _fold(query).lower()
+    folded = _fold(query).lower().replace(".", "")
     best = ""
     for row in store.connection.execute(
         "SELECT title FROM documents WHERE page_type LIKE '%battle%' COLLATE NOCASE"
     ):
         title = (row["title"] or "").strip()
-        if title and _fold(title).lower() in folded and len(title) > len(best):
+        if title and _fold(title).lower().replace(".", "") in folded and len(title) > len(best):
             best = title
     return best
+
+
+def battle_facts(store: FactStore, query: str) -> list[dict]:
+    """The named battle page's own infobox facts, if the query names one.
+
+    `link_entities` tokenises `vs.` apart from the stored alias, so the fight
+    the question names never links from the query and its infobox (arc,
+    place, outcome, chapters, the sides' techniques) stays out of the bundle.
+    The phrasing-robustness requirement (2026-08-24) needs that infobox in
+    every bundle about the fight, rank or no rank.
+    """
+    title = battle_named(store, query)
+    if not title:
+        return []
+    return [
+        {
+            "entity": title,
+            "key": row["key"],
+            "label": row["label"] or row["key"],
+            "value": row["value"],
+            "citation": row["citation"],
+        }
+        for row in store.facts_for(title)
+    ]
+
+
+# A question that asks for the *set* of fights a fighter was in, as opposed to
+# one named fight. "Every Fight Mahoraga Has Ever Been In" is the inverse of
+# `battle_named`: there the query names the battle and we read who fought; here
+# the query names the fighter and we list every battle they appear on.
+# A statement form ("Every Fight Mahoraga Has Ever Been In") and its
+# question-worded twin ("Who did Mahoraga fight?"). Both want the same set: the
+# fighter's whole list of battles. The wh-form is what rule 2b in `router.route`
+# guards for, so this test must recognise it too or `build_roster` never enters
+# the battles-in branch and returns an empty roster instead.
+_BATTLES_IN = re.compile(
+    r"\b(every|all|each)\s+(fight\w*|battle\w*|duel\w*|match\w*)\b"
+    r"|\b(who|what|which)\s+\w*\s*(did|does|do|was|were|is|are)?\s*"
+    r"\w*\s*(fight(ed|s)?|battle(d|s)?|duel(ed|s)?)\b",
+    re.IGNORECASE,
+)
+
+
+def asks_for_battles_in(query: str) -> bool:
+    """Whether the question wants a fighter's whole fight list."""
+    return bool(_BATTLES_IN.search(query or ""))
+
+
+# "What is the result of the battle between X and Y?" The win/loss the wiki
+# records for that fight is a `Result` cell in the fighter's own battle table
+# (the `X/Battles` subpage, one row per fight: Participants | Chapter(s) |
+# Episode(s) | Result). The battle infoboxes of the `X vs. Y` pages carry an
+# `Outcome` field on only some of them, and it names aftermath participants,
+# not a win/loss -- so the table's Result column is the authoritative
+# win/loss source. The qa top-8 never surfaces that cell: it ranks the
+# fighter's own page first, which is why the campaign retired every result
+# question in round 1. This path reads the table directly.
+_BATTLE_RESULT = re.compile(
+    r"\bresult\w*\s+of\s+(?:the\s+)?(?:battle|fight|duel|match|fusion)\w*"
+    r"|\bwho\s+(?:won|lost)\s+(?:the\s+)?(?:battle|fight|duel|match)\w*",
+    re.IGNORECASE,
+)
+
+# The phrasing words a result question uses that name no fighter, so they are
+# not treated as opponents when a fight row is looked up.
+_RESULT_PHRASING = {
+    "result", "results", "battle", "battles", "fight", "fights",
+    "duel", "duels", "match", "matches", "fusion", "fusions",
+    "won", "lost", "between", "versus", "against",
+}
+
+# A table column name. A `Result` cell that came back equal to a column name
+# is a header the parser misread as data, and a participants cell ending in
+# `Participants` is a note line the splitter glued to the next table's header
+# (it happens in the One-Punch Man wiki's webcomic sections). Neither is a
+# fight, so both are dropped.
+_HEADER_CELLS = {
+    "participants", "chapter(s)", "episode(s)", "result",
+    "audiobook", "audiobook story",
+}
+
+
+def _is_real_fight_row(participants: str, result: str) -> bool:
+    """Whether a parsed table row is a fight rather than header or note text."""
+    participants = (participants or "").strip()
+    result = (result or "").strip()
+    if not participants or not result:
+        return False
+    if participants.lower() in _HEADER_CELLS:
+        return False
+    if participants.lower().endswith("participants"):
+        return False
+    if result.lower() in _HEADER_CELLS:
+        return False
+    return True
+
+
+def _opponent_terms(
+    query: str, fighter: str, overrides: dict | None
+) -> list[str]:
+    """What to look for in a fight row: the question's opponent words.
+
+    Two sources. `content_words` gives the ordinary words, and the
+    `and`-separated phrases of the `between ...` span are kept verbatim
+    because word extraction can lose a name entirely: `Do-S` tokenises into
+    two one- and two-letter words, both of which `content_words` drops, so
+    "the battle between Beaut and Do-S" would otherwise have nothing to match
+    the row `Sweet Mask vs. Do-S ...` against. A phrase that is only the
+    fighter itself or only phrasing says nothing, and the series title the
+    question tails with is dropped by the wiki's declared `series_titles`.
+    """
+    fighter_words = set(content_words(fighter))
+    title_words: set[str] = set()
+    for title in (overrides or {}).get("series_titles") or []:
+        title_words.update(content_words(title))
+
+    terms = [
+        word for word in content_words(query)
+        if word not in fighter_words
+        and word not in _RESULT_PHRASING
+        and word not in title_words
+    ]
+
+    tail = (query or "").lower()
+    at = tail.find("between")
+    if at != -1:
+        tail = tail[at + len("between") :]
+        for title in (overrides or {}).get("series_titles") or []:
+            tail = tail.replace(title.lower(), " ")
+        tail = tail.split(" in ")[0]
+        for segment in re.split(r"\s+and\s+|\s+vs\.?\s+", tail):
+            segment = segment.strip(" ?!.")
+            if not segment or segment.lower() in _RESULT_PHRASING:
+                continue
+            words = content_words(segment)
+            # A segment that is only the fighter itself says nothing. A
+            # segment whose words `content_words` threw away (`Do-S`) is the
+            # case the verbatim phrase exists for, so it keeps its folded
+            # form even with no words left.
+            if set(words) <= fighter_words and words:
+                continue
+            term = re.sub(r"[^a-z0-9]+", " ", _fold(segment)).strip()
+            if term and term not in terms:
+                terms.append(term)
+    return terms
+
+
+def asks_for_battle_result(query: str) -> bool:
+    """Whether the question asks for the win/loss of a named fight."""
+    return bool(_BATTLE_RESULT.search(query or ""))
+
+
+def battle_result_fighter(query: str, fallback: str) -> str:
+    """Which side's battle table a result question is keyed to.
+
+    "The battle between X and Y" names X first, and the wiki records each
+    fight's Result from the table owner's perspective -- `X vs. Y` reads
+    `Win` in X's table and `Loss` in Y's -- so the question's wording asks
+    for the first-named side's table. The resolved subject can land on the
+    other side (entity ranking is its own business), and reading that table
+    returns the mirror image of the answer, so the span's first party wins.
+    Falls back to the subject when the question names no `between` span.
+    """
+    match = re.search(r"\bbetween\b", query or "", re.IGNORECASE)
+    if not match:
+        return fallback
+    span = (query or "")[match.end():]
+    first = re.split(
+        r"\s+and\s+|\s+vs\.?\s+", span, maxsplit=1, flags=re.IGNORECASE
+    )[0].strip(" ?!.,;:")
+    return first or fallback
+
+
+def _battles_table_rows(store: FactStore, subpage: str) -> list[dict[str, Any]]:
+    """The fight rows of a fighter's battle table, one dict per `Result` cell.
+
+    Read off the subpage's level-2 chunks: the table parser renders each row
+    as one line of `Participants | Chapter(s) | Episode(s) | Result`, so a
+    data row is a pipe-delimited line under a `Participants` header line. A
+    section whose table the passage splitter joined into one line falls back
+    to reading the pipe-delimited token stream, where the header ends at the
+    `Result` column the wiki keeps last.
+    """
+    rows: list[dict[str, Any]] = []
+    for chunk in store.connection.execute(
+        "SELECT c.text, c.breadcrumb FROM chunks c "
+        "JOIN documents d ON c.document_id = d.id "
+        "WHERE d.title = ? COLLATE NOCASE AND c.level = 2",
+        (subpage,),
+    ):
+        section = chunk["breadcrumb"] or subpage
+        text = chunk["text"] or ""
+        lines = [line.strip() for line in text.splitlines() if " | " in line]
+        if lines:
+            columns: list[str] = []
+            for line in lines:
+                cells = [cell.strip() for cell in line.split(" | ")]
+                if not cells or not cells[0]:
+                    continue
+                if cells[0].lower() == "participants":
+                    columns = cells[1:]
+                    continue
+                if not columns or len(cells) < 2:
+                    continue
+                row = {
+                    name: (cells[i + 1] if i + 1 < len(cells) else "")
+                    for i, name in enumerate(columns)
+                }
+                result = row.get("Result", cells[-1]).strip()
+                if not _is_real_fight_row(cells[0], result):
+                    continue
+                rows.append({
+                    "section": section,
+                    "participants": cells[0],
+                    "columns": row,
+                    "result": result,
+                })
+            continue
+
+        tokens = [token.strip() for token in text.split(" | ")]
+        header = next(
+            (i for i, token in enumerate(tokens)
+             if token.lower() == "participants"),
+            None,
+        )
+        if header is None:
+            continue
+        end = next(
+            (i for i in range(header + 1, len(tokens))
+             if tokens[i].lower() == "result"),
+            None,
+        )
+        if end is None:
+            continue
+        columns = tokens[header + 1 : end + 1]
+        width = len(columns)
+        i = end + 1
+        while i + width <= len(tokens):
+            cells = tokens[i : i + width]
+            row = dict(zip(columns, cells))
+            result = row.get("Result", cells[-1]).strip()
+            if _is_real_fight_row(cells[0], result):
+                rows.append({
+                    "section": section,
+                    "participants": cells[0],
+                    "columns": row,
+                    "result": result,
+                })
+            i += width
+    return rows
+
+
+def battle_result(
+    store: FactStore,
+    fighter: str,
+    query: str,
+    member_chars: int,
+    overrides: dict | None = None,
+) -> Roster | None:
+    """The `Result` cells of the fight a result question names.
+
+    The question names one side through its subject (the fighter whose battle
+    table is read) and the other through whatever else it says -- its content
+    words, or the verbatim opponent phrase when a name like `Do-S` tokenises
+    away to nothing. Each table row naming the most of those is returned with
+    its Result cell, the wiki's own win/loss wording. A fighter with no battle
+    table, or a table holding no row naming the opponent, returns None so the
+    caller falls through to whatever else answers.
+    """
+    subpage = f"{fighter}/Battles"
+    rows = _battles_table_rows(store, subpage)
+    if not rows:
+        return None
+
+    asked = _opponent_terms(query, fighter, overrides)
+    if not asked:
+        return None
+
+    scored: list[tuple[int, dict[str, Any]]] = []
+    for row in rows:
+        text = re.sub(r"[^a-z0-9]+", " ", _fold(row["participants"]))
+        score = sum(
+            1 for word in asked
+            if re.search(rf"\b{re.escape(word)}\b", text)
+        )
+        if score:
+            scored.append((score, row))
+    if not scored:
+        return None
+    top = max(score for score, _ in scored)
+    hits = [row for score, row in scored if score == top]
+
+    members: list[Member] = []
+    facts: list[dict[str, str]] = []
+    for row in hits:
+        row_facts: list[dict[str, str]] = []
+        debut: list[str] = []
+        for name, value in row["columns"].items():
+            if name == "Result":
+                continue
+            value = (value or "").strip()
+            if not value or value.lower() == "none":
+                continue
+            row_facts.append({"field": name, "value": value})
+            if "hapter" in name:
+                debut.append(f"Chapter {value}")
+            if "pisode" in name:
+                debut.append(f"Episode {value}")
+        result = (row.get("result") or "").strip()
+        if result:
+            row_facts.insert(0, {"field": "Result", "value": result})
+        members.append(Member(
+            name=row["participants"],
+            facts=row_facts,
+            debut=" (" + ", ".join(debut) + ")" if debut else "",
+            breadcrumb=f"{subpage} / {row['section']}",
+        ))
+        if result:
+            facts.append({
+                "entity": fighter,
+                "field": f"Result ({row['participants']})",
+                "value": result,
+                "citation": f"{subpage} / {row['section']}",
+            })
+
+    if not facts:
+        return None
+
+    return Roster(
+        subject=fighter,
+        basis=f"{len(hits)} fight row(s) in {subpage} naming {', '.join(asked)}",
+        kind="battles",
+        members=members,
+        facts=facts,
+        confidence="declared",
+        candidates=len(hits),
+    )
+
+
+def _battle_sides(store: FactStore, title: str, overrides: dict | None) -> dict[str, str]:
+    """The infobox fields of one battle page, keyed by lower-cased name.
+
+    `side1`/`powers1` on Jujutsu Kaisen, `combatant1`/`abilities1` on One-Punch
+    Man -- the names come from this wiki's own declaration, so a fighter is
+    found whichever vocabulary the series uses.
+    """
+    node = store.node_by_name(title)
+    if node is None:
+        return {}
+    facts = {
+        (row["key"] or "").strip().lower(): (row["value"] or "")
+        for row in store.connection.execute(
+            "SELECT key, value FROM facts WHERE node_id = ?", (node["id"],)
+        )
+    }
+    pairs = battle_relations(overrides)
+    sides: dict[str, str] = {}
+    for side, abilities in pairs:
+        if side:
+            sides[side] = facts.get(side, "")
+        if abilities:
+            sides[abilities] = facts.get(abilities, "")
+    return sides
+
+
+def _fighter_words(fighter: str) -> list[str]:
+    """The distinctive words of a fighter's name, longest first.
+
+    The canonical page title is long (`Eight-Handled Sword Divergent Sila Divine
+    General Mahoraga`) but the infobox side field writes only `Mahoraga`. Matching
+    the full string finds nothing; matching on *any* content word matches too much
+    (the word `divine` in the name hits `Divine Flame` on 20 unrelated battles).
+    The last content word is the actual name -- `Mahoraga`, `Sukuna`, `Gojo` --
+    and that is what the infobox writes. Fall back to all long words only when
+    there is a single one, so a two-word name like `Ryomen Sukuna` still matches.
+    """
+    words = [w for w in content_words(fighter) if len(w) > 3]
+    if not words:
+        return []
+    # The last word is the name; earlier words are descriptors that appear on
+    # other pages' abilities and would over-match.
+    return [words[-1]] if len(words) > 1 else words
+
+
+def _fighter_role(store: FactStore, title: str, fighter: str, overrides: dict | None) -> str:
+    """How `fighter` figures in this battle, read off the infobox.
+
+    A name on a side is a combatant; a name only among a side's abilities is a
+    tool that side deployed -- Mahoraga is Sukuna's cursed tool in two of his
+    four fights and a direct opponent in the other two, and the script has to
+    say which. The wiki wrote it down; this only reads it back.
+    """
+    words = _fighter_words(fighter)
+    if not words:
+        return "named in this battle"
+    sides = _battle_sides(store, title, overrides)
+    pairs = battle_relations(overrides)
+    for side, abilities in pairs:
+        if not side or not abilities:
+            continue
+        side_text = _fold(sides.get(side, "")).lower()
+        tool_text = _fold(sides.get(abilities, "")).lower()
+        on_side = any(w in side_text for w in words)
+        as_tool = any(w in tool_text for w in words)
+        if on_side:
+            return "direct combatant"
+        if as_tool:
+            # Which side wielded it is the other half of the sentence.
+            return f"deployed by {sides.get(side, '').strip()} as a tool"
+    return "named in this battle"
+
+
+def battles_in(
+    store: FactStore,
+    episodes: cite.EpisodeIndex,
+    fighter: str,
+    member_chars: int,
+    overrides: dict | None = None,
+) -> Roster | None:
+    """Every battle page `fighter` appears on, with their role in each.
+
+    The inverse of `_battle_roster`. That one reads what a named fighter used in
+    one fight; this lists the fights and says, per fight, whether they were a
+    combatant or a deployed tool. A fighter who was never on any battle page's
+    side returns `None`, so the caller falls through to whatever else answers.
+    """
+    words = _fighter_words(fighter)
+    if not words:
+        return None
+
+    hits: list[tuple[str, str]] = []  # (battle title, role)
+    for row in store.connection.execute(
+        "SELECT title FROM documents WHERE page_type LIKE '%battle%' COLLATE NOCASE"
+    ):
+        title = (row["title"] or "").strip()
+        if not title:
+            continue
+        sides = _battle_sides(store, title, overrides)
+        pairs = battle_relations(overrides)
+        present = False
+        for side, abilities in pairs:
+            if side and any(w in _fold(sides.get(side, "")).lower() for w in words):
+                present = True
+                break
+            if abilities and any(w in _fold(sides.get(abilities, "")).lower() for w in words):
+                present = True
+                break
+        if not present:
+            continue
+        hits.append((title, _fighter_role(store, title, fighter, overrides)))
+
+    if not hits:
+        return None
+
+    members: list[Member] = []
+    for title, role in hits:
+        member = _render_member(store, episodes, title, "", member_chars)
+        sides = _battle_sides(store, title, overrides)
+        pairs = battle_relations(overrides)
+        facts = [{"field": "Role", "value": role}]
+        for side, abilities in pairs:
+            if side and sides.get(side):
+                facts.append({"field": f"Side ({side})", "value": sides[side].strip()})
+            if abilities and sides.get(abilities):
+                tools = ", ".join(
+                    part.strip() for part in re.split(r"[,\n]", sides[abilities]) if part.strip()
+                )
+                facts.append({"field": f"Used ({abilities})", "value": tools})
+        member.facts = facts + member.facts
+        members.append(member)
+
+    return Roster(
+        subject=fighter,
+        basis=f"{len(hits)} battle page(s) naming {fighter}",
+        kind="battles",
+        members=members,
+        confidence="declared",
+        candidates=len(hits),
+    )
 
 
 def _battle_roster(
@@ -682,13 +1170,27 @@ def build_roster(
     settings = settings or get_settings()
     overrides = load_overrides(paths)
 
+    # Longest declared phrase wins, so a series can declare both "hero" and
+    # "s-class hero" and the more specific topic gets the smaller set.
+    registry = load_rosters(overrides)
+    declared = max(
+        (d for d in registry if d.matches(query)),
+        key=lambda d: d.matches(query),
+        default=None,
+    )
+
     # Order is not membership. "Every arc in order" is set-shaped, so it reached
     # the discovery path and answered with the 84 chapters of a single arc.
     # Imported here rather than at module scope because chronology builds
     # `Roster` and `Member`, which live in this module.
+    #
+    # Unless the query carries a declared set's match phrase: "arcs in the
+    # hero association saga" fires `wants_chronology` on the plural `arcs`,
+    # and the chain is the wrong answer where this wiki wrote down the
+    # membership roster it wants instead.
     from scriptengine.retrieve import chronology
 
-    if chronology.wants_chronology(query):
+    if declared is None and chronology.wants_chronology(query):
         ordered = chronology.build_chronology(paths, query, max_members)
         if ordered is not None:
             return ordered
@@ -702,14 +1204,6 @@ def build_roster(
     words = content_words(strip_work_title(query, title))
     constraints = Constraints()
 
-    # Longest declared phrase wins, so a series can declare both "hero" and
-    # "s-class hero" and the more specific topic gets the smaller set.
-    registry = load_rosters(overrides)
-    declared = max(
-        (d for d in registry if d.matches(query)),
-        key=lambda d: d.matches(query),
-        default=None,
-    )
     # Every word this series uses to name a *general* set. A word in here cannot
     # be what identifies a person, however many characters are named after it.
     #
@@ -736,6 +1230,23 @@ def build_roster(
     with FactStore(paths.facts_db) as store:
         episodes = cite.EpisodeIndex.from_store(store)
         entities = rank_subjects(store.link_entities(query), demote, priority)
+        # The type-priority order ranks every event page ahead of a technique
+        # the question names outright, so "Every Fight Mahoraga Has Ever Been
+        # In" resolved to `Sukuna vs. Yorozu` with the Mahoraga page at rank
+        # nine. The same word-overlap test the router's `_subject` runs has to
+        # see the whole pool before the first-resolved pick, or the subject
+        # here and the one the router chose disagree.
+        asked = set(words)
+        entities = [
+            row
+            for _, row in sorted(
+                enumerate(entities),
+                key=lambda item: (
+                    not bool(set(content_words(item[1]["name"])) & asked),
+                    item[0],
+                ),
+            )
+        ]
         subject = next(
             (row["name"] for row in entities if row["is_resolved"]),
             entities[0]["name"] if entities else query,
@@ -781,6 +1292,40 @@ def build_roster(
         # because no `Majin Buu` page exists to resolve to.
         if declared is not None and declared.subject:
             character = ""
+
+        # "What is the result of the battle between X and Y?" wants the wiki's
+        # own win/loss, a `Result` cell in the fighter's battle table that no
+        # passage the qa top-8 ranks ever carries. Runs before every character
+        # path for the same reason as the battles-in branch: those answer with a
+        # fighter's kit and would never read the table. The table read is the
+        # first-named side's -- the wiki records the Result from the table
+        # owner's perspective, so the mirror-image table holds the mirror
+        # image of the answer. A fighter with no battle table, or a table
+        # holding no row naming the opponent, returns None and falls through.
+        if asks_for_battle_result(query):
+            fighter = battle_result_fighter(query, character or subject)
+            if fighter:
+                outcome = battle_result(
+                    store, fighter, query, member_chars, overrides
+                )
+                if outcome is not None:
+                    return outcome
+
+        # A question that asks for a fighter's whole fight list wants the set of
+        # battles, not their kit. "Every Fight Mahoraga Has Ever Been In" has no
+        # kind word at all, so `character` above is empty; resolve one from the
+        # subject when it is missing. Runs before every character path because
+        # those answer with a fighter's abilities and would never list their
+        # fights. A fighter on no battle page returns None and falls through.
+        if asks_for_battles_in(query):
+            # The subject the router resolved is the fighter; a battles-in query
+            # names one person and nothing else. `character` above is empty here
+            # because there is no kind word, so fall back to the subject itself.
+            fighter = character or subject
+            if fighter:
+                in_fights = battles_in(store, episodes, fighter, member_chars, overrides)
+                if in_fights is not None and in_fights.members:
+                    return in_fights
 
         # A question that names a fight is asking about that fight. Before the
         # character paths, because every one of them answers with the whole kit:
@@ -978,6 +1523,17 @@ def build_roster(
                 allowed = {name.lower() for name in kept_names}
                 members = [m for m in members if m.name.lower() in allowed]
                 rejected = list(rejected) + unnamed_rejected
+
+            # A general class page is the category, not a member of it. Runs only
+            # here (a personal roster), so `Every domain expansion` still returns
+            # the Domain Expansion page; `Every ability of Megumi` must not.
+            kept_names, general_rejected = drop_general_pages(
+                store, [m.name for m in members], character
+            )
+            if general_rejected:
+                allowed = {name.lower() for name in kept_names}
+                members = [m for m in members if m.name.lower() in allowed]
+                rejected = list(rejected) + general_rejected
 
         # Judged here, inside the store's `with`, because the class is read
         # from the wiki's own infobox and the connection closes below.
@@ -1553,6 +2109,56 @@ def drop_off_class(
     return kept, rejected
 
 
+# The twelve relation words `ingest/relations.py` enforces. A question about one
+# of them wants that edge first; the rest are background.
+_RELATION_WORDS = frozenset({
+    "family", "friend", "ally", "rival", "enemy", "mentor", "student",
+    "superior", "subordinate", "romantic", "creator", "creation",
+})
+
+
+def rank_relations(
+    relations: Sequence[dict[str, Any]], query: str
+) -> list[dict[str, Any]]:
+    """The same edges in the order a question about them wants.
+
+    `edges_for` returns strongest-confidence first and stops at its limit, so on
+    a character with thirty-two edges the one that answers "Who is X's student?"
+    can fall outside the slice before it is ever ranked. Ordering by relevance to
+    the question first means the edge the question names leads, whatever its
+    confidence rank was.
+
+The vocabulary is closed (see `ingest/relations.RELATIONS`), so a word in the
+    query that matches one of them is evidence about which relation is wanted,
+    and nothing else can be. A match on either end counts: "Who is X's student?"
+    names `student`, and the edge reads `X -[mentor]-> Y`, where the answer is
+    the other
+    end from the word's side.
+
+    The bundle keeps only the top twenty, and the graph edges and the
+    LLM-extracted rows can both carry a full-strength confidence, so on a tie
+    the quoted row wins: it is the wiki's own words about the relationship,
+    and the one a "who is X to Y" question is actually asking for. Within the
+    quoted / unquoted split, confidence order survives, and the input list is
+    never mutated.
+    """
+    if not relations:
+        return []
+    folded = _fold(query).lower()
+    wanted = {word for word in _RELATION_WORDS if word in folded}
+
+    def score(index: int) -> tuple[int, float, int]:
+        edge = relations[index]
+        relation = (edge.get("relation") or "").strip().lower()
+        # The question asked for this kind of relationship.
+        primary = 0 if relation in wanted else 1
+        quoted = 0 if (edge.get("quote") or "").strip() else 1
+        return (primary, -float(edge.get("confidence") or 0.0), quoted)
+
+    order = sorted(range(len(relations)), key=score)
+    return [relations[i] for i in order]
+
+
 def _class_filtered(
     store: FactStore, roster: "Roster", query: str, overrides: dict | None
 ) -> "Roster":
@@ -1570,6 +2176,16 @@ def _class_filtered(
         allowed = {name.lower() for name in kept}
         roster.members = [m for m in roster.members if m.name.lower() in allowed]
         roster.rejected = list(roster.rejected) + rejected
+    # A general class page is the category, not a member of it. This path is
+    # always personal (the subject is the character), so the gate applies; a
+    # question for the category itself never reaches here with that as a member.
+    kept2, general_rejected = drop_general_pages(
+        store, [m.name for m in roster.members], roster.subject
+    )
+    if general_rejected:
+        allowed2 = {name.lower() for name in kept2}
+        roster.members = [m for m in roster.members if m.name.lower() in allowed2]
+        roster.rejected = list(roster.rejected) + general_rejected
     return _dedupe_roster(roster)
 
 
@@ -1620,36 +2236,12 @@ def stated_users(store: FactStore, name: str) -> str:
     return memo[key]
 
 
-# A qualifier the wiki writes after a user's name to say how they came by the
-# technique. Only an outright copy disowns it.
-#
-# `(via ...)` deliberately does **not**, and that was measured rather than
-# assumed: `Ten Shadows Technique` reads `... Megumi Fushiguro Yuka Okkotsu
-# Sukuna (via Megumi)`, and it is gold on `Every cursed technique of Sukuna`.
-# Using a technique through the body he has taken is still him using it.
-# Including `via` here cost that canon item on two questions.
-#
-# `(Formerly)` also stays in: it says the technique was theirs and no longer
-# is, not that it was never theirs. `(Anime)` says which adaptation.
-_BORROWED = re.compile(r"\(\s*(copied|copy|borrowed)\s*\)", re.IGNORECASE)
-
-
-def _copied(stated: str, subject: str) -> bool:
-    """Whether the `user` field names this subject only as a borrower.
-
-    Read on the subject's own entry, not the whole field: `Shrine` reads
-    `Ryomen Sukuna Yuta Okkotsu (Copied) Yuji Itadori`, and the `(Copied)`
-    belongs to Yuta alone. Asking whether the string contains `(Copied)`
-    anywhere would disown it from Sukuna, whose technique it is.
-    """
-    folded = _fold(stated).lower()
-    start = folded.find(subject)
-    if start < 0:
-        return False
-    tail = folded[start + len(subject):]
-    match = _BORROWED.match(tail.lstrip())
-    return match is not None
-
+# The `(Copied)` branch that used to live here was removed 2026-08-19 under the
+# owner's specification: a technique Yuta copied *is* one of his cursed
+# techniques, because Copy is his innate technique and using it through the copy
+# is still him using it. The wiki marks those users `(Copied)` in the field; that
+# now says nothing about whose technique it is. What survives below is the other
+# branch only -- a member whose own page names users and does not name this one.
 
 def drop_off_owner(
     store: FactStore, names: Sequence[str], character: str, overrides: dict | None
@@ -1681,26 +2273,65 @@ def drop_off_owner(
     rejected: list[dict[str, str]] = []
     for name in names:
         stated = stated_users(store, name)
-        # A qualifier after the subject's name says how they came by it, and
-        # `(Copied)` says it is not theirs. Yuta Okkotsu's whole innate
-        # technique is copying, so the wiki lists him as a user of six
-        # techniques he borrowed -- `Cursed Speech`, `Sky Manipulation`,
-        # `Technique Extinguishment`, `Thin Ice Breaker`, `G Warstaff`,
-        # `Shrine` -- and marks every one of them in the field itself.
-        if stated and subject and _copied(stated, subject):
-            rejected.append({
-                "name": name,
-                "reason": f"the wiki records {character} as a copied user of "
-                          f"this, not its owner",
-                "rule": "copied",
-            })
-            continue
         if stated and subject and subject not in _fold(stated).lower():
             rejected.append({
                 "name": name,
                 "reason": f"the wiki records its users as {' '.join(stated.split())!r},"
                           f" which does not include {character}",
                 "rule": "owner",
+            })
+            continue
+        kept.append(name)
+    if not kept:
+        return list(names), []
+    return kept, rejected
+
+
+# A page that lists many users is the *category*, not a member of it. Measured on
+# this wiki rather than assumed: `Domain Expansion` names nineteen users and
+# `Simple Domain` fifteen -- they are the class pages -- while every instance
+# names at most five (Shrine three, Ten Shadows Technique five, Limitless four).
+# The gap is wide enough that a threshold between them cannot misfile an instance.
+_GENERAL_PAGE_MIN_USERS = 6
+
+
+def _user_count(store: FactStore, name: str) -> int:
+    """How many users the wiki lists on this ability's own page."""
+    stated = stated_users(store, name)
+    if not stated:
+        return 0
+    # Users are newline-separated; a line may hold several names but the count of
+    # lines is what separates a category (19) from an instance (<=5).
+    return len([line for line in stated.split("\n") if line.strip()])
+
+
+def drop_general_pages(
+    store: FactStore, names: Sequence[str], character: str
+) -> tuple[list[str], list[dict[str, str]]]:
+    """Remove members whose own page is the class itself, not an instance of it.
+
+    `Every ability of Megumi Fushiguro` was returning `Domain Expansion`, the
+    category page with nineteen users, while his own `Chimera Shadow Garden` --
+    a named technique he actually uses -- was already gold. A general page is
+    the class; a character's instance is what belongs in their kit.
+
+    Runs only on a personal roster (a non-empty `character`), so a question that
+    asks for the category itself -- `Every domain expansion` -- still returns it.
+    Positive evidence only: a member with no page, or a page naming few users, is
+    kept untouched. Never empties a non-empty set.
+    """
+    if not character or not names:
+        return list(names), []
+    kept: list[str] = []
+    rejected: list[dict[str, str]] = []
+    for name in names:
+        count = _user_count(store, name)
+        if count >= _GENERAL_PAGE_MIN_USERS:
+            rejected.append({
+                "name": name,
+                "reason": f"the wiki's page for this lists {count} users; it is the "
+                          f"class itself, not one of {character}'s abilities",
+                "rule": "general_page",
             })
             continue
         kept.append(name)

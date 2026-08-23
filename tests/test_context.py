@@ -9,6 +9,7 @@ from scriptengine.api.context import (
     estimate_tokens,
     render_prompt,
 )
+from scriptengine.api.rules import writing_rules
 from scriptengine.retrieve.citations import EpisodeIndex
 
 
@@ -79,7 +80,7 @@ class TestRenderPrompt:
         assert "VOICE RULES" in text
         assert "CHAPTER/EPISODE ANNOTATION RULES" in text
         assert "Intro: OFF" in text
-        assert "3,000 words" in text
+        assert "2,500 and 3,500 words" in text
         assert "VOICE RULES" not in render_prompt(bundle(), rules=False)
 
     def test_a_time_is_shown_when_known(self):
@@ -194,6 +195,20 @@ class TestBeatSplitting:
         assert _capped_beats([beat])[0]["source_span"] == ""
 
 
+class TestWritingRules:
+    def test_the_script_format_block_is_served(self):
+        rules = writing_rules(intro=True, words=6000)
+        assert "=== SCRIPT FORMAT: a narrative script is a story, not a dump ===" in rules
+        assert "through-line" in rules
+        assert "flashback" in rules
+
+    def test_the_choice_lines_still_render(self):
+        rules = writing_rules(intro=False, words=3000)
+        assert "Intro: OFF" in rules
+        assert "Length contract: the script must be between" in rules
+        assert "2,500 and 3,500 words" in rules
+
+
 class TestBudgeting:
     def test_the_cast_list_is_capped(self):
         # The Shibuya Incident lists 42 participants; rendering all of them
@@ -206,3 +221,30 @@ class TestBudgeting:
         text = render_prompt(bundle())
         for participant in bundle()["participants"]:
             assert participant in text
+
+
+class TestBattleFactsReachTheQaBundle:
+    """A named battle's infobox is in the qa bundle, rank or no rank.
+
+    The battle title `Yuji Itadori vs. Panda` never links from the query
+    (`link_entities` tokenises `vs.` apart from the stored alias), so its
+    arc/place/outcome/chapters facts were missing from every bundle about the
+    fight unless the vector rank happened to surface the page. The
+    phrasing-robustness requirement (2026-08-24: every natural phrasing of a
+    question must be answerable) pays for those facts up front.
+    """
+
+    def test_a_battle_field_answer_is_in_the_bundle(self):
+        import pytest
+
+        from scriptengine.api.context import build_context
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        out = build_context(
+            paths, "Where did Yuji Itadori vs. Panda take place?", mode="qa"
+        )
+        rendered = [f"{f.get('field')} {f.get('value')}" for f in out["facts"]]
+        assert any("Gachinko Fight Club" in line for line in rendered), rendered

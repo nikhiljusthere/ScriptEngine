@@ -63,13 +63,30 @@ def norm(text: str) -> str:
     text = unicodedata.normalize("NFKD", text or "")
     text = "".join(ch for ch in text if not unicodedata.combining(ch))
     text = text.lower().replace("&", "and")
-    text = re.sub(r"[^a-z0-9%]+", " ", text)
+    # \w, not [a-z0-9]: a kanji gold (JJK's `虎杖悠仁`) must survive the fold.
+    # The ASCII class erased CJK on both sides, so every kanji question was
+    # unanswerable by construction (2026-08-24 campaign).
+    text = re.sub(r"[^\w%]+", " ", text)
     # A plural is not a different technique. The engine returned `Machine Gun
     # Blow` for the wiki's `Machinegun Blows` and was scored a miss for it.
     # Folded on both sides, so it can only ever merge a name with its own
     # plural -- this is not substring matching, which stays deliberately out:
     # `Super Saiyan` must not match `Super Saiyan 2`. Four-letter words and up,
     # so `gas`, `ren` and `nen` survive intact.
+    #
+    # Verb endings are folded too, for the same both-sides reason: the golds
+    # say `smashed` while chunked text carries the truncated inflection
+    # `smashe`, and the Deep Sea King batch had eighteen questions re-golded
+    # to sub-phrases because of it. Drop a trailing `ed` first (`smashed`
+    # becomes `smashe`, meeting the chunk's form), then the plural fold above
+    # handles the rest. Same four-letter guard: `red`, `bed` and `wed`
+    # survive, as do `gas`-shaped words. A further fold of the trailing `e`
+    # (`smashe` -> `smash`) was tried and reverted: it merges `Normal Punch`
+    # with the `normal punches` alias of `Consecutive Normal Punches`, which
+    # breaks the bank's distinctness invariant (opm-set-01). Irregular forms
+    # (`blew`/`blows`) and `-ing` (`rip`/`ripping`) are beyond any suffix
+    # fold and stay gold rules.
+    text = re.sub(r"\b(\w{4,})ed\b", r"\1", text)
     text = re.sub(r"\b(\w{3,})s\b", r"\1", text)
     return " ".join(text.split())
 
@@ -112,7 +129,8 @@ def haystack(body: dict) -> str:
                      f"{fact.get('value', '')}")
     for rel in body.get("relations") or []:
         parts.append(f"{rel.get('source', '')} {rel.get('relation', '')} "
-                     f"{rel.get('target', '')}")
+                     f"{rel.get('target', '')} {rel.get('era', '')} "
+                     f"{rel.get('quote', '')}")
     parts += _members(body)
     return norm(" ".join(p for p in parts if p))
 
