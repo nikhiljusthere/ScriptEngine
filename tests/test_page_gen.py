@@ -359,6 +359,26 @@ def test_battle_aliases_override_drives_the_search(series_with_store):
         "Angel vs. Sukuna", "Jujutsu Sorcerers vs. Sukuna"}
 
 
+def test_battle_page_generates_its_own_facts_not_the_union(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel vs. Sukuna", overrides=_JJK_OVERRIDES)
+    notes = [q["note"] for q in out.questions]
+    # A battle page's subject is the fight itself: its own infobox facts, never
+    # the union of every battle a fighter in it is in elsewhere (the old code
+    # reduced the title to "sukuna" and pulled in both fixture battles).
+    assert "page-gen:battle:Angel vs. Sukuna:outcome" in notes
+    assert not any("Jujutsu Sorcerers vs. Sukuna" in n for n in notes)
+    # The degenerate one-battle "every battle" set/roster is not declared.
+    assert "page-gen:battles" not in notes
+    assert not any(r["name"] == "Every battle involving Angel vs. Sukuna"
+                   for r in out.rosters)
+    outcome = next(q for q in out.questions
+                   if q["note"] == "page-gen:battle:Angel vs. Sukuna:outcome")
+    assert outcome["answer"] == [{"item": "Angel wins.", "aliases": []}]
+
+
 def test_battle_technique_question_is_a_fact_not_a_roster(series_with_store):
     from scriptengine.eval.page_gen import generate_structured
 

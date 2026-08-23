@@ -238,28 +238,46 @@ def _techniques_for(abilities: str, side: str, character: str) -> list[str]:
             techniques.append(line)
     return techniques
 
+def _page_type_is_battle(store, title: str) -> bool:
+    """True when the page is itself a battle (the store's own `page_type`)."""
+    row = store.connection.execute(
+        "SELECT page_type FROM documents WHERE title = ? COLLATE NOCASE", (title,)
+    ).fetchone()
+    return bool(row and row["page_type"] and "battle" in row["page_type"].lower())
+
 def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified):
     pairs = battle_relations(overrides)
     if not pairs:
         return
     episodes = cite.EpisodeIndex.from_store(store)
 
-    # The character's battle pages name her by whichever of her names the
-    # infobox side carries, so the union runs over the title and every alias.
-    # A wiki may keep the fighter and the name her battles use on separate
-    # pages (the JJK wiki files the Angel's fights under her host body,
-    # Hana Kurusu); that bridge is declared per-wiki in `battle_aliases`,
-    # never inferred.
-    extra = ((overrides or {}).get("battle_aliases") or {}).get(title) or []
-    battles: dict[str, str] = {}          # battle title -> the name that matched
-    for name in [title, *aliases, *extra]:
-        result = battles_in(store, episodes, name, MEMBER_CHARS, overrides)
-        if result is None:
-            continue
-        for member in result.members:
-            battles.setdefault(member.name, name)
-    if not battles:
-        return
+    if _page_type_is_battle(store, title):
+        # A battle page's structured half is its own infobox, not the union of
+        # every fight each of its fighters is in elsewhere: `_fighter_words`
+        # reduces a fight title to a surname word ("Choso vs. Naoya Zenin" ->
+        # "zenin") and over-matches the whole family's battles. The subject is
+        # the fight itself, and a one-battle "every battle" set is degenerate,
+        # so the set/roster is skipped for battle pages.
+        battles: dict[str, str] = {title: title}   # battle title -> the name that matched
+        own_battle = True
+    else:
+        # The character's battle pages name her by whichever of her names the
+        # infobox side carries, so the union runs over the title and every alias.
+        # A wiki may keep the fighter and the name her battles use on separate
+        # pages (the JJK wiki files the Angel's fights under her host body,
+        # Hana Kurusu); that bridge is declared per-wiki in `battle_aliases`,
+        # never inferred.
+        extra = ((overrides or {}).get("battle_aliases") or {}).get(title) or []
+        battles = {}          # battle title -> the name that matched
+        for name in [title, *aliases, *extra]:
+            result = battles_in(store, episodes, name, MEMBER_CHARS, overrides)
+            if result is None:
+                continue
+            for member in result.members:
+                battles.setdefault(member.name, name)
+        if not battles:
+            return
+        own_battle = False
 
     # Store alias rows are lowercased; a crawl alias keeps its case. Show the
     # better-cased spelling in question text.
@@ -327,35 +345,39 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
         if facts.get("arc"):
             emit("arc", f"In which arc does {battle} take place?", facts["arc"])
 
-        techniques = (
-            _techniques_for(facts.get(my_powers, ""), facts.get(my_side, ""), shown(matched))
-            if my_powers else []
-        )
-        if techniques:
-            question = f"Which techniques did {shown(matched)} use in {battle}?"
-            if all(chunked(store, t) for t in techniques):
-                out.questions.append(_question(
-                    question, "fact", title, [", ".join(techniques)], wiki, title,
-                    f"page-gen:battle:{battle}:techniques", verified,
-                    extra_sources=(battle_url,)))
-            else:
-                _retire(out, question, ", ".join(techniques),
-                        f"technique list not chunked on any page (G3 shape) for {battle!r}",
-                        f"page-gen:battle:{battle}:techniques")
+        if not own_battle:
+            # Per-fighter technique spans belong to the fighters' own pages; a
+            # battle page's subject is the fight, so it carries no kit question.
+            techniques = (
+                _techniques_for(facts.get(my_powers, ""), facts.get(my_side, ""), shown(matched))
+                if my_powers else []
+            )
+            if techniques:
+                question = f"Which techniques did {shown(matched)} use in {battle}?"
+                if all(chunked(store, t) for t in techniques):
+                    out.questions.append(_question(
+                        question, "fact", title, [", ".join(techniques)], wiki, title,
+                        f"page-gen:battle:{battle}:techniques", verified,
+                        extra_sources=(battle_url,)))
+                else:
+                    _retire(out, question, ", ".join(techniques),
+                            f"technique list not chunked on any page (G3 shape) for {battle!r}",
+                            f"page-gen:battle:{battle}:techniques")
 
     battle_titles = sorted(battles)
-    out.questions.append(_question(
-        f"Every battle involving {title}", "set", title, battle_titles, wiki, title,
-        "page-gen:battles", verified, expect_mode="roster",
-        extra_sources=tuple(f"{wiki}/wiki/{b.replace(' ', '_')}" for b in battle_titles)))
-    s = title.lower()
-    out.rosters.append({
-        "name": f"Every battle involving {title}",
-        "match": [f"every battle involving {s}", f"all the battles involving {s}",
-                  f"battles involving {s}", f"every battle of {s}"],
-        "subject": title,
-        "members": battle_titles,
-    })
+    if not own_battle:
+        out.questions.append(_question(
+            f"Every battle involving {title}", "set", title, battle_titles, wiki, title,
+            "page-gen:battles", verified, expect_mode="roster",
+            extra_sources=tuple(f"{wiki}/wiki/{b.replace(' ', '_')}" for b in battle_titles)))
+        s = title.lower()
+        out.rosters.append({
+            "name": f"Every battle involving {title}",
+            "match": [f"every battle involving {s}", f"all the battles involving {s}",
+                      f"battles involving {s}", f"every battle of {s}"],
+            "subject": title,
+            "members": battle_titles,
+        })
 
 def _plural(word: str) -> str:
     if word.endswith("y") and len(word) > 2 and word[-2] not in "aeiou":
