@@ -705,6 +705,23 @@ def test_roster_phrase_safe_bans_arc_saga_words():
     assert not _roster_phrase_safe("The Final Saga")
 
 
+def test_declared_battles_wins_over_discovery():
+    from scriptengine.eval.page_gen import _declared_battles
+
+    overrides = {"rosters": [
+        {"name": "Angel's aliases", "match": ["angel's aliases"],
+         "subject": "Angel", "members": ["Hana Kurusu"]},
+        {"name": "Every battle involving Angel",
+         "match": ["every battle involving angel"],
+         "subject": "Angel", "members": ["Angel vs. Sukuna"]},
+    ]}
+    # the battles roster (name carries "battle") is picked, not the aliases one
+    assert _declared_battles(overrides, "Angel") == ["Angel vs. Sukuna"]
+    assert _declared_battles(overrides, "Nobody") is None
+    # a character with no declared battles roster falls back to discovery
+    assert _declared_battles({"rosters": overrides["rosters"][:1]}, "Angel") is None
+
+
 def _cli(tmp_path, monkeypatch):
     """Point the CLI's settings at the fixture's series tree + a fresh questions root."""
     import scriptengine.cli as cli

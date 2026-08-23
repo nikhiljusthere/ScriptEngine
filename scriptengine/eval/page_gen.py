@@ -255,6 +255,25 @@ def _roster_phrase_safe(title: str) -> bool:
     """
     return not re.search(r"\b(arc|saga)s?\b", title.lower())
 
+def _declared_battles(overrides, title: str) -> list[str] | None:
+    """Members of the declared `<title> Battles` roster, or None.
+
+    A wiki that keeps a closed battle category (JJK, OPM) declares it; the
+    battles-in discovery matches on a fighter's alias and drags in fights the
+    subject is only named in prose for (e.g. "Megumi Fushiguro vs. Aoi Todo"
+    for Yuji Itadori). When the roster exists, its members are the
+    authoritative closed set -- the OPM "declare the closed set from the
+    category" rule.
+    """
+    from scriptengine.retrieve.roster import load_rosters
+
+    for roster in load_rosters(overrides):
+        if roster.subject.lower() != title.lower() or not roster.members:
+            continue
+        if "battle" in " ".join([roster.name, *roster.match]).lower():
+            return list(roster.members)
+    return None
+
 def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified):
     pairs = battle_relations(overrides)
     if not pairs:
@@ -285,6 +304,11 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
                 continue
             for member in result.members:
                 battles.setdefault(member.name, name)
+        declared = _declared_battles(overrides, title)
+        if declared:
+            # The wiki's own closed battle category (declared) wins over a
+            # battles-in discovery that over-matches on an alias.
+            battles = {m: title for m in declared}
         if not battles:
             return
         own_battle = False
