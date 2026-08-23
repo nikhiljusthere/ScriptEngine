@@ -407,3 +407,54 @@ def test_virtual_infobox_section_is_covered_by_identity(series_with_store):
     battle = [s for s in out.coverage["sections"]
               if s["path"] == "Synopsis / Culling Game Arc"][0]
     assert any(n.startswith("page-gen:battle:") for n in battle["covered_by"])
+
+
+def test_verify_sheet_shape(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    row = {v["question"]: v for v in out.verify}
+    v = row["What is the status of Angel?"]
+    assert v["source"] == "identity:status"
+    assert v["page_span"] == "Unknown"
+    assert v["section"] == "infobox"
+    set_row = row["Every battle involving Angel"]
+    assert set_row["kind"] == "set"
+    assert "Angel vs. Sukuna" in set_row["answer"]
+    assert set_row["section"] == "infobox"
+
+
+def test_route_safe_flags_each_trap():
+    from scriptengine.eval.page_gen import route_safe
+
+    assert route_safe("What is Angel's status?") == []
+    assert route_safe("In which manga chapter does Angel first appear?") == []
+    assert route_safe("Every battle involving Angel", kind="set") == []
+    assert "wh-word" in route_safe("According to the wiki, Angel...")
+    assert "whom" in route_safe("Whom did Angel fight?")
+    assert "in order to" in route_safe("What did Angel do in order to win?")
+    assert "how many" in route_safe("How many battles did Angel have?")
+
+
+def test_generator_raises_on_trap_question(series_with_store, monkeypatch):
+    from scriptengine import eval as eval_pkg
+
+    paths, store = series_with_store
+    import scriptengine.eval.page_gen as pg
+
+    real_builder = pg._identity_builder
+
+    def trap_builder(store_, paths_, title, aliases, overrides, wiki, out, verified):
+        real_builder(store_, paths_, title, aliases, overrides, wiki, out, verified)
+        out.questions.append({
+            "id": "", "kind": "fact", "question": "According to the wiki, Angel's status",
+            "subject": title, "tier": "wiki", "expect_mode": "qa", "scope": "closed",
+            "answer": [{"item": "Unknown", "aliases": []}], "sources": [],
+            "verified": verified, "note": "page-gen:trap",
+        })
+
+    monkeypatch.setattr(pg, "_BUILDERS", (trap_builder,))
+    import pytest
+    with pytest.raises(pg.PageGenError, match="According to"):
+        pg.generate_structured(paths, "Angel", overrides=None)

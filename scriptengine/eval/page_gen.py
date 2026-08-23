@@ -521,6 +521,77 @@ def _coverage(store, paths, title, aliases, overrides, out, extra_sections):
         "retired_sections": retired,
     }
 
+# House style fronts a wh-question with a preposition ("In which manga
+# chapter does..."), so the guard reads the first *content* word.
+_LEAD_PREPS = ("in", "on", "at", "by", "to")
+_WH_WORDS = {"what", "which", "who", "where", "when", "how"}
+_SET_LEADS = {"every", "what", "which"}   # set questions: "Every battle involving..."
+
+
+def route_safe(question_text: str, kind: str = "fact") -> list[str]:
+    """The routing-trap audit as a function. Empty means the question is clean.
+
+    Set questions open with `Every`/`What are all the`; fact questions with a
+    wh-word (possibly preposition-fronted). Both forbid `Whom`, `in order to`,
+    `how many`, and an `According to X` lead.
+    """
+    text = (question_text or "").strip()
+    low = text.lower()
+    words = low.split()
+    violations: list[str] = []
+    if low.startswith("according to"):
+        violations.append("according-to")
+    content = words[1] if len(words) > 1 and words[0] in _LEAD_PREPS else (
+        words[0] if words else "")
+    if content == "whom":
+        violations.append("whom")
+    elif content not in (_WH_WORDS if kind != "set" else _SET_LEADS):
+        violations.append("wh-word")
+    if "in order to" in low:
+        violations.append("in order to")
+    if "how many" in low:
+        violations.append("how many")
+    return violations
+
+
+def _verify(out: PageGenOutput) -> None:
+    """One sheet row per generated question: what it is, its source field, the
+    verbatim page span, and where the page confirms it."""
+    note_to_section: dict[str, str] = {}
+    for section in out.coverage.get("sections", []):
+        for note in section.get("covered_by", []):
+            note_to_section[note] = section["path"]
+    rows: list[dict] = []
+    for q in out.questions:
+        note = q.get("note", "")
+        key = note[len(PROV):] if note.startswith(PROV) else note
+        items = [a["item"] for a in q.get("answer", [])]
+        rows.append({
+            "question": q["question"],
+            "kind": q["kind"],
+            "answer": items,
+            "source": key,
+            "page_span": ", ".join(items),
+            "section": note_to_section.get(note, ""),
+        })
+    out.verify = rows
+
+
+def _guard(out: PageGenOutput) -> None:
+    """The generator cannot emit a trap question or a trap match phrase."""
+    problems: list[str] = []
+    for q in out.questions:
+        for violation in route_safe(q["question"], q.get("kind", "fact")):
+            problems.append(f"{q.get('note', '?')}: {violation} in {q['question']!r}")
+    for roster in out.rosters:
+        for phrase in roster.get("match", []):
+            if re.search(r"\b(arc|saga)s?\b", phrase.lower()):
+                problems.append(
+                    f"roster {roster['name']!r}: arc/saga in match phrase {phrase!r}")
+    if problems:
+        raise PageGenError(
+            "route-unsafe generated material:\n" + "\n".join(problems))
+
 def _aliases_of(store: FactStore, paths: SeriesPaths, title: str) -> list[str]:
     """The page's alias rows plus the crawl's, best-effort.
 
@@ -578,6 +649,8 @@ def generate_structured(
         for builder in _BUILDERS:
             builder(store, paths, title, aliases, overrides, wiki, out, verified)
         _coverage(store, paths, title, aliases, overrides, out, extra_sections)
+        _verify(out)
+        _guard(out)
         return out
     finally:
         store.close()
