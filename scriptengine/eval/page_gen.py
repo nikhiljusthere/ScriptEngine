@@ -19,6 +19,7 @@ from datetime import date
 
 from scriptengine.config import SeriesPaths
 from scriptengine.ingest.crawler import load_manifest, sanitise_filename
+from scriptengine.retrieve.abilities import collect_abilities
 from scriptengine.retrieve import citations as cite
 from scriptengine.retrieve.roster import MEMBER_CHARS, battle_relations, battles_in
 from scriptengine.stores.facts import FactStore
@@ -341,7 +342,66 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
         "members": battle_titles,
     })
 
-_BUILDERS = (_identity_builder, _battle_builder)
+def _plural(word: str) -> str:
+    if word.endswith("y") and len(word) > 2 and word[-2] not in "aeiou":
+        return word[:-1] + "ies"
+    if word.endswith("s"):
+        return word
+    return word + "s"
+
+
+def _technique_builder(store, paths, title, aliases, overrides, wiki, out, verified):
+    # Names come from the wiki's own `user`-edge filing; the extracted
+    # `abilities` table is the fallback when the crawl file is absent.
+    names: list[str] = []
+    result = collect_abilities(paths, title, max_abilities=200)
+    if result:
+        names = [a["name"] for a in (result.get("abilities") or []) if a.get("name")]
+    if not names:
+        names = [row["name"] for row in store.abilities_of(title)
+                 if (row["name"] or "").strip()]
+    if not names:
+        return  # empty: no roster, no question -- the prose pass owns it
+    s = title.lower()
+    out.rosters.append({
+        "name": f"Every named technique of {title}",
+        "match": [f"every named technique of {s}", f"every named cursed technique of {s}",
+                  f"all the named techniques of {s}", f"{s}'s named techniques"],
+        "subject": title,
+        "members": names,
+    })
+    out.questions.append(_question(
+        f"What are all the named techniques of {title}?", "set", title, names,
+        wiki, title, "page-gen:techniques", verified, expect_mode="roster"))
+
+
+def _relations_builder(store, paths, title, aliases, overrides, wiki, out, verified):
+    groups: dict[str, list[str]] = {}
+    for row in store.relations_of(title):
+        relation = (row["relation"] or "").strip().lower()
+        other = (row["other"] or "").strip()
+        if not relation or not other:
+            continue
+        members = groups.setdefault(relation, [])
+        if other not in members:
+            members.append(other)
+    for relation in sorted(groups):
+        members = groups[relation]
+        if len(members) < 2:
+            continue  # a one-line relation is prose, not a closed set
+        s = title.lower()
+        out.rosters.append({
+            "name": f"Every {relation} of {title}",
+            "match": [f"every {relation} of {s}", f"all the {_plural(relation)} of {s}"],
+            "subject": title,
+            "members": members,
+        })
+        out.questions.append(_question(
+            f"What are all the {_plural(relation)} of {title}?", "set", title, members,
+            wiki, title, f"page-gen:relation:{relation}", verified, expect_mode="roster"))
+
+
+_BUILDERS = (_identity_builder, _battle_builder, _technique_builder, _relations_builder)
 
 def _aliases_of(store: FactStore, paths: SeriesPaths, title: str) -> list[str]:
     """The page's alias rows plus the crawl's, best-effort.

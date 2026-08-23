@@ -132,6 +132,17 @@ def _build_store(paths, title="Angel"):
              " Gender: Female. Debut: Chapter 199.",
     )
     _add_battles(store)
+    store.ensure_abilities()
+    store.save_abilities("Angel", [
+        {"name": "Flight", "kind": "technique"},
+        {"name": "Jacob's Ladder", "kind": "technique"},
+    ], 2, "v1", "test")
+    store.ensure_relations()
+    store.save_relations("Angel", [
+        {"other": "Sukuna", "relation": "rival"},
+        {"other": "Higuruma", "relation": "ally"},
+        {"other": "Ino", "relation": "ally"},
+    ], 2, "v1", "test")
     store.commit()
     return store
 
@@ -331,3 +342,31 @@ def test_battle_technique_question_is_a_fact_not_a_roster(series_with_store):
     # the alias-matched battle names the character by alias in its question
     q2 = [x for x in out.questions if x["note"] == "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"]
     assert q2 and "Hana Kurusu" in q2[0]["question"]
+
+
+def test_technique_roster_and_set(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    decl = [r for r in out.rosters if r["name"] == "Every named technique of Angel"]
+    assert decl and set(decl[0]["members"]) == {"Flight", "Jacob's Ladder"}
+    q = [x for x in out.questions if x["note"] == "page-gen:techniques"]
+    assert q and q[0]["kind"] == "set" and q[0]["expect_mode"] == "roster"
+    assert [a["item"] for a in q[0]["answer"]] and set(a["item"] for a in q[0]["answer"]) == {
+        "Flight", "Jacob's Ladder"}
+
+
+def test_relation_rosters_group_by_relation(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    names = {r["name"] for r in out.rosters}
+    assert "Every ally of Angel" in names
+    # a one-line relation is prose, not a closed set (the Kento Nanami finding)
+    assert "Every rival of Angel" not in names
+    decl = [r for r in out.rosters if r["name"] == "Every ally of Angel"][0]
+    assert set(decl["members"]) == {"Higuruma", "Ino"}
+    q = [x for x in out.questions if x["note"] == "page-gen:relation:ally"]
+    assert q and q[0]["kind"] == "set" and q[0]["expect_mode"] == "roster"
