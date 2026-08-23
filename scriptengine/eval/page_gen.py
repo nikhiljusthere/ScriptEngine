@@ -730,6 +730,99 @@ def prose_extra_sections(batch: dict) -> dict:
                 extra.setdefault(path, []).append(q)
     return extra
 
+# The campaign's page tiers, by the store's own `page_type` (never a series
+# name): characters get the full pipeline, the character-centric non-character
+# pages get the structured half.
+_TIER_TYPES: dict[str, tuple[str, ...]] = {
+    "a": ("character",),
+    "b": ("character_synopsis", "battle", "technique", "story_arcs", "event"),
+}
+
+def page_set(store, tier: str, include: list[str] | None = None) -> list[str]:
+    """The campaign's page list for a tier.
+
+    The store's `page_type` set, plus any explicitly included titles (the redos
+    the store types `unknown`, which no tier filter reaches). Deduped, stable
+    order.
+    """
+    types = _TIER_TYPES.get(tier)
+    if not types:
+        raise PageGenError(f"unknown tier {tier!r}: expected one of {sorted(_TIER_TYPES)}")
+    placeholders = ",".join("?" * len(types))
+    rows = store.connection.execute(
+        f"SELECT title FROM documents WHERE page_type IN ({placeholders}) "
+        "AND TRIM(title) <> '' ORDER BY title COLLATE NOCASE",
+        types,
+    ).fetchall()
+    titles = [row["title"] for row in rows]
+    seen = set(titles)
+    for title in (include or []):
+        title = (title or "").strip()
+        if title and title not in seen:
+            titles.append(title)
+            seen.add(title)
+    return titles
+
+def run_page_gen(
+    paths: SeriesPaths,
+    page: str,
+    overrides: dict | None,
+    batch_path: Path,
+    decl_path: Path,
+    coverage_path: Path,
+    verify_path: Path,
+    no_prose_scaffold: bool = False,
+) -> dict:
+    """Generate `page`'s structured half and write the four campaign artifacts.
+
+    Returns a per-page status dict for the sweep report (structured counts,
+    rosters, retires, supersessions, uncovered sections). Raises
+    `PageGenError` / `QuestionsError` on failure; the caller records or
+    re-raises.
+    """
+    from scriptengine.eval import questions as Q  # noqa: F401  (validation lives in write_batch)
+
+    batch_path = Path(batch_path)
+    existing_batch = (
+        json.loads(batch_path.read_text(encoding="utf-8"))
+        if batch_path.exists() else {})
+    series = paths.name
+    slug = slug_of(page)
+    result = generate_structured(
+        paths, page, overrides, None, prose_extra_sections(existing_batch))
+    batch = write_batch(
+        batch_path, series, slug, wiki_base(paths, page), result,
+        existing=existing_batch)
+    decl_path.write_text(
+        render_decl(result, page, date.today().isoformat()), encoding="utf-8")
+    if not no_prose_scaffold:
+        coverage_path.write_text(
+            json.dumps(result.coverage, indent=2, ensure_ascii=False),
+            encoding="utf-8")
+        verify_path.write_text(
+            json.dumps(result.verify, indent=2, ensure_ascii=False),
+            encoding="utf-8")
+
+    generated = [q for q in batch["questions"]
+                 if str(q.get("note", "")).startswith(PROV)]
+    by_class: dict[str, int] = {}
+    for question in generated:
+        cls = question["note"].split(":", 2)[1]
+        by_class[cls] = by_class.get(cls, 0) + 1
+    return {
+        "page": page,
+        "structured": len(generated),
+        "by_class": by_class,
+        "rosters": len(result.rosters),
+        "auto_retires": len(result.retires),
+        "retires": result.retires,
+        "hand_kept": len(batch["questions"]) - len(generated),
+        "superseded": sum(
+            1 for r in batch["retired"] if "superseded" in str(r.get("reason", ""))),
+        "uncovered": list(result.coverage.get("uncovered") or [])
+        if not no_prose_scaffold else [],
+    }
+
 def write_batch(
     batch_path: Path,
     series: str,

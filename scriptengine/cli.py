@@ -1600,13 +1600,11 @@ def page_gen(
     validation.
     """
     import logging
-    from datetime import date
 
     from scriptengine.config import load_overrides
     from scriptengine.eval import questions as Q
     from scriptengine.eval.page_gen import (
-        PageGenError, generate_structured, prose_extra_sections, render_decl,
-        slug_of, wiki_base, write_batch)
+        PageGenError, run_page_gen, slug_of)
 
     logging.disable(logging.INFO)
 
@@ -1623,56 +1621,131 @@ def page_gen(
     verify_path = Path(verify_sheet) if verify_sheet else questions_root / f"{base}.verify.json"
 
     try:
-        existing_batch = (
-            json.loads(batch_path.read_text(encoding="utf-8"))
-            if batch_path.exists() else {})
-        result = generate_structured(
-            paths, page, overrides, settings,
-            prose_extra_sections(existing_batch))
-        batch = write_batch(
-            batch_path, series, slug, wiki_base(paths, page), result,
-            existing=existing_batch)
-        decl_path.write_text(
-            render_decl(result, page, date.today().isoformat()), encoding="utf-8")
-        if not no_prose_scaffold:
-            coverage_path.write_text(
-                json.dumps(result.coverage, indent=2, ensure_ascii=False),
-                encoding="utf-8")
-            verify_path.write_text(
-                json.dumps(result.verify, indent=2, ensure_ascii=False),
-                encoding="utf-8")
+        status = run_page_gen(
+            paths, page, overrides, batch_path, decl_path, coverage_path,
+            verify_path, no_prose_scaffold)
     except (PageGenError, Q.QuestionsError) as error:
         console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1) from error
 
-    generated = [q for q in batch["questions"]
-                 if str(q.get("note", "")).startswith("page-gen:")]
-    by_class: dict[str, int] = {}
-    for question in generated:
-        cls = question["note"].split(":", 2)[1]
-        by_class[cls] = by_class.get(cls, 0) + 1
-    superseded = [r for r in batch["retired"] if "superseded" in str(r.get("reason", ""))]
+    by_class = status["by_class"]
 
     table = Table(title=f"page-gen: {series} / {page}")
     table.add_column("")
     table.add_column("", justify="right")
     for cls in sorted(by_class):
         table.add_row(f"{cls} questions", str(by_class[cls]))
-    table.add_row("structured questions", str(len(generated)))
-    table.add_row("rosters declared", str(len(result.rosters)))
-    table.add_row("auto-retires", str(len(result.retires)))
-    table.add_row("hand-authored kept", str(len(batch["questions"]) - len(generated)))
-    table.add_row("collisions superseded", str(len(superseded)))
+    table.add_row("structured questions", str(status["structured"]))
+    table.add_row("rosters declared", str(status["rosters"]))
+    table.add_row("auto-retires", str(status["auto_retires"]))
+    table.add_row("hand-authored kept", str(status["hand_kept"]))
+    table.add_row("collisions superseded", str(status["superseded"]))
     if not no_prose_scaffold:
-        table.add_row("uncovered sections", str(len(result.coverage.get("uncovered", []))))
+        table.add_row("uncovered sections", str(len(status["uncovered"])))
     console.print(table)
-    for retire in result.retires:
+    for retire in status["retires"]:
         console.print(f"  [dim]retired: {retire['question']} -- {retire['reason']}[/dim]")
     console.print(f"[bold]batch[/bold]: {batch_path}")
     console.print(f"[bold]decl[/bold]: {decl_path}")
     if not no_prose_scaffold:
         console.print(f"[bold]coverage[/bold]: {coverage_path}")
         console.print(f"[bold]verify[/bold]: {verify_path}")
+
+
+@app.command("page-sweep")
+def page_sweep(
+    series: str = typer.Option(..., "--series", help="The series to sweep."),
+    tier: str = typer.Option(
+        "b", "--tier", help="a = characters, b = character-centric non-characters."),
+    include: str = typer.Option(
+        "", "--include",
+        help="Comma-separated extra titles (e.g. the redos the store types unknown)."),
+    force: bool = typer.Option(
+        False, "--force", help="Re-sweep pages already in the report."),
+    limit: int = typer.Option(
+        0, "--limit", help="Sweep at most N pages this run (0 = all that remain)."),
+    out: Path = typer.Option(
+        None, "--out", help="Write the report there instead of alongside the batches."),
+) -> None:
+    """Run `page-gen` across a whole page tier, writing each page's artifacts
+    plus a per-page status report. Resumable: pages already swept (no error) are
+    skipped unless `--force`. A page that fails is recorded with its error and
+    the sweep continues, so one bad page never aborts the tier."""
+    import logging
+    from datetime import date
+
+    from scriptengine.config import load_overrides
+    from scriptengine.eval.page_gen import (
+        PageGenError, page_set, run_page_gen, slug_of)
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+
+    settings = get_settings()
+    paths = series_paths(series, settings)
+    overrides = load_overrides(paths)
+    store = FactStore(paths.facts_db)
+    try:
+        include_list = [t for t in (include or "").split(",") if t.strip()]
+        titles = page_set(store, tier, include_list)
+    except PageGenError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+    finally:
+        store.close()
+
+    questions_root = settings.questions_root
+    questions_root.mkdir(parents=True, exist_ok=True)
+    report_path = (out if out
+                   else questions_root / f"_{series}_page_sweep_{tier}.report.json")
+    report = (json.loads(report_path.read_text(encoding="utf-8"))
+              if report_path.exists()
+              else {"series": series, "tier": tier, "pages": []})
+    done = {p["page"] for p in report["pages"] if not p.get("error")}
+
+    swept = 0
+    errors = 0
+    for title in titles:
+        if limit and swept >= limit:
+            break
+        if title in done and not force:
+            continue
+        slug = slug_of(title)
+        base = f"_{series}_page_{slug}"
+        batch_path = questions_root / f"{base}.json"
+        decl_path = questions_root / f"{base}.decl.yaml"
+        coverage_path = questions_root / f"{base}.coverage.json"
+        verify_path = questions_root / f"{base}.verify.json"
+        try:
+            status = run_page_gen(
+                paths, title, overrides, batch_path, decl_path,
+                coverage_path, verify_path)
+        except Exception as error:  # record and continue; the sweep is resilient
+            status = {"page": title, "error": f"{type(error).__name__}: {error}"}
+        row = {k: v for k, v in status.items() if k != "retires"}
+        index = next(
+            (i for i, p in enumerate(report["pages"]) if p["page"] == title), None)
+        if index is None:
+            report["pages"].append(row)
+        else:
+            report["pages"][index] = row
+        swept += 1
+        if row.get("error"):
+            errors += 1
+            console.print(f"[red]  {title}: {row['error']}[/red]")
+        else:
+            console.print(f"[dim]  {title}: {row['structured']} structured, "
+                          f"{len(row['uncovered'])} uncovered[/dim]")
+
+    report["updated"] = date.today().isoformat()
+    report_path.write_text(
+        json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    total_structured = sum(
+        p.get("structured", 0) for p in report["pages"] if not p.get("error"))
+    console.print(
+        f"swept {swept} page(s) this run ({errors} errors); "
+        f"report holds {len(report['pages'])} pages, {total_structured} structured Qs")
+    console.print(f"[bold]report[/bold]: {report_path}")
 
 
 @app.command("page-merge")

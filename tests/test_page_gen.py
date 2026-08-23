@@ -664,6 +664,35 @@ def test_prose_extra_sections_groups_by_section_path():
     assert prose_extra_sections({}) == {}
 
 
+def test_page_set_by_tier(series_with_store):
+    from scriptengine.eval.page_gen import PageGenError, page_set
+
+    paths, store = series_with_store
+    assert page_set(store, "a") == ["Angel"]
+    assert page_set(store, "b") == ["Angel vs. Sukuna", "Jujutsu Sorcerers vs. Sukuna"]
+    # `include` reaches the pages the tier filter never would
+    assert page_set(store, "a", include=["Angel vs. Sukuna"]) == [
+        "Angel", "Angel vs. Sukuna"]
+    with pytest.raises(PageGenError, match="unknown tier"):
+        page_set(store, "z")
+
+
+def test_run_page_gen_status(series_with_store, tmp_path):
+    from scriptengine.eval.page_gen import run_page_gen
+
+    paths, _ = series_with_store
+    status = run_page_gen(
+        paths, "Angel", _JJK_OVERRIDES,
+        tmp_path / "b.json", tmp_path / "decl.yaml",
+        tmp_path / "coverage.json", tmp_path / "verify.json")
+    assert (tmp_path / "b.json").exists()
+    assert (tmp_path / "decl.yaml").exists()
+    assert (tmp_path / "coverage.json").exists()
+    assert status["page"] == "Angel"
+    assert status["structured"] > 0 and "identity" in status["by_class"]
+    assert status["uncovered"]  # the fixture leaves prose sections uncovered
+
+
 def _cli(tmp_path, monkeypatch):
     """Point the CLI's settings at the fixture's series tree + a fresh questions root."""
     import scriptengine.cli as cli
@@ -750,3 +779,22 @@ def test_page_gen_rerun_feeds_prose_questions_into_the_ledger(tmp_path, series_w
     assert "prose:Trivia" in by_path["Trivia"]["covered_by"]
     batch2 = json.loads(batch_path.read_text(encoding="utf-8"))
     assert any(q.get("note") == "prose:Trivia" for q in batch2["questions"])
+
+
+def test_page_sweep_command(tmp_path, series_with_store, monkeypatch):
+    import json
+    from typer.testing import CliRunner
+    from scriptengine.eval.page_gen import slug_of
+
+    cli = _cli(tmp_path, monkeypatch)
+    result = CliRunner().invoke(cli.app, ["page-sweep", "--series", "jjk", "--tier", "b"])
+    assert result.exit_code == 0, result.output
+    report_path = tmp_path / "questions" / "_jjk_page_sweep_b.report.json"
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    swept = {p["page"] for p in report["pages"]}
+    assert swept == {"Angel vs. Sukuna", "Jujutsu Sorcerers vs. Sukuna"}
+    for page in swept:
+        assert (tmp_path / "questions" / f"_jjk_page_{slug_of(page)}.json").exists()
+    # resumable: a second run sweeps nothing new
+    result = CliRunner().invoke(cli.app, ["page-sweep", "--series", "jjk", "--tier", "b"])
+    assert "swept 0 page(s)" in result.output
