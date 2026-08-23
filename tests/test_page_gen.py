@@ -131,8 +131,71 @@ def _build_store(paths, title="Angel"):
         text="Status: Unknown. Species: Human Incarnation. Age: 1000+."
              " Gender: Female. Debut: Chapter 199.",
     )
+    _add_battles(store)
     store.commit()
     return store
+
+
+def _add_battles(store):
+    """Two battle documents: one names the title, one names the alias.
+
+    Shaped like the JJK battle infobox (`side1`/`powers1`), the fixture's
+    `_JJK_OVERRIDES` says as much; with `overrides=None` the builder's
+    default pairs find nothing and no battle questions are generated.
+    """
+    specs = [
+        {
+            "title": "Angel vs. Sukuna",
+            "facts": [
+                ("side1", "Side 1", "Angel"),
+                ("side2", "Side 2", "Sukuna"),
+                ("outcome", "Outcome", "Angel wins."),
+                ("place", "Place", "Shinjuku"),
+                ("date", "Date", "December 24, 2018"),
+                ("chapters", "Chapters", "Chapter 199 - 203"),
+                ("powers1", "Powers 1", "Angel\nFlight\nJacob's Ladder"),
+                ("powers2", "Powers 2", "Sukuna\nCursed Speech"),
+            ],
+            "text": "Angel vs. Sukuna took place in Shinjuku on December 24, 2018,"
+                    " spanning Chapter 199 to 203. The outcome was that Angel wins."
+                    " Angel used Flight and Jacob's Ladder against Sukuna's Cursed Speech.",
+        },
+        {
+            "title": "Jujutsu Sorcerers vs. Sukuna",
+            "facts": [
+                ("side1", "Side 1", "Hana Kurusu"),
+                ("side2", "Side 2", "Sukuna"),
+                ("outcome", "Outcome", "Inconclusive."),
+                ("chapters", "Chapters", "Chapter 204"),
+                ("powers1", "Powers 1", "Hana Kurusu\nFlight"),
+                ("powers2", "Powers 2", "Sukuna\nCursed Speech"),
+            ],
+            "text": "Jujutsu Sorcerers vs. Sukuna is recorded in Chapter 204."
+                    " The outcome was Inconclusive.",
+        },
+    ]
+    for spec in specs:
+        doc = store.add_document(
+            title=spec["title"],
+            url=f"https://jujutsu-kaisen.fandom.com/wiki/{spec['title'].replace(' ', '_')}",
+            page_type="battle",
+            infobox_template="Battle Infobox",
+            lead="",
+            word_count=len(spec["text"].split()),
+            revid=2,
+            fetched_at="2026-08-24T00:00:00+00:00",
+        )
+        section_id = store.add_section(
+            document_id=doc, title="Synopsis", breadcrumb="Synopsis", level=2,
+            ordinal=1, text=spec["text"], word_count=len(spec["text"].split()),
+        )
+        node = store.add_node(spec["title"], label="battle", document_id=doc)
+        for key, label, value in spec["facts"]:
+            store.add_fact(node_id=node, key=key, label=label, value=value, citation="")
+        store.add_chunk(
+            document_id=doc, section_id=section_id, parent_id=None, level=1,
+            ordinal=1, doc_title=spec["title"], breadcrumb="Synopsis", text=spec["text"],
+        )
 
 
 @pytest.fixture
@@ -212,3 +275,59 @@ def test_phrasing_traps_hold_on_generated_questions(series_with_store):
     for r in out.rosters:
         for phrase in r["match"]:
             assert not re.search(r"\b(arc|saga)s?\b", phrase)
+
+
+# Mirrors `series/jjk/overrides.yaml` `battle_relations:` -- the catalog must
+# take the vocabulary from the overrides, never hardcode it.
+_JJK_OVERRIDES = {
+    "battle_relations": [
+        {"side": "side1", "abilities": "powers1"},
+        {"side": "side2", "abilities": "powers2"},
+    ]
+}
+
+
+def test_battle_block_questions(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    q = {x["note"]: x for x in out.questions}
+    assert q["page-gen:battle:Angel vs. Sukuna:outcome"]["question"] == "What is the outcome of Angel vs. Sukuna?"
+    assert q["page-gen:battle:Angel vs. Sukuna:outcome"]["answer"] == [{"item": "Angel wins.", "aliases": []}]
+    assert q["page-gen:battle:Angel vs. Sukuna:chapters"]["question"] == "In which manga chapter does Angel vs. Sukuna begin?"
+    assert q["page-gen:battle:Angel vs. Sukuna:chapters"]["answer"] == [{"item": "Chapter 199", "aliases": []}]
+    assert q["page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"]["question"] == "Which manga chapters cover Jujutsu Sorcerers vs. Sukuna?"
+    assert "page-gen:battle:Angel vs. Sukuna:episodes" not in q   # no episodes fact on the page
+    # every battle fact names the character page and the battle page
+    for note, q in q.items():
+        if note.startswith("page-gen:battle:"):
+            assert len(q["sources"]) == 2 and q["sources"][0].endswith("/wiki/Angel")
+
+
+def test_battle_set_and_decl(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    setq = [q for q in out.questions if q["note"] == "page-gen:battles"]
+    assert len(setq) == 1 and setq[0]["kind"] == "set" and setq[0]["expect_mode"] == "roster"
+    items = [a["item"] for a in setq[0]["answer"]]
+    assert "Angel vs. Sukuna" in items
+    # alias discovery: the battle that names Hana Kurusu is in the set too
+    assert len(items) >= 2 and "Jujutsu Sorcerers vs. Sukuna" in items
+    decl = [r for r in out.rosters if r["name"] == "Every battle involving Angel"]
+    assert decl and set(items) == set(decl[0]["members"])
+
+
+def test_battle_technique_question_is_a_fact_not_a_roster(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    q = [x for x in out.questions if x["note"] == "page-gen:battle:Angel vs. Sukuna:techniques"]
+    assert q and q[0]["kind"] == "fact" and q[0]["expect_mode"] == "qa"
+    assert [a["item"] for a in q[0]["answer"]] == ["Flight, Jacob's Ladder"]
+    # the alias-matched battle names the character by alias in its question
+    q2 = [x for x in out.questions if x["note"] == "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"]
+    assert q2 and "Hana Kurusu" in q2[0]["question"]

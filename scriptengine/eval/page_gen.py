@@ -13,11 +13,14 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from datetime import date
 
 from scriptengine.config import SeriesPaths
 from scriptengine.ingest.crawler import load_manifest, sanitise_filename
+from scriptengine.retrieve import citations as cite
+from scriptengine.retrieve.roster import MEMBER_CHARS, battle_relations, battles_in
 from scriptengine.stores.facts import FactStore
 
 PROV = "page-gen:"
@@ -181,7 +184,164 @@ def _identity_builder(store, paths, title, aliases, overrides, wiki, out, verifi
         # Everything else (capabilities, hair, eye, ...) is prose: the ledger
         # leaves its section uncovered for the reader.
 
-_BUILDERS = (_identity_builder,)
+def _fold(value: str) -> str:
+    return unicodedata.normalize("NFKC", value).lower()
+
+# `Chapter 199 - 203` is a range: the campaign's precedent (Toji 014) asks for
+# the start endpoint, not the span.
+_CHAPTER_RANGE = re.compile(
+    r"^\s*chapter\s+([\d.]+)\s*[-\u2013\u2014]\s*([\d.]+)\s*$", re.IGNORECASE)
+
+def _split_list(value: str) -> list[str]:
+    return [part.strip() for part in re.split(r"[\n,]", value) if part.strip()]
+
+def _techniques_for(abilities: str, side: str, character: str) -> list[str]:
+    """The technique lines under the character's marker.
+
+    The wiki interleaves fighter lines with their technique lines in one cell
+    (`Aoi Todo` newline `Boogie Woogie` newline `Arata Nitta` ...), so a
+    fighter's kit is read as the lines under their own marker, in page order.
+    Battle-scoped technique sets never close, so this is a fact, not a roster.
+    """
+    fighters = _split_list(side)
+    lines = [line.strip() for line in abilities.splitlines() if line.strip()]
+
+    def is_marker(line: str) -> bool:
+        fl = _fold(line)
+        return any(
+            fl == _fold(fighter) or (
+                _fold(fighter).split() and _fold(fighter).split()[-1] == fl)
+            for fighter in fighters
+        )
+
+    char = _fold(character)
+    char_last = char.split()[-1] if char.split() else ""
+    techniques: list[str] = []
+    under_character = False
+    for line in lines:
+        fl = _fold(line)
+        if is_marker(line):
+            under_character = fl == char or (bool(char_last) and char_last in fl)
+            continue
+        if under_character:
+            techniques.append(line)
+    return techniques
+
+def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified):
+    pairs = battle_relations(overrides)
+    if not pairs:
+        return
+    episodes = cite.EpisodeIndex.from_store(store)
+
+    # The character's battle pages name her by whichever of her names the
+    # infobox side carries, so the union runs over the title and every alias.
+    battles: dict[str, str] = {}          # battle title -> the name that matched
+    for name in [title, *aliases]:
+        result = battles_in(store, episodes, name, MEMBER_CHARS, overrides)
+        if result is None:
+            continue
+        for member in result.members:
+            battles.setdefault(member.name, name)
+    if not battles:
+        return
+
+    # Store alias rows are lowercased; a crawl alias keeps its case. Show the
+    # better-cased spelling in question text.
+    display: dict[str, str] = {}
+    for alias in sorted(aliases, key=lambda a: (a.islower(), a)):
+        display.setdefault(_fold(alias), alias)
+
+    def shown(name: str) -> str:
+        if name == title:
+            return title
+        candidate = display.get(_fold(name))
+        if candidate and not candidate.islower():
+            return candidate
+        return name.title()
+
+    char_url = f"{wiki}/wiki/{title.replace(' ', '_')}"
+    for battle in sorted(battles):
+        matched = battles[battle]
+        facts = {
+            (row["key"] or "").lower(): (row["value"] or "").strip()
+            for row in store.facts_for(battle)
+        }
+        battle_url = f"{wiki}/wiki/{battle.replace(' ', '_')}"
+
+        # Which side (and abilities column) the character is on, off the
+        # infobox's own words -- the owner-perspective the result is phrased from.
+        words = [w for w in re.findall(r"[a-z']+", _fold(matched)) if len(w) > 3]
+        word = words[-1] if words else _fold(matched)
+        my_side = my_powers = ""
+        for side, abilities in pairs:
+            if (word and word in _fold(facts.get(side, ""))) or (
+                    word and word in _fold(facts.get(abilities, ""))):
+                my_side, my_powers = side, abilities
+                break
+
+        def emit(key: str, question: str, value: str) -> None:
+            note = f"page-gen:battle:{battle}:{key}"
+            if not value or not chunked(store, value):
+                _retire(out, question, value,
+                        f"value not chunked on any page (G3 shape) for {battle!r}",
+                        note)
+                return
+            out.questions.append(_question(
+                question, "fact", title, [value], wiki, title, note, verified,
+                extra_sources=(battle_url,)))
+
+        if facts.get("outcome"):
+            emit("outcome", f"What is the outcome of {battle}?", facts["outcome"])
+        if facts.get("place"):
+            emit("place", f"Where did {battle} take place?", facts["place"])
+        elif facts.get("event"):
+            emit("event", f"Which event is {battle} part of?", facts["event"])
+        if facts.get("date"):
+            emit("date", f"When does {battle} take place?", facts["date"])
+        if facts.get("chapters"):
+            value = facts["chapters"]
+            match = _CHAPTER_RANGE.match(value)
+            if match:
+                emit("chapters", f"In which manga chapter does {battle} begin?",
+                     f"Chapter {match.group(1)}")
+            else:
+                emit("chapters", f"Which manga chapters cover {battle}?", value)
+        if facts.get("episodes"):
+            emit("episodes", f"In which episode is {battle} depicted?", facts["episodes"])
+        if facts.get("arc"):
+            emit("arc", f"In which arc does {battle} take place?", facts["arc"])
+
+        techniques = (
+            _techniques_for(facts.get(my_powers, ""), facts.get(my_side, ""), shown(matched))
+            if my_powers else []
+        )
+        if techniques:
+            question = f"Which techniques did {shown(matched)} use in {battle}?"
+            if all(chunked(store, t) for t in techniques):
+                out.questions.append(_question(
+                    question, "fact", title, [", ".join(techniques)], wiki, title,
+                    f"page-gen:battle:{battle}:techniques", verified,
+                    extra_sources=(battle_url,)))
+            else:
+                _retire(out, question, ", ".join(techniques),
+                        f"technique list not chunked on any page (G3 shape) for {battle!r}",
+                        f"page-gen:battle:{battle}:techniques")
+
+    battle_titles = sorted(battles)
+    out.questions.append(_question(
+        f"Every battle involving {title}", "set", title, battle_titles, wiki, title,
+        "page-gen:battles", verified, expect_mode="roster",
+        extra_sources=tuple(f"{wiki}/wiki/{b.replace(' ', '_')}" for b in battle_titles)))
+    s = title.lower()
+    out.rosters.append({
+        "name": f"Every battle involving {title}",
+        "match": [f"every battle involving {s}", f"all the battles involving {s}",
+                  f"battles involving {s}", f"every battle of {s}"],
+        "subject": title,
+        "members": battle_titles,
+    })
+
+_BUILDERS = (_identity_builder, _battle_builder)
 
 def _aliases_of(store: FactStore, paths: SeriesPaths, title: str) -> list[str]:
     """The page's alias rows plus the crawl's, best-effort.
