@@ -16,8 +16,10 @@ import re
 import unicodedata
 from dataclasses import dataclass, field
 from datetime import date
+from pathlib import Path
 
 from scriptengine.config import SeriesPaths
+from scriptengine.eval import questions as Q
 from scriptengine.ingest.crawler import load_manifest, sanitise_filename
 from scriptengine.retrieve.abilities import collect_abilities
 from scriptengine.retrieve import citations as cite
@@ -654,3 +656,138 @@ def generate_structured(
         return out
     finally:
         store.close()
+
+def _norm_text(text: str) -> str:
+    """The reconciliation fold: NFKD, lowercase, punctuation stripped."""
+    text = unicodedata.normalize("NFKD", text or "").lower()
+    return " ".join(re.sub(r"[^\w\s]", " ", text).split())
+
+# Numbering order within a batch: identity first, then the per-battle block,
+# techniques, relations, the list-field sets, and the battles set last.
+_CLASS_ORDER = {
+    "identity": 0, "battle": 1, "techniques": 2, "relation": 3,
+    "alias": 4, "affiliation": 4, "battles": 5,
+}
+
+def _class_of(note: str) -> str:
+    key = note[len(PROV):] if note.startswith(PROV) else ""
+    return key.split(":", 1)[0]
+
+def write_batch(
+    batch_path: Path,
+    series: str,
+    slug: str,
+    wiki: str,
+    out: PageGenOutput,
+    existing: dict | None = None,
+) -> dict:
+    """Merge the generated half into the campaign batch, idempotently.
+
+    Hand-authored questions (no `page-gen:` marker in `note`) are never
+    renumbered or dropped; a hand question duplicating a generated one is
+    moved to `retired` as `superseded`, not clobbered. Generated rows take
+    the lowest free ids. The serialized batch must pass `questions.validate`
+    before the file is touched.
+    """
+    batch_path = Path(batch_path)
+    existing_batch = existing
+    if existing_batch is None:
+        existing_batch = (
+            json.loads(batch_path.read_text(encoding="utf-8"))
+            if batch_path.exists() else {}
+        )
+    kept_questions = [
+        q for q in (existing_batch.get("questions") or [])
+        if not str(q.get("note", "")).startswith(PROV)
+    ]
+    kept_retired = [
+        r for r in (existing_batch.get("retired") or [])
+        if not str(r.get("note", "")).startswith(PROV)
+    ]
+
+    decorated = sorted(
+        enumerate(out.questions),
+        key=lambda pair: (
+            _CLASS_ORDER.get(_class_of(str(pair[1].get("note", ""))), 99),
+            pair[0],
+        ),
+    )
+    ordered = [q for _, q in decorated]
+
+    gen_by_norm = {_norm_text(q["question"]): q for q in ordered}
+    surviving: list[dict] = []
+    superseded: list[dict] = []
+    for q in kept_questions:
+        gen = gen_by_norm.get(_norm_text(q.get("question", "")))
+        if gen is not None:
+            superseded.append({
+                "id": q.get("id", ""),
+                "item": "",
+                "question": q.get("question", ""),
+                "reason": f"superseded by {gen.get('note', PROV)} "
+                          "(page-gen reconciliation)",
+                "retired": True,
+            })
+        else:
+            surviving.append(q)
+
+    qid = re.compile(rf"^{re.escape(f'{series}-pg-{slug}-')}(\d+)$")
+    used: set[int] = set()
+    for row in [*surviving, *kept_retired]:
+        match = qid.match(str(row.get("id", "")))
+        if match:
+            used.add(int(match.group(1)))
+    next_num = 1
+    for q in ordered:
+        while next_num in used:
+            next_num += 1
+        q["id"] = f"{series}-pg-{slug}-{next_num:03d}"
+        used.add(next_num)
+        next_num += 1
+
+    rid = re.compile(rf"^{re.escape(f'{series}-pg-{slug}-retired-')}(\d+)$")
+    used_ret: set[int] = set()
+    for row in kept_retired:
+        match = rid.match(str(row.get("id", "")))
+        if match:
+            used_ret.add(int(match.group(1)))
+    kept_keys = {
+        (_norm_text(r.get("question", "")), str(r.get("item", "")))
+        for r in kept_retired
+    }
+    gen_retired: list[dict] = []
+    next_ret = 1
+    for r in out.retires:
+        # A hand-retire of the same (question, value) says more; keep it.
+        if (_norm_text(r.get("question", "")), str(r.get("item", ""))) in kept_keys:
+            continue
+        while next_ret in used_ret:
+            next_ret += 1
+        r["id"] = f"{series}-pg-{slug}-retired-{next_ret:02d}"
+        used_ret.add(next_ret)
+        gen_retired.append(r)
+        next_ret += 1
+
+    batch = {
+        "series": series,
+        "wiki": wiki,
+        "updated": date.today().isoformat(),
+        "note": (
+            f"page-gen {date.today().isoformat()}: {len(ordered)} structured "
+            f"questions (note page-gen:-marked), {len(gen_retired)} auto-retires, "
+            f"{len(surviving)} hand-authored kept, {len(superseded)} superseded"
+        ),
+        "retired": kept_retired + superseded + gen_retired,
+        "questions": surviving + ordered,
+    }
+
+    payload = json.dumps(batch, ensure_ascii=False, indent=2)
+    tmp = batch_path.with_name(batch_path.name + ".tmp")
+    try:
+        tmp.write_text(payload, encoding="utf-8")
+        Q.validate([Q.load_file(tmp)])
+        tmp.replace(batch_path)
+    except Q.QuestionsError as exc:
+        tmp.unlink(missing_ok=True)
+        raise PageGenError(f"generated batch fails validation: {exc}") from exc
+    return batch

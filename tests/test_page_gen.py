@@ -458,3 +458,59 @@ def test_generator_raises_on_trap_question(series_with_store, monkeypatch):
     import pytest
     with pytest.raises(pg.PageGenError, match="According to"):
         pg.generate_structured(paths, "Angel", overrides=None)
+
+
+def test_write_batch_creates_and_validates(tmp_path, series_with_store):
+    from scriptengine.eval import questions as Q
+    from scriptengine.eval.page_gen import generate_structured, write_batch
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    batch = write_batch(tmp_path / "_jjk_page_angel.json", "jjk", "angel",
+                        "https://jujutsu-kaisen.fandom.com", out)
+    ids = [q["id"] for q in batch["questions"]]
+    assert len(ids) == len(set(ids))
+    assert ids and all(i.startswith("jjk-pg-angel-") for i in ids)
+    assert batch["series"] == "jjk" and batch["wiki"].startswith("https://")
+    Q.validate([Q.load_file(tmp_path / "_jjk_page_angel.json")])
+
+
+def test_rerun_never_clobbers_hand_authored(tmp_path, series_with_store):
+    from scriptengine.eval.page_gen import generate_structured, write_batch
+
+    paths, store = series_with_store
+    out1 = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    first = write_batch(tmp_path / "_jjk_page_angel.json", "jjk", "angel",
+                        "https://jujutsu-kaisen.fandom.com", out1)
+    hand = {"id": "jjk-pg-angel-900", "kind": "fact",
+            "question": "How did Angel defeat Sukuna in the Culling Game?",
+            "subject": "Angel", "tier": "wiki", "expect_mode": "qa", "scope": "closed",
+            "answer": [{"item": "she did not"}],
+            "sources": ["https://jujutsu-kaisen.fandom.com/wiki/Angel"],
+            "verified": "2026-08-23", "note": "hand-authored S1"}
+    existing = dict(first)
+    existing["questions"] = list(first["questions"]) + [hand]
+    out2 = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    second = write_batch(tmp_path / "_jjk_page_angel.json", "jjk", "angel",
+                         "https://jujutsu-kaisen.fandom.com", out2, existing=existing)
+    assert any(q["id"] == "jjk-pg-angel-900" for q in second["questions"])
+    assert all(q["id"] == "jjk-pg-angel-900" or q["note"].startswith("page-gen:")
+               for q in second["questions"])
+
+
+def test_collision_supersedes_the_hand_authored(tmp_path, series_with_store):
+    from scriptengine.eval.page_gen import generate_structured, write_batch
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    dup = {"id": "jjk-pg-angel-777", "kind": "fact",
+           "question": "What is the status of Angel?",
+           "subject": "Angel", "tier": "wiki", "expect_mode": "qa", "scope": "closed",
+           "answer": [{"item": "Unknown"}],
+           "sources": ["https://jujutsu-kaisen.fandom.com/wiki/Angel"],
+           "verified": "2026-08-23", "note": "hand S4"}
+    batch = write_batch(tmp_path / "_jjk_page_angel.json", "jjk", "angel",
+                        "https://jujutsu-kaisen.fandom.com", out,
+                        existing={"questions": [dup], "retired": []})
+    assert all(q["id"] != "jjk-pg-angel-777" for q in batch["questions"])
+    assert any("superseded" in r["reason"] for r in batch["retired"])
