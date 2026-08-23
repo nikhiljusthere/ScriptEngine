@@ -663,6 +663,34 @@ class TestBattleScoped:
         with FactStore(self.jjk().facts_db) as store:
             assert battle_facts(store, "What is Yuji Itadori's grade?") == []
 
+    def test_a_declared_battles_set_beats_the_battles_in_discovery(self):
+        """`What are all the battles involving Satoru Gojo?` is a battles-in
+        phrasing, but the series has declared the closed set the wiki keeps for
+        him, so the curated members must win over the battles-in discovery.
+
+        The discovery matches on a fighter's alias and drags in fights he is not
+        in (it returned the 27-battle superset, `Maki Zenin vs. Mai Zenin`
+        among them). It ran before the declared path, which the query's own
+        name would constrain to the 8 fights Gojo is actually in -- so the
+        hand-authored 8-member question scored 0 while its statement-form twin
+        scored 100. The declaration is the curation; it wins.
+        """
+        from scriptengine.config import load_overrides
+        from scriptengine.retrieve.roster import build_roster, load_rosters
+
+        paths = self.jjk()
+        registry = load_rosters(load_overrides(paths))
+        if not any(
+            "battle" in d.name.lower() and "satoru gojo" in d.name.lower()
+            for d in registry
+        ):
+            pytest.skip("the Gojo battles roster is not declared")
+
+        roster = build_roster(paths, "What are all the battles involving Satoru Gojo?")
+        names = {m.name for m in roster.members}
+        assert "Maki Zenin vs. Mai Zenin" not in names, names
+        assert "Satoru Gojo vs. Sukuna" in names, names
+
 
 class TestBattleRelationsAreDeclared:
     """Three wikis, three names for the same two infobox fields.

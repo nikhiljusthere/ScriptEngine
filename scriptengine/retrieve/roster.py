@@ -1317,7 +1317,14 @@ def build_roster(
         # subject when it is missing. Runs before every character path because
         # those answer with a fighter's abilities and would never list their
         # fights. A fighter on no battle page returns None and falls through.
-        if asks_for_battles_in(query):
+        #
+        # Only when no declared set answers the query: a series that declares
+        # the closed battles category (JJK's per-character `Satoru Gojo Battles`)
+        # has curated the membership, and the discovery over-matches on a
+        # fighter's alias -- it dragged `Maki Zenin vs. Mai Zenin` into every
+        # answer about Gojo's fights, scoring the hand-authored 8-member
+        # question 0 while its statement-form twin hit 100. The curation wins.
+        if declared is None and asks_for_battles_in(query):
             # The subject the router resolved is the fighter; a battles-in query
             # names one person and nothing else. `character` above is empty here
             # because there is no kind word, so fall back to the subject itself.
