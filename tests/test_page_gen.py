@@ -337,6 +337,28 @@ def test_battle_set_and_decl(series_with_store):
     assert decl and set(items) == set(decl[0]["members"])
 
 
+def test_battle_aliases_override_drives_the_search(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    # Drop the alias row: without it, only the battle naming the title itself
+    # is reachable, and the per-wiki bridge (`battle_aliases`) must supply it.
+    node = store.node_by_name("Angel")
+    store.connection.execute("DELETE FROM aliases WHERE node_id = ?", (node["id"],))
+    store.commit()
+
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    battles = [q["note"] for q in out.questions if q["note"].startswith("page-gen:battle:")]
+    assert any("Angel vs. Sukuna" in n for n in battles)
+    assert not any("Jujutsu Sorcerers" in n for n in battles)
+
+    overrides = {**_JJK_OVERRIDES, "battle_aliases": {"Angel": ["Hana Kurusu"]}}
+    out2 = generate_structured(paths, "Angel", overrides=overrides)
+    setq = next(q for q in out2.questions if q["note"] == "page-gen:battles")
+    assert set(a["item"] for a in setq["answer"]) == {
+        "Angel vs. Sukuna", "Jujutsu Sorcerers vs. Sukuna"}
+
+
 def test_battle_technique_question_is_a_fact_not_a_roster(series_with_store):
     from scriptengine.eval.page_gen import generate_structured
 

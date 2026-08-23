@@ -240,8 +240,13 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
 
     # The character's battle pages name her by whichever of her names the
     # infobox side carries, so the union runs over the title and every alias.
+    # A wiki may keep the fighter and the name her battles use on separate
+    # pages (the JJK wiki files the Angel's fights under her host body,
+    # Hana Kurusu); that bridge is declared per-wiki in `battle_aliases`,
+    # never inferred.
+    extra = ((overrides or {}).get("battle_aliases") or {}).get(title) or []
     battles: dict[str, str] = {}          # battle title -> the name that matched
-    for name in [title, *aliases]:
+    for name in [title, *aliases, *extra]:
         result = battles_in(store, episodes, name, MEMBER_CHARS, overrides)
         if result is None:
             continue
