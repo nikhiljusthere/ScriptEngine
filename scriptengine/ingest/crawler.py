@@ -831,3 +831,20 @@ def load_manifest(paths: SeriesPaths) -> dict[str, Any]:
     if not paths.manifest.exists():
         return {}
     return json.loads(paths.manifest.read_text(encoding="utf-8"))
+
+
+def parse_page(paths: SeriesPaths, title: str) -> WikiPage:
+    """Parse one stored page with the current extraction code.
+
+    `load_extracted` re-parses a whole corpus; this reads a single page, for
+    callers that need one page's current facts and sections without touching
+    the rest of the disk. Missing file is a `FileNotFoundError` naming the
+    title, because "not crawled" is a different failure from "bad page".
+    """
+    path = paths.wikitext / f"{sanitise_filename(title)}.json"
+    if not path.exists():
+        raise FileNotFoundError(f"no stored crawl for page {title!r} at {path}")
+    page = WikiPage.from_dict(json.loads(path.read_text(encoding="utf-8")))
+    manifest = load_manifest(paths)
+    ontology = Ontology.from_dict(manifest.get("ontology") or {})
+    return reextract(page, ontology)
