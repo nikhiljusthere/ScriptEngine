@@ -102,7 +102,13 @@ def _build_store(paths, title="Angel"):
         ("Personality", "Personality", 2, "Angel is calm and reserved."),
         ("Synopsis", "Synopsis", 2, ""),
         ("History", "Synopsis / History", 3, "Angel first appears in Chapter 199."),
+        ("Culling Game Arc", "Synopsis / Culling Game Arc", 3,
+         "During the Culling Game, Angel vs. Sukuna takes place on a rooftop."),
+        ("Cursed Technique", "Abilities and Powers / Cursed Technique", 3,
+         "Flight and Jacob's Ladder are Angel's techniques."),
+        ("Trivia", "Trivia", 2, "Angel appears in fan polls."),
         ("References", "References", 2, ""),
+        ("Navigation", "Navigation", 2, ""),
     ]
     for ordinal, (sect, crumb, level, text) in enumerate(sections, start=1):
         store.add_section(
@@ -370,3 +376,34 @@ def test_relation_rosters_group_by_relation(series_with_store):
     assert set(decl["members"]) == {"Higuruma", "Ino"}
     q = [x for x in out.questions if x["note"] == "page-gen:relation:ally"]
     assert q and q[0]["kind"] == "set" and q[0]["expect_mode"] == "roster"
+
+
+def test_coverage_marks_uncovered_and_retired(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    cov = out.coverage
+    paths_covered = {s["path"] for s in cov["sections"] if s["covered_by"]}
+    assert "Synopsis / Culling Game Arc" in paths_covered
+    assert "Abilities and Powers / Cursed Technique" in paths_covered
+    assert "Trivia" in cov["uncovered"]
+    retired = {s["path"]: s["reason"] for s in cov["retired_sections"]}
+    assert "References" in retired and "Navigation" in retired
+    # the ledger is exhaustive: every section is covered, uncovered, or retired
+    all_paths = {s["path"] for s in cov["sections"]}
+    assert all_paths == paths_covered | set(cov["uncovered"]) | set(retired)
+
+
+def test_virtual_infobox_section_is_covered_by_identity(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    by_path = {s["path"]: s for s in out.coverage["sections"]}
+    assert by_path["infobox"]["covered_by"]
+    assert by_path["lead"]["covered_by"]
+    # battle questions land on the section that narrates the fight
+    battle = [s for s in out.coverage["sections"]
+              if s["path"] == "Synopsis / Culling Game Arc"][0]
+    assert any(n.startswith("page-gen:battle:") for n in battle["covered_by"])

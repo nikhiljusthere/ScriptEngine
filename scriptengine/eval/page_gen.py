@@ -403,6 +403,124 @@ def _relations_builder(store, paths, title, aliases, overrides, wiki, out, verif
 
 _BUILDERS = (_identity_builder, _battle_builder, _technique_builder, _relations_builder)
 
+# Section headings that never carry prose: the ledger retires them with a
+# reason instead of leaving them as prose-pass targets.
+_NON_PROSE_HEADINGS = {
+    "references", "navigation", "site navigation", "external links",
+    "see also", "gallery",
+}
+
+def _battle_search_phrases(store, battle, overrides, char_names: set[str]) -> list[str]:
+    """What to search the page's sections for, to find the one that narrates `battle`.
+
+    The battle title and the sides' own words, minus the character's names:
+    her own name sits in every section and would point at `Appearance`
+    instead of the synopsis beat that tells the fight.
+    """
+    pairs = battle_relations(overrides)
+    facts = {
+        (row["key"] or "").lower(): (row["value"] or "").strip()
+        for row in store.facts_for(battle)
+    }
+    raw = [battle]
+    for side, abilities in pairs:
+        for key in (side, abilities):
+            raw.extend(_split_list(facts.get(key, "")))
+    phrases: list[str] = []
+    for phrase in raw:
+        folded = _fold(phrase)
+        if not folded or folded in phrases and phrase in phrases:
+            continue
+        if folded in char_names:
+            continue
+        # a bare word that is part of a longer character name ("hana" in
+        # "hana kurusu") names the character, not an opponent
+        if " " not in folded and any(folded in cn for cn in char_names):
+            continue
+        phrases.append(folded)
+    return phrases
+
+def _coverage(store, paths, title, aliases, overrides, out, extra_sections):
+    """The section-coverage ledger: where each generated question confirms on
+    the page, what the prose pass still owns, and what is retired with a reason."""
+    section_rows = [
+        (row["breadcrumb"] or row["title"] or "", (row["text"] or ""))
+        for row in store.document_sections(title)
+    ]
+    section_paths = [path for path, _ in section_rows]
+    all_paths = ["lead", "infobox", *section_paths]
+
+    covered: dict[str, list[str]] = {}
+
+    def add_cover(path: str, *notes: str) -> None:
+        bucket = covered.setdefault(path, [])
+        for note in notes:
+            if note and note not in bucket:
+                bucket.append(note)
+
+    # 1. The virtual rows. `infobox` is covered by the identity and list-field
+    # questions; `lead` when the page has a lead with words.
+    if store.document_lead(title).strip():
+        add_cover("lead", "page-gen:lead")
+    add_cover(
+        "infobox",
+        *[q["note"] for q in out.questions
+          if q["note"].startswith(("page-gen:identity:", "page-gen:alias",
+                                   "page-gen:affiliation", "page-gen:battles"))],
+    )
+
+    # 2. A battle's questions confirm on the first section (page order) that
+    # mentions the fight or an opponent; a fight the page never narrates
+    # confirms on its own battle page, which the question's `sources` name.
+    char_names = {_fold(title), *(_fold(a) for a in aliases if a)}
+    battle_titles: list[str] = []
+    for q in out.questions:
+        note = q["note"]
+        if note.startswith("page-gen:battle:"):
+            battle = note[len("page-gen:battle:"):].rsplit(":", 1)[0]
+            if battle not in battle_titles:
+                battle_titles.append(battle)
+    for battle in sorted(battle_titles):
+        notes = [q["note"] for q in out.questions
+                 if q["note"].startswith(f"page-gen:battle:{battle}:")]
+        if not notes:
+            continue
+        phrases = _battle_search_phrases(store, battle, overrides, char_names)
+        for path, text in section_rows:
+            if any(p in _fold(text) for p in phrases):
+                add_cover(path, *notes)
+                break
+
+    # 3. The named-technique set confirms on the first abilities/technique section.
+    if any(q["note"] == "page-gen:techniques" for q in out.questions):
+        for path, _ in section_rows:
+            folded = path.lower()
+            if "cursed technique" in folded or "abilities" in folded:
+                add_cover(path, "page-gen:techniques")
+                break
+
+    # 5. Non-prose sections retire with a reason, not silence.
+    retired = [
+        {"path": path, "reason": f"no prose: {path.split('/')[-1].lower()}"}
+        for path in section_paths
+        if path.split("/")[-1].lower() in _NON_PROSE_HEADINGS
+    ]
+    retired_paths = {row["path"] for row in retired}
+
+    # 6. Prose-pass registrations: sections the reader covered, by section path.
+    for path, questions in (extra_sections or {}).items():
+        add_cover(path, *[str(q.get("note") or q.get("id") or "prose") for q in questions])
+
+    # 7. Everything left is the prose scaffold.
+    covered_paths = {p for p in all_paths if covered.get(p)}
+    uncovered = [p for p in all_paths if p not in covered_paths and p not in retired_paths]
+
+    out.coverage = {
+        "sections": [{"path": p, "covered_by": covered.get(p, [])} for p in all_paths],
+        "uncovered": uncovered,
+        "retired_sections": retired,
+    }
+
 def _aliases_of(store: FactStore, paths: SeriesPaths, title: str) -> list[str]:
     """The page's alias rows plus the crawl's, best-effort.
 
@@ -459,6 +577,7 @@ def generate_structured(
         aliases = _aliases_of(store, paths, title)
         for builder in _BUILDERS:
             builder(store, paths, title, aliases, overrides, wiki, out, verified)
+        _coverage(store, paths, title, aliases, overrides, out, extra_sections)
         return out
     finally:
         store.close()
