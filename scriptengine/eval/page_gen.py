@@ -18,6 +18,8 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
+import yaml
+
 from scriptengine.config import SeriesPaths
 from scriptengine.eval import questions as Q
 from scriptengine.ingest.crawler import load_manifest, sanitise_filename
@@ -791,3 +793,116 @@ def write_batch(
         tmp.unlink(missing_ok=True)
         raise PageGenError(f"generated batch fails validation: {exc}") from exc
     return batch
+
+# ── decl fragment + text-insert merge ────────────────────────────────────────
+# The scalar/flow-list rendering is ported verbatim from the campaign's
+# assembler (jjk_assemble.py): plain scalars stay bare, anything carrying a
+# YAML-meaningful character is JSON-quoted so the fragment always parses.
+
+def _needs_quote(s: str) -> bool:
+    if s == "":
+        return True
+    if any(c in s for c in ":[],{}&*#!|>%@`\"'"):
+        return True
+    if s[0] in "-?" or s != s.strip():
+        return True
+    return False
+
+def _q(s: str) -> str:
+    return json.dumps(s, ensure_ascii=False) if _needs_quote(s) else s
+
+def _flow_list(items) -> str:
+    return "[" + ", ".join(_q(str(x)) for x in items) + "]"
+
+def _roster_entry(roster: dict) -> list[str]:
+    lines = [f"  - name: {_q(str(roster['name']))}"]
+    if "match" in roster:
+        lines.append(f"    match: {_flow_list(roster['match'])}")
+    if "subject" in roster:
+        lines.append(f"    subject: {_q(str(roster['subject']))}")
+    if "members" in roster:
+        lines.append(f"    members: {_flow_list(roster['members'])}")
+    if "category" in roster:
+        lines.append(f"    category: {_q(str(roster['category']))}")
+    if "groups" in roster:
+        lines.append(f"    groups: {_flow_list(roster['groups'])}")
+    return lines
+
+def _decl_block_lines(rosters: list[dict], header: str) -> list[str]:
+    lines = []
+    if header:
+        lines.append(f"  {header.strip()}")
+    for roster in rosters:
+        lines.extend(_roster_entry(roster))
+    return lines
+
+def _decl_rosters(decl_path: Path) -> list[dict]:
+    data = yaml.safe_load(Path(decl_path).read_text(encoding="utf-8"))
+    if data is None:
+        return []
+    if isinstance(data, list):
+        return data
+    return data.get("rosters", []) or []
+
+def render_decl(out: PageGenOutput, title: str, date: str) -> str:
+    """The `decl.yaml` fragment: a `rosters:` top key with the generated rosters."""
+    header = f"# ── page-gen: {title} ({date}) ──"
+    lines = ["rosters:"] + _decl_block_lines(out.rosters, header)
+    return "\n".join(lines) + "\n"
+
+def _existing_roster_names(text: str) -> set[str]:
+    data = yaml.safe_load(text)
+    return {r.get("name") for r in ((data or {}).get("rosters") or [])}
+
+def _insert_into_rosters(text: str, block_lines: list[str]) -> str:
+    lines = text.split("\n")
+    roster_idx = next((i for i, l in enumerate(lines) if re.match(r"^rosters:", l)), None)
+    if roster_idx is None:
+        if lines and lines[-1].strip():
+            lines.append("")
+        lines.extend(["rosters:"] + block_lines)
+        return "\n".join(lines)
+    next_top = next(
+        (j for j in range(roster_idx + 1, len(lines))
+         if re.match(r"^[A-Za-z_][\w-]*:", lines[j])),
+        None)
+    if next_top is not None:
+        at = next_top
+    else:
+        at = len(lines)
+        while at > roster_idx + 1 and lines[at - 1].strip() == "":
+            at -= 1
+    return "\n".join(lines[:at] + block_lines + lines[at:])
+
+def merge_decl(decl_path: Path, overrides_path: Path, header: str) -> int:
+    """Text-insert the decl's rosters into `overrides.yaml`'s `rosters:` block.
+
+    String surgery only — the file is never YAML round-tripped, so house
+    comments survive. Duplicates (by name) are skipped. The merged text is
+    parsed and checked before it is written; a mismatch raises and leaves the
+    file untouched.
+    """
+    decl_path = Path(decl_path)
+    overrides_path = Path(overrides_path)
+    original = overrides_path.read_text(encoding="utf-8")
+    fresh = [r for r in _decl_rosters(decl_path)
+             if r.get("name") not in _existing_roster_names(original)]
+    if not fresh:
+        return 0
+
+    new_text = _insert_into_rosters(original, _decl_block_lines(fresh, header))
+
+    before_names = _existing_roster_names(original)
+    after = (yaml.safe_load(new_text) or {}).get("rosters") or []
+    after_by_name = {r.get("name"): r for r in after}
+    if not before_names.issubset(after_by_name):
+        raise PageGenError("merge dropped a pre-existing roster; file left unchanged")
+    for roster in fresh:
+        got = after_by_name.get(roster.get("name"))
+        if got is None:
+            raise PageGenError(f"merged roster {roster.get('name')!r} is missing")
+        if roster.get("members") and set(roster["members"]) != set(got.get("members") or []):
+            raise PageGenError(f"merged roster {roster.get('name')!r} lost members")
+
+    overrides_path.write_text(new_text, encoding="utf-8")
+    return len(fresh)

@@ -514,3 +514,87 @@ def test_collision_supersedes_the_hand_authored(tmp_path, series_with_store):
                         existing={"questions": [dup], "retired": []})
     assert all(q["id"] != "jjk-pg-angel-777" for q in batch["questions"])
     assert any("superseded" in r["reason"] for r in batch["retired"])
+
+
+def _merge_fixture(tmp_path):
+    overrides = tmp_path / "overrides.yaml"
+    overrides.write_text(
+        "rosters:\n"
+        "  # a comment that must survive\n"
+        "  - name: Existing Roster\n"
+        "    match: [existing]\n"
+        "    members: [One]\n"
+        "battle_relations:\n"
+        "  - side: side1\n"
+        "    abilities: powers1\n", encoding="utf-8")
+    decl = tmp_path / "decl.yaml"
+    decl.write_text("rosters:\n"
+                    "  - name: New Roster\n"
+                    "    match: [new]\n"
+                    "    subject: Angel\n"
+                    '    members: ["A", "B: C"]\n', encoding="utf-8")
+    return overrides, decl
+
+
+def test_render_decl_quoting_and_style():
+    from scriptengine.eval.page_gen import PageGenOutput, render_decl
+    import yaml
+
+    out = PageGenOutput()
+    out.rosters.append({
+        "name": "Every battle involving Angel",
+        "match": ["every battle involving angel"],
+        "subject": "Angel",
+        "members": ["Angel vs. Sukuna", "Desshi Pacification Squad vs. Sukuna: Round 2"],
+    })
+    text = render_decl(out, "Angel", "2026-08-24")
+    rosters = yaml.safe_load(text)
+    assert list(rosters) == ["rosters"]
+    assert rosters["rosters"][0]["members"] == [
+        "Angel vs. Sukuna", "Desshi Pacification Squad vs. Sukuna: Round 2"]
+    # a value containing ':' must be JSON-quoted in the source, not a plain scalar
+    assert '"Desshi Pacification Squad vs. Sukuna: Round 2"' in text
+    assert "2026-08-24" in text and "Angel" in text
+
+
+def test_merge_decl_text_inserts_and_preserves_comments(tmp_path):
+    from scriptengine.eval.page_gen import merge_decl
+    import yaml
+
+    overrides, decl = _merge_fixture(tmp_path)
+    inserted = merge_decl(decl, overrides, "# ── page-gen: Angel (2026-08-24) ──")
+    assert inserted == 1
+    text = overrides.read_text(encoding="utf-8")
+    assert "# a comment that must survive" in text
+    assert "New Roster" in text
+    rosters = yaml.safe_load(text)["rosters"]
+    assert [r["name"] for r in rosters] == ["Existing Roster", "New Roster"]
+    assert yaml.safe_load(text)["battle_relations"] == [
+        {"side": "side1", "abilities": "powers1"}]
+
+
+def test_merge_decl_skips_duplicate_names(tmp_path):
+    from scriptengine.eval.page_gen import merge_decl
+
+    overrides, decl = _merge_fixture(tmp_path)
+    before = overrides.read_text(encoding="utf-8")
+    dup = tmp_path / "dup_decl.yaml"
+    dup.write_text("rosters:\n  - name: Existing Roster\n    match: [existing]\n",
+                   encoding="utf-8")
+    assert merge_decl(dup, overrides, "# header") == 0
+    assert overrides.read_text(encoding="utf-8") == before
+
+
+def test_merge_decl_appends_when_no_rosters_key(tmp_path):
+    from scriptengine.eval.page_gen import merge_decl
+    import yaml
+
+    overrides = tmp_path / "overrides.yaml"
+    overrides.write_text("battle_relations:\n  - side: side1\n    abilities: powers1\n",
+                         encoding="utf-8")
+    decl = tmp_path / "decl.yaml"
+    decl.write_text("rosters:\n  - name: New Roster\n    match: [new]\n",
+                    encoding="utf-8")
+    assert merge_decl(decl, overrides, "# header") == 1
+    rosters = yaml.safe_load(overrides.read_text(encoding="utf-8"))["rosters"]
+    assert [r["name"] for r in rosters] == ["New Roster"]
