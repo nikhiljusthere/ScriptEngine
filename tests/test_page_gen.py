@@ -448,6 +448,31 @@ def test_relation_rosters_exclude_self_and_take_reverse_counterparts(series_with
         assert "Angel" not in r["members"]
 
 
+def test_directional_relation_rosters_read_the_correct_side(series_with_store):
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths, store = series_with_store
+    # mentor/student are directional: (A, B, mentor) = A mentors B, so B is A's
+    # student. "Every mentor of Angel" must list the people who mentor Angel,
+    # not the people Angel mentors. The builder reads the correct side: a mentor
+    # row where Angel is the *other* end (Yaga mentors Angel) and a student row
+    # where Angel is the *character* end (Angel is Kamo's student).
+    store.save_relations("Angel", [
+        {"other": "Kamo", "relation": "mentor"},   # Angel mentors Kamo (a student)
+        {"other": "Ino", "relation": "mentor"},    # Angel mentors Ino (a student)
+    ], 2, "v1", "test")
+    store.save_relations("Yaga", [{"other": "Angel", "relation": "mentor"}], 2, "v1", "test")
+    store.save_relations("Higuruma", [{"other": "Angel", "relation": "mentor"}], 2, "v1", "test")
+    store.commit()
+
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    by_name = {r["name"]: r for r in out.rosters}
+    # Angel's mentors are the people who mentor Angel, not the people Angel mentors
+    assert set(by_name["Every mentor of Angel"]["members"]) == {"Yaga", "Higuruma"}
+    # Angel's students are the people Angel mentors
+    assert set(by_name["Every student of Angel"]["members"]) == {"Kamo", "Ino"}
+
+
 def test_coverage_marks_uncovered_and_retired(series_with_store):
     from scriptengine.eval.page_gen import generate_structured
 

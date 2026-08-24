@@ -446,27 +446,67 @@ def _technique_builder(store, paths, title, aliases, overrides, wiki, out, verif
         wiki, title, "page-gen:techniques", verified, expect_mode="roster"))
 
 
-def _relations_builder(store, paths, title, aliases, overrides, wiki, out, verified):
-    groups: dict[str, list[str]] = {}
-    for row in store.relations_of(title):
-        relation = (row["relation"] or "").strip().lower()
-        if not relation:
+# Directional relations and their inverse. A stored row (A, B, mentor) means A
+# mentors B, so B is A's student: "Every mentor of X" lists X's mentors (the A's
+# in (A, X, mentor)) and "Every student of X" lists X's students (the B's in
+# (X, B, mentor)). Symmetric relations have no inverse and map to themselves.
+_RELATION_INVERSE = {
+    "mentor": "student", "student": "mentor",
+    "superior": "subordinate", "subordinate": "superior",
+    "creator": "creation", "creation": "creator",
+}
+
+
+def _relation_members(label: str, title: str, rows) -> list[str]:
+    """The people who are `label` to `title`, reading the correct side.
+
+    A row (character, other, rel) says `character` is `rel` to `other`. So `Y`
+    is `label` to `title` when there is a row (Y, title, label), or -- for a
+    directional label -- a row (title, Y, inverse(label)). Grouping by label and
+    taking the counterpart (the old code) mixed both sides: "Every mentor of
+    Gojo" listed his students, because (Gojo, Yuji, mentor) was read as "Yuji is
+    Gojo's mentor".
+    """
+    inverse = _RELATION_INVERSE.get(label, label)
+    symmetric = inverse == label
+    members: list[str] = []
+    for row in rows:
+        rel = (row["relation"] or "").strip().lower()
+        character = (row["character"] or "").strip()
+        other = (row["other"] or "").strip()
+        if rel == label:
+            if other.lower() == title.lower():
+                candidate = character          # (Y, title, label): Y is label to title
+            elif symmetric and character.lower() == title.lower():
+                candidate = other              # (title, Y, label), symmetric
+            else:
+                continue
+        elif rel == inverse:
+            if character.lower() == title.lower():
+                candidate = other              # (title, Y, inverse): Y is label to title
+            else:
+                continue
+        else:
             continue
-        # `relations_of` returns the title as either endpoint: on a forward row
-        # the counterpart is `other`, on a reverse row -- the relationship
-        # recorded on the *other* character's page (`other` == title) -- it is
-        # `character`. Taking `other` unconditionally (the old code) put the
-        # title into its own roster and dropped the real counterpart.
-        counterpart = (row["other"] or "").strip()
-        if (row["character"] or "").strip().lower() != title.lower():
-            counterpart = (row["character"] or "").strip()
-        if not counterpart or counterpart.lower() == title.lower():
-            continue  # empty or a self-loop: never a member of its own roster
-        members = groups.setdefault(relation, [])
-        if counterpart not in members:
-            members.append(counterpart)
-    for relation in sorted(groups):
-        members = groups[relation]
+        if not candidate or candidate.lower() == title.lower():
+            continue  # never a member of its own roster
+        if candidate not in members:
+            members.append(candidate)
+    return members
+
+
+def _relations_builder(store, paths, title, aliases, overrides, wiki, out, verified):
+    rows = store.relations_of(title)
+    # A mentor row feeds both the "mentor" and the "student" roster, so the
+    # labels to emit are every relation present plus its inverse.
+    labels: set[str] = set()
+    for row in rows:
+        relation = (row["relation"] or "").strip().lower()
+        if relation:
+            labels.add(relation)
+            labels.add(_RELATION_INVERSE.get(relation, relation))
+    for relation in sorted(labels):
+        members = _relation_members(relation, title, rows)
         if len(members) < 2:
             continue  # a one-line relation is prose, not a closed set
         s = title.lower()
