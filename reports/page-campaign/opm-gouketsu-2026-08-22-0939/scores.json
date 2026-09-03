@@ -1,0 +1,1967 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the battles of Gouketsu in One-Punch Man?",
+      "set": "Gouketsu's battles",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Gouketsu in One-Punch Man?",
+      "set": "Gouketsu's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the battles of Gouketsu in One-Punch Man?",
+      "found": [
+        "Gouketsu vs. Bakuzan",
+        "Suiryu vs. Gouketsu"
+      ],
+      "missing": [],
+      "members": [
+        "Gouketsu vs. Bakuzan",
+        "Suiryu vs. Gouketsu"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Gouketsu in One-Punch Man?",
+      "found": [
+        "Original Super Fight Champion"
+      ],
+      "missing": [],
+      "members": [
+        "Original Super Fight Champion"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Suiryu and Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-003",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Gouketsu and Suiryu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-004",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Gouketsu and Bakuzan in One-Punch Man?",
+      "id": "opm-pg-gouketsu-005",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Bakuzan and Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-006",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Saitama and Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-007",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of Gouketsu's off-screen battle with Genos in One-Punch Man?",
+      "id": "opm-pg-gouketsu-008",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Gouketsu and Sneck and Max in One-Punch Man?",
+      "id": "opm-pg-gouketsu-009",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of Gouketsu's flashback battle with Orochi in One-Punch Man?",
+      "id": "opm-pg-gouketsu-010",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of Gouketsu's off-screen battle with Saitama in One-Punch Man?",
+      "id": "opm-pg-gouketsu-011",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-012",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Gouketsu calms Bakuzan down by demonstrating his far superior strength to him"
+      ],
+      "found": [
+        "Gouketsu calms Bakuzan down by demonstrating his far superior strength to him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-013",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Suiryu is defeated by Gouketsu"
+      ],
+      "found": [
+        "Suiryu is defeated by Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-014",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Super Fight Arc"
+      ],
+      "found": [
+        "Super Fight Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What event is the Gouketsu vs. Bakuzan battle part of in One-Punch Man?",
+      "id": "opm-pg-gouketsu-015",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Monster Association Invasion"
+      ],
+      "found": [
+        "Monster Association Invasion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Gouketsu vs. Bakuzan battle take place in One-Punch Man?",
+      "id": "opm-pg-gouketsu-016",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "C-City Super Stadium"
+      ],
+      "found": [
+        "C-City Super Stadium"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter of the One-Punch Man manga does the Gouketsu vs. Bakuzan battle take place?",
+      "id": "opm-pg-gouketsu-017",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Chapter 74"
+      ],
+      "found": [
+        "Chapter 74"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode of the One-Punch Man anime is the Gouketsu vs. Bakuzan battle featured?",
+      "id": "opm-pg-gouketsu-018",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Episode 20"
+      ],
+      "found": [
+        "Episode 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-021",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Super Fight Arc"
+      ],
+      "found": [
+        "Super Fight Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What event is the Suiryu vs. Gouketsu battle part of in One-Punch Man?",
+      "id": "opm-pg-gouketsu-022",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Invasion"
+      ],
+      "found": [
+        "Monster Association Invasion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Suiryu vs. Gouketsu battle take place in One-Punch Man?",
+      "id": "opm-pg-gouketsu-023",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "C-City Super Stadium"
+      ],
+      "found": [
+        "C-City Super Stadium"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapters of the One-Punch Man manga does the Suiryu vs. Gouketsu battle take place?",
+      "id": "opm-pg-gouketsu-024",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 72",
+        "Chapter 73"
+      ],
+      "found": [
+        "Chapter 72",
+        "Chapter 73"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode of the One-Punch Man anime is the Suiryu vs. Gouketsu battle featured?",
+      "id": "opm-pg-gouketsu-025",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Episode 20"
+      ],
+      "found": [
+        "Episode 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu advise Bakuzan not to become in the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-028",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "overconfident"
+      ],
+      "found": [
+        "overconfident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Gouketsu block Bakuzan's elbow strike in the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-029",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "with just two fingers"
+      ],
+      "found": [
+        "with just two fingers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the resulting shockwave create in the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-030",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "a massive hole in the Super Fight Stadium"
+      ],
+      "found": [
+        "a massive hole in the Super Fight Stadium"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu warn Bakuzan about in the aftermath of the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-031",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "cannot solo the whole Hero Association"
+      ],
+      "found": [
+        "cannot solo the whole Hero Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How is the Gouketsu vs. Bakuzan battle different in the One-Punch Man anime?",
+      "id": "opm-pg-gouketsu-032",
+      "subject": "Gouketsu vs. Bakuzan",
+      "accept": "all",
+      "expected": [
+        "lasts much shorter"
+      ],
+      "found": [
+        "lasts much shorter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu suggest Suiryu could do by consuming a monster cell in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-033",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "join the ranks of the Monster Association as an executive member"
+      ],
+      "found": [
+        "join the ranks of the Monster Association as an executive member"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What attack did Suiryu use on Gouketsu at the start of their battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-034",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Void Sky Dragon Fist"
+      ],
+      "found": [
+        "Void Sky Dragon Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu declare since Suiryu refuses to become a monster in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-035",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "he will die"
+      ],
+      "found": [
+        "he will die"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu do before Gouketsu's foot made contact in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-036",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "leaps onto Gouketsu's shoulder and unleashes a flurry of punches"
+      ],
+      "found": [
+        "leaps onto Gouketsu's shoulder and unleashes a flurry of punches"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Gouketsu stop Suiryu's Void Quake Tiger Fist in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-037",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "pinches the attack with three fingers"
+      ],
+      "found": [
+        "pinches the attack with three fingers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu intend for The Three Crows to do to Suiryu at the end of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-038",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "devour Suiryu as a snack"
+      ],
+      "found": [
+        "devour Suiryu as a snack"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who arrived to save Suiryu in the aftermath of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-039",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Sneck and Max"
+      ],
+      "found": [
+        "Sneck and Max"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bakuzan do before collapsing in the aftermath of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "id": "opm-pg-gouketsu-040",
+      "subject": "Suiryu vs. Gouketsu",
+      "accept": "all",
+      "expected": [
+        "consuming multiple monster cells"
+      ],
+      "found": [
+        "consuming multiple monster cells"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's race in One-Punch Man?",
+      "id": "opm-pg-gouketsu-041",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Mysterious Being Human (Formerly)"
+      ],
+      "found": [
+        "Mysterious Being Human (Formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's status in One-Punch Man?",
+      "id": "opm-pg-gouketsu-042",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's gender in One-Punch Man?",
+      "id": "opm-pg-gouketsu-043",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's location in One-Punch Man?",
+      "id": "opm-pg-gouketsu-044",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "C-City"
+      ],
+      "found": [
+        "C-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's level in One-Punch Man?",
+      "id": "opm-pg-gouketsu-045",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Dragon"
+      ],
+      "found": [
+        "Dragon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's affiliation in One-Punch Man?",
+      "id": "opm-pg-gouketsu-046",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Monster Association"
+      ],
+      "found": [
+        "Monster Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the alias of Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-047",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Original Super Fight Champion"
+      ],
+      "found": [
+        "Original Super Fight Champion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What abilities are listed on Gouketsu's character infobox in One-Punch Man?",
+      "id": "opm-pg-gouketsu-048",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Superhuman Physical Prowess Martial Arts Master Shockwave Generation"
+      ],
+      "found": [
+        "Superhuman Physical Prowess Martial Arts Master Shockwave Generation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter of the One-Punch Man manga does Gouketsu first appear?",
+      "id": "opm-pg-gouketsu-050",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode of the One-Punch Man anime does Gouketsu first appear?",
+      "id": "opm-pg-gouketsu-051",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Episode 18"
+      ],
+      "found": [
+        "Episode 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the Japanese voice for Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-052",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Kenji Nomura"
+      ],
+      "found": [
+        "Kenji Nomura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the English voice for Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-053",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Kellen Goff"
+      ],
+      "found": [
+        "Kellen Goff"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who killed Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-054",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Saitama"
+      ],
+      "found": [
+        "Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Gouketsu's role in the Super Fight Arc in One-Punch Man?",
+      "id": "opm-pg-gouketsu-055",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "main antagonist"
+      ],
+      "found": [
+        "main antagonist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu wear as a human in One-Punch Man?",
+      "id": "opm-pg-gouketsu-056",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "a ripped black keikogi with a black belt"
+      ],
+      "found": [
+        "a ripped black keikogi with a black belt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was on the left side of Gouketsu's upper lip as a human in One-Punch Man?",
+      "id": "opm-pg-gouketsu-057",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "a scar"
+      ],
+      "found": [
+        "a scar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What kind of hair did Gouketsu have as a human in One-Punch Man?",
+      "id": "opm-pg-gouketsu-058",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "spiky hair reminiscing a sea urchin"
+      ],
+      "found": [
+        "spiky hair reminiscing a sea urchin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What replaced Gouketsu's original eyes during his monsterification in One-Punch Man?",
+      "id": "opm-pg-gouketsu-059",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "a set of four vertical bloodshot eyes with mulberry and bright yellow pupils"
+      ],
+      "found": [
+        "a set of four vertical bloodshot eyes with mulberry and bright yellow pupils"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the scars and blood on Gouketsu fuse with his skin to form in One-Punch Man?",
+      "id": "opm-pg-gouketsu-060",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "dark, cross-hatched markings"
+      ],
+      "found": [
+        "dark, cross-hatched markings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu obtain on his jaws after becoming a Mysterious Being in One-Punch Man?",
+      "id": "opm-pg-gouketsu-061",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "two large lower sabertooth"
+      ],
+      "found": [
+        "two large lower sabertooth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How was Gouketsu described as a Mysterious Being in One-Punch Man?",
+      "id": "opm-pg-gouketsu-062",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "exceptionally calm, composed, and calculating"
+      ],
+      "found": [
+        "exceptionally calm, composed, and calculating"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What philosophy did Gouketsu strongly follow in One-Punch Man?",
+      "id": "opm-pg-gouketsu-063",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Social Darwinism"
+      ],
+      "found": [
+        "Social Darwinism"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu state after kicking Max and Sneck into the air in One-Punch Man?",
+      "id": "opm-pg-gouketsu-064",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "he just simply poked them"
+      ],
+      "found": [
+        "he just simply poked them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu viciously toy with Suiryu to do before feeding him to The Three Crows in One-Punch Man?",
+      "id": "opm-pg-gouketsu-065",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "humiliate and torture him"
+      ],
+      "found": [
+        "humiliate and torture him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Gouketsu block all of Bakuzan's attacks in One-Punch Man?",
+      "id": "opm-pg-gouketsu-066",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "make him realize that there will always be stronger monsters"
+      ],
+      "found": [
+        "make him realize that there will always be stronger monsters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Gouketsu the winner of as a martial artist in One-Punch Man?",
+      "id": "opm-pg-gouketsu-067",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "the first Super Fight tournament"
+      ],
+      "found": [
+        "the first Super Fight tournament"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How long before the events of the series was Gouketsu the winner of the first Super Fight tournament in One-Punch Man?",
+      "id": "opm-pg-gouketsu-068",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "eleven years"
+      ],
+      "found": [
+        "eleven years"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who challenged Gouketsu to a fight in which he was thoroughly defeated in One-Punch Man?",
+      "id": "opm-pg-gouketsu-069",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Monster King Orochi"
+      ],
+      "found": [
+        "Monster King Orochi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What condition did the Monster Association offer Gouketsu to stay alive in One-Punch Man?",
+      "id": "opm-pg-gouketsu-070",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "if he ate a monster cell and joined the Monster Association"
+      ],
+      "found": [
+        "if he ate a monster cell and joined the Monster Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What were The Three Crows to Gouketsu before his transformation in One-Punch Man?",
+      "id": "opm-pg-gouketsu-071",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "his disciples"
+      ],
+      "found": [
+        "his disciples"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "Why did The Three Crows lose their egos after transforming into monsters in One-Punch Man?",
+      "id": "opm-pg-gouketsu-072",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "lost their egos due to their weak will"
+      ],
+      "found": [
+        "lost their egos due to their weak will"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Gouketsu swiftly take out on his way to the C-City Super Stadium in One-Punch Man?",
+      "id": "opm-pg-gouketsu-073",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Genos"
+      ],
+      "found": [
+        "Genos"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who was fleeing from the Three Crows when Gouketsu caught him in One-Punch Man?",
+      "id": "opm-pg-gouketsu-074",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Benpatsu"
+      ],
+      "found": [
+        "Benpatsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu order every martial artist to do in One-Punch Man?",
+      "id": "opm-pg-gouketsu-075",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "eat a monster cell and become a Mysterious Being"
+      ],
+      "found": [
+        "eat a monster cell and become a Mysterious Being"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Gouketsu defeat Max and Sneck in One-Punch Man?",
+      "id": "opm-pg-gouketsu-076",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "with a swift kick"
+      ],
+      "found": [
+        "with a swift kick"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which contestants yielded and became monsters after Gouketsu's offer in One-Punch Man?",
+      "id": "opm-pg-gouketsu-077",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Rosie, Choze, Benpatsu, Volten, and Hamukichi"
+      ],
+      "found": [
+        "Rosie, Choze, Benpatsu, Volten, and Hamukichi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu offer Suiryu after he won the fight with Choze in One-Punch Man?",
+      "id": "opm-pg-gouketsu-078",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "an executive position in the Monster Association"
+      ],
+      "found": [
+        "an executive position in the Monster Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who reentered the stadium to help Suiryu fight The Three Crows in One-Punch Man?",
+      "id": "opm-pg-gouketsu-079",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Max and Sneck"
+      ],
+      "found": [
+        "Max and Sneck"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu's head do after Saitama's punch in One-Punch Man?",
+      "id": "opm-pg-gouketsu-080",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "flies up into the atmosphere before landing in the Super Fight stadium"
+      ],
+      "found": [
+        "flies up into the atmosphere before landing in the Super Fight stadium"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Gouketsu's Shockwave Generation do in One-Punch Man?",
+      "id": "opm-pg-gouketsu-081",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "creating powerful shockwaves from his punches that could cause great destruction"
+      ],
+      "found": [
+        "creating powerful shockwaves from his punches that could cause great destruction"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did one of Gouketsu's punches generate in One-Punch Man?",
+      "id": "opm-pg-gouketsu-082",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "shockwaves that blew a massive hole in the Super Fight Stadium"
+      ],
+      "found": [
+        "shockwaves that blew a massive hole in the Super Fight Stadium"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Gouketsu disable Genos in One-Punch Man?",
+      "id": "opm-pg-gouketsu-083",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "smash Genos into the pavement with a single blow"
+      ],
+      "found": [
+        "smash Genos into the pavement with a single blow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Gouketsu stop one of Suiryu's strongest attacks in One-Punch Man?",
+      "id": "opm-pg-gouketsu-084",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "with just three fingers"
+      ],
+      "found": [
+        "with just three fingers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu remark about himself compared to Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-085",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "he was like a baby compared to Gouketsu"
+      ],
+      "found": [
+        "he was like a baby compared to Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Gouketsu block the transformed Bakuzan's attacks in One-Punch Man?",
+      "id": "opm-pg-gouketsu-086",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "with only one arm"
+      ],
+      "found": [
+        "with only one arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu's blows produce when Saitama approached him in One-Punch Man?",
+      "id": "opm-pg-gouketsu-087",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "shockwaves that could be felt throughout the city"
+      ],
+      "found": [
+        "shockwaves that could be felt throughout the city"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How do Gouketsu's four eyes move in One-Punch Man?",
+      "id": "opm-pg-gouketsu-088",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "independently from one another"
+      ],
+      "found": [
+        "independently from one another"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gouketsu identify the transformed Bakuzan as in One-Punch Man?",
+      "id": "opm-pg-gouketsu-089",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "a Dragon-level threat"
+      ],
+      "found": [
+        "a Dragon-level threat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos claim about defeating Gouketsu safely in One-Punch Man?",
+      "id": "opm-pg-gouketsu-090",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "a group of S-Class heroes would need to team up with Saitama"
+      ],
+      "found": [
+        "a group of S-Class heroes would need to team up with Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu still believe after witnessing Saitama obliterate Bakuzan in One-Punch Man?",
+      "id": "opm-pg-gouketsu-091",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Saitama could not defeat Gouketsu"
+      ],
+      "found": [
+        "Saitama could not defeat Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was Gouketsu's last fight skipped in One-Punch Man?",
+      "id": "opm-pg-gouketsu-092",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "because ONE specifically told Murata so"
+      ],
+      "found": [
+        "because ONE specifically told Murata so"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the term Gouketsu refer to in One-Punch Man?",
+      "id": "opm-pg-gouketsu-093",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "a man who is larger than life"
+      ],
+      "found": [
+        "a man who is larger than life"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Gouketsu originally designed without in One-Punch Man?",
+      "id": "opm-pg-gouketsu-094",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "the black marking on his forehead and chin"
+      ],
+      "found": [
+        "the black marking on his forehead and chin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What side kick is Gouketsu seen using in the bonus page from Volume 14 in One-Punch Man?",
+      "id": "opm-pg-gouketsu-095",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "Sokuto-Geri"
+      ],
+      "found": [
+        "Sokuto-Geri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bakuzan's alias in One-Punch Man?",
+      "id": "opm-pg-gouketsu-096",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Strongest Man in the History of Super Fight"
+      ],
+      "found": [
+        "Strongest Man in the History of Super Fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What fighting style does Bakuzan use in One-Punch Man?",
+      "id": "opm-pg-gouketsu-097",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Dark Hell Assassination Art"
+      ],
+      "found": [
+        "Dark Hell Assassination Art"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode of the One-Punch Man anime does Bakuzan first appear?",
+      "id": "opm-pg-gouketsu-098",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the Japanese voice for Bakuzan in One-Punch Man?",
+      "id": "opm-pg-gouketsu-099",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Taro Yamaguchi"
+      ],
+      "found": [
+        "Taro Yamaguchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the English voice for Bakuzan in One-Punch Man?",
+      "id": "opm-pg-gouketsu-100",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Bill Butts"
+      ],
+      "found": [
+        "Bill Butts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of Bakuzan's round two battle with Saitama in One-Punch Man?",
+      "id": "opm-pg-gouketsu-101",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Bakuzan is killed"
+      ],
+      "found": [
+        "Bakuzan is killed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What move did Bakuzan use as his final blow against Saitama in One-Punch Man?",
+      "id": "opm-pg-gouketsu-102",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Hell Dispatch Chop"
+      ],
+      "found": [
+        "Hell Dispatch Chop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Gouketsu surprised at regarding Bakuzan's body in One-Punch Man?",
+      "id": "opm-pg-gouketsu-103",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "withstand eating multiple Monster Cells"
+      ],
+      "found": [
+        "withstand eating multiple Monster Cells"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Suiryu's occupation in One-Punch Man?",
+      "id": "opm-pg-gouketsu-104",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "Neo Hero"
+      ],
+      "found": [
+        "Neo Hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What fighting style does Suiryu use in One-Punch Man?",
+      "id": "opm-pg-gouketsu-105",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "Void Fist"
+      ],
+      "found": [
+        "Void Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu acknowledge about Gouketsu after being overwhelmed in One-Punch Man?",
+      "id": "opm-pg-gouketsu-106",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "Gouketsu's superiority in every regard"
+      ],
+      "found": [
+        "Gouketsu's superiority in every regard"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu refuse to do even when it could have been his only chance at mercy in One-Punch Man?",
+      "id": "opm-pg-gouketsu-107",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "lick Bakuzan's foot"
+      ],
+      "found": [
+        "lick Bakuzan's foot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu ask Saitama after witnessing him defeat both Bakuzan and Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-108",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "if he can become his disciple"
+      ],
+      "found": [
+        "if he can become his disciple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was the setting of Suiryu getting drunk in ONE's first storyboard scrapped in One-Punch Man?",
+      "id": "opm-pg-gouketsu-109",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "a drunkard vs Gouketsu was deemed too comical and they wanted to show despair"
+      ],
+      "found": [
+        "a drunkard vs Gouketsu was deemed too comical and they wanted to show despair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Orochi to Gouketsu in One-Punch Man?",
+      "id": "opm-pg-gouketsu-110",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "rival"
+      ],
+      "found": [
+        "rival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Gouketsu to The Three Crows in One-Punch Man?",
+      "id": "opm-pg-gouketsu-111",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "mentor"
+      ],
+      "found": [
+        "mentor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Gouketsu to Orochi in One-Punch Man?",
+      "id": "opm-pg-gouketsu-112",
+      "subject": "Gouketsu",
+      "accept": "all",
+      "expected": [
+        "subordinate"
+      ],
+      "found": [
+        "subordinate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 105,
+    "fact_present": 105
+  }
+}

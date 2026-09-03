@@ -449,6 +449,7 @@ class TestDeclaredMembers:
         definition = RosterDefinition.parse(
             {"name": "Named", "match": ["named"], "members": ["Super Saiyan", "Goku"]}
         )
+        assert definition is not None
         assert _declared_members(transformations, definition) == ["Super Saiyan", "Goku"]
 
     def test_a_name_the_store_does_not_have_is_dropped(self, transformations):
@@ -458,6 +459,7 @@ class TestDeclaredMembers:
         definition = RosterDefinition.parse(
             {"name": "Named", "match": ["named"], "members": ["Super Saiyan", "Mosco"]}
         )
+        assert definition is not None
         assert _declared_members(transformations, definition) == ["Super Saiyan"]
 
 

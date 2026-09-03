@@ -1,0 +1,1265 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Iori Hazenoki?",
+      "set": "Every named technique of Iori Hazenoki",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Iori Hazenoki?",
+      "set": "Every ally of Iori Hazenoki",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the romantics of Iori Hazenoki?",
+      "set": "Every romantic of Iori Hazenoki",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Iori Hazenoki",
+      "set": "Every battle involving Iori Hazenoki",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Iori Hazenoki?",
+      "found": [
+        "Reverse Cursed Technique"
+      ],
+      "missing": [],
+      "members": [
+        "Reverse Cursed Technique"
+      ]
+    },
+    {
+      "query": "What are all the allies of Iori Hazenoki?",
+      "found": [
+        "Reggie Star",
+        "Chizuru Hari"
+      ],
+      "missing": [],
+      "members": [
+        "Chizuru Hari",
+        "Reggie Star"
+      ]
+    },
+    {
+      "query": "What are all the romantics of Iori Hazenoki?",
+      "found": [
+        "Reggie Star",
+        "Chizuru Hari"
+      ],
+      "missing": [],
+      "members": [
+        "Chizuru Hari",
+        "Reggie Star"
+      ]
+    },
+    {
+      "query": "Every battle involving Iori Hazenoki",
+      "found": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Iori Hazenoki vs. Kenjaku",
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Iori Hazenoki vs. Kenjaku",
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Iori Hazenoki's name?",
+      "id": "jjk-pg-iori_hazenoki-001",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "\u9ec4\u6ae8\u6298"
+      ],
+      "found": [
+        "\u9ec4\u6ae8\u6298"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Iori Hazenoki's name?",
+      "id": "jjk-pg-iori_hazenoki-002",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Hazenoki Iori"
+      ],
+      "found": [
+        "Hazenoki Iori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Iori Hazenoki's race?",
+      "id": "jjk-pg-iori_hazenoki-003",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Iori Hazenoki's gender?",
+      "id": "jjk-pg-iori_hazenoki-004",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Iori Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-005",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Iori Hazenoki's occupation?",
+      "id": "jjk-pg-iori_hazenoki-006",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Iori Hazenoki first appear?",
+      "id": "jjk-pg-iori_hazenoki-007",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Chapter 168"
+      ],
+      "found": [
+        "Chapter 168"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Iori Hazenoki first depicted?",
+      "id": "jjk-pg-iori_hazenoki-008",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Iori Hazenoki's Japanese voice actor?",
+      "id": "jjk-pg-iori_hazenoki-009",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Ryota Osaka"
+      ],
+      "found": [
+        "Ryota Osaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-010",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Hazenoki withdraws."
+      ],
+      "found": [
+        "Hazenoki withdraws."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-iori_hazenoki-011",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-iori_hazenoki-012",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-013",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Chapter 169 & 173"
+      ],
+      "found": [
+        "Chapter 169 & 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Fumihiko Takaba vs. Iori Hazenoki depicted?",
+      "id": "jjk-pg-iori_hazenoki-014",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Episode 57 - 58"
+      ],
+      "found": [
+        "Episode 57 - 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-iori_hazenoki-015",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Iori Hazenoki vs. Kenjaku?",
+      "id": "jjk-pg-iori_hazenoki-016",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Iori Hazenoki vs. Kenjaku take place?",
+      "id": "jjk-pg-iori_hazenoki-017",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Lake Gosho Colony"
+      ],
+      "found": [
+        "Lake Gosho Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Iori Hazenoki vs. Kenjaku take place?",
+      "id": "jjk-pg-iori_hazenoki-018",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Iori Hazenoki vs. Kenjaku?",
+      "id": "jjk-pg-iori_hazenoki-019",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Chapter 239"
+      ],
+      "found": [
+        "Chapter 239"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Iori Hazenoki vs. Kenjaku take place?",
+      "id": "jjk-pg-iori_hazenoki-020",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-iori_hazenoki-021",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-iori_hazenoki-022",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-iori_hazenoki-023",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-iori_hazenoki-024",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-iori_hazenoki-025",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-iori_hazenoki-026",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hazenoki Iori use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-iori_hazenoki-027",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Solo Forbidden Area (Failed)"
+      ],
+      "found": [
+        "Solo Forbidden Area (Failed)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-iori_hazenoki-028",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Takaba interrupts the battle."
+      ],
+      "found": [
+        "Takaba interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-iori_hazenoki-029",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-iori_hazenoki-030",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Reggie Star's Group begin?",
+      "id": "jjk-pg-iori_hazenoki-031",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Chapter 167"
+      ],
+      "found": [
+        "Chapter 167"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Reggie Star's Group depicted?",
+      "id": "jjk-pg-iori_hazenoki-032",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-iori_hazenoki-033",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Iori Hazenoki use in Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-iori_hazenoki-034",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Explosive Flesh Technique"
+      ],
+      "found": [
+        "Explosive Flesh Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Iori Hazenoki look like?",
+      "id": "jjk-pg-iori_hazenoki-039",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "a tan-skinned young man of relatively average height with a well-toned physique"
+      ],
+      "found": [
+        "a tan-skinned young man of relatively average height with a well-toned physique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hazenoki's hair like?",
+      "id": "jjk-pg-iori_hazenoki-040",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "slicked blond hair that reaches just past the back of his neck"
+      ],
+      "found": [
+        "slicked blond hair that reaches just past the back of his neck"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hazenoki's outfit consist of?",
+      "id": "jjk-pg-iori_hazenoki-041",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "dark brown suspenders with a golden fivel that hook onto olive green short pants that are cut very wide around the ankles"
+      ],
+      "found": [
+        "dark brown suspenders with a golden fivel that hook onto olive green short pants that are cut very wide around the ankles"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What footwear does Hazenoki wear?",
+      "id": "jjk-pg-iori_hazenoki-042",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "a pair of long dark brown socks and thick red sneakers with yellowish-orange lines in silver soles and zippers"
+      ],
+      "found": [
+        "a pair of long dark brown socks and thick red sneakers with yellowish-orange lines in silver soles and zippers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Iori Hazenoki characterized?",
+      "id": "jjk-pg-iori_hazenoki-043",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "a vicious, temper-prone individual who willingly engages in the brutality of the Culling Game"
+      ],
+      "found": [
+        "a vicious, temper-prone individual who willingly engages in the brutality of the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hazenoki's tendency in fighting?",
+      "id": "jjk-pg-iori_hazenoki-044",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "to indulge in torturing his opponents but will go all out if he feels he's being mocked"
+      ],
+      "found": [
+        "to indulge in torturing his opponents but will go all out if he feels he's being mocked"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How do Hazenoki's violent tendencies contrast?",
+      "id": "jjk-pg-iori_hazenoki-045",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "heavily with the extremely goofy Fumihiko Takaba"
+      ],
+      "found": [
+        "heavily with the extremely goofy Fumihiko Takaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What made Hazenoki give up on his fight with Takaba?",
+      "id": "jjk-pg-iori_hazenoki-046",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Hazenoki was frustrated enough to stop fighting Takaba altogether"
+      ],
+      "found": [
+        "Hazenoki was frustrated enough to stop fighting Takaba altogether"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Hazenoki revived for the Culling Game?",
+      "id": "jjk-pg-iori_hazenoki-047",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "by incarnating through his vessel with the help of Kenjaku on the night of October 31, 2018"
+      ],
+      "found": [
+        "by incarnating through his vessel with the help of Kenjaku on the night of October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What group did Hazenoki join?",
+      "id": "jjk-pg-iori_hazenoki-048",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Reggie Star's group of Culling Game participants"
+      ],
+      "found": [
+        "Reggie Star's group of Culling Game participants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hazenoki first attack Megumi?",
+      "id": "jjk-pg-iori_hazenoki-049",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "dropping and detonating his left eye next to Megumi"
+      ],
+      "found": [
+        "dropping and detonating his left eye next to Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hazenoki and Reggie use to attack Megumi?",
+      "id": "jjk-pg-iori_hazenoki-050",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "Reggie's gasoline receipts and his explosive teeth"
+      ],
+      "found": [
+        "Reggie's gasoline receipts and his explosive teeth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Takaba say that silenced Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-051",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "\"marry me and be my wi-fi\""
+      ],
+      "found": [
+        "\"marry me and be my wi-fi\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takaba deflect Hazenoki's flying eye?",
+      "id": "jjk-pg-iori_hazenoki-052",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "a paper fan to deflect the eye into the air high above them before it explodes"
+      ],
+      "found": [
+        "a paper fan to deflect the eye into the air high above them before it explodes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takaba poke Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-053",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "a finger gun with two hands to poke his opponent's rear end"
+      ],
+      "found": [
+        "a finger gun with two hands to poke his opponent's rear end"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hazenoki's punch on Takaba land?",
+      "id": "jjk-pg-iori_hazenoki-054",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "slips right off the back of Takaba's left shoulder, as if he were covered in lotion"
+      ],
+      "found": [
+        "slips right off the back of Takaba's left shoulder, as if he were covered in lotion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What made Hazenoki decide to end his fight with Takaba?",
+      "id": "jjk-pg-iori_hazenoki-055",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "his Kogane informs him that Reggie Star has been eliminated"
+      ],
+      "found": [
+        "his Kogane informs him that Reggie Star has been eliminated"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hazenoki tell Takaba who demanded his points?",
+      "id": "jjk-pg-iori_hazenoki-056",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "to stop following him and die"
+      ],
+      "found": [
+        "to stop following him and die"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hazenoki avoid capture on the night of November 14?",
+      "id": "jjk-pg-iori_hazenoki-057",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "avoid being captured as he sensed their arrival"
+      ],
+      "found": [
+        "avoid being captured as he sensed their arrival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hazenoki chance upon Kenjaku?",
+      "id": "jjk-pg-iori_hazenoki-058",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "the Lake Gosho Colony"
+      ],
+      "found": [
+        "the Lake Gosho Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kenjaku intend to kill Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-059",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "to fulfil the conditions of ending the Culling Game and activate the Great Merger"
+      ],
+      "found": [
+        "to fulfil the conditions of ending the Culling Game and activate the Great Merger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Hazenoki incapacitated?",
+      "id": "jjk-pg-iori_hazenoki-060",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "smaller cursed spirits that pierced his neck, preventing him from using reverse cursed technique from the neck down"
+      ],
+      "found": [
+        "smaller cursed spirits that pierced his neck, preventing him from using reverse cursed technique from the neck down"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hazenoki do before he died?",
+      "id": "jjk-pg-iori_hazenoki-061",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "insulting the ancient curse user before he dies"
+      ],
+      "found": [
+        "insulting the ancient curse user before he dies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of sorcerer is Hazenoki?",
+      "id": "jjk-pg-iori_hazenoki-062",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "an elite-level sorcerer from the past with fundamental knowledge of jujutsu and enough combat prowess to apply it in a fight"
+      ],
+      "found": [
+        "an elite-level sorcerer from the past with fundamental knowledge of jujutsu and enough combat prowess to apply it in a fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hazenoki willing to do to provide ammunition for his technique?",
+      "id": "jjk-pg-iori_hazenoki-063",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "frequently gouge out his own eyes and teeth to provide ammunition for his cursed technique"
+      ],
+      "found": [
+        "frequently gouge out his own eyes and teeth to provide ammunition for his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hazenoki's Explosive Flesh technique allow him to do?",
+      "id": "jjk-pg-iori_hazenoki-064",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "remotely detonate his own body parts and use them as bombs"
+      ],
+      "found": [
+        "remotely detonate his own body parts and use them as bombs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Hazenoki keep creating bombs?",
+      "id": "jjk-pg-iori_hazenoki-065",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "reverse cursed technique to replace his lost body parts"
+      ],
+      "found": [
+        "reverse cursed technique to replace his lost body parts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Iori Hazenoki rank in the third Popularity Poll?",
+      "id": "jjk-pg-iori_hazenoki-066",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "74th in the third Popularity Poll with 6 votes"
+      ],
+      "found": [
+        "74th in the third Popularity Poll with 6 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Iori Hazenoki rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-iori_hazenoki-067",
+      "subject": "Iori Hazenoki",
+      "accept": "all",
+      "expected": [
+        "38th in the fourth Popularity Poll with 104 votes"
+      ],
+      "found": [
+        "38th in the fourth Popularity Poll with 104 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 9,
+    "canon_total": 9,
+    "canon_recall": 1.0,
+    "members_returned": 9,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 63,
+    "fact_present": 63
+  }
+}

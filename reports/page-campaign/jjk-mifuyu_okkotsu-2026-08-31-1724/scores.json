@@ -1,0 +1,1441 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the families of Mifuyu Okkotsu?",
+      "set": "Every family of Mifuyu Okkotsu",
+      "confidence": "declared",
+      "returned": 8,
+      "available": 8,
+      "canon": 8,
+      "found": 8,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Mifuyu Okkotsu?",
+      "set": "Mifuyu Okkotsu's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Mifuyu Okkotsu",
+      "set": "Every battle involving Mifuyu Okkotsu",
+      "confidence": "declared",
+      "returned": 9,
+      "available": 9,
+      "canon": 9,
+      "found": 9,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the families of Mifuyu Okkotsu?",
+      "found": [
+        "Iori Okkotsu",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu",
+        "Yuta Okkotsu",
+        "Maki Zenin",
+        "Mai Zenin",
+        "Ogi Zenin",
+        "Naobito Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Iori Okkotsu",
+        "Mai Zenin",
+        "Maki Zenin",
+        "Naobito Zenin",
+        "Ogi Zenin",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu",
+        "Yuta Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Mifuyu Okkotsu?",
+      "found": [
+        "Gojo Clan"
+      ],
+      "missing": [],
+      "members": [
+        "Gojo Clan"
+      ]
+    },
+    {
+      "query": "Every battle involving Mifuyu Okkotsu",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu",
+        "Yuji Itadori vs. Yuta Okkotsu",
+        "Yuta Okkotsu & Maki Zenin vs. Cursed Spirits",
+        "Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits",
+        "Yuta Okkotsu vs. Cursed Spirit",
+        "Yuta Okkotsu vs. Kurourushi",
+        "Yuta Okkotsu vs. Suguru Geto",
+        "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu",
+        "Yuji Itadori vs. Yuta Okkotsu",
+        "Yuta Okkotsu & Maki Zenin vs. Cursed Spirits",
+        "Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits",
+        "Yuta Okkotsu vs. Cursed Spirit",
+        "Yuta Okkotsu vs. Kurourushi",
+        "Yuta Okkotsu vs. Suguru Geto",
+        "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Mifuyu Okkotsu's name?",
+      "id": "jjk-pg-mifuyu_okkotsu-001",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "\u4e59\u9aa8\u7f8e\u51ac"
+      ],
+      "found": [
+        "\u4e59\u9aa8\u7f8e\u51ac"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Mifuyu Okkotsu's name?",
+      "id": "jjk-pg-mifuyu_okkotsu-002",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Okkotsu Mifuyu"
+      ],
+      "found": [
+        "Okkotsu Mifuyu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mifuyu Okkotsu's race?",
+      "id": "jjk-pg-mifuyu_okkotsu-003",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Mifuyu Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-004",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "48"
+      ],
+      "found": [
+        "48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mifuyu Okkotsu's gender?",
+      "id": "jjk-pg-mifuyu_okkotsu-005",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Mifuyu Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-006",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Mifuyu Okkotsu first appear?",
+      "id": "jjk-pg-mifuyu_okkotsu-007",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 1"
+      ],
+      "found": [
+        "Modulo Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-mifuyu_okkotsu-008",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-009",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-010",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-011",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-012",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Mifuyu Okkotsu use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-mifuyu_okkotsu-013",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Copy, Brain Transplant Technique, Cursed Speech, G Warstaff, Hair Shikigami Technique, Shrine, Cleave, Sky Manipulation, Thin Ice Breaker, Technique Extinguishment, Jacob's Ladder, Domain Expansion: Authentic Mutual Love, Domain Expansion: Unlimited Void, Limitless, Blue, Hollow Purple, Reverse Cursed Technique, Rika"
+      ],
+      "found": [
+        "Copy, Brain Transplant Technique, Cursed Speech, G Warstaff, Hair Shikigami Technique, Shrine, Cleave, Sky Manipulation, Thin Ice Breaker, Technique Extinguishment, Jacob's Ladder, Domain Expansion: Authentic Mutual Love, Domain Expansion: Unlimited Void, Limitless, Blue, Hollow Purple, Reverse Cursed Technique, Rika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-014",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Tsurugi allows Maru to win."
+      ],
+      "found": [
+        "Tsurugi allows Maru to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-015",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Tokyo, Japan"
+      ],
+      "found": [
+        "Tokyo, Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-016",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "January 14, 2087"
+      ],
+      "found": [
+        "January 14, 2087"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-017",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 14"
+      ],
+      "found": [
+        "Chapter 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Mifuyu Okkotsu use in Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-018",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Tool: Honoyagi, Simple Domain, Maculation, Rika, Cursed Tool: Split Soul Katana"
+      ],
+      "found": [
+        "Cursed Tool: Honoyagi, Simple Domain, Maculation, Rika, Cursed Tool: Split Soul Katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Yuta Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-019",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Yuta Okkotsu take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-020",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Yuta Okkotsu begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-021",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 140"
+      ],
+      "found": [
+        "Chapter 140"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Yuta Okkotsu depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-022",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Episode 48"
+      ],
+      "found": [
+        "Episode 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Yuta Okkotsu take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-023",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Mifuyu Okkotsu use in Yuji Itadori vs. Yuta Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-024",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Energy Manipulation, Cursed Tool: Katana, Rika"
+      ],
+      "found": [
+        "Cursed Energy Manipulation, Cursed Tool: Katana, Rika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu & Maki Zenin vs. Cursed Spirits?",
+      "id": "jjk-pg-mifuyu_okkotsu-025",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Curses are exorcised."
+      ],
+      "found": [
+        "Curses are exorcised."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu & Maki Zenin vs. Cursed Spirits take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-026",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Elementary School"
+      ],
+      "found": [
+        "Elementary School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu & Maki Zenin vs. Cursed Spirits begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-027",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu & Maki Zenin vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-028",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu & Maki Zenin vs. Cursed Spirits take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-029",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Mifuyu Okkotsu use in Yuta Okkotsu & Maki Zenin vs. Cursed Spirits?",
+      "id": "jjk-pg-mifuyu_okkotsu-030",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Rika Manifestation"
+      ],
+      "found": [
+        "Rika Manifestation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits?",
+      "id": "jjk-pg-mifuyu_okkotsu-031",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Curses are exorcised."
+      ],
+      "found": [
+        "Curses are exorcised."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-032",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Hapina Shopping Center"
+      ],
+      "found": [
+        "Hapina Shopping Center"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-033",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-034",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-035",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Mifuyu Okkotsu use in Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits?",
+      "id": "jjk-pg-mifuyu_okkotsu-036",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Energy Manipulation, Cursed Tool: Katana"
+      ],
+      "found": [
+        "Cursed Energy Manipulation, Cursed Tool: Katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Cursed Spirit?",
+      "id": "jjk-pg-mifuyu_okkotsu-037",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Cursed Spirit take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-038",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuta Okkotsu vs. Cursed Spirit?",
+      "id": "jjk-pg-mifuyu_okkotsu-039",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 137"
+      ],
+      "found": [
+        "Chapter 137"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Cursed Spirit depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-040",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Episode 47"
+      ],
+      "found": [
+        "Episode 47"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Cursed Spirit take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-041",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident Arc"
+      ],
+      "found": [
+        "Shibuya Incident Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Mifuyu Okkotsu use in Yuta Okkotsu vs. Cursed Spirit?",
+      "id": "jjk-pg-mifuyu_okkotsu-042",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Tool: Katana, Rika"
+      ],
+      "found": [
+        "Cursed Tool: Katana, Rika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Kurourushi?",
+      "id": "jjk-pg-mifuyu_okkotsu-043",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Kurourushi take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-044",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Kurourushi take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-045",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuta Okkotsu vs. Kurourushi?",
+      "id": "jjk-pg-mifuyu_okkotsu-046",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 175"
+      ],
+      "found": [
+        "Chapter 175"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Kurourushi depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-047",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Kurourushi take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-048",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Suguru Geto?",
+      "id": "jjk-pg-mifuyu_okkotsu-049",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Suguru Geto take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-050",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Suguru Geto take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-051",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "December 24, 2017"
+      ],
+      "found": [
+        "December 24, 2017"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu vs. Suguru Geto begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-052",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Suguru Geto depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-053",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Suguru Geto take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-054",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori?",
+      "id": "jjk-pg-mifuyu_okkotsu-055",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-056",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-057",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori begin?",
+      "id": "jjk-pg-mifuyu_okkotsu-058",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 176"
+      ],
+      "found": [
+        "Chapter 176"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori depicted?",
+      "id": "jjk-pg-mifuyu_okkotsu-059",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-mifuyu_okkotsu-060",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Mifuyu Okkotsu play in the series?",
+      "id": "jjk-pg-mifuyu_okkotsu-064",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "a minor character in Jujutsu Kaisen Modulo"
+      ],
+      "found": [
+        "a minor character in Jujutsu Kaisen Modulo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mifuyu Okkotsu's relationship to Iori Okkotsu?",
+      "id": "jjk-pg-mifuyu_okkotsu-065",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "Iori Okkotsu's wife"
+      ],
+      "found": [
+        "Iori Okkotsu's wife"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mifuyu Okkotsu look like?",
+      "id": "jjk-pg-mifuyu_okkotsu-066",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "a middle-aged woman with long black hair, evenly parted at the front and styled into a bun at the back of her head"
+      ],
+      "found": [
+        "a middle-aged woman with long black hair, evenly parted at the front and styled into a bun at the back of her head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mifuyu wear in her wedding photograph?",
+      "id": "jjk-pg-mifuyu_okkotsu-067",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "a traditional Shinto bridal outfit, consisting of a shiromuku and a tsunokakushi"
+      ],
+      "found": [
+        "a traditional Shinto bridal outfit, consisting of a shiromuku and a tsunokakushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mifuyu typically wear casually?",
+      "id": "jjk-pg-mifuyu_okkotsu-068",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "a dark-colored kimono secured with a light-colored Nagoya obi"
+      ],
+      "found": [
+        "a dark-colored kimono secured with a light-colored Nagoya obi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mifuyu fear after her husband's disappearance in 2070?",
+      "id": "jjk-pg-mifuyu_okkotsu-069",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "she would be ostracized by the Okkotsu family"
+      ],
+      "found": [
+        "she would be ostracized by the Okkotsu family"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Mifuyu approach parenting?",
+      "id": "jjk-pg-mifuyu_okkotsu-070",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "a strict approach to parenting in an effort to provide balance"
+      ],
+      "found": [
+        "a strict approach to parenting in an effort to provide balance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mifuyu do with the ring entrusted to her daughter?",
+      "id": "jjk-pg-mifuyu_okkotsu-071",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "confiscated a ring entrusted to her daughter by her father-in-law and gave it to her son instead"
+      ],
+      "found": [
+        "confiscated a ring entrusted to her daughter by her father-in-law and gave it to her son instead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mifuyu say was the greatest honor of her life?",
+      "id": "jjk-pg-mifuyu_okkotsu-072",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "giving birth to them"
+      ],
+      "found": [
+        "giving birth to them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Mifuyu and Iori Okkotsu have their son Tsurugi?",
+      "id": "jjk-pg-mifuyu_okkotsu-073",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "a son, Tsurugi, in 2069"
+      ],
+      "found": [
+        "a son, Tsurugi, in 2069"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Mifuyu give birth to their daughter Yuka?",
+      "id": "jjk-pg-mifuyu_okkotsu-074",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "on March 18"
+      ],
+      "found": [
+        "on March 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Mifuyu's father-in-law pass away?",
+      "id": "jjk-pg-mifuyu_okkotsu-075",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "her father-in-law passed away in 2080"
+      ],
+      "found": [
+        "her father-in-law passed away in 2080"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who made the decision for Mifuyu to confiscate the ring?",
+      "id": "jjk-pg-mifuyu_okkotsu-076",
+      "subject": "Mifuyu Okkotsu",
+      "accept": "all",
+      "expected": [
+        "the Gojo Clan"
+      ],
+      "found": [
+        "the Gojo Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 18,
+    "canon_total": 18,
+    "canon_recall": 1.0,
+    "members_returned": 18,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 73,
+    "fact_present": 73
+  }
+}

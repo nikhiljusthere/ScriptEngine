@@ -1,0 +1,1833 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Flashy Flash?",
+      "set": "Flashy Flash's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the aliases of Flashy Flash?",
+      "found": [
+        "Forelocks in the Face",
+        "Clavicle Smash"
+      ],
+      "missing": [],
+      "members": [
+        "Clavicle Smash",
+        "Forelocks in the Face"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's alias in One-Punch Man?",
+      "id": "opm-pg-flash-002",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Forelocks in the Face"
+      ],
+      "found": [
+        "Forelocks in the Face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's other alias in One-Punch Man?",
+      "id": "opm-pg-flash-003",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Clavicle Smash"
+      ],
+      "found": [
+        "Clavicle Smash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's Japanese name in One-Punch Man?",
+      "id": "opm-pg-flash-004",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Senk\u014d no Furasshu"
+      ],
+      "found": [
+        "Senk\u014d no Furasshu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's race in One-Punch Man?",
+      "id": "opm-pg-flash-005",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's occupation in One-Punch Man?",
+      "id": "opm-pg-flash-006",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Hero"
+      ],
+      "found": [
+        "Hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's hero rank in One-Punch Man?",
+      "id": "opm-pg-flash-007",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "S-Class Rank 10"
+      ],
+      "found": [
+        "S-Class Rank 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's former hero rank in One-Punch Man?",
+      "id": "opm-pg-flash-008",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "S-Class Rank 13"
+      ],
+      "found": [
+        "S-Class Rank 13"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's height in One-Punch Man?",
+      "id": "opm-pg-flash-009",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "172 cm"
+      ],
+      "found": [
+        "172 cm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's weight in One-Punch Man?",
+      "id": "opm-pg-flash-010",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "65 kg"
+      ],
+      "found": [
+        "65 kg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's age in One-Punch Man?",
+      "id": "opm-pg-flash-011",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "25"
+      ],
+      "found": [
+        "25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Flashy Flash and Gale Wind and Hellfire Flame in One-Punch Man?",
+      "id": "opm-pg-flash-012",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashy Flash is victorious"
+      ],
+      "found": [],
+      "missing": [
+        "Flashy Flash is victorious"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Flashy Flash and Saitama in One-Punch Man?",
+      "id": "opm-pg-flash-013",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashy Flash is defeated"
+      ],
+      "found": [],
+      "missing": [
+        "Flashy Flash is defeated"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Flashy Flash and Speed-o'-Sound Sonic in One-Punch Man?",
+      "id": "opm-pg-flash-014",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashy Flash is defeated"
+      ],
+      "found": [],
+      "missing": [
+        "Flashy Flash is defeated"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to Hundred-Eyes Octopus in One-Punch Man?",
+      "id": "opm-pg-flash-015",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "slashed its eyes"
+      ],
+      "found": [],
+      "missing": [
+        "slashed its eyes"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to the monsters during the Monster Association raid in One-Punch Man?",
+      "id": "opm-pg-flash-016",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "dispatched them"
+      ],
+      "found": [],
+      "missing": [
+        "dispatched them"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to Hellfire Flame and Gale Wind in One-Punch Man?",
+      "id": "opm-pg-flash-017",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "defeated them"
+      ],
+      "found": [],
+      "missing": [
+        "defeated them"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to the Heavenly Ninja Party in One-Punch Man?",
+      "id": "opm-pg-flash-018",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "held ground"
+      ],
+      "found": [],
+      "missing": [
+        "held ground"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to Platinum Sperm in One-Punch Man?",
+      "id": "opm-pg-flash-019",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "held his own"
+      ],
+      "found": [],
+      "missing": [
+        "held his own"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to Garou in One-Punch Man?",
+      "id": "opm-pg-flash-020",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "held his own"
+      ],
+      "found": [],
+      "missing": [
+        "held his own"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to Saitama in their sparring match in One-Punch Man?",
+      "id": "opm-pg-flash-021",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "evaded several attacks"
+      ],
+      "found": [],
+      "missing": [
+        "evaded several attacks"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's sword technique in One-Punch Man?",
+      "id": "opm-pg-flash-022",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Wind Blade Kick"
+      ],
+      "found": [
+        "Wind Blade Kick"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Wind Blade Kick in One-Punch Man?",
+      "id": "opm-pg-flash-023",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "F\u016bjin Kyaku"
+      ],
+      "found": [
+        "F\u016bjin Kyaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's sword piercing technique in One-Punch Man?",
+      "id": "opm-pg-flash-024",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Heavy Flash Slash"
+      ],
+      "found": [
+        "Heavy Flash Slash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Heavy Flash Slash in One-Punch Man?",
+      "id": "opm-pg-flash-025",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "J\u016bsenzan"
+      ],
+      "found": [
+        "J\u016bsenzan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's ultimate technique set in One-Punch Man?",
+      "id": "opm-pg-flash-026",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Ultimate Techniques"
+      ],
+      "found": [
+        "Ultimate Techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Ultimate Techniques in One-Punch Man?",
+      "id": "opm-pg-flash-027",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Zetsugi"
+      ],
+      "found": [],
+      "missing": [
+        "Zetsugi"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Ultimate Techniques in One-Punch Man?",
+      "id": "opm-pg-flash-028",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Absolute Technique"
+      ],
+      "found": [],
+      "missing": [
+        "Absolute Technique"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's slashing technique in One-Punch Man?",
+      "id": "opm-pg-flash-029",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash Slash"
+      ],
+      "found": [
+        "Flash Slash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Flash Slash in One-Punch Man?",
+      "id": "opm-pg-flash-030",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Senk\u014dzan"
+      ],
+      "found": [
+        "Senk\u014dzan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Flash Slash in One-Punch Man?",
+      "id": "opm-pg-flash-031",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashy Slash"
+      ],
+      "found": [
+        "Flashy Slash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's punching technique in One-Punch Man?",
+      "id": "opm-pg-flash-032",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash Fist"
+      ],
+      "found": [
+        "Flash Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Flash Fist in One-Punch Man?",
+      "id": "opm-pg-flash-033",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Senk\u014dken"
+      ],
+      "found": [],
+      "missing": [
+        "Senk\u014dken"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Flash Fist in One-Punch Man?",
+      "id": "opm-pg-flash-034",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashy Fist"
+      ],
+      "found": [],
+      "missing": [
+        "Flashy Fist"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's kicking technique in One-Punch Man?",
+      "id": "opm-pg-flash-035",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash Kicks"
+      ],
+      "found": [
+        "Flash Kicks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Flash Kicks in One-Punch Man?",
+      "id": "opm-pg-flash-036",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Senk\u014d Kyaku"
+      ],
+      "found": [
+        "Senk\u014d Kyaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability does Flashy Flash have in One-Punch Man?",
+      "id": "opm-pg-flash-037",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Immense Speed and Reflexes"
+      ],
+      "found": [
+        "Immense Speed and Reflexes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Flashy Flash do with his Immense Speed in One-Punch Man?",
+      "id": "opm-pg-flash-038",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "travel to and slash the eyes of Hundred-Eyes Octopus"
+      ],
+      "found": [],
+      "missing": [
+        "travel to and slash the eyes of Hundred-Eyes Octopus"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability allows Flashy Flash to keep up with two Demon-level speedsters in One-Punch Man?",
+      "id": "opm-pg-flash-039",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Immense Speed and Reflexes"
+      ],
+      "found": [
+        "Immense Speed and Reflexes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash's speed leave in his wake in One-Punch Man?",
+      "id": "opm-pg-flash-040",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "powerful shock waves"
+      ],
+      "found": [
+        "powerful shock waves"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's fighting style in One-Punch Man?",
+      "id": "opm-pg-flash-041",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Ninjutsu Master"
+      ],
+      "found": [
+        "Ninjutsu Master"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's ability type in One-Punch Man?",
+      "id": "opm-pg-flash-042",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Weapons"
+      ],
+      "found": [
+        "Weapons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's stamina rating in One-Punch Man?",
+      "id": "opm-pg-flash-043",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "8"
+      ],
+      "found": [
+        "8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's intelligence rating in One-Punch Man?",
+      "id": "opm-pg-flash-044",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "6"
+      ],
+      "found": [
+        "6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's justice rating in One-Punch Man?",
+      "id": "opm-pg-flash-045",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "5"
+      ],
+      "found": [
+        "5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's total hero rating in One-Punch Man?",
+      "id": "opm-pg-flash-046",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "61"
+      ],
+      "found": [
+        "61"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's first S-Class hero achievement in One-Punch Man?",
+      "id": "opm-pg-flash-047",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "defeated a Dragon-level Mysterious Being"
+      ],
+      "found": [],
+      "missing": [
+        "defeated a Dragon-level Mysterious Being"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's lowest known justice rating among S-Class heroes in One-Punch Man?",
+      "id": "opm-pg-flash-048",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "5"
+      ],
+      "found": [
+        "5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash depicted as in the 2017 OPM Halloween cover in One-Punch Man?",
+      "id": "opm-pg-flash-049",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "kitsune"
+      ],
+      "found": [
+        "kitsune"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who taught Flashy Flash swordsmanship in One-Punch Man?",
+      "id": "opm-pg-flash-050",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Speed-o'-Sound Sonic"
+      ],
+      "found": [
+        "Speed-o'-Sound Sonic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's connection to the Ninja Village in One-Punch Man?",
+      "id": "opm-pg-flash-051",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "44th Graduation Class"
+      ],
+      "found": [
+        "44th Graduation Class"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the nickname of Flashy Flash's graduation class in One-Punch Man?",
+      "id": "opm-pg-flash-052",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "The End"
+      ],
+      "found": [
+        "The End"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for The End in One-Punch Man?",
+      "id": "opm-pg-flash-053",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Owari"
+      ],
+      "found": [
+        "Owari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for The End in One-Punch Man?",
+      "id": "opm-pg-flash-054",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "The Final"
+      ],
+      "found": [],
+      "missing": [
+        "The Final"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did ONE say about Sonic and Flash being related in One-Punch Man?",
+      "id": "opm-pg-flash-055",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "avoided answering"
+      ],
+      "found": [
+        "avoided answering"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Murata reveal about Sonic and Flash in One-Punch Man?",
+      "id": "opm-pg-flash-056",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "somewhat related"
+      ],
+      "found": [
+        "somewhat related"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Speed-o'-Sound Sonic to Flashy Flash in One-Punch Man?",
+      "id": "opm-pg-flash-057",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "fellow ninja"
+      ],
+      "found": [],
+      "missing": [
+        "fellow ninja"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Saitama to Flashy Flash in One-Punch Man?",
+      "id": "opm-pg-flash-058",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "self-proclaimed master"
+      ],
+      "found": [],
+      "missing": [
+        "self-proclaimed master"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Genos to Flashy Flash in One-Punch Man?",
+      "id": "opm-pg-flash-059",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "self-proclaimed grand master"
+      ],
+      "found": [],
+      "missing": [
+        "self-proclaimed grand master"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's affiliation in One-Punch Man?",
+      "id": "opm-pg-flash-060",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Hero Association"
+      ],
+      "found": [
+        "Hero Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's other affiliation in One-Punch Man?",
+      "id": "opm-pg-flash-061",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "The Village"
+      ],
+      "found": [
+        "The Village"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's other affiliation in One-Punch Man?",
+      "id": "opm-pg-flash-062",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "44th Graduation Class"
+      ],
+      "found": [
+        "44th Graduation Class"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's other affiliation in One-Punch Man?",
+      "id": "opm-pg-flash-063",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Saitama Group"
+      ],
+      "found": [
+        "Saitama Group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's status in One-Punch Man?",
+      "id": "opm-pg-flash-064",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's personality trait in One-Punch Man?",
+      "id": "opm-pg-flash-065",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "calm and serious"
+      ],
+      "found": [
+        "calm and serious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Flashy Flash's personality trait in One-Punch Man?",
+      "id": "opm-pg-flash-066",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "arrogant"
+      ],
+      "found": [
+        "arrogant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash believe about training in One-Punch Man?",
+      "id": "opm-pg-flash-067",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "the key to true strength"
+      ],
+      "found": [
+        "the key to true strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash say about Gale Wind and Hellfire Flame in One-Punch Man?",
+      "id": "opm-pg-flash-068",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "their lack of training"
+      ],
+      "found": [],
+      "missing": [
+        "their lack of training"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash say about his speed in One-Punch Man?",
+      "id": "opm-pg-flash-069",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "kinda fast"
+      ],
+      "found": [],
+      "missing": [
+        "kinda fast"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash say about Hellfire Flame in One-Punch Man?",
+      "id": "opm-pg-flash-070",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "too slow"
+      ],
+      "found": [
+        "too slow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash say about Hellfire Flame and Gale Wind in One-Punch Man?",
+      "id": "opm-pg-flash-071",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "your training is lacking"
+      ],
+      "found": [
+        "your training is lacking"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash say about Saitama in One-Punch Man?",
+      "id": "opm-pg-flash-072",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "pretty damn good"
+      ],
+      "found": [],
+      "missing": [
+        "pretty damn good"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's sword in One-Punch Man?",
+      "id": "opm-pg-flash-073",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Instakill"
+      ],
+      "found": [
+        "Instakill"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Instakill in One-Punch Man?",
+      "id": "opm-pg-flash-074",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Shunsatsumaru"
+      ],
+      "found": [
+        "Shunsatsumaru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Instakill in One-Punch Man?",
+      "id": "opm-pg-flash-075",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashkill"
+      ],
+      "found": [
+        "Flashkill"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's secondary weapon in One-Punch Man?",
+      "id": "opm-pg-flash-076",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Kunai"
+      ],
+      "found": [
+        "Kunai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Flashy Flash's cape in One-Punch Man?",
+      "id": "opm-pg-flash-077",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Waterproof Cape"
+      ],
+      "found": [
+        "Waterproof Cape"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Flashy Flash first appear in the One-Punch Man webcomic?",
+      "id": "opm-pg-flash-078",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Flashy Flash first appear in the One-Punch Man manga?",
+      "id": "opm-pg-flash-079",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Chapter 30"
+      ],
+      "found": [
+        "Chapter 30"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Flashy Flash first appear in the One-Punch Man anime?",
+      "id": "opm-pg-flash-080",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Episode 10"
+      ],
+      "found": [
+        "Episode 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does the battle between Flashy Flash and Gale Wind and Hellfire Flame take place in One-Punch Man?",
+      "id": "opm-pg-flash-081",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Chapter 99"
+      ],
+      "found": [
+        "Chapter 99"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does the battle between Flashy Flash and Saitama take place in One-Punch Man?",
+      "id": "opm-pg-flash-082",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Chapter 129"
+      ],
+      "found": [
+        "Chapter 129"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Forelocks in the Face in One-Punch Man?",
+      "id": "opm-pg-flash-083",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Maegami J\u0101ma"
+      ],
+      "found": [],
+      "missing": [
+        "Maegami J\u0101ma"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Clavicle Smash in One-Punch Man?",
+      "id": "opm-pg-flash-084",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Kenk\u014dkotsu Kurassh\u0101"
+      ],
+      "found": [
+        "Kenk\u014dkotsu Kurassh\u0101"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Clavicle Smash in One-Punch Man?",
+      "id": "opm-pg-flash-085",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Shoulder Blade Crusher"
+      ],
+      "found": [
+        "Shoulder Blade Crusher"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to the cave-in in One-Punch Man?",
+      "id": "opm-pg-flash-086",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "got trapped under it"
+      ],
+      "found": [],
+      "missing": [
+        "got trapped under it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Flashy Flash do to his sword in One-Punch Man?",
+      "id": "opm-pg-flash-087",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "broke it"
+      ],
+      "found": [],
+      "missing": [
+        "broke it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Brawny Muscle do to Flashy Flash's replacement sword in One-Punch Man?",
+      "id": "opm-pg-flash-088",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "broke it"
+      ],
+      "found": [],
+      "missing": [
+        "broke it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama do to Instakill in the webcomic in One-Punch Man?",
+      "id": "opm-pg-flash-089",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "broke it"
+      ],
+      "found": [],
+      "missing": [
+        "broke it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama do to Flashy Flash's replacement sword in the webcomic in One-Punch Man?",
+      "id": "opm-pg-flash-090",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "broke it"
+      ],
+      "found": [],
+      "missing": [
+        "broke it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash's Immense Speed allow him to do in One-Punch Man?",
+      "id": "opm-pg-flash-091",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "dispatch monsters so fast"
+      ],
+      "found": [],
+      "missing": [
+        "dispatch monsters so fast"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash's Immense Speed allow him to do in One-Punch Man?",
+      "id": "opm-pg-flash-092",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "create a geometric structure of light"
+      ],
+      "found": [],
+      "missing": [
+        "create a geometric structure of light"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash's Ninjutsu Master allow him to do in One-Punch Man?",
+      "id": "opm-pg-flash-093",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "fend off senior ninjas"
+      ],
+      "found": [],
+      "missing": [
+        "fend off senior ninjas"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash's Wind Blade Kick allow him to do in One-Punch Man?",
+      "id": "opm-pg-flash-094",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "kicks mid-flip"
+      ],
+      "found": [],
+      "missing": [
+        "kicks mid-flip"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Flashy Flash's Heavy Flash Slash allow him to do in One-Punch Man?",
+      "id": "opm-pg-flash-095",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "pierce the target"
+      ],
+      "found": [],
+      "missing": [
+        "pierce the target"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that allows Flashy Flash to slash before opponents can react in One-Punch Man?",
+      "id": "opm-pg-flash-096",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash Slash"
+      ],
+      "found": [
+        "Flash Slash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that allows Flashy Flash to unleash a barrage of punches in One-Punch Man?",
+      "id": "opm-pg-flash-097",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash Fist"
+      ],
+      "found": [
+        "Flash Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that allows Flashy Flash to deliver a kick numerous times in One-Punch Man?",
+      "id": "opm-pg-flash-098",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash Kicks"
+      ],
+      "found": [
+        "Flash Kicks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that allows Flashy Flash to create afterimages in One-Punch Man?",
+      "id": "opm-pg-flash-099",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Afterimage Creation"
+      ],
+      "found": [
+        "Afterimage Creation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that allows Flashy Flash to manipulate air in One-Punch Man?",
+      "id": "opm-pg-flash-100",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Air Manipulation"
+      ],
+      "found": [
+        "Air Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 99,
+    "fact_present": 65
+  }
+}

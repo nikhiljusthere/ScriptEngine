@@ -1,0 +1,89 @@
+# Staged roster declarations for the Naoya Zenin page campaign
+# (questions/_jjk_page_naoya_zenin.section1.json, section 1: battles).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# The battles roster is the four battle pages listed in the `Battles & Events`
+# section of `Naoya Zenin`, whose titles are reused verbatim from
+# _jjk_battles.json; all four carry the `Naoya Zenin Battles` category. The
+# battles-in discovery path returns an 18-member superset (it unions the
+# `Maki Zenin Battles` category through the Maki-titled pages), so the set is
+# declared.
+#
+# The ten technique rosters are the infobox `powers1`/`powers2` blocks of the
+# four battle pages. Five of them (Choso / Naoya in Choso's fight, Maki / Naoya
+# in Maki's fight, Naoya in the Daido & Miyo fight) already resolve by
+# discovery and match the official bank (jjk-cov-13/14/32/33/38); the other
+# five leak or drop members under discovery, and are declared so the declared
+# roster wins (G6). Match phrases are the lowercased bank question plus one
+# paraphrase each, and say `techniques`, never `arc`. Members carrying `&`
+# stay quoted or YAML parses them as anchors.
+
+rosters:
+   - name: Every battle involving Naoya Zenin
+     match:
+       - every battle involving naoya zenin
+       - all the battles involving naoya zenin
+       - battles involving naoya zenin
+       - every battle of naoya zenin
+     subject: Naoya Zenin
+     members: [Choso vs. Naoya Zenin, Maki Zenin vs. Naoya Zenin, "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin", "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"]
+   - name: Which techniques did Choso use in Choso vs. Naoya Zenin
+     match:
+       - which techniques did choso use in choso vs. naoya zenin
+       - what techniques did choso use in choso vs. naoya zenin
+     subject: Choso
+     members: [Blood Manipulation, Flowing Red Scale, Hand-to-Hand Combat, Slicing Exorcism, Supernova]
+   - name: Which techniques did Naoya Zenin use in Choso vs. Naoya Zenin
+     match:
+       - which techniques did naoya zenin use in choso vs. naoya zenin
+       - what techniques did naoya zenin use in choso vs. naoya zenin
+     subject: Naoya Zenin
+     members: [Hand-to-Hand Combat, Projection Sorcery]
+   - name: Which techniques did Maki Zenin use in Maki Zenin vs. Naoya Zenin
+     match:
+       - which techniques did maki zenin use in maki zenin vs. naoya zenin
+       - what techniques did maki zenin use in maki zenin vs. naoya zenin
+     subject: Maki Zenin
+     members: [Cursed Tool, Hand-to-Hand Combat, Shiranui-Gata, Split Soul Katana]
+   - name: Which techniques did Naoya Zenin use in Maki Zenin vs. Naoya Zenin
+     match:
+       - which techniques did naoya zenin use in maki zenin vs. naoya zenin
+       - what techniques did naoya zenin use in maki zenin vs. naoya zenin
+     subject: Naoya Zenin
+     members: [Cursed Energy, Hand-to-Hand Combat, Projection Sorcery]
+   - name: "Which techniques did Noritoshi Kamo use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin"
+     match:
+       - "which techniques did noritoshi kamo use in maki zenin & noritoshi kamo vs. naoya zenin"
+       - "what techniques did noritoshi kamo use in maki zenin & noritoshi kamo vs. naoya zenin"
+     subject: Noritoshi Kamo
+     members: [Blood Manipulation, "Bow & Arrows", Crimson Binding, Flowing Red Scale, Non-Cursed Tools, Piercing Blood]
+   - name: "Which techniques did Maki Zenin use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin"
+     match:
+       - "which techniques did maki zenin use in maki zenin & noritoshi kamo vs. naoya zenin"
+       - "what techniques did maki zenin use in maki zenin & noritoshi kamo vs. naoya zenin"
+     subject: Maki Zenin
+     members: [Split Soul Katana]
+   - name: "Which techniques did Naoya Zenin use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin"
+     match:
+       - "which techniques did naoya zenin use in maki zenin & noritoshi kamo vs. naoya zenin"
+       - "what techniques did naoya zenin use in maki zenin & noritoshi kamo vs. naoya zenin"
+     subject: Naoya Zenin
+     members: [Projection Sorcery]
+   - name: "Which techniques did Hagane Daido use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+     match:
+       - "which techniques did hagane daido use in maki zenin, hagane daido & rokujushi miyo vs. naoya zenin"
+       - "what techniques did hagane daido use in maki zenin, hagane daido & rokujushi miyo vs. naoya zenin"
+     subject: Hagane Daido
+     members: [Cursed Tool, Split Soul Katana]
+   - name: "Which techniques did Rokujushi Miyo use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+     match:
+       - "which techniques did rokujushi miyo use in maki zenin, hagane daido & rokujushi miyo vs. naoya zenin"
+       - "what techniques did rokujushi miyo use in maki zenin, hagane daido & rokujushi miyo vs. naoya zenin"
+     subject: Rokujushi Miyo
+     members: [Simple Domain]
+   - name: "Which techniques did Naoya Zenin use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+     match:
+       - "which techniques did naoya zenin use in maki zenin, hagane daido & rokujushi miyo vs. naoya zenin"
+       - "what techniques did naoya zenin use in maki zenin, hagane daido & rokujushi miyo vs. naoya zenin"
+     subject: Naoya Zenin
+     members: [Domain Expansion, Projection Sorcery, Time Cell Moon Palace]

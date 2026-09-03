@@ -1,0 +1,393 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kaichi",
+      "set": "Every battle involving Kaichi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Kaichi",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Takuma Ino vs. Ogami & Her Grandson"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Takuma Ino vs. Ogami & Her Grandson"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kaichi's name?",
+      "id": "jjk-pg-kaichi-001",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "\u736c\u8c78"
+      ],
+      "found": [
+        "\u736c\u8c78"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kaichi's name?",
+      "id": "jjk-pg-kaichi-002",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Kaichi"
+      ],
+      "found": [
+        "Kaichi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kaichi first appear?",
+      "id": "jjk-pg-kaichi-003",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Chapter 95"
+      ],
+      "found": [
+        "Chapter 95"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kaichi first depicted?",
+      "id": "jjk-pg-kaichi-004",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "The Movie Episode 35"
+      ],
+      "found": [
+        "The Movie Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-kaichi-005",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kaichi-006",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kaichi-007",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-kaichi-008",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kaichi-009",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-kaichi-010",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Ogami is victorious."
+      ],
+      "found": [
+        "Ogami is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-kaichi-011",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Shibuya Tower"
+      ],
+      "found": [
+        "Shibuya Tower"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-kaichi-012",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-kaichi-013",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Chapter 95 & 97"
+      ],
+      "found": [
+        "Chapter 95 & 97"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Takuma Ino vs. Ogami & Her Grandson depicted?",
+      "id": "jjk-pg-kaichi-014",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Episode 35"
+      ],
+      "found": [
+        "Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-kaichi-015",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kaichi look like?",
+      "id": "jjk-pg-kaichi-017",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Kaichi takes the form of a light-colored cone-shaped horn marked with swirling designs of a darker tone."
+      ],
+      "found": [
+        "Kaichi takes the form of a light-colored cone-shaped horn marked with swirling designs of a darker tone."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kaichi behave in flight?",
+      "id": "jjk-pg-kaichi-018",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Acting as a homing missile, Kaichi can make sharp turns and will continue to pursue the user's target until it hits."
+      ],
+      "found": [
+        "Acting as a homing missile, Kaichi can make sharp turns and will continue to pursue the user's target until it hits."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takuma use Kaichi during the Night Parade of a Hundred Demons?",
+      "id": "jjk-pg-kaichi-019",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "Takuma used Kaichi to exorcise a large curse during the Night Parade of a Hundred Demons."
+      ],
+      "found": [
+        "Takuma used Kaichi to exorcise a large curse during the Night Parade of a Hundred Demons."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the mythological creature referenced by Kaichi do in East Asian mythology?",
+      "id": "jjk-pg-kaichi-020",
+      "subject": "Kaichi",
+      "accept": "all",
+      "expected": [
+        "It could discern the innocent from the guilty, ramming the latter with its single horn, making further reference for Ino's technique design and homing abilities."
+      ],
+      "found": [
+        "It could discern the innocent from the guilty, ramming the latter with its single horn, making further reference for Ino's technique design and homing abilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

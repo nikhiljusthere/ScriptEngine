@@ -1,0 +1,1915 @@
+{
+ "series": "opm",
+ "wiki": "https://onepunchman.fandom.com",
+ "updated": "2026-08-22",
+ "note": "Fuhrer Ugly cluster (page campaign, OPM): main page + Sweet Mask vs. Fuhrer Ugly battle page. 2 set questions (aliases roster declared in overrides.yaml; every-battles set live-verified) and 103 fact-presence questions covering infobox attributes, lead, appearance, personality, history, plot, abilities, fighting style, attacks, trivia, quotes, relations, and the webcomic outcome. Every gold verified against stored wikitext and live-probed 2026-08-22 (105/105 probes passed); no retirements.",
+ "questions": [
+  {
+   "id": "opm-pg-fuhrer_ugly-001",
+   "kind": "set",
+   "question": "What are all the aliases of Fuhrer Ugly?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Vomited Fuhrer Ugly"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22",
+   "note": "Declared roster \"Fuhrer Ugly's aliases\" (overrides.yaml, member: Vomited Fuhrer Ugly); live-verified 1 member 2026-08-22."
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-002",
+   "kind": "set",
+   "question": "Every battle of Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sweet Mask vs. Fuhrer Ugly"
+    },
+    {
+     "item": "Heroes vs. Monster Association Executives"
+    },
+    {
+     "item": "Garou vs. Monster Association Executives"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22",
+   "note": "Battles-in roster path; live-verified 3 members 2026-08-22 (Sweet Mask vs. Fuhrer Ugly, Heroes vs. Monster Association Executives, Garou vs. Monster Association Executives)."
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-003",
+   "kind": "fact",
+   "question": "What is the result of the battle between Sweet Mask and Fuhrer Ugly in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Interrupted by Tatsumaki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-004",
+   "kind": "fact",
+   "question": "What is the result of the battle between the Monster Association Executives and Garou in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fuhrer Ugly is killed by Garou"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly",
+    "https://onepunchman.fandom.com/wiki/Garou_vs._Monster_Association_Executives"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-005",
+   "kind": "fact",
+   "question": "What is the result of the battle between the Monster Association Executives and the heroes in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Interrupted by Garou"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly",
+    "https://onepunchman.fandom.com/wiki/Heroes_vs._Monster_Association_Executives"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-006",
+   "kind": "fact",
+   "question": "What arc is the battle between Sweet Mask and Fuhrer Ugly in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Monster Association Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-007",
+   "kind": "fact",
+   "question": "What event is the battle between Sweet Mask and Fuhrer Ugly part of in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Monster Association Raid"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-008",
+   "kind": "fact",
+   "question": "Where does the battle between Sweet Mask and Fuhrer Ugly take place in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Monster Association Headquarters"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-009",
+   "kind": "fact",
+   "question": "What manga chapters does the battle between Sweet Mask and Fuhrer Ugly span in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 118, 126, 131, 134"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-010",
+   "kind": "fact",
+   "question": "What is the previous battle listed in the infobox of the Sweet Mask vs. Fuhrer Ugly page in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fubuki, Bang, and Bomb vs. Do-S"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-011",
+   "kind": "fact",
+   "question": "What is the next battle listed in the infobox of the Sweet Mask vs. Fuhrer Ugly page in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Garou vs. Puri-Puri Prisoner"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-012",
+   "kind": "fact",
+   "question": "What was Sweet Mask doing when Fuhrer Ugly appeared behind him in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "admire himself in a narcissistic fashion"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-013",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly kick Sweet Mask through at the start of their battle in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "multiple mirrors"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-014",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly plan to do to Sweet Mask's face in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "etch reality into the hero's face"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-015",
+   "kind": "fact",
+   "question": "What did Sweet Mask deduce Fuhrer Ugly was in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a type of Ugmon"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-016",
+   "kind": "fact",
+   "question": "Why was Sweet Mask unable to beat Fuhrer Ugly in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "witnessing extreme ugliness paralyzes him with fear"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-017",
+   "kind": "fact",
+   "question": "What did Tatsumaki create around Sweet Mask to save him from Fuhrer Ugly in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a psychic barrier"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-018",
+   "kind": "fact",
+   "question": "What did Sweet Mask do to one of the monsters after defeating Do-S in One-Punch Man?",
+   "subject": "Sweet Mask vs. Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "beheading one of them, taking its head with him"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sweet_Mask_vs._Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-019",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's race in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mysterious Being (Ugmon)"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-020",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's gender in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-021",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's status in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-022",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's location in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Monster Association Headquarters (Z-City)"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-023",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's disaster level in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Dragon"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-024",
+   "kind": "fact",
+   "question": "What was Fuhrer Ugly's affiliation in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Monster Association"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-025",
+   "kind": "fact",
+   "question": "In which chapter does Fuhrer Ugly first appear in the One-Punch Man webcomic?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 57"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-026",
+   "kind": "fact",
+   "question": "In which chapter does Fuhrer Ugly first appear in the One-Punch Man manga?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 90"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-027",
+   "kind": "fact",
+   "question": "In which episode does Fuhrer Ugly first appear in the One-Punch Man anime?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 27"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-028",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's alias in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Vomited Fuhrer Ugly"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-029",
+   "kind": "fact",
+   "question": "Who killed Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Garou"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-030",
+   "kind": "fact",
+   "question": "Who killed Fuhrer Ugly in the original webcomic in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Bang"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-031",
+   "kind": "fact",
+   "question": "What position did Fuhrer Ugly hold in the Monster Association in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "executive member"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-032",
+   "kind": "fact",
+   "question": "What is Fuhrer Ugly's appearance in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a tall, obese, ugly man with grotesque facial features"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-033",
+   "kind": "fact",
+   "question": "What does Fuhrer Ugly dress in in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a dark middle school uniform"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-034",
+   "kind": "fact",
+   "question": "What shape is Fuhrer Ugly's head in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cone-shaped and mostly bald with a few rings of hair"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-035",
+   "kind": "fact",
+   "question": "What is distinctive about Fuhrer Ugly's belly button in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a prominent outie belly button"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-036",
+   "kind": "fact",
+   "question": "What does Fuhrer Ugly's larger mutated form have in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "longer and thicker limbs, an enlarged cranium, and bulging veins and muscles"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-037",
+   "kind": "fact",
+   "question": "What happened to Fuhrer Ugly's body after escaping Gums' digestive juices in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "covered in vomit"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-038",
+   "kind": "fact",
+   "question": "What transformed Fuhrer Ugly into a monster in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "jealousy and self-hatred"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-039",
+   "kind": "fact",
+   "question": "Whom does Fuhrer Ugly particularly hate in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "good-looking opponents"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-040",
+   "kind": "fact",
+   "question": "Who did Fuhrer Ugly tell he hated the most among all the heroes in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sweet Mask"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-041",
+   "kind": "fact",
+   "question": "What game did Fuhrer Ugly propose to the other executives in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "whoever kills the most heroes gets to lead"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-042",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly wonder aloud about Tatsumaki in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "what kind of panties she's wearing"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-043",
+   "kind": "fact",
+   "question": "What was Fuhrer Ugly originally, according to Sweet Mask, in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an ugly human"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-044",
+   "kind": "fact",
+   "question": "What caused Fuhrer Ugly to become a Mysterious Being in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his heart being swallowed by darkness"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-045",
+   "kind": "fact",
+   "question": "What was Fuhrer Ugly reading before the battle against the Hero Association in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a book about popularity"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-046",
+   "kind": "fact",
+   "question": "Who was admiring himself in a large mirror when Fuhrer Ugly sneaked up behind him in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sweet Mask"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-047",
+   "kind": "fact",
+   "question": "Why did Sweet Mask struggle to fight back against Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his discomfort around ugly enemies"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-048",
+   "kind": "fact",
+   "question": "What did Tatsumaki do to lift Sweet Mask away from Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "shielding him in a psychic bubble"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-049",
+   "kind": "fact",
+   "question": "What punch did Fuhrer Ugly deliver to crush Sweet Mask's face in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Face Caving Punch"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-050",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly tear in half after crushing Sweet Mask's face in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sweet Mask's lower body"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-051",
+   "kind": "fact",
+   "question": "What contest did Fuhrer Ugly suggest to the other executives in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a free-for-all contest where the monster who kills the most S-Class heroes gets to lead"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-052",
+   "kind": "fact",
+   "question": "Who interrupted Fuhrer Ugly just as he prepared to kill Child Emperor in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Homeless Emperor"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-053",
+   "kind": "fact",
+   "question": "What did Homeless Emperor say the free-for-all was in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "simply the law of nature"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-054",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly claim he would become after the race to kill the S-Class was over in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Monster King"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-055",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly tear off of Sosshi in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an arm"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-056",
+   "kind": "fact",
+   "question": "Who rescued all the mercenaries after Fuhrer Ugly tore Sosshi's arm off in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Pig God"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-057",
+   "kind": "fact",
+   "question": "What punch did Fuhrer Ugly use to counter Tanktop Master's Tanktop Tackle in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Forearm Caving Punch"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-058",
+   "kind": "fact",
+   "question": "What did the clash with Fuhrer Ugly do to Tanktop Master in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "both of Tanktop Master's forearms breaking"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-059",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly do to Tanktop Master after breaking his forearms in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "brutally beats Tanktop Master into a near-death state"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-060",
+   "kind": "fact",
+   "question": "Who was allowed to consume Tanktop Master after Fuhrer Ugly beat him in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gums"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-061",
+   "kind": "fact",
+   "question": "Who arrived just in time to distract Fuhrer Ugly from Tatsumaki in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Bang"
+    },
+    {
+     "item": "Genos"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-062",
+   "kind": "fact",
+   "question": "What punch did Fuhrer Ugly attempt against Bang after rising in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Dignity Caving Punch"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-063",
+   "kind": "fact",
+   "question": "What did Bang's redirect of the punch force Gums to do in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "spit out Genos"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-064",
+   "kind": "fact",
+   "question": "What did Gums mistakenly believe about Fuhrer Ugly when it swallowed him in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fuhrer Ugly attacked it on purpose"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-065",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly do to escape from within Gums in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "tears his way out from within Gums, dissolving in its stomach acid"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-066",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly demand to fight when he arrived in his mutated form in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Silver Fang"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-067",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly spit at Black Sperm's clones in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "acid"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-068",
+   "kind": "fact",
+   "question": "What attack did Superalloy Darkshine use against Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Superalloy Double Bazooka"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-069",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly counter Darkshine's attack with in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Forearm Melting Punch"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-070",
+   "kind": "fact",
+   "question": "What did the acid on Fuhrer Ugly's body begin to do to Darkshine in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "dissolve the muscular hero's hands"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-071",
+   "kind": "fact",
+   "question": "Who warned the others not to confront Fuhrer Ugly unarmed in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Zanbai"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-072",
+   "kind": "fact",
+   "question": "What happened to Zanbai's sword when Fuhrer Ugly caught it in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "melts in his grip"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-073",
+   "kind": "fact",
+   "question": "How did Fuhrer Ugly kill Zanbai in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "spitting acid in Zanbai's face"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-074",
+   "kind": "fact",
+   "question": "Which two heroes attacked Fuhrer Ugly simultaneously with their techniques in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Atomic Samurai"
+    },
+    {
+     "item": "Nichirin"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-075",
+   "kind": "fact",
+   "question": "Who sacrificed himself to save Atomic Samurai and Iaian from Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Amahare"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-076",
+   "kind": "fact",
+   "question": "What was the result of Fuhrer Ugly's Full Body Melting Punch on Nichirin in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "mortally wounded, dissolved from the waist down"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-077",
+   "kind": "fact",
+   "question": "What did Black Sperm merge his clones into to punish Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Golden Sperm"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-078",
+   "kind": "fact",
+   "question": "Why did Fuhrer Ugly's acidic vomit have no effect on Golden Sperm in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "anti-corrosive properties"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-079",
+   "kind": "fact",
+   "question": "What explosion did Fuhrer Ugly notice while searching for Bang in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a massive explosion resulting from the battle between Garou and Bang"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-080",
+   "kind": "fact",
+   "question": "How did Garou kill Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "kicks a hole through Fuhrer Ugly's body"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-081",
+   "kind": "fact",
+   "question": "What happened to Fuhrer Ugly's body after Garou kicked through it in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "beginning to melt away completely"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-082",
+   "kind": "fact",
+   "question": "What can Fuhrer Ugly's Immense Strength do in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "crush Sweet Mask's skull with a single punch and tear him apart with apparent ease"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-083",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly do when Bang kicked through Gums to rescue Tanktop Master in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "intercepted him in mid-air before he could begin to fall"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-084",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly's Immense Durability let him withstand in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the crushing weight of the Monster Association's rubble"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-085",
+   "kind": "fact",
+   "question": "What do Fuhrer Ugly's feelings of humiliation and misery do in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "enhance his power and abilities over time"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-086",
+   "kind": "fact",
+   "question": "What does Fuhrer Ugly call his accelerated development in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Extreme Violence"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-087",
+   "kind": "fact",
+   "question": "What can Fuhrer Ugly's Transformation ability do in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "mutate his cells to significantly grow in size and become even stronger"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-088",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly gain after breaking free from Gums in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a defensive layer of digestive fluids over his entire body"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-089",
+   "kind": "fact",
+   "question": "How could Fuhrer Ugly use his digestive fluids for long-range attacks in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "project the digestive fluids through his spit or an enormous stream of vomit"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-090",
+   "kind": "fact",
+   "question": "What can Fuhrer Ugly's Healing Factor do in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "heal from damage, constantly healing even while submerged in acid"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-091",
+   "kind": "fact",
+   "question": "What was Fuhrer Ugly unable to heal from in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the large hole in his abdomen inflicted by Garou"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-092",
+   "kind": "fact",
+   "question": "How does Fuhrer Ugly mainly fight in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "relies on his brute strength in close-quarters combat"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-093",
+   "kind": "fact",
+   "question": "Based on whose data can Fuhrer Ugly see through his opponents in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Drive Knight"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-094",
+   "kind": "fact",
+   "question": "What are most of Fuhrer Ugly's attacks accompanied by in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "insults and sarcastic remarks"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-095",
+   "kind": "fact",
+   "question": "What kind of punch is Fuhrer Ugly's Face Caving Punch in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a simple, yet powerful downward punch at the opponent's face"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-096",
+   "kind": "fact",
+   "question": "Who did Fuhrer Ugly first use the Forearm Caving Punch against in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tanktop Master"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-097",
+   "kind": "fact",
+   "question": "What did the Forearm Caving Punch do to Tanktop Master in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "shattering and mangling the hero's forearms"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-098",
+   "kind": "fact",
+   "question": "What does Fuhrer Ugly do when using the Dignity Caving Punch in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "grows in size and throws a powerful punch towards the opponent"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-099",
+   "kind": "fact",
+   "question": "What book is Fuhrer Ugly seen reading in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "10 easy ways to become popular"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-100",
+   "kind": "fact",
+   "question": "Fuhrer Ugly's death by Garou resembles a scene from which series in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hokuto no Ken"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-101",
+   "kind": "fact",
+   "question": "What does Fuhrer Ugly proclaim when he claims to be the Monster King in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Just remember! After we kill da heroes, I'm da new Monster King."
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-102",
+   "kind": "fact",
+   "question": "What did Fuhrer Ugly tell Darkshine about the power Gums gave him in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "This is the digestive power Gums gave me! The feelings of humiliation and inferiority... I'll give you a taste of em, too!"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-103",
+   "kind": "fact",
+   "question": "Who is Black Sperm to Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-104",
+   "kind": "fact",
+   "question": "Who is Kamikaze to Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-pg-fuhrer_ugly-105",
+   "kind": "fact",
+   "question": "What is the result of the webcomic battle between Bang and Fuhrer Ugly in One-Punch Man?",
+   "subject": "Fuhrer Ugly",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fuhrer Ugly is killed"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Fuhrer_Ugly"
+   ],
+   "verified": "2026-08-22"
+  }
+ ],
+ "retired": []
+}

@@ -1,0 +1,1941 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Boros?",
+      "set": "Boros's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "Every battle of Boros",
+      "set": "1 battle page(s) naming Boros",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the aliases of Boros?",
+      "found": [
+        "Dominator of the Universe"
+      ],
+      "missing": [],
+      "members": [
+        "Dominator of the Universe"
+      ]
+    },
+    {
+      "query": "Every battle of Boros",
+      "found": [
+        "Saitama vs. Boros"
+      ],
+      "missing": [],
+      "members": [
+        "Saitama vs. Boros"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Saitama and Boros in One-Punch Man?",
+      "id": "opm-pg-boros-002",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's race in One-Punch Man?",
+      "id": "opm-pg-boros-003",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Mysterious Being"
+      ],
+      "found": [
+        "Mysterious Being"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's alias in One-Punch Man?",
+      "id": "opm-pg-boros-004",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Dominator of the Universe"
+      ],
+      "found": [
+        "Dominator of the Universe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's height in One-Punch Man?",
+      "id": "opm-pg-boros-005",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "240 cm"
+      ],
+      "found": [
+        "240 cm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's status in One-Punch Man?",
+      "id": "opm-pg-boros-006",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's birthplace in One-Punch Man?",
+      "id": "opm-pg-boros-007",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Boros's Home Planet"
+      ],
+      "found": [
+        "Boros's Home Planet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's occupation in One-Punch Man?",
+      "id": "opm-pg-boros-008",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Space Pirate"
+      ],
+      "found": [
+        "Space Pirate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's disaster level in One-Punch Man?",
+      "id": "opm-pg-boros-009",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Dragon (or higher)"
+      ],
+      "found": [
+        "Dragon (or higher)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's affiliation in One-Punch Man?",
+      "id": "opm-pg-boros-010",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Dark Matter Thieves"
+      ],
+      "found": [
+        "Dark Matter Thieves"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Boros first appear in the One-Punch Man manga?",
+      "id": "opm-pg-boros-011",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Boros first appear in the One-Punch Man anime?",
+      "id": "opm-pg-boros-012",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Episode 10"
+      ],
+      "found": [
+        "Episode 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the Japanese voice for Boros in One-Punch Man?",
+      "id": "opm-pg-boros-013",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Toshiyuki Morikawa"
+      ],
+      "found": [
+        "Toshiyuki Morikawa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the English voice for Boros in One-Punch Man?",
+      "id": "opm-pg-boros-014",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Chris Jai Alex"
+      ],
+      "found": [
+        "Chris Jai Alex"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the battle between Saitama and Boros in in One-Punch Man?",
+      "id": "opm-pg-boros-015",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Alien Conquerors Arc"
+      ],
+      "found": [
+        "Alien Conquerors Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What event is the battle between Saitama and Boros part of in One-Punch Man?",
+      "id": "opm-pg-boros-016",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Dark Matter Thieves' Invasion"
+      ],
+      "found": [
+        "Dark Matter Thieves' Invasion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the battle between Saitama and Boros take place in One-Punch Man?",
+      "id": "opm-pg-boros-017",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "A-City",
+        "Dark Matter Thieves' Ship"
+      ],
+      "found": [
+        "A-City",
+        "Dark Matter Thieves' Ship"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapters does the battle between Saitama and Boros span in One-Punch Man?",
+      "id": "opm-pg-boros-018",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Chapters 34, 35, 36"
+      ],
+      "found": [
+        "Chapters 34, 35, 36"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What anime episodes does the battle between Saitama and Boros span in One-Punch Man?",
+      "id": "opm-pg-boros-019",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Episodes 11, 12"
+      ],
+      "found": [
+        "Episodes 11, 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What webcomic chapters does the battle between Saitama and Boros span in One-Punch Man?",
+      "id": "opm-pg-boros-020",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Chapters 38, 39, 40"
+      ],
+      "found": [
+        "Chapters 38, 39, 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What battle comes before Saitama vs. Boros in One-Punch Man?",
+      "id": "opm-pg-boros-021",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Saitama vs. Groribas and Geryuganshoop"
+      ],
+      "found": [
+        "Saitama vs. Groribas and Geryuganshoop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What battle comes after Saitama vs. Boros in One-Punch Man?",
+      "id": "opm-pg-boros-022",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Saitama vs. Pluton"
+      ],
+      "found": [
+        "Saitama vs. Pluton"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What hero class was Saitama when he fought Boros in One-Punch Man?",
+      "id": "opm-pg-boros-023",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "B-Class"
+      ],
+      "found": [
+        "B-Class"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros introduce himself as when Saitama broke into his throne room in One-Punch Man?",
+      "id": "opm-pg-boros-024",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Dominator of the Universe"
+      ],
+      "found": [
+        "Dominator of the Universe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Boros attack A-City in One-Punch Man?",
+      "id": "opm-pg-boros-025",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "prophecy",
+        "worthy opponent"
+      ],
+      "found": [
+        "prophecy",
+        "worthy opponent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What had Boros done across the universe before coming to Earth in One-Punch Man?",
+      "id": "opm-pg-boros-026",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "shattering planets and razing civilizations"
+      ],
+      "found": [
+        "shattering planets and razing civilizations"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How long did the battle between Saitama and Boros last in One-Punch Man?",
+      "id": "opm-pg-boros-027",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "5 minutes and 20 seconds"
+      ],
+      "found": [
+        "5 minutes and 20 seconds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the anime's depiction of the battle between Saitama and Boros resemble in One-Punch Man?",
+      "id": "opm-pg-boros-028",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "poses and the heartbeat"
+      ],
+      "found": [
+        "poses and the heartbeat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama's punch do to Boros's arm during their battle in One-Punch Man?",
+      "id": "opm-pg-boros-029",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "blows off Boros' arm"
+      ],
+      "found": [
+        "blows off Boros' arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama's Serious Punch do to Boros's massive energy blast in One-Punch Man?",
+      "id": "opm-pg-boros-030",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "completely negates Boros' massive energy blast"
+      ],
+      "found": [
+        "completely negates Boros' massive energy blast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the pressure of Saitama's Serious Punch do to Boros in One-Punch Man?",
+      "id": "opm-pg-boros-031",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "decimates Boros"
+      ],
+      "found": [
+        "decimates Boros"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros acknowledge as he lay dying in One-Punch Man?",
+      "id": "opm-pg-boros-032",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Saitama was holding back the entire time"
+      ],
+      "found": [
+        "Saitama was holding back the entire time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros realize about the prophecy as he lay dying in One-Punch Man?",
+      "id": "opm-pg-boros-033",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "the prophecy he had believed in was false"
+      ],
+      "found": [
+        "the prophecy he had believed in was false"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who foretold that Boros would find an opponent on a distant planet in One-Punch Man?",
+      "id": "opm-pg-boros-034",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "alien seer"
+      ],
+      "found": [
+        "alien seer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Boros seeking when he traveled the universe in One-Punch Man?",
+      "id": "opm-pg-boros-035",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "the thrilling battle he sought"
+      ],
+      "found": [
+        "the thrilling battle he sought"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How long did Boros travel the universe before arriving on Earth in One-Punch Man?",
+      "id": "opm-pg-boros-036",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "20 years"
+      ],
+      "found": [
+        "20 years"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What percentage of A-City was destroyed by the Dark Matter Thieves in One-Punch Man?",
+      "id": "opm-pg-boros-037",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "99.8%"
+      ],
+      "found": [
+        "99.8%"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was the only structure left standing in A-City after the bombardment in One-Punch Man?",
+      "id": "opm-pg-boros-038",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Hero Association headquarters"
+      ],
+      "found": [
+        "Hero Association headquarters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which two of Boros's top subordinates did Saitama kill before confronting Boros in One-Punch Man?",
+      "id": "opm-pg-boros-039",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Groribas",
+        "Geryuganshoop"
+      ],
+      "found": [
+        "Groribas",
+        "Geryuganshoop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama punch Boros into when they first met in One-Punch Man?",
+      "id": "opm-pg-boros-040",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "a pillar"
+      ],
+      "found": [
+        "a pillar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama berate Boros for after punching him in One-Punch Man?",
+      "id": "opm-pg-boros-041",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "destroying A-City for a stupid reason"
+      ],
+      "found": [
+        "destroying A-City for a stupid reason"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros do after his restraining armor was destroyed in One-Punch Man?",
+      "id": "opm-pg-boros-042",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "unleashes his true strength"
+      ],
+      "found": [
+        "unleashes his true strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique did Boros use to launch Saitama to the Moon in One-Punch Man?",
+      "id": "opm-pg-boros-043",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Meteoric Burst"
+      ],
+      "found": [
+        "Meteoric Burst"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama get back to the spaceship after being launched to the Moon in One-Punch Man?",
+      "id": "opm-pg-boros-044",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "leaps back from the moon, landing directly on the spaceship"
+      ],
+      "found": [
+        "leaps back from the moon, landing directly on the spaceship"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros compliment Saitama for before passing away in One-Punch Man?",
+      "id": "opm-pg-boros-045",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "the splendid battle"
+      ],
+      "found": [
+        "the splendid battle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bofoi take along with his giant spaceship in the One-Punch Man webcomic?",
+      "id": "opm-pg-boros-046",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Boros's body"
+      ],
+      "found": [
+        "Boros's body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos discover in one of Bofoi's laboratories in the One-Punch Man webcomic?",
+      "id": "opm-pg-boros-047",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "unconscious Boros inside a medical machine filled with a healing liquid"
+      ],
+      "found": [
+        "unconscious Boros inside a medical machine filled with a healing liquid"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos question about Boros in Bofoi's laboratory in One-Punch Man?",
+      "id": "opm-pg-boros-048",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "whether he is a mindless weapon designed solely for combat"
+      ],
+      "found": [
+        "whether he is a mindless weapon designed solely for combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos do to the laboratory where he found Boros in One-Punch Man?",
+      "id": "opm-pg-boros-049",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "demolishing the entire laboratory"
+      ],
+      "found": [
+        "demolishing the entire laboratory"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What authority did Boros have as leader of the alien invasion force in One-Punch Man?",
+      "id": "opm-pg-boros-050",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "absolute authority over his armada"
+      ],
+      "found": [
+        "absolute authority over his armada"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros's species develop to adapt to the harsh conditions of their home planet in One-Punch Man?",
+      "id": "opm-pg-boros-051",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "the most advanced regenerative abilities in the universe"
+      ],
+      "found": [
+        "the most advanced regenerative abilities in the universe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What could Boros sense that appeared as an aura around people in One-Punch Man?",
+      "id": "opm-pg-boros-052",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "people's energy"
+      ],
+      "found": [
+        "people's energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama describe fighting Boros in One-Punch Man?",
+      "id": "opm-pg-boros-053",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "almost like a real fight"
+      ],
+      "found": [
+        "almost like a real fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Immense Strength do in One-Punch Man?",
+      "id": "opm-pg-boros-054",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "knock Saitama through several pillars of his ship with only a single punch"
+      ],
+      "found": [
+        "knock Saitama through several pillars of his ship with only a single punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Immense Durability do in One-Punch Man?",
+      "id": "opm-pg-boros-055",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "the first on-screen opponent to survive a direct hit from Saitama's punch"
+      ],
+      "found": [
+        "the first on-screen opponent to survive a direct hit from Saitama's punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Immense Speed and Reflexes do in One-Punch Man?",
+      "id": "opm-pg-boros-056",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "move at extraordinary speeds"
+      ],
+      "found": [
+        "move at extraordinary speeds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Immense Endurance do in One-Punch Man?",
+      "id": "opm-pg-boros-057",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "remained conscious long enough to speak with the hero before passing away"
+      ],
+      "found": [
+        "remained conscious long enough to speak with the hero before passing away"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Regeneration do in One-Punch Man?",
+      "id": "opm-pg-boros-058",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "regrew an arm instantly by focusing his energy"
+      ],
+      "found": [
+        "regrew an arm instantly by focusing his energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Energy Projection do in One-Punch Man?",
+      "id": "opm-pg-boros-059",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "fire devastating blasts from the eye in his chest"
+      ],
+      "found": [
+        "fire devastating blasts from the eye in his chest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Flight do in One-Punch Man?",
+      "id": "opm-pg-boros-060",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "propel himself through the air at incredibly high speeds"
+      ],
+      "found": [
+        "propel himself through the air at incredibly high speeds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Energy Bullets do in One-Punch Man?",
+      "id": "opm-pg-boros-061",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "condenses the energy in his body and shoots through his eyes"
+      ],
+      "found": [
+        "condenses the energy in his body and shoots through his eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Power Release do in One-Punch Man?",
+      "id": "opm-pg-boros-062",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "keep his immense powers in check"
+      ],
+      "found": [
+        "keep his immense powers in check"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Boros's Shockwave Generation do in One-Punch Man?",
+      "id": "opm-pg-boros-063",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "generate powerful shockwaves with the force of his punches"
+      ],
+      "found": [
+        "generate powerful shockwaves with the force of his punches"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Boros resort to Meteoric Burst in One-Punch Man?",
+      "id": "opm-pg-boros-064",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "when he wished to settle a fight quickly"
+      ],
+      "found": [
+        "when he wished to settle a fight quickly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Meteoric Burst do to Boros's body in One-Punch Man?",
+      "id": "opm-pg-boros-065",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "boost his body to speed and power beyond normal limits"
+      ],
+      "found": [
+        "boost his body to speed and power beyond normal limits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Meteoric Burst cost Boros in One-Punch Man?",
+      "id": "opm-pg-boros-066",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "putting an immense burden on his body and thus shortening his lifespan"
+      ],
+      "found": [
+        "putting an immense burden on his body and thus shortening his lifespan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Boros's speed appear in his Meteoric Burst form in One-Punch Man?",
+      "id": "opm-pg-boros-067",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "appeared as just a purple streak"
+      ],
+      "found": [
+        "appeared as just a purple streak"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Boros's ultimate attack in One-Punch Man?",
+      "id": "opm-pg-boros-068",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Collapsing Star Roaring Cannon"
+      ],
+      "found": [
+        "Collapsing Star Roaring Cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What could Boros launch from his mouth while in his Meteoric Burst form in One-Punch Man?",
+      "id": "opm-pg-boros-069",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "a massive beam of energy"
+      ],
+      "found": [
+        "a massive beam of energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How was the color of Boros's Collapsing Star Roaring Cannon different from his other energy beams in One-Punch Man?",
+      "id": "opm-pg-boros-070",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "golden tones"
+      ],
+      "found": [
+        "golden tones"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros say was needed to perform the Collapsing Star Roaring Cannon in One-Punch Man?",
+      "id": "opm-pg-boros-071",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "concentrate and release the entirety of his latent energy"
+      ],
+      "found": [
+        "concentrate and release the entirety of his latent energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros say his Collapsing Star Roaring Cannon had enough power to destroy in One-Punch Man?",
+      "id": "opm-pg-boros-072",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "the Earth's surface"
+      ],
+      "found": [
+        "the Earth's surface"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What rank did Boros place in the character popularity poll in One-Punch Man?",
+      "id": "opm-pg-boros-073",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "11th"
+      ],
+      "found": [
+        "11th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Boros look in the first release of the manga in One-Punch Man?",
+      "id": "opm-pg-boros-074",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "more human"
+      ],
+      "found": [
+        "more human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who redesigned Boros to look more alien in One-Punch Man?",
+      "id": "opm-pg-boros-075",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Yusuke Murata"
+      ],
+      "found": [
+        "Yusuke Murata"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What could Boros's name be a reference to in One-Punch Man?",
+      "id": "opm-pg-boros-076",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Ballos"
+      ],
+      "found": [
+        "Ballos"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Besides Boros, which two opponents deduced Saitama's immense power in One-Punch Man?",
+      "id": "opm-pg-boros-077",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Carnage Kabuto",
+        "Orochi"
+      ],
+      "found": [
+        "Carnage Kabuto",
+        "Orochi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Which of ONE's previous works is Boros an allusion to in One-Punch Man?",
+      "id": "opm-pg-boros-078",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Taiyo Man"
+      ],
+      "found": [
+        "Taiyo Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Murata abandon giving Boros another transformation past Meteoric Burst in One-Punch Man?",
+      "id": "opm-pg-boros-079",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "that would imply Boros was still holding back in Meteoric Burst"
+      ],
+      "found": [
+        "that would imply Boros was still holding back in Meteoric Burst"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which monsters did Murata state are his favorites in One-Punch Man?",
+      "id": "opm-pg-boros-080",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Boros",
+        "Deep Sea King"
+      ],
+      "found": [
+        "Boros",
+        "Deep Sea King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Boros to Saitama in One-Punch Man?",
+      "id": "opm-pg-boros-081",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "rival"
+      ],
+      "found": [
+        "rival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the location of Boros's Home Planet in One-Punch Man?",
+      "id": "opm-pg-boros-082",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "Space"
+      ],
+      "found": [
+        "Space"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What type of celestial body is Boros's Home Planet in One-Punch Man?",
+      "id": "opm-pg-boros-083",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "Planet"
+      ],
+      "found": [
+        "Planet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the climate of Boros's Home Planet like in One-Punch Man?",
+      "id": "opm-pg-boros-084",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "extremely harsh climate"
+      ],
+      "found": [
+        "extremely harsh climate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros demonstrate during his battle with Saitama about his home planet in One-Punch Man?",
+      "id": "opm-pg-boros-085",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "quickly regrowing his severed arm"
+      ],
+      "found": [
+        "quickly regrowing his severed arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Boros's Home Planet first appear in the One-Punch Man manga?",
+      "id": "opm-pg-boros-086",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "Chapter 36"
+      ],
+      "found": [
+        "Chapter 36"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Boros's Home Planet first appear in the One-Punch Man webcomic?",
+      "id": "opm-pg-boros-087",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "Chapter 40"
+      ],
+      "found": [
+        "Chapter 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Boros's Home Planet first appear in the One-Punch Man anime?",
+      "id": "opm-pg-boros-088",
+      "subject": "Boros's Home Planet",
+      "accept": "all",
+      "expected": [
+        "Episode 12"
+      ],
+      "found": [
+        "Episode 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What was Boros's restraining armor used for in One-Punch Man?",
+      "id": "opm-pg-boros-089",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "seal his immeasurable, irresistible power"
+      ],
+      "found": [
+        "seal his immeasurable, irresistible power"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the status of Boros's restraining armor in One-Punch Man?",
+      "id": "opm-pg-boros-090",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "Destroyed"
+      ],
+      "found": [
+        "Destroyed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What color is Boros's restraining armor in One-Punch Man?",
+      "id": "opm-pg-boros-091",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "golden"
+      ],
+      "found": [
+        "golden"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What design features does Boros's restraining armor have in One-Punch Man?",
+      "id": "opm-pg-boros-092",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "spike designs"
+      ],
+      "found": [
+        "spike designs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros's restraining armor keep Boros relatively unharmed from in One-Punch Man?",
+      "id": "opm-pg-boros-093",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "a normal punch from Saitama"
+      ],
+      "found": [
+        "a normal punch from Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama's blow send Boros into, shattering his armor, in One-Punch Man?",
+      "id": "opm-pg-boros-094",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "a wall"
+      ],
+      "found": [
+        "a wall"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the restraining armor allow Boros to do in most of his fights in One-Punch Man?",
+      "id": "opm-pg-boros-095",
+      "subject": "Boros's Restraining Armor",
+      "accept": "all",
+      "expected": [
+        "enjoy the thrill of battle without having to kill his opponents too soon"
+      ],
+      "found": [
+        "enjoy the thrill of battle without having to kill his opponents too soon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did the battle between Saitama and Boros end in One-Punch Man?",
+      "id": "opm-pg-boros-096",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "Boros is killed by Saitama"
+      ],
+      "found": [
+        "Boros is killed by Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros declare about Saitama out of the countless beings he had faced in One-Punch Man?",
+      "id": "opm-pg-boros-097",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "the only one to survive this long against him"
+      ],
+      "found": [
+        "the only one to survive this long against him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the massive spaceship do after the battle between Saitama and Boros in One-Punch Man?",
+      "id": "opm-pg-boros-098",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "begins to collapse, crashing toward the ruins of A-City"
+      ],
+      "found": [
+        "begins to collapse, crashing toward the ruins of A-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Saitama consider Boros to be at the time of their fight in One-Punch Man?",
+      "id": "opm-pg-boros-099",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "the most powerful foe he had faced"
+      ],
+      "found": [
+        "the most powerful foe he had faced"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros withstand from Saitama during their battle in One-Punch Man?",
+      "id": "opm-pg-boros-100",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "three normal punches",
+        "Consecutive Normal Punches",
+        "Serious Punch"
+      ],
+      "found": [
+        "three normal punches",
+        "Consecutive Normal Punches",
+        "Serious Punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros's fighting style note about his record in combat in One-Punch Man?",
+      "id": "opm-pg-boros-101",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "not a single loss"
+      ],
+      "found": [
+        "not a single loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Boros depicted as in the 2017 Halloween cover of One-Punch Man?",
+      "id": "opm-pg-boros-102",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Great King Enma"
+      ],
+      "found": [
+        "Great King Enma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What role does Boros play in the video game A Hero Nobody Knows in One-Punch Man?",
+      "id": "opm-pg-boros-103",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "final boss"
+      ],
+      "found": [
+        "final boss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Boros's incredible speed do to his own ship and crew in One-Punch Man?",
+      "id": "opm-pg-boros-104",
+      "subject": "Saitama vs. Boros",
+      "accept": "all",
+      "expected": [
+        "kills several of his own crew"
+      ],
+      "found": [
+        "kills several of his own crew"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 103,
+    "fact_present": 103
+  }
+}

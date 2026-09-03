@@ -1,0 +1,797 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Yorozu?",
+      "set": "Every named technique of Yorozu",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Yorozu",
+      "set": "Every battle involving Yorozu",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Yorozu?",
+      "found": [
+        "Domain Expansion",
+        "Construction",
+        "Threefold Affliction"
+      ],
+      "missing": [],
+      "members": [
+        "Construction",
+        "Domain Expansion",
+        "Threefold Affliction"
+      ]
+    },
+    {
+      "query": "Every battle involving Yorozu",
+      "found": [
+        "Sukuna vs. Yorozu"
+      ],
+      "missing": [],
+      "members": [
+        "Sukuna vs. Yorozu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Yorozu's name?",
+      "id": "jjk-pg-yorozu-001",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "\u4e07"
+      ],
+      "found": [
+        "\u4e07"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Yorozu's name?",
+      "id": "jjk-pg-yorozu-002",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Yorozu"
+      ],
+      "found": [
+        "Yorozu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yorozu's race?",
+      "id": "jjk-pg-yorozu-003",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Yorozu?",
+      "id": "jjk-pg-yorozu-004",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "1000+"
+      ],
+      "found": [
+        "1000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yorozu's gender?",
+      "id": "jjk-pg-yorozu-005",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Yorozu?",
+      "id": "jjk-pg-yorozu-006",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yorozu's occupation?",
+      "id": "jjk-pg-yorozu-007",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yorozu first appear?",
+      "id": "jjk-pg-yorozu-008",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Chapter 211"
+      ],
+      "found": [
+        "Chapter 211"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Sukuna vs. Yorozu?",
+      "id": "jjk-pg-yorozu-009",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Sukuna vs. Yorozu take place?",
+      "id": "jjk-pg-yorozu-010",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Sukuna vs. Yorozu begin?",
+      "id": "jjk-pg-yorozu-011",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Chapter 217"
+      ],
+      "found": [
+        "Chapter 217"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Sukuna vs. Yorozu take place?",
+      "id": "jjk-pg-yorozu-012",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yorozu prefer to dress in the Heian Era?",
+      "id": "jjk-pg-yorozu-015",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "in the nude and hardly wore clothing"
+      ],
+      "found": [
+        "in the nude and hardly wore clothing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu wear on the day she met Sukuna?",
+      "id": "jjk-pg-yorozu-016",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "an untied haori"
+      ],
+      "found": [
+        "an untied haori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What combat attire did Yorozu wear for her fight with Sukuna in the Culling Game?",
+      "id": "jjk-pg-yorozu-017",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "a sleeveless dark body suit with loose light-colored pants that tucked into boots"
+      ],
+      "found": [
+        "a sleeveless dark body suit with loose light-colored pants that tucked into boots"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the well-mannered gentlemen of the Heian capital refer to Yorozu as a hick?",
+      "id": "jjk-pg-yorozu-018",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "behaved in an inelegant and obnoxious manner"
+      ],
+      "found": [
+        "behaved in an inelegant and obnoxious manner"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yorozu want to be the one who killed Sukuna?",
+      "id": "jjk-pg-yorozu-019",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "to take his solitude for herself"
+      ],
+      "found": [
+        "to take his solitude for herself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What remained Yorozu's primary desire even after a thousand years?",
+      "id": "jjk-pg-yorozu-020",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "finding and kill Sukuna to teach him about love"
+      ],
+      "found": [
+        "finding and kill Sukuna to teach him about love"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What binding vow did Yorozu make with Sukuna?",
+      "id": "jjk-pg-yorozu-021",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "the two would marry if she defeated him"
+      ],
+      "found": [
+        "the two would marry if she defeated him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu fantasize about doing in celebration of marrying Sukuna?",
+      "id": "jjk-pg-yorozu-022",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "destroy three villages, make shrunken heads"
+      ],
+      "found": [
+        "destroy three villages, make shrunken heads"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What soup did Yorozu want to enjoy in celebration?",
+      "id": "jjk-pg-yorozu-023",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "monkey-brain soup"
+      ],
+      "found": [
+        "monkey-brain soup"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu want Sukuna to use to defeat her?",
+      "id": "jjk-pg-yorozu-024",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "his own technique"
+      ],
+      "found": [
+        "his own technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu's fighting style best?",
+      "id": "jjk-pg-yorozu-025",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "the Five Empty Generals of the Toh"
+      ],
+      "found": [
+        "the Five Empty Generals of the Toh"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu's fighting style earn her?",
+      "id": "jjk-pg-yorozu-026",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "official recognition from the Fujiwara clan"
+      ],
+      "found": [
+        "official recognition from the Fujiwara clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did the fight between Yorozu and Sukuna start out?",
+      "id": "jjk-pg-yorozu-027",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "initially competitive, where Yorozu landed several direct hits and withstood the Ten Shadows Technique"
+      ],
+      "found": [
+        "initially competitive, where Yorozu landed several direct hits and withstood the Ten Shadows Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could Yorozu create consecutively with no signs of fatigue?",
+      "id": "jjk-pg-yorozu-028",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "large constructs"
+      ],
+      "found": [
+        "large constructs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the first sign of Yorozu exhausting her cursed energy?",
+      "id": "jjk-pg-yorozu-029",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "a nosebleed"
+      ],
+      "found": [
+        "a nosebleed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu pilot using semi-autonomous cursed energy?",
+      "id": "jjk-pg-yorozu-030",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "her Insect Armor"
+      ],
+      "found": [
+        "her Insect Armor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Yorozu's Construction technique re-create?",
+      "id": "jjk-pg-yorozu-031",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "any substance she recognized except for special cursed tools"
+      ],
+      "found": [
+        "any substance she recognized except for special cursed tools"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Yorozu construct with Insect Wings?",
+      "id": "jjk-pg-yorozu-032",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "two pairs of insect-like wings on her back that allow her to fly at high speeds"
+      ],
+      "found": [
+        "two pairs of insect-like wings on her back that allow her to fly at high speeds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu develop as her primary weapon?",
+      "id": "jjk-pg-yorozu-033",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "a liquid metal"
+      ],
+      "found": [
+        "a liquid metal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yorozu choose an insect's carapace for her construction?",
+      "id": "jjk-pg-yorozu-034",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "the ultimate armor"
+      ],
+      "found": [
+        "the ultimate armor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What property makes Yorozu's True Sphere untouchable?",
+      "id": "jjk-pg-yorozu-035",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "no contact area and generates infinite pressure as a result"
+      ],
+      "found": [
+        "no contact area and generates infinite pressure as a result"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the structures inside Yorozu's domain resemble?",
+      "id": "jjk-pg-yorozu-036",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "the disembodied brains and ganglia of insects"
+      ],
+      "found": [
+        "the disembodied brains and ganglia of insects"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What arc event besides the battle with Sukuna is listed for Yorozu?",
+      "id": "jjk-pg-yorozu-037",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yorozu rank in the third Popularity Poll?",
+      "id": "jjk-pg-yorozu-038",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "84th"
+      ],
+      "found": [
+        "84th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yorozu rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-yorozu-039",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "55th"
+      ],
+      "found": [
+        "55th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yorozu's favorite food?",
+      "id": "jjk-pg-yorozu-040",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "monkey-brain potage"
+      ],
+      "found": [
+        "monkey-brain potage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yorozu claim to be when she revealed herself to Megumi?",
+      "id": "jjk-pg-yorozu-041",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "his older sister"
+      ],
+      "found": [
+        "his older sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yorozu adopt Tsumiki's personality?",
+      "id": "jjk-pg-yorozu-042",
+      "subject": "Yorozu",
+      "accept": "all",
+      "expected": [
+        "to fool Megumi to further her ends"
+      ],
+      "found": [
+        "to fool Megumi to further her ends"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 40,
+    "fact_present": 40
+  }
+}

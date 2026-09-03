@@ -1,0 +1,56 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": []
+    },
+    {
+      "path": "Prologue",
+      "covered_by": []
+    },
+    {
+      "path": "Battle",
+      "covered_by": [
+        "page-gen:battle:Jujutsu Sorcerers vs. Dagon:outcome",
+        "page-gen:battle:Jujutsu Sorcerers vs. Dagon:place",
+        "page-gen:battle:Jujutsu Sorcerers vs. Dagon:date",
+        "page-gen:battle:Jujutsu Sorcerers vs. Dagon:chapters",
+        "page-gen:battle:Jujutsu Sorcerers vs. Dagon:episodes",
+        "page-gen:battle:Jujutsu Sorcerers vs. Dagon:arc"
+      ]
+    },
+    {
+      "path": "Aftermath",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "infobox",
+    "Prologue",
+    "Aftermath"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

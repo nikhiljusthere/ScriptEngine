@@ -1,0 +1,3293 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the families of Wasuke Itadori?",
+      "set": "Every family of Wasuke Itadori",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Wasuke Itadori",
+      "set": "Every battle involving Wasuke Itadori",
+      "confidence": "declared",
+      "returned": 24,
+      "available": 24,
+      "canon": 24,
+      "found": 24,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the families of Wasuke Itadori?",
+      "found": [
+        "Jin Itadori",
+        "Yuji Itadori",
+        "Kaori Itadori",
+        "Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jin Itadori",
+        "Kaori Itadori",
+        "Sukuna",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "Every battle involving Wasuke Itadori",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori & Aoi Todo vs. Hanami",
+        "Yuji Itadori & Aoi Todo vs. Mahito",
+        "Yuji Itadori & Choso vs. Cursed Spirits",
+        "Yuji Itadori & Kento Nanami vs. Mahito",
+        "Yuji Itadori & Kento Nanami vs. Transfigured Humans",
+        "Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits",
+        "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka",
+        "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits",
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito",
+        "Yuji Itadori vs. Aoi Todo",
+        "Yuji Itadori vs. Choso",
+        "Yuji Itadori vs. Finger Bearer",
+        "Yuji Itadori vs. Haba & Hanyu",
+        "Yuji Itadori vs. Hiromi Higuruma",
+        "Yuji Itadori vs. Junpei Yoshino",
+        "Yuji Itadori vs. Kinji Hakari",
+        "Yuji Itadori vs. Ko-Guy",
+        "Yuji Itadori vs. Mahito",
+        "Yuji Itadori vs. Panda",
+        "Yuji Itadori vs. Yuta Okkotsu",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori & Aoi Todo vs. Hanami",
+        "Yuji Itadori & Aoi Todo vs. Mahito",
+        "Yuji Itadori & Choso vs. Cursed Spirits",
+        "Yuji Itadori & Kento Nanami vs. Mahito",
+        "Yuji Itadori & Kento Nanami vs. Transfigured Humans",
+        "Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits",
+        "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka",
+        "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits",
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito",
+        "Yuji Itadori vs. Aoi Todo",
+        "Yuji Itadori vs. Choso",
+        "Yuji Itadori vs. Finger Bearer",
+        "Yuji Itadori vs. Haba & Hanyu",
+        "Yuji Itadori vs. Hiromi Higuruma",
+        "Yuji Itadori vs. Junpei Yoshino",
+        "Yuji Itadori vs. Kinji Hakari",
+        "Yuji Itadori vs. Ko-Guy",
+        "Yuji Itadori vs. Mahito",
+        "Yuji Itadori vs. Panda",
+        "Yuji Itadori vs. Yuta Okkotsu",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Wasuke Itadori's name?",
+      "id": "jjk-pg-wasuke_itadori-001",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "\u864e\u6756\u502d\u52a9"
+      ],
+      "found": [
+        "\u864e\u6756\u502d\u52a9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Wasuke Itadori's name?",
+      "id": "jjk-pg-wasuke_itadori-002",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Itadori Wasuke"
+      ],
+      "found": [
+        "Itadori Wasuke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Wasuke Itadori's race?",
+      "id": "jjk-pg-wasuke_itadori-003",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Wasuke Itadori's gender?",
+      "id": "jjk-pg-wasuke_itadori-004",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Wasuke Itadori?",
+      "id": "jjk-pg-wasuke_itadori-005",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Wasuke Itadori first appear?",
+      "id": "jjk-pg-wasuke_itadori-006",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Wasuke Itadori first depicted?",
+      "id": "jjk-pg-wasuke_itadori-007",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Wasuke Itadori's Japanese voice actor?",
+      "id": "jjk-pg-wasuke_itadori-008",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shigeru Chiba"
+      ],
+      "found": [
+        "Shigeru Chiba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Wasuke Itadori's English voice actor?",
+      "id": "jjk-pg-wasuke_itadori-009",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Kyle Hebert"
+      ],
+      "found": [
+        "Kyle Hebert"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-wasuke_itadori-010",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-wasuke_itadori-011",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-wasuke_itadori-012",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-wasuke_itadori-013",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-wasuke_itadori-014",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-wasuke_itadori-015",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-wasuke_itadori-016",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat"
+      ],
+      "found": [
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-wasuke_itadori-017",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-wasuke_itadori-018",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-wasuke_itadori-019",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-wasuke_itadori-020",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-wasuke_itadori-021",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-wasuke_itadori-022",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Black Flash, Blood Manipulation, Piercing Blood, Domain Expansion, Hand-to-Hand Combat, Divergent Fist, Reverse Cursed Technique, Shrine, Dismantle, Simple Domain"
+      ],
+      "found": [
+        "Black Flash, Blood Manipulation, Piercing Blood, Domain Expansion, Hand-to-Hand Combat, Divergent Fist, Reverse Cursed Technique, Shrine, Dismantle, Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Aoi Todo vs. Hanami?",
+      "id": "jjk-pg-wasuke_itadori-023",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Gojo takes over the battle."
+      ],
+      "found": [
+        "Gojo takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Aoi Todo vs. Hanami take place?",
+      "id": "jjk-pg-wasuke_itadori-024",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Aoi Todo vs. Hanami begin?",
+      "id": "jjk-pg-wasuke_itadori-025",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 48"
+      ],
+      "found": [
+        "Chapter 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Aoi Todo vs. Hanami depicted?",
+      "id": "jjk-pg-wasuke_itadori-026",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 19 - 20"
+      ],
+      "found": [
+        "Episode 19 - 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Aoi Todo vs. Hanami take place?",
+      "id": "jjk-pg-wasuke_itadori-027",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Aoi Todo vs. Hanami?",
+      "id": "jjk-pg-wasuke_itadori-028",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Black Flash"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Aoi Todo vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-029",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji & Todo are victorious. Pseudo-Geto intervenes."
+      ],
+      "found": [
+        "Yuji & Todo are victorious. Pseudo-Geto intervenes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-030",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-031",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Aoi Todo vs. Mahito begin?",
+      "id": "jjk-pg-wasuke_itadori-032",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 127"
+      ],
+      "found": [
+        "Chapter 127"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Aoi Todo vs. Mahito depicted?",
+      "id": "jjk-pg-wasuke_itadori-033",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 44 - 45"
+      ],
+      "found": [
+        "Episode 44 - 45"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-034",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Aoi Todo vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-035",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation, Divergent Fist, Black Flash"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation, Divergent Fist, Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Choso vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-036",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji & Choso are victorious. Naoya confronts them after."
+      ],
+      "found": [
+        "Yuji & Choso are victorious. Naoya confronts them after."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Choso vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-037",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori & Choso vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-038",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 139"
+      ],
+      "found": [
+        "Chapter 139"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Choso vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-wasuke_itadori-039",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 48"
+      ],
+      "found": [
+        "Episode 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Choso vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-040",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Choso vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-041",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Kento Nanami vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-042",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Mahito withdraws."
+      ],
+      "found": [
+        "Mahito withdraws."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Kento Nanami vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-043",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Satozakura High"
+      ],
+      "found": [
+        "Satozakura High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Kento Nanami vs. Mahito begin?",
+      "id": "jjk-pg-wasuke_itadori-044",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 29"
+      ],
+      "found": [
+        "Chapter 29"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Kento Nanami vs. Mahito depicted?",
+      "id": "jjk-pg-wasuke_itadori-045",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 13"
+      ],
+      "found": [
+        "Episode 13"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Kento Nanami vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-046",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Kento Nanami vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-047",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Divergent Fist"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Divergent Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Kento Nanami vs. Transfigured Humans?",
+      "id": "jjk-pg-wasuke_itadori-048",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nanami are victorious."
+      ],
+      "found": [
+        "Yuji & Nanami are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "id": "jjk-pg-wasuke_itadori-049",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Kinema Cinema"
+      ],
+      "found": [
+        "Kinema Cinema"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "id": "jjk-pg-wasuke_itadori-050",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "September 2018"
+      ],
+      "found": [
+        "September 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Kento Nanami vs. Transfigured Humans begin?",
+      "id": "jjk-pg-wasuke_itadori-051",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 19"
+      ],
+      "found": [
+        "Chapter 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Kento Nanami vs. Transfigured Humans depicted?",
+      "id": "jjk-pg-wasuke_itadori-052",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 9"
+      ],
+      "found": [
+        "Episode 9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "id": "jjk-pg-wasuke_itadori-053",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Kento Nanami vs. Transfigured Humans?",
+      "id": "jjk-pg-wasuke_itadori-054",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Divergent Fist"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Divergent Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-055",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji incarnates Sukuna."
+      ],
+      "found": [
+        "Yuji incarnates Sukuna."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-056",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Sugisawa Municipal High School #3"
+      ],
+      "found": [
+        "Sugisawa Municipal High School #3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-057",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "June 2018"
+      ],
+      "found": [
+        "June 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-058",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-wasuke_itadori-059",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-060",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb"
+      ],
+      "found": [
+        "Fearsome Womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-061",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Cursed Object: Sukuna finger"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Cursed Object: Sukuna finger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka?",
+      "id": "jjk-pg-wasuke_itadori-062",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji & Megumi are victorious."
+      ],
+      "found": [
+        "Yuji & Megumi are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "id": "jjk-pg-wasuke_itadori-063",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Metropolitan Expressway RT. 3 Shibuya Line"
+      ],
+      "found": [
+        "Metropolitan Expressway RT. 3 Shibuya Line"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "id": "jjk-pg-wasuke_itadori-064",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka begin?",
+      "id": "jjk-pg-wasuke_itadori-065",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 94"
+      ],
+      "found": [
+        "Chapter 94"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka depicted?",
+      "id": "jjk-pg-wasuke_itadori-066",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 35"
+      ],
+      "found": [
+        "Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "id": "jjk-pg-wasuke_itadori-067",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-068",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nobara exorcise all curses."
+      ],
+      "found": [
+        "Yuji & Nobara exorcise all curses."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-069",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Roppongi, Tokyo"
+      ],
+      "found": [
+        "Roppongi, Tokyo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-070",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "June 2018"
+      ],
+      "found": [
+        "June 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits begin?",
+      "id": "jjk-pg-wasuke_itadori-071",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 4"
+      ],
+      "found": [
+        "Chapter 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-wasuke_itadori-072",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 3"
+      ],
+      "found": [
+        "Episode 3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-wasuke_itadori-073",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb"
+      ],
+      "found": [
+        "Fearsome Womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits?",
+      "id": "jjk-pg-wasuke_itadori-074",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Cursed Tool: Slaughter Demon"
+      ],
+      "found": [
+        "Cursed Tool: Slaughter Demon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "id": "jjk-pg-wasuke_itadori-075",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nobara are victorious."
+      ],
+      "found": [
+        "Yuji & Nobara are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-wasuke_itadori-076",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yasohachi Bridge"
+      ],
+      "found": [
+        "Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu begin?",
+      "id": "jjk-pg-wasuke_itadori-077",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 59"
+      ],
+      "found": [
+        "Chapter 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu depicted?",
+      "id": "jjk-pg-wasuke_itadori-078",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 23 - 24"
+      ],
+      "found": [
+        "Episode 23 - 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-wasuke_itadori-079",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Death Painting"
+      ],
+      "found": [
+        "Death Painting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "id": "jjk-pg-wasuke_itadori-080",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Black Flash"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-081",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "found": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-082",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "found": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-083",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Mahito begin?",
+      "id": "jjk-pg-wasuke_itadori-084",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 121"
+      ],
+      "found": [
+        "Chapter 121"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Mahito depicted?",
+      "id": "jjk-pg-wasuke_itadori-085",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 42 - 44"
+      ],
+      "found": [
+        "Episode 42 - 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-086",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-087",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Aoi Todo?",
+      "id": "jjk-pg-wasuke_itadori-088",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Hanami."
+      ],
+      "found": [
+        "Interrupted by Hanami."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Aoi Todo take place?",
+      "id": "jjk-pg-wasuke_itadori-089",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Aoi Todo begin?",
+      "id": "jjk-pg-wasuke_itadori-090",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 34"
+      ],
+      "found": [
+        "Chapter 34"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Aoi Todo depicted?",
+      "id": "jjk-pg-wasuke_itadori-091",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 15 - 16"
+      ],
+      "found": [
+        "Episode 15 - 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Aoi Todo take place?",
+      "id": "jjk-pg-wasuke_itadori-092",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Choso?",
+      "id": "jjk-pg-wasuke_itadori-093",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Choso is victorious."
+      ],
+      "found": [
+        "Choso is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Choso take place?",
+      "id": "jjk-pg-wasuke_itadori-094",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Choso take place?",
+      "id": "jjk-pg-wasuke_itadori-095",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Choso begin?",
+      "id": "jjk-pg-wasuke_itadori-096",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 101"
+      ],
+      "found": [
+        "Chapter 101"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Choso depicted?",
+      "id": "jjk-pg-wasuke_itadori-097",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 37"
+      ],
+      "found": [
+        "Episode 37"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Choso take place?",
+      "id": "jjk-pg-wasuke_itadori-098",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Finger Bearer?",
+      "id": "jjk-pg-wasuke_itadori-099",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Sukuna takes over the battle."
+      ],
+      "found": [
+        "Sukuna takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Finger Bearer take place?",
+      "id": "jjk-pg-wasuke_itadori-100",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Eishu Juvenile Detention Center"
+      ],
+      "found": [
+        "Eishu Juvenile Detention Center"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Finger Bearer take place?",
+      "id": "jjk-pg-wasuke_itadori-101",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "July 2018"
+      ],
+      "found": [
+        "July 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Finger Bearer begin?",
+      "id": "jjk-pg-wasuke_itadori-102",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 6"
+      ],
+      "found": [
+        "Chapter 6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Finger Bearer depicted?",
+      "id": "jjk-pg-wasuke_itadori-103",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 4"
+      ],
+      "found": [
+        "Episode 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Finger Bearer take place?",
+      "id": "jjk-pg-wasuke_itadori-104",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb"
+      ],
+      "found": [
+        "Fearsome Womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Haba & Hanyu?",
+      "id": "jjk-pg-wasuke_itadori-105",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji is victorious."
+      ],
+      "found": [
+        "Yuji is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-wasuke_itadori-106",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-wasuke_itadori-107",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Haba & Hanyu begin?",
+      "id": "jjk-pg-wasuke_itadori-108",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Haba & Hanyu depicted?",
+      "id": "jjk-pg-wasuke_itadori-109",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-wasuke_itadori-110",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Hiromi Higuruma?",
+      "id": "jjk-pg-wasuke_itadori-111",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Higuruma allows Yuji to win."
+      ],
+      "found": [
+        "Higuruma allows Yuji to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-wasuke_itadori-112",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-wasuke_itadori-113",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Hiromi Higuruma begin?",
+      "id": "jjk-pg-wasuke_itadori-114",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 164"
+      ],
+      "found": [
+        "Chapter 164"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Hiromi Higuruma depicted?",
+      "id": "jjk-pg-wasuke_itadori-115",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 55 - 56"
+      ],
+      "found": [
+        "Episode 55 - 56"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-wasuke_itadori-116",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-wasuke_itadori-117",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji talks Junpei down."
+      ],
+      "found": [
+        "Yuji talks Junpei down."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-wasuke_itadori-118",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Satozakura High School"
+      ],
+      "found": [
+        "Satozakura High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-wasuke_itadori-119",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 26"
+      ],
+      "found": [
+        "Chapter 26"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Junpei Yoshino depicted?",
+      "id": "jjk-pg-wasuke_itadori-120",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 12"
+      ],
+      "found": [
+        "Episode 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-wasuke_itadori-121",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Kinji Hakari?",
+      "id": "jjk-pg-wasuke_itadori-122",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hakari agrees to listen."
+      ],
+      "found": [
+        "Hakari agrees to listen."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Kinji Hakari take place?",
+      "id": "jjk-pg-wasuke_itadori-123",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Gachinko Fight Club"
+      ],
+      "found": [
+        "Gachinko Fight Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Kinji Hakari take place?",
+      "id": "jjk-pg-wasuke_itadori-124",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "November 11, 2018"
+      ],
+      "found": [
+        "November 11, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Kinji Hakari?",
+      "id": "jjk-pg-wasuke_itadori-125",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 155 & 157"
+      ],
+      "found": [
+        "Chapter 155 & 157"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Kinji Hakari depicted?",
+      "id": "jjk-pg-wasuke_itadori-126",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 52 - 53"
+      ],
+      "found": [
+        "Episode 52 - 53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Kinji Hakari take place?",
+      "id": "jjk-pg-wasuke_itadori-127",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Ko-Guy?",
+      "id": "jjk-pg-wasuke_itadori-128",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori is victorious."
+      ],
+      "found": [
+        "Yuji Itadori is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Ko-Guy take place?",
+      "id": "jjk-pg-wasuke_itadori-129",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Meiji-Jingumae Station B2F"
+      ],
+      "found": [
+        "Meiji-Jingumae Station B2F"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Ko-Guy take place?",
+      "id": "jjk-pg-wasuke_itadori-130",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Ko-Guy begin?",
+      "id": "jjk-pg-wasuke_itadori-131",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 86"
+      ],
+      "found": [
+        "Chapter 86"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Ko-Guy depicted?",
+      "id": "jjk-pg-wasuke_itadori-132",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 32"
+      ],
+      "found": [
+        "Episode 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Ko-Guy take place?",
+      "id": "jjk-pg-wasuke_itadori-133",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Mahito?",
+      "id": "jjk-pg-wasuke_itadori-134",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Nanami joins the battle."
+      ],
+      "found": [
+        "Nanami joins the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-135",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Satozakura High"
+      ],
+      "found": [
+        "Satozakura High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Mahito begin?",
+      "id": "jjk-pg-wasuke_itadori-136",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 27"
+      ],
+      "found": [
+        "Chapter 27"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Mahito depicted?",
+      "id": "jjk-pg-wasuke_itadori-137",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 12"
+      ],
+      "found": [
+        "Episode 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Mahito take place?",
+      "id": "jjk-pg-wasuke_itadori-138",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Panda?",
+      "id": "jjk-pg-wasuke_itadori-139",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori is victorious."
+      ],
+      "found": [
+        "Yuji Itadori is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Panda take place?",
+      "id": "jjk-pg-wasuke_itadori-140",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Gachinko Fight Club"
+      ],
+      "found": [
+        "Gachinko Fight Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Panda take place?",
+      "id": "jjk-pg-wasuke_itadori-141",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "November 10, 2018"
+      ],
+      "found": [
+        "November 10, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Panda?",
+      "id": "jjk-pg-wasuke_itadori-142",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 153"
+      ],
+      "found": [
+        "Chapter 153"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Panda depicted?",
+      "id": "jjk-pg-wasuke_itadori-143",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 52"
+      ],
+      "found": [
+        "Episode 52"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Panda take place?",
+      "id": "jjk-pg-wasuke_itadori-144",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Yuta Okkotsu?",
+      "id": "jjk-pg-wasuke_itadori-145",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Yuta Okkotsu take place?",
+      "id": "jjk-pg-wasuke_itadori-146",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Yuta Okkotsu begin?",
+      "id": "jjk-pg-wasuke_itadori-147",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 140"
+      ],
+      "found": [
+        "Chapter 140"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Yuta Okkotsu depicted?",
+      "id": "jjk-pg-wasuke_itadori-148",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Episode 48"
+      ],
+      "found": [
+        "Episode 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Yuta Okkotsu take place?",
+      "id": "jjk-pg-wasuke_itadori-149",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori vs. Yuta Okkotsu?",
+      "id": "jjk-pg-wasuke_itadori-150",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation, Non-Cursed Tool: Survival Knife"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Cursed Energy Manipulation, Non-Cursed Tool: Survival Knife"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-wasuke_itadori-151",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-wasuke_itadori-152",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-wasuke_itadori-153",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-wasuke_itadori-154",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-wasuke_itadori-155",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Wasuke Itadori use in Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-wasuke_itadori-156",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat"
+      ],
+      "found": [
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Wasuke Itadori look like?",
+      "id": "jjk-pg-wasuke_itadori-159",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "an elderly, bedridden man with many wrinkles, short white hair and green eyes"
+      ],
+      "found": [
+        "an elderly, bedridden man with many wrinkles, short white hair and green eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Wasuke wear while in the hospital?",
+      "id": "jjk-pg-wasuke_itadori-160",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "a light blue hospital gown"
+      ],
+      "found": [
+        "a light blue hospital gown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Wasuke Itadori characterized?",
+      "id": "jjk-pg-wasuke_itadori-161",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "a selfless, caring man who taught Yuji to help others"
+      ],
+      "found": [
+        "a selfless, caring man who taught Yuji to help others"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Wasuke's worst trait?",
+      "id": "jjk-pg-wasuke_itadori-162",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "very short tempered and stubborn"
+      ],
+      "found": [
+        "very short tempered and stubborn"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Wasuke's temper mean for his visitors?",
+      "id": "jjk-pg-wasuke_itadori-163",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "nobody else wanted to visit him"
+      ],
+      "found": [
+        "nobody else wanted to visit him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Wasuke tell Yuji to do to avoid dying alone?",
+      "id": "jjk-pg-wasuke_itadori-164",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "be surrounded by friends to avoid dying alone"
+      ],
+      "found": [
+        "be surrounded by friends to avoid dying alone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where was Wasuke on March 20, 2003?",
+      "id": "jjk-pg-wasuke_itadori-165",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "in a Sendai hospital with his son, Jin Itadori holding a newborn Yuji"
+      ],
+      "found": [
+        "in a Sendai hospital with his son, Jin Itadori holding a newborn Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Wasuke tell Jin regarding Yuji's mother?",
+      "id": "jjk-pg-wasuke_itadori-166",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "asked Jin to \"leave\" Kaori for good as he did not trust her"
+      ],
+      "found": [
+        "asked Jin to \"leave\" Kaori for good as he did not trust her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Wasuke raise Yuji?",
+      "id": "jjk-pg-wasuke_itadori-167",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "for most of the boy's life, moving to a small town for work purposes eventually returning to Sendai when the boy was six to seven years old"
+      ],
+      "found": [
+        "for most of the boy's life, moving to a small town for work purposes eventually returning to Sendai when the boy was six to seven years old"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Wasuke diagnosed with?",
+      "id": "jjk-pg-wasuke_itadori-168",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "lung cancer"
+      ],
+      "found": [
+        "lung cancer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Wasuke reject early treatment?",
+      "id": "jjk-pg-wasuke_itadori-169",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "the harsh side effects that would follow"
+      ],
+      "found": [
+        "the harsh side effects that would follow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Wasuke tell Yuji before he passed?",
+      "id": "jjk-pg-wasuke_itadori-170",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "he is a \"strong kid\" and to help people whenever he can"
+      ],
+      "found": [
+        "he is a \"strong kid\" and to help people whenever he can"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was done with Wasuke's body after his death?",
+      "id": "jjk-pg-wasuke_itadori-171",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "sent to the morgue and cremated, and Yuji collects his ashes into an urn"
+      ],
+      "found": [
+        "sent to the morgue and cremated, and Yuji collects his ashes into an urn"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What abilities does Wasuke Itadori have?",
+      "id": "jjk-pg-wasuke_itadori-172",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "no additional abilities, though he does know basic martial arts that he later taught to Yuji"
+      ],
+      "found": [
+        "no additional abilities, though he does know basic martial arts that he later taught to Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Wasuke Itadori rank in the 1st Character Popularity Poll?",
+      "id": "jjk-pg-wasuke_itadori-173",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "60th place in the manga's 1st Character Popularity Poll with 73 votes"
+      ],
+      "found": [
+        "60th place in the manga's 1st Character Popularity Poll with 73 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which character does Wasuke's Japanese voice actor also voice?",
+      "id": "jjk-pg-wasuke_itadori-174",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Jogo"
+      ],
+      "found": [
+        "Jogo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which character does Wasuke's English voice actor also voice?",
+      "id": "jjk-pg-wasuke_itadori-175",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Kechizu"
+      ],
+      "found": [
+        "Kechizu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Wasuke Itadori the reincarnation of?",
+      "id": "jjk-pg-wasuke_itadori-176",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "Sukuna's twin brother who he ate in their mother's womb"
+      ],
+      "found": [
+        "Sukuna's twin brother who he ate in their mother's womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Wasuke Itadori's cause of death?",
+      "id": "jjk-pg-wasuke_itadori-177",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "lung cancer"
+      ],
+      "found": [
+        "lung cancer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did people separate themselves from Wasuke?",
+      "id": "jjk-pg-wasuke_itadori-178",
+      "subject": "Wasuke Itadori",
+      "accept": "all",
+      "expected": [
+        "his rough temperament"
+      ],
+      "found": [
+        "his rough temperament"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 28,
+    "canon_total": 28,
+    "canon_recall": 1.0,
+    "members_returned": 28,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 176,
+    "fact_present": 176
+  }
+}

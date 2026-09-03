@@ -441,8 +441,12 @@ def expected_type(candidates: list[str], types: dict[str, str]) -> str:
     best, count = max(counts.items(), key=lambda item: item[1])
     # A bare plurality is not enough: `Galactic Frieza Army` is 121 characters
     # out of 230 classified, and that is the answer, but a set split three ways
-    # is a set the wiki keeps for a reason this cannot see.
-    return best if count * 2 >= total else UNKNOWN
+    # is a set the wiki keeps for a reason this cannot see. Strict majority, so
+    # a two-member set one way (an organisation and the location it sits in)
+    # reads as no majority at all: with `>=` the tie broke on candidate order,
+    # and `Yoshinobu Gakuganji Affiliations` lost its second member to the
+    # type rule as "a location, and this is a set of organizations".
+    return best if count * 2 > total else UNKNOWN
 
 
 def article(semantic: str) -> str:

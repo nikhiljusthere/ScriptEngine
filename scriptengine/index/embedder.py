@@ -143,7 +143,12 @@ class Embedder:
         getter = getattr(model, "get_embedding_dimension", None) or (
             model.get_sentence_embedding_dimension
         )
-        return int(getter())
+        dimension = getter()
+        if dimension is None:
+            # The stubs mark this Optional, but every model this engine ships
+            # reports a fixed size; one that does not has nothing to index.
+            raise ValueError("embedding model reports no dimension")
+        return dimension
 
     # ── encoding ─────────────────────────────────────────────────────────────
 

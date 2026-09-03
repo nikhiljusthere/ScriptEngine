@@ -1,0 +1,37 @@
+# Staged roster declarations for the Nobara Kugisaki page campaign
+# (questions/_jjk_page_nobara_kugisaki.section3.json, section 3: relationships).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# One roster: the closed set the Synopsis' Shibuya Incident Arc names --
+# "seeing Megumi, Yuji, Gojo, Panda, Toge and Maki all laughing with each
+# other" in the room of empty chairs Nobara reserves for the people in her
+# life. The page writes the short forms; the members are the exact page
+# titles, all of which exist in the corpus. A lonely Fumi is a separate
+# chair Nobara "spots" in the same room, not part of the laughing set, so
+# she is not a member.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every relative of Nobara Kugisaki" -- the infobox lists only 'Unnamed
+#     Grandmother' and 'Unnamed Mother', neither a page title.
+#   * "Who is Nobara Kugisaki's best friend?" / "boyfriend" -- the page never
+#     labels a singular best friend or partner; its friendship statements are
+#     plural ('closest allies' = Yuji and Megumi; 'good friends' = Saori and
+#     Fumi) and it states she 'is not dating Yuji'.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every person Nobara Kugisaki saw laughing with each other in the room of empty chairs
+    match:
+      - every person nobara kugisaki saw laughing with each other in the room of empty chairs
+      - everyone nobara kugisaki saw laughing in the room of empty chairs
+      - the people in the room of empty chairs nobara kugisaki saw laughing
+    subject: Nobara Kugisaki
+    members:
+      - Megumi Fushiguro
+      - Yuji Itadori
+      - Satoru Gojo
+      - Panda
+      - Toge Inumaki
+      - Maki Zenin

@@ -1,0 +1,1077 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Atsuya Kusakabe?",
+      "set": "Every named technique of Atsuya Kusakabe",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Atsuya Kusakabe?",
+      "set": "Every ally of Atsuya Kusakabe",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Atsuya Kusakabe?",
+      "set": "Every enemy of Atsuya Kusakabe",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Atsuya Kusakabe?",
+      "set": "Atsuya Kusakabe's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Atsuya Kusakabe",
+      "set": "Every battle involving Atsuya Kusakabe",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Atsuya Kusakabe?",
+      "found": [
+        "Batto Sword Drawing",
+        "Simple Domain",
+        "Evening Moon Sword Drawing",
+        "Hazy Moon"
+      ],
+      "missing": [],
+      "members": [
+        "Batto Sword Drawing",
+        "Evening Moon Sword Drawing",
+        "Hazy Moon",
+        "Simple Domain"
+      ]
+    },
+    {
+      "query": "What are all the allies of Atsuya Kusakabe?",
+      "found": [
+        "Masamichi Yaga",
+        "Kasumi Miwa"
+      ],
+      "missing": [],
+      "members": [
+        "Kasumi Miwa",
+        "Masamichi Yaga"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Atsuya Kusakabe?",
+      "found": [
+        "Sukuna",
+        "Toshihisa Negi",
+        "Manami Suda"
+      ],
+      "missing": [],
+      "members": [
+        "Manami Suda",
+        "Sukuna",
+        "Toshihisa Negi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Atsuya Kusakabe?",
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Tokyo Jujutsu High"
+      ]
+    },
+    {
+      "query": "Every battle involving Atsuya Kusakabe",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Atsuya Kusakabe's name?",
+      "id": "jjk-pg-atsuya_kusakabe-001",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "\u65e5\u4e0b\u90e8\u7be4\u4e5f"
+      ],
+      "found": [
+        "\u65e5\u4e0b\u90e8\u7be4\u4e5f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Atsuya Kusakabe's name?",
+      "id": "jjk-pg-atsuya_kusakabe-002",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe Atsuya"
+      ],
+      "found": [
+        "Kusakabe Atsuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's race?",
+      "id": "jjk-pg-atsuya_kusakabe-003",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's gender?",
+      "id": "jjk-pg-atsuya_kusakabe-004",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Atsuya Kusakabe?",
+      "id": "jjk-pg-atsuya_kusakabe-005",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's occupation?",
+      "id": "jjk-pg-atsuya_kusakabe-006",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Teacher"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Teacher"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's grade?",
+      "id": "jjk-pg-atsuya_kusakabe-007",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Grade 1"
+      ],
+      "found": [
+        "Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Atsuya Kusakabe first appear?",
+      "id": "jjk-pg-atsuya_kusakabe-008",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Chapter 83"
+      ],
+      "found": [
+        "Chapter 83"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Atsuya Kusakabe first depicted?",
+      "id": "jjk-pg-atsuya_kusakabe-009",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "The Movie\nEpisode 31"
+      ],
+      "found": [
+        "The Movie\nEpisode 31"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Atsuya Kusakabe's Japanese voice actor?",
+      "id": "jjk-pg-atsuya_kusakabe-010",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Shinichiro Miki"
+      ],
+      "found": [
+        "Shinichiro Miki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Atsuya Kusakabe's English voice actor?",
+      "id": "jjk-pg-atsuya_kusakabe-011",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kirk Thornton"
+      ],
+      "found": [
+        "Kirk Thornton"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-atsuya_kusakabe-012",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-atsuya_kusakabe-013",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-atsuya_kusakabe-014",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-atsuya_kusakabe-015",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-atsuya_kusakabe-016",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-atsuya_kusakabe-017",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-atsuya_kusakabe-018",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-atsuya_kusakabe-019",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-atsuya_kusakabe-020",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-atsuya_kusakabe-021",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-atsuya_kusakabe-022",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Atsuya Kusakabe use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-atsuya_kusakabe-023",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Evening Moon Sword Drawing, Hazy Moon, Simple Domain"
+      ],
+      "found": [
+        "Evening Moon Sword Drawing, Hazy Moon, Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Atsuya Kusakabe look like?",
+      "id": "jjk-pg-atsuya_kusakabe-029",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "a tall man with spiky brown hair and sharp dark eyes"
+      ],
+      "found": [
+        "a tall man with spiky brown hair and sharp dark eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's usual outfit?",
+      "id": "jjk-pg-atsuya_kusakabe-030",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "a dust brown peacoat over a white dress shirt with a jade necktie, black pants, and black shoes"
+      ],
+      "found": [
+        "a dust brown peacoat over a white dress shirt with a jade necktie, black pants, and black shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What makes Atsuya Kusakabe stand out among grade 1 sorcerers?",
+      "id": "jjk-pg-atsuya_kusakabe-031",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "the only sorcerer of his grade to make that rank without an innate technique"
+      ],
+      "found": [
+        "the only sorcerer of his grade to make that rank without an innate technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who considers Atsuya Kusakabe the strongest grade 1 sorcerer?",
+      "id": "jjk-pg-atsuya_kusakabe-032",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kento Nanami and Gojo"
+      ],
+      "found": [
+        "Kento Nanami and Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Kusakabe still considered the strongest grade 1 sorcerer compared with the sorcerers of the Big Three Families?",
+      "id": "jjk-pg-atsuya_kusakabe-033",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "this statement may not be accurate if sorcerers from the Big Three Families were to be taken into account"
+      ],
+      "found": [
+        "this statement may not be accurate if sorcerers from the Big Three Families were to be taken into account"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kusakabe admit about his chances against a special grade?",
+      "id": "jjk-pg-atsuya_kusakabe-034",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "he has no chance of defeating a special grade and avoids them at all costs"
+      ],
+      "found": [
+        "he has no chance of defeating a special grade and avoids them at all costs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which adversaries did Kusakabe consider below his level?",
+      "id": "jjk-pg-atsuya_kusakabe-035",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "the curse users Toshihisa Negi and Manami Suda"
+      ],
+      "found": [
+        "the curse users Toshihisa Negi and Manami Suda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Atsuya Kusakabe help the jujutsu sorcerers fighting Kenjaku for the Prison Realm?",
+      "id": "jjk-pg-atsuya_kusakabe-036",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe intervened just in time to save the lives of all his allies"
+      ],
+      "found": [
+        "Kusakabe intervened just in time to save the lives of all his allies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku comment on regarding Kusakabe's skill?",
+      "id": "jjk-pg-atsuya_kusakabe-037",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe's knowledge on New Shadow Style, seemingly out of respect for his skill"
+      ],
+      "found": [
+        "Kusakabe's knowledge on New Shadow Style, seemingly out of respect for his skill"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Does Atsuya Kusakabe have an innate cursed technique?",
+      "id": "jjk-pg-atsuya_kusakabe-038",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Despite not possessing an innate technique, Kusakabe is a respected grade 1 sorcerer and a master swordsman of the New Shadow Style"
+      ],
+      "found": [
+        "Despite not possessing an innate technique, Kusakabe is a respected grade 1 sorcerer and a master swordsman of the New Shadow Style"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What would have happened if Atsuya Kusakabe had not intervened to save the jujutsu sorcerers from Kenjaku?",
+      "id": "jjk-pg-atsuya_kusakabe-039",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe intervened just in time to save the lives of all his allies"
+      ],
+      "found": [
+        "Kusakabe intervened just in time to save the lives of all his allies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's main weapon in battle?",
+      "id": "jjk-pg-atsuya_kusakabe-040",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe's swordplay is his main weapon in battle, relying heavily on physical prowess"
+      ],
+      "found": [
+        "Kusakabe's swordplay is his main weapon in battle, relying heavily on physical prowess"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Atsuya Kusakabe quickly defeat using Batto Sword Drawing?",
+      "id": "jjk-pg-atsuya_kusakabe-041",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "three curse user henchmen"
+      ],
+      "found": [
+        "three curse user henchmen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Simple Domain, the New Shadow Style anti-domain technique?",
+      "id": "jjk-pg-atsuya_kusakabe-042",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "An anti-domain technique that neutralizes a Domain Expansion's barrier and disables its sure-hit effect within its range"
+      ],
+      "found": [
+        "An anti-domain technique that neutralizes a Domain Expansion's barrier and disables its sure-hit effect within its range"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kusakabe use Simple Domain against Sukuna?",
+      "id": "jjk-pg-atsuya_kusakabe-043",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Kusakabe used Simple Domain to weaken Sukuna's Dismantle, reducing the damage of the slashes done to him"
+      ],
+      "found": [
+        "Kusakabe used Simple Domain to weaken Sukuna's Dismantle, reducing the damage of the slashes done to him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Batto Sword Drawing?",
+      "id": "jjk-pg-atsuya_kusakabe-044",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "A fast sword drawing technique that coats Kusakabe's blade in cursed energy and rotates it around the blade to increase its drawing speed dramatically"
+      ],
+      "found": [
+        "A fast sword drawing technique that coats Kusakabe's blade in cursed energy and rotates it around the blade to increase its drawing speed dramatically"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Evening Moon Sword Drawing?",
+      "id": "jjk-pg-atsuya_kusakabe-045",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Another sword-drawing technique with a different stance than Batto Sword Drawing that activates a Simple Domain"
+      ],
+      "found": [
+        "Another sword-drawing technique with a different stance than Batto Sword Drawing that activates a Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hazy Moon?",
+      "id": "jjk-pg-atsuya_kusakabe-046",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "A New Shadow Style technique that recreates part of a broken blade with cursed energy"
+      ],
+      "found": [
+        "A New Shadow Style technique that recreates part of a broken blade with cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the kanji and romaji for Batto Sword Drawing?",
+      "id": "jjk-pg-atsuya_kusakabe-047",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "\u629c\u5200 Batt\u014d"
+      ],
+      "found": [
+        "\u629c\u5200 Batt\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the cursed tool that served as Atsuya Kusakabe's primary weapon in combat?",
+      "id": "jjk-pg-atsuya_kusakabe-048",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "a traditional katana with a gold guard and a dark red handle"
+      ],
+      "found": [
+        "a traditional katana with a gold guard and a dark red handle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the condition of Kusakabe's katana after the battle with Sukuna?",
+      "id": "jjk-pg-atsuya_kusakabe-049",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "It broke during Kusakabe's battle with Sukuna"
+      ],
+      "found": [
+        "It broke during Kusakabe's battle with Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's hobby?",
+      "id": "jjk-pg-atsuya_kusakabe-050",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "His hobby is fishing"
+      ],
+      "found": [
+        "His hobby is fishing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's favorite dish?",
+      "id": "jjk-pg-atsuya_kusakabe-051",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Torotaki-maki (fatty tuna and pickled radish roll)"
+      ],
+      "found": [
+        "Torotaki-maki (fatty tuna and pickled radish roll)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's least favorite dish?",
+      "id": "jjk-pg-atsuya_kusakabe-052",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Tuna eye"
+      ],
+      "found": [
+        "Tuna eye"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Atsuya Kusakabe's cause of stress?",
+      "id": "jjk-pg-atsuya_kusakabe-053",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "All missions"
+      ],
+      "found": [
+        "All missions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Atsuya Kusakabe's highest Popularity Poll ranking?",
+      "id": "jjk-pg-atsuya_kusakabe-054",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "16th in the fourth Popularity Poll with 1,042 votes"
+      ],
+      "found": [
+        "16th in the fourth Popularity Poll with 1,042 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the readings and kanji for the surname Kusakabe?",
+      "id": "jjk-pg-atsuya_kusakabe-055",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "Atsuya's surname has the Nanori reading for \"day\" \u65e5 kusa, the Kan-on reading for \"underneath, end\" \u4e0b ka, and the Kun reading for \"division, section, department\" \u90e8 be"
+      ],
+      "found": [
+        "Atsuya's surname has the Nanori reading for \"day\" \u65e5 kusa, the Kan-on reading for \"underneath, end\" \u4e0b ka, and the Kun reading for \"division, section, department\" \u90e8 be"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the meaning and kanji of Atsuya Kusakabe's given name?",
+      "id": "jjk-pg-atsuya_kusakabe-056",
+      "subject": "Atsuya Kusakabe",
+      "accept": "all",
+      "expected": [
+        "His given name has the Kun reading for \"cordial, warm-hearted\" \u7be4 atsu and a Jinmeiyo kanji \"to be\" \u4e5f ya"
+      ],
+      "found": [
+        "His given name has the Kun reading for \"cordial, warm-hearted\" \u7be4 atsu and a Jinmeiyo kanji \"to be\" \u4e5f ya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 12,
+    "canon_total": 12,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 51,
+    "fact_present": 51
+  }
+}

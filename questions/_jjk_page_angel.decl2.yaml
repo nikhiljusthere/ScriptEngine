@@ -1,0 +1,28 @@
+# Staged roster declarations for the Angel page campaign
+# (questions/_jjk_page_angel.section2.json, section 2: techniques & abilities).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Closed set = the two named techniques in the Cursed Technique sub-section of
+# `Angel`'s Abilities and Powers:
+#   * Technique Extinguishment -- the innate technique, its own wiki page
+#   * Maximum Output: Jacob's Ladder -- the extension technique, named by its
+#     in-page display name (the wiki page is titled "Jacob's Ladder")
+#
+# Only these two are named in that sub-section, so the page-stated set is
+# closed. The live router returns the generic technique roster (currently just
+# "Technique Extinguishment") for the roster question until this declaration is
+# merged (G6, declared-roster-wins).
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so they need no YAML quoting; the JBL member carries a colon and
+# is quoted.
+rosters:
+   - name: Every named cursed technique of Angel
+     match:
+       - every named cursed technique of angel
+       - all the named cursed techniques of angel
+       - the named cursed techniques of angel
+       - every cursed technique of angel
+       - angel's named cursed techniques
+     subject: Angel
+     members: ["Technique Extinguishment", "Maximum Output: Jacob's Ladder"]

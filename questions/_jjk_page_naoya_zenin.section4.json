@@ -1,0 +1,1093 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 4 (identity) of the Naoya Zenin cluster. Golds are verbatim on the Naoya Zenin page and its Synopsis (infobox identity fields, lead, Appearance / Vengeful Cursed Spirit, Trivia, Synopsis History); every qa gold is confirmed live in the qa bundle (top_k=12) before committing. The alias and affiliation closed sets are declared in _jjk_page_naoya_zenin.decl4.yaml.",
+ "retired": [
+  {
+   "id": "jjk-pg-naoya_zenin-retired-07",
+   "item": "",
+   "question": "Who created Naoya Zenin?",
+   "reason": "No creator on the page: the infobox has no `creator` field and Gege Akutami is named nowhere on the Naoya Zenin page or its Synopsis, so there is no verbatim creator gold to commit.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-retired-08",
+   "item": "",
+   "question": "What categories does the Naoya Zenin page carry?",
+   "reason": "Unchunked value: the category links (Characters, Cursed Spirits, Cursed Wombs, Jujutsu Sorcerers, Male, Zenin Family) appear only in the page metadata and the Navigation section, which the chunker excludes as boilerplate, so none is in a chunked or carded region.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-retired-09",
+   "item": "",
+   "question": "What are Naoya Zenin's height and weight?",
+   "reason": "The infobox `height` and `weight` cells are empty on this page, so the page states no answer for either; nothing is invented.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-retired-10",
+   "item": "",
+   "question": "What color is Naoya Zenin's outfit in the manga?",
+   "reason": "Unchunked infobox value: the only colour statement ('gray') lives in the Appearance section's `<gallery>` caption, which the chunker strips from section text, so it reaches no chunk or card.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-naoya_zenin-151",
+   "kind": "set",
+   "question": "What are Naoya Zenin's aliases?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Zen'in Naoya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed alias set of the page: the infobox `alias` cell is empty, so the set is the page's single listed alias, the romaji `Zen'in Naoya` (the page's `aliases` list). Staged in _jjk_page_naoya_zenin.decl4.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-152",
+   "kind": "set",
+   "question": "What are Naoya Zenin's affiliations?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Zenin Clan",
+     "aliases": []
+    },
+    {
+     "item": "Hei",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan/Zenin_Clan"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed two-entry set of the infobox `Affiliation` field. `Hei` is a section of the Sorcerer Clan/Zenin Clan page, not a page of its own; both entries are stated in the infobox itself. Staged in _jjk_page_naoya_zenin.decl4.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-153",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's status on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Status field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-154",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's species on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Human (Former) Vengeful Cursed Spirit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Species field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-155",
+   "kind": "fact",
+   "question": "What was Naoya Zenin reincarnated as after his death?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a vengeful cursed spirit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit: 'Following his reincarnation as a vengeful cursed spirit'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-156",
+   "kind": "fact",
+   "question": "What appearance does Naoya Zenin have as a vengeful cursed spirit?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a much more monstrous appearance befitting a curse",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-157",
+   "kind": "fact",
+   "question": "What shape is Naoya Zenin's body as a curse?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a large and long worm-like body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-158",
+   "kind": "fact",
+   "question": "What covers Naoya Zenin's face as a curse?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a mask shaped like a star with six holes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-159",
+   "kind": "fact",
+   "question": "What can Naoya Zenin's human face do on his cursed form?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "protrude from one of these holes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit: 'Naoya's human face can protrude from one of these holes'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-160",
+   "kind": "fact",
+   "question": "What state was Naoya Zenin's worm-like cursed form?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "cursed womb state",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit: 'This form was only Naoya's cursed womb state, and he soon evolved'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-161",
+   "kind": "fact",
+   "question": "What does Naoya Zenin's fully realized cursed form resemble?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a chrysalis with a skull-shaped face",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-162",
+   "kind": "fact",
+   "question": "What can the tendrils on Naoya Zenin's evolved curse form do?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "band together to function like humanoid limbs",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance / Vengeful Cursed Spirit."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-163",
+   "kind": "fact",
+   "question": "What is Naoya Zenin called in the Culling Game battles on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Cursed Naoya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battles & Events: the two Culling Game battle titles list him as `Cursed Naoya` (`Maki Zenin & Noritoshi Kamo vs. Cursed Naoya`, `Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Cursed Naoya`)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-164",
+   "kind": "fact",
+   "question": "In which chapter does Naoya Zenin make his manga debut?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Chapter 138",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Manga Debut field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-165",
+   "kind": "fact",
+   "question": "In which episode does Naoya Zenin make his anime debut?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Episode 48",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Anime Debut field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-166",
+   "kind": "fact",
+   "question": "Who provides Naoya Zenin's Japanese voice?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Kōji Yusa",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Japanese Voice field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-167",
+   "kind": "fact",
+   "question": "Who provides Naoya Zenin's Japanese voice as a child?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Minami Hinata",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Japanese Voice field (`Minami Hinata (Child)`)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-168",
+   "kind": "fact",
+   "question": "Who provides Naoya Zenin's English voice?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Alan Lee",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, English Voice field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-169",
+   "kind": "fact",
+   "question": "Who provides Naoya Zenin's English voice as a child?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Laura Post",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, English Voice field (`Laura Post (Child)`)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-170",
+   "kind": "fact",
+   "question": "What grade is Naoya Zenin listed as on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Special Grade 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Grade field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-171",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's occupation on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Occupation field (first entry)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-172",
+   "kind": "fact",
+   "question": "What position did Naoya Zenin hold, per his infobox?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Head of the Hei",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Occupation field (second entry)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-173",
+   "kind": "fact",
+   "question": "Who was the head of the Zenin clan's elite unit of jujutsu sorcerers?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Naoya Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'Naoya was also the head of the clan's elite unit of jujutsu sorcerers, the Hei.' Reverse direction of jjk-pg-naoya_zenin-079, which golded the unit, not the head."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-174",
+   "kind": "fact",
+   "question": "What sorcerers make up the Hei, per Naoya Zenin's Synopsis?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 150",
+   "answer": [
+    {
+     "item": "sorcerers ranked semi-grade 1 or above",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, History: 'an elite unit within the Zenin Clan composed of sorcerers ranked semi-grade 1 or above'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-175",
+   "kind": "fact",
+   "question": "What is the romaji of Naoya Zenin's name?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Zen'in Naoya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Rōmaji field; the page's `aliases` list."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-176",
+   "kind": "fact",
+   "question": "What are the kanji for Naoya Zenin's name?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "禪院直哉",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Kanji field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-177",
+   "kind": "fact",
+   "question": "What meaning does the first kanji in Naoya Zenin's name carry?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "honesty, frankness",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: the kanji of Naoya's first name carry the meaning \"honesty, frankness\"."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-178",
+   "kind": "fact",
+   "question": "What meaning does the second kanji in Naoya Zenin's name carry?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "exclamation, alas",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: the second kanji of Naoya's first name carries the meaning \"exclamation, alas\"."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-179",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's birthday?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "October 22, 1990",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Birthday field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-180",
+   "kind": "fact",
+   "question": "What age does Naoya Zenin's page list?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "28",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Age field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-181",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's gender?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Gender field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-182",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's hair color?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Blond",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Hair Color field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-183",
+   "kind": "fact",
+   "question": "What is Naoya Zenin's eye color?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Brown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Eye Color field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-184",
+   "kind": "fact",
+   "question": "What did Naoya Zenin's dyed blond hair have accented with?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "his dark green roots",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'dyed blond hair accented with his dark green roots'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-185",
+   "kind": "fact",
+   "question": "What was almost always plastered across Naoya Zenin's face?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "an arrogant grin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'He almost always has an arrogant grin plastered across his face'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-186",
+   "kind": "fact",
+   "question": "What did Naoya Zenin believe his appearance to be?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "an appearance befitting a clan head",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'believes himself to have an appearance befitting a clan head'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-187",
+   "kind": "fact",
+   "question": "How many earrings does Naoya Zenin have on his left ear?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "four",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'He has four earrings in and on his left ear'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-188",
+   "kind": "fact",
+   "question": "How many more earrings does Naoya Zenin have on his right ear in the manga?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "two",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'In the manga, he has two more earrings in his right ear'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-189",
+   "kind": "fact",
+   "question": "What completes Naoya Zenin's outfit?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "light-colored hakama and waraji sandals",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'He completes his outfit with light-colored hakama and waraji sandals'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-190",
+   "kind": "fact",
+   "question": "What was Naoya Zenin wearing when Maki was massacring the Zenin clan?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "dark-colored hakama with light-colored tabi socks",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'When Maki was massacring the Zenin clan, Naoya is seen wearing dark-colored hakama with light-colored tabi socks'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-191",
+   "kind": "fact",
+   "question": "What rank did Naoya Zenin place in the second Popularity Poll?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "10th in the second Popularity Poll with 2,935 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia, Popularity Polls."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-192",
+   "kind": "fact",
+   "question": "What rank did Naoya Zenin place in the third Popularity Poll?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "6th in the third Popularity Poll with 2,858 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia, Popularity Polls."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-193",
+   "kind": "fact",
+   "question": "What rank did Naoya Zenin place in the fourth Popularity Poll?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "5th in the fourth Popularity Poll with 11,731 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia, Popularity Polls."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-194",
+   "kind": "fact",
+   "question": "What did Naoya Zenin receive in the Kukuru Unit's review of the Hei?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Volume 17",
+   "answer": [
+    {
+     "item": "zero stars",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'He received zero stars in their review of the Hei' (Volume 17)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-195",
+   "kind": "fact",
+   "question": "What did the Kukuru Unit call Naoya Zenin in their review of the Hei?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Volume 17",
+   "answer": [
+    {
+     "item": "poop scum",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: the Kukuru Unit's review of the Hei called him \"poop scum\" (Volume 17)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-196",
+   "kind": "fact",
+   "question": "What clan is Naoya Zenin affiliated with on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Zenin Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Affiliation field (first entry)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-197",
+   "kind": "fact",
+   "question": "What unit of the Zenin Clan is Naoya Zenin affiliated with, per his infobox?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Hei",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Affiliation field (second entry)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-198",
+   "kind": "fact",
+   "question": "What kind of man was Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a tall and slim man",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'Naoya was a tall and slim man with brown eyes'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-199",
+   "kind": "fact",
+   "question": "What kind of attire does Naoya Zenin wear?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a traditional attire",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'Naoya wears a traditional attire that resembles most of his clan members'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-200",
+   "kind": "fact",
+   "question": "What shirt does Naoya Zenin wear under his teal kimono?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a white long-sleeved shirt",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'He sports a white long-sleeved shirt that buttons the color underneath his teal kimono'."
+  }
+ ]
+}

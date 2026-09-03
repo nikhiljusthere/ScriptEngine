@@ -1,0 +1,775 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kechizu?",
+      "set": "Every named technique of Kechizu",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Kechizu?",
+      "set": "Every ally of Kechizu",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Kechizu?",
+      "set": "Every family of Kechizu",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Kechizu?",
+      "set": "Every friend of Kechizu",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kechizu?",
+      "set": "Kechizu's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kechizu",
+      "set": "Every battle involving Kechizu",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kechizu?",
+      "found": [
+        "Rot Technique",
+        "Decay"
+      ],
+      "missing": [],
+      "members": [
+        "Decay",
+        "Rot Technique"
+      ]
+    },
+    {
+      "query": "What are all the allies of Kechizu?",
+      "found": [
+        "Mahito",
+        "Eso"
+      ],
+      "missing": [],
+      "members": [
+        "Eso",
+        "Mahito"
+      ]
+    },
+    {
+      "query": "What are all the families of Kechizu?",
+      "found": [
+        "Noritoshi Kamo",
+        "Choso",
+        "Eso",
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Eso",
+        "Noritoshi Kamo",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the friends of Kechizu?",
+      "found": [
+        "Eso",
+        "Choso"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Eso"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kechizu?",
+      "found": [
+        "Kenjaku's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's Group"
+      ]
+    },
+    {
+      "query": "Every battle involving Kechizu",
+      "found": [
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu"
+      ],
+      "missing": [],
+      "members": [
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kechizu's name?",
+      "id": "jjk-pg-kechizu-001",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "\u8840\u5857"
+      ],
+      "found": [
+        "\u8840\u5857"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kechizu's name?",
+      "id": "jjk-pg-kechizu-002",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Kechizu"
+      ],
+      "found": [
+        "Kechizu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kechizu's race?",
+      "id": "jjk-pg-kechizu-003",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Death Painting Incarnation"
+      ],
+      "found": [
+        "Death Painting Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kechizu?",
+      "id": "jjk-pg-kechizu-004",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "150"
+      ],
+      "found": [
+        "150"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kechizu's gender?",
+      "id": "jjk-pg-kechizu-005",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kechizu?",
+      "id": "jjk-pg-kechizu-006",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kechizu's grade?",
+      "id": "jjk-pg-kechizu-007",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Special Grade (Cursed Womb)"
+      ],
+      "found": [
+        "Special Grade (Cursed Womb)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kechizu first appear?",
+      "id": "jjk-pg-kechizu-008",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Chapter 55"
+      ],
+      "found": [
+        "Chapter 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kechizu first depicted?",
+      "id": "jjk-pg-kechizu-009",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Episode 22"
+      ],
+      "found": [
+        "Episode 22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kechizu's Japanese voice actor?",
+      "id": "jjk-pg-kechizu-010",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Kappei Yamaguchi"
+      ],
+      "found": [
+        "Kappei Yamaguchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kechizu's English voice actor?",
+      "id": "jjk-pg-kechizu-011",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Kyle Hebert"
+      ],
+      "found": [
+        "Kyle Hebert"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "id": "jjk-pg-kechizu-012",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nobara are victorious."
+      ],
+      "found": [
+        "Yuji & Nobara are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-kechizu-013",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Yasohachi Bridge"
+      ],
+      "found": [
+        "Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu begin?",
+      "id": "jjk-pg-kechizu-014",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Chapter 59"
+      ],
+      "found": [
+        "Chapter 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu depicted?",
+      "id": "jjk-pg-kechizu-015",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Episode 23 - 24"
+      ],
+      "found": [
+        "Episode 23 - 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-kechizu-016",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Death Painting"
+      ],
+      "found": [
+        "Death Painting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kechizu use in Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "id": "jjk-pg-kechizu-017",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Rot Technique, Decay"
+      ],
+      "found": [
+        "Rot Technique, Decay"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kechizu appear compared to his more humanoid brothers?",
+      "id": "jjk-pg-kechizu-024",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "much more like a curse"
+      ],
+      "found": [
+        "much more like a curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color is Kechizu and what physical features does he have?",
+      "id": "jjk-pg-kechizu-025",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "turquoise with a hunchback, claws, and two mouths with jagged teeth"
+      ],
+      "found": [
+        "turquoise with a hunchback, claws, and two mouths with jagged teeth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is unusual about Kechizu's head structure?",
+      "id": "jjk-pg-kechizu-026",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "a small face on the upper part of his head and a giant mouth just beneath it"
+      ],
+      "found": [
+        "a small face on the upper part of his head and a giant mouth just beneath it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "According to the fanbook, why does Kechizu vessel upper face remain?",
+      "id": "jjk-pg-kechizu-027",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Kechizu's power as a cursed object is weaker than his older brothers"
+      ],
+      "found": [
+        "Kechizu's power as a cursed object is weaker than his older brothers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kechizu maturity compare to the other Death Painting Womb brothers?",
+      "id": "jjk-pg-kechizu-028",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "the least mature of the three Death Painting Womb brothers"
+      ],
+      "found": [
+        "the least mature of the three Death Painting Womb brothers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Kechizu stay close to and call out for help?",
+      "id": "jjk-pg-kechizu-029",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Eso"
+      ],
+      "found": [
+        "Eso"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What grade was Kechizu ranked as a cursed object?",
+      "id": "jjk-pg-kechizu-030",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "special grade"
+      ],
+      "found": [
+        "special grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who incarnated Kechizu and for what purpose?",
+      "id": "jjk-pg-kechizu-031",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "Mahito's group in order to aid in helping curses take over Japan"
+      ],
+      "found": [
+        "Mahito's group in order to aid in helping curses take over Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Despite being the weakest of the three Death Painting brothers, what did Kechizu manage to do?",
+      "id": "jjk-pg-kechizu-032",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "land a surprise attack on Yuji"
+      ],
+      "found": [
+        "land a surprise attack on Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What attribute does Kechizu have as a Death Painting Womb regarding cursed energy?",
+      "id": "jjk-pg-kechizu-033",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "transform his cursed energy into blood"
+      ],
+      "found": [
+        "transform his cursed energy into blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kechizu's Rot Technique let him do?",
+      "id": "jjk-pg-kechizu-034",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "can manipulate his body's corrosive blood which is capable of poisoning his targets"
+      ],
+      "found": [
+        "can manipulate his body's corrosive blood which is capable of poisoning his targets"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kechizu generally attack his opponents?",
+      "id": "jjk-pg-kechizu-035",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "spewing blasts of rotten blood at his opponents burning their flesh on impact"
+      ],
+      "found": [
+        "spewing blasts of rotten blood at his opponents burning their flesh on impact"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Once Kechizu or Eso blood enters a target through wounds what happens during Decay?",
+      "id": "jjk-pg-kechizu-036",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "poison and decompose the target's body at the point of entry, forming a floral pattern"
+      ],
+      "found": [],
+      "missing": [
+        "poison and decompose the target's body at the point of entry, forming a floral pattern"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Within what timeframe does Decay kill a person?",
+      "id": "jjk-pg-kechizu-037",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "within 10 to 15 minutes leaving only their bones behind"
+      ],
+      "found": [
+        "within 10 to 15 minutes leaving only their bones behind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the readings for Kechizu name mean?",
+      "id": "jjk-pg-kechizu-038",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "blood and paint"
+      ],
+      "found": [],
+      "missing": [
+        "blood and paint"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is unique about Kechizu name among the Death Paintings members?",
+      "id": "jjk-pg-kechizu-039",
+      "subject": "Kechizu",
+      "accept": "all",
+      "expected": [
+        "He is the only member of the Death Paintings whose name does not end in so"
+      ],
+      "found": [
+        "He is the only member of the Death Paintings whose name does not end in so"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 12,
+    "canon_total": 12,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 33,
+    "fact_present": 31
+  }
+}

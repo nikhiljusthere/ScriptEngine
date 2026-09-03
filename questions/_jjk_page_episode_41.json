@@ -1,0 +1,2018 @@
+﻿{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-09-02",
+  "note": "episode pass 2026-09-01: +99 hand-authored prose (ids 003-101) + 2 page-gen identity; R5 forms: yes/no 062 (Mahoraga withstands the slashes), comparative 092-098 (anime vs. manga), counterfactual 036 (would have ended the ritual - STATED on page, kept), how-many 033 (six miracles); Plot Details 59 (the full Megumi/Shigemo block incl. the un-tamed shikigami plan, the summoning of Mahoraga, Shigemo's Miracles explainer, the full Sukuna vs. Mahoraga battle incl. soda/popcorn, the fanged mouth, Malevolent Shrine's 200m/140m radii, the flaming arrow finisher, Yuji's cold focus, Nanami's walk); OOA 2 (16 entries, first Wasuke Itadori (Voice) / last Panda (Flashback) - items asked as plain names); Locations 2; B&E 2; Jujutsu 11 (3 tools incl. 2 plain-text, Miracles, Ten Shadows > Mahoraga, Sukuna's techniques incl. the 'Domain Expansion: Malevolent Shrine' colon hazard and the Cleave/Dismantle/Divine Flame Shrine tree); A&M 8 (summoning elaboration + 2 sub-bullets each on the manga/anime Mahoraga differences); Trivia 2 (NOT a stub this episode: the Episode 36 ceiling-collapse scene + the web preview); Music table skipped, Navigation auto-retired; 2 ROUTER-GAP RETIRES (011, 015: NEW 'character-subject hijack' family - the 'per Episode 41' subject hint is discarded in favor of the named character in the question; the character bundle misses the episode page's chunk; flagged for central triage); colon hazards: 'Jogo's Maximum: Meteor' (015, fragment - itself retired via the hijack family), 'the impact of Maximum: Meteor' (019, fragment - PASSED), 'Domain Expansion: Malevolent Shrine' (057/086, second link only)",
+  "retired": [
+    {
+      "id": "jjk-pg-episode_41-015",
+      "item": "Jogo's Maximum",
+      "question": "On what does Sukuna stand while looking over the destroyed remains of Shibuya, per Episode 41?",
+      "reason": "Colon-truncation parser gap (stale corpus): the page has Sukuna standing atop Jogo's [[Maximum: Meteor]], but the stored section text colon-truncates the wikilink target to 'Jogo's Meteor', so the answer 'Jogo's Maximum' is absent from the served bundle. The router now routes this correctly to Episode 41 (episode-anchored rescue, verified 2026-09-02); the current strip_markup already keeps the full 'Maximum: Meteor' (_is_namespaced guard), so this unblocks on the deferred re-index (re-parse + re-embed), not on a new parser-code change.",
+      "reason_class": "parser-gap",
+      "retired": true
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-episode_41-001",
+      "kind": "fact",
+      "question": "What are the kanji for Episode 41's name?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "霹靂－弐－",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "page-gen:identity:kanji"
+    },
+    {
+      "id": "jjk-pg-episode_41-002",
+      "kind": "fact",
+      "question": "What is the romaji of Episode 41's name?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hekireki -ni-",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "page-gen:identity:romaji"
+    },
+    {
+      "id": "jjk-pg-episode_41-003",
+      "kind": "fact",
+      "question": "What is the title of Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Thunderclap, Part 2",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-004",
+      "kind": "fact",
+      "question": "When did Episode 41 air in Japan?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "2023-11-16",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-005",
+      "kind": "fact",
+      "question": "When did Episode 41 air in the United States?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "2023-11-30",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-006",
+      "kind": "fact",
+      "question": "Which arc does Episode 41 belong to?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-007",
+      "kind": "fact",
+      "question": "What is the opening song for Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "SPECIALZ",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-008",
+      "kind": "fact",
+      "question": "What is the ending song for Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "more than words",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-009",
+      "kind": "fact",
+      "question": "Which manga chapter comes first in Episode 41's adaptations?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 117",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Infobox"
+    },
+    {
+      "id": "jjk-pg-episode_41-010",
+      "kind": "fact",
+      "question": "After being severely injured in his fight against Toji, what does Megumi suffer in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a surprise attack from Shigemo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Summary"
+    },
+    {
+      "id": "jjk-pg-episode_41-012",
+      "kind": "fact",
+      "question": "What does Megumi summon with his Ten Shadows Technique, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a certain shikigami",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Summary"
+    },
+    {
+      "id": "jjk-pg-episode_41-013",
+      "kind": "fact",
+      "question": "What role does Episode 41 play in the second season?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the seventeenth episode of the second season",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Intro"
+    },
+    {
+      "id": "jjk-pg-episode_41-014",
+      "kind": "fact",
+      "question": "Who does Yuji remember asking him to help others in the opening flashback, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "grandfather",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-016",
+      "kind": "fact",
+      "question": "What time is it when Shigemo stalks the injured Megumi, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "11:05 PM",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-017",
+      "kind": "fact",
+      "question": "In what area does Shigemo stalk the injured Megumi, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the Dogenzaka area in front of Shibuya 109",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-018",
+      "kind": "fact",
+      "question": "What does the injured Megumi divulge to Shigemo while walking away, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the mechanics of his Ten Shadows Technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-019",
+      "kind": "fact",
+      "question": "What in the distance momentarily distracts Shigemo, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the impact of Maximum",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-020",
+      "kind": "fact",
+      "question": "What has never been tamed that Megumi plans to summon, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a shikigami that has never been tamed",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-021",
+      "kind": "fact",
+      "question": "What is Megumi's last resort, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "to take the curse user down with himself",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-022",
+      "kind": "fact",
+      "question": "Who informed Megumi why the Gojo Clan and the Zenin Clan do not get along, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-023",
+      "kind": "fact",
+      "question": "Which family's leader does Megumi surmise used the Ten Shadows Technique the same way, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the Zenin Family",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-024",
+      "kind": "fact",
+      "question": "What does Megumi chant as he performs the summoning, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "With this treasure, I summon",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-025",
+      "kind": "fact",
+      "question": "Whom does Sukuna order to continue preparations for when he regains his freedom, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Uraume",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-026",
+      "kind": "fact",
+      "question": "What does Uraume declare after Sukuna leaves, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "they will always await the King of Curses",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-027",
+      "kind": "fact",
+      "question": "What manifests in front of Megumi before disappearing to unveil the shikigami's shell, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Divine Dogs and Toads",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-028",
+      "kind": "fact",
+      "question": "What is the name of the shikigami that Megumi reveals to Shigemo, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-029",
+      "kind": "fact",
+      "question": "To whom does Megumi silently apologize before mocking Shigemo, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-030",
+      "kind": "fact",
+      "question": "What does Mahoraga leave Shigemo in after crashing him into a nearby building, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a state of suspended death",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-031",
+      "kind": "fact",
+      "question": "What is Shigemo's innate technique explained in the brief flashback, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Miracles",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-032",
+      "kind": "fact",
+      "question": "What do Shigemo's Miracles erase and store as markings under his eyes, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "his memories of tiny miracles in his daily life",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-033",
+      "kind": "fact",
+      "question": "How many miracles had Shigemo stored, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "six",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-034",
+      "kind": "fact",
+      "question": "During what were all six of Shigemo's stored miracles expended, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "during his confrontation with Kento Nanami",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-035",
+      "kind": "fact",
+      "question": "Who saved Shigemo at the last moment, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-036",
+      "kind": "fact",
+      "question": "What would Shigemo's death have done had he not been saved, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "ended the ritual and caused Megumi to permanently die",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-037",
+      "kind": "fact",
+      "question": "What does Sukuna use to heal Megumi, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "reverse cursed technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-038",
+      "kind": "fact",
+      "question": "What does Sukuna confront after healing Megumi, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mahoraga",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-039",
+      "kind": "fact",
+      "question": "What does Mahoraga extend out of its right arm, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the Sword of Extermination",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-040",
+      "kind": "fact",
+      "question": "What does the Sword of Extermination emit, forcing Sukuna to move out of its way, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "positive energy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-041",
+      "kind": "fact",
+      "question": "What does Sukuna drink while walking out of the building he crashed into, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "soda",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-042",
+      "kind": "fact",
+      "question": "What does Sukuna carry while walking out of the building he crashed into, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a pot of popcorn",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-043",
+      "kind": "fact",
+      "question": "How does Sukuna find the popcorn after tasting it, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "terrible",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-044",
+      "kind": "fact",
+      "question": "What does Mahoraga gather in its body before unleashing it, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "air",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-045",
+      "kind": "fact",
+      "question": "What does Sukuna throw away that ended up in his hoodie, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "one of Mahoraga's fingers",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-046",
+      "kind": "fact",
+      "question": "Where does Sukuna throw the restrained Mahoraga, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a parking garage",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-047",
+      "kind": "fact",
+      "question": "What does Mahoraga grab and throw at Sukuna from the parking garage, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the cars around it",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-048",
+      "kind": "fact",
+      "question": "What does Sukuna's more powerful slash cut apart, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mahoraga's head",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-049",
+      "kind": "fact",
+      "question": "What is heard turning behind Mahoraga's head as it completely heals, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the wheel",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-050",
+      "kind": "fact",
+      "question": "What lands in front of Shigemo, dissuading him from escaping, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a car",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-051",
+      "kind": "fact",
+      "question": "What does Sukuna kill before placing his hand on the shikigami, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the people around them",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-052",
+      "kind": "fact",
+      "question": "Where do Sukuna and Mahoraga fall after the building they were in collapses, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "an underground parking lot",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-053",
+      "kind": "fact",
+      "question": "What does Sukuna create on his neck to catch the Sword of Extermination, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a fanged mouth",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-054",
+      "kind": "fact",
+      "question": "What does Sukuna send Mahoraga crashing into after launching it above ground, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a laundry detergent store",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-055",
+      "kind": "fact",
+      "question": "What does the poisonous gas created by the detergents cause Mahoraga to do, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "vomit",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-056",
+      "kind": "fact",
+      "question": "What does Sukuna infer Mahoraga's ability allows it to do, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "adapt to all phenomenon after observing it",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-057",
+      "kind": "fact",
+      "question": "What domain expansion does Sukuna activate as the enlarged Mahoraga reaches for him, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Malevolent Shrine",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-058",
+      "kind": "fact",
+      "question": "Instead of enclosing its domain with a barrier, what does Malevolent Shrine do, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "manifests Sukuna's innate domain into the existing airspace",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-059",
+      "kind": "fact",
+      "question": "To what is Malevolent Shrine's manifestation compared, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "painting directly in the air instead of on a canvas",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-060",
+      "kind": "fact",
+      "question": "What does the binding vow created by the escape route do, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "increases the domain's radius up to a maximum radius of nearly 200 meters",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-061",
+      "kind": "fact",
+      "question": "To what range does Sukuna narrow his domain expansion, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a radius of 140 meters and above ground",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-062",
+      "kind": "fact",
+      "question": "Does Mahoraga withstand the relentless slashes of Malevolent Shrine, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "manages to withstand",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-063",
+      "kind": "fact",
+      "question": "With what does Sukuna finish off Mahoraga before it can regenerate, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the same flaming arrow technique he used to exorcise Jogo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-064",
+      "kind": "fact",
+      "question": "What creates a pillar of fire in the midst of the destroyed city, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the immense explosion caused by the flames",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-065",
+      "kind": "fact",
+      "question": "What rolls onto the ground before dissolving into liquid shadows, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mahoraga's wheel",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-066",
+      "kind": "fact",
+      "question": "What does Sukuna order the overjoyed Shigemo to do, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "get lost",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-067",
+      "kind": "fact",
+      "question": "What happens to Shigemo as he runs into the crater left by Malevolent Shrine, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "slashed in half",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-068",
+      "kind": "fact",
+      "question": "What area does Sukuna return to after taking Megumi to Shoko Ieiri and Masamichi Yaga, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the area in front of Shibuya 109",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-069",
+      "kind": "fact",
+      "question": "What does Yuji immediately recall once he regains control of his body, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "everyone who was killed or put in danger by Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-070",
+      "kind": "fact",
+      "question": "What does Yuji do after recalling the dead and those put in danger, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "vomit",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-071",
+      "kind": "fact",
+      "question": "What does Yuji realize in his state of cold focus, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "he has to fight and help people or else he's nothing but a murderer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-072",
+      "kind": "fact",
+      "question": "Where does the heavily injured Nanami walk, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a hallway in Shibuya Station",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-073",
+      "kind": "fact",
+      "question": "How is Nanami injured as he walks down a hallway in Shibuya Station, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "half of his body burned by Jogo and missing an eye",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-074",
+      "kind": "fact",
+      "question": "Which character is listed first in Episode 41's order of appearance?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Wasuke Itadori",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Order of Appearance"
+    },
+    {
+      "id": "jjk-pg-episode_41-075",
+      "kind": "fact",
+      "question": "Which character is listed last in Episode 41's order of appearance?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Panda",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Order of Appearance"
+    },
+    {
+      "id": "jjk-pg-episode_41-076",
+      "kind": "fact",
+      "question": "Which location is listed first in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Locations"
+    },
+    {
+      "id": "jjk-pg-episode_41-077",
+      "kind": "fact",
+      "question": "Which street is listed under Shibuya in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Bunkamura Way, Dogenzaka",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Locations"
+    },
+    {
+      "id": "jjk-pg-episode_41-078",
+      "kind": "fact",
+      "question": "Which event is ongoing in Episode 41's battles and events?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "The Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Battles & Events"
+    },
+    {
+      "id": "jjk-pg-episode_41-079",
+      "kind": "fact",
+      "question": "Which battle is listed under the Shibuya Incident in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sukuna vs. Mahoraga",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Battles & Events"
+    },
+    {
+      "id": "jjk-pg-episode_41-080",
+      "kind": "fact",
+      "question": "What cursed tool is linked in Episode 41's jujutsu section?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sword of Extermination",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-081",
+      "kind": "fact",
+      "question": "What plain-text cursed tool is listed in Episode 41's jujutsu section?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Haruta Shigemo's Hand-Sword",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-082",
+      "kind": "fact",
+      "question": "What plain-text cursed tool belongs to Nanami, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nanami's Blunt Sword",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-083",
+      "kind": "fact",
+      "question": "What technique is listed under Haruta Shigemo in Episode 41's jujutsu section?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Miracles",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-084",
+      "kind": "fact",
+      "question": "What shikigami is listed under Ten Shadows Technique in Episode 41's jujutsu section?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-085",
+      "kind": "fact",
+      "question": "What technique is listed under Megumi Fushiguro in Episode 41's jujutsu section?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Ten Shadows Technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-086",
+      "kind": "fact",
+      "question": "What is Sukuna's domain expansion listed under his techniques in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Malevolent Shrine",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-087",
+      "kind": "fact",
+      "question": "What technique is listed under Sukuna alongside Shrine, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-088",
+      "kind": "fact",
+      "question": "What sub-technique is listed first under Shrine in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Cleave",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-089",
+      "kind": "fact",
+      "question": "What sub-technique is listed second under Shrine in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Dismantle",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-090",
+      "kind": "fact",
+      "question": "What plain-text sub-technique is listed under Shrine in Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Divine Flame",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Jujutsu"
+    },
+    {
+      "id": "jjk-pg-episode_41-091",
+      "kind": "fact",
+      "question": "What does Mahoraga's summoning in the anime feature, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a cocoon-like structure that it emerges from and metal cables that wrap around it beforehand",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-092",
+      "kind": "fact",
+      "question": "How is the fight between Sukuna and Mahoraga different in the anime, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "greatly extended and altered in the anime",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-093",
+      "kind": "fact",
+      "question": "What does Mahoraga deflect in the manga, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sukuna's second slash",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-094",
+      "kind": "fact",
+      "question": "What does Sukuna activate before exorcising Mahoraga in the manga, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Malevolent Shrine",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-095",
+      "kind": "fact",
+      "question": "What does Mahoraga display in the anime that is not shown in the manga, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a variety of abilities",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-096",
+      "kind": "fact",
+      "question": "How does Mahoraga adapt to being underwater in the anime, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "by growing gills on its neck and chest",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-097",
+      "kind": "fact",
+      "question": "Where does Mahoraga's wheel fall in the anime, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "inside the crater left by Malevolent Shrine",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-098",
+      "kind": "fact",
+      "question": "Where does Sukuna throw Mahoraga's wheel in the manga, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "behind Shigemo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Anime & Manga Differences"
+    },
+    {
+      "id": "jjk-pg-episode_41-099",
+      "kind": "fact",
+      "question": "What scene from Episode 36 is not included in the explanation of Shigemo's innate technique, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "collapsing the ceiling above Shigemo and using up one of his Miracles",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Trivia"
+    },
+    {
+      "id": "jjk-pg-episode_41-100",
+      "kind": "fact",
+      "question": "Why was the full-length preview of the next episode originally released via web, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the TV version only featured a 3-second long clip announcing the title",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Trivia"
+    },
+    {
+      "id": "jjk-pg-episode_41-101",
+      "kind": "fact",
+      "question": "To what does an endless series of slashes reduce everything within the domain's range, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "dust",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-01",
+      "note": "prose:Plot Details"
+    },
+    {
+      "id": "jjk-pg-episode_41-011",
+      "kind": "fact",
+      "question": "Toward what does Megumi desperately head on the verge of death, per Episode 41?",
+      "subject": "Episode 41",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Dogenzaka crossing",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Episode_41"
+      ],
+      "verified": "2026-09-02",
+      "note": "router-gap retire (F2/F4 char/entity-subject hijack of an episode-anchored question) closed 2026-09-02 by the episode-anchored rescue in router.py; un-retired and now active"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Staged roster declarations for the Angel page campaign
+# (questions/_jjk_page_angel.section3.json, section 3:
+# relationships & people).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every clan that made up the Desshi Pacification Squad` is the closed
+# composition the Synopsis / History section states: the squad was "the Abe
+# Clan's elite forces that also included the Sugawara Clan's remnants." The
+# page does not list the squad's individual members, so the member roster is
+# recorded as retired in the section's `retired[]` (only the clan set is
+# closed).
+#
+# `Every person the Angel revealed herself to in the No. 1 Colony` is the
+# closed hotel group the Culling Game Arc names: Hana "gathers with him, Yuji
+# Itadori, and Fumihiko Takaba in a hotel," and "the Angel reveals herself
+# through a manifested mouth on Hana" to that group.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so they need no YAML quoting; members carry spaces but no
+# `&`/`:`, and are quoted inline per the campaign convention.
+rosters:
+   - name: Every clan that made up the Desshi Pacification Squad
+     match:
+       - every clan that made up the desshi pacification squad
+       - all the clans that made up the desshi pacification squad
+       - clans that made up the desshi pacification squad
+       - every clan of the desshi pacification squad
+     subject: Angel
+     members: ["Abe Clan", "Sugawara Clan"]
+   - name: Every person the Angel revealed herself to in the No. 1 Colony
+     match:
+       - every person the angel revealed herself to in the no. 1 colony
+       - all the people the angel revealed herself to in the no. 1 colony
+       - people the angel revealed herself to in the no. 1 colony
+     subject: Angel
+     members: ["Megumi Fushiguro", "Yuji Itadori", "Fumihiko Takaba"]

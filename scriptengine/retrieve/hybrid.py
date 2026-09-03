@@ -174,7 +174,15 @@ class HybridRetriever:
         top_k: int | None = None,
         expand_parents: bool = True,
         rerank: bool = True,
+        focus: str | None = None,
     ) -> Retrieved:
+        """Retrieve passages for `query`.
+
+        `focus` is the page title the caller says the question is about; it is
+        added to the vector focus list so the answer's page is searched even
+        when the query's own words link a different entity. It never replaces
+        the entity-driven focus.
+        """
         top_k = top_k or self.settings.final_top_k
         result = Retrieved(query=query)
 
@@ -259,10 +267,17 @@ class HybridRetriever:
             candidates.setdefault(hit["chunk_id"], hit)
 
         if self.vectors is not None and self.vectors.exists():
-            focus = [row["name"] for row in entities[:3]] + [
+            focus_list = [row["name"] for row in entities[:3]] + [
                 row["name"] for row in related[:12]
             ]
-            for source, hits in self._vector_search(query, focus).items():
+            # The caller's page: a question authored against one page can name
+            # only a title of it ("the King of Curses" for Angel's page), and
+            # entity linking then focuses the wrong page. Widening the focus to
+            # the named page is a recall fix, not a steering one -- the wide
+            # search runs regardless and fusion still decides.
+            if focus and focus not in focus_list:
+                focus_list.append(focus)
+            for source, hits in self._vector_search(query, focus_list).items():
                 rankings[source] = [hit["chunk_id"] for hit in hits]
                 for hit in hits:
                     candidates.setdefault(hit["chunk_id"], hit)
@@ -340,12 +355,15 @@ class HybridRetriever:
         A chunk found by both searches ranks higher under RRF, so the precision
         benefit survives without the failure mode.
         """
+        vectors = self.vectors
+        if vectors is None:
+            return {}
         vector = self.embedder.encode_query(query)
         limit = self.settings.vector_top_k
-        searches = {"vector": self.vectors.search(vector, limit=limit)}
+        searches = {"vector": vectors.search(vector, limit=limit)}
 
         if focus:
-            narrowed = self.vectors.search(vector, limit=limit, doc_titles=focus)
+            narrowed = vectors.search(vector, limit=limit, doc_titles=focus)
             if narrowed:
                 searches["vector_focused"] = narrowed
 

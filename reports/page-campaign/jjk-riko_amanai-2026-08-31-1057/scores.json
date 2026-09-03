@@ -1,0 +1,471 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Riko Amanai?",
+      "set": "Every ally of Riko Amanai",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Riko Amanai?",
+      "set": "Every enemy of Riko Amanai",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Riko Amanai?",
+      "set": "Every friend of Riko Amanai",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Riko Amanai?",
+      "set": "Riko Amanai's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Riko Amanai?",
+      "found": [
+        "Satoru Gojo",
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Riko Amanai?",
+      "found": [
+        "Toji Fushiguro",
+        "Kokun"
+      ],
+      "missing": [],
+      "members": [
+        "Kokun",
+        "Toji Fushiguro"
+      ]
+    },
+    {
+      "query": "What are all the friends of Riko Amanai?",
+      "found": [
+        "Misato Kuroi",
+        "Tengen",
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "members": [
+        "Misato Kuroi",
+        "Satoru Gojo",
+        "Tengen"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Riko Amanai?",
+      "found": [
+        "Renchoku Girls' Junior High"
+      ],
+      "missing": [],
+      "members": [
+        "Renchoku Girls' Junior High"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Riko Amanai's name?",
+      "id": "jjk-pg-riko_amanai-001",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "\u5929\u5185\u7406\u5b50"
+      ],
+      "found": [
+        "\u5929\u5185\u7406\u5b50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Riko Amanai's name?",
+      "id": "jjk-pg-riko_amanai-002",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Amanai Riko"
+      ],
+      "found": [
+        "Amanai Riko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Riko Amanai's race?",
+      "id": "jjk-pg-riko_amanai-003",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Riko Amanai?",
+      "id": "jjk-pg-riko_amanai-004",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "14"
+      ],
+      "found": [
+        "14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Riko Amanai's gender?",
+      "id": "jjk-pg-riko_amanai-005",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Riko Amanai?",
+      "id": "jjk-pg-riko_amanai-006",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Riko Amanai's occupation?",
+      "id": "jjk-pg-riko_amanai-007",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Star Plasma Vessel Middle School Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Star Plasma Vessel Middle School Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Riko Amanai first appear?",
+      "id": "jjk-pg-riko_amanai-008",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Chapter 65"
+      ],
+      "found": [
+        "Chapter 65"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Riko Amanai's Japanese voice actor?",
+      "id": "jjk-pg-riko_amanai-009",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Anna Nagase"
+      ],
+      "found": [
+        "Anna Nagase"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Riko Amanai's English voice actor?",
+      "id": "jjk-pg-riko_amanai-010",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Reba Buhr"
+      ],
+      "found": [
+        "Reba Buhr"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Riko Amanai first depicted?",
+      "id": "jjk-pg-riko_amanai-011",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Episode 25"
+      ],
+      "found": [
+        "Episode 25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Riko Amanai have for hair?",
+      "id": "jjk-pg-riko_amanai-016",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "long navy blue hair that is braided in the back and extends past her shoulders"
+      ],
+      "found": [
+        "long navy blue hair that is braided in the back and extends past her shoulders"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Riko Amanai normally wear?",
+      "id": "jjk-pg-riko_amanai-017",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "her school uniform"
+      ],
+      "found": [
+        "her school uniform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Riko Amanai characterized?",
+      "id": "jjk-pg-riko_amanai-018",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "outspoken and feisty"
+      ],
+      "found": [
+        "outspoken and feisty"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Riko Amanai want to rescue Misato instead of continuing training?",
+      "id": "jjk-pg-riko_amanai-019",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "Riko was a social girl who cares about her personal relationships"
+      ],
+      "found": [
+        "Riko was a social girl who cares about her personal relationships"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Riko Amanai a combatant?",
+      "id": "jjk-pg-riko_amanai-020",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "non-combatant"
+      ],
+      "found": [
+        "non-combatant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Can Riko Amanai see cursed energy and cursed spirits?",
+      "id": "jjk-pg-riko_amanai-021",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "can still see cursed energy, cursed spirits, and cursed techniques"
+      ],
+      "found": [
+        "can still see cursed energy, cursed spirits, and cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Riko Amanai rank against Yuki Tsukumo in potential?",
+      "id": "jjk-pg-riko_amanai-022",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "greatest potential among the Star Plasma Vessels, surpassing even the special grade sorcerer Yuki Tsukumo"
+      ],
+      "found": [
+        "greatest potential among the Star Plasma Vessels, surpassing even the special grade sorcerer Yuki Tsukumo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Riko Amanai rank in the second Popularity Poll?",
+      "id": "jjk-pg-riko_amanai-023",
+      "subject": "Riko Amanai",
+      "accept": "all",
+      "expected": [
+        "44th in the second Popularity Poll with 36 votes"
+      ],
+      "found": [
+        "44th in the second Popularity Poll with 36 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

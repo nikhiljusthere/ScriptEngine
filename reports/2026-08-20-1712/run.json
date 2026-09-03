@@ -1,0 +1,38 @@
+{
+  "run_id": "2026-08-20-1712",
+  "series": [
+    "opm"
+  ],
+  "git_sha": "2110e4c",
+  "server_started": "2026-08-20T16:40:51+00:00",
+  "health": {
+    "status": "ok",
+    "version": "0.1.0",
+    "device": "cuda",
+    "embed_model": "BAAI/bge-large-en-v1.5",
+    "rerank_model": "BAAI/bge-reranker-v2-m3",
+    "series": [
+      "berserk",
+      "bleach",
+      "csm",
+      "db",
+      "hxh",
+      "jjk",
+      "onepiece",
+      "opm"
+    ],
+    "started": "2026-08-20T16:40:51+00:00"
+  },
+  "questions": {
+    "berserk": 38,
+    "bleach": 42,
+    "csm": 39,
+    "db": 35,
+    "hxh": 42,
+    "jjk": 55,
+    "onepiece": 38,
+    "opm": 39
+  },
+  "seconds": 26.3,
+  "skip_eval": false
+}

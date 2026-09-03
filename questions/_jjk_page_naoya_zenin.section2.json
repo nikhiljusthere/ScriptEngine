@@ -1,0 +1,1084 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 2 (techniques, tools and binding vows) of the Naoya Zenin cluster. Golds are verbatim on the Naoya Zenin page and its Synopsis; the closed technique set is declared in _jjk_page_naoya_zenin.decl2.yaml.",
+ "retired": [
+  {
+   "id": "jjk-pg-naoya_zenin-retired-03",
+   "item": "",
+   "question": "Every tool or object Naoya Zenin carries",
+   "reason": "Not declared as a roster. The Equipment section is a single Conventional Weaponry block describing one 'tanto-style knife' in prose; it is a description, not a page title, so the members = exact page-titles contract cannot be met. Answered per-item via the qa questions (ids 071-074) instead. Left to discovery.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-retired-04",
+   "item": "",
+   "question": "Every technique or ability of Naoya Zenin",
+   "reason": "Not declared as a roster. The Abilities and Powers section enumerates prose lead-ins (Overall Skill Level, Master Hand-to-Hand Combatant, High Tactical Intellect) and the closed technique set is answered by the declared roster 'Every named cursed technique of Naoya Zenin' (id 051) instead. The ability lead-ins are answered per-item via the qa questions in this section.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-naoya_zenin-051",
+   "kind": "set",
+   "question": "Every named cursed technique of Naoya Zenin",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Acceleration Mode",
+     "aliases": []
+    },
+    {
+     "item": "Projection Sorcery",
+     "aliases": []
+    },
+    {
+     "item": "Time Cell Moon Palace",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Projection_Sorcery",
+    "https://jujutsu-kaisen.fandom.com/wiki/Time_Cell_Moon_Palace"
+   ],
+   "verified": "2026-08-23",
+   "note": "Closed set of named techniques in the Cursed Technique section of Naoya Zenin (both Sorcerer and Curse tabs); staged in decl2. Discovery resolves the question to the Zenin Family roster (16 members, missing Acceleration Mode and Time Cell Moon Palace), so the set is declared in _jjk_page_naoya_zenin.decl2.yaml (G6)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-052",
+   "kind": "fact",
+   "question": "What does Projection Sorcery allow Naoya Zenin to do with a second?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "turn one second into 24 frames",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Sorcerer tab."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-053",
+   "kind": "fact",
+   "question": "What does Naoya Zenin trace while using Projection Sorcery?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "a predetermined set of movements",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Sorcerer tab."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-054",
+   "kind": "fact",
+   "question": "What is the result when something disobeys the 24 FPS rule while Naoya Zenin's technique is active?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "they are frozen for one second inside an animated frame",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Sorcerer tab; 'happens' would trip the router's story-verb rule, so the question is phrased around it."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-055",
+   "kind": "fact",
+   "question": "Who did Naoya Zenin inherit his innate technique from?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 148-151, Episode 51",
+   "answer": [
+    {
+     "item": "his father",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Sorcerer tab; the router's wh-regex does not read 'Whose', so the question opens with 'Who'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-056",
+   "kind": "fact",
+   "question": "What rule must anything touched by Naoya Zenin's palm abide by while Projection Sorcery is active?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "the technique's 24 FPS rule",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Sorcerer tab; the page spells it 24 FPS with a space."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-057",
+   "kind": "fact",
+   "question": "What greatly improved Projection Sorcery in Naoya Zenin's cursed spirit form?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "his cursed spirit physiology",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Curse tab."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-058",
+   "kind": "fact",
+   "question": "What could Naoya Zenin's body build up as a curse, combined with the ability to fly?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "speeds that far surpass those of when he was a sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Curse tab."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-059",
+   "kind": "fact",
+   "question": "What did Naoya Zenin retain after becoming a vengeful cursed spirit?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "his innate technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Curse tab."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-060",
+   "kind": "fact",
+   "question": "What did Naoya Zenin's body use to eject the air it drew in?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "thrusting pressure and cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Spirit Physiology, Acceleration Mode."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-061",
+   "kind": "fact",
+   "question": "What did Naoya Zenin's body do with its inlets while it flew around?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "drew in air through the inlets while he flew around",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Spirit Physiology, Acceleration Mode."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-062",
+   "kind": "fact",
+   "question": "Why does Naoya Zenin's body curl up when accelerating toward its top speed?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "so that very speed won't destroy him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Spirit Physiology, Acceleration Mode."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-063",
+   "kind": "fact",
+   "question": "What does curling up increase in Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "Naoya's toughness",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Spirit Physiology, Acceleration Mode."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-064",
+   "kind": "fact",
+   "question": "What does the binding vow on Naoya Zenin's Acceleration Mode prevent?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "being durable outside this mode",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Spirit Physiology, Acceleration Mode; the page's only binding vow."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-065",
+   "kind": "fact",
+   "question": "What does Naoya Zenin's body hide within its shell?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "its tendrils",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Spirit Physiology, Acceleration Mode."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-066",
+   "kind": "fact",
+   "question": "What form did Naoya Zenin's domain take?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "a womb-like environment with a giant eye in place of a uterus",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Domain Expansion, Time Cell Moon Palace."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-067",
+   "kind": "fact",
+   "question": "What rules do the can't-miss attacks of Naoya Zenin's domain enforce on a cellular level?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 142-198, Episode 49",
+   "answer": [
+    {
+     "item": "the 24FPS rules of Projection Sorcery",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Domain Expansion, Time Cell Moon Palace; the page spells 24FPS without a space."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-068",
+   "kind": "fact",
+   "question": "What does the guaranteed-hit of Naoya Zenin's Time Cell Moon Palace target?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 192-197",
+   "answer": [
+    {
+     "item": "the individual cells of his opponents",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Culling Game Arc."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-069",
+   "kind": "fact",
+   "question": "What does moving inside Naoya Zenin's domain do to a person?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 198",
+   "answer": [
+    {
+     "item": "an individual's cellular structure to be disrupted, severely injuring them throughout their body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Culling Game Arc; phrased without 'happens' so the router keeps it a lookup instead of a story walk."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-070",
+   "kind": "fact",
+   "question": "Why was Maki Zenin not subjected to the effects of Naoya Zenin's domain?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 198",
+   "answer": [
+    {
+     "item": "she has no cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Culling Game Arc; Maki is treated as an inanimate object inside the domain."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-071",
+   "kind": "fact",
+   "question": "What conventional weapon did Naoya Zenin carry?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 142, Episode 49",
+   "answer": [
+    {
+     "item": "a tanto-style knife",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Equipment, Conventional Weaponry."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-072",
+   "kind": "fact",
+   "question": "Where did Naoya Zenin keep his knife?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 142, Episode 49",
+   "answer": [
+    {
+     "item": "tucked in his clothes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Equipment, Conventional Weaponry."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-073",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin rarely use his knife?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 142, Episode 49",
+   "answer": [
+    {
+     "item": "He held disdain for the use of weapons in general",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Equipment, Conventional Weaponry."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-074",
+   "kind": "fact",
+   "question": "What was Naoya Zenin trying to do when he used his knife on Choso?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 142, Episode 49",
+   "answer": [
+    {
+     "item": "in an attempt to disable Flowing Red Scale",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Equipment, Conventional Weaponry."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-075",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin hide the only knife he uses?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "to keep it a secret",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-076",
+   "kind": "fact",
+   "question": "What did the cursed technique Naoya Zenin inherited grant him?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 138-141, Episodes 47-49",
+   "answer": [
+    {
+     "item": "incredible speed that Naoya prided himself on",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-077",
+   "kind": "fact",
+   "question": "What did Naoya Zenin prioritize over the former head of the clan?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 138-141, Episodes 47-49",
+   "answer": [
+    {
+     "item": "gathering speed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview; the former head is Naobito."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-078",
+   "kind": "fact",
+   "question": "What kind of sorcerer was Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 138-141, Episodes 47-49",
+   "answer": [
+    {
+     "item": "special grade 1 sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-079",
+   "kind": "fact",
+   "question": "Which elite unit of the Zenin clan was Naoya Zenin the head of?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 148-151, Episode 51",
+   "answer": [
+    {
+     "item": "the Hei",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-080",
+   "kind": "fact",
+   "question": "What made up the Hei that Naoya Zenin headed?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 138-141, Episodes 47-49",
+   "answer": [
+    {
+     "item": "the Zenin clan's most powerful collective of sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview; anchored to Naoya so the router resolves the Zenin page, not the clan's."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-081",
+   "kind": "fact",
+   "question": "What does Naoya Zenin think of sorcerers that rely on weapons?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "He finds sorcerers that rely on weapons to be shameful",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-082",
+   "kind": "fact",
+   "question": "What was Maki Zenin able to do that Naoya Zenin found inconceivable?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "obey the 24FPS",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview; the page spells 24FPS without a space."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-083",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin find Maki Zenin obeying 24FPS inconceivable?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "he refused to acknowledge her strength",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-084",
+   "kind": "fact",
+   "question": "How did Naoya Zenin plan to hurt Maki Zenin with his speed?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "punch through her body using strength forged from his weight and his subsonic speed together",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-085",
+   "kind": "fact",
+   "question": "What did Naoya Zenin plan to do to Maki Zenin during their fight?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "His plan was to trap her",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-086",
+   "kind": "fact",
+   "question": "How long could Naoya Zenin, the only member of the Hei, contend with Maki Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "for more than a few moments",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-087",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin walk straight into Choso's Supernova?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "he relied too heavily on his familiarity with Blood Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-088",
+   "kind": "fact",
+   "question": "What made Choso's Supernova attack uniquely dangerous to Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "a technique unique only to him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-089",
+   "kind": "fact",
+   "question": "How did Naoya Zenin's speed change after he became a vengeful cursed spirit?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "Naoya's speed increased exponentially",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-090",
+   "kind": "fact",
+   "question": "What could Naoya Zenin do as a curse, so fast that Noritoshi Kamo couldn't follow?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "fly through the air at supersonic speeds",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-091",
+   "kind": "fact",
+   "question": "How did cursed Naoya Zenin first pin down Maki Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 151-198, Episode 51",
+   "answer": [
+    {
+     "item": "with his initial high-speed attack",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Overview."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-092",
+   "kind": "fact",
+   "question": "What did Naoya Zenin combine his martial arts skills with as his main combat style?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "the speed granted by his innate technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Physical Prowess."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-093",
+   "kind": "fact",
+   "question": "What types of punches did Naoya Zenin mainly throw in quick succession?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "chops, backfists, elbows, uppercuts, or combinations of the like",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Physical Prowess."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-094",
+   "kind": "fact",
+   "question": "What did a single body shot from Naoya Zenin do to Choso?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "slammed Choso into a stone pillar with enough force to crack it",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Physical Prowess."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-095",
+   "kind": "fact",
+   "question": "What did Naoya Zenin use his tendrils to create as a curse?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 141 and 142, Episode 49",
+   "answer": [
+    {
+     "item": "makeshift arms to strike his opponents with",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Physical Prowess."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-096",
+   "kind": "fact",
+   "question": "What level of intellect was Naoya Zenin considered to have, even as a child?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 140-151, Episodes 48-51",
+   "answer": [
+    {
+     "item": "a genius-level intellect, even as a child",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Intelligence."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-097",
+   "kind": "fact",
+   "question": "What talent did Naoya Zenin share with Naobito?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 140-151, Episodes 48-51",
+   "answer": [
+    {
+     "item": "the same talent for strategic timing",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Intelligence."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-098",
+   "kind": "fact",
+   "question": "What did Naoya Zenin deduce about Maki Zenin's Shiranui-Gata?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 140-151, Episodes 48-51",
+   "answer": [
+    {
+     "item": "it was a trap",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Intelligence."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-099",
+   "kind": "fact",
+   "question": "What did Naoya Zenin decide to do instead of confronting Maki Zenin's Shiranui-Gata directly?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 140-151, Episodes 48-51",
+   "answer": [
+    {
+     "item": "continue gaining speed and hold on to his advantage",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Abilities and Powers, Intelligence."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-100",
+   "kind": "fact",
+   "question": "How did Naoya Zenin create explosions with his technique while fighting Maki Zenin and Noritoshi Kamo?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "sourced": "Chapters 192-197",
+   "answer": [
+    {
+     "item": "freezes air into frames in front of him and strikes them to create explosions",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Culling Game Arc."
+  }
+ ]
+}

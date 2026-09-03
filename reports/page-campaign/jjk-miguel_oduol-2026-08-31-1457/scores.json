@@ -1,0 +1,777 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Miguel Oduol?",
+      "set": "Every named technique of Miguel Oduol",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Miguel Oduol?",
+      "set": "Every ally of Miguel Oduol",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Miguel Oduol?",
+      "set": "Miguel Oduol's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Miguel Oduol",
+      "set": "Every battle involving Miguel Oduol",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Miguel Oduol?",
+      "found": [
+        "Black Rope",
+        "Prayer Song"
+      ],
+      "missing": [],
+      "members": [
+        "Black Rope",
+        "Prayer Song"
+      ]
+    },
+    {
+      "query": "What are all the allies of Miguel Oduol?",
+      "found": [
+        "Suguru Geto",
+        "Satoru Gojo",
+        "Larue",
+        "Manami Suda"
+      ],
+      "missing": [],
+      "members": [
+        "Larue",
+        "Manami Suda",
+        "Satoru Gojo",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Miguel Oduol?",
+      "found": [
+        "Suguru Geto's Group (Former)"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto's Group (Former)"
+      ]
+    },
+    {
+      "query": "Every battle involving Miguel Oduol",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Miguel Oduol's name?",
+      "id": "jjk-pg-miguel_oduol-001",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "\u30df\u30b2\u30eb\u30fb\u30aa\u30c9\u30a5\u30aa\u30fc\u30eb"
+      ],
+      "found": [
+        "\u30df\u30b2\u30eb\u30fb\u30aa\u30c9\u30a5\u30aa\u30fc\u30eb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Miguel Oduol's name?",
+      "id": "jjk-pg-miguel_oduol-002",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Migeru Odu\u014dru"
+      ],
+      "found": [
+        "Migeru Odu\u014dru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Miguel Oduol's race?",
+      "id": "jjk-pg-miguel_oduol-003",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Miguel Oduol's gender?",
+      "id": "jjk-pg-miguel_oduol-004",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Miguel Oduol?",
+      "id": "jjk-pg-miguel_oduol-005",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Miguel Oduol's occupation?",
+      "id": "jjk-pg-miguel_oduol-006",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Curse User (Former)"
+      ],
+      "found": [
+        "Curse User (Former)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Miguel Oduol first appear?",
+      "id": "jjk-pg-miguel_oduol-007",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3\nChapter 33 (Cover Only)\nChapter 145 (Flashback)\nChapter 254"
+      ],
+      "found": [
+        "Chapter 0-3\nChapter 33 (Cover Only)\nChapter 145 (Flashback)\nChapter 254"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Miguel Oduol first depicted?",
+      "id": "jjk-pg-miguel_oduol-008",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "The Movie\nEpisode 40 (Mentioned)\nEpisode 50 (Flashback)"
+      ],
+      "found": [
+        "The Movie\nEpisode 40 (Mentioned)\nEpisode 50 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Miguel Oduol's Japanese voice actor?",
+      "id": "jjk-pg-miguel_oduol-009",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Koichi Yamadera"
+      ],
+      "found": [
+        "Koichi Yamadera"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Miguel Oduol's English voice actor?",
+      "id": "jjk-pg-miguel_oduol-010",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Bill Butts"
+      ],
+      "found": [
+        "Bill Butts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-miguel_oduol-011",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-miguel_oduol-012",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-miguel_oduol-013",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-miguel_oduol-014",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-miguel_oduol-015",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Miguel Oduol use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-miguel_oduol-016",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Prayer Song"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Prayer Song"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Miguel Oduol look like?",
+      "id": "jjk-pg-miguel_oduol-021",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "a tall, heavily muscled African man whose eyes and hair are both normally covered by accessories"
+      ],
+      "found": [
+        "a tall, heavily muscled African man whose eyes and hair are both normally covered by accessories"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What covers Miguel Oduol's eyes?",
+      "id": "jjk-pg-miguel_oduol-022",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Armless sunglasses"
+      ],
+      "found": [
+        "Armless sunglasses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Miguel Oduol always wear on his head?",
+      "id": "jjk-pg-miguel_oduol-023",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "a large puffy beret-style hat"
+      ],
+      "found": [
+        "a large puffy beret-style hat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Miguel Oduol wear around Yuta about a year later?",
+      "id": "jjk-pg-miguel_oduol-024",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "a patterned hoodie"
+      ],
+      "found": [
+        "a patterned hoodie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What decision did Miguel Oduol and Larue make?",
+      "id": "jjk-pg-miguel_oduol-025",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "decided to leave the group after his death"
+      ],
+      "found": [
+        "decided to leave the group after his death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Miguel Oduol swear regarding Suguru Geto's death?",
+      "id": "jjk-pg-miguel_oduol-026",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "curse Suguru if he ended up dying in that battle"
+      ],
+      "found": [
+        "curse Suguru if he ended up dying in that battle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Satoru Gojo describe Miguel Oduol's talking style?",
+      "id": "jjk-pg-miguel_oduol-027",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "like the MMA comedian Bobby Ologun"
+      ],
+      "found": [
+        "like the MMA comedian Bobby Ologun"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How do Yuta Okkotsu and Miguel Oduol get along?",
+      "id": "jjk-pg-miguel_oduol-028",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Yuta and Miguel appear to get along well enough despite the former's role in Suguru's end"
+      ],
+      "found": [
+        "Yuta and Miguel appear to get along well enough despite the former's role in Suguru's end"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Miguel Oduol's family in Kenya responsible for?",
+      "id": "jjk-pg-miguel_oduol-029",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "weaving the Black Rope"
+      ],
+      "found": [
+        "weaving the Black Rope"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Satoru Gojo recruit Miguel Oduol?",
+      "id": "jjk-pg-miguel_oduol-030",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Miguel was good enough to recruit and had him train his prized pupil"
+      ],
+      "found": [
+        "Miguel was good enough to recruit and had him train his prized pupil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Miguel Oduol's training do for Yuta Okkotsu?",
+      "id": "jjk-pg-miguel_oduol-031",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "immensely more powerful than before he left"
+      ],
+      "found": [
+        "immensely more powerful than before he left"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could Miguel Oduol do after taking hits from Satoru Gojo?",
+      "id": "jjk-pg-miguel_oduol-032",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "recover, and counterattack moments later"
+      ],
+      "found": [
+        "recover, and counterattack moments later"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What knowledge does Miguel Oduol have thanks to Suguru Geto?",
+      "id": "jjk-pg-miguel_oduol-033",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "the Six Eyes and the Limitless"
+      ],
+      "found": [
+        "the Six Eyes and the Limitless"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Miguel Oduol's Prayer Song technique work?",
+      "id": "jjk-pg-miguel_oduol-034",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "By dancing to a beat etched into his body"
+      ],
+      "found": [
+        "By dancing to a beat etched into his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to the Black Rope over time?",
+      "id": "jjk-pg-miguel_oduol-035",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "The rope burns away the more it's used until Miguel no longer has any left"
+      ],
+      "found": [
+        "The rope burns away the more it's used until Miguel no longer has any left"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event from the Cursed Child Arc is listed for Miguel Oduol?",
+      "id": "jjk-pg-miguel_oduol-036",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "found": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Miguel Oduol get in the first Popularity Poll?",
+      "id": "jjk-pg-miguel_oduol-037",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "213 votes"
+      ],
+      "found": [
+        "213 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Miguel Oduol get in the second Popularity Poll?",
+      "id": "jjk-pg-miguel_oduol-038",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "19 votes"
+      ],
+      "found": [
+        "19 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Miguel Oduol get in the third Popularity Poll?",
+      "id": "jjk-pg-miguel_oduol-039",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "12 votes"
+      ],
+      "found": [
+        "12 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Miguel Oduol get in the fourth Popularity Poll?",
+      "id": "jjk-pg-miguel_oduol-040",
+      "subject": "Miguel Oduol",
+      "accept": "all",
+      "expected": [
+        "62 votes"
+      ],
+      "found": [
+        "62 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 36,
+    "fact_present": 36
+  }
+}

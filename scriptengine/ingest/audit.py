@@ -55,7 +55,7 @@ def audit_series(paths: SeriesPaths, sample: int = 0) -> dict[str, Any]:
     # happen to be on disk. A capped crawl links heavily to articles it has not
     # reached yet; counting those as dangling measures the sample size rather
     # than the extraction, and buries the genuinely broken links.
-    known_titles = set(manifest.get("all_titles") or ())
+    known_titles: set[str] = set(manifest.get("all_titles") or ())
     partial = bool(known_titles) and len(known_titles) > len(pages)
 
     known_titles.update(page.title for page in pages)
@@ -189,7 +189,7 @@ def _citation_coverage(pages: list[WikiPage], edges: list[Any]) -> dict[str, Any
     }
 
 
-def _unknown_qualifiers(pages: list[WikiPage], ontology: Any) -> dict[str, int]:
+def _unknown_qualifiers(pages: list[WikiPage], ontology: Any) -> dict[str, dict[str, int] | int]:
     """Reference parameters the extractor does not know what to do with.
 
     This is the audit that would have caught the Modulo bug on day one. The wiki

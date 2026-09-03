@@ -570,6 +570,42 @@ def test_write_batch_creates_and_validates(tmp_path, series_with_store):
     Q.validate([Q.load_file(tmp_path / "_jjk_page_angel.json")])
 
 
+def test_cjk_answer_survives_the_batch_round_trip(tmp_path, series_with_store):
+    """G10 (Mei Mei Q001, 2026-08-27): a stored kanji answer came back
+    garbled -- `冥冥` as `å†¥å†¥`, UTF-8 bytes read as cp1252 in a path that
+    did not name its encoding -- and the question became unanswerable by
+    construction, so it was retired. The write is now strict UTF-8 (BOM) and
+    verifies the round-trip before the file becomes the batch; this pins a
+    kanji answer through the real write, read-back and scorer fold."""
+    from scriptengine.eval import questions as Q
+    from scriptengine.eval.canon_gold import norm, present
+    from scriptengine.eval.page_gen import generate_structured, write_batch
+
+    paths, store = series_with_store
+    out = generate_structured(paths, "Angel", overrides=_JJK_OVERRIDES)
+    hand = {
+        "id": "jjk-pg-angel-901", "kind": "fact",
+        "question": "What are the kanji for Angel's name?",
+        "subject": "Angel", "tier": "wiki", "expect_mode": "qa", "scope": "closed",
+        "answer": [{"item": "天使"}],
+        "sources": ["https://jujutsu-kaisen.fandom.com/wiki/Angel"],
+        "verified": "2026-08-27", "note": "hand G10",
+    }
+    path = tmp_path / "_jjk_page_angel.json"
+    batch = write_batch(path, "jjk", "angel", "https://jujutsu-kaisen.fandom.com",
+                        out, existing={"questions": [hand], "retired": []})
+    # The file self-describes as UTF-8, so a reader that would otherwise
+    # assume a local codepage cannot silently re-encode the kanji.
+    assert path.read_bytes().startswith(b"\xef\xbb\xbf")
+    assert "天使" in batch["questions"][0]["answer"][0]["item"]
+    bank = Q.load_file(path)
+    items = [item.item for q in bank.questions for item in q.answer]
+    assert "天使" in items
+    # The fold the scorer uses keeps the kanji on both sides of the match.
+    assert norm("天使") == "天使"
+    assert present(norm("天使"), norm("Angel japanese 天使"))
+
+
 def test_rerun_never_clobbers_hand_authored(tmp_path, series_with_store):
     from scriptengine.eval.page_gen import generate_structured, write_batch
 
@@ -794,7 +830,7 @@ def test_page_gen_command_writes_all_four_artifacts(tmp_path, series_with_store,
     for name in ("_jjk_page_angel.decl.yaml", "_jjk_page_angel.coverage.json",
                  "_jjk_page_angel.verify.json"):
         assert (tmp_path / "questions" / name).exists()
-    batch = json.loads(q.read_text(encoding="utf-8"))
+    batch = json.loads(q.read_text(encoding="utf-8-sig"))
     assert batch["questions"] and all(x["note"].startswith("page-gen:") for x in batch["questions"])
 
 
@@ -833,7 +869,7 @@ def test_page_gen_rerun_feeds_prose_questions_into_the_ledger(tmp_path, series_w
     assert "Trivia" in cov1["uncovered"]
 
     # Phase 3 registered a prose question for Trivia, as the prose pass would.
-    batch = json.loads(batch_path.read_text(encoding="utf-8"))
+    batch = json.loads(batch_path.read_text(encoding="utf-8-sig"))
     batch["questions"].append({
         "id": "jjk-pg-angel-900",
         "kind": "fact",
@@ -856,7 +892,7 @@ def test_page_gen_rerun_feeds_prose_questions_into_the_ledger(tmp_path, series_w
     assert "Trivia" not in cov2["uncovered"]
     by_path = {s["path"]: s for s in cov2["sections"]}
     assert "prose:Trivia" in by_path["Trivia"]["covered_by"]
-    batch2 = json.loads(batch_path.read_text(encoding="utf-8"))
+    batch2 = json.loads(batch_path.read_text(encoding="utf-8-sig"))
     assert any(q.get("note") == "prose:Trivia" for q in batch2["questions"])
 
 

@@ -1,0 +1,55 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": []
+    },
+    {
+      "path": "Prologue",
+      "covered_by": []
+    },
+    {
+      "path": "Battle",
+      "covered_by": [
+        "page-gen:battle:Yuji Itadori vs. Aoi Todo:outcome",
+        "page-gen:battle:Yuji Itadori vs. Aoi Todo:place",
+        "page-gen:battle:Yuji Itadori vs. Aoi Todo:chapters",
+        "page-gen:battle:Yuji Itadori vs. Aoi Todo:episodes",
+        "page-gen:battle:Yuji Itadori vs. Aoi Todo:arc"
+      ]
+    },
+    {
+      "path": "Aftermath",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "infobox",
+    "Prologue",
+    "Aftermath"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

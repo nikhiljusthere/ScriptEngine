@@ -1,0 +1,42 @@
+# Staged roster declarations for the Toji Fushiguro page campaign
+# (questions/_jjk_page_toji_fushiguro.section3.json, section 3:
+# relationships & people).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every cousin of Toji Fushiguro` is the three entries labeled `(Cousin)` in
+# the infobox Relatives field of `Toji Fushiguro`: Naoya Zenin, Maki Zenin,
+# Mai Zenin. The page lists Tsurugi and Yuka Okkotsu separately as
+# `(First Cousin Twice Removed)`, so they are not part of this set.
+#
+# `Every person who could not defeat Dagon together` is the closed trio the
+# Overview section names: "Maki and grade 1 sorcerers Kento Nanami and
+# Naobito Zenin could not defeat together." The page writes `Maki`; the
+# member is the exact page title `Maki Zenin`.
+#
+# The full infobox Relatives list was NOT declared (recorded in the section's
+# `retired[]`): `Megumi's Mother` and `Tsumiki's Mother` have no wiki pages,
+# so the closed set cannot be members = exact page titles.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every cousin of Toji Fushiguro
+    match:
+      - every cousin of toji fushiguro
+      - all cousins of toji fushiguro
+      - cousins of toji fushiguro
+    subject: Toji Fushiguro
+    members:
+      - Naoya Zenin
+      - Maki Zenin
+      - Mai Zenin
+  - name: Every person who could not defeat Dagon together
+    match:
+      - every person who could not defeat dagon together
+      - all the people who could not defeat dagon together
+      - people who could not defeat dagon together
+    subject: Toji Fushiguro
+    members:
+      - Maki Zenin
+      - Kento Nanami
+      - Naobito Zenin

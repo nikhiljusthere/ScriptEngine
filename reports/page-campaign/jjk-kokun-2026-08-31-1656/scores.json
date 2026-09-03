@@ -1,0 +1,621 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Kokun?",
+      "set": "Every enemy of Kokun",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kokun?",
+      "set": "Kokun's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kokun",
+      "set": "Every battle involving Kokun",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Kokun?",
+      "found": [
+        "Riko Amanai",
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Riko Amanai",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kokun?",
+      "found": [
+        "Q"
+      ],
+      "missing": [],
+      "members": [
+        "Q"
+      ]
+    },
+    {
+      "query": "Every battle involving Kokun",
+      "found": [
+        "Satoru Gojo & Suguru Geto vs. Bayer & Kokun"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo & Suguru Geto vs. Bayer & Kokun"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kokun's name?",
+      "id": "jjk-pg-kokun-001",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "\u30b3\u30fc\u30af\u30f3"
+      ],
+      "found": [
+        "\u30b3\u30fc\u30af\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kokun's name?",
+      "id": "jjk-pg-kokun-002",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "K\u014dkun"
+      ],
+      "found": [
+        "K\u014dkun"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokun's race?",
+      "id": "jjk-pg-kokun-003",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokun's gender?",
+      "id": "jjk-pg-kokun-004",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kokun?",
+      "id": "jjk-pg-kokun-005",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokun's occupation?",
+      "id": "jjk-pg-kokun-006",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kokun first appear?",
+      "id": "jjk-pg-kokun-007",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kokun first depicted?",
+      "id": "jjk-pg-kokun-008",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Episode 25"
+      ],
+      "found": [
+        "Episode 25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kokun's Japanese voice actor?",
+      "id": "jjk-pg-kokun-009",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Kazuki Kyan"
+      ],
+      "found": [
+        "Kazuki Kyan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo & Suguru Geto vs. Bayer & Kokun?",
+      "id": "jjk-pg-kokun-010",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Satoru & Suguru are victorious"
+      ],
+      "found": [
+        "Satoru & Suguru are victorious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo & Suguru Geto vs. Bayer & Kokun take place?",
+      "id": "jjk-pg-kokun-011",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "August 2006"
+      ],
+      "found": [
+        "August 2006"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Satoru Gojo & Suguru Geto vs. Bayer & Kokun begin?",
+      "id": "jjk-pg-kokun-012",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Satoru Gojo & Suguru Geto vs. Bayer & Kokun depicted?",
+      "id": "jjk-pg-kokun-013",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Episode 25 - 26"
+      ],
+      "found": [
+        "Episode 25 - 26"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo & Suguru Geto vs. Bayer & Kokun take place?",
+      "id": "jjk-pg-kokun-014",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Gojo's Past"
+      ],
+      "found": [
+        "Gojo's Past"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kokun use in Satoru Gojo & Suguru Geto vs. Bayer & Kokun?",
+      "id": "jjk-pg-kokun-015",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "N/A"
+      ],
+      "found": [
+        "N/A"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Kokun play in the series?",
+      "id": "jjk-pg-kokun-019",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which faction of curse users was Kokun formerly aligned with?",
+      "id": "jjk-pg-kokun-020",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "a faction of curse users called Q"
+      ],
+      "found": [
+        "a faction of curse users called Q"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kokun look like?",
+      "id": "jjk-pg-kokun-021",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "a tall and slim young man with a buzzcut and triangle shaped eyebrows"
+      ],
+      "found": [
+        "a tall and slim young man with a buzzcut and triangle shaped eyebrows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kokun wear on his head?",
+      "id": "jjk-pg-kokun-022",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "a white breton hat that has a dark colored bill and a Q on the front of it"
+      ],
+      "found": [
+        "a white breton hat that has a dark colored bill and a Q on the front of it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What sadistic act is Kokun shown doing?",
+      "id": "jjk-pg-kokun-023",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "throwing an unconscious Riko off a building to her death"
+      ],
+      "found": [
+        "throwing an unconscious Riko off a building to her death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Kokun have great faith in?",
+      "id": "jjk-pg-kokun-024",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "the organization and member Bayer"
+      ],
+      "found": [
+        "the organization and member Bayer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Kokun sent to do in the Gojo's Past Arc?",
+      "id": "jjk-pg-kokun-025",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "infiltrate the location and send Riko plummeting to her death"
+      ],
+      "found": [
+        "infiltrate the location and send Riko plummeting to her death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Kokun captured by Geto?",
+      "id": "jjk-pg-kokun-026",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "easily captured by one of Geto's spirits"
+      ],
+      "found": [
+        "easily captured by one of Geto's spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is known about what happened to Kokun after the organization was disbanded?",
+      "id": "jjk-pg-kokun-027",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "it is unknown what happened to Kokun"
+      ],
+      "found": [
+        "it is unknown what happened to Kokun"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Kokun's strength described?",
+      "id": "jjk-pg-kokun-028",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "a curse user with unknown capabilities"
+      ],
+      "found": [
+        "a curse user with unknown capabilities"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who defeated Kokun in seconds with a cursed spirit?",
+      "id": "jjk-pg-kokun-029",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto"
+      ],
+      "found": [
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does Kokun's codename originate from?",
+      "id": "jjk-pg-kokun-030",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "a Japanese sausage brand"
+      ],
+      "found": [
+        "a Japanese sausage brand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is possible that happened to Kokun after being captured?",
+      "id": "jjk-pg-kokun-031",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "he was killed after being captured by Gojo and Geto"
+      ],
+      "found": [
+        "he was killed after being captured by Gojo and Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kokun rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-kokun-032",
+      "subject": "Kokun",
+      "accept": "all",
+      "expected": [
+        "76th in the fourth Popularity Poll with 10 votes"
+      ],
+      "found": [
+        "76th in the fourth Popularity Poll with 10 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 29,
+    "fact_present": 29
+  }
+}

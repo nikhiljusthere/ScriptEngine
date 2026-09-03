@@ -1,0 +1,939 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Noritoshi Kamo (Ancestor)?",
+      "set": "Every named technique of Noritoshi Kamo (Ancestor)",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Noritoshi Kamo (Ancestor)?",
+      "set": "Noritoshi Kamo (Ancestor)'s aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Noritoshi Kamo (Ancestor)?",
+      "set": "Noritoshi Kamo (Ancestor)'s affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Noritoshi Kamo (Ancestor)",
+      "set": "Every battle involving Noritoshi Kamo (Ancestor)",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Noritoshi Kamo (Ancestor)?",
+      "found": [
+        "High Intellect"
+      ],
+      "missing": [],
+      "members": [
+        "High Intellect"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Noritoshi Kamo (Ancestor)?",
+      "found": [
+        "The Blot of the Kamo Clan",
+        "History's Most Evil Sorcerer"
+      ],
+      "missing": [],
+      "members": [
+        "History's Most Evil Sorcerer",
+        "The Blot of the Kamo Clan"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Noritoshi Kamo (Ancestor)?",
+      "found": [
+        "Kamo Clan (Formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Kamo Clan (Formerly)"
+      ]
+    },
+    {
+      "query": "Every battle involving Noritoshi Kamo (Ancestor)",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+        "Megumi Fushiguro vs. Noritoshi Kamo",
+        "Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+        "Megumi Fushiguro vs. Noritoshi Kamo",
+        "Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Noritoshi Kamo (Ancestor)'s name?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-001",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "\u52a0\u8302\u61b2\u502b"
+      ],
+      "found": [
+        "\u52a0\u8302\u61b2\u502b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Noritoshi Kamo (Ancestor)'s name?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-002",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Kamo Noritoshi"
+      ],
+      "found": [
+        "Kamo Noritoshi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Noritoshi Kamo (Ancestor)'s race?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-003",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Noritoshi Kamo (Ancestor)'s gender?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-004",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Noritoshi Kamo (Ancestor)?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-005",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Noritoshi Kamo (Ancestor)'s occupation?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-006",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Curse User Jujutsu Sorcerer (Former)"
+      ],
+      "found": [
+        "Curse User Jujutsu Sorcerer (Former)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Noritoshi Kamo (Ancestor) first appear?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-007",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Chapter 60 (Flashback)"
+      ],
+      "found": [
+        "Chapter 60 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Noritoshi Kamo (Ancestor) first depicted?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-008",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Episode 24 (Flashback)"
+      ],
+      "found": [
+        "Episode 24 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-009",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-010",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-011",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-012",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-013",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-014",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kamo Noritoshi use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-015",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Blood Manipulation"
+      ],
+      "found": [
+        "Blood Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-016",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "found": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-017",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-018",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-019",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Chapter 191"
+      ],
+      "found": [
+        "Chapter 191"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-020",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kamo Noritoshi use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-021",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Blood Manipulation, Crimson Binding, Flowing Red Scale, Piercing Blood, Non-Cursed Tools, Bow & Arrows"
+      ],
+      "found": [
+        "Blood Manipulation, Crimson Binding, Flowing Red Scale, Piercing Blood, Non-Cursed Tools, Bow & Arrows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Noritoshi Kamo?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-022",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Hanami interrupts the battle."
+      ],
+      "found": [
+        "Hanami interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Noritoshi Kamo take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-023",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Noritoshi Kamo begin?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-024",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Chapter 43"
+      ],
+      "found": [
+        "Chapter 43"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Noritoshi Kamo depicted?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-025",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Episode 18"
+      ],
+      "found": [
+        "Episode 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Noritoshi Kamo take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-026",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-027",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Maki takes over the battle."
+      ],
+      "found": [
+        "Maki takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-028",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami begin?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-029",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Chapter 45"
+      ],
+      "found": [
+        "Chapter 45"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami depicted?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-030",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Episode 18 - 19"
+      ],
+      "found": [
+        "Episode 18 - 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami take place?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-031",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kamo Noritoshi use in Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-032",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "Blood Manipulation, Slicing Exorcism, Piercing Blood"
+      ],
+      "found": [
+        "Blood Manipulation, Slicing Exorcism, Piercing Blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Noritoshi Kamo look like in his original body?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-037",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "an older-looking man with short dark hair, worn slicked back, and a small mustache"
+      ],
+      "found": [
+        "an older-looking man with short dark hair, worn slicked back, and a small mustache"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What distinctive mark did Noritoshi Kamo's face have?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-038",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "a straight, stitched scar running horizontally through his forehead"
+      ],
+      "found": [
+        "a straight, stitched scar running horizontally through his forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Noritoshi Kamo wear in his original body?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-039",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "a dark yukata"
+      ],
+      "found": [
+        "a dark yukata"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Noritoshi Kamo carry with him in his original body?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-040",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "an umbrella"
+      ],
+      "found": [
+        "an umbrella"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Noritoshi Kamo's original personality unknown?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-041",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "his body having been stolen by Kenjaku"
+      ],
+      "found": [
+        "his body having been stolen by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What reputation did Kenjaku gain while inhabiting Noritoshi's body?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-042",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "a cruel man"
+      ],
+      "found": [
+        "a cruel man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku do in Noritoshi Kamo's form?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-043",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "several acts that would solidify him as one of the most evil sorcerers in history"
+      ],
+      "found": [
+        "several acts that would solidify him as one of the most evil sorcerers in history"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What facility did Noritoshi Kamo run in the Meiji Era?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-044",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "a temple"
+      ],
+      "found": [
+        "a temple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What were the results of Noritoshi Kamo's experiments on the woman?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-045",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "nine pregnancies and nine abortions that lead to the creation of the nine Death Paintings"
+      ],
+      "found": [
+        "nine pregnancies and nine abortions that lead to the creation of the nine Death Paintings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Noritoshi Kamo come to inherit Blood Manipulation?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-046",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "mixed in his own blood with some of the cursed wombs"
+      ],
+      "found": [
+        "mixed in his own blood with some of the cursed wombs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the wiki say about Noritoshi Kamo's abilities?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-047",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "currently unknown"
+      ],
+      "found": [
+        "currently unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Kenjaku, as Noritoshi, interested in?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-048",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "human-spirit hybrids"
+      ],
+      "found": [
+        "human-spirit hybrids"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What suggests that Noritoshi Kamo had Blood Manipulation?",
+      "id": "jjk-pg-noritoshi_kamo_ancestor-049",
+      "subject": "Noritoshi Kamo (Ancestor)",
+      "accept": "all",
+      "expected": [
+        "the Death Paintings had all inherited it or had variations of the technique"
+      ],
+      "found": [
+        "the Death Paintings had all inherited it or had variations of the technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 45,
+    "fact_present": 45
+  }
+}

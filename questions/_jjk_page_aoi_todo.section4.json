@@ -1,0 +1,1044 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-23",
+  "note": "Section 4 (identity/grade/aliases/appearance/vitals/media) of the Aoi Todo cluster. Rosters staged in _jjk_page_aoi_todo.decl4.yaml. Infobox-only values (race, status, gender, age, height, voices, debuts, class) confirmed retrievable: the chunked infobox fact list surfaces in the /context bundle for every Aoi Todo question.",
+  "retired": [
+    {
+      "id": "jjk-pg-aoi_todo-retired-s4-01",
+      "item": "",
+      "question": "What are the kanji and romaji of Aoi Todo's name?",
+      "reason": "The infobox `kanji` cell (東堂葵) and `romaji` cell (Tōdō Aoi) are Nihongo/Ruby-derived cells that the pipeline does not make goldable, so a kanji- or romaji-only answer cannot be golded; the clause is retired rather than rephrased, since no chunked prose states the full name in kanji (the Trivia sentence names only the component kanji)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-retired-s4-02",
+      "item": "",
+      "question": "What are Aoi Todo's aliases?",
+      "reason": "The page has no `alias` infobox field and no nickname or epithet anywhere in the prose; the closest form is the description of how his peers see him ('battle-crazed meathead'), which is characterization, not a closed alias set. No roster is staged."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-retired-s4-03",
+      "item": "",
+      "question": "In which other media does Aoi Todo appear?",
+      "reason": "The page has no 'Other Media' section and no mention of games, movies or other appearances, so there is nothing to gold; the clause is retired rather than invented."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-aoi_todo-151",
+      "kind": "fact",
+      "question": "What kind of character is Aoi Todo in the Jujutsu Kaisen series?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "major supporting character in the Jujutsu Kaisen series",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'Aoi Todo is a major supporting character in the Jujutsu Kaisen series.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-152",
+      "kind": "fact",
+      "question": "Which school is Aoi Todo a third-year student at?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kyoto Jujutsu High School",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'He is a third-year student at Kyoto Jujutsu High School' (display text of a wikilink to Kyoto Metropolitan Curse Technical College)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-153",
+      "kind": "fact",
+      "question": "What year of student is Aoi Todo at Kyoto Jujutsu High School?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "third-year student",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'He is a third-year student at Kyoto Jujutsu High School'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-154",
+      "kind": "fact",
+      "question": "What is Aoi Todo's rank as a jujutsu sorcerer, according to the lead?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "grade 1 jujutsu sorcerer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'and a grade 1 jujutsu sorcerer' (both phrases wikilinked, lowercase display text)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-155",
+      "kind": "fact",
+      "question": "What is Aoi Todo's class, according to the infobox?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Grade 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'class = Grade 1' (a wikilink whose display text is 'Grade 1'). The infobox fact list surfaces in the retrieved bundle."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-156",
+      "kind": "fact",
+      "question": "What is Aoi Todo's race, according to the infobox?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'race = Human'. Confirmed retrievable via live cli query + /context: the chunked infobox fact list carries 'specie Human'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-157",
+      "kind": "fact",
+      "question": "What is Aoi Todo's occupation, according to the infobox?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerer",
+          "aliases": [
+            "jujutsu sorcerer"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'occupation = Jujutsu Sorcerer' (a wikilink whose display text is 'Jujutsu Sorcerer'); the lead writes the same phrase lowercase as 'a grade 1 jujutsu sorcerer'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-158",
+      "kind": "fact",
+      "question": "What is Aoi Todo's gender, according to the infobox?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Male",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'gender = Male'; the page is also categorized 'Male' and is written throughout with 'he' pronouns."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-159",
+      "kind": "set",
+      "question": "What are Aoi Todo's affiliations?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kyoto Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox affiliation field is a closed single-entry set: 'Kyoto Jujutsu High' (display text of a wikilink to Kyoto Metropolitan Curse Technical College). Staged in _jjk_page_aoi_todo.decl4.yaml; the declared-member filter keeps it because it is stated in the infobox."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-160",
+      "kind": "fact",
+      "question": "What is Aoi Todo's status?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Alive",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'status = Alive'. Confirmed retrievable via live cli query + /context."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-161",
+      "kind": "fact",
+      "question": "How old is Aoi Todo, according to the official fanbook?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "18",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'age = 18' (fanbook-sourced, pages 36-37)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-162",
+      "kind": "fact",
+      "question": "How old is Aoi Todo in Jujutsu Kaisen Modulo?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "86",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'age = 18 (fanbook) / 86 (Modulo)' (modulo-sourced, chapter 21)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-163",
+      "kind": "fact",
+      "question": "How tall is Aoi Todo, according to the volume 5 profile?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Over 190 cm",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'height = Over 190 cm (Over 6'3\")' (volume 5 profile). Golded on the metric clause only."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-164",
+      "kind": "fact",
+      "question": "Who voices Aoi Todo in the Japanese dub?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Subaru Kimura",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'voice = Subaru Kimura' (a Wikipedia link). Confirmed retrievable via live cli query + /context."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-165",
+      "kind": "fact",
+      "question": "Who voices young Aoi Todo?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yūki Kazu",
+          "aliases": [
+            "Yuki Kazu"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'voice = Subaru Kimura / Yūki Kazu (Young)'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-166",
+      "kind": "fact",
+      "question": "Who voices Aoi Todo in the English dub?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Xander Mobus",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'eng voice = Xander Mobus' (a Wikipedia link)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-167",
+      "kind": "fact",
+      "question": "In which manga chapter does Aoi Todo make his debut?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 16",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'debut = Chapter 16'. Confirmed retrievable via live cli query + /context (the 'manga debut Chapter 16' fact surfaces in the bundle)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-168",
+      "kind": "fact",
+      "question": "In which anime episode does Aoi Todo make his debut?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 8",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'debutanime = Episode 8'. Confirmed retrievable via live cli query + /context."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-169",
+      "kind": "fact",
+      "question": "What color is Aoi Todo's hair?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black",
+          "aliases": [
+            "black"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'hair = Black'; Appearance: 'shoulder-length black hair'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-170",
+      "kind": "fact",
+      "question": "What color are Aoi Todo's eyes?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black",
+          "aliases": [
+            "black"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'eye = Black'; Appearance: 'He has small black eyes'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-171",
+      "kind": "fact",
+      "question": "How does the Appearance section describe Aoi Todo's build?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a very defined, heavy muscular build",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'He has a very defined, heavy muscular build and relatively tan skin.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-172",
+      "kind": "fact",
+      "question": "Whom does Aoi Todo stand about the same height as?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Todo is a tall young man who stands about the same height as Satoru Gojo.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-173",
+      "kind": "fact",
+      "question": "What is one of Aoi Todo's most notable features?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the large scar running down the left side of Todo's face",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'One of his most notable features is the large scar running down the left side of Todo's face that he got from harsh training with Yuki.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-174",
+      "kind": "fact",
+      "question": "How is Aoi Todo's shoulder-length black hair almost always tied?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "into a top-knot bun",
+          "aliases": [
+            "a top-knot bun"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'shoulder-length black hair that is almost always tied into a top-knot bun'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-175",
+      "kind": "fact",
+      "question": "What are the unusual flyaway strands of Aoi Todo's top-knot bun akin to?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "multiple stamens of a flower",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'unusual flyaway strands with rounded ends akin to multiple stamens of a flower, befitting the meaning of his name'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-176",
+      "kind": "fact",
+      "question": "What does Aoi Todo usually don with his jujutsu high uniform?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "martial arts pants and slippers",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'He usually dons martial arts pants and slippers.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-177",
+      "kind": "fact",
+      "question": "What is wrapped around Aoi Todo's waist?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a bright blue sash",
+          "aliases": [
+            "bright blue sash"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'a bright blue sash wrapped around the waist'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-178",
+      "kind": "fact",
+      "question": "What does Aoi Todo usually do to his jacket and undershirt before or during a battle?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "takes his jacket off and rips the undershirt",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'he usually takes his jacket off and rips the undershirt before or during the battle'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-179",
+      "kind": "fact",
+      "question": "What kind of outfit did Aoi Todo wear while playing ping-pong with Mei Mei?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a tennis-type of outfit",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'He wore a tennis-type of outfit while playing ping-pong with Mei Mei, sporting a collared shirt and shorts rather than his normal outfit.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-180",
+      "kind": "fact",
+      "question": "What does the school uniform in Aoi Todo's fantasy of attending junior high consist of?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a black jacket similar to his Jujutsu High one",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Todo wears a school uniform that consists of a black jacket similar to his Jujutsu High one.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-181",
+      "kind": "fact",
+      "question": "What color is Aoi Todo's hair in Jujutsu Kaisen Modulo?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "long white hair",
+          "aliases": [
+            "white hair"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance / Modulo: 'He now has long white hair tied into a high ponytail'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-182",
+      "kind": "fact",
+      "question": "What kind of beard does Aoi Todo have in Jujutsu Kaisen Modulo?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a thick beard",
+          "aliases": [
+            "thick beard"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance / Modulo: 'along with a thick beard of the same color'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-183",
+      "kind": "fact",
+      "question": "What kind of clothing does Aoi Todo wear in the Modulo desert environment?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "loose, light-colored clothing",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance / Modulo: 'Due to being in a desert environment, Todo wears loose, light-colored clothing suited for the harsh climate'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-184",
+      "kind": "fact",
+      "question": "What is draped over Aoi Todo's shoulders in Jujutsu Kaisen Modulo?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a large, black cloak",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance / Modulo: 'Draped over his shoulders is a large, black cloak.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-185",
+      "kind": "fact",
+      "question": "How did Aoi Todo's frame and skin change almost 70 years later?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "his once muscular frame becoming leaner and his skin deeply wrinkled",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance / Modulo: 'Almost 70 years later, Todo has considerably aged, with his once muscular frame becoming leaner and his skin deeply wrinkled.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-186",
+      "kind": "fact",
+      "question": "What is Aoi Todo's favorite food, according to the official fanbook?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Skirt steak",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'According to Jujutsu Kaisen Official Fanbook: ... Favorite food: Skirt steak.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-187",
+      "kind": "fact",
+      "question": "What is Aoi Todo's least favorite food, according to the official fanbook?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "None",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Least favorite food: None.' Confirmed retrievable via live /context: the fanbook trivia block ('favorite food skirt steak, least favorite food none') surfaces in the bundle."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-188",
+      "kind": "fact",
+      "question": "What is Aoi Todo's cause of stress, according to the official fanbook?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Boredom",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Cause of stress: Boredom.'; Personality: 'Todo hates being bored more than anything else.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-189",
+      "kind": "fact",
+      "question": "What does the official fanbook list as Aoi Todo's enrollment method?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Scouted",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'According to Jujutsu Kaisen Official Fanbook: Enrollment method: Scouted.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-190",
+      "kind": "fact",
+      "question": "What does Aoi Todo make sure to do to keep himself well-groomed?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "shower, put on deodorant, and be well-groomed",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Todo takes his appearance very seriously. He makes sure to shower, put on deodorant, and be well-groomed.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-191",
+      "kind": "fact",
+      "question": "What does Aoi Todo's given name mean, according to the Trivia section?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "hollyhock, altha, hibiscus, scarlet rosemallow",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'his given name means \"hollyhock, altha, hibiscus, scarlet rosemallow\"' (the kanji 葵 is not golded; only the English meaning in chunked prose)."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-192",
+      "kind": "fact",
+      "question": "What is Aoi Todo's ranking in the first Popularity Poll?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "8th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Todo ranked 8th in the first Popularity Poll with 7,791 votes.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-193",
+      "kind": "fact",
+      "question": "What is Aoi Todo's ranking in the second Popularity Poll?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "14th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Todo ranked 14th in the second Popularity Poll with 1,024 votes.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-194",
+      "kind": "fact",
+      "question": "What is Aoi Todo's ranking in the third Popularity Poll?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "20th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Todo ranked 20th in the third Popularity Poll with 290 votes.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-195",
+      "kind": "fact",
+      "question": "What is Aoi Todo's ranking in the fourth Popularity Poll?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "19th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Todo ranked 19th in the fourth Popularity Poll with 641 votes.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-196",
+      "kind": "fact",
+      "question": "What did Gege Akutami liken Aoi Todo to?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a highly skilled gorilla",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Gege Akutami likens Todo to a highly skilled gorilla'."
+    },
+    {
+      "id": "jjk-pg-aoi_todo-197",
+      "kind": "fact",
+      "question": "How did Aoi Todo obtain the rank of a grade 1 jujutsu sorcerer, according to the Overview?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "as a student despite coming from a non-sorcerer family",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'He obtained the rank of a grade 1 jujutsu sorcerer as a student despite coming from a non-sorcerer family.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-198",
+      "kind": "fact",
+      "question": "Why did Gege Akutami liken Aoi Todo to a highly skilled gorilla?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "as he became a grade 1 sorcerer as a student despite being from a non-sorcerer family",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Gege Akutami likens Todo to a highly skilled gorilla, as he became a grade 1 sorcerer as a student despite being from a non-sorcerer family.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-199",
+      "kind": "fact",
+      "question": "What does the Appearance section say about Aoi Todo's skin?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "relatively tan skin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'He has a very defined, heavy muscular build and relatively tan skin.'"
+    },
+    {
+      "id": "jjk-pg-aoi_todo-200",
+      "kind": "fact",
+      "question": "How does the Appearance section describe Aoi Todo's choice of pants?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "very loose and stops above the ankle",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Todo's choice of pants is very loose and stops above the ankle with a bright blue sash wrapped around the waist.'"
+    }
+  ]
+}

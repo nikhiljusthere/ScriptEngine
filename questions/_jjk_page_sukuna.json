@@ -1,0 +1,6169 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-24",
+ "note": "page-gen 2026-08-24: 73 structured questions (note page-gen:-marked), 0 auto-retires, 90 hand-authored kept, 4 superseded",
+ "retired": [
+  {
+   "id": "jjk-pg-sukuna-013-chapter-clause",
+   "question": "...and in which chapter of the manga? (the chapter-number clause of 'Who killed Sukuna')",
+   "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The killing is documented ('killing Gojo when the latter least expected it', Synopsis: 'Gojo is killed and Sukuna is victorious'), but the chapter number (Chapter 236) appears only inside `{{Ref|chap=236}}` citation tags on both the main page and the Synopsis -- never in chunked prose. The engine strips Refs, so no phrasing surfaces 'Chapter 236' in any bundle. Same structural class as Shibuya Incident's scrollbox/infobox retires; the killer (Satoru Gojo) is kept because it is retrievable."
+  },
+  {
+   "id": "jjk-pg-sukuna-052",
+   "question": "In which ancient text is the mythological Ryomen-Sukuna described?",
+   "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The string 'Nihon Shoki' appears only inside a `{{Scroll box}}` transclusion in the Trivia section (the mythology note), which is not chunked into a retrievable passage -- the same structural class as Shibuya Incident's chapter-title scrollbox retires. Hida Province passed because it also recurs in prose; Nihon Shoki does not."
+  },
+  {
+   "id": "jjk-pg-sukuna-005",
+   "question": "What is Sukuna's kanji name?",
+   "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The kanji (両面宿儺) live only in the page's `Character Infobox` (`kanji =`) and the leading `{{Nihongo}}` line -- neither is chunked into a retrievable passage, so no phrasing surfaces the string in any bundle. Same structural class as Shibuya Incident's kanji/romaji retires."
+  },
+  {
+   "id": "jjk-pg-sukuna-002",
+   "item": "",
+   "question": "What are all the aliases of Sukuna?",
+   "reason": "superseded by page-gen:alias (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-sukuna-007",
+   "item": "",
+   "question": "What is Sukuna's race?",
+   "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-sukuna-008",
+   "item": "",
+   "question": "How old is Sukuna?",
+   "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-sukuna-009",
+   "item": "",
+   "question": "What is Sukuna's gender?",
+   "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-sukuna-001",
+   "kind": "set",
+   "question": "What are all the battles involving Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hajime Kashimo vs. Sukuna"
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna"
+    },
+    {
+     "item": "Megumi Fushiguro vs. Sukuna"
+    },
+    {
+     "item": "Satoru Gojo vs. Sukuna: First Fight"
+    },
+    {
+     "item": "Sukuna vs. Finger Bearer"
+    },
+    {
+     "item": "Sukuna vs. Jogo"
+    },
+    {
+     "item": "Sukuna vs. Mahoraga"
+    },
+    {
+     "item": "Sukuna vs. Ryu Ishigori"
+    },
+    {
+     "item": "Sukuna vs. Yorozu"
+    },
+    {
+     "item": "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-003",
+   "kind": "set",
+   "question": "What are all the shikigami Sukuna can summon with the Ten Shadows Technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Divine Dogs"
+    },
+    {
+     "item": "Divine Dog: Totality"
+    },
+    {
+     "item": "Nue"
+    },
+    {
+     "item": "Max Elephant"
+    },
+    {
+     "item": "Rabbit Escape"
+    },
+    {
+     "item": "Round Deer"
+    },
+    {
+     "item": "Piercing Ox"
+    },
+    {
+     "item": "Tiger Funeral"
+    },
+    {
+     "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga"
+    },
+    {
+     "item": "Nue: Totality - Merged Beast Agito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-004",
+   "kind": "set",
+   "question": "What are all the cursed tools Sukuna wielded?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kamutoke"
+    },
+    {
+     "item": "Hiten"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-006",
+   "kind": "fact",
+   "question": "What is Sukuna's romaji name?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Ryōmen Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-010",
+   "kind": "fact",
+   "question": "What color is Sukuna's hair?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Pink"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-011",
+   "kind": "fact",
+   "question": "What color are Sukuna's eyes?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Red"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-012",
+   "kind": "fact",
+   "question": "Who killed Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Satoru Gojo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-013",
+   "kind": "fact",
+   "question": "What was Sukuna's occupation in the Heian era?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "sorcerer"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-014",
+   "kind": "fact",
+   "question": "What grade is Sukuna classified as?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Special Grade"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-015",
+   "kind": "fact",
+   "question": "In which chapter does Sukuna make his debut?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Chapter 1"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-016",
+   "kind": "fact",
+   "question": "In which anime episode does Sukuna make his debut?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Episode 1"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-017",
+   "kind": "fact",
+   "question": "Who provides Sukuna's Japanese voice?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Junichi Suwabe"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-018",
+   "kind": "fact",
+   "question": "Who provides Sukuna's English voice?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Ray Chase"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-019",
+   "kind": "fact",
+   "question": "What is Sukuna's full title as the undisputed ruler of curses?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "King of Curses"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-020",
+   "kind": "fact",
+   "question": "What era was Sukuna born during?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Heian Era"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-021",
+   "kind": "fact",
+   "question": "What is one of Sukuna's aliases referring to him as a legendary demon?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Imaginary Demon"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-022",
+   "kind": "fact",
+   "question": "What is Sukuna also known as, the undefeated human sorcerer?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Disgraced One"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-023",
+   "kind": "fact",
+   "question": "What did Sukuna transform himself into after death?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "cursed object"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-024",
+   "kind": "fact",
+   "question": "How many indestructible fingers is Sukuna's soul split into?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "twenty"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-025",
+   "kind": "fact",
+   "question": "When was Sukuna incarnated?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "June 2018"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-026",
+   "kind": "fact",
+   "question": "Who consumed one of Sukuna's fingers to incarnate him?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yuji Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-027",
+   "kind": "fact",
+   "question": "Into whose body did Sukuna transfer his soul?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-028",
+   "kind": "fact",
+   "question": "How many arms does Sukuna's true body have?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "four"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-029",
+   "kind": "fact",
+   "question": "How many eyes does Sukuna's true body have?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "four"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-030",
+   "kind": "fact",
+   "question": "What does Sukuna's true body have on his midriff?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "a large mouth"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-031",
+   "kind": "fact",
+   "question": "What does Sukuna most often wear in his true body?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "a black haori"
+    },
+    {
+     "item": "light-colored pants"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-032",
+   "kind": "fact",
+   "question": "What did Sukuna single-handedly slaughter in the Heian Era?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "the Sun, Moon, and Stars Squad"
+    },
+    {
+     "item": "the Five Empty Generals"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-033",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's cursed technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-034",
+   "kind": "fact",
+   "question": "What is Sukuna's invisible ranged slashing attack called?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Dismantle"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-035",
+   "kind": "fact",
+   "question": "What is Sukuna's slashing attack that adjusts to the target's toughness?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Cleave"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-036",
+   "kind": "fact",
+   "question": "What fire technique can Sukuna create by chanting 'Open'?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Divine Flame"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-037",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's domain expansion?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Malevolent Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-038",
+   "kind": "fact",
+   "question": "What is the maximum radius of Malevolent Shrine's sure-hit area?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "200 meters"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-039",
+   "kind": "fact",
+   "question": "What anti-domain technique is the predecessor to New Shadow Style: Simple Domain?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Hollow Wicker Basket"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-040",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's vajra-like cursed tool?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Kamutoke"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-041",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's trident cursed tool?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Hiten"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-042",
+   "kind": "fact",
+   "question": "Who crafted a replica of Kamutoke for Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yorozu"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-043",
+   "kind": "fact",
+   "question": "What phenomenon occurs when cursed energy is applied within 0.000001 seconds of a hit?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Black Flash"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-044",
+   "kind": "fact",
+   "question": "What did Sukuna suffer seven consecutive times from Yuji in the Shinjuku battle?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Black Flashes"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-045",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's binding vow with Yuji?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Enchain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-046",
+   "kind": "fact",
+   "question": "What hand sign did Sukuna originally need to launch a slash that cuts the world?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Enma",
+     "aliases": [
+      "Enmaten"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-047",
+   "kind": "fact",
+   "question": "How long can Sukuna activate Malevolent Shrine without decreasing its output?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "99 seconds"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-048",
+   "kind": "fact",
+   "question": "What is Sukuna's hobby according to the official fanbook?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "eating"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-049",
+   "kind": "fact",
+   "question": "What do Sukuna's fingers taste like?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "soap"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-050",
+   "kind": "fact",
+   "question": "What award did Sukuna win at the Crunchyroll Anime Awards 2021?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Best Antagonist"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-051",
+   "kind": "fact",
+   "question": "What is Sukuna's mythological namesake?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Ryomen-Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-053",
+   "kind": "fact",
+   "question": "What province is the mythological Ryomen-Sukuna said to have appeared in?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Hida Province"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-054",
+   "kind": "fact",
+   "question": "Who is the reincarnation of Sukuna's twin brother?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Wasuke Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-055",
+   "kind": "fact",
+   "question": "What did Sukuna consume in the womb to avoid starving?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "his twin"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-056",
+   "kind": "fact",
+   "question": "Where was one of Sukuna's fingers kept before Yuji ate it?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "an outdoor thermometer box"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-057",
+   "kind": "fact",
+   "question": "Which school's occult club removed the seal from Sukuna's finger?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Sugisawa High School"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-058",
+   "kind": "fact",
+   "question": "Whose home was one of Sukuna's fingers placed in during the Vs. Mahito Arc?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Junpei Yoshino"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-059",
+   "kind": "fact",
+   "question": "Who died as a result of Sukuna's finger being in Junpei's home?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Nagi Yoshino"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-060",
+   "kind": "fact",
+   "question": "What did Sukuna create on Yuji's palm to eat a finger?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "a mouth"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-061",
+   "kind": "fact",
+   "question": "Where did the awakened finger start killing people in the Death Painting Arc?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yasohachi Bridge"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-062",
+   "kind": "fact",
+   "question": "Who sealed Gojo in Prison Realm at the start of the Shibuya Incident?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Pseudo-Geto"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-063",
+   "kind": "fact",
+   "question": "Which of Sukuna's subordinates did he slaughter in Shibuya?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Nanako Hasaba"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-064",
+   "kind": "fact",
+   "question": "Who was chosen to be Yuji's executioner after the Shibuya Incident?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yuta Okkotsu"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-065",
+   "kind": "fact",
+   "question": "What did Yuta use to gain the upper hand over Yuji?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Rika"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-066",
+   "kind": "fact",
+   "question": "What did Sukuna replace his final finger with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "his mummified real body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-067",
+   "kind": "fact",
+   "question": "On what date did Sukuna briefly have a conversation with Uraume regarding Yuji's soul?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "December 24th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-068",
+   "kind": "fact",
+   "question": "What is Yuji Itadori's relation to Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "grandson"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-069",
+   "kind": "fact",
+   "question": "What did Sukuna unleash at 200% to start the battle with Gojo?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Hollow Purple"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-070",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's ice-forming subordinate?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Uraume"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-071",
+   "kind": "fact",
+   "question": "What cursed technique does Uraume use?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Ice Formation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-072",
+   "kind": "fact",
+   "question": "What did Sukuna order Uraume to use his technique for?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "keep his stored meats cold"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_Synopsis"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-073",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's ability to create new eyes and mouths on his vessel?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Metamorphosis"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-074",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's ability to incarnate into whoever eats his fingers?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Incarnation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-075",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's anti-domain technique that envelops him in an aura?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Domain Amplification"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-076",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that are a twin pair of canines?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Divine Dogs"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-077",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that is an owl emitting electricity?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Nue"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-078",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that is an elephant producing water?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Max Elephant"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-079",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that is a deer able to heal?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Round Deer"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-080",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that is a bull ramming enemies?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Piercing Ox"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-081",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that is his most powerful, adapting to every phenomenon?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Mahoraga"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-082",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that fuses Nue with other beasts?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Merged Beast Agito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-083",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's Cleave variation shaped like a spider's web?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Spiderweb"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-084",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that combines both Divine Dogs into one?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Divine Dog: Totality"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-085",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that is a swarm of rabbits used as a distraction?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Rabbit Escape"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-086",
+   "kind": "fact",
+   "question": "Which Ten Shadows shikigami did Sukuna summon that has an unknown appearance and abilities?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Tiger Funeral"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-087",
+   "kind": "fact",
+   "question": "What cursed tool does Mahoraga wield?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Sword of Extermination"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-088",
+   "kind": "fact",
+   "question": "What did Sukuna call his ultimate slash, described as cutting the world?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "slash that cuts the world"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-089",
+   "kind": "fact",
+   "question": "What is Sukuna's rank in the first Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "10th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-090",
+   "kind": "fact",
+   "question": "How many votes did Sukuna receive in the first Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "5,860"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-091",
+   "kind": "fact",
+   "question": "What is Sukuna's rank in the second Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "13th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-092",
+   "kind": "fact",
+   "question": "What is Sukuna's rank in the third Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "12th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-093",
+   "kind": "fact",
+   "question": "What is Sukuna's rank in the fourth Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "9th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-094",
+   "kind": "fact",
+   "question": "How many manga volume covers does Sukuna appear on individually?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "three"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-096",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's cursed technique in Japanese?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Mizushi"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-19"
+  },
+  {
+   "id": "jjk-pg-sukuna-095",
+   "kind": "fact",
+   "question": "What is the name of Sukuna's domain expansion in Japanese?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Fukuma Mizushi"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-sukuna-002",
+   "kind": "fact",
+   "question": "What are the kanji for Sukuna's name?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "両面宿儺",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-sukuna-007",
+   "kind": "fact",
+   "question": "What is the romaji of Sukuna's name?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ryōmen Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-sukuna-008",
+   "kind": "fact",
+   "question": "What is Sukuna's race?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Human\nIncarnation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-sukuna-009",
+   "kind": "fact",
+   "question": "How old is Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "1000+",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-sukuna-097",
+   "kind": "fact",
+   "question": "What is Sukuna's gender?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-sukuna-098",
+   "kind": "fact",
+   "question": "What is the status of Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-sukuna-099",
+   "kind": "fact",
+   "question": "What is Sukuna's occupation?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Calamity",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-sukuna-100",
+   "kind": "fact",
+   "question": "What is Sukuna's grade?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Special Grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:class"
+  },
+  {
+   "id": "jjk-pg-sukuna-101",
+   "kind": "fact",
+   "question": "In which manga chapter does Sukuna first appear?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-sukuna-102",
+   "kind": "fact",
+   "question": "In which anime episode is Sukuna first depicted?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-sukuna-103",
+   "kind": "fact",
+   "question": "Who is Sukuna's Japanese voice actor?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Junichi Suwabe",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-sukuna-104",
+   "kind": "fact",
+   "question": "Who is Sukuna's English voice actor?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ray Chase",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-sukuna-105",
+   "kind": "fact",
+   "question": "What is the outcome of Hajime Kashimo vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Hajime Kashimo vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-106",
+   "kind": "fact",
+   "question": "Where did Hajime Kashimo vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Makyo Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Hajime Kashimo vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-107",
+   "kind": "fact",
+   "question": "When does Hajime Kashimo vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Hajime Kashimo vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-108",
+   "kind": "fact",
+   "question": "In which manga chapter does Hajime Kashimo vs. Sukuna begin?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 237",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Hajime Kashimo vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-109",
+   "kind": "fact",
+   "question": "In which arc does Hajime Kashimo vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Hajime Kashimo vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-110",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The jujutsu sorcerers are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-111",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-112",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-113",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 244",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-114",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-115",
+   "kind": "fact",
+   "question": "Which techniques did Sukuna use in Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Black Flash, Cursed Tool: Kamutoke, Domain Expansion: Malevolent Shrine, Hand-to-Hand Combat, Hollow Wicker Basket, Reverse Cursed Technique, Shrine, Cleave, Dismantle, Divine Flame",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-116",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji regains control of his body.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-117",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Eishu Juvenile Detention Center",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-118",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "July 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-119",
+   "kind": "fact",
+   "question": "Which manga chapters cover Megumi Fushiguro vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 9",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-120",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Sukuna depicted?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 5",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:episodes"
+  },
+  {
+   "id": "jjk-pg-sukuna-121",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fearsome Womb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-122",
+   "kind": "fact",
+   "question": "What is the outcome of Satoru Gojo vs. Sukuna: First Fight?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji proves he can cage Sukuna.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Sukuna: First Fight:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-123",
+   "kind": "fact",
+   "question": "Where did Satoru Gojo vs. Sukuna: First Fight take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sugisawa Municipal High School",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Sukuna: First Fight:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-124",
+   "kind": "fact",
+   "question": "When does Satoru Gojo vs. Sukuna: First Fight take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "June 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Sukuna: First Fight:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-125",
+   "kind": "fact",
+   "question": "Which manga chapters cover Satoru Gojo vs. Sukuna: First Fight?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Sukuna: First Fight:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-126",
+   "kind": "fact",
+   "question": "In which episode is Satoru Gojo vs. Sukuna: First Fight depicted?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Sukuna: First Fight:episodes"
+  },
+  {
+   "id": "jjk-pg-sukuna-127",
+   "kind": "fact",
+   "question": "In which arc does Satoru Gojo vs. Sukuna: First Fight take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fearsome Womb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Sukuna: First Fight:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-128",
+   "kind": "fact",
+   "question": "What is the outcome of Sukuna vs. Finger Bearer?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Finger Bearer:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-129",
+   "kind": "fact",
+   "question": "Where did Sukuna vs. Finger Bearer take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Eishu Juvenile Detention Center",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Finger Bearer:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-130",
+   "kind": "fact",
+   "question": "When does Sukuna vs. Finger Bearer take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "July 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Finger Bearer:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-131",
+   "kind": "fact",
+   "question": "Which manga chapters cover Sukuna vs. Finger Bearer?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 8",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Finger Bearer:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-132",
+   "kind": "fact",
+   "question": "In which episode is Sukuna vs. Finger Bearer depicted?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 4",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Finger Bearer:episodes"
+  },
+  {
+   "id": "jjk-pg-sukuna-133",
+   "kind": "fact",
+   "question": "In which arc does Sukuna vs. Finger Bearer take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fearsome Womb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Finger Bearer:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-134",
+   "kind": "fact",
+   "question": "What is the outcome of Sukuna vs. Jogo?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Jogo:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-135",
+   "kind": "fact",
+   "question": "Where did Sukuna vs. Jogo take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Outside Shibuya Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Jogo:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-136",
+   "kind": "fact",
+   "question": "When does Sukuna vs. Jogo take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Jogo:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-137",
+   "kind": "fact",
+   "question": "In which manga chapter does Sukuna vs. Jogo begin?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 114",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Jogo:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-138",
+   "kind": "fact",
+   "question": "In which episode is Sukuna vs. Jogo depicted?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 40",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Jogo:episodes"
+  },
+  {
+   "id": "jjk-pg-sukuna-139",
+   "kind": "fact",
+   "question": "In which arc does Sukuna vs. Jogo take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Jogo:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-140",
+   "kind": "fact",
+   "question": "What is the outcome of Sukuna vs. Mahoraga?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Mahoraga:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-141",
+   "kind": "fact",
+   "question": "Where did Sukuna vs. Mahoraga take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Outside Shibuya Station Shibuya 109",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Mahoraga:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-142",
+   "kind": "fact",
+   "question": "When does Sukuna vs. Mahoraga take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Mahoraga:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-143",
+   "kind": "fact",
+   "question": "In which manga chapter does Sukuna vs. Mahoraga begin?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 118",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Mahoraga:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-144",
+   "kind": "fact",
+   "question": "In which episode is Sukuna vs. Mahoraga depicted?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 41",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Mahoraga:episodes"
+  },
+  {
+   "id": "jjk-pg-sukuna-145",
+   "kind": "fact",
+   "question": "In which arc does Sukuna vs. Mahoraga take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Mahoraga:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-146",
+   "kind": "fact",
+   "question": "What is the outcome of Sukuna vs. Ryu Ishigori?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Ryu Ishigori:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-147",
+   "kind": "fact",
+   "question": "Where did Sukuna vs. Ryu Ishigori take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sendai Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Ryu Ishigori:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-148",
+   "kind": "fact",
+   "question": "Which manga chapters cover Sukuna vs. Ryu Ishigori?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 216",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Ryu Ishigori:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-149",
+   "kind": "fact",
+   "question": "In which arc does Sukuna vs. Ryu Ishigori take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Ryu Ishigori:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-150",
+   "kind": "fact",
+   "question": "What is the outcome of Sukuna vs. Yorozu?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Yorozu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Yorozu:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-151",
+   "kind": "fact",
+   "question": "Where did Sukuna vs. Yorozu take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sendai Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Yorozu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Yorozu:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-152",
+   "kind": "fact",
+   "question": "In which manga chapter does Sukuna vs. Yorozu begin?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 217",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Yorozu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Yorozu:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-153",
+   "kind": "fact",
+   "question": "In which arc does Sukuna vs. Yorozu take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Yorozu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Sukuna vs. Yorozu:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-154",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uraume interrupts the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-sukuna-155",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo No. 1 Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-sukuna-156",
+   "kind": "fact",
+   "question": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 16, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-sukuna-157",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 213",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-sukuna-158",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-sukuna-159",
+   "kind": "fact",
+   "question": "Which techniques did Sukuna use in Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hand-to-Hand Combat, Ten Shadows Technique, Nue, Shrine, Cleave: Spiderweb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-160",
+   "kind": "set",
+   "question": "What are all the named techniques of Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    },
+    {
+     "item": "Divine Dogs",
+     "aliases": []
+    },
+    {
+     "item": "Shikigami",
+     "aliases": []
+    },
+    {
+     "item": "Ten Shadows Technique",
+     "aliases": []
+    },
+    {
+     "item": "Nue",
+     "aliases": []
+    },
+    {
+     "item": "Domain Expansion",
+     "aliases": []
+    },
+    {
+     "item": "Malevolent Shrine",
+     "aliases": []
+    },
+    {
+     "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+     "aliases": []
+    },
+    {
+     "item": "Max Elephant",
+     "aliases": []
+    },
+    {
+     "item": "Divine Dog: Totality",
+     "aliases": []
+    },
+    {
+     "item": "Black Flash",
+     "aliases": []
+    },
+    {
+     "item": "Domain Amplification",
+     "aliases": []
+    },
+    {
+     "item": "Rabbit Escape",
+     "aliases": []
+    },
+    {
+     "item": "Hiten",
+     "aliases": []
+    },
+    {
+     "item": "Kamutoke",
+     "aliases": []
+    },
+    {
+     "item": "Hollow Wicker Basket",
+     "aliases": []
+    },
+    {
+     "item": "Spiderweb",
+     "aliases": []
+    },
+    {
+     "item": "Piercing Ox",
+     "aliases": []
+    },
+    {
+     "item": "Round Deer",
+     "aliases": []
+    },
+    {
+     "item": "Merged Beast Agito",
+     "aliases": []
+    },
+    {
+     "item": "Tiger Funeral",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-161",
+   "kind": "set",
+   "question": "What are all the enemies of Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    },
+    {
+     "item": "Angel",
+     "aliases": []
+    },
+    {
+     "item": "Atsuya Kusakabe",
+     "aliases": []
+    },
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": []
+    },
+    {
+     "item": "Hana Kurusu",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:enemy"
+  },
+  {
+   "id": "jjk-pg-sukuna-162",
+   "kind": "set",
+   "question": "What are all the families of Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Wasuke Itadori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-sukuna-163",
+   "kind": "set",
+   "question": "What are all the rivals of Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    },
+    {
+     "item": "Hajime Kashimo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:rival"
+  },
+  {
+   "id": "jjk-pg-sukuna-164",
+   "kind": "set",
+   "question": "What are all the aliases of Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "King of Curses",
+     "aliases": []
+    },
+    {
+     "item": "Imaginary Demon",
+     "aliases": []
+    },
+    {
+     "item": "Disgraced One",
+     "aliases": []
+    },
+    {
+     "item": "The Strongest Sorcerer in History",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:alias"
+  },
+  {
+   "id": "jjk-pg-sukuna-165",
+   "kind": "set",
+   "question": "Every battle involving Sukuna",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hajime Kashimo vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Satoru Gojo vs. Sukuna: First Fight",
+     "aliases": []
+    },
+    {
+     "item": "Sukuna vs. Finger Bearer",
+     "aliases": []
+    },
+    {
+     "item": "Sukuna vs. Jogo",
+     "aliases": []
+    },
+    {
+     "item": "Sukuna vs. Mahoraga",
+     "aliases": []
+    },
+    {
+     "item": "Sukuna vs. Ryu Ishigori",
+     "aliases": []
+    },
+    {
+     "item": "Sukuna vs. Yorozu",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna:_First_Fight",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Finger_Bearer",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Jogo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Ryu_Ishigori",
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Yorozu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-sukuna-166",
+   "kind": "fact",
+   "question": "How is Sukuna described despite his outwardly brutish mannerisms and sadism?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "an extremely intelligent individual"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-167",
+   "kind": "fact",
+   "question": "What has Sukuna fully grasped the nature of as a whole?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "cursed techniques, curses and reverse cursed technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-168",
+   "kind": "fact",
+   "question": "After what can Sukuna quickly deduce the inner workings of cursed techniques?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "after only seeing them once or twice"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-169",
+   "kind": "fact",
+   "question": "What can Sukuna create to foil a cursed technique he has only seen once or twice?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "suitable foils to such techniques"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-170",
+   "kind": "fact",
+   "question": "Against which shikigami did Sukuna gain an understanding of its ability in their fight?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Mahoraga"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-171",
+   "kind": "fact",
+   "question": "How did Sukuna defeat the Mahoraga shikigami?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "after gaining an understanding of its ability"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-172",
+   "kind": "fact",
+   "question": "Whose cursed technique did Sukuna realize the potential of just by seeing it once?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Megumi"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-173",
+   "kind": "fact",
+   "question": "What did Sukuna create with Yuji to take Megumi's body?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a binding vow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-174",
+   "kind": "fact",
+   "question": "How did Sukuna deceive Hana Kurusu during their fight?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by using Megumi's memories"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-175",
+   "kind": "fact",
+   "question": "What did Sukuna make Hana Kurusu think about Megumi's body?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Megumi was in control of his body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-176",
+   "kind": "fact",
+   "question": "What did Sukuna do when Hana Kurusu hugged him?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "critically injure her"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-177",
+   "kind": "fact",
+   "question": "What intellectual capacity has Sukuna demonstrated when pushed into desperate situations?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the intellectual capacity to remain levelheaded and formulate strategies to counter his opponents"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-178",
+   "kind": "fact",
+   "question": "What severely injured Sukuna after Mahoraga was destroyed?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Hollow Purple"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-179",
+   "kind": "fact",
+   "question": "What did Sukuna's binding vow allow him to bypass?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the world-cutting slash's conditions"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-180",
+   "kind": "fact",
+   "question": "When did Sukuna kill Gojo?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "when the latter least expected it"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-181",
+   "kind": "fact",
+   "question": "What did Sukuna lose that disrupted his connection with Megumi's soul?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "two left hands"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-182",
+   "kind": "fact",
+   "question": "How many consecutive Black Flashes did Sukuna suffer from Yuji?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "seven"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-183",
+   "kind": "fact",
+   "question": "What did the consecutive Black Flashes from Yuji disrupt in Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his connection with Megumi's soul"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-184",
+   "kind": "fact",
+   "question": "What did Sukuna regain by improvising binding vows that included uncertain conditions?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his ability to expand his domain without lowering its output or difficulty"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-185",
+   "kind": "fact",
+   "question": "How did Sukuna instantly turn the tides of the battle against the sorcerers?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "removing all the sorcerers except Yuji from the battlefield"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Intelligence"
+  },
+  {
+   "id": "jjk-pg-sukuna-186",
+   "kind": "fact",
+   "question": "Who did Sukuna have a binding vow with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Yuji"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-187",
+   "kind": "fact",
+   "question": "For what did the King of Curses agree to revive the boy in his binding vow with Yuji?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "after his apparent death"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-188",
+   "kind": "fact",
+   "question": "For how long would Yuji allow Sukuna to take over his body when he chants Enchain?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "one minute"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-189",
+   "kind": "fact",
+   "question": "What did Sukuna promise not to do during that minute?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "kill or hurt anyone"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-190",
+   "kind": "fact",
+   "question": "How did Sukuna force Yuji into accepting the binding vow?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Sukuna effortlessly defeated Yuji"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-191",
+   "kind": "fact",
+   "question": "What could Sukuna originally launch by only forming the hand sign of Enma?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "slash that cuts the world"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-192",
+   "kind": "fact",
+   "question": "The hand sign of Enma is the same two-handed sign needed to cast which domain expansion?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Malevolent Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-193",
+   "kind": "fact",
+   "question": "Why was Sukuna unable to fulfill the condition of his enhanced Dismantle?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "after losing a hand to Gojo's Hollow Purple"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-194",
+   "kind": "fact",
+   "question": "What did Sukuna's self-imposed binding vow require him to do?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "make the hand sign, chant Dismantle's incantation, and direct the slash's trajectory with his palm"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-195",
+   "kind": "fact",
+   "question": "How long can Sukuna activate Malevolent Shrine without decreasing its range, difficulty or output?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "99 seconds"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-196",
+   "kind": "fact",
+   "question": "How can Sukuna remove the time limit on his domain?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by shrinking the range of his domain down to the size of a sports ball"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-197",
+   "kind": "fact",
+   "question": "What was Sukuna's binding vow meant to mitigate about Divine Flame?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "slow speed and narrow range"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-198",
+   "kind": "fact",
+   "question": "What did Sukuna restrict himself from using when outnumbered unless inside his domain?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Divine Flame"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-199",
+   "kind": "fact",
+   "question": "What does Malevolent Shrine's expanded cursed technique imbue with explosive cursed energy?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "all the pulverized substances within it"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-200",
+   "kind": "fact",
+   "question": "What do the pulverized substances within the domain get imbued with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the same explosive cursed energy as Divine Flame"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-201",
+   "kind": "fact",
+   "question": "How does Sukuna contain the energy within the domain?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by altering the barrier's specifications to restrict entry and exit for everything other than living creatures"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-202",
+   "kind": "fact",
+   "question": "What do the particles within the domain effectively turn into?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "thermobaric explosives"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-203",
+   "kind": "fact",
+   "question": "What happens when Divine Flame is unleashed within the domain?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "kills all living things within the domain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Restrictions"
+  },
+  {
+   "id": "jjk-pg-sukuna-204",
+   "kind": "fact",
+   "question": "What kind of cursed tool is Kamutoke?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "A powerful, vajra-like cursed tool"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-sukuna-205",
+   "kind": "fact",
+   "question": "What is Kamutoke capable of?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "discharging electricity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-sukuna-206",
+   "kind": "fact",
+   "question": "When did Sukuna wield Kamutoke and Hiten?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a thousand years ago"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-sukuna-207",
+   "kind": "fact",
+   "question": "How did Yorozu craft a replica of Kamutoke for Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "through a binding vow just before she died"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-sukuna-208",
+   "kind": "fact",
+   "question": "What kind of cursed tool is Hiten?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "A trishula-like trident cursed tool"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-sukuna-209",
+   "kind": "fact",
+   "question": "What is unknown about Hiten?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Its capabilities are unknown"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-sukuna-210",
+   "kind": "fact",
+   "question": "What can Sukuna's Shrine technique launch at various ranges to cut through?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "objects and space"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-211",
+   "kind": "fact",
+   "question": "What can Sukuna's cursed technique unleash in addition to slashes?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "destructive flames"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-212",
+   "kind": "fact",
+   "question": "What can Sukuna's Dismantle cut apart with great effectiveness?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "cursed spirits, sorcerers, and inanimate objects"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-213",
+   "kind": "fact",
+   "question": "What did Sukuna use as a model to enhance Dismantle?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Mahoraga's second adaptation to Limitless"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-214",
+   "kind": "fact",
+   "question": "How does Sukuna enhance Dismantle?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by extending its target area to the world itself"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-215",
+   "kind": "fact",
+   "question": "What does Sukuna's Cleave adjust itself depending on?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the target's toughness and cursed energy level"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-216",
+   "kind": "fact",
+   "question": "What must Sukuna do to activate Cleave unless it is used in his domain expansion?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "make physical contact with the target"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-217",
+   "kind": "fact",
+   "question": "How can Sukuna utilize the Cleave technique in the shape of a spider's web?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by touching the ground"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-218",
+   "kind": "fact",
+   "question": "What does Sukuna's Spiderweb collapse in one fell swoop?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the ground"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-219",
+   "kind": "fact",
+   "question": "How can Sukuna create and manipulate fire for long-range attacks?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by chanting \"Open\""
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-220",
+   "kind": "fact",
+   "question": "What does Sukuna form alongside his chant to create Divine Flame?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "an arrow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-221",
+   "kind": "fact",
+   "question": "After which two techniques can Sukuna use Divine Flame?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Dismantle and Cleave"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-222",
+   "kind": "fact",
+   "question": "Whose firepower does the firepower of Sukuna's Divine Flame far exceed?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Jogo's"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-223",
+   "kind": "fact",
+   "question": "After incarnating through whose body did Sukuna gain access to the Ten Shadows Technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Megumi's body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-224",
+   "kind": "fact",
+   "question": "The Ten Shadows Technique is the prized inherited technique of which clan?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the Zenin Clan"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-225",
+   "kind": "fact",
+   "question": "How many different shikigami can Sukuna summon using his shadows as an intermediary?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "ten"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-226",
+   "kind": "fact",
+   "question": "What else does the Ten Shadows Technique grant Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "overall manipulation of shadows"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-227",
+   "kind": "fact",
+   "question": "What can Sukuna store within his own shadow using the Ten Shadows Technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "objects within his own shadow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-228",
+   "kind": "fact",
+   "question": "What are Sukuna's Divine Dogs?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Twin canine shikigami"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-229",
+   "kind": "fact",
+   "question": "What are the Divine Dogs' powerful noses used for?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "tracking"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-230",
+   "kind": "fact",
+   "question": "What do the Divine Dogs' lethal fangs and claws devour?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "curses"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-231",
+   "kind": "fact",
+   "question": "What does keeping the shikigami's form unstable allow Sukuna to increase?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "its effective range"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-232",
+   "kind": "fact",
+   "question": "What does Sukuna compensate for the shikigami's reduced attack power with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his immense cursed energy capacity and output"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-233",
+   "kind": "fact",
+   "question": "What is Sukuna's Totality an improved version of?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Divine Dog"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-234",
+   "kind": "fact",
+   "question": "What does Sukuna's Divine Dog: Totality combine into a single stronger shikigami?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "both shikigami"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-235",
+   "kind": "fact",
+   "question": "What can Sukuna's Divine Dog: Totality smash apart with a single punch?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the ground"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-236",
+   "kind": "fact",
+   "question": "What does Sukuna's Nue possess in addition to being several times larger?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "two additional arms and a long tail that resembles a snake's"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-237",
+   "kind": "fact",
+   "question": "What is the electricity Sukuna's Nue discharges much stronger, akin to?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "lightning bolts"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-238",
+   "kind": "fact",
+   "question": "What can Max Elephant produce from its trunk?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a massive volume of water"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-239",
+   "kind": "fact",
+   "question": "What features does Sukuna's Max Elephant have?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "sunken eye sockets and long curved tusks"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-240",
+   "kind": "fact",
+   "question": "What can Sukuna imitate by firing a water beam out from his hands?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Piercing Blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-241",
+   "kind": "fact",
+   "question": "What does Sukuna use Rabbit Escape as?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a distraction or to obscure his target's vision"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-242",
+   "kind": "fact",
+   "question": "How can Rabbit Escape's rabbits be destroyed?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "without any repercussions"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-243",
+   "kind": "fact",
+   "question": "What can Round Deer, a Ten Shadows shikigami that Sukuna dominated, output positive energy to do?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "heal others or neutralize cursed energy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-244",
+   "kind": "fact",
+   "question": "How does Sukuna's Piercing Ox deal damage?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by charging and ramming into enemies"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-245",
+   "kind": "fact",
+   "question": "What does Sukuna's Piercing Ox do the further it travels?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the harder it hits"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-246",
+   "kind": "fact",
+   "question": "What about Sukuna's Tiger Funeral is unknown?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Its appearance and abilities are unknown"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-247",
+   "kind": "fact",
+   "question": "What is the most powerful shikigami that Sukuna's Ten Shadows Technique can summon?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Mahoraga"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-248",
+   "kind": "fact",
+   "question": "What is Sukuna's Mahoraga shikigami equipped with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the Sword of Extermination"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-249",
+   "kind": "fact",
+   "question": "Who was the first Ten Shadows Technique user to tame the Mahoraga shikigami?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-250",
+   "kind": "fact",
+   "question": "What can Sukuna manifest over himself or others after taming Mahoraga?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "its eight-handled wheel"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-251",
+   "kind": "fact",
+   "question": "What can others shoulder once Sukuna tames Mahoraga?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Mahoraga's adaptation process"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-252",
+   "kind": "fact",
+   "question": "What does Sukuna's Merged Beast Agito combine Nue with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Great Serpent, Round Deer, and Tiger Funeral"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-253",
+   "kind": "fact",
+   "question": "How tall is the resulting humanoid shikigami of Merged Beast Agito?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "as tall as Mahoraga"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-254",
+   "kind": "fact",
+   "question": "What can Sukuna's Merged Beast Agito produce from its fists?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "electricity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-255",
+   "kind": "fact",
+   "question": "What technique is Sukuna highly proficient with?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "reverse cursed technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-256",
+   "kind": "fact",
+   "question": "What could Sukuna instantly heal and regenerate with reverse cursed technique while incarnated in Yuji's body?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "any injuries"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-257",
+   "kind": "fact",
+   "question": "What can Sukuna regenerate within moments using his reverse cursed technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "lost limbs"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-258",
+   "kind": "fact",
+   "question": "What can Sukuna output positive energy to do, something few can do?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "heal others"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-259",
+   "kind": "fact",
+   "question": "How can Sukuna heal his burned-out cursed technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by destroying the part of his brain that cursed techniques are engraved in and regenerating it"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-260",
+   "kind": "fact",
+   "question": "What did Sukuna become aware of as a result of incarnating through Yuji?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his soul's shape"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-261",
+   "kind": "fact",
+   "question": "What can Sukuna repair using reverse cursed technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his soul"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-262",
+   "kind": "fact",
+   "question": "In what form does Domain Amplification envelop Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "an aura around himself"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-263",
+   "kind": "fact",
+   "question": "What does Sukuna use Domain Amplification to neutralize?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Gojo's Limitless technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-264",
+   "kind": "fact",
+   "question": "What does Domain Amplification make Sukuna capable of doing to Gojo?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "physical contact with him"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-265",
+   "kind": "fact",
+   "question": "What does Sukuna use in quick intervals to interrupt and resume Mahoraga's adaptation?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "domain amplification"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-266",
+   "kind": "fact",
+   "question": "What does Sukuna's Hollow Wicker Basket erect?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a basket-shaped barrier"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-267",
+   "kind": "fact",
+   "question": "What does Hollow Wicker Basket neutralize to nullify its sure-hit factor?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a domain's barrier"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-268",
+   "kind": "fact",
+   "question": "What does Sukuna's Malevolent Shrine create?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a Buddhist shrine decorated with skulls"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-269",
+   "kind": "fact",
+   "question": "What relentlessly slashes everything within Malevolent Shrine?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Dismantle or Cleave"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-270",
+   "kind": "fact",
+   "question": "What does Malevolent Shrine depend on to decide which technique slashes?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "its cursed energy level"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-271",
+   "kind": "fact",
+   "question": "Where is Malevolent Shrine manifested instead of a separate space?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the surrounding airspace"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-272",
+   "kind": "fact",
+   "question": "What does Malevolent Shrine not create by enclosing its barrier?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a separate space"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-273",
+   "kind": "fact",
+   "question": "What is formed when Malevolent Shrine allows an escape route?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a binding vow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-274",
+   "kind": "fact",
+   "question": "What does the binding vow vastly increase in Malevolent Shrine?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the sure-hit's effective area"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-275",
+   "kind": "fact",
+   "question": "How many arms and mouths does Sukuna possess in his true form?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "four arms and two mouths"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-276",
+   "kind": "fact",
+   "question": "What does the unique body structure of Sukuna's true form allow his extra arms to do?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "perform hand signs while keeping two of his hands free"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-277",
+   "kind": "fact",
+   "question": "What can the extra mouth of Sukuna's unique body structure do without straining his heart or lungs?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "continuously chant empowered words"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-278",
+   "kind": "fact",
+   "question": "What do the additional body parts of Sukuna's unique body structure provide him?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "an immense advantage over other jujutsu sorcerers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Abilities and Powers / Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-sukuna-279",
+   "kind": "fact",
+   "question": "What kind of figure is the mythological Ryomen-Sukuna?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a demonic/specter-like figure"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-280",
+   "kind": "fact",
+   "question": "In what prefecture is Hida Province located today?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Gifu Prefecture"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-281",
+   "kind": "fact",
+   "question": "What emperor was reigning when the mythological Ryomen-Sukuna appeared in the 4th century?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Emperor Nintoku"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-282",
+   "kind": "fact",
+   "question": "In what century did the mythological Sukuna appear?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "4th century"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-283",
+   "kind": "fact",
+   "question": "What did the mythological figure have in addition to a two-faced head?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a total of eight limbs"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-284",
+   "kind": "fact",
+   "question": "What weapons did the mythological figure wield in his many hands?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a bow, arrow, and sword"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-285",
+   "kind": "fact",
+   "question": "What did the mythological figure terrorize in ancient Hida?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "village after village"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-286",
+   "kind": "fact",
+   "question": "What military commander, dispatched by the Imperial Court, put an end to the mythological monster's tyranny, expelling him from Hida?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Takefurukuma no Mikoto"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-287",
+   "kind": "fact",
+   "question": "What was Ryomen-Sukuna worshipped by some as?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a minor deity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-288",
+   "kind": "fact",
+   "question": "Where can statues depicting the mythological figure's two-faced head still be found today?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Gifu temples and shrines"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-289",
+   "kind": "fact",
+   "question": "What does one theory state Ryomen-Sukuna is a symbol of?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "twins and brothers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-290",
+   "kind": "fact",
+   "question": "What emperor's sons does another theory state Ryomen-sukuna refers to?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Emperor Chuai"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-291",
+   "kind": "fact",
+   "question": "Which two sons of Emperor Chuai does the other theory say Ryomen-sukuna refers to?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kagosaka no Miko"
+    },
+    {
+     "item": "Oshikuma no Miko"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-292",
+   "kind": "fact",
+   "question": "What ancient text recorded the lineage of ancient kami?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Takeuchi-monjo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-293",
+   "kind": "fact",
+   "question": "What did Takeuchi-monjo write Hida Province as?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "日玉國"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-294",
+   "kind": "fact",
+   "question": "What was Hida said to be according to Takeuchi-monjo?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Takamanohara"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-295",
+   "kind": "fact",
+   "question": "What was Kuraiyama Mountain said to be according to Takeuchi-monjo?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the Pyramid"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-296",
+   "kind": "fact",
+   "question": "What dynasty is Ryomen-sukuna considered to have had?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a Hida-based dynasty the same size as the Yamato Dynasty"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-297",
+   "kind": "fact",
+   "question": "Why is Sukuna's kimono very loose?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "space granted him more comfort while having four arms in the past"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-298",
+   "kind": "fact",
+   "question": "How many votes did Sukuna receive in the second Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "1,977"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-299",
+   "kind": "fact",
+   "question": "How many votes did Sukuna receive in the third Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "1,202"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-300",
+   "kind": "fact",
+   "question": "How many votes did Sukuna receive in the fourth Popularity Poll?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "4,077"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-301",
+   "kind": "fact",
+   "question": "What does Sukuna dislike according to the official fanbook?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "nothing in particular"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-302",
+   "kind": "fact",
+   "question": "What was Sukuna closely similar to, despite being a curse user?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a natural disaster"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-303",
+   "kind": "fact",
+   "question": "What does Sukuna possess from when he was a human?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the memories of when he was a human"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-304",
+   "kind": "fact",
+   "question": "Who can't Sukuna be compared to in terms of fear?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Gojo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-305",
+   "kind": "fact",
+   "question": "How were curse users and cursed spirits during Sukuna's time?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "far more vicious compared to the present time"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-306",
+   "kind": "fact",
+   "question": "What was Sukuna known as when he was still a human, even before he became a cursed object?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "King of Curses"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-307",
+   "kind": "fact",
+   "question": "Why did Sukuna feel no impact when Yuji died?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "he was still within the range where Sukuna's reverse cursed technique could revive him"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-308",
+   "kind": "fact",
+   "question": "What was the outcome if time passed beyond the range of Sukuna's reverse cursed technique?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Sukuna would have also died"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-309",
+   "kind": "fact",
+   "question": "Why does Sukuna's consciousness not emerge in Finger Bearers?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Cursed spirits lack the capability as vessels"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-310",
+   "kind": "fact",
+   "question": "When his fingers are sealed or taken in by cursed spirits, what can Sukuna only tell?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "if a finger is close by"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-311",
+   "kind": "fact",
+   "question": "What can Sukuna gather if a finger is unsealed?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "information about its surrounding"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-312",
+   "kind": "fact",
+   "question": "What did Sukuna say during Fushiguro's fight under the Yasohachi bridge?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "that's good"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-313",
+   "kind": "fact",
+   "question": "What did Sukuna not have in his previous life?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a wife or children"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-314",
+   "kind": "fact",
+   "question": "Who was Sukuna's subordinate in his previous life?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Uraume"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-315",
+   "kind": "fact",
+   "question": "What about Sukuna's technique is rather unknown?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the fire-based powers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-316",
+   "kind": "fact",
+   "question": "What was Gojo's wrong prediction about Yuji?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Yuji can be a radar for Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-317",
+   "kind": "fact",
+   "question": "What was Sukuna not considered to appear in?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Jujutsu High"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-318",
+   "kind": "fact",
+   "question": "Why is the Sukuna of Jujutsu Kaisen named after the mythological figure?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his appearance and strength resemble that of Ryōmen Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-319",
+   "kind": "fact",
+   "question": "What Go-on readings is the mononym Sukuna comprised of?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "lodging, inn"
+    },
+    {
+     "item": "exorcism"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-320",
+   "kind": "fact",
+   "question": "What does the title Ryomen mean?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "two faces, both sides/two sides"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-321",
+   "kind": "fact",
+   "question": "On which manga volume covers does Sukuna appear individually?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Volume 14, Volume 25 and Volume 29"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-sukuna-322",
+   "kind": "fact",
+   "question": "Who portrays both Sukuna and Choso in the English dub?",
+   "subject": "Sukuna",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Ray Chase"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  }
+ ]
+}

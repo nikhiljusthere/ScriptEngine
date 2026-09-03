@@ -1,0 +1,1809 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 68 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +16 prose pass (R5, 2026-08-27) ; SU11 audit (2026-08-31): +087/+088 restored (were G5/G14-gap retires of on-page facts); 6/6 retire reasons fixed (2x G10 relabel, 2x roster relabel) | SU11 documented-open: 088 (binding vow) still unserved post-G15 (G5/G14 ranking instability persists) - closes with a documented open per the Kamo precedent",
+ "retired": [
+  {
+   "question": "Where did Tsurugi Okkotsu, Yuka Okkotsu and Maru fight a curse user?",
+   "reason": "B&E roster line ('Tsurugi Okkotsu, Yuka Okkotsu & Maru vs. Curse User', arc header 'Ritual of Harmony') — roster facts are carried by the closed set question 068, not prose beats (Haruta Shigemo precedent). Kept.",
+   "retired": "2026-08-31"
+  },
+  {
+   "question": "Who did Yuka fight alongside against Masaki Takeda?",
+   "reason": "B&E roster line ('Tsurugi Okkotsu & Yuka Okkotsu vs. Masaki Takeda') — roster fact covered by set question 068. The original 'G5/G14 gap' reason was a misdiagnosis (roster lines are not prose-chunked). Kept. (SU11)",
+   "retired": "2026-08-31"
+  },
+  {
+   "question": "What do the kanji in Yuka surname mean?",
+   "reason": "G10 CJK class (Mei Mei / Tsurugi / Eso precedent): the Trivia bullet embeds CJK kanji (乙) that crash cp1252 scorer print; the served form includes the kanji. Kept per the G10 precedent. (SU11: reason was mislabeled G5/G14)",
+   "retired": "2026-08-31"
+  },
+  {
+   "question": "What does Yuka given name mean in Kan-on reading?",
+   "reason": "G10 CJK class (same as above): kan-on meaning bullet embeds kanji. Kept per the G10 precedent. (SU11: reason was mislabeled G5)",
+   "retired": "2026-08-31"
+  },
+  {
+   "question": "Which family event triggered Yuka animosity toward Tsurugi?",
+   "reason": "SU11: RESTORED as active 087 — the answer is on the page (Personality section); retiring an on-page fact violates the Kamo documented-open precedent. Record kept for audit trail.",
+   "retired": "2026-08-31"
+  },
+  {
+   "question": "What did Yuka give as a binding vow before summoning Mahoraga?",
+   "reason": "SU11: RESTORED as active 088 — the answer is on the page (Cursed Restrictions section); same precedent violation, corrected. Record kept for audit trail.",
+   "retired": "2026-08-31"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-yuka_okkotsu-001",
+   "kind": "fact",
+   "question": "What are the kanji for Yuka Okkotsu's name?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "乙骨憂花",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-002",
+   "kind": "fact",
+   "question": "What is the romaji of Yuka Okkotsu's name?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Okkotsu Yūka",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-003",
+   "kind": "fact",
+   "question": "What is Yuka Okkotsu's race?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Human",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-004",
+   "kind": "fact",
+   "question": "How old is Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "16",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-005",
+   "kind": "fact",
+   "question": "What is Yuka Okkotsu's birthday?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "March 18th, 2070",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:birthday"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-006",
+   "kind": "fact",
+   "question": "What is Yuka Okkotsu's gender?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Female",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-007",
+   "kind": "fact",
+   "question": "What is the status of Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Alive",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-008",
+   "kind": "fact",
+   "question": "What is Yuka Okkotsu's occupation?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerer Student",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-009",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuka Okkotsu first appear?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Epilogue\nModulo Chapter 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-010",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The jujutsu sorcerers are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-011",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-012",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-013",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 244",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-014",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-015",
+   "kind": "fact",
+   "question": "Which techniques did Yuka Okkotsu use in Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Copy, Brain Transplant Technique, Cursed Speech, G Warstaff, Hair Shikigami Technique, Shrine, Cleave, Sky Manipulation, Thin Ice Breaker, Technique Extinguishment, Jacob's Ladder, Domain Expansion: Authentic Mutual Love, Domain Expansion: Unlimited Void, Limitless, Blue, Hollow Purple, Reverse Cursed Technique, Rika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-016",
+   "kind": "fact",
+   "question": "What is the outcome of Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tsurugi allows Maru to win.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Marulu_Val_Vol_Yelvori_vs._Tsurugi_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Marulu Val Vol Yelvori vs. Tsurugi Okkotsu:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-017",
+   "kind": "fact",
+   "question": "Where did Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo, Japan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Marulu_Val_Vol_Yelvori_vs._Tsurugi_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Marulu Val Vol Yelvori vs. Tsurugi Okkotsu:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-018",
+   "kind": "fact",
+   "question": "When does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "January 14, 2087",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Marulu_Val_Vol_Yelvori_vs._Tsurugi_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Marulu Val Vol Yelvori vs. Tsurugi Okkotsu:date"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-019",
+   "kind": "fact",
+   "question": "In which manga chapter does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 14",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Marulu_Val_Vol_Yelvori_vs._Tsurugi_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Marulu Val Vol Yelvori vs. Tsurugi Okkotsu:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-020",
+   "kind": "fact",
+   "question": "Which techniques did Yuka Okkotsu use in Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Tool: Honoyagi, Simple Domain, Maculation, Rika, Cursed Tool: Split Soul Katana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Marulu_Val_Vol_Yelvori_vs._Tsurugi_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Marulu Val Vol Yelvori vs. Tsurugi Okkotsu:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-021",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori vs. Yuta Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-022",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori vs. Yuta Okkotsu take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-023",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuji Itadori vs. Yuta Okkotsu begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 140",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-024",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori vs. Yuta Okkotsu depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 48",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-025",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori vs. Yuta Okkotsu take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-026",
+   "kind": "fact",
+   "question": "Which techniques did Yuka Okkotsu use in Yuji Itadori vs. Yuta Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Energy Manipulation, Cursed Tool: Katana, Rika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-027",
+   "kind": "fact",
+   "question": "What is the outcome of Yuta Okkotsu & Maki Zenin vs. Cursed Spirits?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Curses are exorcised.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Maki Zenin vs. Cursed Spirits:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-028",
+   "kind": "fact",
+   "question": "Where did Yuta Okkotsu & Maki Zenin vs. Cursed Spirits take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Elementary School",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Maki Zenin vs. Cursed Spirits:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-029",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuta Okkotsu & Maki Zenin vs. Cursed Spirits begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 0",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Maki Zenin vs. Cursed Spirits:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-030",
+   "kind": "fact",
+   "question": "In which episode is Yuta Okkotsu & Maki Zenin vs. Cursed Spirits depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Movie",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Maki Zenin vs. Cursed Spirits:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-031",
+   "kind": "fact",
+   "question": "In which arc does Yuta Okkotsu & Maki Zenin vs. Cursed Spirits take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Child",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Maki Zenin vs. Cursed Spirits:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-032",
+   "kind": "fact",
+   "question": "Which techniques did Yuka Okkotsu use in Yuta Okkotsu & Maki Zenin vs. Cursed Spirits?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rika Manifestation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Maki Zenin vs. Cursed Spirits:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-033",
+   "kind": "fact",
+   "question": "What is the outcome of Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Curses are exorcised.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-034",
+   "kind": "fact",
+   "question": "Where did Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hapina Shopping Center",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-035",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 0",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-036",
+   "kind": "fact",
+   "question": "In which episode is Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Movie",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-037",
+   "kind": "fact",
+   "question": "In which arc does Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Child",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-038",
+   "kind": "fact",
+   "question": "Which techniques did Yuka Okkotsu use in Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Energy Manipulation, Cursed Tool: Katana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-039",
+   "kind": "fact",
+   "question": "What is the outcome of Yuta Okkotsu vs. Cursed Spirit?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Cursed Spirit:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-040",
+   "kind": "fact",
+   "question": "Where did Yuta Okkotsu vs. Cursed Spirit take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Cursed Spirit:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-041",
+   "kind": "fact",
+   "question": "Which manga chapters cover Yuta Okkotsu vs. Cursed Spirit?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 137",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Cursed Spirit:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-042",
+   "kind": "fact",
+   "question": "In which episode is Yuta Okkotsu vs. Cursed Spirit depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 47",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Cursed Spirit:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-043",
+   "kind": "fact",
+   "question": "In which arc does Yuta Okkotsu vs. Cursed Spirit take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident Arc",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Cursed Spirit:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-044",
+   "kind": "fact",
+   "question": "Which techniques did Yuka Okkotsu use in Yuta Okkotsu vs. Cursed Spirit?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Tool: Katana, Rika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Cursed Spirit:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-045",
+   "kind": "fact",
+   "question": "What is the outcome of Yuta Okkotsu vs. Kurourushi?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Kurourushi:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-046",
+   "kind": "fact",
+   "question": "Where did Yuta Okkotsu vs. Kurourushi take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sendai Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Kurourushi:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-047",
+   "kind": "fact",
+   "question": "When does Yuta Okkotsu vs. Kurourushi take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 12, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Kurourushi:date"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-048",
+   "kind": "fact",
+   "question": "Which manga chapters cover Yuta Okkotsu vs. Kurourushi?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 175",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Kurourushi:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-049",
+   "kind": "fact",
+   "question": "In which episode is Yuta Okkotsu vs. Kurourushi depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 59",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Kurourushi:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-050",
+   "kind": "fact",
+   "question": "In which arc does Yuta Okkotsu vs. Kurourushi take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Kurourushi:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-051",
+   "kind": "fact",
+   "question": "What is the outcome of Yuta Okkotsu vs. Suguru Geto?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-052",
+   "kind": "fact",
+   "question": "Where did Yuta Okkotsu vs. Suguru Geto take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-053",
+   "kind": "fact",
+   "question": "When does Yuta Okkotsu vs. Suguru Geto take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2017",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:date"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-054",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuta Okkotsu vs. Suguru Geto begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 0",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-055",
+   "kind": "fact",
+   "question": "In which episode is Yuta Okkotsu vs. Suguru Geto depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Movie",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-056",
+   "kind": "fact",
+   "question": "In which arc does Yuta Okkotsu vs. Suguru Geto take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Child",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-057",
+   "kind": "fact",
+   "question": "What is the outcome of Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori:outcome"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-058",
+   "kind": "fact",
+   "question": "Where did Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sendai Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori:place"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-059",
+   "kind": "fact",
+   "question": "When does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 12, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori:date"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-060",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori begin?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 176",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori:chapters"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-061",
+   "kind": "fact",
+   "question": "In which episode is Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori depicted?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 59",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori:episodes"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-062",
+   "kind": "fact",
+   "question": "In which arc does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori:arc"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-063",
+   "kind": "set",
+   "question": "What are all the named techniques of Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Biting Twist",
+     "aliases": []
+    },
+    {
+     "item": "Divine Dogs",
+     "aliases": []
+    },
+    {
+     "item": "Savage Jaw Strike",
+     "aliases": []
+    },
+    {
+     "item": "Shikigami",
+     "aliases": []
+    },
+    {
+     "item": "Ten Shadows Technique",
+     "aliases": []
+    },
+    {
+     "item": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-064",
+   "kind": "set",
+   "question": "What are all the families of Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Iori Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Mifuyu Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Tsurugi Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    },
+    {
+     "item": "Michizane Sugawara",
+     "aliases": []
+    },
+    {
+     "item": "Maki Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Mai Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Ogi Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Naobito Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Naoya Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Jinichi Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Toji Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-065",
+   "kind": "set",
+   "question": "What are all the friends of Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Dabura Karaba",
+     "aliases": []
+    },
+    {
+     "item": "Kyoko Tomoe",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:friend"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-066",
+   "kind": "set",
+   "question": "What are all the superiors of Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kou Usami",
+     "aliases": []
+    },
+    {
+     "item": "Marulu Val Vol Yelvori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:superior"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-067",
+   "kind": "set",
+   "question": "What are all the affiliations of Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Jujutsu High Gojo Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-068",
+   "kind": "set",
+   "question": "Every battle involving Yuka Okkotsu",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori vs. Yuta Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu & Maki Zenin vs. Cursed Spirits",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu & Toge Inumaki vs. Cursed Spirits",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu vs. Cursed Spirit",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu vs. Kurourushi",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu vs. Suguru Geto",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Marulu_Val_Vol_Yelvori_vs._Tsurugi_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Maki_Zenin_vs._Cursed_Spirits",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_&_Toge_Inumaki_vs._Cursed_Spirits",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Cursed_Spirit",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Kurourushi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Suguru_Geto",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu_vs._Takako_Uro_vs._Ryu_Ishigori"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-069",
+   "kind": "fact",
+   "question": "What personality traits define Yuka Okkotsu?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "calm and kind person but she can be hot-headed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-070",
+   "kind": "fact",
+   "question": "What rivalry fuels Yuka Okkotsu competitive spirit?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "deep-seated rivalry with her brother",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-072",
+   "kind": "fact",
+   "question": "Whose bond with Yuka Okkotsu amplified her feelings of betrayal?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "her grandfather",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-073",
+   "kind": "fact",
+   "question": "How does Yuka describe her relationship with Tsurugi?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "sibling animosity",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-074",
+   "kind": "fact",
+   "question": "Who rated Yuka strength among sorcerers?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Usami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview  overview"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-075",
+   "kind": "fact",
+   "question": "How does Usami compare Yuka to Tsurugi?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "comparable in strength",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview  overview"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-076",
+   "kind": "fact",
+   "question": "What restriction applies to Yuka Ten Shadows Technique?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "permitted to use abilities of certain shikigami during combat rather than summoning them",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Restrictions  cursed restrictions"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-077",
+   "kind": "fact",
+   "question": "How does Yuka enhance her combat style beyond shikigami?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "combine her martial arts with jujutsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Physical Prowess  physical prowess"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-079",
+   "kind": "fact",
+   "question": "How does Yuka achieve Enhanced Strength?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "manipulating cursed energy to reinforce her body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Physical Prowess  physical prowess"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-086",
+   "kind": "fact",
+   "question": "What effect does Yuka Savage Jaw Strike have on her hands?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "causing her fingernails to grow long and sharp",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique; technique"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-087",
+   "kind": "fact",
+   "question": "Which family event triggered Yuka's animosity toward Tsurugi?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the Gojo clan’s decision to entrust Yuta's ring to Tsurugi, despite Yuka initially being the chosen recipient by Yuta himself"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Personality | SU11 restore: was retired as G5/G14 gap; the answer is on the page (Kamo documented-open precedent — on-page facts stay active)"
+  },
+  {
+   "id": "jjk-pg-yuka_okkotsu-088",
+   "kind": "fact",
+   "question": "What did Yuka give as a binding vow before summoning Mahoraga?",
+   "subject": "Yuka Okkotsu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "she traded her life for a considerable boost to her cursed energy and cursed technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuka_Okkotsu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Restrictions | SU11 restore: was retired as G5/G14 gap; the answer is on the page"
+  }
+ ]
+}

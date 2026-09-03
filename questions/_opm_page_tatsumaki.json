@@ -1,0 +1,1788 @@
+{
+  "series": "opm",
+  "wiki": "https://onepunchman.fandom.com",
+  "updated": "2026-08-21",
+  "note": "Page campaign batch: Tatsumaki cluster (Tatsumaki main page + Tatsumaki/Synopsis). Excluded from the official bank by the underscore prefix; scored via `cli page-run --series opm --batch tatsumaki`.",
+  "questions": [
+    {
+      "id": "opm-pg-tatsumaki-001",
+      "kind": "set",
+      "question": "Every battle of Tatsumaki",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Atomic Samurai, Bang, Metal Bat, and Puri-Puri Prisoner vs. Melzargard",
+          "aliases": []
+        },
+        {
+          "item": "Heroes vs. Do-S",
+          "aliases": []
+        },
+        {
+          "item": "Heroes vs. Hundred-Eyes Octopus",
+          "aliases": []
+        },
+        {
+          "item": "Heroes vs. Monster Association Executives",
+          "aliases": []
+        },
+        {
+          "item": "Heroes vs. Psykos and Orochi",
+          "aliases": []
+        },
+        {
+          "item": "Tatsumaki vs. Ancient King",
+          "aliases": []
+        },
+        {
+          "item": "Tatsumaki vs. Apollo",
+          "aliases": []
+        },
+        {
+          "item": "Tatsumaki vs. Evil Eye",
+          "aliases": []
+        },
+        {
+          "item": "Tatsumaki vs. Psykos & Orochi",
+          "aliases": []
+        },
+        {
+          "item": "Tatsumaki vs. Psykos",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Battles"
+      ],
+      "verified": "2026-08-21",
+      "note": "Pre-verified against the live engine 2026-08-21 (10 members, exact)."
+    },
+    {
+      "id": "opm-pg-tatsumaki-002",
+      "kind": "set",
+      "question": "What are all the aliases of Tatsumaki?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tornado of Terror",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21",
+      "note": "Declared in series/opm/overrides.yaml (roster `Tatsumaki's aliases`): the name sits in the `alias =` infobox field on `Tatsumaki`."
+    },
+    {
+      "id": "opm-pg-tatsumaki-003",
+      "kind": "set",
+      "question": "What are all the named psychic techniques Tatsumaki uses in One Punch Man?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Psychic Binding",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Whirlwind",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Barriers",
+          "aliases": []
+        },
+        {
+          "item": "Chi Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Psychic Remote",
+          "aliases": []
+        },
+        {
+          "item": "Flight",
+          "aliases": []
+        },
+        {
+          "item": "Telepathy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21",
+      "note": "Declared in series/opm/overrides.yaml (roster `Every named psychic technique Tatsumaki uses in One Punch Man`), 7 members."
+    },
+    {
+      "id": "opm-pg-tatsumaki-004",
+      "kind": "fact",
+      "question": "What is Tatsumaki's hero alias?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Tornado of Terror"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-005",
+      "kind": "fact",
+      "question": "What is the Viz translation of Tatsumaki's hero alias?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Terrible Tornado"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-006",
+      "kind": "fact",
+      "question": "What rank does Tatsumaki hold in the Hero Association?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "S-Class Rank 2"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-007",
+      "kind": "fact",
+      "question": "Who does Tatsumaki self-declare to be the teacher of?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Fubuki"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-008",
+      "kind": "fact",
+      "question": "What is Tatsumaki and her sister known as?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Psychic Sisters"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-009",
+      "kind": "fact",
+      "question": "How does the page describe Tatsumaki's build?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "petite woman"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-010",
+      "kind": "fact",
+      "question": "What color are Tatsumaki's eyes?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "emerald green"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-011",
+      "kind": "fact",
+      "question": "What does Tatsumaki wear?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a form-fitting V-neck black dress with a high collar"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-012",
+      "kind": "fact",
+      "question": "What did Tatsumaki gain after her battle against the fused Psykos and Orochi?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a four-pointed, star-shaped scar on each palm"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-013",
+      "kind": "fact",
+      "question": "How is Tatsumaki's personality described?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "brash, moody, hot-headed and impatient"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-014",
+      "kind": "fact",
+      "question": "What did Tatsumaki slam Genos into for retaliating against her verbal abuse of Saitama?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a large piece of rubble"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-015",
+      "kind": "fact",
+      "question": "Who scolded Tatsumaki and made her stop her actions toward Saitama?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Bang"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-016",
+      "kind": "fact",
+      "question": "What two words is Tatsumaki especially averse to being called?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "brat"
+        },
+        {
+          "item": "runt"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-017",
+      "kind": "fact",
+      "question": "How is Tatsumaki towards her younger sister Fubuki?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "overprotective and controlling"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-018",
+      "kind": "fact",
+      "question": "What did Tatsumaki claim multiple times during the S-Class meeting for Waganma's rescue?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "no monster stands a chance against her"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-019",
+      "kind": "fact",
+      "question": "What did Apollo activate inside Fubuki to force Tatsumaki to back down?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a capsule filled with deadly poison"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21",
+      "note": "Replaces a circular question: its gold restated the question's premise ('a curse Blast left in her'). New fact is from the Tatsumaki vs. Apollo synopsis."
+    },
+    {
+      "id": "opm-pg-tatsumaki-020",
+      "kind": "fact",
+      "question": "What complex does Tatsumaki suffer from?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a massive superiority complex"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-021",
+      "kind": "fact",
+      "question": "What did Tatsumaki's explosive temper cause when she became angry at Saitama for calling her a brat and a midget?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "earthquakes and multiple threats"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-022",
+      "kind": "fact",
+      "question": "What did Tatsumaki call all of Fubuki's contacts and friends?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "parasites"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-023",
+      "kind": "fact",
+      "question": "What did Tatsumaki always think about herself as a child?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the cooler one of the two"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-024",
+      "kind": "fact",
+      "question": "Who stated that Tatsumaki is one of the few heroes capable of defeating Elder Centipede?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Gyoro Gyoro"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-025",
+      "kind": "fact",
+      "question": "What did Superalloy Darkshine tell Garou would happen if he fought Tatsumaki?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "he would instantly lose"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-026",
+      "kind": "fact",
+      "question": "Who does Tatsumaki's psychokinetic output surpass?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Geryuganshoop"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-027",
+      "kind": "fact",
+      "question": "What did Tatsumaki effortlessly stop from Boros' giant spaceship?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a very powerful bombardment attack"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-028",
+      "kind": "fact",
+      "question": "What can Tatsumaki lift according to manga illustrator Yusuke Murata?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the entirety of Z-City"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-029",
+      "kind": "fact",
+      "question": "How far underground was Psykos when Tatsumaki located and dragged her out?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "1500 meters underground"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-030",
+      "kind": "fact",
+      "question": "How did Tatsumaki crush Hundred-Eyes Octopus in her brief fight?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "crushed it into a ball with her telekinesis power"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-031",
+      "kind": "fact",
+      "question": "What weather phenomena can Tatsumaki cause with her power?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "large twisters"
+        },
+        {
+          "item": "big storms"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-032",
+      "kind": "fact",
+      "question": "What did Tatsumaki lift out of the ground when serious?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the entire Monster Association Headquarters"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-033",
+      "kind": "fact",
+      "question": "What did Tatsumaki pull out of the ocean during her fight with the fusion of Psykos and Orochi?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "meteor-sized rock formations"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-034",
+      "kind": "fact",
+      "question": "What did Tatsumaki transform the ruins of the Monster Association Headquarters into?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a colossal stone spear"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-035",
+      "kind": "fact",
+      "question": "What happened to Tatsumaki's powers after Psykos ambushed her from behind?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "destabilize and to an extent become unusable"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-036",
+      "kind": "fact",
+      "question": "How does Tatsumaki fly?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "uses psychokinesis to levitate and fly through the air at high speeds"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-037",
+      "kind": "fact",
+      "question": "What can Tatsumaki erect for defense?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "barriers that vary in size"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-038",
+      "kind": "fact",
+      "question": "What does Tatsumaki do to a barrier to trap any target within it?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "invert and add another layer"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-039",
+      "kind": "fact",
+      "question": "Who can Tatsumaki psychically contact with her telepathy?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "her sister Fubuki"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-040",
+      "kind": "fact",
+      "question": "What did Fubuki compare using Chi Manipulation on a strong-willed opponent to?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "trying to pin down a massive boulder"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-041",
+      "kind": "fact",
+      "question": "What is Tatsumaki called for her skill in wielding her psychic abilities?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Master Psychic Combatant"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-042",
+      "kind": "fact",
+      "question": "What did Tatsumaki create to distract Psykos while flying discreetly beneath her?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a dummy of herself"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-043",
+      "kind": "fact",
+      "question": "What did Tatsumaki pinpoint inside Fubuki by copying the wavelength of another esper's signals?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a poison pill"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-044",
+      "kind": "fact",
+      "question": "What is Psychic Binding an ability used to do?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "immobilize targets"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-045",
+      "kind": "fact",
+      "question": "How does the page describe Psychic Whirlwind?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "an anti-psychic technique"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-046",
+      "kind": "fact",
+      "question": "What can Psychic Whirlwind redirect or deflect?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "psychic attacks"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-047",
+      "kind": "fact",
+      "question": "What did Tatsumaki tell Saitama in chapter 37?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Know your place, B-Class!"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-048",
+      "kind": "fact",
+      "question": "What did Tatsumaki say about mental strength?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Mental strength is secondary. All you really need is overwhelming power."
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-049",
+      "kind": "fact",
+      "question": "What did Tatsumaki say she would do to Sekingar if her sister was involved in the Monster Association battle?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "I'm coming after you"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-050",
+      "kind": "fact",
+      "question": "What did Tatsumaki claim in chapter 93 about being beaten?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "I don't think I can be beaten."
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-051",
+      "kind": "fact",
+      "question": "What did Tatsumaki say about becoming a pro hero thanks to Blast?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "There's no way I can say I became a pro hero thanks to him."
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-052",
+      "kind": "fact",
+      "question": "What place did Tatsumaki rank in the character popularity poll?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "6th"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-053",
+      "kind": "fact",
+      "question": "What does Tatsumaki like according to the databook?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "her sister"
+        },
+        {
+          "item": "areas where she could freely use her full abilities"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-054",
+      "kind": "fact",
+      "question": "What word was added to Tatsumaki's name?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Terror"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-055",
+      "kind": "fact",
+      "question": "How much older is Tatsumaki than her sister Fubuki?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "5 years older"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-056",
+      "kind": "fact",
+      "question": "Who once mistook Tatsumaki as the younger sister of Fubuki?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Lily"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-057",
+      "kind": "fact",
+      "question": "What is Tatsumaki obsessed with?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "candy apples"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-058",
+      "kind": "fact",
+      "question": "What does Tatsumaki fear because of an incident with Saitama?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "ghosts"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-059",
+      "kind": "fact",
+      "question": "What did ONE state Tatsumaki in her best shape would have done?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "beaten Golden Sperm"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-060",
+      "kind": "fact",
+      "question": "What did Tatsumaki wear in the 2017 One-Punch Man Halloween cover?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a witch hat, an orange scarf and an orange Jack-O'-Lantern-themed pants"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-061",
+      "kind": "fact",
+      "question": "Who took Tatsumaki away from her adopted family at the age of seven?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Tsukuyomi"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-062",
+      "kind": "fact",
+      "question": "What did the scientists give Tatsumaki's parents for complying?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "money"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-063",
+      "kind": "fact",
+      "question": "What did the scientists reward Tatsumaki with for cooperation?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "candy and toys"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-064",
+      "kind": "fact",
+      "question": "What did the scientists do whenever Tatsumaki wouldn't use her powers?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "locked her up in a cell"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-065",
+      "kind": "fact",
+      "question": "What was Tatsumaki left alone to fend off while locked in a cell 18 years ago?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a monster outbreak"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-066",
+      "kind": "fact",
+      "question": "Who came to Tatsumaki's rescue during the monster outbreak?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Blast"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-067",
+      "kind": "fact",
+      "question": "What was Tatsumaki's reason for holding back her powers from the scientists?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "so that the scientists would deem her useless and let her go"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-068",
+      "kind": "fact",
+      "question": "What was Tatsumaki heartbroken by?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "her parents for selling her out"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-069",
+      "kind": "fact",
+      "question": "What advice did Blast give Tatsumaki?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "not to expect anyone to save her next time"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-070",
+      "kind": "fact",
+      "question": "What did Tatsumaki momentarily lift into the air to retaliate against the kids?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the entire building"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-071",
+      "kind": "fact",
+      "question": "What did Tatsumaki tell Fubuki to do when she was being bullied?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "either come to her or retaliate"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-072",
+      "kind": "fact",
+      "question": "Who did Tatsumaki encounter and battle, holding a grudge against him until today?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Otento"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-073",
+      "kind": "fact",
+      "question": "Where was Tatsumaki sent by plane to fight the Ancient King?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the mountains"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-074",
+      "kind": "fact",
+      "question": "How did Tatsumaki quickly end the fight with the Ancient King?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "sending a meteor crashing down on the Ancient King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-075",
+      "kind": "fact",
+      "question": "What did Saitama mistake Tatsumaki for at the S-Class meeting?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a child"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-076",
+      "kind": "fact",
+      "question": "What did Tatsumaki decide to do with the giant spaceship?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "take down the spaceship alone"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-077",
+      "kind": "fact",
+      "question": "What did Bang tell Tatsumaki when she was about to attack Saitama?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "to act properly as an S-Class hero"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-078",
+      "kind": "fact",
+      "question": "What did Tatsumaki admit about fighting Saitama as she panted from exhaustion?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "having fun fighting someone on the same level as Blast"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21",
+      "note": "Replaces the retired 'Fubuki's vision' question: that gold sat in a section too small to survive chunking, so it is absent from the store."
+    },
+    {
+      "id": "opm-pg-tatsumaki-079",
+      "kind": "fact",
+      "question": "What did Tatsumaki cause in the city where Do-S and Fubuki were fighting?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "an explosion"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-080",
+      "kind": "fact",
+      "question": "What did Tatsumaki immobilize during the fight with Do-S?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "all of the love slaves"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-081",
+      "kind": "fact",
+      "question": "What did Tatsumaki tell Fubuki about the love slaves?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "they will only get in her way"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-082",
+      "kind": "fact",
+      "question": "Which city did Tatsumaki appear in to kill a wounded Hundred-Eyes Octopus?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "I-City"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-083",
+      "kind": "fact",
+      "question": "What did Tatsumaki brag about the Monster Association?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "just a bunch of cowards"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-084",
+      "kind": "fact",
+      "question": "What did Tatsumaki fight at the Z-City Ghost Town?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Evil Eye"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-085",
+      "kind": "fact",
+      "question": "What did Tatsumaki do to Evil Eye at the Z-City Ghost Town?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "twisting it into oblivion"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-086",
+      "kind": "fact",
+      "question": "What did Tatsumaki tear out of Gyoro Gyoro's body?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a humanoid figure"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-087",
+      "kind": "fact",
+      "question": "What did Tatsumaki realize the humanoid inside Gyoro Gyoro was?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "another meat puppet"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-088",
+      "kind": "fact",
+      "question": "What did Tatsumaki receive word of from King?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Tareo's safety"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-089",
+      "kind": "fact",
+      "question": "What impaled both of Tatsumaki's hands?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the blades of Psykos and Orochi's quickly-reforming body"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-090",
+      "kind": "fact",
+      "question": "What did Genos say to Tatsumaki was the disciple's duty to do?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "to help with the teacher's work"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-091",
+      "kind": "fact",
+      "question": "What did Tatsumaki twist in an attempt to fully destroy Psykos's monster form?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the entire city"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-092",
+      "kind": "fact",
+      "question": "Who interrupted the battle between Tatsumaki and Psykos again?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Drive Knight"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-093",
+      "kind": "fact",
+      "question": "What did Tatsumaki pull out of the ground to finish off Orochi?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a rock formation in the shape of a spear"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-094",
+      "kind": "fact",
+      "question": "How did Blast seemingly appear beside Tatsumaki after her barrier vanished?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "from a portal"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-095",
+      "kind": "fact",
+      "question": "Who attacked Tatsumaki with countless energy spheres after the Orochi fight?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Homeless Emperor"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-096",
+      "kind": "fact",
+      "question": "What did Genos refuse to resort to so as not to risk Tatsumaki's life?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "self-destruction"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-097",
+      "kind": "fact",
+      "question": "What was King running when he appeared in front of Tatsumaki and Genos?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "King Engine"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-098",
+      "kind": "fact",
+      "question": "Which city was Tatsumaki dispatched to take on Aggregation?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "P-City"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-099",
+      "kind": "fact",
+      "question": "What level of mysterious being is Aggregation?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dragon level"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-tatsumaki-100",
+      "kind": "fact",
+      "question": "What did Tatsumaki think humanity won't do unless preventive measures are taken?",
+      "subject": "Tatsumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "survive"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    }
+  ]
+}

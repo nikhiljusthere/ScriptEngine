@@ -1,0 +1,375 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Garuda",
+      "set": "Every battle involving Garuda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Garuda",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Garuda's name?",
+      "id": "jjk-pg-garuda-001",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "\u51f0\u8f2a"
+      ],
+      "found": [
+        "\u51f0\u8f2a"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Garuda's name?",
+      "id": "jjk-pg-garuda-002",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Garuda"
+      ],
+      "found": [
+        "Garuda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Garuda first appear?",
+      "id": "jjk-pg-garuda-003",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Chapter 50"
+      ],
+      "found": [
+        "Chapter 50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Garuda first depicted?",
+      "id": "jjk-pg-garuda-004",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Episode 20"
+      ],
+      "found": [
+        "Episode 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-garuda-005",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-garuda-006",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-garuda-007",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-garuda-008",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-garuda-009",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-garuda-010",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-garuda-011",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-garuda-012",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-garuda-013",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-garuda-014",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-garuda-015",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Garuda?",
+      "id": "jjk-pg-garuda-017",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Garuda is a long white shikigami with a unique appearance."
+      ],
+      "found": [
+        "Garuda is a long white shikigami with a unique appearance."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Star Rage transform Garuda?",
+      "id": "jjk-pg-garuda-018",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Star Rage transforms Garuda into a cursed tool that the user can use in battle."
+      ],
+      "found": [
+        "Star Rage transforms Garuda into a cursed tool that the user can use in battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Garuda play in Yuki's battles?",
+      "id": "jjk-pg-garuda-019",
+      "subject": "Garuda",
+      "accept": "all",
+      "expected": [
+        "Garuda is primarily an aid to Yuki in battle, though it is not relied upon as her only source of offense."
+      ],
+      "found": [
+        "Garuda is primarily an aid to Yuki in battle, though it is not relied upon as her only source of offense."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 18,
+    "fact_present": 18
+  }
+}

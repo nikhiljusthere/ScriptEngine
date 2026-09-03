@@ -1,0 +1,599 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Mei Mei?",
+      "set": "Every named technique of Mei Mei",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the subordinates of Mei Mei?",
+      "set": "Every subordinate of Mei Mei",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Mei Mei?",
+      "found": [
+        "Black Bird Manipulation",
+        "Bird Strike"
+      ],
+      "missing": [],
+      "members": [
+        "Bird Strike",
+        "Black Bird Manipulation"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Mei Mei?",
+      "found": [
+        "Satoru Gojo",
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo",
+        "Suguru Geto"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Mei Mei's name?",
+      "id": "jjk-pg-mei_mei-002",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Mei Mei"
+      ],
+      "found": [
+        "Mei Mei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mei Mei's race?",
+      "id": "jjk-pg-mei_mei-003",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mei Mei's gender?",
+      "id": "jjk-pg-mei_mei-004",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Mei Mei?",
+      "id": "jjk-pg-mei_mei-005",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mei Mei's occupation?",
+      "id": "jjk-pg-mei_mei-006",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mei Mei's grade?",
+      "id": "jjk-pg-mei_mei-007",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Grade 1"
+      ],
+      "found": [
+        "Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Mei Mei first appear?",
+      "id": "jjk-pg-mei_mei-008",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3 (Cameo) Chapter 40"
+      ],
+      "found": [
+        "Chapter 0-3 (Cameo) Chapter 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Mei Mei first depicted?",
+      "id": "jjk-pg-mei_mei-009",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Mei Mei's Japanese voice actor?",
+      "id": "jjk-pg-mei_mei-010",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Kotono Mitsuishi"
+      ],
+      "found": [
+        "Kotono Mitsuishi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Mei Mei's English voice actor?",
+      "id": "jjk-pg-mei_mei-011",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Amber Lee Connors"
+      ],
+      "found": [
+        "Amber Lee Connors"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed technique does Mei Mei use to share vision while scouting?",
+      "id": "jjk-pg-mei_mei-014",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Black Bird Manipulation"
+      ],
+      "found": [
+        "Black Bird Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What type of combatant did Mei Mei craft herself into due to believing her technique was weak?",
+      "id": "jjk-pg-mei_mei-015",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "close-quarters combatant"
+      ],
+      "found": [
+        "close-quarters combatant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Mei Mei achieve in the first Popularity Poll?",
+      "id": "jjk-pg-mei_mei-016",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "47th"
+      ],
+      "found": [
+        "47th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Mei Mei's younger brother?",
+      "id": "jjk-pg-mei_mei-017",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Ui Ui"
+      ],
+      "found": [
+        "Ui Ui"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many individuals has Mei Mei's Bird Strike ever failed to kill?",
+      "id": "jjk-pg-mei_mei-018",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo, Kenjaku, and Sukuna"
+      ],
+      "found": [
+        "Satoru Gojo, Kenjaku, and Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool is Mei Mei's primary weapon in combat?",
+      "id": "jjk-pg-mei_mei-019",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Battle Axe"
+      ],
+      "found": [
+        "Battle Axe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What power did Mei Mei lack that forced her to train as a close-quarters combatant?",
+      "id": "jjk-pg-mei_mei-020",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "innate technique"
+      ],
+      "found": [
+        "innate technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Satoru Gojo state about Mei Mei regarding her strength?",
+      "id": "jjk-pg-mei_mei-021",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "he believes Mei Mei is strong"
+      ],
+      "found": [
+        "he believes Mei Mei is strong"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mei Mei claim she couldn't remember the last time of before the Smallpox Deity encounter?",
+      "id": "jjk-pg-mei_mei-022",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "her life was in danger"
+      ],
+      "found": [
+        "her life was in danger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In what episode is Mei Mei first depicted in the anime?",
+      "id": "jjk-pg-mei_mei-023",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What degree of control does Mei Mei have over cursed energy making her a master?",
+      "id": "jjk-pg-mei_mei-024",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "cursed energy control"
+      ],
+      "found": [
+        "cursed energy control"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What grade was Niji Ebina believed to be as strong as?",
+      "id": "jjk-pg-mei_mei-025",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "semi-grade 1"
+      ],
+      "found": [
+        "semi-grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened between Mei Mei and Ui Ui regarding cursed energy?",
+      "id": "jjk-pg-mei_mei-026",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "a binding vow"
+      ],
+      "found": [
+        "a binding vow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "In what form does Mei Mei's name contain the kanji for \"dark/darkness, invisible, divine, hell\"?",
+      "id": "jjk-pg-mei_mei-027",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "compound"
+      ],
+      "found": [
+        "compound"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed technique does Mei Mei use to scout inside Meiji-Jingumae station during Shibuya?",
+      "id": "jjk-pg-mei_mei-028",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Black Bird Manipulation"
+      ],
+      "found": [
+        "Black Bird Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mei Mei use Bird Strike against at Gojo's request?",
+      "id": "jjk-pg-mei_mei-029",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Gojo"
+      ],
+      "found": [
+        "Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Mei Mei uses Black Bird Manipulation to imbue crows with what to control them?",
+      "id": "jjk-pg-mei_mei-030",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "cursed energy"
+      ],
+      "found": [
+        "cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mei Mei's favorite dish according to the Fanbook?",
+      "id": "jjk-pg-mei_mei-031",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "Bak kut teh"
+      ],
+      "found": [
+        "Bak kut teh"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mei Mei enjoy rather than simply hoarding money?",
+      "id": "jjk-pg-mei_mei-032",
+      "subject": "Mei Mei",
+      "accept": "all",
+      "expected": [
+        "the game behind building her bank account"
+      ],
+      "found": [
+        "the game behind building her bank account"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 29,
+    "fact_present": 29
+  }
+}

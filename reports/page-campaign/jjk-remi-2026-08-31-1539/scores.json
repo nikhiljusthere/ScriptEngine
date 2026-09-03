@@ -1,0 +1,703 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Remi?",
+      "set": "Every named technique of Remi",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Remi",
+      "set": "Every battle involving Remi",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Remi?",
+      "found": [
+        "Scorpion Hair"
+      ],
+      "missing": [],
+      "members": [
+        "Scorpion Hair"
+      ]
+    },
+    {
+      "query": "Every battle involving Remi",
+      "found": [
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Remi's name?",
+      "id": "jjk-pg-remi-001",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "\u9e97\u7f8e"
+      ],
+      "found": [
+        "\u9e97\u7f8e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Remi's name?",
+      "id": "jjk-pg-remi-002",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Remi"
+      ],
+      "found": [
+        "Remi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Remi's race?",
+      "id": "jjk-pg-remi-003",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Remi's gender?",
+      "id": "jjk-pg-remi-004",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Remi?",
+      "id": "jjk-pg-remi-005",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Remi's occupation?",
+      "id": "jjk-pg-remi-006",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Remi first appear?",
+      "id": "jjk-pg-remi-007",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Remi first depicted?",
+      "id": "jjk-pg-remi-008",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Remi's Japanese voice actor?",
+      "id": "jjk-pg-remi-009",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Ari Ozawa"
+      ],
+      "found": [
+        "Ari Ozawa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Remi's English voice actor?",
+      "id": "jjk-pg-remi-010",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Cristina Vee"
+      ],
+      "found": [
+        "Cristina Vee"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-remi-011",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Takaba interrupts the battle."
+      ],
+      "found": [
+        "Takaba interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-remi-012",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-remi-013",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Reggie Star's Group begin?",
+      "id": "jjk-pg-remi-014",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Chapter 167"
+      ],
+      "found": [
+        "Chapter 167"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Reggie Star's Group depicted?",
+      "id": "jjk-pg-remi-015",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-remi-016",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Remi use in Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-remi-017",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Scorpion Hair Technique"
+      ],
+      "found": [
+        "Scorpion Hair Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Remi become a jujutsu sorcerer?",
+      "id": "jjk-pg-remi-020",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "a normal human turned jujutsu sorcerer by Kenjaku for the Culling Game"
+      ],
+      "found": [
+        "a normal human turned jujutsu sorcerer by Kenjaku for the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which group did Remi align with?",
+      "id": "jjk-pg-remi-021",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Reggie Star's group"
+      ],
+      "found": [
+        "Reggie Star's group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Remi look like?",
+      "id": "jjk-pg-remi-022",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "a young woman with a well-figured build who is considered attractive enough to make people let their guard down"
+      ],
+      "found": [
+        "a young woman with a well-figured build who is considered attractive enough to make people let their guard down"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Remi's hair look like?",
+      "id": "jjk-pg-remi-023",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "long black hair with fringed bangs and a long ponytail"
+      ],
+      "found": [
+        "long black hair with fringed bangs and a long ponytail"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shape was Remi's ponytail altered into?",
+      "id": "jjk-pg-remi-024",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "a scorpion's tail"
+      ],
+      "found": [
+        "a scorpion's tail"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Remi characterized?",
+      "id": "jjk-pg-remi-025",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "a deceptive and self-serving person who puts on an act to manipulate others for her own benefit"
+      ],
+      "found": [
+        "a deceptive and self-serving person who puts on an act to manipulate others for her own benefit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What pretense did Remi use to get Megumi to work with her?",
+      "id": "jjk-pg-remi-026",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "being her \"knight\", a deception meant to lead the rival player into a trap"
+      ],
+      "found": [
+        "being her \"knight\", a deception meant to lead the rival player into a trap"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Remi falsely believe Reggie would do?",
+      "id": "jjk-pg-remi-027",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Reggie would protect her if she did a good job"
+      ],
+      "found": [
+        "Reggie would protect her if she did a good job"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How has Remi typically solved her problems?",
+      "id": "jjk-pg-remi-028",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "charming men is always how Remi has solved her problems"
+      ],
+      "found": [
+        "charming men is always how Remi has solved her problems"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Remi lie Hiromi was located?",
+      "id": "jjk-pg-remi-029",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Remi trick Megumi into meeting?",
+      "id": "jjk-pg-remi-030",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Reggie Star"
+      ],
+      "found": [
+        "Reggie Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Remi attack Megumi in the battle with Reggie's group?",
+      "id": "jjk-pg-remi-031",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "attacked Megumi with her hair"
+      ],
+      "found": [
+        "attacked Megumi with her hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Remi narrowly survive the explosion?",
+      "id": "jjk-pg-remi-032",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "Megumi bringing her into a room and shielding the blast with the room's door"
+      ],
+      "found": [
+        "Megumi bringing her into a room and shielding the blast with the room's door"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who ambushed and captured Remi on the night of November 14?",
+      "id": "jjk-pg-remi-033",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "the United States military"
+      ],
+      "found": [
+        "the United States military"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Remi have little combat prowess?",
+      "id": "jjk-pg-remi-034",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "she relies on others to protect her"
+      ],
+      "found": [
+        "she relies on others to protect her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Remi's Scorpion Hair technique allow her to do?",
+      "id": "jjk-pg-remi-035",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "manipulate her scorpion tail-like hair to attack her enemies"
+      ],
+      "found": [
+        "manipulate her scorpion tail-like hair to attack her enemies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Remi rank in the third Popularity Poll?",
+      "id": "jjk-pg-remi-036",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "78th in the third Popularity Poll with 5 votes"
+      ],
+      "found": [
+        "78th in the third Popularity Poll with 5 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Remi rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-remi-037",
+      "subject": "Remi",
+      "accept": "all",
+      "expected": [
+        "80th in the fourth Popularity Poll with 9 votes"
+      ],
+      "found": [
+        "80th in the fourth Popularity Poll with 9 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 35,
+    "fact_present": 35
+  }
+}

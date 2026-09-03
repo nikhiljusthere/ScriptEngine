@@ -1,0 +1,1102 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 3 (relationships) of the Naoya Zenin cluster. Golds are verbatim on the Naoya Zenin page and its Synopsis (lead, Personality, infobox Relatives field, Synopsis History); the three closed relative sets are declared in _jjk_page_naoya_zenin.decl3.yaml.",
+ "retired": [
+  {
+   "id": "jjk-pg-naoya_zenin-retired-05",
+   "item": "",
+   "question": "Every relative of Naoya Zenin",
+   "reason": "Not declared as a roster. The closed Relatives list in the infobox includes 'Unnamed Older Brothers' and 'Unnamed Uncle', which have no wiki pages, and its first entry is the 'Zenin Clan' itself (a clan, not a person), so the full set cannot be members = exact page titles. Answered per-relative via this section's qa questions (ids 104-118) and the cousin rosters (ids 101-103) instead.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-retired-06",
+   "item": "",
+   "question": "Every sibling of Naoya Zenin",
+   "reason": "Not a closed, page-titled set. The page names Naoya's brothers only as 'Unnamed Older Brothers' (no wiki page), so no sibling roster can be declared with members = exact page titles; Maki and Mai Zenin are his cousins, not siblings (both listed as (Cousin) in the infobox) and are covered by the cousin rosters (ids 101-103) instead.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-naoya_zenin-101",
+   "kind": "set",
+   "question": "Every cousin of Naoya Zenin",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Maki Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Mai Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Jinichi Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "The four entries labeled (Cousin) in the infobox Relatives field. The page lists Megumi Fushiguro and Iori Okkotsu separately as (First Cousin Once Removed) and Tsurugi and Yuka Okkotsu as (First Cousin Twice Removed), so they are not part of this closed set. Staged in _jjk_page_naoya_zenin.decl3.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-102",
+   "kind": "set",
+   "question": "Every first cousin once removed of Naoya Zenin",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Iori Okkotsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "The two entries labeled (First Cousin Once Removed) in the infobox Relatives field. Staged in _jjk_page_naoya_zenin.decl3.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-103",
+   "kind": "set",
+   "question": "Every first cousin twice removed of Naoya Zenin",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Tsurugi Okkotsu",
+     "aliases": []
+    },
+    {
+     "item": "Yuka Okkotsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "The two entries labeled (First Cousin Twice Removed) in the infobox Relatives field. Staged in _jjk_page_naoya_zenin.decl3.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-104",
+   "kind": "fact",
+   "question": "Who is Naoya Zenin's father?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Naobito Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'the youngest son of Naobito Zenin'; the infobox Relatives field lists 'Naobito Zenin (Father)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-105",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Naobito Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Father",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Naobito Zenin (Father)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-106",
+   "kind": "fact",
+   "question": "Which of Naobito Zenin's sons is Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 142, Volume 17",
+   "answer": [
+    {
+     "item": "the youngest",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, History: 'Naoya Zenin is the youngest of Naobito Zenin's sons'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-107",
+   "kind": "fact",
+   "question": "Which uncle of Naoya Zenin is named on his page?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Ogi Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Ogi Zenin (Uncle)'; the other uncle is listed only as 'Unnamed Uncle'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-108",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Ogi Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Uncle",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Ogi Zenin (Uncle)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-109",
+   "kind": "fact",
+   "question": "What unnamed brothers does Naoya Zenin's page list in his relatives?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Unnamed Older Brothers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-110",
+   "kind": "fact",
+   "question": "What unnamed uncle does Naoya Zenin's page list in his relatives?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Unnamed Uncle",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-111",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Maki Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Cousin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Maki Zenin (Cousin)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-112",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Mai Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Cousin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Mai Zenin (Cousin)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-113",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Jinichi Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Cousin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Jinichi Zenin (Cousin)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-114",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Toji Fushiguro?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Cousin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Toji Fushiguro (Cousin)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-115",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Megumi Fushiguro?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "First Cousin Once Removed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Megumi Fushiguro (First Cousin Once Removed)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-116",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Iori Okkotsu?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "First Cousin Once Removed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Iori Okkotsu (First Cousin Once Removed)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-117",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Tsurugi Okkotsu?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "First Cousin Twice Removed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Tsurugi Okkotsu (First Cousin Twice Removed)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-118",
+   "kind": "fact",
+   "question": "What relationship does Naoya Zenin's page list for Yuka Okkotsu?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "First Cousin Twice Removed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Relatives field: 'Yuka Okkotsu (First Cousin Twice Removed)'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-119",
+   "kind": "fact",
+   "question": "What did Naoya Zenin believe himself to be?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the true heir of the Zenin Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'believed himself to be the true heir of the Zenin Clan'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-120",
+   "kind": "fact",
+   "question": "What stigma did Naoya Zenin strongly embody?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "all the stigma about the Zenin clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'strongly embodied all the stigma about the Zenin clan'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-121",
+   "kind": "fact",
+   "question": "What was Naoya Zenin's only family value?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "trying to outdo everyone to become head of the clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He has no family values whatsoever other than trying to outdo everyone to become head of the clan'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-122",
+   "kind": "fact",
+   "question": "What was Naoya Zenin severely spoiled as?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the youngest and most promising of Naobito's children",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'severely spoiled as the youngest and most promising of Naobito's children'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-123",
+   "kind": "fact",
+   "question": "What was Naoya Zenin conditioned to view himself as?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "his father's successor",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'conditioned to view himself as his father's successor'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-124",
+   "kind": "fact",
+   "question": "Who did Naoya Zenin look down on?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "all those he views as weaker than him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He looked down on all those he views as weaker than him'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-125",
+   "kind": "fact",
+   "question": "What did Naoya Zenin refer to his elders Jinichi and Ogi as?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "weaklings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'referring to his elders, Jinichi and Ogi, as weaklings'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-126",
+   "kind": "fact",
+   "question": "Why did Ogi and Jinichi attack Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "for being excessively pompous",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Ogi and Jinichi attacked him for being excessively pompous'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-127",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin bully Maki Zenin while she was still in the clan?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 148",
+   "answer": [
+    {
+     "item": "her low levels of cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, History: 'Naoya bullied her for her low levels of cursed energy'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-128",
+   "kind": "fact",
+   "question": "What did Naoya Zenin call Maki upon her return to the Zenin clan's property?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 148, Episode 51",
+   "answer": [
+    {
+     "item": "scum",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He called her scum'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-129",
+   "kind": "fact",
+   "question": "What did Naoya Zenin taunt Maki for?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 148, Episode 51",
+   "answer": [
+    {
+     "item": "her scars",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'taunted her for her scars'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-130",
+   "kind": "fact",
+   "question": "What did Naoya Zenin call Maki for following Yuta and Megumi?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 148, Episode 51",
+   "answer": [
+    {
+     "item": "a lapdog",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He called her a lapdog for following Yuta and Megumi'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-131",
+   "kind": "fact",
+   "question": "Who did Naoya Zenin threaten to abuse in the same manner that he used to bully Maki?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 148, Episode 51",
+   "answer": [
+    {
+     "item": "his own cousin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'threatened to abuse his own cousin in the same manner that he used to bully her in the past'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-132",
+   "kind": "fact",
+   "question": "What was Naoya Zenin's reaction when Maki massacred her way through the Zenin clan?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 150, Episode 51",
+   "answer": [
+    {
+     "item": "amused by Maki's power",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'he was amused by Maki's power and simply teased her for being so ruthless'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-133",
+   "kind": "fact",
+   "question": "What did Naoya Zenin refuse to acknowledge about Maki's strength?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 151, Episode 51",
+   "answer": [
+    {
+     "item": "Maki as being in the same realm of strength as Toji",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Naoya refused to acknowledge Maki as being in the same realm of strength as Toji'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-134",
+   "kind": "fact",
+   "question": "What did Naoya Zenin refer to Maki as up until the moment he was defeated?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 151, Episode 51",
+   "answer": [
+    {
+     "item": "an imposter",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'referred to Maki as nothing more than an imposter'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-135",
+   "kind": "fact",
+   "question": "Who did Naoya Zenin want to be the one to stand beside in terms of strength?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 191 and 192",
+   "answer": [
+    {
+     "item": "Toji",
+     "aliases": [
+      "Toji Fushiguro"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'His lone desire was to kill Maki and prove he was the one to stand beside Toji in terms of strength'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-136",
+   "kind": "fact",
+   "question": "Who did Naoya Zenin refuse to accept as the next Toji?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 197",
+   "answer": [
+    {
+     "item": "Maki",
+     "aliases": [
+      "Maki Zenin"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Naoya continued to refuse that she was the next Toji'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-137",
+   "kind": "fact",
+   "question": "Who did Naoya Zenin claim is the one who stands beside Toji, once Maki Zenin cornered him?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 197",
+   "answer": [
+    {
+     "item": "himself",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'went on a tirade claiming the one who stands beside Toji is himself'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-138",
+   "kind": "fact",
+   "question": "What irritated Naoya Zenin to the point where he lashed out in a tantrum?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 197",
+   "answer": [
+    {
+     "item": "His speed couldn't overwhelm Maki after she was enlightened",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'His speed couldn't overwhelm Maki after she was enlightened, irritating him to the point where he lashed out in a tantrum'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-139",
+   "kind": "fact",
+   "question": "What did Naoya Zenin attempt to do as Maki's finishing blow interrupted him?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 198",
+   "answer": [
+    {
+     "item": "call Maki an imposter",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He attempted to call Maki an imposter to once again only to be interrupted by her finishing blow'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-140",
+   "kind": "fact",
+   "question": "What irony of fate came for Naoya Zenin in the form of Maki's mother?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 152, Episode 51",
+   "answer": [
+    {
+     "item": "Maki's mother stabbing him in the back",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: \"Fate's sense of irony came for Naoya in the form of Maki's mother stabbing him in the back\"."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-141",
+   "kind": "fact",
+   "question": "What did Naoya Zenin use his last words to do?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 152, Episode 51",
+   "answer": [
+    {
+     "item": "insult his assailant",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'all he could do was use his last words to insult his assailant'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-142",
+   "kind": "fact",
+   "question": "Who else did Naoya Zenin hold a grudge against, besides Maki?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 192",
+   "answer": [
+    {
+     "item": "Noritoshi",
+     "aliases": [
+      "Noritoshi Kamo"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Maki wasn't the only one he held a grudge against ... took out those transgressions on Noritoshi'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-143",
+   "kind": "fact",
+   "question": "What did Naoya Zenin admit he hated for what Choso did to him?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 192",
+   "answer": [
+    {
+     "item": "Blood Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Naoya also admitted he hated Blood Manipulation for what Choso did to him'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-144",
+   "kind": "fact",
+   "question": "How did Naoya Zenin treat Noritoshi and all others while wholly focused on Maki?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 192, 194 and 195",
+   "answer": [
+    {
+     "item": "as an afterthought",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Wholly focused on Maki, Naoya treated Noritoshi and all others as an afterthought'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-145",
+   "kind": "fact",
+   "question": "What did losing to Maki fuel in Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 191 and 192",
+   "answer": [
+    {
+     "item": "Naoya's grudge against her",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Dying in such a way and losing to Maki only fueled Naoya's grudge against her'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-146",
+   "kind": "fact",
+   "question": "Who was the only person Naoya Zenin ever appeared to have any respect for?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 151, Episode 51",
+   "answer": [
+    {
+     "item": "Toji",
+     "aliases": [
+      "Toji Fushiguro"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'The only person Naoya ever appeared to have any respect for was Toji'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-147",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin go to visit Toji as a child?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 151, Episode 51",
+   "answer": [
+    {
+     "item": "to mock the pitiful man without cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He went to visit him as a child to mock the pitiful man without cursed energy'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-148",
+   "kind": "fact",
+   "question": "What did Naoya Zenin recognize about Toji in spite of his lack of cursed energy?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 151, Episode 51",
+   "answer": [
+    {
+     "item": "Toji was extremely strong in spite of that",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'was instantly able to recognize Toji was extremely strong in spite of that'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-149",
+   "kind": "fact",
+   "question": "What ideology did the visit to Toji lead Naoya Zenin to embrace?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 151, Episode 51",
+   "answer": [
+    {
+     "item": "the sin of the insignificant is the ignorance of true strength",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'This led Naoya to embrace the ideology that the sin of the insignificant is the ignorance of true strength'."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-150",
+   "kind": "fact",
+   "question": "What did Naoya Zenin plot a way to do after Megumi Fushiguro usurped him for the head of the clan?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 138, Episode 48",
+   "answer": [
+    {
+     "item": "kill him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Upon learning that Megumi Fushiguro usurped him for the head of the clan, Naoya didn't hesitate to plot a way to kill him'."
+  }
+ ]
+}

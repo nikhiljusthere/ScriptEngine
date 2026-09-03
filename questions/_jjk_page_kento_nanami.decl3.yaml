@@ -1,0 +1,64 @@
+# Staged roster declarations for the Kento Nanami page campaign
+# (questions/_jjk_page_kento_nanami.section3.json, section 3: relationships
+# & people).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Four closed, page-stated sets. Each is a two-member enumeration the page
+# itself writes as a pair, and every member is an exact wiki page title, so
+# the members = exact page-titles contract holds:
+#   * lead: 'he was an underclassman of Satoru Gojo and Suguru Geto'
+#   * Personality: 'Yuji and Satoru describe Nanami as "gloomy"'
+#     (the page writes first names; members use the page titles)
+#   * Overview: 'Alongside Naobito and Maki Zenin, Nanami was also able to
+#     fight the special grade curse Dagon' (complements the Toji Fushiguro
+#     cluster's closed trio, jjk-pg-toji_fushiguro-116, which adds Kento
+#     Nanami himself)
+#   * Overview: 'Yuji and Takuma Ino both look up to Nanami'
+#
+# Candidate NOT declared: 'Everyone Kento Nanami worried about as he faced
+# the mutated humans' (Maki, Megumi, Naobito in the Synopsis Shibuya
+# section) -- the set is page-stated but it is an action beat (who he
+# worried about while dying), not a standing relationship, and two of its
+# members are already members of the Dagon co-fighters roster above;
+# answered per-person via the section's qa questions (jjk-pg-kento_nanami-143).
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required. Apostrophes are dropped in
+# possessive matches (following the decl2 `kento nanamis ...` convention).
+rosters:
+  - name: Every upperclassman Kento Nanami had at Tokyo Jujutsu High
+    match:
+      - every upperclassman kento nanami had at tokyo jujutsu high
+      - all the upperclassmen of kento nanami
+      - who kento nanami was an underclassman of
+    subject: Kento Nanami
+    members:
+      - Satoru Gojo
+      - Suguru Geto
+  - name: Everyone who describes Kento Nanami as gloomy
+    match:
+      - everyone who describes kento nanami as gloomy
+      - who describes kento nanami as gloomy
+      - the people who call kento nanami gloomy
+    subject: Kento Nanami
+    members:
+      - Yuji Itadori
+      - Satoru Gojo
+  - name: Everyone who fought Dagon alongside Kento Nanami
+    match:
+      - everyone who fought dagon alongside kento nanami
+      - who fought dagon with kento nanami
+      - kento nanamis dagon fighting partners
+    subject: Kento Nanami
+    members:
+      - Maki Zenin
+      - Naobito Zenin
+  - name: Everyone who looks up to Kento Nanami
+    match:
+      - everyone who looks up to kento nanami
+      - who looks up to kento nanami
+      - the people who look up to kento nanami
+    subject: Kento Nanami
+    members:
+      - Yuji Itadori
+      - Takuma Ino

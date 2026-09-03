@@ -1,0 +1,321 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving G Warstaff",
+      "set": "Every battle involving G Warstaff",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving G Warstaff",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Kinji Hakari vs. Charles Bernard"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Kinji Hakari vs. Charles Bernard"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for G Warstaff's name?",
+      "id": "jjk-pg-g_warstaff-001",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "G\u6226\u6756"
+      ],
+      "found": [
+        "G\u6226\u6756"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of G Warstaff's name?",
+      "id": "jjk-pg-g_warstaff-002",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "J\u012b Senj\u014d"
+      ],
+      "found": [
+        "J\u012b Senj\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does G Warstaff first appear?",
+      "id": "jjk-pg-g_warstaff-003",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Chapter 182"
+      ],
+      "found": [
+        "Chapter 182"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-g_warstaff-004",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-g_warstaff-005",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-g_warstaff-006",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-g_warstaff-007",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-g_warstaff-008",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Charles Bernard?",
+      "id": "jjk-pg-g_warstaff-009",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Kinji Hakari is victorious."
+      ],
+      "found": [
+        "Kinji Hakari is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-g_warstaff-010",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-g_warstaff-011",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Charles Bernard begin?",
+      "id": "jjk-pg-g_warstaff-012",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Chapter 182"
+      ],
+      "found": [
+        "Chapter 182"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-g_warstaff-013",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is G Warstaff?",
+      "id": "jjk-pg-g_warstaff-015",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "G Warstaff is a long spear with a feather guard and a pen-shaped blade that can be conjured at will."
+      ],
+      "found": [
+        "G Warstaff is a long spear with a feather guard and a pen-shaped blade that can be conjured at will."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the user fulfill G Warstaff's condition for ink?",
+      "id": "jjk-pg-g_warstaff-016",
+      "subject": "G Warstaff",
+      "accept": "all",
+      "expected": [
+        "By drawing blood from their opponent into the tip of the spear, the user fulfills G Warstaff's condition for ink and attaches a manga panel to the target."
+      ],
+      "found": [
+        "By drawing blood from their opponent into the tip of the spear, the user fulfills G Warstaff's condition for ink and attaches a manga panel to the target."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 15,
+    "fact_present": 15
+  }
+}

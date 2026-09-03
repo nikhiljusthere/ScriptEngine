@@ -1,0 +1,603 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Hagane Daido?",
+      "set": "Every named technique of Hagane Daido",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Hagane Daido?",
+      "set": "Every ally of Hagane Daido",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hagane Daido",
+      "set": "Every battle involving Hagane Daido",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Hagane Daido?",
+      "found": [
+        "Split Soul Katana"
+      ],
+      "missing": [],
+      "members": [
+        "Split Soul Katana"
+      ]
+    },
+    {
+      "query": "What are all the allies of Hagane Daido?",
+      "found": [
+        "Maki Zenin",
+        "Rokujushi Miyo"
+      ],
+      "missing": [],
+      "members": [
+        "Maki Zenin",
+        "Rokujushi Miyo"
+      ]
+    },
+    {
+      "query": "Every battle involving Hagane Daido",
+      "found": [
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hagane Daido's name?",
+      "id": "jjk-pg-hagane_daido-001",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "\u5927\u9053 \u92fc"
+      ],
+      "found": [
+        "\u5927\u9053 \u92fc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hagane Daido's name?",
+      "id": "jjk-pg-hagane_daido-002",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Daid\u014d Hagane"
+      ],
+      "found": [
+        "Daid\u014d Hagane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hagane Daido's race?",
+      "id": "jjk-pg-hagane_daido-003",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hagane Daido's gender?",
+      "id": "jjk-pg-hagane_daido-004",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Hagane Daido?",
+      "id": "jjk-pg-hagane_daido-005",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hagane Daido's occupation?",
+      "id": "jjk-pg-hagane_daido-006",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Swordsman"
+      ],
+      "found": [
+        "Swordsman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hagane Daido first appear?",
+      "id": "jjk-pg-hagane_daido-007",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Chapter 194"
+      ],
+      "found": [
+        "Chapter 194"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-hagane_daido-008",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-hagane_daido-009",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-hagane_daido-010",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-hagane_daido-011",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Chapter 195"
+      ],
+      "found": [
+        "Chapter 195"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-hagane_daido-012",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hagane Daido use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-hagane_daido-013",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Cursed Tool: Split Soul Katana"
+      ],
+      "found": [
+        "Cursed Tool: Split Soul Katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hagane Daido the incarnation of?",
+      "id": "jjk-pg-hagane_daido-017",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "a nameless master swordsman"
+      ],
+      "found": [
+        "a nameless master swordsman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hagane Daido look like?",
+      "id": "jjk-pg-hagane_daido-018",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "an elderly man with a stocky build, short grey hair, and a thick unkempt mustache"
+      ],
+      "found": [
+        "an elderly man with a stocky build, short grey hair, and a thick unkempt mustache"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Hagane's initial incarnation outfit?",
+      "id": "jjk-pg-hagane_daido-019",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "a white t-shirt with black shorts and sandals"
+      ],
+      "found": [
+        "a white t-shirt with black shorts and sandals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hagane wear while fighting in the Sakurajima Colony?",
+      "id": "jjk-pg-hagane_daido-020",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "a more traditional samurai attire, sporting a mid-toned kimono"
+      ],
+      "found": [
+        "a more traditional samurai attire, sporting a mid-toned kimono"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hagane react to being incarnated in modern times?",
+      "id": "jjk-pg-hagane_daido-021",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "confused and distraught about not being able to find a single katana"
+      ],
+      "found": [
+        "confused and distraught about not being able to find a single katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hagane do while looking for a katana?",
+      "id": "jjk-pg-hagane_daido-022",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "frantically run around with tears in his eyes and scream the word katana"
+      ],
+      "found": [
+        "frantically run around with tears in his eyes and scream the word katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who lent Hagane a katana?",
+      "id": "jjk-pg-hagane_daido-023",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin"
+      ],
+      "found": [
+        "Maki Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What trait did Hagane show when he helped Maki?",
+      "id": "jjk-pg-hagane_daido-024",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "a great degree of honor"
+      ],
+      "found": [
+        "a great degree of honor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What makes Hagane an outlier among Culling Game players?",
+      "id": "jjk-pg-hagane_daido-025",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "a non-sorcerer"
+      ],
+      "found": [
+        "a non-sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Hagane wield a sword with greater skill than?",
+      "id": "jjk-pg-hagane_daido-026",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin"
+      ],
+      "found": [
+        "Maki Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How can Hagane target curses if he can't see them?",
+      "id": "jjk-pg-hagane_daido-027",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "he's able to \"see everything else\" around them"
+      ],
+      "found": [
+        "he's able to \"see everything else\" around them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What sword did Hagane borrow?",
+      "id": "jjk-pg-hagane_daido-028",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "Maki's replica of the Split Soul Katana"
+      ],
+      "found": [
+        "Maki's replica of the Split Soul Katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Split Soul Katana require for full power?",
+      "id": "jjk-pg-hagane_daido-029",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "eyes that can perceive the souls of inorganic matter"
+      ],
+      "found": [
+        "eyes that can perceive the souls of inorganic matter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hagane Daido rank in the third Popularity Poll?",
+      "id": "jjk-pg-hagane_daido-030",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "57th in the third Popularity Poll with 13 votes"
+      ],
+      "found": [
+        "57th in the third Popularity Poll with 13 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hagane Daido rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-hagane_daido-031",
+      "subject": "Hagane Daido",
+      "accept": "all",
+      "expected": [
+        "93rd in the fourth Popularity Poll with 5 votes"
+      ],
+      "found": [
+        "93rd in the fourth Popularity Poll with 5 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 28,
+    "fact_present": 28
+  }
+}

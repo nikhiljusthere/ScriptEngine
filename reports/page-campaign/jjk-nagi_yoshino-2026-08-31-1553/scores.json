@@ -1,0 +1,645 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Nagi Yoshino",
+      "set": "Every battle involving Nagi Yoshino",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Nagi Yoshino",
+      "found": [
+        "Yoshinobu Gakuganji vs. Juzo Kumiya",
+        "Yuji Itadori vs. Junpei Yoshino"
+      ],
+      "missing": [],
+      "members": [
+        "Yoshinobu Gakuganji vs. Juzo Kumiya",
+        "Yuji Itadori vs. Junpei Yoshino"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Nagi Yoshino's name?",
+      "id": "jjk-pg-nagi_yoshino-001",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "\u5409\u91ce \u51ea"
+      ],
+      "found": [
+        "\u5409\u91ce \u51ea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Nagi Yoshino's name?",
+      "id": "jjk-pg-nagi_yoshino-002",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Yoshino Nagi"
+      ],
+      "found": [
+        "Yoshino Nagi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nagi Yoshino's race?",
+      "id": "jjk-pg-nagi_yoshino-003",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nagi Yoshino's gender?",
+      "id": "jjk-pg-nagi_yoshino-004",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Nagi Yoshino?",
+      "id": "jjk-pg-nagi_yoshino-005",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nagi Yoshino first appear?",
+      "id": "jjk-pg-nagi_yoshino-006",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Chapter 24"
+      ],
+      "found": [
+        "Chapter 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Nagi Yoshino first depicted?",
+      "id": "jjk-pg-nagi_yoshino-007",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Episode 11"
+      ],
+      "found": [
+        "Episode 11"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Nagi Yoshino's Japanese voice actor?",
+      "id": "jjk-pg-nagi_yoshino-008",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Junko Noda"
+      ],
+      "found": [
+        "Junko Noda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Nagi Yoshino's English voice actor?",
+      "id": "jjk-pg-nagi_yoshino-009",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Amber Lee Connors"
+      ],
+      "found": [
+        "Amber Lee Connors"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yoshinobu Gakuganji vs. Juzo Kumiya?",
+      "id": "jjk-pg-nagi_yoshino-010",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Gojo takes over the battle."
+      ],
+      "found": [
+        "Gojo takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yoshinobu Gakuganji vs. Juzo Kumiya take place?",
+      "id": "jjk-pg-nagi_yoshino-011",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yoshinobu Gakuganji vs. Juzo Kumiya?",
+      "id": "jjk-pg-nagi_yoshino-012",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Chapter 52"
+      ],
+      "found": [
+        "Chapter 52"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yoshinobu Gakuganji vs. Juzo Kumiya depicted?",
+      "id": "jjk-pg-nagi_yoshino-013",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Episode 20"
+      ],
+      "found": [
+        "Episode 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yoshinobu Gakuganji vs. Juzo Kumiya take place?",
+      "id": "jjk-pg-nagi_yoshino-014",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-nagi_yoshino-015",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Yuji talks Junpei down."
+      ],
+      "found": [
+        "Yuji talks Junpei down."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-nagi_yoshino-016",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Satozakura High School"
+      ],
+      "found": [
+        "Satozakura High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-nagi_yoshino-017",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Chapter 26"
+      ],
+      "found": [
+        "Chapter 26"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Junpei Yoshino depicted?",
+      "id": "jjk-pg-nagi_yoshino-018",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Episode 12"
+      ],
+      "found": [
+        "Episode 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-nagi_yoshino-019",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Nagi Yoshino?",
+      "id": "jjk-pg-nagi_yoshino-021",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "the mother of Junpei Yoshino"
+      ],
+      "found": [
+        "the mother of Junpei Yoshino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nagi Yoshino look like?",
+      "id": "jjk-pg-nagi_yoshino-022",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "a youthful woman with a slender figure"
+      ],
+      "found": [
+        "a youthful woman with a slender figure"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nagi wear?",
+      "id": "jjk-pg-nagi_yoshino-023",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "a violet long-sleeved shirt, with black pants that were held up with a light-colored belt and light blue sandals"
+      ],
+      "found": [
+        "a violet long-sleeved shirt, with black pants that were held up with a light-colored belt and light blue sandals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Nagi closely resemble?",
+      "id": "jjk-pg-nagi_yoshino-024",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "her son Junpei"
+      ],
+      "found": [
+        "her son Junpei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Nagi Yoshino characterized?",
+      "id": "jjk-pg-nagi_yoshino-025",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "a friendly, laid-back woman who cared deeply for her son"
+      ],
+      "found": [
+        "a friendly, laid-back woman who cared deeply for her son"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What irresponsible tendencies did Nagi have as a mother?",
+      "id": "jjk-pg-nagi_yoshino-026",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "a smoker and drinker who allowed Junpei to skip school if he wished"
+      ],
+      "found": [
+        "a smoker and drinker who allowed Junpei to skip school if he wished"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nagi believe about her son's path to success?",
+      "id": "jjk-pg-nagi_yoshino-027",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "her son could take a different avenue than education to be successful in life"
+      ],
+      "found": [
+        "her son could take a different avenue than education to be successful in life"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Nagi doing when she saw Junpei with a stranger?",
+      "id": "jjk-pg-nagi_yoshino-028",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "returning home from the grocery store"
+      ],
+      "found": [
+        "returning home from the grocery store"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Junpei do to Nagi's cigarette?",
+      "id": "jjk-pg-nagi_yoshino-029",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "took her cigarette, telling her once again to stop smoking for the sake of her health"
+      ],
+      "found": [
+        "took her cigarette, telling her once again to stop smoking for the sake of her health"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nagi invite Yuji to do?",
+      "id": "jjk-pg-nagi_yoshino-030",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "dinner with them"
+      ],
+      "found": [
+        "dinner with them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nagi pick up after waking from her nap?",
+      "id": "jjk-pg-nagi_yoshino-031",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Sukuna's finger"
+      ],
+      "found": [
+        "Sukuna's finger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Nagi's corpse found?",
+      "id": "jjk-pg-nagi_yoshino-032",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "with its lower half missing, laid in the bedroom with a bedsheet over it and cold packs and ice bags all over her body"
+      ],
+      "found": [
+        "with its lower half missing, laid in the bedroom with a bedsheet over it and cold packs and ice bags all over her body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nagi Yoshino rank in the 1st Character Popularity Poll?",
+      "id": "jjk-pg-nagi_yoshino-033",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "28th place in the manga's 1st Character Popularity Poll with 571 votes"
+      ],
+      "found": [
+        "28th place in the manga's 1st Character Popularity Poll with 571 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who portrays Nagi Yoshino in the English dub?",
+      "id": "jjk-pg-nagi_yoshino-034",
+      "subject": "Nagi Yoshino",
+      "accept": "all",
+      "expected": [
+        "Amber Lee Connors"
+      ],
+      "found": [
+        "Amber Lee Connors"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 33,
+    "fact_present": 33
+  }
+}

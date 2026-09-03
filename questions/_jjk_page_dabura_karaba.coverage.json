@@ -1,0 +1,79 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:race",
+        "page-gen:identity:gender",
+        "page-gen:identity:status",
+        "page-gen:identity:occupation",
+        "page-gen:affiliation",
+        "page-gen:identity:debut"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Personality",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities and Powers",
+      "covered_by": [
+        "page-gen:techniques"
+      ]
+    },
+    {
+      "path": "Abilities and Powers / Intelligence",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities and Powers / Cursed Techniques",
+      "covered_by": []
+    },
+    {
+      "path": "Equipment",
+      "covered_by": []
+    },
+    {
+      "path": "Battles & Events",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Personality",
+    "Abilities and Powers / Intelligence",
+    "Abilities and Powers / Cursed Techniques",
+    "Equipment",
+    "Battles & Events"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

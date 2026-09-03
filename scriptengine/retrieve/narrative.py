@@ -22,8 +22,9 @@ how wikis work, not how Jujutsu Kaisen works.
 from __future__ import annotations
 
 import re
+import sqlite3
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, cast
 
 from scriptengine.config import (
     SeriesPaths,
@@ -33,6 +34,7 @@ from scriptengine.config import (
     subject_ranking,
 )
 from scriptengine.retrieve import citations as cite
+from scriptengine.retrieve.roster import content_words
 from scriptengine.stores.facts import FactStore, rank_subjects
 
 # Instalment numbers: "Chapter 16", "Episode 8", "Volume 5", "Chapter 0-1".
@@ -115,7 +117,7 @@ def _query_content_tokens(query: str, subject: str) -> set[str]:
 
 
 def _event_token_hits(
-    candidate: dict[str, Any], store: "FactStore", tokens: set[str]
+    candidate: sqlite3.Row, store: "FactStore", tokens: set[str]
 ) -> set[str]:
     """Which of the query's content tokens appear in the event's prose."""
     if not tokens:
@@ -263,6 +265,25 @@ class NarrativeRetriever:
         # back as one beat from `Volume 0`, and "Every Cursed Technique of
         # Sukuna" resolved to the generic `Cursed Technique` page.
         #
+        # Type priority also outranks the words the subject names, which is
+        # how the roster-empty fallback could hand `Every Fight Mahoraga Has
+        # Ever Been In` back as `Sukuna vs. Yorozu`: every event page beats the
+        # technique that shares the word with the question. The same overlap
+        # test the router's `_subject` and `build_roster` run has to happen
+        # before the first-resolved pick, or the three retrievers resolve the
+        # same question to different pages.
+        asked = set(content_words(subject))
+        entities = [
+            row
+            for _, row in sorted(
+                enumerate(entities),
+                key=lambda item: (
+                    not bool(set(content_words(item[1]["name"])) & asked),
+                    item[0],
+                ),
+            )
+        ]
+
         # A resolved page still wins over an unresolved one at equal rank:
         # there is nothing to say about a node with no article behind it.
         node = next((row for row in entities if row["is_resolved"]), None)
@@ -321,6 +342,27 @@ class NarrativeRetriever:
 
         return narrative
 
+    def authored_floor(self, subject: str, max_beats: int) -> list[Beat]:
+        """The page a question is authored against, as its own section beats.
+
+        The narrative read resolves the query's own words, and a question written
+        against a fight ("what happens after Yuji regains control of his body?")
+        resolves to the character the query names, walking that character's
+        events -- never the fight's own page, where the Aftermath the question
+        asks about is written. The qa path guards this with the entity-anchored
+        floor (R6); the narrative path needs the same one, or a battle question
+        routed here can never read the battle it is about.
+
+        Only event-type pages carry a narrative of their own -- a battle's
+        Prologue / Battle / Aftermath is a story, but a character's Appearance
+        and Personality sections are a biography -- so a non-event subject
+        yields no floor and the query-driven timeline stands unchanged.
+        """
+        node = self.store.node_by_name(subject)
+        if node is None or not node["is_resolved"] or node["label"] not in EVENT_TYPES:
+            return []
+        return self._beats_from_page(node["name"], max_beats)
+
     # ── ordering ─────────────────────────────────────────────────────────────
 
     def annotate(self, beat: Beat) -> Beat:
@@ -343,6 +385,14 @@ class NarrativeRetriever:
         beats: list[Beat] = []
 
         for section in self.store.document_sections(title):
+            # G15 (2026-08-31): this floor was lifted once as part of the
+            # chunker fix and the `sourcing-01` gold regressed (35/40): the
+            # Shibuya Incident beat stream gained 4-word furniture sections
+            # ("Teams", "Navigation") that carry no refs and pushed unsourced
+            # table sections into the top-40 window. The narrative path is a
+            # script-writing path -- every beat must be sourceable -- so the
+            # floor stays here. Short-section reachability lives in the
+            # chunker (the qa path), where the floor is gone.
             if not section["text"] or section["word_count"] < 20:
                 continue
             beats.append(
@@ -417,7 +467,7 @@ class NarrativeRetriever:
         seen = {(beat.doc_title, beat.breadcrumb) for beat in existing}
         tokens = _query_content_tokens(query, node["name"])
 
-        candidates: list[tuple[tuple[int, float], dict[str, Any]]] = []
+        candidates: list[tuple[tuple[int, float], sqlite3.Row]] = []
         named: set[str] = {node["name"]}
         for row in self.store.edges_for([node["id"]], min_confidence=0.9, limit=200):
             for name in (row["source"], row["target"]):
@@ -432,7 +482,12 @@ class NarrativeRetriever:
                 ):
                     continue
                 related = self._ordered_related(int(candidate["id"]))
-                key = instalment_number(related[0]) if related else (7, 0.0)
+                if related:
+                    # `_ordered_related` only returns titles with a parseable
+                    # instalment number, so this cannot be None.
+                    key = cast("tuple[int, float]", instalment_number(related[0]))
+                else:
+                    key = (7, 0.0)
                 candidates.append((key, candidate))
 
         beats: list[Beat] = []
@@ -521,7 +576,7 @@ class NarrativeRetriever:
         """
         relevant_tokens = _query_content_tokens(query, node["name"])
 
-        events: list[tuple[tuple[int, float], dict[str, Any], set[str]]] = []
+        events: list[tuple[tuple[int, float], sqlite3.Row, set[str], int]] = []
         seen: set[str] = set()
 
         for row in self.store.edges_for([node["id"]], min_confidence=0.3, limit=1000):
@@ -537,14 +592,18 @@ class NarrativeRetriever:
                 ):
                     continue
                 related = self._ordered_related(int(candidate["id"]))
-                key = instalment_number(related[0]) if related else (7, 0.0)
-                events.append(
-                    (
-                        key,
-                        candidate,
-                        _event_token_hits(candidate, self.store, relevant_tokens),
-                    )
-                )
+                if related:
+                    # `_ordered_related` only returns titles with a parseable
+                    # instalment number, so this cannot be None.
+                    key = cast("tuple[int, float]", instalment_number(related[0]))
+                else:
+                    key = (7, 0.0)
+                hits = _event_token_hits(candidate, self.store, relevant_tokens)
+                title_hits = {
+                    token for token in relevant_tokens
+                    if token in candidate["name"].lower()
+                }
+                events.append((key, candidate, hits, len(hits) + len(title_hits)))
 
         if not events:
             return []
@@ -556,15 +615,15 @@ class NarrativeRetriever:
         # query where nothing scores above 1 falls back to the full
         # chronological timeline. A single rare phrase can still anchor
         # ("19 days" matches only the Culling Game page, so it anchors there).
-        best = max(len(hits) for _, _, hits in events)
+        best = max(score for _, _, _, score in events)
         min_score = max(1, best - 1)
-        strong = [event for event in events if len(event[2]) >= min_score]
+        strong = [event for event in events if event[3] >= min_score]
         if strong:
-            best_events = [event for event in events if len(event[2]) == best]
+            best_events = [event for event in events if event[3] == best]
             threshold = min(event[0] for event in best_events)
             events = [
                 event for event in events
-                if event[0] >= threshold or len(event[2]) == best
+                if event[0] >= threshold or event[3] == best
             ]
 
         # A query with two or more content words keeps only the sections that
@@ -578,9 +637,9 @@ class NarrativeRetriever:
             events = [event for event in events if event[2]]
 
         beats: list[Beat] = []
-        for _, event, _ in sorted(
+        for _, event, _, _ in sorted(
             events,
-            key=lambda pair: (-len(pair[2]), pair[0]) if filter_matches else pair[0],
+            key=lambda pair: (-pair[3], pair[0]) if filter_matches else pair[0],
         ):
             if len(beats) >= max_beats:
                 break

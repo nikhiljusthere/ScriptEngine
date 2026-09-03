@@ -1,0 +1,54 @@
+# Staged roster declarations for the Kento Nanami page campaign
+# (questions/_jjk_page_kento_nanami.section6.json, section 6:
+# counts / trivia / misc).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every theme song Gege Akutami chose for Kento Nanami` is the closed
+# two-title set of the Trivia theme-songs bullet:
+#   * "Yura Yura Teikoku De Kangaechu" -- by the band Yura Yura Teikoku
+#   * "Saboten Record"                 -- by the band Fujifabric (the band is
+#     already asked in section 4, jjk-pg-kento_nanami-200)
+# Neither title has a wiki page; both are stated in the bullet's prose, so the
+# declared-member filter keeps them (the same shape as the alias declarations
+# from section 4). Set question: jjk-pg-kento_nanami-264.
+#
+# `Kento Nanami's favorite foods` is the closed two-value set of the fanbook
+# `Favorite food` bullet: Bread and ajillo. `ajillo` has no wiki page of its
+# own (the bullet links to the Wikipedia article), so it is kept by the
+# declared-member filter, like the alias members from section 4. Set
+# question: jjk-pg-kento_nanami-265.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every kanji of Kento Nanami's name" -- the members would be the CJK
+#     characters 七/海/建/人 (Nihongo/Ruby template arguments, no wiki pages),
+#     so the declared-members contract cannot be met. The kanji meanings are
+#     asked as trivia instead (jjk-pg-kento_nanami-259/260).
+#   * "How many Popularity Polls list Kento Nanami's rankings?" -- the Trivia
+#     lists four polls but never states the count, and the polls are not a
+#     declared closed set. The results are asked as fact pairs instead
+#     (jjk-pg-kento_nanami-251..258).
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every theme song Gege Akutami chose for Kento Nanami
+    match:
+      - what are the theme songs gege akutami chose for kento nanami
+      - the theme songs gege akutami chose for kento nanami
+      - every theme song gege akutami chose for kento nanami
+      - all the theme songs of kento nanami
+      - kento nanami's theme songs
+    subject: Kento Nanami
+    members:
+      - Yura Yura Teikoku De Kangaechu
+      - Saboten Record
+
+  - name: Kento Nanami's favorite foods
+    match:
+      - what are kento nanami's favorite foods
+      - what is kento nanami's favorite food
+      - kento nanami's favorite foods
+      - kento nanami's favorite food
+    subject: Kento Nanami
+    members: [Bread, ajillo]

@@ -1,0 +1,357 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Technique Extinguishment",
+      "set": "Every battle involving Technique Extinguishment",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Technique Extinguishment",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Technique Extinguishment's name?",
+      "id": "jjk-pg-technique_extinguishment-001",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "\u8853\u5f0f\u306e\u6d88\u6ec5"
+      ],
+      "found": [
+        "\u8853\u5f0f\u306e\u6d88\u6ec5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Technique Extinguishment's name?",
+      "id": "jjk-pg-technique_extinguishment-002",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Jutsushiki no Sh\u014dmetsu"
+      ],
+      "found": [
+        "Jutsushiki no Sh\u014dmetsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Technique Extinguishment first appear?",
+      "id": "jjk-pg-technique_extinguishment-003",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Chapter 145 (Mentioned)\nChapter 213"
+      ],
+      "found": [
+        "Chapter 145 (Mentioned)\nChapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-technique_extinguishment-004",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-technique_extinguishment-005",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-technique_extinguishment-006",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-technique_extinguishment-007",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-technique_extinguishment-008",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-technique_extinguishment-009",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-technique_extinguishment-010",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-technique_extinguishment-011",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-technique_extinguishment-012",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-technique_extinguishment-013",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Technique Extinguishment extinguish?",
+      "id": "jjk-pg-technique_extinguishment-015",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "This technique extinguishes, as in nullifies or negates, all jujutsu."
+      ],
+      "found": [
+        "This technique extinguishes, as in nullifies or negates, all jujutsu."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can users of Technique Extinguishment do with barriers?",
+      "id": "jjk-pg-technique_extinguishment-016",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Users can move through barriers at will and destroy them completely if they can target the foundation."
+      ],
+      "found": [
+        "Users can move through barriers at will and destroy them completely if they can target the foundation."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can the light of Technique Extinguishment be used to produce?",
+      "id": "jjk-pg-technique_extinguishment-017",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "The light can also be used to enshroud the user or produce instruments, such as the trumpet used to activate Jacob's Ladder."
+      ],
+      "found": [
+        "The light can also be used to enshroud the user or produce instruments, such as the trumpet used to activate Jacob's Ladder."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Maximum Output extension of Jacob's Ladder conjure?",
+      "id": "jjk-pg-technique_extinguishment-018",
+      "subject": "Technique Extinguishment",
+      "accept": "all",
+      "expected": [
+        "Conjures an enormous circle of light in the sky that reflects a magic array, producing a massive, concentrated, beam of light to descend from the sky and engulf the target in its radiance."
+      ],
+      "found": [
+        "Conjures an enormous circle of light in the sky that reflects a magic array, producing a massive, concentrated, beam of light to descend from the sky and engulf the target in its radiance."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 17,
+    "fact_present": 17
+  }
+}

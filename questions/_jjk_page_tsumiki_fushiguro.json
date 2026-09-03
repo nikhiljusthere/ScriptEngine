@@ -1,0 +1,2819 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 116 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +16 prose pass (R5, 2026-08-27) ; SU11 audit (2026-08-31): both retire reasons corrected (131 = duplicate, 132 = counterfactual) ; R6 (2026-09-01): G19 opened — the 2 active kanji-meaning Qs (the 128/130 failures) are the generic-meaning Trivia-bullet retrieval gap (G14 family; the CJK-answer encoding class is the separate G10) ; R6: 129/130 golds re-verbatim over the stored bullet (kanji inline) and closed by the entity-anchored floor",
+ "retired": [
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-131",
+   "question": "What distinguishes Tsumiki from other non-sorcerers in Jujutsu Kaisen?",
+   "reason": "Duplicate: the fact is covered by the active question 'What abilities did Tsumiki have as a non-sorcerer?' (answer 'As a non-sorcerer, Tsumiki had no special abilities'). The original 'G-n Trivia bullet' reason was a misdiagnosis — the question targets the Abilities section, not Trivia. Kept. (SU11)"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-132",
+   "question": "What role would Tsumiki have played if Kenjaku had not chosen her for the Culling Game?",
+   "reason": "Counterfactual: the page states Tsumiki's role only via Kenjaku's choice (Yorozu's vessel); a no-Kenjaku outcome is not stated on the page. Kept. (SU11: the original 'G-n gap' reason was a mislabel for a legitimate counterfactual)"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-001",
+   "kind": "fact",
+   "question": "What are the kanji for Tsumiki Fushiguro's name?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "伏黒 津美紀",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-002",
+   "kind": "fact",
+   "question": "What is the romaji of Tsumiki Fushiguro's name?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fushiguro Tsumiki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-003",
+   "kind": "fact",
+   "question": "What is Tsumiki Fushiguro's race?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Human",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-004",
+   "kind": "fact",
+   "question": "What is Tsumiki Fushiguro's gender?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Female",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-005",
+   "kind": "fact",
+   "question": "What is the status of Tsumiki Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-006",
+   "kind": "fact",
+   "question": "In which manga chapter does Tsumiki Fushiguro first appear?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 9 (Flashback) Chapter 136",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-007",
+   "kind": "fact",
+   "question": "In which anime episode is Tsumiki Fushiguro first depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 5 (Flashback) Episode 47",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-008",
+   "kind": "fact",
+   "question": "Who is Tsumiki Fushiguro's Japanese voice actor?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Saori Hayami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-009",
+   "kind": "fact",
+   "question": "Who is Tsumiki Fushiguro's English voice actor?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suzie Yeung",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-010",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Dagon?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Fushiguro takes over the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-011",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Dagon take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-012",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Dagon take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-013",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Dagon begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 106",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-014",
+   "kind": "fact",
+   "question": "In which episode is Jujutsu Sorcerers vs. Dagon depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 38",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-015",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Dagon take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-016",
+   "kind": "fact",
+   "question": "Which techniques did Tsumiki Fushiguro use in Jujutsu Sorcerers vs. Dagon?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ten Shadows Technique, Domain Expansion: Chimera Shadow Garden, Toad",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Dagon:techniques"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-017",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro & Maki Zenin vs. Hanami?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji & Todo take over the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Maki_Zenin_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Maki Zenin vs. Hanami:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-018",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Maki_Zenin_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Maki Zenin vs. Hanami:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-019",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro & Maki Zenin vs. Hanami begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 46",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Maki_Zenin_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Maki Zenin vs. Hanami:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-020",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro & Maki Zenin vs. Hanami depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 19",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Maki_Zenin_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Maki Zenin vs. Hanami:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-021",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Maki_Zenin_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Maki Zenin vs. Hanami:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-022",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro & Panda vs. Kirara Hoshi?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi subdues Kirara.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-023",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gachinko Fight Club",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-024",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 11, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-025",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro & Panda vs. Kirara Hoshi begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 154",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-026",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro & Panda vs. Kirara Hoshi depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 53",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-027",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-028",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Aoi Todo?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Panda & Toge interrupt the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Aoi Todo:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-029",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Aoi Todo take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Aoi Todo:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-030",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro vs. Aoi Todo take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "August 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Aoi Todo:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-031",
+   "kind": "fact",
+   "question": "Which manga chapters cover Megumi Fushiguro vs. Aoi Todo?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 17",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Aoi Todo:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-032",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Aoi Todo depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 8",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Aoi Todo:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-033",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Aoi Todo take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fearsome Womb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Aoi Todo:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-034",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Finger Bearer?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Finger Bearer:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-035",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Finger Bearer take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yasohachi Bridge",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Finger Bearer:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-036",
+   "kind": "fact",
+   "question": "Which manga chapters cover Megumi Fushiguro vs. Finger Bearer?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 58",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Finger Bearer:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-037",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Finger Bearer depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 23",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Finger Bearer:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-038",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Finger Bearer take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Finger_Bearer"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Finger Bearer:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-039",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Noritoshi Kamo?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hanami interrupts the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Noritoshi_Kamo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Noritoshi Kamo:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-040",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Noritoshi Kamo take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Noritoshi_Kamo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Noritoshi Kamo:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-041",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro vs. Noritoshi Kamo begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 43",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Noritoshi_Kamo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Noritoshi Kamo:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-042",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Noritoshi Kamo depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 18",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Noritoshi_Kamo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Noritoshi Kamo:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-043",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Noritoshi Kamo take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Noritoshi_Kamo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Noritoshi Kamo:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-044",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Reggie Star?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-045",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Reggie Star take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo No. 1 Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-046",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro vs. Reggie Star take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 12, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-047",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro vs. Reggie Star begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 170",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-048",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Reggie Star depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 57 - 58",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-049",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Reggie Star take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-050",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Reggie Star's Group?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Takaba interrupts the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star's Group:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-051",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Reggie Star's Group take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo No. 1 Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star's Group:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-052",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro vs. Reggie Star's Group take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 12, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star's Group:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-053",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro vs. Reggie Star's Group begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 167",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star's Group:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-054",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Reggie Star's Group depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 57",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star's Group:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-055",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Reggie Star's Group take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Reggie Star's Group:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-056",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Sukuna?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji regains control of his body.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-057",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Sukuna take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Eishu Juvenile Detention Center",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-058",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro vs. Sukuna take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "July 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-059",
+   "kind": "fact",
+   "question": "Which manga chapters cover Megumi Fushiguro vs. Sukuna?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 9",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-060",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Sukuna depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 5",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-061",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Sukuna take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fearsome Womb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-062",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Toji Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji commits suicide.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-063",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Outside Shibuya Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-064",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-065",
+   "kind": "fact",
+   "question": "Which manga chapters cover Megumi Fushiguro vs. Toji Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 113",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-066",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Toji Fushiguro depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 40",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-067",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-068",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro vs. Yasohachi Bridge Curse?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Yasohachi_Bridge_Curse"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Yasohachi Bridge Curse:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-069",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro vs. Yasohachi Bridge Curse take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yasohachi Bridge",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Yasohachi_Bridge_Curse"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Yasohachi Bridge Curse:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-070",
+   "kind": "fact",
+   "question": "Which manga chapters cover Megumi Fushiguro vs. Yasohachi Bridge Curse?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 57",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Yasohachi_Bridge_Curse"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Yasohachi Bridge Curse:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-071",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro vs. Yasohachi Bridge Curse depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 23",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Yasohachi_Bridge_Curse"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Yasohachi Bridge Curse:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-072",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro vs. Yasohachi Bridge Curse take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Yasohachi_Bridge_Curse"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro vs. Yasohachi Bridge Curse:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-073",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki takes over the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro,_Toge_Inumaki_&_Noritoshi_Kamo_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-074",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro,_Toge_Inumaki_&_Noritoshi_Kamo_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-075",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 45",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro,_Toge_Inumaki_&_Noritoshi_Kamo_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-076",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 18 - 19",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro,_Toge_Inumaki_&_Noritoshi_Kamo_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-077",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro,_Toge_Inumaki_&_Noritoshi_Kamo_vs._Hanami"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-078",
+   "kind": "fact",
+   "question": "What is the outcome of Satoru Gojo vs. Toji Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Fushiguro is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-079",
+   "kind": "fact",
+   "question": "Where did Satoru Gojo vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-080",
+   "kind": "fact",
+   "question": "When does Satoru Gojo vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "August 2006",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-081",
+   "kind": "fact",
+   "question": "In which manga chapter does Satoru Gojo vs. Toji Fushiguro begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 70",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-082",
+   "kind": "fact",
+   "question": "In which episode is Satoru Gojo vs. Toji Fushiguro depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 27",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-083",
+   "kind": "fact",
+   "question": "In which arc does Satoru Gojo vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gojo's Past",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-084",
+   "kind": "fact",
+   "question": "What is the outcome of Satoru Gojo vs. Toji Fushiguro: Rematch?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-085",
+   "kind": "fact",
+   "question": "Where did Satoru Gojo vs. Toji Fushiguro: Rematch take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "House of the Children of the Star",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-086",
+   "kind": "fact",
+   "question": "When does Satoru Gojo vs. Toji Fushiguro: Rematch take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "August 2006",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-087",
+   "kind": "fact",
+   "question": "In which manga chapter does Satoru Gojo vs. Toji Fushiguro: Rematch begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 74",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-088",
+   "kind": "fact",
+   "question": "In which episode is Satoru Gojo vs. Toji Fushiguro: Rematch depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 28",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-089",
+   "kind": "fact",
+   "question": "In which arc does Satoru Gojo vs. Toji Fushiguro: Rematch take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gojo's Past",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-090",
+   "kind": "fact",
+   "question": "What is the outcome of Suguru Geto vs. Toji Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Fushiguro is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Suguru Geto vs. Toji Fushiguro:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-091",
+   "kind": "fact",
+   "question": "Where did Suguru Geto vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tombs of the Star Corridor",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Suguru Geto vs. Toji Fushiguro:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-092",
+   "kind": "fact",
+   "question": "When does Suguru Geto vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "August 2006",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Suguru Geto vs. Toji Fushiguro:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-093",
+   "kind": "fact",
+   "question": "Which manga chapters cover Suguru Geto vs. Toji Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 73",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Suguru Geto vs. Toji Fushiguro:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-094",
+   "kind": "fact",
+   "question": "In which episode is Suguru Geto vs. Toji Fushiguro depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 28",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Suguru Geto vs. Toji Fushiguro:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-095",
+   "kind": "fact",
+   "question": "In which arc does Suguru Geto vs. Toji Fushiguro take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gojo's Past",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Suguru Geto vs. Toji Fushiguro:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-096",
+   "kind": "fact",
+   "question": "What is the outcome of Toji Fushiguro vs. Dagon?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Toji Fushiguro vs. Dagon:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-097",
+   "kind": "fact",
+   "question": "Where did Toji Fushiguro vs. Dagon take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Toji Fushiguro vs. Dagon:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-098",
+   "kind": "fact",
+   "question": "When does Toji Fushiguro vs. Dagon take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Toji Fushiguro vs. Dagon:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-099",
+   "kind": "fact",
+   "question": "In which manga chapter does Toji Fushiguro vs. Dagon begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 110",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Toji Fushiguro vs. Dagon:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-100",
+   "kind": "fact",
+   "question": "In which episode is Toji Fushiguro vs. Dagon depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 39",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Toji Fushiguro vs. Dagon:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-101",
+   "kind": "fact",
+   "question": "In which arc does Toji Fushiguro vs. Dagon take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Toji Fushiguro vs. Dagon:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-102",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji incarnates Sukuna.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-103",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sugisawa Municipal High School #3",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-104",
+   "kind": "fact",
+   "question": "When does Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "June 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-105",
+   "kind": "fact",
+   "question": "Which manga chapters cover Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-106",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-107",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fearsome Womb",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-108",
+   "kind": "fact",
+   "question": "Which techniques did Tsumiki Fushiguro use in Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ten Shadows Technique, Divine Dogs",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:techniques"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-109",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji & Megumi are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:outcome"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-110",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Metropolitan Expressway RT. 3 Shibuya Line",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:place"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-111",
+   "kind": "fact",
+   "question": "When does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:date"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-112",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka begin?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 94",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:chapters"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-113",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka depicted?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 35",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:episodes"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-114",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:arc"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-115",
+   "kind": "set",
+   "question": "What are all the families of Tsumiki Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Toji Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Jinichi Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-116",
+   "kind": "set",
+   "question": "Every battle involving Tsumiki Fushiguro",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerers vs. Dagon",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro & Maki Zenin vs. Hanami",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro & Panda vs. Kirara Hoshi",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Aoi Todo",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Finger Bearer",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Noritoshi Kamo",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Reggie Star",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Reggie Star's Group",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Toji Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro vs. Yasohachi Bridge Curse",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami",
+     "aliases": []
+    },
+    {
+     "item": "Satoru Gojo vs. Toji Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Satoru Gojo vs. Toji Fushiguro: Rematch",
+     "aliases": []
+    },
+    {
+     "item": "Suguru Geto vs. Toji Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Toji Fushiguro vs. Dagon",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Dagon",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Maki_Zenin_vs._Hanami",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Aoi_Todo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Finger_Bearer",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Noritoshi_Kamo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Reggie_Star's_Group",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Toji_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_vs._Yasohachi_Bridge_Curse",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro,_Toge_Inumaki_&_Noritoshi_Kamo_vs._Hanami",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro:_Rematch",
+    "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto_vs._Toji_Fushiguro",
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro_vs._Dagon",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-117",
+   "kind": "fact",
+   "question": "Who is Tsumiki Fushiguro in relation to Megumi Fushiguro?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the older step-sister of Megumi Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Overview overview"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-118",
+   "kind": "fact",
+   "question": "Who chose Tsumiki Fushiguro as Yorozu's vessel?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Overview overview"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-119",
+   "kind": "fact",
+   "question": "Who is Tsumiki Fushiguro's step-father?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Overview overview"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-120",
+   "kind": "fact",
+   "question": "How is Tsumiki Fushiguro's hair styled?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Her long hair is styled in a ponytail and keeps long bangs on both sides of her face",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-121",
+   "kind": "fact",
+   "question": "What did Tsumiki wear as a middle school uniform?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a navy colored jacket with a black edge over a white button up shirt with a red tie, gray skirt, black stockings, and black shoes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-122",
+   "kind": "fact",
+   "question": "What casual clothes has Tsumiki been shown wearing?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a light colored turtleneck under a pink cardigan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-123",
+   "kind": "fact",
+   "question": "How does Tsumiki feel about Megumi?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tsumiki is a kind girl who cared deeply for her step-brother Megumi and would often times scold him for getting himself into many fights",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-124",
+   "kind": "fact",
+   "question": "What responsibilities did Tsumiki take after their parents disappeared?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "she took on the responsibility of taking care of their home and doing all the housework",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-125",
+   "kind": "fact",
+   "question": "What abilities did Tsumiki have as a non-sorcerer?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "As a non-sorcerer, Tsumiki had no special abilities",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-126",
+   "kind": "fact",
+   "question": "How did Tsumiki become a sorcerer?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "After having her brain transfigured into that of a sorcerer's by Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-127",
+   "kind": "fact",
+   "question": "What strength did Tsumiki gain after her brain transfiguration?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "she had the strength to serve as Yorozu's vessel",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-128",
+   "kind": "fact",
+   "question": "What chapter and episode documents Tsumiki becoming Yorozu's vessel?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 136, Episode 47",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-129",
+   "kind": "fact",
+   "question": "What does the kanji in Tsumiki's surname mean?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+"item": "Tsumiki's surname contains the kanji for \"prone, prostrated, bend down, bow, cover, lay (pipes)\" 伏 fushi and \"black\" 黒 kuro/guro",
+   "aliases": []
+  }
+ ],
+ "sources": [
+  "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+ ],
+ "verified": "2026-08-31",
+ "note": "prose:Trivia trivia | R6 (2026-09-01): gold re-verbatim over the stored Trivia bullet (kanji 伏/黒 inline, G10 class) — the plain-meaning span was not a verbatim substring and could never match; recall itself is the R6 floor (G19)"
+  },
+  {
+   "id": "jjk-pg-tsumiki_fushiguro-130",
+   "kind": "fact",
+   "question": "What does the kanji in Tsumiki's first name mean?",
+   "subject": "Tsumiki Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+"item": "her first name contains \"haven, port, harbor, ferry\" 津 tsu, \"beautiful\" 美 mi and \"chronicle\" 紀 ki",
+   "aliases": []
+  }
+ ],
+ "sources": [
+  "https://jujutsu-kaisen.fandom.com/wiki/Tsumiki_Fushiguro"
+ ],
+ "verified": "2026-08-31",
+ "note": "prose:Trivia trivia | R6 (2026-09-01): gold re-verbatim over the stored Trivia bullet (kanji 津/美/紀 inline, G10 class) — the plain-meaning span was not a verbatim substring and could never match; recall itself is the R6 floor (G19)"
+  }
+ ]
+}

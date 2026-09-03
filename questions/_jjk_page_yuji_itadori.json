@@ -1,0 +1,6216 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-24",
+  "note": "page-gen 2026-08-24: 171 structured questions (note page-gen:-marked), 0 auto-retires, 121 hand-authored kept, 0 superseded",
+  "retired": [
+    {
+      "id": "jjk-pg-yuji_itadori-009",
+      "item": "",
+      "question": "What is Yuji Itadori's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "retired": true
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-011",
+      "item": "",
+      "question": "Who is Yuji Itadori's Japanese voice actor?",
+      "reason": "superseded by page-gen:identity:voice (page-gen reconciliation)",
+      "retired": true
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-012",
+      "item": "",
+      "question": "Who is Yuji Itadori's English voice actor?",
+      "reason": "superseded by page-gen:identity:eng voice (page-gen reconciliation)",
+      "retired": true
+    },
+    {
+      "question": "Which battles does the wiki list in Yuji Itadori's Battles & Events section?",
+      "reason": "Battles & Events is a list of battle links, not a prose narrative (G8 shape); the full battle list is already covered by roster question jjk-pg-yuji_itadori-001 and battle details live on the individual battle pages",
+      "retired": true
+    },
+    {
+      "question": "What does Yuji Itadori tell Kinji Hakari about a cog's function?",
+      "reason": "Quotes section is a cquote, not chunked prose (G5 shape)",
+      "retired": true
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-yuji_itadori-001",
+      "kind": "set",
+      "question": "List every battle involving Yuji Itadori",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume"
+        },
+        {
+          "item": "Jujutsu Sorcerers vs. Sukuna"
+        },
+        {
+          "item": "Yuji Itadori & Aoi Todo vs. Hanami"
+        },
+        {
+          "item": "Yuji Itadori & Aoi Todo vs. Mahito"
+        },
+        {
+          "item": "Yuji Itadori & Choso vs. Cursed Spirits"
+        },
+        {
+          "item": "Yuji Itadori & Kento Nanami vs. Mahito"
+        },
+        {
+          "item": "Yuji Itadori & Kento Nanami vs. Transfigured Humans"
+        },
+        {
+          "item": "Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits"
+        },
+        {
+          "item": "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka"
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits"
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu"
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+        },
+        {
+          "item": "Yuji Itadori vs. Aoi Todo"
+        },
+        {
+          "item": "Yuji Itadori vs. Choso"
+        },
+        {
+          "item": "Yuji Itadori vs. Finger Bearer",
+          "aliases": [
+            "yuji itadori vs finger bearer"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Haba & Hanyu"
+        },
+        {
+          "item": "Yuji Itadori vs. Hiromi Higuruma"
+        },
+        {
+          "item": "Yuji Itadori vs. Junpei Yoshino"
+        },
+        {
+          "item": "Yuji Itadori vs. Kinji Hakari"
+        },
+        {
+          "item": "Yuji Itadori vs. Ko-Guy",
+          "aliases": [
+            "yuji itadori vs ko guy"
+          ]
+        },
+        {
+          "item": "Yuji Itadori vs. Mahito"
+        },
+        {
+          "item": "Yuji Itadori vs. Panda"
+        },
+        {
+          "item": "Yuji Itadori vs. Yuta Okkotsu"
+        },
+        {
+          "item": "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Category:Yuji_Itadori_Battles"
+      ],
+      "verified": "2026-08-19",
+      "note": "The 24 pages the wiki labels `battle` in the `Yuji Itadori Battles` category. The category also holds nine technique pages (Black Flash, Shrine ...) that Yuji uses but are not battles; his page's `Battles & Events` section lists these same 24 plus one redlink (`Yuji Itadori vs. Mahito: Rematch`, unresolved in the store) and eight non-battle event/arc links. Distinct from jjk-set-01, which asks for 1v1s only."
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-002",
+      "kind": "set",
+      "question": "What are Yuji Itadori's aliases?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sukuna's Vessel"
+        },
+        {
+          "item": "The Tiger of West Junior High"
+        },
+        {
+          "item": "The Dangerous Fireball Kid"
+        },
+        {
+          "item": "Yuu-chan"
+        },
+        {
+          "item": "Brat"
+        },
+        {
+          "item": "Brother"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19",
+      "note": "The six names in the `alias =` field of his Character_Infobox."
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-003",
+      "kind": "fact",
+      "question": "When is Yuji Itadori's birthday?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "March 20, 2003"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-004",
+      "kind": "fact",
+      "question": "Where was Yuji Itadori born?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Sendai City"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-005",
+      "kind": "fact",
+      "question": "Who is Yuji Itadori's father, and who is his mother?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Jin Itadori"
+        },
+        {
+          "item": "Kaori Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-006",
+      "kind": "fact",
+      "question": "Who raised Yuji Itadori like a father?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Wasuke Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-007",
+      "kind": "fact",
+      "question": "How tall is Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "173 cm",
+          "aliases": [
+            "173 centimeters"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-008",
+      "kind": "fact",
+      "question": "How much does Yuji Itadori weigh?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "80 kg"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-010",
+      "kind": "fact",
+      "question": "What school does Yuji Itadori attend?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Tokyo Metropolitan Curse Technical College"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-013",
+      "kind": "fact",
+      "question": "In which chapter does Yuji Itadori first appear?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Chapter 1"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-014",
+      "kind": "fact",
+      "question": "What martial arts style is Yuji Itadori skilled in?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Taido Martial Arts"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-015",
+      "kind": "fact",
+      "question": "What is the total number of times Yuji Itadori has used Black Flash?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "nineteen"
+        }
+      ],
+      "absent": [
+        "seventeen"
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19",
+      "note": "Main page: \"Yuji is capable of performing Black Flash seven times in a row and has used it a total of nineteen times.\""
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-016",
+      "kind": "fact",
+      "question": "What is the maximum number of consecutive Black Flashes Yuji Itadori can perform?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "seven times in a row"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-017",
+      "kind": "fact",
+      "question": "How fast can Yuji Itadori run according to his 50-meter time?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "60.02 km/h"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-018",
+      "kind": "fact",
+      "question": "How long does Yuji Itadori take to run 50 meters?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "3 seconds"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-019",
+      "kind": "fact",
+      "question": "What is the name of the cursed tool Gojo gave Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Slaughter Demon"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-020",
+      "kind": "fact",
+      "question": "What happened to Slaughter Demon during Yuji Itadori's fight with the Finger Bearer?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "broken in half"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Slaughter_Demon"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-021",
+      "kind": "fact",
+      "question": "What domain expansion does Yuji Itadori cast after his training with Kusakabe?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hometown Domain"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-022",
+      "kind": "fact",
+      "question": "How long did Yuji Itadori resist Sukuna's Malevolent Shrine with Simple Domain?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "almost 99 seconds"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-023",
+      "kind": "fact",
+      "question": "Who taught Yuji Itadori the basics of barrier techniques through replacement training?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Atsuya Kusakabe"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-024",
+      "kind": "fact",
+      "question": "Whose soul did Yuji Itadori swap with to learn Simple Domain?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Atsuya Kusakabe"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-025",
+      "kind": "fact",
+      "question": "What technique did Yuji Itadori awaken after landing a Black Flash against Sukuna?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Shrine"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-026",
+      "kind": "fact",
+      "question": "Whose inherited technique is Blood Manipulation?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kamo Clan"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-027",
+      "kind": "fact",
+      "question": "Which Death Painting Wombs did Yuji Itadori absorb to gain Blood Manipulation?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Death Painting No. 4-9"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-028",
+      "kind": "fact",
+      "question": "How long did Yuji Itadori retain his youth after becoming a Death Painting Womb?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "68 years"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-029",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's hobby according to the official fanbook?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "karaoke"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-030",
+      "kind": "fact",
+      "question": "What subject caused Yuji Itadori stress in school?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Science subjects"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-031",
+      "kind": "fact",
+      "question": "What would Yuji Itadori have become if he did not become a sorcerer?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "firefighter"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-032",
+      "kind": "fact",
+      "question": "What was Yuji Itadori's rank in the first Popularity Poll?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "1st"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-033",
+      "kind": "fact",
+      "question": "What was Yuji Itadori's vote count in the first Popularity Poll?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "21,735"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-034",
+      "kind": "fact",
+      "question": "What was Yuji Itadori's rank in the fourth Popularity Poll?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "2nd"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-035",
+      "kind": "fact",
+      "question": "What was Yuji Itadori's vote count in the fourth Popularity Poll?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "48,131"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-036",
+      "kind": "fact",
+      "question": "What is the name of Yuji Itadori's theme music credited by Gege Akutami?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Heart ni Hi wo Tsukete"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-037",
+      "kind": "fact",
+      "question": "Which band performs Yuji Itadori's theme music Heart ni Hi wo Tsukete?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "9mm Parabellum Bullet"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-038",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's favorite food?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Rice bowl with food on top and noodles"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-039",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's type of girl?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "tall girls with big butts"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-040",
+      "kind": "fact",
+      "question": "Which actress does Yuji Itadori compare his type to?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Jennifer Lawrence"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-041",
+      "kind": "fact",
+      "question": "What movie did Yuji Itadori watch that made him first see Jennifer Lawrence?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Silver Linings Playbook"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-042",
+      "kind": "fact",
+      "question": "What is the name of the martial arts technique that eliminates starting movements?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Knee Release"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-043",
+      "kind": "fact",
+      "question": "What attack does Yuji Itadori perform by throwing his right leg upwards?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Manji Kick"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-044",
+      "kind": "fact",
+      "question": "What happens when cursed energy is applied within 0.000001 seconds of a physical hit?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Black Flash"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-045",
+      "kind": "fact",
+      "question": "By what factor does Black Flash amplify the destructive power of a strike?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "2.5"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-046",
+      "kind": "fact",
+      "question": "What did Yuji Itadori eat to gain cursed energy for the first time?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Sukuna's finger"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-047",
+      "kind": "fact",
+      "question": "Who told Yuji Itadori to die surrounded by other people?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Wasuke Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-048",
+      "kind": "fact",
+      "question": "What club was Yuji Itadori part of before joining jujutsu?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Occult Club"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-049",
+      "kind": "fact",
+      "question": "What sport did Yuji Itadori use to defeat Mr. Takagi?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "shot put"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-050",
+      "kind": "fact",
+      "question": "Who is the principal of Tokyo Jujutsu High that Yuji Itadori interviewed with?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Masamichi Yaga"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-051",
+      "kind": "fact",
+      "question": "What number of Sukuna's fingers did Gojo say the sorcerers could not destroy?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "20"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-052",
+      "kind": "fact",
+      "question": "Which detention center did Yuji Itadori go to about a month after enrolling?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Eishu Detention Center"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-053",
+      "kind": "fact",
+      "question": "What special grade cursed spirit attacked Yuji Itadori at the detention center?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Finger Bearer"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-054",
+      "kind": "fact",
+      "question": "What did Sukuna rip out of Yuji Itadori to stop him regaining control?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "heart"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-055",
+      "kind": "fact",
+      "question": "What is the name of Sukuna's domain where Yuji Itadori fought him after dying?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Innate Domain"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-056",
+      "kind": "fact",
+      "question": "What word must Sukuna chant to take over Yuji Itadori's body under their binding vow?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Enchain",
+          "aliases": [
+            "En Chain"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19",
+      "note": "Official rendering is 'Enchain' (Binding Vow.json, Chapter 11.json, Sukuna.json). Culling Game Arc.json has the typo 'En Chain'."
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-057",
+      "kind": "fact",
+      "question": "How long is Sukuna allowed to control Yuji Itadori's body under their binding vow?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "one minute"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-058",
+      "kind": "fact",
+      "question": "What training method did Gojo use to teach Yuji Itadori cursed energy flow?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "watching movies"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-059",
+      "kind": "fact",
+      "question": "Which cursed spirit's Domain Expansion did Gojo show Yuji Itadori during training?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Jogo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-060",
+      "kind": "fact",
+      "question": "Which movie did Gojo spoil for Yuji Itadori during his training?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Deep Blue Sea"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-061",
+      "kind": "fact",
+      "question": "Which sorcerer was introduced to Yuji Itadori to accompany him on a mission in the Vs. Mahito Arc?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kento Nanami"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-062",
+      "kind": "fact",
+      "question": "What is the name of Junpei Yoshino's shikigami?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Moon Dregs"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-063",
+      "kind": "fact",
+      "question": "Why could Moon Dregs' poison not affect Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Poison Resistance"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-064",
+      "kind": "fact",
+      "question": "What ability lets Yuji Itadori harm Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "perceive the shape of souls"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-065",
+      "kind": "fact",
+      "question": "What is the name of Aoi Todo's cursed technique?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Boogie Woogie"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-066",
+      "kind": "fact",
+      "question": "What number of Black Flashes did Yuji Itadori land on Hanami during the Kyoto Goodwill Event?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "four"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-067",
+      "kind": "fact",
+      "question": "What position did Yuji Itadori play in the baseball game at the Kyoto Goodwill Event?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "catcher"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-068",
+      "kind": "fact",
+      "question": "Which school did the first-years investigate in the Death Painting Arc?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Saitama Urami East Junior High"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-069",
+      "kind": "fact",
+      "question": "What is the name of the bridge in the Death Painting Arc?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yasohachi Bridge"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-070",
+      "kind": "fact",
+      "question": "What part of Eso did Yuji Itadori blow off with Black Flash?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "arm"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-071",
+      "kind": "fact",
+      "question": "Who nominated Yuji Itadori for promotion to first-grade sorcerer?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Aoi Todo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19",
+      "note": "The wiki (Yuji Itadori_Synopsis) says only 'Later Aoi nominates Yuji for a promotion to first-grade shaman.' No other nominator is named on this wiki."
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-072",
+      "kind": "fact",
+      "question": "On what date did the Shibuya Incident begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "October 31"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-073",
+      "kind": "fact",
+      "question": "Who was with Yuji Itadori at Aoyama Cemetery on the day of the Shibuya Incident?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Mei Mei"
+        },
+        {
+          "item": "Ui Ui"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-074",
+      "kind": "fact",
+      "question": "What kind of cursed spirit did Yuji Itadori identify at Meiji-Jingumae Station?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "grasshopper curse"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-075",
+      "kind": "fact",
+      "question": "What is the true identity of Kokichi Muta?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Mechamaru"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-076",
+      "kind": "fact",
+      "question": "What number of Sukuna's fingers did Jogo feed to Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "ten"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-077",
+      "kind": "fact",
+      "question": "Who saved Yuji Itadori from Mahito's Black Flash during the Shibuya Incident?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Aoi Todo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-078",
+      "kind": "fact",
+      "question": "Who healed Yuji Itadori with his cursed technique after Todo saved him?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Arata Nitta"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-079",
+      "kind": "fact",
+      "question": "What is the name of Mahito's Domain Expansion?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Self-Embodiment of Perfection"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-080",
+      "kind": "fact",
+      "question": "For how long does Mahito activate his Domain Expansion in the Shibuya Incident?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "0.2 seconds"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-081",
+      "kind": "fact",
+      "question": "Who arrived to save everyone from Uraume's Ice Fall during the Shibuya Incident?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yuki Tsukumo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-082",
+      "kind": "fact",
+      "question": "What is the name of the Culling Game's interface shikigami?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kogane"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-083",
+      "kind": "fact",
+      "question": "Who is the sorcerer from 1,000 years ago who calls herself an angel in the Culling Game?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hana Kurusu"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19",
+      "note": "Wiki (Yuji Itadori_Synopsis): 'a sorcerer from 1,000 years ago who calls herself an angel', wikilinked to Hana Kurusu. Wiki-faithful as-is."
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-084",
+      "kind": "fact",
+      "question": "What is the number of colonies around Japan that Tengen tells Yuji about?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "ten"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-085",
+      "kind": "fact",
+      "question": "What is the name of the underground fight club Yuji Itadori entered to find Kinji Hakari?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Gachinko fight club"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-086",
+      "kind": "fact",
+      "question": "Who announces the Gachinko Fight Club tournament that Yuji Itadori fights in?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "John Bobby"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-087",
+      "kind": "fact",
+      "question": "What nickname does the announcer use for Yuji Itadori at the fight club?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Dangerous fireball kid"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-088",
+      "kind": "fact",
+      "question": "Who did Yuji Itadori fight in the Gachinko Fight Club tournament?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Panda"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-089",
+      "kind": "fact",
+      "question": "How much did Kinji Hakari ask Yuji Itadori to pay for information?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "2 hundred yen"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-090",
+      "kind": "fact",
+      "question": "What is the name of Higuruma's Domain Expansion?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Deadly Sentencing"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-091",
+      "kind": "fact",
+      "question": "What is the name of Higuruma's shikigami that judges in his domain?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Judgeman"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-092",
+      "kind": "fact",
+      "question": "What crime was Yuji Itadori tried for in Higuruma's domain the first time?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "entering the Maji Vegas Pachinko Parlor"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-093",
+      "kind": "fact",
+      "question": "On what date did Yuji Itadori enter the Maji Vegas Pachinko Parlor?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "July 16, 2017"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-094",
+      "kind": "fact",
+      "question": "What was Yuji Itadori's second trial charge in Higuruma's domain?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "mass murder in Shibuya"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-095",
+      "kind": "fact",
+      "question": "What article of the penal code did Yuji Itadori cite to claim Sukuna possessed his body?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "article 39 clause 1"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-096",
+      "kind": "fact",
+      "question": "After giving Yuji Itadori his points, what rule did Higuruma ask the Kogane to add to the Culling Game?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "transfer points between players",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-097",
+      "kind": "fact",
+      "question": "For how long were Yuji Itadori and Higuruma protected from cursed technique removal after the point transfer?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "19 days"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-098",
+      "kind": "fact",
+      "question": "Who did Yuta Okkotsu stab in the chest to fake Yuji Itadori's execution?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yuji Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-099",
+      "kind": "fact",
+      "question": "What technique did Yuta Okkotsu use to survive being stabbed by his own blade?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "reverse cursed technique"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-100",
+      "kind": "fact",
+      "question": "Who was the first person Yuji Itadori met in Modulo after his daughter's birth?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Iori Okkotsu"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori/Synopsis"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-268",
+      "kind": "fact",
+      "question": "How does Yuji Itadori's hair look in Modulo?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "His hair is slightly longer and more relaxed, styled in a flowing form rather than its former spiky shape.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Appearance / Modulo"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-269",
+      "kind": "fact",
+      "question": "What does Yuji Itadori wear during his public appearances in Modulo?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji wears a silver reflective hooded jacket, and for the majority of his public appearances, his face is completely obscured by the hood.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Appearance / Modulo"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-270",
+      "kind": "fact",
+      "question": "Which physical features does Yuji Itadori retain in Modulo?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "He retains all the same physical features, including his facial scars.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Appearance / Modulo"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-271",
+      "kind": "fact",
+      "question": "What is Yuji Itadori best at among the first-years trio, according to Akutami?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "According to Akutami, he is the best at cooking among the first years trio.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Intelligence"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-272",
+      "kind": "fact",
+      "question": "How quickly could Yuji Itadori chain Black Flashes after learning of its existence?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "He was even able to use Black Flash four times in a row a short time after he had even learnt of its existence.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Intelligence"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-273",
+      "kind": "fact",
+      "question": "What did Yuji Itadori manage to grasp through replacement training with Kusakabe and Yuta?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji managed to grasp the complex nature of reverse cursed technique and learned how to use and perform it efficiently to heal himself.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Intelligence"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-274",
+      "kind": "fact",
+      "question": "Where does Yuji Itadori's cursed energy originate from?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji's cursed energy originates from the parts of the special grade cursed object, Ryomen Sukuna.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Energy"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-275",
+      "kind": "fact",
+      "question": "What did Yuji Itadori do during his rematch with Mahito that was said to be impossible even for Satoru Gojo?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji managed to land a Black Flash with maximum cursed energy, displaying the ability to use it seemingly at will, a feat said to be impossible for even Satoru Gojo.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Energy"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-276",
+      "kind": "fact",
+      "question": "What is Divergent Fist?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "After Yuji lands a punch on a target, his cursed energy flows after the strike and makes a stronger second impact.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Energy"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-277",
+      "kind": "fact",
+      "question": "Why can Yuji Itadori's blood poison other people?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "By injecting his blood into others, Yuji can poison them due to the incompatibility of his non-human blood, which can even affect aliens.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Death Painting Womb Physiology"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-278",
+      "kind": "fact",
+      "question": "What reaction does a small amount of Yuji Itadori's blood cause in someone?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Even a small amount of his blood introduced through something as minor as a scratch to the face can immediately cause nausea and vomiting.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Death Painting Womb Physiology"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-279",
+      "kind": "fact",
+      "question": "What can Yuji Itadori do as long as he possesses sufficient cursed energy?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "As long as he possesses sufficient cursed energy, he can prevent himself from dying due to blood loss.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Death Painting Womb Physiology"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-280",
+      "kind": "fact",
+      "question": "What did Yuji Itadori make Sukuna promise before accepting the binding vow?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji initially opposed the binding vow, making Sukuna promise that he wouldn't kill or hurt anyone during that minute.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Restrictions"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-281",
+      "kind": "fact",
+      "question": "What did Yuji Itadori do after still disagreeing with the terms of the binding vow?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "The boy still disagreed with the terms and instead had a battle against the King of Curses, where he'd allow the agreement to occur if he lost.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Restrictions"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-282",
+      "kind": "fact",
+      "question": "How did Yuji Itadori's binding vow make Dismantle more effective at separating souls?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Through a binding vow, Yuji increased Dismantle's effectiveness at separating souls by restricting its target to the boundary between Sukuna and Megumi's souls, rending them more effectively than his physical strikes.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Restrictions"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-283",
+      "kind": "fact",
+      "question": "What is Convergence?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "An extension technique that compresses and condenses the user's blood to its absolute limit with cursed energy.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-284",
+      "kind": "fact",
+      "question": "How does Yuji Itadori fire a Piercing Blood beam after using Convergence?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "After using Convergence, the user clasps their hands around the blood orb and fires a blood beam that travels at the speed of sound.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-285",
+      "kind": "fact",
+      "question": "What kind of animals can Yuji Itadori's Hometown Domain create?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "It can even create animals such as crayfish, horses, and geese.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Abilities and Powers / Cursed Techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-286",
+      "kind": "fact",
+      "question": "Who gave Yuji Itadori Slaughter Demon, and who did it originally belong to?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "A cursed tool given to Yuji by Satoru Gojo, originally belonging to Maki Zenin.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Equipment"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-287",
+      "kind": "fact",
+      "question": "What do the cursed tools Yuta Okkotsu gave Yuji Itadori look like?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Cursed tools that resemble gauntlets ending in claw-like gloves.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Equipment"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-288",
+      "kind": "fact",
+      "question": "Why did Yuta Okkotsu give Yuji Itadori gauntlet-like cursed tools?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji was given these cursed tools by Yuta in order to hide the missing fingers on his left hand from Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Equipment"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-289",
+      "kind": "fact",
+      "question": "What was Yuji Itadori's rank and vote count in the second Popularity Poll?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "Yuji ranked 3rd in the second Popularity Poll with 13,265 votes.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Trivia"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-290",
+      "kind": "fact",
+      "question": "Which movies did Yuji Itadori watch during his movie training?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "The movies that he watched during his movie training were \"Léon: The Professional\", \"The Descent\", \"The Host\", \"The Emperor's Naked Army Marches On\".",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Trivia"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-291",
+      "kind": "fact",
+      "question": "What would Yuji Itadori gain if he had eaten a Death Painting Cursed Womb instead of Sukuna?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "open",
+      "answer": [
+        {
+          "item": "If instead of Sukuna he ate a Death Painting, the consciousness of the Cursed Womb will disappear and Yuji will get its cursed energy.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "prose:Trivia"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-101",
+      "kind": "fact",
+      "question": "What are the kanji for Yuji Itadori's name?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "虎杖悠仁",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:kanji"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-102",
+      "kind": "fact",
+      "question": "What is the romaji of Yuji Itadori's name?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Itadori Yūji",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:romaji"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-103",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's race?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:race"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-104",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's birthday?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "March 20, 2003",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:birthday"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-105",
+      "kind": "fact",
+      "question": "How old is Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "15 83 (Modulo)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:age"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-106",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's gender?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Male",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:gender"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-107",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's height?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "173 cm (5'8\")",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:height"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-108",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's weight?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "80 kg (176 lb)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:weight"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-109",
+      "kind": "fact",
+      "question": "What is the status of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Alive",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:status"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-110",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's occupation?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerer Student",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:occupation"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-111",
+      "kind": "fact",
+      "question": "What is Yuji Itadori's grade?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Special Grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:class"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-112",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori first appear?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:debut"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-113",
+      "kind": "fact",
+      "question": "In which anime episode is Yuji Itadori first depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:debutanime"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-114",
+      "kind": "fact",
+      "question": "Who is Yuji Itadori's Japanese voice actor?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Junya Enoki",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:voice"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-115",
+      "kind": "fact",
+      "question": "Who is Yuji Itadori's English voice actor?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Adam McArthur",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:eng voice"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-116",
+      "kind": "fact",
+      "question": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuki interrupts the battle. Kenjaku escapes with Prison Realm.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-117",
+      "kind": "fact",
+      "question": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Police Station, Udagawa Police Box",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-118",
+      "kind": "fact",
+      "question": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 31, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-119",
+      "kind": "fact",
+      "question": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 133",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-120",
+      "kind": "fact",
+      "question": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 46",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-121",
+      "kind": "fact",
+      "question": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-122",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-123",
+      "kind": "fact",
+      "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "The jujutsu sorcerers are victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-124",
+      "kind": "fact",
+      "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shinjuku",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-125",
+      "kind": "fact",
+      "question": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "December 24, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-126",
+      "kind": "fact",
+      "question": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 244",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-127",
+      "kind": "fact",
+      "question": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shinjuku Showdown",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-128",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Jujutsu Sorcerers vs. Sukuna?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Flash, Blood Manipulation, Piercing Blood, Domain Expansion, Hand-to-Hand Combat, Divergent Fist, Reverse Cursed Technique, Shrine, Dismantle, Simple Domain",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-129",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Aoi Todo vs. Hanami?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo takes over the battle.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-130",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Aoi Todo vs. Hanami take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-131",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Aoi Todo vs. Hanami begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 48",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-132",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Aoi Todo vs. Hanami depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 19 - 20",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-133",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Aoi Todo vs. Hanami take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kyoto Goodwill Event",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-134",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Aoi Todo vs. Hanami?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Black Flash",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-135",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Aoi Todo vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji & Todo are victorious. Pseudo-Geto intervenes.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-136",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Shibuya Station",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-137",
+      "kind": "fact",
+      "question": "When does Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 31, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-138",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Aoi Todo vs. Mahito begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 127",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-139",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Aoi Todo vs. Mahito depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 44 - 45",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-140",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-141",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Aoi Todo vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Cursed Energy Manipulation, Divergent Fist, Black Flash",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-142",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Choso vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji & Choso are victorious. Naoya confronts them after.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-143",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Choso vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-144",
+      "kind": "fact",
+      "question": "Which manga chapters cover Yuji Itadori & Choso vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 139",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-145",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Choso vs. Cursed Spirits depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 48",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-146",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Choso vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-147",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Choso vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Cursed Energy Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-148",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Kento Nanami vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mahito withdraws.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-149",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Kento Nanami vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satozakura High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-150",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Kento Nanami vs. Mahito begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 29",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-151",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Kento Nanami vs. Mahito depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 13",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-152",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Kento Nanami vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Vs. Mahito",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-153",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Kento Nanami vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Divergent Fist",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-154",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Kento Nanami vs. Transfigured Humans?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji & Nanami are victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-155",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kinema Cinema",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-156",
+      "kind": "fact",
+      "question": "When does Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "September 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-157",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Kento Nanami vs. Transfigured Humans begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 19",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-158",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Kento Nanami vs. Transfigured Humans depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 9",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-159",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Vs. Mahito",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-160",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Kento Nanami vs. Transfigured Humans?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Divergent Fist",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-161",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji incarnates Sukuna.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-162",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sugisawa Municipal High School #3",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-163",
+      "kind": "fact",
+      "question": "When does Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "June 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-164",
+      "kind": "fact",
+      "question": "Which manga chapters cover Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-165",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-166",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Fearsome Womb",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-167",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Cursed Object: Sukuna finger",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-168",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji & Megumi are victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-169",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Metropolitan Expressway RT. 3 Shibuya Line",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-170",
+      "kind": "fact",
+      "question": "When does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 31, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-171",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 94",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-172",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 35",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-173",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-174",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji & Nobara exorcise all curses.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-175",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Roppongi, Tokyo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-176",
+      "kind": "fact",
+      "question": "When does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "June 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-177",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 4",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-178",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 3",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-179",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Fearsome Womb",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-180",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Cursed Tool: Slaughter Demon",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-181",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji & Nobara are victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-182",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yasohachi Bridge",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-183",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 59",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-184",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 23 - 24",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-185",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Death Painting",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-186",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Black Flash",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-187",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nobara Kugisaki is defeated.\nAoi Todo joins the fight.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-188",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Station Dogenzaka Alley",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-189",
+      "kind": "fact",
+      "question": "When does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 31, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-190",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Mahito begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 121",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-191",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Mahito depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 42 - 44",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-192",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-193",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Cursed Energy Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-194",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Aoi Todo?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Interrupted by Hanami.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Aoi_Todo"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Aoi Todo:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-195",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Aoi Todo take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Aoi_Todo"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Aoi Todo:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-196",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Aoi Todo begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 34",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Aoi_Todo"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Aoi Todo:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-197",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Aoi Todo depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 15 - 16",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Aoi_Todo"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Aoi Todo:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-198",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Aoi Todo take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kyoto Goodwill Event",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Aoi_Todo"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Aoi Todo:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-199",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Choso?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Choso is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Choso:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-200",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Choso take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Station",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Choso:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-201",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Choso take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 31, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Choso:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-202",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Choso begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 101",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Choso:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-203",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Choso depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 37",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Choso:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-204",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Choso take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Choso:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-205",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Finger Bearer?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sukuna takes over the battle.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Finger Bearer:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-206",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Finger Bearer take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Eishu Juvenile Detention Center",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Finger Bearer:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-207",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Finger Bearer take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "July 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Finger Bearer:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-208",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Finger Bearer begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 6",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Finger Bearer:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-209",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Finger Bearer depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 4",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Finger Bearer:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-210",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Finger Bearer take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Fearsome Womb",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Finger Bearer:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-211",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Haba & Hanyu?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Haba & Hanyu:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-212",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Haba & Hanyu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo No. 1 Colony",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Haba & Hanyu:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-213",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Haba & Hanyu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "November 12, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Haba & Hanyu:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-214",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Haba & Hanyu begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 161",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Haba & Hanyu:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-215",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Haba & Hanyu depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 54",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Haba & Hanyu:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-216",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Haba & Hanyu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Haba & Hanyu:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-217",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Hiromi Higuruma?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Higuruma allows Yuji to win.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-218",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Hiromi Higuruma take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo No. 1 Colony",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-219",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "November 12, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-220",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Hiromi Higuruma begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 164",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-221",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Hiromi Higuruma depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 55 - 56",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-222",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-223",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Junpei Yoshino?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji talks Junpei down.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Junpei_Yoshino"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Junpei Yoshino:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-224",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Junpei Yoshino take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satozakura High School",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Junpei_Yoshino"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Junpei Yoshino:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-225",
+      "kind": "fact",
+      "question": "Which manga chapters cover Yuji Itadori vs. Junpei Yoshino?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 26",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Junpei_Yoshino"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Junpei Yoshino:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-226",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Junpei Yoshino depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 12",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Junpei_Yoshino"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Junpei Yoshino:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-227",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Junpei Yoshino take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Vs. Mahito",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Junpei_Yoshino"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Junpei Yoshino:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-228",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Kinji Hakari?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hakari agrees to listen.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Kinji Hakari:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-229",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Kinji Hakari take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gachinko Fight Club",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Kinji Hakari:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-230",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Kinji Hakari take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "November 11, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Kinji Hakari:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-231",
+      "kind": "fact",
+      "question": "Which manga chapters cover Yuji Itadori vs. Kinji Hakari?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 155 & 157",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Kinji Hakari:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-232",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Kinji Hakari depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 52 - 53",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Kinji Hakari:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-233",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Kinji Hakari take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Kinji Hakari:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-234",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Ko-Guy?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Ko-Guy:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-235",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Ko-Guy take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Meiji-Jingumae Station B2F",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Ko-Guy:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-236",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Ko-Guy take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 31, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Ko-Guy:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-237",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Ko-Guy begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 86",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Ko-Guy:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-238",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Ko-Guy depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 32",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Ko-Guy:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-239",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Ko-Guy take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Ko-Guy:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-240",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Mahito?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nanami joins the battle.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Mahito:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-241",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satozakura High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Mahito:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-242",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Mahito begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 27",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Mahito:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-243",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Mahito depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 12",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Mahito:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-244",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Mahito take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Vs. Mahito",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Mahito"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Mahito:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-245",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Panda?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Panda:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-246",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Panda take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gachinko Fight Club",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Panda:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-247",
+      "kind": "fact",
+      "question": "When does Yuji Itadori vs. Panda take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "November 10, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Panda:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-248",
+      "kind": "fact",
+      "question": "Which manga chapters cover Yuji Itadori vs. Panda?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 153",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Panda:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-249",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Panda depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 52",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Panda:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-250",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Panda take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Panda:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-251",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori vs. Yuta Okkotsu?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuta is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-252",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori vs. Yuta Okkotsu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-253",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori vs. Yuta Okkotsu begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 140",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-254",
+      "kind": "fact",
+      "question": "In which episode is Yuji Itadori vs. Yuta Okkotsu depicted?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 48",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:episodes"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-255",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori vs. Yuta Okkotsu take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-256",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori vs. Yuta Okkotsu?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Cursed Energy Manipulation, Non-Cursed Tool: Survival Knife",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori vs. Yuta Okkotsu:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-257",
+      "kind": "fact",
+      "question": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Uraume interrupts the battle.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:outcome"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-258",
+      "kind": "fact",
+      "question": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo No. 1 Colony",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:place"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-259",
+      "kind": "fact",
+      "question": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "November 16, 2018",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:date"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-260",
+      "kind": "fact",
+      "question": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 213",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:chapters"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-261",
+      "kind": "fact",
+      "question": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Culling Game",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:arc"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-262",
+      "kind": "fact",
+      "question": "Which techniques did Yuji Itadori use in Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battle:Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-263",
+      "kind": "set",
+      "question": "What are all the named techniques of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Reverse Cursed Technique",
+          "aliases": []
+        },
+        {
+          "item": "Slaughter Demon",
+          "aliases": []
+        },
+        {
+          "item": "Domain Expansion",
+          "aliases": []
+        },
+        {
+          "item": "Shrine",
+          "aliases": []
+        },
+        {
+          "item": "Divergent Fist",
+          "aliases": []
+        },
+        {
+          "item": "Simple Domain",
+          "aliases": []
+        },
+        {
+          "item": "Blood Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Convergence",
+          "aliases": []
+        },
+        {
+          "item": "Piercing Blood",
+          "aliases": []
+        },
+        {
+          "item": "Black Flash",
+          "aliases": []
+        },
+        {
+          "item": "Manji Kick",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:techniques"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-264",
+      "kind": "set",
+      "question": "What are all the allies of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Angel",
+          "aliases": []
+        },
+        {
+          "item": "Fumihiko Takaba",
+          "aliases": []
+        },
+        {
+          "item": "Hiromi Higuruma",
+          "aliases": []
+        },
+        {
+          "item": "Kinji Hakari",
+          "aliases": []
+        },
+        {
+          "item": "Kiyotaka Ijichi",
+          "aliases": []
+        },
+        {
+          "item": "Kokichi Muta",
+          "aliases": []
+        },
+        {
+          "item": "Nobara Kugisaki",
+          "aliases": []
+        },
+        {
+          "item": "Noritoshi Kamo",
+          "aliases": []
+        },
+        {
+          "item": "Rin Amai",
+          "aliases": []
+        },
+        {
+          "item": "Tengen",
+          "aliases": []
+        },
+        {
+          "item": "Toge Inumaki",
+          "aliases": []
+        },
+        {
+          "item": "Yuta Okkotsu",
+          "aliases": []
+        },
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:relation:ally"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-265",
+      "kind": "set",
+      "question": "What are all the enemies of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mahito",
+          "aliases": []
+        },
+        {
+          "item": "Sukuna",
+          "aliases": []
+        },
+        {
+          "item": "Choso",
+          "aliases": []
+        },
+        {
+          "item": "Haba",
+          "aliases": []
+        },
+        {
+          "item": "Hanyu",
+          "aliases": []
+        },
+        {
+          "item": "Hiromi Higuruma",
+          "aliases": []
+        },
+        {
+          "item": "Jiro Awasaka",
+          "aliases": []
+        },
+        {
+          "item": "Naoya Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Noritoshi Kamo",
+          "aliases": []
+        },
+        {
+          "item": "Ogami's Grandson",
+          "aliases": []
+        },
+        {
+          "item": "Yoshinobu Gakuganji",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:relation:enemy"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-266",
+      "kind": "set",
+      "question": "What are all the families of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jin Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Kaori Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Wasuke Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Choso",
+          "aliases": []
+        },
+        {
+          "item": "Eso",
+          "aliases": []
+        },
+        {
+          "item": "Kechizu",
+          "aliases": []
+        },
+        {
+          "item": "Kenjaku",
+          "aliases": []
+        },
+        {
+          "item": "Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:relation:family"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-267",
+      "kind": "set",
+      "question": "What are all the friends of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Megumi Fushiguro",
+          "aliases": []
+        },
+        {
+          "item": "Aoi Todo",
+          "aliases": []
+        },
+        {
+          "item": "Hana Kurusu",
+          "aliases": []
+        },
+        {
+          "item": "Hiromi Higuruma",
+          "aliases": []
+        },
+        {
+          "item": "Junpei Yoshino",
+          "aliases": []
+        },
+        {
+          "item": "Nagi Yoshino",
+          "aliases": []
+        },
+        {
+          "item": "Nobara Kugisaki",
+          "aliases": []
+        },
+        {
+          "item": "Nobuko Takada",
+          "aliases": []
+        },
+        {
+          "item": "Rin Amai",
+          "aliases": []
+        },
+        {
+          "item": "Setsuko Sasaki",
+          "aliases": []
+        },
+        {
+          "item": "Takeshi Iguchi",
+          "aliases": []
+        },
+        {
+          "item": "Ui Ui",
+          "aliases": []
+        },
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:relation:friend"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-292",
+      "kind": "set",
+      "question": "What are all the mentors of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        },
+        {
+          "item": "Wasuke Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Aoi Todo",
+          "aliases": []
+        },
+        {
+          "item": "Kento Nanami",
+          "aliases": []
+        },
+        {
+          "item": "Masamichi Yaga",
+          "aliases": []
+        },
+        {
+          "item": "Noritoshi Kamo",
+          "aliases": []
+        },
+        {
+          "item": "Takagi",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:relation:mentor"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-293",
+      "kind": "set",
+      "question": "What are all the aliases of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sukuna's Vessel",
+          "aliases": []
+        },
+        {
+          "item": "The Tiger of West Junior High",
+          "aliases": []
+        },
+        {
+          "item": "The Dangerous Fireball Kid (by John☆Bobby)",
+          "aliases": []
+        },
+        {
+          "item": "Yuu-chan (by Kirara)",
+          "aliases": []
+        },
+        {
+          "item": "Brat (by Sukuna)",
+          "aliases": []
+        },
+        {
+          "item": "Brother(by Aoi Todo)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:alias"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-294",
+      "kind": "set",
+      "question": "What are all the affiliations of Yuji Itadori?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Metropolitan Curse Technical College",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:affiliation"
+    },
+    {
+      "id": "jjk-pg-yuji_itadori-295",
+      "kind": "set",
+      "question": "Every battle involving Yuji Itadori",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+          "aliases": []
+        },
+        {
+          "item": "Jujutsu Sorcerers vs. Sukuna",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Aoi Todo vs. Hanami",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Aoi Todo vs. Mahito",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Choso vs. Cursed Spirits",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Kento Nanami vs. Mahito",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Kento Nanami vs. Transfigured Humans",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Megumi Fushiguro vs. Cursed Spirits",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Mahito",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Aoi Todo",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Choso",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Finger Bearer",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Haba & Hanyu",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Hiromi Higuruma",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Junpei Yoshino",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Kinji Hakari",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Ko-Guy",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Mahito",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Panda",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori vs. Yuta Okkotsu",
+          "aliases": []
+        },
+        {
+          "item": "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume",
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Hanami",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Aoi_Todo_vs._Mahito",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Mahito",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Kento_Nanami_vs._Transfigured_Humans",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Cursed_Spirits",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Megumi_Fushiguro_vs._Jiro_Awasaka",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Cursed_Spirits",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Mahito",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Aoi_Todo",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Finger_Bearer",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Haba_&_Hanyu",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Junpei_Yoshino",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Kinji_Hakari",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Ko-Guy",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Mahito",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Panda",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Yuta_Okkotsu",
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori,_Maki_Zenin_&_Hana_Kurusu_vs._Sukuna"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:battles"
+    }
+  ]
+}

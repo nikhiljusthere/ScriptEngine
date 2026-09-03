@@ -1,0 +1,453 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Kyoko Tomoe?",
+      "set": "Every friend of Kyoko Tomoe",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kyoko Tomoe?",
+      "set": "Kyoko Tomoe's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Kyoko Tomoe?",
+      "found": [
+        "Yuka Okkotsu",
+        "Dabura Karaba"
+      ],
+      "missing": [],
+      "members": [
+        "Dabura Karaba",
+        "Yuka Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kyoko Tomoe?",
+      "found": [
+        "Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kyoko Tomoe's name?",
+      "id": "jjk-pg-kyoko_tomoe-001",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "\u5df4 \u606d\u5b50"
+      ],
+      "found": [
+        "\u5df4 \u606d\u5b50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kyoko Tomoe's name?",
+      "id": "jjk-pg-kyoko_tomoe-002",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Tomoe Ky\u014dko"
+      ],
+      "found": [
+        "Tomoe Ky\u014dko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kyoko Tomoe's race?",
+      "id": "jjk-pg-kyoko_tomoe-003",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kyoko Tomoe?",
+      "id": "jjk-pg-kyoko_tomoe-004",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "31"
+      ],
+      "found": [
+        "31"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kyoko Tomoe's gender?",
+      "id": "jjk-pg-kyoko_tomoe-005",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kyoko Tomoe?",
+      "id": "jjk-pg-kyoko_tomoe-006",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kyoko Tomoe's occupation?",
+      "id": "jjk-pg-kyoko_tomoe-007",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Nutritionist"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Nutritionist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kyoko Tomoe first appear?",
+      "id": "jjk-pg-kyoko_tomoe-008",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 11"
+      ],
+      "found": [
+        "Modulo Chapter 11"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Kyoko Tomoe play in the series?",
+      "id": "jjk-pg-kyoko_tomoe-011",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen Modulo series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen Modulo series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kyoko Tomoe's role at Kyoto Jujutsu High?",
+      "id": "jjk-pg-kyoko_tomoe-012",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "the nutritionist of Kyoto Jujutsu High"
+      ],
+      "found": [
+        "the nutritionist of Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kyoko look like?",
+      "id": "jjk-pg-kyoko_tomoe-013",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "a young woman with shoulder-length black hair, styled in a bun at the back of her head"
+      ],
+      "found": [
+        "a young woman with shoulder-length black hair, styled in a bun at the back of her head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kyoko wear as a cook?",
+      "id": "jjk-pg-kyoko_tomoe-014",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "a standard chef's uniform, consisting of a white hat, a long-sleeved white shirt with the sleeves typically rolled up to her elbows, and white pants"
+      ],
+      "found": [
+        "a standard chef's uniform, consisting of a white hat, a long-sleeved white shirt with the sleeves typically rolled up to her elbows, and white pants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Kyoko's personality described?",
+      "id": "jjk-pg-kyoko_tomoe-015",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "an outgoing and straightforward individual who takes great pride in her culinary skills"
+      ],
+      "found": [
+        "an outgoing and straightforward individual who takes great pride in her culinary skills"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kyoko react to people who waste food?",
+      "id": "jjk-pg-kyoko_tomoe-016",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "unforgiving toward those who waste food by failing to finish their meals"
+      ],
+      "found": [
+        "unforgiving toward those who waste food by failing to finish their meals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Kyoko share a close relationship with?",
+      "id": "jjk-pg-kyoko_tomoe-017",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Yuka, as the two often joke casually and discuss their love lives"
+      ],
+      "found": [
+        "Yuka, as the two often joke casually and discuss their love lives"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Tsurugi present to Kyoko as a one-legged octopus?",
+      "id": "jjk-pg-kyoko_tomoe-018",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "a \"wancha octopus,\" a one-legged octopus"
+      ],
+      "found": [
+        "a \"wancha octopus,\" a one-legged octopus"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Kyoko become smitten with at the cultural exchange?",
+      "id": "jjk-pg-kyoko_tomoe-019",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "Upon seeing Dabura, Kyoko was instantly smitten"
+      ],
+      "found": [
+        "Upon seeing Dabura, Kyoko was instantly smitten"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kyoko demonstrate the 'correct' gesture for asking for seconds?",
+      "id": "jjk-pg-kyoko_tomoe-020",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "sticking the utensils into her nose"
+      ],
+      "found": [
+        "sticking the utensils into her nose"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kyoko express relief about regarding Yuka's recovery?",
+      "id": "jjk-pg-kyoko_tomoe-021",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "expressed relief at her recovery"
+      ],
+      "found": [
+        "expressed relief at her recovery"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What qualifications does Kyoko have as a sorcerer?",
+      "id": "jjk-pg-kyoko_tomoe-022",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "the qualifications to be an assistant manager"
+      ],
+      "found": [
+        "the qualifications to be an assistant manager"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Kyoko do with her cursed energy?",
+      "id": "jjk-pg-kyoko_tomoe-023",
+      "subject": "Kyoko Tomoe",
+      "accept": "all",
+      "expected": [
+        "see curses and use simple barrier techniques and shikigami"
+      ],
+      "found": [
+        "see curses and use simple barrier techniques and shikigami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 21,
+    "fact_present": 21
+  }
+}

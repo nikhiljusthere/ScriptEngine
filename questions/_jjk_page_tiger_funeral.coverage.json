@@ -1,0 +1,52 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": []
+    },
+    {
+      "path": "Usage",
+      "covered_by": []
+    },
+    {
+      "path": "Related Techniques",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Description",
+    "Usage",
+    "Related Techniques"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

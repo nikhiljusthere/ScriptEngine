@@ -1,0 +1,3310 @@
+{
+ "series": "opm",
+ "wiki": "https://onepunchman.fandom.com",
+ "updated": "2026-08-22",
+ "note": "Page-campaign batch: round-2 fresh bank. 200 questions across 68 pages no earlier OPM batch covered (48 mid-tier character pages plus arc, event, episode, organization, location and meta pages). Every gold verified against the stored corpus (raw wikitext, chunks/sections, facts, relations) on 2026-08-22 and every question live-probed against /context the same day; the four battles-in sets are declared rosters (over-matched to the wiki-wide `Fights` superset, see series/opm/overrides.yaml); webcomic-only canon is kept with per-question scope notes per the canon-scope rule.",
+ "questions": [
+  {
+   "id": "opm-r2-fresh-001",
+   "kind": "fact",
+   "question": "Who voices Sneck in the Japanese version of One-Punch Man?",
+   "subject": "Sneck",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Shinichiro Miki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sneck"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-002",
+   "kind": "fact",
+   "question": "In which chapter does Sneck first appear in the One-Punch Man manga?",
+   "subject": "Sneck",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 16"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sneck"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-003",
+   "kind": "fact",
+   "question": "What is the relationship between Saitama and Sneck in One-Punch Man?",
+   "subject": "Sneck",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "ally"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sneck"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-004",
+   "kind": "fact",
+   "question": "In which chapter does Drive Knight first appear in the One-Punch Man manga?",
+   "subject": "Drive Knight",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 30"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Drive_Knight"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-005",
+   "kind": "fact",
+   "question": "Who voices Drive Knight in the Japanese version of One-Punch Man?",
+   "subject": "Drive Knight",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Yoji Ueda"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Drive_Knight"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22",
+   "note": "Wiki spells the name Y\u014dji Ueda; the \u014d normalises to o."
+  },
+  {
+   "id": "opm-r2-fresh-006",
+   "kind": "fact",
+   "question": "What is the relationship between Genos and Drive Knight in One-Punch Man?",
+   "subject": "Drive Knight",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "ally"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Drive_Knight"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-007",
+   "kind": "fact",
+   "question": "What is the result of the battle between Do-S and Fubuki and the Blizzard Group in One-Punch Man?",
+   "subject": "Do-S",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Win against the Blizzard Group, later interrupted by Tatsumaki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Do-S"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-009",
+   "kind": "fact",
+   "question": "What is the relationship between Fubuki and Do-S in One-Punch Man?",
+   "subject": "Do-S",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Do-S"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-010",
+   "kind": "fact",
+   "question": "What is the result of the battle between Gyoro Gyoro and Tatsumaki in One-Punch Man?",
+   "subject": "Gyoro Gyoro",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Gyoro Gyoro is destroyed"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gyoro_Gyoro"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-011",
+   "kind": "fact",
+   "question": "Who voices Gyoro Gyoro in the Japanese version of One-Punch Man?",
+   "subject": "Gyoro Gyoro",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Takehito Koyasu"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gyoro_Gyoro"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-012",
+   "kind": "fact",
+   "question": "What is the result of the battle between Hellfire Flame and Gale Wind and Flashy Flash in One-Punch Man?",
+   "subject": "Hellfire Flame",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hellfire_Flame"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-013",
+   "kind": "fact",
+   "question": "In which chapter does Hellfire Flame first appear in the One-Punch Man manga?",
+   "subject": "Hellfire Flame",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 78"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hellfire_Flame"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-014",
+   "kind": "fact",
+   "question": "In which episode does Gale Wind first appear in the One-Punch Man anime?",
+   "subject": "Gale Wind",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Episode 21"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gale_Wind"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-015",
+   "kind": "fact",
+   "question": "What is the result of the battle between Gale Wind and Hellfire Flame and Speed-o'-Sound Sonic in One-Punch Man?",
+   "subject": "Gale Wind",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Negotiation"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gale_Wind"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-016",
+   "kind": "fact",
+   "question": "What is the relationship between Flashy Flash and Gale Wind in One-Punch Man?",
+   "subject": "Gale Wind",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gale_Wind"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-017",
+   "kind": "fact",
+   "question": "What is the relationship between Psykos and Fubuki in One-Punch Man?",
+   "subject": "Psykos",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "friend"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Psykos"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-018",
+   "kind": "fact",
+   "question": "What is the relationship between Psykos and Orochi in One-Punch Man?",
+   "subject": "Psykos",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "creator"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Psykos"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-019",
+   "kind": "fact",
+   "question": "What is the result of the battle between Carnage Kabuto and Saitama in One-Punch Man?",
+   "subject": "Carnage Kabuto",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Carnage Kabuto is killed"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Carnage_Kabuto"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-020",
+   "kind": "fact",
+   "question": "In which chapter does Carnage Kabuto first appear in the One-Punch Man webcomic?",
+   "subject": "Carnage Kabuto",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 9"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Carnage_Kabuto"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-021",
+   "kind": "fact",
+   "question": "Who voices Carnage Kabuto in the English version of One-Punch Man?",
+   "subject": "Carnage Kabuto",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mike McFarland"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Carnage_Kabuto"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-022",
+   "kind": "fact",
+   "question": "What is the relationship between Tanktop Master and Garou in One-Punch Man?",
+   "subject": "Tanktop Master",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "rival"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tanktop_Master"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-023",
+   "kind": "fact",
+   "question": "Who voices Tanktop Master in the English version of One-Punch Man?",
+   "subject": "Tanktop Master",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Patrick Seitz"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tanktop_Master"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-024",
+   "kind": "fact",
+   "question": "In which chapter does Black Sperm first appear in the One-Punch Man webcomic?",
+   "subject": "Black Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 58"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Black_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-025",
+   "kind": "fact",
+   "question": "Who voices Black Sperm in the English version of One-Punch Man?",
+   "subject": "Black Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Jalen K. Cassell"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Black_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-026",
+   "kind": "fact",
+   "question": "What is the relationship between Black Sperm and Saitama in One-Punch Man?",
+   "subject": "Black Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "subordinate"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Black_Sperm"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22",
+   "note": "Webcomic canon (Webcomic Chapter 96): after the Monster Association's downfall Black Sperm becomes Saitama's pet."
+  },
+  {
+   "id": "opm-r2-fresh-027",
+   "kind": "fact",
+   "question": "In which chapter does Elder Centipede first appear in the One-Punch Man manga?",
+   "subject": "Elder Centipede",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 55"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Elder_Centipede"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-028",
+   "kind": "fact",
+   "question": "What is the relationship between Blast and Elder Centipede in One-Punch Man?",
+   "subject": "Elder Centipede",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Elder_Centipede"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-029",
+   "kind": "fact",
+   "question": "Who voices Elder Centipede in the English version of One-Punch Man?",
+   "subject": "Elder Centipede",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Richard Epcar"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Elder_Centipede"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-030",
+   "kind": "fact",
+   "question": "What is the result of the battle between Nyan and Puri-Puri Prisoner in One-Punch Man?",
+   "subject": "Nyan",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Nyan retreats"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Nyan"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-031",
+   "kind": "fact",
+   "question": "Who voices Nyan in the English version of One-Punch Man?",
+   "subject": "Nyan",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Christian la Monte"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Nyan"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-032",
+   "kind": "fact",
+   "question": "In which chapter does Bofoi first appear in the One-Punch Man manga?",
+   "subject": "Bofoi",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 21"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bofoi"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-033",
+   "kind": "fact",
+   "question": "Who voices Bofoi in the Japanese version of One-Punch Man?",
+   "subject": "Bofoi",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Tessho Genda"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bofoi"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22",
+   "note": "Wiki spells the name Tessh\u014d Genda; the \u014d normalises to o."
+  },
+  {
+   "id": "opm-r2-fresh-034",
+   "kind": "fact",
+   "question": "What is the relationship between Bofoi and the Child Emperor in One-Punch Man?",
+   "subject": "Bofoi",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "subordinate"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bofoi"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-035",
+   "kind": "fact",
+   "question": "What is the result of the battle between Chain'n'toad, Stinger, Smile Man, Death Gatling, Wild Horn, Glasses, Shooter and Gun Gun and Garou in One-Punch Man?",
+   "subject": "Chain'n'toad",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Chain'n'toad"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-037",
+   "kind": "fact",
+   "question": "What is the relationship between Fubuki and Lily in One-Punch Man?",
+   "subject": "Lily",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "subordinate"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Lily"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-039",
+   "kind": "fact",
+   "question": "In which chapter does Golden Sperm first appear in the One-Punch Man webcomic?",
+   "subject": "Golden Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 80"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-040",
+   "kind": "fact",
+   "question": "What is the relationship between Superalloy Darkshine and Golden Sperm in One-Punch Man?",
+   "subject": "Golden Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Sperm"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-041",
+   "kind": "fact",
+   "question": "What is the result of the battle between Okamaitachi, Iaian, and Bushidrill and Devil Long Hair in One-Punch Man?",
+   "subject": "Okamaitachi",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Win"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Okamaitachi"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-042",
+   "kind": "fact",
+   "question": "Who voices Okamaitachi in the English version of One-Punch Man?",
+   "subject": "Okamaitachi",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Kayleigh McKee"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Okamaitachi"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-043",
+   "kind": "fact",
+   "question": "Who voices Sekingar in the English version of One-Punch Man?",
+   "subject": "Sekingar",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chris Cason"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sekingar"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-044",
+   "kind": "fact",
+   "question": "What is the relationship between Manako and Saitama in One-Punch Man?",
+   "subject": "Manako",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "ally"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Manako"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-045",
+   "kind": "fact",
+   "question": "What is the relationship between Manako and Psykos in One-Punch Man?",
+   "subject": "Manako",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "creation"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Manako"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-046",
+   "kind": "fact",
+   "question": "What is the result of the battle between Bushidrill, Iaian, and Okamaitachi and Devil Long Hair in One-Punch Man?",
+   "subject": "Bushidrill",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Win"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bushidrill"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-047",
+   "kind": "fact",
+   "question": "What is the relationship between Bushidrill and Kamikaze in One-Punch Man?",
+   "subject": "Bushidrill",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "student"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bushidrill"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-048",
+   "kind": "fact",
+   "question": "What is the relationship between Sour Face and Bang in One-Punch Man?",
+   "subject": "Sour Face",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "student"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sour_Face"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-049",
+   "kind": "fact",
+   "question": "What is the result of the battle between Sour Face and Jakumen in One-Punch Man?",
+   "subject": "Sour Face",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Win"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sour_Face"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-050",
+   "kind": "fact",
+   "question": "In which chapter does Sour Face first appear in the One-Punch Man manga?",
+   "subject": "Sour Face",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 53"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sour_Face"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-051",
+   "kind": "fact",
+   "question": "What is the relationship between Spring Mustachio and Nichirin in One-Punch Man?",
+   "subject": "Spring Mustachio",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "student"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Spring_Mustachio"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-052",
+   "kind": "fact",
+   "question": "What is Bomb's age in One-Punch Man?",
+   "subject": "Bomb",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "83"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bomb"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-053",
+   "kind": "fact",
+   "question": "What is Bomb's fighting style in One-Punch Man?",
+   "subject": "Bomb",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Whirlwind Iron Cutting Fist"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bomb"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-054",
+   "kind": "fact",
+   "question": "What is the relationship between Bomb and Bang in One-Punch Man?",
+   "subject": "Bomb",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "family"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Bomb"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-055",
+   "kind": "fact",
+   "question": "What is Choze's status in One-Punch Man?",
+   "subject": "Choze",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Choze"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-056",
+   "kind": "fact",
+   "question": "What is Choze's fighting style in One-Punch Man?",
+   "subject": "Choze",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Fist Of The Pure Blood Master Race"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Choze"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-057",
+   "kind": "fact",
+   "question": "What is the relationship between Saitama and Choze in One-Punch Man?",
+   "subject": "Choze",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "rival"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Choze"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-058",
+   "kind": "fact",
+   "question": "What is the result of the battle between Choze and Saitama in One-Punch Man?",
+   "subject": "Choze",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Choze"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-059",
+   "kind": "fact",
+   "question": "What organization does Wavygyaza lead in One-Punch Man?",
+   "subject": "Wavygyaza",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Neo Heroes"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Wavygyaza"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-060",
+   "kind": "fact",
+   "question": "What is Wavygyaza's status in One-Punch Man?",
+   "subject": "Wavygyaza",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Wavygyaza"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-061",
+   "kind": "fact",
+   "question": "What is the relationship between Wavygyaza and Beaut in One-Punch Man?",
+   "subject": "Wavygyaza",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "rival"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Wavygyaza"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-062",
+   "kind": "fact",
+   "question": "What is Royal Ripper's level in One-Punch Man?",
+   "subject": "Royal Ripper",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Demon"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Royal_Ripper"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-063",
+   "kind": "fact",
+   "question": "What is Royal Ripper's status in One-Punch Man?",
+   "subject": "Royal Ripper",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Royal_Ripper"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-064",
+   "kind": "fact",
+   "question": "What is the result of the battle between Royal Ripper and Bug God and Garou in One-Punch Man?",
+   "subject": "Royal Ripper",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Win"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Royal_Ripper"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-065",
+   "kind": "fact",
+   "question": "Who voices Royal Ripper in the English version of One-Punch Man?",
+   "subject": "Royal Ripper",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Kayleigh McKee"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Royal_Ripper"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-066",
+   "kind": "fact",
+   "question": "What is Charanko's occupation in One-Punch Man?",
+   "subject": "Charanko",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Disciple"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Charanko"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-067",
+   "kind": "fact",
+   "question": "What is Charanko's age in One-Punch Man?",
+   "subject": "Charanko",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "20"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Charanko"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-068",
+   "kind": "fact",
+   "question": "What is Charanko's fighting style in One-Punch Man?",
+   "subject": "Charanko",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Water Stream Rock Smashing Fist"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Charanko"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-069",
+   "kind": "fact",
+   "question": "What is the relationship between Charanko and Bang in One-Punch Man?",
+   "subject": "Charanko",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "student"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Charanko"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-070",
+   "kind": "fact",
+   "question": "What is Sitch's occupation in One-Punch Man?",
+   "subject": "Sitch",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Hero Association Executive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sitch"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-071",
+   "kind": "fact",
+   "question": "What is Sitch's status in One-Punch Man?",
+   "subject": "Sitch",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sitch"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-072",
+   "kind": "fact",
+   "question": "Where is Sitch located in One-Punch Man?",
+   "subject": "Sitch",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "A-City"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sitch"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-073",
+   "kind": "fact",
+   "question": "Who voices Sitch in the English version of One-Punch Man?",
+   "subject": "Sitch",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Kirk Thornton"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sitch"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-074",
+   "kind": "fact",
+   "question": "What is the relationship between Garou and Sitch in One-Punch Man?",
+   "subject": "Sitch",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Sitch"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-075",
+   "kind": "fact",
+   "question": "What is Mosquito Girl's race in One-Punch Man?",
+   "subject": "Mosquito Girl",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mutant"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mosquito_Girl"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-076",
+   "kind": "fact",
+   "question": "What is Mosquito Girl's level in One-Punch Man?",
+   "subject": "Mosquito Girl",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Demon"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mosquito_Girl"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-077",
+   "kind": "fact",
+   "question": "What is Mosquito Girl's status in One-Punch Man?",
+   "subject": "Mosquito Girl",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mosquito_Girl"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-079",
+   "kind": "fact",
+   "question": "Who voices Mosquito Girl in the English version of One-Punch Man?",
+   "subject": "Mosquito Girl",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Cristina Vee"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mosquito_Girl"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-080",
+   "kind": "fact",
+   "question": "What is Eyelashes' rank in One-Punch Man?",
+   "subject": "Eyelashes",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "B-Class Rank 2"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Eyelashes"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-081",
+   "kind": "fact",
+   "question": "What weapon does Eyelashes use in One-Punch Man?",
+   "subject": "Eyelashes",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Eyelash curlers"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Eyelashes"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-082",
+   "kind": "fact",
+   "question": "What is Eyelashes' status in One-Punch Man?",
+   "subject": "Eyelashes",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Eyelashes"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-083",
+   "kind": "fact",
+   "question": "Who voices Eyelashes in the Japanese version of One-Punch Man?",
+   "subject": "Eyelashes",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Yoshiaki Hasegawa"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Eyelashes"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-084",
+   "kind": "fact",
+   "question": "What is Tanktop Black Hole's rank in One-Punch Man?",
+   "subject": "Tanktop Black Hole",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "B-Class Rank 81"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tanktop_Black_Hole"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-085",
+   "kind": "fact",
+   "question": "What is Tanktop Black Hole's age in One-Punch Man?",
+   "subject": "Tanktop Black Hole",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "28"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tanktop_Black_Hole"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-086",
+   "kind": "fact",
+   "question": "What is the result of the battle between Tanktop Black Hole and Tanktop Tiger and Saitama in One-Punch Man?",
+   "subject": "Tanktop Black Hole",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tanktop_Black_Hole"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-087",
+   "kind": "fact",
+   "question": "Who is Tanktop Black Hole's younger brother in One-Punch Man?",
+   "subject": "Tanktop Black Hole",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Tanktop Tiger"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tanktop_Black_Hole"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-088",
+   "kind": "fact",
+   "question": "What is Mizuki's rank in One-Punch Man?",
+   "subject": "Mizuki",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "B-Class Rank 71"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mizuki"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-089",
+   "kind": "fact",
+   "question": "What is Mizuki's hero alias in One-Punch Man?",
+   "subject": "Mizuki",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Captain Mizuki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mizuki"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-090",
+   "kind": "fact",
+   "question": "What is the relationship between Superalloy Darkshine and Mizuki in One-Punch Man?",
+   "subject": "Mizuki",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "mentor"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mizuki"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-091",
+   "kind": "fact",
+   "question": "Who voices Mizuki in the Japanese version of One-Punch Man?",
+   "subject": "Mizuki",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Anna Nagase"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mizuki"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-092",
+   "kind": "fact",
+   "question": "What is Pig God's rank in One-Punch Man?",
+   "subject": "Pig God",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "S-Class Rank 8"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pig_God"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-093",
+   "kind": "fact",
+   "question": "What is Pig God's status in One-Punch Man?",
+   "subject": "Pig God",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pig_God"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-094",
+   "kind": "fact",
+   "question": "What is the relationship between Pig God and the Child Emperor in One-Punch Man?",
+   "subject": "Pig God",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "ally"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pig_God"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-095",
+   "kind": "fact",
+   "question": "Who voices Pig God in the English version of One-Punch Man?",
+   "subject": "Pig God",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Marc Diraison"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pig_God"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-096",
+   "kind": "fact",
+   "question": "What is Gums' race in One-Punch Man?",
+   "subject": "Gums",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mysterious Being"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gums"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-097",
+   "kind": "fact",
+   "question": "What is Gums' status in One-Punch Man?",
+   "subject": "Gums",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gums"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-098",
+   "kind": "fact",
+   "question": "What is Gums' level in One-Punch Man?",
+   "subject": "Gums",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Dragon"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gums"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-099",
+   "kind": "fact",
+   "question": "What is the result of the battle between Gums and Pig God in One-Punch Man?",
+   "subject": "Gums",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Interrupted by Tatsumaki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Gums"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-101",
+   "kind": "fact",
+   "question": "What is Genji's rank in One-Punch Man?",
+   "subject": "Genji",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "A-Class Rank 17"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Genji"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-102",
+   "kind": "fact",
+   "question": "What is Genji's age in One-Punch Man?",
+   "subject": "Genji",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "24"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Genji"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-103",
+   "kind": "fact",
+   "question": "What is the result of the battle between Lightning Genji and Electric Catfish Man and Maiko Plasma in One-Punch Man?",
+   "subject": "Genji",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Genji"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-104",
+   "kind": "fact",
+   "question": "Who voices Genji in the English version of One-Punch Man?",
+   "subject": "Genji",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Todd Haberkorn"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Genji"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-105",
+   "kind": "fact",
+   "question": "What is Platinum Sperm's race in One-Punch Man?",
+   "subject": "Platinum Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mysterious Being"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Platinum_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-106",
+   "kind": "fact",
+   "question": "What is Platinum Sperm's status in One-Punch Man?",
+   "subject": "Platinum Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Platinum_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-107",
+   "kind": "fact",
+   "question": "What is Platinum Sperm's level in One-Punch Man?",
+   "subject": "Platinum Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Unknown"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Platinum_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-108",
+   "kind": "fact",
+   "question": "In which chapter does Platinum Sperm first appear in the One-Punch Man manga?",
+   "subject": "Platinum Sperm",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 157"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Platinum_Sperm"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-109",
+   "kind": "fact",
+   "question": "What is Rhino Wrestler's level in One-Punch Man?",
+   "subject": "Rhino Wrestler",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Demon"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Rhino_Wrestler"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-110",
+   "kind": "fact",
+   "question": "What is Rhino Wrestler's status in One-Punch Man?",
+   "subject": "Rhino Wrestler",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Rhino_Wrestler"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-111",
+   "kind": "fact",
+   "question": "What is the result of the battle between Rhino Wrestler and Pineapple and Mohican in One-Punch Man?",
+   "subject": "Rhino Wrestler",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Win"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Rhino_Wrestler"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-112",
+   "kind": "fact",
+   "question": "Who voices Rhino Wrestler in the English version of One-Punch Man?",
+   "subject": "Rhino Wrestler",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Richard Epcar"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Rhino_Wrestler"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-113",
+   "kind": "fact",
+   "question": "What is Tareo's age in One-Punch Man?",
+   "subject": "Tareo",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "10"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tareo"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-114",
+   "kind": "fact",
+   "question": "What is Tareo's status in One-Punch Man?",
+   "subject": "Tareo",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tareo"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-115",
+   "kind": "fact",
+   "question": "What is Tareo's occupation in One-Punch Man?",
+   "subject": "Tareo",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Student"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tareo"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-116",
+   "kind": "fact",
+   "question": "What is the relationship between Garou and Tareo in One-Punch Man?",
+   "subject": "Tareo",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "friend"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tareo"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-117",
+   "kind": "fact",
+   "question": "What is Melzargard's race in One-Punch Man?",
+   "subject": "Melzargard",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mysterious Being (Alien)"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Melzargard"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-118",
+   "kind": "fact",
+   "question": "What is Melzargard's status in One-Punch Man?",
+   "subject": "Melzargard",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Melzargard"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-119",
+   "kind": "fact",
+   "question": "What is the result of the battle between Melzargard and Atomic Samurai, Bang, Metal Bat, and Puri-Puri Prisoner in One-Punch Man?",
+   "subject": "Melzargard",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Melzargard is killed"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Melzargard"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-120",
+   "kind": "fact",
+   "question": "Who voices Melzargard in the English version of One-Punch Man?",
+   "subject": "Melzargard",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Vic Mignogna"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Melzargard"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-121",
+   "kind": "fact",
+   "question": "In which chapter does Melzargard first appear in the One-Punch Man manga?",
+   "subject": "Melzargard",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Chapter 32"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Melzargard"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-122",
+   "kind": "fact",
+   "question": "What is Pesky Clown's race in One-Punch Man?",
+   "subject": "Pesky Clown",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mysterious Being"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pesky_Clown"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-123",
+   "kind": "fact",
+   "question": "What is Pesky Clown's status in One-Punch Man?",
+   "subject": "Pesky Clown",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pesky_Clown"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-124",
+   "kind": "fact",
+   "question": "What weapon does Pesky Clown use in One-Punch Man?",
+   "subject": "Pesky Clown",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Mallet"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Pesky_Clown"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-126",
+   "kind": "fact",
+   "question": "What is Heavy Kong's rank in One-Punch Man?",
+   "subject": "Heavy Kong",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "A-Class Rank 33"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Heavy_Kong"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-127",
+   "kind": "fact",
+   "question": "What is Heavy Kong's age in One-Punch Man?",
+   "subject": "Heavy Kong",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "29"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Heavy_Kong"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-128",
+   "kind": "fact",
+   "question": "What is Heavy Kong's status in One-Punch Man?",
+   "subject": "Heavy Kong",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Heavy_Kong"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-129",
+   "kind": "fact",
+   "question": "What is the result of the battle between Heavy Kong and Marshall Gorilla in One-Punch Man?",
+   "subject": "Heavy Kong",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Heavy_Kong"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-130",
+   "kind": "fact",
+   "question": "Where is Heavy Kong located in One-Punch Man?",
+   "subject": "Heavy Kong",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "W-City"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Heavy_Kong"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-131",
+   "kind": "fact",
+   "question": "What is Watchdog Man's rank in One-Punch Man?",
+   "subject": "Watchdog Man",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "S-Class Rank 9"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Watchdog_Man"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-132",
+   "kind": "fact",
+   "question": "What is Watchdog Man's status in One-Punch Man?",
+   "subject": "Watchdog Man",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Watchdog_Man"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-133",
+   "kind": "fact",
+   "question": "What is Watchdog Man's alias in One-Punch Man?",
+   "subject": "Watchdog Man",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Guardian of Q-City"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Watchdog_Man"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-134",
+   "kind": "fact",
+   "question": "What is the relationship between Watchdog Man and Garou in One-Punch Man?",
+   "subject": "Watchdog Man",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "enemy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Watchdog_Man"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-135",
+   "kind": "fact",
+   "question": "What is Hammerhead's race in One-Punch Man?",
+   "subject": "Hammerhead",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Human"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hammerhead"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-136",
+   "kind": "fact",
+   "question": "What is Hammerhead's status in One-Punch Man?",
+   "subject": "Hammerhead",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hammerhead"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-137",
+   "kind": "fact",
+   "question": "What is the result of the battle between Hammerhead and Saitama in One-Punch Man?",
+   "subject": "Hammerhead",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hammerhead"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-138",
+   "kind": "fact",
+   "question": "Who voices Hammerhead in the English version of One-Punch Man?",
+   "subject": "Hammerhead",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Edward Bosco"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hammerhead"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-139",
+   "kind": "fact",
+   "question": "What is Iaian's rank in One-Punch Man?",
+   "subject": "Iaian",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "A-Class Rank 2"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Iaian"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-140",
+   "kind": "fact",
+   "question": "What is Iaian's age in One-Punch Man?",
+   "subject": "Iaian",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "23"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Iaian"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-141",
+   "kind": "fact",
+   "question": "What weapon does Iaian use in One-Punch Man?",
+   "subject": "Iaian",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Katana"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Iaian"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-142",
+   "kind": "fact",
+   "question": "Who voices Iaian in the English version of One-Punch Man?",
+   "subject": "Iaian",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Xander Mobus"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Iaian"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-143",
+   "kind": "fact",
+   "question": "What is the relationship between Iaian and Kamikaze in One-Punch Man?",
+   "subject": "Iaian",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "student"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Iaian"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-144",
+   "kind": "fact",
+   "question": "What is Dr. Genus' occupation in One-Punch Man?",
+   "subject": "Dr. Genus",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Scientist"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Dr._Genus"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-145",
+   "kind": "fact",
+   "question": "What is Dr. Genus' age in One-Punch Man?",
+   "subject": "Dr. Genus",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "100"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Dr._Genus"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-146",
+   "kind": "fact",
+   "question": "What is Dr. Genus' status in One-Punch Man?",
+   "subject": "Dr. Genus",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Dr._Genus"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-147",
+   "kind": "fact",
+   "question": "What is the relationship between Zombieman and Dr. Genus in One-Punch Man?",
+   "subject": "Dr. Genus",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "creator"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Dr._Genus"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-148",
+   "kind": "fact",
+   "question": "Who voices Dr. Genus in the English version of One-Punch Man?",
+   "subject": "Dr. Genus",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Ray Chase"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Dr._Genus"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-149",
+   "kind": "fact",
+   "question": "What is Satoru's rank in One-Punch Man?",
+   "subject": "Satoru",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "C-Class Rank 1"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Satoru"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-150",
+   "kind": "fact",
+   "question": "What is Satoru's age in One-Punch Man?",
+   "subject": "Satoru",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "25"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Satoru"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-151",
+   "kind": "fact",
+   "question": "What vehicle does Satoru use in One-Punch Man?",
+   "subject": "Satoru",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Bicycle"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Satoru"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-152",
+   "kind": "fact",
+   "question": "Who voices Satoru in the English version of One-Punch Man?",
+   "subject": "Satoru",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Robbie Daymond"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Satoru"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-153",
+   "kind": "fact",
+   "question": "What is the relationship between Saitama and Satoru in One-Punch Man?",
+   "subject": "Satoru",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "ally"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Satoru"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-154",
+   "kind": "fact",
+   "question": "What is Golden Ball's rank in One-Punch Man?",
+   "subject": "Golden Ball",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "A-Class Rank 26"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Ball"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-155",
+   "kind": "fact",
+   "question": "What is Golden Ball's age in One-Punch Man?",
+   "subject": "Golden Ball",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "28"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Ball"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-156",
+   "kind": "fact",
+   "question": "What weapon does Golden Ball use in One-Punch Man?",
+   "subject": "Golden Ball",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Slingshot"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Ball"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-157",
+   "kind": "fact",
+   "question": "What is the result of the battle between Golden Ball and Spring Mustachio and Garou in One-Punch Man?",
+   "subject": "Golden Ball",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Ball"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-158",
+   "kind": "fact",
+   "question": "Who voices Golden Ball in the English version of One-Punch Man?",
+   "subject": "Golden Ball",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Kaiji Tang"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Golden_Ball"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-159",
+   "kind": "fact",
+   "question": "What is Waganma's race in One-Punch Man?",
+   "subject": "Waganma",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Human"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Waganma"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-160",
+   "kind": "fact",
+   "question": "What is Waganma's status in One-Punch Man?",
+   "subject": "Waganma",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alive"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Waganma"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-161",
+   "kind": "fact",
+   "question": "Who is Waganma's father in One-Punch Man?",
+   "subject": "Waganma",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Narinki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Waganma"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-162",
+   "kind": "fact",
+   "question": "Who voices Waganma in the English version of One-Punch Man?",
+   "subject": "Waganma",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Morgan Berry"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Waganma"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-163",
+   "kind": "fact",
+   "question": "What was Darkness Blade's former rank in One-Punch Man?",
+   "subject": "Darkness Blade",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Rank 50"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Darkness_Blade"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-164",
+   "kind": "fact",
+   "question": "What is the result of the battle between Darkness Blade, Dynamite Man, Saturn Man and Pandaman and Do-S in One-Punch Man?",
+   "subject": "Darkness Blade",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Loss"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Darkness_Blade"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-167",
+   "kind": "fact",
+   "question": "What is the arc before the Super Fight Arc in One-Punch Man?",
+   "subject": "Super Fight Arc",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Monster Raid Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Super_Fight_Arc"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-168",
+   "kind": "fact",
+   "question": "What is the last arc of the first season of the One-Punch Man anime?",
+   "subject": "Alien Conquerors Arc",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Alien Conquerors Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Alien_Conquerors_Arc"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-169",
+   "kind": "fact",
+   "question": "What is the arc after the Alien Conquerors Arc in One-Punch Man?",
+   "subject": "Alien Conquerors Arc",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "King Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Alien_Conquerors_Arc"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-170",
+   "kind": "fact",
+   "question": "What is the nineteenth arc of the One-Punch Man series?",
+   "subject": "Ninjas Arc",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Ninjas Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Ninjas_Arc"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-171",
+   "kind": "fact",
+   "question": "What is the arc after the Ninjas Arc in One-Punch Man?",
+   "subject": "Ninjas Arc",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Supreme Hero Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Ninjas_Arc"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-172",
+   "kind": "fact",
+   "question": "Who is the five-time champion of the Super Fight tournament in One-Punch Man?",
+   "subject": "Super Fight",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Suiryu"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Super_Fight"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-173",
+   "kind": "fact",
+   "question": "Who was the first Super Fight Champion in One-Punch Man?",
+   "subject": "Super Fight",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Gouketsu"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Super_Fight"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-174",
+   "kind": "fact",
+   "question": "Who claimed to be the Ominous Future in the One-Punch Man webcomic?",
+   "subject": "The Ominous Future",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Garou"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/The_Ominous_Future"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22",
+   "note": "Webcomic canon (Webcomic Chapter 77)."
+  },
+  {
+   "id": "opm-r2-fresh-175",
+   "kind": "fact",
+   "question": "What type of power is Mind Control in One-Punch Man?",
+   "subject": "Mind Control",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Supernatural Power"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mind_Control"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-176",
+   "kind": "fact",
+   "question": "What ability is similar to Mind Control in One-Punch Man?",
+   "subject": "Mind Control",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Telepathy"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Mind_Control"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-177",
+   "kind": "fact",
+   "question": "What type of ability is Transformation in One-Punch Man?",
+   "subject": "Transformation",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Supplementary Technique"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Transformation"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-178",
+   "kind": "fact",
+   "question": "What is the weapon of the Child Emperor in One-Punch Man?",
+   "subject": "Weapon Users",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Backpack"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Weapon_Users"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-179",
+   "kind": "fact",
+   "question": "What is the title of the twenty-third episode of the One-Punch Man anime?",
+   "subject": "Episode 23",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "The Varieties of Pride"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Episode_23"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-180",
+   "kind": "fact",
+   "question": "When did the twenty-third episode of the One-Punch Man anime air in Japan?",
+   "subject": "Episode 23",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "June 25, 2019"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Episode_23"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-181",
+   "kind": "fact",
+   "question": "What is the title of the twentieth episode of the One-Punch Man anime?",
+   "subject": "Episode 20",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Resistance of The Strong"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Episode_20"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-182",
+   "kind": "fact",
+   "question": "What arc does the twentieth episode of the One-Punch Man anime cover?",
+   "subject": "Episode 20",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Super Fight Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Episode_20"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-183",
+   "kind": "fact",
+   "question": "What area of Z-City do Saitama and Genos live in One-Punch Man?",
+   "subject": "Z-City",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Ghost Town"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Z-City"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-184",
+   "kind": "fact",
+   "question": "What is the status of Z-City in One-Punch Man?",
+   "subject": "Z-City",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Damaged"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Z-City"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-185",
+   "kind": "fact",
+   "question": "Who leads the Blizzard Group in One-Punch Man?",
+   "subject": "Blizzard Group",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Fubuki"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Blizzard_Group"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-186",
+   "kind": "fact",
+   "question": "What is the status of the Blizzard Group in One-Punch Man?",
+   "subject": "Blizzard Group",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Active"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Blizzard_Group"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-187",
+   "kind": "fact",
+   "question": "Who leads the Tank Topper Army in One-Punch Man?",
+   "subject": "Tank Topper Army",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Tanktop Master"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Tank_Topper_Army"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-189",
+   "kind": "fact",
+   "question": "What is the status of The Organization in One-Punch Man?",
+   "subject": "The Organization",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Active"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/The_Organization"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-190",
+   "kind": "fact",
+   "question": "What is the outcome of Saitama vs. Awakened Garou in One-Punch Man?",
+   "subject": "Saitama vs. Awakened Garou",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Saitama is victorious"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Saitama_vs._Awakened_Garou"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-191",
+   "kind": "fact",
+   "question": "What arc does Saitama vs. Awakened Garou take place in One-Punch Man?",
+   "subject": "Saitama vs. Awakened Garou",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Monster Association Arc"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Saitama_vs._Awakened_Garou"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-192",
+   "kind": "fact",
+   "question": "Who is the author of the One-Punch Man webcomic?",
+   "subject": "One-Punch Man (webcomic)",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "ONE"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/One-Punch_Man_(webcomic)"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-193",
+   "kind": "fact",
+   "question": "In what year did the One-Punch Man webcomic begin?",
+   "subject": "One-Punch Man (webcomic)",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "2009"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/One-Punch_Man_(webcomic)"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-194",
+   "kind": "fact",
+   "question": "What webcomic did ONE draw in his teens?",
+   "subject": "Interviews",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Sun Man"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Interviews"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-195",
+   "kind": "fact",
+   "question": "Who does ONE believe is stronger in close combat, Garou or Boros?",
+   "subject": "Interviews",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Garou"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Interviews"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-196",
+   "kind": "fact",
+   "question": "Who is the director of the One-Punch Man anime?",
+   "subject": "Anime Interviews",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Natsume Shingo"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Anime_Interviews"
+   ],
+   "expect_mode": "qa",
+   "verified": "2026-08-22"
+  },
+  {
+   "id": "opm-r2-fresh-197",
+   "kind": "set",
+   "question": "What are all the battles of Genji in One-Punch Man?",
+   "subject": "Genji",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Lightning Genji vs. Maiko Plasma and Electric Catfish Man"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Genji"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22",
+   "note": "Declared roster 2026-08-22: the wiki's own Lightning Genji Fights category is the closed one-page set (the Isamu / Child Emperor alias-bridge); the battles-in discovery path over-matched to the wiki-wide 133-page Fights superset, so the set is declared in series/opm/overrides.yaml (ENW / Overgrown Rover / Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner / Suiryu precedent)."
+  },
+  {
+   "id": "opm-r2-fresh-198",
+   "kind": "set",
+   "question": "What are all the battles of Carnage Kabuto in One-Punch Man?",
+   "subject": "Carnage Kabuto",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Genos vs. Carnage Kabuto"
+    },
+    {
+     "item": "Saitama vs. Carnage Kabuto"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Carnage_Kabuto"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22",
+   "note": "Declared roster 2026-08-22: the wiki's own Carnage Kabuto Fights category is the closed two-page set; the battles-in discovery path over-matched to the wiki-wide 133-page Fights superset, so the set is declared in series/opm/overrides.yaml (ENW / Overgrown Rover / Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner / Suiryu precedent)."
+  },
+  {
+   "id": "opm-r2-fresh-199",
+   "kind": "set",
+   "question": "What are all the battles of Royal Ripper in One-Punch Man?",
+   "subject": "Royal Ripper",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Garou vs. Royal Ripper"
+    },
+    {
+     "item": "Garou vs. Royal Ripper and Bug God"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Royal_Ripper"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22",
+   "note": "Declared roster 2026-08-22: the wiki's own Royal Ripper Fights category is the closed two-page set; the battles-in discovery path over-matched to the wiki-wide 133-page Fights superset, so the set is declared in series/opm/overrides.yaml (ENW / Overgrown Rover / Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner / Suiryu precedent)."
+  },
+  {
+   "id": "opm-r2-fresh-200",
+   "kind": "set",
+   "question": "What are all the battles of Hammerhead in One-Punch Man?",
+   "subject": "Hammerhead",
+   "tier": "wiki",
+   "answer": [
+    {
+     "item": "Saitama vs. Hammerhead"
+    },
+    {
+     "item": "Speed-o'-Sound Sonic vs. Paradise Group and Hammerhead"
+    }
+   ],
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Hammerhead"
+   ],
+   "expect_mode": "roster",
+   "verified": "2026-08-22",
+   "note": "Declared roster 2026-08-22: the wiki's own Hammerhead Fights category is the closed two-page set; the battles-in discovery path over-matched to the wiki-wide 133-page Fights superset, so the set is declared in series/opm/overrides.yaml (ENW / Overgrown Rover / Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner / Suiryu precedent)."
+  }
+ ],
+ "retired": [
+  {
+   "question": "In which chapter does Do-S first appear in the One-Punch Man manga?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the debut phrasing does not extract subject `Do-S` -- auto-routing falls to a narrative account of the `One-Punch Man` series page, whose bundle carries no Do-S infobox; the debut fact (`manga = Chapter 59`) on the Do-S page is never served. Other Do-S questions (battle result, relationship) route fine; the gap is specific to this phrasing. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "In which chapter does Chain'n'toad first appear in the One-Punch Man webcomic?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the debut phrasing does not extract subject `Chain'n'toad` (apostrophe) -- auto-routing falls to a narrative account of the `One-Punch Man (webcomic)` page (all 19 beats that page), whose bundle carries no Chain'n'toad infobox; the debut fact (`webcomic = Chapter 95`) is never served. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "Who voices Lily in the English version of One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): routes to qa with subject `Lily`, but the bundle's beats are unrelated pages (Episode 1, Vaccine Man, One-Punch Man (anime), One Punch Man: The Strongest, ...); the Lily character page and its infobox (`english = Erika Harlacher`) are not retrieved for this minor character. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "What is the result of the battle between Mosquito Girl and Genos in One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the gold is the `Result` cell of the Major Battles table on `Mosquito Girl` (`Interrupted and defeated by [[Saitama]]`); the bundle carries the `Genos vs. Mosquito Girl` battle beats and the Mosquito Girl infobox facts, but the table's Result cell is not chunked into anything the qa path serves. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "Who voices Gums in the English version of One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): routes to qa with subject `Gums` and the bundle includes a `Gums` beat, but the Gums infobox's English-VA fact (`english = Ray Chase`) is not in the bundle's facts (only series-page facts are served). Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "What is the result of the battle between Pesky Clown and Sweet Mask in One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the gold is the `Result` cell of the Major Battles table on `Pesky Clown` (`Loss`); the bundle carries the `Sweet Mask vs. Pesky Clown` battle beats but the table's Result cell is not chunked into anything the qa path serves. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "What are the chapters of the Monster Raid Arc in One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the plural phrasing routes to roster mode, which latches onto `TV Junkyard Monster` (a monster from the arc) with basis `Mysterious Beings` instead of the `Monster Raid Arc` page; the arc's infobox fact (`chapters = Chapter 52 - 65`) is never served. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "What are the episodes of the Monster Raid Arc in One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the plural phrasing routes to roster mode with subject `TV Junkyard Monster` (basis `Mysterious Beings`) instead of the `Monster Raid Arc` page; the arc's infobox fact (`episodes = Episode 16 - 18`) is never served. Left un-tuned per the campaign's no-.py rule."
+  },
+  {
+   "question": "What are the primary combat robots of The Organization in One-Punch Man?",
+   "reason": "Live-probed 2026-08-22 (run opm-round2_fresh-2026-08-22-1405): the plural `robots` routes to roster mode (basis `Robots`), which returns a category member list; the answer `Machine Gods` (page prose: `The [[Machine Gods]] are among their primary combat robots`) is a prose fact, not a roster member, and is not served by the roster path. Left un-tuned per the campaign's no-.py rule."
+  }
+ ]
+}

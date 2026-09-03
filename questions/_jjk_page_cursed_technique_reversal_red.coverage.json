@@ -1,0 +1,60 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:debut",
+        "page-gen:identity:anime debut",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": [
+        "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:outcome",
+        "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:place",
+        "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:date",
+        "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:chapters",
+        "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:arc"
+      ]
+    },
+    {
+      "path": "Usage",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Usage",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

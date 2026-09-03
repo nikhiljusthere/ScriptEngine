@@ -1,0 +1,1955 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the story arcs of Jujutsu Kaisen?",
+      "set": "Cursed Child Arc \u2192 Shinjuku Showdown Arc",
+      "confidence": "exact",
+      "returned": 9,
+      "available": 9,
+      "canon": 9,
+      "found": 9,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the story arcs of Jujutsu Kaisen?",
+      "found": [
+        "Cursed Child Arc",
+        "Fearsome Womb Arc",
+        "Vs. Mahito Arc",
+        "Kyoto Goodwill Event Arc",
+        "Death Painting Arc",
+        "Gojo's Past Arc",
+        "Shibuya Incident Arc",
+        "Culling Game Arc",
+        "Shinjuku Showdown Arc"
+      ],
+      "missing": [],
+      "members": [
+        "Cursed Child Arc",
+        "Fearsome Womb Arc",
+        "Vs. Mahito Arc",
+        "Kyoto Goodwill Event Arc",
+        "Death Painting Arc",
+        "Gojo's Past Arc",
+        "Shibuya Incident Arc",
+        "Culling Game Arc",
+        "Shinjuku Showdown Arc"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What number of story arcs does Jujutsu Kaisen have?",
+      "id": "jjk-pg-arcs-002",
+      "subject": "Story Arcs",
+      "accept": "all",
+      "expected": [
+        "9"
+      ],
+      "found": [],
+      "missing": [
+        "9"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What number of chapters do the story arcs of Jujutsu Kaisen span?",
+      "id": "jjk-pg-arcs-003",
+      "subject": "Story Arcs",
+      "accept": "all",
+      "expected": [
+        "275"
+      ],
+      "found": [],
+      "missing": [
+        "275"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What number of episodes do the story arcs of Jujutsu Kaisen span?",
+      "id": "jjk-pg-arcs-004",
+      "subject": "Story Arcs",
+      "accept": "all",
+      "expected": [
+        "59"
+      ],
+      "found": [],
+      "missing": [
+        "59"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What number of movies do the story arcs of Jujutsu Kaisen span?",
+      "id": "jjk-pg-arcs-005",
+      "subject": "Story Arcs",
+      "accept": "all",
+      "expected": [
+        "1"
+      ],
+      "found": [],
+      "missing": [
+        "1"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the zeroth arc of the overall Jujutsu Kaisen series?",
+      "id": "jjk-pg-arcs-006",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Cursed Child Arc"
+      ],
+      "found": [
+        "Cursed Child Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the first story arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-007",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb Arc"
+      ],
+      "found": [
+        "Fearsome Womb Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the second arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-008",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito Arc"
+      ],
+      "found": [
+        "Vs. Mahito Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the third arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-009",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event Arc"
+      ],
+      "found": [
+        "Kyoto Goodwill Event Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the fourth arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-010",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Death Painting Arc"
+      ],
+      "found": [
+        "Death Painting Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the fifth arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-011",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Gojo's Past Arc"
+      ],
+      "found": [
+        "Gojo's Past Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the sixth arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-012",
+      "subject": "Shibuya Incident Arc",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident Arc"
+      ],
+      "found": [
+        "Shibuya Incident Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the seventh arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-013",
+      "subject": "Culling Game Arc",
+      "accept": "all",
+      "expected": [
+        "Culling Game Arc"
+      ],
+      "found": [
+        "Culling Game Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc is the eighth and final arc of Jujutsu Kaisen?",
+      "id": "jjk-pg-arcs-014",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown Arc"
+      ],
+      "found": [
+        "Shinjuku Showdown Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Cursed Child Arc?",
+      "id": "jjk-pg-arcs-015",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-1"
+      ],
+      "found": [
+        "Chapter 0-1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Cursed Child Arc?",
+      "id": "jjk-pg-arcs-016",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-4"
+      ],
+      "found": [
+        "Chapter 0-4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Cursed Child Arc?",
+      "id": "jjk-pg-arcs-017",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Noroi no Ko-hen"
+      ],
+      "found": [],
+      "missing": [
+        "Noroi no Ko-hen"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Cursed Child Arc?",
+      "id": "jjk-pg-arcs-018",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb Arc"
+      ],
+      "found": [],
+      "missing": [
+        "Fearsome Womb Arc"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the anime adaptation of the Cursed Child Arc?",
+      "id": "jjk-pg-arcs-019",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Rika Orimoto die in?",
+      "id": "jjk-pg-arcs-020",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "a tragic traffic accident"
+      ],
+      "found": [
+        "a tragic traffic accident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuta Okkotsu put on to call upon Rika's power?",
+      "id": "jjk-pg-arcs-021",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Rika's ring"
+      ],
+      "found": [
+        "Rika's ring"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who enrolls Yuta Okkotsu as a student?",
+      "id": "jjk-pg-arcs-022",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuta Okkotsu and Rika Orimoto promise each other?",
+      "id": "jjk-pg-arcs-023",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "to fall in love and marry one another"
+      ],
+      "found": [],
+      "missing": [
+        "to fall in love and marry one another"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is Yuta Okkotsu taken to be executed as a cursed human?",
+      "id": "jjk-pg-arcs-024",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "During what period do the events of the Cursed Child Arc take place?",
+      "id": "jjk-pg-arcs-025",
+      "subject": "Cursed Child Arc",
+      "accept": "all",
+      "expected": [
+        "November 2016 - December 2017"
+      ],
+      "found": [
+        "November 2016 - December 2017"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-026",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-027",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 18"
+      ],
+      "found": [
+        "Chapter 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-028",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last episode of the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-029",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 8"
+      ],
+      "found": [
+        "Episode 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-030",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Jutaitaiten-hen"
+      ],
+      "found": [],
+      "missing": [
+        "Jutaitaiten-hen"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc precedes the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-031",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Cursed Child Arc"
+      ],
+      "found": [],
+      "missing": [
+        "Cursed Child Arc"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-032",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito Arc"
+      ],
+      "found": [],
+      "missing": [
+        "Vs. Mahito Arc"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who becomes Sukuna's vessel in the Fearsome Womb Arc?",
+      "id": "jjk-pg-arcs-033",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which club does Yuji Itadori belong to?",
+      "id": "jjk-pg-arcs-034",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "the Occult Research Club"
+      ],
+      "found": [
+        "the Occult Research Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who sends Yuji and Nobara to exorcise curses in Roppongi?",
+      "id": "jjk-pg-arcs-035",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Gojo sensei"
+      ],
+      "found": [
+        "Gojo sensei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Jogo's domain expansion?",
+      "id": "jjk-pg-arcs-036",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Coffin of the Iron Mountain"
+      ],
+      "found": [
+        "Coffin of the Iron Mountain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who are the only members of Gojo sensei's first-year class?",
+      "id": "jjk-pg-arcs-037",
+      "subject": "Fearsome Womb Arc",
+      "accept": "all",
+      "expected": [
+        "Yuji, Megumi, and Nobara"
+      ],
+      "found": [
+        "Yuji, Megumi, and Nobara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-038",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 19"
+      ],
+      "found": [
+        "Chapter 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-039",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 31"
+      ],
+      "found": [
+        "Chapter 31"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-040",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 9"
+      ],
+      "found": [
+        "Episode 9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last episode of the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-041",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 13"
+      ],
+      "found": [],
+      "missing": [
+        "Episode 13"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-042",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "B\u0101sasu Mahito-hen"
+      ],
+      "found": [
+        "B\u0101sasu Mahito-hen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc precedes the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-043",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb Arc"
+      ],
+      "found": [
+        "Fearsome Womb Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Vs. Mahito Arc?",
+      "id": "jjk-pg-arcs-044",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event Arc"
+      ],
+      "found": [
+        "Kyoto Goodwill Event Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Vs. Mahito Arc called in the anime adaptation?",
+      "id": "jjk-pg-arcs-045",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Young Fish and Reverse Punishment Arc"
+      ],
+      "found": [
+        "Young Fish and Reverse Punishment Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who investigates Mahito's trail of transfigured human corpses with Yuji?",
+      "id": "jjk-pg-arcs-046",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Kento Nanami"
+      ],
+      "found": [
+        "Kento Nanami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who witnesses the demise of his classmates at a Kinema Cinema theater?",
+      "id": "jjk-pg-arcs-047",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Junpei Yoshino"
+      ],
+      "found": [
+        "Junpei Yoshino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Junpei Yoshino's mother?",
+      "id": "jjk-pg-arcs-048",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Nagi Yoshino"
+      ],
+      "found": [
+        "Nagi Yoshino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who stops Mahito from touching Yuji's soul?",
+      "id": "jjk-pg-arcs-049",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mahito's technique that allows him to re-shape souls?",
+      "id": "jjk-pg-arcs-050",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Idle Transfiguration"
+      ],
+      "found": [
+        "Idle Transfiguration"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What city is the hometown of Junpei Yoshino?",
+      "id": "jjk-pg-arcs-051",
+      "subject": "Vs. Mahito Arc",
+      "accept": "all",
+      "expected": [
+        "Kawasaki City, Kanagawa Prefecture"
+      ],
+      "found": [
+        "Kawasaki City, Kanagawa Prefecture"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-052",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-053",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 54"
+      ],
+      "found": [
+        "Chapter 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-054",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 14"
+      ],
+      "found": [
+        "Episode 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last episode of the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-055",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 21"
+      ],
+      "found": [
+        "Episode 21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-056",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Ky\u014dto K\u014dry\u016b-kai-hen"
+      ],
+      "found": [],
+      "missing": [
+        "Ky\u014dto K\u014dry\u016b-kai-hen"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc precedes the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-057",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito Arc"
+      ],
+      "found": [],
+      "missing": [
+        "Vs. Mahito Arc"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Kyoto Goodwill Event Arc?",
+      "id": "jjk-pg-arcs-058",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Death Painting Arc"
+      ],
+      "found": [],
+      "missing": [
+        "Death Painting Arc"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What event does the Kyoto Goodwill Event Arc follow?",
+      "id": "jjk-pg-arcs-059",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "the 30th Annual Kyoto Sister-School Goodwill Event"
+      ],
+      "found": [],
+      "missing": [
+        "the 30th Annual Kyoto Sister-School Goodwill Event"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who interrupts Nobara's fight with a rubber bullet?",
+      "id": "jjk-pg-arcs-060",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Mai"
+      ],
+      "found": [
+        "Mai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Aoi Todo swap Yuji out for during the fight against Hanami?",
+      "id": "jjk-pg-arcs-061",
+      "subject": "Kyoto Goodwill Event Arc",
+      "accept": "all",
+      "expected": [
+        "Playful Cloud"
+      ],
+      "found": [
+        "Playful Cloud"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Death Painting Arc?",
+      "id": "jjk-pg-arcs-062",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 55"
+      ],
+      "found": [
+        "Chapter 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Death Painting Arc?",
+      "id": "jjk-pg-arcs-063",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 64"
+      ],
+      "found": [
+        "Chapter 64"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Death Painting Arc?",
+      "id": "jjk-pg-arcs-064",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 22"
+      ],
+      "found": [
+        "Episode 22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last episode of the Death Painting Arc?",
+      "id": "jjk-pg-arcs-065",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 30"
+      ],
+      "found": [
+        "Episode 30"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Death Painting Arc?",
+      "id": "jjk-pg-arcs-066",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Kus\u014dzu-hen"
+      ],
+      "found": [
+        "Kus\u014dzu-hen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc precedes the Death Painting Arc?",
+      "id": "jjk-pg-arcs-067",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event Arc"
+      ],
+      "found": [
+        "Kyoto Goodwill Event Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Death Painting Arc?",
+      "id": "jjk-pg-arcs-068",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Gojo's Past Arc"
+      ],
+      "found": [
+        "Gojo's Past Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Death Painting Arc called in the anime adaptation?",
+      "id": "jjk-pg-arcs-069",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "The Origin of Obedience Arc"
+      ],
+      "found": [
+        "The Origin of Obedience Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What school do the first-years investigate in the Death Painting Arc?",
+      "id": "jjk-pg-arcs-070",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Saitama Urami East Junior High"
+      ],
+      "found": [
+        "Saitama Urami East Junior High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who reveals that the Death Paintings have been assigned to retrieve Sukuna's finger?",
+      "id": "jjk-pg-arcs-071",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Eso"
+      ],
+      "found": [
+        "Eso"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Death Paintings' cursed technique?",
+      "id": "jjk-pg-arcs-072",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Rot Technique"
+      ],
+      "found": [
+        "Rot Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobara impale herself with to counter the poison?",
+      "id": "jjk-pg-arcs-073",
+      "subject": "Death Painting Arc",
+      "accept": "all",
+      "expected": [
+        "Resonance"
+      ],
+      "found": [
+        "Resonance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-074",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 65"
+      ],
+      "found": [
+        "Chapter 65"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-075",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 79"
+      ],
+      "found": [
+        "Chapter 79"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-076",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 25"
+      ],
+      "found": [
+        "Episode 25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last episode of the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-077",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 29"
+      ],
+      "found": [
+        "Episode 29"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-078",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Goj\u014d Kako-hen"
+      ],
+      "found": [
+        "Goj\u014d Kako-hen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc precedes the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-079",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Death Painting Arc"
+      ],
+      "found": [
+        "Death Painting Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-080",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident Arc"
+      ],
+      "found": [
+        "Shibuya Incident Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Gojo's Past Arc called in the anime adaptation?",
+      "id": "jjk-pg-arcs-081",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Hidden Inventory / Premature Death Arc"
+      ],
+      "found": [
+        "Hidden Inventory / Premature Death Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who are the second-year students at Tokyo Jujutsu High in the Gojo's Past Arc?",
+      "id": "jjk-pg-arcs-082",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo and Suguru Geto"
+      ],
+      "found": [],
+      "missing": [
+        "Satoru Gojo and Suguru Geto"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is the Star Plasma Vessel?",
+      "id": "jjk-pg-arcs-083",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Riko Amanai"
+      ],
+      "found": [
+        "Riko Amanai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Riko Amanai's caretaker?",
+      "id": "jjk-pg-arcs-084",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Misato Kuroi"
+      ],
+      "found": [
+        "Misato Kuroi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool does Toji use to defeat Satoru Gojo?",
+      "id": "jjk-pg-arcs-085",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "the Inverted Spear of Heaven"
+      ],
+      "found": [
+        "the Inverted Spear of Heaven"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Satoru Gojo use to defeat Toji?",
+      "id": "jjk-pg-arcs-086",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "Purple"
+      ],
+      "found": [
+        "Purple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What number of villagers does Suguru Geto murder?",
+      "id": "jjk-pg-arcs-087",
+      "subject": "Gojo's Past Arc",
+      "accept": "all",
+      "expected": [
+        "one hundred and twelve"
+      ],
+      "found": [
+        "one hundred and twelve"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Shibuya Incident Arc?",
+      "id": "jjk-pg-arcs-088",
+      "subject": "Shibuya Incident Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 79"
+      ],
+      "found": [
+        "Chapter 79"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Shibuya Incident Arc?",
+      "id": "jjk-pg-arcs-089",
+      "subject": "Shibuya Incident Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 137"
+      ],
+      "found": [
+        "Chapter 137"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Shibuya Incident Arc?",
+      "id": "jjk-pg-arcs-090",
+      "subject": "Shibuya Incident Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 30"
+      ],
+      "found": [
+        "Episode 30"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last episode of the Shibuya Incident Arc?",
+      "id": "jjk-pg-arcs-091",
+      "subject": "Shibuya Incident Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 47"
+      ],
+      "found": [
+        "Episode 47"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Shibuya Incident Arc?",
+      "id": "jjk-pg-arcs-092",
+      "subject": "Shibuya Incident Arc",
+      "accept": "all",
+      "expected": [
+        "Shibuya Jihen-hen"
+      ],
+      "found": [],
+      "missing": [
+        "Shibuya Jihen-hen"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Culling Game Arc?",
+      "id": "jjk-pg-arcs-093",
+      "subject": "Culling Game Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 138"
+      ],
+      "found": [
+        "Chapter 138"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Culling Game Arc?",
+      "id": "jjk-pg-arcs-094",
+      "subject": "Culling Game Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 221"
+      ],
+      "found": [],
+      "missing": [
+        "Chapter 221"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first episode of the Culling Game Arc?",
+      "id": "jjk-pg-arcs-095",
+      "subject": "Culling Game Arc",
+      "accept": "all",
+      "expected": [
+        "Episode 48"
+      ],
+      "found": [
+        "Episode 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Culling Game Arc?",
+      "id": "jjk-pg-arcs-096",
+      "subject": "Culling Game Arc",
+      "accept": "all",
+      "expected": [
+        "Shimetsu Kaiy\u016b-hen"
+      ],
+      "found": [],
+      "missing": [
+        "Shimetsu Kaiy\u016b-hen"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc follows the Culling Game Arc?",
+      "id": "jjk-pg-arcs-097",
+      "subject": "Culling Game Arc",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown Arc"
+      ],
+      "found": [
+        "Shinjuku Showdown Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the first chapter of the Shinjuku Showdown Arc?",
+      "id": "jjk-pg-arcs-098",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 222"
+      ],
+      "found": [
+        "Chapter 222"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the last chapter of the Shinjuku Showdown Arc?",
+      "id": "jjk-pg-arcs-099",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 271"
+      ],
+      "found": [
+        "Chapter 271"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of the Shinjuku Showdown Arc?",
+      "id": "jjk-pg-arcs-100",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Kessen-hen"
+      ],
+      "found": [
+        "Shinjuku Kessen-hen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which arc precedes the Shinjuku Showdown Arc?",
+      "id": "jjk-pg-arcs-101",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Culling Game Arc"
+      ],
+      "found": [
+        "Culling Game Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna consume to substitute his last missing finger?",
+      "id": "jjk-pg-arcs-102",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "the head of his mummified corpse"
+      ],
+      "found": [
+        "the head of his mummified corpse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "On what date does the Shinjuku Showdown take place?",
+      "id": "jjk-pg-arcs-103",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool does Sukuna retrieve from the ice?",
+      "id": "jjk-pg-arcs-104",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Kamutoke"
+      ],
+      "found": [
+        "Kamutoke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What technique does Kashimo activate?",
+      "id": "jjk-pg-arcs-105",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Mythical Beast Amber"
+      ],
+      "found": [
+        "Mythical Beast Amber"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is sent to fight Kenjaku?",
+      "id": "jjk-pg-arcs-106",
+      "subject": "Shinjuku Showdown Arc",
+      "accept": "all",
+      "expected": [
+        "Fumihiko Takaba"
+      ],
+      "found": [
+        "Fumihiko Takaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 9,
+    "canon_total": 9,
+    "canon_recall": 1.0,
+    "members_returned": 9,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 105,
+    "fact_present": 86
+  }
+}

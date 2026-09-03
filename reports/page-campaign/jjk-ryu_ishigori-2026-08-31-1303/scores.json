@@ -1,0 +1,959 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Ryu Ishigori?",
+      "set": "Every named technique of Ryu Ishigori",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Ryu Ishigori",
+      "set": "Every battle involving Ryu Ishigori",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Ryu Ishigori?",
+      "found": [
+        "Domain Expansion",
+        "Cursed Energy Discharge",
+        "Granite Blast"
+      ],
+      "missing": [],
+      "members": [
+        "Cursed Energy Discharge",
+        "Domain Expansion",
+        "Granite Blast"
+      ]
+    },
+    {
+      "query": "Every battle involving Ryu Ishigori",
+      "found": [
+        "Sukuna vs. Ryu Ishigori"
+      ],
+      "missing": [],
+      "members": [
+        "Sukuna vs. Ryu Ishigori"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ryu Ishigori's name?",
+      "id": "jjk-pg-ryu_ishigori-001",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "\u77f3\u6d41\u9f8d"
+      ],
+      "found": [
+        "\u77f3\u6d41\u9f8d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ryu Ishigori's name?",
+      "id": "jjk-pg-ryu_ishigori-002",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Ishig\u014dri Ry\u016b"
+      ],
+      "found": [
+        "Ishig\u014dri Ry\u016b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ryu Ishigori's race?",
+      "id": "jjk-pg-ryu_ishigori-003",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Ryu Ishigori?",
+      "id": "jjk-pg-ryu_ishigori-004",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "400+"
+      ],
+      "found": [
+        "400+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ryu Ishigori's gender?",
+      "id": "jjk-pg-ryu_ishigori-005",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Ryu Ishigori?",
+      "id": "jjk-pg-ryu_ishigori-006",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ryu Ishigori's occupation?",
+      "id": "jjk-pg-ryu_ishigori-007",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ryu Ishigori first appear?",
+      "id": "jjk-pg-ryu_ishigori-008",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Chapter 173"
+      ],
+      "found": [
+        "Chapter 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Ryu Ishigori first depicted?",
+      "id": "jjk-pg-ryu_ishigori-009",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Episode 58"
+      ],
+      "found": [
+        "Episode 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ryu Ishigori's Japanese voice actor?",
+      "id": "jjk-pg-ryu_ishigori-010",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Hiroki T\u014dchi"
+      ],
+      "found": [
+        "Hiroki T\u014dchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ryu Ishigori's English voice actor?",
+      "id": "jjk-pg-ryu_ishigori-011",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Aleks Le"
+      ],
+      "found": [
+        "Aleks Le"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Sukuna vs. Ryu Ishigori?",
+      "id": "jjk-pg-ryu_ishigori-012",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Sukuna vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-ryu_ishigori-013",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Sukuna vs. Ryu Ishigori?",
+      "id": "jjk-pg-ryu_ishigori-014",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Chapter 216"
+      ],
+      "found": [
+        "Chapter 216"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Sukuna vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-ryu_ishigori-015",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What hairstyle does Ryu Ishigori sport, and what is it connected to?",
+      "id": "jjk-pg-ryu_ishigori-018",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "cannon-shaped pompadour"
+      ],
+      "found": [
+        "cannon-shaped pompadour"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ryu Ishigori wear in the modern era?",
+      "id": "jjk-pg-ryu_ishigori-019",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "black jacket with extensive fur trim"
+      ],
+      "found": [
+        "black jacket with extensive fur trim"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu Ishigori look like 400 years ago?",
+      "id": "jjk-pg-ryu_ishigori-020",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "wore a kimono and his hair was fashioned in the chonmage style"
+      ],
+      "found": [
+        "wore a kimono and his hair was fashioned in the chonmage style"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Ryu Ishigori liken fighting worthy opponents?",
+      "id": "jjk-pg-ryu_ishigori-021",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "eating delicacies"
+      ],
+      "found": [
+        "eating delicacies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the hunger follow Ryu into reincarnation?",
+      "id": "jjk-pg-ryu_ishigori-022",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "those fights never satisfied Ryu"
+      ],
+      "found": [
+        "those fights never satisfied Ryu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who in the Sendai Colony really grabbed Ryu's attention?",
+      "id": "jjk-pg-ryu_ishigori-023",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu"
+      ],
+      "found": [
+        "Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu compare the overwhelming of Yuta in the battle royale to?",
+      "id": "jjk-pg-ryu_ishigori-024",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "a delicious cake shop with empty displays when the store is closing"
+      ],
+      "found": [
+        "a delicious cake shop with empty displays when the store is closing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu do to set the table for his battle with Yuta?",
+      "id": "jjk-pg-ryu_ishigori-025",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "got Uro out of the way"
+      ],
+      "found": [
+        "got Uro out of the way"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu tell Yuta about letting his opponent live?",
+      "id": "jjk-pg-ryu_ishigori-026",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "told him he was too soft"
+      ],
+      "found": [
+        "told him he was too soft"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu agree to do for Yuta at the end of their fight?",
+      "id": "jjk-pg-ryu_ishigori-027",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "hand over all the points he scored in the Culling Game"
+      ],
+      "found": [
+        "hand over all the points he scored in the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ryu Ishigori's overall skill level?",
+      "id": "jjk-pg-ryu_ishigori-028",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "boasts incredible destructive power and the highest cursed energy output of any player"
+      ],
+      "found": [
+        "boasts incredible destructive power and the highest cursed energy output of any player"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which exceptional players did Ryu force a deadlock with in the colony?",
+      "id": "jjk-pg-ryu_ishigori-029",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Dhruv, Kurourushi, and Uro"
+      ],
+      "found": [
+        "Dhruv, Kurourushi, and Uro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What makes Ryu a massive wide-range threat?",
+      "id": "jjk-pg-ryu_ishigori-030",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "ability to fire cursed energy like a cannon"
+      ],
+      "found": [
+        "ability to fire cursed energy like a cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Ryu unleash regardless of whether his cursed technique is activated?",
+      "id": "jjk-pg-ryu_ishigori-031",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "the same amount of power"
+      ],
+      "found": [
+        "the same amount of power"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu's pure offensive firepower do to Kurourushi?",
+      "id": "jjk-pg-ryu_ishigori-032",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "annihilated most of Kurourushi in one shot"
+      ],
+      "found": [
+        "annihilated most of Kurourushi in one shot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ryu defeat Takako Uro?",
+      "id": "jjk-pg-ryu_ishigori-033",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "the same blast as Kurourushi"
+      ],
+      "found": [
+        "the same blast as Kurourushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Ryu keep his hands free in close combat?",
+      "id": "jjk-pg-ryu_ishigori-034",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "his hair as the barrel of a cannon"
+      ],
+      "found": [
+        "his hair as the barrel of a cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ryu hold up against Yuta in close-range exchanges?",
+      "id": "jjk-pg-ryu_ishigori-035",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "evenly matched with Yuta"
+      ],
+      "found": [
+        "evenly matched with Yuta"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu withstand in his battle with Uro and Yuta?",
+      "id": "jjk-pg-ryu_ishigori-036",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "being hit with his own Granite Blast"
+      ],
+      "found": [
+        "being hit with his own Granite Blast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ryu block Rika's directed blast?",
+      "id": "jjk-pg-ryu_ishigori-037",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "with just one hand"
+      ],
+      "found": [
+        "with just one hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of tactical intellect does Ryu have?",
+      "id": "jjk-pg-ryu_ishigori-038",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "catch on to his opponent's strategies"
+      ],
+      "found": [
+        "catch on to his opponent's strategies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why didn't Ryu move to break the colony deadlock until Yuta arrived?",
+      "id": "jjk-pg-ryu_ishigori-039",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "at a disadvantage against Uro's ability to redirect his beams"
+      ],
+      "found": [
+        "at a disadvantage against Uro's ability to redirect his beams"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu deduce about why Dhruv didn't react to him?",
+      "id": "jjk-pg-ryu_ishigori-040",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "completely preoccupied with Yuta"
+      ],
+      "found": [
+        "completely preoccupied with Yuta"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu later realize about Rika's abilities during the climax of their clash?",
+      "id": "jjk-pg-ryu_ishigori-041",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "Yuta can actually copy other cursed techniques"
+      ],
+      "found": [
+        "Yuta can actually copy other cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ryu recognize when Yuta exorcised Kurourushi?",
+      "id": "jjk-pg-ryu_ishigori-042",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "converting reversed cursed technique into an outputted attack"
+      ],
+      "found": [
+        "converting reversed cursed technique into an outputted attack"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How would you describe Ryu's cursed energy capacity?",
+      "id": "jjk-pg-ryu_ishigori-043",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "far exceeds the level of most sorcerers"
+      ],
+      "found": [
+        "far exceeds the level of most sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Ryu recognized by Kenjaku when he was alive?",
+      "id": "jjk-pg-ryu_ishigori-044",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "the highest cursed energy output recorded throughout jujutsu history"
+      ],
+      "found": [
+        "the highest cursed energy output recorded throughout jujutsu history"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Yuta's cursed energy compare to Ryu's?",
+      "id": "jjk-pg-ryu_ishigori-045",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "pales in comparison"
+      ],
+      "found": [
+        "pales in comparison"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did cursed energy reinforcement limit the damage of Sukuna's Dismantle on Ryu?",
+      "id": "jjk-pg-ryu_ishigori-046",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "a single deep cut when the King of Curses intended to slice him into three"
+      ],
+      "found": [
+        "a single deep cut when the King of Curses intended to slice him into three"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Ryu shoot from his cannon shaped pompadour?",
+      "id": "jjk-pg-ryu_ishigori-047",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "directed blasts of cursed energy"
+      ],
+      "found": [
+        "directed blasts of cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ryu's signature attack capable of at full power?",
+      "id": "jjk-pg-ryu_ishigori-048",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "decimate several city blocks"
+      ],
+      "found": [
+        "decimate several city blocks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened when Ryu, Yuta, and Takako used domain expansion at the same time?",
+      "id": "jjk-pg-ryu_ishigori-049",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "the barrier came apart before any of their domains were fully realized"
+      ],
+      "found": [
+        "the barrier came apart before any of their domains were fully realized"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Ryu Ishigori rank in the third Popularity Poll?",
+      "id": "jjk-pg-ryu_ishigori-050",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "40th"
+      ],
+      "found": [
+        "40th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Ryu Ishigori rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-ryu_ishigori-051",
+      "subject": "Ryu Ishigori",
+      "accept": "all",
+      "expected": [
+        "50th"
+      ],
+      "found": [
+        "50th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 49,
+    "fact_present": 49
+  }
+}

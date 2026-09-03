@@ -82,6 +82,15 @@ class TestExpectedType:
         types = {"a": semantics.CHARACTER, "b": semantics.UNKNOWN, "c": semantics.UNKNOWN}
         assert expected_type(list(types), types) == semantics.CHARACTER
 
+    def test_an_exact_tie_is_no_majority(self):
+        """`Yoshinobu Gakuganji Affiliations` is one organisation and the
+        location it sits in. With a non-strict majority the tie broke on
+        candidate order, the set read as `organizations`, and the type rule
+        rejected the location as `a location, and this is a set of
+        organizations`. A tie is no majority; the set is left alone."""
+        types = {"o": semantics.ORGANIZATION, "l": semantics.LOCATION}
+        assert expected_type(list(types), types) == semantics.UNKNOWN
+
 
 # `_disagrees` lives in roster.py and is tested beside it, in
 # tests/test_roster_validation.py, and importing it here made this module

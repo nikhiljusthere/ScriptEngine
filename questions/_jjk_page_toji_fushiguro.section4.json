@@ -1,0 +1,1048 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-23",
+  "note": "Section 4 (identity/grade/role/aliases) of the Toji Fushiguro cluster. Rosters staged in _jjk_page_toji_fushiguro.decl4.yaml.",
+  "retired": [
+    {
+      "id": "jjk-pg-toji_fushiguro-retired-s4-01",
+      "question": "What are the kanji and romaji of Toji Fushiguro's name?",
+      "item": "",
+      "reason": "The infobox `kanji` cell (伏黒甚爾) and `romaji` cell (Fushiguro Tōji) are Nihongo/Ruby-derived cells that the pipeline does not make retrievable, so a kanji- or romaji-only answer cannot be golded; the clause is retired rather than rephrased, since no retrievable prose states the name in kanji."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-retired-s4-02",
+      "question": "What are Toji Fushiguro's age, height and blood type?",
+      "item": "",
+      "reason": "The infobox `age`, `height` and `bloodtype` cells are empty on the page (the fields exist but carry no value), so the page states no answer for any of them; nothing is invented."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-retired-s4-03",
+      "question": "What are Toji Fushiguro's titles?",
+      "item": "",
+      "reason": "The page has no `title` infobox field and never enumerates a closed set of titles; its only epithet, \"Sorcerer Killer\", is the infobox `alias` and is carried by the aliases roster (jjk-pg-toji_fushiguro-170) and the moniker questions (171, 173) instead."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-toji_fushiguro-151",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's birth name?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Toji Zenin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro",
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Main-page lead: 'Toji Fushiguro, born Toji Zenin, is a recurring character...'; Synopsis History opens 'Toji Zenin was born into the Zenin Clan on December 31'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-152",
+      "kind": "fact",
+      "question": "What kind of character is Toji Fushiguro in the Jujutsu Kaisen series?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "recurring character in the Jujutsu Kaisen series",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'Toji Fushiguro, born Toji Zenin, is a recurring character in the Jujutsu Kaisen series'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-153",
+      "kind": "fact",
+      "question": "What role does Toji Fushiguro play in the Gojo's Past Arc?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "primary antagonist of the Gojo's Past Arc",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'the primary antagonist of the Gojo's Past Arc, as well as a minor antagonist in the Shibuya Incident Arc'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-154",
+      "kind": "fact",
+      "question": "What role does Toji Fushiguro play in the Shibuya Incident Arc?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "minor antagonist in the Shibuya Incident Arc",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'as well as a minor antagonist in the Shibuya Incident Arc'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-155",
+      "kind": "fact",
+      "question": "Which clan was Toji Fushiguro a former member of?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Zenin Clan",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'He was a former member of the Zenin Clan'; the infobox affiliation field lists 'Zenin Clan (Formerly)'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-156",
+      "kind": "fact",
+      "question": "How does the Toji Fushiguro lead describe his line of work?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "infamous assassin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'an infamous assassin known as the Sorcerer Killer'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-157",
+      "kind": "fact",
+      "question": "According to the lead, who is Toji Fushiguro an enemy of?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'He was also Megumi Fushiguro's father and an enemy of Satoru Gojo'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-158",
+      "kind": "fact",
+      "question": "What was Toji Fushiguro's standing as a user of cursed energy?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "non-curse user",
+          "aliases": [
+            "Non-Curse User"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'contracted by the Time Vessel Association among other groups throughout his time as a non-curse user'; the page's categories include 'Non-Curse Users'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-159",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's race, according to his infobox?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'race = Human'. The race is the infobox race field; it is not conflated with the alias 'Sorcerer Killer' or the occupation 'Non-Curse User'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-160",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's occupation, according to his infobox?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Non-Curse User",
+          "aliases": [
+            "non-curse user"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'occupation = Non-Curse User' (a wikilink whose display text is 'Non-Curse User'); the lead writes the same phrase lowercase as 'a non-curse user'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-161",
+      "kind": "set",
+      "question": "What are Toji Fushiguro's affiliations?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Zenin Clan (Formerly)",
+          "aliases": []
+        },
+        {
+          "item": "Independent",
+          "aliases": []
+        },
+        {
+          "item": "Time Vessel Association (Contracted)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox affiliation field is a closed three-entry set: 'Zenin Clan (Formerly) / Independent / Time Vessel Association (Contracted)'. Staged in _jjk_page_toji_fushiguro.decl4.yaml; 'Independent' has no wiki page but is stated in the infobox itself, so the declared-member filter keeps it."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-162",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's status?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Deceased",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'status = Deceased'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-163",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's birthday?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "December 31",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro",
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'birthday = December 31' (fanbook-sourced); Synopsis History: 'Toji Zenin was born into the Zenin Clan on December 31'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-164",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's gender?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Male",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'gender = Male'; the page is also categorized 'Male'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-165",
+      "kind": "fact",
+      "question": "What color is Toji Fushiguro's hair?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black",
+          "aliases": [
+            "black"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'hair = Black'; Appearance section: 'mid-length straight black hair'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-166",
+      "kind": "fact",
+      "question": "What are Toji Fushiguro's eye colors in the manga and anime?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Green (Manga) Dark Blue (Anime)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox eye field reads 'Green (Manga) / Dark Blue (Anime)'; the page also says in Appearance that 'His eyes are green, just like his son's'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-167",
+      "kind": "fact",
+      "question": "In which manga chapter does Toji Fushiguro make his debut?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 66",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'debut = Chapter 66'. The lead's citation '(Chapter 67, Episode 26)' is a chapter/episode reference for the 'Sorcerer Killer' name, not the debut."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-168",
+      "kind": "fact",
+      "question": "In which anime episode does Toji Fushiguro make his debut?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 25",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'debutanime = Episode 25'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-169",
+      "kind": "fact",
+      "question": "Who voices Toji Fushiguro in the Japanese dub?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Takehito Koyasu",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'voice = Takehito Koyasu' (a Wikipedia link)."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-170",
+      "kind": "set",
+      "question": "What are Toji Fushiguro's aliases?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sorcerer Killer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox alias field is a closed single-value set: 'alias = Sorcerer Killer'. 'Toji Zenin' is the birth name from the lead (asked at 151), not the alias field, so it is not a member. Staged in _jjk_page_toji_fushiguro.decl4.yaml; the declared member is kept even though 'Sorcerer Killer' has no wiki page of its own."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-171",
+      "kind": "fact",
+      "question": "What moniker did Toji Fushiguro earn for turning the Zenin clan's jujutsu knowledge against sorcerers?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sorcerer Killer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers / Overview: \"Toji used the jujutsu knowledge from the Zenin clan and turned it against sorcerers, earning him the moniker of 'Sorcerer Killer.'\""
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-172",
+      "kind": "fact",
+      "question": "What did Toji Fushiguro do with the jujutsu knowledge from the Zenin clan?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "turned it against sorcerers",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"Toji used the jujutsu knowledge from the Zenin clan and turned it against sorcerers, earning him the moniker of 'Sorcerer Killer.'\""
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-173",
+      "kind": "fact",
+      "question": "What name did Toji Fushiguro garner as an assassin, according to the Personality section?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Sorcerer Killer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"Toji is an assassin who's garnered the name 'Sorcerer Killer' and spends his time gambling between assignments from shady clients.\""
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-174",
+      "kind": "fact",
+      "question": "What did Toji Fushiguro take full advantage of, according to the Overview?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "his lack of cursed energy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"Toji took full advantage of his lack of cursed energy, making him the perfect assassin thanks to his status as an 'invisible man'.\""
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-175",
+      "kind": "fact",
+      "question": "What status made Toji Fushiguro the perfect assassin?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "invisible man",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"making him the perfect assassin thanks to his status as an 'invisible man'\"; the Quotes section has him say 'As someone who possesses no cursed energy, I'm the invisible man.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-176",
+      "kind": "fact",
+      "question": "Why does Toji Fushiguro not have a grade?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the Jujutsu world does not have interest in grading those who are physically gifted by Heavenly Restrictions",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Toji does not have a grade because the Jujutsu world does not have interest in grading those who are physically gifted by Heavenly Restrictions.' The page states the absence of a grade; no grade value is asserted."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-177",
+      "kind": "fact",
+      "question": "Does Toji Fushiguro have a sorcerer grade?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Toji does not have a grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Toji does not have a grade because the Jujutsu world does not have interest in grading those who are physically gifted by Heavenly Restrictions.' Answered exactly as the page states it; no grade is invented."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-178",
+      "kind": "fact",
+      "question": "On what level did Toji Fushiguro's status settle after exorcising Dagon?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "on the level of that of a special grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'In comparison, Toji made exorcising Dagon look effortless, cementing his own status undeniably on the level of that of a special grade.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-179",
+      "kind": "fact",
+      "question": "What kind of work did Toji Fushiguro take on after leaving the sorcerer family?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "he took on personal commissions to earn money",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'After he left, he took on personal commissions to earn money, which he used to purchase expensive special grade cursed tools.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-180",
+      "kind": "fact",
+      "question": "What did Toji Fushiguro spend his time doing between assignments from shady clients?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "gambling",
+          "aliases": [
+            "Gambling"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"Toji is an assassin who's garnered the name 'Sorcerer Killer' and spends his time gambling between assignments from shady clients.\""
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-181",
+      "kind": "fact",
+      "question": "What does the official fanbook list as Toji Fushiguro's hobby?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gambling",
+          "aliases": [
+            "gambling"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'According to Jujutsu Kaisen Official Fanbook: Hobby: Gambling.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-182",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's favorite dish, according to the fanbook?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Meat and Offal",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Favorite dish: Meat and Offal.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-183",
+      "kind": "fact",
+      "question": "What is Toji Fushiguro's least favorite dish, according to the fanbook?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Alcohol",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Least favorite dish: Alcohol (He doesn't get drunk).'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-184",
+      "kind": "fact",
+      "question": "Which position did Toji Fushiguro rank in the fourth Popularity Poll?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "10th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Toji ranked 10th in the fourth Popularity Poll with 3,218 votes.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-185",
+      "kind": "fact",
+      "question": "What is it that Toji Fushiguro possesses no amount of, unlike any other known case?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "cursed energy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Cursed Energy section: 'Zero Cursed Energy: Unlike any other known case, Toji possesses no cursed energy.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-186",
+      "kind": "fact",
+      "question": "According to the Cursed Energy section, how much cursed energy does Toji Fushiguro have?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Toji possesses no cursed energy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Cursed Energy section: 'Unlike any other known case, Toji possesses no cursed energy. His Heavenly Restriction completely eliminated cursed energy from his body.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-187",
+      "kind": "fact",
+      "question": "As what kind of person, raised in the Zenin clan, does the page describe Toji Fushiguro?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "non-sorcerer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'As a non-sorcerer raised in the Zenin clan who values cursed techniques above all, Toji is a man who has suffered due to the interests of the sorcerer clans'; the page's categories include 'Non-Sorcerers'."
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-188",
+      "kind": "fact",
+      "question": "What kind of fighter was Toji Fushiguro when he was alive, according to the Overview?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "one of the most elite fighters in the jujutsu world",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'While Toji is technically a non-curse user with no innate talent for jujutsu, he was one of the most elite fighters in the jujutsu world when he was alive.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-189",
+      "kind": "fact",
+      "question": "What innate talent for jujutsu did Toji Fushiguro lack?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "no innate talent for jujutsu",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'While Toji is technically a non-curse user with no innate talent for jujutsu, he was one of the most elite fighters in the jujutsu world when he was alive.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-190",
+      "kind": "fact",
+      "question": "What did Yuki Tsukumo consider Toji Fushiguro to be?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "truly superhuman",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Yuki considered him to be truly superhuman and told Suguru that he shouldn't be ashamed to have lost to him in a fight.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-191",
+      "kind": "fact",
+      "question": "What did Megumi Fushiguro recognize Toji Fushiguro as?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a \"monster\" capable of taking out a special grade cursed spirit",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"He also recognized Toji as a 'monster' capable of taking out a special grade cursed spirit and assessed his shikigami were no match for him.\""
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-192",
+      "kind": "fact",
+      "question": "Who was the first and last person to notice Toji Fushiguro when he stood behind them?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'he once went to see Satoru Gojo out of curiosity and was surprised that Gojo was able to notice him, marking the first and last time someone noticed him when he stood behind them.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-193",
+      "kind": "fact",
+      "question": "According to the Synopsis, into which clan was Toji Zenin born?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Zenin Clan",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Toji Zenin was born into the Zenin Clan on December 31, as the younger brother of Jinichi Zenin and son of the 25th head, Naobito Zenin's elder brother.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-194",
+      "kind": "fact",
+      "question": "What was Toji Zenin born with that completely erased cursed energy from his body?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a Heavenly Restriction",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Born with a Heavenly Restriction that completely erased cursed energy from his body and relying on cursed tools to fight, Toji was seen as inferior by many of his relatives.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-195",
+      "kind": "fact",
+      "question": "How was Toji Fushiguro seen by many of his relatives?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "inferior",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Toji was seen as inferior by many of his relatives.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-196",
+      "kind": "fact",
+      "question": "What did Toji Fushiguro rely on to fight, given his lack of cursed energy?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "cursed tools",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Born with a Heavenly Restriction that completely erased cursed energy from his body and relying on cursed tools to fight, Toji was seen as inferior by many of his relatives.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-197",
+      "kind": "fact",
+      "question": "What did Toji Fushiguro acquire after he left the Zenin clan, despite his lack of money?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "expensive cursed tools",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Despite his lack of money, Toji acquired expensive cursed tools after he left the Zenin Clan.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-198",
+      "kind": "fact",
+      "question": "How did Toji Fushiguro acquire expensive cursed tools, according to the Trivia?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "by taking jobs from private and shady individuals",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Despite his lack of money, Toji acquired expensive cursed tools after he left the Zenin Clan. He did so by taking jobs from private and shady individuals.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-199",
+      "kind": "fact",
+      "question": "What could Toji Fushiguro not do, which is why he was ostracized by the Zenin clan?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "exorcise cursed spirits",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Toji can fight effectively against jujutsu sorcerers even without cursed tools. However, he can't exorcise cursed spirits. Because of this, he was ostracized by the Zenin Clan.'"
+    },
+    {
+      "id": "jjk-pg-toji_fushiguro-200",
+      "kind": "fact",
+      "question": "What did Toji Fushiguro's reputation attract the attention of, according to the Personality section?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the wealthy Time Vessel Association",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'This garnered him a reputation large enough to attract the attention of the wealthy Time Vessel Association for such an important job that could ensure their future.'"
+    }
+  ]
+}

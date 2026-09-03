@@ -376,7 +376,7 @@
       "sources": [
         "https://onepunchman.fandom.com/wiki/Speed-o%27-Sound_Sonic"
       ],
-      "note": "Added 2026-08-04. Bank audit 2026-08-14: added 6 item(s) the wiki documents and the bank omitted: Full Frontal Attack, Hail of Carnage, Exploding Shuriken Ferocious Barrage, Two Shadows Burial, Sonic Heavy Barrage, Thirteen Shadows Burial. Each verified against the cited page's raw wikitext.",
+      "note": "Added 2026-08-04. Bank audit 2026-08-14: added 6 item(s) the wiki documents and the bank omitted: Full Frontal Attack, Hail of Carnage, Exploding Shuriken Ferocious Barrage, Two Shadows Burial, Sonic Heavy Barrage, Thirteen Shadows Burial. Each verified against the cited page's raw wikitext. 2026-09-01 (R7 Part C): aligned to the page's Techniques section -- the engine's roster was correct and the bank was stale. Added Serious Side Hops (a technique the bank omitted) and dropped standalone 'Exploding Shuriken' (the wiki classifies it as a weapon under 'Ninja Weaponry', not a technique; 'Exploding Shuriken Ferocious Barrage' remains). Set now matches the engine's verified 11-technique roster exactly.",
       "answer": [
         {
           "item": "Four Shadows Burial",
@@ -401,11 +401,8 @@
           ]
         },
         {
-          "item": "Exploding Shuriken",
-          "aliases": [
-            "explosive shuriken",
-            "bakuretsu shuriken"
-          ]
+          "item": "Serious Side Hops",
+          "aliases": []
         },
         {
           "item": "Full Frontal Attack",
@@ -1738,15 +1735,8 @@
       "sources": [
         "https://onepunchman.fandom.com/wiki/Hero_Association"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Explicitly states four classes: C, B, A, S Gold corrected 2026-08-15 from `Hero Association`: the wiki lists 4 members and the bank had 1; added C-Class, B-Class, A-Class, S-Class.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Explicitly states four classes: C, B, A, S. Gold corrected 2026-08-15 from `Hero Association`: the wiki lists 4 members and the bank had 1; added C-Class, B-Class, A-Class, S-Class. 2026-09-01 (R7 Part C): dropped the redundant count item 'Four classes' -- it is a scalar, not a roster member, so it could never match in set-scoring. The set is the 4 named classes, which the engine's declared roster (opm overrides.yaml) returns with confidence=declared.",
       "answer": [
-        {
-          "item": "Four classes",
-          "aliases": [
-            "four",
-            "C B A S"
-          ]
-        },
         {
           "item": "C-Class",
           "aliases": []

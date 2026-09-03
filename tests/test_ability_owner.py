@@ -22,7 +22,11 @@ from __future__ import annotations
 
 import pytest
 
-from scriptengine.retrieve.roster import drop_off_owner, stated_users
+from scriptengine.retrieve.roster import (
+    drop_general_pages,
+    drop_off_owner,
+    stated_users,
+)
 from scriptengine.stores.facts import FactStore
 
 # name -> the `user` field on its page, or None for "has no page at all"
@@ -31,8 +35,18 @@ ABILITIES = {
     "Biting Twist": "Yuka Okkotsu",
     "Shrine": "Ryomen Sukuna Yuta Okkotsu (Copied) Yuji Itadori",
     # Nineteen users on the real page, including Megumi. It stays because the
-    # field says so, not because anything special-cased it.
-    "Domain Expansion": "Megumi Fushiguro Satoru Gojo Sukuna",
+    # field says so, not because anything special-cased it. The user list here is
+    # long enough (>= 6 lines) that `drop_general_pages` reads it as the class
+    # itself rather than an instance -- which is what its real page does too.
+    "Domain Expansion": "\n".join(
+        [
+            "Ryomen Sukuna", "Jogo", "Satoru Gojo", "Mahito", "Hanami",
+            "Megumi Fushiguro", "Smallpox Deity", "Dagon", "Hiromi Higuruma",
+            "Takako Uro", "Ryu Ishigori", "Yuta Okkotsu", "Kinji Hakari",
+            "Cursed Naoya", "Kenjaku", "Yuki Tsukumo", "Yorozu",
+            "Yuji Itadori", "Dabura Karaba",
+        ]
+    ),
     "Dismantle": None,
     "Hometown Domain": None,
 }
@@ -125,37 +139,40 @@ class TestDropOffOwner:
 
 
 class TestCopied:
-    """A qualifier after a user's name says how they came by the technique.
+    """A `(Copied)` qualifier no longer disowns a technique from its user.
 
-    Yuta Okkotsu's innate technique *is* copying, so the wiki lists him as a
-    user of six techniques that are not his and marks each one in the field.
+    Removed 2026-08-19 under the owner's specification: Yuta Okkotsu's innate
+    technique *is* copying, so a technique he copied is one of his cursed
+    techniques -- using it through the copy is still him using it. The wiki marks
+    those users `(Copied)` in the field; that now says nothing about whose
+    technique it is. What survives in `drop_off_owner` is only the other branch:
+    a member whose own page names users and does not name this one.
     """
 
-    def test_a_copied_user_does_not_own_it(self, store):
+    def test_a_copied_user_keeps_it(self, store):
         kept, rejected = drop_off_owner(
             store, ["Shrine", "Dismantle"], "Yuta Okkotsu", None
         )
-        assert kept == ["Dismantle"]
-        assert rejected[0]["rule"] == "copied"
+        assert kept == ["Shrine", "Dismantle"]
+        assert rejected == []
 
-    def test_the_marker_belongs_to_the_name_it_follows(self, store):
+    def test_the_marker_does_not_disown_from_any_user(self, store):
         """`Shrine` is `Ryomen Sukuna Yuta Okkotsu (Copied) Yuji Itadori`.
 
-        The `(Copied)` is Yuta's. Asking whether the field contains it
-        anywhere would disown the technique from Sukuna, whose it is.
+        The `(Copied)` is Yuta's. It no longer disowns the technique from him,
+        and it never did for Sukuna, whose it is.
         """
         kept, rejected = drop_off_owner(store, ["Shrine"], "Sukuna", None)
         assert kept == ["Shrine"]
         assert rejected == []
 
-    @pytest.mark.parametrize("qualifier", ["(via Megumi)", "(Formerly)", "(Anime)"])
-    def test_only_an_outright_copy_disowns(self, store, qualifier):
-        """Measured, not assumed. `Ten Shadows Technique` reads
-        `... Yuka Okkotsu Sukuna (via Megumi)` and is gold on
-        `Every cursed technique of Sukuna` -- using a technique through the
-        body he has taken is still him using it. Treating `via` as a copy cost
-        that canon item on two questions.
-        """
+    @pytest.mark.parametrize("qualifier", ["(via Megumi)", "(Formerly)", "(Anime)", "(Copied)"])
+    def test_a_qualifier_after_the_name_never_disowns(self, store, qualifier):
+        """`Ten Shadows Technique` reads `... Yuka Okkotsu Sukuna (via Megumi)`
+        and is gold on `Every cursed technique of Sukuna` -- using a technique
+        through the body he has taken is still him using it. The same holds for
+        `(Copied)`: the qualifier says how they came by it, not that it is not
+        theirs."""
         store.connection.execute(
             "INSERT INTO nodes (id, name) VALUES (50, 'Ten Shadows Technique')"
         )
@@ -168,4 +185,46 @@ class TestCopied:
             store, ["Ten Shadows Technique", "Dismantle"], "Sukuna", None
         )
         assert "Ten Shadows Technique" in kept
+        assert rejected == []
+
+
+class TestDropGeneralPages:
+    """A page that lists many users is the class itself, not a member of it.
+
+    `Every ability of Megumi Fushiguro` was returning `Domain Expansion`, the
+    category page with nineteen users, while his own named technique was already
+    gold. A general page is dropped from a personal roster; an instance and any
+    member with no page are kept.
+    """
+
+    def test_a_category_page_is_dropped_from_a_personal_roster(self, store):
+        # `Domain Expansion` names nineteen users in the fixture above.
+        kept, rejected = drop_general_pages(
+            store, ["Domain Expansion", "Shrine"], "Megumi Fushiguro"
+        )
+        assert kept == ["Shrine"]
+        assert rejected[0]["rule"] == "general_page"
+
+    def test_an_instance_with_few_users_is_kept(self, store):
+        # `Shrine` names three users; it is an instance, not the class.
+        kept, rejected = drop_general_pages(store, ["Shrine"], "Sukuna")
+        assert kept == ["Shrine"]
+        assert rejected == []
+
+    def test_a_member_with_no_page_is_kept(self, store):
+        # `Dismantle` has no page at all; positive evidence only.
+        kept, rejected = drop_general_pages(store, ["Dismantle"], "Yuji Itadori")
+        assert kept == ["Dismantle"]
+        assert rejected == []
+
+    def test_no_subject_means_a_general_question_and_no_opinion(self, store):
+        # `Every domain expansion` asks for the category itself and must keep it.
+        names = ["Domain Expansion", "Shrine"]
+        assert drop_general_pages(store, names, "") == (names, [])
+
+    def test_it_never_empties_a_non_empty_set(self, store):
+        kept, rejected = drop_general_pages(
+            store, ["Domain Expansion"], "Megumi Fushiguro"
+        )
+        assert kept == ["Domain Expansion"]
         assert rejected == []

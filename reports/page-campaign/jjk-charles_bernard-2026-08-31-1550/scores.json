@@ -1,0 +1,667 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Charles Bernard?",
+      "set": "Every named technique of Charles Bernard",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Charles Bernard",
+      "set": "Every battle involving Charles Bernard",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Charles Bernard?",
+      "found": [
+        "G Warstaff"
+      ],
+      "missing": [],
+      "members": [
+        "G Warstaff"
+      ]
+    },
+    {
+      "query": "Every battle involving Charles Bernard",
+      "found": [
+        "Kinji Hakari vs. Charles Bernard"
+      ],
+      "missing": [],
+      "members": [
+        "Kinji Hakari vs. Charles Bernard"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Charles Bernard's name?",
+      "id": "jjk-pg-charles_bernard-001",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "\u30b7\u30e3\u30eb\u30eb\u30fb\u30d9\u30eb\u30ca\u30fc\u30eb"
+      ],
+      "found": [
+        "\u30b7\u30e3\u30eb\u30eb\u30fb\u30d9\u30eb\u30ca\u30fc\u30eb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Charles Bernard's name?",
+      "id": "jjk-pg-charles_bernard-002",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Sharuru Berun\u0101ru"
+      ],
+      "found": [
+        "Sharuru Berun\u0101ru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Charles Bernard's race?",
+      "id": "jjk-pg-charles_bernard-003",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Charles Bernard's gender?",
+      "id": "jjk-pg-charles_bernard-004",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Charles Bernard?",
+      "id": "jjk-pg-charles_bernard-005",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Charles Bernard's occupation?",
+      "id": "jjk-pg-charles_bernard-006",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Artist Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Artist Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Charles Bernard first appear?",
+      "id": "jjk-pg-charles_bernard-007",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Chapter 181"
+      ],
+      "found": [
+        "Chapter 181"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Charles Bernard first depicted?",
+      "id": "jjk-pg-charles_bernard-008",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Charles Bernard?",
+      "id": "jjk-pg-charles_bernard-009",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Kinji Hakari is victorious."
+      ],
+      "found": [
+        "Kinji Hakari is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-charles_bernard-010",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-charles_bernard-011",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Charles Bernard begin?",
+      "id": "jjk-pg-charles_bernard-012",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Chapter 182"
+      ],
+      "found": [
+        "Chapter 182"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-charles_bernard-013",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Charles Bernard's dream before the Culling Game?",
+      "id": "jjk-pg-charles_bernard-016",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "an aspiring mangaka"
+      ],
+      "found": [
+        "an aspiring mangaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Charles turned into a jujutsu sorcerer?",
+      "id": "jjk-pg-charles_bernard-017",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "unwillingly forced to participate in the Culling Game as a jujutsu sorcerer"
+      ],
+      "found": [
+        "unwillingly forced to participate in the Culling Game as a jujutsu sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Charles Bernard look like?",
+      "id": "jjk-pg-charles_bernard-018",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "a young man of French descent who the Japanese locals can tell is foreign"
+      ],
+      "found": [
+        "a young man of French descent who the Japanese locals can tell is foreign"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color is Charles's hair?",
+      "id": "jjk-pg-charles_bernard-019",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "steel blue"
+      ],
+      "found": [
+        "steel blue"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Charles wear?",
+      "id": "jjk-pg-charles_bernard-020",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "a dark turtleneck sweater with a tan neck neckline and a v-shaped design across the chest"
+      ],
+      "found": [
+        "a dark turtleneck sweater with a tan neck neckline and a v-shaped design across the chest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Charles Bernard characterized?",
+      "id": "jjk-pg-charles_bernard-021",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "a self-serving, eccentric individual who is fully confident in his dream of becoming a manga creator"
+      ],
+      "found": [
+        "a self-serving, eccentric individual who is fully confident in his dream of becoming a manga creator"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Charles react to criticism of his art?",
+      "id": "jjk-pg-charles_bernard-022",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "lashes out in an immature fashion"
+      ],
+      "found": [
+        "lashes out in an immature fashion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Charles do when the publishing agent gave him advice?",
+      "id": "jjk-pg-charles_bernard-023",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "assaulted the publishing agent"
+      ],
+      "found": [
+        "assaulted the publishing agent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Shibuya Incident ruin for Charles?",
+      "id": "jjk-pg-charles_bernard-024",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "any practical path to Charles becoming a mangaka"
+      ],
+      "found": [
+        "any practical path to Charles becoming a mangaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Charles ask to give him a reason to kill?",
+      "id": "jjk-pg-charles_bernard-025",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Kinji Hakari"
+      ],
+      "found": [
+        "Kinji Hakari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hakari do to give Charles a reason to kill?",
+      "id": "jjk-pg-charles_bernard-026",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "insulted Charles's dreams, making Charles cry and inspiring him to attack"
+      ],
+      "found": [
+        "insulted Charles's dreams, making Charles cry and inspiring him to attack"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Charles realize he actually needed from the fight?",
+      "id": "jjk-pg-charles_bernard-027",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "an avenue to release his stress"
+      ],
+      "found": [
+        "an avenue to release his stress"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Charles accept after he calmed down?",
+      "id": "jjk-pg-charles_bernard-028",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "Hakari's encouragement to keep aspiring to be a mangaka"
+      ],
+      "found": [
+        "Hakari's encouragement to keep aspiring to be a mangaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Charles act even in a heated fight?",
+      "id": "jjk-pg-charles_bernard-029",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "like an obnoxious otaku"
+      ],
+      "found": [
+        "like an obnoxious otaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of fighter did Charles become after developing his technique?",
+      "id": "jjk-pg-charles_bernard-030",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "a proficient jujutsu user and spearman with his G-Warstaff"
+      ],
+      "found": [
+        "a proficient jujutsu user and spearman with his G-Warstaff"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is G Warstaff?",
+      "id": "jjk-pg-charles_bernard-031",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "a long spear with a pen-shaped tip"
+      ],
+      "found": [
+        "a long spear with a pen-shaped tip"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Charles fulfill the condition for ink in his technique?",
+      "id": "jjk-pg-charles_bernard-032",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "By drawing his opponent's blood into the pen's tip"
+      ],
+      "found": [
+        "By drawing his opponent's blood into the pen's tip"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the manga panel on an opponent allow Charles to do?",
+      "id": "jjk-pg-charles_bernard-033",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "peer into his target's very near future, starting with just one second"
+      ],
+      "found": [
+        "peer into his target's very near future, starting with just one second"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Charles Bernard rank in the third Popularity Poll?",
+      "id": "jjk-pg-charles_bernard-034",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "74th in the third Popularity Poll with 6 votes"
+      ],
+      "found": [
+        "74th in the third Popularity Poll with 6 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Charles Bernard rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-charles_bernard-035",
+      "subject": "Charles Bernard",
+      "accept": "all",
+      "expected": [
+        "127th in the fourth Popularity Poll with 2 votes"
+      ],
+      "found": [
+        "127th in the fourth Popularity Poll with 2 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 33,
+    "fact_present": 33
+  }
+}

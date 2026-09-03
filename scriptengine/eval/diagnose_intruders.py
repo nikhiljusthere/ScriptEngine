@@ -45,6 +45,7 @@ Run against a scores file written by `canon_gold.py`:
     python scriptengine/eval/diagnose_intruders.py reports/<run>/canon_scores.json
 """
 
+import io
 import json
 import sqlite3
 import sys
@@ -279,6 +280,6 @@ def diagnose(scores_path: str) -> str:
 if __name__ == "__main__":
     # Windows stdout defaults to cp1252 and half these wikis romanise with
     # macrons. The artifact is already on disk by here; this is only the echo.
-    if hasattr(sys.stdout, "reconfigure"):
+    if isinstance(sys.stdout, io.TextIOWrapper):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     diagnose(sys.argv[1] if len(sys.argv) > 1 else "canon_scores.json")

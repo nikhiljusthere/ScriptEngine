@@ -1,0 +1,503 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Body Repel",
+      "set": "Every battle involving Body Repel",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Body Repel",
+      "found": [
+        "Satoru Gojo vs. Mahito's Group",
+        "Yuji Itadori & Aoi Todo vs. Mahito",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo vs. Mahito's Group",
+        "Yuji Itadori & Aoi Todo vs. Mahito",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Body Repel's name?",
+      "id": "jjk-pg-body_repel-001",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "\u64a5\u4f53"
+      ],
+      "found": [
+        "\u64a5\u4f53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Body Repel's name?",
+      "id": "jjk-pg-body_repel-002",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Battai"
+      ],
+      "found": [
+        "Battai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Body Repel first appear?",
+      "id": "jjk-pg-body_repel-003",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Chapter 89"
+      ],
+      "found": [
+        "Chapter 89"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Body Repel first depicted?",
+      "id": "jjk-pg-body_repel-004",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Episode 33"
+      ],
+      "found": [
+        "Episode 33"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-body_repel-005",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo is sealed.\nHanami is killed."
+      ],
+      "found": [
+        "Satoru Gojo is sealed.\nHanami is killed."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-body_repel-006",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Fukutoshin Line Platform"
+      ],
+      "found": [
+        "Fukutoshin Line Platform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-body_repel-007",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-body_repel-008",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Chapter 84 - 85 & 88 - 90"
+      ],
+      "found": [
+        "Chapter 84 - 85 & 88 - 90"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Satoru Gojo vs. Mahito's Group depicted?",
+      "id": "jjk-pg-body_repel-009",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Episode 32 - 33"
+      ],
+      "found": [
+        "Episode 32 - 33"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-body_repel-010",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Aoi Todo vs. Mahito?",
+      "id": "jjk-pg-body_repel-011",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Yuji & Todo are victorious. Pseudo-Geto intervenes."
+      ],
+      "found": [
+        "Yuji & Todo are victorious. Pseudo-Geto intervenes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "id": "jjk-pg-body_repel-012",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Shibuya Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "id": "jjk-pg-body_repel-013",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Aoi Todo vs. Mahito begin?",
+      "id": "jjk-pg-body_repel-014",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Chapter 127"
+      ],
+      "found": [
+        "Chapter 127"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Aoi Todo vs. Mahito depicted?",
+      "id": "jjk-pg-body_repel-015",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Episode 44 - 45"
+      ],
+      "found": [
+        "Episode 44 - 45"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Aoi Todo vs. Mahito take place?",
+      "id": "jjk-pg-body_repel-016",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "id": "jjk-pg-body_repel-017",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "found": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-body_repel-018",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "found": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-body_repel-019",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Mahito begin?",
+      "id": "jjk-pg-body_repel-020",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Chapter 121"
+      ],
+      "found": [
+        "Chapter 121"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Mahito depicted?",
+      "id": "jjk-pg-body_repel-021",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Episode 42 - 44"
+      ],
+      "found": [
+        "Episode 42 - 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-body_repel-022",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Body Repel generate its attack?",
+      "id": "jjk-pg-body_repel-024",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "By increasing the energy of the souls associated with this effect, the user can generate an overwhelming output of transfigured humans fused into one attack."
+      ],
+      "found": [
+        "By increasing the energy of the souls associated with this effect, the user can generate an overwhelming output of transfigured humans fused into one attack."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Mahito use Body Repel?",
+      "id": "jjk-pg-body_repel-025",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "Mahito uses Body Repel as a special mid-range attack that greatly adds to the unpredictability aspect of his offense. Body Repel can take many different forms, in fact, it has looked different every time Mahito has unleashed it."
+      ],
+      "found": [
+        "Mahito uses Body Repel as a special mid-range attack that greatly adds to the unpredictability aspect of his offense. Body Repel can take many different forms, in fact, it has looked different every time Mahito has unleashed it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Mahito first use Body Repel?",
+      "id": "jjk-pg-body_repel-026",
+      "subject": "Body Repel",
+      "accept": "all",
+      "expected": [
+        "The first time Mahito used this technique he targeted numerous non-sorcerers in a crowd during his group's battle with Satoru Gojo. Mahito and Choso worked together, using Supernova and Body Repel at the same time to cut down several civilians surrounding Satoru."
+      ],
+      "found": [
+        "The first time Mahito used this technique he targeted numerous non-sorcerers in a crowd during his group's battle with Satoru Gojo. Mahito and Choso worked together, using Supernova and Body Repel at the same time to cut down several civilians surrounding Satoru."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 25,
+    "fact_present": 25
+  }
+}

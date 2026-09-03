@@ -1,0 +1,489 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Shota Ito?",
+      "set": "Every enemy of Shota Ito",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Shota Ito?",
+      "set": "Shota Ito's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Shota Ito?",
+      "found": [
+        "Junpei Yoshino",
+        "Sotomura"
+      ],
+      "missing": [],
+      "members": [
+        "Junpei Yoshino",
+        "Sotomura"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Shota Ito?",
+      "found": [
+        "Satozakura High School"
+      ],
+      "missing": [],
+      "members": [
+        "Satozakura High School"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Shota Ito's name?",
+      "id": "jjk-pg-shota_ito-001",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "\u4f0a\u85e4\u7fd4\u592a"
+      ],
+      "found": [
+        "\u4f0a\u85e4\u7fd4\u592a"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Shota Ito's name?",
+      "id": "jjk-pg-shota_ito-002",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "It\u014d Sh\u014dta"
+      ],
+      "found": [
+        "It\u014d Sh\u014dta"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shota Ito's race?",
+      "id": "jjk-pg-shota_ito-003",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shota Ito's gender?",
+      "id": "jjk-pg-shota_ito-004",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Shota Ito?",
+      "id": "jjk-pg-shota_ito-005",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shota Ito's occupation?",
+      "id": "jjk-pg-shota_ito-006",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "High School Student"
+      ],
+      "found": [
+        "High School Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Shota Ito first appear?",
+      "id": "jjk-pg-shota_ito-007",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Chapter 25"
+      ],
+      "found": [
+        "Chapter 25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Shota Ito first depicted?",
+      "id": "jjk-pg-shota_ito-008",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Episode 10 (Flashback) Episode 11"
+      ],
+      "found": [
+        "Episode 10 (Flashback) Episode 11"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Shota Ito's Japanese voice actor?",
+      "id": "jjk-pg-shota_ito-009",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Takamasa Mogi"
+      ],
+      "found": [
+        "Takamasa Mogi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Shota Ito's English voice actor?",
+      "id": "jjk-pg-shota_ito-010",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Steve Staley"
+      ],
+      "found": [
+        "Steve Staley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Shota Ito play in the series?",
+      "id": "jjk-pg-shota_ito-013",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shota Ito's relationship to Junpei Yoshino?",
+      "id": "jjk-pg-shota_ito-014",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "one of Junpei Yoshino's former bullies"
+      ],
+      "found": [
+        "one of Junpei Yoshino's former bullies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Shota Ito look like?",
+      "id": "jjk-pg-shota_ito-015",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "a tall teenager with brown colored hair that extends to his ears, with most of it that is parted to the right"
+      ],
+      "found": [
+        "a tall teenager with brown colored hair that extends to his ears, with most of it that is parted to the right"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What marking does Shota have on his right arm?",
+      "id": "jjk-pg-shota_ito-016",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "marking similar to the ones that he inflicted on Junpei"
+      ],
+      "found": [
+        "marking similar to the ones that he inflicted on Junpei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Shota Ito wear?",
+      "id": "jjk-pg-shota_ito-017",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "a white button down short sleeve shirt with a pocket on the left breast side, black pants that is held up with a white belt, and light colored shoes"
+      ],
+      "found": [
+        "a white button down short sleeve shirt with a pocket on the left breast side, black pants that is held up with a white belt, and light colored shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shota Ito's true personality?",
+      "id": "jjk-pg-shota_ito-018",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "an abusive bully that adores preying on weaker students"
+      ],
+      "found": [
+        "an abusive bully that adores preying on weaker students"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What tendencies is Shota shown to have?",
+      "id": "jjk-pg-shota_ito-019",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "very jumpy and to have violent tendencies"
+      ],
+      "found": [
+        "very jumpy and to have violent tendencies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shota and his friends do to Junpei?",
+      "id": "jjk-pg-shota_ito-020",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "inflicted a scar on his forehead"
+      ],
+      "found": [
+        "inflicted a scar on his forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What prize did Shota Ito receive at his school?",
+      "id": "jjk-pg-shota_ito-021",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "best report prize for the National Book Report contest"
+      ],
+      "found": [
+        "best report prize for the National Book Report contest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was wrong with Shota's arm when Junpei showed up?",
+      "id": "jjk-pg-shota_ito-022",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "his arm got infected and he felt pain"
+      ],
+      "found": [
+        "his arm got infected and he felt pain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who confronted Shota about bullying Junpei after the incident?",
+      "id": "jjk-pg-shota_ito-023",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "Sotomura"
+      ],
+      "found": [
+        "Sotomura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sotomura say Shota and the others would have to carry?",
+      "id": "jjk-pg-shota_ito-024",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "the burden of murdering Junpei's heart"
+      ],
+      "found": [
+        "the burden of murdering Junpei's heart"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Shota rank in the 1st Character Popularity Poll?",
+      "id": "jjk-pg-shota_ito-025",
+      "subject": "Shota Ito",
+      "accept": "all",
+      "expected": [
+        "74th place in the manga's 1st Character Popularity Poll with 14 votes"
+      ],
+      "found": [
+        "74th place in the manga's 1st Character Popularity Poll with 14 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 23,
+    "fact_present": 23
+  }
+}

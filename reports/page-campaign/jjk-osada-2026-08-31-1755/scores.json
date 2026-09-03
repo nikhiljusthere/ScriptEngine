@@ -1,0 +1,661 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Osada?",
+      "set": "Every named technique of Osada",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Osada?",
+      "set": "Osada's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Osada?",
+      "set": "Osada's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Osada",
+      "set": "Every battle involving Osada",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Osada?",
+      "found": [
+        "Costume S\u00e9ance"
+      ],
+      "missing": [],
+      "members": [
+        "Costume S\u00e9ance"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Osada?",
+      "found": [
+        "Oldsada (by Maru and Tsurugi)"
+      ],
+      "missing": [],
+      "members": [
+        "Oldsada (by Maru and Tsurugi)"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Osada?",
+      "found": [
+        "Kyoto Jujutsu High (Formerly)"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High (Formerly)"
+      ]
+    },
+    {
+      "query": "Every battle involving Osada",
+      "found": [
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu"
+      ],
+      "missing": [],
+      "members": [
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Osada's name?",
+      "id": "jjk-pg-osada-001",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "\u9577\u7530"
+      ],
+      "found": [
+        "\u9577\u7530"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Osada's name?",
+      "id": "jjk-pg-osada-002",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Osada"
+      ],
+      "found": [
+        "Osada"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Osada's race?",
+      "id": "jjk-pg-osada-003",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Osada?",
+      "id": "jjk-pg-osada-004",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "46"
+      ],
+      "found": [
+        "46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Osada's gender?",
+      "id": "jjk-pg-osada-005",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Osada?",
+      "id": "jjk-pg-osada-006",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Osada's occupation?",
+      "id": "jjk-pg-osada-007",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer (Former)"
+      ],
+      "found": [
+        "Jujutsu Sorcerer (Former)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Osada first appear?",
+      "id": "jjk-pg-osada-008",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 3"
+      ],
+      "found": [
+        "Modulo Chapter 3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+      "id": "jjk-pg-osada-009",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Tsurugi allows Maru to win."
+      ],
+      "found": [
+        "Tsurugi allows Maru to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-osada-010",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Tokyo, Japan"
+      ],
+      "found": [
+        "Tokyo, Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-osada-011",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "January 14, 2087"
+      ],
+      "found": [
+        "January 14, 2087"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu begin?",
+      "id": "jjk-pg-osada-012",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Chapter 14"
+      ],
+      "found": [
+        "Chapter 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which series does Osada appear?",
+      "id": "jjk-pg-osada-017",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen Modulo series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen Modulo series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Osada look like?",
+      "id": "jjk-pg-osada-018",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "a middle-aged man with narrow eyes, short black hair, facial hair along his jaw and a mustache, and thick hair on his forearms"
+      ],
+      "found": [
+        "a middle-aged man with narrow eyes, short black hair, facial hair along his jaw and a mustache, and thick hair on his forearms"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What costume does Osada wear?",
+      "id": "jjk-pg-osada-019",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "a shark costume with openings that allow his face to be exposed and his limbs to extend outward"
+      ],
+      "found": [
+        "a shark costume with openings that allow his face to be exposed and his limbs to extend outward"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Osada wear beneath his costume?",
+      "id": "jjk-pg-osada-020",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "a white tank top and a pair of black pants"
+      ],
+      "found": [
+        "a white tank top and a pair of black pants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Osada's appearance differ when he was younger?",
+      "id": "jjk-pg-osada-021",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "slightly longer hair, no facial hair, and wore a white martial arts uniform"
+      ],
+      "found": [
+        "slightly longer hair, no facial hair, and wore a white martial arts uniform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Osada's demeanor described?",
+      "id": "jjk-pg-osada-022",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "a brash, abrasive demeanor that often masks his deeper compassion"
+      ],
+      "found": [
+        "a brash, abrasive demeanor that often masks his deeper compassion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Osada particularly irritated about?",
+      "id": "jjk-pg-osada-023",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "easily irritated, particularly about being called old"
+      ],
+      "found": [
+        "easily irritated, particularly about being called old"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Osada refuse to kill Toranosuke?",
+      "id": "jjk-pg-osada-024",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "his belief that humans should bear responsibility for problems created by human circumstances"
+      ],
+      "found": [
+        "his belief that humans should bear responsibility for problems created by human circumstances"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What else characterizes Osada besides his rough exterior?",
+      "id": "jjk-pg-osada-025",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "loneliness and a paternal attachment to Toranosuke"
+      ],
+      "found": [
+        "loneliness and a paternal attachment to Toranosuke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Osada train as a young sorcerer?",
+      "id": "jjk-pg-osada-026",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "enrolled at Kyoto Jujutsu High"
+      ],
+      "found": [
+        "enrolled at Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Osada choose to live after retiring?",
+      "id": "jjk-pg-osada-027",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "alone in the mountains of Gifu"
+      ],
+      "found": [
+        "alone in the mountains of Gifu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What forced Toranosuke to descend from the mountain?",
+      "id": "jjk-pg-osada-028",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "The heat generated by the solar panels dried up the mountain's river"
+      ],
+      "found": [
+        "The heat generated by the solar panels dried up the mountain's river"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was assigned the mission to exterminate the mysterious 'shark'?",
+      "id": "jjk-pg-osada-029",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "Tsurugi, Yuka, and Maru"
+      ],
+      "found": [
+        "Tsurugi, Yuka, and Maru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Tsurugi kill Toranosuke?",
+      "id": "jjk-pg-osada-030",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "unsheathed his katana and killed it with a single slash"
+      ],
+      "found": [
+        "unsheathed his katana and killed it with a single slash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Tsurugi entrust to Osada at the end?",
+      "id": "jjk-pg-osada-031",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "the cub"
+      ],
+      "found": [
+        "the cub"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Osada's combat prowess as a sorcerer?",
+      "id": "jjk-pg-osada-032",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "demonstrated little combat prowess as a jujutsu sorcerer, relying primarily on his innate technique for detection"
+      ],
+      "found": [
+        "demonstrated little combat prowess as a jujutsu sorcerer, relying primarily on his innate technique for detection"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What type of cursed technique does Osada have?",
+      "id": "jjk-pg-osada-033",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "a s\u00e9ance-type technique that allows him to summon and utilize the abilities of whatever he is wearing"
+      ],
+      "found": [
+        "a s\u00e9ance-type technique that allows him to summon and utilize the abilities of whatever he is wearing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Osada do by activating his technique while wearing a shark costume?",
+      "id": "jjk-pg-osada-034",
+      "subject": "Osada",
+      "accept": "all",
+      "expected": [
+        "swim through the air at high speeds and gains an enhanced sense of smell that is particularly sensitive to the scent of blood"
+      ],
+      "found": [
+        "swim through the air at high speeds and gains an enhanced sense of smell that is particularly sensitive to the scent of blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 30
+  }
+}

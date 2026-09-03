@@ -1,0 +1,802 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Larue?",
+      "set": "Every named technique of Larue",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Larue?",
+      "set": "Every ally of Larue",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Larue?",
+      "set": "Every family of Larue",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Larue",
+      "set": "Every battle involving Larue",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 0.5,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Larue?",
+      "found": [
+        "Heart Catch",
+        "Cutie Honey"
+      ],
+      "missing": [],
+      "members": [
+        "Cutie Honey",
+        "Heart Catch"
+      ]
+    },
+    {
+      "query": "What are all the allies of Larue?",
+      "found": [
+        "Yuki Tsukumo",
+        "Yuta Okkotsu",
+        "Miguel Oduol"
+      ],
+      "missing": [],
+      "members": [
+        "Miguel Oduol",
+        "Yuki Tsukumo",
+        "Yuta Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the families of Larue?",
+      "found": [
+        "Nanako Hasaba",
+        "Mimiko Hasaba",
+        "Manami Suda",
+        "Toshihisa Negi",
+        "Miguel Oduol"
+      ],
+      "missing": [],
+      "members": [
+        "Manami Suda",
+        "Miguel Oduol",
+        "Mimiko Hasaba",
+        "Nanako Hasaba",
+        "Toshihisa Negi"
+      ]
+    },
+    {
+      "query": "Every battle involving Larue",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Larue's name?",
+      "id": "jjk-pg-larue-001",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "\u30e9\u30eb\u30a5"
+      ],
+      "found": [
+        "\u30e9\u30eb\u30a5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Larue's name?",
+      "id": "jjk-pg-larue-002",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Rar\u016b"
+      ],
+      "found": [
+        "Rar\u016b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Larue's race?",
+      "id": "jjk-pg-larue-003",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Larue?",
+      "id": "jjk-pg-larue-004",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "27-28"
+      ],
+      "found": [
+        "27-28"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Larue's gender?",
+      "id": "jjk-pg-larue-005",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Larue?",
+      "id": "jjk-pg-larue-006",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Larue's occupation?",
+      "id": "jjk-pg-larue-007",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Larue first appear?",
+      "id": "jjk-pg-larue-008",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3 Chapter 114"
+      ],
+      "found": [
+        "Chapter 0-3 Chapter 114"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Larue first depicted?",
+      "id": "jjk-pg-larue-009",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "The Movie\nEpisode 40"
+      ],
+      "found": [
+        "The Movie\nEpisode 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Larue's Japanese voice actor?",
+      "id": "jjk-pg-larue-010",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Sho Hayami"
+      ],
+      "found": [
+        "Sho Hayami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-larue-011",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-larue-012",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-larue-013",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-larue-014",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-larue-015",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Larue use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-larue-016",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Heart Catch, Cutie Honey"
+      ],
+      "found": [
+        "Heart Catch, Cutie Honey"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is distinctive about Larue's chest?",
+      "id": "jjk-pg-larue-021",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "two large hearts on his pectoral muscles where his areolas should be"
+      ],
+      "found": [
+        "two large hearts on his pectoral muscles where his areolas should be"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What keeps Larue's blonde hair down?",
+      "id": "jjk-pg-larue-022",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "a blue headband"
+      ],
+      "found": [
+        "a blue headband"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the only clothing Larue wears?",
+      "id": "jjk-pg-larue-023",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "a pair of loose pants"
+      ],
+      "found": [
+        "a pair of loose pants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is known about Larue's personality?",
+      "id": "jjk-pg-larue-024",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "he shares Geto's ideology and considers all members of their group as family"
+      ],
+      "found": [
+        "he shares Geto's ideology and considers all members of their group as family"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Larue stop the squabble between Nanako Hasaba and the other remnants?",
+      "id": "jjk-pg-larue-025",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Geto wouldn't want them to fight"
+      ],
+      "found": [
+        "Geto wouldn't want them to fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Larue infiltrate Jujutsu High with during the Cursed Child Arc?",
+      "id": "jjk-pg-larue-026",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Geto, Nanako and Mimiko Hasaba"
+      ],
+      "found": [
+        "Geto, Nanako and Mimiko Hasaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Larue rescue while Yuki confronted Kenjaku?",
+      "id": "jjk-pg-larue-027",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo, Mai Zenin and Kasumi Miwa"
+      ],
+      "found": [
+        "Aoi Todo, Mai Zenin and Kasumi Miwa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Larue promise the group before they parted ways?",
+      "id": "jjk-pg-larue-028",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "they will one day meet again, and once again share a meal together"
+      ],
+      "found": [
+        "they will one day meet again, and once again share a meal together"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Larue rescue from Sukuna during the Shinjuku Showdown?",
+      "id": "jjk-pg-larue-029",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "a defeated Atsuya Kusakabe"
+      ],
+      "found": [
+        "a defeated Atsuya Kusakabe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What condition did Miguel set for the fight?",
+      "id": "jjk-pg-larue-030",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "they fight after Sukuna can no longer use his domain and after Gojo and Yuta lose"
+      ],
+      "found": [
+        "they fight after Sukuna can no longer use his domain and after Gojo and Yuta lose"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Larue activate on Sukuna's heart before Yuji's strike?",
+      "id": "jjk-pg-larue-031",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Cutie Honey"
+      ],
+      "found": [
+        "Cutie Honey"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Miguel tell Larue when he went to recover him?",
+      "id": "jjk-pg-larue-032",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "it was best to pull out of the fight"
+      ],
+      "found": [
+        "it was best to pull out of the fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Larue durable enough to survive?",
+      "id": "jjk-pg-larue-033",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "a Black Flash from Sukuna"
+      ],
+      "found": [
+        "a Black Flash from Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Larue's Heart Catch create?",
+      "id": "jjk-pg-larue-034",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "a virtual hand that grabs his target from afar"
+      ],
+      "found": [
+        "a virtual hand that grabs his target from afar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to Larue when the Heart Catch hand is destroyed?",
+      "id": "jjk-pg-larue-035",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "one tenth of the damage is transferred back to his body"
+      ],
+      "found": [
+        "one tenth of the damage is transferred back to his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Cutie Honey affect its target?",
+      "id": "jjk-pg-larue-036",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "the target's pupils change into heart shapes"
+      ],
+      "found": [
+        "the target's pupils change into heart shapes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event in the Cursed Child Arc does Larue appear in?",
+      "id": "jjk-pg-larue-037",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "found": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event besides the battle with Kenjaku and Uraume is listed for Larue?",
+      "id": "jjk-pg-larue-038",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What battle is listed for Larue in the Shibuya Incident Arc?",
+      "id": "jjk-pg-larue-039",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume"
+      ],
+      "found": [],
+      "missing": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Larue rank in the third Popularity Poll?",
+      "id": "jjk-pg-larue-040",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "113th"
+      ],
+      "found": [
+        "113th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Larue rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-larue-041",
+      "subject": "Larue",
+      "accept": "all",
+      "expected": [
+        "66th"
+      ],
+      "found": [
+        "66th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 11,
+    "canon_total": 11,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 3,
+    "exact_of": 4,
+    "exact_rate": 0.75,
+    "precision_closed": 0.9167,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 37,
+    "fact_present": 36
+  }
+}

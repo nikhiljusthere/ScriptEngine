@@ -1,0 +1,1033 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-23",
+  "note": "Section 4 (identity/grade/aliases/appearance/vitals/media) of the Kento Nanami cluster. Rosters staged in _jjk_page_kento_nanami.decl4.yaml.",
+  "retired": [
+    {
+      "id": "jjk-pg-kento_nanami-retired-s4-01",
+      "question": "What are the kanji and romaji of Kento Nanami's name?",
+      "item": "",
+      "reason": "The infobox `kanji` cell (七海建人) and `romaji` cell (Nanami Kento) are Nihongo/Ruby-derived cells that the pipeline does not make goldable: the lead's {{Nihongo}}/{{Ruby}} furigana is not chunked, so a kanji- or romaji-only answer cannot be verified against stored wikitext. The clause is retired rather than rephrased; the English name is covered by the identity questions instead."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-kento_nanami-151",
+      "kind": "fact",
+      "question": "What kind of character is Kento Nanami in the Jujutsu Kaisen series?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "major supporting character",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'Kento Nanami ... is a major supporting character in Jujutsu Kaisen' (the series title is a wikilink, so the gold stops before it)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-152",
+      "kind": "fact",
+      "question": "What sorcerer grade was Kento Nanami ranked as while working as a Jujutsu High sorcerer?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "grade 1",
+          "aliases": [
+            "Grade 1"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'While working as a Jujutsu High sorcerer, Nanami was ranked grade 1 and operated primarily out of the Tokyo campus'; the infobox class field reads 'Grade 1'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-153",
+      "kind": "fact",
+      "question": "What is Kento Nanami's occupation, according to his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerer",
+          "aliases": [
+            "jujutsu sorcerer"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'occupation = Jujutsu Sorcerer' (a wikilink whose display text is 'Jujutsu Sorcerer'); the lead writes 'continue working as a jujutsu sorcerer'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-154",
+      "kind": "fact",
+      "question": "What is Kento Nanami's affiliation, according to his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'affiliation = Tokyo Jujutsu High' (display text of the Tokyo Metropolitan Curse Technical College link); the lead says he was 'a former student of Tokyo Jujutsu High'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-155",
+      "kind": "fact",
+      "question": "What is Kento Nanami's race, according to his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'race = Human'; the document card renders 'Species: Human'. Confirmed surfacing via live cli query (fact + card passage)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-156",
+      "kind": "fact",
+      "question": "What is Kento Nanami's status?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Deceased",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami",
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'status = Deceased'; the Synopsis confirms the death in the Shibuya Incident (Mahito kills him) and the afterlife scene meets him among those 'who have since died'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-157",
+      "kind": "fact",
+      "question": "What is Kento Nanami's gender, according to his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Male",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'gender = Male'; the page is also categorized 'Male'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-158",
+      "kind": "fact",
+      "question": "What two ages are listed for Kento Nanami in his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "27",
+          "aliases": []
+        },
+        {
+          "item": "28",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'age = 27 (Volume 3 profile) / 28 (Official Fanbook)'. Both numerals are stated in the infobox cell; '27' per the Volume 3 profile, '28' per the fanbook."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-159",
+      "kind": "fact",
+      "question": "What is Kento Nanami's birthday, according to his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "July 3, 1990",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'birthday = July 3, 1990' (fanbook-sourced)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-160",
+      "kind": "fact",
+      "question": "How tall is Kento Nanami, according to his infobox?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "184 cm",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'height = 184 cm (6'0½\")' per the Volume 3 profile; the gold stops at '184 cm', the value the document card renders as 'Height: 184 cm (6'0½\")'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-161",
+      "kind": "fact",
+      "question": "In which manga chapter does Kento Nanami make his debut?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 18",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'debut = Chapter 18' (a wikilink whose display text is 'Chapter 18'); the document card renders 'Manga Debut: Chapter 18' and it is a related entity in live queries."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-162",
+      "kind": "fact",
+      "question": "In which anime episode does Kento Nanami make his debut?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 8",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'debutanime = Episode 8' (a wikilink whose display text is 'Episode 8'); the document card renders 'Anime Debut: Episode 8'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-163",
+      "kind": "fact",
+      "question": "Who voices Kento Nanami in the Japanese version?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kenjiro Tsuda",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'voice = Kenjiro Tsuda' (a Wikipedia link whose display text is 'Kenjiro Tsuda'); the document card renders the voice line."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-164",
+      "kind": "fact",
+      "question": "Who voices Kento Nanami in the English version?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "David Vincent",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'eng voice = David Vincent' (a Wikipedia link whose display text is 'David Vincent'); the document card renders the English voice line."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-165",
+      "kind": "set",
+      "question": "What are Kento Nanami's aliases?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "7:3 Sorcerer",
+          "aliases": []
+        },
+        {
+          "item": "Nanamin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox alias field is a closed two-value set: 'alias = 7:3 Sorcerer (By Mahito) / Nanamin (By Gojo and Yuji)'. '7:3 Sorcerer' is Mahito's name for him (answered per-alias at jjk-pg-kento_nanami-083) and 'Nanamin' is the nickname Gojo and Yuji use (jjk-pg-kento_nanami-084); the roster collects the field's values. Staged in _jjk_page_kento_nanami.decl4.yaml."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-166",
+      "kind": "set",
+      "question": "What are Kento Nanami's affiliations?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox affiliation field is a closed single-value set: 'affiliation = Tokyo Jujutsu High'. Staged in _jjk_page_kento_nanami.decl4.yaml; 'Tokyo Jujutsu High' is the infobox display text and is stated throughout the prose."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-167",
+      "kind": "fact",
+      "question": "How did Mahito kill Kento Nanami during the Shibuya Incident?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "causing his upper body to gruesomely explode from the waist up",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis Shibuya Incident Arc: 'Nanami tells Yuji that he has it here before Mahito goes to kill Nanami by causing his upper body to gruesomely explode from the waist up with his Idle Transfiguration'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-168",
+      "kind": "fact",
+      "question": "What was left of Kento Nanami after Mahito killed him?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "leaving only Nanami’s hips and legs intact",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis Shibuya Incident Arc: the killing blow is 'leaving only Nanami’s hips and legs intact' (the page writes the possessive with a right single quote)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-169",
+      "kind": "fact",
+      "question": "Where does Gojo meet Kento Nanami after his death, per the Synopsis?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the afterlife",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis Shinjuku Showdown Arc: 'After he is struck by Sukuna's Dismantle, Gojo awakes in the afterlife. There, he meets Nanami, Geto, and others involved in the Star Plasma Vessel incident who have since died.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-170",
+      "kind": "fact",
+      "question": "What color is Kento Nanami's hair?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Blond",
+          "aliases": [
+            "blonde"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'hair = Blond'; Appearance: 'blonde hair styled with a neat part'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-171",
+      "kind": "fact",
+      "question": "What color are Kento Nanami's eyes?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hazel",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'eye = Hazel'; Appearance: 'small hazel-colored eyes'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-172",
+      "kind": "fact",
+      "question": "How does the Appearance section describe Kento Nanami's build?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a tall, well-built man",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Nanami is a tall, well-built man with blonde hair styled with a neat part.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-173",
+      "kind": "fact",
+      "question": "How is Kento Nanami's hair styled, according to the Appearance section?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "styled with a neat part",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'blonde hair styled with a neat part'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-174",
+      "kind": "fact",
+      "question": "What does the Appearance section say about Kento Nanami's eyebrows?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "very thin eyebrows",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Nanami has very thin eyebrows as well as small hazel-colored eyes'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-175",
+      "kind": "fact",
+      "question": "What is distinctive about the arms of Kento Nanami's signature sunglasses?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "don't have arms that wrap around the ears",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'his signature sunglasses, which don't have arms that wrap around the ears'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-176",
+      "kind": "fact",
+      "question": "What is Kento Nanami usually fully dressed in, befitting a former office worker?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a formal business suit",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Befitting a former office worker, Nanami is usually fully dressed in a formal business suit.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-177",
+      "kind": "fact",
+      "question": "What does Kento Nanami's usual suit consist of?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a blue dress shirt underneath a tan blazer with matching slacks and light shoes",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'His usual suit consists of a blue dress shirt underneath a tan blazer with matching slacks and light shoes.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-178",
+      "kind": "fact",
+      "question": "Where is the holster that sheaths Kento Nanami's blunt sword hidden?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "hidden by the back of his blazer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Attached to his dress shirt, there is a holster that sheaths Nanami's blunt sword, hidden by the back of his blazer.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-179",
+      "kind": "fact",
+      "question": "What pattern does Kento Nanami's necktie share with the bandages around his blunt sword?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the same dotted pattern",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'He also sports a necktie that shares the same dotted pattern as the bandages around his blunt sword.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-180",
+      "kind": "fact",
+      "question": "What did Kento Nanami wear after graduating and working for corporate?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a vertical striped jacket over a white button-down shirt and dark-colored tie with white dots all over it",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'After graduating from Jujutsu High and working for corporate, Nanami wore a vertical striped jacket over a white button-down shirt and dark-colored tie with white dots all over it'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-181",
+      "kind": "fact",
+      "question": "What did Kento Nanami wear as a student at Jujutsu High?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a normal Jujutsu High uniform",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'As a student, Nanami wore a normal Jujutsu High uniform.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-182",
+      "kind": "fact",
+      "question": "How was Kento Nanami's hair different when he was younger?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "styled slightly differently",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'His hair was styled slightly differently when he was younger.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-183",
+      "kind": "fact",
+      "question": "What state was Kento Nanami left in after encountering Jogo?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "left in a horrific state with half of his flesh and his entire hair burnt off on the left side",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'he is later left in a horrific state with half of his flesh and his entire hair burnt off on the left side after encountering Jogo'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-184",
+      "kind": "fact",
+      "question": "What did Kento Nanami lose fighting Dagon during the Shibuya Incident?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "an eye",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'During the Shibuya Incident, Nanami loses an eye fighting Dagon'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-185",
+      "kind": "fact",
+      "question": "During what event, per the Appearance section, does Kento Nanami lose an eye fighting Dagon?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'During the Shibuya Incident, Nanami loses an eye fighting Dagon' (the event is a wikilink whose display text is 'Shibuya Incident')."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-186",
+      "kind": "fact",
+      "question": "How is Kento Nanami drawn in Season 2 compared to Season 1 and the manga, per the Trivia?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "quite more muscular in Season 2 than he is in Season 1 and the manga",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami is quite more muscular in Season 2 than he is in Season 1 and the manga.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-187",
+      "kind": "fact",
+      "question": "Which character does the Trivia say Kento Nanami draws heavily from?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yoshikage Kira",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami's appearance, personality, mannerisms, his history as a salaryman and desire for a peaceful life draws heavily from Yoshikage Kira'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-188",
+      "kind": "fact",
+      "question": "In which series is Yoshikage Kira the main antagonist?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Yoshikage Kira, the main antagonist of JoJo's Bizarre Adventure: Diamond is Unbreakable' (the series title is a Wikipedia link whose display text is golded)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-189",
+      "kind": "fact",
+      "question": "What is Kento Nanami's hobby, according to the official fanbook?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "drinking alcohol and cooking for himself",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia fanbook block: 'His hobby is drinking alcohol and cooking for himself.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-190",
+      "kind": "fact",
+      "question": "What is Kento Nanami's least favorite food, according to the official fanbook?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Flat noodles",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia fanbook block: 'Least favorite food: Flat noodles.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-191",
+      "kind": "fact",
+      "question": "What food does the Trivia say Kento Nanami loves?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "bread",
+          "aliases": [
+            "Bread"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami loves bread and is a foodie.' (The fanbook's 'Favorite food: Bread and ajillo' line is a wikilinked phrase, so the gold is the unlinked word 'bread'.)"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-192",
+      "kind": "fact",
+      "question": "What is Kento Nanami's enrollment method, according to the official fanbook?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Scouted",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia fanbook block: 'Enrollment method: Scouted.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-193",
+      "kind": "fact",
+      "question": "What does Kento Nanami do after leaving work on time, according to the official fanbook?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "stays at home to eat, drink, and read",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia fanbook block: 'After leaving work on time, Nanami stays at home to eat, drink, and read.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-194",
+      "kind": "fact",
+      "question": "Behind whom is Kento Nanami the second heaviest drinker in the series?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shoko Ieiri",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami is the second heaviest drinker in the series, behind Shoko Ieiri.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-195",
+      "kind": "fact",
+      "question": "Whom did Gege Akutami create Kento Nanami to represent?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "someone quitting his job as a salaryman",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Gege Akutami created Nanami to represent \"someone quitting his job as a salaryman\".'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-196",
+      "kind": "fact",
+      "question": "What did Gege Akutami originally want to make Kento Nanami?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a villain",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Akutami originally wanted to make Nanami a villain.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-197",
+      "kind": "fact",
+      "question": "What did Gege Akutami keep forgetting to draw on Kento Nanami during the Shibuya Incident?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nanami's watch",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Gege Akutami kept forgetting to draw Nanami's watch during the Shibuya Incident Arc'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-198",
+      "kind": "fact",
+      "question": "What did Gege Akutami assure fans about Kento Nanami's forgotten watch?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "he was definitely working overtime",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: '...but assured fans he was definitely working overtime.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-199",
+      "kind": "fact",
+      "question": "When, per the Trivia, was Kento Nanami's end decided?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "while planning the Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami's end was decided by Akutami while planning the Shibuya Incident.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-200",
+      "kind": "fact",
+      "question": "Which band performed 'Saboten Record', one of the theme songs Gege Akutami chose for Kento Nanami?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Fujifabric",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'The theme songs that Gege Akutami chose for Nanami is \"Yura Yura Teikoku De Kangaechu\" by the band Yura Yura Teikoku and \"Saboten Record\" by the band Fujifabric.'"
+    }
+  ]
+}

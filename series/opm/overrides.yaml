@@ -1,7 +1,40 @@
 # Per-wiki handling for the One-Punch Man wiki.
 
+# This wiki labels its character hub pages (`Saitama`, `Genos`, `Garou`, ...)
+# as `parent_tab` because they carry sub-tabs (`Saitama/Synopsis`,
+# `Saitama/Relationships`, ...). The default subject priority has no entry for
+# it, so on any question naming Saitama a battle page whose name shares a word
+# (`Saitama vs. Orochi`, via the `saitama` alias) won subject resolution, and
+# the router sent attribute lookups ("Why was Saitama disqualified...") down
+# the narrative timeline. Character hubs outrank battles here; the rest keeps
+# the default order. Declared 2026-08-21 for the Saitama page campaign.
+subject_type_priority:
+  - parent_tab
+  - character
+  - character_synopsis
+  - battle
+  - battle_3sides
+  - event
+  - story_arcs
+  # The `Chapters and Volumes` list page. Without this entry `unknown` ranked
+  # ahead of it, and "What is the 195th punch titled in One-Punch Man?"
+  # resolved `One-Punch Man` (the series page) instead of the page that holds
+  # the punch list, sending qa at the wrong document. Declared 2026-08-21 for
+  # the Chapters & Volumes page campaign.
+  - unknown
+  - arc
+  - species
+  - organizations
+  - organization
+  - occupation
+  - location
+  - technique
+  - combat
+  - item
+  - items
+
 # One-Punch Man exists twice over: the webcomic ONE draws and the manga Murata
-# redraws from it. They share a story and not a numbering, and the wiki keeps
+# redraws it from. They share a story and not a numbering, and the wiki keeps
 # them apart on the reference itself:
 #
 #     {{ref|ch = 20|p = 27}}    manga chapter 20
@@ -40,6 +73,15 @@ rosters:
       - named serious series technique saitama uses
     subject: Saitama
     members: [Serious Punch, Omnidirectional Serious Punch, Serious Side Hops, Serious Squirt Gun, Serious Table Flip, Serious Sneeze, Serious Headbutt, Serious Spin, Serious Whack-a-Mole, Serious Squat]
+
+  # What are all the aliases of Saitama?
+  # Declared 2026-08-21 for the page campaign (`opm-pg-saitama-002`): both names
+  # sit in one `alias =` infobox field on `Saitama`, a shape roster discovery
+  # does not read. Members transcribed from `Saitama`.
+  - name: Saitama's aliases
+    match: [all the aliases of saitama, aliases of saitama, saitama's aliases]
+    subject: Saitama
+    members: [Caped Baldy, The Fist That Has Turned Against God]
 
   # Every major cyborg upgrade Genos has received in One Punch Man
   # Declared 2026-08-15: the engine resolved this to `The 'List of Upgrades' section on the Genos page explicitly enumerates all 9 major upgrades, matching the gold exactly.` and returned the wrong set. Members transcribed from `Genos`.
@@ -98,6 +140,113 @@ rosters:
     match: [disciple of atomic samurai, disciples of atomic samurai,
             atomic samurai's disciples]
     members: [Iaian, Okamaitachi, Bushidrill]
+
+  # Every One-Punch Man manga volume
+  # Declared 2026-08-21 for the page campaign (`opm-pg-chapters_volumes-001`):
+  # the `Chapters and Volumes` list page carries category `Volumes`, so the
+  # 37 `Volume N` pages discovered by that category came back with their list
+  # page beside them, which scored the set one member over. The question is
+  # about the volumes themselves, and this wiki keeps 37 of them (Volumes 1-37
+  # as of the 2026-08-21 crawl). Members transcribed from `Chapters and
+  # Volumes`, section `Volume List`.
+  - name: Every One-Punch Man manga volume
+    match:
+      - every volume of one-punch man
+      - all the volumes of one-punch man
+      - volumes of one-punch man
+      - one-punch man volumes
+      - every one-punch man manga volume
+    subject: One-Punch Man
+    members:
+      [Volume 1, Volume 2, Volume 3, Volume 4, Volume 5, Volume 6, Volume 7,
+       Volume 8, Volume 9, Volume 10, Volume 11, Volume 12, Volume 13,
+       Volume 14, Volume 15, Volume 16, Volume 17, Volume 18, Volume 19,
+       Volume 20, Volume 21, Volume 22, Volume 23, Volume 24, Volume 25,
+       Volume 26, Volume 27, Volume 28, Volume 29, Volume 30, Volume 31,
+       Volume 32, Volume 33, Volume 34, Volume 35, Volume 36, Volume 37]
+
+  # Every One-Punch Man online chapter not yet in tankobon format
+  # Declared 2026-08-21 for the page campaign (`opm-pg-chapters_volumes-002`):
+  # `What are all the ... chapters ... not yet in tankobon format` is a plural
+  # wh-question that resolves the `Chapters` category (all 400 chapter pages,
+  # tankobon and online both) and returns 200 of them -- the wrong set, and
+  # capped. The wiki holds the answer as the `Chapters Not Yet in Tankonbon
+  # Format (Online)` section on `Chapters and Volumes`: 44 online chapters
+  # (the 195th through 239th punch), numbered by the webcomic numbering.
+  # Members transcribed from that section.
+  - name: Every One-Punch Man online chapter not yet in tankobon format
+    match:
+      - online chapters of one-punch man not yet in tankobon format
+      - chapters not yet in tankobon format
+      - online chapters not yet in tankobon format
+      - chapters not yet in tankonbon format
+    subject: One-Punch Man
+    members:
+      [Chapter 190 (Online), Chapter 191 (Online), Chapter 192 (Online),
+       Chapter 193 (Online), Chapter 194 (Online), Chapter 195 (Online),
+       Chapter 196 (Online), Chapter 197 (Online), Chapter 198 (Online),
+       Chapter 199 (Online), Chapter 200 (Online), Chapter 201 (Online),
+       Chapter 202 (Online), Chapter 203 (Online), Chapter 204 (Online),
+       Chapter 205 (Online), Chapter 206 (Online), Chapter 207 (Online),
+       Chapter 208 (Online), Chapter 209 (Online), Chapter 210 (Online),
+       Chapter 211 (Online), Chapter 212 (Online), Chapter 213 (Online),
+       Chapter 214 (Online), Chapter 215 (Online), Chapter 216 (Online),
+       Chapter 217 (Online), Chapter 218 (Online), Chapter 219 (Online),
+       Chapter 220 (Online), Chapter 221 (Online), Chapter 222 (Online),
+       Chapter 223 (Online), Chapter 224 (Online), Chapter 225 (Online),
+       Chapter 226 (Online), Chapter 227 (Online), Chapter 228 (Online),
+       Chapter 229 (Online), Chapter 230 (Online), Chapter 231 (Online),
+        Chapter 232 (Online), Chapter 233 (Online), Chapter 234 (Online)]
+
+  # Saga membership rosters
+  # Declared 2026-08-21 for the Story Arcs page campaign: "What arcs are in
+  # the <Saga> Saga?" routes roster (story-in-order pattern) and returns the
+  # `Arcs` category (all 19 arc pages) rather than the saga's subset.
+  - name: Every arc in the Introduction Saga of One-Punch Man
+    match:
+      - arcs in the introduction saga
+      - arcs of the introduction saga
+      - introduction saga arcs
+    subject: One-Punch Man
+    members: [Saitama Introduction Arc, House of Evolution Arc, Paradise Group Arc]
+
+  - name: Every arc in the Hero Association Saga of One-Punch Man
+    match:
+      - arcs in the hero association saga
+      - arcs of the hero association saga
+      - hero association saga arcs
+    subject: One-Punch Man
+    members: [National Superhero Registry Arc, Rumored Monster Arc, Giant Meteor Arc, Sea Monster Arc, Alien Conquerors Arc, King Arc]
+
+  - name: Every arc in the Human Monster Saga of One-Punch Man
+    match:
+      - arcs in the human monster saga
+      - arcs of the human monster saga
+      - human monster saga arcs
+    subject: One-Punch Man
+    members: [Garou Introduction Arc, The Blizzard Group Arc, Hero Hunt Arc, Monster Raid Arc, Super Fight Arc, Monster Association Arc]
+
+  - name: Every arc in the Neo Heroes Saga of One-Punch Man
+    match:
+      - arcs in the neo heroes saga
+      - arcs of the neo heroes saga
+      - neo heroes saga arcs
+    subject: One-Punch Man
+    members: [Psychic Sisters Arc, Neo Heroes Introduction Arc, Cruel Dragon Arc, Ninjas Arc, Supreme Hero Arc, Neo Heroes Uprising Arc, Robot Invasion Arc]
+
+  # The four saga headings of the `Story Arcs` index page, transcribed from its
+  # `== <Saga> Saga ==` sections. Declared 2026-08-22 for the round-2 G6 fix:
+  # "What are the overarching sagas..." carries the plural `sagas` cue that
+  # `wants_chronology` fires on, and the 15-arc chain has no saga grouping to
+  # answer it with; the declared set is the wiki's own four-saga listing.
+  - name: Every overarching saga of One-Punch Man
+    match:
+      - overarching saga of one-punch man
+      - overarching sagas of one-punch man
+      - overarching sagas in one-punch man
+      - every saga of one-punch man
+    subject: One-Punch Man
+    members: [Introduction Saga, Hero Association Saga, Human Monster Saga, Neo Heroes Saga]
 
   - name: Mysterious Beings
     match: [monster, monsters, mysterious being, mysterious beings]
@@ -194,7 +343,278 @@ rosters:
     match: [robot, robots, cyborg, cyborgs]
     category: Robots
 
-# Names an extraction pass stored as this character's ability that are not one:
+  # ── Character alias rosters (page campaign, declared 2026-08-21) ─────────
+  # Each sits in one `alias =` infobox field on the character page, a shape
+  # roster discovery does not read (same as Saitama's). Members transcribed
+  # from the `alias =` field. Standard question phrasing: "What are all the
+  # aliases of <Name>?" so the match below claims the topic.
+  - name: Garou's aliases
+    match: [all the aliases of garou, aliases of garou, garou's aliases]
+    subject: Garou
+    members: [Human Monster, Hero Hunter, Wolfman]
+  - name: Genos's aliases
+    match: [all the aliases of genos, aliases of genos, genos's aliases]
+    subject: Genos
+    members: [Demon Cyborg]
+  - name: Tatsumaki's aliases
+    match: [all the aliases of tatsumaki, aliases of tatsumaki, tatsumaki's aliases]
+    subject: Tatsumaki
+    members: [Tornado of Terror]
+  - name: Empty Void's aliases
+    match: [all the aliases of empty void, aliases of empty void, empty void's aliases]
+    subject: Empty Void
+    members: [That Man]
+  - name: Orochi's aliases
+    match: [all the aliases of orochi, aliases of orochi, orochi's aliases]
+    subject: Orochi
+    members: [Monster King]
+  - name: Beaut's aliases
+    match: [all the aliases of beaut, aliases of beaut, beaut's aliases]
+    subject: Beaut
+    members: [Sweet Mask, Secret Mask]
+  - name: Bang's aliases
+    match: [all the aliases of bang, aliases of bang, bang's aliases]
+    subject: Bang
+    members: [Silver Fang, Greatest Treasure of Martial Arts, Wind of Blood]
+  - name: Flashy Flash's aliases
+    match: [all the aliases of flashy flash, aliases of flashy flash, flashy flash's aliases]
+    subject: Flashy Flash
+    members: [Forelocks in the Face, Clavicle Smash]
+  - name: Boros's aliases
+    match: [all the aliases of boros, aliases of boros, boros's aliases]
+    subject: Boros
+    members: [Dominator of the Universe]
+  - name: Phoenix Man's aliases
+    match: [all the aliases of phoenix man, aliases of phoenix man, phoenix man's aliases]
+    subject: Phoenix Man
+    members: [Monster Chick Man, Birdbrain, Monster King]
+  - name: Fuhrer Ugly's aliases
+    match: [all the aliases of fuhrer ugly, aliases of fuhrer ugly, fuhrer ugly's aliases]
+    subject: Fuhrer Ugly
+    members: [Vomited Fuhrer Ugly]
+  # Declared 2026-08-22 for the Bad page campaign (`opm-pg-bad-001`): the
+  # `alias =` field on `Bad` reads `Metal Bat (Kinzoku Batto)`; romaji and
+  # kanji stay out of the member (G3).
+  - name: Bad's aliases
+    match: [all the aliases of bad, aliases of bad, bad's aliases]
+    subject: Bad
+    members: [Metal Bat]
+  # Declared 2026-08-22 for the Evil Natural Water page campaign
+  # (`opm-pg-evil_natural_water-125`): the `Evil Natural Water Fights`
+  # category is the wiki's own enumeration of its six battles. The battles-in
+  # discovery path only sees the three battle pages whose infoboxes name it
+  # (`Garou and Metal Bat vs. Sage Centipede and Evil Ocean Water` is stored
+  # as page_type=parent_tab, and the two executive-raid pages name the
+  # executives, not the water), so the set is declared from the category.
+  - name: Evil Natural Water's battles
+    match: [all the battles of evil natural water, battles of evil natural water,
+            evil natural water's battles]
+    category: Evil Natural Water Fights
+
+  # Declared 2026-08-22 for the Evil Natural Water page campaign
+  # (`opm-pg-evil_natural_water-001`): the `alias =` field on `Evil Natural
+  # Water` reads `Evil Ocean Water (エビル海洋水, Ebiru Kaiyōsui)` and
+  # `Incarnation of Mother Sea (母なる海の化身, Hahanaru Umi no Keshin)`;
+  # romaji and kanji stay out of the members (G3).
+  - name: Evil Natural Water's aliases
+    match: [all the aliases of evil natural water, aliases of evil natural water, evil natural water's aliases]
+    subject: Evil Natural Water
+    members: [Evil Ocean Water, Incarnation of Mother Sea]
+
+  # Declared 2026-08-22 for the Fubuki page campaign
+  # (`opm-pg-fubuki-117`): the `alias =` field on `Fubuki` reads `Miss
+  # Blizzard (フブキ様, Fubuki-sama)` and `Blizzard of Hell (地獄のフブキ,
+  # Jigoku no Fubuki)`; romaji and kanji stay out of the members (G3).
+  - name: Fubuki's aliases
+    match: [all the aliases of fubuki, aliases of fubuki, fubuki's aliases]
+    subject: Fubuki
+    members: [Miss Blizzard, Blizzard of Hell]
+
+  # Declared 2026-08-22 for the Overgrown Rover page campaign
+  # (`opm-pg-overgrown_rover-102`): the `Overgrown Rover Fights` category is the
+  # wiki's own enumeration of its four battles. The battles-in discovery path
+  # returns a five-page superset, because `Suiko vs. Mirror` names the Rover in
+  # its combatant1 infobox (a supporting combatant on Suiko's side), a
+  # last-content-word over-match, so the closed set is declared from the
+  # category (ENW precedent).
+  - name: Overgrown Rover's battles
+    match: [all the battles of overgrown rover, every battle of overgrown rover,
+            overgrown rover's battles]
+    category: Overgrown Rover Fights
+
+  # Declared 2026-08-22 for the Speed-o'-Sound Sonic page campaign
+  # (`opm-pg-speed_o_sound_sonic-001`): the `Speed-o'-Sound Sonic Fights`
+  # category is the wiki's own enumeration of its ten battles. The battles-in
+  # discovery path returns a twelve-page superset, because `Blast vs. Empty
+  # Void (Retconned)` lists Sonic on its combatant1 side and `Puri-Puri
+  # Prisoner vs. Baquma` names him among the monsters the side deploys (a
+  # supporting role, a last-content-word over-match), so the closed set is
+  # declared from the category (ENW / Overgrown Rover precedent).
+  - name: Speed-o'-Sound Sonic's battles
+    match: [all the battles of speed-o'-sound sonic, every battle of speed-o'-sound sonic,
+            speed-o'-sound sonic's battles]
+    category: Speed-o'-Sound Sonic Fights
+
+  # Declared 2026-08-22 for the Gouketsu page campaign
+  # (`opm-pg-gouketsu-001`): the `Gouketsu Fights` category is the wiki's own
+  # enumeration of its two battles, `Gouketsu vs. Bakuzan` and
+  # `Suiryu vs. Gouketsu`. The battles-in discovery path returns the same
+  # closed two pages (both infoboxes name him in a combatant field; the three
+  # pages that link him in `previous`/`next` navigation name him there only),
+  # so the set is declared from the category for the closed-set shape
+  # (ENW / Overgrown Rover / Sonic precedent).
+  - name: Gouketsu's battles
+    match: [all the battles of gouketsu, every battle of gouketsu,
+            gouketsu's battles]
+    category: Gouketsu Fights
+
+  # Declared 2026-08-22 for the Gouketsu page campaign
+  # (`opm-pg-gouketsu-002`): the `alias =` field on `Gouketsu` reads
+  # `Original Super Fight Champion (スーパーファイト初代王者, Sūpāfaito
+  # shodai ōja)`; romaji and kanji stay out of the member (G3).
+  - name: Gouketsu's aliases
+    match: [all the aliases of gouketsu, aliases of gouketsu, gouketsu's aliases]
+    subject: Gouketsu
+    members: [Original Super Fight Champion]
+
+  # Declared 2026-08-22 for the King page campaign
+  # (`opm-pg-king-001`): the `King Fights` category is the wiki's own
+  # enumeration of the S-Class hero King's three battles, `Heroes vs. Monster
+  # Association Executives`, `King and Saitama vs. Elder Centipede` and
+  # `King vs. Atomic Samurai`. The battles-in discovery path over-matches the
+  # last content word `King` to the wiki's many monster-`King` battle pages
+  # (`Saitama vs. Deep Sea King`, `Genos vs. Subterranean King`, ...), so the
+  # closed set is declared from the category (ENW / Overgrown Rover / Sonic /
+  # Gouketsu precedent).
+  - name: King's battles
+    match: [all the battles of king, every battle of king, king's battles]
+    category: King Fights
+
+  # Declared 2026-08-22 for the King page campaign
+  # (`opm-pg-king-002`): the `alias =` field on `King` reads `The Strongest
+  # Man on Earth`; romaji and kanji stay out of the member (G3).
+  - name: King's aliases
+    match: [all the aliases of king, aliases of king, king's aliases]
+    subject: King
+    members: [The Strongest Man on Earth]
+
+  # Declared 2026-08-22 for the Isamu page campaign
+  # (`opm-pg-isamu-001`): the `Child Emperor Fights` category is the wiki's own
+  # enumeration of Child Emperor's (Isamu's alias) eight battles. The set is
+  # declared from the category (ENW / Overgrown Rover / Sonic / Gouketsu /
+  # King precedent).
+  - name: Isamu's battles
+    match: [all the battles of isamu, every battle of isamu, isamu's battles]
+    category: Child Emperor Fights
+
+  # Declared 2026-08-22 for the Isamu page campaign
+  # (`opm-pg-isamu-002`): the `alias =` field on `Isamu` reads `Child Emperor
+  # (童帝, Dōtei)` and `Wild Emperor (非道帝, Hidōtei; Viz: The Diabolical
+  # Emperor)`; romaji, kanji and the Viz translation stay out of the members (G3).
+  - name: Isamu's aliases
+    match: [all the aliases of isamu, aliases of isamu, isamu's aliases]
+    subject: Isamu
+    members: [Child Emperor, Wild Emperor]
+
+  # Declared 2026-08-22 for the Puri-Puri Prisoner page campaign
+  # (`opm-pg-puri_puri_prisoner-001`): the `Puri-Puri Prisoner Fights`
+  # category is the wiki's own enumeration of its ten battles (confirmed
+  # against the live category page 2026-08-22, all 10 items). The battles-in
+  # discovery path returns an eleven-page superset: every one of the ten
+  # names him in a combatant1/2 field, and `Puri-Puri Prisoner vs. Raiden`
+  # (webcomic exclusive, carrying no `Puri-Puri Prisoner Fights` category
+  # tag) names him in combatant1 too, so the closed set is declared from the
+  # category (ENW / Overgrown Rover / Sonic / Gouketsu / King / Isamu
+  # precedent).
+  - name: Puri-Puri Prisoner's battles
+    match: [all the battles of puri-puri prisoner, every battle of puri-puri prisoner,
+            puri-puri prisoner's battles]
+    category: Puri-Puri Prisoner Fights
+
+  # Declared 2026-08-22 for the Suiryu page campaign
+  # (`opm-pg-suiryu-001`): the `Suiryu Fights` category is the wiki's own
+  # enumeration of his nine battles (confirmed against the live category page
+  # 2026-08-22, all 9 items). Eight of the nine name him in a combatant field
+  # (`Dragon vs. Wolf (Video Game Tournament)` stores him as `Suiryu
+  # (Playing as Dragon)`), but `Puri-Puri Prisoner vs. Raiden` names him in
+  # none (he leads the uprising the wiki tags for him), so the closed set is
+  # declared from the category (ENW / Overgrown Rover /
+  # Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner precedent).
+  - name: Suiryu's battles
+    match: [all the battles of suiryu, every battle of suiryu, suiryu's battles]
+    category: Suiryu Fights
+
+  # Declared 2026-08-22 for the round-2 fresh page campaign
+  # (`opm-r2-fresh-197`): the `Lightning Genji Fights` category is the wiki's
+  # own enumeration of Genji's (Lightning Genji, his alias -- the Isamu /
+  # Child Emperor alias-bridge) single battle, `Lightning Genji vs. Maiko
+  # Plasma and Electric Catfish Man`. The battles-in discovery path over-matches
+  # to the wiki-wide generic `Fights` superset (133 pages, all inside the
+  # 140-member `Fights` category) instead of the one-page set, so the closed set
+  # is declared from the category (ENW / Overgrown Rover / Sonic / Gouketsu /
+  # King / Isamu / Puri-Puri Prisoner / Suiryu precedent).
+  - name: Genji's battles
+    match: [all the battles of genji, every battle of genji, genji's battles]
+    category: Lightning Genji Fights
+
+  # Declared 2026-08-22 for the round-2 fresh page campaign
+  # (`opm-r2-fresh-198`): the `Carnage Kabuto Fights` category is the wiki's own
+  # enumeration of its two battles, `Genos vs. Carnage Kabuto` and `Saitama vs.
+  # Carnage Kabuto`. The battles-in discovery path over-matches to the wiki-wide
+  # generic `Fights` superset (133 pages) instead of the two-page set, so the
+  # closed set is declared from the category (ENW / Overgrown Rover / Sonic /
+  # Gouketsu / King / Isamu / Puri-Puri Prisoner / Suiryu precedent).
+  - name: Carnage Kabuto's battles
+    match: [all the battles of carnage kabuto, every battle of carnage kabuto,
+            carnage kabuto's battles]
+    category: Carnage Kabuto Fights
+
+  # Declared 2026-08-22 for the round-2 fresh page campaign
+  # (`opm-r2-fresh-199`): the `Royal Ripper Fights` category is the wiki's own
+  # enumeration of its two battles, `Garou vs. Royal Ripper` and `Garou vs.
+  # Royal Ripper and Bug God`. The battles-in discovery path over-matches to the
+  # wiki-wide generic `Fights` superset (133 pages) instead of the two-page set,
+  # so the closed set is declared from the category (ENW / Overgrown Rover /
+  # Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner / Suiryu precedent).
+  - name: Royal Ripper's battles
+    match: [all the battles of royal ripper, every battle of royal ripper,
+            royal ripper's battles]
+    category: Royal Ripper Fights
+
+  # Declared 2026-08-22 for the round-2 fresh page campaign
+  # (`opm-r2-fresh-200`): the `Hammerhead Fights` category is the wiki's own
+  # enumeration of its two battles, `Saitama vs. Hammerhead` and `Speed-o'-Sound
+  # Sonic vs. Paradise Group and Hammerhead`. The battles-in discovery path
+  # over-matches to the wiki-wide generic `Fights` superset (133 pages) instead
+  # of the two-page set, so the closed set is declared from the category (ENW /
+  # Overgrown Rover / Sonic / Gouketsu / King / Isamu / Puri-Puri Prisoner /
+  # Suiryu precedent).
+  - name: Hammerhead's battles
+    match: [all the battles of hammerhead, every battle of hammerhead,
+            hammerhead's battles]
+    category: Hammerhead Fights
+
+  # Characters aware of Saitama's power
+  # Declared 2026-08-22 for the page campaign
+  # (`opm-pg-characters_aware_of_saitamas_power-001`): `Characters aware of
+  # Saitama's power` is a list page whose membership is its own listing, a
+  # shape roster discovery cannot read. Auto-routing the set question returned
+  # the 8-member `Characters`-category superset (intruder `Custom Hero`) instead
+  # of the 44 the page lists. Members transcribed verbatim from the page's own
+  # listing (37 main rows + 7 spoiler rows).
+  #
+  # The set names its subject (Saitama's power), so it carries `subject: Saitama`:
+  # a declared set that names its subject runs *instead of* the character-kit
+  # path rather than after it (roster.py: a question carrying both a character
+  # and a kind word like "power" would otherwise answer with Saitama's 28
+  # techniques/traits/transformations, never reaching this roster). It also keeps
+  # the set's own words out of the general set vocabulary.
+  - name: Characters aware of Saitama's power
+    match: [characters aware of saitama's power]
+    subject: Saitama
+    members: [Armored Gorilla, Bakuzan, Bang, Black Sperm, Blast, Bofoi, Bomb, Boros, Busho, Carnage Kabuto, Dr. Kuseno, Empty Void, Flashy Flash, Forte, Fubuki, Garou, Genos, Genus, Glasses, Geryuganshoop, God, Hammerhead, Heavenly Ninja Party, Jinzuren, King, Manako, Mumen Rider, Nyan, Orochi, Overgrown Rover, Phoenix Man, Sneck, Speed-o'-Sound Sonic, Suiryu, Sweet Mask, Tatsumaki, Zombieman, Blue, Child Emperor, Dr. Grumpy Pervert, Drunkard, Suiko, The Great Degenerate, Toupee Warrior]
+
+  # Names an extraction pass stored as this character's ability that are not one:
 # generic descriptors the wiki gives every strong character, and entries that
 # belong to a work outside the story. Added by the 2026-08-14 bank audit, which
 # classified every returned-but-unmatched member against the raw wikitext of the
@@ -278,6 +698,16 @@ ability_stopwords:
 # `battle` is left alone: its 133 pages really are fights.
 semantic_types:
   combat: technique
+
+# The wiki's display title, declared because the campaign phrases every
+# question "…in One-Punch Man?" and `battle_result` scores a fight row against
+# the question's words. Without this, `one`/`punch`/`man` from the tail of the
+# question are scored as fight content on every result question. Read by
+# `roster.battle_result` only; a wiki that keeps no battle tables never looks
+# at it. Declared 2026-08-22 for the Bang page campaign revival
+# ("What is the result of the battle between Bang and Fist Fight Djinn…").
+series_titles:
+  - One-Punch Man
 
 # Abilities a wiki only shows happening: REFUTED 2026-08-17, do not re-declare.
 #

@@ -6,6 +6,138 @@ record of code changes; this log exists to track intent and doc/workflow
 changes at a coarser grain, including things that don't map to a single
 commit.
 
+## 2026-08-22 (OPM round 2: four engine fixes shipped, plan closed at 100%)
+
+Round 2 of the OPM page campaign relaxed round 1's no-`.py` rule (kickoff
+decision 1, recorded in `reports/page-campaign/HANDOFF_ROUND2.md`) and shipped
+four engine fixes, each gated before the next work started (`canon-run
+--series opm` holding 8/16 exact + 235/237 (99.2%) + 78.5% + 18/20, `pytest
+tests/ -q` 985, `eval --series jjk` 24/24 re-run after every `.py` or
+`overrides.yaml` touch):
+
+- **G1 battle-result reading.** `roster.battle_result` reads the first-named
+  side's `X/Battles` table -- the wiki records Result from the table owner's
+  perspective, and `battle_result_fighter` keys the read to the "between"
+  span's first party, with `series_titles` keeping the "in One-Punch Man?"
+  tail out of the match. 12 battle questions revived across the Bang/Orochi/
+  Beaut/Flashy Flash batches.
+- **G2 relations merge.** `hybrid.py` appends `store.relations_of` rows for
+  the top three linked entities (both ways, deduped); `api/context.py`
+  renders era/quote and hoists rows whose two ends are both named in the
+  question. 7 relationship questions revived; 5 stay retired (no extracted
+  row for the pair).
+- **G5 norm stem fold.** `canon_gold.norm` drops a trailing `ed` before the
+  one-`s` plural fold (`smashed` -> `smashe`); a trailing-`e` extension was
+  tried and reverted (it merged `Normal Punch` with the `Consecutive Normal
+  Punches` alias and broke the bank's distinctness invariant). The broader DSK
+  paraphrase class was re-golded to the wiki's exact contiguous phrasing (the
+  G4 gold rule); 2 DSK questions retired with reasons.
+- **G6 declared-roster-wins.** `roster.build_roster` resolves declared
+  rosters before the chronology intercept, and the intercept fires only when
+  no declared roster claims the query. Revived the Story Arcs saga set (4
+  members, new roster) and the DSK battle question (7 wiki-true battles, all
+  present in the 19-page superset); one Story Arcs chapter-attribution
+  question declared an engine gap and retired with reason.
+
+With the fixes gated, the rest of the plan ran: clusters 16-20 (Boros
+105/105, Superalloy Darkshine 102/102, Phoenix Man 104/104, Fuhrer Ugly
+105/105, Mysterious Beings 97/97) and the approved long tail to the top-35 by
+corpus size (Homeless Emperor 101/101, Bad 104/104, Evil Natural Water
+126/126, Fubuki 117/117, Overgrown Rover 117/117, Speed-o'-Sound Sonic
+103/103, Gouketsu 107/107, King 112/112, Isamu 116/116, Puri-Puri Prisoner
+122/122, Suiryu 121/121, Characters aware of Saitama's power 95/95). Phase 3
+authored 200 fresh questions across 68 pages no earlier OPM batch covered,
+deduped against all 3216 active + 279 retired OPM question strings (0
+collisions), scored to **191/191** (9 retired with reasons; 4 battles
+rosters declared from the wiki's own closed `<X> Fights` categories after the
+battles-in path over-matched the wiki-wide 133-page generic `Fights`
+superset). Every batch sits at 100%; the official bank never moved (same
+baseline as above, `pytest` 985, `eval` 24/24). Structural findings (the
+battles-in last-word over-match, the `parent_tab` sage-page blind spot,
+top-N borderline flips) are recorded in `reports/page-campaign/STATUS.md`
+rather than tuned away, per the record-not-fix rule. `WRONG_ANSWERS.md`
+regenerated (307 retired rows); the `HANDOFF_ROUND2.md` checklist is closed.
+
+## 2026-08-21 (OPM Top-25 page campaign: 15/15 clusters at a clean sweep)
+
+The One Punch Man page campaign -- the `cli page-run` adaptation of the JJK
+methodology, one ~100-question sourced batch per top wiki page, scored live
+and driven to 100% before the next cluster starts -- is complete for its
+agreed scope. All 15 clusters (STATUS.md rows 10-24: Saitama, Garou, Genos,
+Monster Association Arc, Tatsumaki, Chapters & Volumes, Story Arcs, Empty
+Void, Blast, Orochi, Beaut, Bang, God, Flashy Flash, Deep Sea King) now sit
+in `questions/_opm_page_<slug>.json` at a clean sweep: 12 batches at 100/100,
+Story Arcs 97/97, Flashy Flash 91/91, Deep Sea King 84/84 (the last three
+smaller by design -- duplicates and structurally-unanswerable questions were
+retired with reasons in each batch's `retired` field rather than padded).
+
+The campaign touched only batch JSONs and `series/opm/overrides.yaml`
+(`Saitama's aliases` + `subject_type_priority`, the two Chapters & Volumes
+list rosters, and the four Story Arcs saga rosters). No `.py` and no
+retriever tuning, per the campaign rule. Final gate after the last cluster:
+`canon-run --series opm` at 2026-08-21-1904 reads **8/16 exact, 235/237
+(99.2%) canon, 78.5% precision, 18/20 fact -- identical to the
+2026-08-20-2312 baseline**, and `pytest tests/ -q` is 985 passed. The
+`_`-prefixed batches stay out of `load_all`, so the official bank never moved.
+
+Findings the campaign recorded instead of fixing (both in
+`reports/page-campaign/STATUS.md`, "OPM campaign status"):
+
+- **The chronology path intercepts "every/all" enumeration phrasing.** Any
+  query matching `_NAMES_AN_ARC` (`\b(arc|saga)s\b`) or the "every battles"
+  shape returns the full 15-arc chain and ignores declared per-saga and
+  per-character rosters. Saga-membership sets (Story Arcs) and
+  "Every battle of X" sets (Deep Sea King) are structurally unanswerable for
+  OPM; both were retired with the reason recorded, and the four declared saga
+  rosters exist for the record.
+- **`canon_gold.norm` plural-folds one `s` only.** The fold regex strips a
+  single trailing `s`, so chunked text the chunker inflected to `smashe`
+  never matches a gold of `smashed`, and the Deep Sea King wall question had
+  to be re-golded to a retrievable sub-phrase of the same sentence ("his way
+  through the wall of the structure") instead of forcing the full verb form.
+  A deliberate scorer artifact, left alone by the campaign rule.
+
+Docs: `reports/page-campaign/STATUS.md` (rows 15-24 + the OPM status
+section), `reports/page-campaign/HANDOFF_OPM.md` §6 (queue state: 1-15 done,
+remaining plan-queue items 16-20 -- Boros, Superalloy Darkshine, Phoenix
+Man, Fuhrer Ugly, Mysterious Beings umbrella -- not started and out of the
+agreed scope), and this entry.
+
+## 2026-08-20 (script-writing path: MCP + CLI + battles-in)
+
+The engine now reaches the writer through three doors — HTTP on :8000, the Typer
+CLI, and an MCP server over stdio — all wrapping the same functions so there is
+one implementation to keep correct. Jujutsu Kaisen (the development wiki) is fully
+green at **24/24** on its gold set, and a real script ("Every Fight Mahoraga Has
+Ever Been In") was regenerated end-to-end through the new loop: 6,099 words, in
+band, every tag verified against the raw crawl.
+
+- **MCP server** (`scriptengine/mcp/server.py`, FastMCP over stdio). Three tools:
+  `research` (the `/context` bundle plus the rendered prompt with the house rules),
+  `verify_script` (tag check against the raw crawl, same gate as `cli verify`), and
+  `script_path` (where a finished script is saved). No file-writing tool by design.
+- **CLI writing loop** (`cli.py`). `script-gen <subject>` does route → fetch → ask
+  the writer model → verify every tag (repairing failures, up to `--max-attempts`)
+  → expand/trim to length → save into the production tree. `verify` is a first-class
+  command for checking any finished script's tags against the raw crawl.
+- **Battles-in roster mode** (`retrieve/roster.py`). A fighter's whole fight list:
+  reads every battle page they appear on, per-fight role included (direct combatant
+  vs deployed tool), from this wiki's own infobox vocabulary. `asks_for_battles_in`
+  + the router send "Every Fight X Has Ever Been In" and its question-worded twins
+  to roster. Reusable for any series that files fights as pages; JJK now declares a
+  battles-in set per major fighter (59 declared sets total).
+- **Length-band enforcement** (`script/writer.py`). Target ± `LENGTH_TOLERANCE`
+  (500) words, enforced by an alternating expand/trim loop capped at
+  `MAX_LENGTH_PASSES` (10); tags stay the hard gate, length is soft. The served
+  rules now state the band explicitly (`api/rules.py`).
+- **Title normalization** (`script/writer.py`, `_apply_title`). Saved title defaults
+  to the raw subject (not the resolved entity name), and the bold line is rewritten
+  to match whatever it saves as, so filename ≡ content and a regenerate reuses its
+  folder. `--title` overrides.
+- **Docs refreshed** across README, STARTME, ARCHITECTURE, ROADMAP, API, CORPUS_REPORT,
+  ADDING_A_SERIES, SCRIPT_STYLE and the generated CATALOGUE to reflect all of the above;
+  live catalogue is now 8 series / 22,945 pages / 211 declared sets.
+
 ## 2026-08-17 (continuation session)
 
 ### P0: jjk-set-10 gold corrected against the wiki — dedupe regression resolved

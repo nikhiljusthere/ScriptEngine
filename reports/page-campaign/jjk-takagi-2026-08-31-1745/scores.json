@@ -1,0 +1,391 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Takagi?",
+      "set": "Takagi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Takagi?",
+      "found": [
+        "Sugisawa Third High School"
+      ],
+      "missing": [],
+      "members": [
+        "Sugisawa Third High School"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Takagi's name?",
+      "id": "jjk-pg-takagi-001",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "\u9ad8\u6728"
+      ],
+      "found": [
+        "\u9ad8\u6728"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Takagi's name?",
+      "id": "jjk-pg-takagi-002",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Takagi"
+      ],
+      "found": [
+        "Takagi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takagi's race?",
+      "id": "jjk-pg-takagi-003",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takagi's gender?",
+      "id": "jjk-pg-takagi-004",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Takagi?",
+      "id": "jjk-pg-takagi-005",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takagi's occupation?",
+      "id": "jjk-pg-takagi-006",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Teacher"
+      ],
+      "found": [
+        "Teacher"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Takagi first appear?",
+      "id": "jjk-pg-takagi-007",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Takagi first depicted?",
+      "id": "jjk-pg-takagi-008",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takagi's Japanese voice actor?",
+      "id": "jjk-pg-takagi-009",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Kenji Sugimura"
+      ],
+      "found": [
+        "Kenji Sugimura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takagi's English voice actor?",
+      "id": "jjk-pg-takagi-010",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Kyle Hebert"
+      ],
+      "found": [
+        "Kyle Hebert"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Takagi play in the series?",
+      "id": "jjk-pg-takagi-012",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takagi's role at the school?",
+      "id": "jjk-pg-takagi-013",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "the athletics club advisor and teacher at Sugisawa Third Municipal High School"
+      ],
+      "found": [
+        "the athletics club advisor and teacher at Sugisawa Third Municipal High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takagi look like?",
+      "id": "jjk-pg-takagi-014",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "a muscular man with a dark colored buzz cut, thin eyebrows, and stubble on his upper lip and chin"
+      ],
+      "found": [
+        "a muscular man with a dark colored buzz cut, thin eyebrows, and stubble on his upper lip and chin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takagi wear?",
+      "id": "jjk-pg-takagi-015",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "a dark green track suit with a light colored edges around his neck and waist, a black tank top under the track suit, and white sneakers"
+      ],
+      "found": [
+        "a dark green track suit with a light colored edges around his neck and waist, a black tank top under the track suit, and white sneakers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Takagi's determination to recruit Yuji described?",
+      "id": "jjk-pg-takagi-016",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "determined to have Yuji Itadori on his team, going so far as to change the latter's club application"
+      ],
+      "found": [
+        "determined to have Yuji Itadori on his team, going so far as to change the latter's club application"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Takagi want Yuji on the athletics club?",
+      "id": "jjk-pg-takagi-017",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "he needs Yuji's skills in the nationals"
+      ],
+      "found": [
+        "he needs Yuji's skills in the nationals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How far did Takagi throw the iron ball in the Shot Put game?",
+      "id": "jjk-pg-takagi-018",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "14 meters"
+      ],
+      "found": [
+        "14 meters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuji win the Shot Put game against Takagi?",
+      "id": "jjk-pg-takagi-019",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "Yuji managed to throw the ball to over 30 meters"
+      ],
+      "found": [
+        "Yuji managed to throw the ball to over 30 meters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takagi rank in the 1st Character Popularity Poll?",
+      "id": "jjk-pg-takagi-020",
+      "subject": "Takagi",
+      "accept": "all",
+      "expected": [
+        "58th place in the manga's 1st Character Popularity Poll with 79 votes"
+      ],
+      "found": [
+        "58th place in the manga's 1st Character Popularity Poll with 79 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

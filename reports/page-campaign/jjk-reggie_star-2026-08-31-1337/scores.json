@@ -1,0 +1,1187 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Reggie Star?",
+      "set": "Every named technique of Reggie Star",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Reggie Star?",
+      "set": "Every ally of Reggie Star",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the romantics of Reggie Star?",
+      "set": "Every romantic of Reggie Star",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the subordinates of Reggie Star?",
+      "set": "Every subordinate of Reggie Star",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Reggie Star",
+      "set": "Every battle involving Reggie Star",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Reggie Star?",
+      "found": [
+        "Contractual Re-Creation",
+        "Hollow Wicker Basket"
+      ],
+      "missing": [],
+      "members": [
+        "Contractual Re-Creation",
+        "Hollow Wicker Basket"
+      ]
+    },
+    {
+      "query": "What are all the allies of Reggie Star?",
+      "found": [
+        "Iori Hazenoki",
+        "Chizuru Hari",
+        "Remi"
+      ],
+      "missing": [],
+      "members": [
+        "Chizuru Hari",
+        "Iori Hazenoki",
+        "Remi"
+      ]
+    },
+    {
+      "query": "What are all the romantics of Reggie Star?",
+      "found": [
+        "Iori Hazenoki",
+        "Remi"
+      ],
+      "missing": [],
+      "members": [
+        "Iori Hazenoki",
+        "Remi"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Reggie Star?",
+      "found": [
+        "Iori Hazenoki",
+        "Chizuru Hari",
+        "Remi"
+      ],
+      "missing": [],
+      "members": [
+        "Chizuru Hari",
+        "Iori Hazenoki",
+        "Remi"
+      ]
+    },
+    {
+      "query": "Every battle involving Reggie Star",
+      "found": [
+        "Megumi Fushiguro vs. Reggie Star",
+        "Megumi Fushiguro vs. Reggie Star's Group",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro vs. Reggie Star",
+        "Megumi Fushiguro vs. Reggie Star's Group",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Reggie Star's name?",
+      "id": "jjk-pg-reggie_star-001",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "\u30ec\u30b8\u30a3\u30fb\u30b9\u30bf\u30fc"
+      ],
+      "found": [
+        "\u30ec\u30b8\u30a3\u30fb\u30b9\u30bf\u30fc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Reggie Star's name?",
+      "id": "jjk-pg-reggie_star-002",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Rejii Sut\u0101"
+      ],
+      "found": [
+        "Rejii Sut\u0101"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Reggie Star's race?",
+      "id": "jjk-pg-reggie_star-003",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Reggie Star's gender?",
+      "id": "jjk-pg-reggie_star-004",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Reggie Star?",
+      "id": "jjk-pg-reggie_star-005",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Reggie Star's occupation?",
+      "id": "jjk-pg-reggie_star-006",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Reggie Star first appear?",
+      "id": "jjk-pg-reggie_star-007",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Chapter 162"
+      ],
+      "found": [
+        "Chapter 162"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Reggie Star first depicted?",
+      "id": "jjk-pg-reggie_star-008",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Episode 55"
+      ],
+      "found": [
+        "Episode 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Reggie Star's Japanese voice actor?",
+      "id": "jjk-pg-reggie_star-009",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Yutaka Aoyama"
+      ],
+      "found": [
+        "Yutaka Aoyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Reggie Star's English voice actor?",
+      "id": "jjk-pg-reggie_star-010",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Alejandro Saab"
+      ],
+      "found": [
+        "Alejandro Saab"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Reggie Star?",
+      "id": "jjk-pg-reggie_star-011",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Megumi is victorious."
+      ],
+      "found": [
+        "Megumi is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Reggie Star take place?",
+      "id": "jjk-pg-reggie_star-012",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro vs. Reggie Star take place?",
+      "id": "jjk-pg-reggie_star-013",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Reggie Star begin?",
+      "id": "jjk-pg-reggie_star-014",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Chapter 170"
+      ],
+      "found": [
+        "Chapter 170"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Reggie Star depicted?",
+      "id": "jjk-pg-reggie_star-015",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Episode 57 - 58"
+      ],
+      "found": [
+        "Episode 57 - 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Reggie Star take place?",
+      "id": "jjk-pg-reggie_star-016",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-reggie_star-017",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Takaba interrupts the battle."
+      ],
+      "found": [
+        "Takaba interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-reggie_star-018",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-reggie_star-019",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Reggie Star's Group begin?",
+      "id": "jjk-pg-reggie_star-020",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Chapter 167"
+      ],
+      "found": [
+        "Chapter 167"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Reggie Star's Group depicted?",
+      "id": "jjk-pg-reggie_star-021",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-reggie_star-022",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-reggie_star-023",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-reggie_star-024",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-reggie_star-025",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-reggie_star-026",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-reggie_star-027",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Reggie Star's blond hair likely dyed?",
+      "id": "jjk-pg-reggie_star-033",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "his eyebrows and goatee are both darker colored"
+      ],
+      "found": [
+        "his eyebrows and goatee are both darker colored"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the kanji tattooed on Reggie Star's left arm mean?",
+      "id": "jjk-pg-reggie_star-034",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "indomitable"
+      ],
+      "found": [
+        "indomitable"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Reggie Star cover his torso with?",
+      "id": "jjk-pg-reggie_star-035",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "numerous paper tags"
+      ],
+      "found": [
+        "numerous paper tags"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Reggie Star adapt to the Culling Game?",
+      "id": "jjk-pg-reggie_star-036",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "focusing solely on gathering strong allies while eliminating the weak or anyone who opposed him"
+      ],
+      "found": [
+        "focusing solely on gathering strong allies while eliminating the weak or anyone who opposed him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Reggie Star use Remi?",
+      "id": "jjk-pg-reggie_star-037",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "to lure in potential allies or targets to gain points from"
+      ],
+      "found": [
+        "to lure in potential allies or targets to gain points from"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Reggie Star embarrassed by Chizuru Hari's death?",
+      "id": "jjk-pg-reggie_star-038",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "would be killed without even utilizing his cursed technique"
+      ],
+      "found": [
+        "would be killed without even utilizing his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Reggie Star believe sorcerers were?",
+      "id": "jjk-pg-reggie_star-039",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "nothing but con artists"
+      ],
+      "found": [
+        "nothing but con artists"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What warning did Reggie Star give Megumi about holding back?",
+      "id": "jjk-pg-reggie_star-040",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "fight earnestly and to kill"
+      ],
+      "found": [
+        "fight earnestly and to kill"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Reggie Star react to the threat of Megumi's domain?",
+      "id": "jjk-pg-reggie_star-041",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "his smirk faded"
+      ],
+      "found": [
+        "his smirk faded"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Reggie Star give Megumi as a show of respect?",
+      "id": "jjk-pg-reggie_star-042",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "all his points"
+      ],
+      "found": [
+        "all his points"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What were Reggie Star's last words to Megumi?",
+      "id": "jjk-pg-reggie_star-043",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "let fate toy with him before he dies like a fool"
+      ],
+      "found": [
+        "let fate toy with him before he dies like a fool"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which of Megumi's most powerful shikigami did Reggie Star overpower?",
+      "id": "jjk-pg-reggie_star-044",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Totality"
+      ],
+      "found": [
+        "Totality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Reggie Star wound the Totality shikigami?",
+      "id": "jjk-pg-reggie_star-045",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "stabbed its mouth with kitchen knives"
+      ],
+      "found": [
+        "stabbed its mouth with kitchen knives"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Reggie Star use to pursue Megumi after wearing him down?",
+      "id": "jjk-pg-reggie_star-046",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "flying drones and a moped"
+      ],
+      "found": [
+        "flying drones and a moped"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What element is Reggie Star weak to in battle?",
+      "id": "jjk-pg-reggie_star-047",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "water"
+      ],
+      "found": [
+        "water"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Reggie Star's favored form of combat?",
+      "id": "jjk-pg-reggie_star-048",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "an unorthodox mix of a random assortment of re-created items and effective martial arts"
+      ],
+      "found": [
+        "an unorthodox mix of a random assortment of re-created items and effective martial arts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Megumi fare in the pure martial arts exchanges against Reggie Star?",
+      "id": "jjk-pg-reggie_star-049",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "was heavily pressured despite wielding a cursed tool"
+      ],
+      "found": [
+        "was heavily pressured despite wielding a cursed tool"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What bladed weapons could Reggie Star comfortably wield?",
+      "id": "jjk-pg-reggie_star-050",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "kitchen knives, combat knives, and machetes"
+      ],
+      "found": [
+        "kitchen knives, combat knives, and machetes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Reggie Star predict Kenjaku would do to the Culling Game?",
+      "id": "jjk-pg-reggie_star-051",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "drop a metaphorical bomb on the game after only the strongest players remained"
+      ],
+      "found": [
+        "drop a metaphorical bomb on the game after only the strongest players remained"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Reggie Star turn Megumi's domain against him?",
+      "id": "jjk-pg-reggie_star-052",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "by deducing that its user has to bear the weight of anything within their shadow"
+      ],
+      "found": [
+        "by deducing that its user has to bear the weight of anything within their shadow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Reggie Star drop into the shadow to pressure Megumi?",
+      "id": "jjk-pg-reggie_star-053",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "re-created cars"
+      ],
+      "found": [
+        "re-created cars"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Reggie Star's ace in his fight with Megumi?",
+      "id": "jjk-pg-reggie_star-054",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "a small house"
+      ],
+      "found": [
+        "a small house"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Megumi reinforce to mislead Reggie Star?",
+      "id": "jjk-pg-reggie_star-055",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "shikigami couldn't be resummoned when they were injured"
+      ],
+      "found": [
+        "shikigami couldn't be resummoned when they were injured"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What injuries did Reggie Star suffer under Max Elephant's weight?",
+      "id": "jjk-pg-reggie_star-056",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "fractures to his right heel bone and fibula"
+      ],
+      "found": [
+        "fractures to his right heel bone and fibula"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Reggie Star's Contractual Re-Creation work?",
+      "id": "jjk-pg-reggie_star-057",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "whatever was written on it into existence"
+      ],
+      "found": [
+        "whatever was written on it into existence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How are re-created items similar to shikigami?",
+      "id": "jjk-pg-reggie_star-058",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "they would disappear after carrying it out"
+      ],
+      "found": [
+        "they would disappear after carrying it out"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What arc event besides the battles with Megumi is listed for Reggie Star?",
+      "id": "jjk-pg-reggie_star-059",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Reggie Star rank in the third Popularity Poll?",
+      "id": "jjk-pg-reggie_star-060",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "62nd"
+      ],
+      "found": [
+        "62nd"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Reggie Star rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-reggie_star-061",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "72nd"
+      ],
+      "found": [
+        "72nd"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What word is Reggie Star's full name likely a play on?",
+      "id": "jjk-pg-reggie_star-062",
+      "subject": "Reggie Star",
+      "accept": "all",
+      "expected": [
+        "register"
+      ],
+      "found": [
+        "register"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 13,
+    "canon_total": 13,
+    "canon_recall": 1.0,
+    "members_returned": 13,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 57,
+    "fact_present": 57
+  }
+}

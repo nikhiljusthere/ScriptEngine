@@ -1,0 +1,1391 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kasumi Miwa?",
+      "set": "Every named technique of Kasumi Miwa",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Kasumi Miwa?",
+      "set": "Every ally of Kasumi Miwa",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Kasumi Miwa?",
+      "set": "Every friend of Kasumi Miwa",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the mentors of Kasumi Miwa?",
+      "set": "Every mentor of Kasumi Miwa",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kasumi Miwa?",
+      "set": "Kasumi Miwa's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kasumi Miwa",
+      "set": "Every battle involving Kasumi Miwa",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kasumi Miwa?",
+      "found": [
+        "Batto Sword Drawing",
+        "Simple Domain"
+      ],
+      "missing": [],
+      "members": [
+        "Batto Sword Drawing",
+        "Simple Domain"
+      ]
+    },
+    {
+      "query": "What are all the allies of Kasumi Miwa?",
+      "found": [
+        "Maki Zenin",
+        "Atsuya Kusakabe"
+      ],
+      "missing": [],
+      "members": [
+        "Atsuya Kusakabe",
+        "Maki Zenin"
+      ]
+    },
+    {
+      "query": "What are all the friends of Kasumi Miwa?",
+      "found": [
+        "Mai Zenin",
+        "Momo Nishimiya"
+      ],
+      "missing": [],
+      "members": [
+        "Mai Zenin",
+        "Momo Nishimiya"
+      ]
+    },
+    {
+      "query": "What are all the mentors of Kasumi Miwa?",
+      "found": [
+        "Atsuya Kusakabe",
+        "Utahime Iori"
+      ],
+      "missing": [],
+      "members": [
+        "Atsuya Kusakabe",
+        "Utahime Iori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kasumi Miwa?",
+      "found": [
+        "Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High"
+      ]
+    },
+    {
+      "query": "Every battle involving Kasumi Miwa",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Maki Zenin vs. Kasumi Miwa",
+        "Maki Zenin vs. Mai Zenin",
+        "Megumi Fushiguro & Maki Zenin vs. Hanami"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Maki Zenin vs. Kasumi Miwa",
+        "Maki Zenin vs. Mai Zenin",
+        "Megumi Fushiguro & Maki Zenin vs. Hanami"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kasumi Miwa's name?",
+      "id": "jjk-pg-kasumi_miwa-001",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "\u4e09\u8f2a\u971e"
+      ],
+      "found": [
+        "\u4e09\u8f2a\u971e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kasumi Miwa's name?",
+      "id": "jjk-pg-kasumi_miwa-002",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Miwa Kasumi"
+      ],
+      "found": [
+        "Miwa Kasumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi Miwa's race?",
+      "id": "jjk-pg-kasumi_miwa-003",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi Miwa's birthday?",
+      "id": "jjk-pg-kasumi_miwa-004",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "April 4, 2001"
+      ],
+      "found": [
+        "April 4, 2001"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kasumi Miwa?",
+      "id": "jjk-pg-kasumi_miwa-005",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "17"
+      ],
+      "found": [
+        "17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi Miwa's gender?",
+      "id": "jjk-pg-kasumi_miwa-006",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi Miwa's height?",
+      "id": "jjk-pg-kasumi_miwa-007",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Almost 170 cm (5'7\")"
+      ],
+      "found": [
+        "Almost 170 cm (5'7\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kasumi Miwa?",
+      "id": "jjk-pg-kasumi_miwa-008",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi Miwa's occupation?",
+      "id": "jjk-pg-kasumi_miwa-009",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kasumi Miwa first appear?",
+      "id": "jjk-pg-kasumi_miwa-010",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chapter 18"
+      ],
+      "found": [
+        "Chapter 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kasumi Miwa first depicted?",
+      "id": "jjk-pg-kasumi_miwa-011",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Episode 8"
+      ],
+      "found": [
+        "Episode 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kasumi Miwa's Japanese voice actor?",
+      "id": "jjk-pg-kasumi_miwa-012",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chinatsu Akasaki"
+      ],
+      "found": [
+        "Chinatsu Akasaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kasumi Miwa's English voice actor?",
+      "id": "jjk-pg-kasumi_miwa-013",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Allegra Clark"
+      ],
+      "found": [
+        "Allegra Clark"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-kasumi_miwa-014",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-kasumi_miwa-015",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-kasumi_miwa-016",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-kasumi_miwa-017",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-kasumi_miwa-018",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-kasumi_miwa-019",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kasumi Miwa use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-kasumi_miwa-020",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Batto Sword Drawing"
+      ],
+      "found": [
+        "Batto Sword Drawing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-kasumi_miwa-021",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kasumi_miwa-022",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kasumi_miwa-023",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-kasumi_miwa-024",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kasumi_miwa-025",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kasumi Miwa use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-kasumi_miwa-026",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Simple Domain"
+      ],
+      "found": [
+        "Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Kasumi Miwa?",
+      "id": "jjk-pg-kasumi_miwa-027",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Maki disarms Miwa."
+      ],
+      "found": [
+        "Maki disarms Miwa."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Kasumi Miwa take place?",
+      "id": "jjk-pg-kasumi_miwa-028",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin vs. Kasumi Miwa begin?",
+      "id": "jjk-pg-kasumi_miwa-029",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chapter 39"
+      ],
+      "found": [
+        "Chapter 39"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Kasumi Miwa depicted?",
+      "id": "jjk-pg-kasumi_miwa-030",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Episode 16 - 17"
+      ],
+      "found": [
+        "Episode 16 - 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Kasumi Miwa take place?",
+      "id": "jjk-pg-kasumi_miwa-031",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Mai Zenin?",
+      "id": "jjk-pg-kasumi_miwa-032",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Mai Zenin take place?",
+      "id": "jjk-pg-kasumi_miwa-033",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. Mai Zenin?",
+      "id": "jjk-pg-kasumi_miwa-034",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chapter 42"
+      ],
+      "found": [
+        "Chapter 42"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Mai Zenin depicted?",
+      "id": "jjk-pg-kasumi_miwa-035",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Mai Zenin take place?",
+      "id": "jjk-pg-kasumi_miwa-036",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro & Maki Zenin vs. Hanami?",
+      "id": "jjk-pg-kasumi_miwa-037",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Yuji & Todo take over the battle."
+      ],
+      "found": [
+        "Yuji & Todo take over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+      "id": "jjk-pg-kasumi_miwa-038",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro & Maki Zenin vs. Hanami begin?",
+      "id": "jjk-pg-kasumi_miwa-039",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chapter 46"
+      ],
+      "found": [
+        "Chapter 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro & Maki Zenin vs. Hanami depicted?",
+      "id": "jjk-pg-kasumi_miwa-040",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Episode 19"
+      ],
+      "found": [
+        "Episode 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+      "id": "jjk-pg-kasumi_miwa-041",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What binding vow did Kasumi Miwa make during her attack on Kenjaku?",
+      "id": "jjk-pg-kasumi_miwa-048",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Kasumi made a binding vow during her attack on Kenjaku to enhance the slash from her Batto Sword Drawing by vowing to never swing a katana again"
+      ],
+      "found": [
+        "Kasumi made a binding vow during her attack on Kenjaku to enhance the slash from her Batto Sword Drawing by vowing to never swing a katana again"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kenjaku counter Kasumi's slash?",
+      "id": "jjk-pg-kasumi_miwa-049",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "the sword was blocked and crushed by Kenjaku with his hand"
+      ],
+      "found": [
+        "the sword was blocked and crushed by Kenjaku with his hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Simple Domain do?",
+      "id": "jjk-pg-kasumi_miwa-050",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "An anti-domain technique that neutralizes a domain's barrier and disables its sure-hit effect in a set area of space around the user"
+      ],
+      "found": [
+        "An anti-domain technique that neutralizes a domain's barrier and disables its sure-hit effect in a set area of space around the user"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the radius of Kasumi's Simple Domain?",
+      "id": "jjk-pg-kasumi_miwa-051",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "a 2.21-meter radius"
+      ],
+      "found": [
+        "a 2.21-meter radius"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What if both of Kasumi's feet leave the position where her stance began?",
+      "id": "jjk-pg-kasumi_miwa-052",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "the technique is dispelled"
+      ],
+      "found": [
+        "the technique is dispelled"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Batto Sword Drawing?",
+      "id": "jjk-pg-kasumi_miwa-053",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "A New Shadow Style technique that uses cursed energy to surround Kasumi's blade when sheathed and rotates it to create incredible speed when she draws the blade"
+      ],
+      "found": [
+        "A New Shadow Style technique that uses cursed energy to surround Kasumi's blade when sheathed and rotates it to create incredible speed when she draws the blade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Batto Sword Drawing the fastest sword-drawing technique of the New Shadow Style?",
+      "id": "jjk-pg-kasumi_miwa-054",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "It is the fastest sword-drawing technique of the New Shadow Style"
+      ],
+      "found": [
+        "It is the fastest sword-drawing technique of the New Shadow Style"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Kasumi's katana considered a semi-cursed tool?",
+      "id": "jjk-pg-kasumi_miwa-055",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "it is considered a semi-cursed tool due to being imbued with Kasumi's cursed energy for a long time"
+      ],
+      "found": [
+        "it is considered a semi-cursed tool due to being imbued with Kasumi's cursed energy for a long time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Kasumi's katana originally a regular sword?",
+      "id": "jjk-pg-kasumi_miwa-056",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Originally a regular sword"
+      ],
+      "found": [
+        "Originally a regular sword"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Maki do to Kasumi's katana during their confrontation?",
+      "id": "jjk-pg-kasumi_miwa-057",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Maki disarmed her katana and stole it from her during their confrontation"
+      ],
+      "found": [
+        "Maki disarmed her katana and stole it from her during their confrontation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku do to the katana Kasumi used at the end of the Shibuya Incident?",
+      "id": "jjk-pg-kasumi_miwa-058",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "the blade was broken by Kenjaku"
+      ],
+      "found": [
+        "the blade was broken by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kasumi's first name, Kasumi, mean?",
+      "id": "jjk-pg-kasumi_miwa-059",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "fog, mist, haze"
+      ],
+      "found": [
+        "fog, mist, haze"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kasumi's surname, Miwa, mean?",
+      "id": "jjk-pg-kasumi_miwa-060",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "three wheels"
+      ],
+      "found": [
+        "three wheels"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Kasumi's name Miwa?",
+      "id": "jjk-pg-kasumi_miwa-061",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "a Japanese homonym for a word that means \"someone who follows trends\""
+      ],
+      "found": [
+        "a Japanese homonym for a word that means \"someone who follows trends\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Kasumi get in the first Popularity Poll?",
+      "id": "jjk-pg-kasumi_miwa-062",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "4,923 votes"
+      ],
+      "found": [
+        "4,923 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Kasumi get in the second Popularity Poll?",
+      "id": "jjk-pg-kasumi_miwa-063",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "17th in the second Popularity Poll with 485 votes"
+      ],
+      "found": [
+        "17th in the second Popularity Poll with 485 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Kasumi get in the third Popularity Poll?",
+      "id": "jjk-pg-kasumi_miwa-064",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "28th in the third Popularity Poll with 165 votes"
+      ],
+      "found": [
+        "28th in the third Popularity Poll with 165 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Kasumi get in the fourth Popularity Poll?",
+      "id": "jjk-pg-kasumi_miwa-065",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "28th in the fourth Popularity Poll with 258 votes"
+      ],
+      "found": [
+        "28th in the fourth Popularity Poll with 258 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi's type, according to the anime omake?",
+      "id": "jjk-pg-kasumi_miwa-066",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "An average good looking guy, but the important thing is that he has to be a person I have fun being around and someone who I think is the only one for me"
+      ],
+      "found": [
+        "An average good looking guy, but the important thing is that he has to be a person I have fun being around and someone who I think is the only one for me"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi's enrollment method?",
+      "id": "jjk-pg-kasumi_miwa-067",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Scouted"
+      ],
+      "found": [
+        "Scouted"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi's hobby?",
+      "id": "jjk-pg-kasumi_miwa-068",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "saving money"
+      ],
+      "found": [
+        "saving money"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi's favorite dish?",
+      "id": "jjk-pg-kasumi_miwa-069",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Stew"
+      ],
+      "found": [
+        "Stew"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi's least favorite dish?",
+      "id": "jjk-pg-kasumi_miwa-070",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Chinese parsley"
+      ],
+      "found": [
+        "Chinese parsley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kasumi's cause of stress?",
+      "id": "jjk-pg-kasumi_miwa-071",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Cause of stress: None"
+      ],
+      "found": [
+        "Cause of stress: None"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is the most romantically popular female character in Jujutsu Kaisen, according to Gege Akutami?",
+      "id": "jjk-pg-kasumi_miwa-072",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Kasumi is the most romantically popular female character in Jujutsu Kaisen"
+      ],
+      "found": [
+        "Kasumi is the most romantically popular female character in Jujutsu Kaisen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who else does Allegra Clark voice in the English dub?",
+      "id": "jjk-pg-kasumi_miwa-073",
+      "subject": "Kasumi Miwa",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin"
+      ],
+      "found": [
+        "Maki Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 14,
+    "canon_total": 14,
+    "canon_recall": 1.0,
+    "members_returned": 14,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 67,
+    "fact_present": 67
+  }
+}

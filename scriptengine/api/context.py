@@ -31,11 +31,13 @@ writer never has to guess and never has to leave a block untagged.
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from scriptengine.api.rules import writing_rules
 from scriptengine.config import SeriesPaths, Settings, get_settings
 from scriptengine.retrieve import citations as cite
+from scriptengine.retrieve import roster
 
 # Rough conversion from characters to tokens for English prose. Deliberately
 # pessimistic, because overshooting a context window costs a failed generation, while
@@ -133,17 +135,24 @@ def build_context(
     token_budget: int = 6000,
     top_k: int | None = None,
     settings: Settings | None = None,
+    subject: str | None = None,
 ) -> dict[str, Any]:
-    """Return an ordered, cited, budgeted bundle for a downstream model."""
+    """Return an ordered, cited, budgeted bundle for a downstream model.
+
+    `subject` names the page the question is about when its words do not. qa
+    widens its vector focus with it, and narrative leads the walk with the
+    page's own sections (the R6 floor), because both are paths that would
+    otherwise read a page the query's own words never resolved.
+    """
     settings = settings or get_settings()
     if mode not in MODES:
         raise ValueError(f"Unknown mode {mode!r}; expected one of {sorted(MODES)}.")
 
     if mode == "narrative":
-        return _narrative_context(paths, query, token_budget, top_k, settings)
+        return _narrative_context(paths, query, token_budget, top_k, settings, subject)
     if mode == "roster":
         return _roster_context(paths, query, token_budget, settings)
-    return _qa_context(paths, query, token_budget, top_k, settings)
+    return _qa_context(paths, query, token_budget, top_k, settings, subject)
 
 
 def _narrative_context(
@@ -152,6 +161,7 @@ def _narrative_context(
     token_budget: int,
     top_k: int | None,
     settings: Settings,
+    subject: str | None = None,
 ) -> dict[str, Any]:
     from scriptengine.retrieve.narrative import NarrativeRetriever
 
@@ -167,13 +177,27 @@ def _narrative_context(
         # all, so a script written from it had the story and not one grade,
         # birthday or debut chapter to anchor it.
         facts = _subject_facts(retriever.store, narrative)
+        # The authored page's own sections, the recall floor the qa path has
+        # (R6): a battle question routed here must be able to read the battle
+        # it is about, even when the query's own words resolve a character the
+        # fight merely names.
+        floor = retriever.authored_floor(subject, max_beats) if subject else []
 
     # The Shibuya Incident lists 42 participants. Rendering all of them spends
     # a chunk of the budget on a cast list before a single event is described,
     # and the ones that matter are the ones the beats actually name.
     participants = narrative.participants[:MAX_PARTICIPANTS]
 
-    beats = _capped_beats([beat.as_dict() for beat in narrative.beats], episodes)
+    # The floor leads, in the wiki's section order; the query-driven timeline
+    # follows with the sections the floor already reached removed by identity,
+    # so a section the timeline also walked is not paid for twice.
+    seen = {(beat.doc_title, beat.breadcrumb) for beat in floor}
+    ordered = [
+        *floor,
+        *(beat for beat in narrative.beats
+          if (beat.doc_title, beat.breadcrumb) not in seen),
+    ]
+    beats = _capped_beats([beat.as_dict() for beat in ordered], episodes)
     used = estimate_tokens(", ".join(participants))
     used += sum(estimate_tokens(f"{f['field']}: {f['value']}") for f in facts)
 
@@ -232,6 +256,13 @@ def _roster_context(
 
     roster = build_roster(paths, query, settings)
 
+    # A roster can carry the wiki's own words about the set -- the `Result`
+    # cells of a fighter's battle table -- and they are paid for first, the
+    # way qa pays for facts: they are the answer, not decoration.
+    facts = roster.facts
+    used = sum(estimate_tokens(f"{f['entity']}, {f['field']}: {f['value']}")
+               for f in facts)
+
     # Every member gets an equal share of the budget. A roster is a list of
     # equals, since the twentieth entry deserves the same treatment as the first,
     # and paying for them in order would let three long biographies at the top
@@ -239,7 +270,6 @@ def _roster_context(
     share = int(token_budget * CHARS_PER_TOKEN / max(len(roster.members), 1) * 0.85)
     member_chars = max(600, min(share, MAX_MEMBER_CHARS))
 
-    used = 0
     members: list[dict[str, Any]] = []
     for member in roster.members:
         payload = member.as_dict()
@@ -250,6 +280,31 @@ def _roster_context(
         members.append(payload)
         used += cost
 
+    # G7: a count question ("How many X...?") routed to a roster still needs the
+    # prose that states the number ("summon up to ten..."). A member list never
+    # says the count, so for count queries carry the subject's own passages --
+    # the same text a qa bundle would return -- paid after the members within the
+    # same budget, so the number is present in the bundle a scorer reads.
+    passages: list[dict[str, Any]] = []
+    from scriptengine.retrieve.router import _COUNT
+    if _COUNT.search(query or ""):
+        from scriptengine.retrieve.hybrid import HybridRetriever
+        with HybridRetriever(paths, settings) as retriever:
+            found = retriever.search(query, top_k=8, rerank=True)
+            retriever.release_models()
+        for order, passage in enumerate(found.passages, start=1):
+            cost = estimate_tokens(passage.text) + 30
+            if used + cost > token_budget and (members or passages):
+                break
+            passages.append({
+                "order": order,
+                "title": passage.breadcrumb or passage.doc_title,
+                "doc_title": passage.doc_title,
+                "text": passage.text,
+                "score": round(passage.score, 4),
+            })
+            used += cost
+
     return {
         "series": paths.name,
         "mode": "roster",
@@ -258,9 +313,10 @@ def _roster_context(
         "kind": roster.kind,
         "groups": roster.groups,
         "members": members,
+        "passages": passages,
         "beats": [],
         "participants": [],
-        "facts": [],
+        "facts": facts,
         "truncated": len(members) < len(roster.members),
         "members_available": len(roster.members),
         # How well the set the wiki gave back matches the set that was asked
@@ -287,16 +343,42 @@ def _qa_context(
     token_budget: int,
     top_k: int | None,
     settings: Settings,
+    subject: str | None = None,
 ) -> dict[str, Any]:
-    from scriptengine.retrieve.hybrid import HybridRetriever
+    from scriptengine.retrieve.hybrid import HybridRetriever, Passage
     from scriptengine.stores.facts import FactStore
 
     with HybridRetriever(paths, settings) as retriever:
-        result = retriever.search(query, top_k=top_k, rerank=True)
+        result = retriever.search(query, top_k=top_k, rerank=True, focus=subject)
         retriever.release_models()
 
     with FactStore(paths.facts_db) as store:
         episodes = cite.EpisodeIndex.from_store(store)
+        # Entity-anchored recall floor (R6; closes the G5/G11/G13/G14 family on
+        # the qa path): the page a question is authored against is fetched
+        # straight from the store and leads the budget walk, so its text is
+        # served whether or not any one of its passages outranks the rest of
+        # the corpus. The ranked beam used to be the only route to the
+        # subject's page, and a phrasing whose keywords missed the answer's
+        # words left the answer on the page and out of the bundle at once
+        # (Kechizu 036, Tsumiki's kanji meanings, Toge 051). Size-aware by
+        # construction: the loop below walks these first, in the wiki's own
+        # section order, and cuts at passage boundaries exactly as it cuts the
+        # beam (the first passage is never dropped, even if it alone exceeds
+        # the budget). A subject that resolves to no document yields an empty
+        # floor and the ranked behaviour stands unchanged.
+        floor = [
+            Passage(
+                chunk_id=row["id"],
+                text=row["text"],
+                doc_title=row["doc_title"],
+                breadcrumb=row["breadcrumb"],
+                ordinal=row["ordinal"],
+                score=0.0,
+                parent_text=row["parent_text"] or "",
+            )
+            for row in (store.passages_for_subject(subject) if subject else [])
+        ]
 
     # Facts are cheap and exact, so they are paid for first: a character's grade
     # is a dozen tokens and is the kind of detail a script gets wrong.
@@ -313,8 +395,29 @@ def _qa_context(
     used = sum(estimate_tokens(f"{f['field']}: {f['value']}") for f in facts)
     used += estimate_tokens(", ".join(entities))
 
+    ranked = roster.rank_relations(result.relations, query)
+    named = {name.lower() for name in entities}
+
+    def connects_named(row: dict[str, Any]) -> bool:
+        source = (row.get("source") or "").lower()
+        target = (row.get("target") or "").lower()
+        return source in named and target in named and source != target
+
+    # "Who is X to Y" names both ends of the answer row, and the wiki files a
+    # relationship under whichever character's page it feels like. On a busy
+    # character (Saitama owns dozens of relations) the row filed under the
+    # other end sits past the slice, so the rows connecting two named
+    # characters keep the front of the bundle and the rest follow in rank order.
+    relations = [row for row in ranked if connects_named(row)]
+    relations += [row for row in ranked if not connects_named(row)]
+
     beats: list[dict[str, Any]] = []
-    for order, passage in enumerate(result.passages, start=1):
+    # The subject's own passages lead the walk, in the wiki's section order; the
+    # ranked beam follows with the subject's own passages removed by id, since
+    # their section-ordered copies are the ones that get paid for.
+    floor_ids = {passage.chunk_id for passage in floor}
+    ordered = [*floor, *(p for p in result.passages if p.chunk_id not in floor_ids)]
+    for order, passage in enumerate(ordered, start=1):
         cost = estimate_tokens(passage.text) + 30
         if used + cost > token_budget and beats:
             break
@@ -339,9 +442,14 @@ def _qa_context(
         "beats": beats,
         "participants": entities,
         "facts": facts,
-        "relations": result.relations[:20],
-        "truncated": len(beats) < len(result.passages),
-        "beats_available": len(result.passages),
+        # Ranked before the slice, with the rows connecting two named characters
+        # hoisted to the front (see above): `edges_for` returns strongest-
+        # confidence first and stops at its own limit, so on a character with
+        # thirty-two edges the one that answers "Who is X's student?" fell
+        # outside the twenty without ever being ranked.
+        "relations": relations[:20],
+        "truncated": len(beats) < len(ordered),
+        "beats_available": len(ordered),
         "tokens_used": used,
     }
 
@@ -403,13 +511,22 @@ def render_prompt(
     if bundle.get("relations"):
         lines.append("## Relationships")
         for relation in bundle["relations"]:
-            lines.append(
-                f"- {relation['source']} / {relation['relation']} / {relation['target']}"
-            )
+            line = (f"- {relation['source']} / {relation['relation']} / "
+                    f"{relation['target']}")
+            # The extracted rows carry the wiki's own words about the
+            # relationship; they are the answer, not decoration, and the
+            # era scopes which stretch of the story they describe.
+            if relation.get("era"):
+                line += f" ({relation['era']})"
+            if relation.get("quote"):
+                line += f": {relation['quote']}"
+            lines.append(line)
         lines.append("")
 
     if bundle.get("members"):
         lines.extend(_render_members(bundle["members"]))
+    if bundle.get("passages"):
+        lines.extend(_render_passages(bundle["passages"]))
     if bundle.get("beats"):
         lines.extend(_render_beats(bundle))
 
@@ -489,4 +606,19 @@ def _render_members(members: list[dict[str, Any]]) -> list[str]:
         if member.get("text"):
             lines.append(member["text"])
 
+    return lines
+
+
+def _render_passages(passages: list[dict[str, Any]]) -> list[str]:
+    """The prose a count roster carries (G7), so the number the list implies
+    is actually stated in the writer's prompt, not left to be counted off.
+    """
+    lines = ["## Sources"]
+    for passage in passages:
+        source = passage.get("doc_title", "")
+        if source:
+            lines.append(f"\n### {source}")
+        text = passage.get("text", "")
+        if text:
+            lines.append(text)
     return lines

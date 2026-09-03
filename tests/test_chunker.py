@@ -155,9 +155,30 @@ class TestChunkPage:
         ])
         assert {c.breadcrumb for c in chunk_page(page) if c.level == 1} == {"Appearance"}
 
-    def test_tiny_sections_are_dropped(self):
-        page = make_page(sections=[section("Stub", "Too short.")])
-        assert not [c for c in chunk_page(page) if c.level == 1]
+    def test_a_short_factual_section_is_chunked_not_dropped(self):
+        # G15 (2026-08-27): the old 20-word floor silently dropped whole
+        # sections -- Kaito Yuki's 19-word Personality section ("Kaito values
+        # discipline, and is hostile to Yuji Itadori, whose existence he
+        # believes goes against the rules of Jujutsu.") indexed zero chunks
+        # and no retrieval path could reach it; 1,660 corpus sections sat
+        # under the floor. Only sections with no text of their own are
+        # skipped now.
+        page = make_page(sections=[
+            section("Personality",
+                    "Kaito values discipline, and is hostile to Yuji Itadori,"
+                    " whose existence he believes goes against the rules of Jujutsu."),
+            section("Empty", ""),
+        ])
+        level1 = [c for c in chunk_page(page) if c.level == 1]
+        assert [c.breadcrumb for c in level1] == ["Personality"]
+        assert level1[0].text.startswith("Kaito values discipline")
+
+    def test_a_short_trivia_bullet_still_yields_a_passage(self):
+        # The 7-word bullet from the 2026-08-25 correction's example must
+        # survive as its own level-2 passage.
+        page = make_page(sections=[section("Trivia", "His maternal grandfather is Danish.")])
+        level2 = [c for c in chunk_page(page) if c.level == 2]
+        assert [c.text for c in level2] == ["His maternal grandfather is Danish."]
 
     def test_entities_are_carried_onto_chunks(self):
         sec = section("Appearance", "Todo stands as tall as Gojo. " * 30)

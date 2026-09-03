@@ -1,0 +1,1326 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +64 hand-authored prose (ids 003-066) + 2 page-gen identity; R5 forms: yes/no 027, comparative 061-065, counterfactual 067 (retired not-stated-on-page), how-many 036/043; infobox new-character field EMPTY; Plot Details 35; OOA 15 entries (first Yuji Itadori / last Mimiko Hasaba, with (Proxy)/(Flashback)/(Silhouette)/(Fantasy) tags - items asked as plain names); Locations 2; B&E has 1 sub-battle; Jujutsu is a Scroll box with Choso's full 3-level technique tree (056-059) + Yuji's Divergent Fist (060, new technique); two colon hazards handled: 'Flowing Red Scale: Stack' (041/059, fragment) and 'Cursed Womb: Death Painting' resolving to display 'Death Painting' (030, benign variant); A&M 8 top-level bullets, 5 asked (nested bullets deduped); NEW section 'Clips' (gallery with caption, 066) - the 10th uncovered section on this page; Trivia is a {{Section stub}} - no Trivia question; Music skipped; Clips section (066) retired as parser gap: <gallery> body stripped by wikitext.py:234, caption unreachable, flagged for central triage",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_37-067",
+   "item": "",
+   "question": "What would have happened if Yuji had not retreated to the bathroom in Episode 37?",
+   "reason": "Counterfactual: the page states only that Yuji retreated to the bathroom and that the water there dispelled Choso's Convergence; no hypothetical outcome of staying in the open is stated on the page. Never invent a resolution. Satisfies the R5 counterfactual form.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_37-066",
+   "item": "This bathroom fight",
+   "question": "What is the clip caption in Episode 37?",
+   "reason": "PARSER GAP (flag for central triage): the Clips section is a <gallery> tag whose body is the caption text (\"This bathroom fight\"). wikitext.py:234 strips <gallery> tags together with their bodies (comment: the body is a list of image files), so the caption never reaches a chunk and the section chunks out of the bundle empty. Verified: the bundle for the question contains neither the caption nor the section. Engine fix = extract gallery captions/payloads as text before the tag-strip pass, then re-index; do NOT rephrase to dodge.",
+   "reason_class": "parser-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_37-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 37's name?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "赫鱗",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_37-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 37's name?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sekirin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_37-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Red Scale",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ep title"
+  },
+  {
+   "id": "jjk-pg-episode_37-004",
+   "kind": "fact",
+   "question": "When did Episode 37 air in Japan?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-10-19",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:jp air date"
+  },
+  {
+   "id": "jjk-pg-episode_37-005",
+   "kind": "fact",
+   "question": "When did Episode 37 air in the United States?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-11-02",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:us air date (ISO on this page)"
+  },
+  {
+   "id": "jjk-pg-episode_37-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 37 belong to?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:arc"
+  },
+  {
+   "id": "jjk-pg-episode_37-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "SPECIALZ",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:opening song"
+  },
+  {
+   "id": "jjk-pg-episode_37-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "more than words",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ending song"
+  },
+  {
+   "id": "jjk-pg-episode_37-009",
+   "kind": "fact",
+   "question": "Which manga chapter comes first in Episode 37's adaptation?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 100",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:adapted from (first of seven)"
+  },
+  {
+   "id": "jjk-pg-episode_37-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 36",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:previous"
+  },
+  {
+   "id": "jjk-pg-episode_37-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 38",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:next"
+  },
+  {
+   "id": "jjk-pg-episode_37-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:season number (single-digit lint false-positive class, benign per ep32-012)"
+  },
+  {
+   "id": "jjk-pg-episode_37-013",
+   "kind": "fact",
+   "question": "Who confronts Yuji at Shibuya Station in Episode 37's summary?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "summary"
+  },
+  {
+   "id": "jjk-pg-episode_37-014",
+   "kind": "fact",
+   "question": "What role does Episode 37 play in the second season?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the thirteenth episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "intro"
+  },
+  {
+   "id": "jjk-pg-episode_37-015",
+   "kind": "fact",
+   "question": "Where does Yuji split up with Megumi in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Tower",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-016",
+   "kind": "fact",
+   "question": "What phrase does Yuji hear someone say in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "spiced cod roe",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (Inumaki's Cursed Speech, quoted in the raw)"
+  },
+  {
+   "id": "jjk-pg-episode_37-017",
+   "kind": "fact",
+   "question": "What hand gesture does Toge give Yuji in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a peace signed hand gesture",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-018",
+   "kind": "fact",
+   "question": "What does Toge say in response in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Salmon, salmon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (Inumaki's Cursed Speech, quoted in the raw)"
+  },
+  {
+   "id": "jjk-pg-episode_37-019",
+   "kind": "fact",
+   "question": "What does Toge pull out of his turtleneck in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "what appears to be a megaphone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-020",
+   "kind": "fact",
+   "question": "What time does Yuji enter Shibuya Station in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "10:10 P.M.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-021",
+   "kind": "fact",
+   "question": "What does Choso use to attack Yuji first in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Piercing Blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-022",
+   "kind": "fact",
+   "question": "What does Yuji use to uppercut Choso in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his injured arm",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-023",
+   "kind": "fact",
+   "question": "What does Choso block the punch with in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his arm and leg",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-024",
+   "kind": "fact",
+   "question": "What did the two people Yuji killed do before dying, according to Yuji in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cry before they died",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-025",
+   "kind": "fact",
+   "question": "What does Choso exude behind him in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "massive volumes of blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-026",
+   "kind": "fact",
+   "question": "What does Choso ask Eso and Kechizu to do in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "watch over him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-027",
+   "kind": "fact",
+   "question": "Does Yuji estimate his chance of avoiding Piercing Blood at only a percentage in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a fifty percent",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (yes/no form; how-many content)"
+  },
+  {
+   "id": "jjk-pg-episode_37-028",
+   "kind": "fact",
+   "question": "How does Yuji bait Choso into firing Piercing Blood in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "jumping off the ground",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-029",
+   "kind": "fact",
+   "question": "What does Choso activate that detonates the blood orbs in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Supernova",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-030",
+   "kind": "fact",
+   "question": "What follows up by using Blood Edge on Yuji's feet in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (link target 'Cursed Womb: Death Painting' resolves to the colon-free display 'Death Painting' - same benign variant as ep33-025)"
+  },
+  {
+   "id": "jjk-pg-episode_37-031",
+   "kind": "fact",
+   "question": "What does Choso admit about his attack in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he was too hasty",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-032",
+   "kind": "fact",
+   "question": "What does Mechamaru claim he is doing in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "saving energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-033",
+   "kind": "fact",
+   "question": "Who uses the same cursed technique as Choso, according to Mechamaru in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-034",
+   "kind": "fact",
+   "question": "What is Blood Manipulation prized for within the Kamo Clan in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "its overall balance in combat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-035",
+   "kind": "fact",
+   "question": "What does Mechamaru advise Yuji to do in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "retreat to the bathroom",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-036",
+   "kind": "fact",
+   "question": "What chance does Mechamaru's plan have of success in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "ten percent",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_37-037",
+   "kind": "fact",
+   "question": "What does Mechamaru taunt Choso with through the device in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "calling him a coward just like his brothers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-038",
+   "kind": "fact",
+   "question": "What is attached to the opposite wall in the bathroom in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mechamaru's communication device",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-039",
+   "kind": "fact",
+   "question": "What dispels the Convergence in the bathroom in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the water splashing around the room",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-040",
+   "kind": "fact",
+   "question": "Why does Blood Manipulation dissolve easier in water in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation normally stops blood from clotting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-041",
+   "kind": "fact",
+   "question": "What does Choso decide to use in the bathroom in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Flowing Red Scale",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (COLON HAZARD: display 'Flowing Red Scale: Stack' truncates at the colon - asked via fragment, same instance-class as ep31-056)"
+  },
+  {
+   "id": "jjk-pg-episode_37-042",
+   "kind": "fact",
+   "question": "What does Choso fire into Yuji's liver in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a Blood Meteorite",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-043",
+   "kind": "fact",
+   "question": "How many significant strikes has Yuji landed, according to Choso in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_37-044",
+   "kind": "fact",
+   "question": "What does Choso hide in his right fist in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a tooth",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-045",
+   "kind": "fact",
+   "question": "What does Choso crack in Yuji with a hammer fist in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his collarbone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-046",
+   "kind": "fact",
+   "question": "What did Choso use to protect the part of his body Yuji attacked in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "hardened blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-047",
+   "kind": "fact",
+   "question": "What does Sukuna call Yuji from his innate domain in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "worthless",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-048",
+   "kind": "fact",
+   "question": "What appears inside Choso's mind in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "A memory of a past event that never happened",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-049",
+   "kind": "fact",
+   "question": "What food do the brothers eat in Choso's memory in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "spaghetti",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_37-050",
+   "kind": "fact",
+   "question": "Which character is listed first in Episode 37's order of appearance?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (first)"
+  },
+  {
+   "id": "jjk-pg-episode_37-051",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 37's order of appearance?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mimiko Hasaba",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (last; the list also carries (Proxy)/(Flashback)/(Silhouette)/(Fantasy) tags - items asked as plain names)"
+  },
+  {
+   "id": "jjk-pg-episode_37-052",
+   "kind": "fact",
+   "question": "Which location is listed first in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (1 of 2)"
+  },
+  {
+   "id": "jjk-pg-episode_37-053",
+   "kind": "fact",
+   "question": "Which station is listed under Shibuya in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (2 of 2)"
+  },
+  {
+   "id": "jjk-pg-episode_37-054",
+   "kind": "fact",
+   "question": "Which event is ongoing in Episode 37's battles and events?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (ongoing)"
+  },
+  {
+   "id": "jjk-pg-episode_37-055",
+   "kind": "fact",
+   "question": "Which battle is listed under the Shibuya Incident in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori vs. Choso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (sub-battle)"
+  },
+  {
+   "id": "jjk-pg-episode_37-056",
+   "kind": "fact",
+   "question": "What technique is listed under Choso in Episode 37's jujutsu section?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Choso's Techniques (root)"
+  },
+  {
+   "id": "jjk-pg-episode_37-057",
+   "kind": "fact",
+   "question": "Which sub-technique comes first under Choso in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Edge",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Choso's Techniques sub-item (1st of 7)"
+  },
+  {
+   "id": "jjk-pg-episode_37-058",
+   "kind": "fact",
+   "question": "Which sub-technique comes last under Choso in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Supernova",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Choso's Techniques sub-item (last of 7)"
+  },
+  {
+   "id": "jjk-pg-episode_37-059",
+   "kind": "fact",
+   "question": "What is the third-level sub-technique listed under Choso in Episode 37?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Flowing Red Scale",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:third-level item (COLON HAZARD: 'Flowing Red Scale: Stack' truncates at the colon - fragment, same instance-class as ep31-056)"
+  },
+  {
+   "id": "jjk-pg-episode_37-060",
+   "kind": "fact",
+   "question": "What technique is listed under Yuji Itadori in Episode 37's jujutsu section?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Divergent Fist",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Yuji Itadori's Techniques (new technique for this character)"
+  },
+  {
+   "id": "jjk-pg-episode_37-061",
+   "kind": "fact",
+   "question": "What does the beam slice in half in the anime, according to Episode 37's differences?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a traffic sign",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (comparative form: anime deflects vs. manga dodges)"
+  },
+  {
+   "id": "jjk-pg-episode_37-062",
+   "kind": "fact",
+   "question": "What does Choso grab and crush in the bathroom in the anime, according to Episode 37's differences?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a piece of the destroyed Mechamaru communication device",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_37-063",
+   "kind": "fact",
+   "question": "What does Yuji throw at Choso during their first bathroom exchange in the anime, according to Episode 37's differences?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a drain cover",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_37-064",
+   "kind": "fact",
+   "question": "What does Choso use to distract Yuji in the anime, according to Episode 37's differences?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one of his teeth",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_37-065",
+   "kind": "fact",
+   "question": "What does Choso plan to do after defeating Yuji in the anime, according to Episode 37's differences?",
+   "subject": "Episode 37",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "execute him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_37"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  }
+ ]
+}

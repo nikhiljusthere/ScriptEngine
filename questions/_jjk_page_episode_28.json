@@ -1,0 +1,1375 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +65 hand-authored prose (ids 003-066, 068) + 1 re-cover 069; R5 forms: yes/no 042, comparative 019, counterfactual 067 (retired not-stated-on-page), how-many 060/066; infobox new-character field EMPTY; page has NO Trivia section (Clips -> Navigation); A&M has 1 item (068); B&E 'Satoru Gojo vs. Toji Fushiguro: Rematch' colon handled via colon-free prefix item (059); 048 RETIRED parser-gap (colon-truncation family, new instances: Jujutsu-section list + line-44 prose beat, full bundle dump: ep28_048_bundle.json) and re-covered by 069 with colon-free fragment 'Purple'",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_28-067",
+   "item": "",
+   "question": "What would have happened if Toji had chopped Satoru's head off during their first fight in Episode 28?",
+   "reason": "Counterfactual: the page states only Satoru's claim that 'the Sorcerer Killer didn't chop his head off or used the Inverted Spear of Heaven for the finishing blow' is why Toji is going to lose - no hypothetical outcome of a successful head-chop is stated on the page (Satoru returns 'back from the dead' regardless); never invent a resolution.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_28-048",
+   "item": "Hollow Technique: Purple",
+   "question": "Which technique defeats Toji in a single shot in Episode 28?",
+   "reason": "parser-gap (colon-truncation family, NEW instance): the parser truncates the technique name 'Hollow Technique: Purple' at its colon in TWO places in the Episode 28 bundle - (a) the Jujutsu section list renders as 'Limitless Infinity Blue (Mentioned) Red Purple Six Eyes' (every Cursed Technique Lapse/Reversal/Hollow item truncated to its post-colon fragment) and (b) the line-44 prose beat renders as 'In a single shot, Satoru defeats Toji with the all-powerful Purple.' The bundle therefore carries the colon-free fragment 'Purple' but never the full name, so the verbatim answer can never match. Extends the known deferred open (parser colon-truncation re-index + gold-update, previously B&E-bullet only - e.g. the 'Satoru Gojo vs. Toji Fushiguro: Rematch' B&E bullet on this same page, handled via colon-free prefix item 059). Fix is deferred to end of pass per handoff; content re-covered by colon-free fragment question 069.",
+   "reason_class": "parser-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_28-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 28's name?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "懐玉－肆－",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_28-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 28's name?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kaigyoku -shi-",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_28-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hidden Inventory, Part 4",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-004",
+   "kind": "fact",
+   "question": "When did Episode 28 air in Japan?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-07-27",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-005",
+   "kind": "fact",
+   "question": "When did Episode 28 air in the United States?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-08-10",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 28 belong to?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gojo's Past",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ao no Sumika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Akari",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-009",
+   "kind": "fact",
+   "question": "Which manga chapters is Episode 28 adapted from?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 73",
+     "aliases": [
+      "Chapter 74",
+      "Chapter 75",
+      "Chapter 76"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 27",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 29",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 28 part of?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-013",
+   "kind": "fact",
+   "question": "What role does Episode 28 play in the second season?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the fourth episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_28-014",
+   "kind": "fact",
+   "question": "What disastrous turn does the escort mission take in Episode 28's summary?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru and Riko have both been slain by the Sorcerer Killer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_28-015",
+   "kind": "fact",
+   "question": "How does the tragedy avoid ending in total defeat in Episode 28's summary?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Honored One suddenly reawakens",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_28-016",
+   "kind": "fact",
+   "question": "What does Toji do right before Suguru's eyes in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "shoots Riko dead",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-017",
+   "kind": "fact",
+   "question": "What does Toji do while being dragged by the dragon in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "casually fires his handgun",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-018",
+   "kind": "fact",
+   "question": "What does Toji's handgun force Suguru to do in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "summon a cursed spirit to block the bullets",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-019",
+   "kind": "fact",
+   "question": "How does Toji's speed compare to Suguru's curse projectiles in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji's speed easily outmaneuvers Suguru's curse projectiles",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-020",
+   "kind": "fact",
+   "question": "What does Toji remind Suguru about humans in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "humans leave behind footprints and a scent",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-021",
+   "kind": "fact",
+   "question": "How did Toji track the group, according to him in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the orthodox way using enhanced senses from his heavenly restriction",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-022",
+   "kind": "fact",
+   "question": "What does Toji casually tell Suguru about Misato in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "she's probably dead",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-023",
+   "kind": "fact",
+   "question": "What does Toji do to Rainbow Dragon in mid-air in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "splits Rainbow Dragon down the middle with a single attack",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-024",
+   "kind": "fact",
+   "question": "What catches the falling platform in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kuchisake-Onna's barrier",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-025",
+   "kind": "fact",
+   "question": "What question must Toji answer in Kuchisake-Onna's simple domain in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Am I pretty",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-026",
+   "kind": "fact",
+   "question": "What does Toji tell Kuchisake-Onna in response in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "she's not his type",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-027",
+   "kind": "fact",
+   "question": "What does Toji use to deflect the scissor blades in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Inverted Spear of Heaven",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-028",
+   "kind": "fact",
+   "question": "Where does Toji get the Inverted Spear of Heaven from in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his own cursed spirit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-029",
+   "kind": "fact",
+   "question": "What does Toji call Suguru when he gets behind his opponent in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a fool for coming in close",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-030",
+   "kind": "fact",
+   "question": "What happens when Suguru attempts to absorb the cursed spirit in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it rejects him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-031",
+   "kind": "fact",
+   "question": "What does Toji use to cut Suguru and Kuchisake-Onna down in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a katana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-032",
+   "kind": "fact",
+   "question": "Why does Toji spare Suguru in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he doesn't know what will happen to the cursed spirits he absorbed if he dies",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-033",
+   "kind": "fact",
+   "question": "What does Toji's taunt say about sorcerers' blessings in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "these sorcerers couldn't defeat a monkey who can't even use jujutsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-034",
+   "kind": "fact",
+   "question": "What does Toji finally remember about his son in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he finally remembers he named Megumi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-035",
+   "kind": "fact",
+   "question": "Who is the representative that receives Riko's body in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shigeru Sonoda",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-036",
+   "kind": "fact",
+   "question": "What does the representative admit about the assassination in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they never expected to actually prevent the merger",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-037",
+   "kind": "fact",
+   "question": "What does the representative claim about the Star Religious Group in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they have no problem perishing with Tengen",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-038",
+   "kind": "fact",
+   "question": "Why does Shiu Kong refuse Toji's invitation to get food in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he would only associate with Toji in work or in hell",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-039",
+   "kind": "fact",
+   "question": "What is Satoru like when he confronts Toji after returning in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "delirious from his newfound awakening and drunk on power",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-040",
+   "kind": "fact",
+   "question": "Why does Satoru claim Toji is going to lose in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Sorcerer Killer didn't chop his head off or used the Inverted Spear of Heaven for the finishing blow",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-041",
+   "kind": "fact",
+   "question": "Which technique does Satoru successfully activate for the first time in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Red",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-042",
+   "kind": "fact",
+   "question": "Does Toji suffer any serious injuries from the blow of Red in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he doesn't suffer any serious injuries",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-043",
+   "kind": "fact",
+   "question": "What does Toji call Satoru while the awakened user levitates in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a monster",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-044",
+   "kind": "fact",
+   "question": "What does Toji attach to the Inverted Spear of Heaven in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Chain of a Thousand Miles",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-045",
+   "kind": "fact",
+   "question": "Why does Toji hesitate before charging Satoru in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he can feel something is off",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-046",
+   "kind": "fact",
+   "question": "What does Satoru apologize for in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "not feeling upset about Riko's death",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-047",
+   "kind": "fact",
+   "question": "What does Satoru proclaim while looking down toward Toji in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "throughout heaven and earth, he alone is the honored one",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-049",
+   "kind": "fact",
+   "question": "What would Toji normally do when Satoru showed up, according to his thoughts in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "I refuse to work for free and then ran away immediately",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-050",
+   "kind": "fact",
+   "question": "What does Toji reveal about his child in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his child will be sold off into the Zenin clan in two or three years",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-051",
+   "kind": "fact",
+   "question": "What does a recovered Suguru do to Toji's inventory cursed spirit in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "absorbs it",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-052",
+   "kind": "fact",
+   "question": "What does Satoru ask Suguru about the non-sorcerers around them in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "if they should kill all the non-sorcerers clapping around them",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-053",
+   "kind": "fact",
+   "question": "What does Suguru say is very important for jujutsu sorcerers in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it's very important for there always to be a point",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_28-054",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru Geto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_28-055",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 28's order of appearance?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shoko Ieiri",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_28-056",
+   "kind": "fact",
+   "question": "What building of the Time Vessel Association is listed as a location in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "House of the Children of the Star",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_28-057",
+   "kind": "fact",
+   "question": "What corridor of Jujutsu High is listed as a location in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tombs of the Star Corridor",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_28-058",
+   "kind": "fact",
+   "question": "Which battle between Suguru and Toji is listed in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru Geto vs. Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_28-059",
+   "kind": "fact",
+   "question": "Which battle between Satoru and Toji is listed as a rematch in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo vs. Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_28-060",
+   "kind": "fact",
+   "question": "Which three cursed tools are listed in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chain of a Thousand Miles",
+     "aliases": [
+      "Inverted Spear of Heaven",
+      "Split Soul Katana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-061",
+   "kind": "fact",
+   "question": "Which parent technique is listed under Satoru Gojo's techniques in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Limitless",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-062",
+   "kind": "fact",
+   "question": "Which sub-technique of Limitless is listed in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Infinity",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-063",
+   "kind": "fact",
+   "question": "Which character's eyes are listed under Satoru Gojo's techniques in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Six Eyes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-064",
+   "kind": "fact",
+   "question": "Which technique that reverses cursed energy is listed under Satoru Gojo's techniques in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-065",
+   "kind": "fact",
+   "question": "Which technique is listed under Suguru Geto's techniques in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Spirit Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-066",
+   "kind": "fact",
+   "question": "Which two cursed spirits are listed under Suguru Geto's techniques in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rainbow Dragon",
+     "aliases": [
+      "Kuchisake-Onna"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_28-068",
+   "kind": "fact",
+   "question": "How does the anime extend the Suguru-Toji fight compared to the manga, according to the differences in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the battle goes all over the main hall of the tombs of the star, descending several levels and destroying several buildings along the way",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_28-069",
+   "kind": "fact",
+   "question": "Which technique defeats Toji in a single shot in Episode 28?",
+   "subject": "Episode 28",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Purple",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_28"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (re-covers retired 048 with the colon-free fragment 'Purple'; colon-truncation family deferred end-of-pass)"
+  }
+ ]
+}

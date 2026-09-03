@@ -1,0 +1,449 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Copy?",
+      "set": "Every named technique of Copy",
+      "confidence": "declared",
+      "returned": 8,
+      "available": 8,
+      "canon": 8,
+      "found": 8,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Copy",
+      "set": "Every battle involving Copy",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Copy?",
+      "found": [
+        "Cursed Speech",
+        "Shikigami",
+        "Shrine",
+        "Technique Extinguishment",
+        "Sky Manipulation",
+        "Thin Ice Breaker",
+        "G Warstaff",
+        "Jacob's Ladder"
+      ],
+      "missing": [],
+      "members": [
+        "Cursed Speech",
+        "G Warstaff",
+        "Jacob's Ladder",
+        "Shikigami",
+        "Shrine",
+        "Sky Manipulation",
+        "Technique Extinguishment",
+        "Thin Ice Breaker"
+      ]
+    },
+    {
+      "query": "Every battle involving Copy",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Copy's name?",
+      "id": "jjk-pg-copy-001",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "\u6a21\u5023"
+      ],
+      "found": [
+        "\u6a21\u5023"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Copy's name?",
+      "id": "jjk-pg-copy-002",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Kop\u012b"
+      ],
+      "found": [
+        "Kop\u012b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Copy first appear?",
+      "id": "jjk-pg-copy-003",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-4\nChapter 178"
+      ],
+      "found": [
+        "Chapter 0-4\nChapter 178"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Copy first depicted?",
+      "id": "jjk-pg-copy-004",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "The Movie\nEpisode 59"
+      ],
+      "found": [
+        "The Movie\nEpisode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-copy-005",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-copy-006",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-copy-007",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-copy-008",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-copy-009",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori?",
+      "id": "jjk-pg-copy-010",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-copy-011",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-copy-012",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori begin?",
+      "id": "jjk-pg-copy-013",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Chapter 176"
+      ],
+      "found": [
+        "Chapter 176"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori depicted?",
+      "id": "jjk-pg-copy-014",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-copy-015",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Copy?",
+      "id": "jjk-pg-copy-018",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Copy allows the user to utilize an innate technique after Rika consumes part of its original user's body."
+      ],
+      "found": [
+        "Copy allows the user to utilize an innate technique after Rika consumes part of its original user's body."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Copy use Rika as external storage?",
+      "id": "jjk-pg-copy-019",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Having Rika function as an external storage for cursed techniques is necessary, as the user's brain would be overloaded by the multiple techniques otherwise."
+      ],
+      "found": [
+        "Having Rika function as an external storage for cursed techniques is necessary, as the user's brain would be overloaded by the multiple techniques otherwise."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the main strength of Copy?",
+      "id": "jjk-pg-copy-020",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "The main strength of Copy lies in the wide variety of abilities at the user's disposal."
+      ],
+      "found": [
+        "The main strength of Copy lies in the wide variety of abilities at the user's disposal."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What restricts Copy's accessibility?",
+      "id": "jjk-pg-copy-021",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "Copy is heavily restricted by its accessibility. While the user can copy a technique, they cannot access it unless Rika is fully manifested or they are within their domain."
+      ],
+      "found": [
+        "Copy is heavily restricted by its accessibility. While the user can copy a technique, they cannot access it unless Rika is fully manifested or they are within their domain."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Copy's Domain Expansion look like?",
+      "id": "jjk-pg-copy-022",
+      "subject": "Copy",
+      "accept": "all",
+      "expected": [
+        "This Domain Expansion conjures a field of cross-like structures littered with countless katanas and encircled by ropes tied together in a fashion symbolic of love."
+      ],
+      "found": [
+        "This Domain Expansion conjures a field of cross-like structures littered with countless katanas and encircled by ropes tied together in a fashion symbolic of love."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 20,
+    "fact_present": 20
+  }
+}

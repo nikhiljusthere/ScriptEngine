@@ -1,0 +1,1038 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 2 (techniques & abilities) of the Angel cluster. Q051 is the closed roster of Angel's named cursed techniques, staged in _jjk_page_angel.decl2.yaml (G6); the 46 fact questions cover the Cursed Technique sub-section (Technique Extinguishment, Maximum Output: Jacob's Ladder), the non-technique abilities under Abilities and Powers (Overall Abilities, Flight, Great Intellect, Incarnation), the Trivia etymology beats, and the technique-in-combat beats drawn from the Culling Game Arc and Shinjuku Showdown Arc. Golds are NFKD-verbatim on the Angel page and present in the live bundle; the kanji/romaji name cells and unstated details are retired with reasons.",
+ "retired": [
+  {
+   "id": "jjk-pg-angel-retired-06",
+   "item": "",
+   "question": "What is the kanji for the Technique Extinguishment?",
+   "reason": "Unchunked: the kanji (術式が消滅) live only in the Nihongo/Ruby cell of the Cursed Technique section's technique-name cell, which the pipeline does not make goldable.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-07",
+   "item": "",
+   "question": "What is the romaji of Maximum Output: Jacob's Ladder?",
+   "reason": "Unchunked: the romaji (Shutsuryoku Saidai: Yakobu no Hashigo) lives only in the Nihongo/Ruby cell of the Cursed Technique section's technique-name cell, which the pipeline does not make goldable.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-08",
+   "item": "",
+   "question": "What is the Angel's Domain Expansion?",
+   "reason": "Not stated on the page: the Angel page assigns her no domain; domains appear only as her knowledge (Domain Amplification, domain clashes, id 073) and as other characters' domains in the fight prose.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-09",
+   "item": "",
+   "question": "What is the cost of using the Technique Extinguishment?",
+   "reason": "Not stated on the page: no energy cost or usage limit is quantified; the only limit the page states is that it is nearly impossible to split incarnated sorcerers from their hosts without killing both (id 057).",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-10",
+   "item": "",
+   "question": "What grade or rank is the Angel as a sorcerer?",
+   "reason": "Not stated on the page: her grade is never given; 'special grades' on the page refers to the cursed objects susceptible to her technique (like the Prison Realm, id 056), not to her own rank.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-angel-051",
+   "kind": "set",
+   "question": "Every named cursed technique of Angel",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Technique Extinguishment",
+     "aliases": []
+    },
+    {
+     "item": "Maximum Output: Jacob's Ladder",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel",
+    "https://jujutsu-kaisen.fandom.com/wiki/Technique_Extinguishment",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jacob%27s_Ladder"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed set of named techniques in the Cursed Technique sub-section of Abilities and Powers: Technique Extinguishment (the innate technique) and Maximum Output: Jacob's Ladder (the extension technique). Staged in _jjk_page_angel.decl2.yaml (G6, declared-roster-wins): the live router returns the generic technique roster until decl2 is merged."
+  },
+  {
+   "id": "jjk-pg-angel-052",
+   "kind": "fact",
+   "question": "What is the Angel's innate cursed technique?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Technique Extinguishment",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment (innate)."
+  },
+  {
+   "id": "jjk-pg-angel-053",
+   "kind": "fact",
+   "question": "What does the Technique Extinguishment negate?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "any and all other cursed techniques",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment: 'allows for the \"extinguishment\" of any and all other cursed techniques, negating them.'"
+  },
+  {
+   "id": "jjk-pg-angel-054",
+   "kind": "fact",
+   "question": "Who inherited the Angel's technique?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Hana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment: 'The Angel's technique, inherited by Hana.'"
+  },
+  {
+   "id": "jjk-pg-angel-055",
+   "kind": "fact",
+   "question": "What is susceptible to the Technique Extinguishment?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Barriers, seals, and cursed objects alike",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment (innate)."
+  },
+  {
+   "id": "jjk-pg-angel-056",
+   "kind": "fact",
+   "question": "Which special grade is susceptible to the Technique Extinguishment?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "the Prison Realm",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment: 'including special grades like the Prison Realm.'"
+  },
+  {
+   "id": "jjk-pg-angel-057",
+   "kind": "fact",
+   "question": "What is nearly impossible for the Angel to do to incarnated sorcerers?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "split incarnated sorcerers from their hosts without killing both",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment (innate)."
+  },
+  {
+   "id": "jjk-pg-angel-058",
+   "kind": "fact",
+   "question": "Why is it nearly impossible for the Angel to split incarnated sorcerers from their hosts?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "incarnations are fusions of cursed objects with living flesh",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Technique Extinguishment: 'as incarnations are fusions of cursed objects with living flesh.'"
+  },
+  {
+   "id": "jjk-pg-angel-059",
+   "kind": "fact",
+   "question": "What kind of technique is Maximum Output: Jacob's Ladder?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "An extension technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-060",
+   "kind": "fact",
+   "question": "What does the Angel conjure in her hands when casting Jacob's Ladder?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "a four-winged trumpet made of light",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-061",
+   "kind": "fact",
+   "question": "What appears in the sky above her when she casts Jacob's Ladder?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "an immense circle of light in the sky above her",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-062",
+   "kind": "fact",
+   "question": "What does the circle of light resemble?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "a magic array",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-063",
+   "kind": "fact",
+   "question": "What is in the middle of the circle of light?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "a heptagram",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-064",
+   "kind": "fact",
+   "question": "What is along the periphery of the circle of light?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "several crosses",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-065",
+   "kind": "fact",
+   "question": "What happens when the Angel sounds the trumpet?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "a pillar of light descends from middle of the circle to engulf whatever is below",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-066",
+   "kind": "fact",
+   "question": "Under what will any curse be \"extinguished\" when the Angel sounds the trumpet?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "sourced": "Chapters 213 and 221",
+   "answer": [
+    {
+     "item": "the light of Jacob's Ladder",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique > Maximum Output: Jacob's Ladder (extension)."
+  },
+  {
+   "id": "jjk-pg-angel-067",
+   "kind": "fact",
+   "question": "What did the Angel and Hana use Jacob's Ladder on, unsealing Satoru Gojo?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "the \"Back\" of the Prison Realm",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities: 'they used Jacob's Ladder on the \"Back\" of the Prison Realm, unsealing Satoru Gojo.'"
+  },
+  {
+   "id": "jjk-pg-angel-068",
+   "kind": "fact",
+   "question": "What ability does the Angel grant Hana while possessing her?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 145",
+   "answer": [
+    {
+     "item": "the ability to levitate and fly",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Flight."
+  },
+  {
+   "id": "jjk-pg-angel-069",
+   "kind": "fact",
+   "question": "Who is the Angel fatally dangerous to?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "fellow incarnated sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities."
+  },
+  {
+   "id": "jjk-pg-angel-070",
+   "kind": "fact",
+   "question": "What has the Angel repeatedly proven herself to be?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "shrewd, perceptive, and knowledgeable on jujutsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Great Intellect."
+  },
+  {
+   "id": "jjk-pg-angel-071",
+   "kind": "fact",
+   "question": "Whose innate technique did the Angel realize the true nature and potential of?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 240",
+   "answer": [
+    {
+     "item": "Takaba's innate technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Great Intellect: 'the Angel was the only one to realize the true nature and potential of Takaba's innate technique.'"
+  },
+  {
+   "id": "jjk-pg-angel-072",
+   "kind": "fact",
+   "question": "What did the Angel initially realize Takaba's technique may have done for Hana?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 220",
+   "answer": [
+    {
+     "item": "helped Hana survive Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Great Intellect."
+  },
+  {
+   "id": "jjk-pg-angel-073",
+   "kind": "fact",
+   "question": "What does the Angel's jujutsu knowledge extend to?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 225-229",
+   "answer": [
+    {
+     "item": "the workings of Domain Amplification, the dynamics involved in a domain clash, and the potential recovery of a burnt-out technique using Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Great Intellect."
+  },
+  {
+   "id": "jjk-pg-angel-074",
+   "kind": "fact",
+   "question": "Who did the Angel correctly ascertain as the responsible party for flooding the first Tokyo Colony with non-sorcerer foreigners?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 209 and 210",
+   "answer": [
+    {
+     "item": "the responsible party was Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Great Intellect."
+  },
+  {
+   "id": "jjk-pg-angel-075",
+   "kind": "fact",
+   "question": "What did the Angel's deal with Kenjaku effectively bind her soul to?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "a cursed object",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities > Incarnation: 'the Angel struck a deal with Kenjaku to effectively bind her soul to a cursed object.'"
+  },
+  {
+   "id": "jjk-pg-angel-076",
+   "kind": "fact",
+   "question": "What does the deal with Kenjaku allow the Angel to do?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "incarnate post-mortem and possess Hana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities > Incarnation: 'allowing her to incarnate post-mortem and possess Hana.'"
+  },
+  {
+   "id": "jjk-pg-angel-077",
+   "kind": "fact",
+   "question": "What kind of relationship has the Angel formed with Hana, unlike most incarnates?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "a symbiotic relationship that leaves Hana in control of her body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities > Incarnation."
+  },
+  {
+   "id": "jjk-pg-angel-078",
+   "kind": "fact",
+   "question": "Where on Hana's body does the Angel usually manifest the second mouth?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "her cheek or hand",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities > Incarnation: 'the Angel able to speak by manifesting a second mouth on the girl's body, usually her cheek or hand.'"
+  },
+  {
+   "id": "jjk-pg-angel-079",
+   "kind": "fact",
+   "question": "What condition leaves the Angel unable to physically interfere?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "Hana takes a fatal misstep during combat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities > Incarnation: 'this condition leaves the Angel unable to physically interfere in the event that Hana takes a fatal misstep during combat.'"
+  },
+  {
+   "id": "jjk-pg-angel-080",
+   "kind": "fact",
+   "question": "Why cannot the Angel switch hosts, unlike Sukuna?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "lacking the King of Curse's knowledge on how to divide her own soul",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities > Incarnation: 'the Angel cannot switch hosts, lacking the King of Curse's knowledge on how to divide her own soul.'"
+  },
+  {
+   "id": "jjk-pg-angel-081",
+   "kind": "fact",
+   "question": "What is the Heian Era described as?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "the golden age of jujutsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities: 'the Angel was a notable sorcerer during the Heian Era, the golden age of jujutsu.'"
+  },
+  {
+   "id": "jjk-pg-angel-082",
+   "kind": "fact",
+   "question": "Why is the Angel a formidable force?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "her experience and holding an innate technique that counters any and all jujutsu without prejudice",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities."
+  },
+  {
+   "id": "jjk-pg-angel-083",
+   "kind": "fact",
+   "question": "What was Hana sufficiently empowered by the Angel to do, despite no formal sorcerer training?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "easily survive the Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities: 'Hana who, despite being a young girl with no formal sorcerer training, was sufficiently empowered by the ancient sorcerer to easily survive the Culling Game.'"
+  },
+  {
+   "id": "jjk-pg-angel-084",
+   "kind": "fact",
+   "question": "What was the Angel's and Hana's greatest contribution to their sorcerer allies?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199-238",
+   "answer": [
+    {
+     "item": "they used Jacob's Ladder on the \"Back\" of the Prison Realm, unsealing Satoru Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities."
+  },
+  {
+   "id": "jjk-pg-angel-085",
+   "kind": "fact",
+   "question": "What is the \"Jacob's Ladder\" technique named after?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the ladder seen by the biblical patriarch Jacob in the Book of Genesis",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-086",
+   "kind": "fact",
+   "question": "What comes with the use of the Jacob's Ladder technique?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a prayer-like chant",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-087",
+   "kind": "fact",
+   "question": "What does the use of the Jacob's Ladder technique involve?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the creation of all-purifying light meant to \"erase sin\"",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-088",
+   "kind": "fact",
+   "question": "What does the technique spawn for Hana to sound?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "a trumpet of light",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-089",
+   "kind": "fact",
+   "question": "What is the trumpet of light possibly based on?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the seven trumpets of Revelation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-090",
+   "kind": "fact",
+   "question": "What, besides cross-like shapes, fly around the target when the technique is used?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "small cherubic beings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-091",
+   "kind": "fact",
+   "question": "What do the Angel's innate technique and her desire to kill Sukuna seem to reflect?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the essence of anti-demonic exorcism",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia."
+  },
+  {
+   "id": "jjk-pg-angel-092",
+   "kind": "fact",
+   "question": "What ability did the Angel deduce Megumi and co. must have sought her out for?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "her ability to negate all jujutsu, including barriers and seals",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / Culling Game Arc: 'Deducing that Megumi and co. must have sought her out for her ability to negate all jujutsu, including barriers and seals.'"
+  },
+  {
+   "id": "jjk-pg-angel-093",
+   "kind": "fact",
+   "question": "What did the Angel say she could probably do that would free Gojo?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "unseal the Prison Realm",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / Culling Game Arc: 'The Angel goes on to say that could probably unseal the Prison Realm (thus freeing Gojo).'"
+  },
+  {
+   "id": "jjk-pg-angel-094",
+   "kind": "fact",
+   "question": "Who can switch hosts like Sukuna?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 221",
+   "answer": [
+    {
+     "item": "the King of Curses",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / Shinjuku Showdown Arc: 'such a feat is impossible for anyone other than the King of Curses.'"
+  },
+  {
+   "id": "jjk-pg-angel-095",
+   "kind": "fact",
+   "question": "What must the King of Curses have learned to switch hosts?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 221",
+   "answer": [
+    {
+     "item": "how to divide his own soul among multiple cursed objects",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / Shinjuku Showdown Arc: 'who must have learned how to divide his own soul among multiple cursed objects.'"
+  },
+  {
+   "id": "jjk-pg-angel-096",
+   "kind": "fact",
+   "question": "Why did the Angel recommend unsealing Gojo not in a confined space?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 221",
+   "answer": [
+    {
+     "item": "in case Gojo snaps after a being sealed for so long",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / Shinjuku Showdown Arc: 'on the Angel's recommendation to do it not in a confined space in case Gojo snaps after a being sealed for so long.'"
+  },
+  {
+   "id": "jjk-pg-angel-097",
+   "kind": "fact",
+   "question": "What did the Angel still agree to let her power be used for, with Hana no longer in a condition to fight?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 221",
+   "answer": [
+    {
+     "item": "unseal Gojo from within the Prison Realm",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / Shinjuku Showdown Arc: 'the Angel still agrees to let her power be used to unseal Gojo from within the Prison Realm.'"
+  }
+ ]
+}

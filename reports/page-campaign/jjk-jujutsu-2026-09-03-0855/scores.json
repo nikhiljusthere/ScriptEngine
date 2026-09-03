@@ -1,0 +1,999 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Jujutsu?",
+      "set": "Every named technique of Jujutsu",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Jujutsu",
+      "set": "Every battle involving Jujutsu",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Jujutsu?",
+      "found": [
+        "Binding Vow"
+      ],
+      "missing": [],
+      "members": [
+        "Binding Vow"
+      ]
+    },
+    {
+      "query": "Every battle involving Jujutsu",
+      "found": [
+        "Choso vs. Naoya Zenin",
+        "Jujutsu Sorcerers vs. Dagon",
+        "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+        "Maki Zenin vs. Naoya Zenin",
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Choso vs. Naoya Zenin",
+        "Jujutsu Sorcerers vs. Dagon",
+        "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+        "Maki Zenin vs. Naoya Zenin",
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Jujutsu's name?",
+      "id": "jjk-pg-jujutsu-001",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "\u546a\u8853"
+      ],
+      "found": [
+        "\u546a\u8853"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Jujutsu's name?",
+      "id": "jjk-pg-jujutsu-002",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Jujutsu"
+      ],
+      "found": [
+        "Jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu first appear?",
+      "id": "jjk-pg-jujutsu-003",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-1 Chapter 1"
+      ],
+      "found": [
+        "Chapter 0-1 Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Jujutsu first depicted?",
+      "id": "jjk-pg-jujutsu-004",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Choso vs. Naoya Zenin?",
+      "id": "jjk-pg-jujutsu-005",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Choso is victorious."
+      ],
+      "found": [
+        "Choso is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Choso vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-006",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Choso vs. Naoya Zenin begin?",
+      "id": "jjk-pg-jujutsu-007",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 140"
+      ],
+      "found": [
+        "Chapter 140"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Choso vs. Naoya Zenin depicted?",
+      "id": "jjk-pg-jujutsu-008",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Episode 48 - 49"
+      ],
+      "found": [
+        "Episode 48 - 49"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Choso vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-009",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Dagon?",
+      "id": "jjk-pg-jujutsu-010",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro takes over the battle."
+      ],
+      "found": [
+        "Toji Fushiguro takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-jujutsu-011",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-jujutsu-012",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Dagon begin?",
+      "id": "jjk-pg-jujutsu-013",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 106"
+      ],
+      "found": [
+        "Chapter 106"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Dagon depicted?",
+      "id": "jjk-pg-jujutsu-014",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Episode 38"
+      ],
+      "found": [
+        "Episode 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-jujutsu-015",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "id": "jjk-pg-jujutsu-016",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "found": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-017",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-018",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-jujutsu-019",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 191"
+      ],
+      "found": [
+        "Chapter 191"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-020",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Naoya Zenin?",
+      "id": "jjk-pg-jujutsu-021",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-022",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Zenin Household"
+      ],
+      "found": [
+        "Zenin Household"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-023",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. Naoya Zenin?",
+      "id": "jjk-pg-jujutsu-024",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 151"
+      ],
+      "found": [
+        "Chapter 151"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Naoya Zenin depicted?",
+      "id": "jjk-pg-jujutsu-025",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-026",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-jujutsu-027",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-028",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-029",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-jujutsu-030",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Chapter 195"
+      ],
+      "found": [
+        "Chapter 195"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-jujutsu-031",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long has jujutsu existed?",
+      "id": "jjk-pg-jujutsu-034",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "It is unknown for how long exactly, but jujutsu has existed for thousands of years, for as long as curses have roamed the Earth."
+      ],
+      "found": [
+        "It is unknown for how long exactly, but jujutsu has existed for thousands of years, for as long as curses have roamed the Earth."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which era is considered the Golden Age of Jujutsu?",
+      "id": "jjk-pg-jujutsu-035",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "The Heian Era, one thousand years ago when Ryomen Sukuna reigned supreme, is considered the \"Golden Age of Jujutsu\"."
+      ],
+      "found": [
+        "The Heian Era, one thousand years ago when Ryomen Sukuna reigned supreme, is considered the \"Golden Age of Jujutsu\"."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What controls the landscape of the jujutsu community in the modern era?",
+      "id": "jjk-pg-jujutsu-036",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "In the modern era, Jujutsu Headquarters and the Big Three Sorcerer Families currently control the landscape of their community."
+      ],
+      "found": [
+        "In the modern era, Jujutsu Headquarters and the Big Three Sorcerer Families currently control the landscape of their community."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What makes Satoru Gojo a near-unstoppable force?",
+      "id": "jjk-pg-jujutsu-037",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo is the first person in several hundred years to be born with both, making him a near-unstoppable force."
+      ],
+      "found": [
+        "Satoru Gojo is the first person in several hundred years to be born with both, making him a near-unstoppable force."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cursed Energy, according to the Jujutsu glossary?",
+      "id": "jjk-pg-jujutsu-038",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Energy \u546a\u529b Juryoku is a power source produced from negative emotions, which can accumulate and ferment until a cursed spirit is manifested."
+      ],
+      "found": [
+        "Cursed Energy \u546a\u529b Juryoku is a power source produced from negative emotions, which can accumulate and ferment until a cursed spirit is manifested."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Residuals in jujutsu?",
+      "id": "jjk-pg-jujutsu-039",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Residuals \u6b8b\u7a62 Zan'e are traces of cursed energy left behind by jujutsu."
+      ],
+      "found": [
+        "Residuals \u6b8b\u7a62 Zan'e are traces of cursed energy left behind by jujutsu."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Divergent Fist?",
+      "id": "jjk-pg-jujutsu-040",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Divergent Fist \u9015\u5ead\u62f3 Keitei Ken: Yuji Itadori's signature punching jujutsu that strikes his opponents with a second delayed impact after the initial strike."
+      ],
+      "found": [
+        "Divergent Fist \u9015\u5ead\u62f3 Keitei Ken: Yuji Itadori's signature punching jujutsu that strikes his opponents with a second delayed impact after the initial strike."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Black Flash?",
+      "id": "jjk-pg-jujutsu-041",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Black Flash \u9ed2\u9583 Kokusen: Spatial distortion created when a jujutsu practitioner connects with an impact of cursed energy within a span of .000001 seconds of a physical hit."
+      ],
+      "found": [
+        "Black Flash \u9ed2\u9583 Kokusen: Spatial distortion created when a jujutsu practitioner connects with an impact of cursed energy within a span of .000001 seconds of a physical hit."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary define Innate Techniques?",
+      "id": "jjk-pg-jujutsu-042",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Innate Techniques \u751f\u5f97\u8853\u5f0f Sh\u014dtoku Jutsushiki are intrinsic supernatural abilities that are etched into user's flesh when they are born."
+      ],
+      "found": [
+        "Innate Techniques \u751f\u5f97\u8853\u5f0f Sh\u014dtoku Jutsushiki are intrinsic supernatural abilities that are etched into user's flesh when they are born."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary define Inherited Techniques?",
+      "id": "jjk-pg-jujutsu-043",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Inherited Techniques \u76f8\u4f1d\u8853\u5f0f S\u014dden Jutsushiki are innate techniques that are hereditarily passed down within sorcerers of the same bloodline."
+      ],
+      "found": [
+        "Inherited Techniques \u76f8\u4f1d\u8853\u5f0f S\u014dden Jutsushiki are innate techniques that are hereditarily passed down within sorcerers of the same bloodline."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary define Shikigami?",
+      "id": "jjk-pg-jujutsu-044",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Shikigami \u5f0f\u795e Shikigami are familiars similar to cursed spirits that are tamed and conjured by sorcerers in battle."
+      ],
+      "found": [
+        "Shikigami \u5f0f\u795e Shikigami are familiars similar to cursed spirits that are tamed and conjured by sorcerers in battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary define Cursed Objects?",
+      "id": "jjk-pg-jujutsu-045",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Objects \u546a\u7269 Jubutsu are items with a dark history that contain cursed energy."
+      ],
+      "found": [
+        "Cursed Objects \u546a\u7269 Jubutsu are items with a dark history that contain cursed energy."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary define Cursed Tools?",
+      "id": "jjk-pg-jujutsu-046",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Tools \u546a\u5177 Jugu are weapons infused with cursed energy."
+      ],
+      "found": [
+        "Cursed Tools \u546a\u5177 Jugu are weapons infused with cursed energy."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary define Cursed Corpses?",
+      "id": "jjk-pg-jujutsu-047",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Corpses \u546a\u9ab8 Jugai are inanimate objects possessed by a curse allowing them to gain self-control."
+      ],
+      "found": [
+        "Cursed Corpses \u546a\u9ab8 Jugai are inanimate objects possessed by a curse allowing them to gain self-control."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Cursed Restrictions?",
+      "id": "jjk-pg-jujutsu-048",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Restrictions \u546a\u7e1b Jubaku are limitations created through jujutsu that benefit the user in one facet while determining them in a separate way."
+      ],
+      "found": [
+        "Cursed Restrictions \u546a\u7e1b Jubaku are limitations created through jujutsu that benefit the user in one facet while determining them in a separate way."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is a Binding Vow?",
+      "id": "jjk-pg-jujutsu-049",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Binding Vow \u7e1b\u308a Shibari is a pact made using jujutsu that a practitioner uses to create conditions for themselves or agreements with others."
+      ],
+      "found": [
+        "Binding Vow \u7e1b\u308a Shibari is a pact made using jujutsu that a practitioner uses to create conditions for themselves or agreements with others."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long has jujutsu existed?",
+      "id": "jjk-pg-jujutsu-050",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "It is unknown for how long exactly, but jujutsu has existed for thousands of years, for as long as curses have roamed the Earth."
+      ],
+      "found": [
+        "It is unknown for how long exactly, but jujutsu has existed for thousands of years, for as long as curses have roamed the Earth."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where are jujutsu sorcerers recruited and trained today?",
+      "id": "jjk-pg-jujutsu-051",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Jujutsu sorcerers currently are recruited and trained through the two jujutsu educational facilities in Tokyo and Kyoto."
+      ],
+      "found": [
+        "Jujutsu sorcerers currently are recruited and trained through the two jujutsu educational facilities in Tokyo and Kyoto."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What determines the aggregate amount of an individual's cursed energy?",
+      "id": "jjk-pg-jujutsu-052",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "The aggregate amount of an individual's cursed energy isn't determined by how many negative emotions they possess but by their innate talent for jujutsu."
+      ],
+      "found": [
+        "The aggregate amount of an individual's cursed energy isn't determined by how many negative emotions they possess but by their innate talent for jujutsu."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Jujutsu glossary describe Moon Dregs?",
+      "id": "jjk-pg-jujutsu-053",
+      "subject": "Jujutsu",
+      "accept": "all",
+      "expected": [
+        "Moon Dregs is a poison jellyfish shikigami conjured by a cursed technique used by Junpei Yoshino."
+      ],
+      "found": [
+        "Moon Dregs is a poison jellyfish shikigami conjured by a cursed technique used by Junpei Yoshino."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 51,
+    "fact_present": 51
+  }
+}

@@ -9,20 +9,26 @@ ScriptEngine is a knowledge engine over Fandom wikis. It does **not** write
 scripts. It serves ordered, cited research context over HTTP (`POST /context`
 on `http://127.0.0.1:8000`). The AI (you) writes the scripts.
 
-Six series are indexed:
+Eight series are indexed:
 
 | id | wiki | pages | prose sourced to a chapter |
 |---|---|---|---|
 | `jjk` | Jujutsu Kaisen | 987 | 55% |
-| `hxh` | Hunterpedia | 2,014 | 50% |
+| `hxh` | Hunterpedia | 2,018 | 50% |
 | `csm` | Chainsaw Man | 537 | 42% |
-| `bleach` | Bleach | 2,248 | 34% |
-| `opm` | One-Punch Man | 1,565 | 31% |
+| `bleach` | Bleach | 2,252 | 34% |
+| `opm` | One-Punch Man | 1,571 | 30% |
+| `db` | Dragon Ball | 7,205 | 4% |
+| `onepiece` | One Piece | 7,613 | 0% |
 | `berserk` | Berserk | 762 | 0% |
 
-**Berserk is the exception worth knowing before you promise a script.** Its wiki
-cites cover art and interviews rather than instalments, so its prose carries no
-chapter numbers and a Berserk script cannot be tagged. Everything else can.
+**Two series are the exceptions worth knowing before you promise a script.**
+Berserk's wiki cites cover art and interviews rather than instalments, so its
+prose carries no chapter numbers and a Berserk script cannot be tagged. One Piece
+footnotes nothing inline either (0%), but it writes one page per chapter and
+episode, so a claim retrieved from the page titled "Chapter 1015" is sourced to
+Chapter 1015: sourceable by route two rather than route one. Everything else can
+be tagged by at least one route.
 
 The fetched context already carries the writing contract: the house format, the
 voice rules and the chapter/episode annotation rules are appended to every
@@ -43,6 +49,13 @@ same contract with the reasoning and the samples attached.
 Most published scripts are rosters. A topic starting "Every…", "All…", "Each…"
 or naming ranks/levels/types is a roster; anything else is a narrative.
 
+A roster also answers **a fighter's whole fight list**. "Every Fight Mahoraga Has
+Ever Been In" (and its question-worded twins, "Who did Mahoraga fight?") come back
+as one section per battle page the wiki has for that fighter, each labelled with
+their role: a direct combatant, or a tool some side deployed. The sides are read
+from this wiki's own infobox vocabulary, so it works on any series that files its
+fights as pages.
+
 **Check what a series can enumerate before promising a topic.** Each series
 declares the sets it maintains, and a declared set resolves the same way every
 time:
@@ -56,14 +69,15 @@ python -m scriptengine.cli catalogue                # every series, regenerated
 how much of each wiki's prose can carry a chapter, and every declared set with
 its size. It is generated, so run it rather than trusting the copy on disk.
 
-119 sets are declared across the eight series: devils, hunters, hybrids and
+211 sets are declared across the eight series: devils, hunters, hybrids and
 fiends on Chainsaw Man; apostles, pseudo-apostles and the God Hand on Berserk;
 mysterious beings and each hero class on One-Punch Man; the six Nen types, the
 Phantom Troupe and the Zoldycks on Hunterpedia; espada, quincy and all thirteen
-Gotei divisions on Bleach; cursed spirits, sorcerers and domain expansions on
-Jujutsu Kaisen; races, transformations and films on Dragon Ball; races, Devil
-Fruit types and the Marine rank ladder on One Piece. A topic outside the list
-still works, it is just found by search rather than declared.
+Gotei divisions on Bleach; cursed spirits, sorcerers, domain expansions and a
+battles-in set for every major fighter on Jujutsu Kaisen (59 sets in total);
+races, transformations and films on Dragon Ball; races, Devil Fruit types and the
+Marine rank ladder on One Piece. A topic outside the list still works, it is just
+found by search rather than declared.
 
 **A set that comes back is not automatically the right set.** Enumeration
 returns the best-scoring candidate on the wiki, so a topic the wiki does not
@@ -119,13 +133,28 @@ because a wiki labels its fields unusually.
 
 ## The workflow (when the user says "start" or asks for a script)
 
+**There is also a one-shot path.** If you just want the engine to fetch, write,
+verify and save in a single call, use `script-gen` instead of steps 4–8:
+
+```powershell
+python -m scriptengine.cli script-gen "Every Fight Mahoraga Has Ever Been In" --series jjk --words 6000
+```
+
+It routes the topic to a mode, fetches the bundle, asks the writer model for the
+script, checks every chapter/episode tag against the raw crawl (repairing any
+that fail), and expands or trims until it lands within 500 words of `--words`,
+then saves into the production tree. An agent host can do the same thing through
+the MCP tools (`research`, `verify_script`, `script_path`) without the HTTP server.
+The manual steps below keep a human in the seat on every section and are still
+the right choice when you want to shape each part by hand.
+
 1. Read this file and `docs/SCRIPT_STYLE.md`. Skim the samples in
    `sample scripts/` that match the requested topic's style.
 2. Ask the user, in order:
    - **Topic**: what the script is about (e.g. "Shibuya Incident",
      "Every Rank of Curse").
-   - **Series**: `jjk`, `hxh`, `csm`, `bleach`, `opm`, `berserk` or `db`
-     (default `jjk`).
+    - **Series**: `jjk`, `hxh`, `csm`, `bleach`, `opm`, `db`, `onepiece` or
+      `berserk` (default `jjk`).
    - **Intro**: yes or no (the hook paragraph; see the style guide §3).
    - **Length**: target word count (default 3,000 words ≈ 18,000 chars).
 3. Make sure ScriptEngine is running: `http://127.0.0.1:8000/health` should
@@ -155,22 +184,28 @@ because a wiki labels its fields unusually.
    - Bold title line, optional intro hook, `* **Heading**` sections of long
      spoken paragraphs.
    - `VOICE_RULES` and `ANNOTATION_RULES` apply (style guide §5, §6).
-   - Only facts in the context; never invent numbers or names.
-   - Hit the target length: full treatment per section, no padding.
-7. Save it into the production tree, not into the repo. Ask the engine where it
-   goes rather than guessing, so a rewrite lands back in its own folder instead
-   of opening a second one:
+    - Only facts in the context; never invent numbers or names.
+    - Land inside the length band: target ± 500 words, reached by giving every
+      section full treatment with real specifics, not padding. `script-gen`
+      enforces this automatically (expanding and trimming until it is in band);
+      when writing by hand, count before you finish.
+    - The bold title line is the saved filename. Keep it a clean name for the
+      topic; if the engine resolves the subject to something longer than the
+      video's title, save under the title, not the resolved page name.
+ 7. Save it into the production tree, not into the repo. Ask the engine where it
+    goes rather than guessing, so a rewrite lands back in its own folder instead
+    of opening a second one:
 
-   ```powershell
-   python -m scriptengine.cli script-path "Every Fight Mahoraga Has Ever Been In" --create
-   # E:\Personal\Plot Works\Video 1 - Every Fight Mahoraga Has Ever Been In\Script\...
-   ```
+    ```powershell
+    python -m scriptengine.cli script-path "Every Fight Mahoraga Has Ever Been In" --create
+    # E:\Personal\Plot Works\Video 1 - Every Fight Mahoraga Has Ever Been In\Script\...
+    ```
 
-   Each video gets one numbered folder named after the script, and the script
-   sits in its `Script/` subfolder beside that video's `Audio/`, `Images/`,
-   `Prompt File/` and `storyboard/`. An existing folder with the same title is
-   reused; a new title takes the next free number. The root is
-   `SCRIPTENGINE_SCRIPTS_ROOT` in `.env`.
+    Each video gets one numbered folder named after the script, and the script
+    sits in its `Script/` subfolder beside that video's `Audio/`, `Images/`,
+    `Prompt File/` and `storyboard/`. An existing folder with the same title is
+    reused; a new title takes the next free number. The root is
+    `SCRIPTENGINE_SCRIPTS_ROOT` in `.env`.
 
 8. Verify the tags before calling it done. Every `(Chapter N, Episode M)` in the
    finished script has to exist in the crawl:

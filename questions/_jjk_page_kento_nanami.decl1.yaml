@@ -1,0 +1,34 @@
+# Staged roster declarations for the Kento Nanami page campaign
+# (questions/_jjk_page_kento_nanami.json, section 1: battles).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Members are the five battle pages of the wiki's own `Kento Nanami Battles`
+# category (5 entries in facts.db), read off the `Battles & Events` section
+# of `Kento Nanami` and the titles in questions/_jjk_battles.json
+# (jjk-cov-11 "Every battle of Kento Nanami", reused verbatim, not
+# re-transcribed). All three sources agree on the same five.
+#
+# The battles-in discovery path returns a 6-member SUPERSET instead:
+# `Jujutsu Sorcerers vs. Sukuna` matches only through Takuma Ino's
+# `Cursed Tool: Nanami's Blunt Sword` line in the battle infobox's powers
+# field (a deployed tool, not a combatant) -- the recurring last-word
+# over-match finding recorded for the OPM campaign. The closed set is the
+# five above; the coordinator decides at page-run.
+#
+# Match phrases say `battles`, never `arc`: `_ASKS_FOR_ARCS` fires on any
+# enumeration cue with `arc` within forty characters and would hand the
+# question to chronology. Titles containing `&` stay quoted.
+rosters:
+  - name: Every battle involving Kento Nanami
+    match:
+      - every battle involving kento nanami
+      - all the battles involving kento nanami
+      - battles involving kento nanami
+      - every battle of kento nanami
+    subject: Kento Nanami
+    members:
+      - Jujutsu Sorcerers vs. Dagon
+      - Kento Nanami vs. Mahito
+      - "Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo"
+      - "Yuji Itadori & Kento Nanami vs. Mahito"
+      - "Yuji Itadori & Kento Nanami vs. Transfigured Humans"

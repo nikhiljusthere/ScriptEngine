@@ -1,0 +1,34 @@
+# Staged roster declarations for the Nobara Kugisaki page campaign
+# (questions/_jjk_page_nobara_kugisaki.section1.json, section 1: battles).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Members are the eight battle pages of the closed set: the seven battle pages
+# whose titles name Nobara Kugisaki (listed in the `Battles & Events` section
+# of `Nobara Kugisaki`) plus `Jujutsu Sorcerers vs. Sukuna`, the Shinjuku
+# Showdown group of that section. This is exactly the set already golded as
+# "Every battle of Nobara Kugisaki" (jjk-cov-05) in questions/_jjk_battles.json
+# and is reused verbatim; all eight pages carry
+# [[Category:Nobara Kugisaki Battles]].
+#
+# Match phrases say `battles`, never `arc`: `_ASKS_FOR_ARCS` fires on any
+# enumeration cue with `arc` within forty characters and would hand the
+# question to chronology. `Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo`
+# carries `&`, which is safe unquoted in a YAML block scalar list item, but
+# the whole member is quoted to match the Toji decls.
+rosters:
+  - name: Every battle involving Nobara Kugisaki
+    match:
+      - every battle involving nobara kugisaki
+      - all the battles involving nobara kugisaki
+      - battles involving nobara kugisaki
+      - every battle of nobara kugisaki
+    subject: Nobara Kugisaki
+    members:
+      - Jujutsu Sorcerers vs. Sukuna
+      - "Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo"
+      - Nobara Kugisaki vs. Cursed Spirits
+      - Nobara Kugisaki vs. Mai Zenin
+      - Nobara Kugisaki vs. Momo Nishimiya
+      - "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits"
+      - "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu"
+      - "Yuji Itadori & Nobara Kugisaki vs. Mahito"

@@ -310,11 +310,12 @@ class TestMarkupStripping:
         for token in ("{{", "}}", "[[", "]]", "<!--", "<br>", "'''"):
             assert token not in text
 
-    def test_nihongo_keeps_the_english_name_not_the_japanese(self):
-        # Picking the longest argument, which looks reasonable, returns the
-        # kanji here, and produced section text reading "の: A binding vow...".
+    def test_nihongo_keeps_every_argument_english_kanji_and_romaji(self):
+        # Keep-all (not longest, not first): the romaji (third position) is the
+        # locator a script cites the name by, and dropping it made "What is the
+        # romaji of X?" unservable. Longest-arg would have returned the kanji.
         assert strip_markup("{{Nihongo|Revealing One's Hand|情報の開示|Jōhō}}") == (
-            "Revealing One's Hand"
+            "Revealing One's Hand 情報の開示 Jōhō"
         )
 
     def test_ruby_keeps_the_base_character_not_the_furigana(self):
@@ -386,7 +387,9 @@ class TestInfobox:
         assert found[0] == "Character Infobox"
 
     def test_parameters_become_facts_with_links_and_citations_attached(self):
-        _, params = find_infobox(self.INFOBOX)
+        found = find_infobox(self.INFOBOX)
+        assert found is not None
+        _, params = found
         facts = {f.key: f for f in facts_from_infobox(params)}
 
         assert facts["name"].value == "Aoi Todo"
@@ -398,7 +401,9 @@ class TestInfobox:
         assert facts["age"].citations[0].params["page"] == "36-37"
 
     def test_presentational_parameters_are_not_facts(self):
-        _, params = find_infobox(self.INFOBOX)
+        found = find_infobox(self.INFOBOX)
+        assert found is not None
+        _, params = found
         assert "image" not in {f.key for f in facts_from_infobox(params)}
 
     def test_known_vocabulary_wins_over_name_matching(self):
@@ -424,7 +429,9 @@ class TestInfobox:
         assert "class" in found[1]
 
     def test_labels_from_the_wiki_schema_are_applied(self):
-        _, params = find_infobox("{{Infobox|class = Grade 1}}")
+        found = find_infobox("{{Infobox|class = Grade 1}}")
+        assert found is not None
+        _, params = found
         (fact,) = facts_from_infobox(params, labels={"class": "Grade"})
         assert fact.key == "class" and fact.label == "Grade"
 

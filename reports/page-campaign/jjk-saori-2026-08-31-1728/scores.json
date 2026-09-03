@@ -1,0 +1,465 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Saori?",
+      "set": "Every friend of Saori",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Saori?",
+      "found": [
+        "Nobara Kugisaki",
+        "Fumi"
+      ],
+      "missing": [],
+      "members": [
+        "Fumi",
+        "Nobara Kugisaki"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Saori's name?",
+      "id": "jjk-pg-saori-001",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "\u6c99\u7e54"
+      ],
+      "found": [
+        "\u6c99\u7e54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Saori's name?",
+      "id": "jjk-pg-saori-002",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Saori"
+      ],
+      "found": [
+        "Saori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Saori's race?",
+      "id": "jjk-pg-saori-003",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Saori?",
+      "id": "jjk-pg-saori-004",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "23"
+      ],
+      "found": [
+        "23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Saori's gender?",
+      "id": "jjk-pg-saori-005",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Saori?",
+      "id": "jjk-pg-saori-006",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Saori's occupation?",
+      "id": "jjk-pg-saori-007",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Student (Former)"
+      ],
+      "found": [
+        "Student (Former)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Saori first appear?",
+      "id": "jjk-pg-saori-008",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Chapter 5 (Mentioned) Chapter 125"
+      ],
+      "found": [
+        "Chapter 5 (Mentioned) Chapter 125"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Saori first depicted?",
+      "id": "jjk-pg-saori-009",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Episode 3 (Flashback) Episode 43"
+      ],
+      "found": [
+        "Episode 3 (Flashback) Episode 43"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Saori's Japanese voice actor?",
+      "id": "jjk-pg-saori-010",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Rie Suegara"
+      ],
+      "found": [
+        "Rie Suegara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Saori's English voice actor?",
+      "id": "jjk-pg-saori-011",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "Cristina Vee"
+      ],
+      "found": [
+        "Cristina Vee"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Saori's relationship to Nobara Kugisaki?",
+      "id": "jjk-pg-saori-013",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "a good friend of Nobara Kugisaki"
+      ],
+      "found": [
+        "a good friend of Nobara Kugisaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Saori look like as a child?",
+      "id": "jjk-pg-saori-014",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "a young girl with long brown hair with bangs and brown eyes"
+      ],
+      "found": [
+        "a young girl with long brown hair with bangs and brown eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Saori wear as a child?",
+      "id": "jjk-pg-saori-015",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "a white turtleneck sweater, beige skirt with white socks and black shoes"
+      ],
+      "found": [
+        "a white turtleneck sweater, beige skirt with white socks and black shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nobara say Saori looked like?",
+      "id": "jjk-pg-saori-016",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "a doll"
+      ],
+      "found": [
+        "a doll"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Nobara describe Saori's kindness?",
+      "id": "jjk-pg-saori-017",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "kind as a nun"
+      ],
+      "found": [
+        "kind as a nun"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Saori's family move to a village?",
+      "id": "jjk-pg-saori-018",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "her mother's interest in organic stuff and spirituality"
+      ],
+      "found": [
+        "her mother's interest in organic stuff and spirituality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the village drive Saori's family out?",
+      "id": "jjk-pg-saori-019",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "They made her out to be a bad person"
+      ],
+      "found": [
+        "They made her out to be a bad person"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why couldn't Saori take a break at work?",
+      "id": "jjk-pg-saori-020",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "proofs are due today"
+      ],
+      "found": [
+        "proofs are due today"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What surprised Saori about her coworker?",
+      "id": "jjk-pg-saori-021",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "her coworker suddenly asks if Saori wants to get married"
+      ],
+      "found": [
+        "her coworker suddenly asks if Saori wants to get married"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Saori once make to impress Nobara and Fumi?",
+      "id": "jjk-pg-saori-022",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "black tea"
+      ],
+      "found": [
+        "black tea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What pet did Saori own?",
+      "id": "jjk-pg-saori-023",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "a white dog"
+      ],
+      "found": [
+        "a white dog"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many siblings does Saori have?",
+      "id": "jjk-pg-saori-024",
+      "subject": "Saori",
+      "accept": "all",
+      "expected": [
+        "an only child"
+      ],
+      "found": [
+        "an only child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 23,
+    "fact_present": 23
+  }
+}

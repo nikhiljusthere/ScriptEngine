@@ -1,0 +1,393 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Judgeman",
+      "set": "Every battle involving Judgeman",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Judgeman",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori vs. Hiromi Higuruma"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori vs. Hiromi Higuruma"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Judgeman's name?",
+      "id": "jjk-pg-judgeman-001",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "\u30b8\u30e3\u30c3\u30b8\u30de\u30f3"
+      ],
+      "found": [
+        "\u30b8\u30e3\u30c3\u30b8\u30de\u30f3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Judgeman's name?",
+      "id": "jjk-pg-judgeman-002",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Jajjiman"
+      ],
+      "found": [
+        "Jajjiman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Judgeman first appear?",
+      "id": "jjk-pg-judgeman-003",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Chapter 159"
+      ],
+      "found": [
+        "Chapter 159"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Judgeman first depicted?",
+      "id": "jjk-pg-judgeman-004",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Episode 55"
+      ],
+      "found": [
+        "Episode 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-judgeman-005",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-judgeman-006",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-judgeman-007",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-judgeman-008",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-judgeman-009",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Hiromi Higuruma?",
+      "id": "jjk-pg-judgeman-010",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Higuruma allows Yuji to win."
+      ],
+      "found": [
+        "Higuruma allows Yuji to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-judgeman-011",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-judgeman-012",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Hiromi Higuruma begin?",
+      "id": "jjk-pg-judgeman-013",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Chapter 164"
+      ],
+      "found": [
+        "Chapter 164"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Hiromi Higuruma depicted?",
+      "id": "jjk-pg-judgeman-014",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Episode 55 - 56"
+      ],
+      "found": [
+        "Episode 55 - 56"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-judgeman-015",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shape is Judgeman's body?",
+      "id": "jjk-pg-judgeman-017",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "It is a large dark mass with a shape similar to the scales of justice, even featuring a scale on each side of its body."
+      ],
+      "found": [
+        "It is a large dark mass with a shape similar to the scales of justice, even featuring a scale on each side of its body."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Judgeman's sewn-shut eyes represent?",
+      "id": "jjk-pg-judgeman-018",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "It has a white, mask-like face with its eyes sewn shut to represent impartialness, akin to Lady Justice's blindfold."
+      ],
+      "found": [
+        "It has a white, mask-like face with its eyes sewn shut to represent impartialness, akin to Lady Justice's blindfold."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Judgeman begin the trial?",
+      "id": "jjk-pg-judgeman-019",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "It begins the trial by stating the charges against the accused and submitting evidence to the prosecution for deliberation."
+      ],
+      "found": [
+        "It begins the trial by stating the charges against the accused and submitting evidence to the prosecution for deliberation."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuji figure out about Judgeman's verdicts?",
+      "id": "jjk-pg-judgeman-020",
+      "subject": "Judgeman",
+      "accept": "all",
+      "expected": [
+        "Yuji figured out that since Judgeman found him guilty without a confession, it can't refuse a request for a retrial."
+      ],
+      "found": [
+        "Yuji figured out that since Judgeman found him guilty without a confession, it can't refuse a request for a retrial."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

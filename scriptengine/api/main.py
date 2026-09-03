@@ -77,6 +77,16 @@ class ContextRequest(BaseModel):
     series: str
     query: str
     mode: Literal["qa", "narrative", "roster", "auto"] = "qa"
+    # The page the question is authored against, when the query's own words do
+    # not name it: "What kind of motif does the King of Curses have, per the
+    # page's Trivia?" asks about Angel's page but names only Sukuna's title, so
+    # the search would focus Sukuna and never surface the one passage that
+    # carries the answer. It widens the qa vector focus to the named page, and
+    # (release R1-b) takes precedence over the query's own subject for the mode
+    # decision whenever the page is a thing rather than a story; a story-typed
+    # page keeps the narrative read, and the wide search keeps the focus either
+    # way.
+    subject: str | None = None
     token_budget: int = Field(default=6000, ge=200, le=100_000)
     top_k: int | None = Field(
         default=None,
@@ -194,7 +204,7 @@ def context(request: ContextRequest) -> dict[str, Any]:
     mode = request.mode
     routed = None
     if mode == "auto":
-        routed = route(paths, request.query)
+        routed = route(paths, request.query, subject=request.subject)
         mode = routed.mode
 
     bundle = build_context(
@@ -203,6 +213,7 @@ def context(request: ContextRequest) -> dict[str, Any]:
         mode=mode,
         token_budget=request.token_budget,
         top_k=request.top_k,
+        subject=request.subject,
     )
     # A roster with nothing in it is not an answer. Falling back keeps a topic
     # phrased as a list ("Every fight in Shibuya") from returning an empty
@@ -214,6 +225,7 @@ def context(request: ContextRequest) -> dict[str, Any]:
             mode="narrative",
             token_budget=request.token_budget,
             top_k=request.top_k,
+            subject=request.subject,
         )
 
     # Why this mode was chosen, so a misroute is visible to the caller rather

@@ -23,8 +23,8 @@ structure.
 | 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | done |
 | 3 | Hybrid retrieval, narrative ordering, gold eval set | done |
 | 4 | FastAPI service, Electron UI wired to it | done |
-| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | in progress |
-| 6 | Prove universality on Chainsaw Man and Marvel with no new code | open |
+| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | done |
+| 6 | Prove universality on Chainsaw Man and Marvel with no new code | in progress (Chainsaw Man done; Marvel untested) |
 | 7 | Graph-driven abilities endpoint (`/abilities`), ComfyUI answer workflow | done |
 | 8 | Direct AI script-writing path: `STARTME.md`, `script_writer.ps1`, house style guide | done |
 | 9 | Subject resolution, roster mode, per-sentence sourcing, rules served with context | done |
@@ -40,22 +40,37 @@ structure.
 | 19 | Audited against canon sources: subpage folding, per-series canon media | done |
 | 20 | Tell a current set member from a former one (e.g. Espada: 18 pages, 10 seats) | open |
 | 21 | Detect an *incomplete* set: name matches exactly, category barely filled | open |
+| 22 | MCP server (`scriptengine/mcp/server.py`): `research`, `verify_script`, `script_path` over stdio, wrapping the same functions the API serves | done |
+| 23 | CLI script-writing loop: `script-gen` (route → fetch → write → verify tags → repair) and `verify` as first-class commands | done |
+| 24 | Battles-in roster mode: a fighter's whole fight list, per-fight role read from the wiki's own infobox vocabulary | done |
+| 25 | Length-band enforcement (target ± 500 words) and title normalization so filename ≡ content and a rewrite reuses its folder | done |
 
 ## What's open right now
 
-**Phase 5, extraction audit (in progress).** Three data-integrity bugs have
-already been fixed by auditing the JJK crawl: citations captured but never
-rendered into prose, the three main character pages skipped by an over-broad
-maintenance-banner filter, and 845 junk `:Category:` edges from a defeated
-namespace check. The phase closes when a fresh crawl's audit plateaus with no
-further silent extraction failures found.
+**Phase 5, extraction audit (done).** Three data-integrity bugs were fixed by
+auditing the JJK crawl: citations captured but never rendered into prose, the
+three main character pages skipped by an over-broad maintenance-banner filter,
+and 845 junk `:Category:` edges from a defeated namespace check. The phase closed
+when a fresh crawl's audit plateaued with no further silent extraction failures;
+Jujutsu Kaisen now scores 24/24 on its gold set.
 
-**Phase 6, universality proof.** Six wikis are indexed and typing above 90%.
+**Phase 6, universality proof.** Eight wikis are indexed and typing above 90%.
 Chainsaw Man is done; Marvel is a legacy wiki using Lua modules
 (`Marvel Database:Character Template`) that structural discovery should reach
 but hasn't been re-tested since that landed. This phase closes when a wiki
 with a meaningfully different template convention is onboarded with zero new
 Python, only an `overrides.yaml` entry for its citation grammar.
+
+**Phases 22–25 (done).** The engine now reaches the writer through three doors:
+the HTTP API on :8000, the Typer CLI (`script-gen`, `verify`, and the rest of the
+pipeline as commands), and an MCP server that exposes `research`, `verify_script`
+and `script_path` over stdio so an agent host can drive it without a running
+server. All three wrap the same functions, so there is one implementation to keep
+correct. The writing loop gained two guarantees: every chapter/episode tag is
+checked against the raw crawl before a script is called done (with repair passes
+for failures), and length is enforced as a band of target ± 500 words rather than
+a hope. Roster mode also learned to answer "every fight X has been in" by reading
+the wiki's own battle infoboxes, per-fight role included.
 
 **Phase 20, current vs. former membership.** Sets like the Espada hold more
 pages than seats because departed/replaced members keep their page. Needs a

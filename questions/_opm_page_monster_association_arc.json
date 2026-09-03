@@ -1,0 +1,1838 @@
+{
+  "series": "opm",
+  "wiki": "https://onepunchman.fandom.com",
+  "updated": "2026-08-21",
+  "note": "Page campaign batch: Monster Association Arc cluster (Monster Association Arc page + Mysterious Beings/Monster Association page). Excluded from the official bank by the underscore prefix; scored via `cli page-run --series opm --batch monster_association_arc`.",
+  "questions": [
+    {
+      "id": "opm-pg-monster_association_arc-001",
+      "kind": "set",
+      "question": "Every executive of the Monster Association",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Sperm"
+        },
+        {
+          "item": "Elder Centipede"
+        },
+        {
+          "item": "Evil Natural Water"
+        },
+        {
+          "item": "Fuhrer Ugly"
+        },
+        {
+          "item": "Gouketsu"
+        },
+        {
+          "item": "Gums"
+        },
+        {
+          "item": "Homeless Emperor"
+        },
+        {
+          "item": "Nyan"
+        },
+        {
+          "item": "Overgrown Rover"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21",
+      "note": "Roster declared in series/opm/overrides.yaml: category Monster Association Executives."
+    },
+    {
+      "id": "opm-pg-monster_association_arc-002",
+      "kind": "fact",
+      "question": "What arc number is the Monster Association Arc in the One-Punch Man series?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "fifteenth arc"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-003",
+      "kind": "fact",
+      "question": "What number arc of the Human Monster Saga is the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "sixth arc"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-004",
+      "kind": "fact",
+      "question": "Who offered Speed-o'-Sound Sonic a monster cell at the start of the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gale Wind"
+        },
+        {
+          "item": "Hellfire Flame"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-005",
+      "kind": "fact",
+      "question": "Why did Speed-o'-Sound Sonic want to give up his humanity during the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "to surpass Saitama"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-006",
+      "kind": "fact",
+      "question": "Who killed Destrochloridium after it attacked a Hero Association executive?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Superalloy Darkshine"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-007",
+      "kind": "fact",
+      "question": "Who ate Awakened Cockroach at the start of the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Orochi"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-008",
+      "kind": "fact",
+      "question": "What was the reason Orochi ate Awakened Cockroach at the start of the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "for losing to Genos, and as a demonstration of Orochi's authority"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-009",
+      "kind": "fact",
+      "question": "Why was Do-S spared from being killed at the start of the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "for her abilities"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-010",
+      "kind": "fact",
+      "question": "Who knocked Garou out before he woke up to encounter Death Gatling in the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Saitama"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-011",
+      "kind": "fact",
+      "question": "Who dominated Saitama in a fighting game while Garou was resting during the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-012",
+      "kind": "fact",
+      "question": "Who fully repaired Genos at the start of the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Dr. Kuseno"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-013",
+      "kind": "fact",
+      "question": "Whose unconscious body did Garou use as a meat shield to cover his escape from Bang?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Death Gatling"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-014",
+      "kind": "fact",
+      "question": "Who killed Elder Centipede with a Serious Punch during the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Saitama"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-015",
+      "kind": "fact",
+      "question": "Who tricked Elder Centipede into believing he had brought Blast with him?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-016",
+      "kind": "fact",
+      "question": "Who rescued Garou while calling for Elder Centipede to cover their escape?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Phoenix Man"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-017",
+      "kind": "fact",
+      "question": "Who declared that Garou should be recognized as a Dragon level threat?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Sitch"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-018",
+      "kind": "fact",
+      "question": "Who explained that Blast acts on his own to the Hero Association staff?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Stitch"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-019",
+      "kind": "fact",
+      "question": "Who announced his frustration at the Hero Association staff during the Monster Association Arc?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Narinki"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-020",
+      "kind": "fact",
+      "question": "Who assured Narinki that they would save his son?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Sekingar"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-021",
+      "kind": "fact",
+      "question": "Who pleaded for Bofoi's participation in the assault against the Monster Association?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Child Emperor"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-022",
+      "kind": "fact",
+      "question": "Who attempted to rally Saitama and his acquaintances to take the situation more seriously?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Fubuki"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-023",
+      "kind": "fact",
+      "question": "Who captured Narinki's Private Squad just before Garou woke up in the Monster Association HQ?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "G5"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-024",
+      "kind": "fact",
+      "question": "Who made Narinki's Private Squad her love slaves?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Do-S"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-025",
+      "kind": "fact",
+      "question": "What did Orochi request Garou to bring back within one day?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "the head of any hero"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-026",
+      "kind": "fact",
+      "question": "Who commanded Bug God and Royal Ripper to monitor Garou?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gyoro Gyoro"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-027",
+      "kind": "fact",
+      "question": "Whose head did Garou resolve to bring back after Saitama let him off with a warning?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Saitama"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-028",
+      "kind": "fact",
+      "question": "Who was seen meditating on a bean bag at the Monster Association HQ when Phoenix Man entered?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gyoro Gyoro"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-029",
+      "kind": "fact",
+      "question": "Who did Gyoro Gyoro say Orochi originally was?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "a simple human being"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-030",
+      "kind": "fact",
+      "question": "Who did Gyoro Gyoro say was responsible for the creation of the Monster King?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Orochi"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-031",
+      "kind": "fact",
+      "question": "What did Zombieman suspect the takoyaki shop to be?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "a new front for the House of Evolution"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-032",
+      "kind": "fact",
+      "question": "Who did Zombieman meet up with after leaving the takoyaki shop?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Dr. Genus"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-033",
+      "kind": "fact",
+      "question": "Who created the limiter to restrict everyone's abilities?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "God"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-034",
+      "kind": "fact",
+      "question": "What did the individual who removed his limiter pay for his immense power by?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "losing his hair"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-035",
+      "kind": "fact",
+      "question": "Who captured Tareo while Garou was in his stalemate with Royal Ripper and Bug God?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Sludge Jellyfish"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-036",
+      "kind": "fact",
+      "question": "Who offered to go defeat Marshall Gorilla instead of the three heroes the Hero Association sent?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Zombieman"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21",
+      "note": "Retired 'What did Dr. Kuseno give Saitama for hot pot?' (retrieval miss: the hot-pot chunk does not rank in the QA top-8 for this arc page). Replaced with a verified character-anchored fact from the same plot section."
+    },
+    {
+      "id": "opm-pg-monster_association_arc-037",
+      "kind": "fact",
+      "question": "Who was instantly knocked out when the group rushed to eat the steaming hot pot?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-038",
+      "kind": "fact",
+      "question": "Who captured Child Emperor's scouting robot 'Dig Here Woof Woof No. 3'?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gyoro Gyoro"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-039",
+      "kind": "fact",
+      "question": "Who was Tareo put into the same cell as as a prisoner?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Waganma"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-040",
+      "kind": "fact",
+      "question": "Who exerted his influence to remove Demon Cyborg and Silver Fang from the rescue mission?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Child Emperor"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-041",
+      "kind": "fact",
+      "question": "Who punched Royal Ripper's head off with one blow, killing him in the process?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Garou"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-042",
+      "kind": "fact",
+      "question": "What technique did Garou use to shred Royal Ripper to pieces after killing him?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Whirlwind Iron Cutting Fist"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-043",
+      "kind": "fact",
+      "question": "What did Garou devour to replenish himself while escaping with Tareo?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "one of the limbs of the monsters"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-044",
+      "kind": "fact",
+      "question": "Who suddenly attacked Garou and Tareo while they were backing away from Overgrown Rover?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Super Mouse"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-045",
+      "kind": "fact",
+      "question": "Who is the threat level Dragon reserved for according to Super Mouse?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "the Monster Association cadres"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-046",
+      "kind": "fact",
+      "question": "What technique did Super Mouse, Unihorn, and Showerhead use to punch a hole through Garou?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Demon Trinity Bursting Speed Thrust"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-047",
+      "kind": "fact",
+      "question": "Who easily dispatched Unihorn after Garou deflected the Demon Trinity Bursting Speed Thrust?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Overgrown Rover"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-048",
+      "kind": "fact",
+      "question": "Who fired an energy blast that made everything above ground in Z-City shake?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Overgrown Rover"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-049",
+      "kind": "fact",
+      "question": "Who paralyzed Garou after he was buried underneath a pile of rubble?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gyoro Gyoro"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-050",
+      "kind": "fact",
+      "question": "What must a human repeatably experience to accelerate the growth process?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "death"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-051",
+      "kind": "fact",
+      "question": "What is the key ingredient needed for the human to accelerate growth?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "their very own personal hell"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-052",
+      "kind": "fact",
+      "question": "Who intervened by grabbing Garou and pulling him down to eye level?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Orochi"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-053",
+      "kind": "fact",
+      "question": "What did Orochi fire at Garou, piercing him and leaving a visible round hole in his abdomen?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "his horns"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-054",
+      "kind": "fact",
+      "question": "What did Gyoro Gyoro comment on as Orochi's first discovery as a monster?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "horn manipulation"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-055",
+      "kind": "fact",
+      "question": "What did Orochi copy when Garou utilized Water Stream Rock Smashing Fist?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "his stance"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-056",
+      "kind": "fact",
+      "question": "Who barged into the S-Class meeting and insisted he should lead the S-Class heroes?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Sweet Mask"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-057",
+      "kind": "fact",
+      "question": "Who entered the S-Class meeting and quelled the situation with all their mutual respect for him?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-058",
+      "kind": "fact",
+      "question": "What motivated Sekingar to personally head to the Monster Association scene?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "fame"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-059",
+      "kind": "fact",
+      "question": "Who mocked the heroes' strike team due to their lack of numbers?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Evil Eye"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-060",
+      "kind": "fact",
+      "question": "Who tallied the number of monsters to over 150?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Child Emperor"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-061",
+      "kind": "fact",
+      "question": "What did Evil Eye declare he would do to Tatsumaki and Fubuki as an experiment?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "gouge out the eyes of Tatsumaki and her sister, Fubuki"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-062",
+      "kind": "fact",
+      "question": "Who created a barrier protecting the strike team while leaving them to deal with the falling debris?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Tatsumaki"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-063",
+      "kind": "fact",
+      "question": "Who cut Gyoro Gyoro's spy drone in two?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Child Emperor"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-064",
+      "kind": "fact",
+      "question": "What disaster level did Gale Wind and Hellfire Flame reveal as when they brought out their monster forms?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Dragon"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-065",
+      "kind": "fact",
+      "question": "What technique did Flashy Flash use to slice both Gale Wind and Hellfire Flame in half?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Flashy Slash"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-066",
+      "kind": "fact",
+      "question": "Who shot the monster that tried to ambush Child Emperor dead?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Mini Octotank No. 8"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-067",
+      "kind": "fact",
+      "question": "What ultimate weapon did Child Emperor summon to fight Phoenix Man?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "the mech Brave Giant"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-068",
+      "kind": "fact",
+      "question": "What did Child Emperor sneak into Phoenix Man's costume that would tickle him until he died of asphyxiation?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "a tickling robot"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-069",
+      "kind": "fact",
+      "question": "Who encountered and killed Vampire (Pureblood) during the Monster Association raid?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Zombieman"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-070",
+      "kind": "fact",
+      "question": "What did Sweet Mask effortlessly tear through, subsequently killing all of them?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "the entire Narinki Squad"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-071",
+      "kind": "fact",
+      "question": "Who was revealed to be a shapeshifting monster that promptly died of fright when King told him to find another hero?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Waganma"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-072",
+      "kind": "fact",
+      "question": "How many moves did G5 confidently proclaim he would beat Atomic Samurai in?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "23 moves"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-073",
+      "kind": "fact",
+      "question": "Who appeared behind Zombieman and blasted him point-blank with a beam of energy?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Homeless Emperor"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-074",
+      "kind": "fact",
+      "question": "How many S-Class heroes did Homeless Emperor state he would kill alone?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "seventeen of the S-Class heroes"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-075",
+      "kind": "fact",
+      "question": "What entity does Homeless Emperor claim appeared before him and granted him power?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "God"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-076",
+      "kind": "fact",
+      "question": "Who destroys the devices used to nurture monster cells collected from Orochi?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Sweet Mask"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-077",
+      "kind": "fact",
+      "question": "What is Fuhrer Ugly's disaster level?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Dragon"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-078",
+      "kind": "fact",
+      "question": "What is Sweet Mask's physical reaction when he sees extreme ugliness?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "he starts shaking and is no longer able to move"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-079",
+      "kind": "fact",
+      "question": "Who devoured his monster comrades after mistakenly thinking they would have been a good feed for them?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Pig God"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-080",
+      "kind": "fact",
+      "question": "Who sneaked up from behind Pig God and swallowed the hero?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gums"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-081",
+      "kind": "fact",
+      "question": "What do the Mad Doctor Fish do to the monster who unleashed Evil Natural Water?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "turn him into bones"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-082",
+      "kind": "fact",
+      "question": "Who swiftly pummeled Puri-Puri Prisoner after the hero moved to release him from the chains?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Garou"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-083",
+      "kind": "fact",
+      "question": "What happens when Saitama grows bored of Garou and demonstrates how serious he can be?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "flipping the entire Monster Association HQ once again"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-084",
+      "kind": "fact",
+      "question": "What does Saitama suggest Garou wanted to be all along?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "a hero"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-085",
+      "kind": "fact",
+      "question": "Who appears, having become immensely powerful from his many battles, and evolved into a borderline monster himself?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Garou"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-086",
+      "kind": "fact",
+      "question": "What does the story impact section say about the conflict between the Hero Association and the Monster Association?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "engage in a large-scale war"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-087",
+      "kind": "fact",
+      "question": "What is the outcome of the war between the Hero Association and Monster Association?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "The Hero Association is victorious. The Monster Association collapses."
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-088",
+      "kind": "fact",
+      "question": "Who was shocked to discover that Armored Gorilla had sided with the humans?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Marshall Gorilla"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21",
+      "note": "Retired 'What does the story impact section say about Garou's monsterization?' (retrieval miss: the Story Impact chunk does not rank in the QA top-8). Replaced with a verified character-anchored fact."
+    },
+    {
+      "id": "opm-pg-monster_association_arc-089",
+      "kind": "fact",
+      "question": "What is revealed about Blast in the story impact section?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "opposing \"God\" alongside his mysterious comrades"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-090",
+      "kind": "fact",
+      "question": "What does Saitama stop Garou from achieving?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "his goal of becoming \"Absolute Evil\""
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-091",
+      "kind": "fact",
+      "question": "What powers does Garou receive after the battle with Saitama?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "powers from \"God\""
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-092",
+      "kind": "fact",
+      "question": "What is the number of volumes the Monster Association Arc consists of, making it the longest arc of the manga?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "20 volumes"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-093",
+      "kind": "fact",
+      "question": "What is the number of chapters released prior to the Monster Association Arc at the time of its conclusion?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "77 chapters"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-094",
+      "kind": "fact",
+      "question": "What is the number of chapters included in the Monster Association Arc based on volume count?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "98 chapters"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Monster_Association_Arc"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-095",
+      "kind": "fact",
+      "question": "What was the Monster Association?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "an organization of Mysterious Beings secretly operated by Psykos and publicly led by Monster King Orochi"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-096",
+      "kind": "fact",
+      "question": "Where was the Monster Association's base located?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "beneath the Z-City Ghost Town"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-097",
+      "kind": "fact",
+      "question": "What is the number of monsters the Monster Association consists of?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "around 500 monsters"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-098",
+      "kind": "fact",
+      "question": "What is the number of Monster Association members that are disaster level Demon or higher?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "about 30"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-099",
+      "kind": "fact",
+      "question": "Who is the Boss of the Monster Association?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "the Monster King, Orochi"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-monster_association_arc-100",
+      "kind": "fact",
+      "question": "Who is the Military Advisor of the Monster Association?",
+      "subject": "Monster Association Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "core",
+      "answer": [
+        {
+          "item": "Gyoro Gyoro"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Mysterious_Beings/Monster_Association"
+      ],
+      "verified": "2026-08-21"
+    }
+  ]
+}

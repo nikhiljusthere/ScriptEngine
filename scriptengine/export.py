@@ -104,7 +104,7 @@ def _write_node(
     relations: list[tuple[str, str]],
     filenames: dict[str, str],
 ) -> None:
-    taken = set("url _citations".split())
+    taken: set[str] = set("url _citations".split())
     fields: dict[str, Any] = {}
     if label and label != "unknown":
         fields["type"] = label
@@ -142,7 +142,7 @@ def _write_document(
     facts: list[Any],
     filenames: dict[str, str],
 ) -> None:
-    taken = set("type url resolved aliases _citations".split())
+    taken: set[str] = set("type url resolved aliases _citations".split())
     fields: dict[str, Any] = {}
     if page_type and page_type != "unknown":
         fields["type"] = page_type

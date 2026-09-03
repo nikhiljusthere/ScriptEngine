@@ -1,0 +1,551 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kou Usami?",
+      "set": "Every named technique of Kou Usami",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the subordinates of Kou Usami?",
+      "set": "Every subordinate of Kou Usami",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kou Usami?",
+      "set": "Kou Usami's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kou Usami?",
+      "found": [
+        "Cursed Speech"
+      ],
+      "missing": [],
+      "members": [
+        "Cursed Speech"
+      ]
+    },
+    {
+      "query": "What are all the subordinates of Kou Usami?",
+      "found": [
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu",
+        "Marulu Val Vol Yelvori"
+      ],
+      "missing": [],
+      "members": [
+        "Marulu Val Vol Yelvori",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kou Usami?",
+      "found": [
+        "The Government of Japan Jujutsu Headquarters"
+      ],
+      "missing": [],
+      "members": [
+        "The Government of Japan Jujutsu Headquarters"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kou Usami's name?",
+      "id": "jjk-pg-kou_usami-001",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "\u5b87\u4f50\u7f8e \u9d3b"
+      ],
+      "found": [
+        "\u5b87\u4f50\u7f8e \u9d3b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kou Usami's name?",
+      "id": "jjk-pg-kou_usami-002",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Usami Kou"
+      ],
+      "found": [
+        "Usami Kou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kou Usami's race?",
+      "id": "jjk-pg-kou_usami-003",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kou Usami?",
+      "id": "jjk-pg-kou_usami-004",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "32"
+      ],
+      "found": [
+        "32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kou Usami's gender?",
+      "id": "jjk-pg-kou_usami-005",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kou Usami?",
+      "id": "jjk-pg-kou_usami-006",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kou Usami's occupation?",
+      "id": "jjk-pg-kou_usami-007",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Acting Minister for Foreign Affairs"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Acting Minister for Foreign Affairs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kou Usami's grade?",
+      "id": "jjk-pg-kou_usami-008",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Grade 1"
+      ],
+      "found": [
+        "Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kou Usami first appear?",
+      "id": "jjk-pg-kou_usami-009",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 1"
+      ],
+      "found": [
+        "Modulo Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Kou Usami play in the series?",
+      "id": "jjk-pg-kou_usami-013",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "a supporting character in Jujutsu Kaisen Modulo"
+      ],
+      "found": [
+        "a supporting character in Jujutsu Kaisen Modulo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What government position does Kou Usami hold?",
+      "id": "jjk-pg-kou_usami-014",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "the Acting Minister for Foreign Affairs for the Government of Japan"
+      ],
+      "found": [
+        "the Acting Minister for Foreign Affairs for the Government of Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kou Usami look like?",
+      "id": "jjk-pg-kou_usami-015",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "short, slick-back brown hair and dark brown eyes"
+      ],
+      "found": [
+        "short, slick-back brown hair and dark brown eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kou Usami wear?",
+      "id": "jjk-pg-kou_usami-016",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "a formal light-brown suit with a black high-collar shirt underneath, complete with a pair of light-brown pants and black dress shoes"
+      ],
+      "found": [
+        "a formal light-brown suit with a black high-collar shirt underneath, complete with a pair of light-brown pants and black dress shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Usami wear to conceal his hands' cursed seals?",
+      "id": "jjk-pg-kou_usami-017",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "white gloves"
+      ],
+      "found": [
+        "white gloves"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Kou Usami's personality described?",
+      "id": "jjk-pg-kou_usami-018",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "a pragmatic yet deeply idealistic diplomat who prioritizes coexistence and mutual understanding above all else"
+      ],
+      "found": [
+        "a pragmatic yet deeply idealistic diplomat who prioritizes coexistence and mutual understanding above all else"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Usami believe would result from treating the Simurians as enemies?",
+      "id": "jjk-pg-kou_usami-019",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "inevitably lead to war"
+      ],
+      "found": [
+        "inevitably lead to war"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Usami instruct Tsurugi Okkotsu to do?",
+      "id": "jjk-pg-kou_usami-020",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "learn everything he could from Marulu Val Vol Yelvori about the Simurians"
+      ],
+      "found": [
+        "learn everything he could from Marulu Val Vol Yelvori about the Simurians"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What belief led Usami to entrust the Okkotsu siblings with the Simurian envoy?",
+      "id": "jjk-pg-kou_usami-021",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "sincere interpersonal bonds can accomplish what rigid adult diplomacy cannot"
+      ],
+      "found": [
+        "sincere interpersonal bonds can accomplish what rigid adult diplomacy cannot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Kou Usami's skill as a fighter described?",
+      "id": "jjk-pg-kou_usami-022",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "a capable fighter befitting his rank"
+      ],
+      "found": [
+        "a capable fighter befitting his rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Usami effortlessly defeat?",
+      "id": "jjk-pg-kou_usami-023",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Masaki Takeda"
+      ],
+      "found": [
+        "Masaki Takeda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What physical trait does Usami possess?",
+      "id": "jjk-pg-kou_usami-024",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "above-average speed"
+      ],
+      "found": [
+        "above-average speed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kou Usami's innate technique called?",
+      "id": "jjk-pg-kou_usami-025",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "Cursed Speech"
+      ],
+      "found": [
+        "Cursed Speech"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Cursed Speech technique do?",
+      "id": "jjk-pg-kou_usami-026",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "infuse his words with cursed energy, compelling others to obey to his verbal commands"
+      ],
+      "found": [
+        "infuse his words with cursed energy, compelling others to obey to his verbal commands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What determines the backlash of Usami's Cursed Speech?",
+      "id": "jjk-pg-kou_usami-027",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "the strength of the command and the difference in power between himself and the target"
+      ],
+      "found": [
+        "the strength of the command and the difference in power between himself and the target"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Usami recently mention feeling an urge to do?",
+      "id": "jjk-pg-kou_usami-028",
+      "subject": "Kou Usami",
+      "accept": "all",
+      "expected": [
+        "adopt a large dog"
+      ],
+      "found": [
+        "adopt a large dog"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 25,
+    "fact_present": 25
+  }
+}

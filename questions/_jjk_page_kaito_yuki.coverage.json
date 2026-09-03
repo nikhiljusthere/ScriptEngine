@@ -1,0 +1,84 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:race",
+        "page-gen:identity:gender",
+        "page-gen:identity:age",
+        "page-gen:identity:birthday",
+        "page-gen:identity:status",
+        "page-gen:identity:occupation",
+        "page-gen:affiliation",
+        "page-gen:identity:voice",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Personality",
+      "covered_by": [
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:outcome",
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:place",
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:date",
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:chapters",
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:episodes",
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:arc",
+        "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:techniques"
+      ]
+    },
+    {
+      "path": "Synopsis",
+      "covered_by": []
+    },
+    {
+      "path": "Synopsis / Phantom Parade",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities and Powers",
+      "covered_by": [
+        "page-gen:techniques"
+      ]
+    },
+    {
+      "path": "Abilities and Powers / Cursed Technique",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Synopsis",
+    "Synopsis / Phantom Parade",
+    "Abilities and Powers / Cursed Technique"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

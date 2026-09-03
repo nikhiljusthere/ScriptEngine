@@ -42,6 +42,7 @@ Off unless a series declares which page types to read:
 from __future__ import annotations
 
 import logging
+from collections.abc import Set
 from concurrent.futures import ThreadPoolExecutor
 
 from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
@@ -126,7 +127,7 @@ def extract_from_passage(
     section: str,
     text: str,
     characters: dict[str, str],
-    stopwords: set[str],
+    stopwords: Set[str],
 ) -> list[tuple[str, dict[str, str]]]:
     """`(owner, row)` for one passage. Thread-safe: touches no store."""
     from scriptengine.ingest.abilities import _answer_budget

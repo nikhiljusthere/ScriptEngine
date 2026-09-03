@@ -70,7 +70,7 @@ def probe(timeout: float = 120.0) -> tuple[bool, str]:
             f"{elapsed:.1f}s but {reasoning} reasoning tokens -- thinking is on. "
             "`lms load` has no preset flag, so it comes back on every CLI reload "
             "unless the per-model default config sets enableThinking false. See "
-            "EXTRACTION_RUNBOOK.md."
+            "docs/EXTRACTION_RUNBOOK.md."
         )
     return True, f"{elapsed:.1f}s, no thinking"
 

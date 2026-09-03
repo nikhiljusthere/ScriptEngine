@@ -19,7 +19,7 @@ different standard of proof.
 The output is `questions/_<series>_relations.json`. Underscore-prefixed so
 `questions.load_all` skips it: this is coverage gold, transcribed from a
 primary source but not independently researched, and it must not move the
-headline number. See `NEW_SERIES_PLAYBOOK.md`, "Build a bank, in two parts".
+headline number. See `docs/NEW_SERIES_PLAYBOOK.md`, "Build a bank, in two parts".
 """
 
 from __future__ import annotations

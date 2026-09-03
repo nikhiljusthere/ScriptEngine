@@ -1,0 +1,1847 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "Who are all the characters aware of Saitama's power in One-Punch Man?",
+      "set": "Characters aware of Saitama's power",
+      "confidence": "partial",
+      "returned": 44,
+      "available": 44,
+      "canon": 44,
+      "found": 44,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Who are all the characters aware of Saitama's power in One-Punch Man?",
+      "found": [
+        "Armored Gorilla",
+        "Bakuzan",
+        "Bang",
+        "Black Sperm",
+        "Blast",
+        "Bofoi",
+        "Bomb",
+        "Boros",
+        "Busho",
+        "Carnage Kabuto",
+        "Dr. Kuseno",
+        "Empty Void",
+        "Flashy Flash",
+        "Forte",
+        "Fubuki",
+        "Garou",
+        "Genos",
+        "Genus",
+        "Glasses",
+        "Geryuganshoop",
+        "God",
+        "Hammerhead",
+        "Heavenly Ninja Party",
+        "Jinzuren",
+        "King",
+        "Manako",
+        "Mumen Rider",
+        "Nyan",
+        "Orochi",
+        "Overgrown Rover",
+        "Phoenix Man",
+        "Sneck",
+        "Speed-o'-Sound Sonic",
+        "Suiryu",
+        "Sweet Mask",
+        "Tatsumaki",
+        "Zombieman",
+        "Blue",
+        "Child Emperor",
+        "Dr. Grumpy Pervert",
+        "Drunkard",
+        "Suiko",
+        "The Great Degenerate",
+        "Toupee Warrior"
+      ],
+      "missing": [],
+      "members": [
+        "Armored Gorilla",
+        "Bakuzan",
+        "Bang",
+        "Black Sperm",
+        "Blast",
+        "Blue",
+        "Bofoi",
+        "Bomb",
+        "Boros",
+        "Busho",
+        "Carnage Kabuto",
+        "Child Emperor",
+        "Dr. Grumpy Pervert",
+        "Dr. Kuseno",
+        "Drunkard",
+        "Empty Void",
+        "Flashy Flash",
+        "Forte",
+        "Fubuki",
+        "Garou",
+        "Genos",
+        "Genus",
+        "Geryuganshoop",
+        "Glasses",
+        "God",
+        "Hammerhead",
+        "Heavenly Ninja Party",
+        "Jinzuren",
+        "King",
+        "Manako",
+        "Mumen Rider",
+        "Nyan",
+        "Orochi",
+        "Overgrown Rover",
+        "Phoenix Man",
+        "Sneck",
+        "Speed-o'-Sound Sonic",
+        "Suiko",
+        "Suiryu",
+        "Sweet Mask",
+        "Tatsumaki",
+        "The Great Degenerate",
+        "Toupee Warrior",
+        "Zombieman"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "Who are the Saitama Group members who are among the characters aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-002",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "Bang",
+        "Bomb",
+        "Dr. Kuseno",
+        "Fubuki",
+        "Genos",
+        "King"
+      ],
+      "found": [
+        "Bang",
+        "Bomb",
+        "Dr. Kuseno",
+        "Fubuki",
+        "Genos",
+        "King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "Who are the deceased characters who are among the characters aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-003",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "Bakuzan",
+        "Boros",
+        "Carnage Kabuto",
+        "Geryuganshoop",
+        "Orochi"
+      ],
+      "found": [
+        "Bakuzan",
+        "Boros",
+        "Carnage Kabuto",
+        "Geryuganshoop",
+        "Orochi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "Who are the Dark Matter Thieves who are among the characters aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-004",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "Boros",
+        "Geryuganshoop"
+      ],
+      "found": [
+        "Boros",
+        "Geryuganshoop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "Who are the Neo Heroes who are among the characters aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-005",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "Blue"
+      ],
+      "found": [
+        "Blue"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "Who are the Ninja Village members who are among the characters aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-006",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "Empty Void"
+      ],
+      "found": [
+        "Empty Void"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What does the page on characters aware of Saitama's power say about Saitama's power being unacknowledged?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-007",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "Saitama's power is mostly unacknowledged"
+      ],
+      "found": [
+        "Saitama's power is mostly unacknowledged"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How are the few characters aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-008",
+      "subject": "Characters aware of Saitama's power",
+      "accept": "all",
+      "expected": [
+        "few characters are aware of it by sensing Saitama's potential or witnessing his abilities first-hand"
+      ],
+      "found": [
+        "few characters are aware of it by sensing Saitama's potential or witnessing his abilities first-hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Genos become aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-009",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Genos is among the few who are aware of the overwhelming power of Saitama"
+      ],
+      "found": [
+        "Genos is among the few who are aware of the overwhelming power of Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What first made Genos impressed by Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-010",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Genos noticed Saitama's strength for the first time when he saved him from defeat against Mosquito Girl"
+      ],
+      "found": [
+        "Genos noticed Saitama's strength for the first time when he saved him from defeat against Mosquito Girl"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Bang become aware of Saitama's power in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-011",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bang became aware of just how powerful Saitama was during the Giant Meteor incident"
+      ],
+      "found": [
+        "Bang became aware of just how powerful Saitama was during the Giant Meteor incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Boros tell Saitama was powerful before fighting him?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-012",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "Boros was one of the few characters who could immediately tell Saitama was powerful before fighting him"
+      ],
+      "found": [
+        "Boros was one of the few characters who could immediately tell Saitama was powerful before fighting him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What could Boros sense about Saitama's energy?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-013",
+      "subject": "Boros",
+      "accept": "all",
+      "expected": [
+        "He was able to sense no limit to his energy"
+      ],
+      "found": [
+        "He was able to sense no limit to his energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Blast first meet Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-014",
+      "subject": "Blast",
+      "accept": "all",
+      "expected": [
+        "Blast first met Saitama in the underground of Z-City and did not consider him to be anything special at that time"
+      ],
+      "found": [
+        "Blast first met Saitama in the underground of Z-City and did not consider him to be anything special at that time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What astounded Blast while transporting Saitama and Garou?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-015",
+      "subject": "Blast",
+      "accept": "all",
+      "expected": [
+        "Blast was astounded at the incredible strength he witnessed"
+      ],
+      "found": [
+        "Blast was astounded at the incredible strength he witnessed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Armored Gorilla become aware of Saitama's strength in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-016",
+      "subject": "Armored Gorilla",
+      "accept": "all",
+      "expected": [
+        "After Beast King's defeat by Saitama, Armored Gorilla was aware of the hero's strength"
+      ],
+      "found": [
+        "After Beast King's defeat by Saitama, Armored Gorilla was aware of the hero's strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Genus become aware of Saitama's strength in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-017",
+      "subject": "Genus",
+      "accept": "all",
+      "expected": [
+        "Genus became aware of the Caped Baldy's immeasurable strength"
+      ],
+      "found": [
+        "Genus became aware of the Caped Baldy's immeasurable strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does God regard Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-018",
+      "subject": "God",
+      "accept": "all",
+      "expected": [
+        "the mysterious entity has seen Saitama as a threat"
+      ],
+      "found": [
+        "the mysterious entity has seen Saitama as a threat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did God send to eliminate Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-019",
+      "subject": "God",
+      "accept": "all",
+      "expected": [
+        "sent Sage Centipede and Evil Ocean Water, two immensely powerful and gigantic Mysterious Beings, to eliminate Saitama"
+      ],
+      "found": [
+        "sent Sage Centipede and Evil Ocean Water, two immensely powerful and gigantic Mysterious Beings, to eliminate Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Garou witness during his fight with Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-020",
+      "subject": "Garou",
+      "accept": "all",
+      "expected": [
+        "Garou directly witnessed the overwhelming strength Saitama possessed"
+      ],
+      "found": [
+        "Garou directly witnessed the overwhelming strength Saitama possessed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What credit did King take that was actually Saitama's work?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-021",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "King took the credit for killing at least five Mysterious Beings that were actually killed by Saitama"
+      ],
+      "found": [
+        "King took the credit for killing at least five Mysterious Beings that were actually killed by Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How is Dr. Kuseno aware of Saitama's strength in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-022",
+      "subject": "Dr. Kuseno",
+      "accept": "all",
+      "expected": [
+        "Kuseno is aware of his strength due to how much Genos has talked about Saitama to him"
+      ],
+      "found": [
+        "Kuseno is aware of his strength due to how much Genos has talked about Saitama to him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why is Empty Void aware that Saitama is no ordinary hero?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-023",
+      "subject": "Empty Void",
+      "accept": "all",
+      "expected": [
+        "he is now aware that Saitama is no ordinary hero"
+      ],
+      "found": [
+        "he is now aware that Saitama is no ordinary hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Fubuki become aware of Saitama's strength in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-024",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Fubuki became aware of how strong he actually is, as she saw how he defeated Sonic with his Serious Side Hops"
+      ],
+      "found": [
+        "Fubuki became aware of how strong he actually is, as she saw how he defeated Sonic with his Serious Side Hops"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Flashy Flash first encounter Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-025",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flashy Flash initially mistook Saitama for a monster during their first encounter"
+      ],
+      "found": [
+        "Flashy Flash initially mistook Saitama for a monster during their first encounter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What else is Flashy Flash aware of about Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-026",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "He is also aware that Saitama effortlessly defeated Empty Void"
+      ],
+      "found": [
+        "He is also aware that Saitama effortlessly defeated Empty Void"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Overgrown Rover acknowledge Saitama was beyond it?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-027",
+      "subject": "Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "clearly acknowledging that Saitama was more than Rover could possibly handle"
+      ],
+      "found": [
+        "clearly acknowledging that Saitama was more than Rover could possibly handle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Speed-o'-Sound Sonic vow after losing to Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-028",
+      "subject": "Speed-o'-Sound Sonic",
+      "accept": "all",
+      "expected": [
+        "Speed-o'-Sound Sonic swore eternal rivalry and vowed to defeat him"
+      ],
+      "found": [
+        "Speed-o'-Sound Sonic swore eternal rivalry and vowed to defeat him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Suiryu first recognize Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-029",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "Suiryu first recognized Saitama's strength upon seeing him defeat Zakos with a simple slap"
+      ],
+      "found": [
+        "Suiryu first recognized Saitama's strength upon seeing him defeat Zakos with a simple slap"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Sweet Mask come to realize Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-030",
+      "subject": "Sweet Mask",
+      "accept": "all",
+      "expected": [
+        "Sweet Mask apparently realized that Saitama was stronger than most heroes of his rank"
+      ],
+      "found": [
+        "Sweet Mask apparently realized that Saitama was stronger than most heroes of his rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi realize after witnessing Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-031",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Orochi realized that he was responsible for the death of the two Cadres Elder Centipede and Gouketsu"
+      ],
+      "found": [
+        "Orochi realized that he was responsible for the death of the two Cadres Elder Centipede and Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Tatsumaki discover Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-032",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Tatsumaki discovered Saitama's strength when the latter interrupted her from punishing the Blizzard Group"
+      ],
+      "found": [
+        "Tatsumaki discovered Saitama's strength when the latter interrupted her from punishing the Blizzard Group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Black Sperm become aware of Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-033",
+      "subject": "Black Sperm",
+      "accept": "all",
+      "expected": [
+        "Black Sperm becomes aware of Saitama's strength after witnessing him defeat Garou"
+      ],
+      "found": [
+        "Black Sperm becomes aware of Saitama's strength after witnessing him defeat Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Zombieman become aware of Saitama's power?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-034",
+      "subject": "Zombieman",
+      "accept": "all",
+      "expected": [
+        "This causes him to be kind of aware of Saitama's immense power"
+      ],
+      "found": [
+        "This causes him to be kind of aware of Saitama's immense power"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Carnage Kabuto tell Saitama was powerful?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-035",
+      "subject": "Carnage Kabuto",
+      "accept": "all",
+      "expected": [
+        "Carnage Kabuto was one of the few characters who could immediately tell Saitama was powerful before fighting him"
+      ],
+      "found": [
+        "Carnage Kabuto was one of the few characters who could immediately tell Saitama was powerful before fighting him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bakuzan think after losing to Saitama in the Super Fight Tournament?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-036",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "Bakuzan thought that Saitama used some cheap trick to win the match"
+      ],
+      "found": [
+        "Bakuzan thought that Saitama used some cheap trick to win the match"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Busho become aware of Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-037",
+      "subject": "Busho",
+      "accept": "all",
+      "expected": [
+        "Busho became one of the first HA staff members to purview Saitama's great strength"
+      ],
+      "found": [
+        "Busho became one of the first HA staff members to purview Saitama's great strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Jinzuren describe Saitama to Sneck?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-038",
+      "subject": "Jinzuren",
+      "accept": "all",
+      "expected": [
+        "he described Saitama as if God was residing on his body"
+      ],
+      "found": [
+        "he described Saitama as if God was residing on his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Geryuganshoop die in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-039",
+      "subject": "Geryuganshoop",
+      "accept": "all",
+      "expected": [
+        "Geryuganshoop died in complete and utter disbelief at his defeat"
+      ],
+      "found": [
+        "Geryuganshoop died in complete and utter disbelief at his defeat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama's display inspire in Glasses?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-040",
+      "subject": "Glasses",
+      "accept": "all",
+      "expected": [
+        "inspired him to leave the group and pursue his own lifestyle as a hero"
+      ],
+      "found": [
+        "inspired him to leave the group and pursue his own lifestyle as a hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Hammerhead become aware of Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-041",
+      "subject": "Hammerhead",
+      "accept": "all",
+      "expected": [
+        "Since then Hammerhead was aware of the hero's strength"
+      ],
+      "found": [
+        "Since then Hammerhead was aware of the hero's strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Manako realize about Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-042",
+      "subject": "Manako",
+      "accept": "all",
+      "expected": [
+        "she realized he was going to be too hard to kill and decided to stay with Saitama and Flashy Flash"
+      ],
+      "found": [
+        "she realized he was going to be too hard to kill and decided to stay with Saitama and Flashy Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Nyan sense about Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-043",
+      "subject": "Nyan",
+      "accept": "all",
+      "expected": [
+        "Nyan could intuitively sense he was no match for said unknown hero"
+      ],
+      "found": [
+        "Nyan could intuitively sense he was no match for said unknown hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Phoenix Man feel from Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-044",
+      "subject": "Phoenix Man",
+      "accept": "all",
+      "expected": [
+        "he then began to feel strong pressure from Saitama"
+      ],
+      "found": [
+        "he then began to feel strong pressure from Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Sneck react to the revelation of Saitama's ability?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-045",
+      "subject": "Sneck",
+      "accept": "all",
+      "expected": [
+        "Sneck was originally unmoved by the revelation of Saitama's ability conveyed to him by Jinzuren"
+      ],
+      "found": [
+        "Sneck was originally unmoved by the revelation of Saitama's ability conveyed to him by Jinzuren"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Mumen Rider become aware of Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-046",
+      "subject": "Mumen Rider",
+      "accept": "all",
+      "expected": [
+        "Mumen Rider became aware of Saitama's strength after he was saved by him from Deep Sea King"
+      ],
+      "found": [
+        "Mumen Rider became aware of Saitama's strength after he was saved by him from Deep Sea King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Forte surmise about Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-047",
+      "subject": "Forte",
+      "accept": "all",
+      "expected": [
+        "he quickly surmised Saitama's true strength and opted not to confront but to befriend him"
+      ],
+      "found": [
+        "he quickly surmised Saitama's true strength and opted not to confront but to befriend him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bofoi wonder about Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-048",
+      "subject": "Bofoi",
+      "accept": "all",
+      "expected": [
+        "Bofoi wondered if Saitama could be a proper challenge to his greater plans"
+      ],
+      "found": [
+        "Bofoi wondered if Saitama could be a proper challenge to his greater plans"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What impressed Blue about Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-049",
+      "subject": "Blue",
+      "accept": "all",
+      "expected": [
+        "he was impressed by Saitama's ability to jump at high-speed when carrying Sweet Mask"
+      ],
+      "found": [
+        "he was impressed by Saitama's ability to jump at high-speed when carrying Sweet Mask"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Suiko react to Saitama destroying Mirror?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-050",
+      "subject": "Suiko",
+      "accept": "all",
+      "expected": [
+        "she pinched her own cheek to make sure she wasn't dreaming"
+      ],
+      "found": [
+        "she pinched her own cheek to make sure she wasn't dreaming"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Butterfly DX come to believe in Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-051",
+      "subject": "Butterfly DX",
+      "accept": "all",
+      "expected": [
+        "Butterfly soon came around to his mindset after seeing Saitama take care of the Dragon-Level threat Machine God Mirror"
+      ],
+      "found": [
+        "Butterfly soon came around to his mindset after seeing Saitama take care of the Dragon-Level threat Machine God Mirror"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Toad come to accept about Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-052",
+      "subject": "Chain'n'toad",
+      "accept": "all",
+      "expected": [
+        "Toad soon came to acclimate the words of his fellow hero Forte about Saitama's real strength"
+      ],
+      "found": [
+        "Toad soon came to acclimate the words of his fellow hero Forte about Saitama's real strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Dr. Grumpy Pervert witness in Y-City?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-053",
+      "subject": "Dr. Grumpy Pervert",
+      "accept": "all",
+      "expected": [
+        "Dr. Grumpy Pervert along with the other members of the group witnessed Saitama destroy the threat with a single punch"
+      ],
+      "found": [
+        "Dr. Grumpy Pervert along with the other members of the group witnessed Saitama destroy the threat with a single punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Drunkard become aware of Saitama's merit?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-054",
+      "subject": "Drunkard",
+      "accept": "all",
+      "expected": [
+        "Drunkard soon became aware of Saitama's merit as were the others"
+      ],
+      "found": [
+        "Drunkard soon became aware of Saitama's merit as were the others"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What surprised The Great Degenerate in Y-City?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-055",
+      "subject": "The Great Degenerate",
+      "accept": "all",
+      "expected": [
+        "much to the surprise of the Great Degenerate and other members"
+      ],
+      "found": [
+        "much to the surprise of the Great Degenerate and other members"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Toupee Warrior become aware of in Y-City?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-056",
+      "subject": "Toupee Warrior",
+      "accept": "all",
+      "expected": [
+        "becoming aware of the Caped Baldy's unusual strength for his rank"
+      ],
+      "found": [
+        "becoming aware of the Caped Baldy's unusual strength for his rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Red Nose remark on in Y-City?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-057",
+      "subject": "Red Nose",
+      "accept": "all",
+      "expected": [
+        "Red Nose, unlike the other members of the group, even remarked on Saitama's unusual strength"
+      ],
+      "found": [
+        "Red Nose, unlike the other members of the group, even remarked on Saitama's unusual strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos still think about defeating Gouketsu?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-058",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Genos still thought that Saitama would need help to safely defeat Gouketsu"
+      ],
+      "found": [
+        "Genos still thought that Saitama would need help to safely defeat Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Genos become more aware of Saitama's capabilities later?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-059",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Genos became more aware of Saitama's capabilities, knowing of his battle against Cosmic Fear Mode Garou on Io"
+      ],
+      "found": [
+        "Genos became more aware of Saitama's capabilities, knowing of his battle against Cosmic Fear Mode Garou on Io"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Blast request of Saitama for the final battle?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-060",
+      "subject": "Blast",
+      "accept": "all",
+      "expected": [
+        "requested Saitama's assistance for the final battle against"
+      ],
+      "found": [
+        "requested Saitama's assistance for the final battle against"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Garou come to remember who Saitama is?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-061",
+      "subject": "Garou",
+      "accept": "all",
+      "expected": [
+        "It wasn't until after he had become a monster that he came to remember who Saitama is"
+      ],
+      "found": [
+        "It wasn't until after he had become a monster that he came to remember who Saitama is"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How long did King keep wondering who saved him?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-062",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "for a long time, King kept wondering who was that mysterious man that saved him"
+      ],
+      "found": [
+        "for a long time, King kept wondering who was that mysterious man that saved him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki keep trying to do to Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-063",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Fubuki, however, is still persistent in her efforts to recruit Saitama"
+      ],
+      "found": [
+        "Fubuki, however, is still persistent in her efforts to recruit Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Flashy Flash react to Saitama's fighting prowess?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-064",
+      "subject": "Flashy Flash",
+      "accept": "all",
+      "expected": [
+        "Flash became impressed by his fighting prowess after spending time together in the base"
+      ],
+      "found": [
+        "Flash became impressed by his fighting prowess after spending time together in the base"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Overgrown Rover do when the Monster King ordered it to kill Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-065",
+      "subject": "Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "Rover instead fled for its life the very moment the Monster King ordered it to kill Saitama"
+      ],
+      "found": [
+        "Rover instead fled for its life the very moment the Monster King ordered it to kill Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Speed-o'-Sound Sonic stop working and focus on training?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-066",
+      "subject": "Speed-o'-Sound Sonic",
+      "accept": "all",
+      "expected": [
+        "Recognizing his power, Sonic stops working and focuses on training"
+      ],
+      "found": [
+        "Recognizing his power, Sonic stops working and focuses on training"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Suiryu witness Saitama defeat in the Super Fight tournament era?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-067",
+      "subject": "Suiryu",
+      "accept": "all",
+      "expected": [
+        "Suiryu witnessed Saitama's incredible strength once again when the hero was able to effortlessly defeat Bakuzan"
+      ],
+      "found": [
+        "Suiryu witnessed Saitama's incredible strength once again when the hero was able to effortlessly defeat Bakuzan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Sweet Mask criticize the Soda Pop Boys for lacking?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-068",
+      "subject": "Sweet Mask",
+      "accept": "all",
+      "expected": [
+        "criticized them for lacking the beauty of overwhelming power that Saitama has"
+      ],
+      "found": [
+        "criticized them for lacking the beauty of overwhelming power that Saitama has"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama repel with his Serious Squirt Gun in the fight with Orochi?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-069",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "easily repelled by Saitama's Serious Squirt Gun and then being mortally wounded by a single punch"
+      ],
+      "found": [
+        "easily repelled by Saitama's Serious Squirt Gun and then being mortally wounded by a single punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki still believe about herself versus Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-070",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "she still believed that she is stronger than he is"
+      ],
+      "found": [
+        "she still believed that she is stronger than he is"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Black Sperm see Saitama do to Garou in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-071",
+      "subject": "Black Sperm",
+      "accept": "all",
+      "expected": [
+        "witnessing him defeat Garou, in his Cosmic Fear Mode, with a single punch"
+      ],
+      "found": [
+        "witnessing him defeat Garou, in his Cosmic Fear Mode, with a single punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What story did Genos tell Zombieman about Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-072",
+      "subject": "Zombieman",
+      "accept": "all",
+      "expected": [
+        "Genos tells Zombieman a story of Saitama, which he does not seem to believe at first"
+      ],
+      "found": [
+        "Genos tells Zombieman a story of Saitama, which he does not seem to believe at first"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Carnage Kabuto do when anger got the better of him?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-073",
+      "subject": "Carnage Kabuto",
+      "accept": "all",
+      "expected": [
+        "after turning Carnage Mode on and losing all reason, no longer feared him"
+      ],
+      "found": [
+        "after turning Carnage Mode on and losing all reason, no longer feared him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bakuzan assume about his new monster form?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-074",
+      "subject": "Bakuzan",
+      "accept": "all",
+      "expected": [
+        "he assumed that his new monster form should be able to kill Saitama"
+      ],
+      "found": [
+        "he assumed that his new monster form should be able to kill Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Busho seek to test about Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-075",
+      "subject": "Busho",
+      "accept": "all",
+      "expected": [
+        "Seeking to test for himself just how powerful the new hero really was"
+      ],
+      "found": [
+        "Seeking to test for himself just how powerful the new hero really was"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When did Jinzuren first become aware of Saitama's strength?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-076",
+      "subject": "Jinzuren",
+      "accept": "all",
+      "expected": [
+        "Jinruzen was one of the first staff members of the hero association to become aware of the abnormal strength that Saitama possessed"
+      ],
+      "found": [
+        "Jinruzen was one of the first staff members of the hero association to become aware of the abnormal strength that Saitama possessed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why had Geryuganshoop's psychic powers no effect on Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-077",
+      "subject": "Geryuganshoop",
+      "accept": "all",
+      "expected": [
+        "when his psychic powers had no real effect on him"
+      ],
+      "found": [
+        "when his psychic powers had no real effect on him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Glasses see Saitama dispatch in a single punch?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-078",
+      "subject": "Glasses",
+      "accept": "all",
+      "expected": [
+        "he dispatched the Demon level threat Demonic Fan in a single punch"
+      ],
+      "found": [
+        "he dispatched the Demon level threat Demonic Fan in a single punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama stop Hammerhead's attack?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-079",
+      "subject": "Hammerhead",
+      "accept": "all",
+      "expected": [
+        "Saitama effortlessly stopping Hammerhead's attack and shattering his battlesuit with a single elbow"
+      ],
+      "found": [
+        "Saitama effortlessly stopping Hammerhead's attack and shattering his battlesuit with a single elbow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama do when Manako was in danger?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-080",
+      "subject": "Manako",
+      "accept": "all",
+      "expected": [
+        "Saitama did not hesitate to destroy the monster that was about to attack her"
+      ],
+      "found": [
+        "Saitama did not hesitate to destroy the monster that was about to attack her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Nyan find when he tried to sneak-attack Saitama in One-Punch Man?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-081",
+      "subject": "Nyan",
+      "accept": "all",
+      "expected": [
+        "his sneak attack had no effect on him whatsoever"
+      ],
+      "found": [
+        "his sneak attack had no effect on him whatsoever"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama enter Phoenix Man's Phoenix Space?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-082",
+      "subject": "Phoenix Man",
+      "accept": "all",
+      "expected": [
+        "Saitama broke into his Phoenix Space by punching it"
+      ],
+      "found": [
+        "Saitama broke into his Phoenix Space by punching it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Sneck opt to do to the newbie?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-083",
+      "subject": "Sneck",
+      "accept": "all",
+      "expected": [
+        "Sneck opted to rookie crush the newbie, but failed miserably"
+      ],
+      "found": [
+        "Sneck opted to rookie crush the newbie, but failed miserably"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Mumen Rider send Saitama after being saved?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-084",
+      "subject": "Mumen Rider",
+      "accept": "all",
+      "expected": [
+        "sent him a letter in thanks for both his rescue and preserving his heroic pride"
+      ],
+      "found": [
+        "sent him a letter in thanks for both his rescue and preserving his heroic pride"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Forte do instead of confronting Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-085",
+      "subject": "Forte",
+      "accept": "all",
+      "expected": [
+        "opted not to confront but to befriend him by looking after his pets instead"
+      ],
+      "found": [
+        "opted not to confront but to befriend him by looking after his pets instead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bofoi do after reading Saitama's track record?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-086",
+      "subject": "Bofoi",
+      "accept": "all",
+      "expected": [
+        "Bofoi wondered if Saitama could be a proper challenge to his greater plans later on"
+      ],
+      "found": [
+        "Bofoi wondered if Saitama could be a proper challenge to his greater plans later on"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What threats did Blue defeat before heading to Y-City?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-087",
+      "subject": "Blue",
+      "accept": "all",
+      "expected": [
+        "after defeating Shell King, a Demon-level threat, and Eel Dragon, a Dragon-level threat, Blue headed to Y-City"
+      ],
+      "found": [
+        "after defeating Shell King, a Demon-level threat, and Eel Dragon, a Dragon-level threat, Blue headed to Y-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Suiko introduce to Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-088",
+      "subject": "Suiko",
+      "accept": "all",
+      "expected": [
+        "Suiko introduced Suiryu, her older brother, to Saitama"
+      ],
+      "found": [
+        "Suiko introduced Suiryu, her older brother, to Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Butterfly initially disbelieving of?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-089",
+      "subject": "Butterfly DX",
+      "accept": "all",
+      "expected": [
+        "Initially disbelieving his partner Forte's testimony about the newbie A-Class hero's true might"
+      ],
+      "found": [
+        "Initially disbelieving his partner Forte's testimony about the newbie A-Class hero's true might"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Toad bested by during the battle in Y-City?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-090",
+      "subject": "Chain'n'toad",
+      "accept": "all",
+      "expected": [
+        "While having been bested by the Disaster Level Dragon Mirror during battle in Y-City"
+      ],
+      "found": [
+        "While having been bested by the Disaster Level Dragon Mirror during battle in Y-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Dr. Grumpy Pervert approach Saitama?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-091",
+      "subject": "Dr. Grumpy Pervert",
+      "accept": "all",
+      "expected": [
+        "whom approached Saitama in regards to confronting the top brass of their employment bureau over their derogatory hero names"
+      ],
+      "found": [
+        "whom approached Saitama in regards to confronting the top brass of their employment bureau over their derogatory hero names"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What hero name did Drunkard wish to go by?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-092",
+      "subject": "Drunkard",
+      "accept": "all",
+      "expected": [
+        "Drunkard, wishing to go by the hero name Young Man"
+      ],
+      "found": [
+        "Drunkard, wishing to go by the hero name Young Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did The Great Degenerate scout Saitama for?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-093",
+      "subject": "The Great Degenerate",
+      "accept": "all",
+      "expected": [
+        "Great Degenerate scouted out Saitama to ingratiate their collective of grieving heroes as its leader"
+      ],
+      "found": [
+        "Great Degenerate scouted out Saitama to ingratiate their collective of grieving heroes as its leader"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What organization is Toupee Warrior a member of?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-094",
+      "subject": "Toupee Warrior",
+      "accept": "all",
+      "expected": [
+        "Toupee Warrior is a member of the Hero Name Victims Association"
+      ],
+      "found": [
+        "Toupee Warrior is a member of the Hero Name Victims Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Red Nose recruit Saitama to be?",
+      "id": "opm-pg-characters_aware_of_saitamas_power-095",
+      "subject": "Red Nose",
+      "accept": "all",
+      "expected": [
+        "met Saitama and recruited him into the group, wishing him to become their leader"
+      ],
+      "found": [
+        "met Saitama and recruited him into the group, wishing him to become their leader"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 44,
+    "canon_total": 44,
+    "canon_recall": 1.0,
+    "members_returned": 44,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 94,
+    "fact_present": 94
+  }
+}

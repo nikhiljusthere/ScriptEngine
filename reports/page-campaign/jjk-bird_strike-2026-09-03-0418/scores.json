@@ -1,0 +1,447 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Bird Strike",
+      "set": "Every battle involving Bird Strike",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Bird Strike",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Mei Mei & Ui Ui vs. Smallpox Deity"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Mei Mei & Ui Ui vs. Smallpox Deity"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Bird Strike's name?",
+      "id": "jjk-pg-bird_strike-001",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "\u795e\u98a8"
+      ],
+      "found": [
+        "\u795e\u98a8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Bird Strike's name?",
+      "id": "jjk-pg-bird_strike-002",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "B\u0101do Sutoraiku"
+      ],
+      "found": [
+        "B\u0101do Sutoraiku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Bird Strike first appear?",
+      "id": "jjk-pg-bird_strike-003",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Chapter 102"
+      ],
+      "found": [
+        "Chapter 102"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Bird Strike first depicted?",
+      "id": "jjk-pg-bird_strike-004",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Episode 38"
+      ],
+      "found": [
+        "Episode 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-bird_strike-005",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-bird_strike-006",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-bird_strike-007",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-bird_strike-008",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-bird_strike-009",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Mei Mei & Ui Ui vs. Smallpox Deity?",
+      "id": "jjk-pg-bird_strike-010",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Mei Mei & Ui Ui are victorious."
+      ],
+      "found": [
+        "Mei Mei & Ui Ui are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Mei Mei & Ui Ui vs. Smallpox Deity take place?",
+      "id": "jjk-pg-bird_strike-011",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Fukushotin Line Platform Between Harujuku & Dogenzaka"
+      ],
+      "found": [
+        "Fukushotin Line Platform Between Harujuku & Dogenzaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Mei Mei & Ui Ui vs. Smallpox Deity take place?",
+      "id": "jjk-pg-bird_strike-012",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Mei Mei & Ui Ui vs. Smallpox Deity begin?",
+      "id": "jjk-pg-bird_strike-013",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Chapter 101"
+      ],
+      "found": [
+        "Chapter 101"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Mei Mei & Ui Ui vs. Smallpox Deity depicted?",
+      "id": "jjk-pg-bird_strike-014",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Episode 36 & 38"
+      ],
+      "found": [
+        "Episode 36 & 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Mei Mei & Ui Ui vs. Smallpox Deity take place?",
+      "id": "jjk-pg-bird_strike-015",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Bird Strike work?",
+      "id": "jjk-pg-bird_strike-017",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "In order to erase the limits of their typically weak crows, a Black Bird Manipulator can force their crows to commit suicide in return. By hurling a crow imbued with cursed energy beyond its normal limits, the user can unleash a devastating attack that is normally a one-hit finisher."
+      ],
+      "found": [
+        "In order to erase the limits of their typically weak crows, a Black Bird Manipulator can force their crows to commit suicide in return. By hurling a crow imbued with cursed energy beyond its normal limits, the user can unleash a devastating attack that is normally a one-hit finisher."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Mei Mei first showcase Bird Strike?",
+      "id": "jjk-pg-bird_strike-018",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Mei Mei first showcased this technique in her jujutsu battle with the special grade disease curse Smallpox Deity. Bird Strike hit the Smallpox Deity from behind and exorcised the special grade immediately."
+      ],
+      "found": [
+        "Mei Mei first showcased this technique in her jujutsu battle with the special grade disease curse Smallpox Deity. Bird Strike hit the Smallpox Deity from behind and exorcised the special grade immediately."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mei Mei claim about who has survived Bird Strike?",
+      "id": "jjk-pg-bird_strike-019",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "She considers Bird Strike to be the true value of her innate technique and claims no one other than Satoru Gojo has ever survived it."
+      ],
+      "found": [
+        "She considers Bird Strike to be the true value of her innate technique and claims no one other than Satoru Gojo has ever survived it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened when Mei Mei used Bird Strike against Kenjaku?",
+      "id": "jjk-pg-bird_strike-020",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Mei Mei used Bird Strike against Kenjaku after defeating the Smallpox Deity. However, the technique failed to hit the ancient sorcerer."
+      ],
+      "found": [
+        "Mei Mei used Bird Strike against Kenjaku after defeating the Smallpox Deity. However, the technique failed to hit the ancient sorcerer."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened when Mei Mei attempted to hit Sukuna with Bird Strike?",
+      "id": "jjk-pg-bird_strike-021",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Mei Mei attempted to hit Sukuna with Bird Strike to create an opening for Hiromi Higuruma and Yuji Itadori. The crows were struck down by Sukuna using Kamutoke before they could hit him."
+      ],
+      "found": [
+        "Mei Mei attempted to hit Sukuna with Bird Strike to create an opening for Hiromi Higuruma and Yuji Itadori. The crows were struck down by Sukuna using Kamutoke before they could hit him."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What damage could Bird Strike do if it hits, according to Mei Mei?",
+      "id": "jjk-pg-bird_strike-022",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "Observing this, Mei Mei suggests that Bird Strike could do lasting damage to sorcerers on the level of Gojo, Kenjaku, and Sukuna if it hits."
+      ],
+      "found": [
+        "Observing this, Mei Mei suggests that Bird Strike could do lasting damage to sorcerers on the level of Gojo, Kenjaku, and Sukuna if it hits."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the kanji in Bird Strike's name reference?",
+      "id": "jjk-pg-bird_strike-023",
+      "subject": "Bird Strike",
+      "accept": "all",
+      "expected": [
+        "The kanji used in the name of this attack are the same ones used in the word \"Divine Wind\" \u795e\u98a8 Kami Kaze. This is in reference to the self-sacrificial nature of Bird Strike, likening it to the Kamikaze units that were utilized by Japan during World War II."
+      ],
+      "found": [
+        "The kanji used in the name of this attack are the same ones used in the word \"Divine Wind\" \u795e\u98a8 Kami Kaze. This is in reference to the self-sacrificial nature of Bird Strike, likening it to the Kamikaze units that were utilized by Japan during World War II."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 22,
+    "fact_present": 22
+  }
+}

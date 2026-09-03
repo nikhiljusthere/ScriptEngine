@@ -1,0 +1,891 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kirara Hoshi?",
+      "set": "Every named technique of Kirara Hoshi",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Kirara Hoshi?",
+      "set": "Every ally of Kirara Hoshi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Kirara Hoshi?",
+      "set": "Every friend of Kirara Hoshi",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kirara Hoshi?",
+      "set": "Kirara Hoshi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kirara Hoshi",
+      "set": "Every battle involving Kirara Hoshi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kirara Hoshi?",
+      "found": [
+        "Love Rendezvous"
+      ],
+      "missing": [],
+      "members": [
+        "Love Rendezvous"
+      ]
+    },
+    {
+      "query": "What are all the allies of Kirara Hoshi?",
+      "found": [
+        "Kinji Hakari",
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "members": [
+        "Kinji Hakari",
+        "Megumi Fushiguro"
+      ]
+    },
+    {
+      "query": "What are all the friends of Kirara Hoshi?",
+      "found": [
+        "Kinji Hakari",
+        "Panda",
+        "Choso"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Kinji Hakari",
+        "Panda"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kirara Hoshi?",
+      "found": [
+        "Tokyo Jujutsu High Gachinko Fight Club"
+      ],
+      "missing": [],
+      "members": [
+        "Tokyo Jujutsu High Gachinko Fight Club"
+      ]
+    },
+    {
+      "query": "Every battle involving Kirara Hoshi",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Megumi Fushiguro & Panda vs. Kirara Hoshi"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Megumi Fushiguro & Panda vs. Kirara Hoshi"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kirara Hoshi's name?",
+      "id": "jjk-pg-kirara_hoshi-001",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "\u661f \u7dba\u7f85\u7f85"
+      ],
+      "found": [
+        "\u661f \u7dba\u7f85\u7f85"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kirara Hoshi's name?",
+      "id": "jjk-pg-kirara_hoshi-002",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Hoshi Kirara"
+      ],
+      "found": [
+        "Hoshi Kirara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kirara Hoshi's gender?",
+      "id": "jjk-pg-kirara_hoshi-003",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kirara Hoshi?",
+      "id": "jjk-pg-kirara_hoshi-004",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kirara Hoshi's occupation?",
+      "id": "jjk-pg-kirara_hoshi-005",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kirara Hoshi's Japanese voice actor?",
+      "id": "jjk-pg-kirara_hoshi-006",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Yuki Sakakihara"
+      ],
+      "found": [
+        "Yuki Sakakihara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kirara Hoshi's English voice actor?",
+      "id": "jjk-pg-kirara_hoshi-007",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Kayleigh McKee"
+      ],
+      "found": [
+        "Kayleigh McKee"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kirara Hoshi first appear?",
+      "id": "jjk-pg-kirara_hoshi-008",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Chapter 153"
+      ],
+      "found": [
+        "Chapter 153"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kirara Hoshi first depicted?",
+      "id": "jjk-pg-kirara_hoshi-009",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Episode 52"
+      ],
+      "found": [
+        "Episode 52"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-kirara_hoshi-010",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kirara_hoshi-011",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kirara_hoshi-012",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-kirara_hoshi-013",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-kirara_hoshi-014",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro & Panda vs. Kirara Hoshi?",
+      "id": "jjk-pg-kirara_hoshi-015",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Megumi subdues Kirara."
+      ],
+      "found": [
+        "Megumi subdues Kirara."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+      "id": "jjk-pg-kirara_hoshi-016",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Gachinko Fight Club"
+      ],
+      "found": [
+        "Gachinko Fight Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+      "id": "jjk-pg-kirara_hoshi-017",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "November 11, 2018"
+      ],
+      "found": [
+        "November 11, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro & Panda vs. Kirara Hoshi begin?",
+      "id": "jjk-pg-kirara_hoshi-018",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Chapter 154"
+      ],
+      "found": [
+        "Chapter 154"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro & Panda vs. Kirara Hoshi depicted?",
+      "id": "jjk-pg-kirara_hoshi-019",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Episode 53"
+      ],
+      "found": [
+        "Episode 53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+      "id": "jjk-pg-kirara_hoshi-020",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kirara Hoshi look like in terms of general build?",
+      "id": "jjk-pg-kirara_hoshi-026",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "a young, slender person"
+      ],
+      "found": [
+        "a young, slender person"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long is Kirara Hoshi hair?",
+      "id": "jjk-pg-kirara_hoshi-027",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "long black hair that reaches just past the back of their neck"
+      ],
+      "found": [
+        "long black hair that reaches just past the back of their neck"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color is the right section of Kirara bangs dyed?",
+      "id": "jjk-pg-kirara_hoshi-028",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "cyan"
+      ],
+      "found": [
+        "cyan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many piercings does Kirara have below their mouth?",
+      "id": "jjk-pg-kirara_hoshi-030",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "four piercings"
+      ],
+      "found": [
+        "four piercings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kirara compare to Hakari among jujutsu sorcerers?",
+      "id": "jjk-pg-kirara_hoshi-031",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "one of Jujutsu High's strongest sorcerers"
+      ],
+      "found": [
+        "one of Jujutsu High's strongest sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kept everyone from accessing Hakari monitor room without invitation?",
+      "id": "jjk-pg-kirara_hoshi-032",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "No one including Panda was able to access the monitor room where Hakari was staying unless invited"
+      ],
+      "found": [
+        "No one including Panda was able to access the monitor room where Hakari was staying unless invited"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role did Kirara play during the Raid on Sukuna?",
+      "id": "jjk-pg-kirara_hoshi-033",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "aiding Ui Ui in recovering their injured allies"
+      ],
+      "found": [
+        "aiding Ui Ui in recovering their injured allies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kirara tactical intellect compare to Megumi?",
+      "id": "jjk-pg-kirara_hoshi-034",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "an intellect that can match Megumi's"
+      ],
+      "found": [
+        "an intellect that can match Megumi's"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kirara recognize when Megumi used Rabbit Escape?",
+      "id": "jjk-pg-kirara_hoshi-035",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "attracting all the rabbits back to him and suffocating"
+      ],
+      "found": [
+        "attracting all the rabbits back to him and suffocating"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What method did Kirara use to immobilize Panda?",
+      "id": "jjk-pg-kirara_hoshi-036",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "immobilize Panda with a car"
+      ],
+      "found": [
+        "immobilize Panda with a car"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kirara surprise Megumi with Love Rendezvous marks?",
+      "id": "jjk-pg-kirara_hoshi-037",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "removing the mark from themselves so they could mark an object"
+      ],
+      "found": [
+        "removing the mark from themselves so they could mark an object"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many stars does Love Rendezvous apporition?",
+      "id": "jjk-pg-kirara_hoshi-038",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Apportions five"
+      ],
+      "found": [
+        "Apportions five"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What must someone marked with one star do to approach another under Love Rendezvous?",
+      "id": "jjk-pg-kirara_hoshi-039",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "they must follow a determined order"
+      ],
+      "found": [
+        "they must follow a determined order"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How do targets of same star behave under Love Rendezvous?",
+      "id": "jjk-pg-kirara_hoshi-040",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "attract each other"
+      ],
+      "found": [
+        "attract each other"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which star is nearest to Earth in Love Rendezvous order?",
+      "id": "jjk-pg-kirara_hoshi-041",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Imai"
+      ],
+      "found": [
+        "Imai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which star is furthest from Earth in Love Rendezvous ordering?",
+      "id": "jjk-pg-kirara_hoshi-042",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Gacrux"
+      ],
+      "found": [
+        "Gacrux"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kirara surname kanji relate to their cursed technique?",
+      "id": "jjk-pg-kirara_hoshi-043",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "directly relates"
+      ],
+      "found": [
+        "directly relates"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kirara rank in the third Popularity Poll?",
+      "id": "jjk-pg-kirara_hoshi-044",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "44th"
+      ],
+      "found": [
+        "44th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes apart were Kirara third and fourth poll rankings?",
+      "id": "jjk-pg-kirara_hoshi-045",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "11 votes"
+      ],
+      "found": [
+        "11 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who portrays Kirara in the English dub?",
+      "id": "jjk-pg-kirara_hoshi-046",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "Kayleigh McKee"
+      ],
+      "found": [
+        "Kayleigh McKee"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shape are Kirara Hoshi's pupils?",
+      "id": "jjk-pg-kirara_hoshi-047",
+      "subject": "Kirara Hoshi",
+      "accept": "all",
+      "expected": [
+        "star-shaped"
+      ],
+      "found": [
+        "star-shaped"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 9,
+    "canon_total": 9,
+    "canon_recall": 1.0,
+    "members_returned": 9,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 41,
+    "fact_present": 41
+  }
+}

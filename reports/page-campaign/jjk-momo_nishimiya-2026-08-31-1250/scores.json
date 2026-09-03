@@ -1,0 +1,865 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Momo Nishimiya?",
+      "set": "Every named technique of Momo Nishimiya",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Momo Nishimiya?",
+      "set": "Every friend of Momo Nishimiya",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Momo Nishimiya?",
+      "set": "Momo Nishimiya's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Momo Nishimiya",
+      "set": "Every battle involving Momo Nishimiya",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Momo Nishimiya?",
+      "found": [
+        "Tool Manipulation",
+        "Wind Scythe"
+      ],
+      "missing": [],
+      "members": [
+        "Tool Manipulation",
+        "Wind Scythe"
+      ]
+    },
+    {
+      "query": "What are all the friends of Momo Nishimiya?",
+      "found": [
+        "Kasumi Miwa",
+        "Mai Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Kasumi Miwa",
+        "Mai Zenin"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Momo Nishimiya?",
+      "found": [
+        "Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High"
+      ]
+    },
+    {
+      "query": "Every battle involving Momo Nishimiya",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Nobara Kugisaki vs. Momo Nishimiya"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Nobara Kugisaki vs. Momo Nishimiya"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Momo Nishimiya's name?",
+      "id": "jjk-pg-momo_nishimiya-001",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "\u897f\u5bae\u6843"
+      ],
+      "found": [
+        "\u897f\u5bae\u6843"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Momo Nishimiya's name?",
+      "id": "jjk-pg-momo_nishimiya-002",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Nishimiya Momo"
+      ],
+      "found": [
+        "Nishimiya Momo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Momo Nishimiya's race?",
+      "id": "jjk-pg-momo_nishimiya-003",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Momo Nishimiya?",
+      "id": "jjk-pg-momo_nishimiya-004",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "18"
+      ],
+      "found": [
+        "18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Momo Nishimiya's birthday?",
+      "id": "jjk-pg-momo_nishimiya-005",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "July 7, 2000"
+      ],
+      "found": [
+        "July 7, 2000"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Momo Nishimiya's gender?",
+      "id": "jjk-pg-momo_nishimiya-006",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Momo Nishimiya?",
+      "id": "jjk-pg-momo_nishimiya-007",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Momo Nishimiya's occupation?",
+      "id": "jjk-pg-momo_nishimiya-008",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Momo Nishimiya's height?",
+      "id": "jjk-pg-momo_nishimiya-009",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "150 cm (4'11\")"
+      ],
+      "found": [
+        "150 cm (4'11\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Momo Nishimiya first appear?",
+      "id": "jjk-pg-momo_nishimiya-010",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Momo Nishimiya first depicted?",
+      "id": "jjk-pg-momo_nishimiya-011",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Episode 14"
+      ],
+      "found": [
+        "Episode 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Momo Nishimiya's Japanese voice actor?",
+      "id": "jjk-pg-momo_nishimiya-012",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Rie Kugimiya"
+      ],
+      "found": [
+        "Rie Kugimiya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Momo Nishimiya's English voice actor?",
+      "id": "jjk-pg-momo_nishimiya-013",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Tara Sands"
+      ],
+      "found": [
+        "Tara Sands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-momo_nishimiya-014",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-momo_nishimiya-015",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-momo_nishimiya-016",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-momo_nishimiya-017",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-momo_nishimiya-018",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-momo_nishimiya-019",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Momo Nishimiya use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-momo_nishimiya-020",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Tool Manipulation, Wind Scythe"
+      ],
+      "found": [
+        "Tool Manipulation, Wind Scythe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Nobara Kugisaki vs. Momo Nishimiya?",
+      "id": "jjk-pg-momo_nishimiya-021",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Mai interrupts the battle."
+      ],
+      "found": [
+        "Mai interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-momo_nishimiya-022",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobara Kugisaki vs. Momo Nishimiya begin?",
+      "id": "jjk-pg-momo_nishimiya-023",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Chapter 40"
+      ],
+      "found": [
+        "Chapter 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Nobara Kugisaki vs. Momo Nishimiya depicted?",
+      "id": "jjk-pg-momo_nishimiya-024",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-momo_nishimiya-025",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Momo Nishimiya look like?",
+      "id": "jjk-pg-momo_nishimiya-030",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "She has blonde hair tied into two pig-tails tied at the base and ends that point upwards and pale blue eyes"
+      ],
+      "found": [
+        "She has blonde hair tied into two pig-tails tied at the base and ends that point upwards and pale blue eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Momo's school uniform consist of?",
+      "id": "jjk-pg-momo_nishimiya-031",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "a loose, short-sleeved black dress that ends mid-calf and black ballerina shoes"
+      ],
+      "found": [
+        "a loose, short-sleeved black dress that ends mid-calf and black ballerina shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Momo respond to the unfair treatment of women in the jujutsu world?",
+      "id": "jjk-pg-momo_nishimiya-032",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "she is willing to adapt to the expectations society asks her in order to advance her career"
+      ],
+      "found": [
+        "she is willing to adapt to the expectations society asks her in order to advance her career"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Momo form a rivalry with after following the belief that Yuji Itadori was a danger?",
+      "id": "jjk-pg-momo_nishimiya-033",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki"
+      ],
+      "found": [
+        "Nobara Kugisaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Momo care a lot about?",
+      "id": "jjk-pg-momo_nishimiya-034",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "cuteness"
+      ],
+      "found": [
+        "cuteness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Momo Nishimiya's official sorcerer ranking?",
+      "id": "jjk-pg-momo_nishimiya-035",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "floating somewhere around semi-grade 2, as speculated by Panda"
+      ],
+      "found": [
+        "floating somewhere around semi-grade 2, as speculated by Panda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Momo normally take for a group of sorcerers?",
+      "id": "jjk-pg-momo_nishimiya-036",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "a scout for a group of sorcerers"
+      ],
+      "found": [
+        "a scout for a group of sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Momo do at the end of the Shibuya Incident?",
+      "id": "jjk-pg-momo_nishimiya-037",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "coordinated the main attacks on Kenjaku in a last-ditch effort to reclaim Prison Realm"
+      ],
+      "found": [
+        "coordinated the main attacks on Kenjaku in a last-ditch effort to reclaim Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What signal did Momo use to mark the target right beneath her?",
+      "id": "jjk-pg-momo_nishimiya-038",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "a flaming lantern"
+      ],
+      "found": [
+        "a flaming lantern"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Momo's Tool Manipulation technique work?",
+      "id": "jjk-pg-momo_nishimiya-039",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Momo can telepathically control her cursed energy-charged broom, allowing her to levitate it independently of herself"
+      ],
+      "found": [
+        "Momo can telepathically control her cursed energy-charged broom, allowing her to levitate it independently of herself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Momo do with her broom in combat?",
+      "id": "jjk-pg-momo_nishimiya-040",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "strike, fly at high speeds, and generate powerful gusts of wind"
+      ],
+      "found": [
+        "strike, fly at high speeds, and generate powerful gusts of wind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What surprised Momo about the power of her Wind Scythe attack?",
+      "id": "jjk-pg-momo_nishimiya-041",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Uraume blocked it with their bare hand"
+      ],
+      "found": [
+        "Uraume blocked it with their bare hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool does Momo carry?",
+      "id": "jjk-pg-momo_nishimiya-042",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "a straw broom similar to those used by witches"
+      ],
+      "found": [
+        "a straw broom similar to those used by witches"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Momo Nishimiya rank in the first Popularity Poll?",
+      "id": "jjk-pg-momo_nishimiya-043",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "35th"
+      ],
+      "found": [
+        "35th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is unusual about Momo's heritage?",
+      "id": "jjk-pg-momo_nishimiya-044",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Momo is American-Japanese"
+      ],
+      "found": [
+        "Momo is American-Japanese"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which real-life celebrity did Momo name as her type?",
+      "id": "jjk-pg-momo_nishimiya-045",
+      "subject": "Momo Nishimiya",
+      "accept": "all",
+      "expected": [
+        "Sebastian Stan"
+      ],
+      "found": [
+        "Sebastian Stan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 7,
+    "canon_total": 7,
+    "canon_recall": 1.0,
+    "members_returned": 7,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 41,
+    "fact_present": 41
+  }
+}

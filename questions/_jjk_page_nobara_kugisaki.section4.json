@@ -1,0 +1,1071 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-23",
+  "note": "Section 4 (identity/grade/aliases/appearance/vitals/media) of the Nobara Kugisaki cluster. Rosters staged in _jjk_page_nobara_kugisaki.decl4.yaml.",
+  "retired": [
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-01",
+      "question": "What are Nobara Kugisaki's aliases?",
+      "item": "",
+      "reason": "The page has no `alias` infobox cell and the prose names no nickname or epithet; its only page-level alias is the romaji ordering 'Kugisaki Nobara', which is the infobox `romaji` cell (a Nihongo/Ruby-derived cell the pipeline does not make retrievable), so there is no closed alias set to declare."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-02",
+      "question": "What are the kanji and romaji of Nobara Kugisaki's name?",
+      "item": "",
+      "reason": "The infobox `kanji` cell (釘崎野薔薇) and `romaji` cell (Kugisaki Nobara) are Nihongo/Ruby-derived cells that the pipeline does not make retrievable, so a kanji- or romaji-only answer cannot be golded; no chunked prose states the name in kanji."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-03",
+      "question": "What is Nobara Kugisaki's weight?",
+      "item": "",
+      "reason": "The infobox has no weight field and the page states no weight anywhere, so there is nothing to gold; nothing is invented."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-04",
+      "question": "In which manga chapter does Nobara Kugisaki make her debut?",
+      "item": "",
+      "reason": "The infobox `debut` cell ('Chapter 1 (Cover Only) / Chapter 3') is restated in no chunked prose, and a live query for the debut question surfaces no chapter value, so the infobox-only value is unretrievable."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-05",
+      "question": "In which anime episode does Nobara Kugisaki make her debut?",
+      "item": "",
+      "reason": "The infobox `debutanime` cell ('Episode 2') is restated in no chunked prose; a live query for the debut question surfaces an Episode 3 opening-sequence trivia chunk instead, which is a different fact, so the infobox-only value is unretrievable."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-06",
+      "question": "Who voices Nobara Kugisaki in the Japanese dub?",
+      "item": "",
+      "reason": "The infobox `voice` cell ('Asami Seto') is not chunked into prose and does not surface in a live query for the voice-actor question, so the infobox-only value is unretrievable."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-07",
+      "question": "Who voices Nobara Kugisaki in the English dub?",
+      "item": "",
+      "reason": "The infobox `eng voice` cell ('Anne Yatco') is not chunked into prose and does not surface in a live query for the voice-actor question, so the infobox-only value is unretrievable."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-nobara_kugisaki-151",
+      "kind": "fact",
+      "question": "What role does Nobara Kugisaki play in the Jujutsu Kaisen series?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "tritagonist",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'Nobara Kugisaki ... is the tritagonist of the Jujutsu Kaisen series.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-152",
+      "kind": "fact",
+      "question": "According to the lead, what is Nobara Kugisaki at Tokyo Jujutsu High?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a first-year student",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'She is a first-year student and grade 3 jujutsu sorcerer at Tokyo Jujutsu High studying under Satoru Gojo.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-153",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's class, according to her infobox?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Grade 3",
+          "aliases": [
+            "grade 3"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'class = [[Grade|Grade 3]]'."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-154",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's gender?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Female",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'gender = Female'; the page is also categorized 'Female'."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-155",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's race, according to her infobox?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'race = Human'; the value is served by the entity's facts table on retrieval."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-156",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's status?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Alive",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'status = Alive'; the page later writes 'the fact she was alive' after her recovery."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-157",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's occupation, according to her infobox?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'occupation = [[Jujutsu Sorcerer]]<br>Student'; the second value (Student) is carried by 152's 'a first-year student'."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-158",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's birthday?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "August 7th, 2002",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki",
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'birthday = August 7th, 2002' (fanbook-sourced); Synopsis History: 'Nobara was born on August 7th, 2002 to an unnamed mother in a village.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-159",
+      "kind": "fact",
+      "question": "How old is Nobara Kugisaki?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "16",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Infobox: 'age = 16' (fanbook-sourced); the value is served by the entity's facts table on retrieval."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-160",
+      "kind": "fact",
+      "question": "How old is Nobara Kugisaki in Jujutsu Kaisen Modulo?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "84",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox age field's second value: '84 (Modulo)' citing Chapter 13 -- her age in the Jujutsu Kaisen Modulo spinoff."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-161",
+      "kind": "fact",
+      "question": "According to the Synopsis, who was Nobara Kugisaki born to?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "an unnamed mother",
+          "aliases": [
+            "Unnamed Mother"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Nobara was born on August 7th, 2002 to an unnamed mother in a village.'; the infobox relatives field lists 'Unnamed Mother'."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-162",
+      "kind": "fact",
+      "question": "Where was Nobara Kugisaki born?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "in a village",
+          "aliases": [
+            "a village"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Nobara was born on August 7th, 2002 to an unnamed mother in a village.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-163",
+      "kind": "fact",
+      "question": "What grade is Nobara Kugisaki ranked as by Jujutsu High?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "grade 3",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers (Overall Skill Level): 'Nobara is ranked as a grade 3 jujutsu sorcerer by Jujutsu High.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-164",
+      "kind": "fact",
+      "question": "Who recommended Nobara Kugisaki and her peers for promotion after the fight with the Death Paintings?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mei Mei",
+          "aliases": []
+        },
+        {
+          "item": "Aoi Todo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers: 'Nobara and Yuji defeated the special grade curses, prompting Mei Mei (via payment from Gojo) and Aoi Todo to recommend her and all her peers to be promoted to grade 1.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-165",
+      "kind": "fact",
+      "question": "To what grade were Nobara Kugisaki and her peers recommended for promotion?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "grade 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers: '...to recommend her and all her peers to be promoted to grade 1.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-166",
+      "kind": "fact",
+      "question": "What has Nobara Kugisaki repeatedly demonstrated the capability to do in terms of grade?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "contend with jujutsu users ranked leagues above",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers: 'Nobara has showcased numerous times the capability to contend with jujutsu users ranked leagues above in terms of grade.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-167",
+      "kind": "fact",
+      "question": "Since the Goodwill Event, what kind of curses has Nobara Kugisaki demonstrated the potential to combat?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "special grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers: 'Despite ultimately being eliminated from the Goodwill Event, Nobara has since demonstrated the potential to combat special grade curses.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-168",
+      "kind": "fact",
+      "question": "How does the Appearance section describe Nobara Kugisaki's build?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "slim fair-skinned young woman",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Nobara is slim fair-skinned young woman with neck-length light brown hair.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-169",
+      "kind": "fact",
+      "question": "What color is Nobara Kugisaki's hair, according to the Appearance section?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "light brown",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'neck-length light brown hair that reaches to her neck.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-170",
+      "kind": "fact",
+      "question": "How is Nobara Kugisaki's hair styled?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "in an asymmetrical bob-cut",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'styled with bangs that cover the right side of her forehead in an asymmetrical bob-cut.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-171",
+      "kind": "fact",
+      "question": "What color are Nobara Kugisaki's eyes?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "orange eyes",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'She has orange eyes, long eyelashes and thin eyebrows of the same color.'; infobox: 'eye = Orange'."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-172",
+      "kind": "fact",
+      "question": "What else does the Appearance section say about Nobara Kugisaki's eyes?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "long eyelashes and thin eyebrows of the same color",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'She has orange eyes, long eyelashes and thin eyebrows of the same color.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-173",
+      "kind": "fact",
+      "question": "What now covers Nobara Kugisaki's left eye, after her near-fatal injury from Mahito?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "an eyepatch",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'After sustaining a near-fatal injury from Mahito, she now has an eyepatch covering her left eye.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-174",
+      "kind": "fact",
+      "question": "What does Nobara Kugisaki's Jujutsu High uniform consist of?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a dark blue gakuran-style top (a button-down jacket) and a long matching skirt",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'Nobara's Jujutsu High uniform consists of a dark blue gakuran-style top (a button-down jacket) and a long matching skirt that reaches to just above her knees.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-175",
+      "kind": "fact",
+      "question": "What does Nobara Kugisaki wear along with her uniform?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "black pantyhose and brown shoes along with her signature brown belt",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'She also sports black pantyhose and brown shoes along with her signature brown belt that holds her tools for jujutsu.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-176",
+      "kind": "fact",
+      "question": "What did Nobara Kugisaki's tracksuit include?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a white and blue hoodie accented with a flower pattern, black tights, and white shoes",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'She didn't have a tracksuit prior to enrolling at Jujutsu High and bought one shortly after. It included a white and blue hoodie accented with a flower pattern, black tights, and white shoes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-177",
+      "kind": "fact",
+      "question": "What does the Appearance section say about Nobara Kugisaki's tracksuit before Jujutsu High?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "didn't have a tracksuit prior to enrolling at Jujutsu High and bought one shortly after",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Appearance: 'She didn't have a tracksuit prior to enrolling at Jujutsu High and bought one shortly after.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-178",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's natural hair color, according to the Trivia?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "naturally dark brown",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara's hair is dyed and is naturally dark brown.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-179",
+      "kind": "fact",
+      "question": "What color is Nobara Kugisaki's hair in the anime, according to the Trivia?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "more of a ginger brown color",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Her hair color varies in the anime and manga: In the anime, it is more of a ginger brown color.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-180",
+      "kind": "fact",
+      "question": "What color is Nobara Kugisaki's hair in manga illustrations, according to the Trivia?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "an orange color",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'In manga illustrations, her hair is an orange color.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-181",
+      "kind": "fact",
+      "question": "How tall is Nobara Kugisaki, according to the Trivia?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "just short of 160 centimeters",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara is just short of 160 centimeters (5'3\").' The infobox height cell '160 cm (5'3\")' agrees; the page states no weight."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-182",
+      "kind": "fact",
+      "question": "What rank did Nobara Kugisaki place in the first Popularity Poll?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "sixth",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara ranked sixth in the first Popularity Poll with 9,590 votes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-183",
+      "kind": "fact",
+      "question": "What rank did Nobara Kugisaki place in the second Popularity Poll?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "11th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara ranked 11th in the second Popularity Poll with 2,152 votes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-184",
+      "kind": "fact",
+      "question": "What rank did Nobara Kugisaki place in the third Popularity Poll?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "13th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara ranked 13th in the third Popularity Poll with 1,012 votes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-185",
+      "kind": "fact",
+      "question": "What rank did Nobara Kugisaki place in the fourth Popularity Poll?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "14th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara ranked 14th in the fourth Popularity Poll with 1,514 votes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-186",
+      "kind": "fact",
+      "question": "How many votes did Nobara Kugisaki receive in the first Popularity Poll?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "9,590 votes",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara ranked sixth in the first Popularity Poll with 9,590 votes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-187",
+      "kind": "fact",
+      "question": "What award did Nobara Kugisaki win at the Crunchyroll Anime Awards 2022?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Best Girl",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara Kugisaki won the award for Best Girl in the Crunchyroll Anime Awards 2022.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-188",
+      "kind": "fact",
+      "question": "What theme song did Gege Akutami choose for Nobara Kugisaki?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Seishun Kyousoukyoku",
+          "aliases": []
+        },
+        {
+          "item": "Ano Depaato",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'The theme song that Gege Akutami chose for Nobara is \"Seishun Kyousoukyoku\" by Sunny Day Service and \"Ano Depaato\" by Natsuko Nisshoku.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-189",
+      "kind": "fact",
+      "question": "What does the official fanbook list as Nobara Kugisaki's hobby?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Her hobby is shopping",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia (fanbook block): 'Her hobby is shopping.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-190",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's favorite dish, according to the fanbook?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Popular food and watermelon",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia (fanbook block): 'Favorite dish: Popular food and watermelon.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-191",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's least favorite dish, according to the fanbook?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Lightly pickled vegetables",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia (fanbook block): 'Least favorite dish: Lightly pickled vegetables.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-192",
+      "kind": "fact",
+      "question": "What is Nobara Kugisaki's cause of stress, according to the fanbook?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Dehydration",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia (fanbook block): 'Cause of stress: Dehydration.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-193",
+      "kind": "fact",
+      "question": "What are Nobara Kugisaki's favorite brands?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Balenciaga",
+          "aliases": []
+        },
+        {
+          "item": "Onitsuka Tiger",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara goes shopping during her spare time. Her favorite brands are Balenciaga and Onitsuka Tiger.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-194",
+      "kind": "fact",
+      "question": "How does Nobara Kugisaki enjoy her life in Tokyo?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "by buying a lot of food and wearing a lot of clothes",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara enjoys her life in Tokyo by buying a lot of food and wearing a lot of clothes.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-195",
+      "kind": "fact",
+      "question": "Why did Nobara Kugisaki want Mai Zenin's uniform?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "was unaware that Jujutsu High provided custom uniforms for the summer season",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nobara was unaware that Jujutsu High provided custom uniforms for the summer season, which is why she wanted Mai Zenin's.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-196",
+      "kind": "fact",
+      "question": "What does the full kanji in Nobara Kugisaki's given name refer to, according to the Trivia?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "her brash and feminine nature",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'The full kanji in her given name refers to her brash and feminine nature.' The gold is the English clause; the kanji glyph itself is not chunked."
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-197",
+      "kind": "fact",
+      "question": "What is the second kanji of Nobara Kugisaki's name associated with in merchandise?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "associated with roses in merchandise",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'The second kanji is associated with roses in merchandise, symbolizing her femininity that values her looks while having a more thorny, tough side.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-198",
+      "kind": "fact",
+      "question": "When did Nobara Kugisaki's nearly miraculous recovery occur?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "December 24",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality (post-Shibuya): 'Following her nearly miraculous recovery on December 24, a scarred Nobara appeared to still be in high spirits.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-199",
+      "kind": "fact",
+      "question": "What fact did Nobara Kugisaki use to surprise Megumi Fushiguro after the raid on Sukuna?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the fact she was alive",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'Upon seeing Yuji again, the two got up to old habits by attempting to surprise Megumi with the fact she was alive.'"
+    },
+    {
+      "id": "jjk-pg-nobara_kugisaki-200",
+      "kind": "set",
+      "question": "What are Nobara Kugisaki's affiliations?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-23",
+      "note": "The infobox affiliation field is a closed single-entry set: '[[Tokyo Metropolitan Curse Technical College|Tokyo Jujutsu High]]'. Staged in _jjk_page_nobara_kugisaki.decl4.yaml; the page writes the short form in the lead ('at Tokyo Jujutsu High') as well."
+    }
+  ]
+}

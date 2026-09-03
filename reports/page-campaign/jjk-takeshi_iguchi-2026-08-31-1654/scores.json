@@ -1,0 +1,507 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Takeshi Iguchi?",
+      "set": "Every friend of Takeshi Iguchi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Takeshi Iguchi?",
+      "set": "Takeshi Iguchi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Takeshi Iguchi?",
+      "found": [
+        "Yuji Itadori",
+        "Setsuko Sasaki"
+      ],
+      "missing": [],
+      "members": [
+        "Setsuko Sasaki",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Takeshi Iguchi?",
+      "found": [
+        "Sugisawa Third High School Occult Research Club"
+      ],
+      "missing": [],
+      "members": [
+        "Sugisawa Third High School Occult Research Club"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Takeshi Iguchi's name?",
+      "id": "jjk-pg-takeshi_iguchi-001",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "\u4e95\u53e3\u305f\u3051\u3057"
+      ],
+      "found": [
+        "\u4e95\u53e3\u305f\u3051\u3057"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Takeshi Iguchi's name?",
+      "id": "jjk-pg-takeshi_iguchi-002",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Iguchi Takeshi"
+      ],
+      "found": [
+        "Iguchi Takeshi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeshi Iguchi's race?",
+      "id": "jjk-pg-takeshi_iguchi-003",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeshi Iguchi's gender?",
+      "id": "jjk-pg-takeshi_iguchi-004",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Takeshi Iguchi?",
+      "id": "jjk-pg-takeshi_iguchi-005",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeshi Iguchi's occupation?",
+      "id": "jjk-pg-takeshi_iguchi-006",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Student"
+      ],
+      "found": [
+        "Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Takeshi Iguchi first appear?",
+      "id": "jjk-pg-takeshi_iguchi-007",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Takeshi Iguchi first depicted?",
+      "id": "jjk-pg-takeshi_iguchi-008",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takeshi Iguchi's Japanese voice actor?",
+      "id": "jjk-pg-takeshi_iguchi-009",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Takahiro Sumi"
+      ],
+      "found": [
+        "Takahiro Sumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takeshi Iguchi's English voice actor?",
+      "id": "jjk-pg-takeshi_iguchi-010",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Kyle Hebert"
+      ],
+      "found": [
+        "Kyle Hebert"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Takeshi Iguchi play in the series?",
+      "id": "jjk-pg-takeshi_iguchi-013",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What year is Takeshi Iguchi at Sugisawa Third Municipal High School?",
+      "id": "jjk-pg-takeshi_iguchi-014",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a second-year student"
+      ],
+      "found": [
+        "a second-year student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takeshi Iguchi look like?",
+      "id": "jjk-pg-takeshi_iguchi-015",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a relatively tall teenage boy with short black hair that juts upward to a point toward the back of his head"
+      ],
+      "found": [
+        "a relatively tall teenage boy with short black hair that juts upward to a point toward the back of his head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takeshi wear?",
+      "id": "jjk-pg-takeshi_iguchi-016",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a typical school uniform, a black gakuran, and white shoes"
+      ],
+      "found": [
+        "a typical school uniform, a black gakuran, and white shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Takeshi Iguchi's personality described?",
+      "id": "jjk-pg-takeshi_iguchi-017",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a relatively calm person and a typical teenager who wants to enjoy their time with friends"
+      ],
+      "found": [
+        "a relatively calm person and a typical teenager who wants to enjoy their time with friends"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeshi Iguchi into?",
+      "id": "jjk-pg-takeshi_iguchi-018",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "spooky things and the supernatural"
+      ],
+      "found": [
+        "spooky things and the supernatural"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What game do the Occult Research Club members play?",
+      "id": "jjk-pg-takeshi_iguchi-019",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a game of Kokkuri"
+      ],
+      "found": [
+        "a game of Kokkuri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the club's theory about why the rugby field got closed?",
+      "id": "jjk-pg-takeshi_iguchi-020",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "it being haunted by a missing man from thirty years prior"
+      ],
+      "found": [
+        "it being haunted by a missing man from thirty years prior"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuji tell Setsuko and Takeshi about the club?",
+      "id": "jjk-pg-takeshi_iguchi-021",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "he liked the club and wanted to stay"
+      ],
+      "found": [
+        "he liked the club and wanted to stay"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Setsuko and Takeshi find when they unsealed the cursed charm?",
+      "id": "jjk-pg-takeshi_iguchi-022",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "a human-looking finger"
+      ],
+      "found": [
+        "a human-looking finger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Setsuko discover about Takeshi after they reunited?",
+      "id": "jjk-pg-takeshi_iguchi-023",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Takeshi has a curse attached to his head"
+      ],
+      "found": [
+        "Takeshi has a curse attached to his head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who brought Takeshi outside of the Sendai Colony's barrier?",
+      "id": "jjk-pg-takeshi_iguchi-024",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Takeshi seen doing before he and Setsuko contemplated the barrier?",
+      "id": "jjk-pg-takeshi_iguchi-025",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "waking Setsuko Sasaki up"
+      ],
+      "found": [
+        "waking Setsuko Sasaki up"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takeshi rank in the 1st Character Popularity Poll?",
+      "id": "jjk-pg-takeshi_iguchi-026",
+      "subject": "Takeshi Iguchi",
+      "accept": "all",
+      "expected": [
+        "75th place in the manga's 1st Character Popularity Poll with 12 votes"
+      ],
+      "found": [
+        "75th place in the manga's 1st Character Popularity Poll with 12 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 24,
+    "fact_present": 24
+  }
+}

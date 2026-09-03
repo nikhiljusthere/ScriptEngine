@@ -1,0 +1,685 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Cross Val Vol Yelvori?",
+      "set": "Every named technique of Cross Val Vol Yelvori",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Cross Val Vol Yelvori?",
+      "set": "Every ally of Cross Val Vol Yelvori",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Cross Val Vol Yelvori?",
+      "set": "Cross Val Vol Yelvori's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Cross Val Vol Yelvori",
+      "set": "Every battle involving Cross Val Vol Yelvori",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Cross Val Vol Yelvori?",
+      "found": [
+        "Chaos",
+        "Harmony",
+        "Third Eye"
+      ],
+      "missing": [],
+      "members": [
+        "Chaos",
+        "Harmony",
+        "Third Eye"
+      ]
+    },
+    {
+      "query": "What are all the allies of Cross Val Vol Yelvori?",
+      "found": [
+        "Dabura Karaba",
+        "Dapa"
+      ],
+      "missing": [],
+      "members": [
+        "Dabura Karaba",
+        "Dapa"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Cross Val Vol Yelvori?",
+      "found": [
+        "Rumel Tribe"
+      ],
+      "missing": [],
+      "members": [
+        "Rumel Tribe"
+      ]
+    },
+    {
+      "query": "Every battle involving Cross Val Vol Yelvori",
+      "found": [
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu"
+      ],
+      "missing": [],
+      "members": [
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Cross Val Vol Yelvori's name?",
+      "id": "jjk-pg-cross_val_vol_yelvori-001",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "\u30af\u30ed\u30b9\u30fb\u30f4\u30a1\u30eb\u30fb\u30f4\u30eb\u30fb\u30a4\u30a7\u30eb\u30f4\u30ea"
+      ],
+      "found": [
+        "\u30af\u30ed\u30b9\u30fb\u30f4\u30a1\u30eb\u30fb\u30f4\u30eb\u30fb\u30a4\u30a7\u30eb\u30f4\u30ea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Cross Val Vol Yelvori's name?",
+      "id": "jjk-pg-cross_val_vol_yelvori-002",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Kurosu Varu Vuru Yeruvuri"
+      ],
+      "found": [
+        "Kurosu Varu Vuru Yeruvuri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross Val Vol Yelvori's race?",
+      "id": "jjk-pg-cross_val_vol_yelvori-003",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Simurian"
+      ],
+      "found": [
+        "Simurian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Cross Val Vol Yelvori?",
+      "id": "jjk-pg-cross_val_vol_yelvori-004",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "19"
+      ],
+      "found": [
+        "19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross Val Vol Yelvori's gender?",
+      "id": "jjk-pg-cross_val_vol_yelvori-005",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Cross Val Vol Yelvori?",
+      "id": "jjk-pg-cross_val_vol_yelvori-006",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross Val Vol Yelvori's occupation?",
+      "id": "jjk-pg-cross_val_vol_yelvori-007",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Rumelian Dispatch Officer"
+      ],
+      "found": [
+        "Rumelian Dispatch Officer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Cross Val Vol Yelvori first appear?",
+      "id": "jjk-pg-cross_val_vol_yelvori-008",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 1"
+      ],
+      "found": [
+        "Modulo Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+      "id": "jjk-pg-cross_val_vol_yelvori-009",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Tsurugi allows Maru to win."
+      ],
+      "found": [
+        "Tsurugi allows Maru to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-cross_val_vol_yelvori-010",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Tokyo, Japan"
+      ],
+      "found": [
+        "Tokyo, Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-cross_val_vol_yelvori-011",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "January 14, 2087"
+      ],
+      "found": [
+        "January 14, 2087"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu begin?",
+      "id": "jjk-pg-cross_val_vol_yelvori-012",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Chapter 14"
+      ],
+      "found": [
+        "Chapter 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross Val Vol Yelvori's role among the Simurian refugees?",
+      "id": "jjk-pg-cross_val_vol_yelvori-017",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "the dispatch officer of the Simurian refugees who have come seeking a home at Earth in 2086"
+      ],
+      "found": [
+        "the dispatch officer of the Simurian refugees who have come seeking a home at Earth in 2086"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Cross's older twin brother?",
+      "id": "jjk-pg-cross_val_vol_yelvori-018",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "Maru"
+      ],
+      "found": [
+        "Maru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross Val Vol Yelvori look like?",
+      "id": "jjk-pg-cross_val_vol_yelvori-019",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "a slim young man of average height possessing orange-red eyes and very light green hair which is tied to the back"
+      ],
+      "found": [
+        "a slim young man of average height possessing orange-red eyes and very light green hair which is tied to the back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What markings does Cross have on his face?",
+      "id": "jjk-pg-cross_val_vol_yelvori-020",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "red, swirling markings on his cheeks and underneath his eyes"
+      ],
+      "found": [
+        "red, swirling markings on his cheeks and underneath his eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross wear?",
+      "id": "jjk-pg-cross_val_vol_yelvori-021",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "green and white robes with a purple sash around his waist"
+      ],
+      "found": [
+        "green and white robes with a purple sash around his waist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Cross Val Vol Yelvori characterized?",
+      "id": "jjk-pg-cross_val_vol_yelvori-022",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "a generally aloof and calculating individual"
+      ],
+      "found": [
+        "a generally aloof and calculating individual"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross believe about war with Japan?",
+      "id": "jjk-pg-cross_val_vol_yelvori-023",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "it's in the Simurians' best interests to go to war with Japan"
+      ],
+      "found": [
+        "it's in the Simurians' best interests to go to war with Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross terrified of?",
+      "id": "jjk-pg-cross_val_vol_yelvori-024",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "repeating the oppression his people suffered on their home planet"
+      ],
+      "found": [
+        "repeating the oppression his people suffered on their home planet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross' hatred of Earthlings born out of?",
+      "id": "jjk-pg-cross_val_vol_yelvori-025",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "envy and his own trauma"
+      ],
+      "found": [
+        "envy and his own trauma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What feudal Japanese practice disgusts Cross?",
+      "id": "jjk-pg-cross_val_vol_yelvori-026",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "fumi-e"
+      ],
+      "found": [
+        "fumi-e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Cross' attitude toward religious differences?",
+      "id": "jjk-pg-cross_val_vol_yelvori-027",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "a lot of respect for religious differences, even when it comes to Earthlings"
+      ],
+      "found": [
+        "a lot of respect for religious differences, even when it comes to Earthlings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Cross vote for in the Simurian vote?",
+      "id": "jjk-pg-cross_val_vol_yelvori-028",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "to coexist"
+      ],
+      "found": [
+        "to coexist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross imply about the Japanese people?",
+      "id": "jjk-pg-cross_val_vol_yelvori-029",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "he sees much of Deskunte, the tribe that oppressed Rumel, in the Japanese people"
+      ],
+      "found": [
+        "he sees much of Deskunte, the tribe that oppressed Rumel, in the Japanese people"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How strong is Cross among the Rumelian refugees?",
+      "id": "jjk-pg-cross_val_vol_yelvori-030",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "one of the strongest warriors among the Rumelian refugees"
+      ],
+      "found": [
+        "one of the strongest warriors among the Rumelian refugees"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross's Chaos technique do?",
+      "id": "jjk-pg-cross_val_vol_yelvori-031",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "distorts the laws of order itself"
+      ],
+      "found": [
+        "distorts the laws of order itself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross's Harmony technique do?",
+      "id": "jjk-pg-cross_val_vol_yelvori-032",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "brings its targets into harmony by \"harmonizing\" them with the world and seeking balance between them"
+      ],
+      "found": [
+        "brings its targets into harmony by \"harmonizing\" them with the world and seeking balance between them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross's Harmony technique identify on a single person?",
+      "id": "jjk-pg-cross_val_vol_yelvori-033",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "someone who is their equal counterpart"
+      ],
+      "found": [
+        "someone who is their equal counterpart"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the source of a Simurian's rolloluca?",
+      "id": "jjk-pg-cross_val_vol_yelvori-034",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "a third eye on their foreheads"
+      ],
+      "found": [
+        "a third eye on their foreheads"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Cross's sword look like?",
+      "id": "jjk-pg-cross_val_vol_yelvori-035",
+      "subject": "Cross Val Vol Yelvori",
+      "accept": "all",
+      "expected": [
+        "a forked, golden blade with a red orb inside of its circular hilt"
+      ],
+      "found": [
+        "a forked, golden blade with a red orb inside of its circular hilt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 7,
+    "canon_total": 7,
+    "canon_recall": 1.0,
+    "members_returned": 7,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 31,
+    "fact_present": 31
+  }
+}

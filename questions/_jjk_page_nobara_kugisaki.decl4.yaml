@@ -1,0 +1,30 @@
+# Staged roster declarations for the Nobara Kugisaki page campaign
+# (questions/_jjk_page_nobara_kugisaki.section4.json, section 4:
+# identity / grade / aliases / appearance / vitals / media).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Nobara Kugisaki's affiliations` is the closed single-entry set of the
+# infobox `affiliation` field (the link display `Tokyo Jujutsu High` on the
+# `Tokyo Metropolitan Curse Technical College` target). The page writes the
+# short form in the lead ('at Tokyo Jujutsu High') and in the section 1
+# battles' place golds alike, so the member is stated in the corpus and the
+# declared-member filter keeps it.
+#
+# No aliases roster is staged: the page has no `alias` infobox cell and the
+# prose names no nickname -- the only page-level alias is the romaji ordering
+# 'Kugisaki Nobara', a Nihongo/Ruby-derived cell the pipeline does not make
+# retrievable (recorded in the section's `retired[]` alongside the kanji/
+# romaji, weight, manga-debut, anime-debut and voice-actor retires).
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Nobara Kugisaki's affiliations
+    match:
+      - what are nobara kugisaki's affiliations
+      - what is nobara kugisaki's affiliation
+      - all the affiliations of nobara kugisaki
+      - affiliations of nobara kugisaki
+      - nobara kugisaki's affiliations
+    subject: Nobara Kugisaki
+    members: [Tokyo Jujutsu High]

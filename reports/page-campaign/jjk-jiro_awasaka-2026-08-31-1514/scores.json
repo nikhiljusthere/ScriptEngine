@@ -1,0 +1,873 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Jiro Awasaka?",
+      "set": "Every named technique of Jiro Awasaka",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Jiro Awasaka?",
+      "set": "Every ally of Jiro Awasaka",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Jiro Awasaka?",
+      "set": "Every enemy of Jiro Awasaka",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Jiro Awasaka?",
+      "set": "Jiro Awasaka's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Jiro Awasaka",
+      "set": "Every battle involving Jiro Awasaka",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Jiro Awasaka?",
+      "found": [
+        "Inverse"
+      ],
+      "missing": [],
+      "members": [
+        "Inverse"
+      ]
+    },
+    {
+      "query": "What are all the allies of Jiro Awasaka?",
+      "found": [
+        "Kenjaku",
+        "Uraume",
+        "Ogami"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Ogami",
+        "Uraume"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Jiro Awasaka?",
+      "found": [
+        "Satoru Gojo",
+        "Yuji Itadori",
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro",
+        "Satoru Gojo",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Jiro Awasaka?",
+      "found": [
+        "Kenjaku's group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's group"
+      ]
+    },
+    {
+      "query": "Every battle involving Jiro Awasaka",
+      "found": [
+        "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka"
+      ],
+      "missing": [],
+      "members": [
+        "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Jiro Awasaka's name?",
+      "id": "jjk-pg-jiro_awasaka-001",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "\u7c9f\u5742 \u4e8c\u826f"
+      ],
+      "found": [
+        "\u7c9f\u5742 \u4e8c\u826f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Jiro Awasaka's name?",
+      "id": "jjk-pg-jiro_awasaka-002",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Awasaka Jir\u014d"
+      ],
+      "found": [
+        "Awasaka Jir\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Jiro Awasaka's race?",
+      "id": "jjk-pg-jiro_awasaka-003",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Jiro Awasaka?",
+      "id": "jjk-pg-jiro_awasaka-004",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "61"
+      ],
+      "found": [
+        "61"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Jiro Awasaka's gender?",
+      "id": "jjk-pg-jiro_awasaka-005",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Jiro Awasaka?",
+      "id": "jjk-pg-jiro_awasaka-006",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Jiro Awasaka's occupation?",
+      "id": "jjk-pg-jiro_awasaka-007",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jiro Awasaka first appear?",
+      "id": "jjk-pg-jiro_awasaka-008",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Chapter 93"
+      ],
+      "found": [
+        "Chapter 93"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Jiro Awasaka first depicted?",
+      "id": "jjk-pg-jiro_awasaka-009",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Episode 34"
+      ],
+      "found": [
+        "Episode 34"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Jiro Awasaka's Japanese voice actor?",
+      "id": "jjk-pg-jiro_awasaka-010",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Minoru Hirota"
+      ],
+      "found": [
+        "Minoru Hirota"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Jiro Awasaka's English voice actor?",
+      "id": "jjk-pg-jiro_awasaka-011",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Edward Bosco"
+      ],
+      "found": [
+        "Edward Bosco"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka?",
+      "id": "jjk-pg-jiro_awasaka-012",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Yuji & Megumi are victorious."
+      ],
+      "found": [
+        "Yuji & Megumi are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "id": "jjk-pg-jiro_awasaka-013",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Metropolitan Expressway RT. 3 Shibuya Line"
+      ],
+      "found": [
+        "Metropolitan Expressway RT. 3 Shibuya Line"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "id": "jjk-pg-jiro_awasaka-014",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka begin?",
+      "id": "jjk-pg-jiro_awasaka-015",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Chapter 94"
+      ],
+      "found": [
+        "Chapter 94"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka depicted?",
+      "id": "jjk-pg-jiro_awasaka-016",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Episode 35"
+      ],
+      "found": [
+        "Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka take place?",
+      "id": "jjk-pg-jiro_awasaka-017",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Jiro Awasaka use in Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka?",
+      "id": "jjk-pg-jiro_awasaka-018",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Inverse"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Inverse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Jiro Awasaka's build despite his old age?",
+      "id": "jjk-pg-jiro_awasaka-024",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "a defined muscular tone to his body"
+      ],
+      "found": [
+        "a defined muscular tone to his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Jiro Awasaka's head look like?",
+      "id": "jjk-pg-jiro_awasaka-025",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "mostly bald but he has a tuft of hair on the top that's a similar shape to the goatee on his chin"
+      ],
+      "found": [
+        "mostly bald but he has a tuft of hair on the top that's a similar shape to the goatee on his chin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What facial features does Jiro Awasaka sport?",
+      "id": "jjk-pg-jiro_awasaka-026",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "thick eyebrows and a handlebar mustache"
+      ],
+      "found": [
+        "thick eyebrows and a handlebar mustache"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Jiro Awasaka currently wear?",
+      "id": "jjk-pg-jiro_awasaka-027",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "a white t-shirt tucked into the tall haramaki sash around his waist where he keeps his knife"
+      ],
+      "found": [
+        "a white t-shirt tucked into the tall haramaki sash around his waist where he keeps his knife"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Jiro Awasaka characterized?",
+      "id": "jjk-pg-jiro_awasaka-028",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "an evil, selfish, and vindictive old man who desires to live according to his own twisted code"
+      ],
+      "found": [
+        "an evil, selfish, and vindictive old man who desires to live according to his own twisted code"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Awasaka believe he could do in his youth?",
+      "id": "jjk-pg-jiro_awasaka-029",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "live free and make money as long as he did what \"needed to be done\""
+      ],
+      "found": [
+        "live free and make money as long as he did what \"needed to be done\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Awasaka kill his victims?",
+      "id": "jjk-pg-jiro_awasaka-030",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "He tore them apart and dissected them, ripping the skin from their skulls as they begged for mercy"
+      ],
+      "found": [
+        "He tore them apart and dissected them, ripping the skin from their skulls as they begged for mercy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What changed Awasaka's freedom in his latter years?",
+      "id": "jjk-pg-jiro_awasaka-031",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "a child with the Six Eyes was born into the Gojo Clan"
+      ],
+      "found": [
+        "a child with the Six Eyes was born into the Gojo Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Awasaka agree to work with Kenjaku's faction?",
+      "id": "jjk-pg-jiro_awasaka-032",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "to get rid of Satoru Gojo"
+      ],
+      "found": [
+        "to get rid of Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Awasaka believe about his age?",
+      "id": "jjk-pg-jiro_awasaka-033",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "he's always in the prime of his life"
+      ],
+      "found": [
+        "he's always in the prime of his life"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Awasaka desire to do with the weak?",
+      "id": "jjk-pg-jiro_awasaka-034",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "to trample on the weak until the day he dies"
+      ],
+      "found": [
+        "to trample on the weak until the day he dies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What type of fighter is Jiro Awasaka?",
+      "id": "jjk-pg-jiro_awasaka-035",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "a tough, close-combat type fighter with experience in the art of killing"
+      ],
+      "found": [
+        "a tough, close-combat type fighter with experience in the art of killing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Awasaka use to make himself nigh-invulnerable in battle?",
+      "id": "jjk-pg-jiro_awasaka-036",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "his innate technique and cursed energy manipulation"
+      ],
+      "found": [
+        "his innate technique and cursed energy manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What fighting style does Awasaka use?",
+      "id": "jjk-pg-jiro_awasaka-037",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "a wait and counter fighting style that plays to the strengths of his cursed technique"
+      ],
+      "found": [
+        "a wait and counter fighting style that plays to the strengths of his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Awasaka constantly use cursed energy to do?",
+      "id": "jjk-pg-jiro_awasaka-038",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "reinforce his body and protect it from cursed techniques and slashing attacks"
+      ],
+      "found": [
+        "reinforce his body and protect it from cursed techniques and slashing attacks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Awasaka's technique Inverse do?",
+      "id": "jjk-pg-jiro_awasaka-039",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "attacks become weaker the stronger they are and stronger the weaker they are"
+      ],
+      "found": [
+        "attacks become weaker the stronger they are and stronger the weaker they are"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "With what does Awasaka protect himself to nullify his opponent's attacks?",
+      "id": "jjk-pg-jiro_awasaka-040",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "cursed energy on top of inverse"
+      ],
+      "found": [
+        "cursed energy on top of inverse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What weapon does Jiro Awasaka carry?",
+      "id": "jjk-pg-jiro_awasaka-041",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "a tanto-style knife"
+      ],
+      "found": [
+        "a tanto-style knife"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Awasaka capable of with his short blade?",
+      "id": "jjk-pg-jiro_awasaka-042",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "drawing it and slashing his target in one motion with great speed"
+      ],
+      "found": [
+        "drawing it and slashing his target in one motion with great speed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Jiro Awasaka's family status?",
+      "id": "jjk-pg-jiro_awasaka-043",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "an only child"
+      ],
+      "found": [
+        "an only child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What lie would Jiro Awasaka tell without a second thought?",
+      "id": "jjk-pg-jiro_awasaka-044",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "\"I only became a curse user so I could make enough money to help my sick mother\""
+      ],
+      "found": [
+        "\"I only became a curse user so I could make enough money to help my sick mother\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jiro Awasaka rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-jiro_awasaka-045",
+      "subject": "Jiro Awasaka",
+      "accept": "all",
+      "expected": [
+        "143rd in the fourth Popularity Poll with 1 vote"
+      ],
+      "found": [
+        "143rd in the fourth Popularity Poll with 1 vote"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 9,
+    "canon_total": 9,
+    "canon_recall": 1.0,
+    "members_returned": 9,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 40,
+    "fact_present": 40
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Barrier",
+      "set": "Every battle involving Barrier",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Barrier",
+      "found": [
+        "Megumi Fushiguro vs. Yasohachi Bridge Curse",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro vs. Yasohachi Bridge Curse",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Barrier's name?",
+      "id": "jjk-pg-barrier-001",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "\u7d50\u754c"
+      ],
+      "found": [
+        "\u7d50\u754c"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Barrier's name?",
+      "id": "jjk-pg-barrier-002",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Kekkai"
+      ],
+      "found": [
+        "Kekkai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Barrier first appear?",
+      "id": "jjk-pg-barrier-003",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Barrier first depicted?",
+      "id": "jjk-pg-barrier-004",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Yasohachi Bridge Curse?",
+      "id": "jjk-pg-barrier-005",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro is victorious."
+      ],
+      "found": [
+        "Megumi Fushiguro is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Yasohachi Bridge Curse take place?",
+      "id": "jjk-pg-barrier-006",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Yasohachi Bridge"
+      ],
+      "found": [
+        "Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Megumi Fushiguro vs. Yasohachi Bridge Curse?",
+      "id": "jjk-pg-barrier-007",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Chapter 57"
+      ],
+      "found": [
+        "Chapter 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Yasohachi Bridge Curse depicted?",
+      "id": "jjk-pg-barrier-008",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Episode 23"
+      ],
+      "found": [
+        "Episode 23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Yasohachi Bridge Curse take place?",
+      "id": "jjk-pg-barrier-009",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Death Painting"
+      ],
+      "found": [
+        "Death Painting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-barrier-010",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-barrier-011",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-barrier-012",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-barrier-013",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-barrier-014",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are barriers in jujutsu?",
+      "id": "jjk-pg-barrier-016",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Barriers are territories of various sizes and effects that anyone with enough cursed energy can learn to create."
+      ],
+      "found": [
+        "Barriers are territories of various sizes and effects that anyone with enough cursed energy can learn to create."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the most basic use of a barrier?",
+      "id": "jjk-pg-barrier-017",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "To surround and protect the user is the most basic use of a barrier."
+      ],
+      "found": [
+        "To surround and protect the user is the most basic use of a barrier."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How can complex barriers be customized?",
+      "id": "jjk-pg-barrier-018",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Complex barriers can be customized with certain conditions using binding vows and talismans, but this takes a certain degree of skill to accomplish effectively."
+      ],
+      "found": [
+        "Complex barriers can be customized with certain conditions using binding vows and talismans, but this takes a certain degree of skill to accomplish effectively."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do barriers recognize?",
+      "id": "jjk-pg-barrier-019",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "Barriers only recognize individuals with cursed energy and they completely ignore inanimate objects and buildings."
+      ],
+      "found": [
+        "Barriers only recognize individuals with cursed energy and they completely ignore inanimate objects and buildings."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kekkai literally mean?",
+      "id": "jjk-pg-barrier-020",
+      "subject": "Barrier",
+      "accept": "all",
+      "expected": [
+        "However, Kekkai \u7d50\u754c means a zone, territory, or field with a boundary. An outer wall is merely a component of a barrier and is irrelevant to the literal definition of Kekkai."
+      ],
+      "found": [
+        "However, Kekkai \u7d50\u754c means a zone, territory, or field with a boundary. An outer wall is merely a component of a barrier and is irrelevant to the literal definition of Kekkai."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

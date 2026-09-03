@@ -1,0 +1,71 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:race",
+        "page-gen:identity:gender",
+        "page-gen:identity:status",
+        "page-gen:identity:occupation",
+        "page-gen:affiliation",
+        "page-gen:identity:debut"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Personality",
+      "covered_by": []
+    },
+    {
+      "path": "Synopsis",
+      "covered_by": []
+    },
+    {
+      "path": "Synopsis / History",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities and Powers",
+      "covered_by": [
+        "page-gen:techniques"
+      ]
+    },
+    {
+      "path": "Abilities and Powers / Physical Prowess",
+      "covered_by": []
+    },
+    {
+      "path": "Battles & Events",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Personality",
+    "Synopsis",
+    "Synopsis / History",
+    "Abilities and Powers / Physical Prowess",
+    "Battles & Events"
+  ],
+  "retired_sections": [
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

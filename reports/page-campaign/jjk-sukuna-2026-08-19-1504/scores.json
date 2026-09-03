@@ -1,0 +1,1767 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the battles involving Sukuna?",
+      "set": "Every battle involving Sukuna",
+      "confidence": "declared",
+      "returned": 10,
+      "available": 10,
+      "canon": 10,
+      "found": 10,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Sukuna?",
+      "set": "Sukuna's aliases",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the shikigami Sukuna can summon with the Ten Shadows Technique?",
+      "set": "Every shikigami Sukuna can summon with the Ten Shadows Technique",
+      "confidence": "declared",
+      "returned": 10,
+      "available": 10,
+      "canon": 10,
+      "found": 10,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the cursed tools Sukuna wielded?",
+      "set": "Every cursed tool Sukuna wielded",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the battles involving Sukuna?",
+      "found": [
+        "Hajime Kashimo vs. Sukuna",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Megumi Fushiguro vs. Sukuna",
+        "Satoru Gojo vs. Sukuna: First Fight",
+        "Sukuna vs. Finger Bearer",
+        "Sukuna vs. Jogo",
+        "Sukuna vs. Mahoraga",
+        "Sukuna vs. Ryu Ishigori",
+        "Sukuna vs. Yorozu",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Hajime Kashimo vs. Sukuna",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Megumi Fushiguro vs. Sukuna",
+        "Satoru Gojo vs. Sukuna: First Fight",
+        "Sukuna vs. Finger Bearer",
+        "Sukuna vs. Jogo",
+        "Sukuna vs. Mahoraga",
+        "Sukuna vs. Ryu Ishigori",
+        "Sukuna vs. Yorozu",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Sukuna?",
+      "found": [
+        "King of Curses",
+        "Imaginary Demon",
+        "Disgraced One",
+        "The Strongest Sorcerer in History"
+      ],
+      "missing": [],
+      "members": [
+        "Disgraced One",
+        "Imaginary Demon",
+        "King of Curses",
+        "The Strongest Sorcerer in History"
+      ]
+    },
+    {
+      "query": "What are all the shikigami Sukuna can summon with the Ten Shadows Technique?",
+      "found": [
+        "Divine Dogs",
+        "Divine Dog: Totality",
+        "Nue",
+        "Max Elephant",
+        "Rabbit Escape",
+        "Round Deer",
+        "Piercing Ox",
+        "Tiger Funeral",
+        "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+        "Nue: Totality - Merged Beast Agito"
+      ],
+      "missing": [],
+      "members": [
+        "Divine Dog: Totality",
+        "Divine Dogs",
+        "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+        "Max Elephant",
+        "Nue",
+        "Nue: Totality - Merged Beast Agito",
+        "Piercing Ox",
+        "Rabbit Escape",
+        "Round Deer",
+        "Tiger Funeral"
+      ]
+    },
+    {
+      "query": "What are all the cursed tools Sukuna wielded?",
+      "found": [
+        "Kamutoke",
+        "Hiten"
+      ],
+      "missing": [],
+      "members": [
+        "Hiten",
+        "Kamutoke"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's romaji name?",
+      "id": "jjk-pg-sukuna-006",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Ry\u014dmen Sukuna"
+      ],
+      "found": [
+        "Ry\u014dmen Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's race?",
+      "id": "jjk-pg-sukuna-007",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Sukuna?",
+      "id": "jjk-pg-sukuna-008",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "1000+"
+      ],
+      "found": [
+        "1000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's gender?",
+      "id": "jjk-pg-sukuna-009",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color is Sukuna's hair?",
+      "id": "jjk-pg-sukuna-010",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Pink"
+      ],
+      "found": [
+        "Pink"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color are Sukuna's eyes?",
+      "id": "jjk-pg-sukuna-011",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Red"
+      ],
+      "found": [
+        "Red"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's status?",
+      "id": "jjk-pg-sukuna-012",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's occupation?",
+      "id": "jjk-pg-sukuna-013",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Calamity"
+      ],
+      "found": [
+        "Calamity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What grade is Sukuna classified as?",
+      "id": "jjk-pg-sukuna-014",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Special Grade"
+      ],
+      "found": [
+        "Special Grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which chapter does Sukuna make his debut?",
+      "id": "jjk-pg-sukuna-015",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode does Sukuna make his debut?",
+      "id": "jjk-pg-sukuna-016",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who provides Sukuna's Japanese voice?",
+      "id": "jjk-pg-sukuna-017",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Junichi Suwabe"
+      ],
+      "found": [
+        "Junichi Suwabe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who provides Sukuna's English voice?",
+      "id": "jjk-pg-sukuna-018",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Ray Chase"
+      ],
+      "found": [
+        "Ray Chase"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's full title as the undisputed ruler of curses?",
+      "id": "jjk-pg-sukuna-019",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "King of Curses"
+      ],
+      "found": [
+        "King of Curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What era was Sukuna born during?",
+      "id": "jjk-pg-sukuna-020",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Heian Era"
+      ],
+      "found": [
+        "Heian Era"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's true demon name?",
+      "id": "jjk-pg-sukuna-021",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Imaginary Demon"
+      ],
+      "found": [
+        "Imaginary Demon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna also known as, the undefeated human sorcerer?",
+      "id": "jjk-pg-sukuna-022",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Disgraced One"
+      ],
+      "found": [
+        "Disgraced One"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna transform himself into after death?",
+      "id": "jjk-pg-sukuna-023",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "cursed object"
+      ],
+      "found": [
+        "cursed object"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many indestructible fingers is Sukuna's soul split into?",
+      "id": "jjk-pg-sukuna-024",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "twenty"
+      ],
+      "found": [
+        "twenty"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When was Sukuna incarnated?",
+      "id": "jjk-pg-sukuna-025",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "June 2018"
+      ],
+      "found": [
+        "June 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who consumed one of Sukuna's fingers to incarnate him?",
+      "id": "jjk-pg-sukuna-026",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Into whose body did Sukuna transfer his soul?",
+      "id": "jjk-pg-sukuna-027",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "How many arms does Sukuna's true body have?",
+      "id": "jjk-pg-sukuna-028",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "four"
+      ],
+      "found": [
+        "four"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many eyes does Sukuna's true body have?",
+      "id": "jjk-pg-sukuna-029",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "four"
+      ],
+      "found": [
+        "four"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna's true body have on his midriff?",
+      "id": "jjk-pg-sukuna-030",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "a large mouth"
+      ],
+      "found": [
+        "a large mouth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna most often wear in his true body?",
+      "id": "jjk-pg-sukuna-031",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "a black haori"
+      ],
+      "found": [
+        "a black haori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna single-handedly slaughter in the Heian Era?",
+      "id": "jjk-pg-sukuna-032",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "the Sun, Moon, and Stars Squad"
+      ],
+      "found": [
+        "the Sun, Moon, and Stars Squad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's cursed technique?",
+      "id": "jjk-pg-sukuna-033",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Shrine"
+      ],
+      "found": [
+        "Shrine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's invisible ranged slashing attack called?",
+      "id": "jjk-pg-sukuna-034",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Dismantle"
+      ],
+      "found": [
+        "Dismantle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's slashing attack that adjusts to the target's toughness?",
+      "id": "jjk-pg-sukuna-035",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Cleave"
+      ],
+      "found": [
+        "Cleave"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What fire technique can Sukuna create by chanting 'Open'?",
+      "id": "jjk-pg-sukuna-036",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Divine Flame"
+      ],
+      "found": [
+        "Divine Flame"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's domain expansion?",
+      "id": "jjk-pg-sukuna-037",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Malevolent Shrine"
+      ],
+      "found": [
+        "Malevolent Shrine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the maximum radius of Malevolent Shrine's sure-hit area?",
+      "id": "jjk-pg-sukuna-038",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "200 meters"
+      ],
+      "found": [
+        "200 meters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What anti-domain technique is the predecessor to New Shadow Style: Simple Domain?",
+      "id": "jjk-pg-sukuna-039",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Hollow Wicker Basket"
+      ],
+      "found": [
+        "Hollow Wicker Basket"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's vajra-like cursed tool?",
+      "id": "jjk-pg-sukuna-040",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Kamutoke"
+      ],
+      "found": [
+        "Kamutoke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's trident cursed tool?",
+      "id": "jjk-pg-sukuna-041",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Hiten"
+      ],
+      "found": [
+        "Hiten"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who crafted a replica of Kamutoke for Sukuna?",
+      "id": "jjk-pg-sukuna-042",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Yorozu"
+      ],
+      "found": [
+        "Yorozu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What phenomenon occurs when cursed energy is applied within 0.000001 seconds of a hit?",
+      "id": "jjk-pg-sukuna-043",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Black Flash"
+      ],
+      "found": [
+        "Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna suffer seven consecutive of from Yuji in the Shinjuku battle?",
+      "id": "jjk-pg-sukuna-044",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Black Flash"
+      ],
+      "found": [
+        "Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's binding vow with Yuji?",
+      "id": "jjk-pg-sukuna-045",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Enchain"
+      ],
+      "found": [
+        "Enchain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What hand sign did Sukuna originally need to launch a slash that cuts the world?",
+      "id": "jjk-pg-sukuna-046",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Enma"
+      ],
+      "found": [
+        "Enma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long can Sukuna activate Malevolent Shrine without decreasing its output?",
+      "id": "jjk-pg-sukuna-047",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "99 seconds"
+      ],
+      "found": [
+        "99 seconds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's hobby according to the official fanbook?",
+      "id": "jjk-pg-sukuna-048",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "eating"
+      ],
+      "found": [
+        "eating"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Sukuna's fingers taste like?",
+      "id": "jjk-pg-sukuna-049",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "soap"
+      ],
+      "found": [
+        "soap"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What award did Sukuna win at the Crunchyroll Anime Awards 2021?",
+      "id": "jjk-pg-sukuna-050",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Best Antagonist"
+      ],
+      "found": [
+        "Best Antagonist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's mythological namesake?",
+      "id": "jjk-pg-sukuna-051",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Ryomen-Sukuna"
+      ],
+      "found": [
+        "Ryomen-Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What province is the mythological Ryomen-Sukuna said to have appeared in?",
+      "id": "jjk-pg-sukuna-053",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Hida Province"
+      ],
+      "found": [
+        "Hida Province"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's twin brother who reincarnated?",
+      "id": "jjk-pg-sukuna-054",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Wasuke Itadori"
+      ],
+      "found": [
+        "Wasuke Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna consume in the womb to avoid starving?",
+      "id": "jjk-pg-sukuna-055",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "his twin"
+      ],
+      "found": [
+        "his twin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where was one of Sukuna's fingers kept before Yuji ate it?",
+      "id": "jjk-pg-sukuna-056",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "an outdoor thermometer box"
+      ],
+      "found": [
+        "an outdoor thermometer box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which school's occult club removed the seal from Sukuna's finger?",
+      "id": "jjk-pg-sukuna-057",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Sugisawa High School"
+      ],
+      "found": [
+        "Sugisawa High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose home was one of Sukuna's fingers placed in during the Vs. Mahito Arc?",
+      "id": "jjk-pg-sukuna-058",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Junpei Yoshino"
+      ],
+      "found": [
+        "Junpei Yoshino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who died as a result of Sukuna's finger being in Junpei's home?",
+      "id": "jjk-pg-sukuna-059",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Nagi Yoshino"
+      ],
+      "found": [
+        "Nagi Yoshino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna create on Yuji's palm to eat a finger?",
+      "id": "jjk-pg-sukuna-060",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "a mouth"
+      ],
+      "found": [
+        "a mouth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did the awakened finger start killing people in the Death Painting Arc?",
+      "id": "jjk-pg-sukuna-061",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Yasohachi Bridge"
+      ],
+      "found": [
+        "Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who sealed Gojo in Prison Realm at the start of the Shibuya Incident?",
+      "id": "jjk-pg-sukuna-062",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Pseudo-Geto"
+      ],
+      "found": [
+        "Pseudo-Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which of Sukuna's subordinates did he slaughter in Shibuya?",
+      "id": "jjk-pg-sukuna-063",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Nanako Hasaba"
+      ],
+      "found": [
+        "Nanako Hasaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was chosen to be Yuji's executioner after the Shibuya Incident?",
+      "id": "jjk-pg-sukuna-064",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu"
+      ],
+      "found": [
+        "Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuta use to gain the upper hand over Yuji?",
+      "id": "jjk-pg-sukuna-065",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Rika"
+      ],
+      "found": [
+        "Rika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna replace his final finger with?",
+      "id": "jjk-pg-sukuna-066",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "his mummified real body"
+      ],
+      "found": [
+        "his mummified real body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "On what date did Sukuna speak with Uraume about Yuji's soul?",
+      "id": "jjk-pg-sukuna-067",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "December 24th"
+      ],
+      "found": [
+        "December 24th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuji Kenjaku's relation to Sukuna?",
+      "id": "jjk-pg-sukuna-068",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "grandson"
+      ],
+      "found": [
+        "grandson"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna unleash at 200% to start the battle with Gojo?",
+      "id": "jjk-pg-sukuna-069",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Hollow Purple"
+      ],
+      "found": [
+        "Hollow Purple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's ice-forming subordinate?",
+      "id": "jjk-pg-sukuna-070",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Uraume"
+      ],
+      "found": [
+        "Uraume"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed technique does Uraume use?",
+      "id": "jjk-pg-sukuna-071",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Ice Formation"
+      ],
+      "found": [
+        "Ice Formation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna order Uraume to use his technique for?",
+      "id": "jjk-pg-sukuna-072",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "keep his stored meats cold"
+      ],
+      "found": [
+        "keep his stored meats cold"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's ability to create new eyes and mouths on his vessel?",
+      "id": "jjk-pg-sukuna-073",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Metamorphosis"
+      ],
+      "found": [
+        "Metamorphosis"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's ability to incarnate into whoever eats his fingers?",
+      "id": "jjk-pg-sukuna-074",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Incarnation"
+      ],
+      "found": [
+        "Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's anti-domain technique that envelops him in an aura?",
+      "id": "jjk-pg-sukuna-075",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Domain Amplification"
+      ],
+      "found": [
+        "Domain Amplification"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's twin canine shikigami?",
+      "id": "jjk-pg-sukuna-076",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Divine Dogs"
+      ],
+      "found": [
+        "Divine Dogs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's owl-like shikigami that emits electricity?",
+      "id": "jjk-pg-sukuna-077",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Nue"
+      ],
+      "found": [
+        "Nue"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's elephant shikigami that produces water?",
+      "id": "jjk-pg-sukuna-078",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Max Elephant"
+      ],
+      "found": [
+        "Max Elephant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's deer shikigami that can heal?",
+      "id": "jjk-pg-sukuna-079",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Round Deer"
+      ],
+      "found": [
+        "Round Deer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's bull shikigami that rams enemies?",
+      "id": "jjk-pg-sukuna-080",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Piercing Ox"
+      ],
+      "found": [
+        "Piercing Ox"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's most powerful shikigami that adapts to all phenomena?",
+      "id": "jjk-pg-sukuna-081",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Mahoraga"
+      ],
+      "found": [
+        "Mahoraga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's fusion shikigami combining Nue with others?",
+      "id": "jjk-pg-sukuna-082",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Merged Beast Agito"
+      ],
+      "found": [
+        "Merged Beast Agito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's Cleave variation shaped like a spider's web?",
+      "id": "jjk-pg-sukuna-083",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Spiderweb"
+      ],
+      "found": [
+        "Spiderweb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's improved Divine Dog that combines both shikigami?",
+      "id": "jjk-pg-sukuna-084",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Divine Dog: Totality"
+      ],
+      "found": [
+        "Divine Dog: Totality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's swarm of rabbit shikigami used as a distraction?",
+      "id": "jjk-pg-sukuna-085",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Rabbit Escape"
+      ],
+      "found": [
+        "Rabbit Escape"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's shikigami with unknown appearance and abilities?",
+      "id": "jjk-pg-sukuna-086",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Tiger Funeral"
+      ],
+      "found": [
+        "Tiger Funeral"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool does Mahoraga wield?",
+      "id": "jjk-pg-sukuna-087",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Sword of Extermination"
+      ],
+      "found": [
+        "Sword of Extermination"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's slash that cuts the world?",
+      "id": "jjk-pg-sukuna-088",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "slashes that cut the world"
+      ],
+      "found": [
+        "slashes that cut the world"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's rank in the first Popularity Poll?",
+      "id": "jjk-pg-sukuna-089",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "10th"
+      ],
+      "found": [
+        "10th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Sukuna receive in the first Popularity Poll?",
+      "id": "jjk-pg-sukuna-090",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "5,860"
+      ],
+      "found": [
+        "5,860"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's rank in the second Popularity Poll?",
+      "id": "jjk-pg-sukuna-091",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "13th"
+      ],
+      "found": [
+        "13th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's rank in the third Popularity Poll?",
+      "id": "jjk-pg-sukuna-092",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "12th"
+      ],
+      "found": [
+        "12th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sukuna's rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-sukuna-093",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "9th"
+      ],
+      "found": [
+        "9th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many manga volume covers does Sukuna appear on individually?",
+      "id": "jjk-pg-sukuna-094",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "three"
+      ],
+      "found": [
+        "three"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sukuna's cursed technique in Japanese?",
+      "id": "jjk-pg-sukuna-096",
+      "subject": "Sukuna",
+      "accept": "all",
+      "expected": [
+        "Mizushi"
+      ],
+      "found": [
+        "Mizushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 26,
+    "canon_total": 26,
+    "canon_recall": 1.0,
+    "members_returned": 26,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 89,
+    "fact_present": 89
+  }
+}

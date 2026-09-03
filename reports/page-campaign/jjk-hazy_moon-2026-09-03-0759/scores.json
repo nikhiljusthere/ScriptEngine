@@ -1,0 +1,413 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hazy Moon",
+      "set": "Every battle involving Hazy Moon",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Hazy Moon",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin",
+        "Yuji Itadori vs. Junpei Yoshino"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin",
+        "Yuji Itadori vs. Junpei Yoshino"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hazy Moon's name?",
+      "id": "jjk-pg-hazy_moon-001",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "\u6727\u6708"
+      ],
+      "found": [
+        "\u6727\u6708"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hazy Moon's name?",
+      "id": "jjk-pg-hazy_moon-002",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Oborozuki"
+      ],
+      "found": [
+        "Oborozuki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hazy Moon first appear?",
+      "id": "jjk-pg-hazy_moon-003",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Chapter 254"
+      ],
+      "found": [
+        "Chapter 254"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-hazy_moon-004",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hazy_moon-005",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hazy_moon-006",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-hazy_moon-007",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hazy_moon-008",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-hazy_moon-009",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-hazy_moon-010",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-hazy_moon-011",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-hazy_moon-012",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Chapter 195"
+      ],
+      "found": [
+        "Chapter 195"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-hazy_moon-013",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-hazy_moon-014",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Yuji talks Junpei down."
+      ],
+      "found": [
+        "Yuji talks Junpei down."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-hazy_moon-015",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Satozakura High School"
+      ],
+      "found": [
+        "Satozakura High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-hazy_moon-016",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Chapter 26"
+      ],
+      "found": [
+        "Chapter 26"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Junpei Yoshino depicted?",
+      "id": "jjk-pg-hazy_moon-017",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Episode 12"
+      ],
+      "found": [
+        "Episode 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-hazy_moon-018",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hazy Moon do?",
+      "id": "jjk-pg-hazy_moon-020",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "This technique allows the user to form their cursed energy into the shape of a sword's blade after the physical blade breaks."
+      ],
+      "found": [
+        "This technique allows the user to form their cursed energy into the shape of a sword's blade after the physical blade breaks."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What properties does Hazy Moon's cursed energy blade have?",
+      "id": "jjk-pg-hazy_moon-021",
+      "subject": "Hazy Moon",
+      "accept": "all",
+      "expected": [
+        "The cursed energy blade has physical properties akin to a real sword, allowing the user to continue attacking with the broken weapon."
+      ],
+      "found": [
+        "The cursed energy blade has physical properties akin to a real sword, allowing the user to continue attacking with the broken weapon."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 20,
+    "fact_present": 20
+  }
+}

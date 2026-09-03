@@ -1,0 +1,1897 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "Every battle of Genos",
+      "set": "16 battle page(s) naming Genos",
+      "confidence": "declared",
+      "returned": 16,
+      "available": 16,
+      "canon": 16,
+      "found": 16,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Genos?",
+      "set": "Genos's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the major cyborg upgrades Genos has received in One Punch Man?",
+      "set": "Every major cyborg upgrade Genos has received in One Punch Man",
+      "confidence": "declared",
+      "returned": 9,
+      "available": 9,
+      "canon": 9,
+      "found": 9,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle of Genos",
+      "found": [
+        "Garou vs. Genos",
+        "Genos vs. Armored Gorilla",
+        "Genos vs. Awakened Cockroach",
+        "Genos vs. Carnage Kabuto",
+        "Genos vs. Deep Sea King",
+        "Genos vs. Face Ripper",
+        "Genos vs. G4",
+        "Genos vs. G5",
+        "Genos vs. Mosquito Girl",
+        "Genos vs. Speed-o'-Sound Sonic",
+        "Genos, Bang, and Bomb vs. Elder Centipede",
+        "Genos, Bofoi, and Saitama vs. Meteor",
+        "Heroes vs. Monster Association Executives",
+        "Heroes vs. Psykos and Orochi",
+        "Saitama vs. Genos",
+        "Saitama vs. Genos: Round Two"
+      ],
+      "missing": [],
+      "members": [
+        "Garou vs. Genos",
+        "Genos vs. Armored Gorilla",
+        "Genos vs. Awakened Cockroach",
+        "Genos vs. Carnage Kabuto",
+        "Genos vs. Deep Sea King",
+        "Genos vs. Face Ripper",
+        "Genos vs. G4",
+        "Genos vs. G5",
+        "Genos vs. Mosquito Girl",
+        "Genos vs. Speed-o'-Sound Sonic",
+        "Genos, Bang, and Bomb vs. Elder Centipede",
+        "Genos, Bofoi, and Saitama vs. Meteor",
+        "Heroes vs. Monster Association Executives",
+        "Heroes vs. Psykos and Orochi",
+        "Saitama vs. Genos",
+        "Saitama vs. Genos: Round Two"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Genos?",
+      "found": [
+        "Demon Cyborg"
+      ],
+      "missing": [],
+      "members": [
+        "Demon Cyborg"
+      ]
+    },
+    {
+      "query": "What are all the major cyborg upgrades Genos has received in One Punch Man?",
+      "found": [
+        "Anti-Saitama Tactical Arms",
+        "Arms Mode",
+        "Post-Sea-Monster-Arc Upgrade",
+        "G4 Upgrade",
+        "Post-Super-Fight-Arc Upgrade",
+        "Monster Association Arc Upgrade",
+        "Post-Psychic-Sisters-Arc Upgrade",
+        "Post-Supreme-Hero-Arc Upgrade",
+        "Kuseno's Final Upgrade"
+      ],
+      "missing": [],
+      "members": [
+        "Anti-Saitama Tactical Arms",
+        "Arms Mode",
+        "G4 Upgrade",
+        "Kuseno's Final Upgrade",
+        "Monster Association Arc Upgrade",
+        "Post-Psychic-Sisters-Arc Upgrade",
+        "Post-Sea-Monster-Arc Upgrade",
+        "Post-Super-Fight-Arc Upgrade",
+        "Post-Supreme-Hero-Arc Upgrade"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is Genos's hero name?",
+      "id": "opm-pg-genos-004",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Demon Cyborg"
+      ],
+      "found": [
+        "Demon Cyborg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What rank does Genos currently hold in the S-Class?",
+      "id": "opm-pg-genos-005",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "S-Class Rank 11"
+      ],
+      "found": [
+        "S-Class Rank 11"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese reading of Genos's name?",
+      "id": "opm-pg-genos-006",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Jenosu"
+      ],
+      "found": [
+        "Jenosu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How tall is Genos?",
+      "id": "opm-pg-genos-007",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "178 cm"
+      ],
+      "found": [
+        "178 cm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What color are Genos's irises?",
+      "id": "opm-pg-genos-008",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "yellow irises"
+      ],
+      "found": [
+        "yellow irises"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Genos's hair look like?",
+      "id": "opm-pg-genos-009",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "spiky blond hair"
+      ],
+      "found": [
+        "spiky blond hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why is all of Genos's upper-body attire sleeveless?",
+      "id": "opm-pg-genos-010",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "allow his arms to transform without hassle"
+      ],
+      "found": [
+        "allow his arms to transform without hassle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Genos call Saitama?",
+      "id": "opm-pg-genos-011",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "master"
+      ],
+      "found": [
+        "master"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How is Genos's personality described?",
+      "id": "opm-pg-genos-012",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "extremely serious character"
+      ],
+      "found": [
+        "extremely serious character"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Besides Saitama, who does Genos hold deep respect for?",
+      "id": "opm-pg-genos-013",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Dr. Kuseno"
+      ],
+      "found": [
+        "Dr. Kuseno"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Which animal does Genos exhibit jealousy towards?",
+      "id": "opm-pg-genos-014",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Overgrown Rover"
+      ],
+      "found": [
+        "Overgrown Rover"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How was Genos described before he became a cyborg?",
+      "id": "opm-pg-genos-015",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "diligent and responsible boy"
+      ],
+      "found": [
+        "diligent and responsible boy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What chance of victory did the VGS simulations show Genos having against any Demon-level threat?",
+      "id": "opm-pg-genos-016",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "70%"
+      ],
+      "found": [
+        "70%"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which Dragon-level threat did Genos defeat single-handedly to underscore his growth?",
+      "id": "opm-pg-genos-017",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Forest King"
+      ],
+      "found": [
+        "Forest King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Gyoro Gyoro say Genos lacks?",
+      "id": "opm-pg-genos-018",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "firepower"
+      ],
+      "found": [
+        "firepower"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Genos do with a dropkick?",
+      "id": "opm-pg-genos-019",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "breaking apart the ground"
+      ],
+      "found": [
+        "breaking apart the ground"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "With which hero could Genos keep up in speed, both moving faster than Fubuki could see?",
+      "id": "opm-pg-genos-020",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Speed-o'-Sound Sonic"
+      ],
+      "found": [
+        "Speed-o'-Sound Sonic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What type of radiation is Genos remarkably resistant to?",
+      "id": "opm-pg-genos-021",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "lethal radiation"
+      ],
+      "found": [
+        "lethal radiation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Dr. Kuseno give Genos so his cybernetic body turns organic intake into biofuel?",
+      "id": "opm-pg-genos-022",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the ability to taste"
+      ],
+      "found": [
+        "the ability to taste"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where in his body is Genos's core held?",
+      "id": "opm-pg-genos-023",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "inside his chest"
+      ],
+      "found": [
+        "inside his chest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did it transpire Genos's core was during his fight with Psykos and Orochi?",
+      "id": "opm-pg-genos-024",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a nuclear reactor"
+      ],
+      "found": [
+        "a nuclear reactor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What mechanism in Genos's legs keeps the interval between landing and the next movement short?",
+      "id": "opm-pg-genos-025",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "shock-absorbing mechanism"
+      ],
+      "found": [
+        "shock-absorbing mechanism"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What do the ports in Genos's palms allow him to fire?",
+      "id": "opm-pg-genos-026",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "large, powerful blasts of heat, fire, or plasma"
+      ],
+      "found": [
+        "large, powerful blasts of heat, fire, or plasma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why is swimming difficult for Genos?",
+      "id": "opm-pg-genos-027",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "too heavy to swim"
+      ],
+      "found": [
+        "too heavy to swim"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What tool did Genos gain after his fight with Sonic to deal with faster opponents?",
+      "id": "opm-pg-genos-028",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Instant Adhesive Gel"
+      ],
+      "found": [
+        "Instant Adhesive Gel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What form does Genos's Arms Mode take when inactive?",
+      "id": "opm-pg-genos-029",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a suitcase"
+      ],
+      "found": [
+        "a suitcase"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the G4 Upgrade replace Genos's parts with?",
+      "id": "opm-pg-genos-030",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the parts of G4"
+      ],
+      "found": [
+        "the parts of G4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the G4 Upgrade give Genos's hair?",
+      "id": "opm-pg-genos-031",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "fiber enhancements"
+      ],
+      "found": [
+        "fiber enhancements"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Genos do to his body parts if they get detached after the Post-Super-Fight-Arc Upgrade?",
+      "id": "opm-pg-genos-032",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "recall his body parts"
+      ],
+      "found": [
+        "recall his body parts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What shape do the blaster ports in Genos's palms take in his Monster Association Arc Upgrade?",
+      "id": "opm-pg-genos-033",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "gaping demon mouths"
+      ],
+      "found": [
+        "gaping demon mouths"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How long can Genos sustain the full power of his Monster Association Arc Upgrade?",
+      "id": "opm-pg-genos-034",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "ten seconds"
+      ],
+      "found": [
+        "ten seconds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos punch a huge hole through with Kuseno's Final Upgrade?",
+      "id": "opm-pg-genos-035",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Child Emperor's Super Brave Giant"
+      ],
+      "found": [
+        "Child Emperor's Super Brave Giant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Genos first use his Machine Gun Blow against?",
+      "id": "opm-pg-genos-036",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Carnage Kabuto"
+      ],
+      "found": [
+        "Carnage Kabuto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Genos's Incineration Cannon beam do to a target?",
+      "id": "opm-pg-genos-037",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "rapidly heat up a target to the point of being able to melt various metals"
+      ],
+      "found": [
+        "rapidly heat up a target to the point of being able to melt various metals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was the True Spiral Incineration Cannon capable of matching?",
+      "id": "opm-pg-genos-038",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "one of the strongest energy attacks from the fusion of Psykos and Orochi"
+      ],
+      "found": [
+        "one of the strongest energy attacks from the fusion of Psykos and Orochi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does Genos destroy himself when self-destruction is his last resort?",
+      "id": "opm-pg-genos-039",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "overheating his core"
+      ],
+      "found": [
+        "overheating his core"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "During which fight did Genos first attempt to self-destruct?",
+      "id": "opm-pg-genos-040",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "his fight against Mosquito Girl"
+      ],
+      "found": [
+        "his fight against Mosquito Girl"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What makes Genos's forearm retractable for the Rocket Punch?",
+      "id": "opm-pg-genos-041",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a cable connected to his elbow"
+      ],
+      "found": [
+        "a cable connected to his elbow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos's Jet Drive Arrow completely destroy?",
+      "id": "opm-pg-genos-042",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "G5's true form"
+      ],
+      "found": [
+        "G5's true form"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos use his Arm Lasers to destroy?",
+      "id": "opm-pg-genos-043",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the leftover goo from Orochi's body"
+      ],
+      "found": [
+        "the leftover goo from Orochi's body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the tactical combination formed by Genos and Drive Knight?",
+      "id": "opm-pg-genos-044",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Tactical Combination: Promoted Rook"
+      ],
+      "found": [
+        "Tactical Combination: Promoted Rook"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the main weapon of Genos's Promoted Rook transformation?",
+      "id": "opm-pg-genos-045",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a giant sword with a guard shaped like a dragon's head and wings"
+      ],
+      "found": [
+        "a giant sword with a guard shaped like a dragon's head and wings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Genos always carry with him to write down notes?",
+      "id": "opm-pg-genos-046",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "an acid-proof notebook"
+      ],
+      "found": [
+        "an acid-proof notebook"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What kind of phone does Genos use instead of a conventional smartphone?",
+      "id": "opm-pg-genos-047",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a flip phone"
+      ],
+      "found": [
+        "a flip phone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the kanji for Genos's name mean?",
+      "id": "opm-pg-genos-048",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "genocide"
+      ],
+      "found": [
+        "genocide"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the other meaning of Genos's name's kanji in Chinese?",
+      "id": "opm-pg-genos-049",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "to fight fiercely to the end"
+      ],
+      "found": [
+        "to fight fiercely to the end"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which fighting game may Genos's Machine Gun Blow be a reference to?",
+      "id": "opm-pg-genos-050",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Street Fighter"
+      ],
+      "found": [
+        "Street Fighter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the Hero Encyclopedia list as the things Genos likes?",
+      "id": "opm-pg-genos-051",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Saitama's teachings",
+        "oiled sardine"
+      ],
+      "found": [
+        "Saitama's teachings",
+        "oiled sardine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the Hero Encyclopedia list as Genos's hobbies?",
+      "id": "opm-pg-genos-052",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "surfing the internet",
+        "reading",
+        "writing in his diary"
+      ],
+      "found": [
+        "surfing the internet",
+        "reading",
+        "writing in his diary"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which hero is promoted to S-Class one year ago, contradicting the claim about Genos?",
+      "id": "opm-pg-genos-053",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Metal Bat"
+      ],
+      "found": [
+        "Metal Bat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does cleaning Genos's body require?",
+      "id": "opm-pg-genos-054",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a high-pressure shower"
+      ],
+      "found": [
+        "a high-pressure shower"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos promise Dr. Kuseno he would do to the cyborg that destroyed his town?",
+      "id": "opm-pg-genos-055",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "find that cyborg one day and destroy him"
+      ],
+      "found": [
+        "find that cyborg one day and destroy him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "At what age was Genos a regular boy living happily with his family?",
+      "id": "opm-pg-genos-056",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What attacked and destroyed Genos's town, killing his family?",
+      "id": "opm-pg-genos-057",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a crazy rampaging cyborg"
+      ],
+      "found": [
+        "a crazy rampaging cyborg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who found the surviving Genos in the ruins of his town?",
+      "id": "opm-pg-genos-058",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Dr. Kuseno"
+      ],
+      "found": [
+        "Dr. Kuseno"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos beg Dr. Kuseno to do?",
+      "id": "opm-pg-genos-059",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "transform him into a cyborg"
+      ],
+      "found": [
+        "transform him into a cyborg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos promise Dr. Kuseno after his rebirth as a cyborg?",
+      "id": "opm-pg-genos-060",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "one day he would find and destroy the cyborg"
+      ],
+      "found": [
+        "one day he would find and destroy the cyborg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Genos unable to find despite four years of travel?",
+      "id": "opm-pg-genos-061",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the whereabouts of the Rampaging Cyborg"
+      ],
+      "found": [
+        "the whereabouts of the Rampaging Cyborg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Genos following on his first appearance?",
+      "id": "opm-pg-genos-062",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a trail of dead animals"
+      ],
+      "found": [
+        "a trail of dead animals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which city was Mosquito Girl rampaging when Genos revealed himself?",
+      "id": "opm-pg-genos-063",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Z-City"
+      ],
+      "found": [
+        "Z-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos take out of Mosquito Girl in return for losing his arm?",
+      "id": "opm-pg-genos-064",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "both her legs"
+      ],
+      "found": [
+        "both her legs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What stopped Genos from self-destructing against Mosquito Girl?",
+      "id": "opm-pg-genos-065",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Saitama ungracefully smacks Mosquito Girl in the face"
+      ],
+      "found": [
+        "Saitama ungracefully smacks Mosquito Girl in the face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where did Genos show up a week later, fully rebuilt?",
+      "id": "opm-pg-genos-066",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Saitama's apartment"
+      ],
+      "found": [
+        "Saitama's apartment"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What limit did Saitama set when he asked Genos to sum up his story?",
+      "id": "opm-pg-genos-067",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "under twenty words"
+      ],
+      "found": [
+        "under twenty words"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos destroy upon finding the House of Evolution's base?",
+      "id": "opm-pg-genos-068",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the building and part of a mountain in the distance"
+      ],
+      "found": [
+        "the building and part of a mountain in the distance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which official hero certification exam did Genos and Saitama sign up at?",
+      "id": "opm-pg-genos-069",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the 6th official hero certification exam"
+      ],
+      "found": [
+        "the 6th official hero certification exam"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos receive on the hero certification exam?",
+      "id": "opm-pg-genos-070",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a perfect 100"
+      ],
+      "found": [
+        "a perfect 100"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What contest did Saitama challenge Genos to at the udon shop?",
+      "id": "opm-pg-genos-071",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "a spicy udon eating contest"
+      ],
+      "found": [
+        "a spicy udon eating contest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos say Saitama's C-Class ranking went up from and to?",
+      "id": "opm-pg-genos-072",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "388 rank",
+        "342"
+      ],
+      "found": [
+        "388 rank",
+        "342"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which S-Class hero greeted Genos at the Z-City branch?",
+      "id": "opm-pg-genos-073",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Bang"
+      ],
+      "found": [
+        "Bang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos see Bang decide to protect as the meteor approached?",
+      "id": "opm-pg-genos-074",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "his dojo"
+      ],
+      "found": [
+        "his dojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos attach his Power Core to before attacking the meteor?",
+      "id": "opm-pg-genos-075",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the shoulder of his left arm"
+      ],
+      "found": [
+        "the shoulder of his left arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which city was under attack when Genos received the call?",
+      "id": "opm-pg-genos-076",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "J-City"
+      ],
+      "found": [
+        "J-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What had the Deep Sea King just taken down at the Evacuation Shelter?",
+      "id": "opm-pg-genos-077",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "four heroes"
+      ],
+      "found": [
+        "four heroes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the Deep Sea King's Acid Spit do to Genos's body?",
+      "id": "opm-pg-genos-078",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "melting his body"
+      ],
+      "found": [
+        "melting his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who engaged the Deep Sea King right before it was about to finish Genos?",
+      "id": "opm-pg-genos-079",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Mumen Rider"
+      ],
+      "found": [
+        "Mumen Rider"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What warning did Drive Knight give Genos about a fellow S-Class hero?",
+      "id": "opm-pg-genos-080",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "not to trust Metal Knight"
+      ],
+      "found": [
+        "not to trust Metal Knight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique prevented Genos from tracking Sonic?",
+      "id": "opm-pg-genos-081",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Four Shadows Burial"
+      ],
+      "found": [
+        "Four Shadows Burial"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos believe about Saitama when he came back with a wig?",
+      "id": "opm-pg-genos-082",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Saitama is very desperate"
+      ],
+      "found": [
+        "Saitama is very desperate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Face Ripper manage to chip away during their fight?",
+      "id": "opm-pg-genos-083",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "parts of Genos' arm"
+      ],
+      "found": [
+        "parts of Genos' arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which hero defeated Genos on his way to the C-City Super Stadium?",
+      "id": "opm-pg-genos-084",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Gouketsu"
+      ],
+      "found": [
+        "Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What movement style did Garou mimic to catch Genos off guard?",
+      "id": "opm-pg-genos-085",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Watchdog Man"
+      ],
+      "found": [
+        "Watchdog Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Garou rip off from Genos?",
+      "id": "opm-pg-genos-086",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Genos' right arm"
+      ],
+      "found": [
+        "Genos' right arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos declare about Saitama before readying his incineration cannon a third time?",
+      "id": "opm-pg-genos-087",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "the strongest hero"
+      ],
+      "found": [
+        "the strongest hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who intervened before Genos could fire his third incineration cannon?",
+      "id": "opm-pg-genos-088",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Bang and Bomb"
+      ],
+      "found": [
+        "Bang and Bomb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What move did Genos use to break Elder Centipede's teeth?",
+      "id": "opm-pg-genos-089",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Jet Drive Arrow"
+      ],
+      "found": [
+        "Jet Drive Arrow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama say Genos lacked?",
+      "id": "opm-pg-genos-090",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "power"
+      ],
+      "found": [
+        "power"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where did Genos note down Saitama's answer about what he lacks?",
+      "id": "opm-pg-genos-091",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "his acid proof memo"
+      ],
+      "found": [
+        "his acid proof memo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Drive Knight propose to Genos as they were falling?",
+      "id": "opm-pg-genos-092",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "that the two of them fuse"
+      ],
+      "found": [
+        "that the two of them fuse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos regain when Fubuki used her psychic powers on him?",
+      "id": "opm-pg-genos-093",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "his cooling function"
+      ],
+      "found": [
+        "his cooling function"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos incinerate to save Tatsumaki?",
+      "id": "opm-pg-genos-094",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "several Black Sperm clones"
+      ],
+      "found": [
+        "several Black Sperm clones"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was rumbling when King appeared to save Genos and Tatsumaki?",
+      "id": "opm-pg-genos-095",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "King Engine"
+      ],
+      "found": [
+        "King Engine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama say it meant if Genos did not explode?",
+      "id": "opm-pg-genos-096",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "he has indeed gotten stronger"
+      ],
+      "found": [
+        "he has indeed gotten stronger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What new move did Genos use to create a blinding light against Saitama?",
+      "id": "opm-pg-genos-097",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "Lightning Core"
+      ],
+      "found": [
+        "Lightning Core"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Kuseno instruct Genos to locate before fleeing?",
+      "id": "opm-pg-genos-098",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "his final set of armor"
+      ],
+      "found": [
+        "his final set of armor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama reconfirm as Genos's reason for wanting to get stronger?",
+      "id": "opm-pg-genos-099",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "to exact revenge upon the Rampaging Cyborg"
+      ],
+      "found": [
+        "to exact revenge upon the Rampaging Cyborg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What threat was Genos dispatched to T-City to confront?",
+      "id": "opm-pg-genos-100",
+      "subject": "Genos",
+      "accept": "all",
+      "expected": [
+        "The Extended Family of Darkness"
+      ],
+      "found": [
+        "The Extended Family of Darkness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 26,
+    "canon_total": 26,
+    "canon_recall": 1.0,
+    "members_returned": 26,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 97,
+    "fact_present": 97
+  }
+}

@@ -1,0 +1,871 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Ogami?",
+      "set": "Every named technique of Ogami",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Ogami?",
+      "set": "Every ally of Ogami",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Ogami?",
+      "set": "Ogami's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Ogami?",
+      "set": "Ogami's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Ogami",
+      "set": "Every battle involving Ogami",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Ogami?",
+      "found": [
+        "S\u00e9ance Technique"
+      ],
+      "missing": [],
+      "members": [
+        "S\u00e9ance Technique"
+      ]
+    },
+    {
+      "query": "What are all the allies of Ogami?",
+      "found": [
+        "Jiro Awasaka",
+        "Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Jiro Awasaka",
+        "Kenjaku"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Ogami?",
+      "found": [
+        "Granny Ogami"
+      ],
+      "missing": [],
+      "members": [
+        "Granny Ogami"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Ogami?",
+      "found": [
+        "Kenjaku's group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's group"
+      ]
+    },
+    {
+      "query": "Every battle involving Ogami",
+      "found": [
+        "Takuma Ino vs. Ogami & Her Grandson"
+      ],
+      "missing": [],
+      "members": [
+        "Takuma Ino vs. Ogami & Her Grandson"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ogami's name?",
+      "id": "jjk-pg-ogami-001",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "\u30aa\u30ac\u30df"
+      ],
+      "found": [
+        "\u30aa\u30ac\u30df"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ogami's name?",
+      "id": "jjk-pg-ogami-002",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Ogami"
+      ],
+      "found": [
+        "Ogami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's race?",
+      "id": "jjk-pg-ogami-003",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's gender?",
+      "id": "jjk-pg-ogami-004",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Ogami?",
+      "id": "jjk-pg-ogami-005",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "87"
+      ],
+      "found": [
+        "87"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Ogami?",
+      "id": "jjk-pg-ogami-006",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's occupation?",
+      "id": "jjk-pg-ogami-007",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ogami first appear?",
+      "id": "jjk-pg-ogami-008",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Chapter 93"
+      ],
+      "found": [
+        "Chapter 93"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Ogami first depicted?",
+      "id": "jjk-pg-ogami-009",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Episode 34"
+      ],
+      "found": [
+        "Episode 34"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ogami's Japanese voice actor?",
+      "id": "jjk-pg-ogami-010",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Jun Karasawa"
+      ],
+      "found": [
+        "Jun Karasawa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ogami's English voice actor?",
+      "id": "jjk-pg-ogami-011",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Alex Cazares"
+      ],
+      "found": [
+        "Alex Cazares"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogami-012",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Ogami is victorious."
+      ],
+      "found": [
+        "Ogami is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogami-013",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Shibuya Tower"
+      ],
+      "found": [
+        "Shibuya Tower"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogami-014",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogami-015",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Chapter 95 & 97"
+      ],
+      "found": [
+        "Chapter 95 & 97"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Takuma Ino vs. Ogami & Her Grandson depicted?",
+      "id": "jjk-pg-ogami-016",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Episode 35"
+      ],
+      "found": [
+        "Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogami-017",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Ogami use in Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogami-018",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "S\u00e9ance Technique",
+        "Toji Zenin",
+        "Hand-to-Hand Combat"
+      ],
+      "found": [
+        "S\u00e9ance Technique",
+        "Toji Zenin",
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Ogami nicknamed Granny Ogami?",
+      "id": "jjk-pg-ogami-024",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "her elderly appearance, having numerous wrinkles"
+      ],
+      "found": [
+        "her elderly appearance, having numerous wrinkles"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogami's head look like?",
+      "id": "jjk-pg-ogami-025",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "light-colored hair tied into a maru-mage bun with an accessory placed on it"
+      ],
+      "found": [
+        "light-colored hair tied into a maru-mage bun with an accessory placed on it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the back of Ogami's kimono haori include?",
+      "id": "jjk-pg-ogami-026",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "a \"JJ\" circle symbol"
+      ],
+      "found": [
+        "a \"JJ\" circle symbol"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogami always carry with her for jujutsu?",
+      "id": "jjk-pg-ogami-027",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "her prayer beads"
+      ],
+      "found": [
+        "her prayer beads"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Ogami characterized?",
+      "id": "jjk-pg-ogami-028",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "an evil, self-serving old woman who only ever used her talents for herself at the cost of others"
+      ],
+      "found": [
+        "an evil, self-serving old woman who only ever used her talents for herself at the cost of others"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Ogami curse others?",
+      "id": "jjk-pg-ogami-029",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "in order to get paid and live freely, nothing more"
+      ],
+      "found": [
+        "in order to get paid and live freely, nothing more"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogami hardly do most of the time?",
+      "id": "jjk-pg-ogami-030",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "speaks or opens her eyes"
+      ],
+      "found": [
+        "speaks or opens her eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What deterred Ogami's freedom to commit crimes?",
+      "id": "jjk-pg-ogami-031",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "the presence of Satoru Gojo"
+      ],
+      "found": [
+        "the presence of Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What would Ogami do during old assassinations?",
+      "id": "jjk-pg-ogami-032",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "kill people not even involved in her assignment"
+      ],
+      "found": [
+        "kill people not even involved in her assignment"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Ogami once murder to use in a s\u00e9ance?",
+      "id": "jjk-pg-ogami-033",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "a man's daughter"
+      ],
+      "found": [
+        "a man's daughter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogami frequently kidnap?",
+      "id": "jjk-pg-ogami-034",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "young children to become her \"grandchildren\""
+      ],
+      "found": [
+        "young children to become her \"grandchildren\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ogami react when her grandson was injured in a fight?",
+      "id": "jjk-pg-ogami-035",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "She showed little to no concern"
+      ],
+      "found": [
+        "She showed little to no concern"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ogami in her heyday?",
+      "id": "jjk-pg-ogami-036",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "a talented sorcerer and reputable assassin"
+      ],
+      "found": [
+        "a talented sorcerer and reputable assassin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Ogami outmaneuver in their battle?",
+      "id": "jjk-pg-ogami-037",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "grade 2 sorcerer, Ino"
+      ],
+      "found": [
+        "grade 2 sorcerer, Ino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Ogami's s\u00e9ance technique summon?",
+      "id": "jjk-pg-ogami-038",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "the body or soul information from a deceased person using their corpse"
+      ],
+      "found": [
+        "the body or soul information from a deceased person using their corpse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the s\u00e9ance technique allow Ogami to do?",
+      "id": "jjk-pg-ogami-039",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "shape-shift herself or a willing participant into that person"
+      ],
+      "found": [
+        "shape-shift herself or a willing participant into that person"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami careful to summon in her s\u00e9ance?",
+      "id": "jjk-pg-ogami-040",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "only the body's information and not the soul's"
+      ],
+      "found": [
+        "only the body's information and not the soul's"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the shape-shifter from Ogami's s\u00e9ance technique utilize?",
+      "id": "jjk-pg-ogami-041",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "the physical abilities of the s\u00e9ance's target without reviving their personality"
+      ],
+      "found": [
+        "the physical abilities of the s\u00e9ance's target without reviving their personality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Ogami activate her s\u00e9ance?",
+      "id": "jjk-pg-ogami-042",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "chanting an incantation with her prayer beads for a few minutes"
+      ],
+      "found": [
+        "chanting an incantation with her prayer beads for a few minutes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Into whom did Ogami transform her grandson using her s\u00e9ance?",
+      "id": "jjk-pg-ogami-043",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro"
+      ],
+      "found": [
+        "Toji Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami a junior member of?",
+      "id": "jjk-pg-ogami-044",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "the Boy Idol Agency fan club"
+      ],
+      "found": [
+        "the Boy Idol Agency fan club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the truth about Ogami's grandson?",
+      "id": "jjk-pg-ogami-045",
+      "subject": "Ogami",
+      "accept": "all",
+      "expected": [
+        "one of the numerous children she kidnapped and raised after falsifying their relationship"
+      ],
+      "found": [
+        "one of the numerous children she kidnapped and raised after falsifying their relationship"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 40,
+    "fact_present": 40
+  }
+}

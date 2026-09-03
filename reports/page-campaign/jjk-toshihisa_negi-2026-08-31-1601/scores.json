@@ -1,0 +1,549 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the families of Toshihisa Negi?",
+      "set": "Every family of Toshihisa Negi",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Toshihisa Negi?",
+      "set": "Toshihisa Negi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the arcs and events Toshihisa Negi is involved in?",
+      "set": "Cursed Child Arc \u2192 Shinjuku Showdown Arc",
+      "confidence": "exact",
+      "returned": 9,
+      "available": 9,
+      "canon": 4,
+      "found": 2,
+      "recall": 0.5,
+      "precision": 0.222,
+      "exact": false,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the families of Toshihisa Negi?",
+      "found": [
+        "Manami Suda",
+        "Nanako Hasaba",
+        "Mimiko Hasaba",
+        "Larue"
+      ],
+      "missing": [],
+      "members": [
+        "Larue",
+        "Manami Suda",
+        "Mimiko Hasaba",
+        "Nanako Hasaba"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Toshihisa Negi?",
+      "found": [
+        "Suguru Geto's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto's Group"
+      ]
+    },
+    {
+      "query": "What are all the arcs and events Toshihisa Negi is involved in?",
+      "found": [
+        "Cursed Child Arc",
+        "Shibuya Incident Arc"
+      ],
+      "missing": [
+        "Night Parade of a Hundred Demons",
+        "Shibuya Incident"
+      ],
+      "members": [
+        "Cursed Child Arc",
+        "Fearsome Womb Arc",
+        "Vs. Mahito Arc",
+        "Kyoto Goodwill Event Arc",
+        "Death Painting Arc",
+        "Gojo's Past Arc",
+        "Shibuya Incident Arc",
+        "Culling Game Arc",
+        "Shinjuku Showdown Arc"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Toshihisa Negi's name?",
+      "id": "jjk-pg-toshihisa_negi-001",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "\u7962\u6728\u5229\u4e45"
+      ],
+      "found": [
+        "\u7962\u6728\u5229\u4e45"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Toshihisa Negi's name?",
+      "id": "jjk-pg-toshihisa_negi-002",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Negi Toshihisa"
+      ],
+      "found": [
+        "Negi Toshihisa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Toshihisa Negi's race?",
+      "id": "jjk-pg-toshihisa_negi-003",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Toshihisa Negi's gender?",
+      "id": "jjk-pg-toshihisa_negi-004",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Toshihisa Negi?",
+      "id": "jjk-pg-toshihisa_negi-005",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Toshihisa Negi's occupation?",
+      "id": "jjk-pg-toshihisa_negi-006",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Toshihisa Negi first appear?",
+      "id": "jjk-pg-toshihisa_negi-007",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3 Chapter 114"
+      ],
+      "found": [
+        "Chapter 0-3 Chapter 114"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Toshihisa Negi first depicted?",
+      "id": "jjk-pg-toshihisa_negi-008",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "The Movie Episode 40"
+      ],
+      "found": [
+        "The Movie Episode 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Toshihisa Negi's Japanese voice actor?",
+      "id": "jjk-pg-toshihisa_negi-009",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Gou Inoue"
+      ],
+      "found": [
+        "Gou Inoue"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Toshihisa Negi's English voice actor?",
+      "id": "jjk-pg-toshihisa_negi-010",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "Kellen Goff"
+      ],
+      "found": [
+        "Kellen Goff"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Toshihisa Negi play in the series?",
+      "id": "jjk-pg-toshihisa_negi-013",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "a minor antagonist in the Jujutsu Kaisen series and its prequel Jujutsu High"
+      ],
+      "found": [
+        "a minor antagonist in the Jujutsu Kaisen series and its prequel Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Toshihisa Negi's former role in Geto's group?",
+      "id": "jjk-pg-toshihisa_negi-014",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "a commander in Suguru Geto's \"family\" of sorcerers"
+      ],
+      "found": [
+        "a commander in Suguru Geto's \"family\" of sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Negi and Manami Suda decide to do after Suguru's death?",
+      "id": "jjk-pg-toshihisa_negi-015",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "carry on his will by joining the entity who stole his body"
+      ],
+      "found": [],
+      "missing": [
+        "carry on his will by joining the entity who stole his body"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Toshihisa Negi look like?",
+      "id": "jjk-pg-toshihisa_negi-016",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "a muscular young man with a thin frame",
+        "mid-length, disheveled black hair and sharp eyes"
+      ],
+      "found": [
+        "a muscular young man with a thin frame",
+        "mid-length, disheveled black hair and sharp eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was distinctive about Negi's face in 2017?",
+      "id": "jjk-pg-toshihisa_negi-017",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "a large scar going down the right side of his face"
+      ],
+      "found": [
+        "a large scar going down the right side of his face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Negi wear a year after 2017?",
+      "id": "jjk-pg-toshihisa_negi-018",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "a skin-tight black bodysuit underneath a light-colored monk's robe that mainly drapes over his left side"
+      ],
+      "found": [
+        "a skin-tight black bodysuit underneath a light-colored monk's robe that mainly drapes over his left side"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What vision does Negi share with Suguru Geto?",
+      "id": "jjk-pg-toshihisa_negi-019",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "to eradicate non-sorcerers"
+      ],
+      "found": [
+        "to eradicate non-sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Negi refer to normal humans?",
+      "id": "jjk-pg-toshihisa_negi-020",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "monkeys"
+      ],
+      "found": [
+        "monkeys"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Negi and Manami decide about Pseudo-Geto?",
+      "id": "jjk-pg-toshihisa_negi-021",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "allow Pseudo-Geto to exist in order to keep carrying on Suguru's legacy"
+      ],
+      "found": [
+        "allow Pseudo-Geto to exist in order to keep carrying on Suguru's legacy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How are Toshihisa Negi's abilities as a sorcerer described?",
+      "id": "jjk-pg-toshihisa_negi-022",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "completely unknown"
+      ],
+      "found": [
+        "completely unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which event was Negi heavily involved?",
+      "id": "jjk-pg-toshihisa_negi-023",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "the Night Parade of a Hundred Demons in Kyoto"
+      ],
+      "found": [
+        "the Night Parade of a Hundred Demons in Kyoto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Negi take on in battle?",
+      "id": "jjk-pg-toshihisa_negi-024",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "grade 1 jujutsu sorcerer; Atsuya Kusakabe"
+      ],
+      "found": [
+        "grade 1 jujutsu sorcerer; Atsuya Kusakabe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Negi rank in the second Popularity Poll?",
+      "id": "jjk-pg-toshihisa_negi-026",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "89th in the second Popularity Poll with 3 votes"
+      ],
+      "found": [
+        "89th in the second Popularity Poll with 3 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Negi rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-toshihisa_negi-027",
+      "subject": "Toshihisa Negi",
+      "accept": "all",
+      "expected": [
+        "127th in the fourth Popularity Poll with 2 votes"
+      ],
+      "found": [
+        "127th in the fourth Popularity Poll with 2 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 7,
+    "canon_total": 9,
+    "canon_recall": 0.7778,
+    "members_returned": 14,
+    "exact_answers": 2,
+    "exact_of": 3,
+    "exact_rate": 0.6667,
+    "precision_closed": 0.5,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 24,
+    "fact_present": 23
+  }
+}

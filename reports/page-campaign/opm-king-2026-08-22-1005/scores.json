@@ -1,0 +1,2065 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the battles of King in One-Punch Man?",
+      "set": "King's battles",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of King in One-Punch Man?",
+      "set": "King's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the battles of King in One-Punch Man?",
+      "found": [
+        "Heroes vs. Monster Association Executives",
+        "King and Saitama vs. Elder Centipede",
+        "King vs. Atomic Samurai"
+      ],
+      "missing": [],
+      "members": [
+        "Heroes vs. Monster Association Executives",
+        "King and Saitama vs. Elder Centipede",
+        "King vs. Atomic Samurai"
+      ]
+    },
+    {
+      "query": "What are all the aliases of King in One-Punch Man?",
+      "found": [
+        "The Strongest Man on Earth"
+      ],
+      "missing": [],
+      "members": [
+        "The Strongest Man on Earth"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and Tongue Stretcher in One-Punch Man?",
+      "id": "opm-pg-king-003",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and Saitama and Elder Centipede in One-Punch Man?",
+      "id": "opm-pg-king-004",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and the monster disguised as Waganma in One-Punch Man?",
+      "id": "opm-pg-king-005",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and the Monster Association executives in One-Punch Man?",
+      "id": "opm-pg-king-006",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Garou"
+      ],
+      "found": [
+        "Interrupted by Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and Atomic Samurai in One-Punch Man?",
+      "id": "opm-pg-king-007",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "The fight is called off"
+      ],
+      "found": [
+        "The fight is called off"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King, Saitama, Genos and Bang and Fubuki and the Blizzard Group in the video game challenge in One-Punch Man?",
+      "id": "opm-pg-king-008",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and the assassins in King's Weekend-like Weekday in One-Punch Man?",
+      "id": "opm-pg-king-009",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and Black Sperm, Psykos, Homeless Emperor and Evil Natural Water in the One-Punch Man webcomic?",
+      "id": "opm-pg-king-010",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Fubuki"
+      ],
+      "found": [
+        "Interrupted by Fubuki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between King and Evil Natural Water in the One-Punch Man webcomic?",
+      "id": "opm-pg-king-011",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Evil Natural Water and King in the One-Punch Man webcomic?",
+      "id": "opm-pg-king-012",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the King vs. Atomic Samurai battle in One-Punch Man?",
+      "id": "opm-pg-king-013",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "The fight is called off"
+      ],
+      "found": [
+        "The fight is called off"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the King vs. Atomic Samurai battle in One-Punch Man?",
+      "id": "opm-pg-king-014",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "Neo Heroes Introduction Arc"
+      ],
+      "found": [
+        "Neo Heroes Introduction Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the King vs. Atomic Samurai battle take place in One-Punch Man?",
+      "id": "opm-pg-king-015",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "M-City (Outside a Mouse Sushi)"
+      ],
+      "found": [
+        "M-City (Outside a Mouse Sushi)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapter does the King vs. Atomic Samurai battle span in One-Punch Man?",
+      "id": "opm-pg-king-016",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "Chapter 189 (Online)"
+      ],
+      "found": [
+        "Chapter 189 (Online)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What webcomic chapter covers the King vs. Atomic Samurai battle in One-Punch Man?",
+      "id": "opm-pg-king-017",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "Chapter 109"
+      ],
+      "found": [
+        "Chapter 109"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of King vs. Atomic Samurai in One-Punch Man?",
+      "id": "opm-pg-king-018",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "Round Two"
+      ],
+      "found": [
+        "Round Two"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of King vs. Atomic Samurai in One-Punch Man?",
+      "id": "opm-pg-king-019",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "Saitama vs. Cruel Dragon"
+      ],
+      "found": [
+        "Saitama vs. Cruel Dragon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Atomic Samurai and his disciples decide to wait at the Mouse Sushi branch in One-Punch Man?",
+      "id": "opm-pg-king-020",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "King is not home"
+      ],
+      "found": [
+        "King is not home"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Atomic Samurai claim King achieved with the apple in One-Punch Man?",
+      "id": "opm-pg-king-021",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "slicing the blade through gaps between the cells"
+      ],
+      "found": [
+        "slicing the blade through gaps between the cells"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Atomic Samurai announce he will do after the encounter with King in One-Punch Man?",
+      "id": "opm-pg-king-022",
+      "subject": "King vs. Atomic Samurai",
+      "accept": "all",
+      "expected": [
+        "restart his training from the beginning"
+      ],
+      "found": [
+        "restart his training from the beginning"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the King and Saitama vs. Elder Centipede battle in One-Punch Man?",
+      "id": "opm-pg-king-023",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "Saitama eliminates Elder Centipede"
+      ],
+      "found": [
+        "Saitama eliminates Elder Centipede"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the King and Saitama vs. Elder Centipede battle in One-Punch Man?",
+      "id": "opm-pg-king-024",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "Monster Association Arc"
+      ],
+      "found": [
+        "Monster Association Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapter covers the King and Saitama vs. Elder Centipede battle in One-Punch Man?",
+      "id": "opm-pg-king-025",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "Chapter 85"
+      ],
+      "found": [
+        "Chapter 85"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What anime episode covers the King and Saitama vs. Elder Centipede battle in One-Punch Man?",
+      "id": "opm-pg-king-026",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "Episode 24"
+      ],
+      "found": [
+        "Episode 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of King and Saitama vs. Elder Centipede in One-Punch Man?",
+      "id": "opm-pg-king-027",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "Genos, Bang and Bomb vs. Elder Centipede"
+      ],
+      "found": [
+        "Genos, Bang and Bomb vs. Elder Centipede"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did King distract the Elder Centipede in One-Punch Man?",
+      "id": "opm-pg-king-028",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "yelling provocative words over a megaphone"
+      ],
+      "found": [
+        "yelling provocative words over a megaphone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was revealed about King in the extra chapter included with Volume 17 of One-Punch Man?",
+      "id": "opm-pg-king-029",
+      "subject": "King and Saitama vs. Elder Centipede",
+      "accept": "all",
+      "expected": [
+        "King soiled himself when Elder Centipede was charging at him"
+      ],
+      "found": [
+        "King soiled himself when Elder Centipede was charging at him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the King Arc the ninth arc of in One-Punch Man?",
+      "id": "opm-pg-king-030",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "the One-Punch Man series"
+      ],
+      "found": [
+        "the One-Punch Man series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the King Arc the sixth and final arc of in One-Punch Man?",
+      "id": "opm-pg-king-031",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "the Hero Association Saga"
+      ],
+      "found": [
+        "the Hero Association Saga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What webcomic chapters does the King Arc span in One-Punch Man?",
+      "id": "opm-pg-king-032",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "Chapter 42 - 44"
+      ],
+      "found": [
+        "Chapter 42 - 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What volume does the King Arc cover in One-Punch Man?",
+      "id": "opm-pg-king-033",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "Volume 8"
+      ],
+      "found": [
+        "Volume 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapters does the King Arc span in One-Punch Man?",
+      "id": "opm-pg-king-034",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "38 \u2022 39"
+      ],
+      "found": [
+        "38 \u2022 39"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the previous arc of the King Arc in One-Punch Man?",
+      "id": "opm-pg-king-035",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "Alien Conquerors Arc"
+      ],
+      "found": [
+        "Alien Conquerors Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the next arc of the King Arc in One-Punch Man?",
+      "id": "opm-pg-king-036",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "Garou Introduction Arc"
+      ],
+      "found": [
+        "Garou Introduction Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did King make the Tongue Stretcher surrender in the King Arc in One-Punch Man?",
+      "id": "opm-pg-king-037",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "stared at Tongue Stretcher until he automatically surrendered"
+      ],
+      "found": [
+        "stared at Tongue Stretcher until he automatically surrendered"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is G4 described as in the King Arc in One-Punch Man?",
+      "id": "opm-pg-king-038",
+      "subject": "King Arc",
+      "accept": "all",
+      "expected": [
+        "a machine created by The Organization"
+      ],
+      "found": [
+        "a machine created by The Organization"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What type of location is King's Apartment in One-Punch Man?",
+      "id": "opm-pg-king-039",
+      "subject": "King's Apartment",
+      "accept": "all",
+      "expected": [
+        "Residence"
+      ],
+      "found": [
+        "Residence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In what city is King's Apartment located in One-Punch Man?",
+      "id": "opm-pg-king-040",
+      "subject": "King's Apartment",
+      "accept": "all",
+      "expected": [
+        "M-City"
+      ],
+      "found": [
+        "M-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In what webcomic chapter does King's Apartment make its debut in One-Punch Man?",
+      "id": "opm-pg-king-041",
+      "subject": "King's Apartment",
+      "accept": "all",
+      "expected": [
+        "Chapter 43"
+      ],
+      "found": [],
+      "missing": [
+        "Chapter 43"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In what manga chapter does King's Apartment make its debut in One-Punch Man?",
+      "id": "opm-pg-king-042",
+      "subject": "King's Apartment",
+      "accept": "all",
+      "expected": [
+        "Chapter 38"
+      ],
+      "found": [
+        "Chapter 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What partially destroyed King's Apartment in One-Punch Man?",
+      "id": "opm-pg-king-043",
+      "subject": "King's Apartment",
+      "accept": "all",
+      "expected": [
+        "Giant Crow"
+      ],
+      "found": [
+        "Giant Crow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who visits King's home in the Neo Heroes Introduction Arc in One-Punch Man?",
+      "id": "opm-pg-king-044",
+      "subject": "King's Apartment",
+      "accept": "all",
+      "expected": [
+        "Atomic Samurai and his disciples"
+      ],
+      "found": [
+        "Atomic Samurai and his disciples"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What volume is King's Weekend-like Weekday included with in One-Punch Man?",
+      "id": "opm-pg-king-045",
+      "subject": "King's Weekend-like Weekday",
+      "accept": "all",
+      "expected": [
+        "Volume 12"
+      ],
+      "found": [
+        "Volume 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the release date of King's Weekend-like Weekday in One-Punch Man?",
+      "id": "opm-pg-king-046",
+      "subject": "King's Weekend-like Weekday",
+      "accept": "all",
+      "expected": [
+        "December 2, 2016"
+      ],
+      "found": [
+        "December 2, 2016"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz Media title of King's Weekend-like Weekday in One-Punch Man?",
+      "id": "opm-pg-king-047",
+      "subject": "King's Weekend-like Weekday",
+      "accept": "all",
+      "expected": [
+        "King's Weekday Off"
+      ],
+      "found": [
+        "King's Weekday Off"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What chapter follows King's Weekend-like Weekday in One-Punch Man?",
+      "id": "opm-pg-king-048",
+      "subject": "King's Weekend-like Weekday",
+      "accept": "all",
+      "expected": [
+        "Star"
+      ],
+      "found": [
+        "Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What group of assassins was hired to kill King in King's Weekend-like Weekday in One-Punch Man?",
+      "id": "opm-pg-king-049",
+      "subject": "King's Weekend-like Weekday",
+      "accept": "all",
+      "expected": [
+        "Hitman Clan"
+      ],
+      "found": [
+        "Hitman Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did King stop the assassin from taking the weapon out of his pocket in King's Weekend-like Weekday in One-Punch Man?",
+      "id": "opm-pg-king-050",
+      "subject": "King's Weekend-like Weekday",
+      "accept": "all",
+      "expected": [
+        "in order to keep his identity a secret"
+      ],
+      "found": [
+        "in order to keep his identity a secret"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was the Giant Bird's real target in the Omake (Volume 8) cover of One-Punch Man?",
+      "id": "opm-pg-king-051",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "Saitama\u2019s \u201cshiny\u201d head"
+      ],
+      "found": [
+        "Saitama\u2019s \u201cshiny\u201d head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the Tongue Stretcher claim in the Omake (Volume 8) of One-Punch Man?",
+      "id": "opm-pg-king-052",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "actually fought and hit King, and even get hit by him before getting captured"
+      ],
+      "found": [
+        "actually fought and hit King, and even get hit by him before getting captured"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What kind of superhero does the anime series King shows Saitama in Sense feature in One-Punch Man?",
+      "id": "opm-pg-king-053",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "a superhero who uses baked potatoes as weapons"
+      ],
+      "found": [
+        "a superhero who uses baked potatoes as weapons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who defeated Bang, Genos and Saitama in the video game challenge in Numbers of One-Punch Man?",
+      "id": "opm-pg-king-054",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "Piko"
+      ],
+      "found": [
+        "Piko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King state his Christmas plans are in the One-Punch Man Holiday Special Chapter of One-Punch Man?",
+      "id": "opm-pg-king-055",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "going on a date with his \u201cgirlfriend\u201d"
+      ],
+      "found": [
+        "going on a date with his \u201cgirlfriend\u201d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What new series is King showing Saitama in Squadron of One-Punch Man?",
+      "id": "opm-pg-king-056",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "ZOO-MEN"
+      ],
+      "found": [
+        "ZOO-MEN"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How was Zombieman murdered in OVA 6 of One-Punch Man?",
+      "id": "opm-pg-king-057",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "stabbed in the back by Atomic Samurai's katana"
+      ],
+      "found": [
+        "stabbed in the back by Atomic Samurai's katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What happens when King appears on the battlefield in One Punch Man: A Hero Nobody Knows?",
+      "id": "opm-pg-king-058",
+      "subject": "King/Other Media",
+      "accept": "all",
+      "expected": [
+        "the King Engine roars and paralyzes the opponent"
+      ],
+      "found": [],
+      "missing": [
+        "the King Engine roars and paralyzes the opponent"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Saitama to King in One-Punch Man?",
+      "id": "opm-pg-king-059",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "friend"
+      ],
+      "found": [
+        "friend"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Genos to King in One-Punch Man?",
+      "id": "opm-pg-king-060",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "friend"
+      ],
+      "found": [
+        "friend"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is King to Tatsumaki in One-Punch Man?",
+      "id": "opm-pg-king-061",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Tatsumaki to King in One-Punch Man?",
+      "id": "opm-pg-king-062",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "rival"
+      ],
+      "found": [
+        "rival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Kamikaze to King in One-Punch Man?",
+      "id": "opm-pg-king-063",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "rival"
+      ],
+      "found": [
+        "rival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Bang to King in One-Punch Man?",
+      "id": "opm-pg-king-064",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "student"
+      ],
+      "found": [
+        "student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King feel guilty about regarding the monsters Saitama killed in One-Punch Man?",
+      "id": "opm-pg-king-065",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "how he took credit for killing 5 monsters that Saitama killed"
+      ],
+      "found": [
+        "how he took credit for killing 5 monsters that Saitama killed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who does Superalloy Darkshine see as stronger than even Tatsumaki in One-Punch Man?",
+      "id": "opm-pg-king-066",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "King"
+      ],
+      "found": [
+        "King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King's total faith in Saitama lead him to in One-Punch Man?",
+      "id": "opm-pg-king-067",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "facing down Elder Centipede with only Saitama as back up"
+      ],
+      "found": [
+        "facing down Elder Centipede with only Saitama as back up"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's race in One-Punch Man?",
+      "id": "opm-pg-king-068",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's age in One-Punch Man?",
+      "id": "opm-pg-king-069",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "29"
+      ],
+      "found": [
+        "29"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's height in One-Punch Man?",
+      "id": "opm-pg-king-070",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "187 cm (6\u20191\u00bd\")"
+      ],
+      "found": [
+        "187 cm (6\u20191\u00bd\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's weight in One-Punch Man?",
+      "id": "opm-pg-king-071",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Undisclosed"
+      ],
+      "found": [
+        "Undisclosed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's location in One-Punch Man?",
+      "id": "opm-pg-king-072",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "King's Apartment (M-City)"
+      ],
+      "found": [
+        "King's Apartment (M-City)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's rank in One-Punch Man?",
+      "id": "opm-pg-king-073",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "S-Class: Rank 5 (Current) S-Class: Rank 7 (Formerly) S-Class: Rank 6 (Giant Meteor Arc)"
+      ],
+      "found": [
+        "S-Class: Rank 5 (Current) S-Class: Rank 7 (Formerly) S-Class: Rank 6 (Giant Meteor Arc)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What abilities are listed on King's infobox in One-Punch Man?",
+      "id": "opm-pg-king-074",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "King Engine Enhanced Luck Master Gamer Intimidating Aura"
+      ],
+      "found": [
+        "King Engine Enhanced Luck Master Gamer Intimidating Aura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does King first appear in the One-Punch Man webcomic?",
+      "id": "opm-pg-king-075",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does King first appear in the One-Punch Man manga?",
+      "id": "opm-pg-king-076",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Chapter 13 (Cameo) Chapter 30 (Full Appearance)"
+      ],
+      "found": [
+        "Chapter 13 (Cameo) Chapter 30 (Full Appearance)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is King's most notable physical feature in One-Punch Man?",
+      "id": "opm-pg-king-077",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "three vertical scars over his left eye, received from Octopus Claw Man"
+      ],
+      "found": [
+        "three vertical scars over his left eye, received from Octopus Claw Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is King sometimes seen wearing in One-Punch Man?",
+      "id": "opm-pg-king-078",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "a cap that has the kanji for 'King' on it"
+      ],
+      "found": [
+        "a cap that has the kanji for 'King' on it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which S-Class heroes' bluffs was King's bluffing convincing enough to make hesitate in One-Punch Man?",
+      "id": "opm-pg-king-079",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Black Sperm",
+        "Fuhrer Ugly",
+        "Atomic Samurai"
+      ],
+      "found": [
+        "Black Sperm",
+        "Fuhrer Ugly",
+        "Atomic Samurai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is enough to leave King winded in One-Punch Man?",
+      "id": "opm-pg-king-080",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Walking up a single flight of stairs"
+      ],
+      "found": [
+        "Walking up a single flight of stairs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What opponents do King's intimidating characteristics have no effect on in One-Punch Man?",
+      "id": "opm-pg-king-081",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "robotic opponents"
+      ],
+      "found": [
+        "robotic opponents"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Whose dojo did King visit to ask for training after the incident with Atomic Samurai in One-Punch Man?",
+      "id": "opm-pg-king-082",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Bang"
+      ],
+      "found": [
+        "Bang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is the King Engine in One-Punch Man?",
+      "id": "opm-pg-king-083",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "a rumbling sound that others claim to hear when King readies for battle or when he is generally serious"
+      ],
+      "found": [
+        "a rumbling sound that others claim to hear when King readies for battle or when he is generally serious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the King Engine actually in One-Punch Man?",
+      "id": "opm-pg-king-084",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "simply the sound of King's heart beating rapidly and loudly from fear, anxiety, or other uneasiness"
+      ],
+      "found": [
+        "simply the sound of King's heart beating rapidly and loudly from fear, anxiety, or other uneasiness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the King Engine's sound mistaken for in One-Punch Man?",
+      "id": "opm-pg-king-085",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "bloodlust"
+      ],
+      "found": [
+        "bloodlust"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King mostly do if his opponents aren't scared in One-Punch Man?",
+      "id": "opm-pg-king-086",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "bluffs himself out of battles or just runs away"
+      ],
+      "found": [
+        "bluffs himself out of battles or just runs away"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can King Face do in One-Punch Man?",
+      "id": "opm-pg-king-087",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "King's intimidating facial expression, which scares off Villains and Mysterious Beings"
+      ],
+      "found": [
+        "King's intimidating facial expression, which scares off Villains and Mysterious Beings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can King Brain do in One-Punch Man?",
+      "id": "opm-pg-king-088",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "instantly think of and simulate strategies"
+      ],
+      "found": [
+        "instantly think of and simulate strategies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Super Catch supposedly allow King to do in One-Punch Man?",
+      "id": "opm-pg-king-089",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "catch heavy weights such as a large group of people"
+      ],
+      "found": [
+        "catch heavy weights such as a large group of people"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Super Sparking King Mode in One-Punch Man?",
+      "id": "opm-pg-king-090",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "A supposed powered-up form of King's mentioned by Child Emperor that increases his abilities and powers"
+      ],
+      "found": [
+        "A supposed powered-up form of King's mentioned by Child Emperor that increases his abilities and powers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In Child Emperor's imagination, what does the Ultimate Purgatory Hellfire Burst Wave Motion Cannon manifest as in One-Punch Man?",
+      "id": "opm-pg-king-091",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "an incredibly powerful energy blast, visible from outer space when unleashed"
+      ],
+      "found": [],
+      "missing": [
+        "an incredibly powerful energy blast, visible from outer space when unleashed"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What did Golden Sperm mistake King's Ultimate Fleeing Technique: Backwards B Dash for in One-Punch Man?",
+      "id": "opm-pg-king-092",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "a kind of trap, thinking King is chanting a curse and luring him"
+      ],
+      "found": [
+        "a kind of trap, thinking King is chanting a curse and luring him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What paradoxical knack does King have in One-Punch Man?",
+      "id": "opm-pg-king-093",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "the unprecedented knack for either stumbling into or drawing the most cataclysmic situations imaginable his way"
+      ],
+      "found": [
+        "the unprecedented knack for either stumbling into or drawing the most cataclysmic situations imaginable his way"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which Dragon-level Monster Association executives was King's mere presence enough to make cautious in One-Punch Man?",
+      "id": "opm-pg-king-094",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Black Sperm",
+        "Golden Sperm",
+        "Homeless Emperor"
+      ],
+      "found": [
+        "Black Sperm",
+        "Golden Sperm",
+        "Homeless Emperor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What place did King achieve in the character popularity poll in One-Punch Man?",
+      "id": "opm-pg-king-095",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "8th"
+      ],
+      "found": [
+        "8th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was King named the king of heroes in One-Punch Man?",
+      "id": "opm-pg-king-096",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "his strength to effortlessly defeat a monster of the disaster level \u201cDemon\u201d"
+      ],
+      "found": [
+        "his strength to effortlessly defeat a monster of the disaster level \u201cDemon\u201d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What book did King recommend as an Easter egg in One-Punch Man?",
+      "id": "opm-pg-king-097",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "How I Developed Indomitable Will"
+      ],
+      "found": [
+        "How I Developed Indomitable Will"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does one of King's rumored feats involve doing with a bomb in One-Punch Man?",
+      "id": "opm-pg-king-098",
+      "subject": "King",
+      "accept": "all",
+      "expected": [
+        "Flying into the sky holding the bomb that can destroy the entire solar system and hurling it into a giant black hole"
+      ],
+      "found": [
+        "Flying into the sky holding the bomb that can destroy the entire solar system and hurling it into a giant black hole"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What had King won in his childhood in One-Punch Man?",
+      "id": "opm-pg-king-099",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "several video game tournaments"
+      ],
+      "found": [
+        "several video game tournaments"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who attacked King, giving him his characteristic three scars in One-Punch Man?",
+      "id": "opm-pg-king-100",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "the Octopus Claw Man"
+      ],
+      "found": [
+        "the Octopus Claw Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did King get to the top of the Hero Association's headquarters during the Dark Matter Thieves' attack in One-Punch Man?",
+      "id": "opm-pg-king-101",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "crawled up from a hole that Saitama made"
+      ],
+      "found": [
+        "crawled up from a hole that Saitama made"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King suggest the heroes call instead of attacking the mother ship in One-Punch Man?",
+      "id": "opm-pg-king-102",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Metal Knight"
+      ],
+      "found": [
+        "Metal Knight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama get into King's apartment in One-Punch Man?",
+      "id": "opm-pg-king-103",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "through the open window"
+      ],
+      "found": [
+        "through the open window"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King claim he was aiming to buy in One-Punch Man?",
+      "id": "opm-pg-king-104",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "an action game"
+      ],
+      "found": [
+        "an action game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did King initially believe about Saitama and the Giant Crow in One-Punch Man?",
+      "id": "opm-pg-king-105",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Saitama was eaten by the Giant Crow"
+      ],
+      "found": [
+        "Saitama was eaten by the Giant Crow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why does King visit Saitama's place at the start of the Blizzard Group Arc in One-Punch Man?",
+      "id": "opm-pg-king-106",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "to retrieve his portable video game console"
+      ],
+      "found": [
+        "to retrieve his portable video game console"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Saitama do to save King from Garou in the Super Fight Arc in One-Punch Man?",
+      "id": "opm-pg-king-107",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "kicks Garou into a wall"
+      ],
+      "found": [
+        "kicks Garou into a wall"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King tell the boy who appears to be Waganma to do in One-Punch Man?",
+      "id": "opm-pg-king-108",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "go to another hero"
+      ],
+      "found": [
+        "go to another hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did King and Tareo escape being devoured by Orochi in One-Punch Man?",
+      "id": "opm-pg-king-109",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "shooting both King and Tareo up at an alarming rate"
+      ],
+      "found": [
+        "shooting both King and Tareo up at an alarming rate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does King advise Homeless Emperor to pay attention to in One-Punch Man?",
+      "id": "opm-pg-king-110",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "the loose rocks under his feet"
+      ],
+      "found": [
+        "the loose rocks under his feet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What nonsensical phenomenon does King dub during his bluff against Atomic Samurai in One-Punch Man?",
+      "id": "opm-pg-king-111",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Dolzenabring Reaction"
+      ],
+      "found": [
+        "Dolzenabring Reaction"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who does King stumble upon at the Final Training Ground in One-Punch Man?",
+      "id": "opm-pg-king-112",
+      "subject": "King/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Garou"
+      ],
+      "found": [
+        "Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 110,
+    "fact_present": 107
+  }
+}

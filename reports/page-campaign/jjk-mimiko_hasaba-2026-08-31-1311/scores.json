@@ -1,0 +1,705 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Mimiko Hasaba?",
+      "set": "Every ally of Mimiko Hasaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Mimiko Hasaba?",
+      "set": "Every enemy of Mimiko Hasaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Mimiko Hasaba?",
+      "set": "Every family of Mimiko Hasaba",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Mimiko Hasaba?",
+      "set": "Mimiko Hasaba's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Mimiko Hasaba?",
+      "found": [
+        "Suguru Geto",
+        "Manami Suda"
+      ],
+      "missing": [],
+      "members": [
+        "Manami Suda",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Mimiko Hasaba?",
+      "found": [
+        "Kenjaku",
+        "Kiyotaka Ijichi"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Kiyotaka Ijichi"
+      ]
+    },
+    {
+      "query": "What are all the families of Mimiko Hasaba?",
+      "found": [
+        "Nanako Hasaba",
+        "Larue",
+        "Toshihisa Negi"
+      ],
+      "missing": [],
+      "members": [
+        "Larue",
+        "Nanako Hasaba",
+        "Toshihisa Negi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Mimiko Hasaba?",
+      "found": [
+        "Suguru Geto's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Mimiko Hasaba's name?",
+      "id": "jjk-pg-mimiko_hasaba-001",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "\u67b7\u5834\u7f8e\u3005\u5b50"
+      ],
+      "found": [
+        "\u67b7\u5834\u7f8e\u3005\u5b50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Mimiko Hasaba's name?",
+      "id": "jjk-pg-mimiko_hasaba-002",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Hasaba Mimiko"
+      ],
+      "found": [
+        "Hasaba Mimiko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mimiko Hasaba's race?",
+      "id": "jjk-pg-mimiko_hasaba-003",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mimiko Hasaba's gender?",
+      "id": "jjk-pg-mimiko_hasaba-004",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Mimiko Hasaba?",
+      "id": "jjk-pg-mimiko_hasaba-005",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mimiko Hasaba's occupation?",
+      "id": "jjk-pg-mimiko_hasaba-006",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Mimiko Hasaba?",
+      "id": "jjk-pg-mimiko_hasaba-007",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "15(2017) 16"
+      ],
+      "found": [
+        "15(2017) 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Mimiko Hasaba first appear?",
+      "id": "jjk-pg-mimiko_hasaba-008",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3 Chapter 77"
+      ],
+      "found": [
+        "Chapter 0-3 Chapter 77"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Mimiko Hasaba first depicted?",
+      "id": "jjk-pg-mimiko_hasaba-009",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "The Movie\n\nEpisode 25 (Fantasy) Episode 29"
+      ],
+      "found": [
+        "The Movie\n\nEpisode 25 (Fantasy) Episode 29"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Mimiko Hasaba's Japanese voice actor?",
+      "id": "jjk-pg-mimiko_hasaba-010",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Risae Matsuda"
+      ],
+      "found": [
+        "Risae Matsuda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Mimiko Hasaba's English voice actor?",
+      "id": "jjk-pg-mimiko_hasaba-011",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Sarah Anne Williams"
+      ],
+      "found": [
+        "Sarah Anne Williams"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mimiko Hasaba carry with her?",
+      "id": "jjk-pg-mimiko_hasaba-016",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "a doll that has multiple stitches and a noose around its neck"
+      ],
+      "found": [
+        "a doll that has multiple stitches and a noose around its neck"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Mimiko's appearance change during the Shibuya Incident Arc?",
+      "id": "jjk-pg-mimiko_hasaba-017",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "extended mid-length brown hair"
+      ],
+      "found": [
+        "extended mid-length brown hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mimiko Hasaba wear as a child?",
+      "id": "jjk-pg-mimiko_hasaba-018",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "a black sleeveless dress"
+      ],
+      "found": [
+        "a black sleeveless dress"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mimiko Hasaba wear after being saved by Geto?",
+      "id": "jjk-pg-mimiko_hasaba-019",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "a black hoodie and a white skirt"
+      ],
+      "found": [
+        "a black hoodie and a white skirt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mimiko demand of Kenjaku?",
+      "id": "jjk-pg-mimiko_hasaba-020",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "give Geto's body back"
+      ],
+      "found": [
+        "give Geto's body back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Mimiko as one of Geto's closest followers?",
+      "id": "jjk-pg-mimiko_hasaba-021",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "a sorcerer supremacist"
+      ],
+      "found": [
+        "a sorcerer supremacist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mimiko willing to do despite her loathing of non-sorcerers?",
+      "id": "jjk-pg-mimiko_hasaba-022",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "kill sorcerers"
+      ],
+      "found": [
+        "kill sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Mimiko's skill level described?",
+      "id": "jjk-pg-mimiko_hasaba-023",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "a sorcerer of unknown capabilities"
+      ],
+      "found": [
+        "a sorcerer of unknown capabilities"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the function of Mimiko's innate technique?",
+      "id": "jjk-pg-mimiko_hasaba-024",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "hang her targets to death using a noose and a doll"
+      ],
+      "found": [
+        "hang her targets to death using a noose and a doll"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Mimiko's technique transfer harm to the person she attacks?",
+      "id": "jjk-pg-mimiko_hasaba-025",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Whatever is done to the stuffed toy is reflected on the target of the technique"
+      ],
+      "found": [
+        "Whatever is done to the stuffed toy is reflected on the target of the technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mimiko's ability allow her to kill?",
+      "id": "jjk-pg-mimiko_hasaba-026",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "three Jujutsu High assistant managers with ease"
+      ],
+      "found": [
+        "three Jujutsu High assistant managers with ease"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What tools does Mimiko use with her cursed technique?",
+      "id": "jjk-pg-mimiko_hasaba-027",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "stuffed toy and rope that she ties in a noose"
+      ],
+      "found": [
+        "stuffed toy and rope that she ties in a noose"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is mandatory for Mimiko to hang her targets?",
+      "id": "jjk-pg-mimiko_hasaba-028",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "usage of rope is mandatory"
+      ],
+      "found": [
+        "usage of rope is mandatory"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event in the Cursed Child Arc does Mimiko Hasaba appear in?",
+      "id": "jjk-pg-mimiko_hasaba-029",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "found": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event in the Shibuya Incident Arc does Mimiko Hasaba appear in?",
+      "id": "jjk-pg-mimiko_hasaba-030",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Mimiko Hasaba rank in the first Popularity Poll?",
+      "id": "jjk-pg-mimiko_hasaba-031",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "51st"
+      ],
+      "found": [
+        "51st"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Mimiko Hasaba rank in the second Popularity Poll?",
+      "id": "jjk-pg-mimiko_hasaba-032",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "75th"
+      ],
+      "found": [
+        "75th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Mimiko Hasaba rank in the third Popularity Poll?",
+      "id": "jjk-pg-mimiko_hasaba-033",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "84th"
+      ],
+      "found": [
+        "84th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Mimiko Hasaba rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-mimiko_hasaba-034",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "39th"
+      ],
+      "found": [
+        "39th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the wiki say about the ages of the Hasaba twins?",
+      "id": "jjk-pg-mimiko_hasaba-035",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "not yet known which of the twins is the older or the younger"
+      ],
+      "found": [
+        "not yet known which of the twins is the older or the younger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the real-life relationship between Mimiko's and Nanako's voice actresses?",
+      "id": "jjk-pg-mimiko_hasaba-036",
+      "subject": "Mimiko Hasaba",
+      "accept": "all",
+      "expected": [
+        "real-life twins"
+      ],
+      "found": [
+        "real-life twins"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 32,
+    "fact_present": 32
+  }
+}

@@ -16,6 +16,7 @@ refuse rather than prose a reader has to notice -- the previous version sourced
 one whole question to a powerscaling wiki.
 """
 
+import io
 import json
 import re
 import sys
@@ -91,9 +92,19 @@ def norm(text: str) -> str:
     return " ".join(text.split())
 
 
-def ask(series: str, query: str) -> dict:
-    payload = json.dumps({"series": series, "query": query, "mode": "auto",
-                          "token_budget": 60000}).encode()
+def ask(series: str, query: str, subject: str | None = None, top_k: int = 8) -> dict:
+    # `top_k` is the verification beam. The page-run scorer widens it (a niche
+    # fact that ranks just past the writer's top-8 is still *in the corpus*);
+    # the writer keeps its own tight top_k, so this only widens what the scorer
+    # counts as "served", never what the writer is handed.
+    payload = {"series": series, "query": query, "mode": "auto",
+               "token_budget": 60000, "top_k": top_k}
+    # The page the question is authored against, when its words do not name it
+    # (the campaign's G3): the search focuses the wrong entity and the answer's
+    # page is never read. The API adds it to the qa vector focus only.
+    if subject:
+        payload["subject"] = subject
+    payload = json.dumps(payload).encode()
     request = urllib.request.Request(
         f"{BASE}/context", data=payload,
         headers={"Content-Type": "application/json"})
@@ -205,7 +216,7 @@ def score_sets(gold: list | None = None) -> dict:
     return {"rows": rows, "detail": detail}
 
 
-def score_facts(questions: list | None = None) -> list[dict]:
+def score_facts(questions: list | None = None, top_k: int = 8) -> list[dict]:
     """Whether the correct answer is present in what was served.
 
     Deliberately not "did the engine answer correctly": this engine serves
@@ -215,7 +226,7 @@ def score_facts(questions: list | None = None) -> list[dict]:
     """
     out = []
     for q in (questions if questions is not None else FACTS):
-        body = ask(q.series, q.question)
+        body = ask(q.series, q.question, getattr(q, "subject", None), top_k)
         folded = haystack(body)
 
         found, missing = [], []
@@ -285,7 +296,7 @@ def summarise(rows: list[dict], facts: list[dict] | None = None) -> dict:
 
 
 def main() -> None:
-    if hasattr(sys.stdout, "reconfigure"):
+    if isinstance(sys.stdout, io.TextIOWrapper):
         # Windows stdout defaults to cp1252 and half these wikis romanise with
         # macrons; an unrenderable title must not be able to kill a 40-minute
         # run at the print statement.

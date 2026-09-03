@@ -1,0 +1,24 @@
+# Staged roster declarations for the Aoi Todo page campaign
+# (questions/_jjk_page_aoi_todo.section4.json, section 4:
+# identity / grade / aliases / appearance / vitals / media).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Aoi Todo's affiliations` is the closed single-entry set of the infobox
+# `affiliation` field: `Kyoto Jujutsu High`, the display text of a wikilink to
+# Kyoto Metropolitan Curse Technical College. The alias declaration from the
+# other sections does not apply here: the page has no `alias` infobox field and
+# no nickname or epithet in the prose (see retired clause
+# jjk-pg-aoi_todo-retired-s4-02), so no aliases roster is staged.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required on the match side; the member is
+# plain and needs no quoting either.
+rosters:
+  - name: Aoi Todo's affiliations
+    match:
+      - what are aoi todo's affiliations
+      - all the affiliations of aoi todo
+      - affiliations of aoi todo
+      - aoi todo's affiliations
+    subject: Aoi Todo
+    members: [Kyoto Jujutsu High]

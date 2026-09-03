@@ -1,0 +1,529 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Ganesha?",
+      "set": "Every named technique of Ganesha",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Ganesha?",
+      "set": "Ganesha's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Ganesha",
+      "set": "Every battle involving Ganesha",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Ganesha?",
+      "found": [
+        "Obstacle Removal"
+      ],
+      "missing": [],
+      "members": [
+        "Obstacle Removal"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Ganesha?",
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku"
+      ]
+    },
+    {
+      "query": "Every battle involving Ganesha",
+      "found": [
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ganesha's name?",
+      "id": "jjk-pg-ganesha-001",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "\u6b53\u559c\u5929"
+      ],
+      "found": [
+        "\u6b53\u559c\u5929"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ganesha's name?",
+      "id": "jjk-pg-ganesha-002",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Kangiten"
+      ],
+      "found": [
+        "Kangiten"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ganesha's race?",
+      "id": "jjk-pg-ganesha-003",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Cursed Spirit"
+      ],
+      "found": [
+        "Cursed Spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Ganesha?",
+      "id": "jjk-pg-ganesha-004",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ganesha's grade?",
+      "id": "jjk-pg-ganesha-005",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Special Grade"
+      ],
+      "found": [
+        "Special Grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ganesha first appear?",
+      "id": "jjk-pg-ganesha-006",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Chapter 201"
+      ],
+      "found": [
+        "Chapter 201"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-ganesha-007",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-ganesha-008",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-ganesha-009",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-ganesha-010",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-ganesha-011",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of curse was Ganesha?",
+      "id": "jjk-pg-ganesha-015",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "a special grade \"Asian divine curse\""
+      ],
+      "found": [
+        "a special grade \"Asian divine curse\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who controlled Ganesha, and how?",
+      "id": "jjk-pg-ganesha-016",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "controlled by Kenjaku via Cursed Spirit Manipulation"
+      ],
+      "found": [
+        "controlled by Kenjaku via Cursed Spirit Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Ganesha exorcised?",
+      "id": "jjk-pg-ganesha-017",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "by Yuki Tsukumo in her fight with Kenjaku above the Tombs of the Star Corridor"
+      ],
+      "found": [
+        "by Yuki Tsukumo in her fight with Kenjaku above the Tombs of the Star Corridor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ganesha look like?",
+      "id": "jjk-pg-ganesha-018",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "a giant curse with an elephant's head, a humanlike body with four arms, and a light complexion"
+      ],
+      "found": [
+        "a giant curse with an elephant's head, a humanlike body with four arms, and a light complexion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ganesha appear when summoned by Kenjaku?",
+      "id": "jjk-pg-ganesha-019",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "from a seeming rift in space that it pulled open with its bare hands"
+      ],
+      "found": [
+        "from a seeming rift in space that it pulled open with its bare hands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ganesha clothed in?",
+      "id": "jjk-pg-ganesha-020",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "a golden vest-jacket with a black blot pattern, black bands of cloth around its arms, black pants, and black prayer bead wristlets on each arm"
+      ],
+      "found": [
+        "a golden vest-jacket with a black blot pattern, black bands of cloth around its arms, black pants, and black prayer bead wristlets on each arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kenjaku bring forth Ganesha?",
+      "id": "jjk-pg-ganesha-021",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "to prove to Garry K. Johnson that the power of curses surpasses the US' military might"
+      ],
+      "found": [
+        "to prove to Garry K. Johnson that the power of curses surpasses the US' military might"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ganesha teleport out of the White House?",
+      "id": "jjk-pg-ganesha-022",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "the armed US servicemen in the White House"
+      ],
+      "found": [
+        "the armed US servicemen in the White House"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ganesha's grade and origin?",
+      "id": "jjk-pg-ganesha-023",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "a special grade curse foreign to Japan"
+      ],
+      "found": [
+        "a special grade curse foreign to Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ganesha's cursed technique called?",
+      "id": "jjk-pg-ganesha-024",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Obstacle Removal"
+      ],
+      "found": [
+        "Obstacle Removal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ganesha's technique unable to contain?",
+      "id": "jjk-pg-ganesha-025",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "the \"overwhelming mass\" created by Yuki's Star Rage"
+      ],
+      "found": [
+        "the \"overwhelming mass\" created by Yuki's Star Rage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Japanese equivalent of the Hindu deity Ganesha?",
+      "id": "jjk-pg-ganesha-026",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "Kangiten"
+      ],
+      "found": [
+        "Kangiten"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kangiten?",
+      "id": "jjk-pg-ganesha-027",
+      "subject": "Ganesha",
+      "accept": "all",
+      "expected": [
+        "an elephant-headed god (deva) of obstacles, bliss, and success"
+      ],
+      "found": [
+        "an elephant-headed god (deva) of obstacles, bliss, and success"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 24,
+    "fact_present": 24
+  }
+}

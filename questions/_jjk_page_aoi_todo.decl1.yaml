@@ -1,0 +1,32 @@
+# Staged roster declarations for the Aoi Todo page campaign
+# (questions/_jjk_page_aoi_todo.json, section 1: battles).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Members are the five battle pages the wiki tags with the `Aoi Todo Battles`
+# category, read off the `Battles & Events` section of `Aoi Todo` and the
+# titles in questions/_jjk_battles.json (reused verbatim, not re-transcribed).
+# The section's Shinjuku Showdown group also lists `Fumihiko Takaba vs.
+# Kenjaku` -- Aoi helped Yuta Okkotsu kill Kenjaku after that fight, per the
+# Synopsis -- but no battle page title names Aoi Todo, the page carries no
+# `Aoi Todo Battles` category, and the battles-in discovery path (5 members)
+# does not return it, so the closed set is the five above (recorded in the
+# section's `retired[]`).
+#
+# Match phrases say `battles`, never `arc`: `_ASKS_FOR_ARCS` fires on any
+# enumeration cue with `arc` within forty characters and would hand the
+# question to chronology. The `of` variant mirrors the official bank's
+# `Every battle of Aoi Todo` (jjk-cov-12).
+rosters:
+  - name: Every battle involving Aoi Todo
+    match:
+      - every battle involving aoi todo
+      - all the battles involving aoi todo
+      - battles involving aoi todo
+      - every battle of aoi todo
+    subject: Aoi Todo
+    members:
+      - Megumi Fushiguro vs. Aoi Todo
+      - Yuji Itadori vs. Aoi Todo
+      - Yuji Itadori & Aoi Todo vs. Hanami
+      - Yuji Itadori & Aoi Todo vs. Mahito
+      - Jujutsu Sorcerers vs. Sukuna

@@ -1,0 +1,1969 @@
+{
+  "note": "Page-campaign batch: Gouketsu cluster (character page + the two battle pages of the wiki's own `Gouketsu Fights` category + cross-page facts from the Bakuzan and Suiryu pages). Every gold pre-verified against live /context probes on 2026-08-22; the `Gouketsu's battles` and `Gouketsu's aliases` rosters are declared in series/opm/overrides.yaml with the category as their member source (G3: romaji/kanji excluded from the alias member). Five questions were retired 2026-08-22 as engine gaps: the four `previous`/`next` infobox-locator questions (intercepted by the battles-in roster path) and the infobox `partners` field (not surfaced in any bundle).",
+  "questions": [
+    {
+      "answer": [
+        {
+          "item": "Gouketsu vs. Bakuzan"
+        },
+        {
+          "item": "Suiryu vs. Gouketsu"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-001",
+      "kind": "set",
+      "question": "What are all the battles of Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22",
+      "note": "Declared roster `Gouketsu's battles` in series/opm/overrides.yaml (2026-08-22): members = the wiki's own `Gouketsu Fights` category (2 battle pages); the battles-in discovery path returns the same closed two (both infoboxes name him in a combatant field; the three pages that link him in `previous`/`next` navigation name him there only), so the set is declared. Gold verified against the live roster 2026-08-22."
+    },
+    {
+      "answer": [
+        {
+          "item": "Original Super Fight Champion"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-002",
+      "kind": "set",
+      "question": "What are all the aliases of Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22",
+      "note": "Declared roster `Gouketsu's aliases` in series/opm/overrides.yaml (2026-08-22): the infobox `alias =` field on Gouketsu; romaji and kanji stay out of the member (G3)."
+    },
+    {
+      "answer": [
+        {
+          "item": "Loss"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-003",
+      "kind": "fact",
+      "question": "What is the result of the battle between Suiryu and Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Win"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-004",
+      "kind": "fact",
+      "question": "What is the result of the battle between Gouketsu and Suiryu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Win"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-005",
+      "kind": "fact",
+      "question": "What is the result of the battle between Gouketsu and Bakuzan in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Loss"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-006",
+      "kind": "fact",
+      "question": "What is the result of the battle between Bakuzan and Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Loss"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-007",
+      "kind": "fact",
+      "question": "What is the result of the battle between Saitama and Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Win"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-008",
+      "kind": "fact",
+      "question": "What is the result of Gouketsu's off-screen battle with Genos in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Win"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-009",
+      "kind": "fact",
+      "question": "What is the result of the battle between Gouketsu and Sneck and Max in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Loss"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-010",
+      "kind": "fact",
+      "question": "What is the result of Gouketsu's flashback battle with Orochi in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Loss"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-011",
+      "kind": "fact",
+      "question": "What is the result of Gouketsu's off-screen battle with Saitama in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Gouketsu calms Bakuzan down by demonstrating his far superior strength to him"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-012",
+      "kind": "fact",
+      "question": "What is the outcome of the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Suiryu is defeated by Gouketsu"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-013",
+      "kind": "fact",
+      "question": "What is the outcome of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Super Fight Arc"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-014",
+      "kind": "fact",
+      "question": "What arc is the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Monster Association Invasion"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-015",
+      "kind": "fact",
+      "question": "What event is the Gouketsu vs. Bakuzan battle part of in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "C-City Super Stadium"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-016",
+      "kind": "fact",
+      "question": "Where does the Gouketsu vs. Bakuzan battle take place in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Chapter 74"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-017",
+      "kind": "fact",
+      "question": "In which chapter of the One-Punch Man manga does the Gouketsu vs. Bakuzan battle take place?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Episode 20"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-018",
+      "kind": "fact",
+      "question": "In which episode of the One-Punch Man anime is the Gouketsu vs. Bakuzan battle featured?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Super Fight Arc"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-021",
+      "kind": "fact",
+      "question": "What arc is the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Monster Association Invasion"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-022",
+      "kind": "fact",
+      "question": "What event is the Suiryu vs. Gouketsu battle part of in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "C-City Super Stadium"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-023",
+      "kind": "fact",
+      "question": "Where does the Suiryu vs. Gouketsu battle take place in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Chapter 72"
+        },
+        {
+          "item": "Chapter 73"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-024",
+      "kind": "fact",
+      "question": "In which chapters of the One-Punch Man manga does the Suiryu vs. Gouketsu battle take place?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Episode 20"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-025",
+      "kind": "fact",
+      "question": "In which episode of the One-Punch Man anime is the Suiryu vs. Gouketsu battle featured?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "overconfident"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-028",
+      "kind": "fact",
+      "question": "What did Gouketsu advise Bakuzan not to become in the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "with just two fingers"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-029",
+      "kind": "fact",
+      "question": "How did Gouketsu block Bakuzan's elbow strike in the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a massive hole in the Super Fight Stadium"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-030",
+      "kind": "fact",
+      "question": "What did the resulting shockwave create in the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "cannot solo the whole Hero Association"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-031",
+      "kind": "fact",
+      "question": "What did Gouketsu warn Bakuzan about in the aftermath of the Gouketsu vs. Bakuzan battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "lasts much shorter"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-032",
+      "kind": "fact",
+      "question": "How is the Gouketsu vs. Bakuzan battle different in the One-Punch Man anime?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu_vs._Bakuzan"
+      ],
+      "subject": "Gouketsu vs. Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "join the ranks of the Monster Association as an executive member"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-033",
+      "kind": "fact",
+      "question": "What did Gouketsu suggest Suiryu could do by consuming a monster cell in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Void Sky Dragon Fist"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-034",
+      "kind": "fact",
+      "question": "What attack did Suiryu use on Gouketsu at the start of their battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "he will die"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-035",
+      "kind": "fact",
+      "question": "What did Gouketsu declare since Suiryu refuses to become a monster in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "leaps onto Gouketsu's shoulder and unleashes a flurry of punches"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-036",
+      "kind": "fact",
+      "question": "What did Suiryu do before Gouketsu's foot made contact in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "pinches the attack with three fingers"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-037",
+      "kind": "fact",
+      "question": "How did Gouketsu stop Suiryu's Void Quake Tiger Fist in the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "devour Suiryu as a snack"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-038",
+      "kind": "fact",
+      "question": "What did Gouketsu intend for The Three Crows to do to Suiryu at the end of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Sneck and Max"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-039",
+      "kind": "fact",
+      "question": "Who arrived to save Suiryu in the aftermath of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "consuming multiple monster cells"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-040",
+      "kind": "fact",
+      "question": "What did Bakuzan do before collapsing in the aftermath of the Suiryu vs. Gouketsu battle in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu_vs._Gouketsu"
+      ],
+      "subject": "Suiryu vs. Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Mysterious Being Human (Formerly)"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-041",
+      "kind": "fact",
+      "question": "What is Gouketsu's race in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Deceased"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-042",
+      "kind": "fact",
+      "question": "What is Gouketsu's status in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Male"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-043",
+      "kind": "fact",
+      "question": "What is Gouketsu's gender in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "C-City"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-044",
+      "kind": "fact",
+      "question": "What is Gouketsu's location in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Dragon"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-045",
+      "kind": "fact",
+      "question": "What is Gouketsu's level in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Monster Association"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-046",
+      "kind": "fact",
+      "question": "What is Gouketsu's affiliation in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Original Super Fight Champion"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-047",
+      "kind": "fact",
+      "question": "What is the alias of Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Superhuman Physical Prowess Martial Arts Master Shockwave Generation"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-048",
+      "kind": "fact",
+      "question": "What abilities are listed on Gouketsu's character infobox in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Chapter 66"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-050",
+      "kind": "fact",
+      "question": "In which chapter of the One-Punch Man manga does Gouketsu first appear?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Episode 18"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-051",
+      "kind": "fact",
+      "question": "In which episode of the One-Punch Man anime does Gouketsu first appear?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Kenji Nomura"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-052",
+      "kind": "fact",
+      "question": "Who provides the Japanese voice for Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Kellen Goff"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-053",
+      "kind": "fact",
+      "question": "Who provides the English voice for Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Saitama"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-054",
+      "kind": "fact",
+      "question": "Who killed Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "main antagonist"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-055",
+      "kind": "fact",
+      "question": "What was Gouketsu's role in the Super Fight Arc in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a ripped black keikogi with a black belt"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-056",
+      "kind": "fact",
+      "question": "What did Gouketsu wear as a human in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a scar"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-057",
+      "kind": "fact",
+      "question": "What was on the left side of Gouketsu's upper lip as a human in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "spiky hair reminiscing a sea urchin"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-058",
+      "kind": "fact",
+      "question": "What kind of hair did Gouketsu have as a human in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a set of four vertical bloodshot eyes with mulberry and bright yellow pupils"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-059",
+      "kind": "fact",
+      "question": "What replaced Gouketsu's original eyes during his monsterification in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "dark, cross-hatched markings"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-060",
+      "kind": "fact",
+      "question": "What did the scars and blood on Gouketsu fuse with his skin to form in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "two large lower sabertooth"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-061",
+      "kind": "fact",
+      "question": "What did Gouketsu obtain on his jaws after becoming a Mysterious Being in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "exceptionally calm, composed, and calculating"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-062",
+      "kind": "fact",
+      "question": "How was Gouketsu described as a Mysterious Being in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Social Darwinism"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-063",
+      "kind": "fact",
+      "question": "What philosophy did Gouketsu strongly follow in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "he just simply poked them"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-064",
+      "kind": "fact",
+      "question": "What did Gouketsu state after kicking Max and Sneck into the air in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "humiliate and torture him"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-065",
+      "kind": "fact",
+      "question": "What did Gouketsu viciously toy with Suiryu to do before feeding him to The Three Crows in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "make him realize that there will always be stronger monsters"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-066",
+      "kind": "fact",
+      "question": "Why did Gouketsu block all of Bakuzan's attacks in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "the first Super Fight tournament"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-067",
+      "kind": "fact",
+      "question": "What was Gouketsu the winner of as a martial artist in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "eleven years"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-068",
+      "kind": "fact",
+      "question": "How long before the events of the series was Gouketsu the winner of the first Super Fight tournament in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Monster King Orochi"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-069",
+      "kind": "fact",
+      "question": "Who challenged Gouketsu to a fight in which he was thoroughly defeated in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "if he ate a monster cell and joined the Monster Association"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-070",
+      "kind": "fact",
+      "question": "What condition did the Monster Association offer Gouketsu to stay alive in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "his disciples"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-071",
+      "kind": "fact",
+      "question": "What were The Three Crows to Gouketsu before his transformation in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "lost their egos due to their weak will"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-072",
+      "kind": "fact",
+      "question": "Why did The Three Crows lose their egos after transforming into monsters in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Genos"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-073",
+      "kind": "fact",
+      "question": "Who did Gouketsu swiftly take out on his way to the C-City Super Stadium in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Benpatsu"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-074",
+      "kind": "fact",
+      "question": "Who was fleeing from the Three Crows when Gouketsu caught him in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "eat a monster cell and become a Mysterious Being"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-075",
+      "kind": "fact",
+      "question": "What did Gouketsu order every martial artist to do in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "with a swift kick"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-076",
+      "kind": "fact",
+      "question": "How did Gouketsu defeat Max and Sneck in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Rosie, Choze, Benpatsu, Volten, and Hamukichi"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-077",
+      "kind": "fact",
+      "question": "Which contestants yielded and became monsters after Gouketsu's offer in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "an executive position in the Monster Association"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-078",
+      "kind": "fact",
+      "question": "What did Gouketsu offer Suiryu after he won the fight with Choze in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Max and Sneck"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-079",
+      "kind": "fact",
+      "question": "Who reentered the stadium to help Suiryu fight The Three Crows in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "flies up into the atmosphere before landing in the Super Fight stadium"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-080",
+      "kind": "fact",
+      "question": "What did Gouketsu's head do after Saitama's punch in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "creating powerful shockwaves from his punches that could cause great destruction"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-081",
+      "kind": "fact",
+      "question": "What can Gouketsu's Shockwave Generation do in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "shockwaves that blew a massive hole in the Super Fight Stadium"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-082",
+      "kind": "fact",
+      "question": "What did one of Gouketsu's punches generate in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "smash Genos into the pavement with a single blow"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-083",
+      "kind": "fact",
+      "question": "How did Gouketsu disable Genos in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "with just three fingers"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-084",
+      "kind": "fact",
+      "question": "How did Gouketsu stop one of Suiryu's strongest attacks in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "he was like a baby compared to Gouketsu"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-085",
+      "kind": "fact",
+      "question": "What did Suiryu remark about himself compared to Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "with only one arm"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-086",
+      "kind": "fact",
+      "question": "How did Gouketsu block the transformed Bakuzan's attacks in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "shockwaves that could be felt throughout the city"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-087",
+      "kind": "fact",
+      "question": "What did Gouketsu's blows produce when Saitama approached him in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "independently from one another"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-088",
+      "kind": "fact",
+      "question": "How do Gouketsu's four eyes move in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a Dragon-level threat"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-089",
+      "kind": "fact",
+      "question": "What did Gouketsu identify the transformed Bakuzan as in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a group of S-Class heroes would need to team up with Saitama"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-090",
+      "kind": "fact",
+      "question": "What did Genos claim about defeating Gouketsu safely in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Saitama could not defeat Gouketsu"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-091",
+      "kind": "fact",
+      "question": "What did Suiryu still believe after witnessing Saitama obliterate Bakuzan in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "because ONE specifically told Murata so"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-092",
+      "kind": "fact",
+      "question": "Why was Gouketsu's last fight skipped in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a man who is larger than life"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-093",
+      "kind": "fact",
+      "question": "What does the term Gouketsu refer to in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "the black marking on his forehead and chin"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-094",
+      "kind": "fact",
+      "question": "What was Gouketsu originally designed without in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Sokuto-Geri"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-095",
+      "kind": "fact",
+      "question": "What side kick is Gouketsu seen using in the bonus page from Volume 14 in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Strongest Man in the History of Super Fight"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-096",
+      "kind": "fact",
+      "question": "What is Bakuzan's alias in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Dark Hell Assassination Art"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-097",
+      "kind": "fact",
+      "question": "What fighting style does Bakuzan use in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Episode 17"
+        }
+      ],
+      "expect_mode": "narrative",
+      "id": "opm-pg-gouketsu-098",
+      "kind": "fact",
+      "question": "In which episode of the One-Punch Man anime does Bakuzan first appear?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Taro Yamaguchi"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-099",
+      "kind": "fact",
+      "question": "Who provides the Japanese voice for Bakuzan in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Bill Butts"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-100",
+      "kind": "fact",
+      "question": "Who provides the English voice for Bakuzan in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Bakuzan is killed"
+        }
+      ],
+      "expect_mode": "roster",
+      "id": "opm-pg-gouketsu-101",
+      "kind": "fact",
+      "question": "What is the result of Bakuzan's round two battle with Saitama in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Hell Dispatch Chop"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-102",
+      "kind": "fact",
+      "question": "What move did Bakuzan use as his final blow against Saitama in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "withstand eating multiple Monster Cells"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-103",
+      "kind": "fact",
+      "question": "What was Gouketsu surprised at regarding Bakuzan's body in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Bakuzan"
+      ],
+      "subject": "Bakuzan",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Neo Hero"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-104",
+      "kind": "fact",
+      "question": "What is Suiryu's occupation in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu"
+      ],
+      "subject": "Suiryu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Void Fist"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-105",
+      "kind": "fact",
+      "question": "What fighting style does Suiryu use in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu"
+      ],
+      "subject": "Suiryu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "Gouketsu's superiority in every regard"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-106",
+      "kind": "fact",
+      "question": "What did Suiryu acknowledge about Gouketsu after being overwhelmed in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu"
+      ],
+      "subject": "Suiryu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "lick Bakuzan's foot"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-107",
+      "kind": "fact",
+      "question": "What did Suiryu refuse to do even when it could have been his only chance at mercy in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu"
+      ],
+      "subject": "Suiryu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "if he can become his disciple"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-108",
+      "kind": "fact",
+      "question": "What did Suiryu ask Saitama after witnessing him defeat both Bakuzan and Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu"
+      ],
+      "subject": "Suiryu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "a drunkard vs Gouketsu was deemed too comical and they wanted to show despair"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-109",
+      "kind": "fact",
+      "question": "Why was the setting of Suiryu getting drunk in ONE's first storyboard scrapped in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Suiryu"
+      ],
+      "subject": "Suiryu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "rival"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-110",
+      "kind": "fact",
+      "question": "Who is Orochi to Gouketsu in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "mentor"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-111",
+      "kind": "fact",
+      "question": "Who is Gouketsu to The Three Crows in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Gouketsu"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    },
+    {
+      "answer": [
+        {
+          "item": "subordinate"
+        }
+      ],
+      "expect_mode": "qa",
+      "id": "opm-pg-gouketsu-112",
+      "kind": "fact",
+      "question": "Who is Gouketsu to Orochi in One-Punch Man?",
+      "scope": "closed",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Orochi"
+      ],
+      "subject": "Gouketsu",
+      "tier": "wiki",
+      "verified": "2026-08-22"
+    }
+  ],
+  "retired": [
+    {
+      "id": "opm-pg-gouketsu-019",
+      "question": "What is the battle preceding Gouketsu vs. Bakuzan in One-Punch Man?",
+      "reason": "Retired 2026-08-22: a retrieval gap, not a gold error. The `previous =` field on the Gouketsu vs. Bakuzan page is documented, but every phrasing that names the battle (or Gouketsu plus a fight) is intercepted by the battles-in roster path, which returns the declared `Gouketsu's battles` member set (the two Gouketsu Fights pages) instead of the infobox locator. Rephrasings without the battle name were probed and intercept the same way; the field cannot be reached until the intercept yields to infobox-locator questions."
+    },
+    {
+      "id": "opm-pg-gouketsu-020",
+      "question": "What is the battle following Gouketsu vs. Bakuzan in One-Punch Man?",
+      "reason": "Retired 2026-08-22: a retrieval gap, not a gold error. The `next =` field on the Gouketsu vs. Bakuzan page is documented, but the battles-in roster path intercepts every phrasing naming the battle and returns the declared `Gouketsu's battles` member set instead of the infobox locator; rephrasings were probed and intercept the same way."
+    },
+    {
+      "id": "opm-pg-gouketsu-026",
+      "question": "What is the battle preceding Suiryu vs. Gouketsu in One-Punch Man?",
+      "reason": "Retired 2026-08-22: a retrieval gap, not a gold error. The `previous =` field on the Suiryu vs. Gouketsu page is documented, but the battles-in roster path intercepts every phrasing naming the battle and returns the declared `Gouketsu's battles` member set instead of the infobox locator; rephrasings were probed and intercept the same way."
+    },
+    {
+      "id": "opm-pg-gouketsu-027",
+      "question": "What is the battle following Suiryu vs. Gouketsu in One-Punch Man?",
+      "reason": "Retired 2026-08-22: a retrieval gap, not a gold error. The `next =` field on the Suiryu vs. Gouketsu page is documented, but the battles-in roster path intercepts every phrasing naming the battle and returns the declared `Gouketsu's battles` member set instead of the infobox locator; rephrasings were probed and intercept the same way."
+    },
+    {
+      "id": "opm-pg-gouketsu-049",
+      "question": "Who are the partners listed on Gouketsu's character infobox in One-Punch Man?",
+      "reason": "Retired 2026-08-22: a retrieval gap, not a gold error. The infobox `partners =` field (The Three Crows (Disciples)) is not surfaced in any bundle: the question routes to the Characters roster, which returns only the page subject, and the field is not carried as a fact or relation. The partnership itself is answerable through the extracted mentor relation (kept in the batch); the infobox field itself is not."
+    }
+  ],
+  "series": "opm",
+  "updated": "2026-08-22",
+  "wiki": "https://onepunchman.fandom.com"
+}

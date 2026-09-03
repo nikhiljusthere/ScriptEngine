@@ -1,0 +1,671 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Rainbow Dragon?",
+      "set": "Rainbow Dragon's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Rainbow Dragon",
+      "set": "Every battle involving Rainbow Dragon",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Rainbow Dragon?",
+      "found": [
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "Every battle involving Rainbow Dragon",
+      "found": [
+        "Maki Zenin vs. Ogi Zenin",
+        "Maki Zenin vs. The Kukuru Unit",
+        "Suguru Geto vs. Toji Fushiguro"
+      ],
+      "missing": [],
+      "members": [
+        "Maki Zenin vs. Ogi Zenin",
+        "Maki Zenin vs. The Kukuru Unit",
+        "Suguru Geto vs. Toji Fushiguro"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Rainbow Dragon's name?",
+      "id": "jjk-pg-rainbow_dragon-001",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "\u8679\u7adc"
+      ],
+      "found": [
+        "\u8679\u7adc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Rainbow Dragon's name?",
+      "id": "jjk-pg-rainbow_dragon-002",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "K\u014dry\u016b"
+      ],
+      "found": [
+        "K\u014dry\u016b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rainbow Dragon's race?",
+      "id": "jjk-pg-rainbow_dragon-003",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Cursed Spirit"
+      ],
+      "found": [
+        "Cursed Spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Rainbow Dragon?",
+      "id": "jjk-pg-rainbow_dragon-004",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Rainbow Dragon first appear?",
+      "id": "jjk-pg-rainbow_dragon-005",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Chapter 72"
+      ],
+      "found": [
+        "Chapter 72"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Rainbow Dragon first depicted?",
+      "id": "jjk-pg-rainbow_dragon-006",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Episode 27"
+      ],
+      "found": [
+        "Episode 27"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Ogi Zenin?",
+      "id": "jjk-pg-rainbow_dragon-007",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Maki is victorious."
+      ],
+      "found": [
+        "Maki is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Ogi Zenin take place?",
+      "id": "jjk-pg-rainbow_dragon-008",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "The Zenin Clan Household"
+      ],
+      "found": [
+        "The Zenin Clan Household"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. Ogi Zenin take place?",
+      "id": "jjk-pg-rainbow_dragon-009",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin vs. Ogi Zenin begin?",
+      "id": "jjk-pg-rainbow_dragon-010",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Chapter 148"
+      ],
+      "found": [
+        "Chapter 148"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Ogi Zenin depicted?",
+      "id": "jjk-pg-rainbow_dragon-011",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Ogi Zenin take place?",
+      "id": "jjk-pg-rainbow_dragon-012",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. The Kukuru Unit?",
+      "id": "jjk-pg-rainbow_dragon-013",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious"
+      ],
+      "found": [
+        "Maki Zenin is victorious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. The Kukuru Unit take place?",
+      "id": "jjk-pg-rainbow_dragon-014",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Zenin Household Ton Room"
+      ],
+      "found": [
+        "Zenin Household Ton Room"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. The Kukuru Unit take place?",
+      "id": "jjk-pg-rainbow_dragon-015",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. The Kukuru Unit?",
+      "id": "jjk-pg-rainbow_dragon-016",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Chapter 150"
+      ],
+      "found": [
+        "Chapter 150"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. The Kukuru Unit depicted?",
+      "id": "jjk-pg-rainbow_dragon-017",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. The Kukuru Unit take place?",
+      "id": "jjk-pg-rainbow_dragon-018",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Suguru Geto vs. Toji Fushiguro?",
+      "id": "jjk-pg-rainbow_dragon-019",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro is victorious."
+      ],
+      "found": [
+        "Toji Fushiguro is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Suguru Geto vs. Toji Fushiguro take place?",
+      "id": "jjk-pg-rainbow_dragon-020",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star Corridor"
+      ],
+      "found": [
+        "Tombs of the Star Corridor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Suguru Geto vs. Toji Fushiguro take place?",
+      "id": "jjk-pg-rainbow_dragon-021",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "August 2006"
+      ],
+      "found": [
+        "August 2006"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Suguru Geto vs. Toji Fushiguro?",
+      "id": "jjk-pg-rainbow_dragon-022",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Chapter 73"
+      ],
+      "found": [
+        "Chapter 73"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Suguru Geto vs. Toji Fushiguro depicted?",
+      "id": "jjk-pg-rainbow_dragon-023",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Episode 28"
+      ],
+      "found": [
+        "Episode 28"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Suguru Geto vs. Toji Fushiguro take place?",
+      "id": "jjk-pg-rainbow_dragon-024",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Gojo's Past"
+      ],
+      "found": [
+        "Gojo's Past"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role did Rainbow Dragon play in the series?",
+      "id": "jjk-pg-rainbow_dragon-027",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "a cursed spirit"
+      ],
+      "found": [
+        "a cursed spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who controlled Rainbow Dragon?",
+      "id": "jjk-pg-rainbow_dragon-028",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto's Cursed Spirit Manipulation technique"
+      ],
+      "found": [
+        "Suguru Geto's Cursed Spirit Manipulation technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rainbow Dragon resemble?",
+      "id": "jjk-pg-rainbow_dragon-029",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "a large white Japanese dragon with bulging yellow eyes"
+      ],
+      "found": [
+        "a large white Japanese dragon with bulging yellow eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Geto summon Rainbow Dragon on the plane?",
+      "id": "jjk-pg-rainbow_dragon-030",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "to protect them while they travelled on the plane"
+      ],
+      "found": [
+        "to protect them while they travelled on the plane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Rainbow Dragon exorcised?",
+      "id": "jjk-pg-rainbow_dragon-031",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "sliced apart and subsequently exorcised by Toji"
+      ],
+      "found": [
+        "sliced apart and subsequently exorcised by Toji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Toji Fushiguro use to bypass Rainbow Dragon's durability?",
+      "id": "jjk-pg-rainbow_dragon-032",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "the Split Soul Katana"
+      ],
+      "found": [
+        "the Split Soul Katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Rainbow Dragon's rank?",
+      "id": "jjk-pg-rainbow_dragon-033",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "a cursed spirit of an unknown rank"
+      ],
+      "found": [
+        "a cursed spirit of an unknown rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Rainbow Dragon's most notable aspect?",
+      "id": "jjk-pg-rainbow_dragon-034",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "its durability, having the hardest skin out of all of Geto's cursed spirits"
+      ],
+      "found": [
+        "its durability, having the hardest skin out of all of Geto's cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rainbow Dragon's namesake based on?",
+      "id": "jjk-pg-rainbow_dragon-035",
+      "subject": "Rainbow Dragon",
+      "accept": "all",
+      "expected": [
+        "the Hong, a two-headed dragon"
+      ],
+      "found": [
+        "the Hong, a two-headed dragon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 33,
+    "fact_present": 33
+  }
+}

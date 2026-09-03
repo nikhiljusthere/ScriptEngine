@@ -1,0 +1,56 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": []
+    },
+    {
+      "path": "Prologue",
+      "covered_by": []
+    },
+    {
+      "path": "Battle",
+      "covered_by": [
+        "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:outcome",
+        "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:place",
+        "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:date",
+        "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:chapters",
+        "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:episodes",
+        "page-gen:battle:Yuta Okkotsu vs. Suguru Geto:arc"
+      ]
+    },
+    {
+      "path": "Aftermath",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "infobox",
+    "Prologue",
+    "Aftermath"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

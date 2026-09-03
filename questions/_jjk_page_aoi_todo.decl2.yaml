@@ -1,0 +1,47 @@
+# Staged roster declarations for the Aoi Todo page campaign
+# (questions/_jjk_page_aoi_todo.section2.json, section 2: cursed technique
+# & tools).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Roster 1 is the closed set of named techniques/applications in the
+# `Cursed Technique` section of `Aoi Todo`:
+#   * Innate Technique sub-heading: Boogie Woogie and its sub-application
+#     Boogie Woogie: Revised (the vibraslap-triggered condition).
+#   * Anti-Domain Techniques sub-heading: New Shadow Style: Simple Domain
+#     (learned from Yuki Tsukumo).
+# The `Cursed Restrictions` subsection's `Revealing One's Hand` is a binding
+# vow, not a technique, so it is not a member.
+#
+# Roster 2 is the closed, page-stated set of named cursed tools: the
+# `Equipment > Cursed Tools` subsection names exactly one (Playful Cloud).
+# The vibraslap is listed under `Non-Cursed Tools`, so it is not a member.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every technique or ability of Aoi Todo" -- the Abilities and Powers
+#     section enumerates prose lead-ins, not a closed page-titled set.
+#   * "Every tool or object Aoi Todo carries" -- the page splits Cursed
+#     Tools from Non-Cursed Tools; only the cursed-tool set is declared.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `&`, so no YAML quoting is required on them. Member values containing
+# `: ` are quoted.
+rosters:
+  - name: Every named cursed technique of Aoi Todo
+    match:
+      - every named cursed technique of aoi todo
+      - all the named cursed techniques of aoi todo
+      - the named cursed techniques aoi todo uses
+    subject: Aoi Todo
+    members:
+      - Boogie Woogie
+      - 'Boogie Woogie: Revised'
+      - 'New Shadow Style: Simple Domain'
+  - name: Every cursed tool Aoi Todo carries
+    match:
+      - every cursed tool aoi todo carries
+      - all the cursed tools aoi todo carries
+      - the cursed tools aoi todo carries
+    subject: Aoi Todo
+    members:
+      - Playful Cloud

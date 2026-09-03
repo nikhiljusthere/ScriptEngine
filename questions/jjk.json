@@ -1,7 +1,7 @@
 {
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-15",
+  "updated": "2026-08-19",
   "questions": [
     {
       "id": "jjk-set-01",
@@ -82,7 +82,7 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
       ],
-      "note": "One of the original seventeen. Sukuna is the measured cost of running full membership validation on prose-extracted rows: doing so deletes Dismantle, Cleave and Shrine for `no field on this page names X as a user`, which is the exact condition prose extraction exists to work around. Bank audit 2026-08-14: added 2 item(s) the wiki documents and the bank omitted: Domain Amplification, Spiderweb; added 1 wiki-spelling alias(es): Divine Flame -> Furnace. Each verified against the cited page's raw wikitext.",
+      "note": "One of the original seventeen. Sukuna is the measured cost of running full membership validation on prose-extracted rows: doing so deletes Dismantle, Cleave and Shrine for `no field on this page names X as a user`, which is the exact condition prose extraction exists to work around. Bank audit 2026-08-14: added Domain Amplification, Spiderweb; alias Divine Flame -> Furnace. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique only. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Sukuna's typed survivors are `Shrine` (Innate) and `Ten Shadows Technique` (Inherited). The three untyped items read off the Sukuna page: `Dismantle` and `Cleave` are applications of Shrine (the wiki gives them no page and no type), and `Furnace`/`Divine Flame` is an application, not a separate technique. Malevolent Shrine is his domain; Hollow Wicker Basket, Domain Amplification and Reverse Cursed Technique are jujutsu abilities.",
       "answer": [
         {
           "item": "Shrine",
@@ -91,49 +91,10 @@
           ]
         },
         {
-          "item": "Dismantle",
-          "aliases": [
-            "cleave dismantle"
-          ]
-        },
-        {
-          "item": "Cleave",
-          "aliases": []
-        },
-        {
-          "item": "Furnace",
-          "aliases": [
-            "fuga",
-            "divine flame"
-          ]
-        },
-        {
-          "item": "Malevolent Shrine",
-          "aliases": [
-            "domain expansion malevolent shrine"
-          ]
-        },
-        {
-          "item": "Hollow Wicker Basket",
-          "aliases": []
-        },
-        {
-          "item": "Reverse Cursed Technique",
-          "aliases": []
-        },
-        {
           "item": "Ten Shadows Technique",
           "aliases": [
             "ten shadows"
           ]
-        },
-        {
-          "item": "Domain Amplification",
-          "aliases": []
-        },
-        {
-          "item": "Spiderweb",
-          "aliases": []
         }
       ],
       "baseline": true
@@ -151,67 +112,10 @@
         "https://jujutsu-kaisen.fandom.com/wiki/Limitless",
         "https://www.cbr.com/jjk-gojo-every-cursed-technique/"
       ],
-      "note": "Added 2026-08-04. Scored 7/7. Bank audit 2026-08-14: added 3 item(s) the wiki documents and the bank omitted: Curtain, Falling Blossom Emotion, New Shadow Style: Simple Domain. Each verified against the cited page's raw wikitext. Corrected 2026-08-17: added `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue`, which this question omitted while its twin `jjk-set-10` -- the same question in different words -- has always golded it. The Gojo page settles it: the technique is written there as a bolded `{{Nihongo}}` name, the same form it uses for `Limitless`, `Infinity`, `Curtain` and `Unlimited Void`, so the wiki names it exactly as it names the ten already here. The short form is aliased because extraction reads the prose and shortens it. `Hollow Purple` is left as banked; the page writes `Hollow Technique: Purple` and the alias already reaches it.",
+      "note": "Added 2026-08-04. Scored 7/7. Bank audit 2026-08-14: added Curtain, Falling Blossom Emotion, New Shadow Style: Simple Domain. Corrected 2026-08-17: added `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue`. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique, and everything else -- extensions, domains, anti-domains, barriers, Reverse Cursed Technique -- is a jujutsu ability that is not one. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Gojo's only `Innate`/`Inherited` technique is `Limitless`; `Infinity` is part of it, Blue/Red/Purple are applications (Extension Technique), `Unlimited Void` is his domain, and Reverse Cursed Technique / Curtain / Falling Blossom Emotion / New Shadow Style: Simple Domain are jujutsu abilities. The four untyped items the old gold carried (`Infinity`, `Curtain`, Maximum Output: Blue, NSS: Simple Domain) were read off the Gojo page's own `Cursed Technique` section and confirmed to be applications or traits of Limitless rather than separate techniques.",
       "answer": [
         {
           "item": "Limitless",
-          "aliases": []
-        },
-        {
-          "item": "Cursed Technique Lapse - Maximum Cursed Energy Output: Blue",
-          "aliases": [
-            "maximum cursed energy output",
-            "maximum output blue"
-          ]
-        },
-        {
-          "item": "Infinity",
-          "aliases": [
-            "muryokusho"
-          ]
-        },
-        {
-          "item": "Cursed Technique Lapse: Blue",
-          "aliases": [
-            "blue",
-            "lapse blue"
-          ]
-        },
-        {
-          "item": "Cursed Technique Reversal: Red",
-          "aliases": [
-            "red",
-            "reversal red"
-          ]
-        },
-        {
-          "item": "Hollow Purple",
-          "aliases": [
-            "hollow technique purple",
-            "purple"
-          ]
-        },
-        {
-          "item": "Unlimited Void",
-          "aliases": [
-            "infinite void",
-            "domain expansion unlimited void"
-          ]
-        },
-        {
-          "item": "Reverse Cursed Technique",
-          "aliases": []
-        },
-        {
-          "item": "Curtain",
-          "aliases": []
-        },
-        {
-          "item": "Falling Blossom Emotion",
-          "aliases": []
-        },
-        {
-          "item": "New Shadow Style: Simple Domain",
           "aliases": []
         }
       ],
@@ -297,7 +201,7 @@
         "https://jujutsu-kaisen.fandom.com/wiki/Copy",
         "https://www.cbr.com/yuta-okkotsu-cursed-techniques/"
       ],
-      "note": "Added 2026-08-04. Corrected 2026-08-17: `Pure Love` removed. It was never a technique of Yuta's; the engine was right to return four. The string `Pure Love` does not occur once in the `Yuta Okkotsu` page's raw wikitext, and his `=== [[Cursed Technique]]s ===` section names Rika, Complete Manifestation, Copy, Cursed Speech, Shikigami, Sky Manipulation, Thin Ice Breaker, Technique Extinguishment, Maximum Output: Jacob's Ladder, G Warstaff, Shrine, Brain Transplant, Limitless, Infinity, Cursed Technique Lapse: Blue, Hollow Technique: Purple, Reverse Cursed Technique, Authentic Mutual Love and Unlimited Void -- no Pure Love among them. Where the phrase does appear it belongs to someone else or to nobody: the `Rika Orimoto` page gives the Jujutsu Kaisen 0 finisher the heading `Cursed Energy Blast`, tags it `(Unnamed)`, describes it as `an energy beam of \"Pure Love\", the strongest curse of all` fired by Rika, and attributes the beam to her; the `Yuta Okkotsu vs. Suguru Geto` and `Yuta Okkotsu/Synopsis` pages use it only as Yuta's line of dialogue answering Geto's `womanizer` taunt. The only place `Pure Love` is a proper-noun technique on this wiki is `Private Pure Love Train`, Kinji Hakari's `type = Innate Technique`, plus the pachinko manga it is named after. There is no node and no alias for `Pure Love` in the store because there is no page for it to be a name of. Same family as the jjk-set-09 / jjk-set-12 corrections: a phrase the prose uses descriptively was banked as if it were a named technique.",
+      "note": "Added 2026-08-04. Corrected 2026-08-17: `Pure Love` removed -- it was never a technique of Yuta's, and the engine was right to return four. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1), which specifies this question outright as the model for the redefinition: a cursed technique is an Innate or Inherited Technique, and Copy is Yuta's innate technique, so every technique he copied through it is one of his. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Nine items: `Copy` (Innate), `Cursed Speech`, `Sky Manipulation`, `Technique Extinguishment`, `G Warstaff` and `Shrine` (all Innate, copied through Copy -- the wiki marks Yuta `(Copied)` in their user fields, which under the specification says nothing about whose technique they are), `Limitless` (Inherited), plus `Brain Transplant` and `Dhruv Lakdawalla's Shikigami Technique`, both read off the Yuta page. The old gold's `Rika` is a cursed spirit, not a technique; `Authentic Mutual Love` is his domain; Reverse Cursed Technique is a jujutsu ability.",
       "answer": [
         {
           "item": "Copy",
@@ -306,22 +210,38 @@
           ]
         },
         {
-          "item": "Rika",
-          "aliases": [
-            "rika orimoto",
-            "cursed spirit manifestation"
-          ]
-        },
-        {
-          "item": "Reverse Cursed Technique",
+          "item": "Cursed Speech",
           "aliases": []
         },
         {
-          "item": "Authentic Mutual Love",
+          "item": "Dhruv Lakdawalla's Shikigami Technique",
+          "aliases": []
+        },
+        {
+          "item": "Sky Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Technique Extinguishment",
+          "aliases": []
+        },
+        {
+          "item": "G Warstaff",
+          "aliases": []
+        },
+        {
+          "item": "Shrine",
           "aliases": [
-            "true and mutual love",
-            "domain expansion authentic mutual love"
+            "cursed technique shrine"
           ]
+        },
+        {
+          "item": "Brain Transplant",
+          "aliases": []
+        },
+        {
+          "item": "Limitless",
+          "aliases": []
         }
       ],
       "baseline": true
@@ -1166,38 +1086,14 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Yuji's named cursed techniques. Corrected 2026-08-17: `Divergent Fist` and `Black Flash` removed, on the wiki's own evidence. Both pages carry `type = Taijutsu`, against `Inherited Technique` on `Blood Manipulation`, `Innate Technique` on `Shrine` and `Extension Technique` on `Convergence` and `Piercing Blood`. A cursed technique is engraved or inherited and run on cursed energy. Divergent Fist is a way of applying cursed energy to a punch, producing a delayed second impact, and Black Flash is a phenomenon anyone with precise enough timing produces rather than something Yuji possesses. Both remain gold on `jjk-char-01`, `Every ability of Yuji Itadori`, where the wider claim is the right one. Same correction as `jjk-set-12`.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Yuji's named cursed techniques. Corrected 2026-08-17: `Divergent Fist` and `Black Flash` removed, on the wiki's own evidence -- both carry `type = Taijutsu`, against `Inherited Technique` on `Blood Manipulation` and `Innate Technique` on `Shrine`. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique only. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Yuji's typed survivors are `Blood Manipulation` (Inherited) and `Shrine` (Innate). The untyped item read off the Yuji page: `Dismantle` is an application of Shrine (the wiki gives it no page and no type). Convergence and Piercing Blood are extensions; Simple Domain / Domain Expansion are domains; Reverse Cursed Technique is a jujutsu ability.",
       "answer": [
         {
           "item": "Blood Manipulation",
           "aliases": []
         },
         {
-          "item": "Piercing Blood",
-          "aliases": []
-        },
-        {
-          "item": "Convergence",
-          "aliases": []
-        },
-        {
           "item": "Shrine",
-          "aliases": []
-        },
-        {
-          "item": "Dismantle",
-          "aliases": []
-        },
-        {
-          "item": "Reverse Cursed Technique",
-          "aliases": []
-        },
-        {
-          "item": "Simple Domain",
-          "aliases": []
-        },
-        {
-          "item": "Domain Expansion",
           "aliases": []
         }
       ]
@@ -1264,66 +1160,10 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Corrected 2026-08-17 against the wiki's own page, in the same family as the jjk-set-09 / jjk-set-12 corrections. The page's `Cursed Technique` section titles each technique with its qualified name, so the gold now uses the wiki's page titles: `Cursed Technique Lapse: Blue`, `Cursed Technique Reversal: Red`, `Hollow Technique: Purple`, `New Shadow Style: Simple Domain`, and `Cursed Technique Lapse - Maximum Cursed Energy Output: Blue` (the wiki's own section heading). `Six Eyes` removed: the page files it under a separate `Special Abilities` heading and its infobox types it `Jujutsu Trait`, not a cursed technique. `Curtain` added, which the page lists under `Barrier Techniques`. Each verified against the cited page's raw wikitext.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Corrected 2026-08-17 against the wiki's own page: qualified names, `Six Eyes` removed (a Jujutsu Trait), `Curtain` added. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique only. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Gojo's only typed survivor is `Limitless` (Inherited). The four untyped items read off the Gojo page: `Infinity` is part of Limitless, Maximum Output: Blue is an application of it, and New Shadow Style: Simple Domain is a domain form; Curtain is a barrier and Reverse Cursed Technique / Falling Blossom Emotion / Unlimited Void are jujutsu abilities. This question now agrees item-for-item with jjk-set-03.",
       "answer": [
         {
           "item": "Limitless",
-          "aliases": []
-        },
-        {
-          "item": "Infinity",
-          "aliases": [
-            "muryokusho"
-          ]
-        },
-        {
-          "item": "Cursed Technique Lapse: Blue",
-          "aliases": [
-            "blue",
-            "lapse blue"
-          ]
-        },
-        {
-          "item": "Cursed Technique Lapse - Maximum Cursed Energy Output: Blue",
-          "aliases": [
-            "maximum cursed energy output",
-            "maximum output blue"
-          ]
-        },
-        {
-          "item": "Cursed Technique Reversal: Red",
-          "aliases": [
-            "red",
-            "reversal red"
-          ]
-        },
-        {
-          "item": "Hollow Technique: Purple",
-          "aliases": [
-            "hollow purple",
-            "purple"
-          ]
-        },
-        {
-          "item": "Reverse Cursed Technique",
-          "aliases": []
-        },
-        {
-          "item": "Curtain",
-          "aliases": []
-        },
-        {
-          "item": "New Shadow Style: Simple Domain",
-          "aliases": [
-            "simple domain"
-          ]
-        },
-        {
-          "item": "Falling Blossom Emotion",
-          "aliases": []
-        },
-        {
-          "item": "Unlimited Void",
           "aliases": []
         }
       ]
@@ -1474,18 +1314,10 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Nobara's named cursed techniques. Corrected 2026-08-17: `Black Flash` removed, on the wiki's own evidence rather than on a reading of it. Its page carries `type = Taijutsu`, the value this wiki also gives `Divergent Fist`, against `Innate Technique` on `Shrine` and `Extension Technique` on `Convergence`. A cursed technique is engraved or inherited and run on cursed energy; Black Flash is a phenomenon that occurs when cursed energy lands within a millionth of a second of a physical strike, it belongs to nobody in particular, and eight characters on this wiki produce it. It is still genuinely one of Nobara's abilities and remains gold on `jjk-char-04`, `Every ability of Nobara Kugisaki`, which is the question that claim belongs to.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Nobara's named cursed techniques. Corrected 2026-08-17: `Black Flash` removed -- its page carries `type = Taijutsu`, not a technique type. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique only. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Nobara has exactly one: `Straw Doll Technique` (Innate). `Resonance` and `Hairpin` are extensions of it (Extension Technique) -- applications, not separate techniques -- and remain gold on `jjk-char-04`, `Every ability of Nobara Kugisaki`, where the wider claim is the right one.",
       "answer": [
         {
           "item": "Straw Doll Technique",
-          "aliases": []
-        },
-        {
-          "item": "Resonance",
-          "aliases": []
-        },
-        {
-          "item": "Hairpin",
           "aliases": []
         }
       ]
@@ -1548,46 +1380,14 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Sukuna's 10 named techniques",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `charset`. Redefined 2026-08-19 under the owner's taxonomy specification (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique only, so this question now agrees item-for-item with jjk-set-02. The bank is being redefined, not corrected; the exact-answer count is not comparable across this change. Sukuna's typed survivors are `Shrine` (Innate) and `Ten Shadows Technique` (Inherited). Dismantle/Cleave/Divine Flame are applications of Shrine; Spiderweb is an extension; Malevolent Shrine is his domain; Domain Amplification, Hollow Wicker Basket and Reverse Cursed Technique are jujutsu abilities.",
       "answer": [
         {
           "item": "Shrine",
           "aliases": []
         },
         {
-          "item": "Dismantle",
-          "aliases": []
-        },
-        {
-          "item": "Cleave",
-          "aliases": []
-        },
-        {
-          "item": "Spiderweb",
-          "aliases": []
-        },
-        {
-          "item": "Divine Flame",
-          "aliases": []
-        },
-        {
-          "item": "Malevolent Shrine",
-          "aliases": []
-        },
-        {
           "item": "Ten Shadows Technique",
-          "aliases": []
-        },
-        {
-          "item": "Reverse Cursed Technique",
-          "aliases": []
-        },
-        {
-          "item": "Domain Amplification",
-          "aliases": []
-        },
-        {
-          "item": "Hollow Wicker Basket",
           "aliases": []
         }
       ]
@@ -1595,23 +1395,23 @@
     {
       "id": "jjk-set-14",
       "kind": "fact",
-      "question": "How many grades of jujutsu sorcerers exist?",
+      "question": "How many rank classifications are in the jujutsu sorcerer grading system?",
       "subject": "Jujutsu sorcerer grades",
       "scope": "closed",
       "expect_mode": "qa",
       "tier": "wiki",
-      "verified": "2026-08-15",
+      "verified": "2026-08-19",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Grade"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. 6 grades including Special Grade Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. Redefined 2026-08-19 (HANDOVER Phase 3): reworded to ask for rank classifications, golded at the **8** the `Grade` page bolds -- Grade 4, Grade 3, Semi-Grade 2, Grade 2, Semi-Grade 1, Grade 1, Special Grade 1 and Special Grade. The old gold of \"6 grades\" matched nothing on the page.",
       "answer": [
         {
-          "item": "6 grades",
+          "item": "8 rank classifications",
           "aliases": [
-            "six",
-            "grades",
-            "six grades"
+            "eight",
+            "rank classifications",
+            "eight rank classifications"
           ]
         }
       ],
@@ -1619,24 +1419,34 @@
     },
     {
       "id": "jjk-set-15",
-      "kind": "fact",
-      "question": "How many Big Three Sorcerer Families exist?",
+      "kind": "set",
+      "question": "What are the Big Three Sorcerer Families?",
       "subject": "Big Three Families",
       "scope": "closed",
-      "expect_mode": "qa",
+      "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-15",
+      "verified": "2026-08-19",
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Three major sorcerer families Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Converted to a fact question 2026-08-15, then converted back to a set 2026-08-19 (HANDOVER Phase 3): the `Sorcerer Clan` page has a `==Big Three Families==` section naming exactly three -- Zenin, Gojo and Kamo -- so the answer names members and should be scored as a roster. The count form measured nothing.",
       "answer": [
         {
-          "item": "3 families",
+          "item": "Zenin Clan",
           "aliases": [
-            "three",
-            "families",
-            "three families"
+            "zenin family"
+          ]
+        },
+        {
+          "item": "Gojo Clan",
+          "aliases": [
+            "gojo family"
+          ]
+        },
+        {
+          "item": "Kamo Clan",
+          "aliases": [
+            "kamo family"
           ]
         }
       ],
@@ -1679,13 +1489,13 @@
       "sources": [
         "https://jujutsu-kaisen.fandom.com/wiki/Ryomen_Sukuna%27s_Fingers"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Sukuna has 20 fingers Converted to a fact question 2026-08-15: the answer is a count, which names no member and could never match a roster, so scoring it as a set measured nothing and charged the miss to precision. The engine's roster for this question was correct; the gold could not say so.",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Stays a fact (HANDOVER Phase 3): the answer is a count, which names no member and could never match a roster. The `Ryomen Sukuna's Fingers` page writes verbatim `There are 20 of Sukuna's severed, mummified fingers`, so the gold is **20**. It still fails for the Phase 4 reason -- the count string does not surface in the ranked relations/context bundle -- which is a retrieval gap to fix separately, not a bank defect.",
       "answer": [
         {
-          "item": "20 fingers",
+          "item": "20",
           "aliases": [
             "twenty",
-            "fingers",
+            "20 fingers",
             "twenty fingers"
           ]
         }
@@ -1803,9 +1613,585 @@
           "aliases": []
         }
       ]
+    },
+    {
+      "id": "jjk-fact-15",
+      "kind": "fact",
+      "question": "What is Kento Nanami's jujutsu sorcerer grade?",
+      "subject": "Kento Nanami",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `attribute`. The Nanami page's infobox reads `|class = [[Grade|Grade 1]]`.",
+      "answer": [
+        {
+          "item": "Grade 1",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-16",
+      "kind": "fact",
+      "question": "What is Aoi Todo's jujutsu sorcerer grade?",
+      "subject": "Aoi Todo",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `attribute`. The Todo page's infobox reads `|class = [[Grade|Grade 1]]`.",
+      "answer": [
+        {
+          "item": "Grade 1",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-17",
+      "kind": "fact",
+      "question": "What is Maki Zenin's jujutsu sorcerer grade?",
+      "subject": "Maki Zenin",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `attribute`. The Maki page's infobox reads `|class = [[Grade|Grade 4]]`.",
+      "answer": [
+        {
+          "item": "Grade 4",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-18",
+      "kind": "fact",
+      "question": "What is Panda's jujutsu sorcerer grade?",
+      "subject": "Panda",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `attribute`. The Panda page's infobox reads `|class = [[Grade|Semi-Grade 2]]`.",
+      "answer": [
+        {
+          "item": "Semi-Grade 2",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-19",
+      "kind": "fact",
+      "question": "Who killed Hanami?",
+      "subject": "Hanami",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Domain_Amplification",
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `relation`. Corrected 2026-08-19 after the live canon run: the original gold (Yuji Itadori) was a memory error, not sourced from any page. The wiki attributes Hanami's death to Satoru Gojo during the Shibuya Incident -- the battle page `Satoru Gojo vs. Mahito's Group` records outcome `Hanami is killed`, and its image caption reads `Satoru Gojo exorcises Hanami ... Hanami is mercilessly exorcised`; the Domain Amplification page (ch. 85, ep. 33) says he lured them into deactivating it and then crushed them at close range.",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-fact-20",
+      "kind": "fact",
+      "question": "Who killed Jogo?",
+      "subject": "Jogo",
+      "scope": "closed",
+      "expect_mode": "qa",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hanami/Synopsis"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `relation`. The Hanami synopsis states verbatim `Later when Jogo is killed by Sukuna, Hanami meets with Jogo along with Dagon`.",
+      "answer": [
+        {
+          "item": "Sukuna",
+          "aliases": []
+        }
+      ],
+      "accept": "any"
+    },
+    {
+      "id": "jjk-set-20",
+      "kind": "set",
+      "question": "Every domain expansion in Jujutsu Kaisen",
+      "subject": "Domain Expansion",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Domain_Expansion"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The corpus holds exactly thirteen technique pages typed `type = [[Domain Expansion]]`: Malevolent Shrine (Sukuna), Coffin of the Iron Mountain (Jogo), Unlimited Void (Gojo/Yuta), Horizon of the Captivating Skandha (Dagon), Self-Embodiment of Perfection (Mahito), Chimera Shadow Garden (Megumi), Threefold Affliction (Yorozu, ch. 219), Deadly Sentencing (Higuruma), Idle Death Gamble (Hakari), Womb Profusion (Naoya), Time Cell Moon Palace (Kenjaku), Otherworld Between Darkness and Light: Reverse Transcendence (Kenjaku) and Authentic Mutual Love (Yuta). Corrected 2026-08-19 after the live canon run: the original gold listed a Smallpox Deity domain that has no page on this wiki, while Threefold Affliction -- Yorozu's Domain Expansion -- does. This is a general question with no character subject, so the Phase 5 general-page gate does not apply.",
+      "answer": [
+        {
+          "item": "Malevolent Shrine",
+          "aliases": []
+        },
+        {
+          "item": "Coffin of the Iron Mountain",
+          "aliases": []
+        },
+        {
+          "item": "Unlimited Void",
+          "aliases": [
+            "infinite void"
+          ]
+        },
+        {
+          "item": "Horizon of the Captivating Skandha",
+          "aliases": []
+        },
+        {
+          "item": "Self-Embodiment of Perfection",
+          "aliases": []
+        },
+        {
+          "item": "Chimera Shadow Garden",
+          "aliases": []
+        },
+        {
+          "item": "Threefold Affliction",
+          "aliases": []
+        },
+        {
+          "item": "Deadly Sentencing",
+          "aliases": []
+        },
+        {
+          "item": "Idle Death Gamble",
+          "aliases": []
+        },
+        {
+          "item": "Womb Profusion",
+          "aliases": []
+        },
+        {
+          "item": "Time Cell Moon Palace",
+          "aliases": []
+        },
+        {
+          "item": "Otherworld Between Darkness and Light: Reverse Transcendence",
+          "aliases": [
+            "reverse transcendence"
+          ]
+        },
+        {
+          "item": "Authentic Mutual Love",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-21",
+      "kind": "set",
+      "question": "Every inherited technique in Jujutsu Kaisen",
+      "subject": "Inherited Technique",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Technique"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The five technique pages whose infobox reads `type = Inherited Technique`: Blood Manipulation, Cursed Speech, Limitless, Projection Sorcery and Ten Shadows Technique.",
+      "answer": [
+        {
+          "item": "Blood Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Speech",
+          "aliases": []
+        },
+        {
+          "item": "Limitless",
+          "aliases": []
+        },
+        {
+          "item": "Projection Sorcery",
+          "aliases": []
+        },
+        {
+          "item": "Ten Shadows Technique",
+          "aliases": [
+            "ten shadows"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-22",
+      "kind": "set",
+      "question": "Every cursed tool in Jujutsu Kaisen",
+      "subject": "Cursed Tool",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Tool"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The twelve technique pages whose infobox reads `type = Cursed Tool`: Black Rope, Chain of a Thousand Miles, Dragon-Bone, Festering Life Sword, Hiten, Honoyagi, Inverted Spear of Heaven, Kamutoke, Playful Cloud, Slaughter Demon, Split Soul Katana and Sword of Extermination.",
+      "answer": [
+        {
+          "item": "Black Rope",
+          "aliases": []
+        },
+        {
+          "item": "Chain of a Thousand Miles",
+          "aliases": []
+        },
+        {
+          "item": "Dragon-Bone",
+          "aliases": []
+        },
+        {
+          "item": "Festering Life Sword",
+          "aliases": []
+        },
+        {
+          "item": "Hiten",
+          "aliases": []
+        },
+        {
+          "item": "Honoyagi",
+          "aliases": []
+        },
+        {
+          "item": "Inverted Spear of Heaven",
+          "aliases": [
+            "inverted spear"
+          ]
+        },
+        {
+          "item": "Kamutoke",
+          "aliases": []
+        },
+        {
+          "item": "Playful Cloud",
+          "aliases": []
+        },
+        {
+          "item": "Slaughter Demon",
+          "aliases": []
+        },
+        {
+          "item": "Split Soul Katana",
+          "aliases": []
+        },
+        {
+          "item": "Sword of Extermination",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-23",
+      "kind": "set",
+      "question": "Every first-year student of Kyoto Jujutsu High in 2018",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Kyoto page's 2018 tab lists exactly one 1st-year student, Arata Nitta; its 2nd and 3rd years (Mai Zenin, Kokichi Muta, Kasumi Miwa / Noritoshi Kamo, Aoi Todo, Momo Nishimiya) are the padding this set guards against via absent.",
+      "absent": [
+        "Mai Zenin",
+        "Kokichi Muta",
+        "Aoi Todo"
+      ],
+      "answer": [
+        {
+          "item": "Arata Nitta",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-24",
+      "kind": "set",
+      "question": "Every second-year student of Kyoto Jujutsu High in 2018",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Kyoto page's 2018 tab lists exactly three 2nd-year students: Mai Zenin, Kokichi Muta and Kasumi Miwa.",
+      "answer": [
+        {
+          "item": "Mai Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Kokichi Muta",
+          "aliases": []
+        },
+        {
+          "item": "Kasumi Miwa",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-25",
+      "kind": "set",
+      "question": "Every third-year student of Kyoto Jujutsu High in 2018",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Kyoto page's 2018 tab lists exactly three 3rd-year students: Noritoshi Kamo, Aoi Todo and Momo Nishimiya.",
+      "answer": [
+        {
+          "item": "Noritoshi Kamo",
+          "aliases": []
+        },
+        {
+          "item": "Aoi Todo",
+          "aliases": []
+        },
+        {
+          "item": "Momo Nishimiya",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-26",
+      "kind": "set",
+      "question": "Every faculty member of Kyoto Jujutsu High in 2018",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kyoto_Metropolitan_Curse_Technical_College"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Kyoto page's 2018 tab lists exactly two faculty: Yoshinobu Gakuganji and Utahime Iori.",
+      "answer": [
+        {
+          "item": "Yoshinobu Gakuganji",
+          "aliases": []
+        },
+        {
+          "item": "Utahime Iori",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-27",
+      "kind": "set",
+      "question": "Every story arc in Jujutsu Kaisen",
+      "subject": "Jujutsu Kaisen arcs",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Kaisen"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The nine pages filed under the wiki's story-arcs type: Culling Game Arc, Cursed Child Arc, Death Painting Arc, Fearsome Womb Arc, Gojo's Past Arc, Kyoto Goodwill Event Arc, Shibuya Incident Arc, Shinjuku Showdown Arc and Vs. Mahito Arc.",
+      "answer": [
+        {
+          "item": "Culling Game Arc",
+          "aliases": []
+        },
+        {
+          "item": "Cursed Child Arc",
+          "aliases": []
+        },
+        {
+          "item": "Death Painting Arc",
+          "aliases": []
+        },
+        {
+          "item": "Fearsome Womb Arc",
+          "aliases": []
+        },
+        {
+          "item": "Gojo's Past Arc",
+          "aliases": [
+            "gojos past"
+          ]
+        },
+        {
+          "item": "Kyoto Goodwill Event Arc",
+          "aliases": []
+        },
+        {
+          "item": "Shibuya Incident Arc",
+          "aliases": []
+        },
+        {
+          "item": "Shinjuku Showdown Arc",
+          "aliases": []
+        },
+        {
+          "item": "Vs. Mahito Arc",
+          "aliases": [
+            "vs mahito"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-28",
+      "kind": "set",
+      "question": "Every named member of the Gojo Clan",
+      "subject": "Gojo Clan",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Sorcerer Clan page's Gojo tab has a Members table naming exactly six: Satoru Gojo, Yuta Okkotsu, Iori Okkotsu, Mifuyu Okkotsu, Tsurugi Okkotsu and Yuka Okkotsu.",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        },
+        {
+          "item": "Yuta Okkotsu",
+          "aliases": []
+        },
+        {
+          "item": "Iori Okkotsu",
+          "aliases": []
+        },
+        {
+          "item": "Mifuyu Okkotsu",
+          "aliases": []
+        },
+        {
+          "item": "Tsurugi Okkotsu",
+          "aliases": []
+        },
+        {
+          "item": "Yuka Okkotsu",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-29",
+      "kind": "set",
+      "question": "Every named member of the Kamo Clan",
+      "subject": "Kamo Clan",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Sorcerer Clan page's Kamo tab has a Members table with five rows: Noritoshi Kamo (Ancestor), an unnamed 24th head, Noritoshi Kamo, Kenjaku ('the 25th and current head') and Shino. Gold is the four named members; the unnamed row cannot be golded. Corrected 2026-08-19 after the live canon run: the original gold omitted Shino.",
+      "answer": [
+        {
+          "item": "Noritoshi Kamo (Ancestor)",
+          "aliases": []
+        },
+        {
+          "item": "Noritoshi Kamo",
+          "aliases": []
+        },
+        {
+          "item": "Kenjaku",
+          "aliases": []
+        },
+        {
+          "item": "Shino",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "jjk-set-30",
+      "kind": "set",
+      "question": "Every named member of the Inumaki Clan",
+      "subject": "Inumaki Clan",
+      "scope": "closed",
+      "expect_mode": "roster",
+      "tier": "wiki",
+      "verified": "2026-08-19",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sorcerer_Clan"
+      ],
+      "note": "Added 2026-08-19 by the bank expansion. Shape `group`. The Sorcerer Clan page's Inumaki tab lists its members; golded from that table.",
+      "answer": [
+        {
+          "item": "Toge Inumaki",
+          "aliases": []
+        }
+      ]
     }
   ],
   "retired": [
+    {
+      "question": "Every named member of the Zenin Clan's outcasts",
+      "item": "Toji Fushiguro",
+      "reason": "Retired 2026-08-19: the cited Sorcerer Clan/Zenin Clan page has no Outcasts section in its wikitext, so there is no member list to gold against. The claim that Toji and Maki sit under an 'Outcasts' heading was not verifiable on the page."
+    },
+    {
+      "question": "Every named member of the Fushiguro Family",
+      "item": "Toji Fushiguro",
+      "reason": "Retired 2026-08-19: there is no Fushiguro family page and the Sorcerer Clan tabber has no Fushiguro tab, so the wiki documents no member list for this family."
+    },
+    {
+      "question": "Every named member of the Itadori Family",
+      "item": "Wasuke Itadori",
+      "reason": "Retired 2026-08-19: there is no Itadori family page. The Yuji infobox's relatives field mixes blood and half-siblings (Choso, Eso, Kechizu and the six Death Painting Wombs), so it does not document a clean 'Itadori Family' roster."
+    },
+    {
+      "question": "Every named member of the Okkotsu Family",
+      "item": "Iori Okkotsu",
+      "reason": "Retired 2026-08-19: there is no Okkotsu family page. The Yuta infobox's relatives field spans both parents' families (Gojo, Zenin in-laws), so it does not document a clean 'Okkotsu Family' roster."
+    },
     {
       "question": "Every special-grade sorcerer (the four registered special-grade sorcerers in 2018)",
       "item": "Satoru Gojo",

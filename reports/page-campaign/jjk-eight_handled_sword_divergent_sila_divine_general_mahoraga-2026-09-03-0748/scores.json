@@ -1,0 +1,473 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Eight-Handled Sword Divergent Sila Divine General Mahoraga?",
+      "set": "Every named technique of Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "set": "Every battle involving Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Eight-Handled Sword Divergent Sila Divine General Mahoraga?",
+      "found": [
+        "Sword of Extermination"
+      ],
+      "missing": [],
+      "members": [
+        "Sword of Extermination"
+      ]
+    },
+    {
+      "query": "Every battle involving Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "found": [
+        "Satoru Gojo vs. Sukuna",
+        "Sukuna vs. Mahoraga",
+        "Sukuna vs. Yorozu"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo vs. Sukuna",
+        "Sukuna vs. Mahoraga",
+        "Sukuna vs. Yorozu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Eight-Handled Sword Divergent Sila Divine General Mahoraga's name?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-001",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "\u516b\u63e1\u5263\u7570\u6212\u795e\u5c06\u9b54\u865a\u7f85"
+      ],
+      "found": [
+        "\u516b\u63e1\u5263\u7570\u6212\u795e\u5c06\u9b54\u865a\u7f85"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Eight-Handled Sword Divergent Sila Divine General Mahoraga's name?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-002",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Yatsuka-no-Tsurugi Ikaishinsh\u014d Makora"
+      ],
+      "found": [
+        "Yatsuka-no-Tsurugi Ikaishinsh\u014d Makora"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Eight-Handled Sword Divergent Sila Divine General Mahoraga first appear?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-003",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Chapter 9 (Partially Named) Chapter 117"
+      ],
+      "found": [
+        "Chapter 9 (Partially Named) Chapter 117"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Eight-Handled Sword Divergent Sila Divine General Mahoraga first depicted?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-004",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Episode 5 (Partially Named) Episode 40 (Cameo) Episode 41"
+      ],
+      "found": [
+        "Episode 5 (Partially Named) Episode 40 (Cameo) Episode 41"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Sukuna?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-005",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-006",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Makyo Shinjuku"
+      ],
+      "found": [
+        "Makyo Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-007",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Satoru Gojo vs. Sukuna begin?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-008",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Chapter 223"
+      ],
+      "found": [
+        "Chapter 223"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-009",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Sukuna vs. Mahoraga?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-010",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Sukuna vs. Mahoraga take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-011",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Outside Shibuya Station Shibuya 109"
+      ],
+      "found": [
+        "Outside Shibuya Station Shibuya 109"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Sukuna vs. Mahoraga take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-012",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Sukuna vs. Mahoraga begin?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-013",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Chapter 118"
+      ],
+      "found": [
+        "Chapter 118"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Sukuna vs. Mahoraga depicted?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-014",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Episode 41"
+      ],
+      "found": [
+        "Episode 41"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Sukuna vs. Mahoraga take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-015",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Sukuna vs. Yorozu?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-016",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Sukuna vs. Yorozu take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-017",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Sukuna vs. Yorozu begin?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-018",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Chapter 217"
+      ],
+      "found": [
+        "Chapter 217"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Sukuna vs. Yorozu take place?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-019",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Mahoraga summoned?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-022",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Rather than form a shadow puppet with their hands to manifest the shikigami, the user simply extends both arms forward at a slight upward angle with their fists closed."
+      ],
+      "found": [
+        "Rather than form a shadow puppet with their hands to manifest the shikigami, the user simply extends both arms forward at a slight upward angle with their fists closed."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mahoraga look like?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-023",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "The shikigami itself is a towering, muscular humanoid figure with four wings protruding from its eye sockets and a tail-like appendage extending from the back of its head."
+      ],
+      "found": [
+        "The shikigami itself is a towering, muscular humanoid figure with four wings protruding from its eye sockets and a tail-like appendage extending from the back of its head."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mahoraga's primary weapon?",
+      "id": "jjk-pg-eight_handled_sword_divergent_sila_divine_general_mahoraga-024",
+      "subject": "Eight-Handled Sword Divergent Sila Divine General Mahoraga",
+      "accept": "all",
+      "expected": [
+        "Its primary weapon is the Sword of Extermination, a blade attached to its forearm that is enveloped in positive energy, making it especially effective against cursed spirits."
+      ],
+      "found": [
+        "Its primary weapon is the Sword of Extermination, a blade attached to its forearm that is enveloped in positive energy, making it especially effective against cursed spirits."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 22,
+    "fact_present": 22
+  }
+}

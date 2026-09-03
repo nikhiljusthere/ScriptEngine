@@ -1,0 +1,653 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Fumi?",
+      "set": "Every friend of Fumi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Fumi",
+      "set": "Every battle involving Fumi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Fumi?",
+      "found": [
+        "Nobara Kugisaki",
+        "Saori"
+      ],
+      "missing": [],
+      "members": [
+        "Nobara Kugisaki",
+        "Saori"
+      ]
+    },
+    {
+      "query": "Every battle involving Fumi",
+      "found": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Fumihiko Takaba vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Fumihiko Takaba vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Fumi's name?",
+      "id": "jjk-pg-fumi-001",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "\u3075\u307f"
+      ],
+      "found": [
+        "\u3075\u307f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Fumi's name?",
+      "id": "jjk-pg-fumi-002",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Fumi"
+      ],
+      "found": [
+        "Fumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fumi's race?",
+      "id": "jjk-pg-fumi-003",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Fumi?",
+      "id": "jjk-pg-fumi-004",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "15"
+      ],
+      "found": [
+        "15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fumi's gender?",
+      "id": "jjk-pg-fumi-005",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Fumi?",
+      "id": "jjk-pg-fumi-006",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fumi's occupation?",
+      "id": "jjk-pg-fumi-007",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Student"
+      ],
+      "found": [
+        "Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Fumi first appear?",
+      "id": "jjk-pg-fumi-008",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Chapter 124 (Flashback)"
+      ],
+      "found": [
+        "Chapter 124 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Fumi first depicted?",
+      "id": "jjk-pg-fumi-009",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Episode 43 (Flashback)"
+      ],
+      "found": [
+        "Episode 43 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Fumi's Japanese voice actor?",
+      "id": "jjk-pg-fumi-010",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Azusa Aoi"
+      ],
+      "found": [
+        "Azusa Aoi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Fumi's English voice actor?",
+      "id": "jjk-pg-fumi-011",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Emi Lo Ryan Bartley (Child)"
+      ],
+      "found": [
+        "Emi Lo Ryan Bartley (Child)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-fumi-012",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Hazenoki withdraws."
+      ],
+      "found": [
+        "Hazenoki withdraws."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-fumi-013",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-fumi-014",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-fumi-015",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Chapter 169 & 173"
+      ],
+      "found": [
+        "Chapter 169 & 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Fumihiko Takaba vs. Iori Hazenoki depicted?",
+      "id": "jjk-pg-fumi-016",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Episode 57 - 58"
+      ],
+      "found": [
+        "Episode 57 - 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-fumi-017",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Fumihiko Takaba vs. Kenjaku?",
+      "id": "jjk-pg-fumi-018",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Yuta ambushes Kenjaku."
+      ],
+      "found": [
+        "Yuta ambushes Kenjaku."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Fumihiko Takaba vs. Kenjaku take place?",
+      "id": "jjk-pg-fumi-019",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Lake Gosho Colony"
+      ],
+      "found": [
+        "Lake Gosho Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Fumihiko Takaba vs. Kenjaku take place?",
+      "id": "jjk-pg-fumi-020",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Fumihiko Takaba vs. Kenjaku begin?",
+      "id": "jjk-pg-fumi-021",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Chapter 239"
+      ],
+      "found": [
+        "Chapter 239"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Fumihiko Takaba vs. Kenjaku take place?",
+      "id": "jjk-pg-fumi-022",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Fumi play in the series?",
+      "id": "jjk-pg-fumi-025",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Fumi's childhood friend?",
+      "id": "jjk-pg-fumi-026",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki's childhood friend"
+      ],
+      "found": [
+        "Nobara Kugisaki's childhood friend"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Fumi look like?",
+      "id": "jjk-pg-fumi-027",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "a young girl with long, dark-brown hair which she ties into a high ponytail"
+      ],
+      "found": [
+        "a young girl with long, dark-brown hair which she ties into a high ponytail"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Fumi wear as a child?",
+      "id": "jjk-pg-fumi-028",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "a turtleneck and a dress, along with a light, short-sleeved shirt"
+      ],
+      "found": [
+        "a turtleneck and a dress, along with a light, short-sleeved shirt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Fumi's personality described in contrast to Nobara?",
+      "id": "jjk-pg-fumi-029",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "a quiet and shy girl who is very caring"
+      ],
+      "found": [
+        "a quiet and shy girl who is very caring"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Fumi and her family do before the Shibuya Incident?",
+      "id": "jjk-pg-fumi-030",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "shifted to a small village"
+      ],
+      "found": [
+        "shifted to a small village"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Fumi realize about Nobara's 'secret base'?",
+      "id": "jjk-pg-fumi-031",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "it was someone's house"
+      ],
+      "found": [
+        "it was someone's house"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nobara tell Fumi about their next meeting?",
+      "id": "jjk-pg-fumi-032",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "the next time they meet to make sure that all three of them are there"
+      ],
+      "found": [
+        "the next time they meet to make sure that all three of them are there"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who portrays Fumi as a child in the English dub?",
+      "id": "jjk-pg-fumi-033",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "Ryan Bartley"
+      ],
+      "found": [
+        "Ryan Bartley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which Japanese script is the name Fumi written?",
+      "id": "jjk-pg-fumi-034",
+      "subject": "Fumi",
+      "accept": "all",
+      "expected": [
+        "hiragana"
+      ],
+      "found": [
+        "hiragana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 32,
+    "fact_present": 32
+  }
+}

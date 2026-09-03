@@ -1,0 +1,52 @@
+# Staged roster declarations for the Nobara Kugisaki page campaign
+# (questions/_jjk_page_nobara_kugisaki.section2.json, section 2: techniques &
+# cursed tools).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# First roster: the three techniques named in the `Abilities and Powers >
+# Cursed Technique` section of `Nobara Kugisaki`, each its own page: the
+# `Straw Doll Technique` (her innate technique) plus the two named
+# applications in the technique table, `Resonance` and `Hairpin`. `Black
+# Flash` is filed under `Cursed Energy` on the page -- a phenomenon any
+# sorcerer can unleash, not a named technique of hers -- so it is not a
+# member.
+#
+# Second roster: the closed set of the `Equipment > Cursed Tools` subsection:
+# Hammer, Nails and Straw Doll, the three named (bolded) entries of the tools
+# table. None is its own page, which is permitted -- a declared member
+# survives on mentioned-anywhere, not on article existence (the `Ghost Devil
+# Contract` precedent in `roster._declared_members`). The `Toy Mallet` is
+# listed under `Conventional Weaponry`, not cursed tools, so it is not a
+# member.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every ability of Nobara Kugisaki" -- the abilities section mixes prose
+#     lead-ins (Overall Skill Level, the Maki training) with page-stated
+#     entries, so the members=page-titles contract cannot be met across the
+#     whole section; the closed named-technique set is declared instead and
+#     the rest is answered per-item via the section's qa questions.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every named cursed technique of Nobara Kugisaki
+    match:
+      - every named cursed technique of nobara kugisaki
+      - all the cursed techniques of nobara kugisaki
+      - the techniques nobara kugisaki uses
+    subject: Nobara Kugisaki
+    members:
+      - Straw Doll Technique
+      - Resonance
+      - Hairpin
+  - name: Every cursed tool of Nobara Kugisaki
+    match:
+      - every cursed tool of nobara kugisaki
+      - all the cursed tools of nobara kugisaki
+      - the cursed tools nobara kugisaki uses
+    subject: Nobara Kugisaki
+    members:
+      - Hammer
+      - Nails
+      - Straw Doll

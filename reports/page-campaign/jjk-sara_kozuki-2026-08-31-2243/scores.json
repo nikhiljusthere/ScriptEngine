@@ -1,0 +1,639 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Sara Kozuki?",
+      "set": "Every named technique of Sara Kozuki",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Sara Kozuki?",
+      "set": "Every friend of Sara Kozuki",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Sara Kozuki?",
+      "set": "Sara Kozuki's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Sara Kozuki?",
+      "found": [
+        "Prayer Formation Technique"
+      ],
+      "missing": [],
+      "members": [
+        "Prayer Formation Technique"
+      ]
+    },
+    {
+      "query": "What are all the friends of Sara Kozuki?",
+      "found": [
+        "Masamichi Yaga",
+        "Kensuke Nagino"
+      ],
+      "missing": [],
+      "members": [
+        "Kensuke Nagino",
+        "Masamichi Yaga"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Sara Kozuki?",
+      "found": [
+        "Fukuoka Branch Campus"
+      ],
+      "missing": [],
+      "members": [
+        "Fukuoka Branch Campus"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Sara Kozuki's name?",
+      "id": "jjk-pg-sara_kozuki-001",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "\u9999\u6708\u7d17\u826f"
+      ],
+      "found": [
+        "\u9999\u6708\u7d17\u826f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Sara Kozuki's name?",
+      "id": "jjk-pg-sara_kozuki-002",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Kozuki Sara"
+      ],
+      "found": [
+        "Kozuki Sara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sara Kozuki's race?",
+      "id": "jjk-pg-sara_kozuki-003",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Sara Kozuki?",
+      "id": "jjk-pg-sara_kozuki-004",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "21"
+      ],
+      "found": [
+        "21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sara Kozuki's gender?",
+      "id": "jjk-pg-sara_kozuki-005",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Sara Kozuki?",
+      "id": "jjk-pg-sara_kozuki-006",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sara Kozuki's occupation?",
+      "id": "jjk-pg-sara_kozuki-007",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Sara Kozuki's Japanese voice actor?",
+      "id": "jjk-pg-sara_kozuki-008",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Satsuki Yukino"
+      ],
+      "found": [
+        "Satsuki Yukino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of hair does Sara Kozuki have?",
+      "id": "jjk-pg-sara_kozuki-012",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "long black hair"
+      ],
+      "found": [
+        "long black hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does the loose strand of Sara Kozuki's hair fall?",
+      "id": "jjk-pg-sara_kozuki-013",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "behind her right ear"
+      ],
+      "found": [
+        "behind her right ear"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which of Sara Kozuki's ears is partially covered by her hair?",
+      "id": "jjk-pg-sara_kozuki-014",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "left ear"
+      ],
+      "found": [
+        "left ear"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Sara Kozuki a young girl or a grown woman?",
+      "id": "jjk-pg-sara_kozuki-015",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "an adult woman"
+      ],
+      "found": [
+        "an adult woman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What blouse does Sara Kozuki wear?",
+      "id": "jjk-pg-sara_kozuki-016",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "light beige blouse"
+      ],
+      "found": [
+        "light beige blouse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Does Sara Kozuki's blouse have a bow?",
+      "id": "jjk-pg-sara_kozuki-017",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "a large bow at the neck"
+      ],
+      "found": [
+        "a large bow at the neck"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of skirt does Sara Kozuki wear?",
+      "id": "jjk-pg-sara_kozuki-018",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "a long black skirt"
+      ],
+      "found": [
+        "a long black skirt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of boots does Sara Kozuki wear?",
+      "id": "jjk-pg-sara_kozuki-019",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "high-heeled boots"
+      ],
+      "found": [
+        "high-heeled boots"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Sara Kozuki's overall skill level?",
+      "id": "jjk-pg-sara_kozuki-020",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "barrier techniques"
+      ],
+      "found": [
+        "barrier techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Sara Kozuki's innate technique?",
+      "id": "jjk-pg-sara_kozuki-021",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Prayer Formation Technique"
+      ],
+      "found": [
+        "Prayer Formation Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Japanese name of Sara Kozuki's Prayer Formation Technique?",
+      "id": "jjk-pg-sara_kozuki-022",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Kijin Juh\u014d"
+      ],
+      "found": [
+        "Kijin Juh\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sara Kozuki's technique use as the core of its barrier?",
+      "id": "jjk-pg-sara_kozuki-023",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "cornerstone"
+      ],
+      "found": [
+        "cornerstone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Japanese term for the cornerstone at the heart of Sara Kozuki's barrier?",
+      "id": "jjk-pg-sara_kozuki-024",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "Soseki"
+      ],
+      "found": [
+        "Soseki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sara Kozuki's barrier do to the people caught within it?",
+      "id": "jjk-pg-sara_kozuki-025",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "places curses on those inside it"
+      ],
+      "found": [
+        "places curses on those inside it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of vow binds Sara Kozuki's technique?",
+      "id": "jjk-pg-sara_kozuki-026",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "a pre-established binding vow"
+      ],
+      "found": [
+        "a pre-established binding vow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Can Sara Kozuki be affected by her own barrier?",
+      "id": "jjk-pg-sara_kozuki-027",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "cannot affect Sara herself"
+      ],
+      "found": [
+        "cannot affect Sara herself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to Sara Kozuki because of the binding vow on her technique?",
+      "id": "jjk-pg-sara_kozuki-028",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "she cannot receive the barrier's effects"
+      ],
+      "found": [
+        "she cannot receive the barrier's effects"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the cornerstone carry that protects the person holding it?",
+      "id": "jjk-pg-sara_kozuki-029",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "her cursed energy"
+      ],
+      "found": [
+        "her cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is safer inside Sara Kozuki's barrier, someone carrying the cornerstone or someone without it?",
+      "id": "jjk-pg-sara_kozuki-030",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "anyone within the barrier who possesses the stone"
+      ],
+      "found": [
+        "anyone within the barrier who possesses the stone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What would have happened to a person inside Sara Kozuki's barrier if they had not been carrying the cornerstone?",
+      "id": "jjk-pg-sara_kozuki-031",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "places curses on those inside it"
+      ],
+      "found": [
+        "places curses on those inside it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What had Sara Kozuki been doing before Phantom Parade?",
+      "id": "jjk-pg-sara_kozuki-032",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "investigating Kyushu in pursuit of Rozetsu 26 years ago"
+      ],
+      "found": [
+        "investigating Kyushu in pursuit of Rozetsu 26 years ago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which of her classmates did Sara Kozuki develop feelings for?",
+      "id": "jjk-pg-sara_kozuki-033",
+      "subject": "Sara Kozuki",
+      "accept": "all",
+      "expected": [
+        "in love with Nagino"
+      ],
+      "found": [
+        "in love with Nagino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 30
+  }
+}

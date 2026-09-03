@@ -1,0 +1,24 @@
+# Staged roster declarations for the Naoya Zenin page campaign
+# (questions/_jjk_page_naoya_zenin.section2.json, section 2: techniques).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# The single roster is the closed set of Naoya Zenin's named cursed techniques,
+# the three lead-ins of the `Abilities and Powers / Cursed Technique` section of
+# `Naoya Zenin` (both the Sorcerer and the Cursed Spirit tabs): Projection
+# Sorcery, which he inherited; the Acceleration Mode of his Cursed Spirit
+# Physiology; and the Time Cell Moon Palace Domain Expansion. Discovery does
+# not hold the set: the question resolves to the `Zenin Family` roster (16
+# members including Naoya's relatives and clan sorcerers, missing Acceleration
+# Mode and Time Cell Moon Palace), so the declared roster wins (G6). The ten
+# per-battle technique rosters in decl1 are a different set (the battle
+# infoboxes' powers blocks) and are untouched.
+
+rosters:
+   - name: Every named cursed technique of Naoya Zenin
+     match:
+       - every named cursed technique of naoya zenin
+       - all the named cursed techniques of naoya zenin
+       - the named cursed techniques of naoya zenin
+       - what named cursed techniques does naoya zenin have
+     subject: Naoya Zenin
+     members: [Acceleration Mode, Projection Sorcery, Time Cell Moon Palace]

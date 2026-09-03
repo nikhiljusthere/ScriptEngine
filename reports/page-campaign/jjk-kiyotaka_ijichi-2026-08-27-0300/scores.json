@@ -1,0 +1,1047 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kiyotaka Ijichi?",
+      "set": "Every named technique of Kiyotaka Ijichi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Kiyotaka Ijichi?",
+      "set": "Every ally of Kiyotaka Ijichi",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Kiyotaka Ijichi?",
+      "set": "Every enemy of Kiyotaka Ijichi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Kiyotaka Ijichi?",
+      "set": "Every friend of Kiyotaka Ijichi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the superiors of Kiyotaka Ijichi?",
+      "set": "Every superior of Kiyotaka Ijichi",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kiyotaka Ijichi?",
+      "set": "Kiyotaka Ijichi's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kiyotaka Ijichi?",
+      "found": [
+        "Curtain",
+        "Shikigami"
+      ],
+      "missing": [],
+      "members": [
+        "Curtain",
+        "Shikigami"
+      ]
+    },
+    {
+      "query": "What are all the allies of Kiyotaka Ijichi?",
+      "found": [
+        "Yuji Itadori",
+        "Kento Nanami",
+        "Nobara Kugisaki"
+      ],
+      "missing": [],
+      "members": [
+        "Kento Nanami",
+        "Nobara Kugisaki",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Kiyotaka Ijichi?",
+      "found": [
+        "Mimiko Hasaba",
+        "Nanako Hasaba"
+      ],
+      "missing": [],
+      "members": [
+        "Mimiko Hasaba",
+        "Nanako Hasaba"
+      ]
+    },
+    {
+      "query": "What are all the friends of Kiyotaka Ijichi?",
+      "found": [
+        "Satoru Gojo",
+        "Kento Nanami"
+      ],
+      "missing": [],
+      "members": [
+        "Kento Nanami",
+        "Satoru Gojo"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Kiyotaka Ijichi?",
+      "found": [
+        "Satoru Gojo",
+        "Kento Nanami",
+        "Shoko Ieiri"
+      ],
+      "missing": [],
+      "members": [
+        "Kento Nanami",
+        "Satoru Gojo",
+        "Shoko Ieiri"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kiyotaka Ijichi?",
+      "found": [
+        "Tokyo Metropolitan Curse Technical College"
+      ],
+      "missing": [],
+      "members": [
+        "Tokyo Metropolitan Curse Technical College"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kiyotaka Ijichi's name?",
+      "id": "jjk-pg-kiyotaka_ijichi-001",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "\u4f0a\u5730\u77e5 \u6f54\u9ad8"
+      ],
+      "found": [
+        "\u4f0a\u5730\u77e5 \u6f54\u9ad8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kiyotaka Ijichi's name?",
+      "id": "jjk-pg-kiyotaka_ijichi-002",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi Kiyotaka"
+      ],
+      "found": [
+        "Ijichi Kiyotaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's race?",
+      "id": "jjk-pg-kiyotaka_ijichi-003",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's birthday?",
+      "id": "jjk-pg-kiyotaka_ijichi-004",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "April 20, 1991"
+      ],
+      "found": [
+        "April 20, 1991"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kiyotaka Ijichi?",
+      "id": "jjk-pg-kiyotaka_ijichi-005",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "26 27"
+      ],
+      "found": [
+        "26 27"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's gender?",
+      "id": "jjk-pg-kiyotaka_ijichi-006",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kiyotaka Ijichi?",
+      "id": "jjk-pg-kiyotaka_ijichi-007",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's occupation?",
+      "id": "jjk-pg-kiyotaka_ijichi-008",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Assistant Manager Driver"
+      ],
+      "found": [
+        "Assistant Manager Driver"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kiyotaka Ijichi first appear?",
+      "id": "jjk-pg-kiyotaka_ijichi-009",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-2 Chapter 6"
+      ],
+      "found": [
+        "Chapter 0-2 Chapter 6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kiyotaka Ijichi's Japanese voice actor?",
+      "id": "jjk-pg-kiyotaka_ijichi-010",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Mitsuo Iwata"
+      ],
+      "found": [
+        "Mitsuo Iwata"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kiyotaka Ijichi first depicted?",
+      "id": "jjk-pg-kiyotaka_ijichi-011",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Episode 3 (Voice only) Episode 4"
+      ],
+      "found": [
+        "Episode 3 (Voice only) Episode 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kiyotaka Ijichi's English voice actor?",
+      "id": "jjk-pg-kiyotaka_ijichi-012",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Chris Tergliafera"
+      ],
+      "found": [
+        "Chris Tergliafera"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kiyotaka Ijichi's hair look like?",
+      "id": "jjk-pg-kiyotaka_ijichi-019",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "mid-length black hair that shapes his head and parts across the front of his forehead"
+      ],
+      "found": [
+        "mid-length black hair that shapes his head and parts across the front of his forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Does Kiyotaka Ijichi normally wear glasses?",
+      "id": "jjk-pg-kiyotaka_ijichi-020",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "He has small black eyes and normally wears glasses"
+      ],
+      "found": [
+        "He has small black eyes and normally wears glasses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Kiyotaka Ijichi's face look bored most of the time?",
+      "id": "jjk-pg-kiyotaka_ijichi-021",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "sunken cheeks that give him a resting bored expression across his face most of the time"
+      ],
+      "found": [
+        "sunken cheeks that give him a resting bored expression across his face most of the time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kiyotaka Ijichi usually wear?",
+      "id": "jjk-pg-kiyotaka_ijichi-022",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "a normal manager's uniform, which includes a black suit and tie attire"
+      ],
+      "found": [
+        "a normal manager's uniform, which includes a black suit and tie attire"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's personality like?",
+      "id": "jjk-pg-kiyotaka_ijichi-023",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "a calm, rational, and reserved individual who maintains an authoritative and professional composure as assistant manager for Jujutsu High"
+      ],
+      "found": [
+        "a calm, rational, and reserved individual who maintains an authoritative and professional composure as assistant manager for Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kiyotaka Ijichi react when one of his allies dies?",
+      "id": "jjk-pg-kiyotaka_ijichi-024",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "dismayed anytime an ally perishes"
+      ],
+      "found": [
+        "dismayed anytime an ally perishes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kiyotaka Ijichi stop Yuji Itadori from confronting Junpei Yoshino?",
+      "id": "jjk-pg-kiyotaka_ijichi-025",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi regretted allowing Yuji Itadori to die at the detention center and tried to avoid making the same mistake by stopping him from confronting Junpei Yoshino"
+      ],
+      "found": [
+        "Ijichi regretted allowing Yuji Itadori to die at the detention center and tried to avoid making the same mistake by stopping him from confronting Junpei Yoshino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kiyotaka Ijichi do when he faced Mimiko and Nanako Hasaba after they murdered the managers?",
+      "id": "jjk-pg-kiyotaka_ijichi-026",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Not only did he stand his ground, but he tried to talk the young sorcerers out of their actions"
+      ],
+      "found": [
+        "Not only did he stand his ground, but he tried to talk the young sorcerers out of their actions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What responsibility did Kiyotaka Ijichi assume during the Shibuya Incident?",
+      "id": "jjk-pg-kiyotaka_ijichi-027",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "taking charge of all the auxiliary managers and supervising communication between sorcerers"
+      ],
+      "found": [
+        "taking charge of all the auxiliary managers and supervising communication between sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which two people especially shake Kiyotaka Ijichi's confidence?",
+      "id": "jjk-pg-kiyotaka_ijichi-028",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo and Kento Nanami"
+      ],
+      "found": [
+        "Satoru Gojo and Kento Nanami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Kiyotaka Ijichi more anxious around Satoru Gojo than usual?",
+      "id": "jjk-pg-kiyotaka_ijichi-029",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Gojo's playful attitude and complete disregard for regulations make Ijichi much more anxious compared to his ordinary demeanor"
+      ],
+      "found": [
+        "Gojo's playful attitude and complete disregard for regulations make Ijichi much more anxious compared to his ordinary demeanor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Ijichi give up on becoming a sorcerer?",
+      "id": "jjk-pg-kiyotaka_ijichi-030",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Gojo made Ijichi stop pursuing the path of a sorcerer by casually calling him useless and threatening to slap him if he didn't quit"
+      ],
+      "found": [
+        "Gojo made Ijichi stop pursuing the path of a sorcerer by casually calling him useless and threatening to slap him if he didn't quit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kiyotaka Ijichi later realize about Satoru Gojo?",
+      "id": "jjk-pg-kiyotaka_ijichi-031",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Later in life, Ijichi realized how Gojo was trying to protect him"
+      ],
+      "found": [
+        "Later in life, Ijichi realized how Gojo was trying to protect him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Did Kiyotaka Ijichi originally train to become a full-fledged sorcerer?",
+      "id": "jjk-pg-kiyotaka_ijichi-032",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi attended Tokyo Jujutsu High with the intention of becoming a full-fledged jujutsu sorcerer, like Gojo and Shoko"
+      ],
+      "found": [
+        "Ijichi attended Tokyo Jujutsu High with the intention of becoming a full-fledged jujutsu sorcerer, like Gojo and Shoko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Kiyotaka Ijichi conjure and cast even without an innate technique?",
+      "id": "jjk-pg-kiyotaka_ijichi-033",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi can conjure shikigami and cast barriers"
+      ],
+      "found": [
+        "Ijichi can conjure shikigami and cast barriers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Kiyotaka Ijichi useful on a mission with students?",
+      "id": "jjk-pg-kiyotaka_ijichi-034",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "He is highly knowledgeable on jujutsu, which helps make him an asset on any mission, especially with students"
+      ],
+      "found": [
+        "He is highly knowledgeable on jujutsu, which helps make him an asset on any mission, especially with students"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kiyotaka Ijichi's combat skill compare to a real sorcerer's?",
+      "id": "jjk-pg-kiyotaka_ijichi-035",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "He can exorcise a grade 3 cursed spirit if he was forced to fight"
+      ],
+      "found": [
+        "He can exorcise a grade 3 cursed spirit if he was forced to fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Haruta Shigemo target managers like Ijichi during the Shibuya Incident?",
+      "id": "jjk-pg-kiyotaka_ijichi-036",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Managers like Ijichi were targeted during the incident by Haruta Shigemo for this very reason, proving how much of a major asset Ijichi is, despite his low combat ability"
+      ],
+      "found": [
+        "Managers like Ijichi were targeted during the incident by Haruta Shigemo for this very reason, proving how much of a major asset Ijichi is, despite his low combat ability"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "If Kiyotaka Ijichi were forced to fight, what could he do?",
+      "id": "jjk-pg-kiyotaka_ijichi-037",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "He can exorcise a grade 3 cursed spirit if he was forced to fight"
+      ],
+      "found": [
+        "He can exorcise a grade 3 cursed spirit if he was forced to fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Simple Barriers used for?",
+      "id": "jjk-pg-kiyotaka_ijichi-038",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Barriers are used to conceal, contain, or deny entry to others within that space"
+      ],
+      "found": [
+        "Barriers are used to conceal, contain, or deny entry to others within that space"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kiyotaka Ijichi hide Gojo's Purple from Sukuna?",
+      "id": "jjk-pg-kiyotaka_ijichi-039",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi is a skilled barrier user who used talismans to conceal Gojo's Purple against Sukuna"
+      ],
+      "found": [
+        "Ijichi is a skilled barrier user who used talismans to conceal Gojo's Purple against Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kiyotaka Ijichi's Curtain barrier do?",
+      "id": "jjk-pg-kiyotaka_ijichi-040",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "a dome-shaped barrier conceals the environment within it from the outside and turns the sky inside it into night, luring out cursed spirits"
+      ],
+      "found": [
+        "a dome-shaped barrier conceals the environment within it from the outside and turns the sky inside it into night, luring out cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Kiyotaka Ijichi summon to support other sorcerers?",
+      "id": "jjk-pg-kiyotaka_ijichi-041",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi is capable of summoning shikigami to support other sorcerers"
+      ],
+      "found": [
+        "Ijichi is capable of summoning shikigami to support other sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What place did Kiyotaka Ijichi take in the first Popularity Poll?",
+      "id": "jjk-pg-kiyotaka_ijichi-042",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "He ranked 23rd in the first Popularity Poll with 1,087 votes"
+      ],
+      "found": [
+        "He ranked 23rd in the first Popularity Poll with 1,087 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Kiyotaka Ijichi get in the fourth Popularity Poll?",
+      "id": "jjk-pg-kiyotaka_ijichi-043",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "569 votes"
+      ],
+      "found": [
+        "569 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's specialty according to the official fanbook?",
+      "id": "jjk-pg-kiyotaka_ijichi-044",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Excel"
+      ],
+      "found": [
+        "Excel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's favorite food?",
+      "id": "jjk-pg-kiyotaka_ijichi-045",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Udon"
+      ],
+      "found": [
+        "Udon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What food does Kiyotaka Ijichi dislike the most?",
+      "id": "jjk-pg-kiyotaka_ijichi-046",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Spicy food"
+      ],
+      "found": [
+        "Spicy food"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kiyotaka Ijichi's cause of stress according to the fanbook?",
+      "id": "jjk-pg-kiyotaka_ijichi-047",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the kanji in Kiyotaka Ijichi's name mean?",
+      "id": "jjk-pg-kiyotaka_ijichi-048",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi's surname has the Go-on reading for \"Italy, that one\" \u4f0a i, \"earth, ground\" \u5730 ji, and \"to know, wisdom\" \u77e5 chi. His given name has the kanji for \"clean, pure\" \u6f54 kiyo and the Kun reading for \"tall, high\" \u9ad8 taka."
+      ],
+      "found": [
+        "Ijichi's surname has the Go-on reading for \"Italy, that one\" \u4f0a i, \"earth, ground\" \u5730 ji, and \"to know, wisdom\" \u77e5 chi. His given name has the kanji for \"clean, pure\" \u6f54 kiyo and the Kun reading for \"tall, high\" \u9ad8 taka."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role is Kiyotaka Ijichi meant to play?",
+      "id": "jjk-pg-kiyotaka_ijichi-049",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi is a self-proclaimed \"fighter\", but is not meant to be on the battlefield besides playing a supporting role"
+      ],
+      "found": [
+        "Ijichi is a self-proclaimed \"fighter\", but is not meant to be on the battlefield besides playing a supporting role"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Kiyotaka Ijichi allowed to fight?",
+      "id": "jjk-pg-kiyotaka_ijichi-050",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "he doesn't know how to and is technically forbidden from doing so"
+      ],
+      "found": [
+        "he doesn't know how to and is technically forbidden from doing so"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of work is Kiyotaka Ijichi good at?",
+      "id": "jjk-pg-kiyotaka_ijichi-051",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi is excellent at desk work"
+      ],
+      "found": [
+        "Ijichi is excellent at desk work"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What stresses out Kiyotaka Ijichi about his job?",
+      "id": "jjk-pg-kiyotaka_ijichi-052",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "sending students on dangerous missions, frequently getting into conflicts, and being abused by Gojo and his other senior members"
+      ],
+      "found": [
+        "sending students on dangerous missions, frequently getting into conflicts, and being abused by Gojo and his other senior members"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Kiyotaka Ijichi secretly attracted to Shoko Ieiri?",
+      "id": "jjk-pg-kiyotaka_ijichi-053",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "Ijichi is secretly attracted to Shoko Ieiri"
+      ],
+      "found": [
+        "Ijichi is secretly attracted to Shoko Ieiri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What theme songs did Gege Akutami choose for Kiyotaka Ijichi?",
+      "id": "jjk-pg-kiyotaka_ijichi-054",
+      "subject": "Kiyotaka Ijichi",
+      "accept": "all",
+      "expected": [
+        "\"Do Nacchaten Dayo\" by Yasuyuki Okamura and \"SPY\" by Noriyuki Makihara"
+      ],
+      "found": [
+        "\"Do Nacchaten Dayo\" by Yasuyuki Okamura and \"SPY\" by Noriyuki Makihara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 13,
+    "canon_total": 13,
+    "canon_recall": 1.0,
+    "members_returned": 13,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 48,
+    "fact_present": 48
+  }
+}

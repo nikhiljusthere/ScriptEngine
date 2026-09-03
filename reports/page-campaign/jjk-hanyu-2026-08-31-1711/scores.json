@@ -1,0 +1,667 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Hanyu?",
+      "set": "Every named technique of Hanyu",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hanyu",
+      "set": "Every battle involving Hanyu",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Hanyu?",
+      "found": [
+        "Airplane Hair"
+      ],
+      "missing": [],
+      "members": [
+        "Airplane Hair"
+      ]
+    },
+    {
+      "query": "Every battle involving Hanyu",
+      "found": [
+        "Yuji Itadori vs. Haba & Hanyu"
+      ],
+      "missing": [],
+      "members": [
+        "Yuji Itadori vs. Haba & Hanyu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hanyu's name?",
+      "id": "jjk-pg-hanyu-001",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "\u7fbd\u751f"
+      ],
+      "found": [
+        "\u7fbd\u751f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hanyu's name?",
+      "id": "jjk-pg-hanyu-002",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Hany\u016b"
+      ],
+      "found": [
+        "Hany\u016b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hanyu's race?",
+      "id": "jjk-pg-hanyu-003",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hanyu's gender?",
+      "id": "jjk-pg-hanyu-004",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Hanyu?",
+      "id": "jjk-pg-hanyu-005",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hanyu's occupation?",
+      "id": "jjk-pg-hanyu-006",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hanyu first appear?",
+      "id": "jjk-pg-hanyu-007",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Hanyu first depicted?",
+      "id": "jjk-pg-hanyu-008",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Hanyu's Japanese voice actor?",
+      "id": "jjk-pg-hanyu-009",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Junko Takeuchi"
+      ],
+      "found": [
+        "Junko Takeuchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Haba & Hanyu?",
+      "id": "jjk-pg-hanyu-010",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Yuji is victorious."
+      ],
+      "found": [
+        "Yuji is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-hanyu-011",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-hanyu-012",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Haba & Hanyu begin?",
+      "id": "jjk-pg-hanyu-013",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Haba & Hanyu depicted?",
+      "id": "jjk-pg-hanyu-014",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-hanyu-015",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hanyu use in Yuji Itadori vs. Haba & Hanyu?",
+      "id": "jjk-pg-hanyu-016",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Airplane Technique"
+      ],
+      "found": [
+        "Airplane Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Hanyu play in the series?",
+      "id": "jjk-pg-hanyu-019",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Hanyu's Culling Game partner?",
+      "id": "jjk-pg-hanyu-020",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Haba"
+      ],
+      "found": [
+        "Haba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who defeated Hanyu and Haba?",
+      "id": "jjk-pg-hanyu-021",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hanyu look like?",
+      "id": "jjk-pg-hanyu-022",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "a relatively tall woman with a muscular build"
+      ],
+      "found": [
+        "a relatively tall woman with a muscular build"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hanyu's hair do when she activates her cursed technique?",
+      "id": "jjk-pg-hanyu-023",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "changes shape"
+      ],
+      "found": [
+        "changes shape"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hanyu wear?",
+      "id": "jjk-pg-hanyu-024",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "a tank top that is cut short to show her stomach, as well as cargo pants and combat boots"
+      ],
+      "found": [
+        "a tank top that is cut short to show her stomach, as well as cargo pants and combat boots"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hanyu wear to protect her eyes when flying?",
+      "id": "jjk-pg-hanyu-025",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "aviator glasses"
+      ],
+      "found": [
+        "aviator glasses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hanyu treat Rin Amai?",
+      "id": "jjk-pg-hanyu-026",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "exploiting Rin Amai by threatening to kill him if he didn't work as her gofer"
+      ],
+      "found": [
+        "exploiting Rin Amai by threatening to kill him if he didn't work as her gofer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hanyu and Haba treat new players?",
+      "id": "jjk-pg-hanyu-027",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "take advantage of new players and pick them off while they're still disoriented from the initial transfer process"
+      ],
+      "found": [
+        "take advantage of new players and pick them off while they're still disoriented from the initial transfer process"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who marked Hanyu?",
+      "id": "jjk-pg-hanyu-028",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hanyu undergo to be able to use her cursed technique?",
+      "id": "jjk-pg-hanyu-029",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "having her brain adjusted to be able to use her cursed technique by Kenjaku"
+      ],
+      "found": [
+        "having her brain adjusted to be able to use her cursed technique by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hanyu first attack Yuji Itadori?",
+      "id": "jjk-pg-hanyu-030",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "charges at him using her hair as a jet, crashing through two buildings"
+      ],
+      "found": [
+        "charges at him using her hair as a jet, crashing through two buildings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Hanyu knocked out in her fight with Yuji?",
+      "id": "jjk-pg-hanyu-031",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "hit by a piece of rubble thrown by Yuji that is imbued with cursed energy"
+      ],
+      "found": [
+        "hit by a piece of rubble thrown by Yuji that is imbued with cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of cursed technique does Hanyu have?",
+      "id": "jjk-pg-hanyu-032",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "a hair-based cursed technique"
+      ],
+      "found": [
+        "a hair-based cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hanyu's innate technique called?",
+      "id": "jjk-pg-hanyu-033",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Airplane Hair"
+      ],
+      "found": [
+        "Airplane Hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Airplane Hair technique change Hanyu's hair into?",
+      "id": "jjk-pg-hanyu-034",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "the shape of a jet plane with fiery boosters"
+      ],
+      "found": [
+        "the shape of a jet plane with fiery boosters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is vulnerable about Hanyu while her technique is active?",
+      "id": "jjk-pg-hanyu-035",
+      "subject": "Hanyu",
+      "accept": "all",
+      "expected": [
+        "Other sections of her body are less protected by cursed energy"
+      ],
+      "found": [
+        "Other sections of her body are less protected by cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 33,
+    "fact_present": 33
+  }
+}

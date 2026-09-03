@@ -42,9 +42,10 @@ import logging
 import random
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, cast
 from urllib.parse import quote, urlparse
 
+from curl_cffi import BrowserTypeLiteral
 from curl_cffi.requests import AsyncSession, BrowserType
 
 from scriptengine.config import Settings, SeriesPaths, get_settings
@@ -154,7 +155,9 @@ class WikiCrawler:
 
     async def __aenter__(self) -> "WikiCrawler":
         self._session = AsyncSession(
-            impersonate=self._impersonation,
+            # `select_impersonation` only ever returns a `BrowserType` value
+            # spelled as a string; the stub wants the literal union.
+            impersonate=cast(BrowserTypeLiteral, self._impersonation),
             max_clients=self.settings.crawl_concurrency,
             timeout=self.settings.crawl_timeout_seconds,
         )
@@ -623,7 +626,7 @@ class WikiCrawler:
         counter_lock = asyncio.Lock()
         # `redirects=1` means several enumerated titles can resolve to the same
         # article, which otherwise gets fetched and written more than once.
-        seen_pages: set[int] = set()
+        seen_pages: set[Any] = set()
 
         async def worker() -> None:
             nonlocal written

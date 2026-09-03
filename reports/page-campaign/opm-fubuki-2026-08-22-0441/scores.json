@@ -1,0 +1,2159 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "Every battle of Fubuki in One-Punch Man",
+      "set": "5 battle page(s) naming Fubuki",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Fubuki in One-Punch Man?",
+      "set": "Fubuki's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle of Fubuki in One-Punch Man",
+      "found": [
+        "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+        "Fubuki, Bang, and Bomb vs. Do-S",
+        "Heroes vs. Do-S",
+        "Heroes vs. Psykos and Orochi",
+        "Saitama vs. Fubuki, Eyelashes and Mountain Ape"
+      ],
+      "missing": [],
+      "members": [
+        "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+        "Fubuki, Bang, and Bomb vs. Do-S",
+        "Heroes vs. Do-S",
+        "Heroes vs. Psykos and Orochi",
+        "Saitama vs. Fubuki, Eyelashes and Mountain Ape"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Fubuki in One-Punch Man?",
+      "found": [
+        "Miss Blizzard",
+        "Blizzard of Hell"
+      ],
+      "missing": [],
+      "members": [
+        "Blizzard of Hell",
+        "Miss Blizzard"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Saitama in One-Punch Man?",
+      "id": "opm-pg-fubuki-002",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Genos and Speed-o'-Sound Sonic"
+      ],
+      "found": [
+        "Interrupted by Genos and Speed-o'-Sound Sonic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and the Blizzard Group and Do-S in One-Punch Man?",
+      "id": "opm-pg-fubuki-003",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Tatsumaki"
+      ],
+      "found": [
+        "Interrupted by Tatsumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Overgrown Rover in One-Punch Man?",
+      "id": "opm-pg-fubuki-004",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Overgrown Rover submits"
+      ],
+      "found": [
+        "Overgrown Rover submits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Psykos in One-Punch Man?",
+      "id": "opm-pg-fubuki-005",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Garou in the One-Punch Man webcomic?",
+      "id": "opm-pg-fubuki-006",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Tatsumaki in the One-Punch Man webcomic?",
+      "id": "opm-pg-fubuki-007",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Interrupted"
+      ],
+      "found": [
+        "Interrupted"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and the Blizzard Group and Demonic Fan in One-Punch Man?",
+      "id": "opm-pg-fubuki-008",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Hyaha Axe in One-Punch Man?",
+      "id": "opm-pg-fubuki-009",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and the Blizzard Group and the Saitama Group in One-Punch Man?",
+      "id": "opm-pg-fubuki-010",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Jumping Spider in One-Punch Man?",
+      "id": "opm-pg-fubuki-011",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Fubuki and Seafolk in One-Punch Man?",
+      "id": "opm-pg-fubuki-012",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Saitama vs. Fubuki, Eyelashes and Mountain Ape battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-013",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Genos and Speed-o'-Sound Sonic"
+      ],
+      "found": [
+        "Interrupted by Genos and Speed-o'-Sound Sonic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Fubuki, Bang, and Bomb vs. Do-S battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-014",
+      "subject": "Fubuki, Bang, and Bomb vs. Do-S",
+      "accept": "all",
+      "expected": [
+        "Fubuki defeats Do-S"
+      ],
+      "found": [
+        "Fubuki defeats Do-S"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Bang, Bomb, and Fubuki vs. Overgrown Rover battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-015",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "Rover sits."
+      ],
+      "found": [
+        "Rover sits."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Heroes vs. Do-S battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-016",
+      "subject": "Heroes vs. Do-S",
+      "accept": "all",
+      "expected": [
+        "Do-S enslaves most of the heroes but has to retreat from Tatsumaki"
+      ],
+      "found": [
+        "Do-S enslaves most of the heroes but has to retreat from Tatsumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Heroes vs. Psykos and Orochi battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-017",
+      "subject": "Heroes vs. Psykos and Orochi",
+      "accept": "all",
+      "expected": [
+        "Heroes win"
+      ],
+      "found": [
+        "Heroes win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Saitama vs. Fubuki, Eyelashes and Mountain Ape battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-018",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "The Blizzard Group Arc"
+      ],
+      "found": [
+        "The Blizzard Group Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Saitama vs. Fubuki, Eyelashes and Mountain Ape battle take place in One-Punch Man?",
+      "id": "opm-pg-fubuki-019",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "Z-City"
+      ],
+      "found": [
+        "Z-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapters does the Saitama vs. Fubuki, Eyelashes and Mountain Ape battle span in One-Punch Man?",
+      "id": "opm-pg-fubuki-020",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "Chapter 42, 43"
+      ],
+      "found": [
+        "Chapter 42, 43"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What webcomic chapters cover the Saitama vs. Fubuki, Eyelashes and Mountain Ape battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-021",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "Chapter 47, 48"
+      ],
+      "found": [
+        "Chapter 47, 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What anime episode covers the Saitama vs. Fubuki, Eyelashes and Mountain Ape battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-022",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "Episode 14"
+      ],
+      "found": [
+        "Episode 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Saitama vs. Fubuki, Eyelashes and Mountain Ape in One-Punch Man?",
+      "id": "opm-pg-fubuki-023",
+      "subject": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+      "accept": "all",
+      "expected": [
+        "Genos vs. Speed-o'-Sound Sonic"
+      ],
+      "found": [
+        "Genos vs. Speed-o'-Sound Sonic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapters does the Fubuki, Bang, and Bomb vs. Do-S battle span in One-Punch Man?",
+      "id": "opm-pg-fubuki-024",
+      "subject": "Fubuki, Bang, and Bomb vs. Do-S",
+      "accept": "all",
+      "expected": [
+        "Chapter 116, 117"
+      ],
+      "found": [
+        "Chapter 116, 117"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Fubuki, Bang, and Bomb vs. Do-S in One-Punch Man?",
+      "id": "opm-pg-fubuki-025",
+      "subject": "Fubuki, Bang, and Bomb vs. Do-S",
+      "accept": "all",
+      "expected": [
+        "Sweet Mask vs. Fuhrer Ugly"
+      ],
+      "found": [
+        "Sweet Mask vs. Fuhrer Ugly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What webcomic chapter covers the Bang, Bomb, and Fubuki vs. Overgrown Rover battle in One-Punch Man?",
+      "id": "opm-pg-fubuki-026",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "Chapter 69"
+      ],
+      "found": [
+        "Chapter 69"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Bang, Bomb, and Fubuki vs. Overgrown Rover in One-Punch Man?",
+      "id": "opm-pg-fubuki-027",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. Evil Natural Water"
+      ],
+      "found": [
+        "Child Emperor vs. Evil Natural Water"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki use to protect Bang and Bomb from Overgrown Rover's energy blasts in One-Punch Man?",
+      "id": "opm-pg-fubuki-028",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "her barrier"
+      ],
+      "found": [
+        "her barrier"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What special bonus did Fubuki tell Bomb was for joining the Fubuki Group in One-Punch Man?",
+      "id": "opm-pg-fubuki-029",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "a 3 kg special beef set"
+      ],
+      "found": [
+        "a 3 kg special beef set"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What command from Saitama made Overgrown Rover sit in One-Punch Man?",
+      "id": "opm-pg-fubuki-030",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "Sit!"
+      ],
+      "found": [
+        "Sit!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki notice about Bomb after the fight with Overgrown Rover in One-Punch Man?",
+      "id": "opm-pg-fubuki-031",
+      "subject": "Bang, Bomb, and Fubuki vs. Overgrown Rover",
+      "accept": "all",
+      "expected": [
+        "just as strong as Bang"
+      ],
+      "found": [
+        "just as strong as Bang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Tatsumaki to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-032",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "family"
+      ],
+      "found": [
+        "family"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Fubuki to Tatsumaki in One-Punch Man?",
+      "id": "opm-pg-fubuki-033",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "family"
+      ],
+      "found": [
+        "family"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Psykos to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-034",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "friend"
+      ],
+      "found": [
+        "friend"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Lily to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-035",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "subordinate"
+      ],
+      "found": [
+        "subordinate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Do-S to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-036",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "enemy"
+      ],
+      "found": [
+        "enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is King to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-037",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Bomb to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-038",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Beaut to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-039",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "rival"
+      ],
+      "found": [
+        "rival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Tsukuyomi Spy to Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-040",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "enemy"
+      ],
+      "found": [
+        "enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Fubuki try to get Saitama to join the Blizzard Group at their first meeting in One-Punch Man?",
+      "id": "opm-pg-fubuki-041",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "worried about her rank"
+      ],
+      "found": [
+        "worried about her rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki bring to the restaurant after Saitama ditched her with the bill in One-Punch Man?",
+      "id": "opm-pg-fubuki-042",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "the cabbage he left at the restaurant"
+      ],
+      "found": [
+        "the cabbage he left at the restaurant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki describe her sister as in One-Punch Man?",
+      "id": "opm-pg-fubuki-043",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a \"monster within monsters\""
+      ],
+      "found": [
+        "a \"monster within monsters\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki use the Blizzard Group as in One-Punch Man?",
+      "id": "opm-pg-fubuki-044",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a crutch for her ego"
+      ],
+      "found": [
+        "a crutch for her ego"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why does Fubuki believe she will never reach S-Class in One-Punch Man?",
+      "id": "opm-pg-fubuki-045",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Sweet Mask"
+      ],
+      "found": [
+        "Sweet Mask"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki consider Blast to be in One-Punch Man?",
+      "id": "opm-pg-fubuki-046",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "the strongest hero"
+      ],
+      "found": [
+        "the strongest hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was Fubuki shocked and awed during the video game contest with King in One-Punch Man?",
+      "id": "opm-pg-fubuki-047",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "King somehow defeated her entire group"
+      ],
+      "found": [
+        "King somehow defeated her entire group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Fubuki's signature move in One-Punch Man?",
+      "id": "opm-pg-fubuki-048",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Hell Storm"
+      ],
+      "found": [
+        "Hell Storm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Hell Storm do in One-Punch Man?",
+      "id": "opm-pg-fubuki-049",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "surrounding the target with a strong tornado, drawing in rocks and nearby small objects to inflict damage along with the wind"
+      ],
+      "found": [
+        "surrounding the target with a strong tornado, drawing in rocks and nearby small objects to inflict damage along with the wind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Psychic Barriers do in One-Punch Man?",
+      "id": "opm-pg-fubuki-050",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "protect herself or her allies"
+      ],
+      "found": [
+        "protect herself or her allies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Flight do in One-Punch Man?",
+      "id": "opm-pg-fubuki-051",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "levitate in mid-air, or even fly at quick bursts when needed"
+      ],
+      "found": [
+        "levitate in mid-air, or even fly at quick bursts when needed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Organic-Body Enhancement do in One-Punch Man?",
+      "id": "opm-pg-fubuki-052",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "temporarily strengthen organic parts of a person's body, boosting their physical attributes like speed"
+      ],
+      "found": [
+        "temporarily strengthen organic parts of a person's body, boosting their physical attributes like speed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Telepathy do in One-Punch Man?",
+      "id": "opm-pg-fubuki-053",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "psychically contact her sister"
+      ],
+      "found": [
+        "psychically contact her sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Energy Suppression do in One-Punch Man?",
+      "id": "opm-pg-fubuki-054",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "suppress thermal motion"
+      ],
+      "found": [
+        "suppress thermal motion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Organic Restoration do in One-Punch Man?",
+      "id": "opm-pg-fubuki-055",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "restore and heal organic materials"
+      ],
+      "found": [
+        "restore and heal organic materials"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Psychic Binding do in One-Punch Man?",
+      "id": "opm-pg-fubuki-056",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "immobilize targets"
+      ],
+      "found": [
+        "immobilize targets"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Psychic Whirlwind do in One-Punch Man?",
+      "id": "opm-pg-fubuki-057",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "create a whirlwind capable of harmlessly redirecting psychic attacks much stronger than her own"
+      ],
+      "found": [
+        "create a whirlwind capable of harmlessly redirecting psychic attacks much stronger than her own"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Fubuki's Psychic Strike do in One-Punch Man?",
+      "id": "opm-pg-fubuki-058",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "hit a nearby target on the back of the neck with her telekinesis, knocking them out"
+      ],
+      "found": [
+        "hit a nearby target on the back of the neck with her telekinesis, knocking them out"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique Fubuki developed to surpass her sister in One-Punch Man?",
+      "id": "opm-pg-fubuki-059",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Psychic Whirlwind"
+      ],
+      "found": [
+        "Psychic Whirlwind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What jamming effect does Fubuki's Psychic Whirlwind have on another esper in One-Punch Man?",
+      "id": "opm-pg-fubuki-060",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "unable to use their abilities"
+      ],
+      "found": [
+        "unable to use their abilities"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's rank in the B-Class in One-Punch Man?",
+      "id": "opm-pg-fubuki-061",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Rank 1"
+      ],
+      "found": [
+        "Rank 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's status in One-Punch Man?",
+      "id": "opm-pg-fubuki-062",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's occupation in One-Punch Man?",
+      "id": "opm-pg-fubuki-063",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Hero"
+      ],
+      "found": [
+        "Hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's age in One-Punch Man?",
+      "id": "opm-pg-fubuki-064",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "23"
+      ],
+      "found": [
+        "23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's height in One-Punch Man?",
+      "id": "opm-pg-fubuki-065",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "167 cm"
+      ],
+      "found": [
+        "167 cm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's race in One-Punch Man?",
+      "id": "opm-pg-fubuki-066",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What weapon does Fubuki carry in One-Punch Man?",
+      "id": "opm-pg-fubuki-067",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Box Cutter"
+      ],
+      "found": [
+        "Box Cutter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What abilities are listed on Fubuki's infobox in One-Punch Man?",
+      "id": "opm-pg-fubuki-068",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Psychokinesis",
+        "Telepathy"
+      ],
+      "found": [
+        "Psychokinesis",
+        "Telepathy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Fubuki's affiliation in One-Punch Man?",
+      "id": "opm-pg-fubuki-069",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Hero Association"
+      ],
+      "found": [
+        "Hero Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Fubuki's older sister in One-Punch Man?",
+      "id": "opm-pg-fubuki-070",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Tatsumaki"
+      ],
+      "found": [
+        "Tatsumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Fubuki first appear in the One-Punch Man webcomic?",
+      "id": "opm-pg-fubuki-071",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Chapter 47"
+      ],
+      "found": [
+        "Chapter 47"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Fubuki first appear in the One-Punch Man manga?",
+      "id": "opm-pg-fubuki-072",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Chapter 42"
+      ],
+      "found": [
+        "Chapter 42"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Fubuki first appear in the One-Punch Man anime?",
+      "id": "opm-pg-fubuki-073",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Episode 6"
+      ],
+      "found": [
+        "Episode 6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the Japanese voice for Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-074",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Saori Hayami"
+      ],
+      "found": [
+        "Saori Hayami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who provides the English voice for Fubuki in One-Punch Man?",
+      "id": "opm-pg-fubuki-075",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Laura Post"
+      ],
+      "found": [
+        "Laura Post"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the total of Fubuki's Hero Rating in One-Punch Man?",
+      "id": "opm-pg-fubuki-076",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Fubuki's rating determined by the Hero Association",
+        "50"
+      ],
+      "found": [
+        "Fubuki's rating determined by the Hero Association",
+        "50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What hairstyle does Fubuki have in One-Punch Man?",
+      "id": "opm-pg-fubuki-077",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "chin-length dark green hair styled into a bob with a fringe"
+      ],
+      "found": [
+        "chin-length dark green hair styled into a bob with a fringe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki's main attire consist of in One-Punch Man?",
+      "id": "opm-pg-fubuki-078",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a dark royal-green, form-fitting V-neck dress with a high collar"
+      ],
+      "found": [
+        "a dark royal-green, form-fitting V-neck dress with a high collar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is left on both of Fubuki's palms after she cools Genos' overheating core in One-Punch Man?",
+      "id": "opm-pg-fubuki-079",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "jagged, burst-shaped scars"
+      ],
+      "found": [
+        "jagged, burst-shaped scars"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki believe about clothes in One-Punch Man?",
+      "id": "opm-pg-fubuki-080",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "clothes define the man"
+      ],
+      "found": [
+        "clothes define the man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Whose gatekeeping at Rank 1 of A-Class prevents Fubuki from advancing in One-Punch Man?",
+      "id": "opm-pg-fubuki-081",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Sweet Mask"
+      ],
+      "found": [
+        "Sweet Mask"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki sacrifice herself to buy time for in One-Punch Man?",
+      "id": "opm-pg-fubuki-082",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Bang and Bomb to escape from Overgrown Rover"
+      ],
+      "found": [
+        "Bang and Bomb to escape from Overgrown Rover"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki gather in the hope of surpassing her sister in One-Punch Man?",
+      "id": "opm-pg-fubuki-083",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "lower-ranked B-Class heroes"
+      ],
+      "found": [
+        "lower-ranked B-Class heroes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What kind of leader is Fubuki to her group members in One-Punch Man?",
+      "id": "opm-pg-fubuki-084",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a charismatic leader"
+      ],
+      "found": [
+        "a charismatic leader"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What rank did Fubuki achieve in the latest official character poll in One-Punch Man?",
+      "id": "opm-pg-fubuki-085",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "second overall"
+      ],
+      "found": [
+        "second overall"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Fubuki like according to the databook?",
+      "id": "opm-pg-fubuki-086",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "being at the top of B-Class, and the Blizzard Group as well as brands that suit her style"
+      ],
+      "found": [
+        "being at the top of B-Class, and the Blizzard Group as well as brands that suit her style"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What are Fubuki's hobbies according to the databook?",
+      "id": "opm-pg-fubuki-087",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "collecting high-heels, shopping, gathering high-ranked heroes, and self-training"
+      ],
+      "found": [
+        "collecting high-heels, shopping, gathering high-ranked heroes, and self-training"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What yokai is Fubuki and her name based on in One-Punch Man?",
+      "id": "opm-pg-fubuki-088",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "yuki-onna"
+      ],
+      "found": [
+        "yuki-onna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What character was Fubuki depicted as on the 2017 One-Punch Man Halloween cover?",
+      "id": "opm-pg-fubuki-089",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a yuki-onna"
+      ],
+      "found": [
+        "a yuki-onna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What position did Fubuki hold in the Society for Supernatural Research?",
+      "id": "opm-pg-fubuki-090",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "president"
+      ],
+      "found": [
+        "president"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What position did Psykos hold in the group during their high school years?",
+      "id": "opm-pg-fubuki-091",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "vice president"
+      ],
+      "found": [
+        "vice president"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who took Tatsumaki away to research her psychic powers in One-Punch Man?",
+      "id": "opm-pg-fubuki-092",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Tsukuyomi"
+      ],
+      "found": [
+        "Tsukuyomi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who informed Fubuki about the report from the investigation in Z-City's ghost town in One-Punch Man?",
+      "id": "opm-pg-fubuki-093",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Eyelashes"
+      ],
+      "found": [
+        "Eyelashes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki use to slightly injure Do-S in One-Punch Man?",
+      "id": "opm-pg-fubuki-094",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Hell Storm"
+      ],
+      "found": [
+        "Hell Storm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Do-S decide to do after Fubuki did not succumb to the monster's mind control?",
+      "id": "opm-pg-fubuki-095",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "kill Fubuki instead of using the hero to lure Tatsumaki out"
+      ],
+      "found": [
+        "kill Fubuki instead of using the hero to lure Tatsumaki out"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki hit Do-S with when taking her revenge in the Monster Association headquarters?",
+      "id": "opm-pg-fubuki-096",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "her own whip"
+      ],
+      "found": [
+        "her own whip"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Do-S' whistle actually in One-Punch Man?",
+      "id": "opm-pg-fubuki-097",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a dog whistle"
+      ],
+      "found": [
+        "a dog whistle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who found Fubuki after Awakened Garou defeated her in the One-Punch Man webcomic?",
+      "id": "opm-pg-fubuki-098",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "King"
+      ],
+      "found": [
+        "King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki do to Psykos to defeat her in the One-Punch Man webcomic?",
+      "id": "opm-pg-fubuki-099",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "used a special technique to deflect the psychic waves of her enemy"
+      ],
+      "found": [
+        "used a special technique to deflect the psychic waves of her enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki have no choice but to do to protect her and her group from her sister's madness in the One-Punch Man webcomic?",
+      "id": "opm-pg-fubuki-100",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "disband her group"
+      ],
+      "found": [
+        "disband her group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who rescued Fubuki after her group lost to Demonic Fan in One-Punch Man?",
+      "id": "opm-pg-fubuki-101",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Tatsumaki"
+      ],
+      "found": [
+        "Tatsumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How much did the Blizzard Group earn by the end of the week in Struggle of the Blizzard Group?",
+      "id": "opm-pg-fubuki-102",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "2 million"
+      ],
+      "found": [
+        "2 million"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was the length of King's winning streak in the Numbers video game competition?",
+      "id": "opm-pg-fubuki-103",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "thirty-game winning streak"
+      ],
+      "found": [
+        "thirty-game winning streak"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What plans does Fubuki have for Christmas in the One-Punch Man Holiday Special Chapter?",
+      "id": "opm-pg-fubuki-104",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "a party at their headquarters"
+      ],
+      "found": [
+        "a party at their headquarters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki mend while recovering in the hospital in the Sewing chapter?",
+      "id": "opm-pg-fubuki-105",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Genos' damaged jacket"
+      ],
+      "found": [
+        "Genos' damaged jacket"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki use to mask the scent of machine oil on Genos' clothes?",
+      "id": "opm-pg-fubuki-106",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "cologne"
+      ],
+      "found": [
+        "cologne"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which C-Class hero wished to join Fubuki's group once she reaches B-Class?",
+      "id": "opm-pg-fubuki-107",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Swim"
+      ],
+      "found": [
+        "Swim"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki find out about Genos in the OVA Genos and Memory Loss in One-Punch Man?",
+      "id": "opm-pg-fubuki-108",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "lost his memory"
+      ],
+      "found": [
+        "lost his memory"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which video game features Fubuki as a powerful water unit in One-Punch Man?",
+      "id": "opm-pg-fubuki-109",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "Grand Summoners"
+      ],
+      "found": [
+        "Grand Summoners"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who does Fubuki try to recruit in One Punch Man: A Hero Nobody Knows?",
+      "id": "opm-pg-fubuki-110",
+      "subject": "Fubuki",
+      "accept": "all",
+      "expected": [
+        "the Custom Hero"
+      ],
+      "found": [
+        "the Custom Hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who sings Tatsumaki & Fubuki's One-Punch Song?",
+      "id": "opm-pg-fubuki-111",
+      "subject": "Tatsumaki & Fubuki's One-Punch Song",
+      "accept": "all",
+      "expected": [
+        "Aoi Yuuki",
+        "Saori Hayami"
+      ],
+      "found": [
+        "Aoi Yuuki",
+        "Saori Hayami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the duration of Tatsumaki & Fubuki's One-Punch Song?",
+      "id": "opm-pg-fubuki-112",
+      "subject": "Tatsumaki & Fubuki's One-Punch Song",
+      "accept": "all",
+      "expected": [
+        "1:33"
+      ],
+      "found": [
+        "1:33"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "When was Tatsumaki & Fubuki's One-Punch Song released?",
+      "id": "opm-pg-fubuki-113",
+      "subject": "Tatsumaki & Fubuki's One-Punch Song",
+      "accept": "all",
+      "expected": [
+        "April 23, 2016"
+      ],
+      "found": [
+        "April 23, 2016"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What company licensed Tatsumaki & Fubuki's One-Punch Song?",
+      "id": "opm-pg-fubuki-114",
+      "subject": "Tatsumaki & Fubuki's One-Punch Song",
+      "accept": "all",
+      "expected": [
+        "Lantis Company"
+      ],
+      "found": [
+        "Lantis Company"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What type of track is Tatsumaki & Fubuki's One-Punch Song?",
+      "id": "opm-pg-fubuki-115",
+      "subject": "Tatsumaki & Fubuki's One-Punch Song",
+      "accept": "all",
+      "expected": [
+        "Ending Theme"
+      ],
+      "found": [
+        "Ending Theme"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What OVA is Tatsumaki & Fubuki's One-Punch Song bundled with?",
+      "id": "opm-pg-fubuki-116",
+      "subject": "Tatsumaki & Fubuki's One-Punch Song",
+      "accept": "all",
+      "expected": [
+        "OVA 5"
+      ],
+      "found": [
+        "OVA 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 7,
+    "canon_total": 7,
+    "canon_recall": 1.0,
+    "members_returned": 7,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 115,
+    "fact_present": 115
+  }
+}

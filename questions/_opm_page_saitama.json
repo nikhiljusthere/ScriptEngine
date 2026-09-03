@@ -1,0 +1,1920 @@
+{
+  "series": "opm",
+  "wiki": "https://onepunchman.fandom.com",
+  "updated": "2026-08-21",
+  "note": "Page campaign batch: Saitama cluster (main page, synopsis, relationships, other media, battles subpage). Excluded from the official bank by the underscore prefix; scored via `cli page-run --series opm --batch saitama`.",
+  "questions": [
+    {
+      "id": "opm-pg-saitama-001",
+      "kind": "set",
+      "question": "Every battle of Saitama",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Blast vs. Empty Void (Retconned)",
+          "aliases": []
+        },
+        {
+          "item": "Child Emperor vs. Phoenix Man: Round 2",
+          "aliases": []
+        },
+        {
+          "item": "Genos, Bofoi, and Saitama vs. Meteor",
+          "aliases": []
+        },
+        {
+          "item": "King and Saitama vs. Elder Centipede",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Boros",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Carnage Kabuto",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Crablante",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Cruel Dragon",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Deep Sea King",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Empty Void",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Evil Natural Water",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Flashy Flash",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Genos",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Genos: Round Two",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Groribas and Geryuganshoop",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Hammerhead",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. House of Evolution",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Marugori",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Mirror",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Mosquito",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Orochi",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Overgrown Rover and Nyan",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Personification Of A Light Pull Cord",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Pluton",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Speed-o'-Sound Sonic",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Speed-o'-Sound Sonic: Round Three",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Speed-o'-Sound Sonic: Round Two",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Subterranean King",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Suiryu",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Super Custom YO649Z Mk. II",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Tanktop Tiger and Tanktop Black Hole",
+          "aliases": []
+        },
+        {
+          "item": "Saitama vs. Vaccine Man",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Battles"
+      ],
+      "verified": "2026-08-16",
+      "note": "Reused from opm-cov-01 (bank): transcribed from the `combatant` fields of 33 battle pages; diffed 1:1 against `roster.battles_in` output on 2026-08-21."
+    },
+    {
+      "id": "opm-pg-saitama-002",
+      "kind": "set",
+      "question": "What are all the aliases of Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Caped Baldy",
+          "aliases": []
+        },
+        {
+          "item": "The Fist That Has Turned Against God",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21",
+      "note": "Declared in series/opm/overrides.yaml (roster `Saitama's aliases`): both names sit in one `alias =` infobox field on `Saitama`."
+    },
+    {
+      "id": "opm-pg-saitama-003",
+      "kind": "fact",
+      "question": "What is Saitama's hero name?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Caped Baldy"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-004",
+      "kind": "fact",
+      "question": "What is the Japanese reading of Saitama's hero name?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hagemanto"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-005",
+      "kind": "fact",
+      "question": "How tall is Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "175 cm"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-006",
+      "kind": "fact",
+      "question": "How much does Saitama weigh?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "70 kg"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-007",
+      "kind": "fact",
+      "question": "Which apartment does Saitama live in at the Hero Association Headquarters?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hero Apartment 104"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-008",
+      "kind": "fact",
+      "question": "What is Saitama's rumored identity in Z-City's Ghost Town?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Ghost Town Monster"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-009",
+      "kind": "fact",
+      "question": "What two foods does Saitama like according to his profile?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "seaweed"
+        },
+        {
+          "item": "Chinese cabbage"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-010",
+      "kind": "fact",
+      "question": "What is the hidden meaning behind Saitama's cactus?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "remains unchanged no matter how it is taken care of"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-011",
+      "kind": "fact",
+      "question": "What is Saitama's hero profile number in the anime?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "03402"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-012",
+      "kind": "fact",
+      "question": "In which poll did Saitama rank 1st and young Saitama 10th?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "character popularity poll"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-013",
+      "kind": "fact",
+      "question": "What is the name of Saitama's fighting style?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Killer Move: Serious Series"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-014",
+      "kind": "fact",
+      "question": "Which organizations is Saitama affiliated with?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hero Association"
+        },
+        {
+          "item": "Saitama Group"
+        },
+        {
+          "item": "Hero Name Victims Association"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-015",
+      "kind": "fact",
+      "question": "Besides hero, what other occupation is listed for Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Teacher"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-016",
+      "kind": "fact",
+      "question": "In which game was Saitama bested by Bang?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Rock, Paper, Scissors"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-017",
+      "kind": "fact",
+      "question": "What does Saitama mostly lose to King at?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "video games"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-018",
+      "kind": "fact",
+      "question": "What eating contest did Saitama lose to Genos in?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "spicy noodle eating contest"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-019",
+      "kind": "fact",
+      "question": "What has no enemy been able to do to Saitama in any way?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "no enemy has been able to injure him in any way"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-020",
+      "kind": "fact",
+      "question": "Which moon of Jupiter did Saitama lift the entire surface of?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Io"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-021",
+      "kind": "fact",
+      "question": "What did Saitama accidentally do to Jupiter's gas during the Garou fight on Io?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "blew away half of Jupiter's gas"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21",
+      "note": "Re-golded 2026-08-21: 'Jupiter's gases' sits only in a slideshow image caption (unchunked region); the chunked prose says 'accidentally blew away half of Jupiter's gas with a serious sneeze'."
+    },
+    {
+      "id": "opm-pg-saitama-022",
+      "kind": "fact",
+      "question": "What did Saitama complete in the blink of an eye during his hero tryouts?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "1500-meter dash"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-023",
+      "kind": "fact",
+      "question": "What ability lets Saitama run across the ocean?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Water Running"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-024",
+      "kind": "fact",
+      "question": "How does the main page describe Saitama's Invulnerability?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "incomparable physical toughness and durability"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-025",
+      "kind": "fact",
+      "question": "What did Saitama's Serious Punch completely neutralize?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Collapsing Star Roaring Cannon"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-026",
+      "kind": "fact",
+      "question": "What improvised weapon did Saitama use to kill Crablante?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "tie to grab the monster's eye and tear out his intestines"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-027",
+      "kind": "fact",
+      "question": "What rank does Saitama's promotion list begin with?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "C-Class Rank 388"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-028",
+      "kind": "fact",
+      "question": "What rank did Saitama hold after the Deep Sea King incident?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "C-Class Rank 1"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-029",
+      "kind": "fact",
+      "question": "What part of the hero exam did Saitama do poorly on?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "written portion of the hero exam"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-030",
+      "kind": "fact",
+      "question": "How do almost all of Saitama's enemies fare against a single earnest punch?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "almost no enemy has been able to survive a single earnest punch"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-031",
+      "kind": "fact",
+      "question": "What showed Saitama's improvement on his 300th day of training?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "wrecking a car after saving a boy"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-032",
+      "kind": "fact",
+      "question": "What was Saitama's daily training schedule?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "100 push-ups"
+        },
+        {
+          "item": "100 sit-ups"
+        },
+        {
+          "item": "100 squats"
+        },
+        {
+          "item": "10 km"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-033",
+      "kind": "fact",
+      "question": "Which monster attacked a group of people during Saitama's first year and a half of training?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Octopus Claw Man"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-034",
+      "kind": "fact",
+      "question": "What did Saitama tell Marugori, who had just destroyed D-City?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "put some pants on"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-035",
+      "kind": "fact",
+      "question": "Which House of Evolution monsters did Saitama defeat one after another?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kamakyuri"
+        },
+        {
+          "item": "Ground Dragon"
+        },
+        {
+          "item": "Beast King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-036",
+      "kind": "fact",
+      "question": "What mode did Carnage Kabuto enter, vowing to rampage until the next Saturday?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Carnage Mode"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-037",
+      "kind": "fact",
+      "question": "What was Saitama's total score on the 6th Official Superhero Certification Exam?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "score of 71"
+        },
+        {
+          "item": "passing is 70"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-038",
+      "kind": "fact",
+      "question": "Why was Saitama's exam score low despite a perfect physical record?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "did poorly on the written test"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-039",
+      "kind": "fact",
+      "question": "What was Saitama doing during Sneck's lecture that angered the A-Class hero?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "chewing bubble gum"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-040",
+      "kind": "fact",
+      "question": "What was Genos actually chasing during his first sparring match with Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "afterimage"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-041",
+      "kind": "fact",
+      "question": "Where did Saitama's Death Punch stop during the sparring match?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "inches before hitting Genos' face"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-042",
+      "kind": "fact",
+      "question": "What did Saitama do after Genos failed to destroy the meteor?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "punches his way through it"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-043",
+      "kind": "fact",
+      "question": "Which monster accused Saitama of destroying the town after the meteor?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Tanktop Black Hole"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-044",
+      "kind": "fact",
+      "question": "What did Saitama say about the Deep Sea King's punch?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "too weak to hurt him"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-045",
+      "kind": "fact",
+      "question": "Which S-Class hero refused to shake Saitama's hand?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Atomic Samurai"
+        },
+        {
+          "item": "S-Class rank 4"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-046",
+      "kind": "fact",
+      "question": "Who was surprised that an S-Class hero called herself the disciple of B-Class Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Fubuki"
+        },
+        {
+          "item": "disciple of the B-Class Saitama"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-047",
+      "kind": "fact",
+      "question": "What did Saitama give to the heroes at the hospital who had been beaten by Garou?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "bananas"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-048",
+      "kind": "fact",
+      "question": "Where did Garou sneak-attack Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "wig shop"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-049",
+      "kind": "fact",
+      "question": "What did Garou try to hit Saitama with at the wig shop?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "karate chop"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-050",
+      "kind": "fact",
+      "question": "Which round of the Super Fight did Saitama face Choze in?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "semi-finals"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-051",
+      "kind": "fact",
+      "question": "Why was Saitama disqualified from the Super Fight?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "wig came off"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-052",
+      "kind": "fact",
+      "question": "Who warned Saitama of Gouketsu and the Monster Association's invasion?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Suiryu"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-053",
+      "kind": "fact",
+      "question": "What did Saitama cook Dr. Kuseno's gift with?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "cabbage"
+        },
+        {
+          "item": "high-quality beef"
+        },
+        {
+          "item": "hotpot"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-054",
+      "kind": "fact",
+      "question": "What did Garou do in the restaurant before Saitama caught him for the third time?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "dine-and-dash"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-055",
+      "kind": "fact",
+      "question": "What did Saitama use to flip over the Monster Association Headquarters?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Serious Table Flip"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-056",
+      "kind": "fact",
+      "question": "Which two heroes did Saitama entrust the two formerly dangerous monsters to?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Butterfly DX"
+        },
+        {
+          "item": "Chain'n'toad"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-057",
+      "kind": "fact",
+      "question": "What did the Hero Association mistake Saitama and Tatsumaki for during their fight?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dragon-level threat"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-058",
+      "kind": "fact",
+      "question": "What did the Neo Heroes claim to have selected?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "two thousand possible candidates"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-059",
+      "kind": "fact",
+      "question": "Who did Genos defeat before challenging Saitama to a duel?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Forest King"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-060",
+      "kind": "fact",
+      "question": "Which two factions were at war in the conflict Saitama got involved in after defeating Rangor?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Saints"
+        },
+        {
+          "item": "Deathbone"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-061",
+      "kind": "fact",
+      "question": "Whom did Flashy Flash want Saitama to help search for?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Manako"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-062",
+      "kind": "fact",
+      "question": "Who did Saitama swiftly take out and confiscate weapons from at Sonic's hideout?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ninja Village Leader"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-063",
+      "kind": "fact",
+      "question": "What did Saitama find in the ground at Sonic's hideout?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "figure-shaped crater"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-064",
+      "kind": "fact",
+      "question": "Where did Saitama, Genos, and Flash encounter the Internet Surfers?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "City-E"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-065",
+      "kind": "fact",
+      "question": "What time limit did Flashy Flash set for their match?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "thirty minutes"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-066",
+      "kind": "fact",
+      "question": "What did Saitama offer to fix Flash's broken sword with?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "duct tape"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-067",
+      "kind": "fact",
+      "question": "What was Saitama on when Sweet Mask explained his ideal hero project?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ferris wheel"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-068",
+      "kind": "fact",
+      "question": "How did Saitama first meet Genos?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "tried to self-destruct"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-069",
+      "kind": "fact",
+      "question": "How did Saitama first meet King?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "saved him from Octopus Claw Man"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-070",
+      "kind": "fact",
+      "question": "What did King feel guilty about after Saitama saved him from Giant Crow?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "taking credit for Saitama's actions"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-071",
+      "kind": "fact",
+      "question": "What did Saitama declare Fubuki to be when Tatsumaki asked?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "acquaintance"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-072",
+      "kind": "fact",
+      "question": "What did Zombieman ask Dr. Genus to do after seeing Saitama fight Garou?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "remove his limiter"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-073",
+      "kind": "fact",
+      "question": "For what did Saitama first mistake Tatsumaki?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "little girl"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-074",
+      "kind": "fact",
+      "question": "What did Saitama give Mumen Rider when visiting him in the hospital?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a banana"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-075",
+      "kind": "fact",
+      "question": "What did Saitama think of Child Emperor?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "pretty cool"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-076",
+      "kind": "fact",
+      "question": "What did Saitama say he would at least do when Blast reached out to him again?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "make Blast some tea"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-077",
+      "kind": "fact",
+      "question": "How does Speed-o'-Sound Sonic view Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "eternal rival"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-078",
+      "kind": "fact",
+      "question": "Why did Saitama sympathize with Boros?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "worthy enough opponent"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-079",
+      "kind": "fact",
+      "question": "How did God first communicate with Saitama?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "telepathy"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-080",
+      "kind": "fact",
+      "question": "What did Saitama break through during his training, per Dr. Genus?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "natural limiter that humans have"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-081",
+      "kind": "fact",
+      "question": "What price did Saitama pay for breaking his limiter, per Dr. Genus?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "his hair and his emotions"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Relationships"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-082",
+      "kind": "fact",
+      "question": "What early reference features both Ripped Uniforms and Piggy Bancon?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ripped Uniforms"
+        },
+        {
+          "item": "Piggy Bancon"
+        },
+        {
+          "item": "200 Yen"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-083",
+      "kind": "fact",
+      "question": "What extra chapter depicts Saitama fighting a light pull cord?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Personification Of A Light Pull Cord"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-084",
+      "kind": "fact",
+      "question": "What was Saitama treating in the light pull cord extra chapter?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "decaying tooth"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-085",
+      "kind": "fact",
+      "question": "Where was Saitama hiding from a mysterious being during his first year and a half of training?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Shelter Nr. 7"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-086",
+      "kind": "fact",
+      "question": "Which police chief offers Saitama pork cutlet in the Pork Cutlet Bowl extra, and what monster attacks the station?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Chief Kuma"
+        },
+        {
+          "item": "Surprise-Attack Plum"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Gold fix 2026-08-21: the extra names only Chief Kuma as a policeman; Surprise-Attack Plum is the Demon-level monster (the true culprit) that attacks the station, not a second officer. The other officer is unnamed, so 'which two policemen' was unanswerable as golded."
+    },
+    {
+      "id": "opm-pg-saitama-087",
+      "kind": "fact",
+      "question": "What is the lost cat's name, and what monster attacks Saitama in the Lost Cat extra?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Torako"
+        },
+        {
+          "item": "Grizzly Nyah"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Review fix 2026-08-21: the wiki only calls Grizzly Nyah 'a monster'; the original 'the bear' assumed a species the page does not state."
+    },
+    {
+      "id": "opm-pg-saitama-088",
+      "kind": "fact",
+      "question": "Which clan did the martial artists claim to be from when they raided Bang's dojo in the Lobster extra?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Harsh Path Clan"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Review fix 2026-08-21: 'Lobster' is the extra chapter's title (the creatures being eaten); the Harsh Path Clan martial artists are raiders of Bang's dojo, not Lobster's subordinates."
+    },
+    {
+      "id": "opm-pg-saitama-089",
+      "kind": "fact",
+      "question": "Why did the Giant Crow fall for Saitama's head in the Volume 8 omake?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "shiny"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-090",
+      "kind": "fact",
+      "question": "What total score did Saitama receive in the hero costume contest omake?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "total score of 8"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Gold fix 2026-08-21: Torajirou is the contest's head judge and Game-Berus the monster that attacked the audience; neither is a hero name Saitama entered, so the original gold was wrong. Re-golded to Saitama's total score."
+    },
+    {
+      "id": "opm-pg-saitama-091",
+      "kind": "fact",
+      "question": "Which two monsters attacked Y-City in the Squadron omake?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Scaledon"
+        },
+        {
+          "item": "Wild Horn"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-092",
+      "kind": "fact",
+      "question": "What video game was King picking up when he was mistaken for Vaccine Man's killer in the Witness omake?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Moe Moe Chronicle 2"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Review fix 2026-08-21: Moe Moe Chronicle 2 is King's video game picked up from the floor in the Witness omake, not a manga Saitama was reading."
+    },
+    {
+      "id": "opm-pg-saitama-093",
+      "kind": "fact",
+      "question": "What did the boss transform into before his fight with Saitama in Road To Hero?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Fish of Darkness"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-094",
+      "kind": "fact",
+      "question": "What did Saitama nearly do to Bang after winning rock paper scissors in OVA 4?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "almost kills Bang"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-095",
+      "kind": "fact",
+      "question": "What monster does Genos's radar lead him to in OVA 9?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Lord of Mountains"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Review fix 2026-08-21: the radar is Genos's ('detecting energy levels via his radar'), not Fubuki's; Fubuki only visits the apartment before leaving."
+    },
+    {
+      "id": "opm-pg-saitama-096",
+      "kind": "fact",
+      "question": "What was the grand prize of the Wild Animal tournament in OVA 10?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "five million yen"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-097",
+      "kind": "fact",
+      "question": "What is Saitama's alternate self called in the video game One Punch Man: A Hero Nobody Knows?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dream Saitama"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21",
+      "note": "Review fix 2026-08-21: Dream Saitama is a playable alternate version in the video game One Punch Man: A Hero Nobody Knows, not an anime character; the game title left the gold (now in the question)."
+    },
+    {
+      "id": "opm-pg-saitama-098",
+      "kind": "fact",
+      "question": "Who performed Saitama's One-Punch Song?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Makoto Furukawa"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-099",
+      "kind": "fact",
+      "question": "Which two threats beat Saitama in the 200 Yen early reference?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ripped Uniforms"
+        },
+        {
+          "item": "Piggy Bancon"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Other_Media"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-saitama-100",
+      "kind": "fact",
+      "question": "Which of Saitama's recorded losses took place off-screen?",
+      "subject": "Saitama",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Piggy Bancon"
+        },
+        {
+          "item": "Off-Screen"
+        }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Saitama/Battles"
+      ],
+      "verified": "2026-08-21"
+    }
+  ]
+}

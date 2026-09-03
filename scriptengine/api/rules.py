@@ -11,6 +11,8 @@ They live here now, and `docs/SCRIPT_STYLE.md` quotes this module rather than
 the other way round. One copy, served to every client.
 
 * `STYLE_RULES`: the house format, from the finished scripts in `sample scripts/`.
+* `SCRIPT_FORMAT`: how a *narrative* script is built from a beat list (the
+  through-line, flashbacks, which beats to skip).
 * `VOICE_RULES`: the anti-AI voice, distilled from Wikipedia:Signs of AI
   writing. The full learning is `docs/ANTI_AI_SCRIPTING.md`.
 * `ANNOTATION_RULES`: how a line states the chapter and episode it came from.
@@ -35,6 +37,15 @@ INTRO_ON = """\
 
 INTRO_OFF = """\
 - Intro: OFF. After the title go straight into the first section heading. No preamble of any kind.
+"""
+
+SCRIPT_FORMAT = """\
+=== SCRIPT FORMAT: a narrative script is a story, not a dump ===
+- Choose a through-line. A narrative bundle returns dozens of beats; a script wants the ones that carry the story forward, in story order. Fold a background beat into the section it explains rather than giving it a section of its own.
+- A prequel sorts first chronologically but is not the start of the story. Volume 0 / Chapter 0.x material belongs in an opening flashback section, not as beat 1 of the main timeline.
+- Skip the list beats. Sections that enumerate Chapters, Episodes, Characters Introduced or Terminology Introduced are reference material, not narration; drop them, or fold the one useful fact into the surrounding prose.
+- Facts come from the context and nowhere else. A section whose beat carries no locator may set a scene, but may not state a fact; a line that needs a number the context never gives is written plainly without one.
+- Open each section with a bulleted bold heading naming the beat, tell it with specifics, and end it cleanly. No filler transitions between beats.
 """
 
 VOICE_RULES = """\
@@ -71,14 +82,18 @@ ANNOTATION_RULES = """\
 def writing_rules(intro: bool = True, words: int = 0) -> str:
     """The full contract, with the two choices the user makes folded in."""
     length = (
-        f"- Target length: about {words:,} words. Reach it by giving every section "
-        "full treatment with real specifics from the context, never by padding.\n"
+        f"- Length contract: the script must be between "
+        f"{max(0, words - 500):,} and {words + 500:,} words. "
+        f"Count your words before you finish and land inside that band. "
+        "Reach it by giving every section full treatment with real specifics "
+        "from the context, never by padding.\n"
         if words
         else ""
     )
     return "\n".join(
         [
             STYLE_RULES + (INTRO_ON if intro else INTRO_OFF) + length,
+            SCRIPT_FORMAT,
             VOICE_RULES,
             ANNOTATION_RULES,
         ]

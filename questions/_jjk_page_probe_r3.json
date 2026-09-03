@@ -1,0 +1,2524 @@
+﻿{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-27",
+  "note": "R3 adversarial probe batch (release R1): 21 completed characters x 6 forms (yes/no, comparative, negated conditional, scope phrase, event-name scope, possessive-noun bait). Every answer is a verbatim item already proven on the character's own page batch. A failure here surfaces a router/retrieval gap without blocking any page's exit 0.",
+  "questions": [
+    {
+      "id": "jjk-probe-r3-001",
+      "kind": "fact",
+      "question": "Is Yuji Itadori's vote count in the first Popularity Poll 21,735?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "21,735"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in yuji_itadori batch fact: \"What was Yuji Itadori's vote count in the first Popularity Poll?\""
+    },
+    {
+      "id": "jjk-probe-r3-002",
+      "kind": "fact",
+      "question": "Can Yuji Itadori perform more consecutive Black Flashes in a row than the total of nineteen he has ever landed?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "seven times in a row"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in yuji_itadori batch fact: 'What is the maximum number of consecutive Black Flashes Yuji Itadori can perform?'"
+    },
+    {
+      "id": "jjk-probe-r3-003",
+      "kind": "fact",
+      "question": "What would have happened if Yuji Itadori had not become a sorcerer?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "firefighter"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in yuji_itadori batch fact: 'What would Yuji Itadori have become if he did not become a sorcerer?'"
+    },
+    {
+      "id": "jjk-probe-r3-004",
+      "kind": "fact",
+      "question": "What domain expansion does Yuji Itadori cast in battle after his training with Kusakabe?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hometown Domain"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in yuji_itadori batch fact: 'What domain expansion does Yuji Itadori cast after his training with Kusakabe?'"
+    },
+    {
+      "id": "jjk-probe-r3-005",
+      "kind": "fact",
+      "question": "How long did Yuji Itadori resist Sukuna's Malevolent Shrine during the Shibuya Incident?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "almost 99 seconds"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in yuji_itadori batch fact: \"How long did Yuji Itadori resist Sukuna's Malevolent Shrine with Simple Domain?\""
+    },
+    {
+      "id": "jjk-probe-r3-006",
+      "kind": "fact",
+      "question": "Whose inherited technique is Blood Manipulation: the Kamo Clan's or the Zenin Clan's?",
+      "subject": "Yuji Itadori",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kamo Clan"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in yuji_itadori batch fact: 'Whose inherited technique is Blood Manipulation?'"
+    },
+    {
+      "id": "jjk-probe-r3-007",
+      "kind": "fact",
+      "question": "Is Satoru Gojo's limit on domain expansions in one day five times?",
+      "subject": "Satoru Gojo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "five times",
+          "aliases": [
+            "at least five times"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in satoru_gojo batch fact: 'How many times can Satoru Gojo expand his domain in one day?'"
+    },
+    {
+      "id": "jjk-probe-r3-008",
+      "kind": "fact",
+      "question": "Is Kenjaku the only one Satoru Gojo is as skilled as in pure hand-to-hand combat?",
+      "subject": "Satoru Gojo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kenjaku"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in satoru_gojo batch fact: 'Who is Satoru Gojo as skilled as in pure hand-to-hand combat?'"
+    },
+    {
+      "id": "jjk-probe-r3-009",
+      "kind": "fact",
+      "question": "What would have happened if Satoru Gojo's Simple Domain had not held out for three minutes in the domain clash?",
+      "subject": "Satoru Gojo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "crumble",
+          "aliases": [
+            "crumbled"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in satoru_gojo batch fact: \"What happened to Sukuna's Malevolent Shrine within three minutes of the domain clash?\""
+    },
+    {
+      "id": "jjk-probe-r3-010",
+      "kind": "fact",
+      "question": "What did Satoru Gojo rip out of Jogo in battle?",
+      "subject": "Satoru Gojo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jogo's head"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in satoru_gojo batch fact: 'What did Satoru Gojo rip out of Jogo?'"
+    },
+    {
+      "id": "jjk-probe-r3-011",
+      "kind": "fact",
+      "question": "What happened to Sukuna's Malevolent Shrine within three minutes of the domain clash of the Shibuya Incident?",
+      "subject": "Satoru Gojo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "crumble",
+          "aliases": [
+            "crumbled"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in satoru_gojo batch fact: \"What happened to Sukuna's Malevolent Shrine within three minutes of the domain clash?\""
+    },
+    {
+      "id": "jjk-probe-r3-012",
+      "kind": "fact",
+      "question": "Whose soul did Satoru Gojo protect: Riko Amanai's or the Star Religious Group's?",
+      "subject": "Satoru Gojo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Riko Amanai"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in satoru_gojo batch fact: 'Who did Satoru Gojo grow to show compassion for while protecting her?'"
+    },
+    {
+      "id": "jjk-probe-r3-013",
+      "kind": "fact",
+      "question": "Is Megumi Fushiguro's domain expansion a complete one?",
+      "subject": "Megumi Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "incomplete"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in megumi_fushiguro batch fact: \"Is Megumi Fushiguro's domain expansion complete?\""
+    },
+    {
+      "id": "jjk-probe-r3-014",
+      "kind": "fact",
+      "question": "Does the Ten Shadows Technique reach a higher percentage of its potential inside Megumi Fushiguro's domain than outside it?",
+      "subject": "Megumi Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "120%"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in megumi_fushiguro batch fact: \"What percent of its potential does the Ten Shadows Technique reach inside Megumi Fushiguro's domain?\""
+    },
+    {
+      "id": "jjk-probe-r3-015",
+      "kind": "fact",
+      "question": "What would have happened if Megumi Fushiguro had not swapped weapons with Maki in the fight against Hanami?",
+      "subject": "Megumi Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Playful Cloud"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in megumi_fushiguro batch fact: 'What is the name of the cursed tool Megumi Fushiguro used against Hanami after swapping weapons with Maki?'"
+    },
+    {
+      "id": "jjk-probe-r3-016",
+      "kind": "fact",
+      "question": "How many facial scars does Megumi Fushiguro acquire in battle after the Shinjuku Showdown Arc?",
+      "subject": "Megumi Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "three"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in megumi_fushiguro batch fact: 'How many facial scars does Megumi Fushiguro acquire after the Shinjuku Showdown Arc?'"
+    },
+    {
+      "id": "jjk-probe-r3-017",
+      "kind": "fact",
+      "question": "What is the name of Megumi Fushiguro's strongest offensive shikigami during the Shibuya Incident?",
+      "subject": "Megumi Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Divine Dog: Totality"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in megumi_fushiguro batch fact: \"What is the name of Megumi Fushiguro's strongest offensive shikigami?\""
+    },
+    {
+      "id": "jjk-probe-r3-018",
+      "kind": "fact",
+      "question": "How many of the Zenin Clan's shikigami can Megumi Fushiguro summon at the same time?",
+      "subject": "Megumi Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "three"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in megumi_fushiguro batch fact: 'How many shikigami can Megumi Fushiguro summon at the same time?'"
+    },
+    {
+      "id": "jjk-probe-r3-019",
+      "kind": "fact",
+      "question": "Is Sukuna's soul split into twenty indestructible fingers?",
+      "subject": "Sukuna",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "twenty"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in sukuna batch fact: \"How many indestructible fingers is Sukuna's soul split into?\""
+    },
+    {
+      "id": "jjk-probe-r3-020",
+      "kind": "fact",
+      "question": "Is Malevolent Shrine's sure-hit area wider than 200 meters?",
+      "subject": "Sukuna",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "200 meters"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in sukuna batch fact: \"What is the maximum radius of Malevolent Shrine's sure-hit area?\""
+    },
+    {
+      "id": "jjk-probe-r3-021",
+      "kind": "fact",
+      "question": "What would have happened if no one had consumed any of Sukuna's fingers?",
+      "subject": "Sukuna",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in sukuna batch fact: \"Who consumed one of Sukuna's fingers to incarnate him?\""
+    },
+    {
+      "id": "jjk-probe-r3-022",
+      "kind": "fact",
+      "question": "What is the name of Sukuna's domain expansion in battle?",
+      "subject": "Sukuna",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Malevolent Shrine"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in sukuna batch fact: \"What is the name of Sukuna's domain expansion?\""
+    },
+    {
+      "id": "jjk-probe-r3-023",
+      "kind": "fact",
+      "question": "What did Sukuna single-handedly slaughter in the events of the Heian Era?",
+      "subject": "Sukuna",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the Sun, Moon, and Stars Squad"
+        },
+        {
+          "item": "the Five Empty Generals"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in sukuna batch fact: 'What did Sukuna single-handedly slaughter in the Heian Era?'"
+    },
+    {
+      "id": "jjk-probe-r3-024",
+      "kind": "fact",
+      "question": "What does Sukuna most often wear in the King of Curses's true body?",
+      "subject": "Sukuna",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a black haori"
+        },
+        {
+          "item": "light-colored pants"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in sukuna batch fact: 'What does Sukuna most often wear in his true body?'"
+    },
+    {
+      "id": "jjk-probe-r3-025",
+      "kind": "fact",
+      "question": "Is Maki Zenin a Grade 4 jujutsu sorcerer?",
+      "subject": "Maki Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Grade 4"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in maki_zenin batch fact: 'What grade of jujutsu sorcerer is Maki Zenin?'"
+    },
+    {
+      "id": "jjk-probe-r3-026",
+      "kind": "fact",
+      "question": "Is Maki Zenin older in Jujutsu Kaisen Modulo than she is stated to be in the prequel?",
+      "subject": "Maki Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "77 (Modulo)",
+          "aliases": [
+            "77"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in maki_zenin batch fact: 'What age is Maki Zenin in Jujutsu Kaisen Modulo?'"
+    },
+    {
+      "id": "jjk-probe-r3-027",
+      "kind": "fact",
+      "question": "What would have happened if Maki Zenin had not been born a non-sorcerer?",
+      "subject": "Maki Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "non-sorcerer"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in maki_zenin batch fact: 'What was Maki Zenin born as?'"
+    },
+    {
+      "id": "jjk-probe-r3-028",
+      "kind": "fact",
+      "question": "What insulting name does Maki Zenin use for her teacher in class?",
+      "subject": "Maki Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "moron"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in maki_zenin batch fact: 'What insulting name does Maki Zenin use for her teacher?'"
+    },
+    {
+      "id": "jjk-probe-r3-029",
+      "kind": "fact",
+      "question": "What age is Maki Zenin in the events of Jujutsu Kaisen Modulo?",
+      "subject": "Maki Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "77 (Modulo)",
+          "aliases": [
+            "77"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in maki_zenin batch fact: 'What age is Maki Zenin in Jujutsu Kaisen Modulo?'"
+    },
+    {
+      "id": "jjk-probe-r3-030",
+      "kind": "fact",
+      "question": "Which of the Zenin Clan's cousins inherited Naobito Zenin's cursed technique?",
+      "subject": "Maki Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Naoya Zenin"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in maki_zenin batch fact: \"Which cousin of Maki Zenin inherited Naobito Zenin's cursed technique?\""
+    },
+    {
+      "id": "jjk-probe-r3-031",
+      "kind": "fact",
+      "question": "Is Kenjaku deceased?",
+      "subject": "Kenjaku",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Deceased"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in kenjaku batch fact: \"What is Kenjaku's status?\""
+    },
+    {
+      "id": "jjk-probe-r3-032",
+      "kind": "fact",
+      "question": "Is Womb Profusion more similar to Malevolent Shrine than to any other domain?",
+      "subject": "Kenjaku",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Malevolent Shrine"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in kenjaku batch fact: 'Womb Profusion is similar to which other domain?'"
+    },
+    {
+      "id": "jjk-probe-r3-033",
+      "kind": "fact",
+      "question": "What technique would Kenjaku have gained if he had not expelled Mahito?",
+      "subject": "Kenjaku",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Idle Transfiguration"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in kenjaku batch fact: 'What technique did Kenjaku gain after expelling Mahito?'"
+    },
+    {
+      "id": "jjk-probe-r3-034",
+      "kind": "fact",
+      "question": "What technique does Kenjaku use to heal his body in battle?",
+      "subject": "Kenjaku",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Reverse Cursed Technique"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in kenjaku batch fact: 'What technique does Kenjaku use to heal his body?'"
+    },
+    {
+      "id": "jjk-probe-r3-035",
+      "kind": "fact",
+      "question": "Whom was the Prison Realm the crux of Kenjaku's plan to seal during the Culling Game?",
+      "subject": "Kenjaku",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in kenjaku batch fact: \"Whom was the Prison Realm the crux of Kenjaku's plan to seal?\""
+    },
+    {
+      "id": "jjk-probe-r3-036",
+      "kind": "fact",
+      "question": "Who held the back gate of the Prison Realm for the higher-ups' plan?",
+      "subject": "Kenjaku",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tengen"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in kenjaku batch fact: 'Who held the back gate of the Prison Realm?'"
+    },
+    {
+      "id": "jjk-probe-r3-037",
+      "kind": "fact",
+      "question": "Is Yuta Okkotsu a Special Grade jujutsu sorcerer?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Special Grade"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in yuta_okkotsu batch fact: 'What grade of jujutsu sorcerer is Yuta Okkotsu?'"
+    },
+    {
+      "id": "jjk-probe-r3-038",
+      "kind": "fact",
+      "question": "Did Yuta Okkotsu resolve to score more points than four hundred all on his own?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "four hundred points"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in yuta_okkotsu batch fact: 'What point total did Yuta Okkotsu resolve to score all on his own?'"
+    },
+    {
+      "id": "jjk-probe-r3-039",
+      "kind": "fact",
+      "question": "What would have happened if Yuta Okkotsu had not pretended to kill Yuji Itadori?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "to help protect Yuji from the higher-ups",
+          "aliases": [
+            "protect Yuji from the higher-ups"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in yuta_okkotsu batch fact: 'Why did Yuta Okkotsu pretend to kill Yuji Itadori?'"
+    },
+    {
+      "id": "jjk-probe-r3-040",
+      "kind": "fact",
+      "question": "What did the elderly Yuta Okkotsu wear in public?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a dark-colored haori over a lighter-colored kimono",
+          "aliases": [
+            "haori",
+            "kimono"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in yuta_okkotsu batch fact: 'What did the elderly Yuta Okkotsu wear?'"
+    },
+    {
+      "id": "jjk-probe-r3-041",
+      "kind": "fact",
+      "question": "What guilt does Yuta Okkotsu hold over the Shibuya Incident?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "guilt about being unable to help his comrades in Shibuya",
+          "aliases": [
+            "unable to help his comrades"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in yuta_okkotsu batch fact: 'What guilt does Yuta Okkotsu hold?'"
+    },
+    {
+      "id": "jjk-probe-r3-042",
+      "kind": "fact",
+      "question": "Who does Yuta Okkotsu not blame for the King of Curses's actions?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in yuta_okkotsu batch fact: \"Who does Yuta Okkotsu not blame for Sukuna's actions?\""
+    },
+    {
+      "id": "jjk-probe-r3-043",
+      "kind": "fact",
+      "question": "Did Nobara Kugisaki finish off Kechizu with Straw Doll Technique: Hairpin?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nobara quickly snaps and activates Straw Doll Technique: Hairpin, detonating the nail in Kechizu's head, killing him instantly",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in nobara_kugisaki batch fact: 'How did Nobara Kugisaki finish off Kechizu?'"
+    },
+    {
+      "id": "jjk-probe-r3-044",
+      "kind": "fact",
+      "question": "Is Straw Doll Technique more central to Nobara Kugisaki's fight with Momo Nishimiya than Resonance?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Straw Doll Technique",
+          "aliases": []
+        },
+        {
+          "item": "Resonance",
+          "aliases": []
+        },
+        {
+          "item": "Hairpin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in nobara_kugisaki batch fact: 'Which techniques did Nobara Kugisaki use in Nobara Kugisaki vs. Momo Nishimiya?'"
+    },
+    {
+      "id": "jjk-probe-r3-045",
+      "kind": "fact",
+      "question": "What would have happened if Nobara Kugisaki had not stabbed her infected arm with her nail?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nobara stabs her infected arm with her nail and activates Straw Doll Technique: Resonance",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in nobara_kugisaki batch fact: \"How did Nobara Kugisaki turn the Death Paintings' Rot Technique against them?\""
+    },
+    {
+      "id": "jjk-probe-r3-046",
+      "kind": "fact",
+      "question": "How did Nobara Kugisaki buy herself time in battle against Haruta Shigemo?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "got Shigemo to talk",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in nobara_kugisaki batch fact: 'How did Nobara Kugisaki buy herself time during the fight with Haruta Shigemo?'"
+    },
+    {
+      "id": "jjk-probe-r3-047",
+      "kind": "fact",
+      "question": "During which event did Nobara Kugisaki fight alongside Kento Nanami against Haruta Shigemo?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "The Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in nobara_kugisaki batch fact: 'During which event did Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?'"
+    },
+    {
+      "id": "jjk-probe-r3-048",
+      "kind": "fact",
+      "question": "What did Nobara Kugisaki do to the cursed tool that Haruta Shigemo's side levitated?",
+      "subject": "Nobara Kugisaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nobara sends one of her nails into the hand of the cursed tool, pinning it to the wall",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in nobara_kugisaki batch fact: \"What did Nobara Kugisaki do to Haruta Shigemo's levitating cursed tool?\""
+    },
+    {
+      "id": "jjk-probe-r3-049",
+      "kind": "fact",
+      "question": "Is Choso's power after his incarnation comparable to a grade 1 sorcerer?",
+      "subject": "Choso",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a grade 1 sorcerer"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in choso batch fact: \"What is Choso's power comparable to after his incarnation?\""
+    },
+    {
+      "id": "jjk-probe-r3-050",
+      "kind": "fact",
+      "question": "Does Choso's Blood Manipulation mastery surpass Noritoshi Kamo's?",
+      "subject": "Choso",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Noritoshi Kamo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in choso batch fact: \"Whose Blood Manipulation mastery does Choso's surpass?\""
+    },
+    {
+      "id": "jjk-probe-r3-051",
+      "kind": "fact",
+      "question": "What would have happened if Eso and Kechizu had been accepted by humanity?",
+      "subject": "Choso",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Eso and Kechizu wouldn't be accepted by humanity"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in choso batch fact: 'Why did Choso initially decide to live as curses?'"
+    },
+    {
+      "id": "jjk-probe-r3-052",
+      "kind": "fact",
+      "question": "What does Choso use his techniques to do in battle to put Gojo at a disadvantage?",
+      "subject": "Choso",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "slaughter tons of non-sorcerers"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in choso batch fact: 'What did Choso use his techniques to do to put Gojo at a disadvantage?'"
+    },
+    {
+      "id": "jjk-probe-r3-053",
+      "kind": "fact",
+      "question": "What goal did Choso ultimately pursue in the Shibuya Incident?",
+      "subject": "Choso",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "avenging his brothers"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in choso batch fact: 'What goal did Choso ultimately pursue during the Shibuya Incident?'"
+    },
+    {
+      "id": "jjk-probe-r3-054",
+      "kind": "fact",
+      "question": "Who is the younger half-brother of the Kamo family's Choso?",
+      "subject": "Choso",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in choso batch fact: \"Who is Choso's younger half-brother?\""
+    },
+    {
+      "id": "jjk-probe-r3-055",
+      "kind": "fact",
+      "question": "Did Kento Nanami defeat Haruta Shigemo with the Ratio Technique?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Ratio Technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in kento_nanami batch fact: 'What technique did Kento Nanami use to defeat Haruta Shigemo?'"
+    },
+    {
+      "id": "jjk-probe-r3-056",
+      "kind": "fact",
+      "question": "Is knocking away Mahito's left hand how Kento Nanami deflected the first strike rather than a block?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "knock away Mahito's left hand",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in kento_nanami batch fact: \"How did Kento Nanami deflect Mahito's first strike in Kento Nanami vs. Mahito?\""
+    },
+    {
+      "id": "jjk-probe-r3-057",
+      "kind": "fact",
+      "question": "What would Kento Nanami have done if he had not taken off his glasses inside Mahito's Domain Expansion?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "takes off his glasses",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in kento_nanami batch fact: \"What did Kento Nanami do while locked inside Mahito's Domain Expansion in Yuji Itadori & Kento Nanami vs. Mahito?\""
+    },
+    {
+      "id": "jjk-probe-r3-058",
+      "kind": "fact",
+      "question": "How did Kento Nanami protect Megumi Fushiguro in battle from Dagon's fish shikigami?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "decapitates both shikigami",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in kento_nanami batch fact: \"How did Kento Nanami protect Megumi Fushiguro from Dagon's fish shikigami?\""
+    },
+    {
+      "id": "jjk-probe-r3-059",
+      "kind": "fact",
+      "question": "What cursed tool did Kento Nanami use in the fight against Dagon during the Fearsome Womb arc?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Blunt Sword",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in kento_nanami batch fact: 'What cursed tool did Kento Nanami use in Jujutsu Sorcerers vs. Dagon?'"
+    },
+    {
+      "id": "jjk-probe-r3-060",
+      "kind": "fact",
+      "question": "What strategy did Kento Nanami develop to stifle the special grade curse's movements?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "use his cursed technique to stifle Mahito's movements",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in kento_nanami batch fact: 'What strategy did Kento Nanami develop in Yuji Itadori & Kento Nanami vs. Mahito?'"
+    },
+    {
+      "id": "jjk-probe-r3-061",
+      "kind": "fact",
+      "question": "Did Toji Fushiguro use Playful Cloud in the fight against Megumi Fushiguro?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Playful Cloud",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in toji_fushiguro batch fact: 'What cursed tool did Toji Fushiguro use in Megumi Fushiguro vs. Toji Fushiguro?'"
+    },
+    {
+      "id": "jjk-probe-r3-062",
+      "kind": "fact",
+      "question": "Is Dagon the only special grade cursed spirit Toji Fushiguro single-handledly dominated?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Dagon",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in toji_fushiguro batch fact: 'Which special grade cursed spirit did Toji Fushiguro single-handledly dominate?'"
+    },
+    {
+      "id": "jjk-probe-r3-063",
+      "kind": "fact",
+      "question": "What would have happened to Megumi if Toji Fushiguro had not committed suicide to protect him?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "committing suicide to protect him",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in toji_fushiguro batch fact: 'How did Toji Fushiguro protect Megumi from his own rampage?'"
+    },
+    {
+      "id": "jjk-probe-r3-064",
+      "kind": "fact",
+      "question": "How did Toji Fushiguro exorcise Rainbow Dragon in battle?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "slices it in half with his longsword cursed tool",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in toji_fushiguro batch fact: 'How did Toji Fushiguro exorcise Rainbow Dragon?'"
+    },
+    {
+      "id": "jjk-probe-r3-065",
+      "kind": "fact",
+      "question": "What cursed tool did Toji Fushiguro use against Megumi Fushiguro during the Shibuya Incident?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Playful Cloud",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in toji_fushiguro batch fact: 'What cursed tool did Toji Fushiguro use in Megumi Fushiguro vs. Toji Fushiguro?'"
+    },
+    {
+      "id": "jjk-probe-r3-066",
+      "kind": "fact",
+      "question": "What cursed spirits did Geto's side use in the fight against Toji Fushiguro?",
+      "subject": "Toji Fushiguro",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Rainbow Dragon",
+          "aliases": []
+        },
+        {
+          "item": "Kuchisake-Onna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in toji_fushiguro batch fact: 'What cursed spirits did Suguru Geto use in Suguru Geto vs. Toji Fushiguro?'"
+    },
+    {
+      "id": "jjk-probe-r3-067",
+      "kind": "fact",
+      "question": "Can Aoi Todo switch the positions of anything with cursed energy within his range with a clap of his hands?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "switch the positions of anything with cursed energy within his range with a clap of his hands",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in aoi_todo batch fact: \"What does Aoi Todo's innate technique Boogie Woogie allow him to do?\""
+    },
+    {
+      "id": "jjk-probe-r3-068",
+      "kind": "fact",
+      "question": "Can Aoi Todo perform more than 50 swaps per second with Boogie Woogie: Revised?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "50 swaps per second",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in aoi_todo batch fact: 'How many swaps per second can Aoi Todo perform with Boogie Woogie: Revised?'"
+    },
+    {
+      "id": "jjk-probe-r3-069",
+      "kind": "fact",
+      "question": "What would Aoi Todo's Boogie Woogie activation have been if he had not replaced his left hand?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a metal piece hitting a wooden box",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in aoi_todo batch fact: 'What did Aoi Todo change the activation condition of Boogie Woogie to after replacing his left hand?'"
+    },
+    {
+      "id": "jjk-probe-r3-070",
+      "kind": "fact",
+      "question": "How did Aoi Todo fare against Megumi Fushiguro in battle when trading blows?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "completely outclassed Megumi when trading blows",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in aoi_todo batch fact: 'How did Aoi Todo fare against Megumi Fushiguro when trading blows?'"
+    },
+    {
+      "id": "jjk-probe-r3-071",
+      "kind": "fact",
+      "question": "How many cursed spirits did Aoi Todo defeat in the Night Parade of a Hundred Demons?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "five grade 1 cursed spirits and 1 special grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in aoi_todo batch fact: 'How many cursed spirits did Aoi Todo defeat during the Night Parade of a Hundred Demons in Kyoto?'"
+    },
+    {
+      "id": "jjk-probe-r3-072",
+      "kind": "fact",
+      "question": "What does the Tokyo Team believe about Aoi Todo's strength?",
+      "subject": "Aoi Todo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Todo is strong enough to bring down their whole team single-handedly",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in aoi_todo batch fact: \"What does Maki Zenin believe about Aoi Todo's strength?\""
+    },
+    {
+      "id": "jjk-probe-r3-073",
+      "kind": "fact",
+      "question": "Did Naoya Zenin use Projection Sorcery against Maki Zenin and Noritoshi Kamo?",
+      "subject": "Naoya Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Projection Sorcery",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in naoya_zenin batch fact: 'What techniques did Naoya Zenin use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?'"
+    },
+    {
+      "id": "jjk-probe-r3-074",
+      "kind": "fact",
+      "question": "Is the minute it took for a thousand rounds of sumo outside the barrier of Miyo's Simple Domain longer than inside it?",
+      "subject": "Naoya Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "The time it took for a thousand rounds of sumo only lasted one minute outside the barrier",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in naoya_zenin batch fact: \"How long did a thousand rounds of sumo take outside the barrier of Miyo's Simple Domain?\""
+    },
+    {
+      "id": "jjk-probe-r3-075",
+      "kind": "fact",
+      "question": "What would have happened if Naoya Zenin's domain had been able to detect Maki Zenin?",
+      "subject": "Naoya Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "it was unable to detect Maki, leading to Naoya's defeat",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in naoya_zenin batch fact: \"Why did Naoya Zenin's domain lose to Maki Zenin?\""
+    },
+    {
+      "id": "jjk-probe-r3-076",
+      "kind": "fact",
+      "question": "How did Naoya Zenin get his knife into Choso in battle?",
+      "subject": "Naoya Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Naoya ducks under Choso's counter and stabs him in the lower abdomen with a knife in a reverse grip",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in naoya_zenin batch fact: 'How did Naoya Zenin get his knife into Choso?'"
+    },
+    {
+      "id": "jjk-probe-r3-077",
+      "kind": "fact",
+      "question": "Why did Naoya Zenin head to the Shibuya Incident?",
+      "subject": "Naoya Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "killing two birds with one stone",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in naoya_zenin batch fact: 'Why did Naoya Zenin head to Shibuya?'"
+    },
+    {
+      "id": "jjk-probe-r3-078",
+      "kind": "fact",
+      "question": "How did the Zenin sorcerer's curse reveal its identity to Maki Zenin?",
+      "subject": "Naoya Zenin",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "reveals its identity as none other than Naoya Zenin, who became a curse after death",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in naoya_zenin batch fact: 'How did the cursed Naoya reveal his identity to Maki Zenin?'"
+    },
+    {
+      "id": "jjk-probe-r3-079",
+      "kind": "fact",
+      "question": "Was the Angel's goal to hunt down and kill all incarnated Culling Game players?",
+      "subject": "Angel",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "hunt down and kill all incarnated Culling Game players",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in angel batch fact: \"What was the Angel's goal, as she laid it out to Megumi and the others?\""
+    },
+    {
+      "id": "jjk-probe-r3-080",
+      "kind": "fact",
+      "question": "Did the Angel maintain a desire to kill Sukuna longer than a thousand years after the Heian Era?",
+      "subject": "Angel",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a thousand years later",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in angel batch fact: 'How long after the Heian Era did the Angel maintain a desire to kill Sukuna?'"
+    },
+    {
+      "id": "jjk-probe-r3-081",
+      "kind": "fact",
+      "question": "What would have happened if Hana had not found Megumi Fushiguro collapsed in the No. 1 Colony?",
+      "subject": "Angel",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Megumi Fushiguro",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in angel batch fact: 'Who did Hana find collapsed in the No. 1 Colony?'"
+    },
+    {
+      "id": "jjk-probe-r3-082",
+      "kind": "fact",
+      "question": "What did the Angel suspect the mass slaughter of non-sorcerers in the colony was meant for?",
+      "subject": "Angel",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the completion of the ritual preceding Tengen's merger with the Japanese populace",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in angel batch fact: 'What did the Angel suspect the mass slaughter of non-sorcerers by curses was meant for?'"
+    },
+    {
+      "id": "jjk-probe-r3-083",
+      "kind": "fact",
+      "question": "What raid did Angel and Hana join in the Shinjuku Showdown?",
+      "subject": "Angel",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the raid on Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in angel batch fact: 'What raid did Angel and Hana join during the Shinjuku Showdown?'"
+    },
+    {
+      "id": "jjk-probe-r3-084",
+      "kind": "fact",
+      "question": "What did the King of Curses exploit to seize control of Yuji Itadori's vessel?",
+      "subject": "Angel",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a prior-made binding vow with Yuji",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in angel batch fact: 'What did Sukuna exploit to seize control of Yuji?'"
+    },
+    {
+      "id": "jjk-probe-r3-085",
+      "kind": "fact",
+      "question": "Is Mahito a Special Grade cursed spirit?",
+      "subject": "Mahito",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Special Grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in mahito batch fact: \"What is Mahito's grade?\""
+    },
+    {
+      "id": "jjk-probe-r3-086",
+      "kind": "fact",
+      "question": "Is Mahito taller than 180 cm?",
+      "subject": "Mahito",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Over 180 cm (Over 5'11\")",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in mahito batch fact: \"What is Mahito's height?\""
+    },
+    {
+      "id": "jjk-probe-r3-087",
+      "kind": "fact",
+      "question": "What would the outcome of Kento Nanami vs. Mahito have been if Nanami had not withdrawn?",
+      "subject": "Mahito",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nanami withdraws.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in mahito batch fact: 'What is the outcome of Kento Nanami vs. Mahito?'"
+    },
+    {
+      "id": "jjk-probe-r3-088",
+      "kind": "fact",
+      "question": "Which techniques did Mahito use in battle against Satoru Gojo's group?",
+      "subject": "Mahito",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Idle Transfiguration, Soul Multiplicity, Body Repel",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in mahito batch fact: \"Which techniques did Mahito use in Satoru Gojo vs. Mahito's Group?\""
+    },
+    {
+      "id": "jjk-probe-r3-089",
+      "kind": "fact",
+      "question": "In which arc does Satoru Gojo face Mahito's Group?",
+      "subject": "Mahito",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in mahito batch fact: \"In which arc does Satoru Gojo vs. Mahito's Group take place?\""
+    },
+    {
+      "id": "jjk-probe-r3-090",
+      "kind": "fact",
+      "question": "Which techniques did Mahito use against Gojo's allies?",
+      "subject": "Mahito",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Idle Transfiguration, Soul Multiplicity, Body Repel",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in mahito batch fact: \"Which techniques did Mahito use in Satoru Gojo vs. Mahito's Group?\""
+    },
+    {
+      "id": "jjk-probe-r3-091",
+      "kind": "fact",
+      "question": "Is Panda a Semi-Grade 2 sorcerer?",
+      "subject": "Panda",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Semi-Grade 2",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in panda batch fact: \"What is Panda's grade?\""
+    },
+    {
+      "id": "jjk-probe-r3-092",
+      "kind": "fact",
+      "question": "Is Panda taller than 190 cm?",
+      "subject": "Panda",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Over 190 cm (Over 6'3\")",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in panda batch fact: \"What is Panda's height?\""
+    },
+    {
+      "id": "jjk-probe-r3-093",
+      "kind": "fact",
+      "question": "What would the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume have been if Yuki had not interrupted the battle?",
+      "subject": "Panda",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuki interrupts the battle. Kenjaku escapes with Prison Realm.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in panda batch fact: 'What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?'"
+    },
+    {
+      "id": "jjk-probe-r3-094",
+      "kind": "fact",
+      "question": "Which techniques did Panda use in battle against Suguru Geto?",
+      "subject": "Panda",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Cursed Corpse, Gorilla Mode, Unblockable Drumming Beat",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in panda batch fact: 'Which techniques did Panda use in Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto?'"
+    },
+    {
+      "id": "jjk-probe-r3-095",
+      "kind": "fact",
+      "question": "In which arc does the fight between Maki, Toge & Panda and Suguru Geto take place?",
+      "subject": "Panda",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Cursed Child",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in panda batch fact: 'In which arc does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?'"
+    },
+    {
+      "id": "jjk-probe-r3-096",
+      "kind": "fact",
+      "question": "What is the outcome of the fight at the Gachinko Fight Club's ring?",
+      "subject": "Panda",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Megumi subdues Kirara.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Panda"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in panda batch fact: 'What is the outcome of Megumi Fushiguro & Panda vs. Kirara Hoshi?'"
+    },
+    {
+      "id": "jjk-probe-r3-097",
+      "kind": "fact",
+      "question": "Is Suguru Geto a Special Grade sorcerer?",
+      "subject": "Suguru Geto",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Special Grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in suguru_geto batch fact: \"What is Suguru Geto's grade?\""
+    },
+    {
+      "id": "jjk-probe-r3-098",
+      "kind": "fact",
+      "question": "Is Curse Manipulation more central to Suguru Geto's fight against Maki, Toge & Panda than Hand-to-Hand Combat?",
+      "subject": "Suguru Geto",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Hand-to-Hand Combat, Curse Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in suguru_geto batch fact: 'Which techniques did Suguru Geto use in Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto?'"
+    },
+    {
+      "id": "jjk-probe-r3-099",
+      "kind": "fact",
+      "question": "What would Suguru Geto's occupation have been if he had not gone rogue?",
+      "subject": "Suguru Geto",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerer (Former) Curse User",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in suguru_geto batch fact: \"What is Suguru Geto's occupation?\""
+    },
+    {
+      "id": "jjk-probe-r3-100",
+      "kind": "fact",
+      "question": "What is the outcome of Suguru Geto's fight with the Shikigami Curse User in battle?",
+      "subject": "Suguru Geto",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Suguru Geto is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in suguru_geto batch fact: 'What is the outcome of Suguru Geto vs. Shikigami Curse User?'"
+    },
+    {
+      "id": "jjk-probe-r3-101",
+      "kind": "fact",
+      "question": "In which arc does the fight between Gojo & Geto and Bayer & Kokun take place?",
+      "subject": "Suguru Geto",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo's Past",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in suguru_geto batch fact: 'In which arc does Satoru Gojo & Suguru Geto vs. Bayer & Kokun take place?'"
+    },
+    {
+      "id": "jjk-probe-r3-102",
+      "kind": "fact",
+      "question": "Where did the fight between the three students and the former top sorcerer's incarnation take place?",
+      "subject": "Suguru Geto",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Tokyo Jujutsu High",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in suguru_geto batch fact: 'Where did Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?'"
+    },
+    {
+      "id": "jjk-probe-r3-103",
+      "kind": "fact",
+      "question": "Did Toge Inumaki use Cursed Speech in the fight against Sukuna?",
+      "subject": "Toge Inumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Cursed Speech",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in toge_inumaki batch fact: 'Which techniques did Toge Inumaki use in Jujutsu Sorcerers vs. Sukuna?'"
+    },
+    {
+      "id": "jjk-probe-r3-104",
+      "kind": "fact",
+      "question": "Is Toge Inumaki's grade higher in 2018 than it was in 2017?",
+      "subject": "Toge Inumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Grade 2 (2017) Semi-Grade 1 (2018)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in toge_inumaki batch fact: \"What is Toge Inumaki's grade?\""
+    },
+    {
+      "id": "jjk-probe-r3-105",
+      "kind": "fact",
+      "question": "What would have happened if Maki had not taken over the battle against Hanami?",
+      "subject": "Toge Inumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Maki takes over the battle.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in toge_inumaki batch fact: 'What is the outcome of Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami?'"
+    },
+    {
+      "id": "jjk-probe-r3-106",
+      "kind": "fact",
+      "question": "What is the outcome of the fight in Shinjuku between the jujutsu sorcerers and Sukuna?",
+      "subject": "Toge Inumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "The jujutsu sorcerers are victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in toge_inumaki batch fact: 'What is the outcome of Jujutsu Sorcerers vs. Sukuna?'"
+    },
+    {
+      "id": "jjk-probe-r3-107",
+      "kind": "fact",
+      "question": "In which arc does the jujutsu sorcerers' fight with Sukuna take place?",
+      "subject": "Toge Inumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shinjuku Showdown",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in toge_inumaki batch fact: 'In which arc does Jujutsu Sorcerers vs. Sukuna take place?'"
+    },
+    {
+      "id": "jjk-probe-r3-108",
+      "kind": "fact",
+      "question": "What is the birthday of Inumaki's character?",
+      "subject": "Toge Inumaki",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "October 23, 2001",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in toge_inumaki batch fact: \"What is Toge Inumaki's birthday?\""
+    },
+    {
+      "id": "jjk-probe-r3-109",
+      "kind": "fact",
+      "question": "Is Jogo a Special Grade cursed spirit?",
+      "subject": "Jogo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Special Grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in jogo batch fact: \"What is Jogo's grade?\""
+    },
+    {
+      "id": "jjk-probe-r3-110",
+      "kind": "fact",
+      "question": "Is Jogo's origin more tied to the earth than to any other element?",
+      "subject": "Jogo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a curse born of humanity's collective fear of the earth"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in jogo batch fact: \"What is Jogo's origin in terms of human fear?\""
+    },
+    {
+      "id": "jjk-probe-r3-111",
+      "kind": "fact",
+      "question": "What would Jogo have lacked if he had not used Disaster Flames and Domain Amplification in the fight against Mahito's Group?",
+      "subject": "Jogo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Disaster Flames, Domain Amplification",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in jogo batch fact: \"Which techniques did Jogo use in Satoru Gojo vs. Mahito's Group?\""
+    },
+    {
+      "id": "jjk-probe-r3-112",
+      "kind": "fact",
+      "question": "What is the outcome of the fight on the unspecified road between Gojo and Jogo?",
+      "subject": "Jogo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo is victorious.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in jogo batch fact: 'What is the outcome of Satoru Gojo vs. Jogo?'"
+    },
+    {
+      "id": "jjk-probe-r3-113",
+      "kind": "fact",
+      "question": "In which arc does the fight between Sukuna and Jogo take place?",
+      "subject": "Jogo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in jogo batch fact: 'In which arc does Sukuna vs. Jogo take place?'"
+    },
+    {
+      "id": "jjk-probe-r3-114",
+      "kind": "fact",
+      "question": "What is the outcome of the fight at the Fukutoshin Line Platform's station?",
+      "subject": "Jogo",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo is sealed.\nHanami is killed.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in jogo batch fact: \"What is the outcome of Satoru Gojo vs. Mahito's Group?\""
+    },
+    {
+      "id": "jjk-probe-r3-115",
+      "kind": "fact",
+      "question": "Is it true that Shoko has remarkable control over her cursed energy despite not possessing an innate technique?",
+      "subject": "Shoko Ieiri",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shoko has remarkable control over her cursed energy despite not possessing an innate technique.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in shoko_ieiri batch fact: 'Does Shoko have an innate cursed technique?'"
+    },
+    {
+      "id": "jjk-probe-r3-116",
+      "kind": "fact",
+      "question": "Is healing herself more efficient for Shoko than healing others?",
+      "subject": "Shoko Ieiri",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Although healing herself is more efficient and less difficult to perform than healing others.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in shoko_ieiri batch fact: 'Is it easier for Shoko to heal herself or others?'"
+    },
+    {
+      "id": "jjk-probe-r3-117",
+      "kind": "fact",
+      "question": "What would have happened if Shoko had not sutured Gojo's body for Yuta?",
+      "subject": "Shoko Ieiri",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "She sutured Gojo's body in order for Yuta to transfer himself into it.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in shoko_ieiri batch fact: \"How did Shoko prepare Gojo's body for Yuta?\""
+    },
+    {
+      "id": "jjk-probe-r3-118",
+      "kind": "fact",
+      "question": "How did Shoko help Nanami in the aftermath of his fight with Mahito?",
+      "subject": "Shoko Ieiri",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "he retreated to Jujutsu High to receive treatment from Shoko.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in shoko_ieiri batch fact: 'How did Shoko help Nanami after his fight with Mahito?'"
+    },
+    {
+      "id": "jjk-probe-r3-119",
+      "kind": "fact",
+      "question": "What did Shoko do in the Night Parade of a Hundred Demons?",
+      "subject": "Shoko Ieiri",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "She healed all of injured sorcerers in the Night Parade of a Hundred Demons.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in shoko_ieiri batch fact: 'What did Shoko do during the Night Parade of a Hundred Demons?'"
+    },
+    {
+      "id": "jjk-probe-r3-120",
+      "kind": "fact",
+      "question": "Why is the doctor at Jujutsu High valuable to the school's sorcerers?",
+      "subject": "Shoko Ieiri",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Not many people can utilize positive energy and even fewer can use it on people other than themselves.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shoko_Ieiri"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in shoko_ieiri batch fact: 'Why is Shoko valuable as the doctor at Jujutsu High?'"
+    },
+    {
+      "id": "jjk-probe-r3-121",
+      "kind": "fact",
+      "question": "Does Mei Mei use Black Bird Manipulation to share vision while scouting?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Bird Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe yesno; grounded in mei_mei batch fact: 'What cursed technique does Mei Mei use to share vision while scouting?'"
+    },
+    {
+      "id": "jjk-probe-r3-122",
+      "kind": "fact",
+      "question": "Is Niji Ebina believed to be as strong as a semi-grade 1 sorcerer?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "semi-grade 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe comparative; grounded in mei_mei batch fact: 'What grade was Niji Ebina believed to be as strong as?'"
+    },
+    {
+      "id": "jjk-probe-r3-123",
+      "kind": "fact",
+      "question": "What would Mei Mei have been if she had not lacked an innate technique?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "innate technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe negated_conditional; grounded in mei_mei batch fact: 'What power did Mei Mei lack that forced her to train as a close-quarters combatant?'"
+    },
+    {
+      "id": "jjk-probe-r3-124",
+      "kind": "fact",
+      "question": "What cursed tool is Mei Mei's primary weapon in battle?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Battle Axe",
+          "aliases": [
+            "battle axe"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe scope_phrase; grounded in mei_mei batch fact: \"What cursed tool is Mei Mei's primary weapon in combat?\""
+    },
+    {
+      "id": "jjk-probe-r3-125",
+      "kind": "fact",
+      "question": "What cursed technique does Mei Mei use to scout during the Shibuya Incident?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Bird Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe event_scope; grounded in mei_mei batch fact: 'What cursed technique does Mei Mei use to scout inside Meiji-Jingumae station during Shibuya?'"
+    },
+    {
+      "id": "jjk-probe-r3-126",
+      "kind": "fact",
+      "question": "What did Mei Mei use Bird Strike against at the Special Grade sorcerer's request?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "R3 probe possessive_bait; grounded in mei_mei batch fact: \"What did Mei Mei use Bird Strike against at Gojo's request?\""
+    }
+  ]
+}

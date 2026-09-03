@@ -1,0 +1,1081 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-23",
+  "note": "Section 3 (relationships & people) of the Kento Nanami cluster. Rosters staged in _jjk_page_kento_nanami.decl3.yaml.",
+  "retired": [
+    {
+      "id": "jjk-pg-kento_nanami-retired-s3-01",
+      "question": "Who is Kento Nanami's romantic interest (Nobuko Takada)?",
+      "item": "",
+      "reason": "Neither stored page names a romantic interest: 'Nobuko Takada', 'girlfriend', 'wife' and 'marriage' appear nowhere in the raw wikitext. The page states only that 'Nanami does want to get married, but not while he's still working as a jujutsu sorcerer' (answered at jjk-pg-kento_nanami-109) and that 'Nanami hasn't been to the bakery after that time in the flashback' (answered at jjk-pg-kento_nanami-110). The unnamed woman in the bakery flashback is not named on the page, so a name gold cannot be committed without invention."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-retired-s3-02",
+      "question": "Where does Kento Nanami work (his family's shrine)?",
+      "item": "",
+      "reason": "No shrine appears on either stored page: 'shrine' does not occur in the raw wikitext of Kento Nanami or Kento Nanami/Synopsis. The lead states Nanami 'operated primarily out of the Tokyo campus' as a Jujutsu High sorcerer, which is the page's own answer to where he works."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-retired-s3-03",
+      "question": "Who is Kento Nanami's mother?",
+      "item": "",
+      "reason": "Neither stored page mentions a mother ('mother' does not occur in the raw wikitext). The only family facts on the page are that 'Nanami's maternal grandfather is Danish' and that 'Nanami is the only sorcerer in his family' (answered at jjk-pg-kento_nanami-111 and -112). A mother gold would have to be invented."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-retired-s3-04",
+      "question": "What are Kento Nanami's 'seventeen days of good luck'?",
+      "item": "",
+      "reason": "Neither stored page contains 'seventeen' or any 'days of good luck' framing. The only 'lucky' on the page is 'He claims he got lucky' about his Black Flash record (covered in section 1, jjk-pg-kento_nanami-050). The page's lucky-7 motif (7/3 birthday, 7:3 alias) is already covered in sections 1-2."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-retired-s3-05",
+      "question": "Who is Kento Nanami's rival?",
+      "item": "",
+      "reason": "The page states no rivalry with any person. The closest relationship is Nanami's regard for Atsuya Kusakabe as the strongest grade 1 sorcerer (answered at jjk-pg-kento_nanami-150), which is admiration from an interview, not a rivalry."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-kento_nanami-101",
+      "kind": "set",
+      "question": "Every upperclassman Kento Nanami had at Tokyo Jujutsu High",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        },
+        {
+          "item": "Suguru Geto",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'he was an underclassman of Satoru Gojo and Suguru Geto'. The page writes both full names, so the members are exact page titles. Staged in _jjk_page_kento_nanami.decl3.yaml."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-102",
+      "kind": "fact",
+      "question": "Who did Kento Nanami become a close mentor to?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'With Satoru's introduction, he also became a close mentor to Yuji Itadori.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-103",
+      "kind": "fact",
+      "question": "Who introduced Kento Nanami to Yuji Itadori?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo",
+          "aliases": [
+            "Satoru Gojo"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Nanami is introduced to Yuji Itadori by Gojo, since Gojo can't teach him at the moment.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-104",
+      "kind": "fact",
+      "question": "What is the reason Satoru Gojo introduced Kento Nanami to Yuji Itadori?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "since Gojo can't teach him at the moment",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Nanami is introduced to Yuji Itadori by Gojo, since Gojo can't teach him at the moment.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-105",
+      "kind": "fact",
+      "question": "Why did Kento Nanami quit being a sorcerer after graduating from the college?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "because he found it to be a pain",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'he decided to quit being a sorcerer because he found it to be a pain.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-106",
+      "kind": "fact",
+      "question": "What did Kento Nanami become after leaving Jujutsu High?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a salaryman",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami",
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Lead: 'Nanami initially left Jujutsu High after graduating to become a salaryman'; the Synopsis tells the same beat as 'work as a businessman'."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-107",
+      "kind": "fact",
+      "question": "What led Kento Nanami to decide to return to being a sorcerer?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a cursed spirit that was causing a baker problems",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'After taking care of a cursed spirit that was causing a baker problems, Nanami decides to return to being a sorcerer.' The bakery is the page's own framing for his flashback (see jjk-pg-kento_nanami-110)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-108",
+      "kind": "fact",
+      "question": "What did Kento Nanami find about the business job he took?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the job only cared about money",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'Nanami then started to work as a businessman, but found that the job only cared about money.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-109",
+      "kind": "fact",
+      "question": "When does Kento Nanami want to get married?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "not while he's still working as a jujutsu sorcerer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia (fanbook block): 'Nanami does want to get married, but not while he's still working as a jujutsu sorcerer.' No prospective bride is named anywhere on the page (retired as s3-01)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-110",
+      "kind": "fact",
+      "question": "Where has Kento Nanami not returned to since the flashback?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the bakery",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia (fanbook block): 'Nanami hasn't been to the bakery after that time in the flashback. However, he is not actively avoiding it.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-111",
+      "kind": "fact",
+      "question": "Who is the only sorcerer in Kento Nanami's family?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nanami",
+          "aliases": [
+            "Kento Nanami"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami is the only sorcerer in his family.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-112",
+      "kind": "fact",
+      "question": "What nationality is Kento Nanami's maternal grandfather?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Danish",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Trivia: 'Nanami's maternal grandfather is Danish.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-113",
+      "kind": "fact",
+      "question": "Who is Kento Nanami's classmate whose extreme optimism offset his negativity?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yu Haibara",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami",
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'his negativity was always offset by his classmate Yu Haibara's extreme optimism'; the Synopsis History has the same pairing at Okinawa."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-114",
+      "kind": "fact",
+      "question": "Whose death affected Kento Nanami greatly?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Haibara",
+          "aliases": [
+            "Yu Haibara"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"Haibara's death affected Nanami greatly and likely played a role in his initial decision to leave his life as a jujutsu sorcerer behind.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-115",
+      "kind": "fact",
+      "question": "Who did Kento Nanami team up with to back up Satoru Gojo and Suguru Geto in Okinawa?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yu Haibara",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'during his first year, he had teamed up with Yu Haibara to back up Suguru Geto and Satoru Gojo while they are at Okinawa.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-116",
+      "kind": "fact",
+      "question": "Where did Kento Nanami team up with Yu Haibara to back up Geto and Gojo?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Okinawa",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'he had teamed up with Yu Haibara to back up Suguru Geto and Satoru Gojo while they are at Okinawa.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-117",
+      "kind": "fact",
+      "question": "Who examined Yu Haibara's dead body while Kento Nanami was in the morgue?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Geto",
+          "aliases": [
+            "Suguru Geto"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis History: 'After the mission is finished, Nanami is in the morgue while Geto examines Yu's dead body and explains how the mission was more difficult.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-118",
+      "kind": "set",
+      "question": "Everyone who describes Kento Nanami as gloomy",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'Yuji and Satoru describe Nanami as \"gloomy\" and the former didn't believe they would get along at first.' The page writes first names; the members are the exact page titles. Staged in _jjk_page_kento_nanami.decl3.yaml."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-119",
+      "kind": "fact",
+      "question": "Who did Kento Nanami initially treat as a child?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji",
+          "aliases": [
+            "Yuji Itadori"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"He initially treated Yuji as a child because he didn't want to see him abandon his youth for the sake of being a jujutsu sorcerer.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-120",
+      "kind": "fact",
+      "question": "Why did Kento Nanami initially treat Yuji Itadori as a child?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "because he didn't want to see him abandon his youth for the sake of being a jujutsu sorcerer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"He initially treated Yuji as a child because he didn't want to see him abandon his youth for the sake of being a jujutsu sorcerer.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-121",
+      "kind": "fact",
+      "question": "What forced Kento Nanami to acknowledge Yuji Itadori?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji eventually proved himself",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'However, Yuji eventually proved himself and forced Nanami to acknowledge him.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-122",
+      "kind": "fact",
+      "question": "Who entrusted Kento Nanami with looking after Yuji Itadori?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Abilities and Powers > Overview: 'Satoru Gojo entrusted Nanami with looking after Yuji due to these traits as well.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-123",
+      "kind": "fact",
+      "question": "What phrase does Takuma Ino think with when approaching every tough decision?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "what would Nanami do",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Ino, a powerful grade 2 sorcerer, approaches every tough decision with \"what would Nanami do\" in mind because he believes Nanami always handles things the right way.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-124",
+      "kind": "fact",
+      "question": "Who was Kento Nanami's fight against Haruta Shigemo particularly stunning to?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nobara Kugisaki",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'This performance in particular was stunning to Nobara Kugisaki, a very capable grade 3 student.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-125",
+      "kind": "fact",
+      "question": "What did watching Kento Nanami fight help Nobara Kugisaki understand?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "that he's on a completely different level",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"Watching Nanami fight helped her understand that he's on a completely different level and that embodies what it means to be a true grade 1 jujutsu sorcerer.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-126",
+      "kind": "set",
+      "question": "Everyone who fought Dagon alongside Kento Nanami",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Maki Zenin",
+          "aliases": []
+        },
+        {
+          "item": "Naobito Zenin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami",
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Alongside Naobito and Maki Zenin, Nanami was also able to fight the special grade curse Dagon'; the Synopsis repeats the trio entering the Shibuya Station. Complements the Toji Fushiguro cluster's closed trio (jjk-pg-toji_fushiguro-116), which adds Kento Nanami himself. Staged in _jjk_page_kento_nanami.decl3.yaml."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-127",
+      "kind": "fact",
+      "question": "Who arrived and nullified Dagon's automatic hit with his own domain?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Megumi",
+          "aliases": [
+            "Megumi Fushiguro"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"Once Megumi arrived and nullified Dagon's automatic hit with his own domain, Nanami focused on protecting Megumi.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-128",
+      "kind": "fact",
+      "question": "What did Kento Nanami focus on once Megumi arrived at Dagon's domain?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "protecting Megumi",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Nanami focused on protecting Megumi and was easily able to dispatch any shikigami that tried to attack the student despite his injuries.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-129",
+      "kind": "fact",
+      "question": "How long did Kento Nanami survive Dagon's endless stream of shikigami?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "for over a minute",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'he miraculously survived Dagon's endless stream of Death Swarm shikigami for over a minute, something that surprised him the domain's caster.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-130",
+      "kind": "set",
+      "question": "Everyone who looks up to Kento Nanami",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yuji Itadori",
+          "aliases": []
+        },
+        {
+          "item": "Takuma Ino",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Yuji and Takuma Ino both look up to Nanami for his demeanor when actively approaching a difficult situation as well as his incredible skill when it comes down to solving it.' The page writes 'Yuji'; the member is the exact page title 'Yuji Itadori'. Staged in _jjk_page_kento_nanami.decl3.yaml."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-131",
+      "kind": "fact",
+      "question": "Why did Kento Nanami claim he became a jujutsu sorcerer?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "because it's slightly less idiotic than being a salaryman",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"He claims he only became a jujutsu sorcerer because it's slightly less idiotic than being a salaryman.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-132",
+      "kind": "fact",
+      "question": "Why did Kento Nanami return to being a sorcerer from the life of a salaryman?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "because he never felt truly appreciated and didn't believe his work had any significant impact on anyone",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"He returned to being a sorcerer from the life of a salaryman because he never felt truly appreciated and didn't believe his work had any significant impact on anyone.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-133",
+      "kind": "fact",
+      "question": "Why does Kento Nanami believe jujutsu sorcerers are trash?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "they must force their comrades to accept that they must willingly sacrifice themselves",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'One of the reasons he believes that jujutsu sorcerers are trash is because they must force their comrades to accept that they must willingly sacrifice themselves.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-134",
+      "kind": "fact",
+      "question": "What phrase does Kento Nanami admit is more befitting than suggesting he quit the profession?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "run away",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'He recognizes that this led him to \"run away\" from the profession, admitting that it's a more befitting phrase than suggesting he \"quit\".'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-135",
+      "kind": "fact",
+      "question": "Which of Kento Nanami's failures haunts him?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "allowing Haibara to die",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: \"Nanami wants to believe he's never been frustrated by his own uselessness, but many of his failures haunt him, such as allowing Haibara to die.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-136",
+      "kind": "fact",
+      "question": "What does Kento Nanami know being a jujutsu sorcerer to be?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a dangerous and demanding job for crazy people",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Personality: 'Nanami knows being a jujutsu sorcerer is a dangerous and demanding job for crazy people, and so he has a hard time respecting people in the profession.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-137",
+      "kind": "fact",
+      "question": "What did Kento Nanami deduce after learning about Gojo's sealing?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the best move for his team",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: \"Upon learning about Satoru's sealing, Nanami was able to deduce what would be the best move for his team and helped carry out Mechamaru's rescue plan without delay.\""
+    },
+    {
+      "id": "jjk-pg-kento_nanami-138",
+      "kind": "fact",
+      "question": "Whose rescue plan did Kento Nanami help carry out during the Shibuya Incident?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mechamaru",
+          "aliases": [
+            "Kokichi Muta"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Nanami was able to deduce what would be the best move for his team and helped carry out Mechamaru's rescue plan without delay' (the page links the name to Kokichi Muta)."
+    },
+    {
+      "id": "jjk-pg-kento_nanami-139",
+      "kind": "fact",
+      "question": "What did Kento Nanami go alone to put in place during the Shibuya Incident?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "protocols for the operation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+      ],
+      "verified": "2026-08-23",
+      "note": "Overview: 'Nanami went alone to put protocols for the operation in place while also delegating the others on another task.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-140",
+      "kind": "fact",
+      "question": "Which Zenin did Kento Nanami encounter alongside Naobito as they entered the Shibuya Station?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Maki Zenin",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Nanami manages to encounter Maki Zenin and Naobito, and joins them as they enter the Shibuya Station.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-141",
+      "kind": "fact",
+      "question": "Who came through the portal to fight Dagon, shocking Kento Nanami and Megumi?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Toji Fushiguro",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Nanami gives the signal to retreat but they are shocked when Toji Fushiguro comes through the portal.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-142",
+      "kind": "fact",
+      "question": "What did Kento Nanami wonder about Toji Fushiguro after he exorcised Dagon?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "if Toji is on their side",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Nanami thinks about how they only survived because Toji had arrived but also wonders if Toji is on their side.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-143",
+      "kind": "fact",
+      "question": "Who did Kento Nanami worry about alongside Megumi Fushiguro and Naobito Zenin as he faced the mutated humans?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Maki",
+          "aliases": [
+            "Maki Zenin"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Nanami then worries about Maki, Megumi, and Naobito and wonders what happened to them.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-144",
+      "kind": "fact",
+      "question": "Where did a dying Kento Nanami think he could spend his time reading?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Malaysia",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Nanami thinks about how he could spend his time living in Malaysia and reading since he is so tired.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-145",
+      "kind": "fact",
+      "question": "Who did Kento Nanami see pointing right just before Mahito killed him?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Haibara",
+          "aliases": [
+            "Yu Haibara"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Suddenly he sees Haibara, who points right. Nanami turns and sees Yuji.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-146",
+      "kind": "fact",
+      "question": "What did Kento Nanami tell Yuji Itadori before Mahito killed him?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "he has it here",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shibuya Incident Arc: 'Nanami turns and sees Yuji. Nanami tells Yuji that he has it here before Mahito goes to kill Nanami.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-147",
+      "kind": "fact",
+      "question": "Who met Kento Nanami in the afterlife after the Star Plasma Vessel incident?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo",
+          "aliases": [
+            "Satoru Gojo"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shinjuku Showdown Arc: 'Gojo awakes in the afterlife. There, he meets Nanami, Geto, and others involved in the Star Plasma Vessel incident who have since died.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-148",
+      "kind": "fact",
+      "question": "Who did Kento Nanami call an old military general in the afterlife?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo",
+          "aliases": [
+            "Satoru Gojo"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shinjuku Showdown Arc: 'Nanami mocks Gojo for being satisfied with his death to a stronger opponent, calling him an old military general.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-149",
+      "kind": "fact",
+      "question": "Which incident were Kento Nanami and Suguru Geto both involved in, per the afterlife scene?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the Star Plasma Vessel incident",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Shinjuku Showdown Arc: 'he meets Nanami, Geto, and others involved in the Star Plasma Vessel incident who have since died.'"
+    },
+    {
+      "id": "jjk-pg-kento_nanami-150",
+      "kind": "fact",
+      "question": "Who did Kento Nanami claim was the strongest Grade 1 sorcerer in his Kyoto interview?",
+      "subject": "Kento Nanami",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Atsuya Kusakabe",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+      ],
+      "verified": "2026-08-23",
+      "note": "Synopsis, Kyoto Goodwill Event Arc: 'Nanami was interviewed on who the strongest Grade 1 sorcerer was, with him claiming it was Atsuya Kusakabe.'"
+    }
+  ]
+}

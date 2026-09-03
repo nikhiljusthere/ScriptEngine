@@ -1,0 +1,635 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Masaki Takeda?",
+      "set": "Every named technique of Masaki Takeda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Masaki Takeda?",
+      "set": "Masaki Takeda's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Masaki Takeda?",
+      "found": [
+        "Shikigami",
+        "Marmalade Boy"
+      ],
+      "missing": [],
+      "members": [
+        "Marmalade Boy",
+        "Shikigami"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Masaki Takeda?",
+      "found": [
+        "Masayoshi Takeda",
+        "Masaaki Takeda"
+      ],
+      "missing": [],
+      "members": [
+        "Masaaki Takeda",
+        "Masayoshi Takeda"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Masaki Takeda's name?",
+      "id": "jjk-pg-masaki_takeda-001",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "\u6b66\u7530 \u6b63\u6a39"
+      ],
+      "found": [
+        "\u6b66\u7530 \u6b63\u6a39"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Masaki Takeda's name?",
+      "id": "jjk-pg-masaki_takeda-002",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Takeda Masaki"
+      ],
+      "found": [
+        "Takeda Masaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Masaki Takeda's race?",
+      "id": "jjk-pg-masaki_takeda-003",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Masaki Takeda's gender?",
+      "id": "jjk-pg-masaki_takeda-004",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Masaki Takeda?",
+      "id": "jjk-pg-masaki_takeda-005",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Masaki Takeda's occupation?",
+      "id": "jjk-pg-masaki_takeda-006",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Masaki Takeda first appear?",
+      "id": "jjk-pg-masaki_takeda-007",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 4"
+      ],
+      "found": [
+        "Modulo Chapter 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Masaki Takeda's modus operandi?",
+      "id": "jjk-pg-masaki_takeda-010",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "repeatedly impersonated an elementary schooler under various aliases to relive the experience of being a first-grader"
+      ],
+      "found": [
+        "repeatedly impersonated an elementary schooler under various aliases to relive the experience of being a first-grader"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Masaki Takeda look like in his true form?",
+      "id": "jjk-pg-masaki_takeda-011",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "a short, elderly man with dark skin and a lean yet muscular build"
+      ],
+      "found": [
+        "a short, elderly man with dark skin and a lean yet muscular build"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Masaki wear when disguising himself?",
+      "id": "jjk-pg-masaki_takeda-012",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "a white polo shirt with black collars and cuffs, black shorts, a white baseball cap, and white athletic shoes"
+      ],
+      "found": [
+        "a white polo shirt with black collars and cuffs, black shorts, a white baseball cap, and white athletic shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Masaki look like when appearing as a child?",
+      "id": "jjk-pg-masaki_takeda-013",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "a young boy with lighter, smoother skin and a full head of light-colored hair styled with a right-side part"
+      ],
+      "found": [
+        "a young boy with lighter, smoother skin and a full head of light-colored hair styled with a right-side part"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Masaki Takeda characterized?",
+      "id": "jjk-pg-masaki_takeda-014",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "a cruel, self-serving old man with no qualms about killing innocent people, including children, to fulfill his desires"
+      ],
+      "found": [
+        "a cruel, self-serving old man with no qualms about killing innocent people, including children, to fulfill his desires"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Masaki obsessed with reliving?",
+      "id": "jjk-pg-masaki_takeda-015",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "the emotions he experienced upon becoming a first grader for the first time"
+      ],
+      "found": [
+        "the emotions he experienced upon becoming a first grader for the first time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Masaki describe these cherished feelings?",
+      "id": "jjk-pg-masaki_takeda-016",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "chords in the human heart that never stop resonating"
+      ],
+      "found": [
+        "chords in the human heart that never stop resonating"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What senile behavior does Masaki exhibit?",
+      "id": "jjk-pg-masaki_takeda-017",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "occasionally repeats his own words"
+      ],
+      "found": [
+        "occasionally repeats his own words"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was the only person to defeat Masaki?",
+      "id": "jjk-pg-masaki_takeda-018",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Masaki lure in families?",
+      "id": "jjk-pg-masaki_takeda-019",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "he used a rental house as bait to lure in families"
+      ],
+      "found": [
+        "he used a rental house as bait to lure in families"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Masaki impersonate the children he killed?",
+      "id": "jjk-pg-masaki_takeda-020",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "using the boy's skin"
+      ],
+      "found": [
+        "using the boy's skin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many people had Masaki murdered by 2086?",
+      "id": "jjk-pg-masaki_takeda-021",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "at least six people"
+      ],
+      "found": [
+        "at least six people"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What story did Masaki fabricate to Tsurugi and Maru?",
+      "id": "jjk-pg-masaki_takeda-022",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "being cursed by his deceased mother, who had forced him to remain a first grader forever"
+      ],
+      "found": [
+        "being cursed by his deceased mother, who had forced him to remain a first grader forever"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What exposed Masaki's lie?",
+      "id": "jjk-pg-masaki_takeda-023",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Yuka's call to Tsurugi exposed the lie"
+      ],
+      "found": [
+        "Yuka's call to Tsurugi exposed the lie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What technique did Tsurugi activate to push back Masaki and his shikigami?",
+      "id": "jjk-pg-masaki_takeda-024",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Maculation technique"
+      ],
+      "found": [
+        "Maculation technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Masaki create a decoy of himself?",
+      "id": "jjk-pg-masaki_takeda-025",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "disguised part of the shikigami's body as himself"
+      ],
+      "found": [
+        "disguised part of the shikigami's body as himself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Masaki's surprise attack do?",
+      "id": "jjk-pg-masaki_takeda-026",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "incapacitated Yuka and critically wounded Tsurugi"
+      ],
+      "found": [
+        "incapacitated Yuka and critically wounded Tsurugi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Maru induce in Masaki to make him lose his shikigami?",
+      "id": "jjk-pg-masaki_takeda-027",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "mental disorientation"
+      ],
+      "found": [
+        "mental disorientation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who intercepted Masaki as he fled into an alleyway?",
+      "id": "jjk-pg-masaki_takeda-028",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "Kou Usami"
+      ],
+      "found": [
+        "Kou Usami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kou Usami subdue Masaki?",
+      "id": "jjk-pg-masaki_takeda-029",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "immobilized him with Cursed Speech and knocked him unconscious with a punch and kick to the face"
+      ],
+      "found": [
+        "immobilized him with Cursed Speech and knocked him unconscious with a punch and kick to the face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Tsurugi assess Masaki's skill?",
+      "id": "jjk-pg-masaki_takeda-030",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "on par with a Grade 1 sorcerer"
+      ],
+      "found": [
+        "on par with a Grade 1 sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of fighter is Masaki?",
+      "id": "jjk-pg-masaki_takeda-031",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "a highly skilled close-range combatant"
+      ],
+      "found": [
+        "a highly skilled close-range combatant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Masaki's Marmalade Boy technique allow him to summon?",
+      "id": "jjk-pg-masaki_takeda-032",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "a large shikigami wielding a needle and spool of thread"
+      ],
+      "found": [
+        "a large shikigami wielding a needle and spool of thread"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Masaki and his shikigami wield in combat?",
+      "id": "jjk-pg-masaki_takeda-033",
+      "subject": "Masaki Takeda",
+      "accept": "all",
+      "expected": [
+        "large sewing needles"
+      ],
+      "found": [
+        "large sewing needles"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 31,
+    "fact_present": 31
+  }
+}

@@ -1,0 +1,1546 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +74 hand-authored prose (ids 003-077) + 2 page-gen identity; R5 forms: yes/no 042 (eight or nine fingers), comparative 073-077 (anime vs. manga), counterfactual 078 (retired not-stated-on-page), how-many 025 (three more curse users); infobox new-character field EMPTY; Plot Details 39 (the full Megumi vs. Toji street battle incl. Toji memory + self-stab, the Kusakabe Team block, the Geto commanders flashback, the full Sukuna vs. Jogo battle incl. the fantasy + Uraume arrival); OOA 2 (26 entries, first Jogo / last Uraume, with (Seánced) + (Mentioned) x4 + (Flashback) x4 + (Fantasy) x3 tags - items asked as plain names); Locations 3 (the expressway display carries a colon - asked via fragment); B&E 3 (ongoing incident + both sub-battles); Jujutsu 9 (6 groups incl. a PLAIN-TEXT cursed tool, a (Mentioned)-tagged technique, a PLAIN-TEXT second-level sub-item under Shrine, and the 'Evening Mood' vs 'Evening Moon' spelling variant); A&M 5 of 8 bullets (the two identical 'greatly extended and altered' tops deduped to one question; sub-bullets folded into their tops); Trivia is a {{Section stub}} - no Trivia question; Music table skipped, Navigation auto-retired; 1 ROUTER-GAP RETIRE (024: plural-ask misroute, 6th family instance, flagged for central triage - bundle was roster-of-Episodes with 0 prose passages); colon hazards: 'New Shadow Style: X' (038, fragment), 'Metropolitan Expressway, Route No. 3: Shibuya Line' (060, fragment), 'Maximum: Meteor' not asked (covered in prose as 'the meteor')",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_40-078",
+   "item": "",
+   "question": "What would have happened if Toji had not stabbed himself in the head in Episode 40?",
+   "reason": "Counterfactual: the page states Toji stabs himself in the head (killing his vessel to save his son) and its immediate aftermath (Megumi's shock, the face changing back into Ogami's Grandson, the later slash by Haruta Shigemo) but no hypothetical of his not stabbing himself is stated on the page. Never invent a resolution. Satisfies the R5 counterfactual form.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_40-024",
+   "item": "Suguru Geto",
+   "question": "Who are Manami and Negi the former commanders of, per Episode 40?",
+   "reason": "Router gap - 6th instance of the plural-ask misroute family (cf. ep21-063, ep22-017, ep22-027, ep26-053, ep29-030): the router plural_ask signal fired on the plural noun \"commanders\" in the question (routed.why: 'asks in the plural, which wants the list'), routed to roster mode with subject 'Episodes', and the bundle returned 59 episode members (infobox facts only, 0 prose passages); the warning reads: 'who', 'manami', 'negi', 'former', 'commanders', 'per' did not narrow this set; every member was kept. The fact itself is on the page (prose: 'the former commanders of Suguru Geto'; flashback: 'Suguru Geto's commanders had a falling out'). FLAGGED FOR CENTRAL TRIAGE (router fix); never rephrase to dodge - retire per pass contract.",
+   "reason_class": "router-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_40-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 40's name?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "霹靂",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_40-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 40's name?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hekireki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_40-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Thunderclap",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ep title"
+  },
+  {
+   "id": "jjk-pg-episode_40-004",
+   "kind": "fact",
+   "question": "When did Episode 40 air in Japan?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-11-09",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:jp air date"
+  },
+  {
+   "id": "jjk-pg-episode_40-005",
+   "kind": "fact",
+   "question": "When did Episode 40 air in the United States?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-11-23",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:us air date (ISO)"
+  },
+  {
+   "id": "jjk-pg-episode_40-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 40 belong to?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:arc"
+  },
+  {
+   "id": "jjk-pg-episode_40-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "SPECIALZ",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:opening song"
+  },
+  {
+   "id": "jjk-pg-episode_40-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "more than words",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ending song"
+  },
+  {
+   "id": "jjk-pg-episode_40-009",
+   "kind": "fact",
+   "question": "Which manga chapter comes first in Episode 40's adaptation?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 113",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:adapted from (first of four: 113, 114, 115, 116)"
+  },
+  {
+   "id": "jjk-pg-episode_40-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 39",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:previous"
+  },
+  {
+   "id": "jjk-pg-episode_40-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 41",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:next"
+  },
+  {
+   "id": "jjk-pg-episode_40-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:season number (single-digit lint false-positive class, benign per ep32-012)"
+  },
+  {
+   "id": "jjk-pg-episode_40-013",
+   "kind": "fact",
+   "question": "What does Sukuna do after waking up, per Episode 40's summary?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "refuses to heed Jogo's advice",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "summary (first clause)"
+  },
+  {
+   "id": "jjk-pg-episode_40-014",
+   "kind": "fact",
+   "question": "What is Megumi facing off against, per Episode 40's summary?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the rampant Toji",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "summary (second clause; neither is aware of the other's identity)"
+  },
+  {
+   "id": "jjk-pg-episode_40-015",
+   "kind": "fact",
+   "question": "What role does Episode 40 play in the second season?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the sixteenth episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "intro"
+  },
+  {
+   "id": "jjk-pg-episode_40-016",
+   "kind": "fact",
+   "question": "What does Megumi liken the séanced Toji to in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a stronger version of Maki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (the Megumi vs. Toji battle opens)"
+  },
+  {
+   "id": "jjk-pg-episode_40-017",
+   "kind": "fact",
+   "question": "What does Toji nearly do to Megumi as he charges into the swarm of rabbits in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "stabs Megumi with the sharpened Playful Cloud",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_40-018",
+   "kind": "fact",
+   "question": "What does Megumi lack to use Domain Expansion again in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (resorts to close quarters combat)"
+  },
+  {
+   "id": "jjk-pg-episode_40-019",
+   "kind": "fact",
+   "question": "What does Toji throw into the air before stomping the ground in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the remaining piece of Playful Cloud",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (launching all the rabbits into the air)"
+  },
+  {
+   "id": "jjk-pg-episode_40-020",
+   "kind": "fact",
+   "question": "What time is it when the Kusakabe Team stands in front of Shibuya Stream in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "11:01 P.M.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (Kusakabe Team block)"
+  },
+  {
+   "id": "jjk-pg-episode_40-021",
+   "kind": "fact",
+   "question": "What has Toge confirmed about Satoru in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru has been sealed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (he relocated all the civilians to safety)"
+  },
+  {
+   "id": "jjk-pg-episode_40-022",
+   "kind": "fact",
+   "question": "Why does Kusakabe keep buying time in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "doesn't want to die fighting the group that managed to seal Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (he makes up an excuse to distract Panda)"
+  },
+  {
+   "id": "jjk-pg-episode_40-023",
+   "kind": "fact",
+   "question": "What do Manami and Negi demand from the two in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "their surrender",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (since they don't want to kill other sorcerers)"
+  },
+  {
+   "id": "jjk-pg-episode_40-025",
+   "kind": "fact",
+   "question": "How many more curse users are hiding behind Manami and Negi in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form; Panda informs Kusakabe)"
+  },
+  {
+   "id": "jjk-pg-episode_40-026",
+   "kind": "fact",
+   "question": "What does Megumi summon to carry him away through the air in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nue",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (after the truck explodes on the roof)"
+  },
+  {
+   "id": "jjk-pg-episode_40-027",
+   "kind": "fact",
+   "question": "What is Megumi's sole advantage in the fight, per Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shoko Ieiri is stationed somewhere in Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_40-028",
+   "kind": "fact",
+   "question": "What is Shoko doing at the toll gate in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "smoking",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (10:51 P.M. on the Metropolitan Expressway, guarded by Yaga)"
+  },
+  {
+   "id": "jjk-pg-episode_40-029",
+   "kind": "fact",
+   "question": "What would have happened to Ijichi and Ino without Shoko, per Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "would have died",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (if not for her healing)"
+  },
+  {
+   "id": "jjk-pg-episode_40-030",
+   "kind": "fact",
+   "question": "What electrocutes the water in the office in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nue",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (the sprinklers confused Toji first)"
+  },
+  {
+   "id": "jjk-pg-episode_40-031",
+   "kind": "fact",
+   "question": "What pulls Megumi into an alleyway in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toad's tongue",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (avoiding Toji's downward stab)"
+  },
+  {
+   "id": "jjk-pg-episode_40-032",
+   "kind": "fact",
+   "question": "What happens to Toji's foot in the alleyway in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "suddenly submerged inside Megumi's shadow",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (throwing off his balance)"
+  },
+  {
+   "id": "jjk-pg-episode_40-033",
+   "kind": "fact",
+   "question": "What does Toji remember his late wife requesting in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to take care of Megumi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (the memory before he stabs himself)"
+  },
+  {
+   "id": "jjk-pg-episode_40-034",
+   "kind": "fact",
+   "question": "What does Toji stab to save Megumi in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "himself in the head",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (killing his vessel; proud his son chose Fushiguro over Zenin)"
+  },
+  {
+   "id": "jjk-pg-episode_40-035",
+   "kind": "fact",
+   "question": "What does Megumi's opponent's face change back into in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ogami's Grandson",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (link resolves to the display name, possessive in the raw)"
+  },
+  {
+   "id": "jjk-pg-episode_40-036",
+   "kind": "fact",
+   "question": "Who slashes Megumi from behind in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Haruta Shigemo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (excited to be back attacking people who can't defend themselves)"
+  },
+  {
+   "id": "jjk-pg-episode_40-037",
+   "kind": "fact",
+   "question": "What did Larue remind the Geto commanders about in Episode 40's flashback?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they are family",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (the day will come when they have a meal together again)"
+  },
+  {
+   "id": "jjk-pg-episode_40-038",
+   "kind": "fact",
+   "question": "What sword-drawing technique does Kusakabe activate in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Evening Moon Sword Drawing",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (COLON HAZARD 'New Shadow Style: X' - asked via the fragment after the colon, same class as ep37-041/059; the Jujutsu section spells it 'Mood', the prose 'Moon' - a spelling variant, see 072)"
+  },
+  {
+   "id": "jjk-pg-episode_40-039",
+   "kind": "fact",
+   "question": "What does Sukuna use to slice Jogo's arms into pieces in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his innate technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (the Sukuna vs. Jogo battle)"
+  },
+  {
+   "id": "jjk-pg-episode_40-040",
+   "kind": "fact",
+   "question": "What does Jogo fly through the air using in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ember Insects",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (after regenerating his arms)"
+  },
+  {
+   "id": "jjk-pg-episode_40-041",
+   "kind": "fact",
+   "question": "What does Jogo fire through the volcanic opening on his head in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a concentrated beam of fire",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (burns through a building but misses Sukuna)"
+  },
+  {
+   "id": "jjk-pg-episode_40-042",
+   "kind": "fact",
+   "question": "Does Pseudo-Geto's assessment of Jogo's strength compare it to Sukuna, per Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "eight or nine fingers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (yes/no form; Sukuna with eight or nine fingers absorbed)"
+  },
+  {
+   "id": "jjk-pg-episode_40-043",
+   "kind": "fact",
+   "question": "What does Jogo control to close in on Sukuna in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the magma",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (surfing on it while firing beams)"
+  },
+  {
+   "id": "jjk-pg-episode_40-044",
+   "kind": "fact",
+   "question": "What does Jogo form out of magma in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two giant hands",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (to grab two skyscrapers and smash Sukuna)"
+  },
+  {
+   "id": "jjk-pg-episode_40-045",
+   "kind": "fact",
+   "question": "What does Jogo struggle to regenerate in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his jaw",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (after Sukuna smashes his face through every floor)"
+  },
+  {
+   "id": "jjk-pg-episode_40-046",
+   "kind": "fact",
+   "question": "What does Kusakabe compare the special-grades' fight to in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "elephants tap-dancing among ants",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (warning the curse users)"
+  },
+  {
+   "id": "jjk-pg-episode_40-047",
+   "kind": "fact",
+   "question": "Who creates the meteor in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jogo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (Maximum: Meteor; gravitational pull attracts debris and cars)"
+  },
+  {
+   "id": "jjk-pg-episode_40-048",
+   "kind": "fact",
+   "question": "What does Sukuna forbid the humans in his vicinity to do in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "move until he says so",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (or else he will kill them)"
+  },
+  {
+   "id": "jjk-pg-episode_40-049",
+   "kind": "fact",
+   "question": "Why won't Jogo use his Domain Expansion, per Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he would lose in a domain struggle",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (Sukuna thinks the lack of confidence stems from losing to Satoru Gojo)"
+  },
+  {
+   "id": "jjk-pg-episode_40-050",
+   "kind": "fact",
+   "question": "What does Sukuna create from his palms in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an arrow of flames",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (while Jogo swirls his flames into a small fireball)"
+  },
+  {
+   "id": "jjk-pg-episode_40-051",
+   "kind": "fact",
+   "question": "Who does Jogo reunite with in his fantasy in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hanami and Dagon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (his deceased allies; Mahito is that mirror)"
+  },
+  {
+   "id": "jjk-pg-episode_40-052",
+   "kind": "fact",
+   "question": "What does Jogo say about the cursed spirits in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the cursed spirits are the true humans",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (sticking to his ideology to the end)"
+  },
+  {
+   "id": "jjk-pg-episode_40-053",
+   "kind": "fact",
+   "question": "What does Sukuna tell Jogo to do in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "stand proud",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details ('you're strong'; Jogo sheds a tear)"
+  },
+  {
+   "id": "jjk-pg-episode_40-054",
+   "kind": "fact",
+   "question": "Who comes to greet Sukuna in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uraume",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (Sukuna is surprised to see them, recognizing them)"
+  },
+  {
+   "id": "jjk-pg-episode_40-055",
+   "kind": "fact",
+   "question": "What time is it on Dogenzaka in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "11:07 P.M.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (an unknown creature walks towards Shigemo; final plot line)"
+  },
+  {
+   "id": "jjk-pg-episode_40-056",
+   "kind": "fact",
+   "question": "Which character is listed first in Episode 40's order of appearance?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jogo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (first)"
+  },
+  {
+   "id": "jjk-pg-episode_40-057",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 40's order of appearance?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uraume",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (last; 25 entries with (Seánced) + (Mentioned) x4 + (Flashback) x4 + (Fantasy) x3 tags - items asked as plain names)"
+  },
+  {
+   "id": "jjk-pg-episode_40-058",
+   "kind": "fact",
+   "question": "Which location is listed first in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (1 of 3)"
+  },
+  {
+   "id": "jjk-pg-episode_40-059",
+   "kind": "fact",
+   "question": "Which street is listed under Shibuya in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Bunkamura Way, Dogenzaka",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (2 of 3; link 'Shibuya#Bunkamura Way, Dogenzaka' resolves to the display)"
+  },
+  {
+   "id": "jjk-pg-episode_40-060",
+   "kind": "fact",
+   "question": "Which expressway is listed under Shibuya in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Metropolitan Expressway",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (3 of 3; COLON HAZARD in display 'Metropolitan Expressway, Route No. 3: Shibuya Line' - asked via the fragment, same class as ep35)"
+  },
+  {
+   "id": "jjk-pg-episode_40-061",
+   "kind": "fact",
+   "question": "Which event is ongoing in Episode 40's battles and events?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (ongoing)"
+  },
+  {
+   "id": "jjk-pg-episode_40-062",
+   "kind": "fact",
+   "question": "Which battle is listed first under the Shibuya Incident in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro vs. Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (sub-battle 1 of 2)"
+  },
+  {
+   "id": "jjk-pg-episode_40-063",
+   "kind": "fact",
+   "question": "Which battle between Sukuna and a cursed spirit is listed in Episode 40?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna vs. Jogo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (sub-battle 2 of 2)"
+  },
+  {
+   "id": "jjk-pg-episode_40-064",
+   "kind": "fact",
+   "question": "What cursed tool is listed in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Playful Cloud",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Cursed Tools"
+  },
+  {
+   "id": "jjk-pg-episode_40-065",
+   "kind": "fact",
+   "question": "What plain-text cursed tool is listed alongside Playful Cloud in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Haruta Shigemo's Hand-Sword",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Cursed Tools (PLAIN-TEXT item - instance of the plain-text item class)"
+  },
+  {
+   "id": "jjk-pg-episode_40-066",
+   "kind": "fact",
+   "question": "What sub-technique is listed under Disaster Flames in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ember Insects",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Jogo's Techniques (second level under Disaster Flames)"
+  },
+  {
+   "id": "jjk-pg-episode_40-067",
+   "kind": "fact",
+   "question": "What technique is listed under Jogo with a stray citation mark in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Disaster Flames",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Jogo's Techniques (raw carries a stray '*' - benign class, same as ep32-047/ep33-053/ep38-062/ep39-054)"
+  },
+  {
+   "id": "jjk-pg-episode_40-068",
+   "kind": "fact",
+   "question": "What technique is listed under Shoko Ieiri in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Shoko Ieiri's Techniques (raw carries the (Mentioned) tag - item asked as the plain name)"
+  },
+  {
+   "id": "jjk-pg-episode_40-069",
+   "kind": "fact",
+   "question": "What technique is listed under Sukuna in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shrine",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Sukuna's Techniques (root)"
+  },
+  {
+   "id": "jjk-pg-episode_40-070",
+   "kind": "fact",
+   "question": "What sub-technique is listed under Shrine in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Divine Flame",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Sukuna's Techniques (second level; PLAIN-TEXT sub-item, same class as ep39-049)"
+  },
+  {
+   "id": "jjk-pg-episode_40-071",
+   "kind": "fact",
+   "question": "What shikigami does Megumi summon instead of Divine Dog that is listed under Ten Shadows Technique in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rabbit Escape",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Megumi Fushiguro's Techniques (second level; the group also lists Mahoraga, Nue and Toad; 'instead of Divine Dog' pins the street-battle summon from the prose)"
+  },
+  {
+   "id": "jjk-pg-episode_40-072",
+   "kind": "fact",
+   "question": "What New Shadow Style item is spelled with 'Mood' in Episode 40's jujutsu section?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Evening Mood Sword Drawing",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Atsuya Kusakabe's Techniques (raw spelling variant: the Jujutsu section writes 'Evening Mood Sword Drawing' while the prose writes 'Evening Moon Sword Drawing' - item asked from the Jujutsu section, same benign class as ep38's Fallen/Falling Blossom Emotion)"
+  },
+  {
+   "id": "jjk-pg-episode_40-073",
+   "kind": "fact",
+   "question": "How is the battle between Megumi and Toji different in the anime, per Episode 40's differences?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "greatly extended and altered in the anime",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (comparative form; the Sukuna-Jogo bullet carries the identical wording - deduped)"
+  },
+  {
+   "id": "jjk-pg-episode_40-074",
+   "kind": "fact",
+   "question": "Where does Megumi escape to in the manga, per Episode 40's differences?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "into the alleyway",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (in the anime he escapes into a warehouse, then the streets of Shibuya)"
+  },
+  {
+   "id": "jjk-pg-episode_40-075",
+   "kind": "fact",
+   "question": "What gets damaged on Jogo in the manga, per Episode 40's differences?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the curse's jaw",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (Sukuna slams him through the building after cutting his arms into pieces)"
+  },
+  {
+   "id": "jjk-pg-episode_40-076",
+   "kind": "fact",
+   "question": "What is Jogo's meteor shown to be formed from in the anime, per Episode 40's differences?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a destroyed building",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_40-077",
+   "kind": "fact",
+   "question": "What does the meteor exert on nearby structures in the anime, per Episode 40's differences?",
+   "subject": "Episode 40",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a gravitational pull",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_40"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (on nearby structures and objects)"
+  }
+ ]
+}

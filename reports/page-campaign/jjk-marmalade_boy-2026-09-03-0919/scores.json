@@ -1,0 +1,149 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Marmalade Boy's name?",
+      "id": "jjk-pg-marmalade_boy-001",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "\u6bcd\u970a\u5ea6\u66b4\u5a01"
+      ],
+      "found": [
+        "\u6bcd\u970a\u5ea6\u66b4\u5a01"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Marmalade Boy's name?",
+      "id": "jjk-pg-marmalade_boy-002",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "Mamar\u0113do B\u014di"
+      ],
+      "found": [
+        "Mamar\u0113do B\u014di"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Marmalade Boy first appear?",
+      "id": "jjk-pg-marmalade_boy-003",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 4"
+      ],
+      "found": [
+        "Modulo Chapter 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the shikigami summoned by Marmalade Boy look like?",
+      "id": "jjk-pg-marmalade_boy-004",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "The shikigami summoned by Marmalade Boy resembles a tall, legless humanoid composed of black threads."
+      ],
+      "found": [
+        "The shikigami summoned by Marmalade Boy resembles a tall, legless humanoid composed of black threads."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the primary ability of Marmalade Boy?",
+      "id": "jjk-pg-marmalade_boy-005",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "The primary ability of Marmalade Boy is the power to shapeshift objects or people using human skin as fabric."
+      ],
+      "found": [
+        "The primary ability of Marmalade Boy is the power to shapeshift objects or people using human skin as fabric."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Masaki manifest his cursed technique?",
+      "id": "jjk-pg-marmalade_boy-006",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "Masaki manifested his cursed technique due to his love for being in the first grade and his desire to remain a first grader forever, a fixation worsened by his senility."
+      ],
+      "found": [
+        "Masaki manifested his cursed technique due to his love for being in the first grade and his desire to remain a first grader forever, a fixation worsened by his senility."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Maru dispel Masaki's shikigami?",
+      "id": "jjk-pg-marmalade_boy-007",
+      "subject": "Marmalade Boy",
+      "accept": "all",
+      "expected": [
+        "Maru's third eye focused on Masaki and activated an ability that induced intense mental confusion, forcibly dispelling his shikigami."
+      ],
+      "found": [
+        "Maru's third eye focused on Masaki and activated an ability that induced intense mental confusion, forcibly dispelling his shikigami."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

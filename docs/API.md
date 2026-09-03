@@ -1,11 +1,18 @@
 # API
 
-```powershell
-python -m scriptengine.api.main    # http://127.0.0.1:8000
-```
+The engine serves the same research through three doors, all of which call the
+same functions so there is one implementation to keep correct:
 
-Local-bound by default. Override with `SCRIPTENGINE_API_HOST` /
-`SCRIPTENGINE_API_PORT`.
+- **HTTP** — `python -m scriptengine.api.main` on `http://127.0.0.1:8000`. This
+  document. Local-bound by default; override with `SCRIPTENGINE_API_HOST` /
+  `SCRIPTENGINE_API_PORT`.
+- **CLI** — `python -m scriptengine.cli`, the whole pipeline as commands,
+  including the writing loop (`script-gen`) and tag checking (`verify`). See
+  [the CLI section](#cli-commands-that-wrap-the-same-code) below.
+- **MCP** — `python -m scriptengine.mcp.server` over stdio, so an agent host
+  (opencode, Claude Desktop, anything MCP-speaking) can research a topic and
+  verify a finished script without the HTTP server running at all. See
+  [the MCP section](#the-mcp-server).
 
 ## The endpoint that matters
 
@@ -79,7 +86,7 @@ empty for prose the wiki cited: see "Sourcing" below.
   "mode": "roster",
   "subject": "Cursed Spirit",
   "basis": "Cursed Spirits (class)",       // the set, and the field it is grouped by
-  "kind": "category",                      // category | type | sections | declared
+  "kind": "category",                      // category | type | sections | declared | battles
   "confidence": "declared",                // declared | exact | partial | weak
   "unmatched": [],                         // words in the set's name the topic never asked for
   "warning": "",                           // populated when confidence is partial or weak
@@ -131,6 +138,13 @@ spin-off entries stay in the store and come back when the topic asks for them
 
 Members are paid for out of an equal share of the budget, so a long biography at
 the top of the list cannot spend what the tail needed.
+
+A roster with `"kind": "battles"` is the battles-in shape: one member per battle
+page the wiki has for the fighter in the topic ("Every Fight Mahoraga Has Ever
+Been In"). Each member's facts carry a `Role` — `direct combatant`, or
+`deployed by <side> as a tool` — read from this wiki's own infobox vocabulary, so
+the script can say which fights they were in with their fists and which they were
+in as someone else's weapon.
 
 #### `as_prompt`
 
@@ -197,3 +211,55 @@ model. If ComfyUI is rendering on the same GPU, either set
 Standard codes. `404` for an unknown entity or an event with no narrative, `422`
 for a malformed body or an invalid series name, `503` when a series exists but
 has not been indexed, with the command to fix it in the message body.
+
+## The MCP server
+
+```powershell
+python -m scriptengine.mcp.server    # speaks MCP over stdio
+```
+
+The engine as tools an agent host can call. It wraps `build_context`,
+`verify_script` and `script_destination` directly — there is no second
+implementation to drift from the HTTP path, so a retrieval or sourcing fix reaches
+both at once. Three tools, sized for the script-writing workflow:
+
+| Tool | What it does | Wraps |
+|---|---|---|
+| `research(subject, series, mode, words, intro, token_budget)` | The ordered, cited bundle for a topic **plus** `prompt`, the bundle rendered as plain text with the house writing rules appended. Write the script from that prompt: it states the only chapter/episode numbers you may tag with. | `build_context` + `render_prompt` |
+| `verify_script(text, series)` | Check every `(Chapter N, Episode M)` in a finished script against the raw crawl — the page exists, a reference cites it, and the pairing matches the wiki's adaptation data. Returns `{tags, distinct, findings, passed}`; `passed` is true only when every tag is real. | `verify_script` (the same gate `cli verify` runs) |
+| `script_path(title)` | Where a finished script should be saved: `scripts output/Video N - <Title>/Script/<Title>.md`. Reuses the folder when one already carries the title, otherwise takes the next free number. Pass the title without the bold markers. | `script_destination` |
+
+The budget rule is the same as the CLI and the API: `words * 8`, clamped to
+6,000–60,000 unless `token_budget` is given. There is deliberately no tool that
+writes files — the agent host has editors of its own; the engine serves research
+and judges tags, it does not hold a pen.
+
+## CLI commands that wrap the same code
+
+The Typer app (`python -m scriptengine.cli`) exposes the pipeline as commands. The
+two that matter for writing:
+
+```powershell
+# One-shot: route → fetch context → ask the writer model → verify every tag
+# against the raw crawl (repairing failures) → expand/trim to target ± 500 words
+# → save into the production tree. Needs LM Studio with the writer model loaded
+# (default qwen/qwen3.8-27b), or set SCRIPTENGINE_WRITER_BACKEND=opencode.
+python -m scriptengine.cli script-gen "Every Fight Mahoraga Has Ever Been In" --series jjk --words 6000
+
+# Check a finished script's tags against the raw crawl before calling it done.
+python -m scriptengine.cli verify "<path to the script>" --series jjk
+```
+
+`script-gen` options: `--mode auto|narrative|roster|qa`, `--intro/--no-intro`,
+`--budget` (0 = words × 8, clamped), `--max-attempts` (repair passes after the
+first draft, default 3), `--title` (save under this title; default is the subject,
+so a regenerate reuses the video's folder), `--write/--no-write`. It prints the
+resolved mode and subject, the context size, any repair or length passes taken,
+and every tag that failed verification. Tags are the hard gate — a script with a
+failing tag still saves but is reported as such; length is the soft one, enforced
+by expanding and trimming until it lands in band or the pass budget (10) is spent.
+
+The rest of the pipeline is also here: `crawl`, `audit`, `index`, `prune`,
+`catalogue`, `rosters`, `eval`, `canon-run`, `page-run`, `query`, `timeline`,
+`export`, `classify`, and `script-path`. Run `python -m scriptengine.cli --help`
+for the full list.

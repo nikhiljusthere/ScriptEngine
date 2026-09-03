@@ -1,0 +1,889 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Arata Nitta?",
+      "set": "Every named technique of Arata Nitta",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Arata Nitta?",
+      "set": "Arata Nitta's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Arata Nitta",
+      "set": "Every battle involving Arata Nitta",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Arata Nitta?",
+      "found": [
+        "Pain Killer"
+      ],
+      "missing": [],
+      "members": [
+        "Pain Killer"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Arata Nitta?",
+      "found": [
+        "Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High"
+      ]
+    },
+    {
+      "query": "Every battle involving Arata Nitta",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Arata Nitta's name?",
+      "id": "jjk-pg-arata_nitta-001",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "\u65b0\u7530\u65b0"
+      ],
+      "found": [
+        "\u65b0\u7530\u65b0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Arata Nitta's name?",
+      "id": "jjk-pg-arata_nitta-002",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Nitta Arata"
+      ],
+      "found": [
+        "Nitta Arata"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata Nitta's race?",
+      "id": "jjk-pg-arata_nitta-003",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Arata Nitta?",
+      "id": "jjk-pg-arata_nitta-004",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "16"
+      ],
+      "found": [
+        "16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata Nitta's gender?",
+      "id": "jjk-pg-arata_nitta-005",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Arata Nitta?",
+      "id": "jjk-pg-arata_nitta-006",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata Nitta's occupation?",
+      "id": "jjk-pg-arata_nitta-007",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Arata Nitta first appear?",
+      "id": "jjk-pg-arata_nitta-008",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 81 (Flashback) Chapter 126"
+      ],
+      "found": [
+        "Chapter 81 (Flashback) Chapter 126"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Arata Nitta first depicted?",
+      "id": "jjk-pg-arata_nitta-009",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Episode 16 (Flashback) Episode 44"
+      ],
+      "found": [
+        "Episode 16 (Flashback) Episode 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Arata Nitta's Japanese voice actor?",
+      "id": "jjk-pg-arata_nitta-010",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Ryota Asari"
+      ],
+      "found": [
+        "Ryota Asari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Arata Nitta's English voice actor?",
+      "id": "jjk-pg-arata_nitta-011",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Kylen Deporter"
+      ],
+      "found": [
+        "Kylen Deporter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-arata_nitta-012",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-arata_nitta-013",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-arata_nitta-014",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-arata_nitta-015",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-arata_nitta-016",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Arata Nitta use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-arata_nitta-017",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Pain Killer Technique"
+      ],
+      "found": [
+        "Pain Killer Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Arata Nitta look like?",
+      "id": "jjk-pg-arata_nitta-021",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "a young man of average height with light-colored, straight hair that reaches his chin"
+      ],
+      "found": [
+        "a young man of average height with light-colored, straight hair that reaches his chin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Arata's school uniform resemble?",
+      "id": "jjk-pg-arata_nitta-022",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "an English butler's attire"
+      ],
+      "found": [
+        "an English butler's attire"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Arata's uniform consist of?",
+      "id": "jjk-pg-arata_nitta-023",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "black trousers, a tailcoat, a gray vest, and white gloves"
+      ],
+      "found": [
+        "black trousers, a tailcoat, a gray vest, and white gloves"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Arata Nitta characterized?",
+      "id": "jjk-pg-arata_nitta-024",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "a kind and timid young man who very much contrasts to Aoi Todo's macho persona"
+      ],
+      "found": [
+        "a kind and timid young man who very much contrasts to Aoi Todo's macho persona"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Arata react when in danger?",
+      "id": "jjk-pg-arata_nitta-025",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "understandably nervous in dangerous situations, but brave and proactive nonetheless"
+      ],
+      "found": [
+        "understandably nervous in dangerous situations, but brave and proactive nonetheless"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Arata do for Nobara in Shibuya?",
+      "id": "jjk-pg-arata_nitta-026",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "treated Nobara despite her gruesome and near hopeless state after Mahito transfigured her"
+      ],
+      "found": [
+        "treated Nobara despite her gruesome and near hopeless state after Mahito transfigured her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Arata reassure Yuji about?",
+      "id": "jjk-pg-arata_nitta-027",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "there was still a chance that she might"
+      ],
+      "found": [
+        "there was still a chance that she might"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Arata with in Shibuya where they saw many people motionless?",
+      "id": "jjk-pg-arata_nitta-028",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Aoi"
+      ],
+      "found": [
+        "Aoi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Aoi notice was taken?",
+      "id": "jjk-pg-arata_nitta-029",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "the Prison Realm"
+      ],
+      "found": [
+        "the Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who asked Arata to heal Yuji?",
+      "id": "jjk-pg-arata_nitta-030",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo"
+      ],
+      "found": [
+        "Aoi Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What news about Sukuna shocked Arata?",
+      "id": "jjk-pg-arata_nitta-031",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Sukuna has killed many people including that Kento Nanami is dead"
+      ],
+      "found": [
+        "Sukuna has killed many people including that Kento Nanami is dead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Arata mistakenly believe about Yuji and Todo?",
+      "id": "jjk-pg-arata_nitta-032",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "the two are biological brothers"
+      ],
+      "found": [
+        "the two are biological brothers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Arata discuss in the meeting with Yuji, Shoko, and Rin Amai?",
+      "id": "jjk-pg-arata_nitta-033",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "his cursed technique"
+      ],
+      "found": [
+        "his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rin demonstrate the process?",
+      "id": "jjk-pg-arata_nitta-034",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "forming pudding on a plate"
+      ],
+      "found": [
+        "forming pudding on a plate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose body did Arata and Rin help treat on December 24?",
+      "id": "jjk-pg-arata_nitta-035",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu"
+      ],
+      "found": [
+        "Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nitta realize about Yuta's injuries?",
+      "id": "jjk-pg-arata_nitta-036",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "the slash wound he was dealt by Sukuna was as bad as Gojo's and reverse cursed technique wouldn't be enough to heal it"
+      ],
+      "found": [
+        "the slash wound he was dealt by Sukuna was as bad as Gojo's and reverse cursed technique wouldn't be enough to heal it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What type of sorcerer is Arata Nitta?",
+      "id": "jjk-pg-arata_nitta-037",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "a first-year student and a non-combatant type of jujutsu sorcerer"
+      ],
+      "found": [
+        "a first-year student and a non-combatant type of jujutsu sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Arata a valuable asset?",
+      "id": "jjk-pg-arata_nitta-038",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "healing techniques are extremely rare among jujutsu sorcerers"
+      ],
+      "found": [
+        "healing techniques are extremely rare among jujutsu sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Arata's Pain Killer technique do?",
+      "id": "jjk-pg-arata_nitta-039",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "stop existing injuries from getting any worse"
+      ],
+      "found": [
+        "stop existing injuries from getting any worse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What limitation does Arata's Pain Killer have?",
+      "id": "jjk-pg-arata_nitta-040",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "any injuries sustained after the technique's application are unaffected"
+      ],
+      "found": [
+        "any injuries sustained after the technique's application are unaffected"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata's special skill?",
+      "id": "jjk-pg-arata_nitta-041",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "being a coordinator"
+      ],
+      "found": [
+        "being a coordinator"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata's favorite dish?",
+      "id": "jjk-pg-arata_nitta-042",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Nanbanzuke"
+      ],
+      "found": [
+        "Nanbanzuke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata's least favorite dish?",
+      "id": "jjk-pg-arata_nitta-043",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Any type of mushroom"
+      ],
+      "found": [
+        "Any type of mushroom"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Arata's cause of stress?",
+      "id": "jjk-pg-arata_nitta-044",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "Being ordered around too much by his sister"
+      ],
+      "found": [
+        "Being ordered around too much by his sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Arata Nitta rank in the second Popularity Poll?",
+      "id": "jjk-pg-arata_nitta-045",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "45th in the second Popularity Poll with 35 votes"
+      ],
+      "found": [
+        "45th in the second Popularity Poll with 35 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Arata Nitta rank in the third Popularity Poll?",
+      "id": "jjk-pg-arata_nitta-046",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "78th in the third Popularity Poll with 5 votes"
+      ],
+      "found": [
+        "78th in the third Popularity Poll with 5 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Arata Nitta rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-arata_nitta-047",
+      "subject": "Arata Nitta",
+      "accept": "all",
+      "expected": [
+        "62nd in the fourth Popularity Poll with 18 votes"
+      ],
+      "found": [
+        "62nd in the fourth Popularity Poll with 18 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 44,
+    "fact_present": 44
+  }
+}

@@ -1,0 +1,875 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Dagon?",
+      "set": "Every named technique of Dagon",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Dagon?",
+      "set": "Every ally of Dagon",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Dagon?",
+      "set": "Every enemy of Dagon",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Dagon?",
+      "set": "Every friend of Dagon",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Dagon?",
+      "set": "Dagon's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Dagon",
+      "set": "Every battle involving Dagon",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Dagon?",
+      "found": [
+        "Shikigami",
+        "Domain Expansion",
+        "Disaster Tides",
+        "Horizon of the Captivating Skandha",
+        "Death Swarm"
+      ],
+      "missing": [],
+      "members": [
+        "Death Swarm",
+        "Disaster Tides",
+        "Domain Expansion",
+        "Horizon of the Captivating Skandha",
+        "Shikigami"
+      ]
+    },
+    {
+      "query": "What are all the allies of Dagon?",
+      "found": [
+        "Mahito",
+        "Jogo",
+        "Hanami"
+      ],
+      "missing": [],
+      "members": [
+        "Hanami",
+        "Jogo",
+        "Mahito"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Dagon?",
+      "found": [
+        "Kento Nanami",
+        "Maki Zenin",
+        "Naobito Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Kento Nanami",
+        "Maki Zenin",
+        "Naobito Zenin"
+      ]
+    },
+    {
+      "query": "What are all the friends of Dagon?",
+      "found": [
+        "Jogo",
+        "Hanami",
+        "Mahito"
+      ],
+      "missing": [],
+      "members": [
+        "Hanami",
+        "Jogo",
+        "Mahito"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Dagon?",
+      "found": [
+        "Mahito's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Mahito's Group"
+      ]
+    },
+    {
+      "query": "Every battle involving Dagon",
+      "found": [
+        "Jujutsu Sorcerers vs. Dagon",
+        "Toji Fushiguro vs. Dagon"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Dagon",
+        "Toji Fushiguro vs. Dagon"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Dagon's race?",
+      "id": "jjk-pg-dagon-001",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Cursed Womb (Formerly) Cursed Spirit"
+      ],
+      "found": [
+        "Cursed Womb (Formerly) Cursed Spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dagon's gender?",
+      "id": "jjk-pg-dagon-002",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Dagon's name?",
+      "id": "jjk-pg-dagon-003",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "\u9640\u826e"
+      ],
+      "found": [
+        "\u9640\u826e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Dagon's name?",
+      "id": "jjk-pg-dagon-004",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Dagon"
+      ],
+      "found": [
+        "Dagon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Dagon?",
+      "id": "jjk-pg-dagon-005",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dagon's grade?",
+      "id": "jjk-pg-dagon-006",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Special Grade"
+      ],
+      "found": [
+        "Special Grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Dagon first appear?",
+      "id": "jjk-pg-dagon-007",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Chapter 10"
+      ],
+      "found": [
+        "Chapter 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Dagon first depicted?",
+      "id": "jjk-pg-dagon-008",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Episode 5"
+      ],
+      "found": [
+        "Episode 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Dagon's Japanese voice actor?",
+      "id": "jjk-pg-dagon-009",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Kenta Miyake Aya Endo (as a Cursed Womb)"
+      ],
+      "found": [
+        "Kenta Miyake Aya Endo (as a Cursed Womb)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Dagon's English voice actor?",
+      "id": "jjk-pg-dagon-010",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Jamieson Price"
+      ],
+      "found": [
+        "Jamieson Price"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Dagon?",
+      "id": "jjk-pg-dagon-011",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro takes over the battle."
+      ],
+      "found": [
+        "Toji Fushiguro takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-dagon-012",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-dagon-013",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Dagon begin?",
+      "id": "jjk-pg-dagon-014",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Chapter 106"
+      ],
+      "found": [
+        "Chapter 106"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Dagon depicted?",
+      "id": "jjk-pg-dagon-015",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Episode 38"
+      ],
+      "found": [
+        "Episode 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-dagon-016",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Dagon use in Jujutsu Sorcerers vs. Dagon?",
+      "id": "jjk-pg-dagon-017",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Disaster Tides, Domain Expansion: Horizon of the Captivating Skandha, Shikigami, Death Swarm"
+      ],
+      "found": [
+        "Disaster Tides, Domain Expansion: Horizon of the Captivating Skandha, Shikigami, Death Swarm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Toji Fushiguro vs. Dagon?",
+      "id": "jjk-pg-dagon-018",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Toji is victorious."
+      ],
+      "found": [
+        "Toji is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Toji Fushiguro vs. Dagon take place?",
+      "id": "jjk-pg-dagon-019",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Toji Fushiguro vs. Dagon take place?",
+      "id": "jjk-pg-dagon-020",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Toji Fushiguro vs. Dagon begin?",
+      "id": "jjk-pg-dagon-021",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Chapter 110"
+      ],
+      "found": [
+        "Chapter 110"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Toji Fushiguro vs. Dagon depicted?",
+      "id": "jjk-pg-dagon-022",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Episode 39"
+      ],
+      "found": [
+        "Episode 39"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Toji Fushiguro vs. Dagon take place?",
+      "id": "jjk-pg-dagon-023",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What creature does Dagon's humanoid appearance resemble?",
+      "id": "jjk-pg-dagon-030",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "octopus/squid-headed"
+      ],
+      "found": [
+        "octopus/squid-headed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Dagon's cursed womb state was described as being far less hostile than whom?",
+      "id": "jjk-pg-dagon-031",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Jogo and Hanami"
+      ],
+      "found": [
+        "Jogo and Hanami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What type of technique forced critical hits against Dagon in his evolved form?",
+      "id": "jjk-pg-dagon-032",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Ratio Technique"
+      ],
+      "found": [
+        "Ratio Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Maki believed Dagon would've easily drowned her entire team if they had fought him where?",
+      "id": "jjk-pg-dagon-033",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "underground"
+      ],
+      "found": [
+        "underground"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dagon do to convert devoured people's flesh into cursed energy?",
+      "id": "jjk-pg-dagon-034",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "digesting and converting"
+      ],
+      "found": [
+        "digesting and converting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Dagon recognized he couldn't directly overcome whose speed during the fight?",
+      "id": "jjk-pg-dagon-035",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Naobito"
+      ],
+      "found": [
+        "Naobito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What hand sign technique did Dagon use as a distraction to cast his domain?",
+      "id": "jjk-pg-dagon-036",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "distracted him with a technique activating hand sign"
+      ],
+      "found": [
+        "distracted him with a technique activating hand sign"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In what state was Dagon most comfortable and least shy?",
+      "id": "jjk-pg-dagon-037",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "around his allies"
+      ],
+      "found": [
+        "around his allies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many shikigami could Dagon conjure on top of his Domain Expansion?",
+      "id": "jjk-pg-dagon-038",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "infinite"
+      ],
+      "found": [
+        "infinite"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "In what manner did Dagon's intelligence change after evolution?",
+      "id": "jjk-pg-dagon-039",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "exponentially"
+      ],
+      "found": [
+        "exponentially"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Dagon could produce massive waves of water without what?",
+      "id": "jjk-pg-dagon-040",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "source"
+      ],
+      "found": [
+        "source"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Toji dispatched Dagon despite him possessing massive amounts of what?",
+      "id": "jjk-pg-dagon-041",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "cursed energy"
+      ],
+      "found": [
+        "cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What Lovecraft character is Dagon's name possibly derived from?",
+      "id": "jjk-pg-dagon-042",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "Father Dagon"
+      ],
+      "found": [
+        "Father Dagon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What were Dagon vulnerable to while existing alone as a cursed womb?",
+      "id": "jjk-pg-dagon-043",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "sorcerers"
+      ],
+      "found": [
+        "sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Dagon behave when alone compared to around allies?",
+      "id": "jjk-pg-dagon-044",
+      "subject": "Dagon",
+      "accept": "all",
+      "expected": [
+        "very shy and nervous"
+      ],
+      "found": [
+        "very shy and nervous"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 17,
+    "canon_total": 17,
+    "canon_recall": 1.0,
+    "members_returned": 17,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 38,
+    "fact_present": 38
+  }
+}

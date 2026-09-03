@@ -1,0 +1,60 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:debut",
+        "page-gen:identity:anime debut",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": [
+        "page-gen:battle:Panda vs. Ultimate Mechamaru:outcome",
+        "page-gen:battle:Panda vs. Ultimate Mechamaru:place",
+        "page-gen:battle:Panda vs. Ultimate Mechamaru:chapters",
+        "page-gen:battle:Panda vs. Ultimate Mechamaru:episodes",
+        "page-gen:battle:Panda vs. Ultimate Mechamaru:arc"
+      ]
+    },
+    {
+      "path": "Description / Weaknesses",
+      "covered_by": []
+    },
+    {
+      "path": "Usage",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Description / Weaknesses",
+    "Usage"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

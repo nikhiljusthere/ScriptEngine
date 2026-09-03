@@ -1,0 +1,397 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Chiharu Miyaguni?",
+      "set": "Every named technique of Chiharu Miyaguni",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Chiharu Miyaguni?",
+      "set": "Chiharu Miyaguni's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Chiharu Miyaguni?",
+      "found": [
+        "Simple Domain"
+      ],
+      "missing": [],
+      "members": [
+        "Simple Domain"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Chiharu Miyaguni?",
+      "found": [
+        "Jujutsu Headquarters"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Headquarters"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Chiharu Miyaguni's name?",
+      "id": "jjk-pg-chiharu_miyaguni-001",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "\u5bae\u570b\u5343\u967d"
+      ],
+      "found": [
+        "\u5bae\u570b\u5343\u967d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Chiharu Miyaguni's name?",
+      "id": "jjk-pg-chiharu_miyaguni-002",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Miyaguni Chiharu"
+      ],
+      "found": [
+        "Miyaguni Chiharu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chiharu Miyaguni's race?",
+      "id": "jjk-pg-chiharu_miyaguni-003",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chiharu Miyaguni's gender?",
+      "id": "jjk-pg-chiharu_miyaguni-004",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Chiharu Miyaguni?",
+      "id": "jjk-pg-chiharu_miyaguni-005",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chiharu Miyaguni's occupation?",
+      "id": "jjk-pg-chiharu_miyaguni-006",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chiharu Miyaguni's grade?",
+      "id": "jjk-pg-chiharu_miyaguni-007",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Grade 1"
+      ],
+      "found": [
+        "Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Chiharu Miyaguni first appear?",
+      "id": "jjk-pg-chiharu_miyaguni-008",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 10"
+      ],
+      "found": [
+        "Modulo Chapter 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Chiharu Miyaguni play in the series?",
+      "id": "jjk-pg-chiharu_miyaguni-011",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "a character in the Jujutsu Kaisen Modulo series"
+      ],
+      "found": [
+        "a character in the Jujutsu Kaisen Modulo series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chiharu Miyaguni's position?",
+      "id": "jjk-pg-chiharu_miyaguni-012",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "a grade 1 jujutsu sorcerer and a higher-up of Jujutsu Headquarters"
+      ],
+      "found": [
+        "a grade 1 jujutsu sorcerer and a higher-up of Jujutsu Headquarters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Miyaguni look like?",
+      "id": "jjk-pg-chiharu_miyaguni-013",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "a tall woman with slender build and a youthful appearance"
+      ],
+      "found": [
+        "a tall woman with slender build and a youthful appearance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Miyaguni's hair styled?",
+      "id": "jjk-pg-chiharu_miyaguni-014",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "straight-cut bangs and two voluminous buns atop her head, with twin tails framing the sides of her face"
+      ],
+      "found": [
+        "straight-cut bangs and two voluminous buns atop her head, with twin tails framing the sides of her face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Miyaguni wear?",
+      "id": "jjk-pg-chiharu_miyaguni-015",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "a dark, high-collared double-breasted tunic featuring two vertical rows of buttons, paired with white culottes and sturdy dark boots"
+      ],
+      "found": [
+        "a dark, high-collared double-breasted tunic featuring two vertical rows of buttons, paired with white culottes and sturdy dark boots"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Miyaguni's personality described?",
+      "id": "jjk-pg-chiharu_miyaguni-016",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "an aura of authority and professionalism"
+      ],
+      "found": [
+        "an aura of authority and professionalism"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Miyaguni do during Dabura Karaba and Mahoraga's duel?",
+      "id": "jjk-pg-chiharu_miyaguni-017",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "efficiently managed evacuations and modified the barrier to push cursed spirits toward the ocean"
+      ],
+      "found": [
+        "efficiently managed evacuations and modified the barrier to push cursed spirits toward the ocean"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is afraid of Miyaguni?",
+      "id": "jjk-pg-chiharu_miyaguni-018",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Tsurugi Okkotsu"
+      ],
+      "found": [
+        "Tsurugi Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who mentored Miyaguni as a child?",
+      "id": "jjk-pg-chiharu_miyaguni-019",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo and Yuji Itadori"
+      ],
+      "found": [
+        "Aoi Todo and Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What discipline is Miyaguni a master of?",
+      "id": "jjk-pg-chiharu_miyaguni-020",
+      "subject": "Chiharu Miyaguni",
+      "accept": "all",
+      "expected": [
+        "the New Shadow Style"
+      ],
+      "found": [
+        "the New Shadow Style"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 18,
+    "fact_present": 18
+  }
+}

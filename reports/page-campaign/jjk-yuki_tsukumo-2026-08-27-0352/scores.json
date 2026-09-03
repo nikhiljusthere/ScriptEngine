@@ -1,0 +1,1873 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Yuki Tsukumo?",
+      "set": "Every named technique of Yuki Tsukumo",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Yuki Tsukumo?",
+      "set": "Every ally of Yuki Tsukumo",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Yuki Tsukumo?",
+      "set": "Every enemy of Yuki Tsukumo",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Yuki Tsukumo?",
+      "set": "Every friend of Yuki Tsukumo",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the students of Yuki Tsukumo?",
+      "set": "Every student of Yuki Tsukumo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Yuki Tsukumo",
+      "set": "Every battle involving Yuki Tsukumo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Yuki Tsukumo?",
+      "found": [
+        "Reverse Cursed Technique",
+        "Shikigami",
+        "Domain Expansion",
+        "Simple Domain",
+        "Garuda",
+        "Star Rage"
+      ],
+      "missing": [],
+      "members": [
+        "Domain Expansion",
+        "Garuda",
+        "Reverse Cursed Technique",
+        "Shikigami",
+        "Simple Domain",
+        "Star Rage"
+      ]
+    },
+    {
+      "query": "What are all the allies of Yuki Tsukumo?",
+      "found": [
+        "Tengen",
+        "Choso",
+        "Larue",
+        "Utahime Iori"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Larue",
+        "Tengen",
+        "Utahime Iori"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Yuki Tsukumo?",
+      "found": [
+        "Kenjaku",
+        "Tengen",
+        "Uraume",
+        "Ganesha"
+      ],
+      "missing": [],
+      "members": [
+        "Ganesha",
+        "Kenjaku",
+        "Tengen",
+        "Uraume"
+      ]
+    },
+    {
+      "query": "What are all the friends of Yuki Tsukumo?",
+      "found": [
+        "Satoru Gojo",
+        "Suguru Geto",
+        "Choso"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Satoru Gojo",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the students of Yuki Tsukumo?",
+      "found": [
+        "Aoi Todo",
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Aoi Todo",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "Every battle involving Yuki Tsukumo",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Yuki Tsukumo's name?",
+      "id": "jjk-pg-yuki_tsukumo-001",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "\u4e5d\u5341\u4e5d \u7531\u57fa"
+      ],
+      "found": [
+        "\u4e5d\u5341\u4e5d \u7531\u57fa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Yuki Tsukumo's name?",
+      "id": "jjk-pg-yuki_tsukumo-002",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Tsukumo Yuki"
+      ],
+      "found": [
+        "Tsukumo Yuki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki Tsukumo's race?",
+      "id": "jjk-pg-yuki_tsukumo-003",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki Tsukumo's gender?",
+      "id": "jjk-pg-yuki_tsukumo-004",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Yuki Tsukumo?",
+      "id": "jjk-pg-yuki_tsukumo-005",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki Tsukumo's occupation?",
+      "id": "jjk-pg-yuki_tsukumo-006",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo first appear?",
+      "id": "jjk-pg-yuki_tsukumo-007",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Chapter 50 (Flashback) Chapter 76"
+      ],
+      "found": [
+        "Chapter 50 (Flashback) Chapter 76"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Yuki Tsukumo first depicted?",
+      "id": "jjk-pg-yuki_tsukumo-008",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Episode 20 (Flashback) Episode 29"
+      ],
+      "found": [
+        "Episode 20 (Flashback) Episode 29"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Yuki Tsukumo's Japanese voice actor?",
+      "id": "jjk-pg-yuki_tsukumo-009",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Noriko Hidaka"
+      ],
+      "found": [
+        "Noriko Hidaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki Tsukumo's grade?",
+      "id": "jjk-pg-yuki_tsukumo-010",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Special Grade"
+      ],
+      "found": [
+        "Special Grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Yuki Tsukumo's English voice actor?",
+      "id": "jjk-pg-yuki_tsukumo-011",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Anjali Kunapaneni"
+      ],
+      "found": [
+        "Anjali Kunapaneni"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-yuki_tsukumo-012",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-yuki_tsukumo-013",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-yuki_tsukumo-014",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-yuki_tsukumo-015",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-yuki_tsukumo-016",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-yuki_tsukumo-017",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Yuki Tsukumo use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-yuki_tsukumo-018",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Garuda"
+      ],
+      "found": [
+        "Garuda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-019",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-yuki_tsukumo-020",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-yuki_tsukumo-021",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-yuki_tsukumo-022",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-yuki_tsukumo-023",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Yuki Tsukumo use in Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-024",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Star Rage, Garuda, Reverse Cursed Technique, Simple Domain"
+      ],
+      "found": [
+        "Star Rage, Garuda, Reverse Cursed Technique, Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuki Tsukumo look like?",
+      "id": "jjk-pg-yuki_tsukumo-031",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki is a very tall young woman with a slender yet athletic build and light skin. She has long blonde hair that extends well down her back with two tufts on in front of each side of her face. She has wide brown (pink in the manga) eyes with thin eyebrows and pronounced eyelashes."
+      ],
+      "found": [
+        "Yuki is a very tall young woman with a slender yet athletic build and light skin. She has long blonde hair that extends well down her back with two tufts on in front of each side of her face. She has wide brown (pink in the manga) eyes with thin eyebrows and pronounced eyelashes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What outfit does Yuki wear in the anime?",
+      "id": "jjk-pg-yuki_tsukumo-032",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "She has sported a few different outfits, but currently appears in the anime with a sleeveless, heather indigo top reminiscent of female Chinese martial artists' attire with a gold mandarin collar. The vest is tucked into high-waisted stone blue jeans. Most of her stomach area is covered with a buttoned grey bodice. She finishes this outfit with a pair of brown heeled boots."
+      ],
+      "found": [
+        "She has sported a few different outfits, but currently appears in the anime with a sleeveless, heather indigo top reminiscent of female Chinese martial artists' attire with a gold mandarin collar. The vest is tucked into high-waisted stone blue jeans. Most of her stomach area is covered with a buttoned grey bodice. She finishes this outfit with a pair of brown heeled boots."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuki wear during the Culling Game?",
+      "id": "jjk-pg-yuki_tsukumo-033",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "During the Culling Game, Yuki wears a black sleeveless turtleneck top with a zipper on the neck and the Jujutsu High crest on the zipper\u2019s button. This attire continues with red baggy cargo pants, which also carries a button with the same crest, with large black vertical lines on the pockets that has black ribbons attached to the pockets. Finally, this attire is completed with dark-colored boots."
+      ],
+      "found": [
+        "During the Culling Game, Yuki wears a black sleeveless turtleneck top with a zipper on the neck and the Jujutsu High crest on the zipper\u2019s button. This attire continues with red baggy cargo pants, which also carries a button with the same crest, with large black vertical lines on the pockets that has black ribbons attached to the pockets. Finally, this attire is completed with dark-colored boots."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Yuki get around when she isn't working?",
+      "id": "jjk-pg-yuki_tsukumo-034",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki travels around on a motorbike and wears appropriate attire while she isn't working. She has a leather biker jacket, with a dome helmet and goggles."
+      ],
+      "found": [
+        "Yuki travels around on a motorbike and wears appropriate attire while she isn't working. She has a leather biker jacket, with a dome helmet and goggles."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Yuki wearing when she first met Suguru Geto in 2007?",
+      "id": "jjk-pg-yuki_tsukumo-035",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "In 2007 when Yuki first met Suguru Geto she wore a heather indigo sleeveless turtleneck top, dark blue jeans with a black belt and black combat boots for a more casual look than her current, more battle-oriented one."
+      ],
+      "found": [
+        "In 2007 when Yuki first met Suguru Geto she wore a heather indigo sleeveless turtleneck top, dark blue jeans with a black belt and black combat boots for a more casual look than her current, more battle-oriented one."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki wear when she introduced herself to a young Aoi Todo?",
+      "id": "jjk-pg-yuki_tsukumo-036",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "She wore this same outfit a few years later when she introduced herself to a young Aoi Todo, except she wore a black fishnet top with a black leather jacket and black gloves."
+      ],
+      "found": [
+        "She wore this same outfit a few years later when she introduced herself to a young Aoi Todo, except she wore a black fishnet top with a black leather jacket and black gloves."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki Tsukumo's overall skill level?",
+      "id": "jjk-pg-yuki_tsukumo-037",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki is an extremely powerful fighter, one of only four registered special grade sorcerers who possesses incredibly unorthodox abilities."
+      ],
+      "found": [
+        "Yuki is an extremely powerful fighter, one of only four registered special grade sorcerers who possesses incredibly unorthodox abilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Jujutsu Headquarters know about Yuki's powers?",
+      "id": "jjk-pg-yuki_tsukumo-038",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Headquarters knew next to nothing about Yuki's powers despite designating her special grade but she has shown up for her allies and showcased her abilities against some of the strongest opponents available."
+      ],
+      "found": [
+        "Jujutsu Headquarters knew next to nothing about Yuki's powers despite designating her special grade but she has shown up for her allies and showcased her abilities against some of the strongest opponents available."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What abilities is Yuki Tsukumo capable of using?",
+      "id": "jjk-pg-yuki_tsukumo-039",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki possesses elite combat instincts and is highly talented in jujutsu, capable of using her innate technique, barrier techniques, and domain expansion."
+      ],
+      "found": [
+        "Yuki possesses elite combat instincts and is highly talented in jujutsu, capable of using her innate technique, barrier techniques, and domain expansion."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Yuki a teacher at Jujutsu High?",
+      "id": "jjk-pg-yuki_tsukumo-040",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "She's also fully capable of instructing students and fostering elite talent despite not being a teacher at Jujutsu High."
+      ],
+      "found": [
+        "She's also fully capable of instructing students and fostering elite talent despite not being a teacher at Jujutsu High."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Yuki Tsukumo mentor into a grade 1 sorcerer?",
+      "id": "jjk-pg-yuki_tsukumo-041",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki introduced Aoi Todo to jujutsu and mentored him into the exceptional grade 1 sorcerer he's flourished into."
+      ],
+      "found": [
+        "Yuki introduced Aoi Todo to jujutsu and mentored him into the exceptional grade 1 sorcerer he's flourished into."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Yuki's training of Aoi Todo?",
+      "id": "jjk-pg-yuki_tsukumo-042",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Her training was extremely grueling, enough so to physically scar Todo for life."
+      ],
+      "found": [
+        "Her training was extremely grueling, enough so to physically scar Todo for life."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has Aoi Todo shown from Yuki's imparted knowledge?",
+      "id": "jjk-pg-yuki_tsukumo-043",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Todo has shown the fruits of her imparted knowledge time and time again, including learning to use Simple Domain from her."
+      ],
+      "found": [
+        "Todo has shown the fruits of her imparted knowledge time and time again, including learning to use Simple Domain from her."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki repel Uraume's Icefall?",
+      "id": "jjk-pg-yuki_tsukumo-044",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki displayed her own strength when she effortlessly repelled Uraume's Icefall technique using only Garuda."
+      ],
+      "found": [
+        "Yuki displayed her own strength when she effortlessly repelled Uraume's Icefall technique using only Garuda."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who saved the sorcerers that Uraume had overpowered?",
+      "id": "jjk-pg-yuki_tsukumo-045",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Uraume had overpowered a large group of sorcerers on their own who were all saved by Yuki's intervention."
+      ],
+      "found": [
+        "Uraume had overpowered a large group of sorcerers on their own who were all saved by Yuki's intervention."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki's first attack do against Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-046",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki used her full strength against Kenjaku and effortlessly exorcised one of his special grade curses with her first attack."
+      ],
+      "found": [
+        "Yuki used her full strength against Kenjaku and effortlessly exorcised one of his special grade curses with her first attack."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki's second attack do to Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-047",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Her second attack sent Kenjaku flying and made him question whether he could even tame the wild beast known as Yuki Tsukumo."
+      ],
+      "found": [
+        "Her second attack sent Kenjaku flying and made him question whether he could even tame the wild beast known as Yuki Tsukumo."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kenjaku's domain expansion severely injure Yuki?",
+      "id": "jjk-pg-yuki_tsukumo-048",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Kenjaku's domain expansion severely injured Tsukumo only because she chose to rely on Tengen's help and their countermeasures had a severe miscalculation."
+      ],
+      "found": [
+        "Kenjaku's domain expansion severely injured Tsukumo only because she chose to rely on Tengen's help and their countermeasures had a severe miscalculation."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki's simple domain compare to Kenjaku's domain?",
+      "id": "jjk-pg-yuki_tsukumo-049",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki's simple domain couldn't stand up to Kenjaku's domain but using her domain would've likely ended with a different outcome."
+      ],
+      "found": [
+        "Yuki's simple domain couldn't stand up to Kenjaku's domain but using her domain would've likely ended with a different outcome."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki drive Kenjaku into a corner?",
+      "id": "jjk-pg-yuki_tsukumo-050",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki continued fighting despite her injuries, and with Choso's help, she drove the curse user into a corner."
+      ],
+      "found": [
+        "Yuki continued fighting despite her injuries, and with Choso's help, she drove the curse user into a corner."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki fight alongside Choso?",
+      "id": "jjk-pg-yuki_tsukumo-051",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Despite initially believing Choso would only hold her back, Yuki fought effectively alongside Choso even while her body was mangled and proficiently utilized reverse cursed technique to heal herself while Choso was holding their opponent off."
+      ],
+      "found": [
+        "Despite initially believing Choso would only hold her back, Yuki fought effectively alongside Choso even while her body was mangled and proficiently utilized reverse cursed technique to heal herself while Choso was holding their opponent off."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened when Yuki regained momentum after healing?",
+      "id": "jjk-pg-yuki_tsukumo-052",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Once healed, Yuki quickly regained momentum with her pure destructive power but Kenjaku outwitted her and dealt an unexpected fatal blow."
+      ],
+      "found": [
+        "Once healed, Yuki quickly regained momentum with her pure destructive power but Kenjaku outwitted her and dealt an unexpected fatal blow."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki do at the end of her fight with Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-053",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki fought to the end and used her innate technique to transform into a black hole with the potential to destroy the world. She suppressed its power using her will and prevented a catastrophe, impressing even the callous Kenjaku."
+      ],
+      "found": [
+        "Yuki fought to the end and used her innate technique to transform into a black hole with the potential to destroy the world. She suppressed its power using her will and prevented a catastrophe, impressing even the callous Kenjaku."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of combatant is Yuki?",
+      "id": "jjk-pg-yuki_tsukumo-054",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki is primarily a close-quarters combatant who supplements her martial arts with her innate technique to unleash devastating attacks."
+      ],
+      "found": [
+        "Yuki is primarily a close-quarters combatant who supplements her martial arts with her innate technique to unleash devastating attacks."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki's first hand-to-hand exchange with Kenjaku go?",
+      "id": "jjk-pg-yuki_tsukumo-055",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "In her first hand-to-hand exchange with Kenjaku, she was able to use a single punch to literally break through his guard and send him flying."
+      ],
+      "found": [
+        "In her first hand-to-hand exchange with Kenjaku, she was able to use a single punch to literally break through his guard and send him flying."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki keep Kenjaku on the defensive?",
+      "id": "jjk-pg-yuki_tsukumo-056",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki kept Kenjaku, an excellent taijutsu user, on the defensive throughout most of their hand-to-hand combat exchanges."
+      ],
+      "found": [
+        "Yuki kept Kenjaku, an excellent taijutsu user, on the defensive throughout most of their hand-to-hand combat exchanges."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could Yuki still do with a broken arm?",
+      "id": "jjk-pg-yuki_tsukumo-057",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Even with a broken arm and numerous other injuries, Yuki was able to pressure Kenjaku with flurries of kicks and other improvised attacks."
+      ],
+      "found": [
+        "Even with a broken arm and numerous other injuries, Yuki was able to pressure Kenjaku with flurries of kicks and other improvised attacks."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did a fully healed Yuki do to Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-058",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "A fully healed Yuki easily outmaneuvered Kenjaku at close range and nearly defeated him."
+      ],
+      "found": [
+        "A fully healed Yuki easily outmaneuvered Kenjaku at close range and nearly defeated him."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How durable is Yuki?",
+      "id": "jjk-pg-yuki_tsukumo-059",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki is exceptionally durable for a human being and has a high pain tolerance."
+      ],
+      "found": [
+        "Yuki is exceptionally durable for a human being and has a high pain tolerance."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What injuries did Yuki suffer from Womb Profusion?",
+      "id": "jjk-pg-yuki_tsukumo-060",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "She suffered a direct hit from Womb Profusion that dealt her a serious head injury as well as a completely shattered right arm."
+      ],
+      "found": [
+        "She suffered a direct hit from Womb Profusion that dealt her a serious head injury as well as a completely shattered right arm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki keep fighting despite her injuries?",
+      "id": "jjk-pg-yuki_tsukumo-061",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Not only was Yuki able to move despite her injuries, but she kept her innate technique active and fought Kenjaku on even terms in hand-to-hand combat."
+      ],
+      "found": [
+        "Not only was Yuki able to move despite her injuries, but she kept her innate technique active and fought Kenjaku on even terms in hand-to-hand combat."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki use her mangled body to pressure Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-062",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "While her body quickly reached its limit due to her injuries, Yuki fought through them and continued to use her mangled body to pressure Kenjaku alongside Choso."
+      ],
+      "found": [
+        "While her body quickly reached its limit due to her injuries, Yuki fought through them and continued to use her mangled body to pressure Kenjaku alongside Choso."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki fight until the very end?",
+      "id": "jjk-pg-yuki_tsukumo-063",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki even managed to move and activate with her body bifurcated, fighting until the very end."
+      ],
+      "found": [
+        "Yuki even managed to move and activate with her body bifurcated, fighting until the very end."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How smart is Yuki?",
+      "id": "jjk-pg-yuki_tsukumo-064",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "While her wits are not always on display due to her straightforward attitude, Yuki is as smart as she is strong and goes into every situation with a considerable amount of thought."
+      ],
+      "found": [
+        "While her wits are not always on display due to her straightforward attitude, Yuki is as smart as she is strong and goes into every situation with a considerable amount of thought."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Yuki analyze her opponents?",
+      "id": "jjk-pg-yuki_tsukumo-065",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Using her advanced knowledge of jujutsu, Yuki vigorously analyzes her opponent's every move throughout a battle, taking mental notes of every technique used and every countermeasure that is taken."
+      ],
+      "found": [
+        "Using her advanced knowledge of jujutsu, Yuki vigorously analyzes her opponent's every move throughout a battle, taking mental notes of every technique used and every countermeasure that is taken."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki recognize about Ganesha at a glance?",
+      "id": "jjk-pg-yuki_tsukumo-066",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "As a testament to her jujutsu-related knowledge and intuition, Yuki was able to recognize Ganesha was a cursed spirit foreign to Japan with a single glance."
+      ],
+      "found": [
+        "As a testament to her jujutsu-related knowledge and intuition, Yuki was able to recognize Ganesha was a cursed spirit foreign to Japan with a single glance."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuki figure out Kenjaku could manipulate gravity?",
+      "id": "jjk-pg-yuki_tsukumo-067",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "It only took a single activation for Yuki to figure out Kenjaku could manipulate gravity."
+      ],
+      "found": [
+        "It only took a single activation for Yuki to figure out Kenjaku could manipulate gravity."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did further observation of Kenjaku reveal to Yuki?",
+      "id": "jjk-pg-yuki_tsukumo-068",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Further observation of Kenjaku's technique allowed Yuki to figure out its effective range as well as the time needed between activation intervals."
+      ],
+      "found": [
+        "Further observation of Kenjaku's technique allowed Yuki to figure out its effective range as well as the time needed between activation intervals."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What plan did Yuki and Tengen work out to deal with Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-069",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki worked with Tengen to formulate a multi-layered plan to deal with Kenjaku that was nearly successful in several facets."
+      ],
+      "found": [
+        "Yuki worked with Tengen to formulate a multi-layered plan to deal with Kenjaku that was nearly successful in several facets."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yuki keep fighting through her physical trauma?",
+      "id": "jjk-pg-yuki_tsukumo-070",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Although the second phase of their plan was miscalculated and Yuki didn't escape Kenjaku's domain unharmed, she knew she needed to keep fighting through her physical trauma so Choso could ambush him in the next phase."
+      ],
+      "found": [
+        "Although the second phase of their plan was miscalculated and Yuki didn't escape Kenjaku's domain unharmed, she knew she needed to keep fighting through her physical trauma so Choso could ambush him in the next phase."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki deduce when Kenjaku survived the ambush?",
+      "id": "jjk-pg-yuki_tsukumo-071",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "When Kenjaku survived the ambush, Yuki quickly deduced how he managed to avoid a fatal blow."
+      ],
+      "found": [
+        "When Kenjaku survived the ambush, Yuki quickly deduced how he managed to avoid a fatal blow."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What would have happened if Yuki's technique had been at full power?",
+      "id": "jjk-pg-yuki_tsukumo-072",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "She also recognized he would've died if her technique was at full power and that he was still cornered regardless."
+      ],
+      "found": [
+        "She also recognized he would've died if her technique was at full power and that he was still cornered regardless."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What mistakes did Yuki make against Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-073",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "she assumed Star Rage could power through any resistance from Cursed Spirit Manipulation. While this was a safe assumption, it was reckless and turned out to be incorrect, which Yuki herself realized and admitted."
+      ],
+      "found": [
+        "she assumed Star Rage could power through any resistance from Cursed Spirit Manipulation. While this was a safe assumption, it was reckless and turned out to be incorrect, which Yuki herself realized and admitted."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuki do even in defeat?",
+      "id": "jjk-pg-yuki_tsukumo-074",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Even in defeat, Yuki quickly improvised a maneuver to take her opponent down with her in a last-ditch effort to do what was necessary for the greater good."
+      ],
+      "found": [
+        "Even in defeat, Yuki quickly improvised a maneuver to take her opponent down with her in a last-ditch effort to do what was necessary for the greater good."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Yuki's control over cursed energy?",
+      "id": "jjk-pg-yuki_tsukumo-075",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki has remarkable control over her cursed energy, as the rare skill to use reverse cursed technique requires extremely precise cursed energy manipulation."
+      ],
+      "found": [
+        "Yuki has remarkable control over her cursed energy, as the rare skill to use reverse cursed technique requires extremely precise cursed energy manipulation."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How much cursed energy does Yuki have?",
+      "id": "jjk-pg-yuki_tsukumo-076",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki possesses a high amount of cursed energy, demonstrated by her ability to perform domain expansion, which requires exceptional levels of cursed energy and control over it."
+      ],
+      "found": [
+        "Yuki possesses a high amount of cursed energy, demonstrated by her ability to perform domain expansion, which requires exceptional levels of cursed energy and control over it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What binding vow does Yuki Tsukumo use?",
+      "id": "jjk-pg-yuki_tsukumo-077",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "A commonly used binding vow by many jujutsu practitioners. By divulging how her cursed technique works, Yuki can increase the effectiveness of her technique."
+      ],
+      "found": [
+        "A commonly used binding vow by many jujutsu practitioners. By divulging how her cursed technique works, Yuki can increase the effectiveness of her technique."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Star Rage do?",
+      "id": "jjk-pg-yuki_tsukumo-078",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki's innate technique allows her to grant virtual mass to herself and her shikigami, Garuda."
+      ],
+      "found": [
+        "Yuki's innate technique allows her to grant virtual mass to herself and her shikigami, Garuda."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the mass added by Star Rage give Yuki and Garuda's attacks?",
+      "id": "jjk-pg-yuki_tsukumo-079",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "The mass added to Yuki and Garuda's attacks gives them devastating destructive force, capable of effortlessly exorcising a special grade curse."
+      ],
+      "found": [
+        "The mass added to Yuki and Garuda's attacks gives them devastating destructive force, capable of effortlessly exorcising a special grade curse."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Yuki use reverse cursed technique?",
+      "id": "jjk-pg-yuki_tsukumo-080",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki is able to utilize reverse cursed technique to heal herself. She has used this during her fight against Kenjaku after she was severely damaged by the sure-hit technique of his Womb Profusion."
+      ],
+      "found": [
+        "Yuki is able to utilize reverse cursed technique to heal herself. She has used this during her fight against Kenjaku after she was severely damaged by the sure-hit technique of his Womb Profusion."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki's shikigami directly connected to?",
+      "id": "jjk-pg-yuki_tsukumo-081",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki's shikigami is directly connected to her innate technique."
+      ],
+      "found": [
+        "Yuki's shikigami is directly connected to her innate technique."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Star Rage turn Garuda into?",
+      "id": "jjk-pg-yuki_tsukumo-082",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "By having virtual mass added to it by Star Rage, Garuda becomes a cursed tool for Yuki to utilize in battle."
+      ],
+      "found": [
+        "By having virtual mass added to it by Star Rage, Garuda becomes a cursed tool for Yuki to utilize in battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Garuda do on its own?",
+      "id": "jjk-pg-yuki_tsukumo-083",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Garuda can also fight and restrain Yuki's opponents independently, creating situations where they fight side-by-side."
+      ],
+      "found": [
+        "Garuda can also fight and restrain Yuki's opponents independently, creating situations where they fight side-by-side."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Simple Domain?",
+      "id": "jjk-pg-yuki_tsukumo-084",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "An anti-domain technique that nullifies a domain expansion's sure-hit effect by neutralizing its barrier."
+      ],
+      "found": [
+        "An anti-domain technique that nullifies a domain expansion's sure-hit effect by neutralizing its barrier."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Yuki teach Simple Domain to?",
+      "id": "jjk-pg-yuki_tsukumo-085",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki also taught Aoi Todo how to use this technique."
+      ],
+      "found": [
+        "Yuki also taught Aoi Todo how to use this technique."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What stripped away Yuki's Simple Domain against Kenjaku?",
+      "id": "jjk-pg-yuki_tsukumo-086",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Against Kenjaku, Yuki's Simple Domain was quickly stripped away by Womb Profusion."
+      ],
+      "found": [
+        "Against Kenjaku, Yuki's Simple Domain was quickly stripped away by Womb Profusion."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki's domain expansion?",
+      "id": "jjk-pg-yuki_tsukumo-087",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki can expand her innate domain and imbue it with her innate technique. It was never displayed but Yuki spoke about it with Tengen while planning to fight against Kenjaku."
+      ],
+      "found": [
+        "Yuki can expand her innate domain and imbue it with her innate technique. It was never displayed but Yuki spoke about it with Tengen while planning to fight against Kenjaku."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Yuki's ranking in the second Popularity Poll?",
+      "id": "jjk-pg-yuki_tsukumo-088",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki ranked 36th in the second Popularity Poll with 77 votes."
+      ],
+      "found": [
+        "Yuki ranked 36th in the second Popularity Poll with 77 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Yuki's ranking in the third Popularity Poll?",
+      "id": "jjk-pg-yuki_tsukumo-089",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki ranked 34th in the third Popularity Poll with 101 votes."
+      ],
+      "found": [
+        "Yuki ranked 34th in the third Popularity Poll with 101 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Yuki's ranking in the fourth Popularity Poll?",
+      "id": "jjk-pg-yuki_tsukumo-090",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki ranked 32nd in the fourth Popularity Poll with 203 votes."
+      ],
+      "found": [
+        "Yuki ranked 32nd in the fourth Popularity Poll with 203 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the kanji in Yuki Tsukumo's name mean?",
+      "id": "jjk-pg-yuki_tsukumo-091",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki\u2019s surname contains the kanji for \"ninety-nine\" \u4e5d\u5341\u4e5d tsukumo, and her first name contains \"reason, cause\" \u7531 yu and \"basis, foundation\" \u57fa ki."
+      ],
+      "found": [
+        "Yuki\u2019s surname contains the kanji for \"ninety-nine\" \u4e5d\u5341\u4e5d tsukumo, and her first name contains \"reason, cause\" \u7531 yu and \"basis, foundation\" \u57fa ki."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki's favorite food?",
+      "id": "jjk-pg-yuki_tsukumo-092",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Chicken burrito"
+      ],
+      "found": [
+        "Chicken burrito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki's least favorite food?",
+      "id": "jjk-pg-yuki_tsukumo-093",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Seaweed"
+      ],
+      "found": [
+        "Seaweed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yuki's cause of stress?",
+      "id": "jjk-pg-yuki_tsukumo-094",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Missions"
+      ],
+      "found": [
+        "Missions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Yuki visit during the Gojo's Past Arc?",
+      "id": "jjk-pg-yuki_tsukumo-095",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "During the Gojo's Past Arc, she didn't visit Jujutsu High to meet Geto, but rather Gojo."
+      ],
+      "found": [
+        "During the Gojo's Past Arc, she didn't visit Jujutsu High to meet Geto, but rather Gojo."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Yuki's salary not stop despite her refusing requests?",
+      "id": "jjk-pg-yuki_tsukumo-096",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Because she\u2019s special grade, her salary does not stop despite refusing requests and constantly being overseas."
+      ],
+      "found": [
+        "Because she\u2019s special grade, her salary does not stop despite refusing requests and constantly being overseas."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Yuki first meet Aoi Todo?",
+      "id": "jjk-pg-yuki_tsukumo-097",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "She met Todo when he was in the 3rd grade of elementary school by chance."
+      ],
+      "found": [
+        "She met Todo when he was in the 3rd grade of elementary school by chance."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Aoi Todo's scar come from?",
+      "id": "jjk-pg-yuki_tsukumo-098",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Todo got his scar from one of her harsh training sessions."
+      ],
+      "found": [
+        "Todo got his scar from one of her harsh training sessions."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Yuki a former Star Plasma Vessel?",
+      "id": "jjk-pg-yuki_tsukumo-099",
+      "subject": "Yuki Tsukumo",
+      "accept": "all",
+      "expected": [
+        "Yuki is a former Star Plasma Vessel."
+      ],
+      "found": [
+        "Yuki is a former Star Plasma Vessel."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 21,
+    "canon_total": 21,
+    "canon_recall": 1.0,
+    "members_returned": 21,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 93,
+    "fact_present": 93
+  }
+}

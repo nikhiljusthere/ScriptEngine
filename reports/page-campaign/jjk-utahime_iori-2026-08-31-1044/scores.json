@@ -1,0 +1,1401 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Utahime Iori?",
+      "set": "Every named technique of Utahime Iori",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Utahime Iori?",
+      "set": "Every ally of Utahime Iori",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Utahime Iori?",
+      "set": "Every enemy of Utahime Iori",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the students of Utahime Iori?",
+      "set": "Every student of Utahime Iori",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Utahime Iori?",
+      "set": "Utahime Iori's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Utahime Iori",
+      "set": "Every battle involving Utahime Iori",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Utahime Iori?",
+      "found": [
+        "Curtain",
+        "Solo Forbidden Area"
+      ],
+      "missing": [],
+      "members": [
+        "Curtain",
+        "Solo Forbidden Area"
+      ]
+    },
+    {
+      "query": "What are all the allies of Utahime Iori?",
+      "found": [
+        "Mai Zenin",
+        "Nobara Kugisaki",
+        "Yuki Tsukumo",
+        "Kokichi Muta"
+      ],
+      "missing": [],
+      "members": [
+        "Kokichi Muta",
+        "Mai Zenin",
+        "Nobara Kugisaki",
+        "Yuki Tsukumo"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Utahime Iori?",
+      "found": [
+        "Satoru Gojo",
+        "Haruta Shigemo",
+        "Uraume",
+        "Kokichi Muta"
+      ],
+      "missing": [],
+      "members": [
+        "Haruta Shigemo",
+        "Kokichi Muta",
+        "Satoru Gojo",
+        "Uraume"
+      ]
+    },
+    {
+      "query": "What are all the students of Utahime Iori?",
+      "found": [
+        "Kasumi Miwa",
+        "Nobara Kugisaki",
+        "Mai Zenin",
+        "Momo Nishimiya"
+      ],
+      "missing": [],
+      "members": [
+        "Kasumi Miwa",
+        "Mai Zenin",
+        "Momo Nishimiya",
+        "Nobara Kugisaki"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Utahime Iori?",
+      "found": [
+        "Kyoto Metropolitan Curse Technical College"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Metropolitan Curse Technical College"
+      ]
+    },
+    {
+      "query": "Every battle involving Utahime Iori",
+      "found": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Iori Hazenoki vs. Kenjaku",
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Iori Hazenoki vs. Kenjaku",
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Utahime Iori's name?",
+      "id": "jjk-pg-utahime_iori-001",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "\u5eb5\u6b4c\u59eb"
+      ],
+      "found": [
+        "\u5eb5\u6b4c\u59eb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Utahime Iori's name?",
+      "id": "jjk-pg-utahime_iori-002",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Iori Utahime"
+      ],
+      "found": [
+        "Iori Utahime"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Utahime Iori's race?",
+      "id": "jjk-pg-utahime_iori-003",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Utahime Iori?",
+      "id": "jjk-pg-utahime_iori-004",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "31"
+      ],
+      "found": [
+        "31"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Utahime Iori's birthday?",
+      "id": "jjk-pg-utahime_iori-005",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "February 18, 1987"
+      ],
+      "found": [
+        "February 18, 1987"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Utahime Iori's gender?",
+      "id": "jjk-pg-utahime_iori-006",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Utahime Iori?",
+      "id": "jjk-pg-utahime_iori-007",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Utahime Iori's occupation?",
+      "id": "jjk-pg-utahime_iori-008",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Teacher"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Teacher"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Utahime Iori's Japanese voice actor?",
+      "id": "jjk-pg-utahime_iori-009",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Yoko Hikasa"
+      ],
+      "found": [
+        "Yoko Hikasa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Utahime Iori's English voice actor?",
+      "id": "jjk-pg-utahime_iori-010",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Tara Sands"
+      ],
+      "found": [
+        "Tara Sands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Utahime Iori first appear?",
+      "id": "jjk-pg-utahime_iori-011",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Utahime Iori's grade?",
+      "id": "jjk-pg-utahime_iori-012",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Semi-Grade 1"
+      ],
+      "found": [
+        "Semi-Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Utahime Iori first depicted?",
+      "id": "jjk-pg-utahime_iori-013",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Episode 14"
+      ],
+      "found": [
+        "Episode 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-utahime_iori-014",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Hazenoki withdraws."
+      ],
+      "found": [
+        "Hazenoki withdraws."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-utahime_iori-015",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-utahime_iori-016",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-utahime_iori-017",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Chapter 169 & 173"
+      ],
+      "found": [
+        "Chapter 169 & 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Fumihiko Takaba vs. Iori Hazenoki depicted?",
+      "id": "jjk-pg-utahime_iori-018",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Episode 57 - 58"
+      ],
+      "found": [
+        "Episode 57 - 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-utahime_iori-019",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Iori Hazenoki vs. Kenjaku?",
+      "id": "jjk-pg-utahime_iori-020",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Iori Hazenoki vs. Kenjaku take place?",
+      "id": "jjk-pg-utahime_iori-021",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Lake Gosho Colony"
+      ],
+      "found": [
+        "Lake Gosho Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Iori Hazenoki vs. Kenjaku take place?",
+      "id": "jjk-pg-utahime_iori-022",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Iori Hazenoki vs. Kenjaku?",
+      "id": "jjk-pg-utahime_iori-023",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Chapter 239"
+      ],
+      "found": [
+        "Chapter 239"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Iori Hazenoki vs. Kenjaku take place?",
+      "id": "jjk-pg-utahime_iori-024",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-utahime_iori-025",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-utahime_iori-026",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-utahime_iori-027",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-utahime_iori-028",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-utahime_iori-029",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-utahime_iori-030",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Utahime Iori use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-utahime_iori-031",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Solo Forbidden Area (Failed)"
+      ],
+      "found": [
+        "Solo Forbidden Area (Failed)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-utahime_iori-032",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Takaba interrupts the battle."
+      ],
+      "found": [
+        "Takaba interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-utahime_iori-033",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-utahime_iori-034",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Reggie Star's Group begin?",
+      "id": "jjk-pg-utahime_iori-035",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Chapter 167"
+      ],
+      "found": [
+        "Chapter 167"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Reggie Star's Group depicted?",
+      "id": "jjk-pg-utahime_iori-036",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-utahime_iori-037",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Utahime Iori's hair look?",
+      "id": "jjk-pg-utahime_iori-044",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "long blackish-purple hair that extends down her back"
+      ],
+      "found": [
+        "long blackish-purple hair that extends down her back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Utahime Iori wear as her outfit?",
+      "id": "jjk-pg-utahime_iori-045",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "a traditional miko outfit"
+      ],
+      "found": [
+        "a traditional miko outfit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color boots does Utahime wear with her miko outfit?",
+      "id": "jjk-pg-utahime_iori-046",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "modern brown colored boots"
+      ],
+      "found": [
+        "modern brown colored boots"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is the scar on Utahime's face located?",
+      "id": "jjk-pg-utahime_iori-047",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "on the right side of her face that crosses the bridge of her nose"
+      ],
+      "found": [
+        "on the right side of her face that crosses the bridge of her nose"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Utahime style her hair in 2006?",
+      "id": "jjk-pg-utahime_iori-048",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "In 2006, Utahime wore her hair in two pigtails"
+      ],
+      "found": [
+        "In 2006, Utahime wore her hair in two pigtails"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Utahime wear on her day off?",
+      "id": "jjk-pg-utahime_iori-049",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "a dark purple baseball hat"
+      ],
+      "found": [
+        "a dark purple baseball hat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "According to whom does the size of Utahime's ribbon change?",
+      "id": "jjk-pg-utahime_iori-050",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Gege Akutami"
+      ],
+      "found": [
+        "Gege Akutami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Utahime Iori older than Satoru Gojo?",
+      "id": "jjk-pg-utahime_iori-051",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "she's older than him"
+      ],
+      "found": [
+        "she's older than him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Utahime often tell Gojo to respect his elders?",
+      "id": "jjk-pg-utahime_iori-052",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "because she's older than him"
+      ],
+      "found": [
+        "because she's older than him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Utahime want to set as an example for her students?",
+      "id": "jjk-pg-utahime_iori-053",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "to set an example for her students"
+      ],
+      "found": [
+        "to set an example for her students"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who annoances Utahime Iori in almost every exchange?",
+      "id": "jjk-pg-utahime_iori-054",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Utahime's general temperament is best described as?",
+      "id": "jjk-pg-utahime_iori-055",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "calm, kind yet stern"
+      ],
+      "found": [],
+      "missing": [
+        "calm, kind yet stern"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Utahime Iori's grade compared to other jujutsu sorcerers is?",
+      "id": "jjk-pg-utahime_iori-056",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "a capable semi-grade 1 sorcerer"
+      ],
+      "found": [],
+      "missing": [
+        "a capable semi-grade 1 sorcerer"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What drink does Utahime prefer according to her profile?",
+      "id": "jjk-pg-utahime_iori-057",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "beer"
+      ],
+      "found": [
+        "beer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What asked Utahime to avoid fighting during the mission to save the students?",
+      "id": "jjk-pg-utahime_iori-058",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Yoshinobu Gakuganji"
+      ],
+      "found": [
+        "Yoshinobu Gakuganji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who stated that Utahime shouldn't be in the frontlines?",
+      "id": "jjk-pg-utahime_iori-059",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Momo Nishimiya"
+      ],
+      "found": [
+        "Momo Nishimiya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose attack did Utahime easily dodge and engage with in a fight?",
+      "id": "jjk-pg-utahime_iori-060",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Haruta Shigemo"
+      ],
+      "found": [
+        "Haruta Shigemo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Utahime protect from Kenjaku's point-blank Maximum: Uzumaki?",
+      "id": "jjk-pg-utahime_iori-061",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Kasumi Miwa"
+      ],
+      "found": [
+        "Kasumi Miwa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Utahime Iori's Innate Technique do?",
+      "id": "jjk-pg-utahime_iori-062",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "temporarily amplifies the cursed energy of any willing sorcerer"
+      ],
+      "found": [
+        "temporarily amplifies the cursed energy of any willing sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How far can Solo Forbidden Area raise its effectiveness with all ritual steps?",
+      "id": "jjk-pg-utahime_iori-063",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "to 120%"
+      ],
+      "found": [
+        "to 120%"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Does Utahime Iori have barrier techniques?",
+      "id": "jjk-pg-utahime_iori-064",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Curtain"
+      ],
+      "found": [
+        "Curtain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the kanji in Utahime Iori's given name mean individually?",
+      "id": "jjk-pg-utahime_iori-065",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "\"song, poetry\" and \"princess, young lady of noble birth\""
+      ],
+      "found": [],
+      "missing": [
+        "\"song, poetry\" and \"princess, young lady of noble birth\""
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the full kanji \u6b4c\u59eb in Utahime's name mean altogether?",
+      "id": "jjk-pg-utahime_iori-066",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "\"diva, songstress\" altogether"
+      ],
+      "found": [
+        "\"diva, songstress\" altogether"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Utahime rank in the first Popularity Poll?",
+      "id": "jjk-pg-utahime_iori-067",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Utahime ranked 21st in the first Popularity Poll with 1,369 votes"
+      ],
+      "found": [
+        "Utahime ranked 21st in the first Popularity Poll with 1,369 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Utahime's least favorite dish is?",
+      "id": "jjk-pg-utahime_iori-068",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "sweets"
+      ],
+      "found": [
+        "sweets"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Utahime's favorite dish is?",
+      "id": "jjk-pg-utahime_iori-069",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "alcohol, preferably beer"
+      ],
+      "found": [
+        "alcohol, preferably beer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Utahime friends with and wants to quit smoking?",
+      "id": "jjk-pg-utahime_iori-070",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Shoko Ieiri"
+      ],
+      "found": [
+        "Shoko Ieiri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Utahime hates who most of the time?",
+      "id": "jjk-pg-utahime_iori-071",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who portrays Utahime in the English dub alongside Momo Nishimiya?",
+      "id": "jjk-pg-utahime_iori-072",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Tara Sands"
+      ],
+      "found": [
+        "Tara Sands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Utahime's cause of stress is?",
+      "id": "jjk-pg-utahime_iori-073",
+      "subject": "Utahime Iori",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 19,
+    "canon_total": 19,
+    "canon_recall": 1.0,
+    "members_returned": 19,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 67,
+    "fact_present": 64
+  }
+}

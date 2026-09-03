@@ -1,0 +1,1039 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kaito Yuki?",
+      "set": "Every named technique of Kaito Yuki",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kaito Yuki?",
+      "set": "Kaito Yuki's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kaito Yuki",
+      "set": "Every battle involving Kaito Yuki",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kaito Yuki?",
+      "found": [
+        "Prayer Formation Technique",
+        "Night Hunt",
+        "Prayer to Palm Strike"
+      ],
+      "missing": [],
+      "members": [
+        "Night Hunt",
+        "Prayer Formation Technique",
+        "Prayer to Palm Strike"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kaito Yuki?",
+      "found": [
+        "Fukuoka Branch Campus"
+      ],
+      "missing": [],
+      "members": [
+        "Fukuoka Branch Campus"
+      ]
+    },
+    {
+      "query": "Every battle involving Kaito Yuki",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kaito Yuki's name?",
+      "id": "jjk-pg-kaito_yuki-001",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "\u7d50\u6728\u6d77\u6597"
+      ],
+      "found": [
+        "\u7d50\u6728\u6d77\u6597"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kaito Yuki's name?",
+      "id": "jjk-pg-kaito_yuki-002",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Y\u016bki Kaito"
+      ],
+      "found": [
+        "Y\u016bki Kaito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kaito Yuki's race?",
+      "id": "jjk-pg-kaito_yuki-003",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kaito Yuki's gender?",
+      "id": "jjk-pg-kaito_yuki-004",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kaito Yuki?",
+      "id": "jjk-pg-kaito_yuki-005",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "16"
+      ],
+      "found": [
+        "16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kaito Yuki's birthday?",
+      "id": "jjk-pg-kaito_yuki-006",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "May 5, 2002"
+      ],
+      "found": [
+        "May 5, 2002"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kaito Yuki?",
+      "id": "jjk-pg-kaito_yuki-007",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kaito Yuki's occupation?",
+      "id": "jjk-pg-kaito_yuki-008",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kaito Yuki's Japanese voice actor?",
+      "id": "jjk-pg-kaito_yuki-009",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Koutaro Nishiyama"
+      ],
+      "found": [
+        "Koutaro Nishiyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-kaito_yuki-010",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-kaito_yuki-011",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-kaito_yuki-012",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-kaito_yuki-013",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-kaito_yuki-014",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-kaito_yuki-015",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kaito Yuki use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-kaito_yuki-016",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Garuda"
+      ],
+      "found": [
+        "Garuda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-kaito_yuki-017",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-kaito_yuki-018",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-kaito_yuki-019",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-kaito_yuki-020",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-kaito_yuki-021",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kaito Yuki use in Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-kaito_yuki-022",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Star Rage, Garuda, Reverse Cursed Technique, Simple Domain"
+      ],
+      "found": [
+        "Star Rage, Garuda, Reverse Cursed Technique, Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kaito Yuki's hair look like?",
+      "id": "jjk-pg-kaito_yuki-026",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "short and messy black hair"
+      ],
+      "found": [
+        "short and messy black hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What small tuft of hair does Kaito Yuki have?",
+      "id": "jjk-pg-kaito_yuki-027",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a short ahoge"
+      ],
+      "found": [
+        "a short ahoge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of uniform does Kaito Yuki wear?",
+      "id": "jjk-pg-kaito_yuki-028",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a modified jujutsu uniform"
+      ],
+      "found": [
+        "a modified jujutsu uniform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What footwear does Kaito Yuki wear with his uniform?",
+      "id": "jjk-pg-kaito_yuki-029",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "knee-high boots"
+      ],
+      "found": [
+        "knee-high boots"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color are the sleeves of Kaito Yuki's outfit?",
+      "id": "jjk-pg-kaito_yuki-030",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "white sleeves with a black line on them"
+      ],
+      "found": [
+        "white sleeves with a black line on them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Kaito Yuki's innate technique?",
+      "id": "jjk-pg-kaito_yuki-031",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Prayer Formation Technique"
+      ],
+      "found": [
+        "Prayer Formation Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kaito Yuki's Prayer Formation Technique?",
+      "id": "jjk-pg-kaito_yuki-032",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "\u7948\u9663\u546a\u6cd5"
+      ],
+      "found": [
+        "\u7948\u9663\u546a\u6cd5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kaito Yuki's Prayer Formation Technique use as the core of its barrier?",
+      "id": "jjk-pg-kaito_yuki-033",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "cornerstone"
+      ],
+      "found": [
+        "cornerstone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the barrier from Kaito Yuki's technique do to the people trapped inside it?",
+      "id": "jjk-pg-kaito_yuki-034",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "places a curse on those inside it, forcing them to fight"
+      ],
+      "found": [
+        "places a curse on those inside it, forcing them to fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the forced fighting inside Kaito Yuki's barrier amplify?",
+      "id": "jjk-pg-kaito_yuki-035",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "the cursed energy within it"
+      ],
+      "found": [
+        "the cursed energy within it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of vow binds Kaito Yuki's Prayer Formation Technique?",
+      "id": "jjk-pg-kaito_yuki-036",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a pre-established binding vow"
+      ],
+      "found": [
+        "a pre-established binding vow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Can Kaito Yuki boost himself with his own Prayer Formation Technique?",
+      "id": "jjk-pg-kaito_yuki-037",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "the technique cannot affect Yuki himself"
+      ],
+      "found": [
+        "the technique cannot affect Yuki himself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What else does the binding on Kaito Yuki's technique apply to besides Kaito?",
+      "id": "jjk-pg-kaito_yuki-038",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "which carries his cursed energy"
+      ],
+      "found": [
+        "which carries his cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who inside Kaito Yuki's barrier is left unaffected by his technique?",
+      "id": "jjk-pg-kaito_yuki-039",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "anyone within the barrier who possesses the stone"
+      ],
+      "found": [
+        "anyone within the barrier who possesses the stone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who falsely named Kaito Yuki's technique?",
+      "id": "jjk-pg-kaito_yuki-040",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Kensuke Nagino"
+      ],
+      "found": [
+        "Kensuke Nagino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What false name did Kensuke Nagino give to Kaito Yuki's technique?",
+      "id": "jjk-pg-kaito_yuki-041",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Cursed Technique Boost"
+      ],
+      "found": [
+        "Cursed Technique Boost"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kensuke Nagino give Kaito Yuki's technique a false name?",
+      "id": "jjk-pg-kaito_yuki-042",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "to conceal its true nature"
+      ],
+      "found": [
+        "to conceal its true nature"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What would have happened to someone inside Kaito Yuki's barrier if they had not been holding the cornerstone?",
+      "id": "jjk-pg-kaito_yuki-043",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "places a curse on those inside it, forcing them to fight"
+      ],
+      "found": [
+        "places a curse on those inside it, forcing them to fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kaito Yuki's Night Hunt create?",
+      "id": "jjk-pg-kaito_yuki-044",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a barrier that confines cursed spirits"
+      ],
+      "found": [
+        "a barrier that confines cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kaito Yuki's Night Hunt similar to in function?",
+      "id": "jjk-pg-kaito_yuki-045",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a curtain"
+      ],
+      "found": [
+        "a curtain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kaito Yuki's Night Hunt do to the humans caught in its barrier?",
+      "id": "jjk-pg-kaito_yuki-046",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "amplifies the cursed energy of humans within the barrier"
+      ],
+      "found": [
+        "amplifies the cursed energy of humans within the barrier"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Kaito Yuki's Night Hunt change the way humans inside it move?",
+      "id": "jjk-pg-kaito_yuki-047",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "making their bodies feel lighter and easier to move"
+      ],
+      "found": [
+        "making their bodies feel lighter and easier to move"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shape is the barrier that Kaito Yuki's Prayer to Palm Strike creates?",
+      "id": "jjk-pg-kaito_yuki-048",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a spherical barrier around Yuki's fist"
+      ],
+      "found": [
+        "a spherical barrier around Yuki's fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kaito Yuki holding in his fist when he uses Prayer to Palm Strike?",
+      "id": "jjk-pg-kaito_yuki-049",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "the barrier's cornerstone"
+      ],
+      "found": [
+        "the barrier's cornerstone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when Kaito Yuki punches an opponent with Prayer to Palm Strike?",
+      "id": "jjk-pg-kaito_yuki-050",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "shatters the barrier and amplifies the force of the punch"
+      ],
+      "found": [
+        "shatters the barrier and amplifies the force of the punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which of Kaito Yuki's two extension techniques amplifies the force of a punch instead of confining cursed spirits?",
+      "id": "jjk-pg-kaito_yuki-051",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "Prayer to Palm Strike"
+      ],
+      "found": [
+        "Prayer to Palm Strike"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which story is Kaito Yuki a character?",
+      "id": "jjk-pg-kaito_yuki-052",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a character in Phantom Parade"
+      ],
+      "found": [
+        "a character in Phantom Parade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What year is Kaito Yuki at the Fukuoka Branch Campus?",
+      "id": "jjk-pg-kaito_yuki-053",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "a first-year student at the Fukuoka Branch Campus of Tokyo Jujutsu High"
+      ],
+      "found": [
+        "a first-year student at the Fukuoka Branch Campus of Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kaito value, and who is he hostile to?",
+      "id": "jjk-pg-kaito_yuki-054",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "values discipline, and is hostile to Yuji Itadori"
+      ],
+      "found": [
+        "values discipline, and is hostile to Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Kaito hostile to Yuji Itadori?",
+      "id": "jjk-pg-kaito_yuki-055",
+      "subject": "Kaito Yuki",
+      "accept": "all",
+      "expected": [
+        "whose existence he believes goes against the rules of Jujutsu"
+      ],
+      "found": [
+        "whose existence he believes goes against the rules of Jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 52,
+    "fact_present": 52
+  }
+}

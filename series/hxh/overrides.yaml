@@ -146,7 +146,11 @@ rosters:
     # miss, while including one is visible and correctable.
     members: [Kurapika, Mizaistom Nana, Kanzai, Pyon, Botobai Gigante, Gel, Saccho Kobayakawa, Ginta, Saiyu, Cluck, Cheadle Yorkshire, Leorio Paradinight, Ging Freecss, Pariston Hill, Ickshonpe Katocha]
   - name: Nen Types
-    match: [nen type, nen types, nen category, nen categories, type of nen]
+    # "levels of nen" added 2026-08-19: the router now sends a counting
+    # question to this set only when it resolves one, and "How many levels of
+    # Nen are there?" -- the wiki's six aura types asked with another word for
+    # them -- resolved nothing and fell through to prose.
+    match: [nen type, nen types, nen category, nen categories, type of nen, levels of nen]
     groups:
       Enhancer: Enhancers
       Transmuter: Transmuters

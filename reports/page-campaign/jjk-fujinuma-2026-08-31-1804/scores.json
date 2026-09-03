@@ -1,0 +1,357 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Fujinuma?",
+      "set": "Every friend of Fujinuma",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Fujinuma?",
+      "found": [
+        "Tsumiki Fushiguro",
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro",
+        "Tsumiki Fushiguro"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Fujinuma's name?",
+      "id": "jjk-pg-fujinuma-001",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "\u85e4\u6cbc"
+      ],
+      "found": [
+        "\u85e4\u6cbc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Fujinuma's name?",
+      "id": "jjk-pg-fujinuma-002",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Fujinuma"
+      ],
+      "found": [
+        "Fujinuma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fujinuma's race?",
+      "id": "jjk-pg-fujinuma-003",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fujinuma's gender?",
+      "id": "jjk-pg-fujinuma-004",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Fujinuma?",
+      "id": "jjk-pg-fujinuma-005",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Fujinuma first appear?",
+      "id": "jjk-pg-fujinuma-006",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Chapter 56"
+      ],
+      "found": [
+        "Chapter 56"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Fujinuma first depicted?",
+      "id": "jjk-pg-fujinuma-007",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Episode 22"
+      ],
+      "found": [
+        "Episode 22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Fujinuma's Japanese voice actor?",
+      "id": "jjk-pg-fujinuma-008",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Arisa Sakuraba"
+      ],
+      "found": [
+        "Arisa Sakuraba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Fujinuma play in the series?",
+      "id": "jjk-pg-fujinuma-010",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Fujinuma look like?",
+      "id": "jjk-pg-fujinuma-011",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "a teenage girl with brown hair that extends below her ears and is styled in a bob"
+      ],
+      "found": [
+        "a teenage girl with brown hair that extends below her ears and is styled in a bob"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Fujinuma wear?",
+      "id": "jjk-pg-fujinuma-012",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "a white shirt under a beige coat and a pair of black pants"
+      ],
+      "found": [
+        "a white shirt under a beige coat and a pair of black pants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Fujinuma's personality described?",
+      "id": "jjk-pg-fujinuma-013",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "a soft-spoken and polite girl who is easily frightened by the paranormal"
+      ],
+      "found": [
+        "a soft-spoken and polite girl who is easily frightened by the paranormal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What lie did Fujinuma believe?",
+      "id": "jjk-pg-fujinuma-014",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Akari Nitta's lie about investigating the Yasohachi Bridge for a college report"
+      ],
+      "found": [
+        "Akari Nitta's lie about investigating the Yasohachi Bridge for a college report"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who went with Fujinuma to the Yasohachi Bridge at night?",
+      "id": "jjk-pg-fujinuma-015",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "Tsumiki Fushiguro and another upperclassman, who were part of her club"
+      ],
+      "found": [
+        "Tsumiki Fushiguro and another upperclassman, who were part of her club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Fujinuma find every other day when she returned home?",
+      "id": "jjk-pg-fujinuma-016",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "her home's automatic door open every other day"
+      ],
+      "found": [
+        "her home's automatic door open every other day"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Fujinuma explain to Megumi about her second year in junior high?",
+      "id": "jjk-pg-fujinuma-017",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "what happened to her during her second year in junior high"
+      ],
+      "found": [
+        "what happened to her during her second year in junior high"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What terrifies Fujinuma about her home?",
+      "id": "jjk-pg-fujinuma-018",
+      "subject": "Fujinuma",
+      "accept": "all",
+      "expected": [
+        "the automatic doors to her parents' store, which is also her home, is wide open whenever she returns home every other day"
+      ],
+      "found": [
+        "the automatic doors to her parents' store, which is also her home, is wide open whenever she returns home every other day"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 17,
+    "fact_present": 17
+  }
+}

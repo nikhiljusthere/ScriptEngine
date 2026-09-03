@@ -1,0 +1,1921 @@
+{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-24",
+  "note": "page-gen 2026-08-24: 2 structured questions (note page-gen:-marked), 0 auto-retires, 97 hand-authored kept, 0 superseded",
+  "retired": [
+    {
+      "id": "jjk-pg-shibuya_incident-012",
+      "question": "What are the kanji for the Shibuya Incident?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The kanji (渋谷事変) live only in the `Event Infobox` and leading `{{Nihongo}}` line, which are not chunked into passages; narrative mode returns an empty context for them. Same structural class as Culling Game's inline-ruby romaji."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-016",
+      "question": "What does the Shibuya Incident count as in jujutsu history?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The phrase \"jujutsu terrorist attack\" appears only in the page's lead sentence and `Event Infobox` (the infobox is not chunked), so no phrasing surfaces it in any narrative bundle -- the same structural class as Culling Game's inline-ruby romaji."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-004",
+      "question": "Who were the curse users that took part in the Shibuya Incident? (golded to Mahito's six)",
+      "reason": "Retired 2026-08-19: a duplicate of jjk-pg-shibuya_incident-003, which asks the identical question and is golded to the eleven curse users the declared roster returns. This copy was originally golded to the six names in Mahito's Group (the participants infobox), but that exact phrasing now routes to the 11-member 'Curse users of the Shibuya Incident' roster, so its six-name gold could never match. The six-member set is still covered by the pre-existing 'Disaster Curses (Mahito's group)' roster and its eval question."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jjk-pg-shibuya_incident-001",
+      "kind": "set",
+      "question": "What are all the battles that took place during the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo vs. Mahito's Group"
+        },
+        {
+          "item": "Yuji Itadori vs. Ko-Guy"
+        },
+        {
+          "item": "Takuma Ino vs. Ogami & Her Grandson"
+        },
+        {
+          "item": "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka"
+        },
+        {
+          "item": "Mei Mei vs. Niji Ebina"
+        },
+        {
+          "item": "Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo"
+        },
+        {
+          "item": "Yuji Itadori vs. Choso"
+        },
+        {
+          "item": "Mei Mei & Ui Ui vs. Smallpox Deity"
+        },
+        {
+          "item": "Jujutsu Sorcerers vs. Dagon"
+        },
+        {
+          "item": "Toji Fushiguro vs. Dagon"
+        },
+        {
+          "item": "Megumi Fushiguro vs. Toji Fushiguro"
+        },
+        {
+          "item": "Sukuna vs. Jogo"
+        },
+        {
+          "item": "Sukuna vs. Mahoraga"
+        },
+        {
+          "item": "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+        },
+        {
+          "item": "Yuji Itadori & Aoi Todo vs. Mahito"
+        },
+        {
+          "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume"
+        },
+        {
+          "item": "Kokichi Muta vs. Mahito"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "The sixteen titles in the Battles scrollbox on the Shibuya Incident page."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-002",
+      "kind": "set",
+      "question": "Who were the jujutsu sorcerers deployed to respond to the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo"
+        },
+        {
+          "item": "Toge Inumaki"
+        },
+        {
+          "item": "Kento Nanami"
+        },
+        {
+          "item": "Takuma Ino"
+        },
+        {
+          "item": "Megumi Fushiguro"
+        },
+        {
+          "item": "Kiyotaka Ijichi"
+        },
+        {
+          "item": "Naobito Zenin"
+        },
+        {
+          "item": "Maki Zenin"
+        },
+        {
+          "item": "Nobara Kugisaki"
+        },
+        {
+          "item": "Akari Nitta"
+        },
+        {
+          "item": "Atsuya Kusakabe"
+        },
+        {
+          "item": "Panda"
+        },
+        {
+          "item": "Mei Mei"
+        },
+        {
+          "item": "Ui Ui"
+        },
+        {
+          "item": "Yuji Itadori"
+        },
+        {
+          "item": "Kokichi Muta"
+        },
+        {
+          "item": "Masamichi Yaga"
+        },
+        {
+          "item": "Shoko Ieiri"
+        },
+        {
+          "item": "Aoi Todo"
+        },
+        {
+          "item": "Arata Nitta"
+        },
+        {
+          "item": "Noritoshi Kamo"
+        },
+        {
+          "item": "Momo Nishimiya"
+        },
+        {
+          "item": "Mai Zenin"
+        },
+        {
+          "item": "Kasumi Miwa"
+        },
+        {
+          "item": "Utahime Iori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "The sorcerers named in the Independent, Nanami, Zenin, Kusakabe, Mei Mei and Medical teams plus the Kyoto Reinforcements group of the participants infobox."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-003",
+      "kind": "set",
+      "question": "Who were the curse users that took part in the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kenjaku"
+        },
+        {
+          "item": "Uraume"
+        },
+        {
+          "item": "Haruta Shigemo"
+        },
+        {
+          "item": "Mimiko Hasaba"
+        },
+        {
+          "item": "Nanako Hasaba"
+        },
+        {
+          "item": "Toshihisa Negi"
+        },
+        {
+          "item": "Manami Suda"
+        },
+        {
+          "item": "Niji Ebina"
+        },
+        {
+          "item": "Jiro Awasaka"
+        },
+        {
+          "item": "Ogami"
+        },
+        {
+          "item": "Toji Fushiguro"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "The eleven names in the Curse Users group of the participants infobox (Kenjaku shown as Pseudo-Geto, Toji Zenin via séance)."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-005",
+      "kind": "set",
+      "question": "What are all the municipalities that remained safe after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Okutama"
+        },
+        {
+          "item": "Oume City"
+        },
+        {
+          "item": "Akiruno City"
+        },
+        {
+          "item": "Hachioji City"
+        },
+        {
+          "item": "Machida City"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "The five named municipalities in the Aftermath section (the page adds 'and various islands', which is not a nameable member)."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-006",
+      "kind": "set",
+      "question": "What were the rulings jujutsu headquarters issued after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo is deemed an accomplice in the Shibuya Incident and is permanently exiled"
+        },
+        {
+          "item": "Masamichi Yaga is sentenced to death for inciting the Shibuya Incident"
+        },
+        {
+          "item": "The suspension on Yuji Itadori's execution is lifted and he is to be sentenced to death immediately"
+        },
+        {
+          "item": "Yuta Okkotsu is appointed Yuji Itadori's executioner"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "The five numbered rulings in the Aftermath section."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-007",
+      "kind": "fact",
+      "question": "When did the Shibuya Incident take place?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "October 31, 2018"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-008",
+      "kind": "fact",
+      "question": "Where did the Shibuya Incident take place?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Shibuya"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-009",
+      "kind": "fact",
+      "question": "Who orchestrated the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Kenjaku"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-010",
+      "kind": "fact",
+      "question": "Why did Kenjaku orchestrate the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "sealing Satoru Gojo inside Prison Realm"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-013",
+      "kind": "fact",
+      "question": "What manga chapters cover the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "accept": "any",
+      "answer": [
+        {
+          "item": "Chapter 83 - Chapter 136",
+          "aliases": [
+            "chapter 83"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "Wiki infobox: 'Manga: Chapter 83 - 136'."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-014",
+      "kind": "fact",
+      "question": "What anime episodes cover the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "accept": "any",
+      "answer": [
+        {
+          "item": "Episode 31 - Episode 47",
+          "aliases": [
+            "episode 31"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19",
+      "note": "Wiki infobox: 'Anime: Episode 31 - 47'."
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-015",
+      "kind": "fact",
+      "question": "What is the outcome of the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Satoru Gojo is sealed"
+        },
+        {
+          "item": "Kenjaku escapes"
+        },
+        {
+          "item": "Shibuya is decimated"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-017",
+      "kind": "fact",
+      "question": "What did Kenjaku switch his method to after failing to get rid of the Six Eyes?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "sealing the Six Eyes user away permanently",
+          "aliases": [
+            "sealing them away permanently"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-018",
+      "kind": "fact",
+      "question": "Why did Kenjaku begin his search for Prison Realm?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "two users of the Six Eyes cannot appear at the same time"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-019",
+      "kind": "fact",
+      "question": "When did Kenjaku acquire Prison Realm?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "at some point in 2012"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-020",
+      "kind": "fact",
+      "question": "Whose body did Kenjaku take over after his death in 2017?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Suguru Geto"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-021",
+      "kind": "fact",
+      "question": "What is Kenjaku called after taking over Geto's body?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Pseudo-Geto"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-022",
+      "kind": "fact",
+      "question": "What group of cursed spirits does Pseudo-Geto ally himself with?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Mahito's group"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-023",
+      "kind": "fact",
+      "question": "In what month of 2018 does Geto meet with Jogo, Hanami and Dagon?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "July"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-024",
+      "kind": "fact",
+      "question": "Why did Jogo want to fight the jujutsu sorcerers in an all-out war?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "replace humanity"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-025",
+      "kind": "fact",
+      "question": "What is the primary condition for winning an all-out war against the jujutsu sorcerers?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "taking Satoru Gojo out of the equation completely"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-026",
+      "kind": "fact",
+      "question": "What grade is Prison Realm classified as?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "special grade"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-027",
+      "kind": "fact",
+      "question": "What object is Prison Realm?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "cursed object"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-028",
+      "kind": "fact",
+      "question": "Around what time did the Shibuya Incident begin?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "7:00 PM"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-029",
+      "kind": "fact",
+      "question": "What radius is the curtain cast around Shibuya?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "four-hundred meter"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-030",
+      "kind": "fact",
+      "question": "Where is the center of the curtain?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Tokyu Department Store"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-031",
+      "kind": "fact",
+      "question": "Who does the curtain only trap?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "non-sorcerers"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-032",
+      "kind": "fact",
+      "question": "What do the civilians inside the curtain demand?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Bring Satoru Gojo"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-033",
+      "kind": "fact",
+      "question": "Which earlier invaders do the higher-ups suspect are behind the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "the invaders of the Goodwill Event",
+          "aliases": [
+            "Goodwill Event",
+            "Goodwill Event invaders"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-034",
+      "kind": "fact",
+      "question": "What number of squads of jujutsu sorcerers were dispatched to safeguard the perimeter outside the curtain?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "four"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-035",
+      "kind": "fact",
+      "question": "What is the name of Kento Nanami's response team?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Nanami Team"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-036",
+      "kind": "fact",
+      "question": "Where is the Nanami Team posted?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "exit 13 of Shibuya Station"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-037",
+      "kind": "fact",
+      "question": "Where is the Zenin Team located?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Shibuya Mark City"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-038",
+      "kind": "fact",
+      "question": "Where does the Kusakabe Team patrol?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Jr. Shibuya Station"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-039",
+      "kind": "fact",
+      "question": "Where are the special grade cursed spirits hiding in the basement?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Hikarie Building"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-040",
+      "kind": "fact",
+      "question": "At what time does Satoru arrive in Shibuya and enter the curtain?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "8:31 PM"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-041",
+      "kind": "fact",
+      "question": "Where does Satoru arrive at 8:38 PM?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Hikarie ShinQ"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-042",
+      "kind": "fact",
+      "question": "Where does Satoru descend to look for the ambush?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Fukutoshin Line Platform"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-043",
+      "kind": "fact",
+      "question": "Where is Yuji when he expresses his desire to back up his sensei?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Aoyama Cemetery"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-044",
+      "kind": "fact",
+      "question": "Where is the Mei Mei Team routed after a second curtain appears?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Meiji-Jingumae Station"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-045",
+      "kind": "fact",
+      "question": "What number of cursed spirits did Pseudo-Geto release in the wake of the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "ten million"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-046",
+      "kind": "fact",
+      "question": "How many wards of Tokyo fall after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "twenty-three"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-047",
+      "kind": "fact",
+      "question": "What number of citizens must be relocated after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "five million"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-048",
+      "kind": "fact",
+      "question": "How many barriers are proposed to be expanded to the edge of the prefecture?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "two"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-049",
+      "kind": "fact",
+      "question": "What era was the Imperial Residence established in?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Meiji Era"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-050",
+      "kind": "fact",
+      "question": "What is the first ruling jujutsu headquarters issues after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Suguru Geto is officially stated to have survived and has been sentenced to death"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-051",
+      "kind": "fact",
+      "question": "How is Satoru Gojo treated by jujutsu headquarters after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "permanently exiled"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-052",
+      "kind": "fact",
+      "question": "What is Masamichi Yaga sentenced to for inciting the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "death"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-053",
+      "kind": "fact",
+      "question": "What happens to Yuji Itadori's execution after the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "The suspension on Yuji Itadori's execution is lifted"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-054",
+      "kind": "fact",
+      "question": "Who is appointed Yuji Itadori's executioner?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Yuta Okkotsu"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-055",
+      "kind": "fact",
+      "question": "What grade is Yuta Okkotsu?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Special grade"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-056",
+      "kind": "fact",
+      "question": "Whom does the wiki say Yuta Okkotsu has the motive to help, even if it means defying authority?",
+      "subject": "Yuta Okkotsu",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": [
+            "Gojo"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-057",
+      "kind": "fact",
+      "question": "What ability does the cursed spirit Yuta is sent to exorcise have?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "lure humans like an anglerfish"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-058",
+      "kind": "fact",
+      "question": "Who is confirmed to be Jujutsu High's mole during the Evening Festival?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Kokichi"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-059",
+      "kind": "fact",
+      "question": "What cursed technique does Kokichi use over a wide range to steal information?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Puppet Manipulation"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-060",
+      "kind": "fact",
+      "question": "Who takes Gojo's first-years to Kokichi's supposed location?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Utahime Iori"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-061",
+      "kind": "fact",
+      "question": "How was Kokichi chosen as the suspected mole?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "process of elimination"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-062",
+      "kind": "fact",
+      "question": "What did Kokichi agree to give in exchange for Mahito healing his body?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "information from Jujutsu High"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-063",
+      "kind": "fact",
+      "question": "What technique does Mahito use to heal Kokichi's body?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Idle Transfiguration"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-064",
+      "kind": "fact",
+      "question": "What was forbidden for Mahito's side under the binding vow with Kokichi?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Kyoto students"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-065",
+      "kind": "fact",
+      "question": "Who does Mahito blame for harming Kokichi?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Hanami"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-066",
+      "kind": "fact",
+      "question": "What does Kokichi use to distract Mahito and escape?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Mechamarus"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-067",
+      "kind": "fact",
+      "question": "What mode does the giant armored puppet Mechamaru fight Mahito in?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Mode: Absolute"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-068",
+      "kind": "fact",
+      "question": "What does Kokichi use to injure Mahito?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "mysterious projectile"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-069",
+      "kind": "fact",
+      "question": "Which manga chapter is the first of the Shibuya Incident Arc?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Chapter 79"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-070",
+      "kind": "fact",
+      "question": "What is the title of Chapter 79?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "A Taste of Things to Come"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-071",
+      "kind": "fact",
+      "question": "Which manga chapter is the last of the Shibuya Incident Arc?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Chapter 137"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-072",
+      "kind": "fact",
+      "question": "Which anime episode is the first of the Shibuya Incident Arc?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Episode 30"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-073",
+      "kind": "fact",
+      "question": "Which anime episode is the last of the Shibuya Incident Arc?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Episode 47"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-074",
+      "kind": "fact",
+      "question": "What is the title of Episode 30?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "It's Like That"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-075",
+      "kind": "fact",
+      "question": "What is the title of Episode 47?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "The Shibuya Incident - Gate Closed"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-076",
+      "kind": "fact",
+      "question": "What is the title of Episode 34?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Pandemonium"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-077",
+      "kind": "fact",
+      "question": "What is the title of Episode 35?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Summon"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-078",
+      "kind": "fact",
+      "question": "What is the title of Episode 36?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Dull Knife"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-079",
+      "kind": "fact",
+      "question": "What is the title of Episode 40?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Thunderclap"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-080",
+      "kind": "fact",
+      "question": "What is the title of Episode 45?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Transformation"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-081",
+      "kind": "fact",
+      "question": "What is the title of Episode 42?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Right and Wrong"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-082",
+      "kind": "fact",
+      "question": "What is the title of Episode 37?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Red Scale"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-083",
+      "kind": "fact",
+      "question": "What is the title of Episode 38?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "narrative",
+      "answer": [
+        {
+          "item": "Fluctuations"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-19"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-011",
+      "kind": "fact",
+      "question": "What is the romaji of the Shibuya Incident?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Shibuya Jihen"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-084",
+      "kind": "fact",
+      "question": "What is the title of Chapter 80?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Evening Festival"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-085",
+      "kind": "fact",
+      "question": "What is the title of Chapter 81?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Evening Festival, Part 2"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-086",
+      "kind": "fact",
+      "question": "What is the title of Chapter 82?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Evening Festival, Part 3"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-087",
+      "kind": "fact",
+      "question": "What is the title of Chapter 83?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 1"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-088",
+      "kind": "fact",
+      "question": "What is the title of Chapter 125?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "A Story About that Girl"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-089",
+      "kind": "fact",
+      "question": "What is the title of Chapter 126?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 43"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-090",
+      "kind": "fact",
+      "question": "What is the title of Chapter 127?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 44"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-091",
+      "kind": "fact",
+      "question": "What is the title of Chapter 128?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 45"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-092",
+      "kind": "fact",
+      "question": "What is the title of Chapter 129?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 46"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-093",
+      "kind": "fact",
+      "question": "What is the title of Chapter 130?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 47"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-094",
+      "kind": "fact",
+      "question": "What is the title of Chapter 131?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 48"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-095",
+      "kind": "fact",
+      "question": "What is the title of Chapter 132?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 49"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-096",
+      "kind": "fact",
+      "question": "What is the title of Chapter 133?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 50"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-097",
+      "kind": "fact",
+      "question": "What is the title of Chapter 134?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 51"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-098",
+      "kind": "fact",
+      "question": "What is the title of Chapter 135?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 52"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-099",
+      "kind": "fact",
+      "question": "What is the title of Chapter 136?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The Shibuya Incident, Part 53"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-100",
+      "kind": "fact",
+      "question": "What is the title of Chapter 137?",
+      "subject": "Shibuya Incident Arc",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hard and White"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident_Arc"
+      ],
+      "verified": "2026-08-23"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-101",
+      "kind": "fact",
+      "question": "What is the romaji of Shibuya Incident's name?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Shibuya Jihen",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:romaji"
+    },
+    {
+      "id": "jjk-pg-shibuya_incident-102",
+      "kind": "fact",
+      "question": "What are the kanji for Shibuya Incident's name?",
+      "subject": "Shibuya Incident",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "渋谷事変",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Shibuya_Incident"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:kanji"
+    }
+  ]
+}

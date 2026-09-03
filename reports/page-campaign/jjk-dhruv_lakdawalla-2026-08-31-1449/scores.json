@@ -1,0 +1,561 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Dhruv Lakdawalla?",
+      "set": "Every named technique of Dhruv Lakdawalla",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the rivals of Dhruv Lakdawalla?",
+      "set": "Every rival of Dhruv Lakdawalla",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Dhruv Lakdawalla?",
+      "found": [
+        "Shikigami"
+      ],
+      "missing": [],
+      "members": [
+        "Shikigami"
+      ]
+    },
+    {
+      "query": "What are all the rivals of Dhruv Lakdawalla?",
+      "found": [
+        "Kurourushi",
+        "Takako Uro"
+      ],
+      "missing": [],
+      "members": [
+        "Kurourushi",
+        "Takako Uro"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Dhruv Lakdawalla's name?",
+      "id": "jjk-pg-dhruv_lakdawalla-001",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "\u30c9\u30eb\u30a5\u30f4\u30fb\u30e9\u30af\u30c0\u30ef\u30e9"
+      ],
+      "found": [
+        "\u30c9\u30eb\u30a5\u30f4\u30fb\u30e9\u30af\u30c0\u30ef\u30e9"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Dhruv Lakdawalla's name?",
+      "id": "jjk-pg-dhruv_lakdawalla-002",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Dor\u016bvu Rakudawara"
+      ],
+      "found": [
+        "Dor\u016bvu Rakudawara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dhruv Lakdawalla's race?",
+      "id": "jjk-pg-dhruv_lakdawalla-003",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Dhruv Lakdawalla?",
+      "id": "jjk-pg-dhruv_lakdawalla-004",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "2000+"
+      ],
+      "found": [
+        "2000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dhruv Lakdawalla's gender?",
+      "id": "jjk-pg-dhruv_lakdawalla-005",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Dhruv Lakdawalla?",
+      "id": "jjk-pg-dhruv_lakdawalla-006",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dhruv Lakdawalla's occupation?",
+      "id": "jjk-pg-dhruv_lakdawalla-007",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Dhruv Lakdawalla first appear?",
+      "id": "jjk-pg-dhruv_lakdawalla-008",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Chapter 173"
+      ],
+      "found": [
+        "Chapter 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Dhruv Lakdawalla first depicted?",
+      "id": "jjk-pg-dhruv_lakdawalla-009",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Episode 58"
+      ],
+      "found": [
+        "Episode 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Dhruv Lakdawalla look?",
+      "id": "jjk-pg-dhruv_lakdawalla-012",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "an ascetic appearance with a well-toned body and eyes that turn outward"
+      ],
+      "found": [
+        "an ascetic appearance with a well-toned body and eyes that turn outward"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What adorns Dhruv Lakdawalla's head?",
+      "id": "jjk-pg-dhruv_lakdawalla-013",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "a traditional multi-chained Matha Patti across the forehead"
+      ],
+      "found": [
+        "a traditional multi-chained Matha Patti across the forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dhruv Lakdawalla wear?",
+      "id": "jjk-pg-dhruv_lakdawalla-014",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "a dark-colored loin cloth"
+      ],
+      "found": [
+        "a dark-colored loin cloth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Dhruv Lakdawalla's beard styled?",
+      "id": "jjk-pg-dhruv_lakdawalla-015",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "a long beard sectioned into three in a thick mustache"
+      ],
+      "found": [
+        "a long beard sectioned into three in a thick mustache"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is known about Dhruv Lakdawalla's personality?",
+      "id": "jjk-pg-dhruv_lakdawalla-016",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "he willingly engaged in the viciousness of the Culling Game"
+      ],
+      "found": [
+        "he willingly engaged in the viciousness of the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What made Dhruv Lakdawalla a target for Yuta Okkotsu?",
+      "id": "jjk-pg-dhruv_lakdawalla-017",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "attacked sorcerers and civilians alike"
+      ],
+      "found": [
+        "attacked sorcerers and civilians alike"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dhruv Lakdawalla accomplish during the Civil War of Wa?",
+      "id": "jjk-pg-dhruv_lakdawalla-018",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "singlehandedly conquered the Japanese archipelago"
+      ],
+      "found": [
+        "singlehandedly conquered the Japanese archipelago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dhruv Lakdawalla's modern incarnation indicate?",
+      "id": "jjk-pg-dhruv_lakdawalla-019",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "he had learned or gained a method to incarnate himself in the past to cheat death"
+      ],
+      "found": [
+        "he had learned or gained a method to incarnate himself in the past to cheat death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Dhruv Lakdawalla participate in the Culling Game?",
+      "id": "jjk-pg-dhruv_lakdawalla-020",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "the Sendai Colony"
+      ],
+      "found": [
+        "the Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many points had Dhruv Lakdawalla gained by November 12th, 2018?",
+      "id": "jjk-pg-dhruv_lakdawalla-021",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "91 points"
+      ],
+      "found": [
+        "91 points"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kurourushi decide to do after struggling against Dhruv?",
+      "id": "jjk-pg-dhruv_lakdawalla-022",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "enter a dormant state until Dhruv dies"
+      ],
+      "found": [
+        "enter a dormant state until Dhruv dies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Dhruv Lakdawalla die?",
+      "id": "jjk-pg-dhruv_lakdawalla-023",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "killed by Yuta Okkotsu at 11:28 AM in the city of Sendai"
+      ],
+      "found": [
+        "killed by Yuta Okkotsu at 11:28 AM in the city of Sendai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose abilities are Yuta Okkotsu's second only to?",
+      "id": "jjk-pg-dhruv_lakdawalla-024",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shikigami did Dhruv Lakdawalla conjure?",
+      "id": "jjk-pg-dhruv_lakdawalla-025",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "grotesque giant rodents with jagged teeth, four eyes, and a tail that crawled along the ground using four legs; and several small pteranodon-like creatures"
+      ],
+      "found": [
+        "grotesque giant rodents with jagged teeth, four eyes, and a tail that crawled along the ground using four legs; and several small pteranodon-like creatures"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the shikigami's orbital routes constitute?",
+      "id": "jjk-pg-dhruv_lakdawalla-026",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "an inviolable domain along their trajectories"
+      ],
+      "found": [
+        "an inviolable domain along their trajectories"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to anything that crosses the paths of Dhruv Lakdawalla's shikigami?",
+      "id": "jjk-pg-dhruv_lakdawalla-027",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "slashed and damaged"
+      ],
+      "found": [
+        "slashed and damaged"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Dhruv Lakdawalla get in the third Popularity Poll?",
+      "id": "jjk-pg-dhruv_lakdawalla-028",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "2 votes"
+      ],
+      "found": [
+        "2 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Dhruv Lakdawalla get in the fourth Popularity Poll?",
+      "id": "jjk-pg-dhruv_lakdawalla-029",
+      "subject": "Dhruv Lakdawalla",
+      "accept": "all",
+      "expected": [
+        "5 votes"
+      ],
+      "found": [
+        "5 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 27,
+    "fact_present": 27
+  }
+}

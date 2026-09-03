@@ -3,8 +3,9 @@
 The one document that defines how every ScriptEngine script is written. It is the
 distillation of three things:
 
-1. The rule blocks in `scriptengine/api/rules.py` (`STYLE_RULES`, `VOICE_RULES`,
-   `ANNOTATION_RULES`), which `/context` appends to every rendered prompt.
+1. The rule blocks in `scriptengine/api/rules.py` (`STYLE_RULES`,
+   `SCRIPT_FORMAT`, `VOICE_RULES`, `ANNOTATION_RULES`), which `/context`
+   appends to every rendered prompt.
 2. The finished scripts in `sample scripts/` (the canonical examples).
 3. `docs/ANTI_AI_SCRIPTING.md` (the full anti-AI voice audit).
 
@@ -53,12 +54,18 @@ Two allowed shapes, identical except for the intro:
 ...
 ```
 
-The script is saved as `<Title>.md` in `scripts output/`.
+The script is saved as `<Title>.md`, one numbered folder per video:
+`Video N - <Title>/Script/<Title>.md` in the production tree (the root is
+`SCRIPTENGINE_SCRIPTS_ROOT`). Ask `cli script-path "<title>" --create` where it
+goes rather than guessing, so a rewrite reuses its own folder.
 
 ## 2. The title
 
 First line of the file, bold, on its own line. A clean name for the topic,
-never a question, never a subtitle.
+never a question, never a subtitle. **The title is the saved filename**, so keep
+it the video's actual title: if the engine resolves the subject to something
+longer (a full canonical page name), save under the title you asked for, not the
+resolved name — `script-gen` rewrites the bold line to match whatever it saves as.
 
 ```
 **What It's Like to be Every Rank of Curse in Jujutsu Kaisen**
@@ -212,9 +219,13 @@ If the script doesn't need one, end on the last section's content.
 ## 8. Length
 
 The whole point of writing scripts outside ComfyUI is length: scripts run to
-**18,000+ characters** (~3,000 words) when asked. Hit the user's target word
-count by giving every section full treatment: real specifics from the
-context, not padding. Every section should add facts the others don't repeat.
+**6,000 words** by default (the `script-gen` target), not the node's ~2k-token
+window. The contract is a **band**, not a floor: land between target − 500 and
+target + 500 words. Reach it by giving every section full treatment with real
+specifics from the context, never padding; every section should add facts the
+others don't repeat. `script-gen` enforces this automatically — expanding while
+the draft is under the band's low edge and trimming once past the high edge, up
+to ten passes — so a hand-written script must count its words before it is done.
 
 ## 9. The canonical samples
 
@@ -251,3 +262,15 @@ The engine states the set it used on a `Set:` line: `Cursed Spirits (class)`
 means the members are the wiki's `Cursed Spirits` category, grouped by the field
 it labels "Grade". If that set is wrong for the script, re-fetch with a sharper
 `-Question` rather than writing around it.
+
+### Narrative scripts: `SCRIPT_FORMAT`
+
+A narrative bundle can return dozens of beats; a script is a through-line, not
+a dump. The `SCRIPT_FORMAT` block in `rules.py` (served with every prompt)
+says how to build it: pick the beats that carry the story forward and order
+them by story time; open a prequel (Volume 0 / Chapter 0.x) as a flashback
+section instead of beat 1; skip the list beats (Chapters, Episodes, Characters
+Introduced, Terminology Introduced); and never state a fact a beat's
+`sourced:` header does not cover. A script on a single character or event is
+always written from a narrative bundle: the CLI and MCP research path route a
+bare name to narrative precisely so a story comes back, not a lookup.

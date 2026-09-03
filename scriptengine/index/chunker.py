@@ -49,6 +49,23 @@ _ABBREVIATIONS = frozenset(
 
 _TRAILING_TOKEN = re.compile(r"([\w.]+)\.$")
 
+# The wiki writes a list section one entry per line: `Label: description`
+# for technique lists, plain bullets for Trivia, and bare heading lines
+# (`Innate Technique`) that sit above the entries they group. Packing 350
+# words across entries (the old rolling pass) mixed four or five entries
+# into one passage, so a question about one entry ("What does Yuta's
+# Unlimited Void look like?") got a passage the cross-encoder read as about
+# five techniques at once and buried under the subject's other pages -- the
+# campaign's G3.
+#
+# The 2026-08-25 correction: the first cut split only on `Label:` lines, so a
+# Trivia section (bullets, no labels) dumped its whole unlabeled tail into
+# one 330-word catchall and the small bullets ("His maternal grandfather is
+# Danish.", 7 words) stopped being served for their questions. The unit is
+# therefore the line -- the wiki's own item -- with bare headings joining the
+# entry they head, and only short items packed.
+_BARE_HEADING = re.compile(r"^[^:.!?]{1,39}$")
+
 # Sections that describe the page rather than the subject. Dropping them keeps
 # navigation furniture out of retrieval. These are MediaWiki-wide conventions.
 BOILERPLATE_SECTIONS = {
@@ -101,6 +118,74 @@ def split_sentences(text: str) -> list[str]:
         else:
             merged.append(part)
     return merged
+
+
+def _section_items(text: str) -> list[str]:
+    """A section's own items: one per non-empty line, headings attached.
+
+    A bare heading line (short, no colon, not a sentence: the wiki's
+    `Innate Technique` over its technique entries) is not an item; it heads
+    the entry below it and joins that item so the embedding keeps the group
+    name around the member. Everything else -- a `Label: description` line,
+    a Trivia bullet, a paragraph -- is its own line in the wiki source and
+    its own item here.
+    """
+    lines = [line.strip() for line in (text or "").split("\n")]
+    items: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if not line:
+            i += 1
+            continue
+        if _BARE_HEADING.match(line) and i + 1 < len(lines) and lines[i + 1]:
+            items.append(f"{line} {lines[i + 1]}")
+            i += 2
+            continue
+        items.append(line)
+        i += 1
+    return items
+
+
+def _passages_from_items(
+    items: list[str], target_words: int, overlap_words: int, min_words: int
+) -> list[str]:
+    """Pack a section's items into passages.
+
+    A substantial item (>= min_words) is its own passage: the entry's label
+    is the query's anchor, and packing it under a neighbor's description is
+    what buried `Unlimited Void`. Short items (< min_words -- `Favorite food:
+    Bread and ajillo.` is five words) still pack toward the target, because
+    a five-word passage embeds noisily than one that carries its list
+    context; an item longer than the target packs its own sentences.
+    """
+    passages: list[str] = []
+    small: list[str] = []
+    small_words = 0
+    for item in items:
+        words = len(item.split())
+        if words >= min_words:
+            if small:
+                item = " ".join([*small, item])
+                words = len(item.split())
+                small, small_words = [], 0
+            if words > target_words:
+                passages.extend(split_passage(item, target_words, overlap_words, min_words))
+            else:
+                passages.append(item)
+        else:
+            small.append(item)
+            small_words += words + 1
+            if small_words >= target_words:
+                passages.append(" ".join(small))
+                small, small_words = [], 0
+    if small:
+        tail = " ".join(small)
+        if passages and len(tail.split()) < min_words:
+            passages[-1] = f"{passages[-1]} {tail}"
+        else:
+            passages.append(tail)
+    return passages
 
 
 def split_passage(
@@ -207,11 +292,15 @@ def chunk_page(
     for index, section in enumerate(page.sections):
         if section.title.strip().lower() in BOILERPLATE_SECTIONS:
             continue
-        # A section headed by an item marker is kept however short it is. The
-        # name is what the question asks for: "Every form of Goku" wants
-        # `Super Saiyan 4`, not the paragraph under it, and `_section_roster`
-        # reads chunks, so dropping the chunk drops the member with it.
-        if section.word_count < min_words and not getattr(section, "is_item", False):
+        # G15 (2026-08-27): the old `word_count < min_words` floor silently
+        # dropped whole factual sections -- Kaito Yuki's 19-word Personality
+        # section indexed zero chunks, so no retrieval path could reach it,
+        # and 1,660 corpus sections sat under the floor. Item-headed sections
+        # were already kept however short (the name is the point, and
+        # `_section_roster` reads chunks, so dropping the chunk drops the
+        # member with it); a plain short section is content, not noise, so
+        # only sections with no text of their own are skipped now.
+        if section.word_count == 0:
             continue
 
         parent_ordinal = ordinal
@@ -228,7 +317,14 @@ def chunk_page(
         )
         ordinal += 1
 
-        passages = split_passage(section.text, target_words, overlap_words, min_words)
+        # A list section is chunked per item, not packed across items: the
+        # item is the retrieval unit (see `_section_items`), short items pack
+        # with their neighbors, and a long item packs its own sentences.
+        items = _section_items(section.text)
+        if len(items) >= 3:
+            passages = _passages_from_items(items, target_words, overlap_words, min_words)
+        else:
+            passages = split_passage(section.text, target_words, overlap_words, min_words)
         for passage in passages:
             chunks.append(
                 Chunk(

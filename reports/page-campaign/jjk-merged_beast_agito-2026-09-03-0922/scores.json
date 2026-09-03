@@ -1,0 +1,289 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Merged Beast Agito?",
+      "set": "Every named technique of Merged Beast Agito",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Merged Beast Agito",
+      "set": "Every battle involving Merged Beast Agito",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Merged Beast Agito?",
+      "found": [
+        "Reverse Cursed Technique"
+      ],
+      "missing": [],
+      "members": [
+        "Reverse Cursed Technique"
+      ]
+    },
+    {
+      "query": "Every battle involving Merged Beast Agito",
+      "found": [
+        "Satoru Gojo vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Merged Beast Agito's name?",
+      "id": "jjk-pg-merged_beast_agito-001",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Nue\u30fbKon - Kang\u014d J\u016b Agito"
+      ],
+      "found": [
+        "Nue\u30fbKon - Kang\u014d J\u016b Agito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Merged Beast Agito's name?",
+      "id": "jjk-pg-merged_beast_agito-002",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "\u9d7a\u300c\u6e3e\u300d\u5d4c\u5408\u7363 \u984e\u5410"
+      ],
+      "found": [
+        "\u9d7a\u300c\u6e3e\u300d\u5d4c\u5408\u7363 \u984e\u5410"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Merged Beast Agito first appear?",
+      "id": "jjk-pg-merged_beast_agito-003",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Chapter 233"
+      ],
+      "found": [
+        "Chapter 233"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Sukuna?",
+      "id": "jjk-pg-merged_beast_agito-004",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-merged_beast_agito-005",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Makyo Shinjuku"
+      ],
+      "found": [
+        "Makyo Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-merged_beast_agito-006",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Satoru Gojo vs. Sukuna begin?",
+      "id": "jjk-pg-merged_beast_agito-007",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Chapter 223"
+      ],
+      "found": [
+        "Chapter 223"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-merged_beast_agito-008",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Merged Beast Agito formed?",
+      "id": "jjk-pg-merged_beast_agito-011",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Merged Beast Agito is Nue combined with Great Serpent, Tiger Funeral, and Round Deer, but it is unknown if the destruction of the other shikigami is required for Nue: Totality to inherit their abilities."
+      ],
+      "found": [
+        "Merged Beast Agito is Nue combined with Great Serpent, Tiger Funeral, and Round Deer, but it is unknown if the destruction of the other shikigami is required for Nue: Totality to inherit their abilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Merged Beast Agito look like?",
+      "id": "jjk-pg-merged_beast_agito-012",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "Merged Beast Agito is a towering and muscular humanoid shikigami with a feathered mane, a mask over its face that resembles Nue's, feathered arms that end in claws, black antlers that protrude from its head, a feminine torso with black stripes, tiger-like feet, and a tail that ends in a snake's head."
+      ],
+      "found": [
+        "Merged Beast Agito is a towering and muscular humanoid shikigami with a feathered mane, a mask over its face that resembles Nue's, feathered arms that end in claws, black antlers that protrude from its head, a feminine torso with black stripes, tiger-like feet, and a tail that ends in a snake's head."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Sukuna summon Merged Beast Agito during his battle with Satoru Gojo?",
+      "id": "jjk-pg-merged_beast_agito-013",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "During his battle with Satoru Gojo, Sukuna used Nue: Totality to merge Nue, Great Serpent, Tiger Funeral, and Round Deer and summon Merged Beast Agito."
+      ],
+      "found": [
+        "During his battle with Satoru Gojo, Sukuna used Nue: Totality to merge Nue, Great Serpent, Tiger Funeral, and Round Deer and summon Merged Beast Agito."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What image may the name Agito evoke on the Merged Beast Agito page?",
+      "id": "jjk-pg-merged_beast_agito-014",
+      "subject": "Merged Beast Agito",
+      "accept": "all",
+      "expected": [
+        "The name may also evoke the image of a gateway to the fused powers of the Ten Shadows Technique's shikigami, symbolizing the union of Nue, Great Serpent, Round Deer, and Tiger Funeral."
+      ],
+      "found": [
+        "The name may also evoke the image of a gateway to the fused powers of the Ten Shadows Technique's shikigami, symbolizing the union of Nue, Great Serpent, Round Deer, and Tiger Funeral."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 12,
+    "fact_present": 12
+  }
+}

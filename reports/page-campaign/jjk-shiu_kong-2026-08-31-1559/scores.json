@@ -1,0 +1,667 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Shiu Kong?",
+      "set": "Every ally of Shiu Kong",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Shiu Kong?",
+      "found": [
+        "Toji Fushiguro",
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto",
+        "Toji Fushiguro"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Shiu Kong's name?",
+      "id": "jjk-pg-shiu_kong-001",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "\u5b54\u6642\u96e8"
+      ],
+      "found": [
+        "\u5b54\u6642\u96e8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Shiu Kong's name?",
+      "id": "jjk-pg-shiu_kong-002",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Kon Shiu"
+      ],
+      "found": [
+        "Kon Shiu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's race?",
+      "id": "jjk-pg-shiu_kong-003",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's gender?",
+      "id": "jjk-pg-shiu_kong-004",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Shiu Kong?",
+      "id": "jjk-pg-shiu_kong-005",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's occupation?",
+      "id": "jjk-pg-shiu_kong-006",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Non-Curse User (Broker)"
+      ],
+      "found": [
+        "Non-Curse User (Broker)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Shiu Kong first appear?",
+      "id": "jjk-pg-shiu_kong-007",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Shiu Kong first depicted?",
+      "id": "jjk-pg-shiu_kong-008",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Episode 25"
+      ],
+      "found": [
+        "Episode 25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Shiu Kong's Japanese voice actor?",
+      "id": "jjk-pg-shiu_kong-009",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Hiroki Yasumoto"
+      ],
+      "found": [
+        "Hiroki Yasumoto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Shiu Kong's English voice actor?",
+      "id": "jjk-pg-shiu_kong-010",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Mick Lauer"
+      ],
+      "found": [
+        "Mick Lauer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's role in the series?",
+      "id": "jjk-pg-shiu_kong-012",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "a handler for curse users"
+      ],
+      "found": [
+        "a handler for curse users"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shiu Kong mediate between in 2006?",
+      "id": "jjk-pg-shiu_kong-013",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "the Time Vessel Association and Toji Fushiguro"
+      ],
+      "found": [
+        "the Time Vessel Association and Toji Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Shiu Kong look like?",
+      "id": "jjk-pg-shiu_kong-014",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "a man of average build with short black hair that's longer on the top than the sides and the back"
+      ],
+      "found": [
+        "a man of average build with short black hair that's longer on the top than the sides and the back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong usually seen wearing?",
+      "id": "jjk-pg-shiu_kong-015",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "a standard black business suit and smoking a cigarette"
+      ],
+      "found": [
+        "a standard black business suit and smoking a cigarette"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Shiu Kong's personality described?",
+      "id": "jjk-pg-shiu_kong-016",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "a formal man posing as a mediator between his clients"
+      ],
+      "found": [
+        "a formal man posing as a mediator between his clients"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Shiu show cunning with Misato Kuroi?",
+      "id": "jjk-pg-shiu_kong-017",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "used her kidnapping to create a false sense of security for Satoru Gojo's group, helping Toji in the process"
+      ],
+      "found": [
+        "used her kidnapping to create a false sense of security for Satoru Gojo's group, helping Toji in the process"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's nationality and former profession?",
+      "id": "jjk-pg-shiu_kong-018",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "a Korean national and former detective who works in Japan now"
+      ],
+      "found": [
+        "a Korean national and former detective who works in Japan now"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Shiu Kong see despite having no cursed technique?",
+      "id": "jjk-pg-shiu_kong-019",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "can see curses"
+      ],
+      "found": [
+        "can see curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shiu Kong do for Megumi Fushiguro?",
+      "id": "jjk-pg-shiu_kong-020",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "babysat Megumi Fushiguro after his mother died"
+      ],
+      "found": [
+        "babysat Megumi Fushiguro after his mother died"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shiu plan with Toji Fushiguro?",
+      "id": "jjk-pg-shiu_kong-021",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "an assassination of the Star Plasma Vessel, Riko Amanai"
+      ],
+      "found": [
+        "an assassination of the Star Plasma Vessel, Riko Amanai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shiu do with Misato Kuroi against Toji's orders?",
+      "id": "jjk-pg-shiu_kong-022",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "kept her alive and transported her to Okinawa using the Time Vessel Association's private jet"
+      ],
+      "found": [
+        "kept her alive and transported her to Okinawa using the Time Vessel Association's private jet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Toji bring Riko's body to after the assassination?",
+      "id": "jjk-pg-shiu_kong-023",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Shigeru Sonoda, a direct representative of the Star Religious Group"
+      ],
+      "found": [
+        "Shigeru Sonoda, a direct representative of the Star Religious Group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shiu say about associating with Toji?",
+      "id": "jjk-pg-shiu_kong-024",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "he'd only associate with Toji in business or in hell"
+      ],
+      "found": [
+        "he'd only associate with Toji in business or in hell"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Shiu criticize about Geto's appearance?",
+      "id": "jjk-pg-shiu_kong-025",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "criticizes Geto's appearance as he should at least play the part for the group"
+      ],
+      "found": [
+        "criticizes Geto's appearance as he should at least play the part for the group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Shiu Kong's abilities?",
+      "id": "jjk-pg-shiu_kong-026",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "doesn't possess any cursed techniques and can only see cursed spirits"
+      ],
+      "found": [
+        "doesn't possess any cursed techniques and can only see cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why doesn't Geto consider Shiu a monkey?",
+      "id": "jjk-pg-shiu_kong-027",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "they worked together on amicable terms after Geto turned into a curse user"
+      ],
+      "found": [
+        "they worked together on amicable terms after Geto turned into a curse user"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's name in Korean?",
+      "id": "jjk-pg-shiu_kong-028",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Kong Si-woo"
+      ],
+      "found": [
+        "Kong Si-woo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Gege Akutami think is the coolest character in Gojo's Past Arc?",
+      "id": "jjk-pg-shiu_kong-029",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "the coolest character in the Gojo's Past Arc"
+      ],
+      "found": [
+        "the coolest character in the Gojo's Past Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shiu Kong's hobby?",
+      "id": "jjk-pg-shiu_kong-030",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "collecting tropical fish"
+      ],
+      "found": [
+        "collecting tropical fish"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Shiu Kong's favorite and least favorite dishes?",
+      "id": "jjk-pg-shiu_kong-031",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Cheese and Cigarettes",
+        "Black beans"
+      ],
+      "found": [
+        "Cheese and Cigarettes",
+        "Black beans"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What causes Shiu Kong stress?",
+      "id": "jjk-pg-shiu_kong-032",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Entertaining customers"
+      ],
+      "found": [
+        "Entertaining customers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Shiu Kong rank in the second Popularity Poll?",
+      "id": "jjk-pg-shiu_kong-033",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "58th in the second Popularity Poll with 20 votes"
+      ],
+      "found": [
+        "58th in the second Popularity Poll with 20 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Shiu Kong rank in the third and fourth Popularity Polls?",
+      "id": "jjk-pg-shiu_kong-034",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "61st in the third Popularity Poll with 11 votes",
+        "62nd in the fourth Popularity Poll with 18 votes"
+      ],
+      "found": [
+        "61st in the third Popularity Poll with 11 votes",
+        "62nd in the fourth Popularity Poll with 18 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is Shiu Kong South Korean?",
+      "id": "jjk-pg-shiu_kong-035",
+      "subject": "Shiu Kong",
+      "accept": "all",
+      "expected": [
+        "Akutami's liking"
+      ],
+      "found": [
+        "Akutami's liking"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 34,
+    "fact_present": 34
+  }
+}

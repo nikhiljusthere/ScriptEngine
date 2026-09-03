@@ -1,0 +1,1690 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +81 hand-authored prose (ids 003-084); R5 forms: yes/no 035, comparative 059, counterfactual 085 (retired, not-stated-on-page), how-many 053/061; Music/Clips skipped per template, Navigation retired by page-gen; 063 retired router-gap (plural-ask -> roster)",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_21-085",
+   "item": "",
+   "question": "What would Geto's plans have looked like if none of the students acted as a landmine for Sukuna in Episode 21?",
+   "reason": "Not stated on the page: Episode 21 says only that Geto believes one of the students acts as a landmine for Sukuna and that killing the student would ruin 'all of their current plans'; it states no alternative plans or outcome had no student been a landmine.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_21-063",
+   "item": "bread or rice",
+   "question": "What are the students asked if they prefer in Episode 21's juju stroll?",
+   "reason": "Router gap (documented plural-wh limitation, new instance): 'What are the students asked if they prefer in Episode 21's juju stroll?' fires the plural_ask router signal (observed route: mode=roster, why='asks in the plural, which wants the list'), and an episode page's roster bundle carries only its character members - no prose - so the Juju Stroll answer 'bread or rice' is not served. The section is otherwise covered (064 'out of ideas' passed in qa). No .py change in the subagent contract; flagged for central triage alongside the scope-word / discourse-opener / 'whose' router fixes.",
+   "reason_class": "router-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_21-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 21's name?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "呪術甲子園",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_21-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 21's name?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Kōshien",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_21-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Koshien",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-004",
+   "kind": "fact",
+   "question": "When did Episode 21 air in Japan?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2021-03-06",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-005",
+   "kind": "fact",
+   "question": "When did Episode 21 air in the United States?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2021-04-23",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 21 belong to?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "VIVID VICE",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "give it back",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-009",
+   "kind": "fact",
+   "question": "Which manga chapters is Episode 21 adapted from?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 53",
+     "aliases": []
+    },
+    {
+     "item": "Chapter 54",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 20",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 22",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is this episode part of?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-013",
+   "kind": "fact",
+   "question": "Which new character is introduced in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uraume",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_21-014",
+   "kind": "fact",
+   "question": "What do Geto's schemes for Satoru Gojo move into in the aftermath of the curses' invasion in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the next phase of planning",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_21-015",
+   "kind": "fact",
+   "question": "Rather than mourn, what do the students decide to finish off the Goodwill Event with in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a competitive game of baseball",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_21-016",
+   "kind": "fact",
+   "question": "Where is Haruta Shigemo walking when he contemplates not being able to do anything during the invasion in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an underground cave",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-017",
+   "kind": "fact",
+   "question": "What does Hanami do to the cave that makes Haruta comment on how Hanami overworked themself in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "crashes from the ceiling",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-018",
+   "kind": "fact",
+   "question": "What does Haruta decide to do to Hanami before Mahito shows up and stops him in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "try to kill Hanami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-019",
+   "kind": "fact",
+   "question": "What does Haruta ask Mahito, who confirms it, in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "if Mahito finished the mission",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-020",
+   "kind": "fact",
+   "question": "What does Geto explain about Tengen's barrier in the flashback in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "changes positions everyday",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-021",
+   "kind": "fact",
+   "question": "Who does Geto say Tengen is in the flashback in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an immortal sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-022",
+   "kind": "fact",
+   "question": "Whom does Jogo ask about being stronger than Tengen in the flashback in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-023",
+   "kind": "fact",
+   "question": "Why don't they seal Gojo within the veil, according to Geto in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they don't want to direct his attention to Mahito's main mission",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-024",
+   "kind": "fact",
+   "question": "What does Geto believe one of the students acts as for Sukuna in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a landmine for Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-025",
+   "kind": "fact",
+   "question": "What does Jogo suggest they do to Sukuna's vessel in the flashback in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "kidnap Sukuna's vessel",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-026",
+   "kind": "fact",
+   "question": "What does Geto say Sukuna is for both them and Jujutsu High in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a bomb for both them and Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-027",
+   "kind": "fact",
+   "question": "What does Mahito say about Hanami after it admits to the difficulty of quelling their killing intent in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hanami is sounding more like a cursed spirit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-028",
+   "kind": "fact",
+   "question": "What does Ijichi confirm about the work behind the casualties and the stolen cursed objects in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it was the work of Mahito",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-029",
+   "kind": "fact",
+   "question": "What does Yaga say is best about informing the students and other sorcerers in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "keep it to just the higherups",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-030",
+   "kind": "fact",
+   "question": "What kind of monk does Juzo say he was tricked by to participate in the raid in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "white haired monk",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-031",
+   "kind": "fact",
+   "question": "What does Mei Mei ask Gojo if rings a bell in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "androgynous monk kid",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-032",
+   "kind": "fact",
+   "question": "Why does Gojo believe the invaders were able to sneak past Tengen's barrier in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the work of the special grade cursed spirit the students fought",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-033",
+   "kind": "fact",
+   "question": "What does Gojo say Tengen's barrier is only used for in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "hiding and not protecting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-034",
+   "kind": "fact",
+   "question": "What do the principals decide might be best after everything that has occurred in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cancel the Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-035",
+   "kind": "fact",
+   "question": "Does Gojo claim it is for the principals to decide whether the Goodwill Event is cancelled in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "its not for them to decide",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-036",
+   "kind": "fact",
+   "question": "What does Nobara ask about Yuji and Aoi in the healing ward in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "what's going on with Yuji and Aoi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-037",
+   "kind": "fact",
+   "question": "What does Yuji express being glad about regarding Megumi in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi isn't seriously hurt",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-038",
+   "kind": "fact",
+   "question": "What does Megumi ask for instead of pizza in the healing ward in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "something easier to digest",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-039",
+   "kind": "fact",
+   "question": "Why was Fushiguro able to get off easier, allowing Shoko to remove the Cursed Bud in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he was drained of cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-040",
+   "kind": "fact",
+   "question": "What does Megumi claim he'll do to Yuji in the healing ward in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "surpass him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-041",
+   "kind": "fact",
+   "question": "Whose friend does Aoi refer to when claiming he expects such things in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his brothers friend",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-042",
+   "kind": "fact",
+   "question": "What does Yuji state about his mindset at the time, leaving him unable to explain their bond in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "wasn't normal",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-043",
+   "kind": "fact",
+   "question": "Who speaks up that they should continue with the Goodwill Event, surprising everyone in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Aoi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-044",
+   "kind": "fact",
+   "question": "What does Gojo decide to remove from the Goodwill Event in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the individual part",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-045",
+   "kind": "fact",
+   "question": "What team event does Yuji end up choosing at random in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "baseball",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-046",
+   "kind": "fact",
+   "question": "Who is batting when the baseball game begins, while Utahime and Momo argue about the rules in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kasumi Miwa",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-047",
+   "kind": "fact",
+   "question": "Why did Noritoshi become a jujutsu sorcerer in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to help his mother",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-048",
+   "kind": "fact",
+   "question": "Why does Yuji say he wants to be a jujutsu sorcerer in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he wants to help people and so that he won't die alone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-049",
+   "kind": "fact",
+   "question": "How is Noritoshi dealt with by Maki after he decides not to swing in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "easily struck out",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-050",
+   "kind": "fact",
+   "question": "Who controls the pitching machine while Nobara steps up to bat in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mechamaru",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-051",
+   "kind": "fact",
+   "question": "Who does Nobara confront at first base before managing to hit the ball in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mai",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-052",
+   "kind": "fact",
+   "question": "Why does Megumi sacrifice himself on a bunt in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "so Nobara can move up a base",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-053",
+   "kind": "fact",
+   "question": "How many runs does the team appear to score, helped by Panda and Maki in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-054",
+   "kind": "fact",
+   "question": "What does Momo use to catch Maki's ball in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "her broom",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-055",
+   "kind": "fact",
+   "question": "What role does Aoi want Yuji to be in, rather than the catcher in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the pitcher",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-056",
+   "kind": "fact",
+   "question": "What does Maki do to Aoi in the face with the ball in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "strikes him in the face with the ball",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-057",
+   "kind": "fact",
+   "question": "What does Yuji realize about Todo after almost everyone congratulates Maki on the pitch in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "just how hated Todo is",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-058",
+   "kind": "fact",
+   "question": "Why doesn't Gakuganji hate Yuji, according to the principals' conversation in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the rules mean his presence cannot be condoned",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-059",
+   "kind": "fact",
+   "question": "How do the principals compare Sukuna and Yuji in terms of potential lives in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna could cause mass death but Yaga believes Yuji could save even more potential lives as a sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-060",
+   "kind": "fact",
+   "question": "Whom does Yaga regret, as an example of sorcerers experiencing regrets in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his former student, Suguru Geto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-061",
+   "kind": "fact",
+   "question": "How many points does Yuji's home run help Toge score in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-062",
+   "kind": "fact",
+   "question": "Which team is the winner of the 30th Annual Kyoto Goodwill Event in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_21-064",
+   "kind": "fact",
+   "question": "What does Yuji say about the showrunners as Panda sits down alone in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "out of ideas",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_21-065",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Haruta Shigemo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_21-066",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 21's order of appearance?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mai Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_21-067",
+   "kind": "fact",
+   "question": "What location is listed in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_21-068",
+   "kind": "fact",
+   "question": "What event is listed as concluded in Episode 21's Battles & Events?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Sister-School Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_21-069",
+   "kind": "fact",
+   "question": "What game is listed in Episode 21's Battles & Events?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Baseball Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_21-070",
+   "kind": "fact",
+   "question": "Which technique is listed under Hanami's Techniques in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Disaster Plants",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_21-071",
+   "kind": "fact",
+   "question": "Which technique is listed under Momo Nishimiya's Techniques in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tool Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_21-072",
+   "kind": "fact",
+   "question": "Which technique is listed under Satoru Gojo's Techniques in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Limitless",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_21-073",
+   "kind": "fact",
+   "question": "Which technique is listed under Shoko Ieiri's Techniques in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_21-074",
+   "kind": "fact",
+   "question": "What random fact about Kasumi Miwa is revealed during the game in Episode 21?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The mango she was letting ripen in the refrigerator is gone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-075",
+   "kind": "fact",
+   "question": "What does Momo Nishimiya's baseball experience amount to, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2L",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-076",
+   "kind": "fact",
+   "question": "What can Noritoshi Kamo write now, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his own name",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-077",
+   "kind": "fact",
+   "question": "What is Yuji Itadori's first impression of Iekei Ramen, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "I poop a lot the next day",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-078",
+   "kind": "fact",
+   "question": "What is Nobara Kugisaki awaiting, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "approval for a credit card",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-079",
+   "kind": "fact",
+   "question": "What does Mai Zenin hate, but got over recently, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "mangoes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-080",
+   "kind": "fact",
+   "question": "What does Panda want to do someday, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "punch a zebra",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-081",
+   "kind": "fact",
+   "question": "What is the one thing Maki Zenin can't tolerate, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "protein powder",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-082",
+   "kind": "fact",
+   "question": "What did Aoi Todo claim to win with Yuji, which Yuji denies in Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the middle school nationals",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-083",
+   "kind": "fact",
+   "question": "What does Toge Inumaki prefer for breakfast, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "bread",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  },
+  {
+   "id": "jjk-pg-episode_21-084",
+   "kind": "fact",
+   "question": "What does Megumi Fushiguro prefer in chicken nanban, according to Episode 21's trivia?",
+   "subject": "Episode 21",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "breast meat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_21"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Trivia"
+  }
+ ]
+}

@@ -21,6 +21,7 @@ Run against a scores file written by `canon_gold.py`:
     python scriptengine/eval/diagnose_misses.py "scripts output/canon_scores_after.json"
 """
 
+import io
 import json
 import sqlite3
 import sys
@@ -160,7 +161,7 @@ def _in_headings(headings: list[str], raw: list[str]) -> str:
     return ""
 
 
-def diagnose(scores_path: str) -> None:
+def diagnose(scores_path: str) -> str:
     with open(scores_path, encoding="utf-8") as handle:
         scores = json.load(handle)
 
@@ -309,6 +310,6 @@ if __name__ == "__main__":
     # Windows stdout defaults to cp1252, and half these wikis romanise with
     # macrons. Replacing an unrenderable character is right here: the artifact
     # is already on disk and this is only the human-readable echo of it.
-    if hasattr(sys.stdout, "reconfigure"):
+    if isinstance(sys.stdout, io.TextIOWrapper):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     diagnose(sys.argv[1] if len(sys.argv) > 1 else "canon_scores.json")

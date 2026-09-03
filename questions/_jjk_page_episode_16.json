@@ -1,0 +1,1474 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +69 hand-authored prose/infobox (ids 003-071); 1 in-batch pre-retire (retired-01, unstated counterfactual) + 1 router-gap retire (033, what-are plural-wh->roster, documented limitation)",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_16-retired-01",
+   "item": "",
+   "question": "What would have happened if Kokichi hadn't underestimated puppets?",
+   "reason": "Not stated on the page: Episode 16 says only that 'Kokichi lost because he underestimated puppets' and states no alternative outcome for the fight had he not.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_16-033",
+   "question": "What are cursed corpses?",
+   "item": "inanimate objects that house curses",
+   "reason": "Known router limitation (not a new shape): the documented plural-wh rule routes 'what are / who are' to roster (STATUS.md L134; HANDOFF_OPM misroute #2). Roster returns an enumeration and cannot surface the definitional prose; the answer is verbatim on the Episode 16 page (Plot Details) and qa would serve it, so the defect is a wrong-mode misroute, not a wrong page. The documented workaround (singular phrasing) was not applied, per the pass rule that router gaps are retired + flagged, not rephrased.",
+   "reason_class": "router-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_16-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 16's name?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "京都姉妹校交流会－団体戦②－",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_16-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 16's name?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyōto Shimai-kō Kōryū-kai -Dantai-sen ②-",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_16-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Sister School Goodwill Event - Team Battle, Part 2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-004",
+   "kind": "fact",
+   "question": "When did Episode 16 air in Japan?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2021-01-30",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-005",
+   "kind": "fact",
+   "question": "When did Episode 16 air in the United States?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2021-03-19",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 16 belong to?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "VIVID VICE",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "give it back",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-009",
+   "kind": "fact",
+   "question": "Which manga chapters is Episode 16 adapted from?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 37",
+     "aliases": []
+    },
+    {
+     "item": "Chapter 38",
+     "aliases": []
+    },
+    {
+     "item": "Chapter 39",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 15",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 17",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 16 part of?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-013",
+   "kind": "fact",
+   "question": "Which character is listed as new in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Arata Nitta",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_16-014",
+   "kind": "fact",
+   "question": "What is Aoi Todo determined to do in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "help his new best friend Yuji reach all new heights",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_16-015",
+   "kind": "fact",
+   "question": "What does Aoi teach Yuji about during their fight?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_16-016",
+   "kind": "fact",
+   "question": "What do Panda and Ultimate Mechamaru duel in, per Episode 16's summary?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a clash of cursed corpses",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_16-017",
+   "kind": "fact",
+   "question": "What cannot a hand progress faster than, per Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the eye",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-018",
+   "kind": "fact",
+   "question": "Who is impressed and almost engrossed in bliss by Yuji's strength?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The third-year",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-019",
+   "kind": "fact",
+   "question": "What does Aoi admit Divergent Fist is strong but will never be effective against?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a special grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-020",
+   "kind": "fact",
+   "question": "What does Divergent Fist take advantage of?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cursed energy that's left behind by Yuji's superhuman speed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-021",
+   "kind": "fact",
+   "question": "What does Aoi make Yuji understand he must do at the moment of impact?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "apply cursed energy at the moment of impact",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-022",
+   "kind": "fact",
+   "question": "What belief about emotions does the page mention?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "emotions build up in the stomach and spread throughout the body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-023",
+   "kind": "fact",
+   "question": "After thanking Aoi, what does Yuji do?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "shrouds his entire body in cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-024",
+   "kind": "fact",
+   "question": "What fantasy has Aoi created between him and Yuji?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the fantasy of best friends Aoi has created between them",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-025",
+   "kind": "fact",
+   "question": "Whom do Nobara and Panda taunt while she's still stuck in the tree?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Momo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-026",
+   "kind": "fact",
+   "question": "What does Nobara say she'll get payback on?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mai or the tin can from Kyoto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-027",
+   "kind": "fact",
+   "question": "What does Ultimate Mechamaru take offense to?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "being referred to as a tin can",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-028",
+   "kind": "fact",
+   "question": "Why does Panda say he and Mechamaru should get along?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they're both cursed corpses",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-029",
+   "kind": "fact",
+   "question": "What does the sorcerer in control of Mechamaru activate to unleash his technique?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sword Option + Boost On",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-030",
+   "kind": "fact",
+   "question": "What grade is Ultimate Mechamaru, per Panda's question?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "semi-first grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-031",
+   "kind": "fact",
+   "question": "Who does the page compare Mechamaru's semi-first grade to?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toge and Noritoshi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-032",
+   "kind": "fact",
+   "question": "How does Panda defend against Mechamaru's Ultra Cannon?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "reinforcing his body with cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-034",
+   "kind": "fact",
+   "question": "Whose masterpiece is Panda, per the page?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Masamichi Yaga",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-035",
+   "kind": "fact",
+   "question": "How does Panda overwhelm Mechamaru in close-quarters combat?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a series of unpredictable moves",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-036",
+   "kind": "fact",
+   "question": "What does Panda deduce about Mechamaru?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he's a puppet being controlled by someone else",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-037",
+   "kind": "fact",
+   "question": "What was Kokichi Muta born with that makes his body nearly useless?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a Heavenly Restriction",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-038",
+   "kind": "fact",
+   "question": "What is Kokichi's most powerful technique?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ultimate Cannon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-039",
+   "kind": "fact",
+   "question": "What does the clearing smoke reveal after Mechamaru believes he's won?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Panda's surprise form, Gorilla Mode",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-040",
+   "kind": "fact",
+   "question": "How many cursed corpse cores does Panda possess, and how does that compare to the standard?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    },
+    {
+     "item": "unlike the standard which is normally one",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-041",
+   "kind": "fact",
+   "question": "Whom are Panda's other two cores?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his brother and sister",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-042",
+   "kind": "fact",
+   "question": "What did Yaga tell Panda would happen whenever he needed help?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they will be there to lend him strength",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-043",
+   "kind": "fact",
+   "question": "What does Gorilla Mode break to send Mechamaru flying?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his Ultra Shield",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-044",
+   "kind": "fact",
+   "question": "What is Gorilla Mode's special ability?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Unblockable Drumming Beat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-045",
+   "kind": "fact",
+   "question": "Why is Panda's cursed energy running low even though he holds the advantage?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Panda's two other cores are damaged and he's going through cursed energy quickly",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-046",
+   "kind": "fact",
+   "question": "What does Mechamaru use to distract Panda atop the buildings?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a tile",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-047",
+   "kind": "fact",
+   "question": "How does Panda finish his fight with Mechamaru?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a powerful forward palm thrust that breaks his opponent apart",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-048",
+   "kind": "fact",
+   "question": "How can Panda fake his cores' locations?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "with cursed energy manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-049",
+   "kind": "fact",
+   "question": "What does Mechamaru commend Panda for?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "doing well for a puppet",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-050",
+   "kind": "fact",
+   "question": "Why did Kokichi lose to Panda?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he underestimated puppets",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-051",
+   "kind": "fact",
+   "question": "Does Panda consider Kokichi an enemy?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they're not enemies anyway",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-052",
+   "kind": "fact",
+   "question": "What does Panda offer Kokichi before leaving the event?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to help him in the future",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-053",
+   "kind": "fact",
+   "question": "What does Panda remember to ask Mechamaru to do before leaving?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "use his phone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-054",
+   "kind": "fact",
+   "question": "What does the fight prompt Kokichi to recall?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "memories of all his peers and his desire to walk among them",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-055",
+   "kind": "fact",
+   "question": "What does Kasumi realize about Maki when they clash?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "just how powerful the Tokyo second-year actually is",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_16-056",
+   "kind": "fact",
+   "question": "Why don't Mai and Momo ask Aoi and Noritoshi for help in the Juju Stroll?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "too much trouble",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_16-057",
+   "kind": "fact",
+   "question": "What do the three Kyoto girls tell Kokichi before running away?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they're counting on him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_16-058",
+   "kind": "fact",
+   "question": "What would happen if the girls said their thoughts out loud, per the Juju Stroll?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they wouldn't be able to ask Mechamaru for help anymore",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_16-059",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kiyotaka Ijichi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_16-060",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 16's order of appearance?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_16-061",
+   "kind": "fact",
+   "question": "Which location is listed in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_16-062",
+   "kind": "fact",
+   "question": "What event is listed at the top of Episode 16's Battles & Events?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Sister-School Goodwill Event",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_16-063",
+   "kind": "fact",
+   "question": "What battle is listed as concluded in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori vs. Aoi Todo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_16-064",
+   "kind": "fact",
+   "question": "What battle is listed in Episode 16 with no outcome noted?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Panda vs. Ultimate Mechamaru",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_16-065",
+   "kind": "fact",
+   "question": "What battle is listed as started in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki Zenin vs. Kasumi Miwa",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_16-066",
+   "kind": "fact",
+   "question": "Which technique is listed under Yuji Itadori's Techniques in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Divergent Fist",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_16-067",
+   "kind": "fact",
+   "question": "Which techniques are listed under Kokichi Muta's Techniques in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Puppet Manipulation",
+     "aliases": []
+    },
+    {
+     "item": "Ultimate Mechamaru",
+     "aliases": []
+    },
+    {
+     "item": "Sword Option",
+     "aliases": []
+    },
+    {
+     "item": "Ultra Spin",
+     "aliases": []
+    },
+    {
+     "item": "Ultra Shield",
+     "aliases": []
+    },
+    {
+     "item": "Boost On",
+     "aliases": []
+    },
+    {
+     "item": "Ultra Cannon",
+     "aliases": []
+    },
+    {
+     "item": "Albatross",
+     "aliases": []
+    },
+    {
+     "item": "Ultimate Cannon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_16-068",
+   "kind": "fact",
+   "question": "Which technique is listed under Momo Nishimiya's Techniques in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tool Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_16-069",
+   "kind": "fact",
+   "question": "Which techniques are listed under Panda's Techniques in Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gorilla Mode",
+     "aliases": []
+    },
+    {
+     "item": "Unblockable Drumming Beat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_16-070",
+   "kind": "fact",
+   "question": "What does the anime add compared to the manga, per Episode 16?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "scenes of Panda training with Principal Yaga are added",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_16-071",
+   "kind": "fact",
+   "question": "How is the fight between Panda and Mechamaru handled in the anime?",
+   "subject": "Episode 16",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the fight between Panda and Mechamaru is extended",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_16"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  }
+ ]
+}

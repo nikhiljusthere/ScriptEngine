@@ -1,0 +1,667 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Haba?",
+      "set": "Every named technique of Haba",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Haba",
+      "set": "Every battle involving Haba",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Haba?",
+      "found": [
+        "Helicopter Hair"
+      ],
+      "missing": [],
+      "members": [
+        "Helicopter Hair"
+      ]
+    },
+    {
+      "query": "Every battle involving Haba",
+      "found": [
+        "Yuji Itadori vs. Haba & Hanyu"
+      ],
+      "missing": [],
+      "members": [
+        "Yuji Itadori vs. Haba & Hanyu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Haba's name?",
+      "id": "jjk-pg-haba-001",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "\u7fbd\u5834"
+      ],
+      "found": [
+        "\u7fbd\u5834"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Haba's name?",
+      "id": "jjk-pg-haba-002",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Haba"
+      ],
+      "found": [
+        "Haba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Haba's race?",
+      "id": "jjk-pg-haba-003",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Haba's gender?",
+      "id": "jjk-pg-haba-004",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Haba?",
+      "id": "jjk-pg-haba-005",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Haba's occupation?",
+      "id": "jjk-pg-haba-006",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Haba first appear?",
+      "id": "jjk-pg-haba-007",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Haba first depicted?",
+      "id": "jjk-pg-haba-008",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Haba's Japanese voice actor?",
+      "id": "jjk-pg-haba-009",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Eiji Takemoto"
+      ],
+      "found": [
+        "Eiji Takemoto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Haba & Hanyu?",
+      "id": "jjk-pg-haba-010",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Yuji is victorious."
+      ],
+      "found": [
+        "Yuji is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-haba-011",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-haba-012",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Haba & Hanyu begin?",
+      "id": "jjk-pg-haba-013",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Haba & Hanyu depicted?",
+      "id": "jjk-pg-haba-014",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Haba & Hanyu take place?",
+      "id": "jjk-pg-haba-015",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Haba use in Yuji Itadori vs. Haba & Hanyu?",
+      "id": "jjk-pg-haba-016",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Helicopter Technique"
+      ],
+      "found": [
+        "Helicopter Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Haba play in the series?",
+      "id": "jjk-pg-haba-019",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Haba's Culling Game partner?",
+      "id": "jjk-pg-haba-020",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Hanyu"
+      ],
+      "found": [
+        "Hanyu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who defeated Haba and Hanyu?",
+      "id": "jjk-pg-haba-021",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Haba look like?",
+      "id": "jjk-pg-haba-022",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "a relatively short, mid-to-older-aged man with a muscular build"
+      ],
+      "found": [
+        "a relatively short, mid-to-older-aged man with a muscular build"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is connected to the top of Haba's head?",
+      "id": "jjk-pg-haba-023",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "a rotator with four propellers that spin and allow him to fly"
+      ],
+      "found": [
+        "a rotator with four propellers that spin and allow him to fly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Haba wear on his vest?",
+      "id": "jjk-pg-haba-024",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "a light-colored sleeveless zip-up vest decorated with a shark design on the front collar"
+      ],
+      "found": [
+        "a light-colored sleeveless zip-up vest decorated with a shark design on the front collar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Haba's personality described?",
+      "id": "jjk-pg-haba-025",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "an aggressive and haughty man"
+      ],
+      "found": [
+        "an aggressive and haughty man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cruel role did Haba likely play?",
+      "id": "jjk-pg-haba-026",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "forcing Rin Amai to do Hanyu's bidding against his will"
+      ],
+      "found": [
+        "forcing Rin Amai to do Hanyu's bidding against his will"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who marked Haba?",
+      "id": "jjk-pg-haba-027",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Haba undergo to use his cursed technique?",
+      "id": "jjk-pg-haba-028",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "having his brain adjusted to be able to use his cursed technique by Kenjaku"
+      ],
+      "found": [
+        "having his brain adjusted to be able to use his cursed technique by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Haba exploit to target new players?",
+      "id": "jjk-pg-haba-029",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Rin Amai"
+      ],
+      "found": [
+        "Rin Amai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuji knock Haba out in their fight?",
+      "id": "jjk-pg-haba-030",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "knocked out by Yuji's kick to his stomach"
+      ],
+      "found": [
+        "knocked out by Yuji's kick to his stomach"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Haba killed on November 14?",
+      "id": "jjk-pg-haba-031",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "killed by a female soldier and her squadron from the United States military"
+      ],
+      "found": [
+        "killed by a female soldier and her squadron from the United States military"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Haba boast his propeller could do?",
+      "id": "jjk-pg-haba-032",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "slash through steel"
+      ],
+      "found": [
+        "slash through steel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who soundly defeated Haba?",
+      "id": "jjk-pg-haba-033",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "players with strength comparable to grade 1 like Higuruma and Yuji"
+      ],
+      "found": [
+        "players with strength comparable to grade 1 like Higuruma and Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Haba's innate technique called?",
+      "id": "jjk-pg-haba-034",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "Helicopter Hair"
+      ],
+      "found": [
+        "Helicopter Hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Haba's cursed technique change his hair into?",
+      "id": "jjk-pg-haba-035",
+      "subject": "Haba",
+      "accept": "all",
+      "expected": [
+        "a propeller with four blades"
+      ],
+      "found": [
+        "a propeller with four blades"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 33,
+    "fact_present": 33
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Dabura Karaba?",
+      "set": "Every named technique of Dabura Karaba",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Dabura Karaba?",
+      "set": "Every ally of Dabura Karaba",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Dabura Karaba?",
+      "set": "Every friend of Dabura Karaba",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Dabura Karaba?",
+      "set": "Dabura Karaba's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Dabura Karaba?",
+      "found": [
+        "Black Rope",
+        "Reverse Cursed Technique",
+        "Domain Expansion",
+        "Light",
+        "Otherworld Between Darkness and Light: Reverse Transcendence"
+      ],
+      "missing": [],
+      "members": [
+        "Black Rope",
+        "Domain Expansion",
+        "Light",
+        "Otherworld Between Darkness and Light: Reverse Transcendence",
+        "Reverse Cursed Technique"
+      ]
+    },
+    {
+      "query": "What are all the allies of Dabura Karaba?",
+      "found": [
+        "Kou Usami",
+        "Cross Val Vol Yelvori",
+        "Marulu Val Vol Yelvori"
+      ],
+      "missing": [],
+      "members": [
+        "Cross Val Vol Yelvori",
+        "Kou Usami",
+        "Marulu Val Vol Yelvori"
+      ]
+    },
+    {
+      "query": "What are all the friends of Dabura Karaba?",
+      "found": [
+        "Dura Val Bobbidi Mechika",
+        "Yuka Okkotsu",
+        "Kyoko Tomoe"
+      ],
+      "missing": [],
+      "members": [
+        "Dura Val Bobbidi Mechika",
+        "Kyoko Tomoe",
+        "Yuka Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Dabura Karaba?",
+      "found": [
+        "Deskunte Tribe",
+        "Rumel Tribe"
+      ],
+      "missing": [],
+      "members": [
+        "Deskunte Tribe",
+        "Rumel Tribe"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Dabura Karaba's name?",
+      "id": "jjk-pg-dabura_karaba-001",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "\u30c0\u30d6\u30e9\u30fb\u30ab\u30e9\u30d0"
+      ],
+      "found": [
+        "\u30c0\u30d6\u30e9\u30fb\u30ab\u30e9\u30d0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Dabura Karaba's name?",
+      "id": "jjk-pg-dabura_karaba-002",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Dabura Karaba"
+      ],
+      "found": [
+        "Dabura Karaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dabura Karaba's race?",
+      "id": "jjk-pg-dabura_karaba-003",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Simurian"
+      ],
+      "found": [
+        "Simurian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dabura Karaba's gender?",
+      "id": "jjk-pg-dabura_karaba-004",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Dabura Karaba?",
+      "id": "jjk-pg-dabura_karaba-005",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dabura Karaba's occupation?",
+      "id": "jjk-pg-dabura_karaba-006",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Deskunte Warrior\nDeskunte Chieftain"
+      ],
+      "found": [
+        "Deskunte Warrior\nDeskunte Chieftain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Dabura Karaba first appear?",
+      "id": "jjk-pg-dabura_karaba-007",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 1"
+      ],
+      "found": [
+        "Modulo Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Dabura Karaba's most distinguishing features?",
+      "id": "jjk-pg-dabura_karaba-012",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "a pair of long, curved horns that extend upward and outward from the sides of his head"
+      ],
+      "found": [
+        "a pair of long, curved horns that extend upward and outward from the sides of his head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color are Dabura Karaba's eyes?",
+      "id": "jjk-pg-dabura_karaba-013",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "orange-red irises"
+      ],
+      "found": [
+        "orange-red irises"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Dabura Karaba's hair worn?",
+      "id": "jjk-pg-dabura_karaba-014",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "short along the top and sides while flowing freely from the back of his head"
+      ],
+      "found": [
+        "short along the top and sides while flowing freely from the back of his head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is unusual about Dabura Karaba's ear lobes?",
+      "id": "jjk-pg-dabura_karaba-015",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "greatly elongated, reaching down to his abdomen, with numerous piercings running down each of them"
+      ],
+      "found": [
+        "greatly elongated, reaching down to his abdomen, with numerous piercings running down each of them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Dabura Karaba's skin markings look like?",
+      "id": "jjk-pg-dabura_karaba-016",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "jagged, asymmetrical patterns across his skin"
+      ],
+      "found": [
+        "jagged, asymmetrical patterns across his skin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What encircles Dabura Karaba's third eye?",
+      "id": "jjk-pg-dabura_karaba-017",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "a distinct circular marking"
+      ],
+      "found": [
+        "a distinct circular marking"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dabura Karaba wear?",
+      "id": "jjk-pg-dabura_karaba-018",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "loose, flowing trousers secured at the waist by a wide belt"
+      ],
+      "found": [
+        "loose, flowing trousers secured at the waist by a wide belt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What wraps around Dabura Karaba's waist?",
+      "id": "jjk-pg-dabura_karaba-019",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Ten long, sash-like strips of dark fabric"
+      ],
+      "found": [
+        "Ten long, sash-like strips of dark fabric"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Dabura Karaba's demeanor described?",
+      "id": "jjk-pg-dabura_karaba-020",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "calm, aloof, and emotionally detached from others"
+      ],
+      "found": [
+        "calm, aloof, and emotionally detached from others"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shaped Dabura Karaba's emotional distance?",
+      "id": "jjk-pg-dabura_karaba-021",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "his immense strength and isolation"
+      ],
+      "found": [
+        "his immense strength and isolation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Dabura Karaba forced to kill Dura?",
+      "id": "jjk-pg-dabura_karaba-022",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Spejo was taken hostage"
+      ],
+      "found": [
+        "Spejo was taken hostage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role did Dabura Karaba assume at Dura's last request?",
+      "id": "jjk-pg-dabura_karaba-023",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "protector of the Rumel Tribe"
+      ],
+      "found": [
+        "protector of the Rumel Tribe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dabura Karaba recognize in Kou Usami?",
+      "id": "jjk-pg-dabura_karaba-024",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "the same indomitable spirit he once saw in Dura"
+      ],
+      "found": [
+        "the same indomitable spirit he once saw in Dura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dabura Karaba do when Cross Val Vol Yelvori was shot?",
+      "id": "jjk-pg-dabura_karaba-025",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "sliced off Yakumaru's arm"
+      ],
+      "found": [
+        "sliced off Yakumaru's arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Jujutsu Headquarters view Dabura Karaba?",
+      "id": "jjk-pg-dabura_karaba-026",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "an equivalent threat to Ryomen Sukuna"
+      ],
+      "found": [
+        "an equivalent threat to Ryomen Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which opponents of exceptional caliber has Dabura Karaba fought?",
+      "id": "jjk-pg-dabura_karaba-027",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Dura and Eight-Handled Sword Divergent Sila Divine General Mahoraga"
+      ],
+      "found": [
+        "Dura and Eight-Handled Sword Divergent Sila Divine General Mahoraga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Dabura Karaba's first innate technique described?",
+      "id": "jjk-pg-dabura_karaba-028",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "murderous intent given tangible form"
+      ],
+      "found": [
+        "murderous intent given tangible form"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Dabura Karaba's light beams do?",
+      "id": "jjk-pg-dabura_karaba-029",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "piercing opponents and causing mass destruction"
+      ],
+      "found": [
+        "piercing opponents and causing mass destruction"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can solidified light constructs do?",
+      "id": "jjk-pg-dabura_karaba-030",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "restrain the targets they pierced through or be stood on"
+      ],
+      "found": [
+        "restrain the targets they pierced through or be stood on"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dabura Karaba reverse Light into?",
+      "id": "jjk-pg-dabura_karaba-031",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "a swirling mass of darkness between his hands"
+      ],
+      "found": [
+        "a swirling mass of darkness between his hands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dabura Karaba's domain expansion called?",
+      "id": "jjk-pg-dabura_karaba-032",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Reverse Transcendence"
+      ],
+      "found": [
+        "Reverse Transcendence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Dabura Karaba learn to expand his domain?",
+      "id": "jjk-pg-dabura_karaba-033",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "by observing the barrier used to conceal Naunax"
+      ],
+      "found": [
+        "by observing the barrier used to conceal Naunax"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can the Black Rope do?",
+      "id": "jjk-pg-dabura_karaba-034",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "disrupt and cancel out the effects of cursed techniques"
+      ],
+      "found": [
+        "disrupt and cancel out the effects of cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Dabura Karaba find the Black Rope?",
+      "id": "jjk-pg-dabura_karaba-035",
+      "subject": "Dabura Karaba",
+      "accept": "all",
+      "expected": [
+        "Africa"
+      ],
+      "found": [
+        "Africa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 13,
+    "canon_total": 13,
+    "canon_recall": 1.0,
+    "members_returned": 13,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 31,
+    "fact_present": 31
+  }
+}

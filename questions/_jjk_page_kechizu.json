@@ -1,0 +1,826 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 23 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +16 prose pass (R5, 2026-08-27) ; +16 prose pass (R5 comparative present, 1 cf retired, 2 G5/G14 retrieval gaps: Q036 Decay verbatim, Q037 Trivia name readings; fix Q034 Rot Technique 'can', 2026-08-31) ; R6 (2026-09-01): 036 gold re-verbatim (possessive 'target's body' — the old span could never match under the norm's apostrophe fold); 036 recall closed by the R6 entity-anchored floor ; R6: 038 gold re-verbatim (kanji + romaji inline); 036 misroute to narrative root-caused to G20 (once-fronted clause read as a statement), fixed in the router",
+ "retired": [
+  {
+   "question": "What would have happened if Kechizu had fought Yuji without Eso?",
+   "reason": "counterfactual: outcome not stated on the page (Mai-Zenin precedent)",
+   "retired": "2026-08-31"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-kechizu-001",
+   "kind": "fact",
+   "question": "What are the kanji for Kechizu's name?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "血塗",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-kechizu-002",
+   "kind": "fact",
+   "question": "What is the romaji of Kechizu's name?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kechizu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-kechizu-003",
+   "kind": "fact",
+   "question": "What is Kechizu's race?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting Incarnation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-kechizu-004",
+   "kind": "fact",
+   "question": "How old is Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "150",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-kechizu-005",
+   "kind": "fact",
+   "question": "What is Kechizu's gender?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-kechizu-006",
+   "kind": "fact",
+   "question": "What is the status of Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-kechizu-007",
+   "kind": "fact",
+   "question": "What is Kechizu's grade?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Special Grade (Cursed Womb)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:class"
+  },
+  {
+   "id": "jjk-pg-kechizu-008",
+   "kind": "fact",
+   "question": "In which manga chapter does Kechizu first appear?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 55",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-kechizu-009",
+   "kind": "fact",
+   "question": "In which anime episode is Kechizu first depicted?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 22",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-kechizu-010",
+   "kind": "fact",
+   "question": "Who is Kechizu's Japanese voice actor?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kappei Yamaguchi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-kechizu-011",
+   "kind": "fact",
+   "question": "Who is Kechizu's English voice actor?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyle Hebert",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-kechizu-012",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji & Nobara are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:outcome"
+  },
+  {
+   "id": "jjk-pg-kechizu-013",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yasohachi Bridge",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:place"
+  },
+  {
+   "id": "jjk-pg-kechizu-014",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu begin?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 59",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:chapters"
+  },
+  {
+   "id": "jjk-pg-kechizu-015",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu depicted?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 23 - 24",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:episodes"
+  },
+  {
+   "id": "jjk-pg-kechizu-016",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:arc"
+  },
+  {
+   "id": "jjk-pg-kechizu-017",
+   "kind": "fact",
+   "question": "Which techniques did Kechizu use in Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rot Technique, Decay",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:techniques"
+  },
+  {
+   "id": "jjk-pg-kechizu-018",
+   "kind": "set",
+   "question": "What are all the named techniques of Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rot Technique",
+     "aliases": []
+    },
+    {
+     "item": "Decay",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-kechizu-019",
+   "kind": "set",
+   "question": "What are all the allies of Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito",
+     "aliases": []
+    },
+    {
+     "item": "Eso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:ally"
+  },
+  {
+   "id": "jjk-pg-kechizu-020",
+   "kind": "set",
+   "question": "What are all the families of Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    },
+    {
+     "item": "Eso",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-kechizu-021",
+   "kind": "set",
+   "question": "What are all the friends of Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Eso",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:friend"
+  },
+  {
+   "id": "jjk-pg-kechizu-022",
+   "kind": "set",
+   "question": "What are all the affiliations of Kechizu?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku's Group",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-kechizu-023",
+   "kind": "set",
+   "question": "Every battle involving Kechizu",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Nobara_Kugisaki_vs._Eso_&_Kechizu"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-kechizu-024",
+   "kind": "fact",
+   "question": "How does Kechizu appear compared to his more humanoid brothers?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "much more like a curse",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kechizu-025",
+   "kind": "fact",
+   "question": "What color is Kechizu and what physical features does he have?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "turquoise with a hunchback, claws, and two mouths with jagged teeth",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kechizu-026",
+   "kind": "fact",
+   "question": "What is unusual about Kechizu's head structure?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a small face on the upper part of his head and a giant mouth just beneath it",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kechizu-027",
+   "kind": "fact",
+   "question": "According to the fanbook, why does Kechizu vessel upper face remain?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kechizu's power as a cursed object is weaker than his older brothers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kechizu-028",
+   "kind": "fact",
+   "question": "How does Kechizu maturity compare to the other Death Painting Womb brothers?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the least mature of the three Death Painting Womb brothers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-kechizu-029",
+   "kind": "fact",
+   "question": "Who does Kechizu stay close to and call out for help?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Eso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-kechizu-030",
+   "kind": "fact",
+   "question": "What grade was Kechizu ranked as a cursed object?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "special grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-kechizu-031",
+   "kind": "fact",
+   "question": "Who incarnated Kechizu and for what purpose?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito's group in order to aid in helping curses take over Japan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-kechizu-032",
+   "kind": "fact",
+   "question": "Despite being the weakest of the three Death Painting brothers, what did Kechizu manage to do?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "land a surprise attack on Yuji",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-kechizu-033",
+   "kind": "fact",
+   "question": "What attribute does Kechizu have as a Death Painting Womb regarding cursed energy?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "transform his cursed energy into blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Death Painting Womb Physiology  death painting womb physiology"
+  },
+  {
+   "id": "jjk-pg-kechizu-034",
+   "kind": "fact",
+   "question": "What does Kechizu's Rot Technique let him do?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "can manipulate his body's corrosive blood which is capable of poisoning his targets",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kechizu-035",
+   "kind": "fact",
+   "question": "How does Kechizu generally attack his opponents?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "spewing blasts of rotten blood at his opponents burning their flesh on impact",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kechizu-036",
+   "kind": "fact",
+   "question": "Once Kechizu or Eso blood enters a target through wounds what happens during Decay?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+"item": "poison and decompose the target's body at the point of entry, forming a floral pattern",
+      "aliases": []
+     }
+    ],
+    "sources": [
+     "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+    ],
+    "verified": "2026-08-31",
+    "note": "prose: Cursed Technique  cursed technique | R6 (2026-09-01): gold fix — restored the possessive (the wiki says 'the target's body'; the norm folds the apostrophe, so the old 'target body' span could never word-boundary-match); recall of the beat itself is the R6 floor (G5/G14)"
+  },
+  {
+   "id": "jjk-pg-kechizu-037",
+   "kind": "fact",
+   "question": "Within what timeframe does Decay kill a person?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "within 10 to 15 minutes leaving only their bones behind",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kechizu-038",
+   "kind": "fact",
+   "question": "What do the readings for Kechizu name mean?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+"item": "Kechizu's name has the readings for \"blood\" 血 kechi and \"paint\" 塗 zu",
+      "aliases": []
+     }
+    ],
+    "sources": [
+     "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+    ],
+    "verified": "2026-08-31",
+    "note": "prose:Trivia trivia | R6 (2026-09-01): gold re-verbatim over the stored Trivia bullet (kanji + romaji 血 kechi / 塗 zu inline, G10 class) — the plain 'blood and paint' span was not contiguous in the stored text and could never match; recall itself is the R6 floor (G14)"
+  },
+  {
+   "id": "jjk-pg-kechizu-039",
+   "kind": "fact",
+   "question": "What is unique about Kechizu name among the Death Paintings members?",
+   "subject": "Kechizu",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "He is the only member of the Death Paintings whose name does not end in so",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kechizu"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  }
+ ]
+}

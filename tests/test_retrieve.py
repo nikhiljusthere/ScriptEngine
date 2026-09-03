@@ -72,7 +72,9 @@ class TestInstalmentOrdering:
         # "Chapter 10" sorts before "Chapter 9" as text, which would silently
         # scramble every timeline.
         titles = ["Chapter 10", "Chapter 9", "Chapter 100", "Chapter 2"]
-        ordered = sorted(titles, key=instalment_number)
+        ordered = sorted(
+            titles, key=lambda title: instalment_number(title) or (7, 0.0)
+        )
         assert ordered == ["Chapter 2", "Chapter 9", "Chapter 10", "Chapter 100"]
 
     def test_kinds_sort_separately(self):

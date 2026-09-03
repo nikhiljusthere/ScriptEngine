@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import pytest
+
 from scriptengine.api.context import (
     MAX_BEAT_CHARS,
     MAX_PARTICIPANTS,
@@ -248,3 +250,144 @@ class TestBattleFactsReachTheQaBundle:
         )
         rendered = [f"{f.get('field')} {f.get('value')}" for f in out["facts"]]
         assert any("Gachinko Fight Club" in line for line in rendered), rendered
+
+
+class TestQaRecallFloor:
+    """The subject page's own passages lead the qa budget walk (R6).
+
+    The G5/G11/G13/G14 family: a question authored against a page whose
+    phrasing's keywords missed the answer's words left the answer on the
+    page and below the ranked beam at once, so the answer was unservable.
+    The entity-anchored floor (`FactStore.passages_for_subject`, wired into
+    `_qa_context`) pays for the subject's own level-2 passages, in the
+    wiki's section order, before the ranked beam, so the answer is served
+    whether or not it outranked the corpus. Every case below measured
+    ABSENT against the pre-floor top-50 beam (budget 60000) and is a
+    verbatim span of the subject page -- the Kechizu and Tsumiki golds were
+    re-verbatim in R6, because a span the wiki does not hold can never
+    match no matter how well it is retrieved.
+    """
+
+    CASES = [
+        (
+            "jjk-pg-kechizu-036",
+            "Once Kechizu or Eso blood enters a target through wounds what happens during Decay?",
+            "Kechizu",
+            "poison and decompose the target's body at the point of entry, "
+            "forming a floral pattern",
+        ),
+        (
+            "jjk-pg-toge_inumaki-051",
+            "What gave Megumi and Noritoshi a chance against Hanami in their fight?",
+            "Toge Inumaki",
+            "an ability that could immobilize the special grade",
+        ),
+        (
+            "jjk-pg-tsumiki_fushiguro-129",
+            "What does the kanji in Tsumiki's surname mean?",
+            "Tsumiki Fushiguro",
+            'Tsumiki\'s surname contains the kanji for "prone, prostrated, '
+            'bend down, bow, cover, lay (pipes)" 伏 fushi and "black" 黒 kuro/guro',
+        ),
+    ]
+
+    @pytest.mark.parametrize("qid,question,subject,answer", CASES)
+    def test_a_sub_beam_answer_is_served_when_the_subject_resolves(
+        self, qid, question, subject, answer
+    ):
+        from scriptengine.api.context import build_context
+        from scriptengine.config import series_paths
+        from scriptengine.eval.canon_gold import haystack, norm, present
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        bundle = build_context(
+            paths, question, mode="qa",
+            token_budget=60000, top_k=50, subject=subject,
+        )
+        assert present(norm(answer), haystack(bundle)), (
+            f"{qid}: the subject's own passages lead the budget walk, so the "
+            f"verbatim answer must be in the bundle"
+        )
+
+    def test_an_unresolvable_subject_leaves_the_ranked_beam_alone(self):
+        from scriptengine.api.context import build_context
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        bundle = build_context(
+            paths, "What is the Shibuya Incident?", mode="qa",
+            token_budget=6000, top_k=8,
+            subject="A Page That Was Never Crawled",
+        )
+        # The floor is empty and the bundle is exactly what the ranked beam
+        # used to produce: beats, not an error, and no floor pages.
+        assert bundle["beats"]
+        assert all(b["doc_title"] != "A Page That Was Never Crawled"
+                   for b in bundle["beats"])
+
+
+class TestNarrativeRecallFloor:
+    """The authored event page's own sections lead the narrative walk.
+
+    A question written against a fight ("what happens after Yuji regains
+    control of his body?") routes narrative -- the verb asks for the story, not
+    a fact -- but its words resolve to the character the fight names, never the
+    fight's own page, where the Aftermath the question asks about is written.
+    The authored floor in ``_narrative_context`` (the narrative twin of qa's
+    R6) pays for that page's level-2 sections, in the wiki's section order,
+    before the query-driven timeline, so a battle question routed narrative can
+    read the battle it is about.
+    """
+
+    CASES = [
+        (
+            "jjk-pg-megumi_fushiguro_vs_sukuna-019",
+            "What happens after Yuji regains control of his body?",
+            "Megumi Fushiguro vs. Sukuna",
+            "Yuji quickly runs out of time and he collapses, "
+            "appearing to die to save Megumi from Sukuna",
+        ),
+    ]
+
+    @pytest.mark.parametrize("qid,question,subject,answer", CASES)
+    def test_an_authored_event_answer_is_served_when_the_route_is_narrative(
+        self, qid, question, subject, answer
+    ):
+        from scriptengine.api.context import build_context
+        from scriptengine.config import series_paths
+        from scriptengine.eval.canon_gold import haystack, norm, present
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        bundle = build_context(
+            paths, question, mode="narrative",
+            token_budget=60000, top_k=50, subject=subject,
+        )
+        assert present(norm(answer), haystack(bundle)), (
+            f"{qid}: the authored event page's sections lead the narrative walk, "
+            f"so the verbatim answer must be in the bundle"
+        )
+
+    def test_an_unresolvable_subject_leaves_the_narrative_walk_alone(self):
+        from scriptengine.api.context import build_context
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        bundle = build_context(
+            paths, "What happens during the Shibuya Incident?",
+            mode="narrative",
+            token_budget=6000, top_k=8,
+            subject="A Page That Was Never Crawled",
+        )
+        # The floor is empty and the bundle is exactly what the query-driven
+        # timeline used to produce: beats, not an error, and no floor pages.
+        assert bundle["beats"]
+        assert all(b["doc_title"] != "A Page That Was Never Crawled"
+                   for b in bundle["beats"])

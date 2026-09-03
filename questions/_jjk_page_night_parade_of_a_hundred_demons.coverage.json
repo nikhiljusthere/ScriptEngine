@@ -1,0 +1,57 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji"
+      ]
+    },
+    {
+      "path": "Prologue",
+      "covered_by": []
+    },
+    {
+      "path": "Event",
+      "covered_by": []
+    },
+    {
+      "path": "Aftermath",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Prologue",
+    "Event",
+    "Aftermath",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

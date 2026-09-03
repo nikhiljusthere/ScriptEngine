@@ -1,0 +1,1561 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Panda?",
+      "set": "Every named technique of Panda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Panda?",
+      "set": "Every enemy of Panda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Panda?",
+      "set": "Every friend of Panda",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the mentors of Panda?",
+      "set": "Every mentor of Panda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Panda?",
+      "set": "Panda's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Panda",
+      "set": "Every battle involving Panda",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Panda?",
+      "found": [
+        "Gorilla Mode",
+        "Unblockable Drumming Beat"
+      ],
+      "missing": [],
+      "members": [
+        "Gorilla Mode",
+        "Unblockable Drumming Beat"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Panda?",
+      "found": [
+        "Kokichi Muta",
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Kokichi Muta",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the friends of Panda?",
+      "found": [
+        "Kokichi Muta",
+        "Yuta Okkotsu",
+        "Kirara Hoshi",
+        "Maki Zenin",
+        "Toge Inumaki"
+      ],
+      "missing": [],
+      "members": [
+        "Kirara Hoshi",
+        "Kokichi Muta",
+        "Maki Zenin",
+        "Toge Inumaki",
+        "Yuta Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the mentors of Panda?",
+      "found": [
+        "Masamichi Yaga",
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "members": [
+        "Masamichi Yaga",
+        "Satoru Gojo"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Panda?",
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Tokyo Jujutsu High"
+      ]
+    },
+    {
+      "query": "Every battle involving Panda",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto",
+        "Megumi Fushiguro & Panda vs. Kirara Hoshi",
+        "Panda vs. Hajime Kashimo",
+        "Panda vs. Ultimate Mechamaru",
+        "Yuji Itadori vs. Panda"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto",
+        "Megumi Fushiguro & Panda vs. Kirara Hoshi",
+        "Panda vs. Hajime Kashimo",
+        "Panda vs. Ultimate Mechamaru",
+        "Yuji Itadori vs. Panda"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Panda's name?",
+      "id": "jjk-pg-panda-001",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "\u30d1\u30f3\u30c0"
+      ],
+      "found": [
+        "\u30d1\u30f3\u30c0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Panda's name?",
+      "id": "jjk-pg-panda-002",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda"
+      ],
+      "found": [
+        "Panda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's race?",
+      "id": "jjk-pg-panda-003",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Cursed Corpse"
+      ],
+      "found": [
+        "Cursed Corpse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's birthday?",
+      "id": "jjk-pg-panda-004",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "March 5"
+      ],
+      "found": [
+        "March 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's gender?",
+      "id": "jjk-pg-panda-005",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Panda?",
+      "id": "jjk-pg-panda-006",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's occupation?",
+      "id": "jjk-pg-panda-007",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Panda first appear?",
+      "id": "jjk-pg-panda-008",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-1 Chapter 10"
+      ],
+      "found": [
+        "Chapter 0-1 Chapter 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Panda first depicted?",
+      "id": "jjk-pg-panda-009",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Episode 5"
+      ],
+      "found": [
+        "Episode 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Panda's Japanese voice actor?",
+      "id": "jjk-pg-panda-010",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Tomokazu Seki"
+      ],
+      "found": [
+        "Tomokazu Seki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Panda's English voice actor?",
+      "id": "jjk-pg-panda-011",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Matthew David Rudd Tara Sands (Young)"
+      ],
+      "found": [
+        "Matthew David Rudd Tara Sands (Young)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's grade?",
+      "id": "jjk-pg-panda-012",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Semi-Grade 2"
+      ],
+      "found": [
+        "Semi-Grade 2"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's height?",
+      "id": "jjk-pg-panda-013",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Over 190 cm (Over 6'3\")"
+      ],
+      "found": [
+        "Over 190 cm (Over 6'3\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-panda-014",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-panda-015",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-panda-016",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-panda-017",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-panda-018",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-panda-019",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Panda use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-panda-020",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Gorilla Mode, Unblockable Drumming Beat (Failed)"
+      ],
+      "found": [
+        "Gorilla Mode, Unblockable Drumming Beat (Failed)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto?",
+      "id": "jjk-pg-panda-021",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto is victorious."
+      ],
+      "found": [
+        "Suguru Geto is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?",
+      "id": "jjk-pg-panda-022",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?",
+      "id": "jjk-pg-panda-023",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "December 24, 2017"
+      ],
+      "found": [
+        "December 24, 2017"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto begin?",
+      "id": "jjk-pg-panda-024",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto depicted?",
+      "id": "jjk-pg-panda-025",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?",
+      "id": "jjk-pg-panda-026",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Panda use in Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto?",
+      "id": "jjk-pg-panda-027",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Cursed Corpse, Gorilla Mode, Unblockable Drumming Beat"
+      ],
+      "found": [
+        "Cursed Corpse, Gorilla Mode, Unblockable Drumming Beat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro & Panda vs. Kirara Hoshi?",
+      "id": "jjk-pg-panda-028",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Megumi subdues Kirara."
+      ],
+      "found": [
+        "Megumi subdues Kirara."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+      "id": "jjk-pg-panda-029",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Gachinko Fight Club"
+      ],
+      "found": [
+        "Gachinko Fight Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+      "id": "jjk-pg-panda-030",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "November 11, 2018"
+      ],
+      "found": [
+        "November 11, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro & Panda vs. Kirara Hoshi begin?",
+      "id": "jjk-pg-panda-031",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 154"
+      ],
+      "found": [
+        "Chapter 154"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro & Panda vs. Kirara Hoshi depicted?",
+      "id": "jjk-pg-panda-032",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Episode 53"
+      ],
+      "found": [
+        "Episode 53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+      "id": "jjk-pg-panda-033",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Panda vs. Hajime Kashimo?",
+      "id": "jjk-pg-panda-034",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Hajime Kashimo is victorious."
+      ],
+      "found": [
+        "Hajime Kashimo is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Panda vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-panda-035",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Panda vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-panda-036",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Panda vs. Hajime Kashimo?",
+      "id": "jjk-pg-panda-037",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 184"
+      ],
+      "found": [
+        "Chapter 184"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Panda vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-panda-038",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Panda vs. Ultimate Mechamaru?",
+      "id": "jjk-pg-panda-039",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda is victorious."
+      ],
+      "found": [
+        "Panda is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Panda vs. Ultimate Mechamaru take place?",
+      "id": "jjk-pg-panda-040",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu School"
+      ],
+      "found": [
+        "Tokyo Jujutsu School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Panda vs. Ultimate Mechamaru begin?",
+      "id": "jjk-pg-panda-041",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 37"
+      ],
+      "found": [
+        "Chapter 37"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Panda vs. Ultimate Mechamaru depicted?",
+      "id": "jjk-pg-panda-042",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Episode 16"
+      ],
+      "found": [
+        "Episode 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Panda vs. Ultimate Mechamaru take place?",
+      "id": "jjk-pg-panda-043",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Panda?",
+      "id": "jjk-pg-panda-044",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori is victorious."
+      ],
+      "found": [
+        "Yuji Itadori is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Panda take place?",
+      "id": "jjk-pg-panda-045",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Gachinko Fight Club"
+      ],
+      "found": [
+        "Gachinko Fight Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Panda take place?",
+      "id": "jjk-pg-panda-046",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "November 10, 2018"
+      ],
+      "found": [
+        "November 10, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Panda?",
+      "id": "jjk-pg-panda-047",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Chapter 153"
+      ],
+      "found": [
+        "Chapter 153"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Panda depicted?",
+      "id": "jjk-pg-panda-048",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Episode 52"
+      ],
+      "found": [
+        "Episode 52"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Panda take place?",
+      "id": "jjk-pg-panda-049",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What grade of sorcerer is Panda, and what kind of cursed corpse is he?",
+      "id": "jjk-pg-panda-056",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda is a semi-grade 2 sorcerer and an Abrupt-Mutation cursed corpse, the most advanced of his kind."
+      ],
+      "found": [
+        "Panda is a semi-grade 2 sorcerer and an Abrupt-Mutation cursed corpse, the most advanced of his kind."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What allows Panda to exorcise curses based solely on his physical abilities?",
+      "id": "jjk-pg-panda-057",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "With a natural affinity for jujutsu, Panda is capable of exorcising curses based solely on his physical abilities."
+      ],
+      "found": [
+        "With a natural affinity for jujutsu, Panda is capable of exorcising curses based solely on his physical abilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Panda's intelligence give him an edge in a fight?",
+      "id": "jjk-pg-panda-058",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "He is highly intelligent and able to think one step ahead of his opponents in a fight."
+      ],
+      "found": [
+        "He is highly intelligent and able to think one step ahead of his opponents in a fight."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What makes Panda a unique challenge in battle, and how can he be taken down?",
+      "id": "jjk-pg-panda-059",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda's physiology also provides a unique challenge in battle. The only way to take him down is by destroying the cores of cursed energy that act as his heart."
+      ],
+      "found": [
+        "Panda's physiology also provides a unique challenge in battle. The only way to take him down is by destroying the cores of cursed energy that act as his heart."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How durable is Panda's body?",
+      "id": "jjk-pg-panda-060",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Additionally, his body is extremely durable and can be reinforced using cursed energy."
+      ],
+      "found": [
+        "Additionally, his body is extremely durable and can be reinforced using cursed energy."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Panda highly intelligent from a young age?",
+      "id": "jjk-pg-panda-061",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda was highly intelligent from a young age due to the circumstances of his creation and his education under Principal Yaga."
+      ],
+      "found": [
+        "Panda was highly intelligent from a young age due to the circumstances of his creation and his education under Principal Yaga."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Panda think in a fight?",
+      "id": "jjk-pg-panda-062",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "In a fight, Panda is highly analytical and tries to stay one step ahead of his opponent."
+      ],
+      "found": [
+        "In a fight, Panda is highly analytical and tries to stay one step ahead of his opponent."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Suguru Geto surprised by Panda?",
+      "id": "jjk-pg-panda-063",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Even Suguru Geto, a sorcerer with immense tactical reasoning, was surprised by Panda's cleverness in battle."
+      ],
+      "found": [
+        "Even Suguru Geto, a sorcerer with immense tactical reasoning, was surprised by Panda's cleverness in battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Panda approach every move against Mechamaru?",
+      "id": "jjk-pg-panda-064",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Against Mechamaru, Panda consistently thought about every move before he made it."
+      ],
+      "found": [
+        "Against Mechamaru, Panda consistently thought about every move before he made it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Panda avoid hitting his allies with Mechamaru's Ultimate Cannon?",
+      "id": "jjk-pg-panda-065",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "He was able to calculate the angle of Mechamaru's Ultimate Cannon so it wouldn't also hit his allies."
+      ],
+      "found": [
+        "He was able to calculate the angle of Mechamaru's Ultimate Cannon so it wouldn't also hit his allies."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Panda win the fight against Mechamaru?",
+      "id": "jjk-pg-panda-066",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "In that same battle, Panda fooled Mechamaru multiple times by faking an injury to his cores and won because his opponent underestimated his intelligence."
+      ],
+      "found": [
+        "In that same battle, Panda fooled Mechamaru multiple times by faking an injury to his cores and won because his opponent underestimated his intelligence."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many cores are inside Panda's body, and what are they?",
+      "id": "jjk-pg-panda-067",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "There exists three cores within Panda's body: the balanced-type Panda, the power-type Gorilla, and a third core, Triceratops."
+      ],
+      "found": [
+        "There exists three cores within Panda's body: the balanced-type Panda, the power-type Gorilla, and a third core, Triceratops."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens if one of Panda's cores is damaged?",
+      "id": "jjk-pg-panda-068",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "If any of these cores are damaged, Panda is unable to shift into that form until it recovers."
+      ],
+      "found": [
+        "If any of these cores are damaged, Panda is unable to shift into that form until it recovers."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Panda hide the real location of his cores?",
+      "id": "jjk-pg-panda-069",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda can manipulate his cursed energy to fake the location of these cores, effectively compensating for these weak points."
+      ],
+      "found": [
+        "Panda can manipulate his cursed energy to fake the location of these cores, effectively compensating for these weak points."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Panda's Triceratops Mode work?",
+      "id": "jjk-pg-panda-070",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "By switching to his \"sister's\" core, Panda can transform into a bipedal Triceratops form."
+      ],
+      "found": [
+        "By switching to his \"sister's\" core, Panda can transform into a bipedal Triceratops form."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Panda look like in Triceratops Mode?",
+      "id": "jjk-pg-panda-071",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "The appearance of Panda's body becomes more slender and feminine while his head takes on a wide Triceratops shape."
+      ],
+      "found": [
+        "The appearance of Panda's body becomes more slender and feminine while his head takes on a wide Triceratops shape."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Panda claim about his sister's form, and what is known about its abilities?",
+      "id": "jjk-pg-panda-072",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda claims his sister's form destroys everyone who looks at her because of her shyness, but this form's abilities have not been displayed and its capabilities are unknown."
+      ],
+      "found": [
+        "Panda claims his sister's form destroys everyone who looks at her because of her shyness, but this form's abilities have not been displayed and its capabilities are unknown."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What conventional weapon does Panda use in combat?",
+      "id": "jjk-pg-panda-073",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda sports knuckle bracers in combat to support his punch-focused style."
+      ],
+      "found": [
+        "Panda sports knuckle bracers in combat to support his punch-focused style."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Panda's knuckle bracers look like?",
+      "id": "jjk-pg-panda-074",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "They're a light blue color and are decorated with small panda heads in the center of each pair."
+      ],
+      "found": [
+        "They're a light blue color and are decorated with small panda heads in the center of each pair."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Panda's rank in the first Popularity Poll?",
+      "id": "jjk-pg-panda-075",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda ranked 14th in the first Popularity Poll with 2,508 votes."
+      ],
+      "found": [
+        "Panda ranked 14th in the first Popularity Poll with 2,508 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Panda's rank in the second Popularity Poll?",
+      "id": "jjk-pg-panda-076",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda ranked 18th in the second Popularity Poll with 474 votes."
+      ],
+      "found": [
+        "Panda ranked 18th in the second Popularity Poll with 474 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Panda's rank in the third Popularity Poll?",
+      "id": "jjk-pg-panda-077",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda ranked 15th in the third Popularity Poll with 344 votes."
+      ],
+      "found": [
+        "Panda ranked 15th in the third Popularity Poll with 344 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Panda's rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-panda-078",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Panda ranked 30th in the fourth Popularity Poll with 215 votes."
+      ],
+      "found": [
+        "Panda ranked 30th in the fourth Popularity Poll with 215 votes."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the official fanbook list as Panda's hobby?",
+      "id": "jjk-pg-panda-079",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "His hobby is collecting panda merch."
+      ],
+      "found": [
+        "His hobby is collecting panda merch."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's favorite food?",
+      "id": "jjk-pg-panda-080",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Favorite food: Calpas (a type of dried sausage snack in Japan)."
+      ],
+      "found": [
+        "Favorite food: Calpas (a type of dried sausage snack in Japan)."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Panda's least favorite food?",
+      "id": "jjk-pg-panda-081",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Least favorite food: Bamboo leaves."
+      ],
+      "found": [
+        "Least favorite food: Bamboo leaves."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What causes Panda stress?",
+      "id": "jjk-pg-panda-082",
+      "subject": "Panda",
+      "accept": "all",
+      "expected": [
+        "Cause of stress: When animals other than pandas are doted upon."
+      ],
+      "found": [
+        "Cause of stress: When animals other than pandas are doted upon."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 18,
+    "canon_total": 18,
+    "canon_recall": 1.0,
+    "members_returned": 18,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 76,
+    "fact_present": 76
+  }
+}

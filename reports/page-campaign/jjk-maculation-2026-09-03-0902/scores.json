@@ -1,0 +1,211 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Maculation",
+      "set": "Every battle involving Maculation",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Maculation",
+      "found": [
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu"
+      ],
+      "missing": [],
+      "members": [
+        "Marulu Val Vol Yelvori vs. Tsurugi Okkotsu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Maculation's name?",
+      "id": "jjk-pg-maculation-001",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "\u6591"
+      ],
+      "found": [
+        "\u6591"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Maculation's name?",
+      "id": "jjk-pg-maculation-002",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "Madara"
+      ],
+      "found": [
+        "Madara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maculation first appear?",
+      "id": "jjk-pg-maculation-003",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 5"
+      ],
+      "found": [
+        "Modulo Chapter 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Marulu Val Vol Yelvori vs. Tsurugi Okkotsu?",
+      "id": "jjk-pg-maculation-004",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "Tsurugi allows Maru to win."
+      ],
+      "found": [
+        "Tsurugi allows Maru to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-maculation-005",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "Tokyo, Japan"
+      ],
+      "found": [
+        "Tokyo, Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu take place?",
+      "id": "jjk-pg-maculation-006",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "January 14, 2087"
+      ],
+      "found": [
+        "January 14, 2087"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Marulu Val Vol Yelvori vs. Tsurugi Okkotsu begin?",
+      "id": "jjk-pg-maculation-007",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "Chapter 14"
+      ],
+      "found": [
+        "Chapter 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the user of Maculation activate the technique?",
+      "id": "jjk-pg-maculation-009",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "The user crouches down and activates Simple Domain, which briefly manifests as several interconnected domains around them."
+      ],
+      "found": [
+        "The user crouches down and activates Simple Domain, which briefly manifests as several interconnected domains around them."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the attack interception program in Maculation do?",
+      "id": "jjk-pg-maculation-010",
+      "subject": "Maculation",
+      "accept": "all",
+      "expected": [
+        "This Simple Domain incorporates a fully automatic attack interception program that enables the user to automatically block or evade any attacks made against them by intruders in the domain while simultaneously counterattacking. This technique is highly effective when facing multiple opponents."
+      ],
+      "found": [
+        "This Simple Domain incorporates a fully automatic attack interception program that enables the user to automatically block or evade any attacks made against them by intruders in the domain while simultaneously counterattacking. This technique is highly effective when facing multiple opponents."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 9,
+    "fact_present": 9
+  }
+}

@@ -1,0 +1,40 @@
+# Staged roster declarations for the Toji Fushiguro page campaign
+# (questions/_jjk_page_toji_fushiguro.section6.json, section 6:
+# counts / trivia / misc).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every conventional weapon Toji Fushiguro used` is the closed three-row set
+# of the `Equipment > Conventional Weaponry` group on `Toji Fushiguro`: a
+# normal katana, a small combat knife and a standard handgun, each named in
+# its own cell. It is the same declared-members shape as the `Cursed Tools`
+# group (section 2) and the infobox `affiliation`/`alias` fields (section 4):
+# the members are page-stated names, and the two without wiki pages are kept
+# by the declared-member filter. The companion count question
+# (jjk-pg-toji_fushiguro-256) golds the member count, `three`.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every kanji of Toji Fushiguro's name" -- the members would be the CJK
+#     characters 伏/黒/甚/爾, which have no wiki pages and exist only as
+#     Nihongo template arguments in the Trivia bullet, so the members =
+#     page-titles contract cannot be met. The kanji meanings are asked as
+#     trivia instead.
+#   * "How many kanji make up Toji Fushiguro's name?" -- the page names four
+#     kanji but never states the count, and a count with no closed declared
+#     set behind it cannot be golded.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every conventional weapon Toji Fushiguro used
+    match:
+      - every conventional weapon toji fushiguro used
+      - every conventional weapons toji fushiguro used
+      - all the conventional weapons toji fushiguro used
+      - conventional weapons toji fushiguro used
+      - how many conventional weapons did toji fushiguro use
+    subject: Toji Fushiguro
+    members:
+      - normal katana
+      - small combat knife
+      - standard handgun

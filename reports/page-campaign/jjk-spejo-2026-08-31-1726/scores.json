@@ -1,0 +1,337 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Spejo?",
+      "set": "Spejo's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Spejo?",
+      "found": [
+        "Deskunte Tribe"
+      ],
+      "missing": [],
+      "members": [
+        "Deskunte Tribe"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Spejo's name?",
+      "id": "jjk-pg-spejo-001",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "\u30b9\u30da\u30fc\u30b8\u30e7"
+      ],
+      "found": [
+        "\u30b9\u30da\u30fc\u30b8\u30e7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Spejo's name?",
+      "id": "jjk-pg-spejo-002",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "Sup\u0113jo"
+      ],
+      "found": [
+        "Sup\u0113jo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Spejo's race?",
+      "id": "jjk-pg-spejo-003",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "Simurian"
+      ],
+      "found": [
+        "Simurian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Spejo's gender?",
+      "id": "jjk-pg-spejo-004",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Spejo?",
+      "id": "jjk-pg-spejo-005",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Spejo first appear?",
+      "id": "jjk-pg-spejo-006",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 9 (Flashback) Modulo Chapter 23"
+      ],
+      "found": [
+        "Modulo Chapter 9 (Flashback) Modulo Chapter 23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Spejo play in the series?",
+      "id": "jjk-pg-spejo-008",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen Modulo series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen Modulo series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Spejo's older brother?",
+      "id": "jjk-pg-spejo-009",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "the younger sister of Dabura Karaba"
+      ],
+      "found": [
+        "the younger sister of Dabura Karaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Spejo look like?",
+      "id": "jjk-pg-spejo-010",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "a young woman with short green hair that barely extends past her face and bright yellow eyes"
+      ],
+      "found": [
+        "a young woman with short green hair that barely extends past her face and bright yellow eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Spejo's third eye aligned?",
+      "id": "jjk-pg-spejo-011",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "vertically aligned"
+      ],
+      "found": [
+        "vertically aligned"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Spejo remove from herself?",
+      "id": "jjk-pg-spejo-012",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "a pair of horns"
+      ],
+      "found": [
+        "a pair of horns"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Spejo's personality described?",
+      "id": "jjk-pg-spejo-013",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "rather aloof, similarly to her brother"
+      ],
+      "found": [
+        "rather aloof, similarly to her brother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Deskunte tribe demand from Rumel?",
+      "id": "jjk-pg-spejo-014",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "90% of Rumel's territory as reparations"
+      ],
+      "found": [
+        "90% of Rumel's territory as reparations"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Deskunte chieftain place on Spejo?",
+      "id": "jjk-pg-spejo-015",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "a death curse"
+      ],
+      "found": [
+        "a death curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dabura Karaba use to remove the curse placed on Spejo?",
+      "id": "jjk-pg-spejo-016",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "the cursed tool Black Rope"
+      ],
+      "found": [
+        "the cursed tool Black Rope"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did the Deskunte chieftain die?",
+      "id": "jjk-pg-spejo-017",
+      "subject": "Spejo",
+      "accept": "all",
+      "expected": [
+        "swiftly killed by Dabura"
+      ],
+      "found": [
+        "swiftly killed by Dabura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 16,
+    "fact_present": 16
+  }
+}

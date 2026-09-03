@@ -52,6 +52,16 @@ class TestWantsChronology:
     def test_membership_questions_are_not(self, query):
         assert not chronology.wants_chronology(query)
 
+    def test_consequence_words_do_not_ask_for_order(self):
+        # G8c (release R1): "consequences" carries "sequence" inside it, and the
+        # substring read sent a condition question down the order path.
+        assert not chronology.wants_chronology(
+            "Under what condition can Suguru Geto absorb a curse with no consequences?"
+        )
+        assert not chronology.wants_chronology(
+            "What are the consequences of a curse user's death?"
+        )
+
 
 class TestChains:
     def test_only_arcs_are_walked(self):
@@ -400,6 +410,7 @@ class TestScaffold:
         paths = paths_for("opm")
         with FactStore(paths.facts_db) as store:
             section = chronology.scaffold(store, "Garou", "Hero Hunt Arc")
+        assert section is not None
         keys = [" ".join(b.text.split())[:120].lower() for b in section.beats]
         assert len(keys) == len(set(keys))
 
@@ -408,6 +419,7 @@ class TestScaffold:
         paths = paths_for("opm")
         with FactStore(paths.facts_db) as store:
             section = chronology.scaffold(store, "Garou", "Hero Hunt Arc")
+        assert section is not None
         for tie in section.relations:
             assert "Ominous Future" not in tie
 

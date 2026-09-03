@@ -189,9 +189,9 @@ class VectorStore:
         return [
             {
                 "chunk_id": int(hit.id),
-                "doc_title": hit.payload.get("doc_title", ""),
-                "breadcrumb": hit.payload.get("breadcrumb", ""),
-                "level": hit.payload.get("level", 2),
+                "doc_title": (hit.payload or {}).get("doc_title", ""),
+                "breadcrumb": (hit.payload or {}).get("breadcrumb", ""),
+                "level": (hit.payload or {}).get("level", 2),
                 "vector_score": float(hit.score),
             }
             for hit in hits

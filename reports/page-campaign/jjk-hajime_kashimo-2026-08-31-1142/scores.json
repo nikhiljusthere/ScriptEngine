@@ -1,0 +1,1321 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Hajime Kashimo?",
+      "set": "Every named technique of Hajime Kashimo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Hajime Kashimo?",
+      "set": "Every ally of Hajime Kashimo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Hajime Kashimo?",
+      "set": "Hajime Kashimo's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hajime Kashimo",
+      "set": "Every battle involving Hajime Kashimo",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Hajime Kashimo?",
+      "found": [
+        "Hollow Wicker Basket",
+        "Mythical Beast Amber"
+      ],
+      "missing": [],
+      "members": [
+        "Hollow Wicker Basket",
+        "Mythical Beast Amber"
+      ]
+    },
+    {
+      "query": "What are all the allies of Hajime Kashimo?",
+      "found": [
+        "Kenjaku",
+        "Kinji Hakari"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Kinji Hakari"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Hajime Kashimo?",
+      "found": [
+        "The God of Lightning"
+      ],
+      "missing": [],
+      "members": [
+        "The God of Lightning"
+      ]
+    },
+    {
+      "query": "Every battle involving Hajime Kashimo",
+      "found": [
+        "Hajime Kashimo vs. Sukuna",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Kinji Hakari vs. Charles Bernard",
+        "Kinji Hakari vs. Hajime Kashimo",
+        "Panda vs. Hajime Kashimo"
+      ],
+      "missing": [],
+      "members": [
+        "Hajime Kashimo vs. Sukuna",
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Kinji Hakari vs. Charles Bernard",
+        "Kinji Hakari vs. Hajime Kashimo",
+        "Panda vs. Hajime Kashimo"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hajime Kashimo's name?",
+      "id": "jjk-pg-hajime_kashimo-001",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "\u9e7f\u7d2b\u96f2\u4e00"
+      ],
+      "found": [
+        "\u9e7f\u7d2b\u96f2\u4e00"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hajime Kashimo's name?",
+      "id": "jjk-pg-hajime_kashimo-002",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Kashimo Hajime"
+      ],
+      "found": [
+        "Kashimo Hajime"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hajime Kashimo's race?",
+      "id": "jjk-pg-hajime_kashimo-003",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Hajime Kashimo?",
+      "id": "jjk-pg-hajime_kashimo-004",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "400+"
+      ],
+      "found": [
+        "400+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hajime Kashimo's gender?",
+      "id": "jjk-pg-hajime_kashimo-005",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Hajime Kashimo?",
+      "id": "jjk-pg-hajime_kashimo-006",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hajime Kashimo's occupation?",
+      "id": "jjk-pg-hajime_kashimo-007",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hajime Kashimo first appear?",
+      "id": "jjk-pg-hajime_kashimo-008",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 158"
+      ],
+      "found": [
+        "Chapter 158"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Hajime Kashimo first depicted?",
+      "id": "jjk-pg-hajime_kashimo-009",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Episode 53"
+      ],
+      "found": [
+        "Episode 53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Hajime Kashimo's Japanese voice actor?",
+      "id": "jjk-pg-hajime_kashimo-010",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Ry\u014dhei Kimura"
+      ],
+      "found": [
+        "Ry\u014dhei Kimura"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Hajime Kashimo's English voice actor?",
+      "id": "jjk-pg-hajime_kashimo-011",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Zeno Robinson"
+      ],
+      "found": [
+        "Zeno Robinson"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Hajime Kashimo vs. Sukuna?",
+      "id": "jjk-pg-hajime_kashimo-012",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hajime Kashimo vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-013",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Makyo Shinjuku"
+      ],
+      "found": [
+        "Makyo Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Hajime Kashimo vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-014",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hajime Kashimo vs. Sukuna begin?",
+      "id": "jjk-pg-hajime_kashimo-015",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 237"
+      ],
+      "found": [
+        "Chapter 237"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Hajime Kashimo vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-016",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-hajime_kashimo-017",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-018",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-019",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-hajime_kashimo-020",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-021",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Charles Bernard?",
+      "id": "jjk-pg-hajime_kashimo-022",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Kinji Hakari is victorious."
+      ],
+      "found": [
+        "Kinji Hakari is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-hajime_kashimo-023",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-hajime_kashimo-024",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Charles Bernard begin?",
+      "id": "jjk-pg-hajime_kashimo-025",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 182"
+      ],
+      "found": [
+        "Chapter 182"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-hajime_kashimo-026",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Hajime Kashimo?",
+      "id": "jjk-pg-hajime_kashimo-027",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Hakari is victorious."
+      ],
+      "found": [
+        "Hakari is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-hajime_kashimo-028",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-hajime_kashimo-029",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Hajime Kashimo begin?",
+      "id": "jjk-pg-hajime_kashimo-030",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 186"
+      ],
+      "found": [
+        "Chapter 186"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-hajime_kashimo-031",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Panda vs. Hajime Kashimo?",
+      "id": "jjk-pg-hajime_kashimo-032",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Hajime Kashimo is victorious."
+      ],
+      "found": [
+        "Hajime Kashimo is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Panda vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-hajime_kashimo-033",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Panda vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-hajime_kashimo-034",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Panda vs. Hajime Kashimo?",
+      "id": "jjk-pg-hajime_kashimo-035",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 184"
+      ],
+      "found": [
+        "Chapter 184"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Panda vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-hajime_kashimo-036",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color were Hajime Kashimo's eyes in his original body?",
+      "id": "jjk-pg-hajime_kashimo-041",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "cyan-colored"
+      ],
+      "found": [
+        "cyan-colored"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Hajime Kashimo's hair styled in his original body?",
+      "id": "jjk-pg-hajime_kashimo-042",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "long cyan-colored hair tied together in a disheveled style"
+      ],
+      "found": [
+        "long cyan-colored hair tied together in a disheveled style"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hajime Kashimo wear in his original body?",
+      "id": "jjk-pg-hajime_kashimo-043",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "a traditional dark-colored haori"
+      ],
+      "found": [
+        "a traditional dark-colored haori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Hajime live according to the wiki?",
+      "id": "jjk-pg-hajime_kashimo-044",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "400 years ago"
+      ],
+      "found": [
+        "400 years ago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of man was Hajime at the end of his life?",
+      "id": "jjk-pg-hajime_kashimo-045",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "an elderly man"
+      ],
+      "found": [
+        "an elderly man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What description applies to Hajime as a type of jujutsu sorcerer?",
+      "id": "jjk-pg-hajime_kashimo-046",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "the perfect example of a jujutsu sorcerer from the past who lives for fighting strong opponents"
+      ],
+      "found": [
+        "the perfect example of a jujutsu sorcerer from the past who lives for fighting strong opponents"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Hajime's emotional state towards the end of his life?",
+      "id": "jjk-pg-hajime_kashimo-047",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "bored and unsatisfied with the battles he fought"
+      ],
+      "found": [
+        "bored and unsatisfied with the battles he fought"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Hajime agree to Kenjaku's terms?",
+      "id": "jjk-pg-hajime_kashimo-048",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "in order to fight Sukuna, the most powerful potential opponent"
+      ],
+      "found": [
+        "in order to fight Sukuna, the most powerful potential opponent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kenjaku rate Hajime's strength relative to Sukuna?",
+      "id": "jjk-pg-hajime_kashimo-049",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "inferior to Sukuna"
+      ],
+      "found": [
+        "inferior to Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku do to invite Hajime to participate in the Culling Game?",
+      "id": "jjk-pg-hajime_kashimo-050",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "entered a binding vow"
+      ],
+      "found": [
+        "entered a binding vow"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could Hajime do as an elderly man on battlefields?",
+      "id": "jjk-pg-hajime_kashimo-051",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "decimate entire battlefields and leave numerous dismembered corpses in his wake"
+      ],
+      "found": [
+        "decimate entire battlefields and leave numerous dismembered corpses in his wake"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hajime prefer over using his cursed technique in combat?",
+      "id": "jjk-pg-hajime_kashimo-052",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "close combat"
+      ],
+      "found": [
+        "close combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Hajime overwhelm his opponents in hand-to-hand combat?",
+      "id": "jjk-pg-hajime_kashimo-053",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "flurries of strikes supplemented by electrified cursed energy"
+      ],
+      "found": [
+        "flurries of strikes supplemented by electrified cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hajime do when Panda landed Unblockable Drumming Beat on him?",
+      "id": "jjk-pg-hajime_kashimo-054",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "took a single hit from Panda's Unblockable Drumming Beat and could tell it dealt internal damage"
+      ],
+      "found": [
+        "took a single hit from Panda's Unblockable Drumming Beat and could tell it dealt internal damage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hajime deal with Panda's Unblockable Drumming Beat attack?",
+      "id": "jjk-pg-hajime_kashimo-055",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "using superior speed and fighting technique to effortlessly outmaneuver and overpower Gorilla Mode"
+      ],
+      "found": [
+        "using superior speed and fighting technique to effortlessly outmaneuver and overpower Gorilla Mode"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the property of Hajime's cursed energy?",
+      "id": "jjk-pg-hajime_kashimo-056",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "electric current"
+      ],
+      "found": [
+        "electric current"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What natural resistance does Hajime have due to his cursed energy?",
+      "id": "jjk-pg-hajime_kashimo-057",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "natural resistance to electricity"
+      ],
+      "found": [
+        "natural resistance to electricity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hajime's natural weakness related to water?",
+      "id": "jjk-pg-hajime_kashimo-058",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "a natural weakness to water"
+      ],
+      "found": [
+        "a natural weakness to water"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hajime Kashimo's innate technique manifest from cursed energy?",
+      "id": "jjk-pg-hajime_kashimo-059",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "phenomena of electricity"
+      ],
+      "found": [
+        "phenomena of electricity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why can Hajime use his innate technique only once before his flesh collapses?",
+      "id": "jjk-pg-hajime_kashimo-060",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Kashimo's body far surpasses the realm of humans when using his technique"
+      ],
+      "found": [
+        "Kashimo's body far surpasses the realm of humans when using his technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What anti-domain technique did Hajime intend to use against Kinji Hakari's Idle Death Gamble?",
+      "id": "jjk-pg-hajime_kashimo-061",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Hollow Wicker Basket"
+      ],
+      "found": [
+        "Hollow Wicker Basket"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hollow Wicker Basket described as in relation to Simple Domain?",
+      "id": "jjk-pg-hajime_kashimo-062",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "the anti-domain technique predecessor to Simple Domain"
+      ],
+      "found": [
+        "the anti-domain technique predecessor to Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hajime's Nyoi Staff function as in battle?",
+      "id": "jjk-pg-hajime_kashimo-063",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "a lightning rod for accumulating his charges"
+      ],
+      "found": [
+        "a lightning rod for accumulating his charges"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hajime do with his staff during combat that was notable?",
+      "id": "jjk-pg-hajime_kashimo-064",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "crudely snap an arm"
+      ],
+      "found": [
+        "crudely snap an arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hajime Kashimo vs. Sukuna take place?",
+      "id": "jjk-pg-hajime_kashimo-065",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Makyo Shinjuku"
+      ],
+      "found": [
+        "Makyo Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does the clash between Hajime and Sukuna begin?",
+      "id": "jjk-pg-hajime_kashimo-066",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "Chapter 237"
+      ],
+      "found": [
+        "Chapter 237"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the kanji mean in the first part of Hajime's name?",
+      "id": "jjk-pg-hajime_kashimo-067",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "one, first"
+      ],
+      "found": [
+        "one, first"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What position did Hajime rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-hajime_kashimo-068",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "15th"
+      ],
+      "found": [
+        "15th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Hajime receive in the fourth Popularity Poll?",
+      "id": "jjk-pg-hajime_kashimo-069",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "1,393 votes"
+      ],
+      "found": [
+        "1,393 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What position did Hajime rank in the third Popularity Poll?",
+      "id": "jjk-pg-hajime_kashimo-070",
+      "subject": "Hajime Kashimo",
+      "accept": "all",
+      "expected": [
+        "18th"
+      ],
+      "found": [
+        "18th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 66,
+    "fact_present": 66
+  }
+}

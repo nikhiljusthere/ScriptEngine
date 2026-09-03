@@ -1,0 +1,1018 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 3 (relationships & people) of the Angel cluster. Q103 and Q128 are the two closed sets the page actually closes (the Desshi Pacification Squad's clan composition, and the hotel group the Angel reveals herself to), staged in _jjk_page_angel.decl3.yaml (G6, declared-roster-wins); the 40 fact questions cover Angel's relationships -- Hana Kurusu (symbiotic vessel), the Heian-era Desshi Pacification Squad, Kenjaku (the deal she struck, now opposed), Sukuna (the 'Disgraced One' she most strongly wants to kill), the present-day sorcerers she allies with, and the Culling Game / Shinjuku Showdown beats. Golds are NFKD-verbatim on the Angel page and present in the live bundle; the roster candidates the page does not close and the unstated relationship predicates are retired with reasons.",
+ "retired": [
+  {
+   "id": "jjk-pg-angel-retired-s3-01",
+   "question": "Every member of the Desshi Pacification Squad",
+   "item": "",
+   "reason": "The page does not enumerate the squad's individual members; it states only the contributing clans ('the Abe Clan's elite forces that also included the Sugawara Clan's remnants'), which is the closed set staged as id 103.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-02",
+   "question": "Every Culling Game player Angel is related to or fought",
+   "item": "",
+   "reason": "Predicate roster the page does not close: related or fought players (Maki Zenin, Kogane, Sukuna) appear in scattered scene beats, and no closed list of players is stated on the page.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-03",
+   "question": "Every person who saved or healed Hana Kurusu",
+   "item": "",
+   "reason": "The page hedges: 'saved earlier by Rin Amai and possibly Takaba'; the 'possibly' leaves the set open, so it is not closed.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-04",
+   "question": "Every incarnated Culling Game player the Angel seeks to kill",
+   "item": "",
+   "reason": "The page targets 'all her fellow incarnated players' in general but names only one specifically (Sukuna, the 'Disgraced One'); no closed roster of incarnated players is stated on the page.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-05",
+   "question": "Every present-day ally of the Angel",
+   "item": "",
+   "reason": "The page lists 'Megumi, Yuji Itadori, and co.'; the 'and co.' leaves the ally set open.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-06",
+   "question": "Who does the Angel distrust?",
+   "item": "",
+   "reason": "Not stated on the page; the only trust gap the page states runs the other way (Yuji Itadori 'takes no orders from someone he does not trust' -- the Angel).",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-07",
+   "question": "Who does the Angel respect or look up to?",
+   "item": "",
+   "reason": "Not stated on the page; no admired or looked-up-to person is named.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s3-08",
+   "question": "Who are Hana Kurusu's relatives?",
+   "item": "",
+   "reason": "Not stated on the page; no kin of either Hana or the Angel is named.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-angel-101",
+   "kind": "fact",
+   "question": "What was the name of the squad the Angel was part of during the Heian Era?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "Desshi Pacification Squad",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / History: 'the Angel was part of the so-called Desshi Pacification Squad, the Abe Clan's elite forces that also included the Sugawara Clan's remnants.'"
+  },
+  {
+   "id": "jjk-pg-angel-102",
+   "kind": "fact",
+   "question": "Whose remnants were also included in the Desshi Pacification Squad?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "Sugawara Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / History: 'the Abe Clan's elite forces that also included the Sugawara Clan's remnants.'"
+  },
+  {
+   "id": "jjk-pg-angel-103",
+   "kind": "set",
+   "question": "Every clan that made up the Desshi Pacification Squad",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Abe Clan",
+     "aliases": []
+    },
+    {
+     "item": "Sugawara Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed composition the Synopsis / History section states: the squad was 'the Abe Clan's elite forces that also included the Sugawara Clan's remnants.' Staged in _jjk_page_angel.decl3.yaml (G6, declared-roster-wins). The squad's individual members are not listed on the page (retired as a roster)."
+  },
+  {
+   "id": "jjk-pg-angel-104",
+   "kind": "fact",
+   "question": "Who did the Desshi Pacification Squad attack during the Heian Era?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / History: 'the squad made an attack on Sukuna, but they were repelled by the King of Curses wielding his two weapons.'"
+  },
+  {
+   "id": "jjk-pg-angel-105",
+   "kind": "fact",
+   "question": "Who repelled the Desshi Pacification Squad during the Heian Era?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis / History: 'they were repelled by the King of Curses' (the King of Curses being Sukuna, the squad's target)."
+  },
+  {
+   "id": "jjk-pg-angel-106",
+   "kind": "fact",
+   "question": "Who did the Angel strike a deal with for a chance to incarnate?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 199 and 220",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'the Angel did strike a deal with the malefic Kenjaku for a chance to incarnate'; History: 'the Angel accepted an invitation from Kenjaku to undergo incarnation after death.'"
+  },
+  {
+   "id": "jjk-pg-angel-107",
+   "kind": "fact",
+   "question": "Who does the Angel suspect is behind the mass slaughter of non-sorcerers by curses?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 209",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'the Angel rightly suspects that this must be due to Kenjaku's machinations, aimed at the mass slaughter of non-sorcerers by curses.'"
+  },
+  {
+   "id": "jjk-pg-angel-108",
+   "kind": "fact",
+   "question": "Who, alongside Sukuna, does the Angel advise the sorcerers to deal with?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 240",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'the Angel offers advice on how to deal with Sukuna and Kenjaku, stating that they ought to attack Kenjaku before Sukuna's and Gojo's fight ends.'"
+  },
+  {
+   "id": "jjk-pg-angel-109",
+   "kind": "fact",
+   "question": "Who does the Angel most strongly desire to kill?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'the latter of whom the Angel calls \"Disgraced One\" and most strongly desires to kill.'"
+  },
+  {
+   "id": "jjk-pg-angel-110",
+   "kind": "fact",
+   "question": "What does the Angel call Sukuna?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "Disgraced One",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'the Angel calls \"Disgraced One\"'; Culling Game Arc: 'one incarnation specifically: the \"Disgraced One\" (Sukuna).'"
+  },
+  {
+   "id": "jjk-pg-angel-111",
+   "kind": "fact",
+   "question": "Who does the Angel actively oppose alongside Kenjaku?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'she has since dedicated her time to actively opposing both him and Sukuna.'"
+  },
+  {
+   "id": "jjk-pg-angel-112",
+   "kind": "fact",
+   "question": "Whose body did the Angel come to possess?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'having come to possess Hana Kurusu's body'; History: 'She ultimately came to inhabit the body of a young girl, Hana Kurusu, in the present day.'"
+  },
+  {
+   "id": "jjk-pg-angel-113",
+   "kind": "fact",
+   "question": "What kind of relationship does the Angel have with Hana Kurusu?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "symbiotic relationship",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "History: 'Unlike most incarnations, the Angel allowed Hana to remain in control of herself, hence forming a symbiotic relationship of incarnate and vessel.'"
+  },
+  {
+   "id": "jjk-pg-angel-114",
+   "kind": "fact",
+   "question": "Who does the Angel allow to remain in control of their shared body?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "History: 'the Angel allowed Hana to remain in control of herself'; Personality: 'leaving Hana with default control of their shared body.'"
+  },
+  {
+   "id": "jjk-pg-angel-115",
+   "kind": "fact",
+   "question": "Who does the Angel tease about her secret feelings for Megumi?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'The Angel is close enough to Hana to know about her past and secret feelings for Megumi, which she was shown teasing the girl with in a light-hearted manner.'"
+  },
+  {
+   "id": "jjk-pg-angel-116",
+   "kind": "fact",
+   "question": "Who does the Angel prioritize protecting over saving the innocent?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 210",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'The Angel has been shown to prioritize Hana's protection over saving the innocent.'"
+  },
+  {
+   "id": "jjk-pg-angel-117",
+   "kind": "fact",
+   "question": "Who does the Angel tell that Megumi's memories of her have recovered?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 270",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Angel tried to tell her that Megumi's memories of her had recovered so there was no need to be embarrassed, though Hana still told her to shut up.'"
+  },
+  {
+   "id": "jjk-pg-angel-118",
+   "kind": "fact",
+   "question": "Who is present alongside the others to see Satoru Gojo off before his fight in Shinjuku?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 222",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Gojo is prepped for his fight against Sukuna in Shinjuku, and Hana is present alongside the others to see him off.'"
+  },
+  {
+   "id": "jjk-pg-angel-119",
+   "kind": "fact",
+   "question": "Who does the Angel join forces with, alongside Yuji Itadori and others?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 209-211",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": [
+      "Megumi"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Since joining forces with Megumi, Yuji Itadori, and co., the Angel has been forthcoming in disclosing information and offering personal judgment.'"
+  },
+  {
+   "id": "jjk-pg-angel-120",
+   "kind": "fact",
+   "question": "Whose past and secret feelings does the Angel know about?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": [
+      "Megumi"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'The Angel is close enough to Hana to know about her past and secret feelings for Megumi.'"
+  },
+  {
+   "id": "jjk-pg-angel-121",
+   "kind": "fact",
+   "question": "Who does Hana find collapsed in the No. 1 Colony?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 173",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": [
+      "Megumi"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'the pair travels from Tokyo's No. 2 to the No. 1 Colony where Hana finds a collapsed Megumi Fushiguro, carries him away.'"
+  },
+  {
+   "id": "jjk-pg-angel-122",
+   "kind": "fact",
+   "question": "Whose memories of Hana does the Angel say have recovered?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 270",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": [
+      "Megumi"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Angel tried to tell her that Megumi's memories of her had recovered so there was no need to be embarrassed.'"
+  },
+  {
+   "id": "jjk-pg-angel-123",
+   "kind": "fact",
+   "question": "Who spoke rudely to Hana over a disagreement?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 210",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": [
+      "Yuji"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Hana, in turn, showed indignation on the Angel's behalf when Yuji spoke to her rudely over a disagreement.'"
+  },
+  {
+   "id": "jjk-pg-angel-124",
+   "kind": "fact",
+   "question": "Who insists that the group should save the US Army soldiers?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 210",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": [
+      "Yuji"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'Yuji insists that they should save the soldiers.'"
+  },
+  {
+   "id": "jjk-pg-angel-125",
+   "kind": "fact",
+   "question": "Who, alongside Yuji Itadori, meets with Hana in a hotel in the No. 1 Colony?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 199",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": [
+      "Takaba"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'gathers with him, Yuji Itadori, and Fumihiko Takaba in a hotel.'"
+  },
+  {
+   "id": "jjk-pg-angel-126",
+   "kind": "fact",
+   "question": "Who does the Angel nominate as a fighter fit to engage Kenjaku?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 240",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": [
+      "Takaba"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'The Angel nominates Takaba as a fighter fit to engage Kenjaku, consequently explaining his cursed technique.'"
+  },
+  {
+   "id": "jjk-pg-angel-127",
+   "kind": "fact",
+   "question": "Who does the Angel help unseal from the Prison Realm?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 221",
+   "answer": [
+    {
+     "item": "Satoru Gojo",
+     "aliases": [
+      "Gojo"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'the Angel still agrees to let her power be used to unseal Gojo from within the Prison Realm.'"
+  },
+  {
+   "id": "jjk-pg-angel-128",
+   "kind": "set",
+   "question": "Every person the Angel revealed herself to in the No. 1 Colony",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": [
+      "Megumi"
+     ]
+    },
+    {
+     "item": "Yuji Itadori",
+     "aliases": [
+      "Yuji"
+     ]
+    },
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": [
+      "Takaba"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed hotel group the Culling Game Arc states: Hana 'gathers with him, Yuji Itadori, and Fumihiko Takaba in a hotel', and 'the Angel reveals herself through a manifested mouth on Hana' to that group. Staged in _jjk_page_angel.decl3.yaml (G6, declared-roster-wins)."
+  },
+  {
+   "id": "jjk-pg-angel-129",
+   "kind": "fact",
+   "question": "Who does the Angel attribute the large influx of people into the Colony to?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 200",
+   "answer": [
+    {
+     "item": "Kogane",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'the Angel notes how odd it is that a large number of people seem to be entering the Colony, which she can tell is happening thanks to Kogane.'"
+  },
+  {
+   "id": "jjk-pg-angel-130",
+   "kind": "fact",
+   "question": "Who asks the Angel if she can switch hosts like Sukuna?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 220 and 221",
+   "answer": [
+    {
+     "item": "Yuta Okkotsu",
+     "aliases": [
+      "Yuta"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'when Yuta asks if the Angel can switch hosts like Sukuna.'"
+  },
+  {
+   "id": "jjk-pg-angel-131",
+   "kind": "fact",
+   "question": "Who, alongside Shoko Ieiri, later healed Hana?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 220",
+   "answer": [
+    {
+     "item": "Yuta Okkotsu",
+     "aliases": [
+      "Yuta"
+     ]
+    },
+    {
+     "item": "Shoko Ieiri",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Hana was later healed by Yuta Okkotsu and Shoko Ieiri after being saved earlier by Rin Amai and possibly Takaba.'"
+  },
+  {
+   "id": "jjk-pg-angel-132",
+   "kind": "fact",
+   "question": "Whose crows are used to view a broadcast of the fight?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 269",
+   "answer": [
+    {
+     "item": "Mei Mei",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'with Mei Mei's crows being used to view a broadcast of the fight.'"
+  },
+  {
+   "id": "jjk-pg-angel-133",
+   "kind": "fact",
+   "question": "Who do Hana, the Angel, and their allies stay inside of, at a safe distance during the fight?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 269",
+   "answer": [
+    {
+     "item": "Rika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Hana, the Angel, and their allies are inside of Rika at a safe distance.'"
+  },
+  {
+   "id": "jjk-pg-angel-134",
+   "kind": "fact",
+   "question": "Who helps Angel and Hana join the battle during the raid on Sukuna?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 263",
+   "answer": [
+    {
+     "item": "Aoi Todo",
+     "aliases": [
+      "Todo"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Angel and Hana, with the help of Todo join the battle and attempt to fire a Jacob's Ladder on the King of Curses.'"
+  },
+  {
+   "id": "jjk-pg-angel-135",
+   "kind": "fact",
+   "question": "Who took the Black Flash hit in Hana's place?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 264",
+   "answer": [
+    {
+     "item": "Aoi Todo",
+     "aliases": [
+      "Todo"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Sukuna caught up to them and attempted to strike Hana with a Black Flash, though Todo took the hit in her place.'"
+  },
+  {
+   "id": "jjk-pg-angel-136",
+   "kind": "fact",
+   "question": "Who did Hana show indignation on behalf of, when Yuji spoke rudely?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 210",
+   "answer": [
+    {
+     "item": "Angel",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Hana, in turn, showed indignation on the Angel's behalf when Yuji spoke to her rudely over a disagreement.'"
+  },
+  {
+   "id": "jjk-pg-angel-137",
+   "kind": "fact",
+   "question": "Who does Tengen say ought to be found to help unseal Satoru Gojo?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 145",
+   "answer": [
+    {
+     "item": "Angel",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'Tengen first makes reference to the Angel ... citing the ancient sorcerer's ability to \"extinguish\" any and all cursed techniques and that she ought to be found so that she may help them unseal Satoru Gojo.'"
+  },
+  {
+   "id": "jjk-pg-angel-138",
+   "kind": "fact",
+   "question": "Who do Hana and co. meet on the rooftop who reveals herself to be another incarnated sorcerer?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 211 and 212",
+   "answer": [
+    {
+     "item": "Megumi's sister",
+     "aliases": [
+      "Tsumiki Fushiguro"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'the group reaches a rooftop where they meet up with Megumi's sister, who reveals herself to be another incarnated sorcerer and flies away.' The page links the sister to Tsumiki Fushiguro."
+  },
+  {
+   "id": "jjk-pg-angel-139",
+   "kind": "fact",
+   "question": "Who, alongside Rin Amai, possibly saved Hana earlier?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 220",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": [
+      "Takaba"
+     ]
+    },
+    {
+     "item": "Rin Amai",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'Hana was later healed by Yuta Okkotsu and Shoko Ieiri after being saved earlier by Rin Amai and possibly Takaba.'"
+  },
+  {
+   "id": "jjk-pg-angel-140",
+   "kind": "fact",
+   "question": "Who did the Angel and Hana attempt to fire a Jacob's Ladder on during the raid?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 263",
+   "answer": [
+    {
+     "item": "Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Shinjuku Showdown Arc: 'During the raid on Sukuna, Angel and Hana, with the help of Todo join the battle and attempt to fire a Jacob's Ladder on the King of Curses.'"
+  },
+  {
+   "id": "jjk-pg-angel-141",
+   "kind": "fact",
+   "question": "Who, besides Kenjaku, do the Angel and Hana remain willing to oppose?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 240",
+   "answer": [
+    {
+     "item": "Sukuna",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Even beyond that point, the Angel and Hana remained willing to aid their allies in opposing Kenjaku and Sukuna.'"
+  },
+  {
+   "id": "jjk-pg-angel-142",
+   "kind": "fact",
+   "question": "Who does the Angel say she would rather not see placed in danger, when Yuji insists on saving the soldiers?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 210",
+   "answer": [
+    {
+     "item": "Hana Kurusu",
+     "aliases": [
+      "Hana"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Culling Game Arc: 'the Angel tells him not to bother ... and that she would rather not see Hana placed in danger, which would imperil herself too.'"
+  }
+ ]
+}

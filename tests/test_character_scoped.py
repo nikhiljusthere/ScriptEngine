@@ -191,6 +191,7 @@ class TestKinds:
             "subject": "Serpico",
             "members": ["Rapier", "Sylph Sword", "Sylph Cloak"],
         })
+        assert declared is not None
         assert declared.subject == "Serpico"
         assert declared.members == ("Rapier", "Sylph Sword", "Sylph Cloak")
 
@@ -198,6 +199,7 @@ class TestKinds:
         # behaviour and the general path still wins.
         plain = R.RosterDefinition.parse({"name": "Apostles",
                                           "category": "Apostles"})
+        assert plain is not None
         assert plain.subject == ""
 
     def test_a_declared_phrase_matches_singular_and_plural(self):
@@ -214,12 +216,14 @@ class TestKinds:
             "match": ["members of the black swordsman party"],
             "members": ["Guts"],
         })
+        assert declared is not None
         assert declared.matches("Every member of the Black Swordsman Party")
         assert declared.matches("Who are the members of the Black Swordsman Party?")
         # And the other direction, for a declaration written in the singular.
         singular = R.RosterDefinition.parse({
             "name": "x", "match": ["devil contract of aki hayakawa"],
             "members": ["Fox Devil"]})
+        assert singular is not None
         assert singular.matches("Every devil contract of Aki Hayakawa")
         assert singular.matches("Every devil contracts of Aki Hayakawa")
         # It must still not match an unrelated set.
@@ -328,7 +332,7 @@ class TestKinds:
         vocabulary = {
             word
             for definition in registry
-            if not definition.subject
+            if definition is not None and not definition.subject
             for phrase in (*definition.match, definition.name)
             for word in R.content_words(phrase)
         }

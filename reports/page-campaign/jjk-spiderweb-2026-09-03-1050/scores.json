@@ -1,0 +1,485 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Spiderweb",
+      "set": "Every battle involving Spiderweb",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Spiderweb",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna",
+        "Yuki Tsukumo & Choso vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Spiderweb's name?",
+      "id": "jjk-pg-spiderweb-001",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "\u8718\u86db\u306e\u7cf8"
+      ],
+      "found": [
+        "\u8718\u86db\u306e\u7cf8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Spiderweb's name?",
+      "id": "jjk-pg-spiderweb-002",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Kumo no Ito"
+      ],
+      "found": [
+        "Kumo no Ito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Spiderweb first appear?",
+      "id": "jjk-pg-spiderweb-003",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Chapter 215"
+      ],
+      "found": [
+        "Chapter 215"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-spiderweb-004",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-spiderweb-005",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-spiderweb-006",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-spiderweb-007",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-spiderweb-008",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-spiderweb-009",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kumo no Ito use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-spiderweb-010",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Blood Manipulation"
+      ],
+      "found": [
+        "Blood Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-spiderweb-011",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-spiderweb-012",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-spiderweb-013",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-spiderweb-014",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-spiderweb-015",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-spiderweb-016",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-spiderweb-017",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-spiderweb-018",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-spiderweb-019",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-spiderweb-020",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What must the user do to create cutting lines with Spiderweb?",
+      "id": "jjk-pg-spiderweb-022",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "As required by Cleave, the user touches their target to create cutting lines along the surface."
+      ],
+      "found": [
+        "As required by Cleave, the user touches their target to create cutting lines along the surface."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What pattern do Spiderweb's cutting lines follow?",
+      "id": "jjk-pg-spiderweb-023",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "As the name implies, this technique creates those lines in a spiderweb-shaped pattern."
+      ],
+      "found": [
+        "As the name implies, this technique creates those lines in a spiderweb-shaped pattern."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Sukuna target the ground with Spiderweb?",
+      "id": "jjk-pg-spiderweb-024",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "Megumi would interfere whenever Sukuna tried to use Shrine to injure his allies, so to get the most out of his cursed technique, Sukuna targeted the ground and activated Spiderweb."
+      ],
+      "found": [
+        "Megumi would interfere whenever Sukuna tried to use Shrine to injure his allies, so to get the most out of his cursed technique, Sukuna targeted the ground and activated Spiderweb."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna's Spiderweb slash of the ground do?",
+      "id": "jjk-pg-spiderweb-025",
+      "subject": "Spiderweb",
+      "accept": "all",
+      "expected": [
+        "This created a spiderweb-shaped pattern across the surface of the ground and slashed it apart in an instant."
+      ],
+      "found": [
+        "This created a spiderweb-shaped pattern across the surface of the ground and slashed it apart in an instant."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 24,
+    "fact_present": 24
+  }
+}

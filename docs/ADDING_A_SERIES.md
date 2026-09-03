@@ -1,9 +1,8 @@
 # Adding a series
 
-> Ingestion lands in Phase 1. This page documents the intended interface; the
-> commands below will not run until then.
-
 Adding a series should be a name and a URL. No Python, no schema, no alias table.
+Seven of the eight series on disk were added exactly this way; each one needed
+only an `overrides.yaml` describing how that wiki writes a citation.
 
 ```powershell
 python -m scriptengine.cli crawl --series csm --start-url https://chainsaw-man.fandom.com/wiki/Chainsaw_Man_Wiki
@@ -154,8 +153,9 @@ python -m scriptengine.cli rosters --series opm
 ### The citation grammar
 
 Every wiki invents its own, and the difference decides whether a script can put
-a chapter on a line at all. Five wikis crawled, five grammars, none of them the
-same as Jujutsu Kaisen's. The mechanism is generic; the vocabulary goes here.
+a chapter on a line at all. Seven wikis crawled beyond Jujutsu Kaisen, seven
+grammars, none of them the same as Jujutsu Kaisen's. The mechanism is generic;
+the vocabulary goes here.
 
 | Key | For | Example |
 |---|---|---|

@@ -1,0 +1,271 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Round Deer?",
+      "set": "Every named technique of Round Deer",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Round Deer",
+      "set": "Every battle involving Round Deer",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Round Deer?",
+      "found": [
+        "Reverse Cursed Technique"
+      ],
+      "missing": [],
+      "members": [
+        "Reverse Cursed Technique"
+      ]
+    },
+    {
+      "query": "Every battle involving Round Deer",
+      "found": [
+        "Sukuna vs. Yorozu"
+      ],
+      "missing": [],
+      "members": [
+        "Sukuna vs. Yorozu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Round Deer's name?",
+      "id": "jjk-pg-round_deer-001",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "\u5186\u9e7f"
+      ],
+      "found": [
+        "\u5186\u9e7f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Round Deer's name?",
+      "id": "jjk-pg-round_deer-002",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Madoka"
+      ],
+      "found": [
+        "Madoka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Round Deer first appear?",
+      "id": "jjk-pg-round_deer-003",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Chapter 218"
+      ],
+      "found": [
+        "Chapter 218"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Sukuna vs. Yorozu?",
+      "id": "jjk-pg-round_deer-004",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Sukuna vs. Yorozu take place?",
+      "id": "jjk-pg-round_deer-005",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Sukuna vs. Yorozu begin?",
+      "id": "jjk-pg-round_deer-006",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Chapter 217"
+      ],
+      "found": [
+        "Chapter 217"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Sukuna vs. Yorozu take place?",
+      "id": "jjk-pg-round_deer-007",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Round Deer?",
+      "id": "jjk-pg-round_deer-010",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "Round Deer is a tall, deer-like shikigami that can output positive energy from reverse cursed technique."
+      ],
+      "found": [
+        "Round Deer is a tall, deer-like shikigami that can output positive energy from reverse cursed technique."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the positive energy output by Round Deer allow it to do?",
+      "id": "jjk-pg-round_deer-011",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "This allows it to heal its user as well as counteract the cursed energy of their opponent."
+      ],
+      "found": [
+        "This allows it to heal its user as well as counteract the cursed energy of their opponent."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the user summon Round Deer?",
+      "id": "jjk-pg-round_deer-012",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "The user summons Round Deer with shadowgraphy using the shape of a deer's head with their hands."
+      ],
+      "found": [
+        "The user summons Round Deer with shadowgraphy using the shape of a deer's head with their hands."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Round Deer counter Yorozu's liquid-metal attack?",
+      "id": "jjk-pg-round_deer-013",
+      "subject": "Round Deer",
+      "accept": "all",
+      "expected": [
+        "The positive energy outputted by Round Deer negated the cursed energy within Yorozu's liquid metal and dissipated the attack in an instant."
+      ],
+      "found": [
+        "The positive energy outputted by Round Deer negated the cursed energy within Yorozu's liquid metal and dissipated the attack in an instant."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 11,
+    "fact_present": 11
+  }
+}

@@ -169,7 +169,12 @@ def _number_flexible(phrase: str) -> "re.Pattern[str]":
         if word.endswith("s"):
             escaped = escaped[:-1]           # `s` is never escaped by `re.escape`
         parts.append(escaped + "s?")
-    return re.compile(r"\b" + r"\s+".join(parts) + r"\b")
+    # A trailing \b only holds after a word character. A phrase ending on a
+    # parenthetical -- "noritoshi kamo (ancestor)" -- ends on ")", where no
+    # boundary can ever exist, so the whole roster silently stopped matching
+    # and the shorter un-parenthesised sibling declaration won instead.
+    tail = r"\b" if words[-1][-1].isalnum() else r""
+    return re.compile(r"\b" + r"\s+".join(parts) + tail)
 
 
 @dataclass(frozen=True)
@@ -294,6 +299,12 @@ class Member:
     breadcrumb: str = ""
     citations: list[str] = field(default_factory=list)
     source_span: str = ""
+    # How many independent extraction paths named this member. 1 = a single
+    # path (a heading, the prose, or an ownership edge). When two independent
+    # readings of the same page both name it, the union keeps it once but the
+    # count records 2 -- corroboration, the signal a plain name-dedup discards
+    # the moment the second path's duplicate is dropped (R7 Part B).
+    sources: int = 1
 
     def as_dict(self) -> dict[str, Any]:
         payload: dict[str, Any] = {
@@ -302,6 +313,8 @@ class Member:
             "facts": self.facts,
             "text": self.text,
         }
+        if self.sources > 1:
+            payload["sources"] = self.sources
         for key in ("group", "debut", "breadcrumb", "source_span"):
             if getattr(self, key):
                 payload[key] = getattr(self, key)
@@ -978,13 +991,38 @@ def _fighter_words(fighter: str) -> list[str]:
     The last content word is the actual name -- `Mahoraga`, `Sukuna`, `Gojo` --
     and that is what the infobox writes. Fall back to all long words only when
     there is a single one, so a two-word name like `Ryomen Sukuna` still matches.
+    A name made only of short words (`Ui Ui`) has no long word, and `content_words`
+    drops every token of three letters or less, so this used to return nothing
+    and the battles-in route returned `None`, leaving the whole 90-battle
+    category in place. The raw short tokens are returned instead;
+    `_fighter_match` matches them at word boundaries.
     """
     words = [w for w in content_words(fighter) if len(w) > 3]
-    if not words:
-        return []
-    # The last word is the name; earlier words are descriptors that appear on
-    # other pages' abilities and would over-match.
-    return [words[-1]] if len(words) > 1 else words
+    if words:
+        # The last word is the name; earlier words are descriptors that appear on
+        # other pages' abilities and would over-match.
+        return [words[-1]] if len(words) > 1 else words
+    for token in _WORD.findall(fighter or ""):
+        lowered = token.lower().strip("'")
+        # `vs` is the one connective short enough to reach the fallback
+        # (the rest are stopwords); a fighter is never named `vs`.
+        if (len(lowered) >= 2 and lowered not in _STOPWORDS and lowered != "vs"
+                and lowered not in words):
+            words.append(lowered)
+    return words
+
+
+def _fighter_match(word: str, text: str) -> bool:
+    """Whether one fighter word occurs in folded, lower-cased infobox text.
+
+    Words of four letters and up match by substring, the way the infobox
+    abbreviates long names. Short words match at word boundaries: a substring
+    search for `ui` from `Ui Ui` landed on four battle pages that never list
+    him (`jujutsu` and friends), while `\\bui\\b` names exactly the two that do.
+    """
+    if len(word) > 3:
+        return word in text
+    return re.search(r"\b" + re.escape(word) + r"\b", text) is not None
 
 
 def _fighter_role(store: FactStore, title: str, fighter: str, overrides: dict | None) -> str:
@@ -1005,8 +1043,8 @@ def _fighter_role(store: FactStore, title: str, fighter: str, overrides: dict | 
             continue
         side_text = _fold(sides.get(side, "")).lower()
         tool_text = _fold(sides.get(abilities, "")).lower()
-        on_side = any(w in side_text for w in words)
-        as_tool = any(w in tool_text for w in words)
+        on_side = any(_fighter_match(w, side_text) for w in words)
+        as_tool = any(_fighter_match(w, tool_text) for w in words)
         if on_side:
             return "direct combatant"
         if as_tool:
@@ -1044,10 +1082,14 @@ def battles_in(
         pairs = battle_relations(overrides)
         present = False
         for side, abilities in pairs:
-            if side and any(w in _fold(sides.get(side, "")).lower() for w in words):
+            if side and any(
+                _fighter_match(w, _fold(sides.get(side, "")).lower()) for w in words
+            ):
                 present = True
                 break
-            if abilities and any(w in _fold(sides.get(abilities, "")).lower() for w in words):
+            if abilities and any(
+                _fighter_match(w, _fold(sides.get(abilities, "")).lower()) for w in words
+            ):
                 present = True
                 break
         if not present:
@@ -1385,6 +1427,7 @@ def build_roster(
                     merged.confidence = owned.confidence
                     merged.rejected = owned.rejected
                     merged.scope = owned.scope
+                    merged.members = _trim_to_corroborated(merged.members)
                     return _class_filtered(store, merged, query, overrides)
                 return _class_filtered(store, owned, query, overrides)
             if extracted is not None:
@@ -1490,11 +1533,15 @@ def build_roster(
                 store, character, kinds, member_chars, overrides, discovered
             )
             if extra is not None:
-                seen = {member.name.strip().lower() for member in members}
-                members += [
-                    member for member in extra.members
-                    if member.name.strip().lower() not in seen
-                ][:max_members - len(members)]
+                index = {m.name.strip().lower(): i for i, m in enumerate(members)}
+                for member in extra.members:
+                    key = member.name.strip().lower()
+                    if key in index:
+                        # The category and the prose both name it: corroboration.
+                        members[index[key]].sources += member.sources
+                    elif len(members) < max_members:
+                        index[key] = len(members)
+                        members.append(member)
 
         # Single combat, when the question asked for it. Read off each battle
         # page's own side fields; see `is_one_on_one` for why the title cannot
@@ -1567,6 +1614,7 @@ def build_roster(
                         "rule": "dedupe",
                     }]
 
+    members = _trim_to_corroborated(members)
     roster = Roster(
         subject=subject,
         basis=f"{basis} ({group_label})" if group_label else basis,
@@ -2724,12 +2772,16 @@ def _combine(first: Roster | None, second: Roster | None) -> Roster | None:
     if second is None:
         return first
     members = list(first.members)
-    seen = {member.name.strip().lower() for member in members}
+    index = {member.name.strip().lower(): i for i, member in enumerate(members)}
     for member in second.members:
         key = member.name.strip().lower()
-        if key in seen:
+        if key in index:
+            # Two independent readings named this member: keep it once and
+            # record the corroboration, which a plain name-dedup discarded the
+            # moment the duplicate was dropped (R7 Part B).
+            members[index[key]].sources += member.sources
             continue
-        seen.add(key)
+        index[key] = len(members)
         members.append(member)
     return Roster(
         subject=first.subject,
@@ -2739,6 +2791,33 @@ def _combine(first: Roster | None, second: Roster | None) -> Roster | None:
         confidence="partial",
         candidates=first.candidates + second.candidates,
     )
+
+
+# R7 Part B. An over-broad merged set is dominated by members a *single*
+# extraction path named; what two independent readings both named is the
+# corroborated core. A drop-to-corroborated-core trim was prototyped but
+# measured against the live opm canon and regressed it: Garou's 53-candidate
+# kit shrank to the 8 corroborated, dropping 54 recovered canon items for +2.6
+# points of precision while the exact-answer count held at 8/16, and it broke
+# the full-kit expectation the measured-good fold relies on. So the trim stays
+# OFF by default; only the corroboration *count* (Member.sources) ships, as a
+# recall-safe signal a caller may tie-break on. The real opm fix is kind
+# narrowing (out of Part B scope).
+_TRIM_UNCORROBORATED = False
+_TRIM_MIN_SIZE = 24
+_TRIM_MIN_GROUPS = 5
+
+
+def _trim_to_corroborated(members: list[Member]) -> list[Member]:
+    """Keep a large, section-broad set's corroborated core (R7 Part B)."""
+    if not _TRIM_UNCORROBORATED or len(members) < _TRIM_MIN_SIZE:
+        return members
+    groups = {member.group for member in members if member.group}
+    if len(groups) < _TRIM_MIN_GROUPS:
+        return members
+    kept = [member for member in members if member.sources > 1]
+    # Never answer empty: with nothing corroborated, the set is what it is.
+    return kept or members
 
 
 def _section_roster(
@@ -3816,7 +3895,7 @@ def _is_packaging_set(store: FactStore, names: list[str], words: Sequence[str],
     """
     if not names:
         return False
-    if {word.lower() for word in words} & _PACKAGING_WORDS:
+    if {word.lower() for word in words} & set(_PACKAGING_WORDS):
         return False
     types = {name: ontology.semantic_type(store, name, overrides) for name in names}
     majority = ontology.expected_type(names, types)
@@ -4127,8 +4206,8 @@ def _choose_set(
     subject: str,
     subject_label: str,
     title: str = "",
-) -> tuple[str, str, list[str]] | None:
-    """Return ``(kind, basis, member names)`` for the best-supported set.
+) -> tuple[str, str, list[str], str, list[str]] | None:
+    """Return ``(kind, basis, member names, confidence, unmatched)`` for the best-supported set.
 
     Scored on how well the set's own name answers the query, then on how much
     of that name the query accounts for, then on size: a set of three is often a

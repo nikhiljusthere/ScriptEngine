@@ -1,0 +1,615 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Ui Ui?",
+      "set": "Every named technique of Ui Ui",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Ui Ui",
+      "set": "2 battle page(s) naming Ui Ui",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Ui Ui?",
+      "found": [
+        "Simple Domain"
+      ],
+      "missing": [],
+      "members": [
+        "Simple Domain"
+      ]
+    },
+    {
+      "query": "Every battle involving Ui Ui",
+      "found": [
+        "Mei Mei & Ui Ui vs. Smallpox Deity",
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Mei Mei & Ui Ui vs. Smallpox Deity"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ui Ui's name?",
+      "id": "jjk-pg-ui_ui-001",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "\u6182\u6182"
+      ],
+      "found": [
+        "\u6182\u6182"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ui Ui's name?",
+      "id": "jjk-pg-ui_ui-002",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Ui Ui"
+      ],
+      "found": [
+        "Ui Ui"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ui Ui's race?",
+      "id": "jjk-pg-ui_ui-003",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ui Ui's gender?",
+      "id": "jjk-pg-ui_ui-004",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Ui Ui?",
+      "id": "jjk-pg-ui_ui-005",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ui Ui's occupation?",
+      "id": "jjk-pg-ui_ui-006",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Head of New Shadow Style (Modulo)"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Head of New Shadow Style (Modulo)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ui Ui first appear?",
+      "id": "jjk-pg-ui_ui-007",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Chapter 83"
+      ],
+      "found": [
+        "Chapter 83"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Ui Ui first depicted?",
+      "id": "jjk-pg-ui_ui-008",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Episode 32"
+      ],
+      "found": [
+        "Episode 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ui Ui's Japanese voice actor?",
+      "id": "jjk-pg-ui_ui-009",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Y\u016bko Sanpei"
+      ],
+      "found": [
+        "Y\u016bko Sanpei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ui Ui's English voice actor?",
+      "id": "jjk-pg-ui_ui-010",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Sarah Anne Williams"
+      ],
+      "found": [
+        "Sarah Anne Williams"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ui Ui's name \"Ui\" written as \u6182\u3044 mean?",
+      "id": "jjk-pg-ui_ui-012",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "\"unhappy, sad/sadness, gloomy, sorrow, grief, distress, affliction\""
+      ],
+      "found": [
+        "\"unhappy, sad/sadness, gloomy, sorrow, grief, distress, affliction\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which popularity polls did Ui Ui rank third or better?",
+      "id": "jjk-pg-ui_ui-013",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "fourth popularity poll with 58 votes"
+      ],
+      "found": [
+        "fourth popularity poll with 58 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Ui Ui hobbies and favorite food listed in Official Fanbook entry?",
+      "id": "jjk-pg-ui_ui-014",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "pisang goreng indonesian fried bananas"
+      ],
+      "found": [
+        "pisang goreng indonesian fried bananas"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What binding vow limits Ui cursed energy usage until Mei gives permission?",
+      "id": "jjk-pg-ui_ui-018",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "usage of jujutsu until she gives him permission"
+      ],
+      "found": [
+        "usage of jujutsu until she gives him permission"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ui Ui look like?",
+      "id": "jjk-pg-ui_ui-019",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "a young boy with a small slender frame, light blue hair that is styled with a neat right-sided part and mint-green eyes with thin eyebrows"
+      ],
+      "found": [
+        "a young boy with a small slender frame, light blue hair that is styled with a neat right-sided part and mint-green eyes with thin eyebrows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ui Ui sport besides his long-sleeved jacket?",
+      "id": "jjk-pg-ui_ui-020",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "suspenders, shorts, long socks, and simple shoes"
+      ],
+      "found": [
+        "suspenders, shorts, long socks, and simple shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Ui Ui appear in Jujutsu Kaisen Modulo?",
+      "id": "jjk-pg-ui_ui-021",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "68 years later, Ui Ui has considerably aged, having thin features and wrinkled skin"
+      ],
+      "found": [
+        "68 years later, Ui Ui has considerably aged, having thin features and wrinkled skin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the aged Ui Ui wear in Modulo?",
+      "id": "jjk-pg-ui_ui-022",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "a hooded black cloak over a white shirt, obscuring his body and most of his face"
+      ],
+      "found": [
+        "a hooded black cloak over a white shirt, obscuring his body and most of his face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Ui Ui feel about his older sister Mei Mei?",
+      "id": "jjk-pg-ui_ui-023",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "loyalty and devotion to his older sister, Mei Mei, whom he unhealthily worships"
+      ],
+      "found": [
+        "loyalty and devotion to his older sister, Mei Mei, whom he unhealthily worships"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why wasn't Ui Ui friendly with Yuji Itadori during the Shibuya Incident?",
+      "id": "jjk-pg-ui_ui-024",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "he was too close to Mei Mei"
+      ],
+      "found": [
+        "he was too close to Mei Mei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ui Ui think of Sukuna after the battle?",
+      "id": "jjk-pg-ui_ui-025",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "came to idolize the ancient sorcerer's immense strength, describing him as a being who had reached \"the peak of violence\""
+      ],
+      "found": [
+        "came to idolize the ancient sorcerer's immense strength, describing him as a being who had reached \"the peak of violence\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Ui Ui feel a sense of gratitude toward Dabura Karaba?",
+      "id": "jjk-pg-ui_ui-026",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "He grew dissatisfied with the era of peace that followed, dismissing it as \"ordinary\" and \"flimsy.\""
+      ],
+      "found": [
+        "He grew dissatisfied with the era of peace that followed, dismissing it as \"ordinary\" and \"flimsy.\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Ui Ui useful to his grade 1 sister during the Shibuya Incident?",
+      "id": "jjk-pg-ui_ui-027",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "He carried her axe outside of combat and was responsible for countering domains, making him useful to his grade 1 sister rather than a liability"
+      ],
+      "found": [
+        "He carried her axe outside of combat and was responsible for countering domains, making him useful to his grade 1 sister rather than a liability"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What proves Ui Ui has a talent for jujutsu despite his age?",
+      "id": "jjk-pg-ui_ui-028",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "his ability to use his innate technique as well as barrier techniques"
+      ],
+      "found": [
+        "his ability to use his innate technique as well as barrier techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Ui Ui's Spatial Transference technique work?",
+      "id": "jjk-pg-ui_ui-029",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "allows him to teleport himself and others with him to locations and people he has marked"
+      ],
+      "found": [
+        "allows him to teleport himself and others with him to locations and people he has marked"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How often can Ui Ui use the soul-switching application of his technique on one person?",
+      "id": "jjk-pg-ui_ui-030",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "can only be used twice per person in a month"
+      ],
+      "found": [
+        "can only be used twice per person in a month"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ui Ui's cause of stress according to the fanbook?",
+      "id": "jjk-pg-ui_ui-031",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Being unable to be with his sister"
+      ],
+      "found": [
+        "Being unable to be with his sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Ui Ui hold in the New Shadow Style in Modulo?",
+      "id": "jjk-pg-ui_ui-032",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Ui Ui is the leader of the New Shadow Style in Jujutsu Kaisen Modulo"
+      ],
+      "found": [
+        "Ui Ui is the leader of the New Shadow Style in Jujutsu Kaisen Modulo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How common are jujutsu sorcerers in Ui Ui's age group?",
+      "id": "jjk-pg-ui_ui-034",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "not many sorcerers in his age group"
+      ],
+      "found": [
+        "not many sorcerers in his age group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which battle in Ui Ui's battle history is listed as offscreen?",
+      "id": "jjk-pg-ui_ui-035",
+      "subject": "Ui Ui",
+      "accept": "all",
+      "expected": [
+        "Mei Mei & Ui Ui vs. Kenjaku"
+      ],
+      "found": [
+        "Mei Mei & Ui Ui vs. Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 30
+  }
+}

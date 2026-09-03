@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from typing import Any
 
 from scriptengine.ingest.documents import Citation, Fact, Link, Section
 
@@ -120,7 +121,7 @@ class CitationGrammar:
     flags: dict[str, str] = field(default_factory=dict)
     instalments: dict[str, str] = field(default_factory=dict)
     params: dict[str, RefRole] = field(default_factory=dict)
-    positional: dict[str, object] = field(default_factory=dict)
+    positional: dict[str, Any] = field(default_factory=dict)
     ref_tags: tuple = ()
 
     @classmethod
@@ -193,14 +194,19 @@ class CitationGrammar:
 # are prose worth keeping. The value says which positional argument holds that
 # prose, because the convention differs and guessing gets it wrong:
 #
-#   {{Nihongo|Revealing One's Hand|情報の開示|Jōhō no Kaiji}}  -> first (English)
+#   {{Nihongo|Revealing One's Hand|情報の開示|Jōhō no Kaiji}}  -> all (English + kanji + romaji)
 #   {{Ruby|情|じょう}}                                          -> first (the kanji)
 #   {{Color|White|'''Binding Vows'''}}                          -> last (arg 1 is a colour)
 #
 # Picking the longest argument, which looks reasonable, yields the Japanese
-# script for Nihongo and the furigana for Ruby.
+# script for Nihongo and the furigana for Ruby. Nihongo keeps every argument
+# because the romaji (third position) is the locator a script cites the name by
+# -- "What is the romaji of X?" -- and dropping it made those names unservable.
+# Ruby stays "first": furigana are readings, never golds, and widening Ruby
+# would perturb a different corpus (OPM carries 1258 of them, zero Nihongo) for
+# no retrieval gain here.
 TRANSPARENT_TEMPLATES: dict[str, str] = {
-    "nihongo": "first",
+    "nihongo": "all",
     "ruby": "first",
     "sub": "first",
     "sup": "first",
@@ -957,9 +963,18 @@ def _flatten_links(text: str) -> str:
         target, _, display = body.partition("|")
         if _renders_text(target.strip()):
             # An interwiki link still shows its label; only its target is
-            # elsewhere. Strip the prefix when no label was given.
-            shown = (display or target.split(":", 1)[-1]).strip()
-            out.append(shown)
+            # elsewhere. When no label was given, strip a namespace/interwiki
+            # prefix (Wikipedia:Subaru -> Subaru), matching extract_links'
+            # leading-colon lstrip. A title that merely *contains* a colon --
+            # the battle "Satoru Gojo vs. Sukuna: First Fight" -- is not
+            # namespaced, and stripping after the first colon dropped the whole
+            # "who vs. whom" identity (found on the episode pass, Ep 2 B&E), so
+            # keep the full target unless the prefix is a real namespace.
+            shown = display
+            if not shown:
+                bare = target.lstrip(":")
+                shown = bare.split(":", 1)[-1] if _is_namespaced(bare) else bare
+            out.append(shown.strip())
 
         i = end
 

@@ -44,15 +44,35 @@ structure directly and never destroys it.
          facts.db (SQLite)            vectors/ (Qdrant local)
    documents, sections, nodes,       chunk embeddings
    edges, facts, chunks_fts (BM25)   bge-large-en-v1.5
-              └──────────────┬──────────────┘
-                             ▼
-                   retrieve/hybrid.py + narrative.py
-         vector ∪ BM25 ∪ graph → RRF → cross-encoder → ordered
-                             ▼
-                       api/main.py  (:8000)
-                             ▼
-                  ComfyUI → Qwen / Gemma → script
+               └──────────────┬──────────────┘
+                              ▼
+        retrieve/  hybrid + narrative + roster (+ battles-in)
+          vector ∪ BM25 ∪ graph → RRF → cross-encoder → ordered
+          citations.py resolves chapter → episode for every beat/member
+                              ▼
+              ┌─────────────────┼──────────────────┐
+              ▼                 ▼                  ▼
+        api/main.py       cli.py (Typer)      mcp/server.py
+            :8000         script-gen/verify   research / verify_script
+              │                 │             / script_path  (stdio)
+              └─────────────────┼──────────────────┘
+                                ▼
+                     build_context + render_prompt
+                     (one implementation, three doors)
+                                ▼
+        writer model → prose → verify tags against raw crawl
+                        → length band (target ± 500) → saved file
 ```
+
+The three doors are the same code. `build_context` and `render_prompt` in
+`scriptengine/api/context.py` assemble the bundle; the HTTP endpoint, the CLI's
+`script-gen`, and the MCP `research` tool all call them rather than re-implementing
+the logic. That is why a fix to retrieval or sourcing reaches every client at once,
+and why there is no second copy of the writing rules to drift. The writing loop in
+`scriptengine/script/writer.py` sits downstream of all three: it takes the bundle,
+asks the writer model for prose, checks every chapter/episode tag against the raw
+crawl (repairing failures), and expands or trims until the draft lands within 500
+words of the target before saving.
 
 ## Why the structure survives
 
@@ -126,6 +146,23 @@ during ingestion) and returns ordered beats with participants and outcomes.
 
 This is the capability the previous pipeline had no path to, and the reason
 ScriptEngine is not just a wiki chatbot.
+
+### Roster retrieval
+
+A third shape answers enumeration: "Every Rank of Curse", "Every Apostle". A
+reranker returns the eight most interesting members out of twenty-two; a roster
+returns all twenty-two in the order the wiki files them. `retrieve/roster.py`
+reads the set from whatever structure states it — a category, a union of
+categories, the sections of one page, a discovered page type, or the distinct
+values of an infobox field — and validates each member against the topic's own
+constraints before returning it.
+
+The battles-in path is the same idea turned around: instead of listing the
+members of a set, it lists every battle page a fighter appears on, reading the
+sides from this wiki's own infobox vocabulary (`side1`/`powers1`, `combatant1`/
+`abilities1`) and labelling each fight with whether they were a direct combatant
+or a deployed tool. Nothing here names a series; the field names come from the
+wiki, so the path works on any corpus that files its fights as pages.
 
 ## Models and VRAM
 

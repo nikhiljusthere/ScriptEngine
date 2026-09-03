@@ -1,0 +1,940 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 14 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +33 prose pass (R5, 2026-08-27)",
+ "retired": [
+  {
+   "question": "What is reason behind Eso smell?",
+   "reason": "G10 CJK: kanji in page text makes BM25 unable to rank generic meaning questions; kanji question jjk-pg-eso-029 covers this ground",
+   "retired": "2026-08-31"
+  },
+  {
+   "question": "What are Go-on readings of Eso name?",
+   "reason": "G10 CJK: kanji in page prevents BM25 ranking; jjk-pg-eso-029 covers kanji identification",
+   "retired": "2026-08-31"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-eso-001",
+   "kind": "fact",
+   "question": "What are the kanji for Eso's name?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "壊相",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-eso-002",
+   "kind": "fact",
+   "question": "What is the romaji of Eso's name?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Esō",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-eso-003",
+   "kind": "fact",
+   "question": "What is Eso's race?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting Incarnation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-eso-004",
+   "kind": "fact",
+   "question": "How old is Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "150",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-eso-005",
+   "kind": "fact",
+   "question": "What is Eso's gender?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-eso-006",
+   "kind": "fact",
+   "question": "What is the status of Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-eso-007",
+   "kind": "fact",
+   "question": "What is Eso's grade?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Special Grade (Cursed Womb)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:class"
+  },
+  {
+   "id": "jjk-pg-eso-008",
+   "kind": "fact",
+   "question": "In which manga chapter does Eso first appear?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 57",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-eso-009",
+   "kind": "fact",
+   "question": "In which anime episode is Eso first depicted?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 23",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-eso-010",
+   "kind": "fact",
+   "question": "Who is Eso's Japanese voice actor?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nobuyuki Hiyama",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-eso-011",
+   "kind": "fact",
+   "question": "Who is Eso's English voice actor?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Landon McDonald",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-eso-012",
+   "kind": "set",
+   "question": "What are all the named techniques of Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rot Technique",
+     "aliases": []
+    },
+    {
+     "item": "Maximum: Wing King",
+     "aliases": []
+    },
+    {
+     "item": "Decay",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-eso-013",
+   "kind": "set",
+   "question": "What are all the families of Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    },
+    {
+     "item": "Kechizu",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-eso-014",
+   "kind": "set",
+   "question": "What are all the affiliations of Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku's Group",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-eso-015",
+   "kind": "fact",
+   "question": "What is Eso overall grade ranking among cursed objects?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "special grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-eso-016",
+   "kind": "fact",
+   "question": "Who incarnated Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito's group",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-eso-017",
+   "kind": "fact",
+   "question": "What was Eso and Kechizu entrusted with retrieving?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one of Sukuna's finger",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-eso-018",
+   "kind": "fact",
+   "question": "How does Eso power compare to his younger brother?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "greater than that of his younger brother",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-eso-019",
+   "kind": "fact",
+   "question": "Which two characters power is Eso greater than, and which surpasses both?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his younger brother",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Abilities and Powers abilities"
+  },
+  {
+   "id": "jjk-pg-eso-020",
+   "kind": "fact",
+   "question": "What did Eso attempt to endure Yuji punch with?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "reinforcing his arm",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Energy  cursed energy"
+  },
+  {
+   "id": "jjk-pg-eso-021",
+   "kind": "fact",
+   "question": "What destroyed Eso reinforced arm during fight with Yuji?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Black Flash",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Energy  cursed energy"
+  },
+  {
+   "id": "jjk-pg-eso-022",
+   "kind": "fact",
+   "question": "What can Eso transform his cursed energy into as Death Painting Womb?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Death Painting Womb Physiology  death painting womb physiology"
+  },
+  {
+   "id": "jjk-pg-eso-023",
+   "kind": "fact",
+   "question": "What condition allows Eso to prevent dying of blood loss as Death Painting Womb?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "as long as Eso has enough cursed energy",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Death Painting Womb Physiology  death painting womb physiology"
+  },
+  {
+   "id": "jjk-pg-eso-024",
+   "kind": "fact",
+   "question": "What binding vow does Eso use by divulging how his technique works?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Revealing One's Hand",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Restrictions  cursed restrictions"
+  },
+  {
+   "id": "jjk-pg-eso-025",
+   "kind": "fact",
+   "question": "What does Revealing One Hand do for Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "increase the effectiveness of his technique, shortening the time it takes for Decay to kill his target",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Restrictions  cursed restrictions"
+  },
+  {
+   "id": "jjk-pg-eso-026",
+   "kind": "fact",
+   "question": "What is name of Eso innate technique?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rot Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-027",
+   "kind": "fact",
+   "question": "What does Rot Technique grant Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "corrosive blood that can poison and decompose his target upon contact",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-028",
+   "kind": "fact",
+   "question": "Besides corrosion, what else can Rot Technique allow Eso to do with blood?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "reshape and manipulate his blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-029",
+   "kind": "fact",
+   "question": "How does Eso blood differ from another character blood?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a different quality than Kechizu's",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-030",
+   "kind": "fact",
+   "question": "What is maximum technique of Rot Technique called?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Wing King",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-031",
+   "kind": "fact",
+   "question": "What does Wing King reshape Eso blood into?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "wasp-shaped wings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-032",
+   "kind": "fact",
+   "question": "What benefits does Wing King give Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "more mobility as well as a way to attack with lines of blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-eso-033",
+   "kind": "fact",
+   "question": "What does large bloody face on Eso back look like?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "sunken eyes, no nose, and a lipless, open mouth with long, sharp teeth",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-eso-034",
+   "kind": "fact",
+   "question": "What are two distinguishing facial features of Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two stud piercings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-eso-035",
+   "kind": "fact",
+   "question": "What eye color does Eso have in the anime compared to manga?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "dark red",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-eso-036",
+   "kind": "fact",
+   "question": "Who do Eso and his brothers believe they are?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-eso-037",
+   "kind": "fact",
+   "question": "How long did Eso and his brothers exist in isolation?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "over 150 years",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-eso-038",
+   "kind": "fact",
+   "question": "Why was Eso willing to spare Nobara?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "if she fled prior to their fight",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-eso-039",
+   "kind": "fact",
+   "question": "Whose wishes does Eso follow?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "older brother Choso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-eso-040",
+   "kind": "fact",
+   "question": "What personality trait does Eso tend to display during fights?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "very eccentric",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-eso-041",
+   "kind": "fact",
+   "question": "What was result of Death Painting Arc confrontation involving Eso?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "defeated by jujutsu students",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-eso-043",
+   "kind": "fact",
+   "question": "What rank did Eso get in second Popularity Poll?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "37th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-eso-044",
+   "kind": "fact",
+   "question": "How many votes did Eso receive in third Popularity Poll?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "14 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-eso-046",
+   "kind": "fact",
+   "question": "According to fanbook, why does Eso stink?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "back is always festering",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-eso-047",
+   "kind": "fact",
+   "question": "What rank did Eso achieve in fourth Popularity Poll?",
+   "subject": "Eso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "52nd",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Eso"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  }
+ ]
+}

@@ -1,0 +1,1039 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Uraume?",
+      "set": "Every named technique of Uraume",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Uraume?",
+      "set": "Every ally of Uraume",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Uraume?",
+      "set": "Every enemy of Uraume",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Uraume?",
+      "set": "Uraume's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Uraume?",
+      "set": "Uraume's affiliations",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Uraume",
+      "set": "Every battle involving Uraume",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Uraume?",
+      "found": [
+        "Reverse Cursed Technique",
+        "Frost Calm",
+        "Ice Formation",
+        "Icefall"
+      ],
+      "missing": [],
+      "members": [
+        "Frost Calm",
+        "Ice Formation",
+        "Icefall",
+        "Reverse Cursed Technique"
+      ]
+    },
+    {
+      "query": "What are all the allies of Uraume?",
+      "found": [
+        "Kenjaku",
+        "Haruta Shigemo",
+        "Jiro Awasaka"
+      ],
+      "missing": [],
+      "members": [
+        "Haruta Shigemo",
+        "Jiro Awasaka",
+        "Kenjaku"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Uraume?",
+      "found": [
+        "Yorozu",
+        "Choso",
+        "Kinji Hakari",
+        "Utahime Iori",
+        "Yuki Tsukumo"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Kinji Hakari",
+        "Utahime Iori",
+        "Yorozu",
+        "Yuki Tsukumo"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Uraume?",
+      "found": [
+        "The Frozen Star Shiori Himi (Vessel)"
+      ],
+      "missing": [],
+      "members": [
+        "The Frozen Star Shiori Himi (Vessel)"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Uraume?",
+      "found": [
+        "Kenjaku's Group",
+        "Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's Group",
+        "Sukuna"
+      ]
+    },
+    {
+      "query": "Every battle involving Uraume",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Kinji Hakari vs. Uraume",
+        "Nobara Kugisaki vs. Momo Nishimiya"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Kinji Hakari vs. Uraume",
+        "Nobara Kugisaki vs. Momo Nishimiya"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Uraume's name?",
+      "id": "jjk-pg-uraume-001",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "\u88cf\u6885"
+      ],
+      "found": [
+        "\u88cf\u6885"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Uraume's name?",
+      "id": "jjk-pg-uraume-002",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Uraume"
+      ],
+      "found": [
+        "Uraume"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Uraume's race?",
+      "id": "jjk-pg-uraume-003",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Uraume?",
+      "id": "jjk-pg-uraume-004",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "1000+"
+      ],
+      "found": [
+        "1000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Uraume's gender?",
+      "id": "jjk-pg-uraume-005",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Male (Original)\nFemale (Incarnation)"
+      ],
+      "found": [
+        "Male (Original)\nFemale (Incarnation)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Uraume?",
+      "id": "jjk-pg-uraume-006",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Uraume's occupation?",
+      "id": "jjk-pg-uraume-007",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Uraume first appear?",
+      "id": "jjk-pg-uraume-008",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Chapter 53"
+      ],
+      "found": [
+        "Chapter 53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Uraume first depicted?",
+      "id": "jjk-pg-uraume-009",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Episode 21"
+      ],
+      "found": [
+        "Episode 21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Uraume's Japanese voice actor?",
+      "id": "jjk-pg-uraume-010",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Mitsuki Saiga"
+      ],
+      "found": [
+        "Mitsuki Saiga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Uraume's English voice actor?",
+      "id": "jjk-pg-uraume-011",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Erica Mendez"
+      ],
+      "found": [
+        "Erica Mendez"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-uraume-012",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-uraume-013",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-uraume-014",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-uraume-015",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-uraume-016",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-uraume-017",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Uraume use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-uraume-018",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Ice Formation, Frost Calm, Icefall"
+      ],
+      "found": [
+        "Ice Formation, Frost Calm, Icefall"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Uraume?",
+      "id": "jjk-pg-uraume-019",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Uraume commits suicide."
+      ],
+      "found": [
+        "Uraume commits suicide."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Uraume take place?",
+      "id": "jjk-pg-uraume-020",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Uraume take place?",
+      "id": "jjk-pg-uraume-021",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Uraume begin?",
+      "id": "jjk-pg-uraume-022",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Chapter 237"
+      ],
+      "found": [
+        "Chapter 237"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Uraume take place?",
+      "id": "jjk-pg-uraume-023",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Nobara Kugisaki vs. Momo Nishimiya?",
+      "id": "jjk-pg-uraume-024",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Mai interrupts the battle."
+      ],
+      "found": [
+        "Mai interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-uraume-025",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobara Kugisaki vs. Momo Nishimiya begin?",
+      "id": "jjk-pg-uraume-026",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Chapter 40"
+      ],
+      "found": [
+        "Chapter 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Nobara Kugisaki vs. Momo Nishimiya depicted?",
+      "id": "jjk-pg-uraume-027",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-uraume-028",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Uraume look like in terms of hair and eye color?",
+      "id": "jjk-pg-uraume-035",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "white hair"
+      ],
+      "found": [
+        "white hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color line runs across the back of Uraume's head?",
+      "id": "jjk-pg-uraume-036",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "dark plum pink"
+      ],
+      "found": [
+        "dark plum pink"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of robes does Uraume wear?",
+      "id": "jjk-pg-uraume-037",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "plain monk robe of dark blue"
+      ],
+      "found": [
+        "plain monk robe of dark blue"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Uraume's usual expression outside of battle?",
+      "id": "jjk-pg-uraume-038",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "blank expression"
+      ],
+      "found": [
+        "blank expression"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Sukuna excited to see Uraume after a thousand years?",
+      "id": "jjk-pg-uraume-039",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "loyalty to Sukuna"
+      ],
+      "found": [
+        "loyalty to Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku tell Uraume regarding the sorcerers during Shibuya?",
+      "id": "jjk-pg-uraume-040",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "leave the sorcerers alive"
+      ],
+      "found": [
+        "leave the sorcerers alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Yuji Itadori serve as messenger for during Shibuya?",
+      "id": "jjk-pg-uraume-041",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "Uraume"
+      ],
+      "found": [
+        "Uraume"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Atsuya Kusakabe perceive Uraume's sorcery?",
+      "id": "jjk-pg-uraume-042",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "completely out of his league"
+      ],
+      "found": [
+        "completely out of his league"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who rescued Jujutsu High sorcerers from Uraume at the last moment?",
+      "id": "jjk-pg-uraume-043",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "special grade sorcerer Yuki Tsukumo"
+      ],
+      "found": [
+        "special grade sorcerer Yuki Tsukumo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rare skill does Uraume possess that requires extremely precise cursed energy manipulation?",
+      "id": "jjk-pg-uraume-044",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "reverse cursed technique"
+      ],
+      "found": [
+        "reverse cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Uraume do to block Choso's Piercing Blood?",
+      "id": "jjk-pg-uraume-045",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "partially block"
+      ],
+      "found": [
+        "partially block"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Uraume's innate technique grant them?",
+      "id": "jjk-pg-uraume-046",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "create and manipulate ice"
+      ],
+      "found": [
+        "create and manipulate ice"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Frost Calm work?",
+      "id": "jjk-pg-uraume-047",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "channels a cloud of freezing mist from their mouth"
+      ],
+      "found": [
+        "channels a cloud of freezing mist from their mouth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when Frost Calm hits enemies?",
+      "id": "jjk-pg-uraume-048",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "large columns of thick ice and frost to ensnare the enemy"
+      ],
+      "found": [
+        "large columns of thick ice and frost to ensnare the enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Uraume perform against multiple sorcerers in Shibuya?",
+      "id": "jjk-pg-uraume-049",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "incapacitated numerous sorcerers"
+      ],
+      "found": [
+        "incapacitated numerous sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Ura part of Uraume's name mean?",
+      "id": "jjk-pg-uraume-050",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "back, behind, other side"
+      ],
+      "found": [
+        "back, behind, other side"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "According to the fanbook, how long had Uraume been sticking to Sukuna?",
+      "id": "jjk-pg-uraume-051",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "a thousand years ago"
+      ],
+      "found": [
+        "a thousand years ago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is cooking people difficult for Sukuna according to the fanbook?",
+      "id": "jjk-pg-uraume-052",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "cooking them is difficult"
+      ],
+      "found": [
+        "cooking them is difficult"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What talent does Uraume have in cooking according to the fanbook?",
+      "id": "jjk-pg-uraume-053",
+      "subject": "Uraume",
+      "accept": "all",
+      "expected": [
+        "excellent talent"
+      ],
+      "found": [
+        "excellent talent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 18,
+    "canon_total": 18,
+    "canon_recall": 1.0,
+    "members_returned": 18,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 47,
+    "fact_present": 47
+  }
+}

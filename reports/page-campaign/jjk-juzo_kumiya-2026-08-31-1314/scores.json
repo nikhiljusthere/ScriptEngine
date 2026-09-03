@@ -1,0 +1,831 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Juzo Kumiya?",
+      "set": "Every named technique of Juzo Kumiya",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Juzo Kumiya?",
+      "set": "Every ally of Juzo Kumiya",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Juzo Kumiya?",
+      "set": "Juzo Kumiya's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Juzo Kumiya",
+      "set": "Every battle involving Juzo Kumiya",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Juzo Kumiya?",
+      "found": [
+        "Curtain",
+        "Dragon-Bone"
+      ],
+      "missing": [],
+      "members": [
+        "Curtain",
+        "Dragon-Bone"
+      ]
+    },
+    {
+      "query": "What are all the allies of Juzo Kumiya?",
+      "found": [
+        "Kenjaku",
+        "Haruta Shigemo",
+        "Mahito",
+        "Hanami"
+      ],
+      "missing": [],
+      "members": [
+        "Hanami",
+        "Haruta Shigemo",
+        "Kenjaku",
+        "Mahito"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Juzo Kumiya?",
+      "found": [
+        "Kenjaku's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's Group"
+      ]
+    },
+    {
+      "query": "Every battle involving Juzo Kumiya",
+      "found": [
+        "Yoshinobu Gakuganji vs. Juzo Kumiya"
+      ],
+      "missing": [],
+      "members": [
+        "Yoshinobu Gakuganji vs. Juzo Kumiya"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Juzo Kumiya's name?",
+      "id": "jjk-pg-juzo_kumiya-001",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "\u7d44\u5c4b\u97a3\u9020"
+      ],
+      "found": [
+        "\u7d44\u5c4b\u97a3\u9020"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Juzo Kumiya's name?",
+      "id": "jjk-pg-juzo_kumiya-002",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Kumiya J\u016bz\u014d"
+      ],
+      "found": [
+        "Kumiya J\u016bz\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Juzo Kumiya's race?",
+      "id": "jjk-pg-juzo_kumiya-003",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Juzo Kumiya's gender?",
+      "id": "jjk-pg-juzo_kumiya-004",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Juzo Kumiya?",
+      "id": "jjk-pg-juzo_kumiya-005",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Juzo Kumiya's occupation?",
+      "id": "jjk-pg-juzo_kumiya-006",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Juzo Kumiya first appear?",
+      "id": "jjk-pg-juzo_kumiya-007",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Chapter 43"
+      ],
+      "found": [
+        "Chapter 43"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Juzo Kumiya first depicted?",
+      "id": "jjk-pg-juzo_kumiya-008",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Episode 18"
+      ],
+      "found": [
+        "Episode 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Juzo Kumiya's Japanese voice actor?",
+      "id": "jjk-pg-juzo_kumiya-009",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Tetsu Inada"
+      ],
+      "found": [
+        "Tetsu Inada"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Juzo Kumiya's English voice actor?",
+      "id": "jjk-pg-juzo_kumiya-010",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Xander Mobus"
+      ],
+      "found": [
+        "Xander Mobus"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yoshinobu Gakuganji vs. Juzo Kumiya?",
+      "id": "jjk-pg-juzo_kumiya-011",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Gojo takes over the battle."
+      ],
+      "found": [
+        "Gojo takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yoshinobu Gakuganji vs. Juzo Kumiya take place?",
+      "id": "jjk-pg-juzo_kumiya-012",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yoshinobu Gakuganji vs. Juzo Kumiya?",
+      "id": "jjk-pg-juzo_kumiya-013",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Chapter 52"
+      ],
+      "found": [
+        "Chapter 52"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yoshinobu Gakuganji vs. Juzo Kumiya depicted?",
+      "id": "jjk-pg-juzo_kumiya-014",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Episode 20"
+      ],
+      "found": [
+        "Episode 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yoshinobu Gakuganji vs. Juzo Kumiya take place?",
+      "id": "jjk-pg-juzo_kumiya-015",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What animal does Juzo Kumiya's face marking represent?",
+      "id": "jjk-pg-juzo_kumiya-020",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "the raccoon"
+      ],
+      "found": [
+        "the raccoon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Juzo Kumiya's face marking resemble?",
+      "id": "jjk-pg-juzo_kumiya-021",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "a typical thief found in cartoons"
+      ],
+      "found": [
+        "a typical thief found in cartoons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Juzo Kumiya wearing?",
+      "id": "jjk-pg-juzo_kumiya-022",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "dark-blue apron over his bare chest"
+      ],
+      "found": [
+        "dark-blue apron over his bare chest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Juzo Kumiya described in terms of temperament?",
+      "id": "jjk-pg-juzo_kumiya-023",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "very aggressive man who is very openly out of his mind"
+      ],
+      "found": [
+        "very aggressive man who is very openly out of his mind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Juzo Kumiya want to do with people's corpses?",
+      "id": "jjk-pg-juzo_kumiya-024",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "hanger racks"
+      ],
+      "found": [
+        "hanger racks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Juzo Kumiya have no interest in cursed spirits?",
+      "id": "jjk-pg-juzo_kumiya-025",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "don't leave a body behind when they're exorcised"
+      ],
+      "found": [
+        "don't leave a body behind when they're exorcised"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of victims does Juzo Kumiya prefer?",
+      "id": "jjk-pg-juzo_kumiya-026",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "young women or someone strong"
+      ],
+      "found": [
+        "young women or someone strong"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Juzo Kumiya create that he considered his masterpiece?",
+      "id": "jjk-pg-juzo_kumiya-027",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "the Dragon-Bone"
+      ],
+      "found": [
+        "the Dragon-Bone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Juzo Kumiya give to Haruta Shigemo before the invasion?",
+      "id": "jjk-pg-juzo_kumiya-028",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "a hand-sword that he had made"
+      ],
+      "found": [
+        "a hand-sword that he had made"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who invaded Tokyo Jujutsu High with Juzo Kumiya?",
+      "id": "jjk-pg-juzo_kumiya-029",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Mahito, Hanami and Haruta"
+      ],
+      "found": [
+        "Mahito, Hanami and Haruta"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What conditions did Juzo's activated curtain have?",
+      "id": "jjk-pg-juzo_kumiya-030",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "restricting only Gojo from entering while allowing other sorcerers to enter"
+      ],
+      "found": [
+        "restricting only Gojo from entering while allowing other sorcerers to enter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Juzo disappointed after Gakuganji sent Utahime off?",
+      "id": "jjk-pg-juzo_kumiya-031",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "a decrepit old man that he couldn't make anything out of"
+      ],
+      "found": [
+        "a decrepit old man that he couldn't make anything out of"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Juzo plan to make of Gakuganji once he figured out his technique?",
+      "id": "jjk-pg-juzo_kumiya-032",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "a wallet"
+      ],
+      "found": [
+        "a wallet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Gojo stop Juzo's attack?",
+      "id": "jjk-pg-juzo_kumiya-033",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "crush his arms and legs"
+      ],
+      "found": [
+        "crush his arms and legs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose existence did Juzo reveal during his interrogation?",
+      "id": "jjk-pg-juzo_kumiya-034",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "monk kid"
+      ],
+      "found": [
+        "monk kid"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Juzo Kumiya create as a curse user?",
+      "id": "jjk-pg-juzo_kumiya-035",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "cursed tools"
+      ],
+      "found": [
+        "cursed tools"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yoshinobu consider Juzo to be?",
+      "id": "jjk-pg-juzo_kumiya-036",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "a formidable opponent"
+      ],
+      "found": [
+        "a formidable opponent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kenjaku feel Juzo was expendable?",
+      "id": "jjk-pg-juzo_kumiya-037",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "his attitude and refusal to follow orders"
+      ],
+      "found": [
+        "his attitude and refusal to follow orders"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Juzo's Curtain technique work?",
+      "id": "jjk-pg-juzo_kumiya-038",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "fully activate a pre-made curtain with set conditions"
+      ],
+      "found": [
+        "fully activate a pre-made curtain with set conditions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Juzo Kumiya's primary weapon in battle?",
+      "id": "jjk-pg-juzo_kumiya-039",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "a large axe"
+      ],
+      "found": [
+        "a large axe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Juzo believe about Haruta Shigemo?",
+      "id": "jjk-pg-juzo_kumiya-040",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "he's unreliable and needs his hand held at all times"
+      ],
+      "found": [
+        "he's unreliable and needs his hand held at all times"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Juzo's activated commissioned curtain capable of keeping out for 30 minutes?",
+      "id": "jjk-pg-juzo_kumiya-041",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Juzo Kumiya rank in the first Popularity Poll?",
+      "id": "jjk-pg-juzo_kumiya-042",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "65th"
+      ],
+      "found": [
+        "65th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Juzo Kumiya rank in the second Popularity Poll?",
+      "id": "jjk-pg-juzo_kumiya-043",
+      "subject": "Juzo Kumiya",
+      "accept": "all",
+      "expected": [
+        "71st"
+      ],
+      "found": [
+        "71st"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 39,
+    "fact_present": 39
+  }
+}

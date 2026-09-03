@@ -1,0 +1,603 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kuchisake-Onna?",
+      "set": "Every named technique of Kuchisake-Onna",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kuchisake-Onna?",
+      "set": "Kuchisake-Onna's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kuchisake-Onna",
+      "set": "Every battle involving Kuchisake-Onna",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kuchisake-Onna?",
+      "found": [
+        "Simple Domain"
+      ],
+      "missing": [],
+      "members": [
+        "Simple Domain"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kuchisake-Onna?",
+      "found": [
+        "Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "Every battle involving Kuchisake-Onna",
+      "found": [
+        "Suguru Geto vs. Toji Fushiguro"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto vs. Toji Fushiguro"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kuchisake-Onna's name?",
+      "id": "jjk-pg-kuchisake_onna-001",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "\u53e3\u88c2\u3051\u5973"
+      ],
+      "found": [
+        "\u53e3\u88c2\u3051\u5973"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kuchisake-Onna's name?",
+      "id": "jjk-pg-kuchisake_onna-002",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Kuchisake-Onna"
+      ],
+      "found": [
+        "Kuchisake-Onna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kuchisake-Onna's race?",
+      "id": "jjk-pg-kuchisake_onna-003",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Imaginary Vengeful Cursed Spirit"
+      ],
+      "found": [
+        "Imaginary Vengeful Cursed Spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kuchisake-Onna's gender?",
+      "id": "jjk-pg-kuchisake_onna-004",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kuchisake-Onna?",
+      "id": "jjk-pg-kuchisake_onna-005",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kuchisake-Onna first appear?",
+      "id": "jjk-pg-kuchisake_onna-006",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Chapter 72"
+      ],
+      "found": [
+        "Chapter 72"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kuchisake-Onna first depicted?",
+      "id": "jjk-pg-kuchisake_onna-007",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Episode 27"
+      ],
+      "found": [
+        "Episode 27"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kuchisake-Onna's Japanese voice actor?",
+      "id": "jjk-pg-kuchisake_onna-008",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Hiroko Kiso"
+      ],
+      "found": [
+        "Hiroko Kiso"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Suguru Geto vs. Toji Fushiguro?",
+      "id": "jjk-pg-kuchisake_onna-009",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro is victorious."
+      ],
+      "found": [
+        "Toji Fushiguro is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Suguru Geto vs. Toji Fushiguro take place?",
+      "id": "jjk-pg-kuchisake_onna-010",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star Corridor"
+      ],
+      "found": [
+        "Tombs of the Star Corridor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Suguru Geto vs. Toji Fushiguro take place?",
+      "id": "jjk-pg-kuchisake_onna-011",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "August 2006"
+      ],
+      "found": [
+        "August 2006"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Suguru Geto vs. Toji Fushiguro?",
+      "id": "jjk-pg-kuchisake_onna-012",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Chapter 73"
+      ],
+      "found": [
+        "Chapter 73"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Suguru Geto vs. Toji Fushiguro depicted?",
+      "id": "jjk-pg-kuchisake_onna-013",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Episode 28"
+      ],
+      "found": [
+        "Episode 28"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Suguru Geto vs. Toji Fushiguro take place?",
+      "id": "jjk-pg-kuchisake_onna-014",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Gojo's Past"
+      ],
+      "found": [
+        "Gojo's Past"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Kuchisake-Onna play in the series?",
+      "id": "jjk-pg-kuchisake_onna-018",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "an imaginary vengeful cursed spirit"
+      ],
+      "found": [
+        "an imaginary vengeful cursed spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who controlled Kuchisake-Onna, and through what ability?",
+      "id": "jjk-pg-kuchisake_onna-019",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto",
+        "through his Cursed Spirit Manipulation"
+      ],
+      "found": [
+        "Suguru Geto",
+        "through his Cursed Spirit Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kuchisake-Onna look like?",
+      "id": "jjk-pg-kuchisake_onna-020",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "a tall woman with long, disheveled black hair that reaches past her shoulders"
+      ],
+      "found": [
+        "a tall woman with long, disheveled black hair that reaches past her shoulders"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What appears in Kuchisake-Onna's hair when she gets excited?",
+      "id": "jjk-pg-kuchisake_onna-021",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "several eyes appear within the strands of hair"
+      ],
+      "found": [
+        "several eyes appear within the strands of hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can be seen when Kuchisake-Onna's mouth is open?",
+      "id": "jjk-pg-kuchisake_onna-022",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "her grotesque, razor-sharp teeth"
+      ],
+      "found": [
+        "her grotesque, razor-sharp teeth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kuchisake-Onna wear?",
+      "id": "jjk-pg-kuchisake_onna-023",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "a simple light-colored trench coat tied closed tightly around her waist"
+      ],
+      "found": [
+        "a simple light-colored trench coat tied closed tightly around her waist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kuchisake-Onna trap Toji Fushiguro with?",
+      "id": "jjk-pg-kuchisake_onna-024",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Simple Domain"
+      ],
+      "found": [
+        "Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What question did Kuchisake-Onna ask Toji within her Simple Domain?",
+      "id": "jjk-pg-kuchisake_onna-025",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "if she was pretty"
+      ],
+      "found": [
+        "if she was pretty"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji respond to Kuchisake-Onna's question?",
+      "id": "jjk-pg-kuchisake_onna-026",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "she isn't his type"
+      ],
+      "found": [
+        "she isn't his type"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji deflect Kuchisake-Onna's scissors?",
+      "id": "jjk-pg-kuchisake_onna-027",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "with the Inverted Spear of Heaven"
+      ],
+      "found": [
+        "with the Inverted Spear of Heaven"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Kuchisake-Onna exorcised?",
+      "id": "jjk-pg-kuchisake_onna-028",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "Toji cut down both Geto and Kuchisake-Onna"
+      ],
+      "found": [
+        "Toji cut down both Geto and Kuchisake-Onna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Kuchisake-Onna's rank?",
+      "id": "jjk-pg-kuchisake_onna-029",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "a cursed spirit of an unknown rank"
+      ],
+      "found": [
+        "a cursed spirit of an unknown rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kuchisake-Onna's Simple Domain enforce?",
+      "id": "jjk-pg-kuchisake_onna-030",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "non-violence between her and her target until her question is answered"
+      ],
+      "found": [
+        "non-violence between her and her target until her question is answered"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kuchisake-Onna based on?",
+      "id": "jjk-pg-kuchisake_onna-031",
+      "subject": "Kuchisake-Onna",
+      "accept": "all",
+      "expected": [
+        "the legendary figure of the same name in Japanese mythology"
+      ],
+      "found": [
+        "the legendary figure of the same name in Japanese mythology"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 28,
+    "fact_present": 28
+  }
+}

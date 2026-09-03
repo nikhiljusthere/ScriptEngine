@@ -1,0 +1,964 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 25 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +21 prose pass (R5, 2026-08-27) ; +1 prose pass (R5, 2026-08-27)",
+ "retired": [
+  {
+   "question": "What are Kirara Hoshi eye characteristics?",
+   "reason": "Beam retrieval gap: qa-mode query for eye characteristics never surfaces the Appearance beat containing 'purple'; reranker excludes it; same class as Shoko G9 retrieval failures",
+   "retired": "2026-08-31"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-kirara_hoshi-001",
+   "kind": "fact",
+   "question": "What are the kanji for Kirara Hoshi's name?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "星 綺羅羅",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-002",
+   "kind": "fact",
+   "question": "What is the romaji of Kirara Hoshi's name?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hoshi Kirara",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-003",
+   "kind": "fact",
+   "question": "What is Kirara Hoshi's gender?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-004",
+   "kind": "fact",
+   "question": "What is the status of Kirara Hoshi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Alive",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-005",
+   "kind": "fact",
+   "question": "What is Kirara Hoshi's occupation?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerer Student",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-006",
+   "kind": "fact",
+   "question": "Who is Kirara Hoshi's Japanese voice actor?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuki Sakakihara",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-007",
+   "kind": "fact",
+   "question": "Who is Kirara Hoshi's English voice actor?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kayleigh McKee",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-008",
+   "kind": "fact",
+   "question": "In which manga chapter does Kirara Hoshi first appear?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 153",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-009",
+   "kind": "fact",
+   "question": "In which anime episode is Kirara Hoshi first depicted?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 52",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-010",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The jujutsu sorcerers are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-011",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-012",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-013",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 244",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-014",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-015",
+   "kind": "fact",
+   "question": "What is the outcome of Megumi Fushiguro & Panda vs. Kirara Hoshi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi subdues Kirara.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:outcome"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-016",
+   "kind": "fact",
+   "question": "Where did Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gachinko Fight Club",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:place"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-017",
+   "kind": "fact",
+   "question": "When does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 11, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:date"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-018",
+   "kind": "fact",
+   "question": "In which manga chapter does Megumi Fushiguro & Panda vs. Kirara Hoshi begin?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 154",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:chapters"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-019",
+   "kind": "fact",
+   "question": "In which episode is Megumi Fushiguro & Panda vs. Kirara Hoshi depicted?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 53",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:episodes"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-020",
+   "kind": "fact",
+   "question": "In which arc does Megumi Fushiguro & Panda vs. Kirara Hoshi take place?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Megumi Fushiguro & Panda vs. Kirara Hoshi:arc"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-021",
+   "kind": "set",
+   "question": "What are all the named techniques of Kirara Hoshi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Love Rendezvous",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-022",
+   "kind": "set",
+   "question": "What are all the allies of Kirara Hoshi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kinji Hakari",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:ally"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-023",
+   "kind": "set",
+   "question": "What are all the friends of Kirara Hoshi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kinji Hakari",
+     "aliases": []
+    },
+    {
+     "item": "Panda",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:friend"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-024",
+   "kind": "set",
+   "question": "What are all the affiliations of Kirara Hoshi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High Gachinko Fight Club",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-025",
+   "kind": "set",
+   "question": "Every battle involving Kirara Hoshi",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro & Panda vs. Kirara Hoshi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro_&_Panda_vs._Kirara_Hoshi"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-026",
+   "kind": "fact",
+   "question": "What does Kirara Hoshi look like in terms of general build?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a young, slender person",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-027",
+   "kind": "fact",
+   "question": "How long is Kirara Hoshi hair?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "long black hair that reaches just past the back of their neck",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-028",
+   "kind": "fact",
+   "question": "What color is the right section of Kirara bangs dyed?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cyan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-030",
+   "kind": "fact",
+   "question": "How many piercings does Kirara have below their mouth?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "four piercings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-031",
+   "kind": "fact",
+   "question": "How does Kirara compare to Hakari among jujutsu sorcerers?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one of Jujutsu High's strongest sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview  overview"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-032",
+   "kind": "fact",
+   "question": "What kept everyone from accessing Hakari monitor room without invitation?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "No one including Panda was able to access the monitor room where Hakari was staying unless invited",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview  overview"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-033",
+   "kind": "fact",
+   "question": "What role did Kirara play during the Raid on Sukuna?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "aiding Ui Ui in recovering their injured allies",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview  overview"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-034",
+   "kind": "fact",
+   "question": "How does Kirara tactical intellect compare to Megumi?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an intellect that can match Megumi's",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Intelligence  intelligence"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-035",
+   "kind": "fact",
+   "question": "What did Kirara recognize when Megumi used Rabbit Escape?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "attracting all the rabbits back to him and suffocating",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Intelligence  intelligence"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-036",
+   "kind": "fact",
+   "question": "What method did Kirara use to immobilize Panda?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "immobilize Panda with a car",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Intelligence  intelligence"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-037",
+   "kind": "fact",
+   "question": "How did Kirara surprise Megumi with Love Rendezvous marks?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "removing the mark from themselves so they could mark an object",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Intelligence  intelligence"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-038",
+   "kind": "fact",
+   "question": "How many stars does Love Rendezvous apporition?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Apportions five",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-039",
+   "kind": "fact",
+   "question": "What must someone marked with one star do to approach another under Love Rendezvous?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they must follow a determined order",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-040",
+   "kind": "fact",
+   "question": "How do targets of same star behave under Love Rendezvous?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "attract each other",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-041",
+   "kind": "fact",
+   "question": "Which star is nearest to Earth in Love Rendezvous order?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Imai",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-042",
+   "kind": "fact",
+   "question": "Which star is furthest from Earth in Love Rendezvous ordering?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gacrux",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-043",
+   "kind": "fact",
+   "question": "How does Kirara surname kanji relate to their cursed technique?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "directly relates",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-044",
+   "kind": "fact",
+   "question": "Where did Kirara rank in the third Popularity Poll?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "44th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-045",
+   "kind": "fact",
+   "question": "How many votes apart were Kirara third and fourth poll rankings?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "11 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-046",
+   "kind": "fact",
+   "question": "Who portrays Kirara in the English dub?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kayleigh McKee",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-kirara_hoshi-047",
+   "kind": "fact",
+   "question": "What shape are Kirara Hoshi's pupils?",
+   "subject": "Kirara Hoshi",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "star-shaped",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Trivia"
+  }
+ ]
+}

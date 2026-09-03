@@ -1,0 +1,375 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Thin Ice Breaker",
+      "set": "Every battle involving Thin Ice Breaker",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Thin Ice Breaker",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Thin Ice Breaker's name?",
+      "id": "jjk-pg-thin_ice_breaker-001",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "\u5b87\u5b88\u7f85\u5f48"
+      ],
+      "found": [
+        "\u5b87\u5b88\u7f85\u5f48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Thin Ice Breaker's name?",
+      "id": "jjk-pg-thin_ice_breaker-002",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Usurabi"
+      ],
+      "found": [
+        "Usurabi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Thin Ice Breaker first appear?",
+      "id": "jjk-pg-thin_ice_breaker-003",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Chapter 177"
+      ],
+      "found": [
+        "Chapter 177"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Thin Ice Breaker first depicted?",
+      "id": "jjk-pg-thin_ice_breaker-004",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-thin_ice_breaker-005",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-thin_ice_breaker-006",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-thin_ice_breaker-007",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-thin_ice_breaker-008",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-thin_ice_breaker-009",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori?",
+      "id": "jjk-pg-thin_ice_breaker-010",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-thin_ice_breaker-011",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-thin_ice_breaker-012",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori begin?",
+      "id": "jjk-pg-thin_ice_breaker-013",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Chapter 176"
+      ],
+      "found": [
+        "Chapter 176"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori depicted?",
+      "id": "jjk-pg-thin_ice_breaker-014",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Takako Uro vs. Ryu Ishigori take place?",
+      "id": "jjk-pg-thin_ice_breaker-015",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does a user of the Thin Ice Breaker strike their target?",
+      "id": "jjk-pg-thin_ice_breaker-017",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "Rather than striking their target directly, the user hits the surface of the sky via their cursed technique."
+      ],
+      "found": [
+        "Rather than striking their target directly, the user hits the surface of the sky via their cursed technique."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What effect does the Thin Ice Breaker have on the target?",
+      "id": "jjk-pg-thin_ice_breaker-018",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "This creates a shattering effect where the sky's surface cracks like thin ice, consequently hitting the target with increased force."
+      ],
+      "found": [
+        "This creates a shattering effect where the sky's surface cracks like thin ice, consequently hitting the target with increased force."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What word is the Thin Ice Breaker's name a pun on?",
+      "id": "jjk-pg-thin_ice_breaker-019",
+      "subject": "Thin Ice Breaker",
+      "accept": "all",
+      "expected": [
+        "The technique's name is a pun on the word usurabi"
+      ],
+      "found": [
+        "The technique's name is a pun on the word usurabi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 18,
+    "fact_present": 18
+  }
+}

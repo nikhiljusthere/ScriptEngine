@@ -1,0 +1,993 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kokichi Muta?",
+      "set": "Every named technique of Kokichi Muta",
+      "confidence": "declared",
+      "returned": 15,
+      "available": 15,
+      "canon": 15,
+      "found": 15,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Kokichi Muta?",
+      "set": "Every ally of Kokichi Muta",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Kokichi Muta?",
+      "set": "Every enemy of Kokichi Muta",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Kokichi Muta?",
+      "set": "Kokichi Muta's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kokichi Muta?",
+      "set": "Kokichi Muta's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kokichi Muta",
+      "set": "Every battle involving Kokichi Muta",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kokichi Muta?",
+      "found": [
+        "Cursed Corpse",
+        "Puppet Manipulation",
+        "Ultimate Mechamaru",
+        "Simple Domain",
+        "Boost On",
+        "Heavenly Restriction",
+        "Mode: Albatross",
+        "Sword Option",
+        "Ultimate Cannon",
+        "Ultra Cannon",
+        "Ultra Spin",
+        "Ultra Shield",
+        "Miracle Cannon",
+        "Mode: Absolute",
+        "Pigeon Viola"
+      ],
+      "missing": [],
+      "members": [
+        "Boost On",
+        "Cursed Corpse",
+        "Heavenly Restriction",
+        "Miracle Cannon",
+        "Mode: Absolute",
+        "Mode: Albatross",
+        "Pigeon Viola",
+        "Puppet Manipulation",
+        "Simple Domain",
+        "Sword Option",
+        "Ultimate Cannon",
+        "Ultimate Mechamaru",
+        "Ultra Cannon",
+        "Ultra Shield",
+        "Ultra Spin"
+      ]
+    },
+    {
+      "query": "What are all the allies of Kokichi Muta?",
+      "found": [
+        "Mahito",
+        "Yuji Itadori",
+        "Mei Mei",
+        "Kento Nanami",
+        "Utahime Iori",
+        "Mai Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Kento Nanami",
+        "Mahito",
+        "Mai Zenin",
+        "Mei Mei",
+        "Utahime Iori",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Kokichi Muta?",
+      "found": [
+        "Mahito",
+        "Kenjaku",
+        "Choso",
+        "Mai Zenin",
+        "Panda",
+        "Utahime Iori"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Kenjaku",
+        "Mahito",
+        "Mai Zenin",
+        "Panda",
+        "Utahime Iori"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Kokichi Muta?",
+      "found": [
+        "Mechamaru"
+      ],
+      "missing": [],
+      "members": [
+        "Mechamaru"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Kokichi Muta?",
+      "found": [
+        "Kyoto Jujutsu High Pseudo-Geto's Group (Temporarily)"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High Pseudo-Geto's Group (Temporarily)"
+      ]
+    },
+    {
+      "query": "Every battle involving Kokichi Muta",
+      "found": [
+        "Kokichi Muta vs. Mahito",
+        "Panda vs. Ultimate Mechamaru"
+      ],
+      "missing": [],
+      "members": [
+        "Kokichi Muta vs. Mahito",
+        "Panda vs. Ultimate Mechamaru"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kokichi Muta's name?",
+      "id": "jjk-pg-kokichi_muta-001",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "\u4e0e \u5e78\u5409"
+      ],
+      "found": [
+        "\u4e0e \u5e78\u5409"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kokichi Muta's name?",
+      "id": "jjk-pg-kokichi_muta-002",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Muta K\u014dkichi"
+      ],
+      "found": [
+        "Muta K\u014dkichi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokichi Muta's race?",
+      "id": "jjk-pg-kokichi_muta-003",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Kokichi Muta?",
+      "id": "jjk-pg-kokichi_muta-004",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "17"
+      ],
+      "found": [
+        "17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokichi Muta's birthday?",
+      "id": "jjk-pg-kokichi_muta-005",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "October 4, 2001"
+      ],
+      "found": [
+        "October 4, 2001"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokichi Muta's gender?",
+      "id": "jjk-pg-kokichi_muta-006",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kokichi Muta?",
+      "id": "jjk-pg-kokichi_muta-007",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokichi Muta's occupation?",
+      "id": "jjk-pg-kokichi_muta-008",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kokichi Muta's Japanese voice actor?",
+      "id": "jjk-pg-kokichi_muta-009",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Yoshitsugu Matsuoka"
+      ],
+      "found": [
+        "Yoshitsugu Matsuoka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kokichi Muta's English voice actor?",
+      "id": "jjk-pg-kokichi_muta-010",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Keith Silverstein"
+      ],
+      "found": [
+        "Keith Silverstein"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kokichi Muta first appear?",
+      "id": "jjk-pg-kokichi_muta-011",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokichi Muta's grade?",
+      "id": "jjk-pg-kokichi_muta-012",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Semi-Grade 1"
+      ],
+      "found": [
+        "Semi-Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kokichi Muta first depicted?",
+      "id": "jjk-pg-kokichi_muta-013",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Episode 14"
+      ],
+      "found": [
+        "Episode 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kokichi Muta vs. Mahito?",
+      "id": "jjk-pg-kokichi_muta-014",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Mahito is victorious."
+      ],
+      "found": [
+        "Mahito is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kokichi Muta vs. Mahito take place?",
+      "id": "jjk-pg-kokichi_muta-015",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "October 19, 2018"
+      ],
+      "found": [
+        "October 19, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kokichi Muta vs. Mahito begin?",
+      "id": "jjk-pg-kokichi_muta-016",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Chapter 80"
+      ],
+      "found": [
+        "Chapter 80"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Kokichi Muta vs. Mahito depicted?",
+      "id": "jjk-pg-kokichi_muta-017",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Episode 30 - 31"
+      ],
+      "found": [
+        "Episode 30 - 31"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kokichi Muta vs. Mahito take place?",
+      "id": "jjk-pg-kokichi_muta-018",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Panda vs. Ultimate Mechamaru?",
+      "id": "jjk-pg-kokichi_muta-019",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Panda is victorious."
+      ],
+      "found": [
+        "Panda is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Panda vs. Ultimate Mechamaru take place?",
+      "id": "jjk-pg-kokichi_muta-020",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu School"
+      ],
+      "found": [
+        "Tokyo Jujutsu School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Panda vs. Ultimate Mechamaru begin?",
+      "id": "jjk-pg-kokichi_muta-021",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Chapter 37"
+      ],
+      "found": [
+        "Chapter 37"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Panda vs. Ultimate Mechamaru depicted?",
+      "id": "jjk-pg-kokichi_muta-022",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Episode 16"
+      ],
+      "found": [
+        "Episode 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Panda vs. Ultimate Mechamaru take place?",
+      "id": "jjk-pg-kokichi_muta-023",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Kokichi Muta hold as a jujutsu sorcerer?",
+      "id": "jjk-pg-kokichi_muta-030",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "semi-grade 1 jujutsu sorcerer"
+      ],
+      "found": [
+        "semi-grade 1 jujutsu sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who acknowledged that Kokichi skill and strategies were exceptional in battle?",
+      "id": "jjk-pg-kokichi_muta-031",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku praise Kokichi for having while fighting Mahito?",
+      "id": "jjk-pg-kokichi_muta-032",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "decent tactical prowess"
+      ],
+      "found": [
+        "decent tactical prowess"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many years of cursed energy was Kokichi prepared to use when piloting Mechamaru Absolute?",
+      "id": "jjk-pg-kokichi_muta-033",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "seventeen years, five months, and six days"
+      ],
+      "found": [
+        "seventeen years, five months, and six days"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What level of cursed energy output could Kokichi release momentarily?",
+      "id": "jjk-pg-kokichi_muta-034",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "comparable to a special grade's"
+      ],
+      "found": [
+        "comparable to a special grade's"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What restriction compensated for Kokichi body without legs?",
+      "id": "jjk-pg-kokichi_muta-035",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "he could use his cursed technique over a vast range and output more cursed energy beyond his limits"
+      ],
+      "found": [
+        "he could use his cursed technique over a vast range and output more cursed energy beyond his limits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Kokichi unable to touch his skin with natural light?",
+      "id": "jjk-pg-kokichi_muta-036",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "his skin was so sensitive it couldn't be touched by natural light"
+      ],
+      "found": [
+        "his skin was so sensitive it couldn't be touched by natural light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Puppet Manipulation allow Kokichi to do?",
+      "id": "jjk-pg-kokichi_muta-037",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "remotely control cursed corpse puppets over a wide range"
+      ],
+      "found": [
+        "remotely control cursed corpse puppets over a wide range"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What area did Kokichi Puppet Manipulation technique encompass?",
+      "id": "jjk-pg-kokichi_muta-038",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "the entirety of Japan"
+      ],
+      "found": [
+        "the entirety of Japan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Mechamaru give his final order to before dying?",
+      "id": "jjk-pg-kokichi_muta-041",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "Kasumi Miwa"
+      ],
+      "found": [
+        "Kasumi Miwa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What binding vow did Kokichi have with Mahito group?",
+      "id": "jjk-pg-kokichi_muta-043",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "promising to give them information as a mole in exchange for a healthy body"
+      ],
+      "found": [
+        "promising to give them information as a mole in exchange for a healthy body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Kokichi personality like?",
+      "id": "jjk-pg-kokichi_muta-044",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "reclusive and reserved individual"
+      ],
+      "found": [
+        "reclusive and reserved individual"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kokichi react when Panda suggested they should get along since they are both cursed corpses?",
+      "id": "jjk-pg-kokichi_muta-045",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "thought of Panda as nothing more than just a doll"
+      ],
+      "found": [
+        "thought of Panda as nothing more than just a doll"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kokichi say to Panda about living carefree in the sun?",
+      "id": "jjk-pg-kokichi_muta-046",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "The fact that a doll like you and not a human like me gets to live so carefree in the sun really pisses me off!"
+      ],
+      "found": [
+        "The fact that a doll like you and not a human like me gets to live so carefree in the sun really pisses me off!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What posthumous message did Kokichi send to Kasumi Miwa?",
+      "id": "jjk-pg-kokichi_muta-047",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "asks Kasumi to find her happiness and adds that as long as she does that, his wish will have come true"
+      ],
+      "found": [
+        "asks Kasumi to find her happiness and adds that as long as she does that, his wish will have come true"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Mechamaru get in the first Popularity Poll?",
+      "id": "jjk-pg-kokichi_muta-048",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "30th"
+      ],
+      "found": [
+        "30th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Kokichi get in the second Popularity Poll?",
+      "id": "jjk-pg-kokichi_muta-049",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "270"
+      ],
+      "found": [
+        "270"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kokichi name his mecha after?",
+      "id": "jjk-pg-kokichi_muta-050",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "an anime he liked"
+      ],
+      "found": [
+        "an anime he liked"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Was Kokichi Muta capable of controlling multiple puppets at once?",
+      "id": "jjk-pg-kokichi_muta-051",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "control several puppets at once remotely"
+      ],
+      "found": [
+        "control several puppets at once remotely"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which technique lets Kokichi fight from a distance instead of engaging directly?",
+      "id": "jjk-pg-kokichi_muta-053",
+      "subject": "Kokichi Muta",
+      "accept": "all",
+      "expected": [
+        "remotely control cursed corpse puppets over a wide range"
+      ],
+      "found": [
+        "remotely control cursed corpse puppets over a wide range"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 6,
+    "canon_found": 31,
+    "canon_total": 31,
+    "canon_recall": 1.0,
+    "members_returned": 31,
+    "exact_answers": 6,
+    "exact_of": 6,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "6/6",
+    "at_recall_zero": 0,
+    "at_recall_80": 6,
+    "confident_and_wrong": [],
+    "fact_questions": 43,
+    "fact_present": 43
+  }
+}

@@ -1,0 +1,911 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 27 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +20 prose pass (R5, 2026-08-27) ; +7 retries+adaptives (2026-08-31); -9 retired ; SU11 audit (2026-08-31): +051 restored (poll rank, was G13-gap retire); 10/10 retire reasons completed",
+ "retired": [
+  {
+   "question": "Was Hiromi Higuruma regarded as a genius before becoming a sorcerer?",
+   "reason": "Yes/no word-boundary class; the genius fact is covered by active 048 ('How did Hiromi Higuruma's peers describe even before he became a sorcerer?') and 035."
+  },
+  {
+   "question": "Is Hiromi Higuruma extraordinarily brilliant by Law School standards?",
+   "reason": "Yes/no word-boundary class; replaced by wh-form active 049 ('By whose standards was Hiromi Higuruma extraordinarily brilliant?')."
+  },
+  {
+   "question": "Can Hiromi Higuruma use Domain Amplification while continuing his cursed technique after interrupting and resuming it?",
+   "reason": "The 'while continuing' variant is not stated verbatim on the page; the interrupt/resume fact is covered by active 050."
+  },
+  {
+   "question": "Higuruma could interrupt and resume his cursed technique after using Domain Amplification but no other sorcerer can do that — why makes him unique in this way?",
+   "reason": "Question embeds the answer string (Domain Amplification) — structural failure; replaced by wh-form active 050."
+  },
+  {
+   "question": "Does Hiromi Higuruma possess an innate cursed technique?",
+   "reason": "Yes/no word-boundary class; covered by active 025 (all named techniques) and 040 (Judgeman)."
+  },
+  {
+   "question": "Can Hiromi Higuruma freely conjure his gavel weapon in either hand?",
+   "reason": "Yes/no word-boundary class; redundant with active 041 (weapon wielded in battle)."
+  },
+  {
+   "question": "Compared to his gavel, is Judgeman larger or smaller in size?",
+   "reason": "Counterfactual: the page describes Judgeman's appearance (active 040) but never states a size comparison with the gavel."
+  },
+  {
+   "question": "Did Hiromi Higuruma fight Haba?",
+   "reason": "Yes/no word-boundary class; covered by active 045 ('Who fought Hiromi Higuruma during the Culling Game Arc?') + battles set 027."
+  },
+  {
+   "question": "Did Hiromi Higuruma rank in the third Popularity Poll?",
+   "reason": "Yes/no word-boundary class; the poll fact is covered by the restored wh-form active 051 (third-poll rank)."
+  },
+  {
+   "question": "Where did Hiromi Higuruma rank in the third Popularity Poll compared to his fourth placement?",
+   "reason": "SU11: RESTORED as active 051 (wh-form) — the answer is on the page (Trivia: 'Hiromi ranked 20th in the third Popularity Poll with 290 votes'); retiring an on-page fact violates the Kamo documented-open precedent. Record kept for audit trail."
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-hiromi_higuruma-001",
+   "kind": "fact",
+   "question": "What are the kanji for Hiromi Higuruma's name?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "日車寛見",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-002",
+   "kind": "fact",
+   "question": "What is the romaji of Hiromi Higuruma's name?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Higuruma Hiromi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-003",
+   "kind": "fact",
+   "question": "What is Hiromi Higuruma's race?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Human",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-004",
+   "kind": "fact",
+   "question": "How old is Hiromi Higuruma?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "36",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-005",
+   "kind": "fact",
+   "question": "What is Hiromi Higuruma's gender?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-006",
+   "kind": "fact",
+   "question": "What is the status of Hiromi Higuruma?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Alive",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-007",
+   "kind": "fact",
+   "question": "What is Hiromi Higuruma's occupation?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Defense Attorney Jujutsu Sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-008",
+   "kind": "fact",
+   "question": "In which manga chapter does Hiromi Higuruma first appear?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 143 (Cameo) Chapter 158",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-009",
+   "kind": "fact",
+   "question": "In which anime episode is Hiromi Higuruma first depicted?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 49 (Cameo) Episode 55",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-010",
+   "kind": "fact",
+   "question": "Who is Hiromi Higuruma's Japanese voice actor?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tomokazu Sugita",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-011",
+   "kind": "fact",
+   "question": "Who is Hiromi Higuruma's English voice actor?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ben Balmaceda",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-012",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The jujutsu sorcerers are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-013",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-014",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-015",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 244",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-016",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-017",
+   "kind": "fact",
+   "question": "Which techniques did Hiromi Higuruma use in Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Domain Amplification, Domain Expansion: Deadly Sentencing, Reverse Cursed Technique, Shikigami: Judgeman",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-018",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori vs. Hiromi Higuruma?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Higuruma allows Yuji to win.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:outcome"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-019",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori vs. Hiromi Higuruma take place?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo No. 1 Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:place"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-020",
+   "kind": "fact",
+   "question": "When does Yuji Itadori vs. Hiromi Higuruma take place?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 12, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:date"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-021",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuji Itadori vs. Hiromi Higuruma begin?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 164",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:chapters"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-022",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori vs. Hiromi Higuruma depicted?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 55 - 56",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:episodes"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-023",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori vs. Hiromi Higuruma take place?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:arc"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-024",
+   "kind": "fact",
+   "question": "Which techniques did Hiromi Higuruma use in Yuji Itadori vs. Hiromi Higuruma?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Domain Expansion: Deadly Sentencing, Judgeman, Cursed Tool: Gavel, Cursed Energy Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Hiromi Higuruma:techniques"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-025",
+   "kind": "set",
+   "question": "What are all the named techniques of Hiromi Higuruma?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    },
+    {
+     "item": "Shikigami",
+     "aliases": []
+    },
+    {
+     "item": "Domain Expansion",
+     "aliases": []
+    },
+    {
+     "item": "Domain Amplification",
+     "aliases": []
+    },
+    {
+     "item": "Judgeman",
+     "aliases": []
+    },
+    {
+     "item": "Deadly Sentencing",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-026",
+   "kind": "set",
+   "question": "What are all the allies of Hiromi Higuruma?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Keita Oe",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:ally"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-027",
+   "kind": "set",
+   "question": "Every battle involving Hiromi Higuruma",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori vs. Hiromi Higuruma",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-028",
+   "kind": "fact",
+   "question": "What expression does Hiromi Higuruma almost always have?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a tired and bored expression",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-029",
+   "kind": "fact",
+   "question": "Why does Hiromi Higuruma almost always have a tired and bored expression on his face?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "due to overwork and the nature of his career",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Appearance"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-030",
+   "kind": "fact",
+   "question": "Is Hiromi Higuruma apathetic?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "no",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-031",
+   "kind": "fact",
+   "question": "How did Hiromi Higuruma's colleagues describe his tendency to take on difficult cases with little chance of acquittal?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "as masochistic",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-033",
+   "kind": "fact",
+   "question": "Which proved more extraordinary for Hiromi Higuruma — his aptitude as a defense attorney or his aptitude as a jujutsu sorcerer?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his aptitude as a jujutsu sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview  overview"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-034",
+   "kind": "fact",
+   "question": "How did Yuji rate Hiromi Higuruma's strength?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "extremely powerful",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Physical Prowess  physical prowess"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-035",
+   "kind": "fact",
+   "question": "Who recommended Hiromi Higuruma become a judge before even graduating Law School?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one of his senior mentors",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Intelligence  intelligence"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-040",
+   "kind": "fact",
+   "question": "What does Judgeman look like?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a large shikigami with a black body that has three stubbed points that act as two arms and a leg",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-041",
+   "kind": "fact",
+   "question": "What weapon does Hiromi Higuruma wield in battle?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his gavel cursed tool",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Equipment"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-045",
+   "kind": "fact",
+   "question": "Who fought Hiromi Higuruma during the Culling Game Arc?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Haba",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-048",
+   "kind": "fact",
+   "question": "How did Hiromi Higuruma's peers describe even before he became a sorcerer?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "as a genius",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Overview overview -- R5 adaptive for genius"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-049",
+   "kind": "fact",
+   "question": "By whose standards was Hiromi Higuruma extraordinarily brilliant?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Law School",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Intelligence intelligence -- R5 adaptive for brilliance"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-050",
+   "kind": "fact",
+   "question": "What allows Hiromi Higuruma to interrupt and resume his cursed technique after using Domain Amplification?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Higuruma's incredible skill with cursed energy manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Energy cursed energy -- R5 adaptive for counterfactual"
+  },
+  {
+   "id": "jjk-pg-hiromi_higuruma-051",
+   "kind": "fact",
+   "question": "Where did Hiromi Higuruma rank in the third Popularity Poll?",
+   "subject": "Hiromi Higuruma",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "20th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Trivia | SU11 restore: was retired 2026-08-31 as a G13 Trivia retrieval gap; Kamo documented-open precedent says on-page facts stay active; Trivia is indexable post-G15"
+  }
+ ]
+}

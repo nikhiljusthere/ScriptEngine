@@ -1,0 +1,38 @@
+# Staged roster declarations for the Toji Fushiguro page campaign
+# (questions/_jjk_page_toji_fushiguro.section4.json, section 4:
+# identity / grade / role / aliases).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Toji Fushiguro's aliases` is the single `alias =` infobox field
+# (`Sorcerer Killer`), a shape roster discovery does not read -- the same
+# reason the Yuji, Sukuna, Maki and Megumi alias declarations exist.
+# `Toji Zenin` is the birth name from the lead prose, not the alias field, so
+# it is asked as a separate fact (jjk-pg-toji_fushiguro-151), not a member.
+# `Sorcerer Killer` has no wiki page of its own; the declared-member filter
+# keeps it because it is stated in the infobox and throughout the prose.
+#
+# `Toji Fushiguro's affiliations` is the closed three-entry set of the
+# infobox `affiliation` field. `Independent` has no wiki page; it is stated in
+# the infobox itself, so the declared-member filter keeps it.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required on the match side; the
+# parenthesised members are quoted for clarity.
+rosters:
+  - name: Toji Fushiguro's aliases
+    match:
+      - what are toji fushiguro's aliases
+      - all the aliases of toji fushiguro
+      - aliases of toji fushiguro
+      - toji fushiguro's aliases
+    subject: Toji Fushiguro
+    members: [Sorcerer Killer]
+
+  - name: Toji Fushiguro's affiliations
+    match:
+      - what are toji fushiguro's affiliations
+      - all the affiliations of toji fushiguro
+      - affiliations of toji fushiguro
+      - toji fushiguro's affiliations
+    subject: Toji Fushiguro
+    members: ["Zenin Clan (Formerly)", Independent, "Time Vessel Association (Contracted)"]

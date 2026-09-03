@@ -1,0 +1,1556 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +74 hand-authored prose (ids 003-078); R5 forms: yes/no 052, comparative 046, counterfactual 079 (retired, not-stated-on-page), how-many 024/034/038; Music/Clips skipped per template, Navigation retired by page-gen; no Trivia section on this page; 017/027 retired router-gap (plural-ask -> roster)",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_22-079",
+   "item": "",
+   "question": "What would have happened if Ijichi could have spared the sorcerers for backup in Episode 22?",
+   "reason": "Counterfactual: the page never states what would have happened had Ijichi spared sorcerers for backup - Megumi simply hangs up, tells his peers the mission is more dangerous, and goes back to the bridge alone. No hypothetical outcome is stated on the page; never invent a resolution.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_22-017",
+   "item": "mysterious deaths",
+   "question": "What are the Tokyo Jujutsu High first-years sent out to investigate in Episode 22?",
+   "reason": "Router gap (documented plural-wh limitation, new instance): 'What are the Tokyo Jujutsu High first-years sent out to investigate in Episode 22?' fires the plural_ask signal (observed route: mode=roster, why='asks in the plural, which wants the list'), and the subject mis-resolves to 'Tokyo Metropolitan Curse Technical College' (location) - a location roster bundle carries no episode prose, so the Summary answer 'mysterious deaths' is absent from the bundle entirely. No .py change in the subagent contract; flagged for central triage with the other plural-ask instances (jjk-pg-episode_21-063).",
+   "reason_class": "router-gap",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_22-027",
+   "item": "question some classmates",
+   "question": "What were the first-years planning to do at the funeral in Episode 22?",
+   "reason": "Router gap (documented plural-wh limitation, new instance): 'What were the first-years planning to do at the funeral in Episode 22?' fires the plural_ask signal (observed route: mode=roster, why='asks in the plural, which wants the list'). The funeral passage IS retrieved, but in a roster bundle it lands in fields the fact scorer's haystack does not read (candidates/rejected), so the answer 'question some classmates' is present in the raw bundle yet unscored. A qa route would have served it in beats. No .py change in the subagent contract; flagged for central triage with the other plural-ask instances (jjk-pg-episode_21-063).",
+   "reason_class": "router-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_22-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 22's name?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "起首雷同",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_22-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 22's name?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kishu Raidō",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_22-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Origin of Obedience",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-004",
+   "kind": "fact",
+   "question": "When did Episode 22 air in Japan?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2021-03-13",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-005",
+   "kind": "fact",
+   "question": "When did Episode 22 air in the United States?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2021-04-30",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 22 belong to?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "VIVID VICE",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "give it back",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-009",
+   "kind": "fact",
+   "question": "Which manga chapters is Episode 22 adapted from?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 55",
+     "aliases": [
+      "Chapter 56"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 21",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 23",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 22 part of?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-013",
+   "kind": "fact",
+   "question": "Which new character dies at the start of Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Taichi Kanada",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-014",
+   "kind": "fact",
+   "question": "Which new character drives the first-years to the mission in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Akari Nitta",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-015",
+   "kind": "fact",
+   "question": "Which new character greets Megumi at the school in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Takeda",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-016",
+   "kind": "fact",
+   "question": "Which new character is the incarnated Death Painting in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kechizu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_22-018",
+   "kind": "fact",
+   "question": "What are Mahito and Geto continuing in Episode 22's summary?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "their schemes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_22-019",
+   "kind": "fact",
+   "question": "What does Taichi find when he comes home in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the auto lock doors to his apartment is open",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-020",
+   "kind": "fact",
+   "question": "How does Taichi die in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "stabbed to death",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-021",
+   "kind": "fact",
+   "question": "What is added to Tokyo Jujutsu High after Taichi's death in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his profile",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-022",
+   "kind": "fact",
+   "question": "What is Akari Nitta's role in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an assistant manager for Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-023",
+   "kind": "fact",
+   "question": "What does Akari explain to the first-years in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a tread that connects their deaths",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-024",
+   "kind": "fact",
+   "question": "How long did the victims attend the same junior high in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two years",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-025",
+   "kind": "fact",
+   "question": "What is the most likely explanation for the deaths in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the three of them were cursed",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-026",
+   "kind": "fact",
+   "question": "What does Megumi question about the deaths in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the idea that the same cursed spirit have traveled so far",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-028",
+   "kind": "fact",
+   "question": "What does the funeral reveal about Taichi's death in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he died the same way as the other three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-029",
+   "kind": "fact",
+   "question": "Where was Taichi killed in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his front entrance where his door wouldn't open",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-030",
+   "kind": "fact",
+   "question": "What does Nobara suggest about the smoking punks in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "beat them up and question them",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-031",
+   "kind": "fact",
+   "question": "Who are the punks bowing to in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-032",
+   "kind": "fact",
+   "question": "What does Megumi state about the school in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he gone here for middle school",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-033",
+   "kind": "fact",
+   "question": "What do the punks say Megumi did at the school in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "beat up all the punks in the general area",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-034",
+   "kind": "fact",
+   "question": "How long has it been since the four victims graduated in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "twenty years",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-035",
+   "kind": "fact",
+   "question": "What do the punks ask if it would qualify in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "bungee jumping from Yasohachi Bridge",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-036",
+   "kind": "fact",
+   "question": "What is Yasohachi Bridge known for in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "suicides",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-037",
+   "kind": "fact",
+   "question": "How did junior high students test the bridge's merit in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "bungee jumping from it",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-038",
+   "kind": "fact",
+   "question": "How many students were found unconscious below the bridge in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "four",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-039",
+   "kind": "fact",
+   "question": "What did Megumi find on his last visit to the bridge in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "nothing special",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-040",
+   "kind": "fact",
+   "question": "What is Tsumiki to Megumi in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his older sister",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-041",
+   "kind": "fact",
+   "question": "What is Nobara annoyed about in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he never tells them anything about himself",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-042",
+   "kind": "fact",
+   "question": "Which cursed objects do Mahito and Geto discuss in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting Wombs 1-3",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-043",
+   "kind": "fact",
+   "question": "Why can't Jujutsu High destroy the new cursed objects in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the cursed object is special grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-044",
+   "kind": "fact",
+   "question": "What is the most Jujutsu High can do to the cursed object in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "halt its lifestream and prevent it from doing further damage",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-045",
+   "kind": "fact",
+   "question": "What exception does Geto mention among the cursed objects in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sukuna's fingers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-046",
+   "kind": "fact",
+   "question": "How do the Death Painting Wombs compare to Sukuna's fingers in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Death Painting Wombs can manifest in anyone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-047",
+   "kind": "fact",
+   "question": "Who does Mahito choose to manifest the womb in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a normal human",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-048",
+   "kind": "fact",
+   "question": "How does Mahito force the incarnation in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "forcing the womb down his throat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-049",
+   "kind": "fact",
+   "question": "What does Mahito ask the newly incarnated curse to do in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "run some errands for him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-050",
+   "kind": "fact",
+   "question": "What do the first-years fail to find at the bridge in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "any traces of the curse",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-051",
+   "kind": "fact",
+   "question": "What statistic does Yuji cite about the curse in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "100% death rate",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-052",
+   "kind": "fact",
+   "question": "Does Yuji want to waste more time at the bridge in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "doesn't want to waste anymore time",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-053",
+   "kind": "fact",
+   "question": "What does Akari suggest about the curse in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "something to do with the act of jumping down",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-054",
+   "kind": "fact",
+   "question": "Who arrives to talk to Megumi on his bike in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one of the punks from earlier",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-055",
+   "kind": "fact",
+   "question": "What does Megumi's old classmate notice at home in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the automatic doors were wide open",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-056",
+   "kind": "fact",
+   "question": "Why does the classmate tell Megumi about the bridge in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his sister Tsumiki went with her that night",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-057",
+   "kind": "fact",
+   "question": "What does Yuji notice about Megumi in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "how shaken Megumi actually is",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-058",
+   "kind": "fact",
+   "question": "What does Ijichi suggest in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they retreat if the threat is larger than expected",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-059",
+   "kind": "fact",
+   "question": "What does Megumi tell his peers in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the mission is more dangerous now",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-060",
+   "kind": "fact",
+   "question": "Why does Megumi go alone to the bridge in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he doesn't want to put his peers in danger",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-061",
+   "kind": "fact",
+   "question": "What is the only way to encounter a curse within a barrier in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "by clearing certain conditions",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-062",
+   "kind": "fact",
+   "question": "What is the curse's Domain similar to in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the one at the Detention Center",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-063",
+   "kind": "fact",
+   "question": "Why is there no need for a Curtain in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "It's impossible to have a Domain with a sustainable expanded cursed technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-064",
+   "kind": "fact",
+   "question": "What do Yuji and Nobara tell Megumi in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he can trust them since they are all friends",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-065",
+   "kind": "fact",
+   "question": "What is Tsumiki stuck in in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a suspended state of sleep",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-066",
+   "kind": "fact",
+   "question": "What does Megumi say he needs to do now in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "exorcise it now",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-067",
+   "kind": "fact",
+   "question": "How must they move to cross the barrier in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "at night, from below, and over the small river",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-068",
+   "kind": "fact",
+   "question": "What kind of cursed spirit do the first-years confront in the Domain in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "mole-like cursed spirit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-069",
+   "kind": "fact",
+   "question": "What does the Death Painting curse comment on in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "how someone had already arrived",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-070",
+   "kind": "fact",
+   "question": "What do Megumi and Nobara do while Yuji faces the new threat in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "deal with the curse in the Domain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_22-071",
+   "kind": "fact",
+   "question": "Who do the first-years catch in Episode 22's juju stroll?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a thief who stole a woman's purse",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_22-072",
+   "kind": "fact",
+   "question": "What does the woman treat the first-years to in Episode 22's juju stroll?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the special gyoza dish at her Chinese restaurant",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_22-073",
+   "kind": "fact",
+   "question": "What is the gyoza made with, according to Megumi, in Episode 22's juju stroll?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cabbage and some thickener instead of meat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details / Juju Stroll"
+  },
+  {
+   "id": "jjk-pg-episode_22-074",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 22?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Taichi Kanada",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_22-075",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 22's order of appearance?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kiyotaka Ijichi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_22-076",
+   "kind": "fact",
+   "question": "Which junior high is listed among Episode 22's locations?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Saitama Urami East Junior High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_22-077",
+   "kind": "fact",
+   "question": "What canyon is listed among Episode 22's locations?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Koinokuchi Canyon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_22-078",
+   "kind": "fact",
+   "question": "What type is listed under Episode 22's Jujutsu section?",
+   "subject": "Episode 22",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Objects",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_22"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  }
+ ]
+}

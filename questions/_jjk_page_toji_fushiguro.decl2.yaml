@@ -1,0 +1,34 @@
+# Staged roster declarations for the Toji Fushiguro page campaign
+# (questions/_jjk_page_toji_fushiguro.section2.json, section 2: techniques &
+# cursed tools).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Members are the four cursed tools named in the `Equipment > Cursed Tools`
+# subsection of `Toji Fushiguro` (each is its own page): Split Soul Katana,
+# Inverted Spear of Heaven, Chain of a Thousand Miles, Playful Cloud. That is
+# the closed, page-stated set of named cursed tools; the page also refers to a
+# "vast arsenal" in general terms but names no further cursed tool there.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every shikigami Toji Fushiguro used" -- the Toji page never states he
+#     used shikigami (every mention is Dagon's or Megumi's), and the Ten
+#     Shadows Technique is not on the page. Not a closed, page-stated set.
+#   * "Every technique/ability of Toji Fushiguro" -- the abilities are prose
+#     lead-ins, not page titles, so the members=page-titles contract cannot be
+#     met; answered per-ability via the section's qa questions instead.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every cursed tool Toji Fushiguro wielded
+    match:
+      - every cursed tool toji fushiguro wielded
+      - all the cursed tools toji fushiguro wielded
+      - cursed tools toji fushiguro wielded
+    subject: Toji Fushiguro
+    members:
+      - Split Soul Katana
+      - Inverted Spear of Heaven
+      - Chain of a Thousand Miles
+      - Playful Cloud

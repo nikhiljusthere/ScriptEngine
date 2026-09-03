@@ -1,0 +1,409 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Takeda?",
+      "set": "Takeda's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Takeda?",
+      "found": [
+        "Saitama Urami East Junior High"
+      ],
+      "missing": [],
+      "members": [
+        "Saitama Urami East Junior High"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Takeda's name?",
+      "id": "jjk-pg-takeda-001",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "\u6b66\u7530"
+      ],
+      "found": [
+        "\u6b66\u7530"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Takeda's name?",
+      "id": "jjk-pg-takeda-002",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Takeda"
+      ],
+      "found": [
+        "Takeda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeda's race?",
+      "id": "jjk-pg-takeda-003",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeda's gender?",
+      "id": "jjk-pg-takeda-004",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Takeda?",
+      "id": "jjk-pg-takeda-005",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeda's occupation?",
+      "id": "jjk-pg-takeda-006",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Faculty Member"
+      ],
+      "found": [
+        "Faculty Member"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Takeda first appear?",
+      "id": "jjk-pg-takeda-007",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Chapter 55"
+      ],
+      "found": [
+        "Chapter 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Takeda first depicted?",
+      "id": "jjk-pg-takeda-008",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Episode 22"
+      ],
+      "found": [
+        "Episode 22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takeda's Japanese voice actor?",
+      "id": "jjk-pg-takeda-009",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Shigeru Ushiyama"
+      ],
+      "found": [
+        "Shigeru Ushiyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takeda's English voice actor?",
+      "id": "jjk-pg-takeda-010",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Landon McDonald"
+      ],
+      "found": [
+        "Landon McDonald"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Takeda play in the series?",
+      "id": "jjk-pg-takeda-012",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does Takeda work?",
+      "id": "jjk-pg-takeda-013",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "one of the faculty members at Saitama Urami East Junior High"
+      ],
+      "found": [
+        "one of the faculty members at Saitama Urami East Junior High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takeda look like?",
+      "id": "jjk-pg-takeda-014",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "an elderly man with grey hair parted in the middle and wears glasses"
+      ],
+      "found": [
+        "an elderly man with grey hair parted in the middle and wears glasses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takeda wear?",
+      "id": "jjk-pg-takeda-015",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "a blue jumpsuit with a collared shirt"
+      ],
+      "found": [
+        "a blue jumpsuit with a collared shirt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Takeda's personality described?",
+      "id": "jjk-pg-takeda-016",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "kindhearted and earnest in his job as a school faculty member"
+      ],
+      "found": [
+        "kindhearted and earnest in his job as a school faculty member"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Takeda treat the students?",
+      "id": "jjk-pg-takeda-017",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "He recalls most of the students and treats them all the same"
+      ],
+      "found": [
+        "He recalls most of the students and treats them all the same"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Takeda think when he first met the first-year students?",
+      "id": "jjk-pg-takeda-018",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "thinking they were making trouble at school"
+      ],
+      "found": [
+        "thinking they were making trouble at school"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who explained that the students had a permit to be at the school?",
+      "id": "jjk-pg-takeda-019",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Akari Nitta steps up and explains that they have a permit to be at the school"
+      ],
+      "found": [
+        "Akari Nitta steps up and explains that they have a permit to be at the school"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Takeda recall about the Junior High students and the deaths?",
+      "id": "jjk-pg-takeda-020",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Junior High students like to test its merit by bungee jumping from Yasohachi Bridge"
+      ],
+      "found": [
+        "Junior High students like to test its merit by bungee jumping from Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Megumi say his sister Tsumiki Fushiguro was, when Takeda asked?",
+      "id": "jjk-pg-takeda-021",
+      "subject": "Takeda",
+      "accept": "all",
+      "expected": [
+        "Megumi states she is fine"
+      ],
+      "found": [
+        "Megumi states she is fine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 20,
+    "fact_present": 20
+  }
+}

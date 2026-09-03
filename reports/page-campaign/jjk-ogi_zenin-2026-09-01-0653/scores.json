@@ -1,0 +1,2521 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Ogi Zenin?",
+      "set": "Every named technique of Ogi Zenin",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Ogi Zenin?",
+      "set": "Every family of Ogi Zenin",
+      "confidence": "declared",
+      "returned": 12,
+      "available": 12,
+      "canon": 12,
+      "found": 12,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Ogi Zenin?",
+      "set": "Ogi Zenin's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Ogi Zenin",
+      "set": "Every battle involving Ogi Zenin",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Ogi Zenin?",
+      "found": [
+        "Falling Blossom Emotion",
+        "Blazing Courage"
+      ],
+      "missing": [],
+      "members": [
+        "Blazing Courage",
+        "Falling Blossom Emotion"
+      ]
+    },
+    {
+      "query": "What are all the families of Ogi Zenin?",
+      "found": [
+        "Naobito Zenin",
+        "Maki Zenin",
+        "Mai Zenin",
+        "Naoya Zenin",
+        "Jinichi Zenin",
+        "Toji Fushiguro",
+        "Megumi Fushiguro",
+        "Yuta Okkotsu",
+        "Iori Okkotsu",
+        "Mifuyu Okkotsu",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu"
+      ],
+      "missing": [],
+      "members": [
+        "Iori Okkotsu",
+        "Jinichi Zenin",
+        "Mai Zenin",
+        "Maki Zenin",
+        "Megumi Fushiguro",
+        "Mifuyu Okkotsu",
+        "Naobito Zenin",
+        "Naoya Zenin",
+        "Toji Fushiguro",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu",
+        "Yuta Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Ogi Zenin?",
+      "found": [
+        "Zenin Clan"
+      ],
+      "missing": [],
+      "members": [
+        "Zenin Clan"
+      ]
+    },
+    {
+      "query": "Every battle involving Ogi Zenin",
+      "found": [
+        "Maki Zenin vs. Ogi Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Maki Zenin vs. Ogi Zenin"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ogi Zenin's name?",
+      "id": "jjk-pg-ogi_zenin-001",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "\u79aa\u9662\u6247"
+      ],
+      "found": [
+        "\u79aa\u9662\u6247"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ogi Zenin's name?",
+      "id": "jjk-pg-ogi_zenin-002",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Zen'in \u014cgi"
+      ],
+      "found": [
+        "Zen'in \u014cgi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogi Zenin's race?",
+      "id": "jjk-pg-ogi_zenin-003",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogi Zenin's gender?",
+      "id": "jjk-pg-ogi_zenin-004",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Ogi Zenin?",
+      "id": "jjk-pg-ogi_zenin-005",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogi Zenin's occupation?",
+      "id": "jjk-pg-ogi_zenin-006",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogi Zenin's grade?",
+      "id": "jjk-pg-ogi_zenin-007",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Special Grade 1"
+      ],
+      "found": [
+        "Special Grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ogi Zenin first appear?",
+      "id": "jjk-pg-ogi_zenin-008",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 42 (Mentioned) Chapter 138"
+      ],
+      "found": [
+        "Chapter 42 (Mentioned) Chapter 138"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Ogi Zenin first depicted?",
+      "id": "jjk-pg-ogi_zenin-009",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 48"
+      ],
+      "found": [
+        "Episode 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ogi Zenin's Japanese voice actor?",
+      "id": "jjk-pg-ogi_zenin-010",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Keiichi Sonobe"
+      ],
+      "found": [
+        "Keiichi Sonobe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ogi Zenin's English voice actor?",
+      "id": "jjk-pg-ogi_zenin-011",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Jamie Simone"
+      ],
+      "found": [
+        "Jamie Simone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Choso vs. Naoya Zenin?",
+      "id": "jjk-pg-ogi_zenin-012",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Choso is victorious."
+      ],
+      "found": [
+        "Choso is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Choso vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-013",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Choso vs. Naoya Zenin begin?",
+      "id": "jjk-pg-ogi_zenin-014",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 140"
+      ],
+      "found": [
+        "Chapter 140"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Choso vs. Naoya Zenin depicted?",
+      "id": "jjk-pg-ogi_zenin-015",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 48 - 49"
+      ],
+      "found": [
+        "Episode 48 - 49"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Choso vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-016",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Dagon?",
+      "id": "jjk-pg-ogi_zenin-018",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro takes over the battle."
+      ],
+      "found": [
+        "Toji Fushiguro takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-ogi_zenin-019",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station"
+      ],
+      "found": [
+        "Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-ogi_zenin-020",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Dagon begin?",
+      "id": "jjk-pg-ogi_zenin-021",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 106"
+      ],
+      "found": [
+        "Chapter 106"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Dagon depicted?",
+      "id": "jjk-pg-ogi_zenin-022",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 38"
+      ],
+      "found": [
+        "Episode 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Dagon take place?",
+      "id": "jjk-pg-ogi_zenin-023",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-ogi_zenin-025",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-ogi_zenin-026",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-ogi_zenin-027",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-ogi_zenin-028",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-ogi_zenin-029",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-ogi_zenin-030",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-ogi_zenin-031",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-ogi_zenin-032",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-ogi_zenin-033",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-ogi_zenin-034",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-ogi_zenin-035",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "id": "jjk-pg-ogi_zenin-037",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "found": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-038",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-039",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-ogi_zenin-040",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 191"
+      ],
+      "found": [
+        "Chapter 191"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-041",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Kasumi Miwa?",
+      "id": "jjk-pg-ogi_zenin-043",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki disarms Miwa."
+      ],
+      "found": [
+        "Maki disarms Miwa."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Kasumi Miwa take place?",
+      "id": "jjk-pg-ogi_zenin-044",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin vs. Kasumi Miwa begin?",
+      "id": "jjk-pg-ogi_zenin-045",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 39"
+      ],
+      "found": [
+        "Chapter 39"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Kasumi Miwa depicted?",
+      "id": "jjk-pg-ogi_zenin-046",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 16 - 17"
+      ],
+      "found": [
+        "Episode 16 - 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Kasumi Miwa take place?",
+      "id": "jjk-pg-ogi_zenin-047",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Mai Zenin?",
+      "id": "jjk-pg-ogi_zenin-048",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Mai Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-049",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. Mai Zenin?",
+      "id": "jjk-pg-ogi_zenin-050",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 42"
+      ],
+      "found": [
+        "Chapter 42"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Mai Zenin depicted?",
+      "id": "jjk-pg-ogi_zenin-051",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Mai Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-052",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Naoya Zenin?",
+      "id": "jjk-pg-ogi_zenin-053",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-054",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Zenin Household"
+      ],
+      "found": [
+        "Zenin Household"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-055",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. Naoya Zenin?",
+      "id": "jjk-pg-ogi_zenin-056",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 151"
+      ],
+      "found": [
+        "Chapter 151"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Naoya Zenin depicted?",
+      "id": "jjk-pg-ogi_zenin-057",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-058",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. Ogi Zenin?",
+      "id": "jjk-pg-ogi_zenin-059",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki is victorious."
+      ],
+      "found": [
+        "Maki is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. Ogi Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-060",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "The Zenin Clan Household"
+      ],
+      "found": [
+        "The Zenin Clan Household"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. Ogi Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-061",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin vs. Ogi Zenin begin?",
+      "id": "jjk-pg-ogi_zenin-062",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 148"
+      ],
+      "found": [
+        "Chapter 148"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. Ogi Zenin depicted?",
+      "id": "jjk-pg-ogi_zenin-063",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. Ogi Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-064",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. The Hei?",
+      "id": "jjk-pg-ogi_zenin-065",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. The Hei take place?",
+      "id": "jjk-pg-ogi_zenin-066",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Zenin Household"
+      ],
+      "found": [
+        "Zenin Household"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. The Hei take place?",
+      "id": "jjk-pg-ogi_zenin-067",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. The Hei?",
+      "id": "jjk-pg-ogi_zenin-068",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 150"
+      ],
+      "found": [
+        "Chapter 150"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. The Hei depicted?",
+      "id": "jjk-pg-ogi_zenin-069",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. The Hei take place?",
+      "id": "jjk-pg-ogi_zenin-070",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin vs. The Kukuru Unit?",
+      "id": "jjk-pg-ogi_zenin-071",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious"
+      ],
+      "found": [
+        "Maki Zenin is victorious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin vs. The Kukuru Unit take place?",
+      "id": "jjk-pg-ogi_zenin-072",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Zenin Household Ton Room"
+      ],
+      "found": [
+        "Zenin Household Ton Room"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin vs. The Kukuru Unit take place?",
+      "id": "jjk-pg-ogi_zenin-073",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Maki Zenin vs. The Kukuru Unit?",
+      "id": "jjk-pg-ogi_zenin-074",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 150"
+      ],
+      "found": [
+        "Chapter 150"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin vs. The Kukuru Unit depicted?",
+      "id": "jjk-pg-ogi_zenin-075",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 51"
+      ],
+      "found": [
+        "Episode 51"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin vs. The Kukuru Unit take place?",
+      "id": "jjk-pg-ogi_zenin-076",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-ogi_zenin-077",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-078",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-079",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-ogi_zenin-080",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 195"
+      ],
+      "found": [
+        "Chapter 195"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-081",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto?",
+      "id": "jjk-pg-ogi_zenin-083",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto is victorious."
+      ],
+      "found": [
+        "Suguru Geto is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?",
+      "id": "jjk-pg-ogi_zenin-084",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?",
+      "id": "jjk-pg-ogi_zenin-085",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "December 24, 2017"
+      ],
+      "found": [
+        "December 24, 2017"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto begin?",
+      "id": "jjk-pg-ogi_zenin-086",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto depicted?",
+      "id": "jjk-pg-ogi_zenin-087",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Toge Inumaki & Panda vs. Suguru Geto take place?",
+      "id": "jjk-pg-ogi_zenin-088",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro & Maki Zenin vs. Hanami?",
+      "id": "jjk-pg-ogi_zenin-090",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Yuji & Todo take over the battle."
+      ],
+      "found": [
+        "Yuji & Todo take over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+      "id": "jjk-pg-ogi_zenin-091",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro & Maki Zenin vs. Hanami begin?",
+      "id": "jjk-pg-ogi_zenin-092",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 46"
+      ],
+      "found": [
+        "Chapter 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro & Maki Zenin vs. Hanami depicted?",
+      "id": "jjk-pg-ogi_zenin-093",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 19"
+      ],
+      "found": [
+        "Episode 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+      "id": "jjk-pg-ogi_zenin-094",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Nobara Kugisaki vs. Mai Zenin?",
+      "id": "jjk-pg-ogi_zenin-096",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Aoi Todo."
+      ],
+      "found": [
+        "Interrupted by Aoi Todo."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nobara Kugisaki vs. Mai Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-097",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobara Kugisaki vs. Mai Zenin begin?",
+      "id": "jjk-pg-ogi_zenin-098",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 17"
+      ],
+      "found": [
+        "Chapter 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Nobara Kugisaki vs. Mai Zenin depicted?",
+      "id": "jjk-pg-ogi_zenin-099",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 8"
+      ],
+      "found": [
+        "Episode 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Nobara Kugisaki vs. Mai Zenin take place?",
+      "id": "jjk-pg-ogi_zenin-100",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb"
+      ],
+      "found": [
+        "Fearsome Womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogi_zenin-101",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Ogami is victorious."
+      ],
+      "found": [
+        "Ogami is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogi_zenin-102",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Tower"
+      ],
+      "found": [
+        "Shibuya Tower"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogi_zenin-103",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogi_zenin-104",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 95 & 97"
+      ],
+      "found": [
+        "Chapter 95 & 97"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Takuma Ino vs. Ogami & Her Grandson depicted?",
+      "id": "jjk-pg-ogi_zenin-105",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Episode 35"
+      ],
+      "found": [
+        "Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogi_zenin-106",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-ogi_zenin-107",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-ogi_zenin-108",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-ogi_zenin-109",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-ogi_zenin-110",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-ogi_zenin-111",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu & Maki Zenin vs. Cursed Spirits?",
+      "id": "jjk-pg-ogi_zenin-112",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Curses are exorcised."
+      ],
+      "found": [
+        "Curses are exorcised."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu & Maki Zenin vs. Cursed Spirits take place?",
+      "id": "jjk-pg-ogi_zenin-113",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Elementary School"
+      ],
+      "found": [
+        "Elementary School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu & Maki Zenin vs. Cursed Spirits begin?",
+      "id": "jjk-pg-ogi_zenin-114",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu & Maki Zenin vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-ogi_zenin-115",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu & Maki Zenin vs. Cursed Spirits take place?",
+      "id": "jjk-pg-ogi_zenin-116",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Ogi Zenin's appearance described in terms of his face?",
+      "id": "jjk-pg-ogi_zenin-122",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "slim elderly man with slicked black hair tied into a long ponytail and black eyes with unusually large pupils, such that the sclerae are only visible when wide open"
+      ],
+      "found": [
+        "slim elderly man with slicked black hair tied into a long ponytail and black eyes with unusually large pupils, such that the sclerae are only visible when wide open"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogi Zenin's attire consist of?",
+      "id": "jjk-pg-ogi_zenin-123",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "a white shitagi, a white kosode and black hakama with white socks in zori sandals"
+      ],
+      "found": [
+        "a white shitagi, a white kosode and black hakama with white socks in zori sandals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ogi Zenin care about within the Zenin clan?",
+      "id": "jjk-pg-ogi_zenin-124",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "his own status"
+      ],
+      "found": [
+        "his own status"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "For what reason did Ogi Zenin attack his nephew Naoya?",
+      "id": "jjk-pg-ogi_zenin-125",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "being excessively disrespectful"
+      ],
+      "found": [
+        "being excessively disrespectful"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What explains Ogi Zenin's lack of compassion for his children?",
+      "id": "jjk-pg-ogi_zenin-126",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "Maki and Mai were born untalented in the realm of jujutsu"
+      ],
+      "found": [
+        "Maki and Mai were born untalented in the realm of jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Ogi Zenin not chosen to become head of the family?",
+      "id": "jjk-pg-ogi_zenin-127",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "his daughters were the reason"
+      ],
+      "found": [
+        "his daughters were the reason"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ogi Zenin volunteer to do to gain favor with the jujutsu higher-ups?",
+      "id": "jjk-pg-ogi_zenin-128",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "frame his own children and execute them personally"
+      ],
+      "found": [
+        "frame his own children and execute them personally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What brought Ogi Zenin to tears after attacking his daughters?",
+      "id": "jjk-pg-ogi_zenin-129",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "the recollection that he was unable to achieve this goal"
+      ],
+      "found": [
+        "the recollection that he was unable to achieve this goal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ogi Zenin call his daughters while trying to leave them for dead?",
+      "id": "jjk-pg-ogi_zenin-130",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "a stain on his life"
+      ],
+      "found": [
+        "a stain on his life"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogi Zenin believe about his own sorcery?",
+      "id": "jjk-pg-ogi_zenin-131",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "believes himself to be equal to Naobito in terms of ability as a sorcerer"
+      ],
+      "found": [
+        "believes himself to be equal to Naobito in terms of ability as a sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What motion allowed Ogi Zenin to defeat his daughter instantly?",
+      "id": "jjk-pg-ogi_zenin-132",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "a 180-degree motion"
+      ],
+      "found": [
+        "a 180-degree motion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ogi Zenin fare against Maki after she gained power similar to Toji's?",
+      "id": "jjk-pg-ogi_zenin-133",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "he was no match for Maki and was effortlessly cut down"
+      ],
+      "found": [
+        "he was no match for Maki and was effortlessly cut down"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What scheme was Ogi Zenin's idea?",
+      "id": "jjk-pg-ogi_zenin-134",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "to frame Megumi, Maki, and Mai for trying to unseal Satoru Gojo"
+      ],
+      "found": [
+        "to frame Megumi, Maki, and Mai for trying to unseal Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ogi Zenin prepare for Maki's return to the Zenin clan?",
+      "id": "jjk-pg-ogi_zenin-135",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "emptied the cursed warehouse of all cursed tools ahead of time"
+      ],
+      "found": [
+        "emptied the cursed warehouse of all cursed tools ahead of time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ogi Zenin's reason for leaving Mai incapacitated?",
+      "id": "jjk-pg-ogi_zenin-136",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "to use as a hostage in case his duel with Maki went sideways"
+      ],
+      "found": [
+        "to use as a hostage in case his duel with Maki went sideways"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What form of combat is Ogi Zenin's main one?",
+      "id": "jjk-pg-ogi_zenin-137",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "swordplay"
+      ],
+      "found": [
+        "swordplay"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ogi Zenin replace his broken katana with?",
+      "id": "jjk-pg-ogi_zenin-138",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "the flames of his Blazing Courage technique"
+      ],
+      "found": [
+        "the flames of his Blazing Courage technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Blazing Courage technique allow?",
+      "id": "jjk-pg-ogi_zenin-139",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "the user to eject flames from their weapon"
+      ],
+      "found": [
+        "the user to eject flames from their weapon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Falling Blossom Emotion applied to Ogi Zenin's swordplay?",
+      "id": "jjk-pg-ogi_zenin-140",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "the blade to automatically strike anything the cursed energy comes into contact with"
+      ],
+      "found": [
+        "the blade to automatically strike anything the cursed energy comes into contact with"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogi Zenin carry with him at all times?",
+      "id": "jjk-pg-ogi_zenin-141",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "a katana"
+      ],
+      "found": [
+        "a katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Ogi Zenin rank in the second Popularity Poll?",
+      "id": "jjk-pg-ogi_zenin-142",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "68th"
+      ],
+      "found": [
+        "68th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Ogi Zenin rank in the third Popularity Poll?",
+      "id": "jjk-pg-ogi_zenin-143",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "100th"
+      ],
+      "found": [
+        "100th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Ogi Zenin rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-ogi_zenin-144",
+      "subject": "Ogi Zenin",
+      "accept": "all",
+      "expected": [
+        "119th"
+      ],
+      "found": [
+        "119th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 16,
+    "canon_total": 16,
+    "canon_recall": 1.0,
+    "members_returned": 16,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 132,
+    "fact_present": 132
+  }
+}

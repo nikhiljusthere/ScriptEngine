@@ -1,0 +1,1329 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Hana Kurusu?",
+      "set": "Every named technique of Hana Kurusu",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Hana Kurusu?",
+      "set": "Every ally of Hana Kurusu",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Hana Kurusu?",
+      "set": "Every friend of Hana Kurusu",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hana Kurusu",
+      "set": "Every battle involving Hana Kurusu",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Hana Kurusu?",
+      "found": [
+        "Technique Extinguishment",
+        "Jacob's Ladder"
+      ],
+      "missing": [],
+      "members": [
+        "Jacob's Ladder",
+        "Technique Extinguishment"
+      ]
+    },
+    {
+      "query": "What are all the allies of Hana Kurusu?",
+      "found": [
+        "Yuta Okkotsu",
+        "Fumihiko Takaba",
+        "Rin Amai"
+      ],
+      "missing": [],
+      "members": [
+        "Fumihiko Takaba",
+        "Rin Amai",
+        "Yuta Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the friends of Hana Kurusu?",
+      "found": [
+        "Angel",
+        "Yuji Itadori",
+        "Fumihiko Takaba"
+      ],
+      "missing": [],
+      "members": [
+        "Angel",
+        "Fumihiko Takaba",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "Every battle involving Hana Kurusu",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Megumi Fushiguro & Maki Zenin vs. Hanami",
+        "Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami",
+        "Satoru Gojo vs. Mahito's Group",
+        "Yuji Itadori & Aoi Todo vs. Hanami",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Megumi Fushiguro & Maki Zenin vs. Hanami",
+        "Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami",
+        "Satoru Gojo vs. Mahito's Group",
+        "Yuji Itadori & Aoi Todo vs. Hanami",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hana Kurusu's name?",
+      "id": "jjk-pg-hana_kurusu-001",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "\u6765\u6816\u83ef"
+      ],
+      "found": [
+        "\u6765\u6816\u83ef"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hana Kurusu's name?",
+      "id": "jjk-pg-hana_kurusu-002",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Kurusu Hana"
+      ],
+      "found": [
+        "Kurusu Hana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hana Kurusu's race?",
+      "id": "jjk-pg-hana_kurusu-003",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hana Kurusu's birthday?",
+      "id": "jjk-pg-hana_kurusu-004",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "October 4"
+      ],
+      "found": [
+        "October 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hana Kurusu's gender?",
+      "id": "jjk-pg-hana_kurusu-005",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Hana Kurusu?",
+      "id": "jjk-pg-hana_kurusu-006",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hana Kurusu's occupation?",
+      "id": "jjk-pg-hana_kurusu-007",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hana Kurusu first appear?",
+      "id": "jjk-pg-hana_kurusu-008",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 145"
+      ],
+      "found": [
+        "Chapter 145"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Hana Kurusu first depicted?",
+      "id": "jjk-pg-hana_kurusu-009",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Episode 50"
+      ],
+      "found": [
+        "Episode 50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-hana_kurusu-010",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hana_kurusu-011",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hana_kurusu-012",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-hana_kurusu-013",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hana_kurusu-014",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hana Kurusu use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-hana_kurusu-015",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "found": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro & Maki Zenin vs. Hanami?",
+      "id": "jjk-pg-hana_kurusu-016",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Yuji & Todo take over the battle."
+      ],
+      "found": [
+        "Yuji & Todo take over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+      "id": "jjk-pg-hana_kurusu-017",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro & Maki Zenin vs. Hanami begin?",
+      "id": "jjk-pg-hana_kurusu-018",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 46"
+      ],
+      "found": [
+        "Chapter 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro & Maki Zenin vs. Hanami depicted?",
+      "id": "jjk-pg-hana_kurusu-019",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Episode 19"
+      ],
+      "found": [
+        "Episode 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro & Maki Zenin vs. Hanami take place?",
+      "id": "jjk-pg-hana_kurusu-020",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kurusu Hana use in Megumi Fushiguro & Maki Zenin vs. Hanami?",
+      "id": "jjk-pg-hana_kurusu-021",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Disaster Plants, Roots, Cursed Bud"
+      ],
+      "found": [
+        "Disaster Plants, Roots, Cursed Bud"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami?",
+      "id": "jjk-pg-hana_kurusu-022",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Maki takes over the battle."
+      ],
+      "found": [
+        "Maki takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami take place?",
+      "id": "jjk-pg-hana_kurusu-023",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami begin?",
+      "id": "jjk-pg-hana_kurusu-024",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 45"
+      ],
+      "found": [
+        "Chapter 45"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami depicted?",
+      "id": "jjk-pg-hana_kurusu-025",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Episode 18 - 19"
+      ],
+      "found": [
+        "Episode 18 - 19"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami take place?",
+      "id": "jjk-pg-hana_kurusu-026",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kurusu Hana use in Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami?",
+      "id": "jjk-pg-hana_kurusu-027",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Disaster Plants, Roots, Wooden Ball"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Disaster Plants, Roots, Wooden Ball"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-hana_kurusu-028",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo is sealed.\nHanami is killed."
+      ],
+      "found": [
+        "Satoru Gojo is sealed.\nHanami is killed."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-hana_kurusu-029",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Fukutoshin Line Platform"
+      ],
+      "found": [
+        "Fukutoshin Line Platform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-hana_kurusu-030",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-hana_kurusu-031",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 84 - 85 & 88 - 90"
+      ],
+      "found": [
+        "Chapter 84 - 85 & 88 - 90"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Satoru Gojo vs. Mahito's Group depicted?",
+      "id": "jjk-pg-hana_kurusu-032",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Episode 32 - 33"
+      ],
+      "found": [
+        "Episode 32 - 33"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-hana_kurusu-033",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kurusu Hana use in Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-hana_kurusu-034",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Disaster Plants, Domain Amplification"
+      ],
+      "found": [
+        "Disaster Plants, Domain Amplification"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Aoi Todo vs. Hanami?",
+      "id": "jjk-pg-hana_kurusu-035",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Gojo takes over the battle."
+      ],
+      "found": [
+        "Gojo takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Aoi Todo vs. Hanami take place?",
+      "id": "jjk-pg-hana_kurusu-036",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Aoi Todo vs. Hanami begin?",
+      "id": "jjk-pg-hana_kurusu-037",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 48"
+      ],
+      "found": [
+        "Chapter 48"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Aoi Todo vs. Hanami depicted?",
+      "id": "jjk-pg-hana_kurusu-038",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Episode 19 - 20"
+      ],
+      "found": [
+        "Episode 19 - 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Aoi Todo vs. Hanami take place?",
+      "id": "jjk-pg-hana_kurusu-039",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Kurusu Hana use in Yuji Itadori & Aoi Todo vs. Hanami?",
+      "id": "jjk-pg-hana_kurusu-040",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat, Disaster Plants, Wooden Ball, Giant Roots, Flower Field, Cursed Buds"
+      ],
+      "found": [
+        "Hand-to-Hand Combat, Disaster Plants, Wooden Ball, Giant Roots, Flower Field, Cursed Buds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-hana_kurusu-041",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-hana_kurusu-042",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-hana_kurusu-043",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-hana_kurusu-044",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-hana_kurusu-045",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hana Kurusu use in Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-hana_kurusu-046",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "found": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hana Kurusu look like, according to the Appearance section?",
+      "id": "jjk-pg-hana_kurusu-051",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "a teenage girl"
+      ],
+      "found": [
+        "a teenage girl"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who shares Hana Kurusu age and height?",
+      "id": "jjk-pg-hana_kurusu-052",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Yuji and Megumi"
+      ],
+      "found": [
+        "Yuji and Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What color are Hana Kurusu eyes?",
+      "id": "jjk-pg-hana_kurusu-053",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "green"
+      ],
+      "found": [
+        "green"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Hana Kurusu hair styled?",
+      "id": "jjk-pg-hana_kurusu-054",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "chin-length blonde hair styled into a bob"
+      ],
+      "found": [
+        "chin-length blonde hair styled into a bob"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What feature do Hana Kurusu hair ends have?",
+      "id": "jjk-pg-hana_kurusu-055",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "deep inward curl"
+      ],
+      "found": [
+        "deep inward curl"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What two features does the Angel give Hana on her body?",
+      "id": "jjk-pg-hana_kurusu-056",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "feathered, bluish-white wings on her upper back"
+      ],
+      "found": [
+        "feathered, bluish-white wings on her upper back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What hovers over Hana Kurusu head due to the Angel?",
+      "id": "jjk-pg-hana_kurusu-057",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "yellow halo"
+      ],
+      "found": [
+        "yellow halo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Hana Kurusu resemble because of the Angel influence?",
+      "id": "jjk-pg-hana_kurusu-058",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Sukuna within Yuji"
+      ],
+      "found": [
+        "Sukuna within Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where on Hana body can the Angel manifest a mouth?",
+      "id": "jjk-pg-hana_kurusu-059",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "her cheek or hand"
+      ],
+      "found": [
+        "her cheek or hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Hana situation before Megumi rescued her?",
+      "id": "jjk-pg-hana_kurusu-060",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "held her hostage for a year"
+      ],
+      "found": [
+        "held her hostage for a year"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who saved Hana from a cursed spirit when they were children?",
+      "id": "jjk-pg-hana_kurusu-061",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Megumi"
+      ],
+      "found": [
+        "Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana develop for Megumi after he saved her?",
+      "id": "jjk-pg-hana_kurusu-062",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "romantic feelings"
+      ],
+      "found": [
+        "romantic feelings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hana believe determines everything?",
+      "id": "jjk-pg-hana_kurusu-063",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "destiny"
+      ],
+      "found": [
+        "destiny"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose jujutsu prowess does Hana possess?",
+      "id": "jjk-pg-hana_kurusu-064",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "the Angel"
+      ],
+      "found": [
+        "the Angel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What level of sorcerer is Hana despite her young age?",
+      "id": "jjk-pg-hana_kurusu-065",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "a skilled sorcerer"
+      ],
+      "found": [
+        "a skilled sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In what combat range is Hana capable using her wings to fly?",
+      "id": "jjk-pg-hana_kurusu-066",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "mid-range"
+      ],
+      "found": [
+        "mid-range"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Jacob Ladder conjure in Hana Kurusu hands?",
+      "id": "jjk-pg-hana_kurusu-067",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "a four-winged trumpet made of light"
+      ],
+      "found": [
+        "a four-winged trumpet made of light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Angel cursed technique nullify?",
+      "id": "jjk-pg-hana_kurusu-068",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "any and all cursed techniques"
+      ],
+      "found": [
+        "any and all cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to vessels when the Angel technique does not revert them to pre-incarnation state?",
+      "id": "jjk-pg-hana_kurusu-069",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "perish"
+      ],
+      "found": [
+        "perish"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What special grade cursed object can the Angel nullify?",
+      "id": "jjk-pg-hana_kurusu-070",
+      "subject": "Hana Kurusu",
+      "accept": "all",
+      "expected": [
+        "Prison Realm"
+      ],
+      "found": [
+        "Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 14,
+    "canon_total": 14,
+    "canon_recall": 1.0,
+    "members_returned": 14,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 66,
+    "fact_present": 66
+  }
+}

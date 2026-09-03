@@ -1,0 +1,167 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Manji Kick's name?",
+      "id": "jjk-pg-manji_kick-001",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "\u534d\u8e74\u308a"
+      ],
+      "found": [
+        "\u534d\u8e74\u308a"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Manji Kick's name?",
+      "id": "jjk-pg-manji_kick-002",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "Manji Keri"
+      ],
+      "found": [
+        "Manji Keri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Manji Kick first appear?",
+      "id": "jjk-pg-manji_kick-003",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "Chapter 121"
+      ],
+      "found": [
+        "Chapter 121"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Manji Kick first depicted?",
+      "id": "jjk-pg-manji_kick-004",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "Episode 42"
+      ],
+      "found": [
+        "Episode 42"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the user avoid an adversary's starting motion in the knee release?",
+      "id": "jjk-pg-manji_kick-005",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "By releasing their knees the user can easily avoid their adversary's own starting motion."
+      ],
+      "found": [
+        "By releasing their knees the user can easily avoid their adversary's own starting motion."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does the knee-release move carry the user?",
+      "id": "jjk-pg-manji_kick-006",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "Instead of falling down, this move instantly guides the user to their opponent's feet."
+      ],
+      "found": [
+        "Instead of falling down, this move instantly guides the user to their opponent's feet."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji first use the Manji Kick?",
+      "id": "jjk-pg-manji_kick-007",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "Yuji, a master martial artist, first demonstrated his proficiency for Taido Martial Arts and used Manji Kick against Mahito in Shibuya."
+      ],
+      "found": [
+        "Yuji, a master martial artist, first demonstrated his proficiency for Taido Martial Arts and used Manji Kick against Mahito in Shibuya."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What effect did the Manji Kick have on Mahito?",
+      "id": "jjk-pg-manji_kick-008",
+      "subject": "Manji Kick",
+      "accept": "all",
+      "expected": [
+        "Enhanced by Yuji's superhuman physical prowess and cursed energy manipulation, Manji kick left a bruise on the special grade's face and even drew blood on impact."
+      ],
+      "found": [
+        "Enhanced by Yuji's superhuman physical prowess and cursed energy manipulation, Manji kick left a bruise on the special grade's face and even drew blood on impact."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 8,
+    "fact_present": 8
+  }
+}

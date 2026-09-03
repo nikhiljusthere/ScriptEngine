@@ -1,0 +1,931 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Fumihiko Takaba?",
+      "set": "Every named technique of Fumihiko Takaba",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Fumihiko Takaba?",
+      "set": "Every ally of Fumihiko Takaba",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Fumihiko Takaba?",
+      "set": "Every enemy of Fumihiko Takaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Fumihiko Takaba?",
+      "set": "Every friend of Fumihiko Takaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Fumihiko Takaba",
+      "set": "Every battle involving Fumihiko Takaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Fumihiko Takaba?",
+      "found": [
+        "Comedian"
+      ],
+      "missing": [],
+      "members": [
+        "Comedian"
+      ]
+    },
+    {
+      "query": "What are all the allies of Fumihiko Takaba?",
+      "found": [
+        "Megumi Fushiguro",
+        "Yuji Itadori",
+        "Hana Kurusu",
+        "Yuta Okkotsu"
+      ],
+      "missing": [],
+      "members": [
+        "Hana Kurusu",
+        "Megumi Fushiguro",
+        "Yuji Itadori",
+        "Yuta Okkotsu"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Fumihiko Takaba?",
+      "found": [
+        "Kenjaku",
+        "Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Sukuna"
+      ]
+    },
+    {
+      "query": "What are all the friends of Fumihiko Takaba?",
+      "found": [
+        "Kenjaku",
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "members": [
+        "Hana Kurusu",
+        "Kenjaku"
+      ]
+    },
+    {
+      "query": "Every battle involving Fumihiko Takaba",
+      "found": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Fumihiko Takaba vs. Kenjaku"
+      ],
+      "missing": [],
+      "members": [
+        "Fumihiko Takaba vs. Iori Hazenoki",
+        "Fumihiko Takaba vs. Kenjaku"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Fumihiko Takaba's name?",
+      "id": "jjk-pg-fumihiko_takaba-001",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "\u9ad9\u7fbd\u53f2\u5f66"
+      ],
+      "found": [
+        "\u9ad9\u7fbd\u53f2\u5f66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Fumihiko Takaba's name?",
+      "id": "jjk-pg-fumihiko_takaba-002",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Takaba Fumihiko"
+      ],
+      "found": [
+        "Takaba Fumihiko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fumihiko Takaba's race?",
+      "id": "jjk-pg-fumihiko_takaba-003",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Fumihiko Takaba?",
+      "id": "jjk-pg-fumihiko_takaba-004",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "35"
+      ],
+      "found": [
+        "35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fumihiko Takaba's gender?",
+      "id": "jjk-pg-fumihiko_takaba-005",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Fumihiko Takaba?",
+      "id": "jjk-pg-fumihiko_takaba-006",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Fumihiko Takaba's occupation?",
+      "id": "jjk-pg-fumihiko_takaba-007",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Comedian Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Comedian Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Fumihiko Takaba first appear?",
+      "id": "jjk-pg-fumihiko_takaba-008",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Chapter 146"
+      ],
+      "found": [
+        "Chapter 146"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Fumihiko Takaba first depicted?",
+      "id": "jjk-pg-fumihiko_takaba-009",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Episode 50"
+      ],
+      "found": [
+        "Episode 50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Fumihiko Takaba's Japanese voice actor?",
+      "id": "jjk-pg-fumihiko_takaba-010",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Satoshi Tsuruoka"
+      ],
+      "found": [
+        "Satoshi Tsuruoka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Fumihiko Takaba's English voice actor?",
+      "id": "jjk-pg-fumihiko_takaba-011",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Scott Whyte"
+      ],
+      "found": [
+        "Scott Whyte"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-fumihiko_takaba-012",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Hazenoki withdraws."
+      ],
+      "found": [
+        "Hazenoki withdraws."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-fumihiko_takaba-013",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-fumihiko_takaba-014",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Fumihiko Takaba vs. Iori Hazenoki?",
+      "id": "jjk-pg-fumihiko_takaba-015",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Chapter 169 & 173"
+      ],
+      "found": [
+        "Chapter 169 & 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Fumihiko Takaba vs. Iori Hazenoki depicted?",
+      "id": "jjk-pg-fumihiko_takaba-016",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Episode 57 - 58"
+      ],
+      "found": [
+        "Episode 57 - 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Fumihiko Takaba vs. Iori Hazenoki take place?",
+      "id": "jjk-pg-fumihiko_takaba-017",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Fumihiko Takaba vs. Kenjaku?",
+      "id": "jjk-pg-fumihiko_takaba-018",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Yuta ambushes Kenjaku."
+      ],
+      "found": [
+        "Yuta ambushes Kenjaku."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Fumihiko Takaba vs. Kenjaku take place?",
+      "id": "jjk-pg-fumihiko_takaba-019",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Lake Gosho Colony"
+      ],
+      "found": [
+        "Lake Gosho Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Fumihiko Takaba vs. Kenjaku take place?",
+      "id": "jjk-pg-fumihiko_takaba-020",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Fumihiko Takaba vs. Kenjaku begin?",
+      "id": "jjk-pg-fumihiko_takaba-021",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Chapter 239"
+      ],
+      "found": [
+        "Chapter 239"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Fumihiko Takaba vs. Kenjaku take place?",
+      "id": "jjk-pg-fumihiko_takaba-022",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of individual is Fumihiko Takaba described as?",
+      "id": "jjk-pg-fumihiko_takaba-028",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "an exceptionally goofy individual whose jokes aren't funny, but he still lives to entertain above all else"
+      ],
+      "found": [
+        "an exceptionally goofy individual whose jokes aren't funny, but he still lives to entertain above all else"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Fumihiko Takaba fail as a comedian?",
+      "id": "jjk-pg-fumihiko_takaba-029",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "he'll still tell jokes in serious situations and get no laughs in response"
+      ],
+      "found": [
+        "he'll still tell jokes in serious situations and get no laughs in response"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Fumihiko Takaba behave in serious or awkward situations?",
+      "id": "jjk-pg-fumihiko_takaba-030",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "always try to make it fun for everyone around, often only serving to irritate them"
+      ],
+      "found": [
+        "always try to make it fun for everyone around, often only serving to irritate them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Fumihiko Takaba claim he can tell about someone by their face?",
+      "id": "jjk-pg-fumihiko_takaba-031",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "if someone is good or evil"
+      ],
+      "found": [
+        "if someone is good or evil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Fumihiko Takaba think of Megumi before helping him despite his appearance?",
+      "id": "jjk-pg-fumihiko_takaba-032",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Megumi had a bad face but decided to help him anyway because beauty is revisionist"
+      ],
+      "found": [
+        "Megumi had a bad face but decided to help him anyway because beauty is revisionist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Fumihiko Takaba joking during the fight affect Iori Hazenoki?",
+      "id": "jjk-pg-fumihiko_takaba-033",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "frustrated his opponent, which played a part in him eventually giving up"
+      ],
+      "found": [
+        "frustrated his opponent, which played a part in him eventually giving up"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When Takaba flared cursed energy to tell a joke, who was affected?",
+      "id": "jjk-pg-fumihiko_takaba-034",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Reggie and Hazenoki to be on guard"
+      ],
+      "found": [
+        "Reggie and Hazenoki to be on guard"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What were Takaba reinforced attacks able to do against Hazenoki?",
+      "id": "jjk-pg-fumihiko_takaba-035",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "knock Hazenoki through several buildings"
+      ],
+      "found": [
+        "knock Hazenoki through several buildings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when Takaba thinks of something certain will be funny with Comedian?",
+      "id": "jjk-pg-fumihiko_takaba-036",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "it becomes reality"
+      ],
+      "found": [
+        "it becomes reality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose potential level does Takaba Comedian technique have enough to oppose?",
+      "id": "jjk-pg-fumihiko_takaba-037",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the Comedian technique integrate others thoughts?",
+      "id": "jjk-pg-fumihiko_takaba-038",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "as feedback, a form of soul resonance"
+      ],
+      "found": [
+        "as feedback, a form of soul resonance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Comedian require to activate?",
+      "id": "jjk-pg-fumihiko_takaba-039",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "absolute assurance and confidence"
+      ],
+      "found": [
+        "absolute assurance and confidence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Takaba get in the third Popularity Poll?",
+      "id": "jjk-pg-fumihiko_takaba-040",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "31st in the third Popularity Poll with 132 votes"
+      ],
+      "found": [
+        "31st in the third Popularity Poll with 132 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Takaba get in the fourth Popularity Poll?",
+      "id": "jjk-pg-fumihiko_takaba-041",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "24th in the fourth Popularity Poll with 528 votes"
+      ],
+      "found": [
+        "24th in the fourth Popularity Poll with 528 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which character is Takaba Culling Game costume likely inspired by?",
+      "id": "jjk-pg-fumihiko_takaba-042",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "The Centerman"
+      ],
+      "found": [
+        "The Centerman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who performed The Centerman that inspired Takaba costume?",
+      "id": "jjk-pg-fumihiko_takaba-043",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "comedian Taizo Harada"
+      ],
+      "found": [
+        "comedian Taizo Harada"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "On which Japanese sketch show did The Centerman appear?",
+      "id": "jjk-pg-fumihiko_takaba-044",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Warauinu"
+      ],
+      "found": [
+        "Warauinu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What numeric range did Takaba go back and forth between in his debut chapter?",
+      "id": "jjk-pg-fumihiko_takaba-045",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "50/50 and 70/30"
+      ],
+      "found": [
+        "50/50 and 70/30"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What tokusatsu heroes does The Centerman bear resemblance to?",
+      "id": "jjk-pg-fumihiko_takaba-046",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "Android Kikaider and Kikaider 01"
+      ],
+      "found": [
+        "Android Kikaider and Kikaider 01"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What Nanori reading does Takaba surname have?",
+      "id": "jjk-pg-fumihiko_takaba-047",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "\"tall, high\""
+      ],
+      "found": [
+        "\"tall, high\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens if Fumihiko Takaba lacks confidence in his Comedian technique?",
+      "id": "jjk-pg-fumihiko_takaba-048",
+      "subject": "Fumihiko Takaba",
+      "accept": "all",
+      "expected": [
+        "prevent the technique from working"
+      ],
+      "found": [
+        "prevent the technique from working"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 5,
+    "canon_found": 11,
+    "canon_total": 11,
+    "canon_recall": 1.0,
+    "members_returned": 11,
+    "exact_answers": 5,
+    "exact_of": 5,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "5/5",
+    "at_recall_zero": 0,
+    "at_recall_80": 5,
+    "confident_and_wrong": [],
+    "fact_questions": 43,
+    "fact_present": 43
+  }
+}

@@ -1,0 +1,1327 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +60 hand-authored prose kept (ids 003-063 minus retired 053, plus 065/066); R5 forms: yes/no 045 (Red fails), comparative 038 (close-range vs. the curse user's belief), counterfactual 064 (retired, not-stated-on-page), how-many 030/043/044; Music/Clips skipped per template, Navigation retired by page-gen; infobox new-character field is EMPTY and Trivia section is EMPTY on this page (no questions); Jujutsu 'Cursed Technique Lapse: Blue' / 'Cursed Technique Reversal: Red' colon hazards avoided by asking Limitless (055); 053 RETIRED router-gap (plural battles_in_ask misroute, NEW instance) - FLAG for central triage; B&E cloning bullets re-covered by natural single-battle questions 065/066 (route to qa, pass)",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_26-064",
+   "item": "",
+   "question": "What would have happened if Satoru had mastered reverse cursed technique before the clone fight in Episode 26?",
+   "reason": "Counterfactual: the page states Red 'fails to activate, as Satoru has yet to master reverse cursed technique' and that he 'simply punches the curse user to defeat him' - no hypothetical outcome of a working Red in that moment is stated on the page; never invent a resolution.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_26-053",
+   "kind": "fact",
+   "question": "Which two battles against the cloning curse user are listed in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Misato Kuroi vs. Cloning Curse User",
+     "aliases": [
+      "Satoru Gojo vs. Cloning Curse User"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events",
+   "reason": "Router-gap (plural battles_in_ask misroute, NEW instance): 'Which two battles against the cloning curse user are listed in Episode 26?' carries an explicit episode scope, yet /context routed it to mode=roster, why: asks for 'Curse User''s fights, which wants the set; signals battles_in_ask=True with subject 'Curse User' (type=unknown, extracted from 'cloning curse user'). The bundle enumerated the GLOBAL Curse Users set (25 candidates / 24 members, confidence=partial, warning: 'which','two','battles','against','cloning','listed','episode' did not narrow this set; every member was kept) instead of Episode 26's B&E bullets, so neither 'Misato Kuroi vs. Cloning Curse User' nor 'Satoru Gojo vs. Cloning Curse User' appears in the bundle. CONTROL: the natural single-battle phrasings route correctly - 'Which battle between Misato Kuroi and the cloning curse user is listed in Episode 26?' -> mode=qa (subject Misato Kuroi, character) and 'Which battle between Satoru Gojo and the cloning curse user is listed in Episode 26?' -> mode=qa (subject Satoru Gojo, character); both bundles contain the B&E bullets. So the defect is the PLURAL 'two battles' phrasing: it flips battles_in_ask on and lets a curse-user name out-compete the named-character subject, dropping the episode scope. This is a battles-in variant of the plural-ask misroute family (cf. ep21-063, ep22-017, ep22-027). VERIFIED 2026-09-01 against live Server 8 via direct POST /context; bundle dumped to C:\\Users\\Nikhil\\AppData\\Local\\Temp\\opencode\\ep26_053_bundle.json. Content coverage is preserved by two new natural single-battle questions (065, 066), which route to qa and pass. Retired per the no-rephrase rule; FLAGGED for central triage (router: plural battles-in questions must keep their episode scope even when a curse-user name appears in the question).",
+   "reason_class": "router-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_26-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 26's name?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "懐玉－弐－",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_26-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 26's name?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kaigyoku -ni-",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_26-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hidden Inventory, Part 2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-004",
+   "kind": "fact",
+   "question": "When did Episode 26 air in Japan?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-07-13",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-005",
+   "kind": "fact",
+   "question": "When did Episode 26 air in the United States?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-07-27",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 26 belong to?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gojo's Past",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ao no Sumika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Akari",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-009",
+   "kind": "fact",
+   "question": "Which manga chapters is Episode 26 adapted from?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 67",
+     "aliases": [
+      "Chapter 74",
+      "Chapter 68",
+      "Chapter 69"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 25",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 27",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 26 part of?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-013",
+   "kind": "fact",
+   "question": "What role does Episode 26 play in the second season?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the second episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_26-014",
+   "kind": "fact",
+   "question": "What does Riko introduce herself as in Episode 26's summary?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the Star Plasma Vessel",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_26-015",
+   "kind": "fact",
+   "question": "What has been placed on Riko in Episode 26's summary?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "A large bounty",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_26-016",
+   "kind": "fact",
+   "question": "What is Suguru doing while his cursed spirit restrains Kokun in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "makes himself some tea",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-017",
+   "kind": "fact",
+   "question": "What does Kokun boast in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Bayer, Q's strongest soldier, will make Suguru regret this",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-018",
+   "kind": "fact",
+   "question": "What happens to Q after Bayer's defeat in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Q disbands as an organization",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-019",
+   "kind": "fact",
+   "question": "What is Toji doing when Shiu Kong finds him in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "betting on races that he apparently never wins",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-020",
+   "kind": "fact",
+   "question": "What is Toji using the Time Vessel Association deposit for in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to wear him down",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-021",
+   "kind": "fact",
+   "question": "What does Shiu tell Toji before he leaves in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he's counting on him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-022",
+   "kind": "fact",
+   "question": "What does Shiu ask about that Toji can't remember in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-023",
+   "kind": "fact",
+   "question": "What do Satoru and Suguru wish they could use like Shoko in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "reverse cursed technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-024",
+   "kind": "fact",
+   "question": "What does Riko do when she wakes up in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "smacks Satoru",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-025",
+   "kind": "fact",
+   "question": "What does Riko proudly state about herself in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "she is Tengen and Tengen is her",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-026",
+   "kind": "fact",
+   "question": "What school does everyone go to at Riko's request in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Renchoku Girls' Junior High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-027",
+   "kind": "fact",
+   "question": "What does Masamichi explain over the phone in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "fulfilling all of Riko's quests is a part of Tengen's orders",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-028",
+   "kind": "fact",
+   "question": "What does Misato add about Riko in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Riko lost her family at a young age",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-029",
+   "kind": "fact",
+   "question": "What does Suguru say about Misato in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Misato is her family, honoring her",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-030",
+   "kind": "fact",
+   "question": "How many of Suguru's surveillance cursed spirits are taken out in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-031",
+   "kind": "fact",
+   "question": "What has Toji posted using the deposit in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a bounty on Riko",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-032",
+   "kind": "fact",
+   "question": "What will Toji lose if someone else takes out the girl in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his deposit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-033",
+   "kind": "fact",
+   "question": "What is Satoru Gojo the first person to inherit in hundreds of years, according to Toji in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "both the Limitless and the Six Eyes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-034",
+   "kind": "fact",
+   "question": "How long is the bounty up for, according to Toji in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "another forty-seven hours",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-035",
+   "kind": "fact",
+   "question": "What does the elderly curse user summon in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two simple shikigami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-036",
+   "kind": "fact",
+   "question": "What does Suguru summon to swallow his opponent in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a giant worm-like curse",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-037",
+   "kind": "fact",
+   "question": "What does the elderly curse user believe about Suguru in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru fears close combat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-038",
+   "kind": "fact",
+   "question": "How does Suguru's approach to the close-range encounter differ from the curse user's belief in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he was leading him into a close-range encounter the entire time",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-039",
+   "kind": "fact",
+   "question": "What class does Satoru run into in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Riko's music class",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-040",
+   "kind": "fact",
+   "question": "What does Misato use to overpower the curse user in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a well-timed low blow",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-041",
+   "kind": "fact",
+   "question": "What is the time limit on the dark web bounty for Riko in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "11 AM the next day",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-042",
+   "kind": "fact",
+   "question": "What happens to the curse user's body after Riko is confirmed as the target in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his body suddenly melts",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-043",
+   "kind": "fact",
+   "question": "How many clones surround Satoru and Riko in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "four clones",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-044",
+   "kind": "fact",
+   "question": "What does Satoru's opponent's innate technique allow in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "generate up to five clones including the main body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-045",
+   "kind": "fact",
+   "question": "Does Satoru's Red activate during the clone fight in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it fails to activate, as Satoru has yet to master reverse cursed technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-046",
+   "kind": "fact",
+   "question": "What does Satoru do after Red fails in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "simply punches the curse user to defeat him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-047",
+   "kind": "fact",
+   "question": "What message does Riko receive in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Misato has been kidnapped",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_26-048",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru Geto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_26-049",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 26's order of appearance?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Bag-Mask Curse User",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_26-050",
+   "kind": "fact",
+   "question": "What school is listed as a location in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Renchoku Girls' Junior High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_26-051",
+   "kind": "fact",
+   "question": "Which battle is listed as concluded in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo & Suguru Geto vs. Bayer & Kokun",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_26-052",
+   "kind": "fact",
+   "question": "Which battle between Suguru and the shikigami user is listed in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru Geto vs. Shikigami Curse User",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_26-054",
+   "kind": "fact",
+   "question": "Which technique is listed under the bag mask curse user's techniques in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cloning Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_26-055",
+   "kind": "fact",
+   "question": "Which parent technique is listed under Satoru Gojo's techniques in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Limitless",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_26-056",
+   "kind": "fact",
+   "question": "Which technique is listed under Shoko Ieiri's techniques in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_26-057",
+   "kind": "fact",
+   "question": "Which technique is listed under Suguru Geto's techniques in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Spirit Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_26-058",
+   "kind": "fact",
+   "question": "What does the extended opening scene show in the anime, according to the differences in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru making tea before revealing that one of his cursed spirits has defeated Kokun",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_26-059",
+   "kind": "fact",
+   "question": "What dialogue is added about Shoko in the anime, according to the differences in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru expresses his desire to be able to use reverse cursed technique like Shoko",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_26-060",
+   "kind": "fact",
+   "question": "What panel of Masamichi's phone call is omitted in the anime, according to the differences in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Masamichi exorcising a cursed spirit while talking on the phone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_26-061",
+   "kind": "fact",
+   "question": "What does the extended cafe scene now include in the anime, according to the differences in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji eating, walking around the cafe, and even spilling someone's food and stepping on it",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_26-062",
+   "kind": "fact",
+   "question": "How does the anime change the end of Satoru's fight with the curse user, according to the differences in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the curse user flees off-screen and Satoru uses blue to magnetize them both into a building",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_26-063",
+   "kind": "fact",
+   "question": "What else is omitted from the manga's treatment of the curse users, according to the differences in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru Geto's surveillance cursed spirits and the introduction of the curse users",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Anime & Manga Differences"
+  },
+  {
+   "id": "jjk-pg-episode_26-065",
+   "kind": "fact",
+   "question": "Which battle between Misato Kuroi and the cloning curse user is listed in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Misato Kuroi vs. Cloning Curse User",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  },
+  {
+   "id": "jjk-pg-episode_26-066",
+   "kind": "fact",
+   "question": "Which battle between Satoru Gojo and the cloning curse user is listed in Episode 26?",
+   "subject": "Episode 26",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo vs. Cloning Curse User",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_26"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Battles & Events"
+  }
+ ]
+}

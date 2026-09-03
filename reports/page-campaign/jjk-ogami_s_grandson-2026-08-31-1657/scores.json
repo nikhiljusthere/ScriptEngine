@@ -1,0 +1,665 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Ogami's Grandson?",
+      "set": "Every enemy of Ogami's Grandson",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Ogami's Grandson?",
+      "set": "Ogami's Grandson's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Ogami's Grandson?",
+      "set": "Ogami's Grandson's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Ogami's Grandson",
+      "set": "Every battle involving Ogami's Grandson",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the enemies of Ogami's Grandson?",
+      "found": [
+        "Takuma Ino",
+        "Yuji Itadori",
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro",
+        "Takuma Ino",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Ogami's Grandson?",
+      "found": [
+        "Kenjaku's group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's group"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Ogami's Grandson?",
+      "found": [
+        "Ogami's Grandson"
+      ],
+      "missing": [],
+      "members": [
+        "Ogami's Grandson"
+      ]
+    },
+    {
+      "query": "Every battle involving Ogami's Grandson",
+      "found": [
+        "Takuma Ino vs. Ogami & Her Grandson"
+      ],
+      "missing": [],
+      "members": [
+        "Takuma Ino vs. Ogami & Her Grandson"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ogami's Grandson's name?",
+      "id": "jjk-pg-ogami_s_grandson-001",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "\u30aa\u30ac\u30df\u306e\u5b6b"
+      ],
+      "found": [
+        "\u30aa\u30ac\u30df\u306e\u5b6b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ogami's Grandson's name?",
+      "id": "jjk-pg-ogami_s_grandson-002",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Ogami No Mago"
+      ],
+      "found": [
+        "Ogami No Mago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's Grandson's race?",
+      "id": "jjk-pg-ogami_s_grandson-003",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's Grandson's gender?",
+      "id": "jjk-pg-ogami_s_grandson-004",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Ogami's Grandson?",
+      "id": "jjk-pg-ogami_s_grandson-005",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's Grandson's occupation?",
+      "id": "jjk-pg-ogami_s_grandson-006",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ogami's Grandson first appear?",
+      "id": "jjk-pg-ogami_s_grandson-007",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Chapter 93"
+      ],
+      "found": [
+        "Chapter 93"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Ogami's Grandson first depicted?",
+      "id": "jjk-pg-ogami_s_grandson-008",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Episode 34"
+      ],
+      "found": [
+        "Episode 34"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Ogami's Grandson's Japanese voice actor?",
+      "id": "jjk-pg-ogami_s_grandson-009",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Ryuunosuke Watanuki"
+      ],
+      "found": [
+        "Ryuunosuke Watanuki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogami_s_grandson-010",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Ogami is victorious."
+      ],
+      "found": [
+        "Ogami is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogami_s_grandson-011",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Shibuya Tower"
+      ],
+      "found": [
+        "Shibuya Tower"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogami_s_grandson-012",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogami_s_grandson-013",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Chapter 95 & 97"
+      ],
+      "found": [
+        "Chapter 95 & 97"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Takuma Ino vs. Ogami & Her Grandson depicted?",
+      "id": "jjk-pg-ogami_s_grandson-014",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Episode 35"
+      ],
+      "found": [
+        "Episode 35"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Takuma Ino vs. Ogami & Her Grandson take place?",
+      "id": "jjk-pg-ogami_s_grandson-015",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Ogami's Grandson use in Takuma Ino vs. Ogami & Her Grandson?",
+      "id": "jjk-pg-ogami_s_grandson-016",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Hand-to-Hand Combat"
+      ],
+      "found": [
+        "Hand-to-Hand Combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Ogami's Grandson play in the series?",
+      "id": "jjk-pg-ogami_s_grandson-021",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ogami's Grandson?",
+      "id": "jjk-pg-ogami_s_grandson-022",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "an unnamed curse user who was kidnapped by Ogami as a child and raised by her"
+      ],
+      "found": [
+        "an unnamed curse user who was kidnapped by Ogami as a child and raised by her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ogami's Grandson brought along to do?",
+      "id": "jjk-pg-ogami_s_grandson-023",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "guard a set of commissioned curtains and kill jujutsu sorcerers"
+      ],
+      "found": [
+        "guard a set of commissioned curtains and kill jujutsu sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogami's Grandson look like?",
+      "id": "jjk-pg-ogami_s_grandson-024",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "a tall, light skinned man with a long neck, a square mohawk haircut, and brown eyes"
+      ],
+      "found": [
+        "a tall, light skinned man with a long neck, a square mohawk haircut, and brown eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ogami's Grandson wear?",
+      "id": "jjk-pg-ogami_s_grandson-025",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "a loose white sweater along with black pants and black shoes"
+      ],
+      "found": [
+        "a loose white sweater along with black pants and black shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ogami's Grandson respond to Ogami's orders?",
+      "id": "jjk-pg-ogami_s_grandson-026",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "follow Ogami's orders and did exactly what she ordered"
+      ],
+      "found": [
+        "follow Ogami's orders and did exactly what she ordered"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ogami's Grandson willing to do for Ogami?",
+      "id": "jjk-pg-ogami_s_grandson-027",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "protect her at the expense of his life"
+      ],
+      "found": [
+        "protect her at the expense of his life"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What relationship did Ogami's Grandson believe he had with Ogami?",
+      "id": "jjk-pg-ogami_s_grandson-028",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Ogami to be his grandmother"
+      ],
+      "found": [
+        "Ogami to be his grandmother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Ogami's Grandson guarding on October 31?",
+      "id": "jjk-pg-ogami_s_grandson-029",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "the cursed objects used to lower the curtains in Shibuya"
+      ],
+      "found": [
+        "the cursed objects used to lower the curtains in Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ogami use her technique to transform Ogami's Grandson into?",
+      "id": "jjk-pg-ogami_s_grandson-030",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro"
+      ],
+      "found": [
+        "Toji Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened to Ogami's Grandson's soul during the transformation?",
+      "id": "jjk-pg-ogami_s_grandson-031",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "defeated by Toji's body due to his Heavenly Restriction"
+      ],
+      "found": [],
+      "missing": [
+        "defeated by Toji's body due to his Heavenly Restriction"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ogami's Grandson eventually die?",
+      "id": "jjk-pg-ogami_s_grandson-032",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "Toji killed himself while fighting Megumi"
+      ],
+      "found": [
+        "Toji killed himself while fighting Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Ogami's Grandson's speed described?",
+      "id": "jjk-pg-ogami_s_grandson-033",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "decently fast"
+      ],
+      "found": [
+        "decently fast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ogami's Grandson actually?",
+      "id": "jjk-pg-ogami_s_grandson-034",
+      "subject": "Ogami's Grandson",
+      "accept": "all",
+      "expected": [
+        "one of the numerous children she kidnapped and raised after falsifying their relationship"
+      ],
+      "found": [
+        "one of the numerous children she kidnapped and raised after falsifying their relationship"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 29
+  }
+}

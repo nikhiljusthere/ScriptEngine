@@ -1,0 +1,1318 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +63 hand-authored prose (ids 003-065) + 2 page-gen identity; R5 forms: yes/no 064, comparative 057/058 (anime vs. manga escape side), counterfactual 066 (retired not-stated-on-page), how-many 017/040; infobox new-character EMPTY; B&E 2 items asked singular (050/051); colon items 'Mode: Albatross', 'Domain Expansion: Self-Embodiment of Perfection', 'Technique Charge: Simple Domain', 'New Shadow Style: Simple Domain' all asked via colon-free fragments per the ep28-048 Jujutsu-list/prose colon-truncation diagnosis; A&M items kept colon-free where the page's own 'Mode: Absolute' mentions carry colons; Trivia 1 bullet asked specifically per the known generic-trivia chunking gap; no Juju Stroll",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_31-066",
+   "item": "",
+   "question": "What would have happened if Mahito had not expanded his domain in Episode 31?",
+   "reason": "Counterfactual: the page states only that Mahito expands Self-Embodiment of Perfection, Kokichi 'was able to protect himself from the domain' via Simple Domain loaded in the tubes, and stabs Mahito in the back; no hypothetical outcome of Mahito not using his domain is stated on the page (Kokichi still loses the last-ditch exchange - Mahito's hands touch him first). Never invent a resolution. Satisfies the R5 counterfactual form.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_31-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 31's name?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "宵祭り",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_31-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 31's name?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yoimatsuri",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_31-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Evening Festival",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ep title"
+  },
+  {
+   "id": "jjk-pg-episode_31-004",
+   "kind": "fact",
+   "question": "When did Episode 31 air in Japan?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-09-07",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:jp air date"
+  },
+  {
+   "id": "jjk-pg-episode_31-005",
+   "kind": "fact",
+   "question": "When did Episode 31 air in the United States?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-09-21",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:us air date"
+  },
+  {
+   "id": "jjk-pg-episode_31-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 31 belong to?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:arc"
+  },
+  {
+   "id": "jjk-pg-episode_31-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "SPECIALZ",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:opening song"
+  },
+  {
+   "id": "jjk-pg-episode_31-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "more than words",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ending song"
+  },
+  {
+   "id": "jjk-pg-episode_31-009",
+   "kind": "fact",
+   "question": "Which manga chapter comes first in Episode 31's adaptation?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 80",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:adapted from (first of four)"
+  },
+  {
+   "id": "jjk-pg-episode_31-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 30",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:previous"
+  },
+  {
+   "id": "jjk-pg-episode_31-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 32",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:next"
+  },
+  {
+   "id": "jjk-pg-episode_31-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:season number"
+  },
+  {
+   "id": "jjk-pg-episode_31-013",
+   "kind": "fact",
+   "question": "How long after the battle with Ultimate Mechamaru does the Shibuya Incident begin, according to Episode 31's summary?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ten days",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "summary"
+  },
+  {
+   "id": "jjk-pg-episode_31-014",
+   "kind": "fact",
+   "question": "What role does Episode 31 play in the second season?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the seventh episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "intro"
+  },
+  {
+   "id": "jjk-pg-episode_31-015",
+   "kind": "fact",
+   "question": "What does Mahito survive from the massive Mechamaru at the start of Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a near point-blank Ultra Cannon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-016",
+   "kind": "fact",
+   "question": "What does Kokichi realize about his usual methods of attack in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "won't be able to damage Mahito's soul",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-017",
+   "kind": "fact",
+   "question": "How many years of cursed energy does Kokichi charge for the Miracle Cannon in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two years",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_31-018",
+   "kind": "fact",
+   "question": "What happens to Mahito's clothes from the Miracle Cannon in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his clothes are burnt off",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-019",
+   "kind": "fact",
+   "question": "What does Mahito do to shake Mechamaru's cockpit in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he enlarges his fist and punches Mechamaru across the face",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-020",
+   "kind": "fact",
+   "question": "What does Kokichi load into a mechanical tube in the cockpit in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a cursed technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-021",
+   "kind": "fact",
+   "question": "What happens to Mahito's left arm in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his entire left arm explodes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-022",
+   "kind": "fact",
+   "question": "What form does Mahito change into to escape Mechamaru in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a hybrid-bird form",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-023",
+   "kind": "fact",
+   "question": "What surprises Geto about Kokichi in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "surprised that Kokichi's strategy is working",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-024",
+   "kind": "fact",
+   "question": "What does Mechamaru fire to pursue Mahito through the air in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Pigeon Viola",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-025",
+   "kind": "fact",
+   "question": "What does Mahito sever connected to Mechamaru's head in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "electrical wires connected to Mechamaru's head",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-026",
+   "kind": "fact",
+   "question": "What domain does Mahito expand in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Self-Embodiment of Perfection",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-027",
+   "kind": "fact",
+   "question": "What does Mahito assume Kokichi thought about domain expansion in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he wouldn't use domain expansion in preparation for Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-028",
+   "kind": "fact",
+   "question": "What does Mahito state about the ten days in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "ten days is plenty of time to recover",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-029",
+   "kind": "fact",
+   "question": "What specific technique was loaded into the tubes that protected Kokichi from the domain in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Simple Domain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (colon item 'New Shadow Style: Simple Domain' asked via colon-free fragment per ep28-048)"
+  },
+  {
+   "id": "jjk-pg-episode_31-030",
+   "kind": "fact",
+   "question": "What happens to Mahito's body after Simple Domain in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito's body implodes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-031",
+   "kind": "fact",
+   "question": "What is Geto impressed with in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kokichi's application of Simple Domain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-032",
+   "kind": "fact",
+   "question": "What does a regular-sized Mechamaru do in the cockpit in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "hold off Mahito",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-033",
+   "kind": "fact",
+   "question": "Why doesn't Kokichi land the finishing blow in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito's hands touch him before he's able to land the finishing blow",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-034",
+   "kind": "fact",
+   "question": "Where is Kasumi Miwa when she sits next to the sleeping Mechamaru puppet in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kyoto Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-035",
+   "kind": "fact",
+   "question": "What has Kasumi Miwa noticed about the students since the Baseball Game in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the students have gotten closer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-036",
+   "kind": "fact",
+   "question": "What does Mahito claim about his explosion in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he blew himself up on purpose to deceive Kokichi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-037",
+   "kind": "fact",
+   "question": "What do Geto and Mahito reveal about the final preparations in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the final preparations for the Shibuya Incident have been concluded",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-038",
+   "kind": "fact",
+   "question": "What do Geto and Mahito call the fight with Kokichi in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "warm-up",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-039",
+   "kind": "fact",
+   "question": "When is the curtain lowered over Shibuya in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "just after 7 P.M. on October 31st",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-040",
+   "kind": "fact",
+   "question": "How tall is the curtain lowered over Shibuya in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "four-hundred-meter",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_31-041",
+   "kind": "fact",
+   "question": "Who arrives and enters the curtain around 8:31 P.M. in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-042",
+   "kind": "fact",
+   "question": "What are the civilians told about leaving until Satoru arrives in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they won't be able to leave",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-043",
+   "kind": "fact",
+   "question": "What is definitely waiting underground, according to Kusakabe in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "special grade cursed spirits waiting underground",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-044",
+   "kind": "fact",
+   "question": "Which sorcerer is listed first among those placed outside the curtain in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (singular per plural-misroute avoidance)"
+  },
+  {
+   "id": "jjk-pg-episode_31-045",
+   "kind": "fact",
+   "question": "What is missing inside the curtain in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "cellular signal",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_31-046",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (first)"
+  },
+  {
+   "id": "jjk-pg-episode_31-047",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 31's order of appearance?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (last)"
+  },
+  {
+   "id": "jjk-pg-episode_31-048",
+   "kind": "fact",
+   "question": "What is the first location listed in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mechamaru's Hideout",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (1 of 2)"
+  },
+  {
+   "id": "jjk-pg-episode_31-049",
+   "kind": "fact",
+   "question": "Which famous Tokyo district is listed as a location in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (2 of 2)"
+  },
+  {
+   "id": "jjk-pg-episode_31-050",
+   "kind": "fact",
+   "question": "Which battle is concluded in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kokichi Muta vs. Mahito",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (concluded)"
+  },
+  {
+   "id": "jjk-pg-episode_31-051",
+   "kind": "fact",
+   "question": "Which event is started in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (started)"
+  },
+  {
+   "id": "jjk-pg-episode_31-052",
+   "kind": "fact",
+   "question": "Which parent technique is listed under Kokichi Muta's techniques in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Puppet Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Kokichi Muta's Techniques"
+  },
+  {
+   "id": "jjk-pg-episode_31-053",
+   "kind": "fact",
+   "question": "Which option of Ultimate Mechamaru fires the Ultimate Cannon in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Albatross",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Kokichi Muta's Techniques (colon item 'Mode: Albatross' asked via fragment)"
+  },
+  {
+   "id": "jjk-pg-episode_31-054",
+   "kind": "fact",
+   "question": "Which technique is listed under Mahito's techniques in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Idle Transfiguration",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Mahito's Techniques"
+  },
+  {
+   "id": "jjk-pg-episode_31-055",
+   "kind": "fact",
+   "question": "Which domain is listed under Mahito's techniques in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Self-Embodiment of Perfection",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Mahito's Techniques (colon item 'Domain Expansion: Self-Embodiment of Perfection' asked via fragment)"
+  },
+  {
+   "id": "jjk-pg-episode_31-056",
+   "kind": "fact",
+   "question": "Which technique charge is listed under Mode: Absolute in Episode 31?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Simple Domain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Kokichi Muta's Techniques (colon item 'Technique Charge: Simple Domain' asked via fragment)"
+  },
+  {
+   "id": "jjk-pg-episode_31-057",
+   "kind": "fact",
+   "question": "Where does Mahito escape into the water in the anime, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the side of the bridge opposite to Kokichi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (comparative form: anime side)"
+  },
+  {
+   "id": "jjk-pg-episode_31-058",
+   "kind": "fact",
+   "question": "Where does Mahito escape into the water in the manga, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the same side as Kokichi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (comparative form: manga side)"
+  },
+  {
+   "id": "jjk-pg-episode_31-059",
+   "kind": "fact",
+   "question": "Which side of Mode: Absolute's head does Mahito punch in the anime, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the right side",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (colon-free item)"
+  },
+  {
+   "id": "jjk-pg-episode_31-060",
+   "kind": "fact",
+   "question": "What does the manga show Kokichi launching Mahito with, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a slap",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (colon-free item)"
+  },
+  {
+   "id": "jjk-pg-episode_31-061",
+   "kind": "fact",
+   "question": "Why doesn't the anime's mountain jump occur in the manga, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the giant puppet never left the water",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_31-062",
+   "kind": "fact",
+   "question": "What does Mahito transform his left arm into to slice the giant puppet's tubes, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a large serrated blade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_31-063",
+   "kind": "fact",
+   "question": "What does Pseudo-Geto pick up during his discussion with Mahito in the anime, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a commissioned curtain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  },
+  {
+   "id": "jjk-pg-episode_31-064",
+   "kind": "fact",
+   "question": "Is the cockpit battle between Kokichi and Mahito extended in the anime, according to Episode 31's differences?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the battle in the cockpit between Kokichi and Mahito is extended and altered",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (yes/no form)"
+  },
+  {
+   "id": "jjk-pg-episode_31-065",
+   "kind": "fact",
+   "question": "Whose final battle is the Ultimate Mechamaru vs. Mahito scene likely an homage to, according to Episode 31's trivia?",
+   "subject": "Episode 31",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Team Dai-Gurren and Antispiral",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_31"
+   ],
+   "verified": "2026-09-01",
+   "note": "trivia (specific phrasing per the known generic-trivia chunking gap)"
+  }
+ ]
+}

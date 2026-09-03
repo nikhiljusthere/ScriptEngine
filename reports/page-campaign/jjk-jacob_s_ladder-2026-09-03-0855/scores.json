@@ -1,0 +1,357 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Jacob's Ladder",
+      "set": "Every battle involving Jacob's Ladder",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Jacob's Ladder",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Jacob's Ladder's name?",
+      "id": "jjk-pg-jacob_s_ladder-001",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "\u90aa\u53bb\u6094\u306e\u68af\u5b50"
+      ],
+      "found": [
+        "\u90aa\u53bb\u6094\u306e\u68af\u5b50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Jacob's Ladder's name?",
+      "id": "jjk-pg-jacob_s_ladder-002",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Yakobu no Hashigo"
+      ],
+      "found": [
+        "Yakobu no Hashigo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jacob's Ladder first appear?",
+      "id": "jjk-pg-jacob_s_ladder-003",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-jacob_s_ladder-004",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-jacob_s_ladder-005",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-jacob_s_ladder-006",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-jacob_s_ladder-007",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-jacob_s_ladder-008",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-jacob_s_ladder-009",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-jacob_s_ladder-010",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-jacob_s_ladder-011",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-jacob_s_ladder-012",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-jacob_s_ladder-013",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the user conjure before activating Jacob's Ladder?",
+      "id": "jjk-pg-jacob_s_ladder-015",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Leading to the activation of this technique, the user conjures a four-winged trumpet made of light accompanied by a large multi-layered magic array in the sky."
+      ],
+      "found": [
+        "Leading to the activation of this technique, the user conjures a four-winged trumpet made of light accompanied by a large multi-layered magic array in the sky."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when the trumpet is sounded?",
+      "id": "jjk-pg-jacob_s_ladder-016",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Upon sounding the trumpet, a pillar of light descends from the circle and engulfs the target in its radiance."
+      ],
+      "found": [
+        "Upon sounding the trumpet, a pillar of light descends from the circle and engulfs the target in its radiance."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to curses bathed in the light of Jacob's Ladder?",
+      "id": "jjk-pg-jacob_s_ladder-017",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "Any curse bathed in the light of Jacob's Ladder will be extinguished without prejudice, including special grade cursed objects such as Ryomen Sukuna and Prison Realm."
+      ],
+      "found": [
+        "Any curse bathed in the light of Jacob's Ladder will be extinguished without prejudice, including special grade cursed objects such as Ryomen Sukuna and Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who used Jacob's Ladder in an attempt to strip Sukuna from Megumi's body?",
+      "id": "jjk-pg-jacob_s_ladder-018",
+      "subject": "Jacob's Ladder",
+      "accept": "all",
+      "expected": [
+        "The Angel and Hana Kurusu used Jacob's Ladder in an attempt to strip Sukuna from Megumi Fushiguro's body."
+      ],
+      "found": [
+        "The Angel and Hana Kurusu used Jacob's Ladder in an attempt to strip Sukuna from Megumi Fushiguro's body."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 17,
+    "fact_present": 17
+  }
+}

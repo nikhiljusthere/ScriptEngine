@@ -1,0 +1,3851 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-24",
+ "note": "page-gen 2026-08-24: 63 structured questions (note page-gen:-marked), 0 auto-retires, 98 hand-authored kept, 2 superseded",
+ "retired": [
+  {
+   "question": "After using reverse cursed technique, what did Choso ask the sorcerers about?",
+   "item": "replenished their blood",
+   "reason": "engine gap: the Shinjuku blood-replenishment line (Choso asking Hakari, Yuta and Shoko how they replenished blood after reverse cursed technique) ranks below the other Shinjuku passages on the qa route, so it is not in the returned bundle; no declaration or phrasing reaches it."
+  },
+  {
+   "id": "jjk-pg-choso-006",
+   "item": "",
+   "question": "How old is Choso?",
+   "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-choso-009",
+   "item": "",
+   "question": "What is Choso's occupation?",
+   "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "question": "What resistance does Yuji have that protects him when exposed to the Death Painting Wombs' blood?",
+   "reason": "cross-character Trivia fact about Yuji, not retrievable on Choso's page; belongs on Yuji Itadori's page",
+   "retired": "2026-08-24"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-choso-001",
+   "kind": "set",
+   "question": "Every battle of Choso",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "answer": [
+    {
+     "item": "Choso vs. Naoya Zenin"
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume"
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna"
+    },
+    {
+     "item": "Satoru Gojo vs. Mahito's Group"
+    },
+    {
+     "item": "Yuji Itadori & Choso vs. Cursed Spirits"
+    },
+    {
+     "item": "Yuji Itadori vs. Choso"
+    },
+    {
+     "item": "Yuki Tsukumo & Choso vs. Kenjaku"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "scope": "closed"
+  },
+  {
+   "id": "jjk-pg-choso-002",
+   "kind": "set",
+   "question": "Who are the Death Painting Wombs",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "answer": [
+    {
+     "item": "Choso"
+    },
+    {
+     "item": "Eso"
+    },
+    {
+     "item": "Kechizu"
+    },
+    {
+     "item": "Noranso"
+    },
+    {
+     "item": "Sho-oso"
+    },
+    {
+     "item": "Tanso"
+    },
+    {
+     "item": "Sanso"
+    },
+    {
+     "item": "Kotsuso"
+    },
+    {
+     "item": "Shoso"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23",
+   "scope": "closed"
+  },
+  {
+   "id": "jjk-pg-choso-003",
+   "kind": "set",
+   "question": "What are Choso's named cursed techniques?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "answer": [
+    {
+     "item": "Blood Manipulation"
+    },
+    {
+     "item": "Slicing Exorcism"
+    },
+    {
+     "item": "Convergence"
+    },
+    {
+     "item": "Piercing Blood"
+    },
+    {
+     "item": "Supernova"
+    },
+    {
+     "item": "Blood Edge"
+    },
+    {
+     "item": "Flowing Red Scale"
+    },
+    {
+     "item": "Flowing Red Scale: Stack"
+    },
+    {
+     "item": "Blood Meteorite"
+    },
+    {
+     "item": "Wing King"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23",
+   "scope": "closed",
+   "note": "Full Cursed Technique table on Choso; derived roster returns only 4 -- staged declaration."
+  },
+  {
+   "id": "jjk-pg-choso-004",
+   "kind": "set",
+   "question": "Who are Choso's opponents?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "answer": [
+    {
+     "item": "Satoru Gojo"
+    },
+    {
+     "item": "Yuji Itadori"
+    },
+    {
+     "item": "Naoya Zenin"
+    },
+    {
+     "item": "Kenjaku"
+    },
+    {
+     "item": "Uraume"
+    },
+    {
+     "item": "Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "scope": "closed",
+   "note": "Read off the seven battle pages; staged declaration."
+  },
+  {
+   "id": "jjk-pg-choso-005",
+   "kind": "fact",
+   "question": "What is the race of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Death Painting Womb"
+    },
+    {
+     "item": "Incarnation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-007",
+   "kind": "fact",
+   "question": "What is Choso's status?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-008",
+   "kind": "fact",
+   "question": "What gender is Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Male"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-010",
+   "kind": "fact",
+   "question": "What class is Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Special Grade"
+    },
+    {
+     "item": "Cursed Womb"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-011",
+   "kind": "fact",
+   "question": "In which chapter does Choso debut?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Chapter 60"
+    },
+    {
+     "item": "Chapter 62"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-012",
+   "kind": "fact",
+   "question": "In which episode does Choso debut in the anime?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Episode 24"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-013",
+   "kind": "fact",
+   "question": "Who voices Choso in the Japanese dub?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Daisuke Namikawa"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-014",
+   "kind": "fact",
+   "question": "Who voices Choso in the English dub?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Ray Chase"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-015",
+   "kind": "fact",
+   "question": "What color is Choso's hair?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Black"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-016",
+   "kind": "fact",
+   "question": "What color are Choso's eyes?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Brown"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-017",
+   "kind": "fact",
+   "question": "Who is Choso's father?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-018",
+   "kind": "fact",
+   "question": "Who are the two incarnated Death Painting brothers with Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kechizu"
+    },
+    {
+     "item": "Eso"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-019",
+   "kind": "fact",
+   "question": "Who is Choso's younger half-brother?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Yuji Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-020",
+   "kind": "fact",
+   "question": "How is Choso's personality described?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "calm and reserved"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-021",
+   "kind": "fact",
+   "question": "What did Choso love despite his cursed spirit nature?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his human mother"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-022",
+   "kind": "fact",
+   "question": "What did Choso tell his two brothers upon being incarnated?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "lived only for one another"
+    },
+    {
+     "item": "they were all one"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-023",
+   "kind": "fact",
+   "question": "What goal did Choso ultimately pursue during the Shibuya Incident?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "avenging his brothers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-024",
+   "kind": "fact",
+   "question": "Why did Choso clash with Jogo?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "keeping Yuji alive to revive Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-025",
+   "kind": "fact",
+   "question": "What does Choso take immense pride in being?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the oldest of ten siblings"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-026",
+   "kind": "fact",
+   "question": "Why can't Choso understand Naoya Zenin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "hates all of his older brothers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-027",
+   "kind": "fact",
+   "question": "What does Choso want to do to Kenjaku for his family?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "kill his father Kenjaku"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-028",
+   "kind": "fact",
+   "question": "What does Choso still regret?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "what happened with Eso and Kechizu"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-029",
+   "kind": "fact",
+   "question": "Why did Choso initially decide to live as curses?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Eso and Kechizu wouldn't be accepted by humanity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-030",
+   "kind": "fact",
+   "question": "What did Yuki tell Choso to do so he could live as a human?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "die as a curse"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-031",
+   "kind": "fact",
+   "question": "What grade was Choso ranked as a Death Painting Womb?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "special grade"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-032",
+   "kind": "fact",
+   "question": "What is Choso's power comparable to after his incarnation?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a grade 1 sorcerer"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-033",
+   "kind": "fact",
+   "question": "How long did Choso hone his cursed techniques as a cursed object?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "150 years"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-034",
+   "kind": "fact",
+   "question": "Whose Blood Manipulation mastery does Choso's surpass?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-035",
+   "kind": "fact",
+   "question": "What of Gojo's could none of Choso's techniques breach?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Infinity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-036",
+   "kind": "fact",
+   "question": "What did Choso use his techniques to do to put Gojo at a disadvantage?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "slaughter tons of non-sorcerers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-037",
+   "kind": "fact",
+   "question": "What technique did Choso use to even the odds against Yuji?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Flowing Red Scale: Stack"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-038",
+   "kind": "fact",
+   "question": "What did Choso hide in his hand to pierce Yuji's liver?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Blood Meteorite"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-039",
+   "kind": "fact",
+   "question": "What did Choso focus Flowing Red Scale: Stack in to track Naoya's speed?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "dynamic visual acuity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-040",
+   "kind": "fact",
+   "question": "What technique did Choso lure Naoya into, which Naoya's clan would not know?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Supernova"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-041",
+   "kind": "fact",
+   "question": "How could Choso guess the correct door to breach Tengen's barrier?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "tracking the presence of his six brothers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-042",
+   "kind": "fact",
+   "question": "Whose invasion did Choso copy to get past the barrier?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-043",
+   "kind": "fact",
+   "question": "What is Choso noted for in unarmed combat?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Master Hand-to-Hand Combatant"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-044",
+   "kind": "fact",
+   "question": "Against whom did Choso receive his most brutal beating?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-045",
+   "kind": "fact",
+   "question": "What lets Choso sense his younger brothers' transformations?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Blood Connection"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-046",
+   "kind": "fact",
+   "question": "What effect does Choso's blood have on a victim?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "poisonous"
+    },
+    {
+     "item": "drains its victim's stamina"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-047",
+   "kind": "fact",
+   "question": "Which of Uraume's techniques was disengaged when the poison took effect?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Ice Formation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-048",
+   "kind": "fact",
+   "question": "How did Choso learn reverse cursed technique?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "replacement training"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-049",
+   "kind": "fact",
+   "question": "What did Choso use Simple Domain to counter?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Sukuna's impromptu Malevolent Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-050",
+   "kind": "fact",
+   "question": "What place did Choso rank in the second Popularity Poll?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "7th"
+    },
+    {
+     "item": "4,757"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-051",
+   "kind": "fact",
+   "question": "Who else does Ray Chase voice in the English dub?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-052",
+   "kind": "fact",
+   "question": "What do the blood of Eso and Kechizu share with Choso's?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the same toxicity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-053",
+   "kind": "fact",
+   "question": "How many Death Painting wombs does Choso count among?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "one of nine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-054",
+   "kind": "fact",
+   "question": "What was Choso's mother capable of giving birth to?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "cursed spirit children"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-055",
+   "kind": "fact",
+   "question": "Who is Choso's third parent?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-056",
+   "kind": "fact",
+   "question": "Where were Choso and his brothers stored?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Jujutsu High"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-057",
+   "kind": "fact",
+   "question": "What else was stored at Jujutsu High with Choso and his brothers?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Sukuna's fingers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-058",
+   "kind": "fact",
+   "question": "What did Mahito take from Jujutsu High?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Sukuna's fingers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-059",
+   "kind": "fact",
+   "question": "Who took Choso and his brothers from Jujutsu High?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-060",
+   "kind": "fact",
+   "question": "Who gave Choso and his brothers bodies?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-061",
+   "kind": "fact",
+   "question": "Which side did Choso and his brothers decide to join?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "the cursed spirits"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-062",
+   "kind": "fact",
+   "question": "What was Choso doing when he sensed his brothers had been killed?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "playing a board game"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-063",
+   "kind": "fact",
+   "question": "Who was Choso playing the board game with?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Pseudo-Geto"
+    },
+    {
+     "item": "Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-064",
+   "kind": "fact",
+   "question": "Where is Choso on October 31?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "the curtain at Shibuya"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-065",
+   "kind": "fact",
+   "question": "Who is with Choso in the curtain at Shibuya?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Hanami"
+    },
+    {
+     "item": "Jogo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-066",
+   "kind": "fact",
+   "question": "How does Choso attack Gojo at Shibuya?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "blood manipulation technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-067",
+   "kind": "fact",
+   "question": "What does Gojo do that greatly stuns Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "activating his domain expansion for less than a second"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-068",
+   "kind": "fact",
+   "question": "What does Choso do to distract Gojo?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "kills some of the humans with his technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-069",
+   "kind": "fact",
+   "question": "What memory stops Choso from killing Yuji?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "a memory of all four of them sharing a meal together"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-070",
+   "kind": "fact",
+   "question": "Why does Choso rush to Yuji's side at Shibuya?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "convinced that Yuji is also one of his siblings"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-071",
+   "kind": "fact",
+   "question": "Whom does Choso confront as his notorious father at Shibuya?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-072",
+   "kind": "fact",
+   "question": "What freezes almost everyone at the Shibuya battle?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Frost Calm"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-073",
+   "kind": "fact",
+   "question": "Who uses Icefall to freeze Yuji, Choso and Momo?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Uraume"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-074",
+   "kind": "fact",
+   "question": "Who saves everyone from Uraume's Icefall at Shibuya?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yuki Tsukumo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-075",
+   "kind": "fact",
+   "question": "How does Choso poison Uraume?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "his blood was mixed in with the Piercing Blood attack"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-076",
+   "kind": "fact",
+   "question": "What does Choso ask about as he approaches Yuji on the staircase?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "asking about his injuries"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-077",
+   "kind": "fact",
+   "question": "What does Choso collect while Yuji says he is fine?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "the remains of Shoso"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-078",
+   "kind": "fact",
+   "question": "How does Choso kill most of the cursed spirits in the tunnel?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Piercing Blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-079",
+   "kind": "fact",
+   "question": "What does Choso note in Yuji's improvement?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "his fluid control over cursed energy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-080",
+   "kind": "fact",
+   "question": "How does Choso defeat Naoya in the Culling Game?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "activates Supernova"
+    },
+    {
+     "item": "poisoning him with his blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-081",
+   "kind": "fact",
+   "question": "Who knocks Choso unconscious with a single unceremonious blow?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yuta"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-082",
+   "kind": "fact",
+   "question": "How does Choso suggest getting past Tengen's barrier?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Mahito once managed to steal Sukuna's finger along with the Death Paintings"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-083",
+   "kind": "fact",
+   "question": "What role do Yuki and Choso take on for Master Tengen?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Master Tengen's guards"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-084",
+   "kind": "fact",
+   "question": "When did Choso confront Kenjaku in Tengen's barrier?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "November 16"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-085",
+   "kind": "fact",
+   "question": "What technique does Choso use, derived from Eso, against Kenjaku?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Wing King"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-086",
+   "kind": "fact",
+   "question": "How does Choso force Kenjaku to use his innate technique?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "activating three Supernovas surrounding him simultaneously"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-087",
+   "kind": "fact",
+   "question": "What innate technique is Kenjaku forced to use?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Antigravity System"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-088",
+   "kind": "fact",
+   "question": "What technique does Yuki activate to herself and Garuda?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Star Rage"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-089",
+   "kind": "fact",
+   "question": "What does Yuki tell Choso to do before she dies?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "die as a curse and live as a human"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-090",
+   "kind": "fact",
+   "question": "What does Choso reveal when he returns to Jujutsu headquarters?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Kenjaku took Tengen and killed Yuki"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-091",
+   "kind": "fact",
+   "question": "What does Choso hand to Yuji two days later?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Yuki's records of soul research"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-092",
+   "kind": "fact",
+   "question": "On what day is the Gojo and Sukuna fight arranged?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "December 24th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-093",
+   "kind": "fact",
+   "question": "What do Choso and Yuji say they should be able to learn and master?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-094",
+   "kind": "fact",
+   "question": "Who explains that she converts cursed energy into blood?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Shoko"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-095",
+   "kind": "fact",
+   "question": "Where does Choso watch the Gojo and Sukuna fight from?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Rika"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-096",
+   "kind": "fact",
+   "question": "What does Choso suffer from the King of Curses?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "a grievous double impalement"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-097",
+   "kind": "fact",
+   "question": "What does Choso launch at Sukuna out of sight?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Piercing Blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-098",
+   "kind": "fact",
+   "question": "What does Choso use to reduce the damage from Sukuna's domain?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Simple Domain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-099",
+   "kind": "fact",
+   "question": "What does Choso form to protect Yuji at the cost of his own life?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "a blood barrier"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-100",
+   "kind": "fact",
+   "question": "What did Choso learn Simple Domain from?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "replacement training"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-choso-006",
+   "kind": "fact",
+   "question": "What are the kanji for Choso's name?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "脹相",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-choso-009",
+   "kind": "fact",
+   "question": "What is the romaji of Choso's name?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chōsō",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-choso-101",
+   "kind": "fact",
+   "question": "What is Choso's race?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Death Painting Womb Incarnation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-choso-102",
+   "kind": "fact",
+   "question": "How old is Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "150",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-choso-103",
+   "kind": "fact",
+   "question": "What is Choso's gender?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-choso-104",
+   "kind": "fact",
+   "question": "What is the status of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-choso-105",
+   "kind": "fact",
+   "question": "What is Choso's occupation?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-choso-106",
+   "kind": "fact",
+   "question": "What is Choso's grade?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Special Grade (Cursed Womb)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:class"
+  },
+  {
+   "id": "jjk-pg-choso-107",
+   "kind": "fact",
+   "question": "In which manga chapter does Choso first appear?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 60 (Flashback) Chapter 62",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-choso-108",
+   "kind": "fact",
+   "question": "In which anime episode is Choso first depicted?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 24",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-choso-109",
+   "kind": "fact",
+   "question": "Who is Choso's Japanese voice actor?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Daisuke Namikawa",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-choso-110",
+   "kind": "fact",
+   "question": "Who is Choso's English voice actor?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ray Chase",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-choso-111",
+   "kind": "fact",
+   "question": "What is the outcome of Choso vs. Naoya Zenin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Choso vs. Naoya Zenin:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-112",
+   "kind": "fact",
+   "question": "Where did Choso vs. Naoya Zenin take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Choso vs. Naoya Zenin:place"
+  },
+  {
+   "id": "jjk-pg-choso-113",
+   "kind": "fact",
+   "question": "In which manga chapter does Choso vs. Naoya Zenin begin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 140",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Choso vs. Naoya Zenin:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-114",
+   "kind": "fact",
+   "question": "In which episode is Choso vs. Naoya Zenin depicted?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 48 - 49",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Choso vs. Naoya Zenin:episodes"
+  },
+  {
+   "id": "jjk-pg-choso-115",
+   "kind": "fact",
+   "question": "In which arc does Choso vs. Naoya Zenin take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Choso vs. Naoya Zenin:arc"
+  },
+  {
+   "id": "jjk-pg-choso-116",
+   "kind": "fact",
+   "question": "Which techniques did Choso use in Choso vs. Naoya Zenin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hand-to-Hand Combat, Blood Manipulation, Flowing Red Scale: Stack, Slicing Exorcism, Supernova",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Choso vs. Naoya Zenin:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-117",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuki interrupts the battle. Kenjaku escapes with Prison Realm.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-118",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Police Station, Udagawa Police Box",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:place"
+  },
+  {
+   "id": "jjk-pg-choso-119",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:date"
+  },
+  {
+   "id": "jjk-pg-choso-120",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 133",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-121",
+   "kind": "fact",
+   "question": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 46",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:episodes"
+  },
+  {
+   "id": "jjk-pg-choso-122",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:arc"
+  },
+  {
+   "id": "jjk-pg-choso-123",
+   "kind": "fact",
+   "question": "Which techniques did Choso use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hand-to-Hand Combat, Blood Manipulation, Convergence, Piercing Blood, Flowing Red Scale",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-124",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The jujutsu sorcerers are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-125",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place"
+  },
+  {
+   "id": "jjk-pg-choso-126",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date"
+  },
+  {
+   "id": "jjk-pg-choso-127",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 244",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-128",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+  },
+  {
+   "id": "jjk-pg-choso-129",
+   "kind": "fact",
+   "question": "Which techniques did Choso use in Jujutsu Sorcerers vs. Sukuna?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation, Convergence, Piercing Blood, Supernova, Simple Domain, Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-130",
+   "kind": "fact",
+   "question": "What is the outcome of Satoru Gojo vs. Mahito's Group?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo is sealed.\nHanami is killed.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-131",
+   "kind": "fact",
+   "question": "Where did Satoru Gojo vs. Mahito's Group take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fukutoshin Line Platform",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:place"
+  },
+  {
+   "id": "jjk-pg-choso-132",
+   "kind": "fact",
+   "question": "When does Satoru Gojo vs. Mahito's Group take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:date"
+  },
+  {
+   "id": "jjk-pg-choso-133",
+   "kind": "fact",
+   "question": "Which manga chapters cover Satoru Gojo vs. Mahito's Group?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 84 - 85 & 88 - 90",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-134",
+   "kind": "fact",
+   "question": "In which episode is Satoru Gojo vs. Mahito's Group depicted?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 32 - 33",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:episodes"
+  },
+  {
+   "id": "jjk-pg-choso-135",
+   "kind": "fact",
+   "question": "In which arc does Satoru Gojo vs. Mahito's Group take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:arc"
+  },
+  {
+   "id": "jjk-pg-choso-136",
+   "kind": "fact",
+   "question": "Which techniques did Choso use in Satoru Gojo vs. Mahito's Group?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation, Slicing Exorcism, Convergence, Piercing Blood, Supernova",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Satoru Gojo vs. Mahito's Group:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-137",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori & Choso vs. Cursed Spirits?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji & Choso are victorious. Naoya confronts them after.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-138",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori & Choso vs. Cursed Spirits take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:place"
+  },
+  {
+   "id": "jjk-pg-choso-139",
+   "kind": "fact",
+   "question": "Which manga chapters cover Yuji Itadori & Choso vs. Cursed Spirits?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 139",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-140",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori & Choso vs. Cursed Spirits depicted?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 48",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:episodes"
+  },
+  {
+   "id": "jjk-pg-choso-141",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori & Choso vs. Cursed Spirits take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:arc"
+  },
+  {
+   "id": "jjk-pg-choso-142",
+   "kind": "fact",
+   "question": "Which techniques did Choso use in Yuji Itadori & Choso vs. Cursed Spirits?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation, Piercing Blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori & Choso vs. Cursed Spirits:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-143",
+   "kind": "fact",
+   "question": "What is the outcome of Yuji Itadori vs. Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Choso:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-144",
+   "kind": "fact",
+   "question": "Where did Yuji Itadori vs. Choso take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Choso:place"
+  },
+  {
+   "id": "jjk-pg-choso-145",
+   "kind": "fact",
+   "question": "When does Yuji Itadori vs. Choso take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Choso:date"
+  },
+  {
+   "id": "jjk-pg-choso-146",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuji Itadori vs. Choso begin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 101",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Choso:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-147",
+   "kind": "fact",
+   "question": "In which episode is Yuji Itadori vs. Choso depicted?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 37",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Choso:episodes"
+  },
+  {
+   "id": "jjk-pg-choso-148",
+   "kind": "fact",
+   "question": "In which arc does Yuji Itadori vs. Choso take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuji Itadori vs. Choso:arc"
+  },
+  {
+   "id": "jjk-pg-choso-149",
+   "kind": "fact",
+   "question": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:outcome"
+  },
+  {
+   "id": "jjk-pg-choso-150",
+   "kind": "fact",
+   "question": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tombs of the Star",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:place"
+  },
+  {
+   "id": "jjk-pg-choso-151",
+   "kind": "fact",
+   "question": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 16, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:date"
+  },
+  {
+   "id": "jjk-pg-choso-152",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 203",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:chapters"
+  },
+  {
+   "id": "jjk-pg-choso-153",
+   "kind": "fact",
+   "question": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:arc"
+  },
+  {
+   "id": "jjk-pg-choso-154",
+   "kind": "fact",
+   "question": "Which techniques did Choso use in Yuki Tsukumo & Choso vs. Kenjaku?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation, Convergence, Piercing Blood, Supernova, Wing King (Imitation)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-155",
+   "kind": "set",
+   "question": "What are all the named techniques of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    },
+    {
+     "item": "Simple Domain",
+     "aliases": []
+    },
+    {
+     "item": "Blood Manipulation",
+     "aliases": []
+    },
+    {
+     "item": "Flowing Red Scale",
+     "aliases": []
+    },
+    {
+     "item": "Slicing Exorcism",
+     "aliases": []
+    },
+    {
+     "item": "Convergence",
+     "aliases": []
+    },
+    {
+     "item": "Piercing Blood",
+     "aliases": []
+    },
+    {
+     "item": "Maximum: Wing King",
+     "aliases": []
+    },
+    {
+     "item": "Supernova",
+     "aliases": []
+    },
+    {
+     "item": "Blood Edge",
+     "aliases": []
+    },
+    {
+     "item": "Blood Meteorite",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-choso-156",
+   "kind": "set",
+   "question": "What are all the allies of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    },
+    {
+     "item": "Mahito",
+     "aliases": []
+    },
+    {
+     "item": "Yuki Tsukumo",
+     "aliases": []
+    },
+    {
+     "item": "Tengen",
+     "aliases": []
+    },
+    {
+     "item": "Hanami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:ally"
+  },
+  {
+   "id": "jjk-pg-choso-157",
+   "kind": "set",
+   "question": "What are all the enemies of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    },
+    {
+     "item": "Kokichi Muta",
+     "aliases": []
+    },
+    {
+     "item": "Naoya Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Uraume",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:enemy"
+  },
+  {
+   "id": "jjk-pg-choso-158",
+   "kind": "set",
+   "question": "What are all the families of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo",
+     "aliases": []
+    },
+    {
+     "item": "Eso",
+     "aliases": []
+    },
+    {
+     "item": "Kechizu",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-choso-159",
+   "kind": "set",
+   "question": "What are all the friends of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuki Tsukumo",
+     "aliases": []
+    },
+    {
+     "item": "Kechizu",
+     "aliases": []
+    },
+    {
+     "item": "Kirara Hoshi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:friend"
+  },
+  {
+   "id": "jjk-pg-choso-160",
+   "kind": "set",
+   "question": "What are all the affiliations of Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "His Brothers Yuji Itadori Mahito's Group (Formerly)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-choso-161",
+   "kind": "set",
+   "question": "Every battle involving Choso",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso vs. Naoya Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+     "aliases": []
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Sukuna",
+     "aliases": []
+    },
+    {
+     "item": "Satoru Gojo vs. Mahito's Group",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori & Choso vs. Cursed Spirits",
+     "aliases": []
+    },
+    {
+     "item": "Yuji Itadori vs. Choso",
+     "aliases": []
+    },
+    {
+     "item": "Yuki Tsukumo & Choso vs. Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Mahito's_Group",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_&_Choso_vs._Cursed_Spirits",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori_vs._Choso",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-choso-162",
+   "kind": "fact",
+   "question": "From whom did Choso inherit his Blood Manipulation technique?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kamo ancestor"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-163",
+   "kind": "fact",
+   "question": "For how long did Choso hone his Blood Manipulation before developing Supernova?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "150 years"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-164",
+   "kind": "fact",
+   "question": "What shape can Choso's Slicing Exorcism take for a singular close-range attack?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "A rotating chakram"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-165",
+   "kind": "fact",
+   "question": "What does Choso's Convergence technique do to his blood?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "Compresses and condenses the blood to its absolute limit"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-166",
+   "kind": "fact",
+   "question": "How does Choso fire his Piercing Blood beam?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "answer": [
+    {
+     "item": "clasped hands"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-167",
+   "kind": "fact",
+   "question": "What can Choso do to a Piercing Blood beam if its first shot misses?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "ricochet"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-168",
+   "kind": "fact",
+   "question": "What can Choso's Supernova be channeled into for an even more devastating attack?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "One larger sphere"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-169",
+   "kind": "fact",
+   "question": "What can Choso shape his blood into using the Blood Edge technique?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "A dagger"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-170",
+   "kind": "fact",
+   "question": "What does Choso's Flowing Red Scale technique improve in his body?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "pulse rate"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-171",
+   "kind": "fact",
+   "question": "What visual change appears on Choso's face when he activates Flowing Red Scale?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "two vertical lines"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-172",
+   "kind": "fact",
+   "question": "What risk comes with Choso hardening the blood inside his body using Blood Meteorite?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Thrombosis"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-173",
+   "kind": "fact",
+   "question": "Whose original technique does Choso's Wing King imitate?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Eso"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-174",
+   "kind": "fact",
+   "question": "How did Choso learn to use Reverse Cursed Technique?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "replacement training"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-175",
+   "kind": "fact",
+   "question": "Whose impromptu domain did Choso counter with his anti-domain technique New Shadow Style: Simple Domain?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Malevolent Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-176",
+   "kind": "fact",
+   "question": "What does Choso's anti-domain technique New Shadow Style: Simple Domain disable?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "A domain's guaranteed-hit effect"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Technique"
+  },
+  {
+   "id": "jjk-pg-choso-177",
+   "kind": "fact",
+   "question": "How long has Choso existed, making his wisdom one of his greatest weapons?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "one-hundred and fifty years"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-choso-178",
+   "kind": "fact",
+   "question": "What did Choso focus on when his ability to manipulate blood outside his body was stripped?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "controlling the blood inside him"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-choso-179",
+   "kind": "fact",
+   "question": "What did Choso raise by focusing Flowing Red Scale: Stack in his eyes to track Naoya?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "dynamic visual acuity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-choso-180",
+   "kind": "fact",
+   "question": "What kind of technique was Supernova, that Naoya's clan would have no knowledge of?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a technique original to Choso"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-choso-181",
+   "kind": "fact",
+   "question": "What did Choso point out Kenjaku wouldn't do against Yuki if someone else lay in wait?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "open his domain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-choso-182",
+   "kind": "fact",
+   "question": "What clever idea did Choso use to get past Tengen's concealing barrier?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "copying how Mahito invaded"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-choso-183",
+   "kind": "fact",
+   "question": "Which two close-range combatants was Choso able to overpower?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Yuji and Naoya"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-choso-184",
+   "kind": "fact",
+   "question": "What did Naoya Zenin note about Choso?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "exceptionally tough"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-choso-185",
+   "kind": "fact",
+   "question": "What image did Choso use to persevere after being injured by Kenjaku?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the image of his brothers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-choso-186",
+   "kind": "fact",
+   "question": "What unique ability of Blood Manipulation lets Choso sense his younger brothers' transformation?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Blood Connection"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Death Painting Womb Physiology"
+  },
+  {
+   "id": "jjk-pg-choso-187",
+   "kind": "fact",
+   "question": "Why could Choso feel when Eso and Kechizu were killed?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Death is considered a transformation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Death Painting Womb Physiology"
+  },
+  {
+   "id": "jjk-pg-choso-188",
+   "kind": "fact",
+   "question": "What does Choso's poisonous blood drain from its victim?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "stamina"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Death Painting Womb Physiology"
+  },
+  {
+   "id": "jjk-pg-choso-189",
+   "kind": "fact",
+   "question": "What is the name of the ability that lets Choso convert cursed energy into blood?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Blood Conversion"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Death Painting Womb Physiology"
+  },
+  {
+   "id": "jjk-pg-choso-190",
+   "kind": "fact",
+   "question": "What can Choso bleed without suffering any significant disfunction?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a literal wave of blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Death Painting Womb Physiology"
+  },
+  {
+   "id": "jjk-pg-choso-191",
+   "kind": "fact",
+   "question": "What kanji does Choso's name contain?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "swelling"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-choso-192",
+   "kind": "fact",
+   "question": "What position did Choso rank in the second Popularity Poll?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "7th"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-choso-193",
+   "kind": "fact",
+   "question": "How many votes did Choso receive in the fourth Popularity Poll?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "6,247"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-choso-194",
+   "kind": "fact",
+   "question": "Who portrays both Choso and Sukuna in the English dub?",
+   "subject": "Choso",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Ray Chase"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  }
+ ]
+}

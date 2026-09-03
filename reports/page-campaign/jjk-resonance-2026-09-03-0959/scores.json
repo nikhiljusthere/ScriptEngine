@@ -1,0 +1,687 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Resonance",
+      "set": "Every battle involving Resonance",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Resonance",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Nobara Kugisaki vs. Momo Nishimiya",
+        "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits",
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Nobara Kugisaki vs. Momo Nishimiya",
+        "Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits",
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Resonance's name?",
+      "id": "jjk-pg-resonance-001",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "\u5171\u9cf4\u308a"
+      ],
+      "found": [
+        "\u5171\u9cf4\u308a"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Resonance's name?",
+      "id": "jjk-pg-resonance-002",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Tomonari"
+      ],
+      "found": [
+        "Tomonari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Resonance first appear?",
+      "id": "jjk-pg-resonance-003",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Chapter 5"
+      ],
+      "found": [
+        "Chapter 5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Resonance first depicted?",
+      "id": "jjk-pg-resonance-004",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Episode 3"
+      ],
+      "found": [
+        "Episode 3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-resonance-005",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-resonance-006",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-resonance-007",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-resonance-008",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-resonance-009",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Nobara Kugisaki vs. Momo Nishimiya?",
+      "id": "jjk-pg-resonance-010",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Mai interrupts the battle."
+      ],
+      "found": [
+        "Mai interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-resonance-011",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobara Kugisaki vs. Momo Nishimiya begin?",
+      "id": "jjk-pg-resonance-012",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Chapter 40"
+      ],
+      "found": [
+        "Chapter 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Nobara Kugisaki vs. Momo Nishimiya depicted?",
+      "id": "jjk-pg-resonance-013",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-resonance-014",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits?",
+      "id": "jjk-pg-resonance-015",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nobara exorcise all curses."
+      ],
+      "found": [
+        "Yuji & Nobara exorcise all curses."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-resonance-016",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Roppongi, Tokyo"
+      ],
+      "found": [
+        "Roppongi, Tokyo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-resonance-017",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "June 2018"
+      ],
+      "found": [
+        "June 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits begin?",
+      "id": "jjk-pg-resonance-018",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Chapter 4"
+      ],
+      "found": [
+        "Chapter 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits depicted?",
+      "id": "jjk-pg-resonance-019",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Episode 3"
+      ],
+      "found": [
+        "Episode 3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "id": "jjk-pg-resonance-020",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb"
+      ],
+      "found": [
+        "Fearsome Womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "id": "jjk-pg-resonance-021",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nobara are victorious."
+      ],
+      "found": [
+        "Yuji & Nobara are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-resonance-022",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Yasohachi Bridge"
+      ],
+      "found": [
+        "Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu begin?",
+      "id": "jjk-pg-resonance-023",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Chapter 59"
+      ],
+      "found": [
+        "Chapter 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu depicted?",
+      "id": "jjk-pg-resonance-024",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Episode 23 - 24"
+      ],
+      "found": [
+        "Episode 23 - 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-resonance-025",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Death Painting"
+      ],
+      "found": [
+        "Death Painting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "id": "jjk-pg-resonance-026",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "found": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-resonance-027",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "found": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-resonance-028",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Mahito begin?",
+      "id": "jjk-pg-resonance-029",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Chapter 121"
+      ],
+      "found": [
+        "Chapter 121"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Mahito depicted?",
+      "id": "jjk-pg-resonance-030",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Episode 42 - 44"
+      ],
+      "found": [
+        "Episode 42 - 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-resonance-031",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Resonance apply cursed energy to the user's target?",
+      "id": "jjk-pg-resonance-033",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "This technique applies cursed energy to the user's target using a straw doll as an effigy."
+      ],
+      "found": [
+        "This technique applies cursed energy to the user's target using a straw doll as an effigy."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the user create the link to the target in Resonance?",
+      "id": "jjk-pg-resonance-034",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "The user will generally use one body part of their target to create the link and then use Resonance to apply damage to more critical appendages of the opponent's body."
+      ],
+      "found": [
+        "The user will generally use one body part of their target to create the link and then use Resonance to apply damage to more critical appendages of the opponent's body."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when a Resonance link is made to multiple opponents?",
+      "id": "jjk-pg-resonance-035",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "If a link is made to multiple opponents, Resonance will injure them all at the same time."
+      ],
+      "found": [
+        "If a link is made to multiple opponents, Resonance will injure them all at the same time."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Resonance to Nobara, and why is it her go-to attack against weak curses?",
+      "id": "jjk-pg-resonance-036",
+      "subject": "Resonance",
+      "accept": "all",
+      "expected": [
+        "Resonance is Nobara's signature move and her go-to attack when exorcising weak curses."
+      ],
+      "found": [
+        "Resonance is Nobara's signature move and her go-to attack when exorcising weak curses."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 35,
+    "fact_present": 35
+  }
+}

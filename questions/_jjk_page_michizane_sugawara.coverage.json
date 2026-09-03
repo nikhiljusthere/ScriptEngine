@@ -1,0 +1,57 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:race",
+        "page-gen:identity:gender",
+        "page-gen:identity:status",
+        "page-gen:identity:debut",
+        "page-gen:identity:debutanime"
+      ]
+    },
+    {
+      "path": "History",
+      "covered_by": []
+    },
+    {
+      "path": "History / Cursed Child Arc",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "History",
+    "History / Cursed Child Arc",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

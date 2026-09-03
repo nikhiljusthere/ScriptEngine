@@ -1,0 +1,560 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 4 (identity) of the Angel cluster. Q151 is the one closed identity set the page actually closes (Angel's affiliations), staged in _jjk_page_angel.decl4.yaml (G6, declared-roster-wins); the 21 fact questions cover the infobox identity fields (status, species, age, gender, occupation, manga debut), the lead's Kenjaku-incarnation and Heian-Era beats, the History section's motivation / Culling-Game-entry / Abe-Clan beats, the Appearance section's wings-and-halo facts, and the Trivia Middle-East-origin and Popularity-Poll beats. Every qa gold is NFKD-verbatim on the Angel page and confirmed live in the qa bundle (top_k=12) before committing; the empty infobox fields, the unstated identity fields, the unchunked kanji/romaji/alias values, the unchunked category links, and the non-live series gold are retired with reasons.",
+ "retired": [
+  {
+   "id": "jjk-pg-angel-retired-s4-01",
+   "item": "",
+   "question": "What is the Angel's real name?",
+   "reason": "Not stated on the page: the page names her only 'Angel'; the sole alternate name is the romaji 'Tenshi' in the page's alias list, which is an alias, not a stated real name.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-02",
+   "item": "",
+   "question": "In which episode does the Angel make her anime debut?",
+   "reason": "Not stated on the page: the infobox has a Manga Debut field (Chapter 199) but no Anime Debut field, and the prose cites manga chapters only.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-03",
+   "item": "",
+   "question": "Who created the Angel?",
+   "reason": "Not stated on the page: the infobox has no creator field and Gege Akutami is named nowhere on the Angel page.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-04",
+   "item": "",
+   "question": "Who provides the Angel's voice?",
+   "reason": "Not stated on the page: the infobox has no voice-actor field and no voice actor is named.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-05",
+   "item": "",
+   "question": "What is the Angel's hair color?",
+   "reason": "Not stated on the page: the infobox hair field is empty.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-06",
+   "item": "",
+   "question": "What is the Angel's eye color?",
+   "reason": "Not stated on the page: the infobox eye field is empty.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-07",
+   "item": "",
+   "question": "What are the Angel's height and weight?",
+   "reason": "Not stated on the page: the infobox lists no height or weight.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-08",
+   "item": "",
+   "question": "What categories does the Angel page carry?",
+   "reason": "Unchunked value: the category links (Characters, Culling Game Players, Female, Incarnations, Jujutsu Sorcerers) appear only in the page metadata and the Navigation section, which the chunker excludes as boilerplate, so none is in a chunked or carded region.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-09",
+   "item": "",
+   "question": "Angel's aliases",
+   "reason": "Unchunked infobox value: the closed alias set is the single romaji 'Tenshi', which lives only in the infobox romaji field and the lead's Nihongo/Ruby cell, not in chunked prose, so the set's only member is not goldable (the same class this page's section 2 retired for the technique-name kanji/romaji). The live fact card carries the value, but a declared roster would commit an unchunked member, so the roster is not staged.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-10",
+   "item": "",
+   "question": "What is the romaji of Angel's name?",
+   "reason": "Unchunked infobox value: 'Tenshi' lives only in the infobox romaji field and the lead's Nihongo/Ruby cell, not in chunked prose; the same class this page's section 2 retired as unchunked (the live fact card carries it, confirmed top_k=12, but it is not commit-able under the section's chunked-prose rule).",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-11",
+   "item": "",
+   "question": "What are the kanji for Angel's name?",
+   "reason": "Unchunked infobox value: '天使' lives only in the infobox kanji field, not in chunked prose; the same class this page's section 2 retired as unchunked.",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-angel-retired-s4-12",
+   "item": "",
+   "question": "What series is the Angel a character in?",
+   "reason": "Gold not live in the qa bundle: the lead sentence 'The Angel is a character in Jujutsu Kaisen.' does not surface in the top-12 bundle for series-shaped questions (five phrasings checked at top_k=12), so the gold cannot be confirmed present in the live bundle.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-angel-151",
+   "kind": "set",
+   "question": "Angel's affiliations",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Abe Clan",
+     "aliases": []
+    },
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed set of group memberships the page states. The infobox has no affiliation field, so the set is closed by the prose: the History and Overall Abilities sections call her part of 'the Abe Clan's elite force' during the Heian Era, and the lead and History state she entered the Culling Game started by Kenjaku (the page's 'Culling Game Players' category agrees). Both members are chunked-prose values confirmed live in the qa bundle (top_k=12) before committing. Staged in _jjk_page_angel.decl4.yaml (G6, declared-roster-wins): the live router has no declared roster for this set until decl4 is merged."
+  },
+  {
+   "id": "jjk-pg-angel-152",
+   "kind": "fact",
+   "question": "What is the Angel's status?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Unknown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Status field."
+  },
+  {
+   "id": "jjk-pg-angel-153",
+   "kind": "fact",
+   "question": "What is the Angel's species?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Human Incarnation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Species field."
+  },
+  {
+   "id": "jjk-pg-angel-154",
+   "kind": "fact",
+   "question": "What age does the Angel's page list?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "1000+",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Age field (the cell cites Chapter 145)."
+  },
+  {
+   "id": "jjk-pg-angel-155",
+   "kind": "fact",
+   "question": "What is the Angel's gender?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Female",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Gender field."
+  },
+  {
+   "id": "jjk-pg-angel-156",
+   "kind": "fact",
+   "question": "What is the Angel's occupation?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Jujutsu Sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Occupation field."
+  },
+  {
+   "id": "jjk-pg-angel-157",
+   "kind": "fact",
+   "question": "What is the Angel's manga debut?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "Chapter 199",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Infobox, Manga Debut field."
+  },
+  {
+   "id": "jjk-pg-angel-158",
+   "kind": "fact",
+   "question": "Who incarnated the Angel?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'has been incarnated by Kenjaku.'"
+  },
+  {
+   "id": "jjk-pg-angel-159",
+   "kind": "fact",
+   "question": "Which era is the Angel from?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "Heian Era",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'a jujutsu sorcerer from the Heian Era.'"
+  },
+  {
+   "id": "jjk-pg-angel-160",
+   "kind": "fact",
+   "question": "Why did the Angel accept an invitation to undergo incarnation after death?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 220",
+   "answer": [
+    {
+     "item": "due to not having or knowing the means to become a cursed object on her own",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "History: 'the Angel accepted an invitation from Kenjaku to undergo incarnation after death ... due to not having or knowing the means to become a cursed object on her own.'"
+  },
+  {
+   "id": "jjk-pg-angel-161",
+   "kind": "fact",
+   "question": "What did Angel and Hana enter some time after the incarnation?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapters 145 and 199",
+   "answer": [
+    {
+     "item": "the Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "History: 'Some time after the incarnation, Angel and Hana entered the Culling Game started by Kenjaku.'"
+  },
+  {
+   "id": "jjk-pg-angel-162",
+   "kind": "fact",
+   "question": "What was the Angel during the Heian Era?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "a notable sorcerer",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overall Abilities: 'The Angel was a notable sorcerer during the Heian Era, the golden age of jujutsu.'"
+  },
+  {
+   "id": "jjk-pg-angel-163",
+   "kind": "fact",
+   "question": "What is the Angel's original appearance?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 145",
+   "answer": [
+    {
+     "item": "The Angel's original appearance is unknown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'The Angel's original appearance is unknown.'"
+  },
+  {
+   "id": "jjk-pg-angel-164",
+   "kind": "fact",
+   "question": "What has Hana permanently manifested on her back under the Angel's influence?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 145",
+   "answer": [
+    {
+     "item": "a pair of feathered, bluish-white wings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'Hana has permanently manifested a pair of feathered, bluish-white wings on her back.'"
+  },
+  {
+   "id": "jjk-pg-angel-165",
+   "kind": "fact",
+   "question": "What has Hana permanently manifested over her head?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 145",
+   "answer": [
+    {
+     "item": "a yellow halo of light",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'a yellow halo of light over her head.'"
+  },
+  {
+   "id": "jjk-pg-angel-166",
+   "kind": "fact",
+   "question": "What do the wings and halo suggest?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 145",
+   "answer": [
+    {
+     "item": "that those are traits inherited from the Angel",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'suggesting that those are traits inherited from the Angel.'"
+  },
+  {
+   "id": "jjk-pg-angel-167",
+   "kind": "fact",
+   "question": "Where was the Angel also from?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the Middle East, where Abrahamic religions originated from",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Angel was also from the Middle East, where Abrahamic religions originated from.'"
+  },
+  {
+   "id": "jjk-pg-angel-168",
+   "kind": "fact",
+   "question": "What rank did the Angel place in the third Popularity Poll?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "69th in the third Popularity Poll with 7 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia, Popularity Polls: 'Angel ranked 69th in the third Popularity Poll with 7 votes.'"
+  },
+  {
+   "id": "jjk-pg-angel-169",
+   "kind": "fact",
+   "question": "What rank did the Angel place in the fourth Popularity Poll?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "127th in the fourth Popularity Poll with 2 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia, Popularity Polls: 'Angel ranked 127th in the fourth Popularity Poll with 2 votes.'"
+  },
+  {
+   "id": "jjk-pg-angel-170",
+   "kind": "fact",
+   "question": "Which clan's elite force was the Angel part of during the Heian Era?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "the Abe Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "History: 'the Angel was part of the so-called Desshi Pacification Squad, the Abe Clan's elite forces.'"
+  },
+  {
+   "id": "jjk-pg-angel-171",
+   "kind": "fact",
+   "question": "How long ago was the Heian Era in which the Angel served?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "Chapter 238",
+   "answer": [
+    {
+     "item": "a thousand years ago",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "History: 'During the Heian Era a thousand years ago, the Angel was part of ...'"
+  },
+  {
+   "id": "jjk-pg-angel-172",
+   "kind": "fact",
+   "question": "What is the Angel's epithet for Sukuna most likely derived from?",
+   "subject": "Angel",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "sourced": "",
+   "answer": [
+    {
+     "item": "the Japanese word for \"Fallen Angel\"",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Angel"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: \"the Angel's epithet for Sukuna, 'Disgraced One', is most likely derived from the Japanese word for 'Fallen Angel'.\""
+  }
+ ]
+}

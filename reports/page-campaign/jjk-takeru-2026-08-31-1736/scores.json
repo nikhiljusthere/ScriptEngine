@@ -1,0 +1,417 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the families of Takeru?",
+      "set": "Every family of Takeru",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Takeru?",
+      "set": "Takeru's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the families of Takeru?",
+      "found": [
+        "Atsuya Kusakabe",
+        "Masamichi Yaga"
+      ],
+      "missing": [],
+      "members": [
+        "Atsuya Kusakabe",
+        "Masamichi Yaga"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Takeru?",
+      "found": [
+        "Masamichi Yaga"
+      ],
+      "missing": [],
+      "members": [
+        "Masamichi Yaga"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Takeru's name?",
+      "id": "jjk-pg-takeru-001",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "\u30bf\u30b1\u30eb"
+      ],
+      "found": [
+        "\u30bf\u30b1\u30eb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Takeru's name?",
+      "id": "jjk-pg-takeru-002",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Takeru"
+      ],
+      "found": [
+        "Takeru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeru's race?",
+      "id": "jjk-pg-takeru-003",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Cursed Corpse Human (Formerly)"
+      ],
+      "found": [
+        "Cursed Corpse Human (Formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeru's gender?",
+      "id": "jjk-pg-takeru-004",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Takeru?",
+      "id": "jjk-pg-takeru-005",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Takeru's Japanese voice actor?",
+      "id": "jjk-pg-takeru-006",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Mayumi Shintani"
+      ],
+      "found": [
+        "Mayumi Shintani"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Takeru first appear?",
+      "id": "jjk-pg-takeru-007",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Chapter 147 (Flashback)"
+      ],
+      "found": [
+        "Chapter 147 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Takeru first depicted?",
+      "id": "jjk-pg-takeru-008",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "Episode 52 (Flashback)"
+      ],
+      "found": [
+        "Episode 52 (Flashback)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Takeru?",
+      "id": "jjk-pg-takeru-011",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "a cursed corpse created by Masamichi Yaga"
+      ],
+      "found": [
+        "a cursed corpse created by Masamichi Yaga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Takeru created from?",
+      "id": "jjk-pg-takeru-012",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "the soul information of Atsuya Kusakabe's nephew"
+      ],
+      "found": [
+        "the soul information of Atsuya Kusakabe's nephew"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does Takeru reside?",
+      "id": "jjk-pg-takeru-013",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "in a forest alongside many other cursed corpses"
+      ],
+      "found": [
+        "in a forest alongside many other cursed corpses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Takeru look like as a cursed corpse?",
+      "id": "jjk-pg-takeru-014",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "a small anthropomorphic dog-looking cursed corpse with small limbs compared to the rest of his body"
+      ],
+      "found": [
+        "a small anthropomorphic dog-looking cursed corpse with small limbs compared to the rest of his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Takeru look like as a human?",
+      "id": "jjk-pg-takeru-015",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "an energetic young boy with light skin, brown spiky short hair and a band aid on his right cheek"
+      ],
+      "found": [
+        "an energetic young boy with light skin, brown spiky short hair and a band aid on his right cheek"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Takeru's personality described?",
+      "id": "jjk-pg-takeru-016",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "a caring and cheerful cursed corpse who cares deeply for Yaga"
+      ],
+      "found": [
+        "a caring and cheerful cursed corpse who cares deeply for Yaga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the assumed nature of Takeru's relationship with his mother?",
+      "id": "jjk-pg-takeru-017",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "a loving son who shared a deep connection with her"
+      ],
+      "found": [
+        "a loving son who shared a deep connection with her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Takeru correctly deduce about Yaga's visitor?",
+      "id": "jjk-pg-takeru-018",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "the woman is his mother"
+      ],
+      "found": [
+        "the woman is his mother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takeru's mother react upon reuniting with him?",
+      "id": "jjk-pg-takeru-019",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "jump out of her chair and rush to hug Takeru in tears of joy"
+      ],
+      "found": [
+        "jump out of her chair and rush to hug Takeru in tears of joy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yaga assure Takeru they would be safe in the forest?",
+      "id": "jjk-pg-takeru-020",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "the forest was protected by Tengen"
+      ],
+      "found": [
+        "the forest was protected by Tengen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Takeru and the other cursed corpses express when Yaga left?",
+      "id": "jjk-pg-takeru-021",
+      "subject": "Takeru",
+      "accept": "all",
+      "expected": [
+        "their sadness for him leaving"
+      ],
+      "found": [
+        "their sadness for him leaving"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

@@ -1,0 +1,547 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Nobuko Takada?",
+      "set": "Every friend of Nobuko Takada",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the aliases of Nobuko Takada?",
+      "set": "Nobuko Takada's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Nobuko Takada?",
+      "found": [
+        "Aoi Todo",
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "members": [
+        "Aoi Todo",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Nobuko Takada?",
+      "found": [
+        "Tall Idol Takada"
+      ],
+      "missing": [],
+      "members": [
+        "Tall Idol Takada"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Nobuko Takada's name?",
+      "id": "jjk-pg-nobuko_takada-001",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "\u9ad8\u7530 \u5ef6\u5b50"
+      ],
+      "found": [
+        "\u9ad8\u7530 \u5ef6\u5b50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Nobuko Takada's name?",
+      "id": "jjk-pg-nobuko_takada-002",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Takada Nobuko"
+      ],
+      "found": [
+        "Takada Nobuko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko Takada's race?",
+      "id": "jjk-pg-nobuko_takada-003",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko Takada's gender?",
+      "id": "jjk-pg-nobuko_takada-004",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Nobuko Takada?",
+      "id": "jjk-pg-nobuko_takada-005",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko Takada's occupation?",
+      "id": "jjk-pg-nobuko_takada-006",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Idol"
+      ],
+      "found": [
+        "Idol"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobuko Takada first appear?",
+      "id": "jjk-pg-nobuko_takada-007",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Chapter 18"
+      ],
+      "found": [
+        "Chapter 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko Takada's height?",
+      "id": "jjk-pg-nobuko_takada-008",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "180 cm (5'11\")"
+      ],
+      "found": [
+        "180 cm (5'11\")"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Nobuko Takada first depicted?",
+      "id": "jjk-pg-nobuko_takada-009",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Episode 8"
+      ],
+      "found": [
+        "Episode 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Nobuko Takada's Japanese voice actor?",
+      "id": "jjk-pg-nobuko_takada-010",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Tomoyo Kurosawa"
+      ],
+      "found": [
+        "Tomoyo Kurosawa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Nobuko Takada's English voice actor?",
+      "id": "jjk-pg-nobuko_takada-011",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Laura Post"
+      ],
+      "found": [
+        "Laura Post"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko Takada's alias?",
+      "id": "jjk-pg-nobuko_takada-014",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Tall Idol Takada"
+      ],
+      "found": [
+        "Tall Idol Takada"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is one of Nobuko Takada's biggest fans?",
+      "id": "jjk-pg-nobuko_takada-015",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo"
+      ],
+      "found": [
+        "Aoi Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobuko Takada look like?",
+      "id": "jjk-pg-nobuko_takada-016",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "a tall young woman with golden eyes",
+        "long black hair tied into twin tails with her wispy bangs covering her forehead"
+      ],
+      "found": [
+        "a tall young woman with golden eyes",
+        "long black hair tied into twin tails with her wispy bangs covering her forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobuko wear?",
+      "id": "jjk-pg-nobuko_takada-017",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "stylish clothes, a choker and platform heels"
+      ],
+      "found": [
+        "stylish clothes, a choker and platform heels"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Nobuko Takada's personality described?",
+      "id": "jjk-pg-nobuko_takada-018",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "a cheerful and upbeat personality"
+      ],
+      "found": [
+        "a cheerful and upbeat personality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did Nobuko manage to persuade despite being crude and unshakable?",
+      "id": "jjk-pg-nobuko_takada-019",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Mai Zenin"
+      ],
+      "found": [
+        "Mai Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Nobuko doing in the Fearsome Womb Arc?",
+      "id": "jjk-pg-nobuko_takada-020",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "having a meet and greet in Tokyo"
+      ],
+      "found": [
+        "having a meet and greet in Tokyo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko's signature move?",
+      "id": "jjk-pg-nobuko_takada-021",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Taka-tan Beam"
+      ],
+      "found": [
+        "Taka-tan Beam"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Nobuko attend middle school with?",
+      "id": "jjk-pg-nobuko_takada-022",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Aoi and Yuji Itadori"
+      ],
+      "found": [
+        "Aoi and Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nobuko say when Aoi confessed his love?",
+      "id": "jjk-pg-nobuko_takada-023",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "she already has someone she likes"
+      ],
+      "found": [
+        "she already has someone she likes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nobuko help Aoi realize about Hanami's sprouts?",
+      "id": "jjk-pg-nobuko_takada-024",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "they grew by draining the target's cursed energy"
+      ],
+      "found": [
+        "they grew by draining the target's cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobuko do with Aoi in his fight with Mahito?",
+      "id": "jjk-pg-nobuko_takada-025",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "pummeling Mahito together with him"
+      ],
+      "found": [
+        "pummeling Mahito together with him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nobuko's favorite sushi and drink?",
+      "id": "jjk-pg-nobuko_takada-026",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "goatfish",
+        "room temperature sake"
+      ],
+      "found": [
+        "goatfish",
+        "room temperature sake"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nobuko say about dumb guys?",
+      "id": "jjk-pg-nobuko_takada-027",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "dumb guys are perfect"
+      ],
+      "found": [
+        "dumb guys are perfect"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who portrays Nobuko Takada in the English dub?",
+      "id": "jjk-pg-nobuko_takada-028",
+      "subject": "Nobuko Takada",
+      "accept": "all",
+      "expected": [
+        "Laura Post"
+      ],
+      "found": [
+        "Laura Post"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 26,
+    "fact_present": 26
+  }
+}

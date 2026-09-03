@@ -72,6 +72,34 @@ class TestSchema:
         assert store.counts()["nodes"] == 0
 
 
+class TestPassagesForSubject:
+    """The entity-anchored recall floor (R6): the subject page's own passages,
+    in the wiki's section order, by title or alias lookup -- not by
+    similarity. A subject that resolves to no document yields an empty list
+    and the caller's ranked behaviour stands unchanged."""
+
+    def test_a_title_resolution_returns_the_pages_passages_in_order(self, populated):
+        rows = populated["store"].passages_for_subject("Aoi Todo")
+        assert [row["text"] for row in rows] == [
+            "Boogie Woogie lets Todo switch the positions of two targets by clapping."
+        ]
+
+    def test_case_and_spacing_do_not_break_the_title_lookup(self, populated):
+        rows = populated["store"].passages_for_subject("  aoi todo ")
+        assert [row["doc_title"] for row in rows] == ["Aoi Todo"]
+
+    def test_an_alias_reaches_the_page(self, populated):
+        # No document is titled `Todo`; the editor alias is the fallback.
+        rows = populated["store"].passages_for_subject("Todo")
+        assert [row["doc_title"] for row in rows] == ["Aoi Todo"]
+
+    def test_a_subject_that_resolves_to_nothing_yields_nothing(self, populated):
+        store = populated["store"]
+        assert store.passages_for_subject("Never Crawled Page") == []
+        assert store.passages_for_subject("") == []
+        assert store.passages_for_subject(None) == []
+
+
 class TestNodes:
     def test_a_node_is_created_once(self, store):
         first = store.add_node("Aoi Todo", "character")

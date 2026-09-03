@@ -1,0 +1,24 @@
+# Staged roster declarations for the Naoya Zenin page campaign
+# (questions/_jjk_page_naoya_zenin.section6.json, section 6: trivia / misc / counts).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every Popularity Poll Naoya Zenin was ranked in` is the closed three-entry set
+# of the Trivia section: the page enumerates Naoya's rank in the second, third,
+# and fourth Popularity Polls, and each poll name is verbatim on the page. Roster
+# discovery does not enumerate a character's poll history, and the undeclared
+# engine misroutes the question to the `Zenin Family` roster (partial
+# confidence), so the set is declared and the declared roster wins (G6). The
+# per-poll rank questions are committed as qa in section 4 (191-193); this roster
+# answers the set, not the ranks.
+#
+# Match phrases carry no `: ` or `&`, so no YAML quoting is required; neither
+# member carries `&` or `:`.
+rosters:
+   - name: Every Popularity Poll Naoya Zenin was ranked in
+     match:
+       - every popularity poll naoya zenin was ranked in
+       - every popularity poll involving naoya zenin
+       - which popularity polls was naoya zenin ranked in
+       - the popularity polls naoya zenin was ranked in
+     subject: Naoya Zenin
+     members: [second Popularity Poll, third Popularity Poll, fourth Popularity Poll]

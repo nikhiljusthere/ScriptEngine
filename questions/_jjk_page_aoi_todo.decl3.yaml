@@ -1,0 +1,42 @@
+# Staged roster declarations for the Aoi Todo page campaign
+# (questions/_jjk_page_aoi_todo.section3.json, section 3:
+# relationships & people).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every student Aoi Todo nominated for promotion` is the closed trio the
+# Synopsis names in the Death Painting Arc: "Aoi and Mei Mei met with
+# principal Yoshinobu, and nominated Megumi, Nobara, and Yuji to be
+# promoted to grade 1 sorcerers." The page writes the given names; the
+# members are the exact page titles.
+#
+# `Every person Aoi Todo and Yuji Itadori saved from Hanami` is the closed
+# pair the Synopsis names in the Kyoto Goodwill Event Arc: "Aoi and Yuji
+# saved Megumi and Maki from Hanami." The page writes 'Megumi' and 'Maki';
+# the members are the exact page titles.
+#
+# The single infobox relatives entry `Unnamed Wife` was NOT declared
+# (recorded in the section's `retired[]`): it has no wiki page, so the
+# closed set cannot be members = exact page titles.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every student Aoi Todo nominated for promotion
+    match:
+      - every student aoi todo nominated for promotion
+      - all students aoi todo nominated for promotion
+      - students aoi todo nominated for promotion
+    subject: Aoi Todo
+    members:
+      - Megumi Fushiguro
+      - Nobara Kugisaki
+      - Yuji Itadori
+  - name: Every person Aoi Todo and Yuji Itadori saved from Hanami
+    match:
+      - every person aoi todo and yuji itadori saved from hanami
+      - all the people aoi todo and yuji itadori saved from hanami
+      - people aoi todo and yuji itadori saved from hanami
+    subject: Aoi Todo
+    members:
+      - Megumi Fushiguro
+      - Maki Zenin

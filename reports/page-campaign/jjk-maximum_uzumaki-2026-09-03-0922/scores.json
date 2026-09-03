@@ -1,0 +1,527 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Maximum: Uzumaki?",
+      "set": "Every named technique of Maximum: Uzumaki",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Maximum: Uzumaki",
+      "set": "Every battle involving Maximum: Uzumaki",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Maximum: Uzumaki?",
+      "found": [
+        "Idle Transfiguration"
+      ],
+      "missing": [],
+      "members": [
+        "Idle Transfiguration"
+      ]
+    },
+    {
+      "query": "Every battle involving Maximum: Uzumaki",
+      "found": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku",
+        "Yuta Okkotsu vs. Suguru Geto"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+        "Yuki Tsukumo & Choso vs. Kenjaku",
+        "Yuta Okkotsu vs. Suguru Geto"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Maximum: Uzumaki's name?",
+      "id": "jjk-pg-maximum_uzumaki-001",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "\u6975\u30ce\u756a\u300c\u3046\u305a\u307e\u304d\u300d"
+      ],
+      "found": [
+        "\u6975\u30ce\u756a\u300c\u3046\u305a\u307e\u304d\u300d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Maximum: Uzumaki's name?",
+      "id": "jjk-pg-maximum_uzumaki-002",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Gokunoban\u30fbUzumaki"
+      ],
+      "found": [
+        "Gokunoban\u30fbUzumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maximum: Uzumaki first appear?",
+      "id": "jjk-pg-maximum_uzumaki-003",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-4 Chapter 134"
+      ],
+      "found": [
+        "Chapter 0-4 Chapter 134"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Maximum: Uzumaki first depicted?",
+      "id": "jjk-pg-maximum_uzumaki-004",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "The Movie Episode 46"
+      ],
+      "found": [
+        "The Movie Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+      "id": "jjk-pg-maximum_uzumaki-005",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "found": [
+        "Yuki interrupts the battle. Kenjaku escapes with Prison Realm."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-maximum_uzumaki-006",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "found": [
+        "Shibuya Police Station, Udagawa Police Box"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-maximum_uzumaki-007",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+      "id": "jjk-pg-maximum_uzumaki-008",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Chapter 133"
+      ],
+      "found": [
+        "Chapter 133"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+      "id": "jjk-pg-maximum_uzumaki-009",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Episode 46"
+      ],
+      "found": [
+        "Episode 46"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+      "id": "jjk-pg-maximum_uzumaki-010",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+      "id": "jjk-pg-maximum_uzumaki-011",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Kenjaku is victorious."
+      ],
+      "found": [
+        "Kenjaku is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-maximum_uzumaki-012",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Tombs of the Star"
+      ],
+      "found": [
+        "Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-maximum_uzumaki-013",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+      "id": "jjk-pg-maximum_uzumaki-014",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Chapter 203"
+      ],
+      "found": [
+        "Chapter 203"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+      "id": "jjk-pg-maximum_uzumaki-015",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Suguru Geto?",
+      "id": "jjk-pg-maximum_uzumaki-016",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Suguru Geto take place?",
+      "id": "jjk-pg-maximum_uzumaki-017",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Suguru Geto take place?",
+      "id": "jjk-pg-maximum_uzumaki-018",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "December 24, 2017"
+      ],
+      "found": [
+        "December 24, 2017"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuta Okkotsu vs. Suguru Geto begin?",
+      "id": "jjk-pg-maximum_uzumaki-019",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Chapter 0"
+      ],
+      "found": [
+        "Chapter 0"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Suguru Geto depicted?",
+      "id": "jjk-pg-maximum_uzumaki-020",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "The Movie"
+      ],
+      "found": [
+        "The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Suguru Geto take place?",
+      "id": "jjk-pg-maximum_uzumaki-021",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Cursed Child"
+      ],
+      "found": [
+        "Cursed Child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Maximum: Uzumaki do?",
+      "id": "jjk-pg-maximum_uzumaki-024",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Cursed Spirit Manipulation - Maximum Technique: Uzumaki combines cursed spirits the curse manipulator has absorbed into one."
+      ],
+      "found": [
+        "Cursed Spirit Manipulation - Maximum Technique: Uzumaki combines cursed spirits the curse manipulator has absorbed into one."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What form does Uzumaki take when used?",
+      "id": "jjk-pg-maximum_uzumaki-025",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "Uzumaki takes the form of a swirling cursed spirit that levitates behind the user."
+      ],
+      "found": [
+        "Uzumaki takes the form of a swirling cursed spirit that levitates behind the user."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when a cursed spirit of semi-grade 1 or higher is used in Uzumaki?",
+      "id": "jjk-pg-maximum_uzumaki-026",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "However, when using cursed spirits of semi-grade 1 and higher in Uzumaki, their innate techniques are extracted to the user."
+      ],
+      "found": [
+        "However, when using cursed spirits of semi-grade 1 and higher in Uzumaki, their innate techniques are extracted to the user."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name and appearance of Maximum: Uzumaki a reference to?",
+      "id": "jjk-pg-maximum_uzumaki-027",
+      "subject": "Maximum: Uzumaki",
+      "accept": "all",
+      "expected": [
+        "The name and appearance of this technique is a reference to Junji Ito's horror manga, Uzumaki."
+      ],
+      "found": [
+        "The name and appearance of this technique is a reference to Junji Ito's horror manga, Uzumaki."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 25,
+    "fact_present": 25
+  }
+}

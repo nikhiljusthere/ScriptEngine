@@ -1,0 +1,5363 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-24",
+ "note": "page-gen 2026-08-24: 44 structured questions (note page-gen:-marked), 0 auto-retires, 96 hand-authored kept, 4 superseded",
+ "retired": [
+  {
+   "id": "jjk-pg-kenjaku-retired-01",
+   "question": "What are the kanji for Kenjaku's name?",
+   "reason": "Retired 2026-08-23: a retrieval gap, not a gold error. The kanji and their Nihongo ruby live only in the infobox, which is not chunked into passages, so no phrasing surfaces them in any bundle. Same structural class as the Shibuya Incident kanji retirement."
+  },
+  {
+   "id": "jjk-pg-kenjaku-001",
+   "item": "",
+   "question": "Every battle involving Kenjaku",
+   "reason": "superseded by page-gen:battles (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-kenjaku-009",
+   "item": "",
+   "question": "What is Kenjaku's race?",
+   "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-kenjaku-011",
+   "item": "",
+   "question": "How old is Kenjaku?",
+   "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-kenjaku-012",
+   "item": "",
+   "question": "What is Kenjaku's occupation?",
+   "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-kenjaku-248",
+   "item": "",
+   "question": "Who held the back gate of the Prison Realm?",
+   "reason": "near-duplicate of jjk-pg-kenjaku-040: 040 already asks 'Who held the back gate of the Prison Realm?' (answer 'Tengen') and passes; 248 covers the same Equipment-section claim ('in the hands of Tengen'). Retired 2026-08-24.",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-kenjaku-002",
+   "kind": "set",
+   "question": "All the battles involving Kenjaku",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba vs. Kenjaku"
+    },
+    {
+     "item": "Iori Hazenoki vs. Kenjaku"
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume"
+    },
+    {
+     "item": "Yuki Tsukumo & Choso vs. Kenjaku"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "Second phrasing of the same four battle titles."
+  },
+  {
+   "id": "jjk-pg-kenjaku-003",
+   "kind": "set",
+   "question": "Every alias of Kenjaku",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo (Ancestor)"
+    },
+    {
+     "item": "Kaori Itadori"
+    },
+    {
+     "item": "Suguru Geto"
+    },
+    {
+     "item": "Pseudo-Geto"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "The alias field of the Kenjaku infobox: three vessel identities plus the plain-text alias Pseudo-Geto. Pending declaration."
+  },
+  {
+   "id": "jjk-pg-kenjaku-004",
+   "kind": "set",
+   "question": "All the aliases of Kenjaku",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo (Ancestor)"
+    },
+    {
+     "item": "Kaori Itadori"
+    },
+    {
+     "item": "Suguru Geto"
+    },
+    {
+     "item": "Pseudo-Geto"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "Second phrasing of the same alias set. Pending declaration."
+  },
+  {
+   "id": "jjk-pg-kenjaku-005",
+   "kind": "set",
+   "question": "Every named cursed technique of Kenjaku",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Brain Transplant"
+    },
+    {
+     "item": "Cursed Spirit Manipulation"
+    },
+    {
+     "item": "Maximum: Uzumaki"
+    },
+    {
+     "item": "Antigravity System"
+    },
+    {
+     "item": "Reverse Cursed Technique"
+    },
+    {
+     "item": "Womb Profusion"
+    },
+    {
+     "item": "Idle Transfiguration"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "The seven named techniques across the Cursed Techniques and Former Jujutsu sections; the undeclared character path returns four (and pads with Curtain). Pending declaration."
+  },
+  {
+   "id": "jjk-pg-kenjaku-006",
+   "kind": "set",
+   "question": "All the named cursed techniques of Kenjaku",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Brain Transplant"
+    },
+    {
+     "item": "Cursed Spirit Manipulation"
+    },
+    {
+     "item": "Maximum: Uzumaki"
+    },
+    {
+     "item": "Antigravity System"
+    },
+    {
+     "item": "Reverse Cursed Technique"
+    },
+    {
+     "item": "Womb Profusion"
+    },
+    {
+     "item": "Idle Transfiguration"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "Second phrasing of the same technique set. Pending declaration."
+  },
+  {
+   "id": "jjk-pg-kenjaku-007",
+   "kind": "set",
+   "question": "Every body Kenjaku has possessed",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo (Ancestor)"
+    },
+    {
+     "item": "Kaori Itadori"
+    },
+    {
+     "item": "Suguru Geto"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "The three named vessels in the Brain Transplant section; the 400-years-ago vessel is unnamed in the wiki and so cannot be a member. Pending declaration."
+  },
+  {
+   "id": "jjk-pg-kenjaku-008",
+   "kind": "set",
+   "question": "Every person Kenjaku has fought",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba"
+    },
+    {
+     "item": "Iori Hazenoki"
+    },
+    {
+     "item": "Yuki Tsukumo"
+    },
+    {
+     "item": "Choso"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23",
+   "note": "The named opponents in the four linked battle titles; Mei Mei's fight is offscreen and unlinked. Pending declaration."
+  },
+  {
+   "id": "jjk-pg-kenjaku-010",
+   "kind": "fact",
+   "question": "What is Kenjaku's status?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-013",
+   "kind": "fact",
+   "question": "What position does Kenjaku hold in the Kamo Clan?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "25th Head of the Kamo Clan"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-014",
+   "kind": "fact",
+   "question": "What group is Kenjaku affiliated with?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku's Group"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-015",
+   "kind": "fact",
+   "question": "What group was Kenjaku formerly affiliated with?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito's Group"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-016",
+   "kind": "fact",
+   "question": "What is Kenjaku's current gender?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-017",
+   "kind": "fact",
+   "question": "In which chapter does Kenjaku first appear in the manga?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 10"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-018",
+   "kind": "fact",
+   "question": "In which chapter is Kenjaku named?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 145"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-019",
+   "kind": "fact",
+   "question": "In which episode does Kenjaku first appear in the anime?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 5"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-020",
+   "kind": "fact",
+   "question": "In which episode is Kenjaku named in the anime?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 50"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-021",
+   "kind": "fact",
+   "question": "Who voices Kenjaku in Suguru Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Takahiro Sakurai"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-022",
+   "kind": "fact",
+   "question": "Who voices Kenjaku in Kaori Itadori's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi Hayashibara"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-023",
+   "kind": "fact",
+   "question": "Who voices Kenjaku in Suguru Geto's body in the English dub?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Lex Lang"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-024",
+   "kind": "fact",
+   "question": "Who voices Kenjaku in Kaori Itadori's body in the English dub?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Allegra Clark"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-025",
+   "kind": "fact",
+   "question": "Who is Kenjaku's son as Kaori Itadori?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-026",
+   "kind": "fact",
+   "question": "Who was Kaori Itadori's former partner?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Jin Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-027",
+   "kind": "fact",
+   "question": "Who is the mother of Yuji Itadori?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kaori Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-028",
+   "kind": "fact",
+   "question": "What is Kenjaku's innate technique?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Brain Transplant"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-029",
+   "kind": "fact",
+   "question": "What unusual physical feature does Kenjaku's brain have?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "teeth"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-030",
+   "kind": "fact",
+   "question": "Which scar can Kenjaku not heal because of a binding vow?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "stitched scar"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-031",
+   "kind": "fact",
+   "question": "What is Kenjaku's domain expansion called?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Womb Profusion"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-032",
+   "kind": "fact",
+   "question": "What form does Womb Profusion take?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "giant pillar"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-033",
+   "kind": "fact",
+   "question": "Womb Profusion is similar to which other domain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Malevolent Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-034",
+   "kind": "fact",
+   "question": "What is the maximum technique of Cursed Spirit Manipulation?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uzumaki"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-035",
+   "kind": "fact",
+   "question": "What does Uzumaki extract from a curse of semi-grade 1 or higher?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "innate technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-036",
+   "kind": "fact",
+   "question": "Whom did Kenjaku first use the Uzumaki technique against?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kasumi Miwa"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-037",
+   "kind": "fact",
+   "question": "What technique did Kenjaku gain after expelling Mahito?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Idle Transfiguration"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-038",
+   "kind": "fact",
+   "question": "What is the Prison Realm?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "special grade cursed object"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-039",
+   "kind": "fact",
+   "question": "Whom was the Prison Realm the crux of Kenjaku's plan to seal?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-040",
+   "kind": "fact",
+   "question": "Who held the back gate of the Prison Realm?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tengen"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-041",
+   "kind": "fact",
+   "question": "What technique does Kenjaku use to heal his body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-042",
+   "kind": "fact",
+   "question": "Which technique originally belonged to Kaori Itadori?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Antigravity System"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-043",
+   "kind": "fact",
+   "question": "Into how many cursed objects did Kenjaku split Sukuna's soul?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "twenty"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-044",
+   "kind": "fact",
+   "question": "How many players did Kenjaku invite to the Culling Game?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a thousand"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-045",
+   "kind": "fact",
+   "question": "What did Kenjaku set up using Tengen's pure barriers as a foundation?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "numerous colonies"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-046",
+   "kind": "fact",
+   "question": "Kenjaku was the orchestrator of which two jujutsu terrorist events?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident"
+    },
+    {
+     "item": "Culling Game"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-047",
+   "kind": "fact",
+   "question": "What did Kenjaku and Uraume hold off at the end of the Shibuya Incident?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a group of sorcerers"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-048",
+   "kind": "fact",
+   "question": "Which special grade sorcerer did Kenjaku best by himself?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuki Tsukumo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-049",
+   "kind": "fact",
+   "question": "What place was Kenjaku able to invade without trouble?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tombs of the Star"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-050",
+   "kind": "fact",
+   "question": "Who is the only person who knows how to turn a sorcerer into a cursed object after death?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-051",
+   "kind": "fact",
+   "question": "Who is Kenjaku's rival?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tengen"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-052",
+   "kind": "fact",
+   "question": "Which foreign power did Kenjaku convince to invade Japan?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "United States military"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-053",
+   "kind": "fact",
+   "question": "Whom did Kenjaku stop Yuji from exorcising?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-054",
+   "kind": "fact",
+   "question": "What was Kenjaku's only regret before his death?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "absorb Jogo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-055",
+   "kind": "fact",
+   "question": "What did Kenjaku compare merging Japan's citizens into one entity to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "toddler holding a crayon"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-056",
+   "kind": "fact",
+   "question": "What did Kenjaku tell Yuki humanity's future lay in?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "optimizing cursed energy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-057",
+   "kind": "fact",
+   "question": "What did Kenjaku remove to deflect Choso's Piercing Blood?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "top half of his head"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-058",
+   "kind": "fact",
+   "question": "What attack did Kenjaku deflect by removing the top of his head?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Piercing Blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-059",
+   "kind": "fact",
+   "question": "Whom did Kenjaku force to retreat?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mei Mei"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-060",
+   "kind": "fact",
+   "question": "What was Kenjaku's reputation as Noritoshi Kamo?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "most evil jujutsu sorcerer"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-061",
+   "kind": "fact",
+   "question": "When were records of Kenjaku's experiments destroyed?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Meiji Era"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-062",
+   "kind": "fact",
+   "question": "Which special grade cursed spirit did Kenjaku acquire as a familiar?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Smallpox Deity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-063",
+   "kind": "fact",
+   "question": "Whom did Kenjaku absorb after Mahito was weakened by Yuji Itadori?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-064",
+   "kind": "fact",
+   "question": "What did Kenjaku pass on to Sukuna as a failsafe?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Great Merger"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-065",
+   "kind": "fact",
+   "question": "Who consumed Kenjaku's head after his death?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rika"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-066",
+   "kind": "fact",
+   "question": "When did Kenjaku help Sukuna live on after death?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Heian era"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-067",
+   "kind": "fact",
+   "question": "Whom did Kenjaku approach over four hundred years ago?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hajime Kashimo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-068",
+   "kind": "fact",
+   "question": "What did Kenjaku convince Hajime to consent to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to be turned into a cursed object"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-069",
+   "kind": "fact",
+   "question": "Which member of the Kamo Clan did Kenjaku acquire the body of in the Meiji era?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-070",
+   "kind": "fact",
+   "question": "What was the woman at the temple capable of giving birth to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "human-spirit hybrids"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-071",
+   "kind": "fact",
+   "question": "How many pregnancies did the woman have?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "nine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-072",
+   "kind": "fact",
+   "question": "How many Death Paintings were created?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "nine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-073",
+   "kind": "fact",
+   "question": "What did Kenjaku mix into the Death Paintings?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi's blood"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-074",
+   "kind": "fact",
+   "question": "What innate technique did the Death Paintings gain because of their third parent?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-075",
+   "kind": "fact",
+   "question": "Whom did Kenjaku kill a month after birth to foil Tengen's merger?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Six Eyes"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-076",
+   "kind": "fact",
+   "question": "In what year did Kenjaku put his brain in Suguru Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2017"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-24"
+  },
+  {
+   "id": "jjk-pg-kenjaku-077",
+   "kind": "fact",
+   "question": "What did Kenjaku put in Suguru's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "brain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-078",
+   "kind": "fact",
+   "question": "What innate technique did Kenjaku desire from Suguru?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Spirit Manipulation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-079",
+   "kind": "fact",
+   "question": "What did Kenjaku explain the curses needed to do in July 2018?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "allies with Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-080",
+   "kind": "fact",
+   "question": "Where did Kenjaku enter to meet Mahito and the other curses?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Dagon's domain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-081",
+   "kind": "fact",
+   "question": "Whom did Kenjaku and Mahito meet up with after setting up a curtain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kokichi"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-082",
+   "kind": "fact",
+   "question": "What technique did Kenjaku figure out Kokichi uses?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Simple Domain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-083",
+   "kind": "fact",
+   "question": "What did Kenjaku tell the curses they needed to do to Gojo?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "distract Gojo for 20 minutes"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-084",
+   "kind": "fact",
+   "question": "Where did Kenjaku plan to fight Gojo?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "underground subway"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-085",
+   "kind": "fact",
+   "question": "What did Gojo use for less than a second to stun everyone?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Domain Expansion"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-086",
+   "kind": "fact",
+   "question": "Who was spying on Geto and the curses?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kokichi"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-087",
+   "kind": "fact",
+   "question": "Who demanded the return of Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mimiko"
+    },
+    {
+     "item": "Nanako"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-088",
+   "kind": "fact",
+   "question": "What did the Smallpox Deity's Domain Expansion seal Mei Mei in?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "coffin"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-089",
+   "kind": "fact",
+   "question": "What did Uraume use to freeze the opposition?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Frost Calm"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-090",
+   "kind": "fact",
+   "question": "What attack did Momo use that failed to hit Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Wind Scythe"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-091",
+   "kind": "fact",
+   "question": "What did Yuki say the next stage of humanity is?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "breaking away from cursed energy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-092",
+   "kind": "fact",
+   "question": "What did Kenjaku adjust in the marked non-sorcerers?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "brains"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-093",
+   "kind": "fact",
+   "question": "On what date did Noritoshi attempt to contact Yoshinobu Gakuganji?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 3rd"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-094",
+   "kind": "fact",
+   "question": "What did Kenjaku take upon himself to become?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "25th head of the Kamo clan"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-095",
+   "kind": "fact",
+   "question": "Who suggested using sorcerers as an energy source?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cyrus Veil"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-096",
+   "kind": "fact",
+   "question": "Who did Kenjaku greet at 6:02 AM on November 1st?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Setsuko Sasaki"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-097",
+   "kind": "fact",
+   "question": "What did Yuki use as her last attack to kill Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "black hole"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-098",
+   "kind": "fact",
+   "question": "What percentage of people laughing made Takaba unhappy?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "99%"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-099",
+   "kind": "fact",
+   "question": "What did Aoi Todo's technique allow?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "positions were swapped"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-100",
+   "kind": "fact",
+   "question": "Whom did Kenjaku give the authority to activate the merger to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku/Synopsis"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-kenjaku-001",
+   "kind": "fact",
+   "question": "What are the kanji for Kenjaku's name?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "羂索",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-kenjaku-009",
+   "kind": "fact",
+   "question": "What is the romaji of Kenjaku's name?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-kenjaku-011",
+   "kind": "fact",
+   "question": "What is Kenjaku's race?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Human",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-kenjaku-012",
+   "kind": "fact",
+   "question": "How old is Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "1000+",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:age"
+  },
+  {
+   "id": "jjk-pg-kenjaku-101",
+   "kind": "fact",
+   "question": "What is Kenjaku's gender?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male (Currently)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-kenjaku-102",
+   "kind": "fact",
+   "question": "What is the status of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-kenjaku-103",
+   "kind": "fact",
+   "question": "What is Kenjaku's occupation?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Curse User 25th Head of the Kamo Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-kenjaku-104",
+   "kind": "fact",
+   "question": "In which manga chapter does Kenjaku first appear?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 10\nChapter 145 (Named)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-kenjaku-105",
+   "kind": "fact",
+   "question": "In which anime episode is Kenjaku first depicted?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 5\nEpisode 50 (Named)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-kenjaku-106",
+   "kind": "fact",
+   "question": "Who is Kenjaku's Japanese voice actor?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Takahiro Sakurai (in Suguru's body)\nMegumi Hayashibara (in Kaori's body)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-kenjaku-107",
+   "kind": "fact",
+   "question": "Who is Kenjaku's English voice actor?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Lex Lang (in Suguru's body)\nAllegra Clark (in Kaori's body)",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-kenjaku-108",
+   "kind": "fact",
+   "question": "What is the outcome of Fumihiko Takaba vs. Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuta ambushes Kenjaku.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Fumihiko_Takaba_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Fumihiko Takaba vs. Kenjaku:outcome"
+  },
+  {
+   "id": "jjk-pg-kenjaku-109",
+   "kind": "fact",
+   "question": "Where did Fumihiko Takaba vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Lake Gosho Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Fumihiko_Takaba_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Fumihiko Takaba vs. Kenjaku:place"
+  },
+  {
+   "id": "jjk-pg-kenjaku-110",
+   "kind": "fact",
+   "question": "When does Fumihiko Takaba vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Fumihiko_Takaba_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Fumihiko Takaba vs. Kenjaku:date"
+  },
+  {
+   "id": "jjk-pg-kenjaku-111",
+   "kind": "fact",
+   "question": "In which manga chapter does Fumihiko Takaba vs. Kenjaku begin?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 239",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Fumihiko_Takaba_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Fumihiko Takaba vs. Kenjaku:chapters"
+  },
+  {
+   "id": "jjk-pg-kenjaku-112",
+   "kind": "fact",
+   "question": "In which arc does Fumihiko Takaba vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Fumihiko_Takaba_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Fumihiko Takaba vs. Kenjaku:arc"
+  },
+  {
+   "id": "jjk-pg-kenjaku-113",
+   "kind": "fact",
+   "question": "What is the outcome of Iori Hazenoki vs. Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Iori_Hazenoki_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Iori Hazenoki vs. Kenjaku:outcome"
+  },
+  {
+   "id": "jjk-pg-kenjaku-114",
+   "kind": "fact",
+   "question": "Where did Iori Hazenoki vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Lake Gosho Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Iori_Hazenoki_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Iori Hazenoki vs. Kenjaku:place"
+  },
+  {
+   "id": "jjk-pg-kenjaku-115",
+   "kind": "fact",
+   "question": "When does Iori Hazenoki vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 24, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Iori_Hazenoki_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Iori Hazenoki vs. Kenjaku:date"
+  },
+  {
+   "id": "jjk-pg-kenjaku-116",
+   "kind": "fact",
+   "question": "Which manga chapters cover Iori Hazenoki vs. Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 239",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Iori_Hazenoki_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Iori Hazenoki vs. Kenjaku:chapters"
+  },
+  {
+   "id": "jjk-pg-kenjaku-117",
+   "kind": "fact",
+   "question": "In which arc does Iori Hazenoki vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku Showdown",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Iori_Hazenoki_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Iori Hazenoki vs. Kenjaku:arc"
+  },
+  {
+   "id": "jjk-pg-kenjaku-118",
+   "kind": "fact",
+   "question": "What is the outcome of Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuki interrupts the battle. Kenjaku escapes with Prison Realm.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:outcome"
+  },
+  {
+   "id": "jjk-pg-kenjaku-119",
+   "kind": "fact",
+   "question": "Where did Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Police Station, Udagawa Police Box",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:place"
+  },
+  {
+   "id": "jjk-pg-kenjaku-120",
+   "kind": "fact",
+   "question": "When does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:date"
+  },
+  {
+   "id": "jjk-pg-kenjaku-121",
+   "kind": "fact",
+   "question": "In which manga chapter does Jujutsu Sorcerers vs. Kenjaku & Uraume begin?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 133",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:chapters"
+  },
+  {
+   "id": "jjk-pg-kenjaku-122",
+   "kind": "fact",
+   "question": "In which episode is Jujutsu Sorcerers vs. Kenjaku & Uraume depicted?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 46",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:episodes"
+  },
+  {
+   "id": "jjk-pg-kenjaku-123",
+   "kind": "fact",
+   "question": "In which arc does Jujutsu Sorcerers vs. Kenjaku & Uraume take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:arc"
+  },
+  {
+   "id": "jjk-pg-kenjaku-124",
+   "kind": "fact",
+   "question": "Which techniques did Kenjaku use in Jujutsu Sorcerers vs. Kenjaku & Uraume?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hand-to-Hand Combat, Cursed Spirit Manipulation, Uzumaki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Jujutsu Sorcerers vs. Kenjaku & Uraume:techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-125",
+   "kind": "fact",
+   "question": "What is the outcome of Yuki Tsukumo & Choso vs. Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:outcome"
+  },
+  {
+   "id": "jjk-pg-kenjaku-126",
+   "kind": "fact",
+   "question": "Where did Yuki Tsukumo & Choso vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tombs of the Star",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:place"
+  },
+  {
+   "id": "jjk-pg-kenjaku-127",
+   "kind": "fact",
+   "question": "When does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 16, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:date"
+  },
+  {
+   "id": "jjk-pg-kenjaku-128",
+   "kind": "fact",
+   "question": "In which manga chapter does Yuki Tsukumo & Choso vs. Kenjaku begin?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 203",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:chapters"
+  },
+  {
+   "id": "jjk-pg-kenjaku-129",
+   "kind": "fact",
+   "question": "In which arc does Yuki Tsukumo & Choso vs. Kenjaku take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Culling Game",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:arc"
+  },
+  {
+   "id": "jjk-pg-kenjaku-130",
+   "kind": "fact",
+   "question": "Which techniques did Kenjaku use in Yuki Tsukumo & Choso vs. Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Spirit Manipulation, Ganesha, Uzumaki, Antigravity System, Cursed Technique Reversal: Gravity*, Domain Expansion: Womb Profusion, Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Yuki Tsukumo & Choso vs. Kenjaku:techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-131",
+   "kind": "set",
+   "question": "What are all the named techniques of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Spirit Manipulation",
+     "aliases": []
+    },
+    {
+     "item": "Curtain",
+     "aliases": []
+    },
+    {
+     "item": "Maximum: Uzumaki",
+     "aliases": []
+    },
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    },
+    {
+     "item": "Domain Expansion",
+     "aliases": []
+    },
+    {
+     "item": "Prison Realm",
+     "aliases": []
+    },
+    {
+     "item": "Idle Transfiguration",
+     "aliases": []
+    },
+    {
+     "item": "Antigravity System",
+     "aliases": []
+    },
+    {
+     "item": "Womb Profusion",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-132",
+   "kind": "set",
+   "question": "What are all the allies of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uraume",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    },
+    {
+     "item": "Cyrus Veil",
+     "aliases": []
+    },
+    {
+     "item": "Hajime Kashimo",
+     "aliases": []
+    },
+    {
+     "item": "Haruta Shigemo",
+     "aliases": []
+    },
+    {
+     "item": "Jiro Awasaka",
+     "aliases": []
+    },
+    {
+     "item": "Jogo",
+     "aliases": []
+    },
+    {
+     "item": "Juzo Kumiya",
+     "aliases": []
+    },
+    {
+     "item": "Mahito",
+     "aliases": []
+    },
+    {
+     "item": "Manami Suda",
+     "aliases": []
+    },
+    {
+     "item": "Niji Ebina",
+     "aliases": []
+    },
+    {
+     "item": "Ogami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:ally"
+  },
+  {
+   "id": "jjk-pg-kenjaku-133",
+   "kind": "set",
+   "question": "What are all the creations of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso",
+     "aliases": []
+    },
+    {
+     "item": "Angel",
+     "aliases": []
+    },
+    {
+     "item": "Dhruv Lakdawalla",
+     "aliases": []
+    },
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": []
+    },
+    {
+     "item": "Hagane Daido",
+     "aliases": []
+    },
+    {
+     "item": "Iori Hazenoki",
+     "aliases": []
+    },
+    {
+     "item": "Reggie Star",
+     "aliases": []
+    },
+    {
+     "item": "Remi",
+     "aliases": []
+    },
+    {
+     "item": "Rin Amai",
+     "aliases": []
+    },
+    {
+     "item": "Rokujushi Miyo",
+     "aliases": []
+    },
+    {
+     "item": "Ryu Ishigori",
+     "aliases": []
+    },
+    {
+     "item": "Smallpox Deity",
+     "aliases": []
+    },
+    {
+     "item": "Takako Uro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:creation"
+  },
+  {
+   "id": "jjk-pg-kenjaku-134",
+   "kind": "set",
+   "question": "What are all the enemies of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru Gojo",
+     "aliases": []
+    },
+    {
+     "item": "Angel",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    },
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": []
+    },
+    {
+     "item": "Iori Hazenoki",
+     "aliases": []
+    },
+    {
+     "item": "Kokichi Muta",
+     "aliases": []
+    },
+    {
+     "item": "Mimiko Hasaba",
+     "aliases": []
+    },
+    {
+     "item": "Nanako Hasaba",
+     "aliases": []
+    },
+    {
+     "item": "Noritoshi Kamo (Ancestor)",
+     "aliases": []
+    },
+    {
+     "item": "Tengen",
+     "aliases": []
+    },
+    {
+     "item": "Yuki Tsukumo",
+     "aliases": []
+    },
+    {
+     "item": "Yuta Okkotsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:enemy"
+  },
+  {
+   "id": "jjk-pg-kenjaku-135",
+   "kind": "set",
+   "question": "What are all the families of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Choso",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:family"
+  },
+  {
+   "id": "jjk-pg-kenjaku-136",
+   "kind": "set",
+   "question": "What are all the friends of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tengen",
+     "aliases": []
+    },
+    {
+     "item": "Fumihiko Takaba",
+     "aliases": []
+    },
+    {
+     "item": "Hanami",
+     "aliases": []
+    },
+    {
+     "item": "Mahito",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:friend"
+  },
+  {
+   "id": "jjk-pg-kenjaku-137",
+   "kind": "set",
+   "question": "What are all the subordinates of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Akuro-o Otake",
+     "aliases": []
+    },
+    {
+     "item": "Ganesha",
+     "aliases": []
+    },
+    {
+     "item": "Haba",
+     "aliases": []
+    },
+    {
+     "item": "Hanyu",
+     "aliases": []
+    },
+    {
+     "item": "Jogo",
+     "aliases": []
+    },
+    {
+     "item": "Juzo Kumiya",
+     "aliases": []
+    },
+    {
+     "item": "Kurourushi",
+     "aliases": []
+    },
+    {
+     "item": "Ogami's Grandson",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:subordinate"
+  },
+  {
+   "id": "jjk-pg-kenjaku-138",
+   "kind": "set",
+   "question": "What are all the aliases of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Noritoshi Kamo (Ancestor)",
+     "aliases": []
+    },
+    {
+     "item": "Kaori Itadori",
+     "aliases": []
+    },
+    {
+     "item": "Suguru Geto",
+     "aliases": []
+    },
+    {
+     "item": "Pseudo-Geto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:alias"
+  },
+  {
+   "id": "jjk-pg-kenjaku-139",
+   "kind": "set",
+   "question": "What are all the affiliations of Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku's Group",
+     "aliases": []
+    },
+    {
+     "item": "Mahito's Group (Formerly)",
+     "aliases": []
+    },
+    {
+     "item": "Kamo Clan",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-kenjaku-140",
+   "kind": "set",
+   "question": "Every battle involving Kenjaku",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba vs. Kenjaku",
+     "aliases": []
+    },
+    {
+     "item": "Iori Hazenoki vs. Kenjaku",
+     "aliases": []
+    },
+    {
+     "item": "Jujutsu Sorcerers vs. Kenjaku & Uraume",
+     "aliases": []
+    },
+    {
+     "item": "Yuki Tsukumo & Choso vs. Kenjaku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Fumihiko_Takaba_vs._Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Iori_Hazenoki_vs._Kenjaku",
+    "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Kenjaku_&_Uraume",
+    "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo_&_Choso_vs._Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-kenjaku-141",
+   "kind": "fact",
+   "question": "What does the wiki say about Kenjaku's original appearance?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku's original appearance is unknown"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Appearance"
+  },
+  {
+   "id": "jjk-pg-kenjaku-142",
+   "kind": "fact",
+   "question": "By what feature can Kenjaku be distinguished while in a vessel's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the stitches and scars that circle the top of his vessel's head"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Appearance"
+  },
+  {
+   "id": "jjk-pg-kenjaku-143",
+   "kind": "fact",
+   "question": "What is the source of the stitches and scars on Kenjaku's vessel's head?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the procedure required to transfer Kenjaku's brain, his only physical feature, into his host"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Appearance"
+  },
+  {
+   "id": "jjk-pg-kenjaku-144",
+   "kind": "fact",
+   "question": "How is Kenjaku's brain different from a conventional brain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku's has teeth"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Appearance"
+  },
+  {
+   "id": "jjk-pg-kenjaku-145",
+   "kind": "fact",
+   "question": "How does Kenjaku look in Suguru Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "exactly as Suguru did during the Night Parade of a Hundred Demons"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Appearance"
+  },
+  {
+   "id": "jjk-pg-kenjaku-146",
+   "kind": "fact",
+   "question": "What is the exception to Kenjaku's appearance in Suguru Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the stitched-up surgical wound encircling his head"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Appearance"
+  },
+  {
+   "id": "jjk-pg-kenjaku-147",
+   "kind": "fact",
+   "question": "What close-combat skills does Kenjaku possess?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "masterful skills in close combat that can stand up to nearly any opponent"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-148",
+   "kind": "fact",
+   "question": "How does Kenjaku compare to Suguru Geto in close-range combat?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a highly capable close-range combatant despite being a curse manipulator"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-149",
+   "kind": "fact",
+   "question": "What does Kenjaku mainly use to supplement his sorcery?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "taijutsu"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-150",
+   "kind": "fact",
+   "question": "What can Kenjaku rely on in close-range combat if need be?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "fully capable of relying on hand-to-hand combat if need be"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-151",
+   "kind": "fact",
+   "question": "What did Kenjaku do to Kasumi Miwa's katana while unarmed?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "effortlessly caught Kasumi Miwa's katana while unarmed and snapped the blade with a simple clench of his fist"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-152",
+   "kind": "fact",
+   "question": "How easily did Kenjaku hold off Choso's assault in Shibuya?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "with contemptible ease"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-153",
+   "kind": "fact",
+   "question": "How did Kenjaku handle every strike Choso threw at him in Shibuya?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "casually parried every strike Choso threw at him while easily landing his own hits"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-154",
+   "kind": "fact",
+   "question": "How did Kenjaku make taking out Choso look easy in the Tombs of the Star?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by using close combat in combination with Cursed Spirit Manipulation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-155",
+   "kind": "fact",
+   "question": "Which of Kenjaku's close-combat opponents proved more of a challenge?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Yuki Tsukumo, who specializes in close combat"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-156",
+   "kind": "fact",
+   "question": "Who did Kenjaku hold off at the same time on his own in the Tombs of the Star?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "both Yuki and Choso at the same time"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-157",
+   "kind": "fact",
+   "question": "What forced Kenjaku to rely solely on taijutsu to survive?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku's cursed techniques were burnt out"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-158",
+   "kind": "fact",
+   "question": "Why couldn't Kenjaku get off any attacks while defending himself against Yuki and Choso?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the sheer volume of offense coming at him"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-159",
+   "kind": "fact",
+   "question": "How did Kenjaku defend himself while his techniques were burnt out?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "effectively defended himself until his techniques were replenished while only suffering moderate damage"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Physical Prowess"
+  },
+  {
+   "id": "jjk-pg-kenjaku-160",
+   "kind": "fact",
+   "question": "What kind of individual is Kenjaku described as in his abilities profile?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a thousand-year-old individual with a vast amount of knowledge acquired over hundreds of years of existence"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-161",
+   "kind": "fact",
+   "question": "What does Kenjaku's vast knowledge include?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "general expertise, a comprehensive understanding of sorcery, and strategic intellect"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-162",
+   "kind": "fact",
+   "question": "How is Kenjaku described as a criminal mastermind?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "extraordinarily clever and a masterfully calculating criminal mastermind"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-163",
+   "kind": "fact",
+   "question": "What is Kenjaku's cleverness due to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his wealth of knowledge on jujutsu sorcery and his talent for manipulation and tactical forecasting"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-164",
+   "kind": "fact",
+   "question": "What makes Kenjaku most cunning?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku's intellect, along with his focus and patience"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-165",
+   "kind": "fact",
+   "question": "How long was Kenjaku willing to wait to create the proper conditions to accomplish his goals?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "hundreds of years"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-166",
+   "kind": "fact",
+   "question": "What allowed Kenjaku's schemes to overcome the Six Eyes?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "careful consideration and planning"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-167",
+   "kind": "fact",
+   "question": "What did Kenjaku analyze Satoru Gojo for?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "to come up with a proper strategy to get the nigh-unbeatable sorcerer out of his way"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-168",
+   "kind": "fact",
+   "question": "What countermeasure did Kenjaku take after seeing that Satoru was strongest when fighting alone?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku orchestrated the Shibuya Incident to put him in unfavorable conditions"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-169",
+   "kind": "fact",
+   "question": "What was Kenjaku waiting for while Satoru was stifled by non-sorcerers and special grade cursed spirits?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "just the right moment to seal him"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-170",
+   "kind": "fact",
+   "question": "Why did Kenjaku make sure nobody from Jujutsu High saw him as Suguru Geto?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "this would've ruined the surprise that was key to distracting and sealing Satoru Gojo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-171",
+   "kind": "fact",
+   "question": "What did Kenjaku move on to after his primary obstacle was removed?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his next well-thought-out and extremely convoluted scheme"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-172",
+   "kind": "fact",
+   "question": "What was Kenjaku's primary goal in creating the Culling Game?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "merging the Japanese population with Tengen"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-173",
+   "kind": "fact",
+   "question": "When did Kenjaku launch the Culling Game?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "directly after the Shibuya Incident"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-174",
+   "kind": "fact",
+   "question": "Whom did Kenjaku recruit throughout numerous generations?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "sorcerers from different time periods"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-175",
+   "kind": "fact",
+   "question": "What is Kenjaku the only sorcerer who knows how to do?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "transform someone into a cursed object after death"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-176",
+   "kind": "fact",
+   "question": "How did Kenjaku avoid a surely fatal encounter with the returned Satoru Gojo?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by allying with Sukuna"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-177",
+   "kind": "fact",
+   "question": "How is Kenjaku's mastery of sorcery applied, according to the wiki?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "appropriately applied to battle"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-178",
+   "kind": "fact",
+   "question": "What kind of fighter is Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a cerebral fighter who can accurately analyze his opponent's abilities and use his own to overcome them in clever and complex ways"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-179",
+   "kind": "fact",
+   "question": "What was unusual about Yuki Tsukumo among the sorcerers Kenjaku encountered?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "one of the few sorcerers that Kenjaku encountered whom he didn't have any prior information"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-180",
+   "kind": "fact",
+   "question": "What did Kenjaku do with his awareness of Choso's weaknesses?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "took advantage of them to easily overpower the Death Painting Womb"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-181",
+   "kind": "fact",
+   "question": "What did Kenjaku have to do to overcome Yuki throughout their battle?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "take numerous risks to overcome her"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-182",
+   "kind": "fact",
+   "question": "What strategy did Kenjaku begin his battle with Yuki with?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by trying to keep her at a distance to observe her skills"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-183",
+   "kind": "fact",
+   "question": "How did Kenjaku's strategy of observing Yuki from a distance end?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a solid strategy that ended up backfiring"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-184",
+   "kind": "fact",
+   "question": "What did Kenjaku recognize even after losing the exchange with Yuki?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his opponent still found his abilities troublesome"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-185",
+   "kind": "fact",
+   "question": "What did Kenjaku do immediately after seeing Yuki's hesitation to open a domain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "expanded his own domain and ended up dealing massive damage"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-186",
+   "kind": "fact",
+   "question": "What talent did Kenjaku display when Choso joined Yuki's side and ambushed him?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "thinking on his feet"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-187",
+   "kind": "fact",
+   "question": "What did Kenjaku do when Choso's ambush surprised him?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "quickly adapted and avoided a fatal blow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-188",
+   "kind": "fact",
+   "question": "How did Kenjaku ultimately defeat Yuki?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "with deception, a sorcerer's greatest weapon"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-189",
+   "kind": "fact",
+   "question": "What did Kenjaku have Yuki believe he was using to buy time?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "cursed spirit manipulation to buy time for a gravity attack"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-190",
+   "kind": "fact",
+   "question": "How did Kenjaku deal the finishing blow to Yuki?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "surprised her with a miniature Uzumaki and dealt the finishing blow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-191",
+   "kind": "fact",
+   "question": "Whom did Kenjaku devise clever countermeasures for as his worst matchup?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Fumihiko Takaba, whose abilities defy all logic and reasoning"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-192",
+   "kind": "fact",
+   "question": "What did Kenjaku recognize about his techniques against Takaba?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his techniques were useless against Takaba"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-193",
+   "kind": "fact",
+   "question": "Why did Kenjaku have to keep his guard up against Takaba?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his thousand years of jujutsu knowledge would go to waste"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-194",
+   "kind": "fact",
+   "question": "Why did Kenjaku persist despite his disadvantage against Takaba?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "he was confident every technique has a weakness"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-195",
+   "kind": "fact",
+   "question": "What did Kenjaku figure out about Takaba activating his technique?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Takaba needed certainty to activate his technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-196",
+   "kind": "fact",
+   "question": "How did Kenjaku respond to the fact that Takaba needed certainty?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "targeting his confidence as a comedian"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-197",
+   "kind": "fact",
+   "question": "What level did Kenjaku stoop to in his fight with Takaba?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Takaba's level of foolish antics"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-198",
+   "kind": "fact",
+   "question": "What did Kenjaku realize was the only way to win once Takaba reactivated his technique?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "to satisfy his desire for comedy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-199",
+   "kind": "fact",
+   "question": "What did Kenjaku do rather than fight against Takaba?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "joined him as a comedy duo and helped manifest his greatest fantasy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-200",
+   "kind": "fact",
+   "question": "What did Kenjaku's comedy-duo approach ultimately achieve against Takaba?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "avoiding defeat against Takaba"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-201",
+   "kind": "fact",
+   "question": "Who executed Kenjaku immediately after he was caught off guard?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Yuta Okkotsu"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-202",
+   "kind": "fact",
+   "question": "What did Kenjaku always have in place as a failsafe?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a contingency plan"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-203",
+   "kind": "fact",
+   "question": "What authority did Kenjaku transfer to Sukuna as a failsafe?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "authority to activate the Great Merger"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Intelligence"
+  },
+  {
+   "id": "jjk-pg-kenjaku-204",
+   "kind": "fact",
+   "question": "What does Kenjaku's innate technique allow him to do?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "swap bodies with another person, even if they are dead, by transplanting his brain into the body of his target"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-205",
+   "kind": "fact",
+   "question": "What mark does Kenjaku's brain transplant leave on his vessel?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a stitched scar running horizontally through the forehead"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-206",
+   "kind": "fact",
+   "question": "What can Kenjaku do by undoing the stitches?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "remove the top part of his head to reveal his original brain"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-207",
+   "kind": "fact",
+   "question": "What does Kenjaku gain access to once inside a body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the host's cursed energy, all their innate techniques, and memories"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-208",
+   "kind": "fact",
+   "question": "Why can't even the Six Eyes recognize Kenjaku as an imposter?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "as he retains the host's cursed energy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-209",
+   "kind": "fact",
+   "question": "How long can Kenjaku live thanks to his cursed technique?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "more than a thousand years"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-210",
+   "kind": "fact",
+   "question": "What is hinted about Kenjaku even when he switches to a new body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku retains access and usage of his former host"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-211",
+   "kind": "fact",
+   "question": "What limits how many cursed techniques Kenjaku can collect from his previous hosts?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "how much his brain can store before overloading"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-212",
+   "kind": "fact",
+   "question": "What body did Kenjaku use to make binding vows with past sorcerers?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "an unknown person's body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-213",
+   "kind": "fact",
+   "question": "What did Kenjaku use his 400-years-ago vessel for?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "make binding vows with past sorcerers, particularly with Hajime Kashimo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-214",
+   "kind": "fact",
+   "question": "Which Kamo did Kenjaku take over to create the Death Paintings?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Noritoshi's body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-215",
+   "kind": "fact",
+   "question": "What did Kenjaku experiment with as Noritoshi Kamo?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the fusion of human flesh and curses, resulting in the Death Paintings"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-216",
+   "kind": "fact",
+   "question": "What was the name of the woman whose body Kenjaku inhabited to give birth to Yuji?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Jin Itadori's partner, Kaori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-217",
+   "kind": "fact",
+   "question": "Why did Kenjaku use Kaori's body to give birth to Yuji?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "to serve as Sukuna's vessel in the Culling Game"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-218",
+   "kind": "fact",
+   "question": "What remains unclear about Kenjaku's time in Kaori's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "how long he inhabited her body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-219",
+   "kind": "fact",
+   "question": "What preceded Kenjaku taking Suguru Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Suguru Geto's death at the hands of Satoru Gojo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-220",
+   "kind": "fact",
+   "question": "What did taking Geto's body give Kenjaku access to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "all of Geto's memories, skills, and jujutsu"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-221",
+   "kind": "fact",
+   "question": "What can the user of Kenjaku's Cursed Spirit Manipulation do?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "summon and control naturally formed cursed spirits for a desired purpose"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-222",
+   "kind": "fact",
+   "question": "How does Kenjaku utilize Cursed Spirit Manipulation?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "as if it is his own innate technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-223",
+   "kind": "fact",
+   "question": "What did Kenjaku acquire as his personal familiars thanks to Cursed Spirit Manipulation?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "numerous cursed spirits"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-224",
+   "kind": "fact",
+   "question": "How has Kenjaku deployed his acquired cursed spirits?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "to fight off multiple opponents and bombard them with a variety of different cursed techniques that each curse possesses"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-225",
+   "kind": "fact",
+   "question": "Which cursed spirit Kenjaku acquired was capable of casting its own Domain Expansion?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "the Smallpox Deity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-226",
+   "kind": "fact",
+   "question": "What did the Smallpox Deity, one of Kenjaku's cursed spirits, nearly do to Mei Mei?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "her brother's assistance to distract it and give her a chance to finish it off"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-227",
+   "kind": "fact",
+   "question": "When did Kenjaku absorb Mahito?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "after he is weakened by Yuji Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-228",
+   "kind": "fact",
+   "question": "What does Kenjaku's maximum technique Uzumaki combine into one powerful attack?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a massive number of collected curses"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-229",
+   "kind": "fact",
+   "question": "When does Kenjaku's Uzumaki extract a curse's innate technique?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "when used with cursed spirits of semi-grade 1 or higher"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-230",
+   "kind": "fact",
+   "question": "How did Kenjaku first use his Uzumaki technique?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "against Kasumi Miwa using Mahito, allowing him to extract Idle Transfiguration"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-231",
+   "kind": "fact",
+   "question": "What does Kenjaku's Antigravity System do?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "negates gravity when used"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-232",
+   "kind": "fact",
+   "question": "How does Kenjaku primarily use the Antigravity System?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a cursed technique reversal of this ability, allowing him to intensify the gravitational pull around him"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-233",
+   "kind": "fact",
+   "question": "Whose technique was the Antigravity System originally?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kaori Itadori"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-234",
+   "kind": "fact",
+   "question": "What can Kenjaku use reverse cursed technique for?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "to heal his body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-235",
+   "kind": "fact",
+   "question": "What else can Kenjaku use to fuel a cursed technique reversal?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "positive energy"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-236",
+   "kind": "fact",
+   "question": "What form does Kenjaku's domain expansion Womb Profusion take?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a giant pillar made up of cursed spirits"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-237",
+   "kind": "fact",
+   "question": "What type of domain is Womb Profusion, and what is it similar to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "an open barrier type domain, similar to Malevolent Shrine"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-238",
+   "kind": "fact",
+   "question": "What is known about the effect of Kenjaku's Womb Profusion domain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "The effect of this domain is unclear, though its guaranteed-hit severely injured Yuki Tsukumo"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Cursed Techniques"
+  },
+  {
+   "id": "jjk-pg-kenjaku-239",
+   "kind": "fact",
+   "question": "How did Kenjaku gain Mahito's Idle Transfiguration?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "After expelling Mahito via the Uzumaki technique"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Former Jujutsu"
+  },
+  {
+   "id": "jjk-pg-kenjaku-240",
+   "kind": "fact",
+   "question": "For how long could Kenjaku use Idle Transfiguration after gaining it?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "for a one-time use"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Former Jujutsu"
+  },
+  {
+   "id": "jjk-pg-kenjaku-241",
+   "kind": "fact",
+   "question": "What ability did Idle Transfiguration grant Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "to reshape other people's souls and potentially himself"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Former Jujutsu"
+  },
+  {
+   "id": "jjk-pg-kenjaku-242",
+   "kind": "fact",
+   "question": "What did Kenjaku use Idle Transfiguration on to kickstart the Culling Game?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Tengen's barrier"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Former Jujutsu"
+  },
+  {
+   "id": "jjk-pg-kenjaku-243",
+   "kind": "fact",
+   "question": "How did Kenjaku kickstart the Culling Game with Idle Transfiguration?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by remotely altering the souls of the people he marked over the years"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Former Jujutsu"
+  },
+  {
+   "id": "jjk-pg-kenjaku-244",
+   "kind": "fact",
+   "question": "What kind of object is the Prison Realm that Kenjaku bears?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a special grade cursed object containing a barrier capable of sealing absolutely anything or anyone inside of an inescapable pocket dimension"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-kenjaku-245",
+   "kind": "fact",
+   "question": "What was the Prison Realm the crux of for Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his plan to seal Satoru Gojo in Shibuya"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-kenjaku-246",
+   "kind": "fact",
+   "question": "When did Kenjaku's plan to seal Satoru Gojo take place?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "October 31st"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-kenjaku-247",
+   "kind": "fact",
+   "question": "Which gate of the Prison Realm is Kenjaku the bearer of?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "front gate"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-kenjaku-249",
+   "kind": "fact",
+   "question": "How is it possible to unseal a target from the Prison Realm?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "by breaking it open with a cursed technique that can cancel or nullify other cursed techniques"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Equipment"
+  },
+  {
+   "id": "jjk-pg-kenjaku-250",
+   "kind": "fact",
+   "question": "What kanji does Kenjaku's name contain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "羂"
+    },
+    {
+     "item": "索"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-251",
+   "kind": "fact",
+   "question": "What is Kenjaku's name likely a reference to?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Infallible Lasso Avalokitesvara, also known as Amoghapāśa"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-252",
+   "kind": "fact",
+   "question": "What is the Japanese name of the Bodhisattva form Kenjaku's name references?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "不空羂索観音 (Fukūkenjaku Kannon)"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-253",
+   "kind": "fact",
+   "question": "How is Amoghapāśa described?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a powerful savior who uses his infallible lasso to capture living beings drifting in the ocean of suffering and settle them on the shore of Liberation"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-254",
+   "kind": "fact",
+   "question": "What does Yuki Tsukumo point out about the sarcastic nature of Kenjaku's name?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Kenjaku's name implies \"compassion\" and \"salvation\" despite his inhumane actions"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-255",
+   "kind": "fact",
+   "question": "Why was Kenjaku able to take over Geto's body, according to the official fanbook?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "because his body was not cremated"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-256",
+   "kind": "fact",
+   "question": "Why doesn't Kenjaku heal the scar on his forehead, according to the fanbook?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "because it's a binding vow"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-257",
+   "kind": "fact",
+   "question": "Why can ordinary people see the brain that takes over Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a physical part of Kenjaku's flesh"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-258",
+   "kind": "fact",
+   "question": "How many cursed techniques is Kenjaku able to possess, and which?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "two cursed techniques: his own, and the technique of the body he hijacked"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-259",
+   "kind": "fact",
+   "question": "What should happen to a person's cursed technique when Kenjaku takes over with his brain?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "should disappear"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-260",
+   "kind": "fact",
+   "question": "What does Mahito's group not know about Geto's body?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "someone has taken over Geto's body"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-261",
+   "kind": "fact",
+   "question": "What do Mahito's group think the person in Geto's body is?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a curse user who knows a lot"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-262",
+   "kind": "fact",
+   "question": "What kind of relationship does Kenjaku have with the other cursed spirits?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "a strictly business-only relationship"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-263",
+   "kind": "fact",
+   "question": "How does Kenjaku regard the cursed spirits who organized themselves to overtake humanity?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "looks down on the cursed spirits who have organized themselves to overtake humanity"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-264",
+   "kind": "fact",
+   "question": "On whom can Kenjaku use Cursed Spirit Manipulation in a one-on-one fight?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "his fellow cursed spirits"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-265",
+   "kind": "fact",
+   "question": "Which cursed spirits may pose a challenge to Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Jogo and Mahito"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-266",
+   "kind": "fact",
+   "question": "Why has Kenjaku never considered taking over the bodies of Gojo and Toji?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "Gojo and Toji"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-267",
+   "kind": "fact",
+   "question": "Why is Gojo an impossible option for Kenjaku to take over?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "since he is unbeatable"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-268",
+   "kind": "fact",
+   "question": "Why might taking over Toji's body be risky for Kenjaku?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "there’s a chance that Toji's Heavenly Restriction and Kenjaku's technique may clash"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-269",
+   "kind": "fact",
+   "question": "How did Kenjaku rank in the second Popularity Poll?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "31st in the second Popularity Poll with 107 votes"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-270",
+   "kind": "fact",
+   "question": "How did Kenjaku rank in the third Popularity Poll?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "36th in the third Popularity Poll with 97 votes"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  },
+  {
+   "id": "jjk-pg-kenjaku-271",
+   "kind": "fact",
+   "question": "How did Kenjaku rank in the fourth Popularity Poll?",
+   "subject": "Kenjaku",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "answer": [
+    {
+     "item": "22nd in the fourth Popularity Poll with 566 votes"
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku"
+   ],
+   "verified": "2026-08-24",
+   "note": "prose: Trivia"
+  }
+ ]
+}

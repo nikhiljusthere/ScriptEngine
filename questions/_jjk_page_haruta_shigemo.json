@@ -1,0 +1,609 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-31",
+ "note": "page-gen 2026-08-24: 22 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded ; +7 prose pass (R5, 2026-08-27) ; +7 prose pass (R5, 2026-08-27) ; Q027 removed (retired battles-in-path roster line)",
+ "retired": [
+  {
+   "id": "jjk-pg-haruta_shigemo-retired-01",
+   "note": "prose",
+   "question": "Which battle involving Sukuna is listed under the Battles and Events section alongside Nobara Kugisaki and Kento Nanami vs. Haruta Shigemo?",
+   "reason": "Battles-and-Events roster line with (Involved) suffix — carried by battles-in-path bundle, not served by prose-beat fact query. Page-gen set Q022 covers the battles roster. Roster-dominated B&E section on small character.",
+   "retired": "2026-08-31"
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-haruta_shigemo-001",
+   "kind": "fact",
+   "question": "What are the kanji for Haruta Shigemo's name?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "重面春太",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-002",
+   "kind": "fact",
+   "question": "What is the romaji of Haruta Shigemo's name?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shigemo Haruta",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-003",
+   "kind": "fact",
+   "question": "What is Haruta Shigemo's race?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Human",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:race"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-004",
+   "kind": "fact",
+   "question": "What is Haruta Shigemo's gender?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Male",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:gender"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-005",
+   "kind": "fact",
+   "question": "What is the status of Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Deceased",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:status"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-006",
+   "kind": "fact",
+   "question": "What is Haruta Shigemo's occupation?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Curse User",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:occupation"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-007",
+   "kind": "fact",
+   "question": "In which manga chapter does Haruta Shigemo first appear?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 52",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debut"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-008",
+   "kind": "fact",
+   "question": "In which anime episode is Haruta Shigemo first depicted?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 20",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:debutanime"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-009",
+   "kind": "fact",
+   "question": "Who is Haruta Shigemo's Japanese voice actor?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Wataru Hatano",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:voice"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-010",
+   "kind": "fact",
+   "question": "Who is Haruta Shigemo's English voice actor?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chris Hackney",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:identity:eng voice"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-011",
+   "kind": "fact",
+   "question": "What is the outcome of Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nobara and Nanami are victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:outcome"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-012",
+   "kind": "fact",
+   "question": "Where did Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shoto Bunkamura Street\nBunkamura Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:place"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-013",
+   "kind": "fact",
+   "question": "When does Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 31, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:date"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-014",
+   "kind": "fact",
+   "question": "In which manga chapter does Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo begin?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 99",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:chapters"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-015",
+   "kind": "fact",
+   "question": "In which episode is Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo depicted?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 36",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:episodes"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-016",
+   "kind": "fact",
+   "question": "In which arc does Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:arc"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-017",
+   "kind": "fact",
+   "question": "Which techniques did Haruta Shigemo use in Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Miracles, Cursed Tool: Hand Sword",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:techniques"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-018",
+   "kind": "set",
+   "question": "What are all the named techniques of Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Miracles",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:techniques"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-019",
+   "kind": "set",
+   "question": "What are all the allies of Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Uraume",
+     "aliases": []
+    },
+    {
+     "item": "Kenjaku",
+     "aliases": []
+    },
+    {
+     "item": "Juzo Kumiya",
+     "aliases": []
+    },
+    {
+     "item": "Hanami",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:ally"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-020",
+   "kind": "set",
+   "question": "What are all the enemies of Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nobara Kugisaki",
+     "aliases": []
+    },
+    {
+     "item": "Kento Nanami",
+     "aliases": []
+    },
+    {
+     "item": "Megumi Fushiguro",
+     "aliases": []
+    },
+    {
+     "item": "Utahime Iori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:relation:enemy"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-021",
+   "kind": "set",
+   "question": "What are all the affiliations of Haruta Shigemo?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kenjaku's Group",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:affiliation"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-022",
+   "kind": "set",
+   "question": "Every battle involving Haruta Shigemo",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo",
+    "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki_&_Kento_Nanami_vs._Haruta_Shigemo"
+   ],
+   "verified": "2026-08-24",
+   "note": "page-gen:battles"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-023",
+   "kind": "fact",
+   "question": "How does Haruta Shigemo describe his approach to combat compared to facing strong opponents?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "preferring to fight weak opponents",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Personality personality"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-024",
+   "kind": "fact",
+   "question": "Why was Haruta Shigemo recruited by Uraume according to the Abilities and Powers section?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to be useful to Kenjaku's plan for sealing Satoru Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-025",
+   "kind": "fact",
+   "question": "What happens to Haruta Shigemo's cursed technique markings when a miracle is released?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the marking turns to white",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose: Cursed Technique  cursed technique"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-026",
+   "kind": "fact",
+   "question": "What unusual capability does Haruta Shigemo's Hand Sword have regarding movement?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to move on its own by crawling around using its fingers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Equipment"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-028",
+   "kind": "fact",
+   "question": "In which Popularity Poll did Haruta Shigemo rank 49th, and how many votes did he receive?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the second Popularity Poll with 26 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  },
+  {
+   "id": "jjk-pg-haruta_shigemo-029",
+   "kind": "fact",
+   "question": "What do the kun readings in Haruta Shigemo's surname mean?",
+   "subject": "Haruta Shigemo",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "division",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo"
+   ],
+   "verified": "2026-08-31",
+   "note": "prose:Trivia trivia"
+  }
+ ]
+}

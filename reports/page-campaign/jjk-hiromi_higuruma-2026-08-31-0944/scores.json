@@ -1,0 +1,795 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Hiromi Higuruma?",
+      "set": "Every named technique of Hiromi Higuruma",
+      "confidence": "declared",
+      "returned": 6,
+      "available": 6,
+      "canon": 6,
+      "found": 6,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Hiromi Higuruma?",
+      "set": "Every ally of Hiromi Higuruma",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hiromi Higuruma",
+      "set": "Every battle involving Hiromi Higuruma",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Hiromi Higuruma?",
+      "found": [
+        "Reverse Cursed Technique",
+        "Shikigami",
+        "Domain Expansion",
+        "Domain Amplification",
+        "Judgeman",
+        "Deadly Sentencing"
+      ],
+      "missing": [],
+      "members": [
+        "Deadly Sentencing",
+        "Domain Amplification",
+        "Domain Expansion",
+        "Judgeman",
+        "Reverse Cursed Technique",
+        "Shikigami"
+      ]
+    },
+    {
+      "query": "What are all the allies of Hiromi Higuruma?",
+      "found": [
+        "Yuji Itadori",
+        "Keita Oe"
+      ],
+      "missing": [],
+      "members": [
+        "Keita Oe",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "Every battle involving Hiromi Higuruma",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori vs. Hiromi Higuruma"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori vs. Hiromi Higuruma"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hiromi Higuruma's name?",
+      "id": "jjk-pg-hiromi_higuruma-001",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "\u65e5\u8eca\u5bdb\u898b"
+      ],
+      "found": [
+        "\u65e5\u8eca\u5bdb\u898b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hiromi Higuruma's name?",
+      "id": "jjk-pg-hiromi_higuruma-002",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Higuruma Hiromi"
+      ],
+      "found": [
+        "Higuruma Hiromi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hiromi Higuruma's race?",
+      "id": "jjk-pg-hiromi_higuruma-003",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Hiromi Higuruma?",
+      "id": "jjk-pg-hiromi_higuruma-004",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "36"
+      ],
+      "found": [
+        "36"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hiromi Higuruma's gender?",
+      "id": "jjk-pg-hiromi_higuruma-005",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Hiromi Higuruma?",
+      "id": "jjk-pg-hiromi_higuruma-006",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hiromi Higuruma's occupation?",
+      "id": "jjk-pg-hiromi_higuruma-007",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Defense Attorney Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Defense Attorney Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hiromi Higuruma first appear?",
+      "id": "jjk-pg-hiromi_higuruma-008",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Chapter 143 (Cameo) Chapter 158"
+      ],
+      "found": [
+        "Chapter 143 (Cameo) Chapter 158"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Hiromi Higuruma first depicted?",
+      "id": "jjk-pg-hiromi_higuruma-009",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Episode 49 (Cameo) Episode 55"
+      ],
+      "found": [
+        "Episode 49 (Cameo) Episode 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Hiromi Higuruma's Japanese voice actor?",
+      "id": "jjk-pg-hiromi_higuruma-010",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Tomokazu Sugita"
+      ],
+      "found": [
+        "Tomokazu Sugita"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Hiromi Higuruma's English voice actor?",
+      "id": "jjk-pg-hiromi_higuruma-011",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Ben Balmaceda"
+      ],
+      "found": [
+        "Ben Balmaceda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-hiromi_higuruma-012",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hiromi_higuruma-013",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hiromi_higuruma-014",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-hiromi_higuruma-015",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-hiromi_higuruma-016",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hiromi Higuruma use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-hiromi_higuruma-017",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Domain Amplification, Domain Expansion: Deadly Sentencing, Reverse Cursed Technique, Shikigami: Judgeman"
+      ],
+      "found": [
+        "Domain Amplification, Domain Expansion: Deadly Sentencing, Reverse Cursed Technique, Shikigami: Judgeman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Hiromi Higuruma?",
+      "id": "jjk-pg-hiromi_higuruma-018",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Higuruma allows Yuji to win."
+      ],
+      "found": [
+        "Higuruma allows Yuji to win."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-hiromi_higuruma-019",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-hiromi_higuruma-020",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori vs. Hiromi Higuruma begin?",
+      "id": "jjk-pg-hiromi_higuruma-021",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Chapter 164"
+      ],
+      "found": [
+        "Chapter 164"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Hiromi Higuruma depicted?",
+      "id": "jjk-pg-hiromi_higuruma-022",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Episode 55 - 56"
+      ],
+      "found": [
+        "Episode 55 - 56"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Hiromi Higuruma take place?",
+      "id": "jjk-pg-hiromi_higuruma-023",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hiromi Higuruma use in Yuji Itadori vs. Hiromi Higuruma?",
+      "id": "jjk-pg-hiromi_higuruma-024",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Domain Expansion: Deadly Sentencing, Judgeman, Cursed Tool: Gavel, Cursed Energy Manipulation"
+      ],
+      "found": [
+        "Domain Expansion: Deadly Sentencing, Judgeman, Cursed Tool: Gavel, Cursed Energy Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What expression does Hiromi Higuruma almost always have?",
+      "id": "jjk-pg-hiromi_higuruma-028",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "a tired and bored expression"
+      ],
+      "found": [
+        "a tired and bored expression"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Hiromi Higuruma almost always have a tired and bored expression on his face?",
+      "id": "jjk-pg-hiromi_higuruma-029",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "due to overwork and the nature of his career"
+      ],
+      "found": [
+        "due to overwork and the nature of his career"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Hiromi Higuruma apathetic?",
+      "id": "jjk-pg-hiromi_higuruma-030",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "no"
+      ],
+      "found": [
+        "no"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hiromi Higuruma's colleagues describe his tendency to take on difficult cases with little chance of acquittal?",
+      "id": "jjk-pg-hiromi_higuruma-031",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "as masochistic"
+      ],
+      "found": [
+        "as masochistic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which proved more extraordinary for Hiromi Higuruma \u2014 his aptitude as a defense attorney or his aptitude as a jujutsu sorcerer?",
+      "id": "jjk-pg-hiromi_higuruma-033",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "his aptitude as a jujutsu sorcerer"
+      ],
+      "found": [
+        "his aptitude as a jujutsu sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuji rate Hiromi Higuruma's strength?",
+      "id": "jjk-pg-hiromi_higuruma-034",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "extremely powerful"
+      ],
+      "found": [
+        "extremely powerful"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who recommended Hiromi Higuruma become a judge before even graduating Law School?",
+      "id": "jjk-pg-hiromi_higuruma-035",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "one of his senior mentors"
+      ],
+      "found": [
+        "one of his senior mentors"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Judgeman look like?",
+      "id": "jjk-pg-hiromi_higuruma-040",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "a large shikigami with a black body that has three stubbed points that act as two arms and a leg"
+      ],
+      "found": [
+        "a large shikigami with a black body that has three stubbed points that act as two arms and a leg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What weapon does Hiromi Higuruma wield in battle?",
+      "id": "jjk-pg-hiromi_higuruma-041",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "his gavel cursed tool"
+      ],
+      "found": [
+        "his gavel cursed tool"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who fought Hiromi Higuruma during the Culling Game Arc?",
+      "id": "jjk-pg-hiromi_higuruma-045",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Haba"
+      ],
+      "found": [
+        "Haba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hiromi Higuruma rank in the third Popularity Poll compared to his fourth placement?",
+      "id": "jjk-pg-hiromi_higuruma-047",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "20th in the third Popularity Poll and 18th in the fourth"
+      ],
+      "found": [],
+      "missing": [
+        "20th in the third Popularity Poll and 18th in the fourth"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hiromi Higuruma's peers describe even before he became a sorcerer?",
+      "id": "jjk-pg-hiromi_higuruma-048",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "as a genius"
+      ],
+      "found": [
+        "as a genius"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "By whose standards was Hiromi Higuruma extraordinarily brilliant?",
+      "id": "jjk-pg-hiromi_higuruma-049",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "Law School"
+      ],
+      "found": [
+        "Law School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What allows Hiromi Higuruma to interrupt and resume his cursed technique after using Domain Amplification?",
+      "id": "jjk-pg-hiromi_higuruma-050",
+      "subject": "Hiromi Higuruma",
+      "accept": "all",
+      "expected": [
+        "His incredible skill with cursed energy manipulation"
+      ],
+      "found": [],
+      "missing": [
+        "His incredible skill with cursed energy manipulation"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 38,
+    "fact_present": 36
+  }
+}

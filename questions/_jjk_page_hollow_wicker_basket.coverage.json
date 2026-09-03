@@ -1,0 +1,70 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:debut",
+        "page-gen:identity:anime debut",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": [
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc"
+      ]
+    },
+    {
+      "path": "Usage",
+      "covered_by": []
+    },
+    {
+      "path": "Usage / Reggie Star",
+      "covered_by": []
+    },
+    {
+      "path": "Usage / Hajime Kashimo",
+      "covered_by": []
+    },
+    {
+      "path": "Usage / Sukuna",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Usage",
+    "Usage / Reggie Star",
+    "Usage / Hajime Kashimo",
+    "Usage / Sukuna"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

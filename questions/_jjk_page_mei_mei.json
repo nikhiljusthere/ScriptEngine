@@ -1,0 +1,661 @@
+﻿{
+  "series": "jjk",
+  "wiki": "https://jujutsu-kaisen.fandom.com",
+  "updated": "2026-08-27",
+  "note": "page-gen 2026-08-24: 13 structured questions + 19 prose Q14-32; page-run 2026-08-27: 31/31 COMPLETE. Q001 (kanji) un-retired 2026-08-27: G10 fixed -- the batch write path is strict UTF-8 (BOM) with a verified round-trip, and the stored answer was corrected to the verified value from facts.db.",
+  "retired": [],
+  "questions": [
+    {
+      "id": "jjk-pg-mei_mei-001",
+      "kind": "fact",
+      "question": "What are the kanji for Mei Mei's name?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "冥冥",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "hand G10: un-retired 2026-08-27 after the utf-8-sig write-path fix; answer verified against facts.db (key=kanji)"
+    },
+    {
+      "id": "jjk-pg-mei_mei-002",
+      "kind": "fact",
+      "question": "What is the romaji of Mei Mei's name?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Mei Mei",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:romaji"
+    },
+    {
+      "id": "jjk-pg-mei_mei-003",
+      "kind": "fact",
+      "question": "What is Mei Mei's race?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Human",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:race"
+    },
+    {
+      "id": "jjk-pg-mei_mei-004",
+      "kind": "fact",
+      "question": "What is Mei Mei's gender?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Female",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:gender"
+    },
+    {
+      "id": "jjk-pg-mei_mei-005",
+      "kind": "fact",
+      "question": "What is the status of Mei Mei?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Alive",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:status"
+    },
+    {
+      "id": "jjk-pg-mei_mei-006",
+      "kind": "fact",
+      "question": "What is Mei Mei's occupation?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Jujutsu Sorcerer",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:occupation"
+    },
+    {
+      "id": "jjk-pg-mei_mei-007",
+      "kind": "fact",
+      "question": "What is Mei Mei's grade?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Grade 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:class"
+    },
+    {
+      "id": "jjk-pg-mei_mei-008",
+      "kind": "fact",
+      "question": "In which manga chapter does Mei Mei first appear?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Chapter 0-3 (Cameo) Chapter 40",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:debut"
+    },
+    {
+      "id": "jjk-pg-mei_mei-009",
+      "kind": "fact",
+      "question": "In which anime episode is Mei Mei first depicted?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 17",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:debutanime"
+    },
+    {
+      "id": "jjk-pg-mei_mei-010",
+      "kind": "fact",
+      "question": "Who is Mei Mei's Japanese voice actor?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kotono Mitsuishi",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:voice"
+    },
+    {
+      "id": "jjk-pg-mei_mei-011",
+      "kind": "fact",
+      "question": "Who is Mei Mei's English voice actor?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Amber Lee Connors",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:identity:eng voice"
+    },
+    {
+      "id": "jjk-pg-mei_mei-012",
+      "kind": "set",
+      "question": "What are all the named techniques of Mei Mei?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Bird Manipulation",
+          "aliases": []
+        },
+        {
+          "item": "Bird Strike",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:techniques"
+    },
+    {
+      "id": "jjk-pg-mei_mei-013",
+      "kind": "set",
+      "question": "What are all the subordinates of Mei Mei?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo",
+          "aliases": []
+        },
+        {
+          "item": "Suguru Geto",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-24",
+      "note": "page-gen:relation:subordinate"
+    },
+    {
+      "id": "jjk-pg-mei_mei-014",
+      "kind": "fact",
+      "question": "What cursed technique does Mei Mei use to share vision while scouting?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Bird Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Cursed Technique section - shares vision with controlled birds"
+    },
+    {
+      "id": "jjk-pg-mei_mei-015",
+      "kind": "fact",
+      "question": "What type of combatant did Mei Mei craft herself into due to believing her technique was weak?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "close-quarters combatant",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Abilities and Powers / Overview - trained as close-quarters combatant"
+    },
+    {
+      "id": "jjk-pg-mei_mei-016",
+      "kind": "fact",
+      "question": "What rank did Mei Mei achieve in the first Popularity Poll?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "47th",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Trivia - first Popularity Poll ranking"
+    },
+    {
+      "id": "jjk-pg-mei_mei-017",
+      "kind": "fact",
+      "question": "Who is Mei Mei's younger brother?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Ui Ui",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: lead + infobox relatives field"
+    },
+    {
+      "id": "jjk-pg-mei_mei-018",
+      "kind": "fact",
+      "question": "How many individuals has Mei Mei's Bird Strike ever failed to kill?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Satoru Gojo, Kenjaku, and Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Cursed Technique section - Bird Strike description"
+    },
+    {
+      "id": "jjk-pg-mei_mei-019",
+      "kind": "fact",
+      "question": "What cursed tool is Mei Mei's primary weapon in combat?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Battle Axe",
+          "aliases": [
+            "battle axe"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Equipment section - battle axe description; fixed answer from verbose version"
+    },
+    {
+      "id": "jjk-pg-mei_mei-020",
+      "kind": "fact",
+      "question": "What power did Mei Mei lack that forced her to train as a close-quarters combatant?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "innate technique",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Abilities and Powers / Overview - weak innate technique belief"
+    },
+    {
+      "id": "jjk-pg-mei_mei-021",
+      "kind": "fact",
+      "question": "What did Satoru Gojo state about Mei Mei regarding her strength?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "he believes Mei Mei is strong",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Abilities and Powers / Overview - Gojo's assessment"
+    },
+    {
+      "id": "jjk-pg-mei_mei-022",
+      "kind": "fact",
+      "question": "What did Mei Mei claim she couldn't remember the last time of before the Smallpox Deity encounter?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "her life was in danger",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Abilities and Powers / Overview - Smallpox Deity domain"
+    },
+    {
+      "id": "jjk-pg-mei_mei-023",
+      "kind": "fact",
+      "question": "In what episode is Mei Mei first depicted in the anime?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Episode 17",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Trivia + infobox - anime debut"
+    },
+    {
+      "id": "jjk-pg-mei_mei-024",
+      "kind": "fact",
+      "question": "What degree of control does Mei Mei have over cursed energy making her a master?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "cursed energy control",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Cursed Energy section - cursed energy reinforcement"
+    },
+    {
+      "id": "jjk-pg-mei_mei-025",
+      "kind": "fact",
+      "question": "What grade was Niji Ebina believed to be as strong as?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "semi-grade 1",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Abilities and Powers / Overview - Niji Ebina comparison"
+    },
+    {
+      "id": "jjk-pg-mei_mei-026",
+      "kind": "fact",
+      "question": "What happened between Mei Mei and Ui Ui regarding cursed energy?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "a binding vow",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Cursed Restrictions section - binding vow details"
+    },
+    {
+      "id": "jjk-pg-mei_mei-027",
+      "kind": "fact",
+      "question": "In what form does Mei Mei's name contain the kanji for \"dark/darkness, invisible, divine, hell\"?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "compound",
+          "aliases": [
+            "compound form"
+          ]
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Trivia - name kanji in compound form; fixed answer and question wording for retrieval"
+    },
+    {
+      "id": "jjk-pg-mei_mei-028",
+      "kind": "fact",
+      "question": "What cursed technique does Mei Mei use to scout inside Meiji-Jingumae station during Shibuya?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Black Bird Manipulation",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Intelligence section - uses crows to scout"
+    },
+    {
+      "id": "jjk-pg-mei_mei-029",
+      "kind": "fact",
+      "question": "What did Mei Mei use Bird Strike against at Gojo's request?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Gojo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Trivia - Bird Strike used at Gojo's request post-Toji"
+    },
+    {
+      "id": "jjk-pg-mei_mei-030",
+      "kind": "fact",
+      "question": "Mei Mei uses Black Bird Manipulation to imbue crows with what to control them?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "cursed energy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Cursed Technique section - Black Bird Manipulation mechanics"
+    },
+    {
+      "id": "jjk-pg-mei_mei-031",
+      "kind": "fact",
+      "question": "What is Mei Mei's favorite dish according to the Fanbook?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Bak kut teh",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Trivia - Fanbook hobbies data"
+    },
+    {
+      "id": "jjk-pg-mei_mei-032",
+      "kind": "fact",
+      "question": "What does Mei Mei enjoy rather than simply hoarding money?",
+      "subject": "Mei Mei",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "the game behind building her bank account",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mei_Mei"
+      ],
+      "verified": "2026-08-27",
+      "note": "prose: Trivia - bank account enjoyment"
+    }
+  ]
+}

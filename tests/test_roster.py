@@ -21,6 +21,7 @@ from scriptengine.retrieve.roster import (
     content_words,
     load_rosters,
     looks_like_enumeration,
+    rank_relations,
 )
 from scriptengine.stores.facts import FactStore, rank_subjects
 
@@ -308,3 +309,53 @@ class TestMemberOrdering:
         assert [member.group for member in members] == [
             "Grade 2", "Special Grade", "Special Grade"
         ]
+
+
+class TestRankRelations:
+    """The relations slice is ranked by the question before it is cut.
+
+    `edges_for` returns strongest-confidence first and stops at its own limit, so
+    on a character with many edges the one that answers the question can fall
+    outside the served twenty without ever being ranked. Ranking by relevance to
+    the question first means the edge the question names leads.
+    """
+
+    def test_the_relation_the_question_names_leads(self):
+        rels = [
+            {"relation": "mentor", "confidence": 0.9,
+             "source": "Satoru Gojo", "target": "Megumi Fushiguro"},
+            {"relation": "family", "confidence": 1.0,
+             "source": "A", "target": "B"},
+        ]
+        out = rank_relations(rels, "Who is Satoru Gojo's mentor?")
+        assert [r["relation"] for r in out] == ["mentor", "family"]
+
+    def test_no_relation_word_keeps_confidence_order(self):
+        rels = [
+            {"relation": "mentor", "confidence": 0.9, "source": "a", "target": "b"},
+            {"relation": "family", "confidence": 1.0, "source": "c", "target": "d"},
+        ]
+        out = rank_relations(rels, "tell me about gojo")
+        assert [r["confidence"] for r in out] == [1.0, 0.9]
+
+    def test_within_a_band_confidence_still_orders(self):
+        rels = [
+            {"relation": "mentor", "confidence": 0.6, "source": "a", "target": "b"},
+            {"relation": "student", "confidence": 0.95, "source": "c", "target": "d"},
+            {"relation": "family", "confidence": 1.0, "source": "e", "target": "f"},
+        ]
+        out = rank_relations(rels, "who is the mentor")
+        # `mentor` leads; among the rest confidence order survives.
+        assert [r["relation"] for r in out] == ["mentor", "family", "student"]
+
+    def test_input_is_not_mutated(self):
+        rels = [
+            {"relation": "mentor", "confidence": 0.9, "source": "a", "target": "b"},
+            {"relation": "family", "confidence": 1.0, "source": "c", "target": "d"},
+        ]
+        before = list(rels)
+        rank_relations(rels, "mentor")
+        assert rels == before
+
+    def test_empty_is_empty(self):
+        assert rank_relations([], "who is the mentor") == []

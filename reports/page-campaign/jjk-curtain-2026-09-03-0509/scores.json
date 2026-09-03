@@ -1,0 +1,149 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Curtain's name?",
+      "id": "jjk-pg-curtain-001",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "\u5e33"
+      ],
+      "found": [
+        "\u5e33"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Curtain's name?",
+      "id": "jjk-pg-curtain-002",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "Tobari"
+      ],
+      "found": [
+        "Tobari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Curtain first appear?",
+      "id": "jjk-pg-curtain-003",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-1 Chapter 6"
+      ],
+      "found": [
+        "Chapter 0-1 Chapter 6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Curtain first depicted?",
+      "id": "jjk-pg-curtain-004",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "Episode 4"
+      ],
+      "found": [
+        "Episode 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is a curtain created?",
+      "id": "jjk-pg-curtain-005",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "A curtain is created with the same general process as any simple barrier."
+      ],
+      "found": [
+        "A curtain is created with the same general process as any simple barrier."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the outer curtain barrier look like?",
+      "id": "jjk-pg-curtain-006",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "Upon activation, a dark, almost liquid-like matter drips down from the sky to form the outer barrier wall in the shape of a half-sphere."
+      ],
+      "found": [
+        "Upon activation, a dark, almost liquid-like matter drips down from the sky to form the outer barrier wall in the shape of a half-sphere."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does a curtain hide from non-sorcerers?",
+      "id": "jjk-pg-curtain-007",
+      "subject": "Curtain",
+      "accept": "all",
+      "expected": [
+        "Anything within the barrier will be imperceivable from outside view, preventing non-sorcerers from being able to see any jujutsu or cursed spirit activity inside."
+      ],
+      "found": [
+        "Anything within the barrier will be imperceivable from outside view, preventing non-sorcerers from being able to see any jujutsu or cursed spirit activity inside."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

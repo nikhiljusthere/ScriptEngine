@@ -656,6 +656,7 @@ def index(
     import logging
 
     from rich.progress import Progress as RichProgress
+    from rich.progress import TaskID
 
     from scriptengine.index.build import build_index, write_status
 
@@ -667,7 +668,7 @@ def index(
     paths = series_paths(series)
 
     with RichProgress(transient=True) as bar:
-        tasks: dict[str, int] = {}
+        tasks: dict[str, TaskID] = {}
 
         def on_progress(stage: str, done: int, total: int) -> None:
             if stage not in tasks:
@@ -1837,4 +1838,12 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    # canon_gold's scorer prints raw CJK (kanji identity answers) to stdout; on a
+    # Windows cp1252 console that raises UnicodeEncodeError unless stdout is
+    # UTF-8. canon_gold.main() reconfigures itself, but the CLI entry never runs
+    # that path, so force it here (page-run, canon-run, etc.).
+    for _stream in (sys.stdout, sys.stderr):
+        _reconfigure = getattr(_stream, "reconfigure", None)
+        if _reconfigure is not None:
+            _reconfigure(encoding="utf-8", errors="replace")
     sys.exit(app())

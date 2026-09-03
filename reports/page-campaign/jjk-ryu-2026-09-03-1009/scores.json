@@ -1,0 +1,167 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Ryu's name?",
+      "id": "jjk-pg-ryu-001",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "\u7adc"
+      ],
+      "found": [
+        "\u7adc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Ryu's name?",
+      "id": "jjk-pg-ryu-002",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "Ry\u016b"
+      ],
+      "found": [
+        "Ry\u016b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Ryu first appear?",
+      "id": "jjk-pg-ryu-003",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "Chapter 97 (Attempted)\nChapter 257"
+      ],
+      "found": [
+        "Chapter 97 (Attempted)\nChapter 257"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Ryu first depicted?",
+      "id": "jjk-pg-ryu-004",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "Episode 35 (Attempted)"
+      ],
+      "found": [
+        "Episode 35 (Attempted)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What form does Ryu take?",
+      "id": "jjk-pg-ryu-005",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "Ryu takes the form of a large serpentine creature with two forearms that end in claws, black eyes, and a pair of horns."
+      ],
+      "found": [
+        "Ryu takes the form of a large serpentine creature with two forearms that end in claws, black eyes, and a pair of horns."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Ryu summoned from the user's hand?",
+      "id": "jjk-pg-ryu-006",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "It is summoned from the user's right hand after they concentrate cursed energy through it."
+      ],
+      "found": [
+        "It is summoned from the user's right hand after they concentrate cursed energy through it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Ino claim about Ryu's power as an Auspicious Beast?",
+      "id": "jjk-pg-ryu-007",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "According to Ino, Ryu is a powerful Auspicious Beast, as none of his opponents survived to tell the tale after he used it against them."
+      ],
+      "found": [
+        "According to Ino, Ryu is a powerful Auspicious Beast, as none of his opponents survived to tell the tale after he used it against them."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Ryu a reference to?",
+      "id": "jjk-pg-ryu-008",
+      "subject": "Ryu",
+      "accept": "all",
+      "expected": [
+        "Ryu is a reference to the Japanese name of the Chinese dragon, a creature from East Asian mythology."
+      ],
+      "found": [
+        "Ryu is a reference to the Japanese name of the Chinese dragon, a creature from East Asian mythology."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 8,
+    "fact_present": 8
+  }
+}

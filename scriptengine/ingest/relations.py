@@ -406,7 +406,7 @@ def extract_series(
     overrides = load_overrides(paths)
     client = LLMClient(settings)
     if not client.available():
-        raise LLMUnavailable(f"No model at {client.base_url}.")
+        raise LLMUnavailable(f"No model at {client.settings.llm_base_url}.")
 
     report = {"considered": 0, "extracted": 0, "cached": 0, "failed": 0, "relations": 0}
     with FactStore(paths.facts_db) as store:

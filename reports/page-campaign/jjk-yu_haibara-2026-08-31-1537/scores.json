@@ -1,0 +1,581 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Yu Haibara?",
+      "set": "Every ally of Yu Haibara",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Yu Haibara?",
+      "set": "Yu Haibara's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Yu Haibara?",
+      "found": [
+        "Suguru Geto",
+        "Satoru Gojo",
+        "Kento Nanami"
+      ],
+      "missing": [],
+      "members": [
+        "Kento Nanami",
+        "Satoru Gojo",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Yu Haibara?",
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Tokyo Jujutsu High"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Yu Haibara's name?",
+      "id": "jjk-pg-yu_haibara-001",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "\u7070\u539f\u96c4"
+      ],
+      "found": [
+        "\u7070\u539f\u96c4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Yu Haibara's name?",
+      "id": "jjk-pg-yu_haibara-002",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Haibara Y\u016b"
+      ],
+      "found": [
+        "Haibara Y\u016b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yu Haibara's race?",
+      "id": "jjk-pg-yu_haibara-003",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Yu Haibara?",
+      "id": "jjk-pg-yu_haibara-004",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "17"
+      ],
+      "found": [
+        "17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yu Haibara's gender?",
+      "id": "jjk-pg-yu_haibara-005",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Yu Haibara?",
+      "id": "jjk-pg-yu_haibara-006",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yu Haibara's occupation?",
+      "id": "jjk-pg-yu_haibara-007",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Student"
+      ],
+      "found": [
+        "Jujutsu Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yu Haibara first appear?",
+      "id": "jjk-pg-yu_haibara-008",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Chapter 70"
+      ],
+      "found": [
+        "Chapter 70"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Yu Haibara first depicted?",
+      "id": "jjk-pg-yu_haibara-009",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Episode 27"
+      ],
+      "found": [
+        "Episode 27"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Yu Haibara's Japanese voice actor?",
+      "id": "jjk-pg-yu_haibara-010",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Gakuto Kajiwara"
+      ],
+      "found": [
+        "Gakuto Kajiwara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Yu Haibara's English voice actor?",
+      "id": "jjk-pg-yu_haibara-011",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Ryan Colt Levy"
+      ],
+      "found": [
+        "Ryan Colt Levy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Yu Haibara's classmate at Tokyo Jujutsu High?",
+      "id": "jjk-pg-yu_haibara-014",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "Kento Nanami"
+      ],
+      "found": [
+        "Kento Nanami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yu Haibara look like?",
+      "id": "jjk-pg-yu_haibara-015",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "a young man with short dark hair, thin eyebrows, and wide, passionate eyes"
+      ],
+      "found": [
+        "a young man with short dark hair, thin eyebrows, and wide, passionate eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yu's uniform differ from the standard?",
+      "id": "jjk-pg-yu_haibara-016",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "his jacket was cropped and left unbuttoned"
+      ],
+      "found": [
+        "his jacket was cropped and left unbuttoned"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Yu Haibara characterized?",
+      "id": "jjk-pg-yu_haibara-017",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "an optimistic and cheerful young man who sought to prove himself to his upperclassmen"
+      ],
+      "found": [
+        "an optimistic and cheerful young man who sought to prove himself to his upperclassmen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yu describe himself?",
+      "id": "jjk-pg-yu_haibara-018",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "straightforward and not given to overthinking"
+      ],
+      "found": [
+        "straightforward and not given to overthinking"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Yu Haibara's approximate strength level?",
+      "id": "jjk-pg-yu_haibara-019",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "approximately at the grade 2 level"
+      ],
+      "found": [
+        "approximately at the grade 2 level"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank was the cursed spirit Yu and Nanami were sent to exorcise actually?",
+      "id": "jjk-pg-yu_haibara-020",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "a grade 1"
+      ],
+      "found": [
+        "a grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yu Haibara rank in the second Popularity Poll?",
+      "id": "jjk-pg-yu_haibara-021",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "26th in the second Popularity Poll with 266 votes"
+      ],
+      "found": [
+        "26th in the second Popularity Poll with 266 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yu Haibara rank in the third Popularity Poll?",
+      "id": "jjk-pg-yu_haibara-022",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "26th in the third Popularity Poll with 189 votes"
+      ],
+      "found": [
+        "26th in the third Popularity Poll with 189 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yu Haibara rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-yu_haibara-023",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "27th in the fourth Popularity Poll with 260 votes"
+      ],
+      "found": [
+        "27th in the fourth Popularity Poll with 260 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of girls did Yu like?",
+      "id": "jjk-pg-yu_haibara-024",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "girls who ate a lot"
+      ],
+      "found": [
+        "girls who ate a lot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could Yu's younger sister do?",
+      "id": "jjk-pg-yu_haibara-025",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "see curses"
+      ],
+      "found": [
+        "see curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yu forbid his sister from doing?",
+      "id": "jjk-pg-yu_haibara-026",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "attending Jujutsu High"
+      ],
+      "found": [
+        "attending Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Yu's favorite food?",
+      "id": "jjk-pg-yu_haibara-027",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "rice"
+      ],
+      "found": [
+        "rice"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yu's hobby according to the fanbook?",
+      "id": "jjk-pg-yu_haibara-028",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "binge eating"
+      ],
+      "found": [
+        "binge eating"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "If alive, how would Yu have regarded Geto's betrayal?",
+      "id": "jjk-pg-yu_haibara-029",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "unbelievable"
+      ],
+      "found": [
+        "unbelievable"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yu respect Geto and Gojo?",
+      "id": "jjk-pg-yu_haibara-030",
+      "subject": "Yu Haibara",
+      "accept": "all",
+      "expected": [
+        "he tended to see people's good points"
+      ],
+      "found": [
+        "he tended to see people's good points"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 28,
+    "fact_present": 28
+  }
+}

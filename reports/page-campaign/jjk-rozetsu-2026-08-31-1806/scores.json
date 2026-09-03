@@ -1,0 +1,507 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Rozetsu?",
+      "set": "Every named technique of Rozetsu",
+      "confidence": "declared",
+      "returned": 10,
+      "available": 10,
+      "canon": 10,
+      "found": 10,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Rozetsu?",
+      "set": "Every enemy of Rozetsu",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Rozetsu?",
+      "found": [
+        "Ferocious Unit",
+        "Cursed Energy Capacity",
+        "Cursed Energy Manipulation",
+        "Cursed Spirit Creation",
+        "Cursed Technique Snatch",
+        "Ten Shadows Technique",
+        "Divine Dogs",
+        "Nue",
+        "Boogie Woogie",
+        "Unquenchable Thirst"
+      ],
+      "missing": [],
+      "members": [
+        "Boogie Woogie",
+        "Cursed Energy Capacity",
+        "Cursed Energy Manipulation",
+        "Cursed Spirit Creation",
+        "Cursed Technique Snatch",
+        "Divine Dogs",
+        "Ferocious Unit",
+        "Nue",
+        "Ten Shadows Technique",
+        "Unquenchable Thirst"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Rozetsu?",
+      "found": [
+        "Masamichi Yaga",
+        "Kensuke Nagino"
+      ],
+      "missing": [],
+      "members": [
+        "Kensuke Nagino",
+        "Masamichi Yaga"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Rozetsu's name?",
+      "id": "jjk-pg-rozetsu-001",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "\u6727\u7d76"
+      ],
+      "found": [
+        "\u6727\u7d76"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Rozetsu's name?",
+      "id": "jjk-pg-rozetsu-002",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Rozetsu"
+      ],
+      "found": [
+        "Rozetsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rozetsu's race?",
+      "id": "jjk-pg-rozetsu-003",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Cursed Spirit"
+      ],
+      "found": [
+        "Cursed Spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rozetsu's gender?",
+      "id": "jjk-pg-rozetsu-004",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rozetsu's grade?",
+      "id": "jjk-pg-rozetsu-005",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Special Grade"
+      ],
+      "found": [
+        "Special Grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Rozetsu?",
+      "id": "jjk-pg-rozetsu-006",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Rozetsu's Japanese voice actor?",
+      "id": "jjk-pg-rozetsu-007",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Jun Fukuyama"
+      ],
+      "found": [
+        "Jun Fukuyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Rozetsu play in the series?",
+      "id": "jjk-pg-rozetsu-010",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "a character in Phantom Parade"
+      ],
+      "found": [
+        "a character in Phantom Parade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who supposedly exorcised Rozetsu 26 years ago?",
+      "id": "jjk-pg-rozetsu-011",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Masamichi Yaga and Kensuke Nagino"
+      ],
+      "found": [
+        "Masamichi Yaga and Kensuke Nagino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rozetsu look like?",
+      "id": "jjk-pg-rozetsu-012",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "a gaunt, pink-colored humanoid body"
+      ],
+      "found": [
+        "a gaunt, pink-colored humanoid body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened to Rozetsu's left arm?",
+      "id": "jjk-pg-rozetsu-013",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "its left arm has grotesquely enlarged"
+      ],
+      "found": [
+        "its left arm has grotesquely enlarged"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Rozetsu view humans?",
+      "id": "jjk-pg-rozetsu-014",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "cursed spirits are superior to humans"
+      ],
+      "found": [
+        "cursed spirits are superior to humans"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has Rozetsu made his life's work?",
+      "id": "jjk-pg-rozetsu-015",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "steal and collect cursed techniques that he particularly likes from humans"
+      ],
+      "found": [
+        "steal and collect cursed techniques that he particularly likes from humans"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Rozetsu typically speak?",
+      "id": "jjk-pg-rozetsu-016",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "remarkably high intelligence and speaks in a polite manner"
+      ],
+      "found": [
+        "remarkably high intelligence and speaks in a polite manner"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of personality does Rozetsu have regarding risks?",
+      "id": "jjk-pg-rozetsu-017",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "a cautious personality and avoids unnecessary risks"
+      ],
+      "found": [
+        "a cautious personality and avoids unnecessary risks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rozetsu's skill level like?",
+      "id": "jjk-pg-rozetsu-018",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "specializes in using his cursed technique but is relatively lacking in physical abilities"
+      ],
+      "found": [
+        "specializes in using his cursed technique but is relatively lacking in physical abilities"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rozetsu's Ferocious Unit form?",
+      "id": "jjk-pg-rozetsu-019",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Rozetsu's true form, which he was restored to after absorbing the mass-produced cursed spirits he had scattered across Kyushu"
+      ],
+      "found": [
+        "Rozetsu's true form, which he was restored to after absorbing the mass-produced cursed spirits he had scattered across Kyushu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How much cursed energy does Rozetsu have?",
+      "id": "jjk-pg-rozetsu-020",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "extraordinary amounts of cursed energy, befitting his rank as a special grade cursed spirit"
+      ],
+      "found": [
+        "extraordinary amounts of cursed energy, befitting his rank as a special grade cursed spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Rozetsu feign death?",
+      "id": "jjk-pg-rozetsu-021",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "feign death by \"decomposing\" himself into cursed energy while retaining consciousness"
+      ],
+      "found": [
+        "feign death by \"decomposing\" himself into cursed energy while retaining consciousness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Rozetsu create besides himself?",
+      "id": "jjk-pg-rozetsu-022",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "other cursed spirits"
+      ],
+      "found": [
+        "other cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rozetsu's Cursed Technique Snatch allow him to do?",
+      "id": "jjk-pg-rozetsu-023",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "recreate other jujutsu sorcerers' cursed techniques"
+      ],
+      "found": [
+        "recreate other jujutsu sorcerers' cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What three conditions must Rozetsu fulfill to steal a technique?",
+      "id": "jjk-pg-rozetsu-024",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "he needs direct contact with the target, he then needs their blood and cursed energy and finally, he needs to have experienced their cursed technique"
+      ],
+      "found": [
+        "he needs direct contact with the target, he then needs their blood and cursed energy and finally, he needs to have experienced their cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which technique did Rozetsu steal from Megumi Fushiguro?",
+      "id": "jjk-pg-rozetsu-025",
+      "subject": "Rozetsu",
+      "accept": "all",
+      "expected": [
+        "Ten Shadows Technique"
+      ],
+      "found": [
+        "Ten Shadows Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 12,
+    "canon_total": 12,
+    "canon_recall": 1.0,
+    "members_returned": 12,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 23,
+    "fact_present": 23
+  }
+}

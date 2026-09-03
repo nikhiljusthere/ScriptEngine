@@ -1,0 +1,1338 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +64 hand-authored prose (ids 003-066) + 2 page-gen identity; R5 forms: yes/no 035, comparative 065, counterfactual 067 (retired not-stated-on-page), how-many 015/020/024; infobox new-character field EMPTY; infobox us air date written out ('October 19, 2023'); Plot Details 35; OOA 7 entries (first Yuji Itadori / last Toji Fushiguro (Seánced - stray accent in the raw, item asked as the name)); Locations has 2 sub-items under Shibuya (053/054); B&E has 2 sub-battles under the ongoing incident (056/057); Jujutsu is a full Scroll box with 5 technique groups (058-064) - one colon hazard ('Divine Dog: Totality' -> fragment 061) and one colon-bearing link target resolving to a colon-free display (054); A&M 2; Trivia is a {{Section stub}} - no Trivia question; Music skipped",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_35-067",
+   "item": "",
+   "question": "What would have happened if Ino had not summoned Kaichi in Episode 35?",
+   "reason": "Counterfactual: the page states only that 'Ino summons auspicious beast no. 1: Kaichi' and that it carves away a large section of the grandson's defending arm; no hypothetical of a failed summoning is stated on the page. Never invent a resolution. Satisfies the R5 counterfactual form.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_35-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 35's name?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "降霊",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_35-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 35's name?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kōrei",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_35-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Summon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ep title"
+  },
+  {
+   "id": "jjk-pg-episode_35-004",
+   "kind": "fact",
+   "question": "When did Episode 35 air in Japan?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-10-05",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:jp air date"
+  },
+  {
+   "id": "jjk-pg-episode_35-005",
+   "kind": "fact",
+   "question": "When did Episode 35 air in the United States?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "October 19, 2023",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:us air date (written out, not ISO, on this page)"
+  },
+  {
+   "id": "jjk-pg-episode_35-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 35 belong to?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:arc"
+  },
+  {
+   "id": "jjk-pg-episode_35-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "SPECIALZ",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:opening song"
+  },
+  {
+   "id": "jjk-pg-episode_35-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "more than words",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:ending song"
+  },
+  {
+   "id": "jjk-pg-episode_35-009",
+   "kind": "fact",
+   "question": "Which manga chapter comes first in Episode 35's adaptation?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 94",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:adapted from (first of four)"
+  },
+  {
+   "id": "jjk-pg-episode_35-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 34",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:previous"
+  },
+  {
+   "id": "jjk-pg-episode_35-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 36",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:next"
+  },
+  {
+   "id": "jjk-pg-episode_35-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "infobox:season number (single-digit lint false-positive class, benign per ep32-012)"
+  },
+  {
+   "id": "jjk-pg-episode_35-013",
+   "kind": "fact",
+   "question": "Who is up to taking down the curtain in Episode 35's summary?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "summary (display text via [[Yuji Itadori|Yuji]])"
+  },
+  {
+   "id": "jjk-pg-episode_35-014",
+   "kind": "fact",
+   "question": "What role does Episode 35 play in the second season?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the eleventh episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "intro"
+  },
+  {
+   "id": "jjk-pg-episode_35-015",
+   "kind": "fact",
+   "question": "How many curtains overlap each other across Shibuya in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "four",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_35-016",
+   "kind": "fact",
+   "question": "What does Megumi suggest they have to do with the curtain in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "find a weak point",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-017",
+   "kind": "fact",
+   "question": "What does Ino believe about the curtain's user in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the user must be inside the curtain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-018",
+   "kind": "fact",
+   "question": "What does Yuji reveal to Ino in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "what happened at Meiji-Jingumae Station",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-019",
+   "kind": "fact",
+   "question": "What building do the trio look up at in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Central Tower",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-020",
+   "kind": "fact",
+   "question": "How many curse users stand atop the tower in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_35-021",
+   "kind": "fact",
+   "question": "What do Yuji and Ino use to scale the tower in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nue",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-022",
+   "kind": "fact",
+   "question": "What does Yuji get from Maki in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a wire",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-023",
+   "kind": "fact",
+   "question": "What do stakes wrapped in talismans serve as in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the base for the curtain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-024",
+   "kind": "fact",
+   "question": "How many talismans are missing in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "two",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (how-many form)"
+  },
+  {
+   "id": "jjk-pg-episode_35-025",
+   "kind": "fact",
+   "question": "How does Yuji take Awasaka out in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "dropping him off the skyscraper",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-026",
+   "kind": "fact",
+   "question": "What does Ino lower over his face in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his mask",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-027",
+   "kind": "fact",
+   "question": "What does Ino say it's time to carve a path to in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "grade 1",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-028",
+   "kind": "fact",
+   "question": "What is wrong with Awasaka's body, according to Megumi in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Awasaka's body is too clean from the impact",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-029",
+   "kind": "fact",
+   "question": "Why does Ino insist Nanami be the one to recommend him for grade 1 in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he looks up to him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-030",
+   "kind": "fact",
+   "question": "What does Ino summon as auspicious beast no. 1 in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Kaichi",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (colon hazard 'auspicious beast no. 1: Kaichi' - asked via the link only, no colon)"
+  },
+  {
+   "id": "jjk-pg-episode_35-031",
+   "kind": "fact",
+   "question": "What does Ino summon next in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reiki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-032",
+   "kind": "fact",
+   "question": "What does Yuji land on Awasaka in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "hard punches",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-033",
+   "kind": "fact",
+   "question": "What slashes the curse user across the face in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Divine Dog's claws",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (link target 'Divine Dog: Totality' resolves to display 'Divine Dog's' - colon-free, safe)"
+  },
+  {
+   "id": "jjk-pg-episode_35-034",
+   "kind": "fact",
+   "question": "What does Megumi's Toad slam Awasaka into in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an overpass",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-035",
+   "kind": "fact",
+   "question": "Does Awasaka remain undamaged after the initial assault in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "remains undamaged",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (yes/no form)"
+  },
+  {
+   "id": "jjk-pg-episode_35-036",
+   "kind": "fact",
+   "question": "What does the grandson consume in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a capsule containing DNA",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-037",
+   "kind": "fact",
+   "question": "Whose soul does the necromancer seance into the grandson in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-038",
+   "kind": "fact",
+   "question": "What does the grandson claim about the transformation in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it's the best one ever",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-039",
+   "kind": "fact",
+   "question": "When was Satoru Gojo born, according to Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "December 7th, 1989",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-040",
+   "kind": "fact",
+   "question": "What did Awasaka and Ogami understand from one glance from the Six Eyes in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "how dangerous he was",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-041",
+   "kind": "fact",
+   "question": "What does Megumi activate to block off their opponent in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Rabbit Escape",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-042",
+   "kind": "fact",
+   "question": "What does Megumi tell Yuji to do in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "retreat for now",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-043",
+   "kind": "fact",
+   "question": "What does Ino realize about his opponent in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his opponent has been transformed through a seance",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-044",
+   "kind": "fact",
+   "question": "Why does Ino recognize his opponent's method in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Granny Ogami is a medium, just like him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-045",
+   "kind": "fact",
+   "question": "What does Toji land on Ino in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a devastating punch to the chin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-046",
+   "kind": "fact",
+   "question": "What does Megumi drop down with from above in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Max Elephant",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-047",
+   "kind": "fact",
+   "question": "What does Yuji hurl at the curse user in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an entire car",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-048",
+   "kind": "fact",
+   "question": "What does Awasaka's innate technique do in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "making attacks weaker the stronger they are and vice versa",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-049",
+   "kind": "fact",
+   "question": "How does Yuji knock Awasaka unconscious in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "adjusts it into a weaker punch",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_35-050",
+   "kind": "fact",
+   "question": "Which character is listed first in Episode 35's order of appearance?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (first)"
+  },
+  {
+   "id": "jjk-pg-episode_35-051",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 35's order of appearance?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Fushiguro",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "order of appearance (last, seanced)"
+  },
+  {
+   "id": "jjk-pg-episode_35-052",
+   "kind": "fact",
+   "question": "Which location is listed first in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (1 of 3)"
+  },
+  {
+   "id": "jjk-pg-episode_35-053",
+   "kind": "fact",
+   "question": "Which tower is listed under Shibuya in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya Tower",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (2 of 3, sub-item)"
+  },
+  {
+   "id": "jjk-pg-episode_35-054",
+   "kind": "fact",
+   "question": "Which expressway route is listed under Shibuya in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Metropolitan Expressway Route No. 3 Shibuya Line",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "locations (3 of 3, sub-item; link target carries a colon but resolves to the colon-free display - same benign variant as ep33-025)"
+  },
+  {
+   "id": "jjk-pg-episode_35-055",
+   "kind": "fact",
+   "question": "Which event is ongoing in Episode 35's battles and events?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The Shibuya Incident",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (ongoing)"
+  },
+  {
+   "id": "jjk-pg-episode_35-056",
+   "kind": "fact",
+   "question": "Which battle is listed first under the Shibuya Incident in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Takuma Ino vs. Ogami & Her Grandson",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (1st sub-battle)"
+  },
+  {
+   "id": "jjk-pg-episode_35-057",
+   "kind": "fact",
+   "question": "Which battle is listed second under the Shibuya Incident in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji Itadori & Megumi Fushiguro vs. Jiro Awasaka",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "battles & events (2nd sub-battle)"
+  },
+  {
+   "id": "jjk-pg-episode_35-058",
+   "kind": "fact",
+   "question": "What is listed under barriers in Episode 35's jujutsu section?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Commissioned Curtain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Barriers ([[Talisman|Commissioned Curtain]] display)"
+  },
+  {
+   "id": "jjk-pg-episode_35-059",
+   "kind": "fact",
+   "question": "What technique is listed under Jiro Awasaka in Episode 35's jujutsu section?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Inverse",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Jiro Awasaka's Techniques"
+  },
+  {
+   "id": "jjk-pg-episode_35-060",
+   "kind": "fact",
+   "question": "What technique is listed under Megumi Fushiguro in Episode 35's jujutsu section?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ten Shadows Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Megumi Fushiguro's Techniques"
+  },
+  {
+   "id": "jjk-pg-episode_35-061",
+   "kind": "fact",
+   "question": "Which technique is listed as a sub-item under Megumi Fushiguro in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Divine Dog",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:sub-item (COLON HAZARD: 'Divine Dog: Totality' truncates at the colon - asked via fragment, same instance-class as ep31-056)"
+  },
+  {
+   "id": "jjk-pg-episode_35-062",
+   "kind": "fact",
+   "question": "What technique is listed under Ogami in Episode 35's jujutsu section?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Séance Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Ogami's Techniques (note the accented 'e')"
+  },
+  {
+   "id": "jjk-pg-episode_35-063",
+   "kind": "fact",
+   "question": "What summoning technique is listed under Takuma Ino in Episode 35's jujutsu section?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Auspicious Beasts Summon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:Takuma Ino's Techniques"
+  },
+  {
+   "id": "jjk-pg-episode_35-064",
+   "kind": "fact",
+   "question": "Which beast is listed as failed under Ino in Episode 35?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ryu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "jujutsu:sub-item 'Ryu (Failed)' - asked via the name, not the parenthetical"
+  },
+  {
+   "id": "jjk-pg-episode_35-065",
+   "kind": "fact",
+   "question": "What does Yuji dive into in the anime, according to Episode 35's differences?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a hotel room",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences (comparative form: anime hotel room vs. manga hallway)"
+  },
+  {
+   "id": "jjk-pg-episode_35-066",
+   "kind": "fact",
+   "question": "Where is Megumi seen standing after dispelling Max Elephant in the anime, according to Episode 35's differences?",
+   "subject": "Episode 35",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a lamp post",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_35"
+   ],
+   "verified": "2026-09-01",
+   "note": "anime & manga differences"
+  }
+ ]
+}

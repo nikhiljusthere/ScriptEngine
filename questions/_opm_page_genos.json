@@ -1,0 +1,1541 @@
+{
+  "series": "opm",
+  "wiki": "https://onepunchman.fandom.com",
+  "updated": "2026-08-21",
+  "note": "Page campaign batch: Genos cluster (main page, synopsis, battles subpage). Excluded from the official bank by the underscore prefix; scored via `cli page-run --series opm --batch genos`.",
+  "questions": [
+    {
+      "id": "opm-pg-genos-001",
+      "kind": "set",
+      "question": "Every battle of Genos",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        { "item": "Garou vs. Genos", "aliases": [] },
+        { "item": "Genos vs. Armored Gorilla", "aliases": [] },
+        { "item": "Genos vs. Awakened Cockroach", "aliases": [] },
+        { "item": "Genos vs. Carnage Kabuto", "aliases": [] },
+        { "item": "Genos vs. Deep Sea King", "aliases": [] },
+        { "item": "Genos vs. Face Ripper", "aliases": [] },
+        { "item": "Genos vs. G4", "aliases": [] },
+        { "item": "Genos vs. G5", "aliases": [] },
+        { "item": "Genos vs. Mosquito Girl", "aliases": [] },
+        { "item": "Genos vs. Speed-o'-Sound Sonic", "aliases": [] },
+        { "item": "Genos, Bang, and Bomb vs. Elder Centipede", "aliases": [] },
+        { "item": "Genos, Bofoi, and Saitama vs. Meteor", "aliases": [] },
+        { "item": "Heroes vs. Monster Association Executives", "aliases": [] },
+        { "item": "Heroes vs. Psykos and Orochi", "aliases": [] },
+        { "item": "Saitama vs. Genos", "aliases": [] },
+        { "item": "Saitama vs. Genos: Round Two", "aliases": [] }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Battles"
+      ],
+      "verified": "2026-08-21",
+      "note": "Pre-verified gold: 16 battle titles transcribed 1:1 from the raw crawl of Genos's battle pages; matches the battles-in path."
+    },
+    {
+      "id": "opm-pg-genos-002",
+      "kind": "set",
+      "question": "What are all the aliases of Genos?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        { "item": "Demon Cyborg", "aliases": [] }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21",
+      "note": "Declared in series/opm/overrides.yaml (roster `Genos's aliases`): the name sits in the `alias =` infobox field and the intro on `Genos`."
+    },
+    {
+      "id": "opm-pg-genos-003",
+      "kind": "set",
+      "question": "What are all the major cyborg upgrades Genos has received in One Punch Man?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        { "item": "Anti-Saitama Tactical Arms", "aliases": [] },
+        { "item": "Arms Mode", "aliases": [] },
+        { "item": "Post-Sea-Monster-Arc Upgrade", "aliases": [] },
+        { "item": "G4 Upgrade", "aliases": [] },
+        { "item": "Post-Super-Fight-Arc Upgrade", "aliases": [] },
+        { "item": "Monster Association Arc Upgrade", "aliases": [] },
+        { "item": "Post-Psychic-Sisters-Arc Upgrade", "aliases": [] },
+        { "item": "Post-Supreme-Hero-Arc Upgrade", "aliases": [] },
+        { "item": "Kuseno's Final Upgrade", "aliases": [] }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21",
+      "note": "Declared in series/opm/overrides.yaml (roster `Every major cyborg upgrade Genos has received in One Punch Man`): all nine forms are named in the `List of Upgrades` section on `Genos`."
+    },
+    {
+      "id": "opm-pg-genos-004",
+      "kind": "fact",
+      "question": "What is Genos's hero name?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Demon Cyborg" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-005",
+      "kind": "fact",
+      "question": "What rank does Genos currently hold in the S-Class?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "S-Class Rank 11" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-006",
+      "kind": "fact",
+      "question": "What is the Japanese reading of Genos's name?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Jenosu" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-007",
+      "kind": "fact",
+      "question": "How tall is Genos?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "178 cm" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-008",
+      "kind": "fact",
+      "question": "What color are Genos's irises?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "yellow irises" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-009",
+      "kind": "fact",
+      "question": "What does Genos's hair look like?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "spiky blond hair" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-010",
+      "kind": "fact",
+      "question": "Why is all of Genos's upper-body attire sleeveless?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "allow his arms to transform without hassle" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-011",
+      "kind": "fact",
+      "question": "What does Genos call Saitama?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "master" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-012",
+      "kind": "fact",
+      "question": "How is Genos's personality described?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "extremely serious character" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-013",
+      "kind": "fact",
+      "question": "Besides Saitama, who does Genos hold deep respect for?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Dr. Kuseno" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-014",
+      "kind": "fact",
+      "question": "Which animal does Genos exhibit jealousy towards?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Overgrown Rover" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-015",
+      "kind": "fact",
+      "question": "How was Genos described before he became a cyborg?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "diligent and responsible boy" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-016",
+      "kind": "fact",
+      "question": "What chance of victory did the VGS simulations show Genos having against any Demon-level threat?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "70%" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-017",
+      "kind": "fact",
+      "question": "Which Dragon-level threat did Genos defeat single-handedly to underscore his growth?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Forest King" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-018",
+      "kind": "fact",
+      "question": "What did Gyoro Gyoro say Genos lacks?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "firepower" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-019",
+      "kind": "fact",
+      "question": "What can Genos do with a dropkick?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "breaking apart the ground" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-020",
+      "kind": "fact",
+      "question": "With which hero could Genos keep up in speed, both moving faster than Fubuki could see?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Speed-o'-Sound Sonic" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-021",
+      "kind": "fact",
+      "question": "What type of radiation is Genos remarkably resistant to?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "lethal radiation" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-022",
+      "kind": "fact",
+      "question": "What did Dr. Kuseno give Genos so his cybernetic body turns organic intake into biofuel?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the ability to taste" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-023",
+      "kind": "fact",
+      "question": "Where in his body is Genos's core held?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "inside his chest" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-024",
+      "kind": "fact",
+      "question": "What did it transpire Genos's core was during his fight with Psykos and Orochi?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a nuclear reactor" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-025",
+      "kind": "fact",
+      "question": "What mechanism in Genos's legs keeps the interval between landing and the next movement short?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "shock-absorbing mechanism" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-026",
+      "kind": "fact",
+      "question": "What do the ports in Genos's palms allow him to fire?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "large, powerful blasts of heat, fire, or plasma" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-027",
+      "kind": "fact",
+      "question": "Why is swimming difficult for Genos?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "too heavy to swim" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-028",
+      "kind": "fact",
+      "question": "What tool did Genos gain after his fight with Sonic to deal with faster opponents?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Instant Adhesive Gel" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-029",
+      "kind": "fact",
+      "question": "What form does Genos's Arms Mode take when inactive?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a suitcase" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-030",
+      "kind": "fact",
+      "question": "What did the G4 Upgrade replace Genos's parts with?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the parts of G4" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-031",
+      "kind": "fact",
+      "question": "What did the G4 Upgrade give Genos's hair?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "fiber enhancements" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-032",
+      "kind": "fact",
+      "question": "What can Genos do to his body parts if they get detached after the Post-Super-Fight-Arc Upgrade?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "recall his body parts" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-033",
+      "kind": "fact",
+      "question": "What shape do the blaster ports in Genos's palms take in his Monster Association Arc Upgrade?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "gaping demon mouths" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-034",
+      "kind": "fact",
+      "question": "How long can Genos sustain the full power of his Monster Association Arc Upgrade?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "ten seconds" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-035",
+      "kind": "fact",
+      "question": "What did Genos punch a huge hole through with Kuseno's Final Upgrade?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Child Emperor's Super Brave Giant" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-036",
+      "kind": "fact",
+      "question": "Who did Genos first use his Machine Gun Blow against?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Carnage Kabuto" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-037",
+      "kind": "fact",
+      "question": "What does Genos's Incineration Cannon beam do to a target?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "rapidly heat up a target to the point of being able to melt various metals" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-038",
+      "kind": "fact",
+      "question": "What was the True Spiral Incineration Cannon capable of matching?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "one of the strongest energy attacks from the fusion of Psykos and Orochi" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-039",
+      "kind": "fact",
+      "question": "How does Genos destroy himself when self-destruction is his last resort?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "overheating his core" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-040",
+      "kind": "fact",
+      "question": "During which fight did Genos first attempt to self-destruct?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "his fight against Mosquito Girl" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-041",
+      "kind": "fact",
+      "question": "What makes Genos's forearm retractable for the Rocket Punch?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a cable connected to his elbow" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-042",
+      "kind": "fact",
+      "question": "What did Genos's Jet Drive Arrow completely destroy?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "G5's true form" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-043",
+      "kind": "fact",
+      "question": "What did Genos use his Arm Lasers to destroy?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the leftover goo from Orochi's body" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-044",
+      "kind": "fact",
+      "question": "What is the name of the tactical combination formed by Genos and Drive Knight?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Tactical Combination: Promoted Rook" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-045",
+      "kind": "fact",
+      "question": "What is the main weapon of Genos's Promoted Rook transformation?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a giant sword with a guard shaped like a dragon's head and wings" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-046",
+      "kind": "fact",
+      "question": "What does Genos always carry with him to write down notes?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "an acid-proof notebook" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-047",
+      "kind": "fact",
+      "question": "What kind of phone does Genos use instead of a conventional smartphone?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a flip phone" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-048",
+      "kind": "fact",
+      "question": "What does the kanji for Genos's name mean?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "genocide" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-049",
+      "kind": "fact",
+      "question": "What is the other meaning of Genos's name's kanji in Chinese?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "to fight fiercely to the end" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-050",
+      "kind": "fact",
+      "question": "Which fighting game may Genos's Machine Gun Blow be a reference to?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Street Fighter" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-051",
+      "kind": "fact",
+      "question": "What does the Hero Encyclopedia list as the things Genos likes?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Saitama's teachings" },
+        { "item": "oiled sardine" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-052",
+      "kind": "fact",
+      "question": "What does the Hero Encyclopedia list as Genos's hobbies?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "surfing the internet" },
+        { "item": "reading" },
+        { "item": "writing in his diary" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-053",
+      "kind": "fact",
+      "question": "Which hero is promoted to S-Class one year ago, contradicting the claim about Genos?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Metal Bat" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-054",
+      "kind": "fact",
+      "question": "What does cleaning Genos's body require?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a high-pressure shower" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-055",
+      "kind": "fact",
+      "question": "What did Genos promise Dr. Kuseno he would do to the cyborg that destroyed his town?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "find that cyborg one day and destroy him" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-056",
+      "kind": "fact",
+      "question": "At what age was Genos a regular boy living happily with his family?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "15" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-057",
+      "kind": "fact",
+      "question": "What attacked and destroyed Genos's town, killing his family?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a crazy rampaging cyborg" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-058",
+      "kind": "fact",
+      "question": "Who found the surviving Genos in the ruins of his town?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Dr. Kuseno" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-059",
+      "kind": "fact",
+      "question": "What did Genos beg Dr. Kuseno to do?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "transform him into a cyborg" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-060",
+      "kind": "fact",
+      "question": "What did Genos promise Dr. Kuseno after his rebirth as a cyborg?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "one day he would find and destroy the cyborg" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-061",
+      "kind": "fact",
+      "question": "What was Genos unable to find despite four years of travel?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the whereabouts of the Rampaging Cyborg" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-062",
+      "kind": "fact",
+      "question": "What was Genos following on his first appearance?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a trail of dead animals" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-063",
+      "kind": "fact",
+      "question": "In which city was Mosquito Girl rampaging when Genos revealed himself?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Z-City" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-064",
+      "kind": "fact",
+      "question": "What did Genos take out of Mosquito Girl in return for losing his arm?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "both her legs" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-065",
+      "kind": "fact",
+      "question": "What stopped Genos from self-destructing against Mosquito Girl?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Saitama ungracefully smacks Mosquito Girl in the face" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-066",
+      "kind": "fact",
+      "question": "Where did Genos show up a week later, fully rebuilt?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Saitama's apartment" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-067",
+      "kind": "fact",
+      "question": "What limit did Saitama set when he asked Genos to sum up his story?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "under twenty words" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-068",
+      "kind": "fact",
+      "question": "What did Genos destroy upon finding the House of Evolution's base?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the building and part of a mountain in the distance" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-069",
+      "kind": "fact",
+      "question": "Which official hero certification exam did Genos and Saitama sign up at?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the 6th official hero certification exam" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-070",
+      "kind": "fact",
+      "question": "What did Genos receive on the hero certification exam?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a perfect 100" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-071",
+      "kind": "fact",
+      "question": "What contest did Saitama challenge Genos to at the udon shop?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "a spicy udon eating contest" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-072",
+      "kind": "fact",
+      "question": "What did Genos say Saitama's C-Class ranking went up from and to?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "388 rank" },
+        { "item": "342" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-073",
+      "kind": "fact",
+      "question": "Which S-Class hero greeted Genos at the Z-City branch?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Bang" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-074",
+      "kind": "fact",
+      "question": "What did Genos see Bang decide to protect as the meteor approached?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "his dojo" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-075",
+      "kind": "fact",
+      "question": "What did Genos attach his Power Core to before attacking the meteor?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the shoulder of his left arm" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-076",
+      "kind": "fact",
+      "question": "Which city was under attack when Genos received the call?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "J-City" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-077",
+      "kind": "fact",
+      "question": "What had the Deep Sea King just taken down at the Evacuation Shelter?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "four heroes" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-078",
+      "kind": "fact",
+      "question": "What did the Deep Sea King's Acid Spit do to Genos's body?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "melting his body" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-079",
+      "kind": "fact",
+      "question": "Who engaged the Deep Sea King right before it was about to finish Genos?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Mumen Rider" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-080",
+      "kind": "fact",
+      "question": "What warning did Drive Knight give Genos about a fellow S-Class hero?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "not to trust Metal Knight" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-081",
+      "kind": "fact",
+      "question": "What technique prevented Genos from tracking Sonic?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Four Shadows Burial" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-082",
+      "kind": "fact",
+      "question": "What did Genos believe about Saitama when he came back with a wig?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Saitama is very desperate" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-083",
+      "kind": "fact",
+      "question": "What did Face Ripper manage to chip away during their fight?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "parts of Genos' arm" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-084",
+      "kind": "fact",
+      "question": "Which hero defeated Genos on his way to the C-City Super Stadium?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Gouketsu" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-085",
+      "kind": "fact",
+      "question": "What movement style did Garou mimic to catch Genos off guard?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Watchdog Man" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-086",
+      "kind": "fact",
+      "question": "What did Garou rip off from Genos?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Genos' right arm" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-087",
+      "kind": "fact",
+      "question": "What did Genos declare about Saitama before readying his incineration cannon a third time?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "the strongest hero" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-088",
+      "kind": "fact",
+      "question": "Who intervened before Genos could fire his third incineration cannon?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Bang and Bomb" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-089",
+      "kind": "fact",
+      "question": "What move did Genos use to break Elder Centipede's teeth?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Jet Drive Arrow" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-090",
+      "kind": "fact",
+      "question": "What did Saitama say Genos lacked?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "power" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-091",
+      "kind": "fact",
+      "question": "Where did Genos note down Saitama's answer about what he lacks?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "his acid proof memo" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-092",
+      "kind": "fact",
+      "question": "What did Drive Knight propose to Genos as they were falling?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "that the two of them fuse" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-093",
+      "kind": "fact",
+      "question": "What did Genos regain when Fubuki used her psychic powers on him?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "his cooling function" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-094",
+      "kind": "fact",
+      "question": "What did Genos incinerate to save Tatsumaki?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "several Black Sperm clones" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-095",
+      "kind": "fact",
+      "question": "What was rumbling when King appeared to save Genos and Tatsumaki?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "King Engine" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-096",
+      "kind": "fact",
+      "question": "What did Saitama say it meant if Genos did not explode?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "he has indeed gotten stronger" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-097",
+      "kind": "fact",
+      "question": "What new move did Genos use to create a blinding light against Saitama?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "Lightning Core" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-098",
+      "kind": "fact",
+      "question": "What did Kuseno instruct Genos to locate before fleeing?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "his final set of armor" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-099",
+      "kind": "fact",
+      "question": "What did Saitama reconfirm as Genos's reason for wanting to get stronger?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "to exact revenge upon the Rampaging Cyborg" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    },
+    {
+      "id": "opm-pg-genos-100",
+      "kind": "fact",
+      "question": "What threat was Genos dispatched to T-City to confront?",
+      "subject": "Genos",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        { "item": "The Extended Family of Darkness" }
+      ],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Genos/Synopsis"
+      ],
+      "verified": "2026-08-21"
+    }
+  ]
+}

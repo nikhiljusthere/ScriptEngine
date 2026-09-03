@@ -254,11 +254,11 @@
       "id": "roster-02",
       "kind": "roster",
       "question": "Every Cursed Technique of Sukuna",
-      "note": "Resolved to the generic `Cursed Technique` page rather than to Sukuna, because 'cursed technique' is the longer alias.",
+      "note": "Resolved to the generic `Cursed Technique` page rather than to Sukuna, because 'cursed technique' is the longer alias. Corrected 2026-08-19 under the owner's taxonomy (HANDOVER Phase 1): a cursed technique is an Innate or Inherited Technique only. Malevolent Shrine is his Domain Expansion (`type = Domain Expansion` -> class `domain`) and Black Flash is Taijutsu (`type = Taijutsu` -> class `physical`); both are jujutsu abilities, not cursed techniques, so the engine's class filter correctly excludes them. The bank note on jjk-set-02 says the same. They were removed from expect_members rather than widening the keep-set, which would have inflated every other technique roster.",
       "expect_min_members": 5,
       "expect_members": [
-        "Malevolent Shrine",
-        "Black Flash"
+        "Shrine",
+        "Ten Shadows Technique"
       ],
       "expect_mode": "roster"
     },

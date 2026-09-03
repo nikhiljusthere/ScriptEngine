@@ -71,7 +71,7 @@ servers: SQLite and embedded Qdrant only.
 | `index/embedder.py` | Lazy-loaded `bge-large-en-v1.5` embedder + `bge-reranker-v2-m3` reranker, idle-unload, CPU fallback |
 | `retrieve/hybrid.py` | Vector ∪ BM25 ∪ graph → RRF fusion (k=60) → cross-encoder rerank → parent-section expansion |
 | `retrieve/narrative.py` | Chronological "beats" retrieval; walks chapter/episode/arc ordering |
-| `retrieve/roster.py` | Enumeration retrieval: declared sets, category reads, membership validation against topic constraints |
+| `retrieve/roster.py` | Enumeration retrieval: declared sets, category reads, membership validation against topic constraints, and the battles-in path (a fighter's whole fight list, per-fight role) |
 | `retrieve/citations.py` | Turns sparse `{{Ref}}` citations into per-sentence `(Chapter N, Episode M)` locators |
 | `retrieve/abilities.py` | Graph-driven backward walk (`user` edges) for "every ability of X" |
 | `retrieve/annotate.py` | Back-annotates an already-written script against the index |
@@ -81,6 +81,8 @@ servers: SQLite and embedded Qdrant only.
 | `api/main.py` | FastAPI app, `:8000`, `POST /context` primary route |
 | `api/context.py` | Assembles the token-budgeted context bundle, the actual product |
 | `api/rules.py` | `VOICE_RULES` / `STYLE_RULES` / `ANNOTATION_RULES`: the script-writing contract shipped with every context bundle |
+| `script/writer.py` | The writing loop: bundle → prompt → prose → verify tags against the raw crawl (repair passes) → length band (target ± 500) → saved file; title normalization |
+| `mcp/server.py` | MCP server over stdio (`research`, `verify_script`, `script_path`); wraps the same functions the API and CLI call, no second implementation |
 | `eval/` | Gold-question regression suite, catalogue generator, canon-recall scoring, script-tag verification |
 | `eval/questions.py` | Loads and validates `questions/<series>.json`. Series are discovered from filenames, so no `.py` file names a series |
 | `eval/canon_gold.py` | Scores the bank against the live server: recall and precision per set question, presence-in-bundle per fact question |
@@ -94,9 +96,13 @@ servers: SQLite and embedded Qdrant only.
 MediaWiki API → ingest/crawler.py → series/<name>/wikitext/*.json
    → ingest/ontology.py + ingest/wikitext.py → index/build.py
    → facts.db (SQLite) + vectors/ (Qdrant)
-   → retrieve/hybrid.py + narrative.py → api/main.py (:8000)
-   → external writer (AI assistant, or the legacy ComfyUI node)
+   → retrieve/ (hybrid + narrative + roster, incl. battles-in; citations)
+   → api/main.py (:8000)  |  cli.py (script-gen/verify)  |  mcp/server.py (stdio)
+   → script/writer.py: writer model → verify tags vs raw crawl → length band → saved file
 ```
+
+All three doors call the same `build_context` / `render_prompt`; there is one
+implementation to keep correct.
 
 Full rationale for each of these choices lives in `ARCHITECTURE.md`.
 
@@ -110,16 +116,17 @@ Electron shell + React 18/MUI (Create React App). `ui/electron/main.js` and
 
 The retired first-generation pipeline: crawler, four iterations of a
 spaCy/NER-based graph builder (`step2_build_graph.py` and `_v2`/`_v3`/`_v6`),
-an HTML cleaner, and Neo4j-based retrieval. Deliberately retained (not
-imported anywhere) until Phase 5 of the roadmap proves the replacement at
-parity. See `legacy/README.md` for the file-by-file reasoning.
+an HTML cleaner, and Neo4j-based retrieval. Deliberately retained (not imported
+anywhere) for reference; Phase 5 has since proven the replacement at parity
+(Jujutsu Kaisen scores 24/24 on its gold set). See `legacy/README.md` for the
+file-by-file reasoning.
 
 ## `tests/`
 
-23 `test_*.py` files mirroring the `scriptengine/` module layout (abilities,
-canon, chronology, chunker, citations, classify, context, export, ontology,
-retrieve, roster, router, semantics, stores, vectors, wikitext, and more).
-Run with `python -m pytest tests/ -q`.
+38 `test_*.py` files mirroring the `scriptengine/` module layout (abilities,
+battle_arity, canon, chronology, chunker, citations, classify, context, export,
+mcp_server, ontology, retrieve, roster, router, script_gen, semantics, stores,
+vectors, wikitext, and more). Run with `python -m pytest tests/ -q`.
 
 ## `docs/`
 
@@ -134,9 +141,12 @@ Run with `python -m pytest tests/ -q`.
 | `CATALOGUE.md` | Generated: current per-series stats, do not hand-edit |
 | `CORPUS_REPORT.md` | Crawl throughput and corpus size notes |
 | `EXTRACTION_AUDIT.md` | Extraction-quality audit findings |
+| `EXTRACTION_RUNBOOK.md` | The index-time model pass: LM Studio setup, tuning, measured trade-offs |
+| `NEW_SERIES_PLAYBOOK.md` | Onboarding checklist for a new wiki, every trap learned the hard way |
 | `RAG_DESIGN_REVIEW.md` | The 28-point review behind roster validation |
 | `RETRIEVAL_SCENARIOS.md` | Scored scenarios and adversarial probes |
 | `SCRIPT_STYLE.md` | The house script-writing style spec |
+| `SCRIPT_STYLE_ANALYSIS.md` | What the published scripts look like, measured; what the engine owes them |
 | `TRIAGE.md` | Corpus/ontology triage notes |
 | `ANTI_AI_SCRIPTING.md` | Anti-AI-writing rules distilled into `VOICE_RULES` |
 

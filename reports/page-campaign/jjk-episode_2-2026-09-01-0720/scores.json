@@ -1,0 +1,565 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Episode 2's name?",
+      "id": "jjk-pg-episode_2-001",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "\u81ea\u5206\u306e\u305f\u3081\u306b"
+      ],
+      "found": [
+        "\u81ea\u5206\u306e\u305f\u3081\u306b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Episode 2's name?",
+      "id": "jjk-pg-episode_2-002",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Jibun no Tameni"
+      ],
+      "found": [
+        "Jibun no Tameni"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to Yuji following the delay of his secret execution?",
+      "id": "jjk-pg-episode_2-003",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "brought to Tokyo Metropolitan Curse Technical School"
+      ],
+      "found": [
+        "brought to Tokyo Metropolitan Curse Technical School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Principal test to see if Yuji is worthy of becoming a sorcerer?",
+      "id": "jjk-pg-episode_2-004",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "his conviction"
+      ],
+      "found": [
+        "his conviction"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Megumi state he will do to Yuji at the start of Episode 2's plot?",
+      "id": "jjk-pg-episode_2-005",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "exorcise Yuji as if he were a curse"
+      ],
+      "found": [
+        "exorcise Yuji as if he were a curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who arrives before Megumi is forced to make a decision about Yuji?",
+      "id": "jjk-pg-episode_2-006",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji reveal to Gojo, which Gojo finds hard to believe?",
+      "id": "jjk-pg-episode_2-007",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "he ate the finger"
+      ],
+      "found": [
+        "he ate the finger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long does Gojo ask Yuji to switch with Sukuna in order to test his control?",
+      "id": "jjk-pg-episode_2-008",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "ten seconds"
+      ],
+      "found": [],
+      "missing": [
+        "ten seconds"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What Sendai specialty does Megumi hold while Gojo fights?",
+      "id": "jjk-pg-episode_2-009",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Kikufuku"
+      ],
+      "found": [
+        "Kikufuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna claim about jujutsu sorcerers?",
+      "id": "jjk-pg-episode_2-010",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "jujutsu sorcerers are troublesome in every era"
+      ],
+      "found": [
+        "jujutsu sorcerers are troublesome in every era"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Gojo repel before counting down the final seconds until Yuji regains control?",
+      "id": "jjk-pg-episode_2-011",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "the rubble created by the curse"
+      ],
+      "found": [
+        "the rubble created by the curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many of Sukuna's fingers must Yuji consume so the elders won't execute him?",
+      "id": "jjk-pg-episode_2-012",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "twenty"
+      ],
+      "found": [
+        "twenty"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji assure Sasaki before leaving the hospital?",
+      "id": "jjk-pg-episode_2-013",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "a sorcerer will come by to heal Iguchi"
+      ],
+      "found": [
+        "a sorcerer will come by to heal Iguchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji decide to do with the second finger at the morgue?",
+      "id": "jjk-pg-episode_2-014",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "swallow the second finger whole"
+      ],
+      "found": [
+        "swallow the second finger whole"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What talent does Yuji prove he possesses, something the jujutsu world hasn't seen in a thousand years?",
+      "id": "jjk-pg-episode_2-015",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "the talent to control Sukuna"
+      ],
+      "found": [
+        "the talent to control Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does Yuji travel with Gojo to attend the jujutsu school?",
+      "id": "jjk-pg-episode_2-016",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "the mountains of Tokyo"
+      ],
+      "found": [
+        "the mountains of Tokyo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna create on Yuji's skin, disappointed that Gojo isn't in charge?",
+      "id": "jjk-pg-episode_2-017",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "a mouth"
+      ],
+      "found": [
+        "a mouth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Masamichi Yaga doing in the principal's office when Yuji and Gojo arrive?",
+      "id": "jjk-pg-episode_2-018",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "creating cute puppets"
+      ],
+      "found": [
+        "creating cute puppets"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji do to the doll while explaining why he must stop Sukuna?",
+      "id": "jjk-pg-episode_2-019",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "grabs the doll and restrains it with brute strength"
+      ],
+      "found": [
+        "grabs the doll and restrains it with brute strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom are Gojo and Yuji going to pick up at Morioka Station?",
+      "id": "jjk-pg-episode_2-020",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki"
+      ],
+      "found": [
+        "Nobara Kugisaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the anime skip from the second chapter?",
+      "id": "jjk-pg-episode_2-021",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "the first two pages of the second chapter, since they were already adapted in the first episode"
+      ],
+      "found": [
+        "the first two pages of the second chapter, since they were already adapted in the first episode"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the anime differ from the manga in how many pictures Gojo takes of Megumi?",
+      "id": "jjk-pg-episode_2-022",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "takes several pictures of Megumi in the anime, whereas he only took one in the manga"
+      ],
+      "found": [
+        "takes several pictures of Megumi in the anime, whereas he only took one in the manga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does the scene of Yuji eating the second finger take place in the anime?",
+      "id": "jjk-pg-episode_2-023",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "in a crematorium as the boy collects his grandfather's ashes and bones into a jar"
+      ],
+      "found": [
+        "in a crematorium as the boy collects his grandfather's ashes and bones into a jar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What battle is listed first in Episode 2's Battles & Events?",
+      "id": "jjk-pg-episode_2-024",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "First Fight"
+      ],
+      "found": [
+        "First Fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event, besides the first fight, is listed in Episode 2's Battles & Events?",
+      "id": "jjk-pg-episode_2-025",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Secret Execution"
+      ],
+      "found": [
+        "Secret Execution"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which technique is listed under Satoru Gojo's Techniques for Episode 2?",
+      "id": "jjk-pg-episode_2-026",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Limitless"
+      ],
+      "found": [
+        "Limitless"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which technique is listed under Shoko Ieiri's Techniques for Episode 2?",
+      "id": "jjk-pg-episode_2-027",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Reverse Cursed Technique"
+      ],
+      "found": [
+        "Reverse Cursed Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which city and hospital are listed first in Episode 2's Locations?",
+      "id": "jjk-pg-episode_2-028",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Sendai City",
+        "Sugisawa Hospital"
+      ],
+      "found": [
+        "Sendai City",
+        "Sugisawa Hospital"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which character appears first in Episode 2?",
+      "id": "jjk-pg-episode_2-029",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Is Yuji the only one passing a deceased person's remains from chopstick to chopstick in the episode?",
+      "id": "jjk-pg-episode_2-030",
+      "subject": "Episode 2",
+      "accept": "all",
+      "expected": [
+        "Yuji is the only one doing this in the episode"
+      ],
+      "found": [
+        "Yuji is the only one doing this in the episode"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 29
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": []
+    },
+    {
+      "path": "Prologue",
+      "covered_by": []
+    },
+    {
+      "path": "Battle",
+      "covered_by": [
+        "page-gen:battle:Megumi Fushiguro vs. Reggie Star:outcome",
+        "page-gen:battle:Megumi Fushiguro vs. Reggie Star:place",
+        "page-gen:battle:Megumi Fushiguro vs. Reggie Star:date",
+        "page-gen:battle:Megumi Fushiguro vs. Reggie Star:chapters",
+        "page-gen:battle:Megumi Fushiguro vs. Reggie Star:episodes",
+        "page-gen:battle:Megumi Fushiguro vs. Reggie Star:arc"
+      ]
+    },
+    {
+      "path": "Aftermath",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "infobox",
+    "Prologue",
+    "Aftermath"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

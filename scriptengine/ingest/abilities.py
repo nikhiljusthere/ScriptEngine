@@ -521,7 +521,7 @@ def extract_series(
     client = LLMClient(settings)
     if not client.available():
         raise LLMUnavailable(
-            f"No model at {client.base_url}. Start Ollama, or set "
+            f"No model at {client.settings.llm_base_url}. Start Ollama, or set "
             "SCRIPTENGINE_LLM_BASE_URL."
         )
 

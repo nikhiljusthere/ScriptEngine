@@ -231,7 +231,9 @@ class FactStore:
             " VALUES (?, ?, ?, ?, ?, ?, ?)",
             (document_id, title, breadcrumb, level, ordinal, text, word_count),
         )
-        return int(cursor.lastrowid)
+        # `lastrowid` is Optional in the sqlite3 stubs; after an INSERT that
+        # just succeeded it is always set.
+        return int(cursor.lastrowid or 0)
 
     def add_categories(self, document_id: int, categories: Iterable[str]) -> None:
         self.connection.executemany(
@@ -322,7 +324,9 @@ class FactStore:
                 doc_title, breadcrumb, text, len(text.split()),
             ),
         )
-        return int(cursor.lastrowid)
+        # `lastrowid` is Optional in the sqlite3 stubs; after an INSERT that
+        # just succeeded it is always set.
+        return int(cursor.lastrowid or 0)
 
     def link_chunk_nodes(self, chunk_id: int, node_ids: Iterable[int]) -> None:
         self.connection.executemany(
@@ -1142,6 +1146,59 @@ class FactStore:
             (*node_ids, level, limit),
         ).fetchall()
 
+    def passages_for_subject(self, subject: str) -> list[sqlite3.Row]:
+        """Every level-2 passage of the page `subject` names, in the wiki's own
+        section order.
+
+        The entity-anchored recall floor (R6): a question authored against a
+        page must be able to read that page's text whether or not any single
+        passage of it outranks the rest of the corpus. The ranked beam answers
+        "what is most relevant to this phrasing"; this answers "what does the
+        page say", and the two only coincide when the phrasing's keywords
+        overlap the answer's words. The G5/G11/G13/G14 failures (Kechizu 036,
+        Tsumiki's kanji meanings, Toge 051) all sat on the subject page and
+        below the beam at once. A store lookup, not a similarity search: the
+        beam still decides what *else* fills the budget, never whether the
+        subject's own page shows up at all.
+
+        A subject that resolves to no document (a bare alias, an un-crawled
+        page, a misspelling) yields an empty list and the caller's ranked
+        behaviour stands unchanged.
+
+        Resolution, in order of confidence: the page's own title, case-
+        insensitive, then an editor-maintained alias. Aliases are stored folded
+        to lower case (see the `aliases` table), so the probe is a plain index
+        hit. When several nodes share an alias the shortest resolved name wins:
+        the character page is the hub, for the same reason `link_entities`
+        orders its results.
+        """
+        if not subject or not subject.strip():
+            return []
+        name = subject.strip()
+        row = self.connection.execute(
+            "SELECT d.id FROM documents d WHERE d.title = ? COLLATE NOCASE",
+            (name,),
+        ).fetchone()
+        if row is None:
+            row = self.connection.execute(
+                "SELECT n.document_id AS id FROM aliases a"
+                " JOIN nodes n ON n.id = a.node_id"
+                " WHERE a.alias = ? AND n.document_id IS NOT NULL"
+                " ORDER BY n.is_resolved DESC, LENGTH(n.name) ASC LIMIT 1",
+                (name.lower(),),
+            ).fetchone()
+        if row is None or row["id"] is None:
+            return []
+        # The parent join is what keeps the floor's passages the same shape as
+        # the beam's: a quoted passage carries its section, not just itself.
+        return self.connection.execute(
+            "SELECT c.*, p.text AS parent_text"
+            " FROM chunks c LEFT JOIN chunks p ON p.id = c.parent_id"
+            " WHERE c.document_id = ? AND c.level = 2"
+            " ORDER BY c.ordinal",
+            (row["id"],),
+        ).fetchall()
+
     # ── enumeration ──────────────────────────────────────────────────────────
     #
     # Three ways a wiki already states "these things belong together". A roster
@@ -1236,7 +1293,7 @@ class FactStore:
             )
 
     def stats(self) -> dict[str, Any]:
-        counts = self.counts()
+        counts: dict[str, Any] = self.counts()
         counts["types"] = {
             row["page_type"]: row["n"]
             for row in self.connection.execute(

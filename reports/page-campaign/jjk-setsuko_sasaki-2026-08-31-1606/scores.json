@@ -1,0 +1,565 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Setsuko Sasaki?",
+      "set": "Every friend of Setsuko Sasaki",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Setsuko Sasaki?",
+      "set": "Setsuko Sasaki's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the friends of Setsuko Sasaki?",
+      "found": [
+        "Yuji Itadori",
+        "Takeshi Iguchi"
+      ],
+      "missing": [],
+      "members": [
+        "Takeshi Iguchi",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Setsuko Sasaki?",
+      "found": [
+        "Sugisawa Third High School Occult Research Club"
+      ],
+      "missing": [],
+      "members": [
+        "Sugisawa Third High School Occult Research Club"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Setsuko Sasaki's name?",
+      "id": "jjk-pg-setsuko_sasaki-001",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "\u4f50\u3005\u6728\u305b\u3064\u3053"
+      ],
+      "found": [
+        "\u4f50\u3005\u6728\u305b\u3064\u3053"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Setsuko Sasaki's name?",
+      "id": "jjk-pg-setsuko_sasaki-002",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Sasaki Setsuko"
+      ],
+      "found": [
+        "Sasaki Setsuko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Setsuko Sasaki's race?",
+      "id": "jjk-pg-setsuko_sasaki-003",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Setsuko Sasaki's gender?",
+      "id": "jjk-pg-setsuko_sasaki-004",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Setsuko Sasaki?",
+      "id": "jjk-pg-setsuko_sasaki-005",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Setsuko Sasaki's occupation?",
+      "id": "jjk-pg-setsuko_sasaki-006",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Student"
+      ],
+      "found": [
+        "Student"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Setsuko Sasaki first appear?",
+      "id": "jjk-pg-setsuko_sasaki-007",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Chapter 1"
+      ],
+      "found": [
+        "Chapter 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Setsuko Sasaki first depicted?",
+      "id": "jjk-pg-setsuko_sasaki-008",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Episode 1"
+      ],
+      "found": [
+        "Episode 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Setsuko Sasaki's Japanese voice actor?",
+      "id": "jjk-pg-setsuko_sasaki-009",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Mariya Ise"
+      ],
+      "found": [
+        "Mariya Ise"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Setsuko Sasaki's English voice actor?",
+      "id": "jjk-pg-setsuko_sasaki-010",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Xanthe Huynh"
+      ],
+      "found": [
+        "Xanthe Huynh"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Setsuko Sasaki play in the series?",
+      "id": "jjk-pg-setsuko_sasaki-013",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which club was Setsuko Sasaki a member of?",
+      "id": "jjk-pg-setsuko_sasaki-014",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "the school's Occult Research Club"
+      ],
+      "found": [
+        "the school's Occult Research Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who were Setsuko Sasaki's friends in the club?",
+      "id": "jjk-pg-setsuko_sasaki-015",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori and Takeshi Iguchi"
+      ],
+      "found": [
+        "Yuji Itadori and Takeshi Iguchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Setsuko Sasaki look like?",
+      "id": "jjk-pg-setsuko_sasaki-016",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "black hair that extends to below her ears and is styled in a bob, and blue eyes",
+        "glasses"
+      ],
+      "found": [
+        "black hair that extends to below her ears and is styled in a bob, and blue eyes",
+        "glasses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Setsuko's school outfit consist of?",
+      "id": "jjk-pg-setsuko_sasaki-017",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a beige-colored vest over a white long-sleeve shirt, and a diagonal striped tie"
+      ],
+      "found": [
+        "a beige-colored vest over a white long-sleeve shirt, and a diagonal striped tie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What else does Setsuko wear?",
+      "id": "jjk-pg-setsuko_sasaki-018",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a dark blue skirt, with grey socks, and light-colored shoes"
+      ],
+      "found": [
+        "a dark blue skirt, with grey socks, and light-colored shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Setsuko Sasaki's personality described?",
+      "id": "jjk-pg-setsuko_sasaki-019",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a laid-back girl who enjoys spending time playing games in the club room"
+      ],
+      "found": [
+        "a laid-back girl who enjoys spending time playing games in the club room"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Setsuko feel guilty?",
+      "id": "jjk-pg-setsuko_sasaki-020",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "for putting her friend in danger"
+      ],
+      "found": [
+        "for putting her friend in danger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What game was the club playing when the student council president arrived?",
+      "id": "jjk-pg-setsuko_sasaki-021",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a game of Kokkuri"
+      ],
+      "found": [
+        "a game of Kokkuri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the real reason the rugby field was closed?",
+      "id": "jjk-pg-setsuko_sasaki-022",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "ticks"
+      ],
+      "found": [
+        "ticks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Setsuko and Takeshi discover inside the cursed charm?",
+      "id": "jjk-pg-setsuko_sasaki-023",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a human-like finger"
+      ],
+      "found": [
+        "a human-like finger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Setsuko realize about Takeshi's head?",
+      "id": "jjk-pg-setsuko_sasaki-024",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a curse had attached itself to Takeshi's head"
+      ],
+      "found": [
+        "a curse had attached itself to Takeshi's head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku offer Setsuko in the dream?",
+      "id": "jjk-pg-setsuko_sasaki-025",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a single chance to leave the barrier and awaken outside of it"
+      ],
+      "found": [
+        "a single chance to leave the barrier and awaken outside of it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which colony did Kenjaku guide Setsuko out of?",
+      "id": "jjk-pg-setsuko_sasaki-026",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "the Sendai Colony"
+      ],
+      "found": [
+        "the Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did everyone dream of meeting?",
+      "id": "jjk-pg-setsuko_sasaki-027",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "a long-haired man wearing a kesa"
+      ],
+      "found": [
+        "a long-haired man wearing a kesa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Setsuko rank in the first Popularity Poll?",
+      "id": "jjk-pg-setsuko_sasaki-028",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "52nd in the first Popularity Poll with 106 votes"
+      ],
+      "found": [
+        "52nd in the first Popularity Poll with 106 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Setsuko rank in the third and fourth Popularity Polls?",
+      "id": "jjk-pg-setsuko_sasaki-029",
+      "subject": "Setsuko Sasaki",
+      "accept": "all",
+      "expected": [
+        "113th in the third Popularity Poll with 1 vote",
+        "53rd in the fourth Popularity Poll with 29 votes"
+      ],
+      "found": [
+        "113th in the third Popularity Poll with 1 vote",
+        "53rd in the fourth Popularity Poll with 29 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 27,
+    "fact_present": 27
+  }
+}

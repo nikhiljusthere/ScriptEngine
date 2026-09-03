@@ -1,0 +1,597 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Rokujushi Miyo?",
+      "set": "Every named technique of Rokujushi Miyo",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Rokujushi Miyo",
+      "set": "Every battle involving Rokujushi Miyo",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Rokujushi Miyo?",
+      "found": [
+        "Simple Domain",
+        "Kappa Rokujushi"
+      ],
+      "missing": [],
+      "members": [
+        "Kappa Rokujushi",
+        "Simple Domain"
+      ]
+    },
+    {
+      "query": "Every battle involving Rokujushi Miyo",
+      "found": [
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+      ],
+      "missing": [],
+      "members": [
+        "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Rokujushi Miyo's name?",
+      "id": "jjk-pg-rokujushi_miyo-001",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "\u4e09\u4ee3\u516d\u5341\u56db"
+      ],
+      "found": [
+        "\u4e09\u4ee3\u516d\u5341\u56db"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Rokujushi Miyo's name?",
+      "id": "jjk-pg-rokujushi_miyo-002",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Miyo Rokuj\u016bshi"
+      ],
+      "found": [
+        "Miyo Rokuj\u016bshi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rokujushi Miyo's race?",
+      "id": "jjk-pg-rokujushi_miyo-003",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rokujushi Miyo's gender?",
+      "id": "jjk-pg-rokujushi_miyo-004",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Rokujushi Miyo?",
+      "id": "jjk-pg-rokujushi_miyo-005",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rokujushi Miyo's occupation?",
+      "id": "jjk-pg-rokujushi_miyo-006",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Sumo Wrestler Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Sumo Wrestler Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Rokujushi Miyo first appear?",
+      "id": "jjk-pg-rokujushi_miyo-007",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Chapter 194"
+      ],
+      "found": [
+        "Chapter 194"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-rokujushi_miyo-008",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin is victorious."
+      ],
+      "found": [
+        "Maki Zenin is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-rokujushi_miyo-009",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-rokujushi_miyo-010",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-rokujushi_miyo-011",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Chapter 195"
+      ],
+      "found": [
+        "Chapter 195"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-rokujushi_miyo-012",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Rokujushi Miyo use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "id": "jjk-pg-rokujushi_miyo-013",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Simple Domain"
+      ],
+      "found": [
+        "Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rokujushi Miyo the incarnation of?",
+      "id": "jjk-pg-rokujushi_miyo-016",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "a sumo enthusiast"
+      ],
+      "found": [
+        "a sumo enthusiast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rokujushi Miyo look like?",
+      "id": "jjk-pg-rokujushi_miyo-017",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "a muscular man with a peculiar hairstyle"
+      ],
+      "found": [
+        "a muscular man with a peculiar hairstyle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is unique about Rokujushi's hairstyle?",
+      "id": "jjk-pg-rokujushi_miyo-018",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "The top of his head is bald but he's styled the rest of his hair in a spiky fashion that juts out three hundred and sixty degrees around the rest of his head"
+      ],
+      "found": [
+        "The top of his head is bald but he's styled the rest of his hair in a spiky fashion that juts out three hundred and sixty degrees around the rest of his head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rokujushi wear?",
+      "id": "jjk-pg-rokujushi_miyo-019",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "his mawashi, a traditional sumo loincloth"
+      ],
+      "found": [
+        "his mawashi, a traditional sumo loincloth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rokujushi's most prominent trait?",
+      "id": "jjk-pg-rokujushi_miyo-020",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "his pure love and adoration for sumo wrestling"
+      ],
+      "found": [
+        "his pure love and adoration for sumo wrestling"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rokujushi respond when Noritoshi asked who he was?",
+      "id": "jjk-pg-rokujushi_miyo-021",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "it didn't matter and he only wanted to sumo"
+      ],
+      "found": [
+        "it didn't matter and he only wanted to sumo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Rokujushi do when he heard a nokotta chant on a television?",
+      "id": "jjk-pg-rokujushi_miyo-022",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "breaking into the corresponding house just to politely ask the old lady inside where the wrestlers were located"
+      ],
+      "found": [
+        "breaking into the corresponding house just to politely ask the old lady inside where the wrestlers were located"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Rokujushi end up after heading in the wrong direction?",
+      "id": "jjk-pg-rokujushi_miyo-023",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Sakurajima"
+      ],
+      "found": [
+        "Sakurajima"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What side of Rokujushi becomes apparent when engaging him in sumo?",
+      "id": "jjk-pg-rokujushi_miyo-024",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "a very intelligent and sincere side"
+      ],
+      "found": [
+        "a very intelligent and sincere side"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rokujushi react when Maki agreed to sumo with him?",
+      "id": "jjk-pg-rokujushi_miyo-025",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "so happy that he immediately shed tears"
+      ],
+      "found": [
+        "so happy that he immediately shed tears"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Rokujushi defeat in a sumo bout despite lower physical prowess?",
+      "id": "jjk-pg-rokujushi_miyo-026",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin"
+      ],
+      "found": [
+        "Maki Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rokujushi contribute to the fight against Naoya?",
+      "id": "jjk-pg-rokujushi_miyo-027",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "hitting the vengeful curse with an effective headbutt"
+      ],
+      "found": [
+        "hitting the vengeful curse with an effective headbutt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the purpose of Rokujushi's simple domain?",
+      "id": "jjk-pg-rokujushi_miyo-028",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "engaging in sumo wrestling"
+      ],
+      "found": [
+        "engaging in sumo wrestling"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What must both parties agree to in order to complete Rokujushi's domain?",
+      "id": "jjk-pg-rokujushi_miyo-029",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "a sumo match"
+      ],
+      "found": [],
+      "missing": [
+        "a sumo match"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Rokujushi Miyo rank in the third Popularity Poll?",
+      "id": "jjk-pg-rokujushi_miyo-030",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "43rd in the third Popularity Poll with 40 votes"
+      ],
+      "found": [
+        "43rd in the third Popularity Poll with 40 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Rokujushi Miyo rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-rokujushi_miyo-031",
+      "subject": "Rokujushi Miyo",
+      "accept": "all",
+      "expected": [
+        "57th in the fourth Popularity Poll with 21 votes"
+      ],
+      "found": [
+        "57th in the fourth Popularity Poll with 21 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 29,
+    "fact_present": 28
+  }
+}

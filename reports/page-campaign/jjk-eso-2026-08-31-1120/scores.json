@@ -1,0 +1,863 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Eso?",
+      "set": "Every named technique of Eso",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Eso?",
+      "set": "Every family of Eso",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Eso?",
+      "set": "Eso's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Eso?",
+      "found": [
+        "Rot Technique",
+        "Maximum: Wing King",
+        "Decay"
+      ],
+      "missing": [],
+      "members": [
+        "Decay",
+        "Maximum: Wing King",
+        "Rot Technique"
+      ]
+    },
+    {
+      "query": "What are all the families of Eso?",
+      "found": [
+        "Noritoshi Kamo",
+        "Choso",
+        "Kechizu",
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "members": [
+        "Choso",
+        "Kechizu",
+        "Noritoshi Kamo",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Eso?",
+      "found": [
+        "Kenjaku's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Eso's name?",
+      "id": "jjk-pg-eso-001",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "\u58ca\u76f8"
+      ],
+      "found": [
+        "\u58ca\u76f8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Eso's name?",
+      "id": "jjk-pg-eso-002",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Es\u014d"
+      ],
+      "found": [
+        "Es\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Eso's race?",
+      "id": "jjk-pg-eso-003",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Death Painting Incarnation"
+      ],
+      "found": [
+        "Death Painting Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Eso?",
+      "id": "jjk-pg-eso-004",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "150"
+      ],
+      "found": [
+        "150"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Eso's gender?",
+      "id": "jjk-pg-eso-005",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Eso?",
+      "id": "jjk-pg-eso-006",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Eso's grade?",
+      "id": "jjk-pg-eso-007",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Special Grade (Cursed Womb)"
+      ],
+      "found": [
+        "Special Grade (Cursed Womb)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Eso first appear?",
+      "id": "jjk-pg-eso-008",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Chapter 57"
+      ],
+      "found": [
+        "Chapter 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Eso first depicted?",
+      "id": "jjk-pg-eso-009",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Episode 23"
+      ],
+      "found": [
+        "Episode 23"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Eso's Japanese voice actor?",
+      "id": "jjk-pg-eso-010",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Nobuyuki Hiyama"
+      ],
+      "found": [
+        "Nobuyuki Hiyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Eso's English voice actor?",
+      "id": "jjk-pg-eso-011",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Landon McDonald"
+      ],
+      "found": [
+        "Landon McDonald"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Eso overall grade ranking among cursed objects?",
+      "id": "jjk-pg-eso-015",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "special grade"
+      ],
+      "found": [
+        "special grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who incarnated Eso?",
+      "id": "jjk-pg-eso-016",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Mahito's group"
+      ],
+      "found": [
+        "Mahito's group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Eso and Kechizu entrusted with retrieving?",
+      "id": "jjk-pg-eso-017",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "one of Sukuna's finger"
+      ],
+      "found": [
+        "one of Sukuna's finger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Eso power compare to his younger brother?",
+      "id": "jjk-pg-eso-018",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "greater than that of his younger brother"
+      ],
+      "found": [
+        "greater than that of his younger brother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which two characters power is Eso greater than, and which surpasses both?",
+      "id": "jjk-pg-eso-019",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "his younger brother"
+      ],
+      "found": [
+        "his younger brother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Eso attempt to endure Yuji punch with?",
+      "id": "jjk-pg-eso-020",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "reinforcing his arm"
+      ],
+      "found": [
+        "reinforcing his arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What destroyed Eso reinforced arm during fight with Yuji?",
+      "id": "jjk-pg-eso-021",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Black Flash"
+      ],
+      "found": [
+        "Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Eso transform his cursed energy into as Death Painting Womb?",
+      "id": "jjk-pg-eso-022",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "blood"
+      ],
+      "found": [
+        "blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What condition allows Eso to prevent dying of blood loss as Death Painting Womb?",
+      "id": "jjk-pg-eso-023",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "as long as Eso has enough cursed energy"
+      ],
+      "found": [
+        "as long as Eso has enough cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What binding vow does Eso use by divulging how his technique works?",
+      "id": "jjk-pg-eso-024",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Revealing One's Hand"
+      ],
+      "found": [
+        "Revealing One's Hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Revealing One Hand do for Eso?",
+      "id": "jjk-pg-eso-025",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "increase the effectiveness of his technique, shortening the time it takes for Decay to kill his target"
+      ],
+      "found": [
+        "increase the effectiveness of his technique, shortening the time it takes for Decay to kill his target"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is name of Eso innate technique?",
+      "id": "jjk-pg-eso-026",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Rot Technique"
+      ],
+      "found": [
+        "Rot Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rot Technique grant Eso?",
+      "id": "jjk-pg-eso-027",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "corrosive blood that can poison and decompose his target upon contact"
+      ],
+      "found": [
+        "corrosive blood that can poison and decompose his target upon contact"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Besides corrosion, what else can Rot Technique allow Eso to do with blood?",
+      "id": "jjk-pg-eso-028",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "reshape and manipulate his blood"
+      ],
+      "found": [
+        "reshape and manipulate his blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Eso blood differ from another character blood?",
+      "id": "jjk-pg-eso-029",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "a different quality than Kechizu's"
+      ],
+      "found": [
+        "a different quality than Kechizu's"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is maximum technique of Rot Technique called?",
+      "id": "jjk-pg-eso-030",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "Wing King"
+      ],
+      "found": [
+        "Wing King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Wing King reshape Eso blood into?",
+      "id": "jjk-pg-eso-031",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "wasp-shaped wings"
+      ],
+      "found": [
+        "wasp-shaped wings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What benefits does Wing King give Eso?",
+      "id": "jjk-pg-eso-032",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "more mobility as well as a way to attack with lines of blood"
+      ],
+      "found": [
+        "more mobility as well as a way to attack with lines of blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does large bloody face on Eso back look like?",
+      "id": "jjk-pg-eso-033",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "sunken eyes, no nose, and a lipless, open mouth with long, sharp teeth"
+      ],
+      "found": [
+        "sunken eyes, no nose, and a lipless, open mouth with long, sharp teeth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are two distinguishing facial features of Eso?",
+      "id": "jjk-pg-eso-034",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "two stud piercings over his thin eyebrows"
+      ],
+      "found": [],
+      "missing": [
+        "two stud piercings over his thin eyebrows"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Eso anime appearance differ from manga appearance?",
+      "id": "jjk-pg-eso-035",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "dark red eyes, spine-like assemblage running down face and thinner, more rectangular teeth"
+      ],
+      "found": [],
+      "missing": [
+        "dark red eyes, spine-like assemblage running down face and thinner, more rectangular teeth"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who do Eso and his brothers believe they are?",
+      "id": "jjk-pg-eso-036",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "one"
+      ],
+      "found": [
+        "one"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long did Eso and his brothers exist in isolation?",
+      "id": "jjk-pg-eso-037",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "over 150 years"
+      ],
+      "found": [
+        "over 150 years"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Eso willing to spare Nobara?",
+      "id": "jjk-pg-eso-038",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "if she fled prior to their fight"
+      ],
+      "found": [
+        "if she fled prior to their fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose wishes does Eso follow?",
+      "id": "jjk-pg-eso-039",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "older brother Choso"
+      ],
+      "found": [
+        "older brother Choso"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What personality trait does Eso tend to display during fights?",
+      "id": "jjk-pg-eso-040",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "very eccentric"
+      ],
+      "found": [
+        "very eccentric"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was result of Death Painting Arc confrontation involving Eso?",
+      "id": "jjk-pg-eso-041",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "defeated by jujutsu students"
+      ],
+      "found": [
+        "defeated by jujutsu students"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Eso get in second Popularity Poll?",
+      "id": "jjk-pg-eso-043",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "37th"
+      ],
+      "found": [
+        "37th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many votes did Eso receive in third Popularity Poll?",
+      "id": "jjk-pg-eso-044",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "14 votes"
+      ],
+      "found": [
+        "14 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "According to fanbook, why does Eso stink?",
+      "id": "jjk-pg-eso-046",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "back is always festering"
+      ],
+      "found": [
+        "back is always festering"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did Eso achieve in fourth Popularity Poll?",
+      "id": "jjk-pg-eso-047",
+      "subject": "Eso",
+      "accept": "all",
+      "expected": [
+        "52nd"
+      ],
+      "found": [
+        "52nd"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 42,
+    "fact_present": 40
+  }
+}

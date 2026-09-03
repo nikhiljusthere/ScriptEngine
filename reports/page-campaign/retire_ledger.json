@@ -1,0 +1,3065 @@
+{
+  "generated": "2026-08-27T01:30:10Z",
+  "source": "questions/_jjk_page_*.json  (retired[] arrays)",
+  "note": "One row per retired page-campaign question. The retire reason is the only signal tying a retire to the page that owes the answer; owed_by_page is inferred from the reason and is null when it cannot be named. absorbed=true marks the 'superseded by page-gen' class, where the question now lives in the page-gen batch. The live count is 338 retires across 47 files; the R1 spec's 339/48 predates the R1 un-retire of mei_mei Q001 (G10).",
+  "counts": {
+    "total": 338,
+    "files": 47,
+    "by_class": {
+      "not_stated": 32,
+      "open_set": 59,
+      "other": 101,
+      "unchunked": 17,
+      "superseded": 97,
+      "cross_page": 13,
+      "dated_retire": 11,
+      "battle_scoped": 8
+    },
+    "named_owed": 120,
+    "absorbed": 97
+  },
+  "rows": [
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-01",
+      "question": "Where did the Desshi Pacification Squad fight Sukuna?",
+      "reason": "Not stated on the page: the History section dates the fight only to the Heian Era a thousand years ago and names no place.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-02",
+      "question": "In which episode is the Culling Game fight with Sukuna depicted?",
+      "reason": "Not stated on the page: the Angel page cites manga chapters only ({{Ref|chap=...}}) and carries no episode locator in its prose, so no episode gold can be verbatim on the page.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-03",
+      "question": "Which other Culling Game players did Angel fight in the Culling Game?",
+      "reason": "Not a closed set on the page: the only Culling Game fight recorded is the rooftop fight with Sukuna (ids 020-030); Megumi's sister (id 019) reveals herself and flies away without a fight, and no list of other players Angel fought is given.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-04",
+      "question": "How did Angel defeat Sukuna?",
+      "reason": "No such defeat is stated: the Culling Game fight ended in Hana's defeat by Sukuna (id 027) and the Heian Era attack was repelled (id 005); the page records no Angel victory over Sukuna.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-05",
+      "question": "What did Angel do to Sukuna in the Heian Era?",
+      "reason": "Not stated on the page: the History section states only that the squad was repelled by the King of Curses wielding his two weapons (ids 005-006) and describes no Angel action on Sukuna in that fight.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-06",
+      "question": "What is the kanji for the Technique Extinguishment?",
+      "reason": "Unchunked: the kanji (術式が消滅) live only in the Nihongo/Ruby cell of the Cursed Technique section's technique-name cell, which the pipeline does not make goldable.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-07",
+      "question": "What is the romaji of Maximum Output: Jacob's Ladder?",
+      "reason": "Unchunked: the romaji (Shutsuryoku Saidai: Yakobu no Hashigo) lives only in the Nihongo/Ruby cell of the Cursed Technique section's technique-name cell, which the pipeline does not make goldable.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-08",
+      "question": "What is the Angel's Domain Expansion?",
+      "reason": "Not stated on the page: the Angel page assigns her no domain; domains appear only as her knowledge (Domain Amplification, domain clashes, id 073) and as other characters' domains in the fight prose.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-09",
+      "question": "What is the cost of using the Technique Extinguishment?",
+      "reason": "Not stated on the page: no energy cost or usage limit is quantified; the only limit the page states is that it is nearly impossible to split incarnated sorcerers from their hosts without killing both (id 057).",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-10",
+      "question": "What grade or rank is the Angel as a sorcerer?",
+      "reason": "Not stated on the page: her grade is never given; 'special grades' on the page refers to the cursed objects susceptible to her technique (like the Prison Realm, id 056), not to her own rank.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-01",
+      "question": "Every member of the Desshi Pacification Squad",
+      "reason": "The page does not enumerate the squad's individual members; it states only the contributing clans ('the Abe Clan's elite forces that also included the Sugawara Clan's remnants'), which is the closed set staged as id 103.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-02",
+      "question": "Every Culling Game player Angel is related to or fought",
+      "reason": "Predicate roster the page does not close: related or fought players (Maki Zenin, Kogane, Sukuna) appear in scattered scene beats, and no closed list of players is stated on the page.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-03",
+      "question": "Every person who saved or healed Hana Kurusu",
+      "reason": "The page hedges: 'saved earlier by Rin Amai and possibly Takaba'; the 'possibly' leaves the set open, so it is not closed.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-04",
+      "question": "Every incarnated Culling Game player the Angel seeks to kill",
+      "reason": "The page targets 'all her fellow incarnated players' in general but names only one specifically (Sukuna, the 'Disgraced One'); no closed roster of incarnated players is stated on the page.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-05",
+      "question": "Every present-day ally of the Angel",
+      "reason": "The page lists 'Megumi, Yuji Itadori, and co.'; the 'and co.' leaves the ally set open.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-06",
+      "question": "Who does the Angel distrust?",
+      "reason": "Not stated on the page; the only trust gap the page states runs the other way (Yuji Itadori 'takes no orders from someone he does not trust' -- the Angel).",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-07",
+      "question": "Who does the Angel respect or look up to?",
+      "reason": "Not stated on the page; no admired or looked-up-to person is named.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s3-08",
+      "question": "Who are Hana Kurusu's relatives?",
+      "reason": "Not stated on the page; no kin of either Hana or the Angel is named.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-01",
+      "question": "What is the Angel's real name?",
+      "reason": "Not stated on the page: the page names her only 'Angel'; the sole alternate name is the romaji 'Tenshi' in the page's alias list, which is an alias, not a stated real name.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-02",
+      "question": "In which episode does the Angel make her anime debut?",
+      "reason": "Not stated on the page: the infobox has a Manga Debut field (Chapter 199) but no Anime Debut field, and the prose cites manga chapters only.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-03",
+      "question": "Who created the Angel?",
+      "reason": "Not stated on the page: the infobox has no creator field and Gege Akutami is named nowhere on the Angel page.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-04",
+      "question": "Who provides the Angel's voice?",
+      "reason": "Not stated on the page: the infobox has no voice-actor field and no voice actor is named.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-05",
+      "question": "What is the Angel's hair color?",
+      "reason": "Not stated on the page: the infobox hair field is empty.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-06",
+      "question": "What is the Angel's eye color?",
+      "reason": "Not stated on the page: the infobox eye field is empty.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-07",
+      "question": "What are the Angel's height and weight?",
+      "reason": "Not stated on the page: the infobox lists no height or weight.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-08",
+      "question": "What categories does the Angel page carry?",
+      "reason": "Unchunked value: the category links (Characters, Culling Game Players, Female, Incarnations, Jujutsu Sorcerers) appear only in the page metadata and the Navigation section, which the chunker excludes as boilerplate, so none is in a chunked or carded region.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-09",
+      "question": "Angel's aliases",
+      "reason": "Unchunked infobox value: the closed alias set is the single romaji 'Tenshi', which lives only in the infobox romaji field and the lead's Nihongo/Ruby cell, not in chunked prose, so the set's only member is not goldable (the same class this page's section 2 retired for the technique-name kanji/romaji). The live fact card carries the value, but a declared roster would commit an unchunked member, so the roster is not staged.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-10",
+      "question": "What is the romaji of Angel's name?",
+      "reason": "Unchunked infobox value: 'Tenshi' lives only in the infobox romaji field and the lead's Nihongo/Ruby cell, not in chunked prose; the same class this page's section 2 retired as unchunked (the live fact card carries it, confirmed top_k=12, but it is not commit-able under the section's chunked-prose rule).",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-11",
+      "question": "What are the kanji for Angel's name?",
+      "reason": "Unchunked infobox value: '天使' lives only in the infobox kanji field, not in chunked prose; the same class this page's section 2 retired as unchunked.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-retired-s4-12",
+      "question": "What series is the Angel a character in?",
+      "reason": "Gold not live in the qa bundle: the lead sentence 'The Angel is a character in Jujutsu Kaisen.' does not surface in the top-12 bundle for series-shaped questions (five phrasings checked at top_k=12), so the gold cannot be confirmed present in the live bundle.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.json",
+      "id": "jjk-pg-angel-001",
+      "question": "Every battle involving Angel",
+      "reason": "superseded by page-gen:battles (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "angel",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_angel.section1.json",
+      "id": "jjk-pg-angel-retired-01",
+      "question": "Where did the Desshi Pacification Squad fight Sukuna?",
+      "reason": "Not stated on the page: the History section dates the fight only to the Heian Era a thousand years ago and names no place.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section1.json",
+      "id": "jjk-pg-angel-retired-02",
+      "question": "In which episode is the Culling Game fight with Sukuna depicted?",
+      "reason": "Not stated on the page: the Angel page cites manga chapters only ({{Ref|chap=...}}) and carries no episode locator in its prose, so no episode gold can be verbatim on the page.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section1.json",
+      "id": "jjk-pg-angel-retired-03",
+      "question": "Which other Culling Game players did Angel fight in the Culling Game?",
+      "reason": "Not a closed set on the page: the only Culling Game fight recorded is the rooftop fight with Sukuna (ids 020-030); Megumi's sister (id 019) reveals herself and flies away without a fight, and no list of other players Angel fought is given.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section1.json",
+      "id": "jjk-pg-angel-retired-04",
+      "question": "How did Angel defeat Sukuna?",
+      "reason": "No such defeat is stated: the Culling Game fight ended in Hana's defeat by Sukuna (id 027) and the Heian Era attack was repelled (id 005); the page records no Angel victory over Sukuna.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section1.json",
+      "id": "jjk-pg-angel-retired-05",
+      "question": "What did Angel do to Sukuna in the Heian Era?",
+      "reason": "Not stated on the page: the History section states only that the squad was repelled by the King of Curses wielding his two weapons (ids 005-006) and describes no Angel action on Sukuna in that fight.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section2.json",
+      "id": "jjk-pg-angel-retired-06",
+      "question": "What is the kanji for the Technique Extinguishment?",
+      "reason": "Unchunked: the kanji (術式が消滅) live only in the Nihongo/Ruby cell of the Cursed Technique section's technique-name cell, which the pipeline does not make goldable.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section2.json",
+      "id": "jjk-pg-angel-retired-07",
+      "question": "What is the romaji of Maximum Output: Jacob's Ladder?",
+      "reason": "Unchunked: the romaji (Shutsuryoku Saidai: Yakobu no Hashigo) lives only in the Nihongo/Ruby cell of the Cursed Technique section's technique-name cell, which the pipeline does not make goldable.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section2.json",
+      "id": "jjk-pg-angel-retired-08",
+      "question": "What is the Angel's Domain Expansion?",
+      "reason": "Not stated on the page: the Angel page assigns her no domain; domains appear only as her knowledge (Domain Amplification, domain clashes, id 073) and as other characters' domains in the fight prose.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section2.json",
+      "id": "jjk-pg-angel-retired-09",
+      "question": "What is the cost of using the Technique Extinguishment?",
+      "reason": "Not stated on the page: no energy cost or usage limit is quantified; the only limit the page states is that it is nearly impossible to split incarnated sorcerers from their hosts without killing both (id 057).",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section2.json",
+      "id": "jjk-pg-angel-retired-10",
+      "question": "What grade or rank is the Angel as a sorcerer?",
+      "reason": "Not stated on the page: her grade is never given; 'special grades' on the page refers to the cursed objects susceptible to her technique (like the Prison Realm, id 056), not to her own rank.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-01",
+      "question": "Every member of the Desshi Pacification Squad",
+      "reason": "The page does not enumerate the squad's individual members; it states only the contributing clans ('the Abe Clan's elite forces that also included the Sugawara Clan's remnants'), which is the closed set staged as id 103.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-02",
+      "question": "Every Culling Game player Angel is related to or fought",
+      "reason": "Predicate roster the page does not close: related or fought players (Maki Zenin, Kogane, Sukuna) appear in scattered scene beats, and no closed list of players is stated on the page.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-03",
+      "question": "Every person who saved or healed Hana Kurusu",
+      "reason": "The page hedges: 'saved earlier by Rin Amai and possibly Takaba'; the 'possibly' leaves the set open, so it is not closed.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-04",
+      "question": "Every incarnated Culling Game player the Angel seeks to kill",
+      "reason": "The page targets 'all her fellow incarnated players' in general but names only one specifically (Sukuna, the 'Disgraced One'); no closed roster of incarnated players is stated on the page.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-05",
+      "question": "Every present-day ally of the Angel",
+      "reason": "The page lists 'Megumi, Yuji Itadori, and co.'; the 'and co.' leaves the ally set open.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-06",
+      "question": "Who does the Angel distrust?",
+      "reason": "Not stated on the page; the only trust gap the page states runs the other way (Yuji Itadori 'takes no orders from someone he does not trust' -- the Angel).",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-07",
+      "question": "Who does the Angel respect or look up to?",
+      "reason": "Not stated on the page; no admired or looked-up-to person is named.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section3.json",
+      "id": "jjk-pg-angel-retired-s3-08",
+      "question": "Who are Hana Kurusu's relatives?",
+      "reason": "Not stated on the page; no kin of either Hana or the Angel is named.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-01",
+      "question": "What is the Angel's real name?",
+      "reason": "Not stated on the page: the page names her only 'Angel'; the sole alternate name is the romaji 'Tenshi' in the page's alias list, which is an alias, not a stated real name.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-02",
+      "question": "In which episode does the Angel make her anime debut?",
+      "reason": "Not stated on the page: the infobox has a Manga Debut field (Chapter 199) but no Anime Debut field, and the prose cites manga chapters only.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-03",
+      "question": "Who created the Angel?",
+      "reason": "Not stated on the page: the infobox has no creator field and Gege Akutami is named nowhere on the Angel page.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-04",
+      "question": "Who provides the Angel's voice?",
+      "reason": "Not stated on the page: the infobox has no voice-actor field and no voice actor is named.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-05",
+      "question": "What is the Angel's hair color?",
+      "reason": "Not stated on the page: the infobox hair field is empty.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-06",
+      "question": "What is the Angel's eye color?",
+      "reason": "Not stated on the page: the infobox eye field is empty.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-07",
+      "question": "What are the Angel's height and weight?",
+      "reason": "Not stated on the page: the infobox lists no height or weight.",
+      "reason_class": "not_stated",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-08",
+      "question": "What categories does the Angel page carry?",
+      "reason": "Unchunked value: the category links (Characters, Culling Game Players, Female, Incarnations, Jujutsu Sorcerers) appear only in the page metadata and the Navigation section, which the chunker excludes as boilerplate, so none is in a chunked or carded region.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-09",
+      "question": "Angel's aliases",
+      "reason": "Unchunked infobox value: the closed alias set is the single romaji 'Tenshi', which lives only in the infobox romaji field and the lead's Nihongo/Ruby cell, not in chunked prose, so the set's only member is not goldable (the same class this page's section 2 retired for the technique-name kanji/romaji). The live fact card carries the value, but a declared roster would commit an unchunked member, so the roster is not staged.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-10",
+      "question": "What is the romaji of Angel's name?",
+      "reason": "Unchunked infobox value: 'Tenshi' lives only in the infobox romaji field and the lead's Nihongo/Ruby cell, not in chunked prose; the same class this page's section 2 retired as unchunked (the live fact card carries it, confirmed top_k=12, but it is not commit-able under the section's chunked-prose rule).",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-11",
+      "question": "What are the kanji for Angel's name?",
+      "reason": "Unchunked infobox value: '天使' lives only in the infobox kanji field, not in chunked prose; the same class this page's section 2 retired as unchunked.",
+      "reason_class": "unchunked",
+      "owed_by_page": "angel",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_angel.section4.json",
+      "id": "jjk-pg-angel-retired-s4-12",
+      "question": "What series is the Angel a character in?",
+      "reason": "Gold not live in the qa bundle: the lead sentence 'The Angel is a character in Jujutsu Kaisen.' does not surface in the top-12 bundle for series-shaped questions (five phrasings checked at top_k=12), so the gold cannot be confirmed present in the live bundle.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-01",
+      "question": "Every battle involving Aoi Todo",
+      "reason": "Listed under the Shinjuku Showdown group of the main page's `Battles & Events` section (Aoi helped Yuta Okkotsu kill Kenjaku after that fight, per the Synopsis), but no battle page title names Aoi Todo, the page carries no `Aoi Todo Battles` category, and the battles-in discovery path (5 members) does not return it -- so the closed set this roster golds is the five battle pages the wiki itself tags as Aoi Todo battles.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-02",
+      "question": "Every technique or ability of Aoi Todo",
+      "reason": "Not declared as a roster. The Abilities and Powers section enumerates prose lead-ins (Master Hand-to-Hand Combatant, Enhanced Strength, Enhanced Speed, Great Tactical Intellect, Cursed Energy Manipulation, Cursed Energy Reinforcement) alongside the techniques and tools, so 'every technique or ability' is not the closed, page-stated set the Cursed Technique section names. Declared the closed Cursed Technique set instead (Every named cursed technique of Aoi Todo) and answered the abilities per-item via this section's qa questions.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-03",
+      "question": "Every tool or object Aoi Todo carries",
+      "reason": "Not declared as a mixed set. The Equipment section splits Cursed Tools (Playful Cloud) from Non-Cursed Tools (Vibraslap); only the closed cursed-tool set is declared (Every cursed tool Aoi Todo carries, staged in _jjk_page_aoi_todo.decl2.yaml), and the vibraslap is a non-cursed tool, so a combined cursed + non-cursed enumeration is left to discovery and answered per-tool via the qa questions.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s3-01",
+      "question": "Every relative of Aoi Todo",
+      "reason": "Not declared as a roster. The infobox relatives field lists exactly one entry, 'Unnamed Wife', which has no wiki page, so the closed set cannot be declared with members = exact page titles. Answered per-entry via the section's qa questions instead (111).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s3-02",
+      "question": "Who is Aoi Todo's rival?",
+      "reason": "The page never labels any character as Aoi Todo's rival. The closest stated dynamics are that his peers don't get along with him and everyone finds him irritating, and that he was especially irritated in the Fearsome Womb because Yuta Okkotsu, a worthy opponent, wouldn't be attending his last Goodwill Event.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s4-01",
+      "question": "What are the kanji and romaji of Aoi Todo's name?",
+      "reason": "The infobox `kanji` cell (東堂葵) and `romaji` cell (Tōdō Aoi) are Nihongo/Ruby-derived cells that the pipeline does not make goldable, so a kanji- or romaji-only answer cannot be golded; the clause is retired rather than rephrased, since no chunked prose states the full name in kanji (the Trivia sentence names only the component kanji).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s4-02",
+      "question": "What are Aoi Todo's aliases?",
+      "reason": "The page has no `alias` infobox field and no nickname or epithet anywhere in the prose; the closest form is the description of how his peers see him ('battle-crazed meathead'), which is characterization, not a closed alias set. No roster is staged.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s4-03",
+      "question": "In which other media does Aoi Todo appear?",
+      "reason": "The page has no 'Other Media' section and no mention of games, movies or other appearances, so there is nothing to gold; the clause is retired rather than invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s5-01",
+      "question": "What was Aoi Todo's role during the Culling Game and the Time Vessel's merge with Tengen, according to the Synopsis?",
+      "reason": "The Synopsis page states no Culling Game or Time Vessel arc: its arc sections run Fearsome Womb, Kyoto Goodwill Event, Death Painting, Shibuya Incident, Shinjuku Showdown and Modulo, and neither stored Aoi Todo page mentions the Culling Game, the Time Vessel or Tengen (grep of the stored wikitext finds zero hits), so no Culling Game / Time Vessel beat (merge with Tengen, Aoi's role) can be golded.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s5-02",
+      "question": "In which chapter does the Synopsis place Aoi Todo's fight with Mahito?",
+      "reason": "The Synopsis page's stored wikitext contains no prose '(Chapter N, Episode M)' locator pairs: the chapter numbers exist only as {{ref|chap=...}}/{{Ref|chap=...}} citation parameters (chap=126/130/132/136 for the Mahito fight), which the chunker renders as separate '(Chapter 126)'-style tokens rather than a contiguous pair, and a grep of the stored wikitext finds zero '(Chapter'/'(Episode' prose hits (the only '(Chapter' on the main page is an image filename), so no verbatim locator can be golded from the stored wikitext.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s6-01",
+      "question": "How many kanji make up Aoi Todo's name?",
+      "reason": "The infobox `kanji` field and the Nihongo/Ruby template in the lead show three characters (東堂葵) but never state the count, and the characters have no wiki pages, so the count is not goldable; the surname kanji meanings are asked instead (jjk-pg-aoi_todo-255).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s6-02",
+      "question": "Every kanji of Aoi Todo's name",
+      "reason": "Not declarable as a roster: the members would be the CJK characters 東/堂/葵, which have no wiki pages and exist only as Nihongo/Ruby template arguments in the lead, so the declared-members contract (members = page titles or page-stated names) cannot be met.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-s6-03",
+      "question": "How many quotes does the Quotes section list?",
+      "reason": "The Quotes section lists four quotes but the page never states the count, and quotes are text, not page titles, so the set is not declarable as a roster; individual quotes are asked instead (jjk-pg-aoi_todo-286..300).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-001",
+      "question": "Every battle involving Aoi Todo",
+      "reason": "superseded by page-gen:battles (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "aoi_todo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-012",
+      "question": "What is the outcome of Megumi Fushiguro vs. Aoi Todo?",
+      "reason": "superseded by page-gen:battle:Megumi Fushiguro vs. Aoi Todo:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "aoi_todo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-020",
+      "question": "What is the outcome of Yuji Itadori vs. Aoi Todo?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori vs. Aoi Todo:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "aoi_todo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-028",
+      "question": "What is the outcome of Yuji Itadori & Aoi Todo vs. Hanami?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Aoi Todo vs. Hanami:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "aoi_todo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-037",
+      "question": "What is the outcome of Yuji Itadori & Aoi Todo vs. Mahito?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "aoi_todo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-04",
+      "question": "How does Aoi Todo fake Boogie Woogie against Hanami?",
+      "reason": "Cross-page/premise: the Aoi page says he countered Hanami with his technique and nearly defeated them; 'faking Boogie Woogie by clapping without the switch' is not stated.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-05",
+      "question": "What does Gojo unleash on Hanami at the end of the battle?",
+      "reason": "Cross-page: Gojo unleashing Hollow Technique: Purple on Hanami is on the Gojo / Hanami / episode page, not the Aoi page.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-06",
+      "question": "How did Aoi help Yuta Okkotsu kill Kenjaku?",
+      "reason": "Cross-page: the Aoi page's Battles section lists the Kenjaku fight; the 'swap so Yuta can kill him' mechanism is on the Kenjaku / episode page.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-07",
+      "question": "What did Choso do after creating a barrier around Yuji, according to the Shinjuku Showdown Arc section of the Synopsis?",
+      "reason": "Cross-page: Choso's barrier-and-sacrifice for Yuji is on the Choso page, not the Aoi page.",
+      "reason_class": "cross_page",
+      "owed_by_page": "choso",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.json",
+      "id": "jjk-pg-aoi_todo-retired-08",
+      "question": "Whom did everyone praise after the pitch that hit Aoi Todo in the face?",
+      "reason": "Cross-page: the praise-after-the-pitch scene is told on the Baseball Game / Kyoto Goodwill synopsis pages, not the Aoi Todo page.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section1.json",
+      "id": "jjk-pg-aoi_todo-retired-01",
+      "question": "Every battle involving Aoi Todo",
+      "reason": "Listed under the Shinjuku Showdown group of the main page's `Battles & Events` section (Aoi helped Yuta Okkotsu kill Kenjaku after that fight, per the Synopsis), but no battle page title names Aoi Todo, the page carries no `Aoi Todo Battles` category, and the battles-in discovery path (5 members) does not return it -- so the closed set this roster golds is the five battle pages the wiki itself tags as Aoi Todo battles.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section2.json",
+      "id": "jjk-pg-aoi_todo-retired-02",
+      "question": "Every technique or ability of Aoi Todo",
+      "reason": "Not declared as a roster. The Abilities and Powers section enumerates prose lead-ins (Master Hand-to-Hand Combatant, Enhanced Strength, Enhanced Speed, Great Tactical Intellect, Cursed Energy Manipulation, Cursed Energy Reinforcement) alongside the techniques and tools, so 'every technique or ability' is not the closed, page-stated set the Cursed Technique section names. Declared the closed Cursed Technique set instead (Every named cursed technique of Aoi Todo) and answered the abilities per-item via this section's qa questions.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section2.json",
+      "id": "jjk-pg-aoi_todo-retired-03",
+      "question": "Every tool or object Aoi Todo carries",
+      "reason": "Not declared as a mixed set. The Equipment section splits Cursed Tools (Playful Cloud) from Non-Cursed Tools (Vibraslap); only the closed cursed-tool set is declared (Every cursed tool Aoi Todo carries, staged in _jjk_page_aoi_todo.decl2.yaml), and the vibraslap is a non-cursed tool, so a combined cursed + non-cursed enumeration is left to discovery and answered per-tool via the qa questions.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section3.json",
+      "id": "jjk-pg-aoi_todo-retired-s3-01",
+      "question": "Every relative of Aoi Todo",
+      "reason": "Not declared as a roster. The infobox relatives field lists exactly one entry, 'Unnamed Wife', which has no wiki page, so the closed set cannot be declared with members = exact page titles. Answered per-entry via the section's qa questions instead (111).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section3.json",
+      "id": "jjk-pg-aoi_todo-retired-s3-02",
+      "question": "Who is Aoi Todo's rival?",
+      "reason": "The page never labels any character as Aoi Todo's rival. The closest stated dynamics are that his peers don't get along with him and everyone finds him irritating, and that he was especially irritated in the Fearsome Womb because Yuta Okkotsu, a worthy opponent, wouldn't be attending his last Goodwill Event.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section4.json",
+      "id": "jjk-pg-aoi_todo-retired-s4-01",
+      "question": "What are the kanji and romaji of Aoi Todo's name?",
+      "reason": "The infobox `kanji` cell (東堂葵) and `romaji` cell (Tōdō Aoi) are Nihongo/Ruby-derived cells that the pipeline does not make goldable, so a kanji- or romaji-only answer cannot be golded; the clause is retired rather than rephrased, since no chunked prose states the full name in kanji (the Trivia sentence names only the component kanji).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section4.json",
+      "id": "jjk-pg-aoi_todo-retired-s4-02",
+      "question": "What are Aoi Todo's aliases?",
+      "reason": "The page has no `alias` infobox field and no nickname or epithet anywhere in the prose; the closest form is the description of how his peers see him ('battle-crazed meathead'), which is characterization, not a closed alias set. No roster is staged.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section4.json",
+      "id": "jjk-pg-aoi_todo-retired-s4-03",
+      "question": "In which other media does Aoi Todo appear?",
+      "reason": "The page has no 'Other Media' section and no mention of games, movies or other appearances, so there is nothing to gold; the clause is retired rather than invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section5.json",
+      "id": "jjk-pg-aoi_todo-retired-s5-01",
+      "question": "What was Aoi Todo's role during the Culling Game and the Time Vessel's merge with Tengen, according to the Synopsis?",
+      "reason": "The Synopsis page states no Culling Game or Time Vessel arc: its arc sections run Fearsome Womb, Kyoto Goodwill Event, Death Painting, Shibuya Incident, Shinjuku Showdown and Modulo, and neither stored Aoi Todo page mentions the Culling Game, the Time Vessel or Tengen (grep of the stored wikitext finds zero hits), so no Culling Game / Time Vessel beat (merge with Tengen, Aoi's role) can be golded.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section5.json",
+      "id": "jjk-pg-aoi_todo-retired-s5-02",
+      "question": "In which chapter does the Synopsis place Aoi Todo's fight with Mahito?",
+      "reason": "The Synopsis page's stored wikitext contains no prose '(Chapter N, Episode M)' locator pairs: the chapter numbers exist only as {{ref|chap=...}}/{{Ref|chap=...}} citation parameters (chap=126/130/132/136 for the Mahito fight), which the chunker renders as separate '(Chapter 126)'-style tokens rather than a contiguous pair, and a grep of the stored wikitext finds zero '(Chapter'/'(Episode' prose hits (the only '(Chapter' on the main page is an image filename), so no verbatim locator can be golded from the stored wikitext.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section6.json",
+      "id": "jjk-pg-aoi_todo-retired-s6-01",
+      "question": "How many kanji make up Aoi Todo's name?",
+      "reason": "The infobox `kanji` field and the Nihongo/Ruby template in the lead show three characters (東堂葵) but never state the count, and the characters have no wiki pages, so the count is not goldable; the surname kanji meanings are asked instead (jjk-pg-aoi_todo-255).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section6.json",
+      "id": "jjk-pg-aoi_todo-retired-s6-02",
+      "question": "Every kanji of Aoi Todo's name",
+      "reason": "Not declarable as a roster: the members would be the CJK characters 東/堂/葵, which have no wiki pages and exist only as Nihongo/Ruby template arguments in the lead, so the declared-members contract (members = page titles or page-stated names) cannot be met.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_aoi_todo.section6.json",
+      "id": "jjk-pg-aoi_todo-retired-s6-03",
+      "question": "How many quotes does the Quotes section list?",
+      "reason": "The Quotes section lists four quotes but the page never states the count, and quotes are text, not page titles, so the set is not declarable as a roster; individual quotes are asked instead (jjk-pg-aoi_todo-286..300).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_choso.json",
+      "id": "",
+      "question": "After using reverse cursed technique, what did Choso ask the sorcerers about?",
+      "reason": "engine gap: the Shinjuku blood-replenishment line (Choso asking Hakari, Yuta and Shoko how they replenished blood after reverse cursed technique) ranks below the other Shinjuku passages on the qa route, so it is not in the returned bundle; no declaration or phrasing reaches it.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_choso.json",
+      "id": "jjk-pg-choso-006",
+      "question": "How old is Choso?",
+      "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "choso",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_choso.json",
+      "id": "jjk-pg-choso-009",
+      "question": "What is Choso's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "choso",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_choso.json",
+      "id": "",
+      "question": "What resistance does Yuji have that protects him when exposed to the Death Painting Wombs' blood?",
+      "reason": "cross-character Trivia fact about Yuji, not retrievable on Choso's page; belongs on Yuji Itadori's page",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kenjaku.json",
+      "id": "jjk-pg-kenjaku-retired-01",
+      "question": "What are the kanji for Kenjaku's name?",
+      "reason": "Retired 2026-08-23: a retrieval gap, not a gold error. The kanji and their Nihongo ruby live only in the infobox, which is not chunked into passages, so no phrasing surfaces them in any bundle. Same structural class as the Shibuya Incident kanji retirement.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kenjaku.json",
+      "id": "jjk-pg-kenjaku-001",
+      "question": "Every battle involving Kenjaku",
+      "reason": "superseded by page-gen:battles (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kenjaku",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kenjaku.json",
+      "id": "jjk-pg-kenjaku-009",
+      "question": "What is Kenjaku's race?",
+      "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kenjaku",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kenjaku.json",
+      "id": "jjk-pg-kenjaku-011",
+      "question": "How old is Kenjaku?",
+      "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kenjaku",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kenjaku.json",
+      "id": "jjk-pg-kenjaku-012",
+      "question": "What is Kenjaku's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kenjaku",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kenjaku.json",
+      "id": "jjk-pg-kenjaku-248",
+      "question": "Who held the back gate of the Prison Realm?",
+      "reason": "near-duplicate of jjk-pg-kenjaku-040: 040 already asks 'Who held the back gate of the Prison Realm?' (answer 'Tengen') and passes; 248 covers the same Equipment-section claim ('in the hands of Tengen'). Retired 2026-08-24.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-01",
+      "question": "Every cursed tool Kento Nanami carries",
+      "reason": "Not declared as a roster. The Equipment > Cursed Tool section names only a single tool -- the 'blunt cleaver wrapped in a cloth' -- which is a prose description, not a page title. There is no closed, page-stated set of named cursed tools that satisfies the members = exact page-titles contract, so it is answered per-item via the qa questions (ids 080-082) instead. Left to discovery.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-01",
+      "question": "Who is Kento Nanami's romantic interest (Nobuko Takada)?",
+      "reason": "Neither stored page names a romantic interest: 'Nobuko Takada', 'girlfriend', 'wife' and 'marriage' appear nowhere in the raw wikitext. The page states only that 'Nanami does want to get married, but not while he's still working as a jujutsu sorcerer' (answered at jjk-pg-kento_nanami-109) and that 'Nanami hasn't been to the bakery after that time in the flashback' (answered at jjk-pg-kento_nanami-110). The unnamed woman in the bakery flashback is not named on the page, so a name gold cannot be committed without invention.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-02",
+      "question": "Where does Kento Nanami work (his family's shrine)?",
+      "reason": "No shrine appears on either stored page: 'shrine' does not occur in the raw wikitext of Kento Nanami or Kento Nanami/Synopsis. The lead states Nanami 'operated primarily out of the Tokyo campus' as a Jujutsu High sorcerer, which is the page's own answer to where he works.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-03",
+      "question": "Who is Kento Nanami's mother?",
+      "reason": "Neither stored page mentions a mother ('mother' does not occur in the raw wikitext). The only family facts on the page are that 'Nanami's maternal grandfather is Danish' and that 'Nanami is the only sorcerer in his family' (answered at jjk-pg-kento_nanami-111 and -112). A mother gold would have to be invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-04",
+      "question": "What are Kento Nanami's 'seventeen days of good luck'?",
+      "reason": "Neither stored page contains 'seventeen' or any 'days of good luck' framing. The only 'lucky' on the page is 'He claims he got lucky' about his Black Flash record (covered in section 1, jjk-pg-kento_nanami-050). The page's lucky-7 motif (7/3 birthday, 7:3 alias) is already covered in sections 1-2.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-05",
+      "question": "Who is Kento Nanami's rival?",
+      "reason": "The page states no rivalry with any person. The closest relationship is Nanami's regard for Atsuya Kusakabe as the strongest grade 1 sorcerer (answered at jjk-pg-kento_nanami-150), which is admiration from an interview, not a rivalry.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s4-01",
+      "question": "What are the kanji and romaji of Kento Nanami's name?",
+      "reason": "The infobox `kanji` cell (七海建人) and `romaji` cell (Nanami Kento) are Nihongo/Ruby-derived cells that the pipeline does not make goldable: the lead's {{Nihongo}}/{{Ruby}} furigana is not chunked, so a kanji- or romaji-only answer cannot be verified against stored wikitext. The clause is retired rather than rephrased; the English name is covered by the identity questions instead.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s5-01",
+      "question": "What did Kento Nanami do in the Culling Game, according to the Synopsis?",
+      "reason": "The stored Synopsis page carries no Culling Game section (its arc sections are Vs. Mahito Arc, Kyoto Goodwill Event Arc, Shibuya Incident Arc and Shinjuku Showdown Arc) and the main page's plot summary (Abilities and Powers / Overview) covers only the Mahito and Shibuya beats, so Nanami's Culling Game return / Time Vessel beat is stated on neither stored page and is retired rather than inferred.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s5-02",
+      "question": "In what year did Kento Nanami die?",
+      "reason": "Neither stored page states a year for Nanami's death: the Synopsis' Shibuya Incident Arc opens with 'On October 31' (no year) and the main page's Overview says only 'During the Shibuya Incident'. A year answer would have to be inferred, so the clause is retired.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s6-01",
+      "question": "What does Kento Nanami say or joke about working overtime, according to a Quotes section?",
+      "reason": "Neither stored page (Kento Nanami, Kento Nanami/Synopsis) carries a Quotes section, and the only verbatim dialogue on the main page sits in a File-template caption (\"No matter what I'm clocking out by six.\") that the parser drops with the File: link, so the line never reaches a chunk and the quote is not goldable. The overtime motif is covered instead by the fanbook trivia questions (jjk-pg-kento_nanami-098 cause of stress, 189 hobby, 193 after-work, 197-198 the forgotten watch).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s6-02",
+      "question": "Every kanji of Kento Nanami's name",
+      "reason": "Not declarable as a roster: the members would be the CJK characters 七/海/建/人, which exist only as Nihongo/Ruby template arguments on the page (the infobox kanji cell 七海建人 is a single string) and have no wiki pages, so the declared-members contract (members = page titles or page-stated names the filter can verify) cannot be met. The kanji meanings are asked as trivia instead (jjk-pg-kento_nanami-259/260).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-retired-s6-03",
+      "question": "How many Popularity Polls does the Trivia list Kento Nanami's rankings for?",
+      "reason": "The Trivia lists four polls (first through fourth) but never states the count, and the polls are not a declared closed set, so the count cannot be golded. The four poll results are asked as fact pairs instead (jjk-pg-kento_nanami-251..258).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-001",
+      "question": "Every battle involving Kento Nanami",
+      "reason": "superseded by page-gen:battles (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-002",
+      "question": "What is the outcome of Kento Nanami vs. Mahito?",
+      "reason": "superseded by page-gen:battle:Kento Nanami vs. Mahito:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-003",
+      "question": "Where did Kento Nanami vs. Mahito take place?",
+      "reason": "superseded by page-gen:battle:Kento Nanami vs. Mahito:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-004",
+      "question": "In which episode is Kento Nanami vs. Mahito depicted?",
+      "reason": "superseded by page-gen:battle:Kento Nanami vs. Mahito:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-012",
+      "question": "What is the outcome of Yuji Itadori & Kento Nanami vs. Mahito?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-013",
+      "question": "Where did Yuji Itadori & Kento Nanami vs. Mahito take place?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-014",
+      "question": "In which episode is Yuji Itadori & Kento Nanami vs. Mahito depicted?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-015",
+      "question": "In which manga chapter does Yuji Itadori & Kento Nanami vs. Mahito begin?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Kento Nanami vs. Mahito:chapters (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-023",
+      "question": "What is the outcome of Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-024",
+      "question": "Where did Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-033",
+      "question": "What is the outcome of Yuji Itadori & Kento Nanami vs. Transfigured Humans?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-034",
+      "question": "Where did Yuji Itadori & Kento Nanami vs. Transfigured Humans take place?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Kento Nanami vs. Transfigured Humans:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.json",
+      "id": "jjk-pg-kento_nanami-039",
+      "question": "Where did Jujutsu Sorcerers vs. Dagon take place?",
+      "reason": "superseded by page-gen:battle:Jujutsu Sorcerers vs. Dagon:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "kento_nanami",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section2.json",
+      "id": "jjk-pg-kento_nanami-retired-01",
+      "question": "Every cursed tool Kento Nanami carries",
+      "reason": "Not declared as a roster. The Equipment > Cursed Tool section names only a single tool -- the 'blunt cleaver wrapped in a cloth' -- which is a prose description, not a page title. There is no closed, page-stated set of named cursed tools that satisfies the members = exact page-titles contract, so it is answered per-item via the qa questions (ids 080-082) instead. Left to discovery.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section3.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-01",
+      "question": "Who is Kento Nanami's romantic interest (Nobuko Takada)?",
+      "reason": "Neither stored page names a romantic interest: 'Nobuko Takada', 'girlfriend', 'wife' and 'marriage' appear nowhere in the raw wikitext. The page states only that 'Nanami does want to get married, but not while he's still working as a jujutsu sorcerer' (answered at jjk-pg-kento_nanami-109) and that 'Nanami hasn't been to the bakery after that time in the flashback' (answered at jjk-pg-kento_nanami-110). The unnamed woman in the bakery flashback is not named on the page, so a name gold cannot be committed without invention.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section3.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-02",
+      "question": "Where does Kento Nanami work (his family's shrine)?",
+      "reason": "No shrine appears on either stored page: 'shrine' does not occur in the raw wikitext of Kento Nanami or Kento Nanami/Synopsis. The lead states Nanami 'operated primarily out of the Tokyo campus' as a Jujutsu High sorcerer, which is the page's own answer to where he works.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section3.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-03",
+      "question": "Who is Kento Nanami's mother?",
+      "reason": "Neither stored page mentions a mother ('mother' does not occur in the raw wikitext). The only family facts on the page are that 'Nanami's maternal grandfather is Danish' and that 'Nanami is the only sorcerer in his family' (answered at jjk-pg-kento_nanami-111 and -112). A mother gold would have to be invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section3.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-04",
+      "question": "What are Kento Nanami's 'seventeen days of good luck'?",
+      "reason": "Neither stored page contains 'seventeen' or any 'days of good luck' framing. The only 'lucky' on the page is 'He claims he got lucky' about his Black Flash record (covered in section 1, jjk-pg-kento_nanami-050). The page's lucky-7 motif (7/3 birthday, 7:3 alias) is already covered in sections 1-2.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section3.json",
+      "id": "jjk-pg-kento_nanami-retired-s3-05",
+      "question": "Who is Kento Nanami's rival?",
+      "reason": "The page states no rivalry with any person. The closest relationship is Nanami's regard for Atsuya Kusakabe as the strongest grade 1 sorcerer (answered at jjk-pg-kento_nanami-150), which is admiration from an interview, not a rivalry.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section4.json",
+      "id": "jjk-pg-kento_nanami-retired-s4-01",
+      "question": "What are the kanji and romaji of Kento Nanami's name?",
+      "reason": "The infobox `kanji` cell (七海建人) and `romaji` cell (Nanami Kento) are Nihongo/Ruby-derived cells that the pipeline does not make goldable: the lead's {{Nihongo}}/{{Ruby}} furigana is not chunked, so a kanji- or romaji-only answer cannot be verified against stored wikitext. The clause is retired rather than rephrased; the English name is covered by the identity questions instead.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section5.json",
+      "id": "jjk-pg-kento_nanami-retired-s5-01",
+      "question": "What did Kento Nanami do in the Culling Game, according to the Synopsis?",
+      "reason": "The stored Synopsis page carries no Culling Game section (its arc sections are Vs. Mahito Arc, Kyoto Goodwill Event Arc, Shibuya Incident Arc and Shinjuku Showdown Arc) and the main page's plot summary (Abilities and Powers / Overview) covers only the Mahito and Shibuya beats, so Nanami's Culling Game return / Time Vessel beat is stated on neither stored page and is retired rather than inferred.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section5.json",
+      "id": "jjk-pg-kento_nanami-retired-s5-02",
+      "question": "In what year did Kento Nanami die?",
+      "reason": "Neither stored page states a year for Nanami's death: the Synopsis' Shibuya Incident Arc opens with 'On October 31' (no year) and the main page's Overview says only 'During the Shibuya Incident'. A year answer would have to be inferred, so the clause is retired.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section6.json",
+      "id": "jjk-pg-kento_nanami-retired-s6-01",
+      "question": "What does Kento Nanami say or joke about working overtime, according to a Quotes section?",
+      "reason": "Neither stored page (Kento Nanami, Kento Nanami/Synopsis) carries a Quotes section, and the only verbatim dialogue on the main page sits in a File-template caption (\"No matter what I'm clocking out by six.\") that the parser drops with the File: link, so the line never reaches a chunk and the quote is not goldable. The overtime motif is covered instead by the fanbook trivia questions (jjk-pg-kento_nanami-098 cause of stress, 189 hobby, 193 after-work, 197-198 the forgotten watch).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section6.json",
+      "id": "jjk-pg-kento_nanami-retired-s6-02",
+      "question": "Every kanji of Kento Nanami's name",
+      "reason": "Not declarable as a roster: the members would be the CJK characters 七/海/建/人, which exist only as Nihongo/Ruby template arguments on the page (the infobox kanji cell 七海建人 is a single string) and have no wiki pages, so the declared-members contract (members = page titles or page-stated names the filter can verify) cannot be met. The kanji meanings are asked as trivia instead (jjk-pg-kento_nanami-259/260).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_kento_nanami.section6.json",
+      "id": "jjk-pg-kento_nanami-retired-s6-03",
+      "question": "How many Popularity Polls does the Trivia list Kento Nanami's rankings for?",
+      "reason": "The Trivia lists four polls (first through fourth) but never states the count, and the polls are not a declared closed set, so the count cannot be golded. The four poll results are asked as fact pairs instead (jjk-pg-kento_nanami-251..258).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_mahito.json",
+      "id": "",
+      "question": "What is a Black Flash?",
+      "reason": "cross-page: the Black Flash definition is canonical on the dedicated Black Flash page (Black Flash.json), which describes it as 'a distortion in space that occurs when cursed energy is applied within 0.000001 seconds (1 microsecond) of a physical hit'; the generic question routes there and is owned by the techniques pass (149). Mahito's page only references Black Flash in the context of his own usage.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_mahito.json",
+      "id": "",
+      "question": "What is a Polymorphic Soul Isomer?",
+      "reason": "cross-page: the Polymorphic Soul Isomer definition is canonical on the dedicated Polymorphic Soul Isomer page (Polymorphic Soul Isomer.json), which describes it as 'Through Soul Multiplicity, Mahito combines numerous souls with weak rejection to create one body'; the generic question routes there and is owned by the techniques pass (149).",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_mahito.json",
+      "id": "",
+      "question": "What is the result of forming the souls with weak rejection into one body?",
+      "reason": "cross-page: follow-up to the Polymorphic Soul Isomer definition; the result fact ('This manifests a highly stable and extremely strong transfigured human') is canonical on the dedicated Polymorphic Soul Isomer page, owned by the techniques pass (149).",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_mahito.json",
+      "id": "",
+      "question": "Who are the other characters that appeared individually on two separate manga volume covers?",
+      "reason": "cross-page: the answer enumerates other characters' cover facts (Yuji Itadori Vol 1/30, Yuta Okkotsu Vol 0/28, Satoru Gojo Vol 4/26), which belong on those characters' own pages. Mahito's own cover fact (Volume 6 and Volume 15) is kept in-lane as jjk-pg-mahito-144.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_maki_zenin.json",
+      "id": "jjk-pg-maki-002",
+      "question": "What are all the aliases of Maki Zenin?",
+      "reason": "superseded by page-gen:alias (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "maki_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_maki_zenin.json",
+      "id": "jjk-pg-maki-012",
+      "question": "What is the status of Maki Zenin?",
+      "reason": "superseded by page-gen:identity:status (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "maki_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-kanji",
+      "question": "What is Megumi Fushiguro's kanji name?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The kanji live only in the page's `Character Infobox` (`kanji =`) and the leading `{{Nihongo}}` line -- neither is chunked into a retrievable passage, so no phrasing surfaces the string in any bundle. Same structural class as Sukuna's kanji retire.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-romaji-ct",
+      "question": "What is Megumi Fushiguro's cursed technique romaji name?",
+      "reason": "Retired 2026-08-19 (re-verified 2026-08-23, round 3): a bad gold, not a retrieval gap. G3 (Nihongo keep-all) now chunks the Abilities-table romaji, but 'Tokusa no Kage Bujutsu' (Unique Shadow Arts) is the Ten Shadows Technique's romaji and does not appear on Megumi's own page (0 occurrences in the stored wikitext) -- it is filed on the Ten Shadows Technique page. Unanswerable from this page's corpus; left retired rather than re-golded to a string that is not here.",
+      "reason_class": "dated_retire",
+      "owed_by_page": "ten_shadows_technique",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-romaji-domain",
+      "question": "What is Megumi Fushiguro's domain expansion romaji name?",
+      "reason": "Retired 2026-08-19 (re-verified 2026-08-23, round 3): a bad gold, not a retrieval gap. G3 now chunks the domain romaji, but 'Kanga An'eitei' does not match the page -- 'Kanga' has 0 occurrences in Megumi's stored wikitext (the domain is 'Chimera Shadow Garden'; only the fragment 'An'eitei' recurs twice). The gold string is not on the page, so it cannot be served from this corpus.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-shikigami-romaji",
+      "question": "What are the romaji names of Megumi Fushiguro's shikigami?",
+      "reason": "Retired 2026-08-19 (re-verified 2026-08-23, round 3): a retrieval gap. G3 (Nihongo keep-all) now chunks the shikigami romaji -- six of the seven (Gyokuken, Nue, Orochi, Gama, Seiteishirazu, Bansho) now surface in the bundle -- but 'Datto' (in-source, 2 occurrences) still does not rank into the top passages for this phrasing, so a full seven-item gold fails. Left retired rather than re-golded to six of seven, which would understate the set.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-004",
+      "question": "What are all the aliases of Megumi Fushiguro?",
+      "reason": "superseded by page-gen:alias (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "megumi_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-006",
+      "question": "What is Megumi Fushiguro's race?",
+      "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "megumi_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-007",
+      "question": "What is Megumi Fushiguro's birthday?",
+      "reason": "superseded by page-gen:identity:birthday (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "megumi_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-008",
+      "question": "How old is Megumi Fushiguro?",
+      "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "megumi_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-009",
+      "question": "What is Megumi Fushiguro's gender?",
+      "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "megumi_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_megumi_fushiguro.json",
+      "id": "jjk-pg-megumi-019",
+      "question": "What is Megumi Fushiguro's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "megumi_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-01",
+      "question": "In which episode is Maki Zenin & Noritoshi Kamo vs. Naoya Zenin depicted?",
+      "reason": "The battle infobox `episodes` field is empty on this page, so there is no episode gold; the chapter range is golded instead (jjk-pg-naoya_zenin-025).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-02",
+      "question": "In which episode is Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin depicted?",
+      "reason": "The battle infobox `episodes` field is empty on this page, so there is no episode gold; the chapter range is golded instead (jjk-pg-naoya_zenin-036).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-03",
+      "question": "Every tool or object Naoya Zenin carries",
+      "reason": "Not declared as a roster. The Equipment section is a single Conventional Weaponry block describing one 'tanto-style knife' in prose; it is a description, not a page title, so the members = exact page-titles contract cannot be met. Answered per-item via the qa questions (ids 071-074) instead. Left to discovery.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-04",
+      "question": "Every technique or ability of Naoya Zenin",
+      "reason": "Not declared as a roster. The Abilities and Powers section enumerates prose lead-ins (Overall Skill Level, Master Hand-to-Hand Combatant, High Tactical Intellect) and the closed technique set is answered by the declared roster 'Every named cursed technique of Naoya Zenin' (id 051) instead. The ability lead-ins are answered per-item via the qa questions in this section.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-05",
+      "question": "Every relative of Naoya Zenin",
+      "reason": "Not declared as a roster. The closed Relatives list in the infobox includes 'Unnamed Older Brothers' and 'Unnamed Uncle', which have no wiki pages, and its first entry is the 'Zenin Clan' itself (a clan, not a person), so the full set cannot be members = exact page titles. Answered per-relative via this section's qa questions (ids 104-118) and the cousin rosters (ids 101-103) instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-06",
+      "question": "Every sibling of Naoya Zenin",
+      "reason": "Not a closed, page-titled set. The page names Naoya's brothers only as 'Unnamed Older Brothers' (no wiki page), so no sibling roster can be declared with members = exact page titles; Maki and Mai Zenin are his cousins, not siblings (both listed as (Cousin) in the infobox) and are covered by the cousin rosters (ids 101-103) instead.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-07",
+      "question": "Who created Naoya Zenin?",
+      "reason": "No creator on the page: the infobox has no `creator` field and Gege Akutami is named nowhere on the Naoya Zenin page or its Synopsis, so there is no verbatim creator gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-08",
+      "question": "What categories does the Naoya Zenin page carry?",
+      "reason": "Unchunked value: the category links (Characters, Cursed Spirits, Cursed Wombs, Jujutsu Sorcerers, Male, Zenin Family) appear only in the page metadata and the Navigation section, which the chunker excludes as boilerplate, so none is in a chunked or carded region.",
+      "reason_class": "unchunked",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-09",
+      "question": "What are Naoya Zenin's height and weight?",
+      "reason": "The infobox `height` and `weight` cells are empty on this page, so the page states no answer for either; nothing is invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-10",
+      "question": "What color is Naoya Zenin's outfit in the manga?",
+      "reason": "Unchunked infobox value: the only colour statement ('gray') lives in the Appearance section's `<gallery>` caption, which the chunker strips from section text, so it reaches no chunk or card.",
+      "reason_class": "unchunked",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-11",
+      "question": "What is Naoya Zenin's blood type?",
+      "reason": "No blood type on the page: the infobox has no blood cell and every \"blood\" mention is Blood Manipulation or Choso's blood, so there is no verbatim blood-type gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-12",
+      "question": "What is Naoya Zenin's theme song?",
+      "reason": "No theme song on the page: there is no theme-song field or any mention of a theme song for Naoya Zenin, so there is no gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-13",
+      "question": "What is Naoya Zenin's favorite food?",
+      "reason": "No favorite food on the page: there is no favorite-food field or any mention of a favorite food, so there is no gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-14",
+      "question": "What is Naoya Zenin's favorite color?",
+      "reason": "No favorite color on the page: the only colour statements are outfit descriptions (teal kimono, light/dark hakama), so there is no favorite-color gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-15",
+      "question": "Every battle involving Naoya Zenin",
+      "reason": "Battles-in discovery returns an 18-page superset naming Naoya via Zenin-lineage relatives, while the page's own Battles & Events section closes at 4 direct battles; wiki-structure ambiguity, so the set is un-closeable under exact-set scoring; the 4 direct battles stay covered by the individual battle facts in S1.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-16",
+      "question": "Which techniques did Choso use in Choso vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-17",
+      "question": "Which techniques did Naoya Zenin use in Choso vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-18",
+      "question": "Which techniques did Maki Zenin use in Maki Zenin vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-19",
+      "question": "Which techniques did Naoya Zenin use in Maki Zenin vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-20",
+      "question": "Which techniques did Noritoshi Kamo use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-21",
+      "question": "Which techniques did Maki Zenin use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-22",
+      "question": "Which techniques did Hagane Daido use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-23",
+      "question": "Which techniques did Naoya Zenin use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "reason": "Battle-scoped technique list is not a closed retrievable span; per-battle technique facts stay covered by the individual technique qa questions; declaration left dormant.",
+      "reason_class": "battle_scoped",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-retired-24",
+      "question": "What are the kanji for Naoya Zenin's name?",
+      "reason": "Unchunked infobox kanji cell: the `kanji` value (禪院直哉) sits in a Nihongo/Ruby-derived infobox cell the pipeline does not make retrievable, so a kanji-only answer cannot be golded.",
+      "reason_class": "unchunked",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-002",
+      "question": "What is the outcome of Choso vs. Naoya Zenin?",
+      "reason": "superseded by page-gen:battle:Choso vs. Naoya Zenin:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-003",
+      "question": "Where did Choso vs. Naoya Zenin take place?",
+      "reason": "superseded by page-gen:battle:Choso vs. Naoya Zenin:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-012",
+      "question": "What is the outcome of Maki Zenin vs. Naoya Zenin?",
+      "reason": "superseded by page-gen:battle:Maki Zenin vs. Naoya Zenin:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-013",
+      "question": "Where did Maki Zenin vs. Naoya Zenin take place?",
+      "reason": "superseded by page-gen:battle:Maki Zenin vs. Naoya Zenin:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-015",
+      "question": "In which episode is Maki Zenin vs. Naoya Zenin depicted?",
+      "reason": "superseded by page-gen:battle:Maki Zenin vs. Naoya Zenin:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-022",
+      "question": "What is the outcome of Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "reason": "superseded by page-gen:battle:Maki Zenin & Noritoshi Kamo vs. Naoya Zenin:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-023",
+      "question": "Where did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "reason": "superseded by page-gen:battle:Maki Zenin & Noritoshi Kamo vs. Naoya Zenin:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-033",
+      "question": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+      "reason": "superseded by page-gen:battle:Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-034",
+      "question": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+      "reason": "superseded by page-gen:battle:Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-175",
+      "question": "What is the romaji of Naoya Zenin's name?",
+      "reason": "superseded by page-gen:identity:romaji (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-179",
+      "question": "What is Naoya Zenin's birthday?",
+      "reason": "superseded by page-gen:identity:birthday (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.json",
+      "id": "jjk-pg-naoya_zenin-181",
+      "question": "What is Naoya Zenin's gender?",
+      "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section1.json",
+      "id": "jjk-pg-naoya_zenin-retired-01",
+      "question": "In which episode is Maki Zenin & Noritoshi Kamo vs. Naoya Zenin depicted?",
+      "reason": "The battle infobox `episodes` field is empty on this page, so there is no episode gold; the chapter range is golded instead (jjk-pg-naoya_zenin-025).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section1.json",
+      "id": "jjk-pg-naoya_zenin-retired-02",
+      "question": "In which episode is Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin depicted?",
+      "reason": "The battle infobox `episodes` field is empty on this page, so there is no episode gold; the chapter range is golded instead (jjk-pg-naoya_zenin-036).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section2.json",
+      "id": "jjk-pg-naoya_zenin-retired-03",
+      "question": "Every tool or object Naoya Zenin carries",
+      "reason": "Not declared as a roster. The Equipment section is a single Conventional Weaponry block describing one 'tanto-style knife' in prose; it is a description, not a page title, so the members = exact page-titles contract cannot be met. Answered per-item via the qa questions (ids 071-074) instead. Left to discovery.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section2.json",
+      "id": "jjk-pg-naoya_zenin-retired-04",
+      "question": "Every technique or ability of Naoya Zenin",
+      "reason": "Not declared as a roster. The Abilities and Powers section enumerates prose lead-ins (Overall Skill Level, Master Hand-to-Hand Combatant, High Tactical Intellect) and the closed technique set is answered by the declared roster 'Every named cursed technique of Naoya Zenin' (id 051) instead. The ability lead-ins are answered per-item via the qa questions in this section.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section3.json",
+      "id": "jjk-pg-naoya_zenin-retired-05",
+      "question": "Every relative of Naoya Zenin",
+      "reason": "Not declared as a roster. The closed Relatives list in the infobox includes 'Unnamed Older Brothers' and 'Unnamed Uncle', which have no wiki pages, and its first entry is the 'Zenin Clan' itself (a clan, not a person), so the full set cannot be members = exact page titles. Answered per-relative via this section's qa questions (ids 104-118) and the cousin rosters (ids 101-103) instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section3.json",
+      "id": "jjk-pg-naoya_zenin-retired-06",
+      "question": "Every sibling of Naoya Zenin",
+      "reason": "Not a closed, page-titled set. The page names Naoya's brothers only as 'Unnamed Older Brothers' (no wiki page), so no sibling roster can be declared with members = exact page titles; Maki and Mai Zenin are his cousins, not siblings (both listed as (Cousin) in the infobox) and are covered by the cousin rosters (ids 101-103) instead.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section4.json",
+      "id": "jjk-pg-naoya_zenin-retired-07",
+      "question": "Who created Naoya Zenin?",
+      "reason": "No creator on the page: the infobox has no `creator` field and Gege Akutami is named nowhere on the Naoya Zenin page or its Synopsis, so there is no verbatim creator gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section4.json",
+      "id": "jjk-pg-naoya_zenin-retired-08",
+      "question": "What categories does the Naoya Zenin page carry?",
+      "reason": "Unchunked value: the category links (Characters, Cursed Spirits, Cursed Wombs, Jujutsu Sorcerers, Male, Zenin Family) appear only in the page metadata and the Navigation section, which the chunker excludes as boilerplate, so none is in a chunked or carded region.",
+      "reason_class": "unchunked",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section4.json",
+      "id": "jjk-pg-naoya_zenin-retired-09",
+      "question": "What are Naoya Zenin's height and weight?",
+      "reason": "The infobox `height` and `weight` cells are empty on this page, so the page states no answer for either; nothing is invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section4.json",
+      "id": "jjk-pg-naoya_zenin-retired-10",
+      "question": "What color is Naoya Zenin's outfit in the manga?",
+      "reason": "Unchunked infobox value: the only colour statement ('gray') lives in the Appearance section's `<gallery>` caption, which the chunker strips from section text, so it reaches no chunk or card.",
+      "reason_class": "unchunked",
+      "owed_by_page": "naoya_zenin",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section6.json",
+      "id": "jjk-pg-naoya_zenin-retired-11",
+      "question": "What is Naoya Zenin's blood type?",
+      "reason": "No blood type on the page: the infobox has no blood cell and every \"blood\" mention is Blood Manipulation or Choso's blood, so there is no verbatim blood-type gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section6.json",
+      "id": "jjk-pg-naoya_zenin-retired-12",
+      "question": "What is Naoya Zenin's theme song?",
+      "reason": "No theme song on the page: there is no theme-song field or any mention of a theme song for Naoya Zenin, so there is no gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section6.json",
+      "id": "jjk-pg-naoya_zenin-retired-13",
+      "question": "What is Naoya Zenin's favorite food?",
+      "reason": "No favorite food on the page: there is no favorite-food field or any mention of a favorite food, so there is no gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_naoya_zenin.section6.json",
+      "id": "jjk-pg-naoya_zenin-retired-14",
+      "question": "What is Naoya Zenin's favorite color?",
+      "reason": "No favorite color on the page: the only colour statements are outfit descriptions (teal kimono, light/dark hakama), so there is no favorite-color gold to commit.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-01",
+      "question": "Every ability of Nobara Kugisaki",
+      "reason": "Not declared as a roster. The `Abilities and Powers` section mixes prose lead-ins (Overall Skill Level, the Maki training) with page-stated entries (the `Black Flash` entry under `Cursed Energy`, the three named techniques under `Cursed Technique`), so the roster's members=page-titles contract cannot be met across the whole section. The closed named-technique set is declared instead (`Every named cursed technique of Nobara Kugisaki`) and the rest is answered per-item via the qa questions in this section.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s3-01",
+      "question": "Every relative of Nobara Kugisaki",
+      "reason": "The infobox Relatives field lists only 'Unnamed Grandmother' and 'Unnamed Mother', both unlinked with no wiki pages, so the closed set cannot be declared with members = exact page titles. Answered per-relative via the section's qa questions instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s3-02",
+      "question": "Who is Nobara Kugisaki's best friend?",
+      "reason": "The page labels no one 'best friend'; its friendship statements are plural or conditional -- 'Yuji and Megumi grew to become Nobara's closest allies' (two people) and 'Saori became good friends with Nobara and Fumi' -- so there is no singular best-friend fact to gold.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s3-03",
+      "question": "Who is Nobara Kugisaki's boyfriend?",
+      "reason": "The Synopsis states she 'is not dating Yuji' and the Trivia section's fanbook block gives her ideal type of man as the historical Oda Nobunaga; the page names no actual romantic partner, so there is no partner to gold.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-01",
+      "question": "What are Nobara Kugisaki's aliases?",
+      "reason": "The page has no `alias` infobox cell and the prose names no nickname or epithet; its only page-level alias is the romaji ordering 'Kugisaki Nobara', which is the infobox `romaji` cell (a Nihongo/Ruby-derived cell the pipeline does not make retrievable), so there is no closed alias set to declare.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-02",
+      "question": "What are the kanji and romaji of Nobara Kugisaki's name?",
+      "reason": "The infobox `kanji` cell (釘崎野薔薇) and `romaji` cell (Kugisaki Nobara) are Nihongo/Ruby-derived cells that the pipeline does not make retrievable, so a kanji- or romaji-only answer cannot be golded; no chunked prose states the name in kanji.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-03",
+      "question": "What is Nobara Kugisaki's weight?",
+      "reason": "The infobox has no weight field and the page states no weight anywhere, so there is nothing to gold; nothing is invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-04",
+      "question": "In which manga chapter does Nobara Kugisaki make her debut?",
+      "reason": "The infobox `debut` cell ('Chapter 1 (Cover Only) / Chapter 3') is restated in no chunked prose, and a live query for the debut question surfaces no chapter value, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-05",
+      "question": "In which anime episode does Nobara Kugisaki make her debut?",
+      "reason": "The infobox `debutanime` cell ('Episode 2') is restated in no chunked prose; a live query for the debut question surfaces an Episode 3 opening-sequence trivia chunk instead, which is a different fact, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-06",
+      "question": "Who voices Nobara Kugisaki in the Japanese dub?",
+      "reason": "The infobox `voice` cell ('Asami Seto') is not chunked into prose and does not surface in a live query for the voice-actor question, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-07",
+      "question": "Who voices Nobara Kugisaki in the English dub?",
+      "reason": "The infobox `eng voice` cell ('Anne Yatco') is not chunked into prose and does not surface in a live query for the voice-actor question, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s5-01",
+      "question": "What did Nobara Kugisaki do during the Culling Game?",
+      "reason": "The Synopsis page states no Culling Game arc: its arc sections run Fearsome Womb, Kyoto Goodwill Event, Death Painting, Shibuya Incident, Shinjuku Showdown, Epilogue and Modulo, and neither stored page mentions the Culling Game or the Time Vessel (Tengen appears once, only in the 2087 Modulo section regarding the previous barriers), so no Culling Game beat (Time Vessel, merge with Tengen, her role) can be golded.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s5-02",
+      "question": "In which chapter and episode does the Synopsis place Nobara Kugisaki's fight with Mahito?",
+      "reason": "The Synopsis page's stored wikitext contains no 'Chapter N, Episode M' prose pairs: the locator numbers exist only as {{Ref|chap=...}}/{{Ref|ep=...}} citations (chap=122/123/124, ep=42/43 for the Mahito fight), which the chunker renders into chunk text as separate '(Chapter 124)'-style tokens (verified live via cli query) rather than a contiguous chapter-episode pair, and a grep of the stored wikitext finds zero prose '(Chapter'/'(Episode' hits, so no verbatim locator pair can be golded from the stored wikitext.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-01",
+      "question": "Every quote Nobara Kugisaki has",
+      "reason": "The Nobara Kugisaki page has no Quotes section (unlike the Toji Fushiguro page); its only verbatim quoted lines sit inside [[File:...]] image captions ('It's to stay true to myself.', 'Good. She's plenty crazy.', 'It wasn't so bad!'), and the chunker drops silent-namespace File: targets, so the quoted text never reaches a chunk and a quotes question cannot be answered by retrieval. The underlying facts are asked instead (259 for 'stay true to myself', 269 for 'plenty crazy', 173 in section 4 for the eyepatch moment).",
+      "reason_class": "other",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-02",
+      "question": "How many kanji make up Nobara Kugisaki's name?",
+      "reason": "The Trivia kanji bullet names four readings (kugi, saki, no, bara) but never states the count, and the characters sit in Nihongo template arguments (unfilled '?' display placeholders on this wiki) that have no wiki pages, so a count with no closed declared set behind it cannot be golded. The kanji meanings are asked instead (jjk-pg-nobara_kugisaki-251/252).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-03",
+      "question": "Every kanji of Nobara Kugisaki's name",
+      "reason": "Not declarable as a roster: the members would be the kanji characters, whose Nihongo display arguments are unfilled '?' placeholders in the wikitext, and none of the readings (kugi, saki, no, bara) is a wiki page, so the declared-members contract (members = page titles or page-stated names) cannot be met.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-04",
+      "question": "Every conventional weapon Nobara Kugisaki used",
+      "reason": "set retired — the 'conventional weapon' phrasing routes to the declared cursed-technique roster, whose members (Black Flash, Hairpin, Resonance, Straw Doll Technique) have no overlap with the page's single conventional weapon (Toy Mallet); the Toy Mallet fact is retained as a qa question, so the closed 1-member set is not standalone-listable under exact-set scoring",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-001",
+      "question": "Every battle involving Nobara Kugisaki",
+      "reason": "superseded by page-gen:battles (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-002",
+      "question": "What is the outcome of Nobara Kugisaki vs. Cursed Spirits?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Cursed Spirits:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-003",
+      "question": "Where did Nobara Kugisaki vs. Cursed Spirits take place?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Cursed Spirits:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-004",
+      "question": "In which episode is Nobara Kugisaki vs. Cursed Spirits depicted?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Cursed Spirits:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-008",
+      "question": "What is the outcome of Nobara Kugisaki vs. Mai Zenin?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Mai Zenin:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-009",
+      "question": "Where did Nobara Kugisaki vs. Mai Zenin take place?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Mai Zenin:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-010",
+      "question": "In which episode is Nobara Kugisaki vs. Mai Zenin depicted?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Mai Zenin:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-014",
+      "question": "What is the outcome of Nobara Kugisaki vs. Momo Nishimiya?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Momo Nishimiya:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-016",
+      "question": "In which episode is Nobara Kugisaki vs. Momo Nishimiya depicted?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki vs. Momo Nishimiya:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-021",
+      "question": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-022",
+      "question": "Where did Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits take place?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-023",
+      "question": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits depicted?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Cursed Spirits:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-027",
+      "question": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-028",
+      "question": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-034",
+      "question": "What is the outcome of Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-036",
+      "question": "In which episode is Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo depicted?",
+      "reason": "superseded by page-gen:battle:Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-044",
+      "question": "Which techniques did Nobara Kugisaki use in Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "reason": "superseded by page-gen:battle:Yuji Itadori & Nobara Kugisaki vs. Mahito:techniques (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-048",
+      "question": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "reason": "superseded by page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-049",
+      "question": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "reason": "superseded by page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-154",
+      "question": "What is Nobara Kugisaki's gender?",
+      "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-158",
+      "question": "What is Nobara Kugisaki's birthday?",
+      "reason": "superseded by page-gen:identity:birthday (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.json",
+      "id": "jjk-pg-nobara_kugisaki-159",
+      "question": "How old is Nobara Kugisaki?",
+      "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "nobara_kugisaki",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section2.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-01",
+      "question": "Every ability of Nobara Kugisaki",
+      "reason": "Not declared as a roster. The `Abilities and Powers` section mixes prose lead-ins (Overall Skill Level, the Maki training) with page-stated entries (the `Black Flash` entry under `Cursed Energy`, the three named techniques under `Cursed Technique`), so the roster's members=page-titles contract cannot be met across the whole section. The closed named-technique set is declared instead (`Every named cursed technique of Nobara Kugisaki`) and the rest is answered per-item via the qa questions in this section.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section3.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s3-01",
+      "question": "Every relative of Nobara Kugisaki",
+      "reason": "The infobox Relatives field lists only 'Unnamed Grandmother' and 'Unnamed Mother', both unlinked with no wiki pages, so the closed set cannot be declared with members = exact page titles. Answered per-relative via the section's qa questions instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section3.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s3-02",
+      "question": "Who is Nobara Kugisaki's best friend?",
+      "reason": "The page labels no one 'best friend'; its friendship statements are plural or conditional -- 'Yuji and Megumi grew to become Nobara's closest allies' (two people) and 'Saori became good friends with Nobara and Fumi' -- so there is no singular best-friend fact to gold.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section3.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s3-03",
+      "question": "Who is Nobara Kugisaki's boyfriend?",
+      "reason": "The Synopsis states she 'is not dating Yuji' and the Trivia section's fanbook block gives her ideal type of man as the historical Oda Nobunaga; the page names no actual romantic partner, so there is no partner to gold.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-01",
+      "question": "What are Nobara Kugisaki's aliases?",
+      "reason": "The page has no `alias` infobox cell and the prose names no nickname or epithet; its only page-level alias is the romaji ordering 'Kugisaki Nobara', which is the infobox `romaji` cell (a Nihongo/Ruby-derived cell the pipeline does not make retrievable), so there is no closed alias set to declare.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-02",
+      "question": "What are the kanji and romaji of Nobara Kugisaki's name?",
+      "reason": "The infobox `kanji` cell (釘崎野薔薇) and `romaji` cell (Kugisaki Nobara) are Nihongo/Ruby-derived cells that the pipeline does not make retrievable, so a kanji- or romaji-only answer cannot be golded; no chunked prose states the name in kanji.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-03",
+      "question": "What is Nobara Kugisaki's weight?",
+      "reason": "The infobox has no weight field and the page states no weight anywhere, so there is nothing to gold; nothing is invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-04",
+      "question": "In which manga chapter does Nobara Kugisaki make her debut?",
+      "reason": "The infobox `debut` cell ('Chapter 1 (Cover Only) / Chapter 3') is restated in no chunked prose, and a live query for the debut question surfaces no chapter value, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-05",
+      "question": "In which anime episode does Nobara Kugisaki make her debut?",
+      "reason": "The infobox `debutanime` cell ('Episode 2') is restated in no chunked prose; a live query for the debut question surfaces an Episode 3 opening-sequence trivia chunk instead, which is a different fact, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-06",
+      "question": "Who voices Nobara Kugisaki in the Japanese dub?",
+      "reason": "The infobox `voice` cell ('Asami Seto') is not chunked into prose and does not surface in a live query for the voice-actor question, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section4.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s4-07",
+      "question": "Who voices Nobara Kugisaki in the English dub?",
+      "reason": "The infobox `eng voice` cell ('Anne Yatco') is not chunked into prose and does not surface in a live query for the voice-actor question, so the infobox-only value is unretrievable.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section5.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s5-01",
+      "question": "What did Nobara Kugisaki do during the Culling Game?",
+      "reason": "The Synopsis page states no Culling Game arc: its arc sections run Fearsome Womb, Kyoto Goodwill Event, Death Painting, Shibuya Incident, Shinjuku Showdown, Epilogue and Modulo, and neither stored page mentions the Culling Game or the Time Vessel (Tengen appears once, only in the 2087 Modulo section regarding the previous barriers), so no Culling Game beat (Time Vessel, merge with Tengen, her role) can be golded.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section5.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s5-02",
+      "question": "In which chapter and episode does the Synopsis place Nobara Kugisaki's fight with Mahito?",
+      "reason": "The Synopsis page's stored wikitext contains no 'Chapter N, Episode M' prose pairs: the locator numbers exist only as {{Ref|chap=...}}/{{Ref|ep=...}} citations (chap=122/123/124, ep=42/43 for the Mahito fight), which the chunker renders into chunk text as separate '(Chapter 124)'-style tokens (verified live via cli query) rather than a contiguous chapter-episode pair, and a grep of the stored wikitext finds zero prose '(Chapter'/'(Episode' hits, so no verbatim locator pair can be golded from the stored wikitext.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section6.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-01",
+      "question": "Every quote Nobara Kugisaki has",
+      "reason": "The Nobara Kugisaki page has no Quotes section (unlike the Toji Fushiguro page); its only verbatim quoted lines sit inside [[File:...]] image captions ('It's to stay true to myself.', 'Good. She's plenty crazy.', 'It wasn't so bad!'), and the chunker drops silent-namespace File: targets, so the quoted text never reaches a chunk and a quotes question cannot be answered by retrieval. The underlying facts are asked instead (259 for 'stay true to myself', 269 for 'plenty crazy', 173 in section 4 for the eyepatch moment).",
+      "reason_class": "other",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section6.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-02",
+      "question": "How many kanji make up Nobara Kugisaki's name?",
+      "reason": "The Trivia kanji bullet names four readings (kugi, saki, no, bara) but never states the count, and the characters sit in Nihongo template arguments (unfilled '?' display placeholders on this wiki) that have no wiki pages, so a count with no closed declared set behind it cannot be golded. The kanji meanings are asked instead (jjk-pg-nobara_kugisaki-251/252).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_nobara_kugisaki.section6.json",
+      "id": "jjk-pg-nobara_kugisaki-retired-s6-03",
+      "question": "Every kanji of Nobara Kugisaki's name",
+      "reason": "Not declarable as a roster: the members would be the kanji characters, whose Nihongo display arguments are unfilled '?' placeholders in the wikitext, and none of the readings (kugi, saki, no, bara) is a wiki page, so the declared-members contract (members = page titles or page-stated names) cannot be met.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_satoru_gojo.json",
+      "id": "jjk-pg-gojo-002",
+      "question": "What are all the aliases of Satoru Gojo?",
+      "reason": "superseded by page-gen:alias (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "satoru_gojo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_satoru_gojo.json",
+      "id": "jjk-pg-gojo-006",
+      "question": "What is Satoru Gojo's race?",
+      "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "satoru_gojo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_satoru_gojo.json",
+      "id": "jjk-pg-gojo-008",
+      "question": "What is Satoru Gojo's gender?",
+      "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "satoru_gojo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_satoru_gojo.json",
+      "id": "jjk-pg-gojo-012",
+      "question": "What is Satoru Gojo's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "satoru_gojo",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_satoru_gojo.json",
+      "id": "jjk-pg-satoru_gojo-169",
+      "question": "What are all the mentors of Satoru Gojo?",
+      "reason": "roster 'Every mentor of Satoru Gojo' not declared (fewer than 2 members); a one-line relation is prose, not a closed set",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_shibuya_incident.json",
+      "id": "jjk-pg-shibuya_incident-012",
+      "question": "What are the kanji for the Shibuya Incident?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The kanji (渋谷事変) live only in the `Event Infobox` and leading `{{Nihongo}}` line, which are not chunked into passages; narrative mode returns an empty context for them. Same structural class as Culling Game's inline-ruby romaji.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_shibuya_incident.json",
+      "id": "jjk-pg-shibuya_incident-016",
+      "question": "What does the Shibuya Incident count as in jujutsu history?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The phrase \"jujutsu terrorist attack\" appears only in the page's lead sentence and `Event Infobox` (the infobox is not chunked), so no phrasing surfaces it in any narrative bundle -- the same structural class as Culling Game's inline-ruby romaji.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_shibuya_incident.json",
+      "id": "jjk-pg-shibuya_incident-004",
+      "question": "Who were the curse users that took part in the Shibuya Incident? (golded to Mahito's six)",
+      "reason": "Retired 2026-08-19: a duplicate of jjk-pg-shibuya_incident-003, which asks the identical question and is golded to the eleven curse users the declared roster returns. This copy was originally golded to the six names in Mahito's Group (the participants infobox), but that exact phrasing now routes to the 11-member 'Curse users of the Shibuya Incident' roster, so its six-name gold could never match. The six-member set is still covered by the pre-existing 'Disaster Curses (Mahito's group)' roster and its eval question.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-013-chapter-clause",
+      "question": "...and in which chapter of the manga? (the chapter-number clause of 'Who killed Sukuna')",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The killing is documented ('killing Gojo when the latter least expected it', Synopsis: 'Gojo is killed and Sukuna is victorious'), but the chapter number (Chapter 236) appears only inside `{{Ref|chap=236}}` citation tags on both the main page and the Synopsis -- never in chunked prose. The engine strips Refs, so no phrasing surfaces 'Chapter 236' in any bundle. Same structural class as Shibuya Incident's scrollbox/infobox retires; the killer (Satoru Gojo) is kept because it is retrievable.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-052",
+      "question": "In which ancient text is the mythological Ryomen-Sukuna described?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The string 'Nihon Shoki' appears only inside a `{{Scroll box}}` transclusion in the Trivia section (the mythology note), which is not chunked into a retrievable passage -- the same structural class as Shibuya Incident's chapter-title scrollbox retires. Hida Province passed because it also recurs in prose; Nihon Shoki does not.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-005",
+      "question": "What is Sukuna's kanji name?",
+      "reason": "Retired 2026-08-19: a retrieval gap, not a gold error. The kanji (両面宿儺) live only in the page's `Character Infobox` (`kanji =`) and the leading `{{Nihongo}}` line -- neither is chunked into a retrievable passage, so no phrasing surfaces the string in any bundle. Same structural class as Shibuya Incident's kanji/romaji retires.",
+      "reason_class": "dated_retire",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-002",
+      "question": "What are all the aliases of Sukuna?",
+      "reason": "superseded by page-gen:alias (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "sukuna",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-007",
+      "question": "What is Sukuna's race?",
+      "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "sukuna",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-008",
+      "question": "How old is Sukuna?",
+      "reason": "superseded by page-gen:identity:age (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "sukuna",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_sukuna.json",
+      "id": "jjk-pg-sukuna-009",
+      "question": "What is Sukuna's gender?",
+      "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "sukuna",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-01",
+      "question": "Every battle involving Toji Fushiguro",
+      "reason": "Not a member of the closed set. The Battles & Events section on Toji Fushiguro lists it under the Shibuya Incident group marked (Summoned) -- Toji's soul was inside Ogami's grandson's vessel during that fight -- but no battle page title names Toji Fushiguro, and the five Toji-titled battle pages (the ones whose titles appear in _jjk_battles.json) are the closed set this roster golds.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-02",
+      "question": "Every technique or ability of Toji Fushiguro",
+      "reason": "Not declared as a roster. The Abilities and Powers section does enumerate his abilities (Master Weapons Specialist, Enhanced Senses, Immense Strength, Immense Speed and Reflexes, Great Tactical Intellect, Zero Cursed Energy, Physically Gifted, Revealing One's Hand), but these are prose lead-ins, not page titles, so the roster's 'members = exact page titles' contract cannot be met. Answered per-ability via the qa questions in this section instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s3-01",
+      "question": "Every relative of Toji Fushiguro",
+      "reason": "Not declared as a roster. The closed Relatives list in the infobox includes 'Megumi's Mother' and 'Tsumiki's Mother', which have no wiki pages and so cannot be exact page titles, and 'Zenin Clan' is a clan, not a person; the full closed set cannot be declared with members = exact page titles. Answered per-relative via the section's qa questions instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s3-02",
+      "question": "Every member of the Zenin clan",
+      "reason": "The Toji Fushiguro page does not enumerate the Zenin clan's membership; it lists only Toji's own relatives in its infobox. Not a closed, page-stated set on this page (the clan's membership belongs to the Zenin Clan page).",
+      "reason_class": "open_set",
+      "owed_by_page": "Zenin Clan",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s3-03",
+      "question": "Who did Toji Fushiguro train?",
+      "reason": "The page states no master-student relationship with any person; the only thing Toji trained is his inventory cursed spirit ('earnestly training it like a pet'), which is a curse, not a person.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s4-01",
+      "question": "What are the kanji and romaji of Toji Fushiguro's name?",
+      "reason": "The infobox `kanji` cell (伏黒甚爾) and `romaji` cell (Fushiguro Tōji) are Nihongo/Ruby-derived cells that the pipeline does not make retrievable, so a kanji- or romaji-only answer cannot be golded; the clause is retired rather than rephrased, since no retrievable prose states the name in kanji.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s4-02",
+      "question": "What are Toji Fushiguro's age, height and blood type?",
+      "reason": "The infobox `age`, `height` and `bloodtype` cells are empty on the page (the fields exist but carry no value), so the page states no answer for any of them; nothing is invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s4-03",
+      "question": "What are Toji Fushiguro's titles?",
+      "reason": "The page has no `title` infobox field and never enumerates a closed set of titles; its only epithet, \"Sorcerer Killer\", is the infobox `alias` and is carried by the aliases roster (jjk-pg-toji_fushiguro-170) and the moniker questions (171, 173) instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s5-01",
+      "question": "In what year did Toji Fushiguro die?",
+      "reason": "Neither stored page states a year for Toji's death: 'In 2006' only anchors the assassination contract (Synopsis, Gojo's Past Arc) and 'October 31, 2018' is the date of Ogami's Séance (Shibuya Incident Arc). No verbatim answer exists on the cited pages, so the clause is retired rather than inferred.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s5-02",
+      "question": "For how long could Toji Fushiguro be resurrected by Ogami's technique?",
+      "reason": "The only duration wording ('allowing Toji to be resurrected for an unprecedented amount of time') sits inside the main page's Nihongo template cell under Cursed Restrictions (Physically Gifted), which the pipeline does not make retrievable, so the clause is retired rather than golded from a non-prose cell.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-01",
+      "question": "How many votes did Toji Fushiguro receive in the first Popularity Poll?",
+      "reason": "The Trivia section states results for the second (9th, 3,384 votes), third (11th, 1,258 votes) and fourth (10th, 3,218 votes) Popularity Polls only; the page states no number for a first poll, so the clause is retired rather than golded to an invented figure.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-02",
+      "question": "How many kanji make up Toji Fushiguro's name?",
+      "reason": "The Trivia kanji bullet names four kanji (伏, 黒, 甚, 爾) but never states the count, and the characters sit in Nihongo template arguments that the roster machinery cannot declare (they are not wiki page titles), so the count is not goldable; the kanji meanings are asked instead (jjk-pg-toji_fushiguro-259/260).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-03",
+      "question": "Every kanji of Toji Fushiguro's name",
+      "reason": "Not declarable as a roster: the members would be the CJK characters 伏/黒/甚/爾, which have no wiki pages and exist only as Nihongo template arguments in the Trivia bullet, so the declared-members contract (members = page titles or page-stated names) cannot be met.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-04",
+      "question": "How many quotes does the Quotes section list?",
+      "reason": "The Quotes section lists five quotes but the page never states the count, and quotes are text, not page titles, so the set is not declarable as a roster; individual quotes are asked instead (jjk-pg-toji_fushiguro-266..274).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-001",
+      "question": "Every battle involving Toji Fushiguro",
+      "reason": "Wiki-structure ambiguity: the engine battles-in discovery returns 18 battle pages naming Toji Fushiguro (many via his Fushiguro-lineage descendants), but his page Battles & Events section closes the set at 5 direct battles. The two disagree, so \"every battle involving Toji\" has no single clean closed set; retired rather than gold a noisy 18-superset or a 5-under-set. The 5 direct battles remain covered by the 49 individual battle fact questions.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-002",
+      "question": "What is the outcome of Satoru Gojo vs. Toji Fushiguro?",
+      "reason": "superseded by page-gen:battle:Satoru Gojo vs. Toji Fushiguro:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-003",
+      "question": "Where did Satoru Gojo vs. Toji Fushiguro take place?",
+      "reason": "superseded by page-gen:battle:Satoru Gojo vs. Toji Fushiguro:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-004",
+      "question": "In which episode is Satoru Gojo vs. Toji Fushiguro depicted?",
+      "reason": "superseded by page-gen:battle:Satoru Gojo vs. Toji Fushiguro:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-011",
+      "question": "What is the outcome of Satoru Gojo vs. Toji Fushiguro: Rematch?",
+      "reason": "superseded by page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-012",
+      "question": "Where did Satoru Gojo vs. Toji Fushiguro: Rematch take place?",
+      "reason": "superseded by page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-013",
+      "question": "In which episode is Satoru Gojo vs. Toji Fushiguro: Rematch depicted?",
+      "reason": "superseded by page-gen:battle:Satoru Gojo vs. Toji Fushiguro: Rematch:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-021",
+      "question": "What is the outcome of Suguru Geto vs. Toji Fushiguro?",
+      "reason": "superseded by page-gen:battle:Suguru Geto vs. Toji Fushiguro:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-022",
+      "question": "Where did Suguru Geto vs. Toji Fushiguro take place?",
+      "reason": "superseded by page-gen:battle:Suguru Geto vs. Toji Fushiguro:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-023",
+      "question": "In which episode is Suguru Geto vs. Toji Fushiguro depicted?",
+      "reason": "superseded by page-gen:battle:Suguru Geto vs. Toji Fushiguro:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-030",
+      "question": "What is the outcome of Megumi Fushiguro vs. Toji Fushiguro?",
+      "reason": "superseded by page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-031",
+      "question": "Where did Megumi Fushiguro vs. Toji Fushiguro take place?",
+      "reason": "superseded by page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-033",
+      "question": "In which episode is Megumi Fushiguro vs. Toji Fushiguro depicted?",
+      "reason": "superseded by page-gen:battle:Megumi Fushiguro vs. Toji Fushiguro:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-039",
+      "question": "What is the outcome of Toji Fushiguro vs. Dagon?",
+      "reason": "superseded by page-gen:battle:Toji Fushiguro vs. Dagon:outcome (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-040",
+      "question": "Where did Toji Fushiguro vs. Dagon take place?",
+      "reason": "superseded by page-gen:battle:Toji Fushiguro vs. Dagon:place (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-041",
+      "question": "In which episode is Toji Fushiguro vs. Dagon depicted?",
+      "reason": "superseded by page-gen:battle:Toji Fushiguro vs. Dagon:episodes (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-163",
+      "question": "What is Toji Fushiguro's birthday?",
+      "reason": "superseded by page-gen:identity:birthday (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-164",
+      "question": "What is Toji Fushiguro's gender?",
+      "reason": "superseded by page-gen:identity:gender (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "toji_fushiguro",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-03",
+      "question": "What did Cursed Technique Reversal: Red do to Toji Fushiguro in the rematch?",
+      "reason": "Cross-page: the Culling Game Gojo-vs-Toji rematch (where Gojo's Cursed Technique Reversal: Red strikes him) is not covered in the Toji Fushiguro page.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-04",
+      "question": "How did Toji Fushiguro kill Riko Amanai?",
+      "reason": "Cross-page: the Toji page says only that he 'assassinate[d] Riko Amanai'; the headshot-by-handgun detail is on the Riko Amanai / Star Plasma Vessel page.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.json",
+      "id": "jjk-pg-toji_fushiguro-retired-05",
+      "question": "How did Toji Fushiguro enter Dagon's Domain Expansion?",
+      "reason": "Cross-page: the Toji page describes the Dagon domain interior, not how he entered (climbing through the hole).",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section1.json",
+      "id": "jjk-pg-toji_fushiguro-retired-01",
+      "question": "Every battle involving Toji Fushiguro",
+      "reason": "Not a member of the closed set. The Battles & Events section on Toji Fushiguro lists it under the Shibuya Incident group marked (Summoned) -- Toji's soul was inside Ogami's grandson's vessel during that fight -- but no battle page title names Toji Fushiguro, and the five Toji-titled battle pages (the ones whose titles appear in _jjk_battles.json) are the closed set this roster golds.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section2.json",
+      "id": "jjk-pg-toji_fushiguro-retired-01",
+      "question": "Every shikigami Toji Fushiguro used",
+      "reason": "Not declared. The Toji Fushiguro page never states that he used shikigami; every 'shikigami' mention on the page refers to Dagon's shikigami (which Toji exorcised) or to Megumi's shikigami (which he assessed). The Ten Shadows Technique is not mentioned on the Toji page, so this is not a closed, page-stated set. Left to discovery.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section2.json",
+      "id": "jjk-pg-toji_fushiguro-retired-02",
+      "question": "Every technique or ability of Toji Fushiguro",
+      "reason": "Not declared as a roster. The Abilities and Powers section does enumerate his abilities (Master Weapons Specialist, Enhanced Senses, Immense Strength, Immense Speed and Reflexes, Great Tactical Intellect, Zero Cursed Energy, Physically Gifted, Revealing One's Hand), but these are prose lead-ins, not page titles, so the roster's 'members = exact page titles' contract cannot be met. Answered per-ability via the qa questions in this section instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section3.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s3-01",
+      "question": "Every relative of Toji Fushiguro",
+      "reason": "Not declared as a roster. The closed Relatives list in the infobox includes 'Megumi's Mother' and 'Tsumiki's Mother', which have no wiki pages and so cannot be exact page titles, and 'Zenin Clan' is a clan, not a person; the full closed set cannot be declared with members = exact page titles. Answered per-relative via the section's qa questions instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section3.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s3-02",
+      "question": "Every member of the Zenin clan",
+      "reason": "The Toji Fushiguro page does not enumerate the Zenin clan's membership; it lists only Toji's own relatives in its infobox. Not a closed, page-stated set on this page (the clan's membership belongs to the Zenin Clan page).",
+      "reason_class": "open_set",
+      "owed_by_page": "Zenin Clan",
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section3.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s3-03",
+      "question": "Who did Toji Fushiguro train?",
+      "reason": "The page states no master-student relationship with any person; the only thing Toji trained is his inventory cursed spirit ('earnestly training it like a pet'), which is a curse, not a person.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section4.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s4-01",
+      "question": "What are the kanji and romaji of Toji Fushiguro's name?",
+      "reason": "The infobox `kanji` cell (伏黒甚爾) and `romaji` cell (Fushiguro Tōji) are Nihongo/Ruby-derived cells that the pipeline does not make retrievable, so a kanji- or romaji-only answer cannot be golded; the clause is retired rather than rephrased, since no retrievable prose states the name in kanji.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section4.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s4-02",
+      "question": "What are Toji Fushiguro's age, height and blood type?",
+      "reason": "The infobox `age`, `height` and `bloodtype` cells are empty on the page (the fields exist but carry no value), so the page states no answer for any of them; nothing is invented.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section4.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s4-03",
+      "question": "What are Toji Fushiguro's titles?",
+      "reason": "The page has no `title` infobox field and never enumerates a closed set of titles; its only epithet, \"Sorcerer Killer\", is the infobox `alias` and is carried by the aliases roster (jjk-pg-toji_fushiguro-170) and the moniker questions (171, 173) instead.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section5.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s5-01",
+      "question": "In what year did Toji Fushiguro die?",
+      "reason": "Neither stored page states a year for Toji's death: 'In 2006' only anchors the assassination contract (Synopsis, Gojo's Past Arc) and 'October 31, 2018' is the date of Ogami's Séance (Shibuya Incident Arc). No verbatim answer exists on the cited pages, so the clause is retired rather than inferred.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section5.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s5-02",
+      "question": "For how long could Toji Fushiguro be resurrected by Ogami's technique?",
+      "reason": "The only duration wording ('allowing Toji to be resurrected for an unprecedented amount of time') sits inside the main page's Nihongo template cell under Cursed Restrictions (Physically Gifted), which the pipeline does not make retrievable, so the clause is retired rather than golded from a non-prose cell.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section6.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-01",
+      "question": "How many votes did Toji Fushiguro receive in the first Popularity Poll?",
+      "reason": "The Trivia section states results for the second (9th, 3,384 votes), third (11th, 1,258 votes) and fourth (10th, 3,218 votes) Popularity Polls only; the page states no number for a first poll, so the clause is retired rather than golded to an invented figure.",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section6.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-02",
+      "question": "How many kanji make up Toji Fushiguro's name?",
+      "reason": "The Trivia kanji bullet names four kanji (伏, 黒, 甚, 爾) but never states the count, and the characters sit in Nihongo template arguments that the roster machinery cannot declare (they are not wiki page titles), so the count is not goldable; the kanji meanings are asked instead (jjk-pg-toji_fushiguro-259/260).",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section6.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-03",
+      "question": "Every kanji of Toji Fushiguro's name",
+      "reason": "Not declarable as a roster: the members would be the CJK characters 伏/黒/甚/爾, which have no wiki pages and exist only as Nihongo template arguments in the Trivia bullet, so the declared-members contract (members = page titles or page-stated names) cannot be met.",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_toji_fushiguro.section6.json",
+      "id": "jjk-pg-toji_fushiguro-retired-s6-04",
+      "question": "How many quotes does the Quotes section list?",
+      "reason": "The Quotes section lists five quotes but the page never states the count, and quotes are text, not page titles, so the set is not declarable as a roster; individual quotes are asked instead (jjk-pg-toji_fushiguro-266..274).",
+      "reason_class": "open_set",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_yuji_itadori.json",
+      "id": "jjk-pg-yuji_itadori-009",
+      "question": "What is Yuji Itadori's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "yuji_itadori",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_yuji_itadori.json",
+      "id": "jjk-pg-yuji_itadori-011",
+      "question": "Who is Yuji Itadori's Japanese voice actor?",
+      "reason": "superseded by page-gen:identity:voice (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "yuji_itadori",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_yuji_itadori.json",
+      "id": "jjk-pg-yuji_itadori-012",
+      "question": "Who is Yuji Itadori's English voice actor?",
+      "reason": "superseded by page-gen:identity:eng voice (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "yuji_itadori",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_yuji_itadori.json",
+      "id": "",
+      "question": "Which battles does the wiki list in Yuji Itadori's Battles & Events section?",
+      "reason": "Battles & Events is a list of battle links, not a prose narrative (G8 shape); the full battle list is already covered by roster question jjk-pg-yuji_itadori-001 and battle details live on the individual battle pages",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_yuji_itadori.json",
+      "id": "",
+      "question": "What does Yuji Itadori tell Kinji Hakari about a cog's function?",
+      "reason": "Quotes section is a cquote, not chunked prose (G5 shape)",
+      "reason_class": "other",
+      "owed_by_page": null,
+      "absorbed": false
+    },
+    {
+      "batch": "_jjk_page_yuta_okkotsu.json",
+      "id": "jjk-pg-yuta-005",
+      "question": "What is Yuta Okkotsu's race?",
+      "reason": "superseded by page-gen:identity:race (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "yuta_okkotsu",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_yuta_okkotsu.json",
+      "id": "jjk-pg-yuta-010",
+      "question": "What is Yuta Okkotsu's occupation?",
+      "reason": "superseded by page-gen:identity:occupation (page-gen reconciliation)",
+      "reason_class": "superseded",
+      "owed_by_page": "yuta_okkotsu",
+      "absorbed": true
+    },
+    {
+      "batch": "_jjk_page_yuta_okkotsu.json",
+      "id": "jjk-pg-yuta-retired-90",
+      "question": "Who allied himself with Yuta Okkotsu to avoid conflict?",
+      "reason": "Cross-page: Naoya allying with Yuta's side to avoid conflict is told in the Culling Game Arc synopsis and chapter pages, not the Yuta Okkotsu page.",
+      "reason_class": "cross_page",
+      "owed_by_page": null,
+      "absorbed": false
+    }
+  ]
+}

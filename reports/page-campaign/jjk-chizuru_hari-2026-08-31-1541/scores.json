@@ -1,0 +1,639 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Chizuru Hari?",
+      "set": "Every ally of Chizuru Hari",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Chizuru Hari?",
+      "set": "Chizuru Hari's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Chizuru Hari",
+      "set": "Every battle involving Chizuru Hari",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Chizuru Hari?",
+      "found": [
+        "Reggie Star",
+        "Iori Hazenoki"
+      ],
+      "missing": [],
+      "members": [
+        "Iori Hazenoki",
+        "Reggie Star"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Chizuru Hari?",
+      "found": [
+        "Reggie Star's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Reggie Star's Group"
+      ]
+    },
+    {
+      "query": "Every battle involving Chizuru Hari",
+      "found": [
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro vs. Reggie Star's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Chizuru Hari's name?",
+      "id": "jjk-pg-chizuru_hari-001",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "\u91dd\u5343\u91e3"
+      ],
+      "found": [
+        "\u91dd\u5343\u91e3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Chizuru Hari's name?",
+      "id": "jjk-pg-chizuru_hari-002",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Hari Chizuru"
+      ],
+      "found": [
+        "Hari Chizuru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chizuru Hari's race?",
+      "id": "jjk-pg-chizuru_hari-003",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chizuru Hari's gender?",
+      "id": "jjk-pg-chizuru_hari-004",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Chizuru Hari?",
+      "id": "jjk-pg-chizuru_hari-005",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Chizuru Hari's occupation?",
+      "id": "jjk-pg-chizuru_hari-006",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Chizuru Hari first appear?",
+      "id": "jjk-pg-chizuru_hari-007",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Chapter 167"
+      ],
+      "found": [
+        "Chapter 167"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Chizuru Hari first depicted?",
+      "id": "jjk-pg-chizuru_hari-008",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Chizuru Hari's Japanese voice actor?",
+      "id": "jjk-pg-chizuru_hari-009",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Toshitsugu Takashige"
+      ],
+      "found": [
+        "Toshitsugu Takashige"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-chizuru_hari-010",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Takaba interrupts the battle."
+      ],
+      "found": [
+        "Takaba interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-chizuru_hari-011",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-chizuru_hari-012",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Reggie Star's Group begin?",
+      "id": "jjk-pg-chizuru_hari-013",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Chapter 167"
+      ],
+      "found": [
+        "Chapter 167"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Reggie Star's Group depicted?",
+      "id": "jjk-pg-chizuru_hari-014",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Episode 57"
+      ],
+      "found": [
+        "Episode 57"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Reggie Star's Group take place?",
+      "id": "jjk-pg-chizuru_hari-015",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Chizuru Hari use in Megumi Fushiguro vs. Reggie Star's Group?",
+      "id": "jjk-pg-chizuru_hari-016",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Claw Technique"
+      ],
+      "found": [
+        "Claw Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which group was Chizuru Hari aligned with?",
+      "id": "jjk-pg-chizuru_hari-020",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Reggie Star's group"
+      ],
+      "found": [
+        "Reggie Star's group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Chizuru Hari look like?",
+      "id": "jjk-pg-chizuru_hari-021",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "a tall middle-aged man with a a toned figure evidenced by his abs"
+      ],
+      "found": [
+        "a tall middle-aged man with a a toned figure evidenced by his abs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Chizuru's hair look like?",
+      "id": "jjk-pg-chizuru_hari-022",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "short and slicked bluish-grey hair that is styled into a pony tail"
+      ],
+      "found": [
+        "short and slicked bluish-grey hair that is styled into a pony tail"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Chizuru's outfit consist of?",
+      "id": "jjk-pg-chizuru_hari-023",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "lime green pants tucked into black boots with a white sash hanging from his waist and black claws on its hands"
+      ],
+      "found": [
+        "lime green pants tucked into black boots with a white sash hanging from his waist and black claws on its hands"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Chizuru have for his opponents as a fighter?",
+      "id": "jjk-pg-chizuru_hari-024",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "some degree of respect for his opponents"
+      ],
+      "found": [
+        "some degree of respect for his opponents"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Chizuru behave during the Culling Game?",
+      "id": "jjk-pg-chizuru_hari-025",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "aggressively followed Reggie and fought to kill any sorcerer that opposed him"
+      ],
+      "found": [
+        "aggressively followed Reggie and fought to kill any sorcerer that opposed him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Chizuru never get to use his cursed technique?",
+      "id": "jjk-pg-chizuru_hari-026",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "was killed before ever getting to utilize his cursed technique"
+      ],
+      "found": [
+        "was killed before ever getting to utilize his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Chizuru join Reggie Star's group?",
+      "id": "jjk-pg-chizuru_hari-027",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "before Megumi and Yuji entered the Tokyo No. 1 colony"
+      ],
+      "found": [
+        "before Megumi and Yuji entered the Tokyo No. 1 colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Chizuru thrown off the building after his negotiations with Reggie failed?",
+      "id": "jjk-pg-chizuru_hari-028",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "thrown off the building and slammed into the ground below by Nue"
+      ],
+      "found": [
+        "thrown off the building and slammed into the ground below by Nue"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Chizuru do just before a new rule was added to the Culling Game?",
+      "id": "jjk-pg-chizuru_hari-029",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "confronted Megumi again inside one of the apartments"
+      ],
+      "found": [
+        "confronted Megumi again inside one of the apartments"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Megumi batter Chizuru off the building the second time?",
+      "id": "jjk-pg-chizuru_hari-030",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Megumi summoned Max Elephant"
+      ],
+      "found": [
+        "Megumi summoned Max Elephant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Chizuru die?",
+      "id": "jjk-pg-chizuru_hari-031",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "Megumi slashes him across the face"
+      ],
+      "found": [
+        "Megumi slashes him across the face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many points did Chizuru score in the Culling Game?",
+      "id": "jjk-pg-chizuru_hari-032",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "28 points"
+      ],
+      "found": [
+        "28 points"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Chizuru's technique allow him to do?",
+      "id": "jjk-pg-chizuru_hari-033",
+      "subject": "Chizuru Hari",
+      "accept": "all",
+      "expected": [
+        "shift his fingers into dark claws"
+      ],
+      "found": [
+        "shift his fingers into dark claws"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 30
+  }
+}

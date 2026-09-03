@@ -1,0 +1,283 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Boost On",
+      "set": "Every battle involving Boost On",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Boost On",
+      "found": [
+        "Panda vs. Ultimate Mechamaru"
+      ],
+      "missing": [],
+      "members": [
+        "Panda vs. Ultimate Mechamaru"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Boost On's name?",
+      "id": "jjk-pg-boost_on-001",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "\u63a8\u529b\u52a0\u7b97"
+      ],
+      "found": [
+        "\u63a8\u529b\u52a0\u7b97"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Boost On's name?",
+      "id": "jjk-pg-boost_on-002",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "B\u016bsuto On"
+      ],
+      "found": [
+        "B\u016bsuto On"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Boost On first appear?",
+      "id": "jjk-pg-boost_on-003",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Chapter 38"
+      ],
+      "found": [
+        "Chapter 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Boost On first depicted?",
+      "id": "jjk-pg-boost_on-004",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Episode 16"
+      ],
+      "found": [
+        "Episode 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Panda vs. Ultimate Mechamaru?",
+      "id": "jjk-pg-boost_on-005",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Panda is victorious."
+      ],
+      "found": [
+        "Panda is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Panda vs. Ultimate Mechamaru take place?",
+      "id": "jjk-pg-boost_on-006",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu School"
+      ],
+      "found": [
+        "Tokyo Jujutsu School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Panda vs. Ultimate Mechamaru begin?",
+      "id": "jjk-pg-boost_on-007",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Chapter 37"
+      ],
+      "found": [
+        "Chapter 37"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Panda vs. Ultimate Mechamaru depicted?",
+      "id": "jjk-pg-boost_on-008",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Episode 16"
+      ],
+      "found": [
+        "Episode 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Panda vs. Ultimate Mechamaru take place?",
+      "id": "jjk-pg-boost_on-009",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Boost On?",
+      "id": "jjk-pg-boost_on-011",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Boost On is a command that engages the elbow-mounted jet boosters of Mechamaru, allowing for a boost in speed and momentum."
+      ],
+      "found": [
+        "Boost On is a command that engages the elbow-mounted jet boosters of Mechamaru, allowing for a boost in speed and momentum."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How can Boost On activate Mechamaru's boosters?",
+      "id": "jjk-pg-boost_on-012",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "It can be used to activate the boosters in either of Mechamaru's arms or both at the same time."
+      ],
+      "found": [
+        "It can be used to activate the boosters in either of Mechamaru's arms or both at the same time."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Boost On used to increase Mechamaru's attack power?",
+      "id": "jjk-pg-boost_on-013",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Boost On is mainly used in conjunction with other commands in order to increase Mechamaru's attack power. When used alongside Sword Option, the Ultra Spin attack is extremely fast and powerful. Enough so to obliterate a tree with a single strike."
+      ],
+      "found": [
+        "Boost On is mainly used in conjunction with other commands in order to increase Mechamaru's attack power. When used alongside Sword Option, the Ultra Spin attack is extremely fast and powerful. Enough so to obliterate a tree with a single strike."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Boost On increase Mechamaru's maneuverability?",
+      "id": "jjk-pg-boost_on-014",
+      "subject": "Boost On",
+      "accept": "all",
+      "expected": [
+        "Boost On can also be used to increase Mechamaru's maneuverability whenever it requires a quick boost in speed. Using both boosters at once give Mechamaru enough speed to instantly propel himself behind his opponent, blitzing past their guard completely."
+      ],
+      "found": [
+        "Boost On can also be used to increase Mechamaru's maneuverability whenever it requires a quick boost in speed. Using both boosters at once give Mechamaru enough speed to instantly propel himself behind his opponent, blitzing past their guard completely."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 13,
+    "fact_present": 13
+  }
+}

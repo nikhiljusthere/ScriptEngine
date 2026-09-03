@@ -21,7 +21,14 @@ from __future__ import annotations
 
 import pytest
 
-from scriptengine.retrieve.roster import asks_one_on_one, side_fighters
+from scriptengine.retrieve.roster import (
+    asks_for_battles_in,
+    battles_in,
+    _fighter_role,
+    _fighter_words,
+    asks_one_on_one,
+    side_fighters,
+)
 from scriptengine.stores.facts import FactStore
 
 CHARACTERS = (
@@ -29,6 +36,13 @@ CHARACTERS = (
     "Maki Zenin", "Nobuaki Zenin", "Sukuna", "Mahito", "Panda", "Ko-Guy",
     "Haba", "Hanyu", "Hana Kurusu",
 )
+
+# JJK's battle infobox vocabulary (series/jjk/overrides.yaml). The default
+# `_BATTLE_SIDES` is `combatant1`/`abilities1`; without this the keys never match.
+JJK_OVERRIDES = {"battle_relations": [
+    {"side": "side1", "abilities": "powers1"},
+    {"side": "side2", "abilities": "powers2"},
+]}
 
 
 @pytest.fixture()
@@ -117,3 +131,125 @@ class TestSideFighters:
         """`Finger Bearer` is one opponent, and not a named character."""
         found, _leftover = side_fighters(store, "Finger Bearer")
         assert found == []
+
+
+class TestAsksForBattlesIn:
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Every Fight Mahoraga Has Ever Been In",
+            "all battles of Sukuna",
+            "each duel Gojo was in",
+            "every match Yuji Itadori fought",
+            # The question-worded twins: same set, asked as a wh-question.
+            "Who did Sukuna fight?",
+            "What battles was Mahoraga in?",
+        ],
+    )
+    def test_recognised(self, query):
+        assert asks_for_battles_in(query) is True
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Sukuna vs. Mahoraga",             # one named battle
+            "Every technique of Sukuna",       # a kit, not his fights
+            "",
+        ],
+    )
+    def test_not_claimed_when_unasked(self, query):
+        assert asks_for_battles_in(query) is False
+
+
+class TestFighterWords:
+    def test_the_last_word_is_the_name(self):
+        """The canonical title is long; the infobox writes only the name."""
+        words = _fighter_words("Eight-Handled Sword Divergent Sila Divine General Mahoraga")
+        assert words == ["mahoraga"]
+
+    def test_a_single_long_word_keeps_itself(self):
+        assert _fighter_words("Mahoraga") == ["mahoraga"]
+
+    def test_short_words_are_dropped(self):
+        """`vs`, `the` and other short tokens identify nobody."""
+        assert _fighter_words("vs the") == []
+
+    def test_a_name_of_only_short_words_keeps_its_tokens(self):
+        """`Ui Ui` has no word longer than three letters, so `content_words`
+        dropped both and the battles-in route answered with the whole
+        90-battle category. The raw tokens come back; the caller matches them
+        at word boundaries."""
+        assert _fighter_words("Ui Ui") == ["ui"]
+
+
+@pytest.fixture()
+def role_store(tmp_path):
+    """Two battles: one where Mahoraga fights, one where it is Sukuna's tool."""
+    store = FactStore(tmp_path / "facts.db")
+    store.initialise()
+
+    def battle(title, facts):
+        doc = store.add_document(
+            title=title, url="", page_type="battle", infobox_template="",
+            lead=f"{title} is a fight.", word_count=4, revid=1, fetched_at="",
+        )
+        node = store.add_node(title, "battle", doc)
+        for key, value in facts:
+            store.add_fact(node_id=node, key=key, label=key, value=value, citation="")
+
+    battle("Sukuna vs. Mahoraga", [("side1", "Sukuna"), ("side2", "Mahoraga")])
+    battle("Sukuna vs. Yorozu", [
+        ("side1", "Sukuna"), ("side2", "Yorozu"),
+        ("powers1", "Mahoraga\nDismantle"),
+    ])
+    # A battle Mahoraga is not on at all.
+    battle("Gojo vs. Toji", [("side1", "Satoru Gojo"), ("side2", "Toji Fushiguro")])
+    # A two-letter fighter, and a page whose text only contains the token as a
+    # substring (`circuit` has `ui` inside it but never names Ui Ui).
+    battle("Mei Mei & Ui Ui vs. Smallpox Deity", [
+        ("side1", "Mei Mei Ui Ui"), ("side2", "Smallpox Deity"),
+    ])
+    battle("Riko vs. Circuit", [("side1", "Riko"), ("side2", "Circuit")])
+
+    yield store
+    store.close()
+
+
+class TestFighterRole:
+    def test_direct_combatant(self, role_store):
+        role = _fighter_role(role_store, "Sukuna vs. Mahoraga", "Mahoraga", JJK_OVERRIDES)
+        assert role == "direct combatant"
+
+    def test_deployed_as_a_tool(self, role_store):
+        role = _fighter_role(role_store, "Sukuna vs. Yorozu", "Mahoraga", JJK_OVERRIDES)
+        assert "deployed by" in role and "Sukuna" in role
+
+
+class TestBattlesIn:
+    def test_lists_only_the_fights_it_is_on(self, role_store):
+        from scriptengine.retrieve.citations import EpisodeIndex
+        roster = battles_in(role_store, EpisodeIndex(), "Mahoraga", 600, JJK_OVERRIDES)
+        assert roster is not None
+        titles = {m.name for m in roster.members}
+        assert titles == {"Sukuna vs. Mahoraga", "Sukuna vs. Yorozu"}
+
+    def test_a_fighter_on_no_battle_returns_none(self, role_store):
+        from scriptengine.retrieve.citations import EpisodeIndex
+        assert battles_in(role_store, EpisodeIndex(), "Panda", 600, JJK_OVERRIDES) is None
+
+    def test_a_short_named_fighter_matches_at_word_boundaries(self, role_store):
+        """`Ui Ui` has no long word. A substring search for `ui` would also land
+        in `Circuit`; word-boundary matching names exactly the fight it is on."""
+        from scriptengine.retrieve.citations import EpisodeIndex
+        roster = battles_in(role_store, EpisodeIndex(), "Ui Ui", 600, JJK_OVERRIDES)
+        assert roster is not None
+        assert {m.name for m in roster.members} == {"Mei Mei & Ui Ui vs. Smallpox Deity"}
+
+    def test_each_member_carries_its_role(self, role_store):
+        from scriptengine.retrieve.citations import EpisodeIndex
+        roster = battles_in(role_store, EpisodeIndex(), "Mahoraga", 600, JJK_OVERRIDES)
+        assert roster is not None
+        roles = {m.name: next(f["value"] for f in m.facts if f["field"] == "Role")
+                 for m in roster.members}
+        assert roles["Sukuna vs. Mahoraga"] == "direct combatant"
+        assert "deployed by" in roles["Sukuna vs. Yorozu"]

@@ -1,0 +1,1957 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "Every battle of Saitama",
+      "set": "33 battle page(s) naming Saitama",
+      "confidence": "declared",
+      "returned": 33,
+      "available": 33,
+      "canon": 33,
+      "found": 33,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Saitama?",
+      "set": "Saitama's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle of Saitama",
+      "found": [
+        "Blast vs. Empty Void (Retconned)",
+        "Child Emperor vs. Phoenix Man: Round 2",
+        "Genos, Bofoi, and Saitama vs. Meteor",
+        "King and Saitama vs. Elder Centipede",
+        "Saitama vs. Boros",
+        "Saitama vs. Carnage Kabuto",
+        "Saitama vs. Crablante",
+        "Saitama vs. Cruel Dragon",
+        "Saitama vs. Deep Sea King",
+        "Saitama vs. Empty Void",
+        "Saitama vs. Evil Natural Water",
+        "Saitama vs. Flashy Flash",
+        "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+        "Saitama vs. Genos",
+        "Saitama vs. Genos: Round Two",
+        "Saitama vs. Groribas and Geryuganshoop",
+        "Saitama vs. Hammerhead",
+        "Saitama vs. House of Evolution",
+        "Saitama vs. Marugori",
+        "Saitama vs. Mirror",
+        "Saitama vs. Mosquito",
+        "Saitama vs. Orochi",
+        "Saitama vs. Overgrown Rover and Nyan",
+        "Saitama vs. Personification Of A Light Pull Cord",
+        "Saitama vs. Pluton",
+        "Saitama vs. Speed-o'-Sound Sonic",
+        "Saitama vs. Speed-o'-Sound Sonic: Round Three",
+        "Saitama vs. Speed-o'-Sound Sonic: Round Two",
+        "Saitama vs. Subterranean King",
+        "Saitama vs. Suiryu",
+        "Saitama vs. Super Custom YO649Z Mk. II",
+        "Saitama vs. Tanktop Tiger and Tanktop Black Hole",
+        "Saitama vs. Vaccine Man"
+      ],
+      "missing": [],
+      "members": [
+        "Blast vs. Empty Void (Retconned)",
+        "Child Emperor vs. Phoenix Man: Round 2",
+        "Genos, Bofoi, and Saitama vs. Meteor",
+        "King and Saitama vs. Elder Centipede",
+        "Saitama vs. Boros",
+        "Saitama vs. Carnage Kabuto",
+        "Saitama vs. Crablante",
+        "Saitama vs. Cruel Dragon",
+        "Saitama vs. Deep Sea King",
+        "Saitama vs. Empty Void",
+        "Saitama vs. Evil Natural Water",
+        "Saitama vs. Flashy Flash",
+        "Saitama vs. Fubuki, Eyelashes and Mountain Ape",
+        "Saitama vs. Genos",
+        "Saitama vs. Genos: Round Two",
+        "Saitama vs. Groribas and Geryuganshoop",
+        "Saitama vs. Hammerhead",
+        "Saitama vs. House of Evolution",
+        "Saitama vs. Marugori",
+        "Saitama vs. Mirror",
+        "Saitama vs. Mosquito",
+        "Saitama vs. Orochi",
+        "Saitama vs. Overgrown Rover and Nyan",
+        "Saitama vs. Personification Of A Light Pull Cord",
+        "Saitama vs. Pluton",
+        "Saitama vs. Speed-o'-Sound Sonic",
+        "Saitama vs. Speed-o'-Sound Sonic: Round Three",
+        "Saitama vs. Speed-o'-Sound Sonic: Round Two",
+        "Saitama vs. Subterranean King",
+        "Saitama vs. Suiryu",
+        "Saitama vs. Super Custom YO649Z Mk. II",
+        "Saitama vs. Tanktop Tiger and Tanktop Black Hole",
+        "Saitama vs. Vaccine Man"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Saitama?",
+      "found": [
+        "Caped Baldy",
+        "The Fist That Has Turned Against God"
+      ],
+      "missing": [],
+      "members": [
+        "Caped Baldy",
+        "The Fist That Has Turned Against God"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is Saitama's hero name?",
+      "id": "opm-pg-saitama-003",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Caped Baldy"
+      ],
+      "found": [
+        "Caped Baldy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese reading of Saitama's hero name?",
+      "id": "opm-pg-saitama-004",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Hagemanto"
+      ],
+      "found": [
+        "Hagemanto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How tall is Saitama?",
+      "id": "opm-pg-saitama-005",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "175 cm"
+      ],
+      "found": [
+        "175 cm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How much does Saitama weigh?",
+      "id": "opm-pg-saitama-006",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "70 kg"
+      ],
+      "found": [
+        "70 kg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which apartment does Saitama live in at the Hero Association Headquarters?",
+      "id": "opm-pg-saitama-007",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Hero Apartment 104"
+      ],
+      "found": [
+        "Hero Apartment 104"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Saitama's rumored identity in Z-City's Ghost Town?",
+      "id": "opm-pg-saitama-008",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "The Ghost Town Monster"
+      ],
+      "found": [
+        "The Ghost Town Monster"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What two foods does Saitama like according to his profile?",
+      "id": "opm-pg-saitama-009",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "seaweed",
+        "Chinese cabbage"
+      ],
+      "found": [
+        "seaweed",
+        "Chinese cabbage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the hidden meaning behind Saitama's cactus?",
+      "id": "opm-pg-saitama-010",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "remains unchanged no matter how it is taken care of"
+      ],
+      "found": [
+        "remains unchanged no matter how it is taken care of"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Saitama's hero profile number in the anime?",
+      "id": "opm-pg-saitama-011",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "03402"
+      ],
+      "found": [
+        "03402"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which poll did Saitama rank 1st and young Saitama 10th?",
+      "id": "opm-pg-saitama-012",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "character popularity poll"
+      ],
+      "found": [
+        "character popularity poll"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Saitama's fighting style?",
+      "id": "opm-pg-saitama-013",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Killer Move: Serious Series"
+      ],
+      "found": [
+        "Killer Move: Serious Series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which organizations is Saitama affiliated with?",
+      "id": "opm-pg-saitama-014",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Hero Association",
+        "Saitama Group",
+        "Hero Name Victims Association"
+      ],
+      "found": [
+        "Hero Association",
+        "Saitama Group",
+        "Hero Name Victims Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Besides hero, what other occupation is listed for Saitama?",
+      "id": "opm-pg-saitama-015",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Teacher"
+      ],
+      "found": [
+        "Teacher"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which game was Saitama bested by Bang?",
+      "id": "opm-pg-saitama-016",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Rock, Paper, Scissors"
+      ],
+      "found": [
+        "Rock, Paper, Scissors"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What does Saitama mostly lose to King at?",
+      "id": "opm-pg-saitama-017",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "video games"
+      ],
+      "found": [
+        "video games"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What eating contest did Saitama lose to Genos in?",
+      "id": "opm-pg-saitama-018",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "spicy noodle eating contest"
+      ],
+      "found": [
+        "spicy noodle eating contest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What has no enemy been able to do to Saitama in any way?",
+      "id": "opm-pg-saitama-019",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "no enemy has been able to injure him in any way"
+      ],
+      "found": [
+        "no enemy has been able to injure him in any way"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which moon of Jupiter did Saitama lift the entire surface of?",
+      "id": "opm-pg-saitama-020",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Io"
+      ],
+      "found": [
+        "Io"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama accidentally do to Jupiter's gas during the Garou fight on Io?",
+      "id": "opm-pg-saitama-021",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "blew away half of Jupiter's gas"
+      ],
+      "found": [
+        "blew away half of Jupiter's gas"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama complete in the blink of an eye during his hero tryouts?",
+      "id": "opm-pg-saitama-022",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "1500-meter dash"
+      ],
+      "found": [
+        "1500-meter dash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What ability lets Saitama run across the ocean?",
+      "id": "opm-pg-saitama-023",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Water Running"
+      ],
+      "found": [
+        "Water Running"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does the main page describe Saitama's Invulnerability?",
+      "id": "opm-pg-saitama-024",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "incomparable physical toughness and durability"
+      ],
+      "found": [
+        "incomparable physical toughness and durability"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama's Serious Punch completely neutralize?",
+      "id": "opm-pg-saitama-025",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Collapsing Star Roaring Cannon"
+      ],
+      "found": [
+        "Collapsing Star Roaring Cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What improvised weapon did Saitama use to kill Crablante?",
+      "id": "opm-pg-saitama-026",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "tie to grab the monster's eye and tear out his intestines"
+      ],
+      "found": [
+        "tie to grab the monster's eye and tear out his intestines"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What rank does Saitama's promotion list begin with?",
+      "id": "opm-pg-saitama-027",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "C-Class Rank 388"
+      ],
+      "found": [
+        "C-Class Rank 388"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What rank did Saitama hold after the Deep Sea King incident?",
+      "id": "opm-pg-saitama-028",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "C-Class Rank 1"
+      ],
+      "found": [
+        "C-Class Rank 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What part of the hero exam did Saitama do poorly on?",
+      "id": "opm-pg-saitama-029",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "written portion of the hero exam"
+      ],
+      "found": [
+        "written portion of the hero exam"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How do almost all of Saitama's enemies fare against a single earnest punch?",
+      "id": "opm-pg-saitama-030",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "almost no enemy has been able to survive a single earnest punch"
+      ],
+      "found": [
+        "almost no enemy has been able to survive a single earnest punch"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What showed Saitama's improvement on his 300th day of training?",
+      "id": "opm-pg-saitama-031",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "wrecking a car after saving a boy"
+      ],
+      "found": [
+        "wrecking a car after saving a boy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Saitama's daily training schedule?",
+      "id": "opm-pg-saitama-032",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "100 push-ups",
+        "100 sit-ups",
+        "100 squats",
+        "10 km"
+      ],
+      "found": [
+        "100 push-ups",
+        "100 sit-ups",
+        "100 squats",
+        "10 km"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which monster attacked a group of people during Saitama's first year and a half of training?",
+      "id": "opm-pg-saitama-033",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Octopus Claw Man"
+      ],
+      "found": [
+        "Octopus Claw Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama tell Marugori, who had just destroyed D-City?",
+      "id": "opm-pg-saitama-034",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "put some pants on"
+      ],
+      "found": [
+        "put some pants on"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which House of Evolution monsters did Saitama defeat one after another?",
+      "id": "opm-pg-saitama-035",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Kamakyuri",
+        "Ground Dragon",
+        "Beast King"
+      ],
+      "found": [
+        "Kamakyuri",
+        "Ground Dragon",
+        "Beast King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What mode did Carnage Kabuto enter, vowing to rampage until the next Saturday?",
+      "id": "opm-pg-saitama-036",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Carnage Mode"
+      ],
+      "found": [
+        "Carnage Mode"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Saitama's total score on the 6th Official Superhero Certification Exam?",
+      "id": "opm-pg-saitama-037",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "score of 71",
+        "passing is 70"
+      ],
+      "found": [
+        "score of 71",
+        "passing is 70"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was Saitama's exam score low despite a perfect physical record?",
+      "id": "opm-pg-saitama-038",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "did poorly on the written test"
+      ],
+      "found": [
+        "did poorly on the written test"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Saitama doing during Sneck's lecture that angered the A-Class hero?",
+      "id": "opm-pg-saitama-039",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "chewing bubble gum"
+      ],
+      "found": [
+        "chewing bubble gum"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Genos actually chasing during his first sparring match with Saitama?",
+      "id": "opm-pg-saitama-040",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "afterimage"
+      ],
+      "found": [
+        "afterimage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where did Saitama's Death Punch stop during the sparring match?",
+      "id": "opm-pg-saitama-041",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "inches before hitting Genos' face"
+      ],
+      "found": [
+        "inches before hitting Genos' face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama do after Genos failed to destroy the meteor?",
+      "id": "opm-pg-saitama-042",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "punches his way through it"
+      ],
+      "found": [
+        "punches his way through it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which monster accused Saitama of destroying the town after the meteor?",
+      "id": "opm-pg-saitama-043",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Tanktop Black Hole"
+      ],
+      "found": [
+        "Tanktop Black Hole"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama say about the Deep Sea King's punch?",
+      "id": "opm-pg-saitama-044",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "too weak to hurt him"
+      ],
+      "found": [
+        "too weak to hurt him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which S-Class hero refused to shake Saitama's hand?",
+      "id": "opm-pg-saitama-045",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Atomic Samurai",
+        "S-Class rank 4"
+      ],
+      "found": [
+        "Atomic Samurai",
+        "S-Class rank 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who was surprised that an S-Class hero called herself the disciple of B-Class Saitama?",
+      "id": "opm-pg-saitama-046",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Fubuki",
+        "disciple of the B-Class Saitama"
+      ],
+      "found": [
+        "Fubuki",
+        "disciple of the B-Class Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama give to the heroes at the hospital who had been beaten by Garou?",
+      "id": "opm-pg-saitama-047",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "bananas"
+      ],
+      "found": [
+        "bananas"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where did Garou sneak-attack Saitama?",
+      "id": "opm-pg-saitama-048",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "wig shop"
+      ],
+      "found": [
+        "wig shop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Garou try to hit Saitama with at the wig shop?",
+      "id": "opm-pg-saitama-049",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "karate chop"
+      ],
+      "found": [
+        "karate chop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which round of the Super Fight did Saitama face Choze in?",
+      "id": "opm-pg-saitama-050",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "semi-finals"
+      ],
+      "found": [
+        "semi-finals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was Saitama disqualified from the Super Fight?",
+      "id": "opm-pg-saitama-051",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "wig came off"
+      ],
+      "found": [
+        "wig came off"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who warned Saitama of Gouketsu and the Monster Association's invasion?",
+      "id": "opm-pg-saitama-052",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Suiryu",
+        "Gouketsu"
+      ],
+      "found": [
+        "Suiryu",
+        "Gouketsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama cook Dr. Kuseno's gift with?",
+      "id": "opm-pg-saitama-053",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "cabbage",
+        "high-quality beef",
+        "hotpot"
+      ],
+      "found": [
+        "cabbage",
+        "high-quality beef",
+        "hotpot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Garou do in the restaurant before Saitama caught him for the third time?",
+      "id": "opm-pg-saitama-054",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "dine-and-dash"
+      ],
+      "found": [
+        "dine-and-dash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama use to flip over the Monster Association Headquarters?",
+      "id": "opm-pg-saitama-055",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Serious Table Flip"
+      ],
+      "found": [
+        "Serious Table Flip"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which two heroes did Saitama entrust the two formerly dangerous monsters to?",
+      "id": "opm-pg-saitama-056",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Butterfly DX",
+        "Chain'n'toad"
+      ],
+      "found": [
+        "Butterfly DX",
+        "Chain'n'toad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the Hero Association mistake Saitama and Tatsumaki for during their fight?",
+      "id": "opm-pg-saitama-057",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Dragon-level threat"
+      ],
+      "found": [
+        "Dragon-level threat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the Neo Heroes claim to have selected?",
+      "id": "opm-pg-saitama-058",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "two thousand possible candidates"
+      ],
+      "found": [
+        "two thousand possible candidates"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Genos defeat before challenging Saitama to a duel?",
+      "id": "opm-pg-saitama-059",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Forest King"
+      ],
+      "found": [
+        "Forest King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which two factions were at war in the conflict Saitama got involved in after defeating Rangor?",
+      "id": "opm-pg-saitama-060",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Saints",
+        "Deathbone"
+      ],
+      "found": [
+        "Saints",
+        "Deathbone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Whom did Flashy Flash want Saitama to help search for?",
+      "id": "opm-pg-saitama-061",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Manako"
+      ],
+      "found": [
+        "Manako"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Saitama swiftly take out and confiscate weapons from at Sonic's hideout?",
+      "id": "opm-pg-saitama-062",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Ninja Village Leader"
+      ],
+      "found": [
+        "Ninja Village Leader"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama find in the ground at Sonic's hideout?",
+      "id": "opm-pg-saitama-063",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "figure-shaped crater"
+      ],
+      "found": [
+        "figure-shaped crater"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where did Saitama, Genos, and Flash encounter the Internet Surfers?",
+      "id": "opm-pg-saitama-064",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "City-E",
+        "Internet Surfers"
+      ],
+      "found": [
+        "City-E",
+        "Internet Surfers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What time limit did Flashy Flash set for their match?",
+      "id": "opm-pg-saitama-065",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "thirty minutes"
+      ],
+      "found": [
+        "thirty minutes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama offer to fix Flash's broken sword with?",
+      "id": "opm-pg-saitama-066",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "duct tape"
+      ],
+      "found": [
+        "duct tape"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Saitama on when Sweet Mask explained his ideal hero project?",
+      "id": "opm-pg-saitama-067",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Ferris wheel"
+      ],
+      "found": [
+        "Ferris wheel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama first meet Genos?",
+      "id": "opm-pg-saitama-068",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "tried to self-destruct"
+      ],
+      "found": [
+        "tried to self-destruct"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Saitama first meet King?",
+      "id": "opm-pg-saitama-069",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "saved him from Octopus Claw Man"
+      ],
+      "found": [
+        "saved him from Octopus Claw Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did King feel guilty about after Saitama saved him from Giant Crow?",
+      "id": "opm-pg-saitama-070",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "taking credit for Saitama's actions"
+      ],
+      "found": [
+        "taking credit for Saitama's actions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama declare Fubuki to be when Tatsumaki asked?",
+      "id": "opm-pg-saitama-071",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "acquaintance"
+      ],
+      "found": [
+        "acquaintance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Zombieman ask Dr. Genus to do after seeing Saitama fight Garou?",
+      "id": "opm-pg-saitama-072",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "remove his limiter"
+      ],
+      "found": [
+        "remove his limiter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "For what did Saitama first mistake Tatsumaki?",
+      "id": "opm-pg-saitama-073",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "little girl"
+      ],
+      "found": [
+        "little girl"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama give Mumen Rider when visiting him in the hospital?",
+      "id": "opm-pg-saitama-074",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "gave him a banana"
+      ],
+      "found": [
+        "gave him a banana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama think of Child Emperor?",
+      "id": "opm-pg-saitama-075",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "pretty cool"
+      ],
+      "found": [
+        "pretty cool"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama say he would at least do when Blast reached out to him again?",
+      "id": "opm-pg-saitama-076",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "make Blast some tea"
+      ],
+      "found": [
+        "make Blast some tea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does Speed-o'-Sound Sonic view Saitama?",
+      "id": "opm-pg-saitama-077",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "eternal rival"
+      ],
+      "found": [
+        "eternal rival"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Saitama sympathize with Boros?",
+      "id": "opm-pg-saitama-078",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "worthy enough opponent"
+      ],
+      "found": [
+        "worthy enough opponent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did God first communicate with Saitama?",
+      "id": "opm-pg-saitama-079",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "telepathy"
+      ],
+      "found": [
+        "telepathy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama break through during his training, per Dr. Genus?",
+      "id": "opm-pg-saitama-080",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "natural limiter that humans have"
+      ],
+      "found": [
+        "natural limiter that humans have"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What price did Saitama pay for breaking his limiter, per Dr. Genus?",
+      "id": "opm-pg-saitama-081",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "his hair and his emotions"
+      ],
+      "found": [
+        "his hair and his emotions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What early reference features both Ripped Uniforms and Piggy Bancon?",
+      "id": "opm-pg-saitama-082",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Ripped Uniforms",
+        "Piggy Bancon",
+        "200 Yen"
+      ],
+      "found": [
+        "Ripped Uniforms",
+        "Piggy Bancon",
+        "200 Yen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What extra chapter depicts Saitama fighting a light pull cord?",
+      "id": "opm-pg-saitama-083",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Personification Of A Light Pull Cord"
+      ],
+      "found": [
+        "Personification Of A Light Pull Cord"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Saitama treating in the light pull cord extra chapter?",
+      "id": "opm-pg-saitama-084",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "decaying tooth"
+      ],
+      "found": [
+        "decaying tooth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where was Saitama hiding from a mysterious being during his first year and a half of training?",
+      "id": "opm-pg-saitama-085",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Shelter Nr. 7",
+        "mysterious being"
+      ],
+      "found": [
+        "Shelter Nr. 7",
+        "mysterious being"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which police chief offers Saitama pork cutlet in the Pork Cutlet Bowl extra, and what monster attacks the station?",
+      "id": "opm-pg-saitama-086",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Chief Kuma",
+        "Surprise-Attack Plum"
+      ],
+      "found": [
+        "Chief Kuma",
+        "Surprise-Attack Plum"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the lost cat's name, and what is the bear called, in the Lost Cat extra?",
+      "id": "opm-pg-saitama-087",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Torako",
+        "Grizzly Nyah"
+      ],
+      "found": [
+        "Torako",
+        "Grizzly Nyah"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which clan did Lobster command in his extra chapter?",
+      "id": "opm-pg-saitama-088",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Harsh Path Clan"
+      ],
+      "found": [
+        "Harsh Path Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did the Giant Crow fall for Saitama's head in the Volume 8 omake?",
+      "id": "opm-pg-saitama-089",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "shiny"
+      ],
+      "found": [
+        "shiny"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What total score did Saitama receive in the hero costume contest omake?",
+      "id": "opm-pg-saitama-090",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "total score of 8"
+      ],
+      "found": [
+        "total score of 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which two monsters attacked Y-City in the Squadron omake?",
+      "id": "opm-pg-saitama-091",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Scaledon",
+        "Wild Horn"
+      ],
+      "found": [
+        "Scaledon",
+        "Wild Horn"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga was Saitama reading when Vaccine Man attacked A-City in the Witness omake?",
+      "id": "opm-pg-saitama-092",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Moe Moe Chronicle 2"
+      ],
+      "found": [
+        "Moe Moe Chronicle 2"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the boss transform into before his fight with Saitama in Road To Hero?",
+      "id": "opm-pg-saitama-093",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Fish of Darkness"
+      ],
+      "found": [
+        "Fish of Darkness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama nearly do to Bang after winning rock paper scissors in OVA 4?",
+      "id": "opm-pg-saitama-094",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "almost kills Bang"
+      ],
+      "found": [
+        "almost kills Bang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What monster does Fubuki's radar detect in OVA 9?",
+      "id": "opm-pg-saitama-095",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Lord of Mountains"
+      ],
+      "found": [
+        "Lord of Mountains"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was the grand prize of the Wild Animal tournament in OVA 10?",
+      "id": "opm-pg-saitama-096",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "five million yen"
+      ],
+      "found": [
+        "five million yen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Saitama's alternate self called in the anime?",
+      "id": "opm-pg-saitama-097",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Dream Saitama",
+        "A Hero Nobody Knows"
+      ],
+      "found": [
+        "Dream Saitama",
+        "A Hero Nobody Knows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who performed Saitama's One-Punch Song?",
+      "id": "opm-pg-saitama-098",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Makoto Furukawa",
+        "Saitama's One-Punch Song"
+      ],
+      "found": [
+        "Makoto Furukawa",
+        "Saitama's One-Punch Song"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which two threats beat Saitama in the 200 Yen early reference?",
+      "id": "opm-pg-saitama-099",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Ripped Uniforms",
+        "Piggy Bancon"
+      ],
+      "found": [
+        "Ripped Uniforms",
+        "Piggy Bancon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which of Saitama's recorded losses took place off-screen?",
+      "id": "opm-pg-saitama-100",
+      "subject": "Saitama",
+      "accept": "all",
+      "expected": [
+        "Piggy Bancon",
+        "Off-Screen"
+      ],
+      "found": [
+        "Piggy Bancon",
+        "Off-Screen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 35,
+    "canon_total": 35,
+    "canon_recall": 1.0,
+    "members_returned": 35,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 98,
+    "fact_present": 98
+  }
+}

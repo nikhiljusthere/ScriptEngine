@@ -1,0 +1,41 @@
+# Staged roster declarations for the Kento Nanami page campaign
+# (questions/_jjk_page_kento_nanami.section2.json, section 2: techniques &
+# cursed tools).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Closed set = the two named techniques in the Cursed Technique (Innate
+# Technique) section of `Kento Nanami`:
+#   * Ratio Technique (Tōkaku Juhō) -- the innate technique
+#   * Collapse (Garagara) -- an extension technique that applies the weak-point
+#     logic to the surrounding environment
+#
+# Both are their own wiki pages ([[Ratio Technique]], [[Collapse]]), so the
+# members = exact page-titles contract holds. The task hint names "Ryokan
+# Kijin / Guardian of the Black Room" and a "seventeen days of good luck"
+# framing, but NONE of those strings appear on this Fandom page (verified by
+# grep of the stored wikitext); the page's own technique section states only
+# the two above, so that is the closed, page-stated set.
+#
+# The lucky-7 motif IS on the page (birthday 7/3, the "7:3 Sorcerer" alias,
+# the "seven-three partition hairstyle", the "seven to three" ratio point) and
+# is covered by the qa questions in the section rather than a roster.
+#
+# A second candidate, "Every cursed tool Kento Nanami carries", was NOT
+# declared: the Equipment > Cursed Tool section names only a single tool, the
+# "blunt cleaver wrapped in a cloth", which is a prose description, not a page
+# title. It cannot satisfy the members = exact page-titles contract, so it is
+# recorded in the section's `retired[]` and answered per-item via qa.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every named cursed technique of Kento Nanami
+    match:
+      - every named cursed technique of kento nanami
+      - all the cursed techniques of kento nanami
+      - the techniques kento nanami uses
+      - kento nanamis cursed technique
+    subject: Kento Nanami
+    members:
+      - Ratio Technique
+      - Collapse

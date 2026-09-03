@@ -1,0 +1,357 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Crimson Binding",
+      "set": "Every battle involving Crimson Binding",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Crimson Binding",
+      "found": [
+        "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+        "Megumi Fushiguro vs. Noritoshi Kamo"
+      ],
+      "missing": [],
+      "members": [
+        "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+        "Megumi Fushiguro vs. Noritoshi Kamo"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Crimson Binding's name?",
+      "id": "jjk-pg-crimson_binding-001",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "\u8d64\u7e1b"
+      ],
+      "found": [
+        "\u8d64\u7e1b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Crimson Binding's name?",
+      "id": "jjk-pg-crimson_binding-002",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Sekibaku"
+      ],
+      "found": [
+        "Sekibaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Crimson Binding first appear?",
+      "id": "jjk-pg-crimson_binding-003",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Chapter 44"
+      ],
+      "found": [
+        "Chapter 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Crimson Binding first depicted?",
+      "id": "jjk-pg-crimson_binding-004",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Episode 18"
+      ],
+      "found": [
+        "Episode 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+      "id": "jjk-pg-crimson_binding-005",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "found": [
+        "Hagane Daido & Rokujushi Miyo interrupt the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-crimson_binding-006",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Sakurajima Colony"
+      ],
+      "found": [
+        "Sakurajima Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-crimson_binding-007",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin begin?",
+      "id": "jjk-pg-crimson_binding-008",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Chapter 191"
+      ],
+      "found": [
+        "Chapter 191"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+      "id": "jjk-pg-crimson_binding-009",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Megumi Fushiguro vs. Noritoshi Kamo?",
+      "id": "jjk-pg-crimson_binding-010",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Hanami interrupts the battle."
+      ],
+      "found": [
+        "Hanami interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Megumi Fushiguro vs. Noritoshi Kamo take place?",
+      "id": "jjk-pg-crimson_binding-011",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Megumi Fushiguro vs. Noritoshi Kamo begin?",
+      "id": "jjk-pg-crimson_binding-012",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Chapter 43"
+      ],
+      "found": [
+        "Chapter 43"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Megumi Fushiguro vs. Noritoshi Kamo depicted?",
+      "id": "jjk-pg-crimson_binding-013",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Episode 18"
+      ],
+      "found": [
+        "Episode 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Megumi Fushiguro vs. Noritoshi Kamo take place?",
+      "id": "jjk-pg-crimson_binding-014",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Crimson Binding?",
+      "id": "jjk-pg-crimson_binding-016",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "This technique transforms the shape of the user's blood into a net capable of binding targets with great efficiency."
+      ],
+      "found": [
+        "This technique transforms the shape of the user's blood into a net capable of binding targets with great efficiency."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Noritoshi use Crimson Binding against Nue?",
+      "id": "jjk-pg-crimson_binding-017",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "By throwing a single pack of his own blood, Noritoshi was able to shape his blood into a large net that bound Megumi Fushiguro's Nue, immobilizing it instantly."
+      ],
+      "found": [
+        "By throwing a single pack of his own blood, Noritoshi was able to shape his blood into a large net that bound Megumi Fushiguro's Nue, immobilizing it instantly."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Noritoshi use Crimson Binding against Naoya Zenin?",
+      "id": "jjk-pg-crimson_binding-018",
+      "subject": "Crimson Binding",
+      "accept": "all",
+      "expected": [
+        "Noritoshi used this technique against Naoya Zenin, who returned to life as a vengeful cursed spirit in the Sakurajima Colony during the Culling Game. He attempted to immobilize the curse so Maki Zenin could hit it with her Split Soul Katana. However, Naoya spun his body to deflect the sword, avoiding the attack."
+      ],
+      "found": [
+        "Noritoshi used this technique against Naoya Zenin, who returned to life as a vengeful cursed spirit in the Sakurajima Colony during the Culling Game. He attempted to immobilize the curse so Maki Zenin could hit it with her Split Soul Katana. However, Naoya spun his body to deflect the sword, avoiding the attack."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 17,
+    "fact_present": 17
+  }
+}

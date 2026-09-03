@@ -1,0 +1,30 @@
+# Scope graphify to source code + design docs, matching the original 67-file run.
+# NOTE: a .graphifyignore REPLACES the .gitignore fallback for this dir, so every
+# exclusion that used to come from .gitignore is repeated here explicitly.
+
+# --- noise dirs (previously via .gitignore) ---
+**/node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+.venv/
+**/.venv/
+.cache/
+hf_cache/
+.pytest_cache/
+.mypy_cache/
+.vscode/
+.idea/
+
+# --- per-series corpora/stores/indexes: thousands of machine-generated wikitext JSONs ---
+series/*
+!series/*/
+series/*/*
+!series/*/overrides.yaml
+
+# --- generated data, not architecture ---
+reports/          # per-run measurement artifacts (JSON dumps, REPORT.md, answers.md)
+questions/        # question bank + page-campaign fixtures (eval gold sets)
+scripts output/   # fetched context + working script drafts (regenerable)
+sample scripts/   # published reference prose: story content, not code architecture
+ScriptEngine RAG Answer.json   # ComfyUI workflow config blob

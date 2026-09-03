@@ -1,0 +1,2141 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the battles of Isamu in One-Punch Man?",
+      "set": "Isamu's battles",
+      "confidence": "declared",
+      "returned": 8,
+      "available": 8,
+      "canon": 8,
+      "found": 8,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Isamu in One-Punch Man?",
+      "set": "Isamu's aliases",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the battles of Isamu in One-Punch Man?",
+      "found": [
+        "Awakened Garou vs. S-Class Heroes (Webcomic)",
+        "Child Emperor and Pig God vs. Eyesight",
+        "Child Emperor vs. Evil Natural Water",
+        "Child Emperor vs. G5",
+        "Child Emperor vs. Phoenix Man",
+        "Child Emperor vs. Phoenix Man: Round 2",
+        "Child Emperor vs. Sludge Jellyfish",
+        "Heroes vs. Monster Association Executives"
+      ],
+      "missing": [],
+      "members": [
+        "Awakened Garou vs. S-Class Heroes (Webcomic)",
+        "Child Emperor and Pig God vs. Eyesight",
+        "Child Emperor vs. Evil Natural Water",
+        "Child Emperor vs. G5",
+        "Child Emperor vs. Phoenix Man",
+        "Child Emperor vs. Phoenix Man: Round 2",
+        "Child Emperor vs. Sludge Jellyfish",
+        "Heroes vs. Monster Association Executives"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Isamu in One-Punch Man?",
+      "found": [
+        "Child Emperor",
+        "Wild Emperor"
+      ],
+      "missing": [],
+      "members": [
+        "Child Emperor",
+        "Wild Emperor"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Pig God and Eyesight in One-Punch Man?",
+      "id": "opm-pg-isamu-003",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Jumping Spider in One-Punch Man?",
+      "id": "opm-pg-isamu-004",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Saitama Group"
+      ],
+      "found": [
+        "Interrupted by Saitama Group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Phoenix Man in One-Punch Man?",
+      "id": "opm-pg-isamu-005",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Sludge Jellyfish in One-Punch Man?",
+      "id": "opm-pg-isamu-006",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Win"
+      ],
+      "found": [
+        "Win"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and G5 in One-Punch Man?",
+      "id": "opm-pg-isamu-007",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Retreat covered by Mad Dog Underdog Cerberus"
+      ],
+      "found": [
+        "Retreat covered by Mad Dog Underdog Cerberus"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Evil Natural Water in One-Punch Man?",
+      "id": "opm-pg-isamu-008",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Tatsumaki"
+      ],
+      "found": [
+        "Interrupted by Tatsumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and the Monster Association executives in One-Punch Man?",
+      "id": "opm-pg-isamu-009",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Garou"
+      ],
+      "found": [
+        "Interrupted by Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Evil Natural Water in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-010",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Awakened Garou in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-011",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Loss"
+      ],
+      "found": [
+        "Loss"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Child Emperor and Bofoi in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-012",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Genos"
+      ],
+      "found": [
+        "Interrupted by Genos"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Child Emperor and Pig God vs. Eyesight battle in One-Punch Man?",
+      "id": "opm-pg-isamu-013",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Pig God eats Eyesight"
+      ],
+      "found": [
+        "Pig God eats Eyesight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Child Emperor and Pig God vs. Eyesight battle in One-Punch Man?",
+      "id": "opm-pg-isamu-014",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Super Fight Arc"
+      ],
+      "found": [
+        "Super Fight Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Child Emperor and Pig God vs. Eyesight battle take place in One-Punch Man?",
+      "id": "opm-pg-isamu-015",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Y-City"
+      ],
+      "found": [
+        "Y-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapter covers the Child Emperor and Pig God vs. Eyesight battle in One-Punch Man?",
+      "id": "opm-pg-isamu-016",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 67"
+      ],
+      "found": [
+        "Chapter 67"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Child Emperor and Pig God vs. Eyesight in One-Punch Man?",
+      "id": "opm-pg-isamu-017",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Sneck vs. Suiryu"
+      ],
+      "found": [
+        "Sneck vs. Suiryu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Child Emperor and Pig God vs. Eyesight in One-Punch Man?",
+      "id": "opm-pg-isamu-018",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Garou vs. Watchdog Man"
+      ],
+      "found": [
+        "Garou vs. Watchdog Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Child Emperor vs. Phoenix Man battle in One-Punch Man?",
+      "id": "opm-pg-isamu-019",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Phoenix Man is seemingly killed effortlessly by Child Emperor"
+      ],
+      "found": [
+        "Phoenix Man is seemingly killed effortlessly by Child Emperor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Child Emperor vs. Phoenix Man battle in One-Punch Man?",
+      "id": "opm-pg-isamu-020",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Arc"
+      ],
+      "found": [
+        "Monster Association Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What webcomic chapter covers the Child Emperor vs. Phoenix Man battle in One-Punch Man?",
+      "id": "opm-pg-isamu-021",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 60"
+      ],
+      "found": [
+        "Chapter 60"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapter covers the Child Emperor vs. Phoenix Man battle in One-Punch Man?",
+      "id": "opm-pg-isamu-022",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 100"
+      ],
+      "found": [
+        "Chapter 100"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Child Emperor vs. Phoenix Man in One-Punch Man?",
+      "id": "opm-pg-isamu-023",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Flashy Flash vs. Gale Wind and Hellfire Flame"
+      ],
+      "found": [
+        "Flashy Flash vs. Gale Wind and Hellfire Flame"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Child Emperor vs. Phoenix Man in One-Punch Man?",
+      "id": "opm-pg-isamu-024",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. Sludge Jellyfish"
+      ],
+      "found": [
+        "Child Emperor vs. Sludge Jellyfish"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Child Emperor vs. Sludge Jellyfish battle in One-Punch Man?",
+      "id": "opm-pg-isamu-025",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor easily incapacitates Sludge Jellyfish"
+      ],
+      "found": [
+        "Child Emperor easily incapacitates Sludge Jellyfish"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Child Emperor vs. Sludge Jellyfish battle in One-Punch Man?",
+      "id": "opm-pg-isamu-026",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Arc"
+      ],
+      "found": [
+        "Monster Association Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What anime episode covers the Child Emperor vs. Sludge Jellyfish battle in One-Punch Man?",
+      "id": "opm-pg-isamu-027",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Episode 32"
+      ],
+      "found": [
+        "Episode 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Child Emperor vs. Sludge Jellyfish in One-Punch Man?",
+      "id": "opm-pg-isamu-028",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. Phoenix Man"
+      ],
+      "found": [
+        "Child Emperor vs. Phoenix Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Child Emperor vs. Sludge Jellyfish in One-Punch Man?",
+      "id": "opm-pg-isamu-029",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. G5"
+      ],
+      "found": [
+        "Child Emperor vs. G5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Child Emperor vs. G5 battle in One-Punch Man?",
+      "id": "opm-pg-isamu-030",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor retreats as one of his tools engages G5"
+      ],
+      "found": [
+        "Child Emperor retreats as one of his tools engages G5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Child Emperor vs. G5 battle in One-Punch Man?",
+      "id": "opm-pg-isamu-031",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Arc"
+      ],
+      "found": [
+        "Monster Association Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Child Emperor vs. G5 in One-Punch Man?",
+      "id": "opm-pg-isamu-032",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. Sludge Jellyfish"
+      ],
+      "found": [
+        "Child Emperor vs. Sludge Jellyfish"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Child Emperor vs. G5 in One-Punch Man?",
+      "id": "opm-pg-isamu-033",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. Phoenix Man: Round 2"
+      ],
+      "found": [],
+      "missing": [
+        "Child Emperor vs. Phoenix Man: Round 2"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Child Emperor vs. Phoenix Man: Round 2 battle in One-Punch Man?",
+      "id": "opm-pg-isamu-034",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Phoenix Man is defeated"
+      ],
+      "found": [
+        "Phoenix Man is defeated"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Child Emperor vs. Phoenix Man: Round 2 battle in One-Punch Man?",
+      "id": "opm-pg-isamu-035",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Arc"
+      ],
+      "found": [
+        "Monster Association Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapters cover the Child Emperor vs. Phoenix Man: Round 2 battle in One-Punch Man?",
+      "id": "opm-pg-isamu-036",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 101, 102, 103"
+      ],
+      "found": [
+        "Chapter 101, 102, 103"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Child Emperor vs. Phoenix Man: Round 2 in One-Punch Man?",
+      "id": "opm-pg-isamu-037",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Child Emperor vs. G5"
+      ],
+      "found": [
+        "Child Emperor vs. G5"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Child Emperor vs. Phoenix Man: Round 2 in One-Punch Man?",
+      "id": "opm-pg-isamu-038",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Zombieman vs. Pureblood"
+      ],
+      "found": [
+        "Zombieman vs. Pureblood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Child Emperor vs. Evil Natural Water battle in One-Punch Man?",
+      "id": "opm-pg-isamu-039",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Tatsumaki"
+      ],
+      "found": [
+        "Interrupted by Tatsumaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Child Emperor vs. Evil Natural Water battle take place in One-Punch Man?",
+      "id": "opm-pg-isamu-040",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Headquarters"
+      ],
+      "found": [
+        "Monster Association Headquarters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What manga chapters cover the Child Emperor vs. Evil Natural Water battle in One-Punch Man?",
+      "id": "opm-pg-isamu-041",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 125, 126, 134"
+      ],
+      "found": [
+        "Chapter 125, 126, 134"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of Child Emperor vs. Evil Natural Water in One-Punch Man?",
+      "id": "opm-pg-isamu-042",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Garou vs. Superalloy Darkshine"
+      ],
+      "found": [
+        "Garou vs. Superalloy Darkshine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of Child Emperor vs. Evil Natural Water in One-Punch Man?",
+      "id": "opm-pg-isamu-043",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Bang, Bomb, and Fubuki vs. Overgrown Rover"
+      ],
+      "found": [
+        "Bang, Bomb, and Fubuki vs. Overgrown Rover"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Heroes vs. Monster Association Executives battle, in which Child Emperor fights, in One-Punch Man?",
+      "id": "opm-pg-isamu-044",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Interrupted by Garou"
+      ],
+      "found": [
+        "Interrupted by Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Heroes vs. Monster Association Executives battle, in which Child Emperor fights, take place in One-Punch Man?",
+      "id": "opm-pg-isamu-045",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Z-City"
+      ],
+      "found": [
+        "Z-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of the Heroes vs. Monster Association Executives battle, in which Child Emperor fights, in One-Punch Man?",
+      "id": "opm-pg-isamu-046",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Heroes vs. Psykos and Orochi"
+      ],
+      "found": [
+        "Heroes vs. Psykos and Orochi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of the Heroes vs. Monster Association Executives battle, in which Child Emperor fights, in One-Punch Man?",
+      "id": "opm-pg-isamu-047",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Garou vs. Bomb"
+      ],
+      "found": [
+        "Garou vs. Bomb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the outcome of the Awakened Garou vs. S-Class Heroes battle, in which Child Emperor fights, in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-048",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Garou is victorious"
+      ],
+      "found": [
+        "Garou is victorious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What arc is the Awakened Garou vs. S-Class Heroes battle, in which Child Emperor fights, in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-049",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Association Arc"
+      ],
+      "found": [
+        "Monster Association Arc"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where does the Awakened Garou vs. S-Class Heroes battle, in which Child Emperor fights, take place in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-050",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Z-City"
+      ],
+      "found": [
+        "Z-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the preceding battle of the Awakened Garou vs. S-Class Heroes battle, in which Child Emperor fights, in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-051",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Garou vs. Golden Sperm"
+      ],
+      "found": [
+        "Garou vs. Golden Sperm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the following battle of the Awakened Garou vs. S-Class Heroes battle, in which Child Emperor fights, in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-052",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Saitama vs. Awakened Garou (Webcomic)"
+      ],
+      "found": [
+        "Saitama vs. Awakened Garou (Webcomic)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Isamu's race in One-Punch Man?",
+      "id": "opm-pg-isamu-053",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Isamu's age in One-Punch Man?",
+      "id": "opm-pg-isamu-054",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "10"
+      ],
+      "found": [
+        "10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Isamu's height in One-Punch Man?",
+      "id": "opm-pg-isamu-055",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "135 cm (4'5\")"
+      ],
+      "found": [],
+      "missing": [
+        "135 cm (4'5\")"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Isamu's weight in One-Punch Man?",
+      "id": "opm-pg-isamu-056",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "35 kg (77 lbs.)"
+      ],
+      "found": [
+        "35 kg (77 lbs.)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Isamu's location in One-Punch Man?",
+      "id": "opm-pg-isamu-057",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Y-City"
+      ],
+      "found": [
+        "Y-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Isamu's rank in One-Punch Man?",
+      "id": "opm-pg-isamu-058",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "S-Class: Rank 5 (Formerly)"
+      ],
+      "found": [
+        "S-Class: Rank 5 (Formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What abilities are listed on Isamu's infobox in One-Punch Man?",
+      "id": "opm-pg-isamu-059",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Genius Intellect"
+      ],
+      "found": [
+        "Genius Intellect"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What weapons are listed on Isamu's infobox in One-Punch Man?",
+      "id": "opm-pg-isamu-060",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Backpack Underdog Man Brave Giant"
+      ],
+      "found": [
+        "Backpack Underdog Man Brave Giant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which video game is Child Emperor a playable character in One-Punch Man?",
+      "id": "opm-pg-isamu-061",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "One Punch Man: A Hero Nobody Knows"
+      ],
+      "found": [],
+      "missing": [
+        "One Punch Man: A Hero Nobody Knows"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What organization does Isamu join after quitting the Hero Association in One-Punch Man?",
+      "id": "opm-pg-isamu-062",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Neo Heroes"
+      ],
+      "found": [
+        "Neo Heroes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Isamu first appear in the One-Punch Man webcomic?",
+      "id": "opm-pg-isamu-063",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 32"
+      ],
+      "found": [
+        "Chapter 32"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Isamu first appear in the One-Punch Man manga?",
+      "id": "opm-pg-isamu-064",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Chapter 30"
+      ],
+      "found": [
+        "Chapter 30"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Isamu first appear in the One-Punch Man anime?",
+      "id": "opm-pg-isamu-065",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Episode 10"
+      ],
+      "found": [
+        "Episode 10"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What can Okame-chan do in One-Punch Man?",
+      "id": "opm-pg-isamu-066",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "determining the physical strength of an individual"
+      ],
+      "found": [
+        "determining the physical strength of an individual"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Okame-chan's estimate of Child Emperor's strength in One-Punch Man?",
+      "id": "opm-pg-isamu-067",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "1880"
+      ],
+      "found": [
+        "1880"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does an Underdog Man appear in One-Punch Man?",
+      "id": "opm-pg-isamu-068",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a dog-like humanoid robot"
+      ],
+      "found": [
+        "a dog-like humanoid robot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What happened to Underdog Man No. 22 in One-Punch Man?",
+      "id": "opm-pg-isamu-069",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "destroyed during his fight against Eyesight"
+      ],
+      "found": [],
+      "missing": [
+        "destroyed during his fight against Eyesight"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is Mad Dog Underdog Cerberus in One-Punch Man?",
+      "id": "opm-pg-isamu-070",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a three-headed biped robot"
+      ],
+      "found": [],
+      "missing": [
+        "a three-headed biped robot"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Mini Octotank No. 8 in One-Punch Man?",
+      "id": "opm-pg-isamu-071",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a mini octopus-shaped robot"
+      ],
+      "found": [
+        "a mini octopus-shaped robot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Tickle-Tickle Bug 3 in One-Punch Man?",
+      "id": "opm-pg-isamu-072",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a bug-like robot that crawls around on the enemy's skin"
+      ],
+      "found": [
+        "a bug-like robot that crawls around on the enemy's skin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Child Emperor's Satellite in One-Punch Man?",
+      "id": "opm-pg-isamu-073",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a satellite to monitor monster activity"
+      ],
+      "found": [
+        "a satellite to monitor monster activity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Brave Giant in One-Punch Man?",
+      "id": "opm-pg-isamu-074",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a giant mech suit piloted by Child Emperor"
+      ],
+      "found": [],
+      "missing": [
+        "a giant mech suit piloted by Child Emperor"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How long can Brave Giant last in One-Punch Man?",
+      "id": "opm-pg-isamu-075",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "2 minutes and 38 seconds"
+      ],
+      "found": [
+        "2 minutes and 38 seconds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Radio-Controlled Sentry in One-Punch Man?",
+      "id": "opm-pg-isamu-076",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a radio-controlled miniature tank"
+      ],
+      "found": [
+        "a radio-controlled miniature tank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Invisible Wall in One-Punch Man?",
+      "id": "opm-pg-isamu-077",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a transparent film Child Emperor uses to defend himself"
+      ],
+      "found": [],
+      "missing": [
+        "a transparent film Child Emperor uses to defend himself"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Tactical Pencil Case in One-Punch Man?",
+      "id": "opm-pg-isamu-078",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a pencil case that can fire pencil missiles"
+      ],
+      "found": [
+        "a pencil case that can fire pencil missiles"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can the umbrella in Child Emperor's equipment do in One-Punch Man?",
+      "id": "opm-pg-isamu-079",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "transform into a sniper rifle"
+      ],
+      "found": [
+        "transform into a sniper rifle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Ribbit Ribbit Mask in One-Punch Man?",
+      "id": "opm-pg-isamu-080",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a frog robot which can move and attach itself to a person's face"
+      ],
+      "found": [
+        "a frog robot which can move and attach itself to a person's face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Flash Freezing Breath in One-Punch Man?",
+      "id": "opm-pg-isamu-081",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a rapid freezing-cold breath"
+      ],
+      "found": [
+        "a rapid freezing-cold breath"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Soccer Dribble in One-Punch Man?",
+      "id": "opm-pg-isamu-082",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "kicks his enemy's head multiple times, intending to cause a concussion"
+      ],
+      "found": [
+        "kicks his enemy's head multiple times, intending to cause a concussion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Saitama to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-083",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Tatsumaki to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-084",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is King to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-085",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Zombieman to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-086",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "friend"
+      ],
+      "found": [
+        "friend"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Pig God to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-087",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "ally"
+      ],
+      "found": [
+        "ally"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Isamu to Bofoi in One-Punch Man?",
+      "id": "opm-pg-isamu-088",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "subordinate"
+      ],
+      "found": [
+        "subordinate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Phoenix Man to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-089",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "enemy"
+      ],
+      "found": [
+        "enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Iaian to Isamu in One-Punch Man?",
+      "id": "opm-pg-isamu-090",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "enemy"
+      ],
+      "found": [
+        "enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Child Emperor work as before the original storyline in One-Punch Man?",
+      "id": "opm-pg-isamu-091",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Metal Knight's assistant"
+      ],
+      "found": [
+        "Metal Knight's assistant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Child Emperor fight and defeat in the Original Webcomic before the original storyline in One-Punch Man?",
+      "id": "opm-pg-isamu-092",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Atomic Samurai's disciples"
+      ],
+      "found": [
+        "Atomic Samurai's disciples"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why was Child Emperor slightly upset at the S-Class heroes meeting in the Alien Conquerors Arc in One-Punch Man?",
+      "id": "opm-pg-isamu-093",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "he couldn't meet Blast, who was absent"
+      ],
+      "found": [
+        "he couldn't meet Blast, who was absent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Child Emperor use Underdog Man No. 22 to analyze in the Super Fight Arc in One-Punch Man?",
+      "id": "opm-pg-isamu-094",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Eyesight's poisons"
+      ],
+      "found": [
+        "Eyesight's poisons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was the reason the Hero Association denied permission to plant explosives in the Monster Association hideout in One-Punch Man?",
+      "id": "opm-pg-isamu-095",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "saving the hostage was their highest priority"
+      ],
+      "found": [
+        "saving the hostage was their highest priority"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why did Child Emperor tell Sekingar to take Silver Fang off the roster in One-Punch Man?",
+      "id": "opm-pg-isamu-096",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "his past relationship with Garou"
+      ],
+      "found": [
+        "his past relationship with Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What show did Waganma recognize Phoenix Man's costume from in One-Punch Man?",
+      "id": "opm-pg-isamu-097",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Animal Kingdom"
+      ],
+      "found": [
+        "Animal Kingdom"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What move did Child Emperor use to knock Phoenix Man into a pillar in One-Punch Man?",
+      "id": "opm-pg-isamu-098",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "20000 Fold Rope Skip Grinder"
+      ],
+      "found": [
+        "20000 Fold Rope Skip Grinder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What move did Child Emperor use to wipe out the revived Subterraneans in One-Punch Man?",
+      "id": "opm-pg-isamu-099",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Gigavolt Smash"
+      ],
+      "found": [
+        "Gigavolt Smash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Child Emperor toss into Phoenix Man's suit in One-Punch Man?",
+      "id": "opm-pg-isamu-100",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Tickle Bug #3"
+      ],
+      "found": [
+        "Tickle Bug #3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Phoenix Man ultimately transform into in the Child Emperor vs. Phoenix Man fight in One-Punch Man?",
+      "id": "opm-pg-isamu-101",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Monster Chick Man"
+      ],
+      "found": [
+        "Monster Chick Man"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Child Emperor get punched in the gut by in the Monster Association base in the Original Webcomic in One-Punch Man?",
+      "id": "opm-pg-isamu-102",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Garou"
+      ],
+      "found": [
+        "Garou"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who saves Child Emperor after he is buried under rubble in One-Punch Man?",
+      "id": "opm-pg-isamu-103",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Puri-Puri Prisoner"
+      ],
+      "found": [
+        "Puri-Puri Prisoner"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What new invention is Child Emperor working on in Numbers in One-Punch Man?",
+      "id": "opm-pg-isamu-104",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Okame-Chan"
+      ],
+      "found": [
+        "Okame-Chan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Okame-Chan calculate Saitama's strength as in Numbers in One-Punch Man?",
+      "id": "opm-pg-isamu-105",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "undefined"
+      ],
+      "found": [
+        "undefined"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Child Emperor complain about regarding Christmas in the One-Punch Man Holiday Special Chapter in One-Punch Man?",
+      "id": "opm-pg-isamu-106",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "he won't have time for research"
+      ],
+      "found": [
+        "he won't have time for research"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How was Zombieman murdered in The Murder Case That Is Too Impossible OVA in One-Punch Man?",
+      "id": "opm-pg-isamu-107",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "stabbed in the back by Atomic Samurai's katana"
+      ],
+      "found": [
+        "stabbed in the back by Atomic Samurai's katana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What caused the dust to detonate in Zombieman Murder Case 2 OVA in One-Punch Man?",
+      "id": "opm-pg-isamu-108",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "Zombieman's lighter"
+      ],
+      "found": [
+        "Zombieman's lighter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What place did Child Emperor achieve in the character popularity poll in One-Punch Man?",
+      "id": "opm-pg-isamu-109",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "17th"
+      ],
+      "found": [
+        "17th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Child Emperor often seen snacking on in One-Punch Man?",
+      "id": "opm-pg-isamu-110",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a pink lollipop"
+      ],
+      "found": [
+        "a pink lollipop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What color are Child Emperor's eyes in One-Punch Man?",
+      "id": "opm-pg-isamu-111",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "amber"
+      ],
+      "found": [
+        "amber"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Why does Child Emperor write Saitama off as a weakling in One-Punch Man?",
+      "id": "opm-pg-isamu-112",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "a faulty reading from his unfinished invention Okame-Chan and the hero's plain appearance"
+      ],
+      "found": [],
+      "missing": [
+        "a faulty reading from his unfinished invention Okame-Chan and the hero's plain appearance"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Child Emperor prioritize creating for his wounded fellow heroes instead of defeating Eyesight in One-Punch Man?",
+      "id": "opm-pg-isamu-113",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "an antidote"
+      ],
+      "found": [
+        "an antidote"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Whom does Child Emperor seem to idolize in One-Punch Man?",
+      "id": "opm-pg-isamu-114",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "King"
+      ],
+      "found": [],
+      "missing": [
+        "King"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "Why does Child Emperor dislike Tatsumaki in One-Punch Man?",
+      "id": "opm-pg-isamu-115",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "arrogant and selfish attitude and lack of strategical thinking"
+      ],
+      "found": [
+        "arrogant and selfish attitude and lack of strategical thinking"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Child Emperor offer Tatsumaki in one of Yusuke Murata's art in One-Punch Man?",
+      "id": "opm-pg-isamu-116",
+      "subject": "Isamu",
+      "accept": "all",
+      "expected": [
+        "orange juice"
+      ],
+      "found": [
+        "orange juice"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 114,
+    "fact_present": 105
+  }
+}

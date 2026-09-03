@@ -1,0 +1,30 @@
+# Staged roster declarations for the Toji Fushiguro page campaign
+# (questions/_jjk_page_toji_fushiguro.json, section 1: battles).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# Members are the five battle pages whose titles name Toji Fushiguro, read off
+# the `Battles & Events` section of `Toji Fushiguro` and the titles in
+# questions/_jjk_battles.json (reused verbatim, not re-transcribed). The
+# section's Shibuya Incident group also lists `Takuma Ino vs. Ogami & Her
+# Grandson` marked `(Summoned)` -- Toji's soul was inside Ogami's grandson's
+# vessel during that fight -- but no battle page title names him, so the
+# closed set is the five above (recorded in the section's `retired[]`).
+#
+# Match phrases say `battles`, never `arc`: `_ASKS_FOR_ARCS` fires on any
+# enumeration cue with `arc` within forty characters and would hand the
+# question to chronology. `Satoru Gojo vs. Toji Fushiguro: Rematch` carries
+# `: ` and must stay quoted or YAML parses it as a mapping.
+rosters:
+  - name: Every battle involving Toji Fushiguro
+    match:
+      - every battle involving toji fushiguro
+      - all the battles involving toji fushiguro
+      - battles involving toji fushiguro
+      - every battle of toji fushiguro
+    subject: Toji Fushiguro
+    members:
+      - Satoru Gojo vs. Toji Fushiguro
+      - Suguru Geto vs. Toji Fushiguro
+      - "Satoru Gojo vs. Toji Fushiguro: Rematch"
+      - Toji Fushiguro vs. Dagon
+      - Megumi Fushiguro vs. Toji Fushiguro

@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Tiger Funeral's name?",
+      "id": "jjk-pg-tiger_funeral-001",
+      "subject": "Tiger Funeral",
+      "accept": "all",
+      "expected": [
+        "\u864e\u846c"
+      ],
+      "found": [
+        "\u864e\u846c"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Tiger Funeral's name?",
+      "id": "jjk-pg-tiger_funeral-002",
+      "subject": "Tiger Funeral",
+      "accept": "all",
+      "expected": [
+        "Kos\u014d"
+      ],
+      "found": [
+        "Kos\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is known about the Tiger Funeral's appearance?",
+      "id": "jjk-pg-tiger_funeral-003",
+      "subject": "Tiger Funeral",
+      "accept": "all",
+      "expected": [
+        "Tiger Funeral's appearance has not yet been shown."
+      ],
+      "found": [
+        "Tiger Funeral's appearance has not yet been shown."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why are the Tiger Funeral's capabilities unknown?",
+      "id": "jjk-pg-tiger_funeral-004",
+      "subject": "Tiger Funeral",
+      "accept": "all",
+      "expected": [
+        "Tiger Funeral's capabilities are unknown, as it has yet to be summoned outright."
+      ],
+      "found": [
+        "Tiger Funeral's capabilities are unknown, as it has yet to be summoned outright."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Sukuna create Merged Beast Agito during his battle with Satoru Gojo?",
+      "id": "jjk-pg-tiger_funeral-005",
+      "subject": "Tiger Funeral",
+      "accept": "all",
+      "expected": [
+        "During his battle with Satoru Gojo, Sukuna fused Nue with Great Serpent, Round Deer, and Tiger Funeral to create Merged Beast Agito."
+      ],
+      "found": [
+        "During his battle with Satoru Gojo, Sukuna fused Nue with Great Serpent, Round Deer, and Tiger Funeral to create Merged Beast Agito."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Merged Beast Agito capable of?",
+      "id": "jjk-pg-tiger_funeral-006",
+      "subject": "Tiger Funeral",
+      "accept": "all",
+      "expected": [
+        "It is a powerful, towering shikigami capable of producing electricity and regenerating with reverse cursed technique."
+      ],
+      "found": [
+        "It is a powerful, towering shikigami capable of producing electricity and regenerating with reverse cursed technique."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

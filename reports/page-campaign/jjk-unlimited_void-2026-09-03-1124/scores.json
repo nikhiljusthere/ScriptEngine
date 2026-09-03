@@ -1,0 +1,595 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Unlimited Void",
+      "set": "Every battle involving Unlimited Void",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Unlimited Void",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Satoru Gojo vs. Jogo",
+        "Satoru Gojo vs. Mahito's Group",
+        "Satoru Gojo vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Satoru Gojo vs. Jogo",
+        "Satoru Gojo vs. Mahito's Group",
+        "Satoru Gojo vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Unlimited Void's name?",
+      "id": "jjk-pg-unlimited_void-001",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "\u7121\u91cf\u7a7a\u51e6"
+      ],
+      "found": [
+        "\u7121\u91cf\u7a7a\u51e6"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Unlimited Void's name?",
+      "id": "jjk-pg-unlimited_void-002",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Mury\u014dk\u016bsho"
+      ],
+      "found": [
+        "Mury\u014dk\u016bsho"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Unlimited Void first appear?",
+      "id": "jjk-pg-unlimited_void-003",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Chapter 15"
+      ],
+      "found": [
+        "Chapter 15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Unlimited Void first depicted?",
+      "id": "jjk-pg-unlimited_void-004",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Episode 7"
+      ],
+      "found": [
+        "Episode 7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-unlimited_void-005",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-unlimited_void-006",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-unlimited_void-007",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-unlimited_void-008",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-unlimited_void-009",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Jogo?",
+      "id": "jjk-pg-unlimited_void-010",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Gojo is victorious."
+      ],
+      "found": [
+        "Gojo is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Jogo take place?",
+      "id": "jjk-pg-unlimited_void-011",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Unspecified Road"
+      ],
+      "found": [
+        "Unspecified Road"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Jogo take place?",
+      "id": "jjk-pg-unlimited_void-012",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "August 2018"
+      ],
+      "found": [
+        "August 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Satoru Gojo vs. Jogo begin?",
+      "id": "jjk-pg-unlimited_void-013",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Chapter 13"
+      ],
+      "found": [
+        "Chapter 13"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Satoru Gojo vs. Jogo depicted?",
+      "id": "jjk-pg-unlimited_void-014",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Episode 6 - 7"
+      ],
+      "found": [
+        "Episode 6 - 7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Jogo take place?",
+      "id": "jjk-pg-unlimited_void-015",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Fearsome Womb"
+      ],
+      "found": [
+        "Fearsome Womb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-unlimited_void-016",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo is sealed.\nHanami is killed."
+      ],
+      "found": [
+        "Satoru Gojo is sealed.\nHanami is killed."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-unlimited_void-017",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Fukutoshin Line Platform"
+      ],
+      "found": [
+        "Fukutoshin Line Platform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-unlimited_void-018",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Satoru Gojo vs. Mahito's Group?",
+      "id": "jjk-pg-unlimited_void-019",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Chapter 84 - 85 & 88 - 90"
+      ],
+      "found": [
+        "Chapter 84 - 85 & 88 - 90"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Satoru Gojo vs. Mahito's Group depicted?",
+      "id": "jjk-pg-unlimited_void-020",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Episode 32 - 33"
+      ],
+      "found": [
+        "Episode 32 - 33"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Mahito's Group take place?",
+      "id": "jjk-pg-unlimited_void-021",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo vs. Sukuna?",
+      "id": "jjk-pg-unlimited_void-022",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Sukuna is victorious."
+      ],
+      "found": [
+        "Sukuna is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-unlimited_void-023",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Makyo Shinjuku"
+      ],
+      "found": [
+        "Makyo Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-unlimited_void-024",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Satoru Gojo vs. Sukuna begin?",
+      "id": "jjk-pg-unlimited_void-025",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Chapter 223"
+      ],
+      "found": [
+        "Chapter 223"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo vs. Sukuna take place?",
+      "id": "jjk-pg-unlimited_void-026",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Unlimited Void bring the user and their targets into?",
+      "id": "jjk-pg-unlimited_void-028",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Befitting its name, Unlimited Void brings the user and their targets inside the Limitless itself, which is an endless void resembling outer space in appearance, with a large black hole, distant galaxies and numerous white patches in the background."
+      ],
+      "found": [
+        "Befitting its name, Unlimited Void brings the user and their targets inside the Limitless itself, which is an endless void resembling outer space in appearance, with a large black hole, distant galaxies and numerous white patches in the background."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Unlimited Void affect the target's mind?",
+      "id": "jjk-pg-unlimited_void-029",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Boundless raw information floods into the target's mind, overwhelming them to the point where they're completely immobilized."
+      ],
+      "found": [
+        "Boundless raw information floods into the target's mind, overwhelming them to the point where they're completely immobilized."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What phenomenon causes the complete incapacitation of a target caught in Unlimited Void?",
+      "id": "jjk-pg-unlimited_void-030",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "The complete incapacitation of the target is caused by a phenomenon where the target will be able to see and feel everything while not being able to see or feel anything at the same time."
+      ],
+      "found": [
+        "The complete incapacitation of the target is caused by a phenomenon where the target will be able to see and feel everything while not being able to see or feel anything at the same time."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kento Nanami consider an almost-guaranteed win alongside Self-Embodiment of Perfection?",
+      "id": "jjk-pg-unlimited_void-031",
+      "subject": "Unlimited Void",
+      "accept": "all",
+      "expected": [
+        "Alongside Self-Embodiment of Perfection, Kento Nanami considered Unlimited Void an almost-guaranteed win once it ensnares its target."
+      ],
+      "found": [
+        "Alongside Self-Embodiment of Perfection, Kento Nanami considered Unlimited Void an almost-guaranteed win once it ensnares its target."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 30,
+    "fact_present": 30
+  }
+}

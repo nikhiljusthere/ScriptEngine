@@ -1,0 +1,4156 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every named cursed technique of Angel",
+      "set": "Every named technique of Angel",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 1,
+      "recall": 0.5,
+      "precision": 0.5,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every clan that made up the Desshi Pacification Squad",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every person the Angel revealed herself to in the No. 1 Colony",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 3,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Angel's affiliations",
+      "set": "-",
+      "confidence": "-",
+      "returned": 0,
+      "available": 0,
+      "canon": 2,
+      "found": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "exact": false,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Angel?",
+      "set": "Every named technique of Angel",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Angel?",
+      "set": "Every ally of Angel",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Angel?",
+      "set": "Every enemy of Angel",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Angel",
+      "set": "Every battle involving Angel",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every named cursed technique of Angel",
+      "found": [
+        "Technique Extinguishment"
+      ],
+      "missing": [
+        "Maximum Output: Jacob's Ladder"
+      ],
+      "members": [
+        "Jacob's Ladder",
+        "Technique Extinguishment"
+      ]
+    },
+    {
+      "query": "Every clan that made up the Desshi Pacification Squad",
+      "found": [],
+      "missing": [
+        "Abe Clan",
+        "Sugawara Clan"
+      ],
+      "members": []
+    },
+    {
+      "query": "Every person the Angel revealed herself to in the No. 1 Colony",
+      "found": [],
+      "missing": [
+        "Megumi Fushiguro",
+        "Yuji Itadori",
+        "Fumihiko Takaba"
+      ],
+      "members": []
+    },
+    {
+      "query": "Angel's affiliations",
+      "found": [],
+      "missing": [
+        "Abe Clan",
+        "Culling Game"
+      ],
+      "members": []
+    },
+    {
+      "query": "What are all the named techniques of Angel?",
+      "found": [
+        "Technique Extinguishment",
+        "Jacob's Ladder"
+      ],
+      "missing": [],
+      "members": [
+        "Jacob's Ladder",
+        "Technique Extinguishment"
+      ]
+    },
+    {
+      "query": "What are all the allies of Angel?",
+      "found": [
+        "Megumi Fushiguro",
+        "Yuji Itadori",
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro",
+        "Satoru Gojo",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Angel?",
+      "found": [
+        "Kenjaku",
+        "Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Sukuna"
+      ]
+    },
+    {
+      "query": "Every battle involving Angel",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What was the name of the squad the Angel was part of during the Heian Era?",
+      "id": "jjk-pg-angel-002",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Desshi Pacification Squad"
+      ],
+      "found": [
+        "Desshi Pacification Squad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the Desshi Pacification Squad made up of?",
+      "id": "jjk-pg-angel-003",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Abe Clan's elite forces that also included the Sugawara Clan's remnants"
+      ],
+      "found": [
+        "the Abe Clan's elite forces that also included the Sugawara Clan's remnants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Desshi Pacification Squad attack during the Heian Era?",
+      "id": "jjk-pg-angel-004",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the outcome of the attack on Sukuna during the Heian Era?",
+      "id": "jjk-pg-angel-005",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "repelled by the King of Curses wielding his two weapons"
+      ],
+      "found": [
+        "repelled by the King of Curses wielding his two weapons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Sukuna wielding when he defeated the Angel and her comrades during the Heian Era?",
+      "id": "jjk-pg-angel-006",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "his two signature cursed tools"
+      ],
+      "found": [
+        "his two signature cursed tools"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long after the Heian Era did the Angel maintain a desire to kill Sukuna?",
+      "id": "jjk-pg-angel-007",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a thousand years later"
+      ],
+      "found": [
+        "a thousand years later"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did the Angel reveal herself to Megumi and the others?",
+      "id": "jjk-pg-angel-008",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "through a manifested mouth on Hana"
+      ],
+      "found": [
+        "through a manifested mouth on Hana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What night did the group come to talk with the Angel in the No. 1 Colony?",
+      "id": "jjk-pg-angel-009",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "November 14"
+      ],
+      "found": [
+        "November 14"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Hana find collapsed in the No. 1 Colony?",
+      "id": "jjk-pg-angel-010",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What made Hana the only player capable of crossing Colony borders freely?",
+      "id": "jjk-pg-angel-011",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Angel's ability"
+      ],
+      "found": [
+        "the Angel's ability"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the Angel's goal, as she laid it out to Megumi and the others?",
+      "id": "jjk-pg-angel-012",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "hunt down and kill all incarnated Culling Game players"
+      ],
+      "found": [
+        "hunt down and kill all incarnated Culling Game players"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the Angel want to hunt down the incarnated Culling Game players?",
+      "id": "jjk-pg-angel-013",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "believing their possession (and overriding the consciousness) of living humans to violate \"God's Law\""
+      ],
+      "found": [
+        "believing their possession (and overriding the consciousness) of living humans to violate \"God's Law\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which incarnated player did the Angel say her allies should first hunt down and kill?",
+      "id": "jjk-pg-angel-014",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the \"Disgraced One\" (Sukuna)"
+      ],
+      "found": [
+        "the \"Disgraced One\" (Sukuna)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Angel credit with the large number of people entering the Colony?",
+      "id": "jjk-pg-angel-015",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Kogane"
+      ],
+      "found": [
+        "Kogane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel suspect the mass slaughter of non-sorcerers by curses was meant for?",
+      "id": "jjk-pg-angel-016",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the completion of the ritual preceding Tengen's merger with the Japanese populace"
+      ],
+      "found": [
+        "the completion of the ritual preceding Tengen's merger with the Japanese populace"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the Angel tell Yuji not to try to save the soldiers?",
+      "id": "jjk-pg-angel-017",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "saving all non-sorcerers was unlikely to stop the ritual outright, and that she would rather not see Hana placed in danger, which would imperil herself too"
+      ],
+      "found": [
+        "saving all non-sorcerers was unlikely to stop the ritual outright, and that she would rather not see Hana placed in danger, which would imperil herself too"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Hana and the others meet with on the 16th, at noon?",
+      "id": "jjk-pg-angel-018",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Maki Zenin"
+      ],
+      "found": [
+        "Maki Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who revealed herself to be another incarnated sorcerer on the rooftop?",
+      "id": "jjk-pg-angel-019",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi's sister"
+      ],
+      "found": [
+        "Megumi's sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Sukuna forcibly take possession of Megumi?",
+      "id": "jjk-pg-angel-020",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "by feeding him a finger of his"
+      ],
+      "found": [
+        "by feeding him a finger of his"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna exploit to seize control of Yuji?",
+      "id": "jjk-pg-angel-021",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a prior-made binding vow with Yuji"
+      ],
+      "found": [
+        "a prior-made binding vow with Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel tell a distressed Hana about purging Sukuna?",
+      "id": "jjk-pg-angel-022",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "though they are bound to harm Megumi, there is no other way to purge Sukuna before the latter achieves a stronger hold over his vessel"
+      ],
+      "found": [
+        "though they are bound to harm Megumi, there is no other way to purge Sukuna before the latter achieves a stronger hold over his vessel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana cast at maximum cursed energy output to strip Sukuna away from Megumi?",
+      "id": "jjk-pg-angel-023",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Jacob's Ladder"
+      ],
+      "found": [
+        "Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did the King of Curses trick Hana mid-cast?",
+      "id": "jjk-pg-angel-024",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the King of Curses pretends to be Megumi to lure Hana into an embrace"
+      ],
+      "found": [
+        "the King of Curses pretends to be Megumi to lure Hana into an embrace"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel try, in vain, to do while Hana was being fooled by Sukuna?",
+      "id": "jjk-pg-angel-025",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "to stop her from falling prey to the Disgraced One"
+      ],
+      "found": [
+        "to stop her from falling prey to the Disgraced One"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna do after fooling Hana into embracing him as Megumi?",
+      "id": "jjk-pg-angel-026",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "brutally injures the angelic pair and throws them off the rooftop they were on"
+      ],
+      "found": [
+        "brutally injures the angelic pair and throws them off the rooftop they were on"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did the Culling Game fight between Hana and the Angel end?",
+      "id": "jjk-pg-angel-027",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana's defeat by Sukuna"
+      ],
+      "found": [
+        "Hana's defeat by Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Hana only nearly succeed in purging Sukuna in the Culling Game?",
+      "id": "jjk-pg-angel-028",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the King of Curses had not yet achieved a strong hold over his new host, Megumi, nor was he at full strength"
+      ],
+      "found": [
+        "the King of Curses had not yet achieved a strong hold over his new host, Megumi, nor was he at full strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the King of Curses exploit to trick Hana into deactivating her technique mid-cast?",
+      "id": "jjk-pg-angel-029",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the girl's love for Megumi"
+      ],
+      "found": [
+        "the girl's love for Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Hana regain consciousness after Sukuna incapacitated her?",
+      "id": "jjk-pg-angel-030",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "thanks to the power of the Angel"
+      ],
+      "found": [
+        "thanks to the power of the Angel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What raid did Angel and Hana join during the Shinjuku Showdown?",
+      "id": "jjk-pg-angel-031",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the raid on Sukuna"
+      ],
+      "found": [
+        "the raid on Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who helped Angel and Hana in the raid on Sukuna?",
+      "id": "jjk-pg-angel-032",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Todo"
+      ],
+      "found": [
+        "Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What caused the output of the Jacob's Ladder to be weakened in the Shinjuku Showdown?",
+      "id": "jjk-pg-angel-033",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana's prior injury"
+      ],
+      "found": [
+        "Hana's prior injury"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the weakened output give Sukuna time to do?",
+      "id": "jjk-pg-angel-034",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "propel enough debris to travel along the light"
+      ],
+      "found": [
+        "propel enough debris to travel along the light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna attempt to strike Hana with during the raid?",
+      "id": "jjk-pg-angel-035",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a Black Flash"
+      ],
+      "found": [
+        "a Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who took the Black Flash in Hana's place?",
+      "id": "jjk-pg-angel-036",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Todo"
+      ],
+      "found": [
+        "Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did the impact of the Black Flash launch Todo and Sukuna?",
+      "id": "jjk-pg-angel-037",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "into a building"
+      ],
+      "found": [
+        "into a building"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the state of Angel, Hana, and Todo after the impact?",
+      "id": "jjk-pg-angel-038",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "out of commission"
+      ],
+      "found": [
+        "out of commission"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where were Hana, the Angel, and their allies once the battle against Sukuna was underway?",
+      "id": "jjk-pg-angel-039",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "inside of Rika at a safe distance"
+      ],
+      "found": [
+        "inside of Rika at a safe distance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What were Mei Mei's crows used for during the fight?",
+      "id": "jjk-pg-angel-040",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "to view a broadcast of the fight"
+      ],
+      "found": [
+        "to view a broadcast of the fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What date was Gojo being prepped for his battle against Sukuna in Shinjuku?",
+      "id": "jjk-pg-angel-041",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "December 24"
+      ],
+      "found": [
+        "December 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana and the Angel recover from after Sukuna's defeat and death?",
+      "id": "jjk-pg-angel-042",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "their injuries"
+      ],
+      "found": [
+        "their injuries"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana tell the Angel after she got flustered meeting Megumi?",
+      "id": "jjk-pg-angel-043",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "told her to shut up"
+      ],
+      "found": [
+        "told her to shut up"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the Angel's aim in the Culling Game?",
+      "id": "jjk-pg-angel-044",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "to wipe out all other incarnated players and chiefly the Disgraced One, Sukuna"
+      ],
+      "found": [
+        "to wipe out all other incarnated players and chiefly the Disgraced One, Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Tengen cite about the ancient sorcerer's ability when he first mentioned the Angel?",
+      "id": "jjk-pg-angel-045",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "\"extinguish\" any and all cursed techniques"
+      ],
+      "found": [
+        "\"extinguish\" any and all cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel demand before she would fulfill what was asked of her?",
+      "id": "jjk-pg-angel-046",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "help in killing Sukuna"
+      ],
+      "found": [
+        "help in killing Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who saved Hana earlier, before she was healed?",
+      "id": "jjk-pg-angel-047",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Rin Amai and possibly Takaba"
+      ],
+      "found": [
+        "Rin Amai and possibly Takaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who healed Hana after the Culling Game?",
+      "id": "jjk-pg-angel-048",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu and Shoko Ieiri"
+      ],
+      "found": [
+        "Yuta Okkotsu and Shoko Ieiri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hana unseal Gojo from the Prison Realm?",
+      "id": "jjk-pg-angel-049",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Jujutsu High's Training Ground No. 4"
+      ],
+      "found": [
+        "Jujutsu High's Training Ground No. 4"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Angel nominate as a fighter fit to engage Kenjaku?",
+      "id": "jjk-pg-angel-050",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Takaba"
+      ],
+      "found": [
+        "Takaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's innate cursed technique?",
+      "id": "jjk-pg-angel-052",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Technique Extinguishment"
+      ],
+      "found": [
+        "Technique Extinguishment"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Technique Extinguishment negate?",
+      "id": "jjk-pg-angel-053",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "any and all other cursed techniques"
+      ],
+      "found": [
+        "any and all other cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who inherited the Angel's technique?",
+      "id": "jjk-pg-angel-054",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana"
+      ],
+      "found": [
+        "Hana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is susceptible to the Technique Extinguishment?",
+      "id": "jjk-pg-angel-055",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Barriers, seals, and cursed objects alike"
+      ],
+      "found": [
+        "Barriers, seals, and cursed objects alike"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which special grade is susceptible to the Technique Extinguishment?",
+      "id": "jjk-pg-angel-056",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Prison Realm"
+      ],
+      "found": [
+        "the Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is nearly impossible for the Angel to do to incarnated sorcerers?",
+      "id": "jjk-pg-angel-057",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "split incarnated sorcerers from their hosts without killing both"
+      ],
+      "found": [
+        "split incarnated sorcerers from their hosts without killing both"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is it nearly impossible for the Angel to split incarnated sorcerers from their hosts?",
+      "id": "jjk-pg-angel-058",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "incarnations are fusions of cursed objects with living flesh"
+      ],
+      "found": [
+        "incarnations are fusions of cursed objects with living flesh"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of technique is Maximum Output: Jacob's Ladder?",
+      "id": "jjk-pg-angel-059",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "An extension technique"
+      ],
+      "found": [
+        "An extension technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Angel conjure in her hands when casting Jacob's Ladder?",
+      "id": "jjk-pg-angel-060",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a four-winged trumpet made of light"
+      ],
+      "found": [
+        "a four-winged trumpet made of light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What appears in the sky above her when she casts Jacob's Ladder?",
+      "id": "jjk-pg-angel-061",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "an immense circle of light in the sky above her"
+      ],
+      "found": [
+        "an immense circle of light in the sky above her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the circle of light resemble?",
+      "id": "jjk-pg-angel-062",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a magic array"
+      ],
+      "found": [
+        "a magic array"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is in the middle of the circle of light?",
+      "id": "jjk-pg-angel-063",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a heptagram"
+      ],
+      "found": [
+        "a heptagram"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is along the periphery of the circle of light?",
+      "id": "jjk-pg-angel-064",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "several crosses"
+      ],
+      "found": [
+        "several crosses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens when the Angel sounds the trumpet?",
+      "id": "jjk-pg-angel-065",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a pillar of light descends from middle of the circle to engulf whatever is below"
+      ],
+      "found": [
+        "a pillar of light descends from middle of the circle to engulf whatever is below"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Under what will any curse be \"extinguished\" when the Angel sounds the trumpet?",
+      "id": "jjk-pg-angel-066",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the light of Jacob's Ladder"
+      ],
+      "found": [
+        "the light of Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel and Hana use Jacob's Ladder on, unsealing Satoru Gojo?",
+      "id": "jjk-pg-angel-067",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the \"Back\" of the Prison Realm"
+      ],
+      "found": [
+        "the \"Back\" of the Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What ability does the Angel grant Hana while possessing her?",
+      "id": "jjk-pg-angel-068",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the ability to levitate and fly"
+      ],
+      "found": [
+        "the ability to levitate and fly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is the Angel fatally dangerous to?",
+      "id": "jjk-pg-angel-069",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "fellow incarnated sorcerers"
+      ],
+      "found": [
+        "fellow incarnated sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has the Angel repeatedly proven herself to be?",
+      "id": "jjk-pg-angel-070",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "shrewd, perceptive, and knowledgeable on jujutsu"
+      ],
+      "found": [
+        "shrewd, perceptive, and knowledgeable on jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose innate technique did the Angel realize the true nature and potential of?",
+      "id": "jjk-pg-angel-071",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Takaba's innate technique"
+      ],
+      "found": [
+        "Takaba's innate technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel initially realize Takaba's technique may have done for Hana?",
+      "id": "jjk-pg-angel-072",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "helped Hana survive Sukuna"
+      ],
+      "found": [
+        "helped Hana survive Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Angel's jujutsu knowledge extend to?",
+      "id": "jjk-pg-angel-073",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the workings of Domain Amplification, the dynamics involved in a domain clash, and the potential recovery of a burnt-out technique using Reverse Cursed Technique"
+      ],
+      "found": [
+        "the workings of Domain Amplification, the dynamics involved in a domain clash, and the potential recovery of a burnt-out technique using Reverse Cursed Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Angel correctly ascertain as the responsible party for flooding the first Tokyo Colony with non-sorcerer foreigners?",
+      "id": "jjk-pg-angel-074",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the responsible party was Kenjaku"
+      ],
+      "found": [
+        "the responsible party was Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel's deal with Kenjaku effectively bind her soul to?",
+      "id": "jjk-pg-angel-075",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a cursed object"
+      ],
+      "found": [
+        "a cursed object"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the deal with Kenjaku allow the Angel to do?",
+      "id": "jjk-pg-angel-076",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "incarnate post-mortem and possess Hana"
+      ],
+      "found": [
+        "incarnate post-mortem and possess Hana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of relationship has the Angel formed with Hana, unlike most incarnates?",
+      "id": "jjk-pg-angel-077",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a symbiotic relationship that leaves Hana in control of her body"
+      ],
+      "found": [
+        "a symbiotic relationship that leaves Hana in control of her body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where on Hana's body does the Angel usually manifest the second mouth?",
+      "id": "jjk-pg-angel-078",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "her cheek or hand"
+      ],
+      "found": [
+        "her cheek or hand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What condition leaves the Angel unable to physically interfere?",
+      "id": "jjk-pg-angel-079",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana takes a fatal misstep during combat"
+      ],
+      "found": [
+        "Hana takes a fatal misstep during combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why cannot the Angel switch hosts, unlike Sukuna?",
+      "id": "jjk-pg-angel-080",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "lacking the King of Curse's knowledge on how to divide her own soul"
+      ],
+      "found": [
+        "lacking the King of Curse's knowledge on how to divide her own soul"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Heian Era described as?",
+      "id": "jjk-pg-angel-081",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the golden age of jujutsu"
+      ],
+      "found": [
+        "the golden age of jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why is the Angel a formidable force?",
+      "id": "jjk-pg-angel-082",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "her experience and holding an innate technique that counters any and all jujutsu without prejudice"
+      ],
+      "found": [
+        "her experience and holding an innate technique that counters any and all jujutsu without prejudice"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Hana sufficiently empowered by the Angel to do, despite no formal sorcerer training?",
+      "id": "jjk-pg-angel-083",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "easily survive the Culling Game"
+      ],
+      "found": [
+        "easily survive the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the Angel's and Hana's greatest contribution to their sorcerer allies?",
+      "id": "jjk-pg-angel-084",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "they used Jacob's Ladder on the \"Back\" of the Prison Realm, unsealing Satoru Gojo"
+      ],
+      "found": [
+        "they used Jacob's Ladder on the \"Back\" of the Prison Realm, unsealing Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the \"Jacob's Ladder\" technique named after?",
+      "id": "jjk-pg-angel-085",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the ladder seen by the biblical patriarch Jacob in the Book of Genesis"
+      ],
+      "found": [
+        "the ladder seen by the biblical patriarch Jacob in the Book of Genesis"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What comes with the use of the Jacob's Ladder technique?",
+      "id": "jjk-pg-angel-086",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a prayer-like chant"
+      ],
+      "found": [
+        "a prayer-like chant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the use of the Jacob's Ladder technique involve?",
+      "id": "jjk-pg-angel-087",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the creation of all-purifying light meant to \"erase sin\""
+      ],
+      "found": [
+        "the creation of all-purifying light meant to \"erase sin\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the technique spawn for Hana to sound?",
+      "id": "jjk-pg-angel-088",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a trumpet of light"
+      ],
+      "found": [
+        "a trumpet of light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the trumpet of light possibly based on?",
+      "id": "jjk-pg-angel-089",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the seven trumpets of Revelation"
+      ],
+      "found": [
+        "the seven trumpets of Revelation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What, besides cross-like shapes, fly around the target when the technique is used?",
+      "id": "jjk-pg-angel-090",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "small cherubic beings"
+      ],
+      "found": [
+        "small cherubic beings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the Angel's innate technique and her desire to kill Sukuna seem to reflect?",
+      "id": "jjk-pg-angel-091",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the essence of anti-demonic exorcism"
+      ],
+      "found": [
+        "the essence of anti-demonic exorcism"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What ability did the Angel deduce Megumi and co. must have sought her out for?",
+      "id": "jjk-pg-angel-092",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "her ability to negate all jujutsu, including barriers and seals"
+      ],
+      "found": [
+        "her ability to negate all jujutsu, including barriers and seals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel say she could probably do that would free Gojo?",
+      "id": "jjk-pg-angel-093",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "unseal the Prison Realm"
+      ],
+      "found": [
+        "unseal the Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who can switch hosts like Sukuna?",
+      "id": "jjk-pg-angel-094",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the King of Curses"
+      ],
+      "found": [
+        "the King of Curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What must the King of Curses have learned to switch hosts?",
+      "id": "jjk-pg-angel-095",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "how to divide his own soul among multiple cursed objects"
+      ],
+      "found": [
+        "how to divide his own soul among multiple cursed objects"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the Angel recommend unsealing Gojo not in a confined space?",
+      "id": "jjk-pg-angel-096",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "in case Gojo snaps after a being sealed for so long"
+      ],
+      "found": [
+        "in case Gojo snaps after a being sealed for so long"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel still agree to let her power be used for, with Hana no longer in a condition to fight?",
+      "id": "jjk-pg-angel-097",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "unseal Gojo from within the Prison Realm"
+      ],
+      "found": [
+        "unseal Gojo from within the Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the name of the squad the Angel was part of during the Heian Era?",
+      "id": "jjk-pg-angel-101",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Desshi Pacification Squad"
+      ],
+      "found": [
+        "Desshi Pacification Squad"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose remnants were also included in the Desshi Pacification Squad?",
+      "id": "jjk-pg-angel-102",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sugawara Clan"
+      ],
+      "found": [],
+      "missing": [
+        "Sugawara Clan"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Desshi Pacification Squad attack during the Heian Era?",
+      "id": "jjk-pg-angel-104",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who repelled the Desshi Pacification Squad during the Heian Era?",
+      "id": "jjk-pg-angel-105",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Angel strike a deal with for a chance to incarnate?",
+      "id": "jjk-pg-angel-106",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel suspect is behind the mass slaughter of non-sorcerers by curses?",
+      "id": "jjk-pg-angel-107",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who, alongside Sukuna, does the Angel advise the sorcerers to deal with?",
+      "id": "jjk-pg-angel-108",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel most strongly desire to kill?",
+      "id": "jjk-pg-angel-109",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Angel call Sukuna?",
+      "id": "jjk-pg-angel-110",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Disgraced One"
+      ],
+      "found": [
+        "Disgraced One"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel actively oppose alongside Kenjaku?",
+      "id": "jjk-pg-angel-111",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose body did the Angel come to possess?",
+      "id": "jjk-pg-angel-112",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of relationship does the Angel have with Hana Kurusu?",
+      "id": "jjk-pg-angel-113",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "symbiotic relationship"
+      ],
+      "found": [
+        "symbiotic relationship"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel allow to remain in control of their shared body?",
+      "id": "jjk-pg-angel-114",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel tease about her secret feelings for Megumi?",
+      "id": "jjk-pg-angel-115",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel prioritize protecting over saving the innocent?",
+      "id": "jjk-pg-angel-116",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel tell that Megumi's memories of her have recovered?",
+      "id": "jjk-pg-angel-117",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is present alongside the others to see Satoru Gojo off before his fight in Shinjuku?",
+      "id": "jjk-pg-angel-118",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel join forces with, alongside Yuji Itadori and others?",
+      "id": "jjk-pg-angel-119",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose past and secret feelings does the Angel know about?",
+      "id": "jjk-pg-angel-120",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Hana find collapsed in the No. 1 Colony?",
+      "id": "jjk-pg-angel-121",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose memories of Hana does the Angel say have recovered?",
+      "id": "jjk-pg-angel-122",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi Fushiguro"
+      ],
+      "found": [
+        "Megumi Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who spoke rudely to Hana over a disagreement?",
+      "id": "jjk-pg-angel-123",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who insists that the group should save the US Army soldiers?",
+      "id": "jjk-pg-angel-124",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Yuji Itadori"
+      ],
+      "found": [
+        "Yuji Itadori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who, alongside Yuji Itadori, meets with Hana in a hotel in the No. 1 Colony?",
+      "id": "jjk-pg-angel-125",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Fumihiko Takaba"
+      ],
+      "found": [
+        "Fumihiko Takaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel nominate as a fighter fit to engage Kenjaku?",
+      "id": "jjk-pg-angel-126",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Fumihiko Takaba"
+      ],
+      "found": [
+        "Fumihiko Takaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel help unseal from the Prison Realm?",
+      "id": "jjk-pg-angel-127",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel attribute the large influx of people into the Colony to?",
+      "id": "jjk-pg-angel-129",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Kogane"
+      ],
+      "found": [
+        "Kogane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who asks the Angel if she can switch hosts like Sukuna?",
+      "id": "jjk-pg-angel-130",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu"
+      ],
+      "found": [
+        "Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who, alongside Shoko Ieiri, later healed Hana?",
+      "id": "jjk-pg-angel-131",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu",
+        "Shoko Ieiri"
+      ],
+      "found": [
+        "Yuta Okkotsu",
+        "Shoko Ieiri"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose crows are used to view a broadcast of the fight?",
+      "id": "jjk-pg-angel-132",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Mei Mei"
+      ],
+      "found": [
+        "Mei Mei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who do Hana, the Angel, and their allies stay inside of, at a safe distance during the fight?",
+      "id": "jjk-pg-angel-133",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Rika"
+      ],
+      "found": [
+        "Rika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who helps Angel and Hana join the battle during the raid on Sukuna?",
+      "id": "jjk-pg-angel-134",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo"
+      ],
+      "found": [
+        "Aoi Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who took the Black Flash hit in Hana's place?",
+      "id": "jjk-pg-angel-135",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo"
+      ],
+      "found": [
+        "Aoi Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Hana show indignation on behalf of, when Yuji spoke rudely?",
+      "id": "jjk-pg-angel-136",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Angel"
+      ],
+      "found": [
+        "Angel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Tengen say ought to be found to help unseal Satoru Gojo?",
+      "id": "jjk-pg-angel-137",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Angel"
+      ],
+      "found": [
+        "Angel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who do Hana and co. meet on the rooftop who reveals herself to be another incarnated sorcerer?",
+      "id": "jjk-pg-angel-138",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Megumi's sister"
+      ],
+      "found": [
+        "Megumi's sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who, alongside Rin Amai, possibly saved Hana earlier?",
+      "id": "jjk-pg-angel-139",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Fumihiko Takaba",
+        "Rin Amai"
+      ],
+      "found": [
+        "Fumihiko Takaba",
+        "Rin Amai"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did the Angel and Hana attempt to fire a Jacob's Ladder on during the raid?",
+      "id": "jjk-pg-angel-140",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who, besides Kenjaku, do the Angel and Hana remain willing to oppose?",
+      "id": "jjk-pg-angel-141",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does the Angel say she would rather not see placed in danger, when Yuji insists on saving the soldiers?",
+      "id": "jjk-pg-angel-142",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Hana Kurusu"
+      ],
+      "found": [
+        "Hana Kurusu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's status?",
+      "id": "jjk-pg-angel-152",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's species?",
+      "id": "jjk-pg-angel-153",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What age does the Angel's page list?",
+      "id": "jjk-pg-angel-154",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "1000+"
+      ],
+      "found": [
+        "1000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's gender?",
+      "id": "jjk-pg-angel-155",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's occupation?",
+      "id": "jjk-pg-angel-156",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's manga debut?",
+      "id": "jjk-pg-angel-157",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Chapter 199"
+      ],
+      "found": [
+        "Chapter 199"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who incarnated the Angel?",
+      "id": "jjk-pg-angel-158",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which era is the Angel from?",
+      "id": "jjk-pg-angel-159",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Heian Era"
+      ],
+      "found": [
+        "Heian Era"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the Angel accept an invitation to undergo incarnation after death?",
+      "id": "jjk-pg-angel-160",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "due to not having or knowing the means to become a cursed object on her own"
+      ],
+      "found": [
+        "due to not having or knowing the means to become a cursed object on her own"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Angel and Hana enter some time after the incarnation?",
+      "id": "jjk-pg-angel-161",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Culling Game"
+      ],
+      "found": [
+        "the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the Angel during the Heian Era?",
+      "id": "jjk-pg-angel-162",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a notable sorcerer"
+      ],
+      "found": [
+        "a notable sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's original appearance?",
+      "id": "jjk-pg-angel-163",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "The Angel's original appearance is unknown"
+      ],
+      "found": [
+        "The Angel's original appearance is unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has Hana permanently manifested on her back under the Angel's influence?",
+      "id": "jjk-pg-angel-164",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a pair of feathered, bluish-white wings"
+      ],
+      "found": [
+        "a pair of feathered, bluish-white wings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has Hana permanently manifested over her head?",
+      "id": "jjk-pg-angel-165",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a yellow halo of light"
+      ],
+      "found": [
+        "a yellow halo of light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the wings and halo suggest?",
+      "id": "jjk-pg-angel-166",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "that those are traits inherited from the Angel"
+      ],
+      "found": [
+        "that those are traits inherited from the Angel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where was the Angel also from?",
+      "id": "jjk-pg-angel-167",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Middle East, where Abrahamic religions originated from"
+      ],
+      "found": [
+        "the Middle East, where Abrahamic religions originated from"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did the Angel place in the third Popularity Poll?",
+      "id": "jjk-pg-angel-168",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "69th in the third Popularity Poll with 7 votes"
+      ],
+      "found": [
+        "69th in the third Popularity Poll with 7 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank did the Angel place in the fourth Popularity Poll?",
+      "id": "jjk-pg-angel-169",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "127th in the fourth Popularity Poll with 2 votes"
+      ],
+      "found": [
+        "127th in the fourth Popularity Poll with 2 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which clan's elite force was the Angel part of during the Heian Era?",
+      "id": "jjk-pg-angel-170",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Abe Clan"
+      ],
+      "found": [
+        "the Abe Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long ago was the Heian Era in which the Angel served?",
+      "id": "jjk-pg-angel-171",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a thousand years ago"
+      ],
+      "found": [
+        "a thousand years ago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel's epithet for Sukuna most likely derived from?",
+      "id": "jjk-pg-angel-172",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Japanese word for \"Fallen Angel\""
+      ],
+      "found": [
+        "the Japanese word for \"Fallen Angel\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Angel's name?",
+      "id": "jjk-pg-angel-098",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "\u5929\u4f7f"
+      ],
+      "found": [],
+      "missing": [
+        "\u5929\u4f7f"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Angel's name?",
+      "id": "jjk-pg-angel-099",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Tenshi"
+      ],
+      "found": [
+        "Tenshi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Angel's race?",
+      "id": "jjk-pg-angel-100",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Human Incarnation"
+      ],
+      "found": [
+        "Human Incarnation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Angel?",
+      "id": "jjk-pg-angel-143",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "1000+"
+      ],
+      "found": [
+        "1000+"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Angel's gender?",
+      "id": "jjk-pg-angel-144",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Angel?",
+      "id": "jjk-pg-angel-145",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Angel's occupation?",
+      "id": "jjk-pg-angel-146",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Angel first appear?",
+      "id": "jjk-pg-angel-147",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Chapter 199"
+      ],
+      "found": [
+        "Chapter 199"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-angel-148",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-angel-149",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-angel-150",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-angel-173",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-angel-174",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hana Kurusu use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-angel-175",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "found": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-angel-176",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Uraume interrupts the battle."
+      ],
+      "found": [
+        "Uraume interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-angel-177",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 1 Colony"
+      ],
+      "found": [
+        "Tokyo No. 1 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-angel-178",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "November 16, 2018"
+      ],
+      "found": [
+        "November 16, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna begin?",
+      "id": "jjk-pg-angel-179",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Chapter 213"
+      ],
+      "found": [
+        "Chapter 213"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna take place?",
+      "id": "jjk-pg-angel-180",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Hana Kurusu use in Yuji Itadori, Maki Zenin & Hana Kurusu vs. Sukuna?",
+      "id": "jjk-pg-angel-181",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "found": [
+        "Technique Extinguishment, Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the Angel maintain a desire to kill Sukuna a thousand years later?",
+      "id": "jjk-pg-angel-186",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Angel developed enough of an animosity towards Sukuna"
+      ],
+      "found": [
+        "the Angel developed enough of an animosity towards Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who else underwent incarnation after death, like the Angel?",
+      "id": "jjk-pg-angel-187",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "many other sorcerers over the centuries"
+      ],
+      "found": [
+        "many other sorcerers over the centuries"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of person was the Angel's host, Hana Kurusu?",
+      "id": "jjk-pg-angel-188",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a young girl"
+      ],
+      "found": [
+        "a young girl"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did the Angel come to inhabit Hana Kurusu?",
+      "id": "jjk-pg-angel-189",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "in the present day"
+      ],
+      "found": [
+        "in the present day"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Tengen first make reference to the Angel?",
+      "id": "jjk-pg-angel-190",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "during the Culling Game's early stages"
+      ],
+      "found": [
+        "during the Culling Game's early stages"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Hana and the Angel travel from to reach the No. 1 Colony?",
+      "id": "jjk-pg-angel-191",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Tokyo's No. 2"
+      ],
+      "found": [
+        "Tokyo's No. 2"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana do with Megumi Fushiguro after finding him collapsed?",
+      "id": "jjk-pg-angel-192",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "carries him away"
+      ],
+      "found": [
+        "carries him away"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel remark about the influx of people into the Colony?",
+      "id": "jjk-pg-angel-193",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "how odd it is that a large number of people seem to be entering the Colony"
+      ],
+      "found": [
+        "how odd it is that a large number of people seem to be entering the Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the mass slaughter of non-sorcerers by curses meant to fill the Colonies with?",
+      "id": "jjk-pg-angel-194",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "more cursed energy"
+      ],
+      "found": [
+        "more cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji say about taking orders from the Angel?",
+      "id": "jjk-pg-angel-195",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "he takes no orders from someone he does not trust"
+      ],
+      "found": [
+        "he takes no orders from someone he does not trust"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel do while Hana noted Yuji's crudeness?",
+      "id": "jjk-pg-angel-196",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "stays silent"
+      ],
+      "found": [
+        "stays silent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What had happened to Tengen when Hana and co. met with Maki Zenin?",
+      "id": "jjk-pg-angel-197",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "Tengen has been captured by Kenjaku"
+      ],
+      "found": [
+        "Tengen has been captured by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel say would be required to allow everyone free traversal between Colonies?",
+      "id": "jjk-pg-angel-198",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "that they find and destroy the barriers' foundation"
+      ],
+      "found": [
+        "that they find and destroy the barriers' foundation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rule did Megumi add to the Culling Game by using his points?",
+      "id": "jjk-pg-angel-199",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "to let players leave the Culling Game by expending 100 points to invite new players as substitutes"
+      ],
+      "found": [
+        "to let players leave the Culling Game by expending 100 points to invite new players as substitutes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "At what time did the group reach the rooftop where they met Megumi's sister?",
+      "id": "jjk-pg-angel-200",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "At around 3 PM"
+      ],
+      "found": [
+        "At around 3 PM"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Megumi's sister do after revealing herself to be another incarnated sorcerer?",
+      "id": "jjk-pg-angel-201",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "flies away"
+      ],
+      "found": [
+        "flies away"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Sukuna do to Hana after exploiting a binding vow with Yuji?",
+      "id": "jjk-pg-angel-202",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "incapacitates Hana"
+      ],
+      "found": [
+        "incapacitates Hana"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom did the Angel immediately recognize within Megumi?",
+      "id": "jjk-pg-angel-203",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the Disgraced One"
+      ],
+      "found": [
+        "the Disgraced One"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel note about the help Yuta Okkotsu and Shoko Ieiri gave her and Hana?",
+      "id": "jjk-pg-angel-204",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "without their help they would have died"
+      ],
+      "found": [
+        "without their help they would have died"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Hana no longer in a condition to do when the Angel agreed to let her power unseal Gojo?",
+      "id": "jjk-pg-angel-205",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "fight"
+      ],
+      "found": [
+        "fight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did the Angel say they ought to attack Kenjaku?",
+      "id": "jjk-pg-angel-206",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "before Sukuna's and Gojo's fight ends"
+      ],
+      "found": [
+        "before Sukuna's and Gojo's fight ends"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did the Angel say beating the King of Curses would mean nothing?",
+      "id": "jjk-pg-angel-207",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "if Kenjaku achieves his goal of merging all humans in Japan with Tengen"
+      ],
+      "found": [
+        "if Kenjaku achieves his goal of merging all humans in Japan with Tengen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel explain about Takaba when nominating him as a fighter?",
+      "id": "jjk-pg-angel-208",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "his cursed technique"
+      ],
+      "found": [
+        "his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long after his unsealing was Gojo prepped for his fight against Sukuna?",
+      "id": "jjk-pg-angel-209",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a month after his unsealing"
+      ],
+      "found": [
+        "a month after his unsealing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel and Hana do at several points during the battle against Sukuna?",
+      "id": "jjk-pg-angel-210",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "comment on and are shocked by the events of the battle as they unfold"
+      ],
+      "found": [
+        "comment on and are shocked by the events of the battle as they unfold"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel warn Hana to do as Sukuna caught up to them?",
+      "id": "jjk-pg-angel-211",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "gain distance"
+      ],
+      "found": [
+        "gain distance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel tell Hana about being embarrassed after Megumi's memories recovered?",
+      "id": "jjk-pg-angel-212",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "there was no need to be embarrassed"
+      ],
+      "found": [
+        "there was no need to be embarrassed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana lack despite being empowered by the Angel?",
+      "id": "jjk-pg-angel-213",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "no formal sorcerer training"
+      ],
+      "found": [
+        "no formal sorcerer training"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the King of Curses fool Hana into doing during her cast of Jacob's Ladder?",
+      "id": "jjk-pg-angel-214",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "deactivating her technique halfway through casting it"
+      ],
+      "found": [
+        "deactivating her technique halfway through casting it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is the Angel able to speak while possessing Hana?",
+      "id": "jjk-pg-angel-215",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "by manifesting a second mouth on the girl's body"
+      ],
+      "found": [
+        "by manifesting a second mouth on the girl's body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the page compare the Angel's manifested second mouth to?",
+      "id": "jjk-pg-angel-216",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "much like Sukuna could while inhabiting Yuji"
+      ],
+      "found": [
+        "much like Sukuna could while inhabiting Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has the Angel's jujutsu knowledge made her to her present-day allies?",
+      "id": "jjk-pg-angel-217",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a major asset to her and Hana's present-day allies"
+      ],
+      "found": [
+        "a major asset to her and Hana's present-day allies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel infer Megumi and Yuji had learned about her?",
+      "id": "jjk-pg-angel-218",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "her technique"
+      ],
+      "found": [
+        "her technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What goal of the Angel's did her newfound allies seem willing to aid?",
+      "id": "jjk-pg-angel-219",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "killing Sukuna"
+      ],
+      "found": [
+        "killing Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What flooded the first Tokyo Colony with non-sorcerers?",
+      "id": "jjk-pg-angel-220",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "over a thousand foreigners of non-sorcerer status"
+      ],
+      "found": [
+        "over a thousand foreigners of non-sorcerer status"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What fail-safe was Kenjaku seeking for the Culling Game?",
+      "id": "jjk-pg-angel-221",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "in case the Culling Game players do not sufficiently raise the Colonies' ambient cursed energy"
+      ],
+      "found": [
+        "in case the Culling Game players do not sufficiently raise the Colonies' ambient cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Despite what demeanor of Takaba's did the Angel realize the true nature of his technique?",
+      "id": "jjk-pg-angel-222",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the man's unassuming, frivolous demeanor"
+      ],
+      "found": [],
+      "missing": [
+        "the man's unassuming, frivolous demeanor"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Angel based on?",
+      "id": "jjk-pg-angel-223",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "the portrayal of angels in the Abrahamic religions, especially Christianity"
+      ],
+      "found": [
+        "the portrayal of angels in the Abrahamic religions, especially Christianity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What inherited traits distinguish Hana?",
+      "id": "jjk-pg-angel-224",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "her feathered wings and halo of light"
+      ],
+      "found": [
+        "her feathered wings and halo of light"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Angel describe her personal creed as?",
+      "id": "jjk-pg-angel-225",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "undoing that which 'violates God's Law'"
+      ],
+      "found": [
+        "undoing that which 'violates God's Law'"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How are angels believed to act in the Abrahamic faiths?",
+      "id": "jjk-pg-angel-226",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "not only be God's messengers but also enforcers of his will on Earth"
+      ],
+      "found": [
+        "not only be God's messengers but also enforcers of his will on Earth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of motif does the King of Curses have, per the page's Trivia?",
+      "id": "jjk-pg-angel-227",
+      "subject": "Angel",
+      "accept": "all",
+      "expected": [
+        "a demonic motif"
+      ],
+      "found": [],
+      "missing": [
+        "a demonic motif"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 8,
+    "canon_found": 10,
+    "canon_total": 18,
+    "canon_recall": 0.5556,
+    "members_returned": 11,
+    "exact_answers": 4,
+    "exact_of": 8,
+    "exact_rate": 0.5,
+    "precision_closed": 0.9091,
+    "precision_over": "8/8",
+    "at_recall_zero": 3,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 218,
+    "fact_present": 214
+  }
+}

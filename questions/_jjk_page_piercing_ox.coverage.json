@@ -1,0 +1,63 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:debut",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": []
+    },
+    {
+      "path": "Usage",
+      "covered_by": [
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:outcome",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:place",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:date",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:chapters",
+        "page-gen:battle:Jujutsu Sorcerers vs. Sukuna:arc",
+        "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:outcome",
+        "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:place",
+        "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:chapters",
+        "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:episodes",
+        "page-gen:battle:Megumi Fushiguro, Toge Inumaki & Noritoshi Kamo vs. Hanami:arc",
+        "page-gen:battle:Sukuna vs. Yorozu:outcome",
+        "page-gen:battle:Sukuna vs. Yorozu:place",
+        "page-gen:battle:Sukuna vs. Yorozu:chapters",
+        "page-gen:battle:Sukuna vs. Yorozu:arc"
+      ]
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Description"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

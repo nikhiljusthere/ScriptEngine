@@ -21,8 +21,8 @@ dropped.
 
 **From the strings, and from nothing else.** The obvious implementation is to
 ask the wiki's alias table whether two names resolve to one page. That was
-written, measured and reverted, and `PRECISION_PLAN.md` files it under "Refuted
-here, do not rebuild": the alias table is one-to-many, `divine dog` names both
+written, measured and reverted -- do not rebuild it: the alias table is
+one-to-many, `divine dog` names both
 `Divine Dogs` and `Divine Dog: Totality`, and collapsing on it merged two
 distinct shikigami. A scorer that reports a better number by being wrong is
 worse than no change at all.
@@ -97,7 +97,7 @@ _SEPARATOR = ": "
 _APOSTROPHES = ("'", "’")
 
 
-def normalise(name: str) -> str:
+def normalise(name: str | None) -> str:
     """The form two names are compared in: folded, collapsed, apostrophe-free.
 
     Not a general-purpose fold. It deliberately does not stem or singularise:

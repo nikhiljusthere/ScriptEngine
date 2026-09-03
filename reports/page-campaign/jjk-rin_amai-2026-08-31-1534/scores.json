@@ -1,0 +1,809 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Rin Amai?",
+      "set": "Every ally of Rin Amai",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the superiors of Rin Amai?",
+      "set": "Every superior of Rin Amai",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Rin Amai",
+      "set": "Every battle involving Rin Amai",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Rin Amai?",
+      "found": [
+        "Yuji Itadori",
+        "Hana Kurusu",
+        "Shoko Ieiri",
+        "Arata Nitta"
+      ],
+      "missing": [],
+      "members": [
+        "Arata Nitta",
+        "Hana Kurusu",
+        "Shoko Ieiri",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the superiors of Rin Amai?",
+      "found": [
+        "Haba",
+        "Hanyu",
+        "Shoko Ieiri"
+      ],
+      "missing": [],
+      "members": [
+        "Haba",
+        "Hanyu",
+        "Shoko Ieiri"
+      ]
+    },
+    {
+      "query": "Every battle involving Rin Amai",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Rin Amai's name?",
+      "id": "jjk-pg-rin_amai-001",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "\u7518\u4e95\u51db"
+      ],
+      "found": [
+        "\u7518\u4e95\u51db"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Rin Amai's name?",
+      "id": "jjk-pg-rin_amai-002",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Amai Rin"
+      ],
+      "found": [
+        "Amai Rin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rin Amai's race?",
+      "id": "jjk-pg-rin_amai-003",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rin Amai's gender?",
+      "id": "jjk-pg-rin_amai-004",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Rin Amai?",
+      "id": "jjk-pg-rin_amai-005",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Rin Amai's occupation?",
+      "id": "jjk-pg-rin_amai-006",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Student Jujutsu Sorcerer"
+      ],
+      "found": [
+        "Student Jujutsu Sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Rin Amai first appear?",
+      "id": "jjk-pg-rin_amai-007",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Chapter 161"
+      ],
+      "found": [
+        "Chapter 161"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Rin Amai first depicted?",
+      "id": "jjk-pg-rin_amai-008",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Episode 54"
+      ],
+      "found": [
+        "Episode 54"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Rin Amai's Japanese voice actor?",
+      "id": "jjk-pg-rin_amai-009",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Soma Saito"
+      ],
+      "found": [
+        "Soma Saito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Rin Amai's English voice actor?",
+      "id": "jjk-pg-rin_amai-010",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Ben Balmaceda"
+      ],
+      "found": [
+        "Ben Balmaceda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-rin_amai-011",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-rin_amai-012",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-rin_amai-013",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-rin_amai-014",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-rin_amai-015",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Rin Amai use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-rin_amai-016",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Sugar Manipulation Technique"
+      ],
+      "found": [
+        "Sugar Manipulation Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What city was Rin Amai a citizen of?",
+      "id": "jjk-pg-rin_amai-020",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Sendai City"
+      ],
+      "found": [
+        "Sendai City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rin become a sorcerer?",
+      "id": "jjk-pg-rin_amai-021",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "involuntarily turned into a sorcerer by Kenjaku and forced to participate in the Culling Game"
+      ],
+      "found": [
+        "involuntarily turned into a sorcerer by Kenjaku and forced to participate in the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rin Amai look like?",
+      "id": "jjk-pg-rin_amai-022",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "a young man with long blond hair that reaches to the back of his neck and thin eyebrows"
+      ],
+      "found": [
+        "a young man with long blond hair that reaches to the back of his neck and thin eyebrows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rin's outfit consist of?",
+      "id": "jjk-pg-rin_amai-023",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "a teal and white tracksuit with a pair of grey pants and brown and white sneakers and a small kippah hat on the top of his head"
+      ],
+      "found": [
+        "a teal and white tracksuit with a pair of grey pants and brown and white sneakers and a small kippah hat on the top of his head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Rin Amai characterized?",
+      "id": "jjk-pg-rin_amai-024",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "an innocent young man compared to other Culling Game players who take advantage of his weakness"
+      ],
+      "found": [
+        "an innocent young man compared to other Culling Game players who take advantage of his weakness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rin behave during the Culling Game while Hanyu and Haba killed others?",
+      "id": "jjk-pg-rin_amai-025",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "too much of a coward to do anything"
+      ],
+      "found": [
+        "too much of a coward to do anything"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Rin help Yuji find?",
+      "id": "jjk-pg-rin_amai-026",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Hiromi Higuruma"
+      ],
+      "found": [
+        "Hiromi Higuruma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rin later prove himself?",
+      "id": "jjk-pg-rin_amai-027",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "by saving Hana Kurusu's life"
+      ],
+      "found": [
+        "by saving Hana Kurusu's life"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rin behave toward the bullies at his school?",
+      "id": "jjk-pg-rin_amai-028",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "he avoided getting on their bad side for the sake of not becoming a target of bullying"
+      ],
+      "found": [
+        "he avoided getting on their bad side for the sake of not becoming a target of bullying"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened after Rin fled from Yuji in fear?",
+      "id": "jjk-pg-rin_amai-029",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "receiving a beating from the bullies who fought Yuji"
+      ],
+      "found": [],
+      "missing": [
+        "receiving a beating from the bullies who fought Yuji"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Rin marked by Kenjaku?",
+      "id": "jjk-pg-rin_amai-030",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "his brain adjusted to be able to use his cursed technique"
+      ],
+      "found": [
+        "his brain adjusted to be able to use his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Rin coerced into doing for Haba and Hanyu?",
+      "id": "jjk-pg-rin_amai-031",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "helping Haba and Hanyu target and kill new players who entered the colony by guiding them with air traffic control lights"
+      ],
+      "found": [
+        "helping Haba and Hanyu target and kill new players who entered the colony by guiding them with air traffic control lights"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What nickname did Rin reveal to gain Yuji's trust?",
+      "id": "jjk-pg-rin_amai-032",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "The Tiger of West Junior High"
+      ],
+      "found": [
+        "The Tiger of West Junior High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Rin tell Yuji Higuruma was?",
+      "id": "jjk-pg-rin_amai-033",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Ikebukuro"
+      ],
+      "found": [
+        "Ikebukuro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Rin stop Hana Kurusu's fall?",
+      "id": "jjk-pg-rin_amai-034",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "stopped her fall using his cursed technique"
+      ],
+      "found": [
+        "stopped her fall using his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Hana's survival depend on besides Rin's technique?",
+      "id": "jjk-pg-rin_amai-035",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "Fumihiko Takaba's cursed technique"
+      ],
+      "found": [
+        "Fumihiko Takaba's cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Rin apologize to Yuji for?",
+      "id": "jjk-pg-rin_amai-036",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "not having the courage to join him in his fight against Sukuna and Kenjaku"
+      ],
+      "found": [
+        "not having the courage to join him in his fight against Sukuna and Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Rin agree to help Shoko and Arata with?",
+      "id": "jjk-pg-rin_amai-037",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "administering sugar to the brain"
+      ],
+      "found": [
+        "administering sugar to the brain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Rin do to make amends for his bullying?",
+      "id": "jjk-pg-rin_amai-038",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "bowed and apologized to make amends"
+      ],
+      "found": [
+        "bowed and apologized to make amends"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What type of sorcerer is Rin Amai?",
+      "id": "jjk-pg-rin_amai-039",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "a non-combatant sorcerer"
+      ],
+      "found": [
+        "a non-combatant sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rin's Sugar Manipulation technique allow him to do?",
+      "id": "jjk-pg-rin_amai-040",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "increase his own sugar level and transform the sugar into a physical form, usually as pudding"
+      ],
+      "found": [
+        "increase his own sugar level and transform the sugar into a physical form, usually as pudding"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What side effect does using Rin's technique have on him?",
+      "id": "jjk-pg-rin_amai-041",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "his low blood sugar causes him to suffer hypoglycemia and makes him light-headed"
+      ],
+      "found": [
+        "his low blood sugar causes him to suffer hypoglycemia and makes him light-headed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Rin Amai rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-rin_amai-042",
+      "subject": "Rin Amai",
+      "accept": "all",
+      "expected": [
+        "80th in the fourth Popularity Poll with 9 votes"
+      ],
+      "found": [
+        "80th in the fourth Popularity Poll with 9 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 39,
+    "fact_present": 38
+  }
+}

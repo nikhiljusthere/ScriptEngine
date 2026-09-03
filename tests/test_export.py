@@ -47,6 +47,11 @@ def series(tmp_path):
     store.add_node("fr:Aoi Todo")
     store.add_node("fr_Aoi Todo")
 
+    def node(name: str):
+        row = store.node_by_name(name)
+        assert row is not None, name
+        return row
+
     store.add_aliases(todo, ["Aoi Todo", "Todo"])
     store.add_aliases(kyoto, ["Kyoto Metropolitan Curse Technical College", "Kyoto Jujutsu High"])
 
@@ -55,17 +60,17 @@ def series(tmp_path):
         confidence=0.95, provenance="infobox", section="Affiliation",
     )
     store.add_edge(
-        source_id=todo, relation="mentions", target_id=store.node_by_name("Yuji Itadori")["id"],
+        source_id=todo, relation="mentions", target_id=node("Yuji Itadori")["id"],
         confidence=0.6, provenance="prose", section="Synopsis",
     )
     for name in ("fr:Aoi Todo", "fr_Aoi Todo"):
         store.add_edge(
             source_id=kyoto, relation="mentions",
-            target_id=store.node_by_name(name)["id"],
+            target_id=node(name)["id"],
             confidence=0.6, provenance="prose", section="Navigation",
         )
     store.add_fact(node_id=todo, key="class", label="Grade", value="Grade 1", citation="Ref vol=5 page=26")
-    store.add_fact(node_id=store.node_by_name("Yuji Itadori")["id"], key="species", label="Species", value="Human", citation="")
+    store.add_fact(node_id=node("Yuji Itadori")["id"], key="species", label="Species", value="Human", citation="")
     store.commit()
     store.close()
 

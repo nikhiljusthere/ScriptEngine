@@ -1,0 +1,44 @@
+# Staged roster declarations for the Kento Nanami page campaign
+# (questions/_jjk_page_kento_nanami.section4.json, section 4:
+# identity / grade / aliases / appearance / vitals / media).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Kento Nanami's aliases` is the closed two-value set of the single
+# `alias =` infobox field:
+#   * 7:3 Sorcerer -- the name Mahito gives him
+#   * Nanamin      -- the nickname Gojo and Yuji use
+# The field is one line the roster discovery does not parse (a
+# `<br>`-separated alias cell), the same shape the alias declarations for
+# Yuji, Sukuna, Maki, Megumi and Toji exist for. Both members are stated
+# in the infobox and in the document card, so the declared-member filter
+# keeps them even though neither has a wiki page of its own. The per-alias
+# facts are already asked in section 2 (jjk-pg-kento_nanami-083, -084);
+# the roster collects the field's values as a set (jjk-pg-kento_nanami-165).
+#
+# `Kento Nanami's affiliations` is the closed single-value set of the
+# infobox `affiliation` field: `Tokyo Jujutsu High` (the display text of
+# the Tokyo Metropolitan Curse Technical College wikilink). It is stated in
+# the infobox and throughout the prose, so the declared-member filter keeps
+# it.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required on the match side; the
+# colon-carrying alias member is quoted for clarity.
+rosters:
+  - name: Kento Nanami's aliases
+    match:
+      - what are kento nanami's aliases
+      - all the aliases of kento nanami
+      - aliases of kento nanami
+      - kento nanami's aliases
+    subject: Kento Nanami
+    members: ["7:3 Sorcerer", Nanamin]
+
+  - name: Kento Nanami's affiliations
+    match:
+      - what are kento nanami's affiliations
+      - all the affiliations of kento nanami
+      - affiliations of kento nanami
+      - kento nanami's affiliations
+    subject: Kento Nanami
+    members: [Tokyo Jujutsu High]

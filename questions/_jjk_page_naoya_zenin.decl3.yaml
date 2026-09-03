@@ -1,0 +1,48 @@
+# Staged roster declarations for the Naoya Zenin page campaign
+# (questions/_jjk_page_naoya_zenin.section3.json, section 3: relationships).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# All three are closed relative sets read off the infobox `Relatives` field of
+# `Naoya Zenin`, whose entries carry an explicit relationship label in
+# `{{Sub|...}}`. The declared-member filter verifies flat membership, so each
+# roster is exactly the set of entries carrying one label; the other labels
+# (Father, Uncle, the two Unnamed entries, the Zenin Clan entry itself) are
+# answered by the section's qa questions instead.
+#
+# `Every cousin of Naoya Zenin` is the four `(Cousin)` entries: Maki Zenin,
+# Mai Zenin, Jinichi Zenin, Toji Fushiguro. Discovery does not hold the set
+# (a cousin question resolves through the Zenin Family roster), so the
+# declared roster wins (G6). The Toji Fushiguro campaign already staged the
+# reverse-direction set (`Every cousin of Toji Fushiguro`, in that cluster's
+# decl3), which is the three-way overlap minus Jinichi Zenin.
+#
+# `Every first cousin once removed of Naoya Zenin` is the two
+# `(First Cousin Once Removed)` entries (Megumi Fushiguro, Iori Okkotsu);
+# `Every first cousin twice removed of Naoya Zenin` is the two
+# `(First Cousin Twice Removed)` entries (Tsurugi Okkotsu, Yuka Okkotsu).
+#
+# The full Relatives list was NOT declared (recorded in the section's
+# `retired[]`): `Unnamed Older Brothers` and `Unnamed Uncle` have no wiki
+# pages, so the closed set cannot be members = exact page titles.
+#
+# Match phrases carry no `: ` or `&`, so no YAML quoting is required.
+rosters:
+   - name: Every cousin of Naoya Zenin
+     match:
+       - every cousin of naoya zenin
+       - all the cousins of naoya zenin
+       - the cousins of naoya zenin
+     subject: Naoya Zenin
+     members: [Maki Zenin, Mai Zenin, Jinichi Zenin, Toji Fushiguro]
+   - name: Every first cousin once removed of Naoya Zenin
+     match:
+       - every first cousin once removed of naoya zenin
+       - all the first cousins once removed of naoya zenin
+     subject: Naoya Zenin
+     members: [Megumi Fushiguro, Iori Okkotsu]
+   - name: Every first cousin twice removed of Naoya Zenin
+     match:
+       - every first cousin twice removed of naoya zenin
+       - all the first cousins twice removed of naoya zenin
+     subject: Naoya Zenin
+     members: [Tsurugi Okkotsu, Yuka Okkotsu]

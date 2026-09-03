@@ -1,0 +1,559 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Niji Ebina?",
+      "set": "Niji Ebina's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Niji Ebina",
+      "set": "Every battle involving Niji Ebina",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Niji Ebina?",
+      "found": [
+        "Kenjaku's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku's Group"
+      ]
+    },
+    {
+      "query": "Every battle involving Niji Ebina",
+      "found": [
+        "Mei Mei vs. Niji Ebina"
+      ],
+      "missing": [],
+      "members": [
+        "Mei Mei vs. Niji Ebina"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Niji Ebina's name?",
+      "id": "jjk-pg-niji_ebina-001",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "\u86ef\u540d\u4ec1\u6b21"
+      ],
+      "found": [
+        "\u86ef\u540d\u4ec1\u6b21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Niji Ebina's name?",
+      "id": "jjk-pg-niji_ebina-002",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Ebina Niji"
+      ],
+      "found": [
+        "Ebina Niji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Niji Ebina's race?",
+      "id": "jjk-pg-niji_ebina-003",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Niji Ebina's gender?",
+      "id": "jjk-pg-niji_ebina-004",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Niji Ebina?",
+      "id": "jjk-pg-niji_ebina-005",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Niji Ebina's occupation?",
+      "id": "jjk-pg-niji_ebina-006",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Niji Ebina first appear?",
+      "id": "jjk-pg-niji_ebina-007",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Chapter 91"
+      ],
+      "found": [
+        "Chapter 91"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Niji Ebina first depicted?",
+      "id": "jjk-pg-niji_ebina-008",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Episode 34"
+      ],
+      "found": [
+        "Episode 34"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Niji Ebina's Japanese voice actor?",
+      "id": "jjk-pg-niji_ebina-009",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Hironori Kond\u014d"
+      ],
+      "found": [
+        "Hironori Kond\u014d"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Niji Ebina's English voice actor?",
+      "id": "jjk-pg-niji_ebina-010",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Edward Bosco"
+      ],
+      "found": [
+        "Edward Bosco"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Mei Mei vs. Niji Ebina?",
+      "id": "jjk-pg-niji_ebina-011",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Mei Mei is victorious."
+      ],
+      "found": [
+        "Mei Mei is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Mei Mei vs. Niji Ebina take place?",
+      "id": "jjk-pg-niji_ebina-012",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Fukutoshin Line Platform Between Harujuku & Dogenzaka"
+      ],
+      "found": [
+        "Fukutoshin Line Platform Between Harujuku & Dogenzaka"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Mei Mei vs. Niji Ebina take place?",
+      "id": "jjk-pg-niji_ebina-013",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Mei Mei vs. Niji Ebina?",
+      "id": "jjk-pg-niji_ebina-014",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Chapter 98"
+      ],
+      "found": [
+        "Chapter 98"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Mei Mei vs. Niji Ebina depicted?",
+      "id": "jjk-pg-niji_ebina-015",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Episode 36"
+      ],
+      "found": [
+        "Episode 36"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Mei Mei vs. Niji Ebina take place?",
+      "id": "jjk-pg-niji_ebina-016",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Niji Ebina?",
+      "id": "jjk-pg-niji_ebina-019",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "a curse using serial killer who aligned himself with Kenjaku during the Shibuya Incident"
+      ],
+      "found": [
+        "a curse using serial killer who aligned himself with Kenjaku during the Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Niji Ebina look like?",
+      "id": "jjk-pg-niji_ebina-020",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "a muscular man with a face without lips or eyelids"
+      ],
+      "found": [
+        "a muscular man with a face without lips or eyelids"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What covers most of Ebina's bowl-cut hair?",
+      "id": "jjk-pg-niji_ebina-021",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "a green, chameleon-like curse that acts as his headwear"
+      ],
+      "found": [
+        "a green, chameleon-like curse that acts as his headwear"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What moral code is assumed about Niji Ebina?",
+      "id": "jjk-pg-niji_ebina-022",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "a questionable moral code"
+      ],
+      "found": [
+        "a questionable moral code"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does Mei Mei believe Ebina was defeated?",
+      "id": "jjk-pg-niji_ebina-023",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "he doesn't understand the value of life despite being a serial killer"
+      ],
+      "found": [
+        "he doesn't understand the value of life despite being a serial killer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Niji Ebina come to join Kenjaku's group?",
+      "id": "jjk-pg-niji_ebina-024",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "Ebina met Kenjaku and joined his group"
+      ],
+      "found": [
+        "Ebina met Kenjaku and joined his group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Niji Ebina die during the Shibuya Incident?",
+      "id": "jjk-pg-niji_ebina-025",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "decapitated by Mei Mei"
+      ],
+      "found": [
+        "decapitated by Mei Mei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Mei Mei say Ebina lost?",
+      "id": "jjk-pg-niji_ebina-026",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "the fact that he couldn't immediately answer as a murderer is the reason why he lost"
+      ],
+      "found": [
+        "the fact that he couldn't immediately answer as a murderer is the reason why he lost"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Mei Mei and Yuji rank Niji Ebina's strength?",
+      "id": "jjk-pg-niji_ebina-027",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "stronger than Ko-Guy, unofficially ranking him around semi-grade 1 level"
+      ],
+      "found": [
+        "stronger than Ko-Guy, unofficially ranking him around semi-grade 1 level"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of cursed spirit did Ebina keep on a chain around his wrist?",
+      "id": "jjk-pg-niji_ebina-028",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "a small bulldog-like curse fastened to a chain around his wrist that he used as a leash"
+      ],
+      "found": [
+        "a small bulldog-like curse fastened to a chain around his wrist that he used as a leash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ebina rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-niji_ebina-029",
+      "subject": "Niji Ebina",
+      "accept": "all",
+      "expected": [
+        "143rd in the fourth Popularity Poll with 1 vote"
+      ],
+      "found": [
+        "143rd in the fourth Popularity Poll with 1 vote"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 27,
+    "fact_present": 27
+  }
+}

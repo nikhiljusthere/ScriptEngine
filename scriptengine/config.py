@@ -134,6 +134,23 @@ class Settings(BaseSettings):
     llm_api_key: str = "local"  # local servers ignore it; sent for shape
     llm_timeout_seconds: int = 300
 
+    # ── Script writing (the one model call on the writing path) ─────────────
+    # Retrieval never calls a model; *writing* a script does. Extraction wants
+    # a small fast instruct model, but a 6,000-word script needs the big
+    # context window and the 32K output budget, so the writer gets its own
+    # model. Defaults to the same Qwen the `opencode.json` provider block
+    # declares, under LM Studio's own API identifier (the `provider/model`
+    # form, as `lms ls` reports it), matching the `llm_model` convention.
+    # Overridden with SCRIPTENGINE_WRITER_* so the extraction settings stay
+    # untouched. The writer reuses LLMClient with these values folded in
+    # (`scriptengine/script/writer.py`), never its own connection code.
+    writer_backend: str = "local"
+    writer_model: str = "qwen/qwen3.8-27b"
+    writer_base_url: str = "http://localhost:1234/v1"
+    writer_api_key: str = "local"
+    writer_timeout_seconds: int = 600
+    writer_max_tokens: int = 32768
+
     # ── API ──────────────────────────────────────────────────────────────────
     api_host: str = "127.0.0.1"
     api_port: int = 8000

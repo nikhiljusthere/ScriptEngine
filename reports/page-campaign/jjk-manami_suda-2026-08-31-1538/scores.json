@@ -1,0 +1,529 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Manami Suda?",
+      "set": "Every ally of Manami Suda",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Manami Suda?",
+      "set": "Every family of Manami Suda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the rivals of Manami Suda?",
+      "set": "Every rival of Manami Suda",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Manami Suda?",
+      "set": "Manami Suda's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Manami Suda?",
+      "found": [
+        "Toshihisa Negi",
+        "Kenjaku",
+        "Miguel Oduol",
+        "Mimiko Hasaba",
+        "Nanako Hasaba"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Miguel Oduol",
+        "Mimiko Hasaba",
+        "Nanako Hasaba",
+        "Toshihisa Negi"
+      ]
+    },
+    {
+      "query": "What are all the families of Manami Suda?",
+      "found": [
+        "Larue",
+        "Toshihisa Negi"
+      ],
+      "missing": [],
+      "members": [
+        "Larue",
+        "Toshihisa Negi"
+      ]
+    },
+    {
+      "query": "What are all the rivals of Manami Suda?",
+      "found": [
+        "Mimiko Hasaba",
+        "Nanako Hasaba"
+      ],
+      "missing": [],
+      "members": [
+        "Mimiko Hasaba",
+        "Nanako Hasaba"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Manami Suda?",
+      "found": [
+        "Suguru Geto's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Manami Suda's name?",
+      "id": "jjk-pg-manami_suda-001",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "\u83c5\u7530\u771f\u5948\u7f8e"
+      ],
+      "found": [
+        "\u83c5\u7530\u771f\u5948\u7f8e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Manami Suda's name?",
+      "id": "jjk-pg-manami_suda-002",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Suda Manami"
+      ],
+      "found": [
+        "Suda Manami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Manami Suda's race?",
+      "id": "jjk-pg-manami_suda-003",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Manami Suda's gender?",
+      "id": "jjk-pg-manami_suda-004",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Manami Suda?",
+      "id": "jjk-pg-manami_suda-005",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Manami Suda's occupation?",
+      "id": "jjk-pg-manami_suda-006",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Manami Suda first appear?",
+      "id": "jjk-pg-manami_suda-007",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3 Chapter 114"
+      ],
+      "found": [
+        "Chapter 0-3 Chapter 114"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Manami Suda first depicted?",
+      "id": "jjk-pg-manami_suda-008",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "The Movie\n\nEpisode 40"
+      ],
+      "found": [
+        "The Movie\n\nEpisode 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Manami Suda's Japanese voice actor?",
+      "id": "jjk-pg-manami_suda-009",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Shizuka Ito"
+      ],
+      "found": [
+        "Shizuka Ito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Manami Suda's English voice actor?",
+      "id": "jjk-pg-manami_suda-010",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Laura Post"
+      ],
+      "found": [
+        "Laura Post"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role did Manami Suda have in Suguru Geto's group?",
+      "id": "jjk-pg-manami_suda-015",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto's secretary as well as a commander in his \"family\" of sorcerers"
+      ],
+      "found": [
+        "Suguru Geto's secretary as well as a commander in his \"family\" of sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Manami and Toshihisa Negi join Kenjaku?",
+      "id": "jjk-pg-manami_suda-016",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "to carry on his will by joining Kenjaku"
+      ],
+      "found": [
+        "to carry on his will by joining Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Manami Suda look like?",
+      "id": "jjk-pg-manami_suda-017",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "a young woman with long dusty-pink hair that reaches past her shoulders and dark blue-green eyes"
+      ],
+      "found": [
+        "a young woman with long dusty-pink hair that reaches past her shoulders and dark blue-green eyes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Manami wear as Suguru's assistant?",
+      "id": "jjk-pg-manami_suda-018",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "a sleeveless purple dress and long dark heels"
+      ],
+      "found": [
+        "a sleeveless purple dress and long dark heels"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Manami wear during the Night Parade of a Hundred Demons?",
+      "id": "jjk-pg-manami_suda-019",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "a white jacket with a fur collar"
+      ],
+      "found": [
+        "a white jacket with a fur collar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Manami Suda believe about non-sorcerers?",
+      "id": "jjk-pg-manami_suda-020",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "non-sorcerers are monkeys and can hardly believe they're of the same race"
+      ],
+      "found": [
+        "non-sorcerers are monkeys and can hardly believe they're of the same race"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Manami think of Mimiko and Nanako's plan to kill Pseudo-Geto?",
+      "id": "jjk-pg-manami_suda-021",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "a childish idea"
+      ],
+      "found": [
+        "a childish idea"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Manami and Toshihisa agree was the best way to honor Suguru's will?",
+      "id": "jjk-pg-manami_suda-022",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "to make the world he envisioned a reality"
+      ],
+      "found": [
+        "to make the world he envisioned a reality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Manami take in battle?",
+      "id": "jjk-pg-manami_suda-023",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "more of a commander role in battle while Suguru is absent, delivering orders and such"
+      ],
+      "found": [
+        "more of a commander role in battle while Suguru is absent, delivering orders and such"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Manami Suda rank in the third Popularity Poll?",
+      "id": "jjk-pg-manami_suda-024",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "113rd in the third Popularity Poll with 1 vote"
+      ],
+      "found": [
+        "113rd in the third Popularity Poll with 1 vote"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Manami Suda rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-manami_suda-025",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "119th in the fourth Popularity Poll with 3 votes"
+      ],
+      "found": [
+        "119th in the fourth Popularity Poll with 3 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who portrays Manami Suda in the English dub?",
+      "id": "jjk-pg-manami_suda-026",
+      "subject": "Manami Suda",
+      "accept": "all",
+      "expected": [
+        "Laura Post"
+      ],
+      "found": [
+        "Laura Post"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 22,
+    "fact_present": 22
+  }
+}

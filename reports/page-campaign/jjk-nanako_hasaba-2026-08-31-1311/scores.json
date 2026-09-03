@@ -1,0 +1,705 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Nanako Hasaba?",
+      "set": "Every ally of Nanako Hasaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Nanako Hasaba?",
+      "set": "Every enemy of Nanako Hasaba",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the families of Nanako Hasaba?",
+      "set": "Every family of Nanako Hasaba",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Nanako Hasaba?",
+      "set": "Nanako Hasaba's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Nanako Hasaba?",
+      "found": [
+        "Suguru Geto",
+        "Manami Suda"
+      ],
+      "missing": [],
+      "members": [
+        "Manami Suda",
+        "Suguru Geto"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Nanako Hasaba?",
+      "found": [
+        "Kenjaku",
+        "Kiyotaka Ijichi"
+      ],
+      "missing": [],
+      "members": [
+        "Kenjaku",
+        "Kiyotaka Ijichi"
+      ]
+    },
+    {
+      "query": "What are all the families of Nanako Hasaba?",
+      "found": [
+        "Mimiko Hasaba",
+        "Larue",
+        "Toshihisa Negi"
+      ],
+      "missing": [],
+      "members": [
+        "Larue",
+        "Mimiko Hasaba",
+        "Toshihisa Negi"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Nanako Hasaba?",
+      "found": [
+        "Suguru Geto's Group"
+      ],
+      "missing": [],
+      "members": [
+        "Suguru Geto's Group"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Nanako Hasaba's name?",
+      "id": "jjk-pg-nanako_hasaba-001",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "\u67b7\u5834\u83dc\u3005\u5b50"
+      ],
+      "found": [
+        "\u67b7\u5834\u83dc\u3005\u5b50"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Nanako Hasaba's name?",
+      "id": "jjk-pg-nanako_hasaba-002",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Hasaba Nanako"
+      ],
+      "found": [
+        "Hasaba Nanako"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nanako Hasaba's race?",
+      "id": "jjk-pg-nanako_hasaba-003",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nanako Hasaba's gender?",
+      "id": "jjk-pg-nanako_hasaba-004",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Nanako Hasaba?",
+      "id": "jjk-pg-nanako_hasaba-005",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nanako Hasaba's occupation?",
+      "id": "jjk-pg-nanako_hasaba-006",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nanako Hasaba first appear?",
+      "id": "jjk-pg-nanako_hasaba-007",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-3 Chapter 77"
+      ],
+      "found": [
+        "Chapter 0-3 Chapter 77"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Nanako Hasaba first depicted?",
+      "id": "jjk-pg-nanako_hasaba-008",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "The Movie Episode 25 (Fantasy) Episode 29"
+      ],
+      "found": [
+        "The Movie Episode 25 (Fantasy) Episode 29"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How old is Nanako Hasaba?",
+      "id": "jjk-pg-nanako_hasaba-009",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "15(2017) 16"
+      ],
+      "found": [
+        "15(2017) 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Nanako Hasaba's Japanese voice actor?",
+      "id": "jjk-pg-nanako_hasaba-010",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Satsumi Matsuda"
+      ],
+      "found": [
+        "Satsumi Matsuda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Nanako Hasaba's English voice actor?",
+      "id": "jjk-pg-nanako_hasaba-011",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Ryan Bartley"
+      ],
+      "found": [
+        "Ryan Bartley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What style of clothing does Nanako Hasaba wear?",
+      "id": "jjk-pg-nanako_hasaba-016",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "kogal style of the gyaru subculture"
+      ],
+      "found": [
+        "kogal style of the gyaru subculture"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is distinctive about Nanako Hasaba's hairstyle?",
+      "id": "jjk-pg-nanako_hasaba-017",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "long caramel hair that she ties back into a bun"
+      ],
+      "found": [
+        "long caramel hair that she ties back into a bun"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nanako Hasaba look like as a child?",
+      "id": "jjk-pg-nanako_hasaba-018",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "a sleeveless light colored dress with black shoes"
+      ],
+      "found": [
+        "a sleeveless light colored dress with black shoes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nanako Hasaba wear during the Shibuya Incident?",
+      "id": "jjk-pg-nanako_hasaba-019",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "light colored sailor uniform with a black collar"
+      ],
+      "found": [
+        "light colored sailor uniform with a black collar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Nanako Hasaba care deeply for?",
+      "id": "jjk-pg-nanako_hasaba-020",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Geto"
+      ],
+      "found": [
+        "Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Nanako confront Kenjaku about?",
+      "id": "jjk-pg-nanako_hasaba-021",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "giving Geto's body back"
+      ],
+      "found": [
+        "giving Geto's body back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Nanako plotting behind Kenjaku's back?",
+      "id": "jjk-pg-nanako_hasaba-022",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "recover the real Geto"
+      ],
+      "found": [
+        "recover the real Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Nanako as one of Geto's closest followers?",
+      "id": "jjk-pg-nanako_hasaba-023",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "a sorcerer supremacist and loathed non-sorcerers"
+      ],
+      "found": [
+        "a sorcerer supremacist and loathed non-sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Nanako ready to do for the greater good?",
+      "id": "jjk-pg-nanako_hasaba-024",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "kill sorcerers"
+      ],
+      "found": [
+        "kill sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Nanako's skill level described?",
+      "id": "jjk-pg-nanako_hasaba-025",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "a sorcerer with unknown capabilities"
+      ],
+      "found": [
+        "a sorcerer with unknown capabilities"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Nanako manipulate using her technique?",
+      "id": "jjk-pg-nanako_hasaba-026",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "a photographed subject that she captures an image of using the camera on her cellphone"
+      ],
+      "found": [
+        "a photographed subject that she captures an image of using the camera on her cellphone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened when Nanako used her technique on herself?",
+      "id": "jjk-pg-nanako_hasaba-027",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "tired her out quickly"
+      ],
+      "found": [
+        "tired her out quickly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nanako use in tandem with her technique?",
+      "id": "jjk-pg-nanako_hasaba-028",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "cellphone camera"
+      ],
+      "found": [
+        "cellphone camera"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event in the Cursed Child Arc does Nanako Hasaba appear in?",
+      "id": "jjk-pg-nanako_hasaba-029",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "found": [
+        "Night Parade of a Hundred Demons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event in the Shibuya Incident Arc does Nanako Hasaba appear in?",
+      "id": "jjk-pg-nanako_hasaba-030",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nanako Hasaba rank in the first Popularity Poll?",
+      "id": "jjk-pg-nanako_hasaba-031",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "62nd"
+      ],
+      "found": [
+        "62nd"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nanako Hasaba rank in the second Popularity Poll?",
+      "id": "jjk-pg-nanako_hasaba-032",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "68th"
+      ],
+      "found": [
+        "68th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nanako Hasaba rank in the third Popularity Poll?",
+      "id": "jjk-pg-nanako_hasaba-033",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "84th"
+      ],
+      "found": [
+        "84th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nanako Hasaba rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-nanako_hasaba-034",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "40th"
+      ],
+      "found": [
+        "40th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the wiki say about the ages of the Hasaba twins?",
+      "id": "jjk-pg-nanako_hasaba-035",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "not yet known which of the twins is the older or the younger"
+      ],
+      "found": [
+        "not yet known which of the twins is the older or the younger"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the real-life relationship between Nanako's and Mimiko's voice actresses?",
+      "id": "jjk-pg-nanako_hasaba-036",
+      "subject": "Nanako Hasaba",
+      "accept": "all",
+      "expected": [
+        "real-life twins"
+      ],
+      "found": [
+        "real-life twins"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 8,
+    "canon_total": 8,
+    "canon_recall": 1.0,
+    "members_returned": 8,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 32,
+    "fact_present": 32
+  }
+}

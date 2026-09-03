@@ -1,0 +1,1052 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 6 (counts/trivia/misc) of the Toji Fushiguro cluster. Rosters staged in _jjk_page_toji_fushiguro.decl6.yaml.",
+ "retired": [
+  {
+   "id": "jjk-pg-toji_fushiguro-retired-s6-01",
+   "question": "How many votes did Toji Fushiguro receive in the first Popularity Poll?",
+   "item": "",
+   "reason": "The Trivia section states results for the second (9th, 3,384 votes), third (11th, 1,258 votes) and fourth (10th, 3,218 votes) Popularity Polls only; the page states no number for a first poll, so the clause is retired rather than golded to an invented figure."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-retired-s6-02",
+   "question": "How many kanji make up Toji Fushiguro's name?",
+   "item": "",
+   "reason": "The Trivia kanji bullet names four kanji (伏, 黒, 甚, 爾) but never states the count, and the characters sit in Nihongo template arguments that the roster machinery cannot declare (they are not wiki page titles), so the count is not goldable; the kanji meanings are asked instead (jjk-pg-toji_fushiguro-259/260)."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-retired-s6-03",
+   "question": "Every kanji of Toji Fushiguro's name",
+   "item": "",
+   "reason": "Not declarable as a roster: the members would be the CJK characters 伏/黒/甚/爾, which have no wiki pages and exist only as Nihongo template arguments in the Trivia bullet, so the declared-members contract (members = page titles or page-stated names) cannot be met."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-retired-s6-04",
+   "question": "How many quotes does the Quotes section list?",
+   "item": "",
+   "reason": "The Quotes section lists five quotes but the page never states the count, and quotes are text, not page titles, so the set is not declarable as a roster; individual quotes are asked instead (jjk-pg-toji_fushiguro-266..274)."
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-toji_fushiguro-251",
+   "kind": "fact",
+   "question": "Which position did Toji Fushiguro rank in the second Popularity Poll?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "9th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Toji ranked 9th in the second Popularity Poll with 3,384 votes.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-252",
+   "kind": "fact",
+   "question": "How many votes did Toji Fushiguro receive in the second Popularity Poll?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "3,384 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 3,384 votes'; not a Ref/infobox value."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-253",
+   "kind": "fact",
+   "question": "Which position did Toji Fushiguro rank in the third Popularity Poll?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "11th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Toji ranked 11th in the third Popularity Poll with 1,258 votes.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-254",
+   "kind": "fact",
+   "question": "How many votes did Toji Fushiguro receive in the third Popularity Poll?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "1,258 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 1,258 votes'; not a Ref/infobox value."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-255",
+   "kind": "fact",
+   "question": "How many votes did Toji Fushiguro receive in the fourth Popularity Poll?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "3,218 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 3,218 votes'; the 4th-poll rank (10th) is already asked in section 4 (jjk-pg-toji_fushiguro-184), so this asks the votes."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-256",
+   "kind": "fact",
+   "question": "How many conventional weapons did Toji Fushiguro use, according to the Equipment section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": [
+      "3"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Closed set of the Equipment > Conventional Weaponry group (three cells: normal katana, small combat knife, standard handgun), declared in _jjk_page_toji_fushiguro.decl6.yaml; the count is the roster's member count, which the page states by listing the group."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-257",
+   "kind": "set",
+   "question": "Every conventional weapon Toji Fushiguro used",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "normal katana",
+     "aliases": []
+    },
+    {
+     "item": "small combat knife",
+     "aliases": []
+    },
+    {
+     "item": "standard handgun",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "The three rows of the Equipment > Conventional Weaponry group on the Toji Fushiguro page; each is named in its own cell ('a normal katana', 'a small combat knife with a thin blade', 'a standard handgun'). Declared in _jjk_page_toji_fushiguro.decl6.yaml."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-258",
+   "kind": "fact",
+   "question": "According to the Trivia, where does Toji's surname come from?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his late wife",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: \"Toji's surname he inherited from his late wife, Fushiguro\"."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-259",
+   "kind": "fact",
+   "question": "What do the kanji of Toji's surname mean, according to the Trivia?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "prone, prostrated, bend down, bow, cover, lay (pipes)",
+     "aliases": []
+    },
+    {
+     "item": "black, darkness",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia kanji bullet: the meanings are quoted in the section text (fushi = 'prone, prostrated, bend down, bow, cover, lay (pipes)', kuro/guro = 'black, darkness')."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-260",
+   "kind": "fact",
+   "question": "What do the kanji of Toji's given name mean, according to the Trivia?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "serious, tremendously, very, great, exceedingly",
+     "aliases": []
+    },
+    {
+     "item": "you, thou, second/second person",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia kanji bullet: to = 'serious, tremendously, very, great, exceedingly', ji = 'you, thou, second/second person'."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-261",
+   "kind": "fact",
+   "question": "What does the official fanbook note about Toji Fushiguro getting drunk?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "He doesn't get drunk",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia fanbook bullet: 'Least favorite dish: Alcohol (He doesn't get drunk).' Section 4 (183) asked for the dish itself, not the parenthetical."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-262",
+   "kind": "fact",
+   "question": "What kind of cursed spirits were in the disciplinary pit, according to the Trivia?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "grade 2 cursed spirits",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia fanbook bullet: 'He received his scar after the Zenin clan threw him into the disciplinary pit of grade 2 cursed spirits.' The scar's cause is asked in section 5 (204); the grade of the spirits is new."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-263",
+   "kind": "fact",
+   "question": "How did Toji establish a friendly relationship with his inventory curse, according to the Trivia?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "by earnestly training it like a pet",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia fanbook bullet: 'Toji was able to establish a friendly relationship with his inventory curse by earnestly training it like a pet.' Section 2 (079) asks why Geto could not absorb it; this asks how the relationship was built."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-264",
+   "kind": "fact",
+   "question": "What did Toji do because he didn't have much money, according to the Trivia?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "wandered from woman to woman",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia (Volume 9): 'Toji didn't have much money, so he wandered from woman to woman.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-265",
+   "kind": "fact",
+   "question": "How does Toji earn and spend his money, according to the Trivia?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he'll earn a ton of money from one job and spend it until it's gone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia (Volume 9): 'But he'll earn a ton of money from one job and spend it until it's gone.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-266",
+   "kind": "fact",
+   "question": "What does Toji tell Shiu Kong about his name, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "I go by Fushiguro now",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To Shiu Kong, Chapter 66): 'I don't go by Zenin anymore. I got married and took my wife's name. I go by Fushiguro now.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-267",
+   "kind": "fact",
+   "question": "What problem does Toji face as soon as he holds a cursed tool, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the cursed energy from it means I am no longer invisible",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To Suguru Geto, Chapter 73): 'as soon as I hold a cursed tool, the cursed energy from it means I am no longer invisible.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-268",
+   "kind": "fact",
+   "question": "What does Toji joke about his stomach, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "An invisible man's gonna have invisible guts, right?",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To Suguru Geto, Chapter 73): 'Then I ingest it and keep it inside my stomach. An invisible man's gonna have invisible guts, right?'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-269",
+   "kind": "fact",
+   "question": "Why didn't Toji use a cursed tool at first, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "I need to stay invisible if I'm gonna pull off a surprise attack on the Six Eyes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To Suguru Geto, Chapter 73): 'And that's why I didn't use a cursed tool at first. I need to stay invisible if I'm gonna pull off a surprise attack on the Six Eyes.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-270",
+   "kind": "fact",
+   "question": "Why did Toji not start with the Star Plasma Vessel, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it's risky to reveal myself to the Six Eyes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To Suguru Geto, Chapter 73): 'I could have started with the Star Plasma Vessel. But it's risky to reveal myself to the Six Eyes.' The item keeps the page's verbatim first-person wording."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-271",
+   "kind": "fact",
+   "question": "What did Toji say he would always say before making a run for it, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "I don't work for free",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To himself, Chapter 75): 'I don't work for free.' That's what I would always say before making a run for it."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-272",
+   "kind": "fact",
+   "question": "Why did Toji want to crush the awakened power of the Limitless, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "I wanted this for self-affirmation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To himself, Chapter 75): 'I wanted to discredit it. To crush it. ... I wanted this for self-affirmation.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-273",
+   "kind": "fact",
+   "question": "What did Toji want to discredit and crush, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the pinnacle of the jujutsu world and the Zen'in family",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To himself, Chapter 75): 'The pinnacle of the jujutsu world and the Zen'in family. I wanted this for self-affirmation.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-274",
+   "kind": "fact",
+   "question": "What does Toji say when he learns Megumi does not go by the Zenin name, according to the Quotes section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Good for you",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Quotes (To Megumi Fushiguro, Chapter 113): 'Not Zen'in, huh? Good for you.' Section 5 (250) covers the plot beat; this is the quote itself."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-275",
+   "kind": "fact",
+   "question": "What is distinctive about the length of Toji's hair, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "mid-length straight black hair that reaches to his ears",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'Toji is a tall, muscular man with mid-length straight black hair that reaches to his ears.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-276",
+   "kind": "fact",
+   "question": "Where is Toji's scar located, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "across the right corner of his lips",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'he has thin black eyebrows and a scar across the right corner of his lips.' The scar's cause is asked in section 5 (204); this asks the location."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-277",
+   "kind": "fact",
+   "question": "What does Toji wear for casual attire, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a long-sleeved black shirt and matching pants with sandals",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'For casual attire, Toji wears a simple outfit consisting of a long-sleeved black shirt and matching pants with sandals.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-278",
+   "kind": "fact",
+   "question": "What does Toji wear while fighting, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "white baggy training pants with a black belt weaved through the waist and black martial arts slippers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'While fighting, Toji wears a tight-fitting black shirt, sports white baggy training pants with a black belt weaved through the waist and black martial arts slippers.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-279",
+   "kind": "fact",
+   "question": "What did Toji wear while still a member of the Zenin clan, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a dark colored haori over a black yukata",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'While still a member of the Zenin clan, Toji had longer hair and he wore a dark colored haori over a black yukata.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-280",
+   "kind": "fact",
+   "question": "What does the outfit of Toji's vessel look like after being reanimated, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a loose white sweater along with black pants and black shoes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'Toji inhabits the body of her grandson, who wears a loose white sweater along with black pants and black shoes.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-281",
+   "kind": "fact",
+   "question": "What do Toji's pitch black sclerae symbolize, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "how he's lost most of his sense of self",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'Toji's sclerae become completely pitch black to symbolize how he's lost most of his sense of self' (section 3, 142 asks what the sclerae became)."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-282",
+   "kind": "fact",
+   "question": "When do Toji's sclerae return to normal, according to the Appearance section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "when he impales his own head to save Megumi from his own rampage",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'return back to normal when he impales his own head to save Megumi from his own rampage.' Section 1 (048) asks how Toji protected Megumi; this asks the sclerae trigger."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-283",
+   "kind": "fact",
+   "question": "Under what condition does Toji enjoy insightful conversation, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "as long as it somehow pertains to himself",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He appears to enjoy insightful conversation with others as long as it somehow pertains to himself.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-284",
+   "kind": "fact",
+   "question": "How did Toji reassure Satoru Gojo upon meeting, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he was not the type to recall a random man either",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Toji, on the other hand, reassured him that he was not the type to recall a random man either.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-285",
+   "kind": "fact",
+   "question": "What expression does Toji have in battle, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a crazed expression as if he's lost in the thrill of the fight",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'In battle, Toji has a crazed expression as if he's lost in the thrill of the fight, but he's always maintaining a cool and calculated head and plotting his next move.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-286",
+   "kind": "fact",
+   "question": "What did Toji do with the Time Vessel Association's middleman, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "invite him to eat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'he got along well enough with their middleman to invite him to eat.' Section 3 (150) names the mediator (Shiu Kong); this asks what Toji did with him."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-287",
+   "kind": "fact",
+   "question": "What did Toji stop doing thanks to his wife's influence, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "gambling and hunting sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'He stopped gambling and hunting sorcerers; it was likely her influence that stopped Toji from taking revenge on the Zenin clan.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-288",
+   "kind": "fact",
+   "question": "Why did Toji name his son Megumi, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it means blessings",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'naming him \"Megumi\" because it means blessings.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-289",
+   "kind": "fact",
+   "question": "According to the Personality section, why did Toji try to cut down the most gifted sorcerer in the world?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "as another way to spite them all",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Toji chose to try and cut down the most gifted sorcerer in the world as another way to spite them all.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-290",
+   "kind": "fact",
+   "question": "What did Toji's pride cost him, according to the Personality section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his life",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Unfortunately, this pride cost Toji his life.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-291",
+   "kind": "fact",
+   "question": "What injury did Toji sustain when he defeated the strongest jujutsu sorcerers at the time, according to the Overview?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a small cut around the ear",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'He was able to defeat the strongest jujutsu sorcerers at the time without sustaining any injuries beyond a small cut around the ear.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-292",
+   "kind": "fact",
+   "question": "What did Toji refer to Suguru's abilities as, compared to his own strength, according to the Overview?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "rabble",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'Toji referred to Suguru's abilities as rabble compared to his own strength.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-293",
+   "kind": "fact",
+   "question": "Whom did Toji nearly kill while completing his assignment, according to the Overview?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "both of Jujutsu High's most blessed sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'completing his assignment while nearly killing both of Jujutsu High's most blessed sorcerers in the process.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-294",
+   "kind": "fact",
+   "question": "How did Toji kill Ogami, according to the Overview?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "with a single blow",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'At the start of his out-of-control rampage, Toji killed Ogami with a single blow' (section 3, 141 asks whom Toji killed; this asks how)."
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-295",
+   "kind": "fact",
+   "question": "How did Toji's resurrected body act, according to the Overview?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "acted purely on fighting instinct",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'Toji's body was able to overwrite her technique and acted purely on fighting instinct.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-296",
+   "kind": "fact",
+   "question": "How did Toji post his bounty, according to the Intelligence section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "on a website for curse users with a time limit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Intelligence: 'By posting it on a website for curse users with a time limit, evil sorcerers flocked to collect the bounty.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-297",
+   "kind": "fact",
+   "question": "Why did Toji consider the bounty hunters free labor, according to the Intelligence section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he knew they'd be unable to win",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Intelligence: 'He knew they'd be unable to win, so this was free labor, a smart way to use his resources.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-298",
+   "kind": "fact",
+   "question": "What did Toji create when he was brought back by Ogami, according to the Intelligence section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a theory that was correct on how exactly he was able to keep his individuality despite his technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Intelligence: 'Toji instantly created a theory that was correct on how exactly he was able to keep his individuality despite his technique.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-299",
+   "kind": "fact",
+   "question": "What does the Physical Prowess section say about Toji's marksmanship?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "an expert marksmen with extremely precise aim",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Physical Prowess: 'Armed with a normal handgun, he's also an expert marksmen with extremely precise aim.'"
+  },
+  {
+   "id": "jjk-pg-toji_fushiguro-300",
+   "kind": "fact",
+   "question": "How fast was Toji inside Dagon's Domain, according to the Physical Prowess section?",
+   "subject": "Toji Fushiguro",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "so fast that he could run on water like it was nothing",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+   ],
+   "verified": "2026-08-23",
+   "note": "Physical Prowess: 'Inside Dagon's Domain, Toji was so fast that he could run on water like it was nothing, shocking the special grade.' Section 5 (246) asks how he entered the domain; this asks his speed in it."
+  }
+ ]
+}

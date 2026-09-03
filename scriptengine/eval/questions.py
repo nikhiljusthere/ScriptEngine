@@ -203,21 +203,29 @@ def _question(raw: dict, series: str, where: str) -> Question:
     )
 
 
-def load_bank(series: str, root: Path | None = None) -> Bank:
-    path = (root or questions_root()) / f"{series}.json"
+def load_file(path: Path) -> Bank:
+    """Parse one bank file at an explicit path.
+
+    `load_bank` derives the filename from the series name, which is all the
+    official bank needs; campaign batches sit under `_*.json` names that
+    `load_all` skips, and this is how they get loaded instead. The declared
+    `series` field wins over the stem, so a file may live anywhere as long as
+    it says whose questions it holds.
+    """
+    path = Path(path)
     if not path.exists():
-        raise QuestionsError(f"no question bank for {series!r} at {path}")
+        raise QuestionsError(f"no question bank at {path}")
     try:
-        raw = json.loads(path.read_text(encoding="utf-8"))
+        # `utf-8-sig`, not `utf-8`: the batch writer emits a BOM so a file is
+        # self-describing and a default-codepage reader cannot re-encode the
+        # kanji (G10). `utf-8-sig` strips the BOM when present and reads a
+        # BOM-less file unchanged, so every reader and writer in the pipeline
+        # can agree on the one encoding.
+        raw = json.loads(path.read_text(encoding="utf-8-sig"))
     except json.JSONDecodeError as exc:
         raise QuestionsError(f"{path.name} is not valid JSON: {exc}") from exc
 
-    declared = raw.get("series")
-    if declared and declared != series:
-        raise QuestionsError(
-            f"{path.name} declares series {declared!r} but is filed as {series!r}"
-        )
-
+    series = (raw.get("series") or "").strip() or path.stem
     bank = Bank(
         series=series,
         path=path,
@@ -228,6 +236,19 @@ def load_bank(series: str, root: Path | None = None) -> Bank:
     bank.questions = [
         _question(q, series, path.name) for q in (raw.get("questions") or ())
     ]
+    return bank
+
+
+def load_bank(series: str, root: Path | None = None) -> Bank:
+    path = (root or questions_root()) / f"{series}.json"
+    if not path.exists():
+        raise QuestionsError(f"no question bank for {series!r} at {path}")
+    bank = load_file(path)
+    declared = bank.series
+    if declared != series:
+        raise QuestionsError(
+            f"{path.name} declares series {declared!r} but is filed as {series!r}"
+        )
     return bank
 
 

@@ -1,0 +1,749 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Kurourushi?",
+      "set": "Every named technique of Kurourushi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the rivals of Kurourushi?",
+      "set": "Every rival of Kurourushi",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Kurourushi",
+      "set": "Every battle involving Kurourushi",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Kurourushi?",
+      "found": [
+        "Festering Life Sword",
+        "Earthen Insect Trance"
+      ],
+      "missing": [],
+      "members": [
+        "Earthen Insect Trance",
+        "Festering Life Sword"
+      ]
+    },
+    {
+      "query": "What are all the rivals of Kurourushi?",
+      "found": [
+        "Dhruv Lakdawalla",
+        "Takako Uro"
+      ],
+      "missing": [],
+      "members": [
+        "Dhruv Lakdawalla",
+        "Takako Uro"
+      ]
+    },
+    {
+      "query": "Every battle involving Kurourushi",
+      "found": [
+        "Yuta Okkotsu vs. Kurourushi"
+      ],
+      "missing": [],
+      "members": [
+        "Yuta Okkotsu vs. Kurourushi"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kurourushi's name?",
+      "id": "jjk-pg-kurourushi-001",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "\u9ed2\u6c90\u6b7b"
+      ],
+      "found": [
+        "\u9ed2\u6c90\u6b7b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kurourushi's name?",
+      "id": "jjk-pg-kurourushi-002",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Kurourushi"
+      ],
+      "found": [
+        "Kurourushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kurourushi's race?",
+      "id": "jjk-pg-kurourushi-003",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Cursed Spirit"
+      ],
+      "found": [
+        "Cursed Spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kurourushi?",
+      "id": "jjk-pg-kurourushi-004",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kurourushi's grade?",
+      "id": "jjk-pg-kurourushi-005",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Special Grade"
+      ],
+      "found": [
+        "Special Grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kurourushi first appear?",
+      "id": "jjk-pg-kurourushi-006",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Chapter 173"
+      ],
+      "found": [
+        "Chapter 173"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Kurourushi first depicted?",
+      "id": "jjk-pg-kurourushi-007",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Episode 58"
+      ],
+      "found": [
+        "Episode 58"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kurourushi's Japanese voice actor?",
+      "id": "jjk-pg-kurourushi-008",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Yukihiro Nozuyama"
+      ],
+      "found": [
+        "Yukihiro Nozuyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kurourushi's English voice actor?",
+      "id": "jjk-pg-kurourushi-009",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Aleks Le"
+      ],
+      "found": [
+        "Aleks Le"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuta Okkotsu vs. Kurourushi?",
+      "id": "jjk-pg-kurourushi-010",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Yuta is victorious."
+      ],
+      "found": [
+        "Yuta is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuta Okkotsu vs. Kurourushi take place?",
+      "id": "jjk-pg-kurourushi-011",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Sendai Colony"
+      ],
+      "found": [
+        "Sendai Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuta Okkotsu vs. Kurourushi take place?",
+      "id": "jjk-pg-kurourushi-012",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuta Okkotsu vs. Kurourushi?",
+      "id": "jjk-pg-kurourushi-013",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Chapter 175"
+      ],
+      "found": [
+        "Chapter 175"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuta Okkotsu vs. Kurourushi depicted?",
+      "id": "jjk-pg-kurourushi-014",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Episode 59"
+      ],
+      "found": [
+        "Episode 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuta Okkotsu vs. Kurourushi take place?",
+      "id": "jjk-pg-kurourushi-015",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kurourushi look like?",
+      "id": "jjk-pg-kurourushi-019",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Its face, arms, and legs have the appearance as if they were made out of a maroon-colored insect exoskeleton"
+      ],
+      "found": [
+        "Its face, arms, and legs have the appearance as if they were made out of a maroon-colored insect exoskeleton"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many human arms can Kurourushi produce?",
+      "id": "jjk-pg-kurourushi-020",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "up to four"
+      ],
+      "found": [
+        "up to four"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What hides Kurourushi's abdomen?",
+      "id": "jjk-pg-kurourushi-021",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "a black shroud that extends from its head"
+      ],
+      "found": [
+        "a black shroud that extends from its head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kurourushi's face have in it?",
+      "id": "jjk-pg-kurourushi-022",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "eight separate sets of red eyes with orange sclerae"
+      ],
+      "found": [
+        "eight separate sets of red eyes with orange sclerae"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What protrude from Kurourushi's face?",
+      "id": "jjk-pg-kurourushi-023",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "six long, purple antennae"
+      ],
+      "found": [
+        "six long, purple antennae"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Kurourushi driven?",
+      "id": "jjk-pg-kurourushi-024",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "entirely by its instincts as a cursed spirit"
+      ],
+      "found": [
+        "entirely by its instincts as a cursed spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kurourushi say was its reason for killing?",
+      "id": "jjk-pg-kurourushi-025",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "it loved the taste of iron"
+      ],
+      "found": [
+        "it loved the taste of iron"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kurourushi's offspring interrupt the domain battle?",
+      "id": "jjk-pg-kurourushi-026",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "entering the barrier and repeating that it loves the taste of iron"
+      ],
+      "found": [
+        "entering the barrier and repeating that it loves the taste of iron"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kurourushi collect before entering the Sendai deadlock?",
+      "id": "jjk-pg-kurourushi-027",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "fifty-two points"
+      ],
+      "found": [
+        "fifty-two points"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Kurourushi decide to enter a dormant state?",
+      "id": "jjk-pg-kurourushi-028",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Dhruv Lakdawalla would've been an unfavorable matchup"
+      ],
+      "found": [
+        "Dhruv Lakdawalla would've been an unfavorable matchup"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kurourushi create in preparation for its exorcism?",
+      "id": "jjk-pg-kurourushi-029",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "an offspring that would inherit its cursed energy"
+      ],
+      "found": [
+        "an offspring that would inherit its cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Kurourushi balance itself while fighting Yuta?",
+      "id": "jjk-pg-kurourushi-030",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "on a twister made of flying cockroaches"
+      ],
+      "found": [
+        "on a twister made of flying cockroaches"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yuta Okkotsu defeat Kurourushi?",
+      "id": "jjk-pg-kurourushi-031",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "the sorcerer bit the cockroach curse and delivered a mouth-to-mouth blast of positive energy"
+      ],
+      "found": [
+        "the sorcerer bit the cockroach curse and delivered a mouth-to-mouth blast of positive energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kurourushi do to Takako Uro's arm?",
+      "id": "jjk-pg-kurourushi-032",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "severed her arm with the Festering Life Sword"
+      ],
+      "found": [
+        "severed her arm with the Festering Life Sword"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What ended Kurourushi after Ryu Ishigori's Granite Blast?",
+      "id": "jjk-pg-kurourushi-033",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "a consecutive blast of positive energy"
+      ],
+      "found": [],
+      "missing": [
+        "a consecutive blast of positive energy"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Kurourushi's cursed cockroach swarms do?",
+      "id": "jjk-pg-kurourushi-034",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "strip all the flesh off a group of humans in seconds"
+      ],
+      "found": [
+        "strip all the flesh off a group of humans in seconds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the devoured flesh stimulate in Kurourushi?",
+      "id": "jjk-pg-kurourushi-035",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Kurourushi's parthenogenesis process"
+      ],
+      "found": [
+        "Kurourushi's parthenogenesis process"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do the flying insect curses of Earthen Insect Trance carry?",
+      "id": "jjk-pg-kurourushi-036",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "large sacs filled with a liquid substance that gets released when destroyed"
+      ],
+      "found": [
+        "large sacs filled with a liquid substance that gets released when destroyed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Festering Life Sword?",
+      "id": "jjk-pg-kurourushi-037",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "an enchanted blade that mixes life and death"
+      ],
+      "found": [
+        "an enchanted blade that mixes life and death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What launch from the six firing barrels of the Festering Life Sword?",
+      "id": "jjk-pg-kurourushi-038",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "cursed insect eggs into its target"
+      ],
+      "found": [
+        "cursed insect eggs into its target"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What arc event is listed for Kurourushi besides its battle with Yuta Okkotsu?",
+      "id": "jjk-pg-kurourushi-039",
+      "subject": "Kurourushi",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 36,
+    "fact_present": 35
+  }
+}

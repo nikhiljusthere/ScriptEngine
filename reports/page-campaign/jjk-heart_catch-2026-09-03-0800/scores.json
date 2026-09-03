@@ -1,0 +1,229 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Heart Catch",
+      "set": "Every battle involving Heart Catch",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Heart Catch",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Heart Catch's name?",
+      "id": "jjk-pg-heart_catch-001",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "\u4eba\u5fc3\u638c\u63e1"
+      ],
+      "found": [
+        "\u4eba\u5fc3\u638c\u63e1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Heart Catch's name?",
+      "id": "jjk-pg-heart_catch-002",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "H\u0101to Kyatchi"
+      ],
+      "found": [
+        "H\u0101to Kyatchi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Heart Catch first appear?",
+      "id": "jjk-pg-heart_catch-003",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "Chapter 255"
+      ],
+      "found": [
+        "Chapter 255"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-heart_catch-004",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-heart_catch-005",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-heart_catch-006",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-heart_catch-007",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-heart_catch-008",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Heart Catch manifest?",
+      "id": "jjk-pg-heart_catch-010",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "Activating this technique manifests a large virtual hand that floats in the air near the user."
+      ],
+      "found": [
+        "Activating this technique manifests a large virtual hand that floats in the air near the user."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How strong is Heart Catch's virtual hand?",
+      "id": "jjk-pg-heart_catch-011",
+      "subject": "Heart Catch",
+      "accept": "all",
+      "expected": [
+        "The hand has enough force to crumble parts of a building when slammed against it."
+      ],
+      "found": [
+        "The hand has enough force to crumble parts of a building when slammed against it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 10,
+    "fact_present": 10
+  }
+}

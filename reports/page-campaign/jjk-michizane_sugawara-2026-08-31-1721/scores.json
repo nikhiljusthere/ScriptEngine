@@ -1,0 +1,309 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the families of Michizane Sugawara?",
+      "set": "Every family of Michizane Sugawara",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the families of Michizane Sugawara?",
+      "found": [
+        "Satoru Gojo",
+        "Yuta Okkotsu",
+        "Iori Okkotsu",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu"
+      ],
+      "missing": [],
+      "members": [
+        "Iori Okkotsu",
+        "Satoru Gojo",
+        "Tsurugi Okkotsu",
+        "Yuka Okkotsu",
+        "Yuta Okkotsu"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Michizane Sugawara's name?",
+      "id": "jjk-pg-michizane_sugawara-001",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "\u83c5\u539f \u9053\u771f"
+      ],
+      "found": [
+        "\u83c5\u539f \u9053\u771f"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Michizane Sugawara's name?",
+      "id": "jjk-pg-michizane_sugawara-002",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "Sugawara Michizane"
+      ],
+      "found": [
+        "Sugawara Michizane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Michizane Sugawara's race?",
+      "id": "jjk-pg-michizane_sugawara-003",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "Vengeful Cursed Spirit\nHuman (Formerly)"
+      ],
+      "found": [
+        "Vengeful Cursed Spirit\nHuman (Formerly)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Michizane Sugawara's gender?",
+      "id": "jjk-pg-michizane_sugawara-004",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Michizane Sugawara?",
+      "id": "jjk-pg-michizane_sugawara-005",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Michizane Sugawara first appear?",
+      "id": "jjk-pg-michizane_sugawara-006",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "Chapter 0-4 (Mentioned)"
+      ],
+      "found": [
+        "Chapter 0-4 (Mentioned)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Michizane Sugawara first depicted?",
+      "id": "jjk-pg-michizane_sugawara-007",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "The Movie (Mentioned)"
+      ],
+      "found": [
+        "The Movie (Mentioned)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Michizane Sugawara play in the series?",
+      "id": "jjk-pg-michizane_sugawara-009",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "a character mentioned in the Jujutsu High prequel series"
+      ],
+      "found": [
+        "a character mentioned in the Jujutsu High prequel series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Michizane Sugawara's ancestral connection?",
+      "id": "jjk-pg-michizane_sugawara-010",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "the ancestor to both Satoru Gojo and Yuta Okkotsu"
+      ],
+      "found": [
+        "the ancestor to both Satoru Gojo and Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Satoru Gojo explain about Michizane Sugawara's ancestry?",
+      "id": "jjk-pg-michizane_sugawara-011",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "an ancestor to both him and Yuta Okkotsu"
+      ],
+      "found": [
+        "an ancestor to both him and Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How do Panda and Maki describe Michizane Sugawara's status?",
+      "id": "jjk-pg-michizane_sugawara-012",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "one of Japan's Big Three Vengeful Spirits and a big shot in the jujutsu world"
+      ],
+      "found": [
+        "one of Japan's Big Three Vengeful Spirits and a big shot in the jujutsu world"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Michizane Sugawara based on?",
+      "id": "jjk-pg-michizane_sugawara-013",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "the real-life Sugawara no Michizane"
+      ],
+      "found": [
+        "the real-life Sugawara no Michizane"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which two real-life figures, besides Sugawara no Michizane, are named among Japan's great vengeful spirits?",
+      "id": "jjk-pg-michizane_sugawara-014",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "Emperor Sutoku and Taira no Masakado"
+      ],
+      "found": [
+        "Emperor Sutoku and Taira no Masakado"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why were Yuta Okkotsu and Satoru Gojo born with massive cursed energy?",
+      "id": "jjk-pg-michizane_sugawara-015",
+      "subject": "Michizane Sugawara",
+      "accept": "all",
+      "expected": [
+        "their blood relation to Michizane Sugawara"
+      ],
+      "found": [
+        "their blood relation to Michizane Sugawara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 14,
+    "fact_present": 14
+  }
+}

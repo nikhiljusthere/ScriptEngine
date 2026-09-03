@@ -1,0 +1,55 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": []
+    },
+    {
+      "path": "Prologue",
+      "covered_by": []
+    },
+    {
+      "path": "Battle",
+      "covered_by": [
+        "page-gen:battle:Kento Nanami vs. Mahito:outcome",
+        "page-gen:battle:Kento Nanami vs. Mahito:place",
+        "page-gen:battle:Kento Nanami vs. Mahito:chapters",
+        "page-gen:battle:Kento Nanami vs. Mahito:episodes",
+        "page-gen:battle:Kento Nanami vs. Mahito:arc"
+      ]
+    },
+    {
+      "path": "Aftermath",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "infobox",
+    "Prologue",
+    "Aftermath"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

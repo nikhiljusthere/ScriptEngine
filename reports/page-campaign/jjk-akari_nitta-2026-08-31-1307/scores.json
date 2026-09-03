@@ -1,0 +1,1261 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the subordinates of Akari Nitta?",
+      "set": "Every subordinate of Akari Nitta",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Akari Nitta?",
+      "set": "Akari Nitta's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Akari Nitta",
+      "set": "Every battle involving Akari Nitta",
+      "confidence": "declared",
+      "returned": 5,
+      "available": 5,
+      "canon": 5,
+      "found": 5,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the subordinates of Akari Nitta?",
+      "found": [
+        "Yuji Itadori",
+        "Megumi Fushiguro",
+        "Nobara Kugisaki"
+      ],
+      "missing": [],
+      "members": [
+        "Megumi Fushiguro",
+        "Nobara Kugisaki",
+        "Yuji Itadori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Akari Nitta?",
+      "found": [
+        "Kyoto Jujutsu High (Graduate) Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "members": [
+        "Kyoto Jujutsu High (Graduate) Tokyo Jujutsu High"
+      ]
+    },
+    {
+      "query": "Every battle involving Akari Nitta",
+      "found": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Kinji Hakari vs. Charles Bernard",
+        "Kinji Hakari vs. Hajime Kashimo",
+        "Kinji Hakari vs. Uraume",
+        "Yuji Itadori vs. Kinji Hakari"
+      ],
+      "missing": [],
+      "members": [
+        "Jujutsu Sorcerers vs. Sukuna",
+        "Kinji Hakari vs. Charles Bernard",
+        "Kinji Hakari vs. Hajime Kashimo",
+        "Kinji Hakari vs. Uraume",
+        "Yuji Itadori vs. Kinji Hakari"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Akari Nitta's name?",
+      "id": "jjk-pg-akari_nitta-001",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "\u65b0\u7530\u660e"
+      ],
+      "found": [
+        "\u65b0\u7530\u660e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Akari Nitta's name?",
+      "id": "jjk-pg-akari_nitta-002",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Nitta Akari"
+      ],
+      "found": [
+        "Nitta Akari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Akari Nitta's race?",
+      "id": "jjk-pg-akari_nitta-003",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Akari Nitta's gender?",
+      "id": "jjk-pg-akari_nitta-004",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Female"
+      ],
+      "found": [
+        "Female"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Akari Nitta?",
+      "id": "jjk-pg-akari_nitta-005",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Akari Nitta's occupation?",
+      "id": "jjk-pg-akari_nitta-006",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Assistant Manager Driver"
+      ],
+      "found": [
+        "Assistant Manager Driver"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Akari Nitta first appear?",
+      "id": "jjk-pg-akari_nitta-007",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 55"
+      ],
+      "found": [
+        "Chapter 55"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Akari Nitta first depicted?",
+      "id": "jjk-pg-akari_nitta-008",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Episode 22"
+      ],
+      "found": [
+        "Episode 22"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Akari Nitta's Japanese voice actor?",
+      "id": "jjk-pg-akari_nitta-009",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Sora Tokui"
+      ],
+      "found": [
+        "Sora Tokui"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Akari Nitta's English voice actor?",
+      "id": "jjk-pg-akari_nitta-010",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Sarah Anne Williams"
+      ],
+      "found": [
+        "Sarah Anne Williams"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-akari_nitta-011",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "found": [
+        "The jujutsu sorcerers are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-akari_nitta-012",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-akari_nitta-013",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Jujutsu Sorcerers vs. Sukuna begin?",
+      "id": "jjk-pg-akari_nitta-014",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 244"
+      ],
+      "found": [
+        "Chapter 244"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Jujutsu Sorcerers vs. Sukuna take place?",
+      "id": "jjk-pg-akari_nitta-015",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Akari Nitta use in Jujutsu Sorcerers vs. Sukuna?",
+      "id": "jjk-pg-akari_nitta-016",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Pain Killer Technique"
+      ],
+      "found": [
+        "Pain Killer Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Charles Bernard?",
+      "id": "jjk-pg-akari_nitta-017",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Kinji Hakari is victorious."
+      ],
+      "found": [
+        "Kinji Hakari is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-akari_nitta-018",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-akari_nitta-019",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Charles Bernard begin?",
+      "id": "jjk-pg-akari_nitta-020",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 182"
+      ],
+      "found": [
+        "Chapter 182"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Charles Bernard take place?",
+      "id": "jjk-pg-akari_nitta-021",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Hajime Kashimo?",
+      "id": "jjk-pg-akari_nitta-022",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Hakari is victorious."
+      ],
+      "found": [
+        "Hakari is victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-akari_nitta-023",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Tokyo No. 2 Colony"
+      ],
+      "found": [
+        "Tokyo No. 2 Colony"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-akari_nitta-024",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "November 12, 2018"
+      ],
+      "found": [
+        "November 12, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Hajime Kashimo begin?",
+      "id": "jjk-pg-akari_nitta-025",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 186"
+      ],
+      "found": [
+        "Chapter 186"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Hajime Kashimo take place?",
+      "id": "jjk-pg-akari_nitta-026",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Kinji Hakari vs. Uraume?",
+      "id": "jjk-pg-akari_nitta-027",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Uraume commits suicide."
+      ],
+      "found": [
+        "Uraume commits suicide."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Kinji Hakari vs. Uraume take place?",
+      "id": "jjk-pg-akari_nitta-028",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Shinjuku"
+      ],
+      "found": [
+        "Shinjuku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Kinji Hakari vs. Uraume take place?",
+      "id": "jjk-pg-akari_nitta-029",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "December 24, 2018"
+      ],
+      "found": [
+        "December 24, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Kinji Hakari vs. Uraume begin?",
+      "id": "jjk-pg-akari_nitta-030",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 237"
+      ],
+      "found": [
+        "Chapter 237"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Kinji Hakari vs. Uraume take place?",
+      "id": "jjk-pg-akari_nitta-031",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Shinjuku Showdown"
+      ],
+      "found": [
+        "Shinjuku Showdown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Kinji Hakari?",
+      "id": "jjk-pg-akari_nitta-032",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Hakari agrees to listen."
+      ],
+      "found": [
+        "Hakari agrees to listen."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Kinji Hakari take place?",
+      "id": "jjk-pg-akari_nitta-033",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Gachinko Fight Club"
+      ],
+      "found": [
+        "Gachinko Fight Club"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori vs. Kinji Hakari take place?",
+      "id": "jjk-pg-akari_nitta-034",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "November 11, 2018"
+      ],
+      "found": [
+        "November 11, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Kinji Hakari?",
+      "id": "jjk-pg-akari_nitta-035",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Chapter 155 & 157"
+      ],
+      "found": [
+        "Chapter 155 & 157"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Kinji Hakari depicted?",
+      "id": "jjk-pg-akari_nitta-036",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Episode 52 - 53"
+      ],
+      "found": [
+        "Episode 52 - 53"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Kinji Hakari take place?",
+      "id": "jjk-pg-akari_nitta-037",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Culling Game"
+      ],
+      "found": [
+        "Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is distinctive about Akari Nitta's hairstyle?",
+      "id": "jjk-pg-akari_nitta-041",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "neck-length light-colored yellow hair with asymmetrically split bangs"
+      ],
+      "found": [
+        "neck-length light-colored yellow hair with asymmetrically split bangs"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Akari's hair change during the Shibuya Incident?",
+      "id": "jjk-pg-akari_nitta-042",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "her unruly messy strands are now trimmed more evenly at the ends"
+      ],
+      "found": [
+        "her unruly messy strands are now trimmed more evenly at the ends"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What earring does Akari wear during the Shibuya Incident?",
+      "id": "jjk-pg-akari_nitta-043",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "two circles and three small rods piercing the bigger one"
+      ],
+      "found": [
+        "two circles and three small rods piercing the bigger one"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Akari wear while serving as a jujutsu high manager?",
+      "id": "jjk-pg-akari_nitta-044",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "jet-black long-sleeved vest, with three buttons and two pockets"
+      ],
+      "found": [
+        "jet-black long-sleeved vest, with three buttons and two pockets"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How would you describe Akari Nitta's character?",
+      "id": "jjk-pg-akari_nitta-045",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "kind and caring person but is quite serious when it comes to working"
+      ],
+      "found": [
+        "kind and caring person but is quite serious when it comes to working"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What showed that Akari has limits to her tolerance?",
+      "id": "jjk-pg-akari_nitta-046",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "grew rather short-tempered when the First Years didn't answer their phones"
+      ],
+      "found": [
+        "grew rather short-tempered when the First Years didn't answer their phones"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Akari make a cover-up about Yasohachi Bridge?",
+      "id": "jjk-pg-akari_nitta-047",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "so that the female civilian who had its curse wouldn't panic"
+      ],
+      "found": [
+        "so that the female civilian who had its curse wouldn't panic"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who accompanied Maki Zenin and Nobara Kugisaki when Akari still didn't want them to head off?",
+      "id": "jjk-pg-akari_nitta-048",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "a Special Grade 1 Naobito"
+      ],
+      "found": [
+        "a Special Grade 1 Naobito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Akari make sure to find out after Nanami rescued her?",
+      "id": "jjk-pg-akari_nitta-049",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "ask him if Ijichi was still alive"
+      ],
+      "found": [
+        "ask him if Ijichi was still alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Akari do when a civilian being questioned started to suspect them?",
+      "id": "jjk-pg-akari_nitta-050",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "came up with the perfect alibi"
+      ],
+      "found": [
+        "came up with the perfect alibi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What move did Akari prioritize after Shigemo kicked and stabbed her?",
+      "id": "jjk-pg-akari_nitta-051",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "crawling into a nearby escalator"
+      ],
+      "found": [
+        "crawling into a nearby escalator"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Akari fill in jujutsu?",
+      "id": "jjk-pg-akari_nitta-052",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "a non-combatant type of sorcerer"
+      ],
+      "found": [
+        "a non-combatant type of sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "According to the fanbook, what may Akari have received?",
+      "id": "jjk-pg-akari_nitta-053",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "minimal combat training"
+      ],
+      "found": [
+        "minimal combat training"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What effect did one kick from Haruta Shigemo have on Akari?",
+      "id": "jjk-pg-akari_nitta-054",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "leaving her motionless for several minutes"
+      ],
+      "found": [
+        "leaving her motionless for several minutes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What hobby does Akari Nitta have?",
+      "id": "jjk-pg-akari_nitta-055",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "modifying cars (custom cars)"
+      ],
+      "found": [
+        "modifying cars (custom cars)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Akari Nitta's favorite dish?",
+      "id": "jjk-pg-akari_nitta-056",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "fried yakisoba covered in a thick salty sauce"
+      ],
+      "found": [
+        "fried yakisoba covered in a thick salty sauce"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Akari Nitta hate?",
+      "id": "jjk-pg-akari_nitta-057",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "monkfish livers"
+      ],
+      "found": [
+        "monkfish livers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Akari Nitta's source of stress?",
+      "id": "jjk-pg-akari_nitta-058",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "her little brother doesn't listen to her"
+      ],
+      "found": [
+        "her little brother doesn't listen to her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Akari aspire to be an assistant manager?",
+      "id": "jjk-pg-akari_nitta-059",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "keep an eye on her little brother"
+      ],
+      "found": [
+        "keep an eye on her little brother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Akari Nitta before becoming a manager?",
+      "id": "jjk-pg-akari_nitta-060",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "an ex-delinquent"
+      ],
+      "found": [
+        "an ex-delinquent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Akari Nitta rank in the first Popularity Poll?",
+      "id": "jjk-pg-akari_nitta-061",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "38th"
+      ],
+      "found": [
+        "38th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Akari Nitta rank in the second Popularity Poll?",
+      "id": "jjk-pg-akari_nitta-062",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "46th"
+      ],
+      "found": [
+        "46th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Akari Nitta rank in the third Popularity Poll?",
+      "id": "jjk-pg-akari_nitta-063",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "57th"
+      ],
+      "found": [
+        "57th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Akari Nitta rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-akari_nitta-064",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "57th"
+      ],
+      "found": [
+        "57th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Gege Akutami want for Akari's character design?",
+      "id": "jjk-pg-akari_nitta-065",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "a simple character"
+      ],
+      "found": [
+        "a simple character"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Akari start being an assistant manager?",
+      "id": "jjk-pg-akari_nitta-066",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "only recently started"
+      ],
+      "found": [
+        "only recently started"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Akari Nitta graduate from?",
+      "id": "jjk-pg-akari_nitta-067",
+      "subject": "Akari Nitta",
+      "accept": "all",
+      "expected": [
+        "Kyoto Jujutsu High"
+      ],
+      "found": [
+        "Kyoto Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 9,
+    "canon_total": 9,
+    "canon_recall": 1.0,
+    "members_returned": 9,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 64,
+    "fact_present": 64
+  }
+}

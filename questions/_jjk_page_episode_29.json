@@ -1,0 +1,1530 @@
+﻿{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-09-01",
+ "note": "episode pass 2026-09-01: +73 hand-authored prose (ids 003-065, 067-076) + 1 re-cover 077; R5 forms: yes/no 027, comparative 076, counterfactual 066 (retired not-stated-on-page), how-many 047/064; NO Battles & Events section; A&M Differences EMPTY scroll box; Trivia EMPTY heading; colon item 'Hollow Technique: Purple' (line-48 prose) asked as fragment 'Purple' (055) per ep28-048 colon-truncation diagnosis; 030 RETIRED router-gap ('what kind of' trigger -> roster over Episodes set, answer prose in members[].text which the scorer's haystack does not read; bundle dump ep29_030_bundle.json) and re-covered by 077",
+ "retired": [
+  {
+   "id": "jjk-pg-episode_29-066",
+   "item": "",
+   "question": "What would have happened if Satoru had been able to go through with killing Suguru in Episode 29?",
+   "reason": "Counterfactual: the page states only that 'Satoru takes aim with Hollow Technique: Purple, but he can't go through with murdering his best friend' and that Suguru walks away declaring all that's left is doing his best; no hypothetical outcome of a successful kill is stated on the page (Suguru simply remains at large). Never invent a resolution.",
+   "reason_class": "not-stated-on-page",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-episode_29-030",
+   "item": "one with a healthy appetite",
+   "question": "What kind of woman does Yu say is his ideal in Episode 29?",
+   "reason": "router-gap (misroute family, instance 5 of 5 - NEW 'what kind of X' trigger): 'What kind of woman does Yu say is his ideal in Episode 29?' routes to mode=roster over the whole Episodes set (59 members kept, confidence=exact, warning: \"'woman', 'does', 'say', 'his', 'ideal' did not narrow this set; every member was kept, so this is all of 'Episodes'\"). The verbatim answer prose IS in the bundle but inside the Episode 29 roster member's text field (members[21].text), which the fact scorer's haystack does not fold, so it is unscored. A character-subject rephrase routes to qa and passes (probe: 67 beats, 'one with a healthy appetite' present; bundle dump ep29_030_bundle.json). Siblings: ep21-063, ep22-017/027 (plural 'what are/who are' -> roster), ep26-053 (battles-in plural variant). Fix deferred to end-of-pass central triage; content re-covered by 077.",
+   "reason_class": "router-gap",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-episode_29-001",
+   "kind": "fact",
+   "question": "What are the kanji for Episode 29's name?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "玉折",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:kanji"
+  },
+  {
+   "id": "jjk-pg-episode_29-002",
+   "kind": "fact",
+   "question": "What is the romaji of Episode 29's name?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gyokusetsu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "page-gen:identity:romaji"
+  },
+  {
+   "id": "jjk-pg-episode_29-003",
+   "kind": "fact",
+   "question": "What is the title of Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Premature Death",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-004",
+   "kind": "fact",
+   "question": "When did Episode 29 air in Japan?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-08-03",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-005",
+   "kind": "fact",
+   "question": "When did Episode 29 air in the United States?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2023-08-17",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-006",
+   "kind": "fact",
+   "question": "Which arc does Episode 29 belong to?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Gojo's Past",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-007",
+   "kind": "fact",
+   "question": "What is the opening song for Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Ao no Sumika",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-008",
+   "kind": "fact",
+   "question": "What is the ending song for Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Akari",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-009",
+   "kind": "fact",
+   "question": "Which manga chapters is Episode 29 adapted from?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 76",
+     "aliases": [
+      "Chapter 77",
+      "Chapter 78",
+      "Chapter 79"
+     ]
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-010",
+   "kind": "fact",
+   "question": "Which episode precedes Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 28",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-011",
+   "kind": "fact",
+   "question": "Which episode follows Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 30",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-012",
+   "kind": "fact",
+   "question": "Which season of the Jujutsu Kaisen anime is Episode 29 part of?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-013",
+   "kind": "fact",
+   "question": "What role does Episode 29 play in the second season?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the fifth episode of the second season",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-014",
+   "kind": "fact",
+   "question": "Which special-grade sorcerer is listed as a new character in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuki Tsukumo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-015",
+   "kind": "fact",
+   "question": "Which Hasaba sister is listed as a new character in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Mimiko Hasaba",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-016",
+   "kind": "fact",
+   "question": "Which other Hasaba sister is listed as a new character in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nanako Hasaba",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:infobox"
+  },
+  {
+   "id": "jjk-pg-episode_29-017",
+   "kind": "fact",
+   "question": "What does Satoru distinguish himself as in Episode 29's summary?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the lone strongest",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_29-018",
+   "kind": "fact",
+   "question": "What does Satoru realize about his strength in Episode 29's summary?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his strength alone may not be enough to save everyone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Summary"
+  },
+  {
+   "id": "jjk-pg-episode_29-019",
+   "kind": "fact",
+   "question": "When does the present-day story of Episode 29 take place?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "August 2007",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-020",
+   "kind": "fact",
+   "question": "What has Satoru automated in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Infinity",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-021",
+   "kind": "fact",
+   "question": "What can Satoru run continuously in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "reverse cursed technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-022",
+   "kind": "fact",
+   "question": "What is Satoru on his way to mastering in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "domain expansion",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-023",
+   "kind": "fact",
+   "question": "What does Satoru ask Suguru about his physical state in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "if he's lost weight",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-024",
+   "kind": "fact",
+   "question": "What does Suguru liken his cycle of exorcism and consumption to in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "eating a dirty rag",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-025",
+   "kind": "fact",
+   "question": "What does Suguru mutter to himself in the shower in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "monkeys",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-026",
+   "kind": "fact",
+   "question": "What can't Suguru get out of his head in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the clapping of the children of the star",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-027",
+   "kind": "fact",
+   "question": "Does Suguru have any company on his missions in the busy summer of Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "This leaves Suguru alone on his missions",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-028",
+   "kind": "fact",
+   "question": "What does Yu Haibara do when he finds Suguru sitting alone in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "decides to join him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-029",
+   "kind": "fact",
+   "question": "How does Yu describe himself about being a sorcerer in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he isn't the type to think about it too hard",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-031",
+   "kind": "fact",
+   "question": "What does Yu assure Suguru about the woman in the lounge in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "this woman is a good person",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-032",
+   "kind": "fact",
+   "question": "What is Yuki Tsukumo's sorcerer grade when she introduces herself in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "special grade",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-033",
+   "kind": "fact",
+   "question": "What is Yuki infamous for, according to Suguru's knowledge in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "ignoring missions and bumming around overseas",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-034",
+   "kind": "fact",
+   "question": "What does Yuki feel Jujutsu Headquarters is only doing about cursed spirits in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "treating the symptoms of cursed spirits instead of curing the disease",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-035",
+   "kind": "fact",
+   "question": "What does Yuki want to create in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a world without cursed spirits",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-036",
+   "kind": "fact",
+   "question": "Who was an ideal case for breaking away from cursed energy, according to Yuki in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Toji Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-037",
+   "kind": "fact",
+   "question": "What radical solution does Suguru offer in the conversation with Yuki in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "killing all non-sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-038",
+   "kind": "fact",
+   "question": "What can't Suguru distinguish in non-sorcerers in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "their admirability from their ugliness",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-039",
+   "kind": "fact",
+   "question": "What does Yuki advise Suguru to do about his feelings toward non-sorcerers in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "make a choice that will shape how he truly feels about non-sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-040",
+   "kind": "fact",
+   "question": "What does Yuki tell Suguru about Tengen before driving off in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tengen is stable due to another Star Plasma Vessel appearing",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-041",
+   "kind": "fact",
+   "question": "What was the cursed spirit they were meant to exorcise supposed to be in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "grade 2",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-042",
+   "kind": "fact",
+   "question": "What actually killed Yu Haibara in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a local deity",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-043",
+   "kind": "fact",
+   "question": "What does Nanami do in the morgue in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "throwing things across the morgue",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-044",
+   "kind": "fact",
+   "question": "What does Suguru compare working as a jujutsu sorcerer to in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a marathon with only the body of his comrade's corpses awaiting him at the end",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-045",
+   "kind": "fact",
+   "question": "What had the villagers done to the two young sorcerers in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "beaten and locked inside a cage",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-046",
+   "kind": "fact",
+   "question": "What does Suguru make after seeing the two caged girls in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his choice about non-sorcerers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-047",
+   "kind": "fact",
+   "question": "How many people does Suguru murder in the village incident in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "over a hundred people",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-048",
+   "kind": "fact",
+   "question": "What happens to Suguru after the village incident in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru is expelled and sentenced to death",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-049",
+   "kind": "fact",
+   "question": "What does Masamichi Yaga admit to Satoru in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he doesn't know whats going on either",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-050",
+   "kind": "fact",
+   "question": "Why can't Shoko smoke on a street corner in Shinjuku in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "she doesn't have a lighter",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-051",
+   "kind": "fact",
+   "question": "What does Shoko call Suguru's reasoning in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "childish",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-052",
+   "kind": "fact",
+   "question": "Who does Shoko call to the city to confront Suguru in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-053",
+   "kind": "fact",
+   "question": "What question does Suguru put to Satoru about being the strongest in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he's the strongest because he's Satoru Gojo or if being the strongest makes Satoru Gojo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-054",
+   "kind": "fact",
+   "question": "What does Suguru tell Satoru are his last words in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "kill him if he must because there is a purpose in that action as well",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-055",
+   "kind": "fact",
+   "question": "Which technique does Satoru take aim with, but can't go through with, in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Purple",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-056",
+   "kind": "fact",
+   "question": "What does Satoru realize about his strength while sitting on the steps in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his strength is only good enough to save those already prepared to be rescued",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-057",
+   "kind": "fact",
+   "question": "How does Suguru take over the remnants of the Time Vessel Association in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "by making an example of Shigeru Sonoda",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-058",
+   "kind": "fact",
+   "question": "Why does Satoru greet young Megumi with a comically disgusted face in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his resemblance to Toji",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-059",
+   "kind": "fact",
+   "question": "What does Megumi say about his father in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he doesn't care about his father because he abandoned them",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-060",
+   "kind": "fact",
+   "question": "What does Megumi add about Tsumiki in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tsumiki's mother disappeared as well",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-061",
+   "kind": "fact",
+   "question": "What grade is Megumi when Satoru meets him in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a first grader",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-062",
+   "kind": "fact",
+   "question": "What does Satoru honestly tell Megumi about Tsumiki and the Zenin clan in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tsumiki absolutely won't be happy there",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-063",
+   "kind": "fact",
+   "question": "What does Satoru ask Megumi to become in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "strong enough to keep up with him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-064",
+   "kind": "fact",
+   "question": "How many students does Satoru wake up to a decade later in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-065",
+   "kind": "fact",
+   "question": "What are Yuji and Nobara doing while Satoru sleeps in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "bicker over the chair Satoru was sleeping in",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-067",
+   "kind": "fact",
+   "question": "Which character appears first in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Suguru Geto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_29-068",
+   "kind": "fact",
+   "question": "Which character is listed last in Episode 29's order of appearance?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Nobara Kugisaki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Characters in Order of Appearance"
+  },
+  {
+   "id": "jjk-pg-episode_29-069",
+   "kind": "fact",
+   "question": "Which district of Tokyo is listed as a location in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shinjuku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_29-070",
+   "kind": "fact",
+   "question": "What building of the Time Vessel Association is listed as a location in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "House of the Children of the Star",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_29-071",
+   "kind": "fact",
+   "question": "Which school is listed as a location in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Tokyo Jujutsu High",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Locations"
+  },
+  {
+   "id": "jjk-pg-episode_29-072",
+   "kind": "fact",
+   "question": "Which parent technique is listed under Satoru Gojo's techniques in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Limitless",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_29-073",
+   "kind": "fact",
+   "question": "Which sub-technique of Limitless is listed in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Infinity",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_29-074",
+   "kind": "fact",
+   "question": "Which technique, listed under Satoru Gojo's techniques, is marked as mentioned in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Reverse Cursed Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_29-075",
+   "kind": "fact",
+   "question": "Which technique is listed under Suguru Geto's techniques in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Spirit Manipulation",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Jujutsu"
+  },
+  {
+   "id": "jjk-pg-episode_29-076",
+   "kind": "fact",
+   "question": "How do Satoru and Suguru compare after a year of missions in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru has undoubtedly distinguished himself as the lone strongest while Suguru has visibly worn himself out",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details"
+  },
+  {
+   "id": "jjk-pg-episode_29-077",
+   "kind": "fact",
+   "question": "What does Yu Haibara say about his ideal woman in Episode 29?",
+   "subject": "Episode 29",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one with a healthy appetite",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_29"
+   ],
+   "verified": "2026-09-01",
+   "note": "prose:Plot Details (re-covers retired 030; character-subject phrasing routes to qa - the 'what kind of' phrasing misroutes to roster over the Episodes set)"
+  }
+ ]
+}

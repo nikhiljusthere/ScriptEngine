@@ -1,0 +1,61 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:debut",
+        "page-gen:identity:anime debut",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": []
+    },
+    {
+      "path": "Usage",
+      "covered_by": [
+        "page-gen:battle:Maki Zenin vs. Ogi Zenin:outcome",
+        "page-gen:battle:Maki Zenin vs. Ogi Zenin:place",
+        "page-gen:battle:Maki Zenin vs. Ogi Zenin:date",
+        "page-gen:battle:Maki Zenin vs. Ogi Zenin:chapters",
+        "page-gen:battle:Maki Zenin vs. Ogi Zenin:episodes",
+        "page-gen:battle:Maki Zenin vs. Ogi Zenin:arc"
+      ]
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Description",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

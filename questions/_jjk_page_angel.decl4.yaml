@@ -1,0 +1,32 @@
+# Staged roster declarations for the Angel page campaign
+# (questions/_jjk_page_angel.section4.json, section 4: identity).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Angel's affiliations` is the closed set of group memberships the page
+# states. The infobox has no affiliation field, so the set is closed by the
+# prose: the History and Overall Abilities sections call her part of "the Abe
+# Clan's elite force" during the Heian Era, and the lead and History state she
+# entered the Culling Game started by Kenjaku (the page's "Culling Game
+# Players" category agrees). No other membership is stated on the page, and
+# both members are chunked-prose values confirmed live in the qa bundle
+# (top_k=12) before committing.
+#
+# `Angel's aliases` is NOT staged: the closed alias set is the single romaji
+# `Tenshi`, which lives only in the infobox `romaji` field and the lead's
+# Nihongo/Ruby cell -- an unchunked infobox value the pipeline does not make
+# goldable (the same class this page's section 2 retired for the technique
+# name kanji/romaji). It is retired in the section's retired[] with that
+# reason; the live fact card carries the value, but a declared roster would
+# commit an unchunked member.
+#
+# Match phrases carry no `: ` or `&`, so no YAML quoting is required; members
+# are quoted inline per the campaign convention.
+rosters:
+   - name: Angel's affiliations
+     match:
+       - what are angel's affiliations
+       - all the affiliations of angel
+       - affiliations of angel
+       - angel's affiliations
+     subject: Angel
+     members: ["Abe Clan", "Culling Game"]

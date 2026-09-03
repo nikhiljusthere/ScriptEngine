@@ -1,0 +1,543 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Shino?",
+      "set": "Shino's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Shino",
+      "set": "Every battle involving Shino",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Shino?",
+      "found": [
+        "Kamo Clan"
+      ],
+      "missing": [],
+      "members": [
+        "Kamo Clan"
+      ]
+    },
+    {
+      "query": "Every battle involving Shino",
+      "found": [
+        "Yoshinobu Gakuganji vs. Juzo Kumiya",
+        "Yuji Itadori vs. Junpei Yoshino"
+      ],
+      "missing": [],
+      "members": [
+        "Yoshinobu Gakuganji vs. Juzo Kumiya",
+        "Yuji Itadori vs. Junpei Yoshino"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Shino's name?",
+      "id": "jjk-pg-shino-001",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "\u56db\u4e43"
+      ],
+      "found": [
+        "\u56db\u4e43"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Shino's name?",
+      "id": "jjk-pg-shino-002",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Shino"
+      ],
+      "found": [
+        "Shino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shino's race?",
+      "id": "jjk-pg-shino-003",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shino's gender?",
+      "id": "jjk-pg-shino-004",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Shino?",
+      "id": "jjk-pg-shino-005",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shino's occupation?",
+      "id": "jjk-pg-shino-006",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer\nAttendant"
+      ],
+      "found": [
+        "Jujutsu Sorcerer\nAttendant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Shino first appear?",
+      "id": "jjk-pg-shino-007",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Chapter 191"
+      ],
+      "found": [
+        "Chapter 191"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yoshinobu Gakuganji vs. Juzo Kumiya?",
+      "id": "jjk-pg-shino-008",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Gojo takes over the battle."
+      ],
+      "found": [
+        "Gojo takes over the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yoshinobu Gakuganji vs. Juzo Kumiya take place?",
+      "id": "jjk-pg-shino-009",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yoshinobu Gakuganji vs. Juzo Kumiya?",
+      "id": "jjk-pg-shino-010",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Chapter 52"
+      ],
+      "found": [
+        "Chapter 52"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yoshinobu Gakuganji vs. Juzo Kumiya depicted?",
+      "id": "jjk-pg-shino-011",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Episode 20"
+      ],
+      "found": [
+        "Episode 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yoshinobu Gakuganji vs. Juzo Kumiya take place?",
+      "id": "jjk-pg-shino-012",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-shino-013",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Yuji talks Junpei down."
+      ],
+      "found": [
+        "Yuji talks Junpei down."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-shino-014",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Satozakura High School"
+      ],
+      "found": [
+        "Satozakura High School"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which manga chapters cover Yuji Itadori vs. Junpei Yoshino?",
+      "id": "jjk-pg-shino-015",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Chapter 26"
+      ],
+      "found": [
+        "Chapter 26"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori vs. Junpei Yoshino depicted?",
+      "id": "jjk-pg-shino-016",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Episode 12"
+      ],
+      "found": [
+        "Episode 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori vs. Junpei Yoshino take place?",
+      "id": "jjk-pg-shino-017",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Vs. Mahito"
+      ],
+      "found": [
+        "Vs. Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Shino play in the series?",
+      "id": "jjk-pg-shino-020",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor character in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shino's status regarding Kenjaku?",
+      "id": "jjk-pg-shino-021",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "an elderly member of the Kamo Clan who was manipulated by Kenjaku"
+      ],
+      "found": [
+        "an elderly member of the Kamo Clan who was manipulated by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Shino look like?",
+      "id": "jjk-pg-shino-022",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "an old, short man with eyes hidden in his wrinkled face and strokes of hair falling on his forehead"
+      ],
+      "found": [
+        "an old, short man with eyes hidden in his wrinkled face and strokes of hair falling on his forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Shino's personality described?",
+      "id": "jjk-pg-shino-023",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "very devoted to the Kamo family and certain of his knowledge"
+      ],
+      "found": [
+        "very devoted to the Kamo family and certain of his knowledge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Shino react when he mistook Noritoshi for a stranger?",
+      "id": "jjk-pg-shino-024",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "acts hostile towards the boy and expresses disappointment with the clan guard"
+      ],
+      "found": [
+        "acts hostile towards the boy and expresses disappointment with the clan guard"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Noritoshi return to the Kamo family home?",
+      "id": "jjk-pg-shino-025",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "November 3rd at 11:05 P.M"
+      ],
+      "found": [
+        "November 3rd at 11:05 P.M"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why didn't Shino recognize Noritoshi?",
+      "id": "jjk-pg-shino-026",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "the old man's mind was manipulated to have him believe he was living in the world of a hundred and fifty years ago"
+      ],
+      "found": [
+        "the old man's mind was manipulated to have him believe he was living in the world of a hundred and fifty years ago"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who took over the Kamo clan?",
+      "id": "jjk-pg-shino-027",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Kenjaku, the curse user behind the Shibuya Incident"
+      ],
+      "found": [
+        "Kenjaku, the curse user behind the Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is known about Shino's abilities as a sorcerer?",
+      "id": "jjk-pg-shino-028",
+      "subject": "Shino",
+      "accept": "all",
+      "expected": [
+        "Shino's abilities as a sorcerer are unknown"
+      ],
+      "found": [
+        "Shino's abilities as a sorcerer are unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 3,
+    "canon_total": 3,
+    "canon_recall": 1.0,
+    "members_returned": 3,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 26,
+    "fact_present": 26
+  }
+}

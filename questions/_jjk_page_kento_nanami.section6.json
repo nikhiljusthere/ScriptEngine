@@ -1,0 +1,1044 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 6 (counts/trivia/misc) of the Kento Nanami cluster. Rosters staged in _jjk_page_kento_nanami.decl6.yaml.",
+ "retired": [
+  {
+   "id": "jjk-pg-kento_nanami-retired-s6-01",
+   "question": "What does Kento Nanami say or joke about working overtime, according to a Quotes section?",
+   "item": "",
+   "reason": "Neither stored page (Kento Nanami, Kento Nanami/Synopsis) carries a Quotes section, and the only verbatim dialogue on the main page sits in a File-template caption (\"No matter what I'm clocking out by six.\") that the parser drops with the File: link, so the line never reaches a chunk and the quote is not goldable. The overtime motif is covered instead by the fanbook trivia questions (jjk-pg-kento_nanami-098 cause of stress, 189 hobby, 193 after-work, 197-198 the forgotten watch)."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-retired-s6-02",
+   "question": "Every kanji of Kento Nanami's name",
+   "item": "",
+   "reason": "Not declarable as a roster: the members would be the CJK characters 七/海/建/人, which exist only as Nihongo/Ruby template arguments on the page (the infobox kanji cell 七海建人 is a single string) and have no wiki pages, so the declared-members contract (members = page titles or page-stated names the filter can verify) cannot be met. The kanji meanings are asked as trivia instead (jjk-pg-kento_nanami-259/260)."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-retired-s6-03",
+   "question": "How many Popularity Polls does the Trivia list Kento Nanami's rankings for?",
+   "item": "",
+   "reason": "The Trivia lists four polls (first through fourth) but never states the count, and the polls are not a declared closed set, so the count cannot be golded. The four poll results are asked as fact pairs instead (jjk-pg-kento_nanami-251..258)."
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-kento_nanami-251",
+   "kind": "fact",
+   "question": "Which position did Kento Nanami rank in the first Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "5th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Nanami ranked 5th in the first Popularity Poll with 11,644 votes.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-252",
+   "kind": "fact",
+   "question": "How many votes did Kento Nanami receive in the first Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "11,644 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 11,644 votes'; not a Ref/infobox value."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-253",
+   "kind": "fact",
+   "question": "Which position did Kento Nanami rank in the second Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "5th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Nanami ranked 5th in the second Popularity Poll with 5,548 votes.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-254",
+   "kind": "fact",
+   "question": "How many votes did Kento Nanami receive in the second Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "5,548 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 5,548 votes'; not a Ref/infobox value."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-255",
+   "kind": "fact",
+   "question": "Which position did Kento Nanami rank in the third Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "7th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Nanami ranked 7th in the third Popularity Poll with 2,541 votes.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-256",
+   "kind": "fact",
+   "question": "How many votes did Kento Nanami receive in the third Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "2,541 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 2,541 votes'; not a Ref/infobox value."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-257",
+   "kind": "fact",
+   "question": "Which position did Kento Nanami rank in the fourth Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "8th",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: 'Nanami ranked 8th in the fourth Popularity Poll with 4,162 votes.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-258",
+   "kind": "fact",
+   "question": "How many votes did Kento Nanami receive in the fourth Popularity Poll, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "4,162 votes",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: single verbatim number in the poll bullet 'with 4,162 votes'; not a Ref/infobox value."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-259",
+   "kind": "fact",
+   "question": "What do the kanji of Kento Nanami's family name mean, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "seven",
+     "aliases": []
+    },
+    {
+     "item": "sea, ocean",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia kanji bullet: the surname contains the kanji for 'seven' and 'sea, ocean'; the meanings are quoted in the bullet's prose (Nihongo template arguments kept by the parser). The infobox kanji cell was retired in section 4 (retired-s4-01); this asks the Trivia bullet's meanings."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-260",
+   "kind": "fact",
+   "question": "What do the kanji of Kento Nanami's first name mean, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to build, to establish",
+     "aliases": []
+    },
+    {
+     "item": "person",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia kanji bullet: the first name contains the kanji for 'to build, to establish' and 'person'."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-261",
+   "kind": "fact",
+   "question": "Why does Kento Nanami's family name sound the way it does, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a reference to his Ratio Technique",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: \"Nanami's family name sounds the same as 'seven' and 'three', a reference to his Ratio Technique.\" Section 2 (085) asks what the birthday references; this asks the family-name soundalike."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-262",
+   "kind": "fact",
+   "question": "What is the other theme song Gege Akutami chose for Kento Nanami, besides 'Saboten Record', according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yura Yura Teikoku De Kangaechu",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: the bullet names two theme songs; section 4 (200) asked the band for 'Saboten Record' (Fujifabric), this asks the other title."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-263",
+   "kind": "fact",
+   "question": "Which band performed 'Yura Yura Teikoku De Kangaechu', one of the theme songs Gege Akutami chose for Kento Nanami, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yura Yura Teikoku",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia: '\"Yura Yura Teikoku De Kangaechu\" by the band Yura Yura Teikoku.' The song is named after its band, as the page states both."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-264",
+   "kind": "set",
+   "question": "What are the theme songs Gege Akutami chose for Kento Nanami, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yura Yura Teikoku De Kangaechu",
+     "aliases": []
+    },
+    {
+     "item": "Saboten Record",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "The closed two-title set of the Trivia theme-songs bullet; declared in _jjk_page_kento_nanami.decl6.yaml."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-265",
+   "kind": "set",
+   "question": "What are Kento Nanami's favorite foods, according to the official fanbook?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Bread",
+     "aliases": []
+    },
+    {
+     "item": "ajillo",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Fanbook bullet: 'Favorite food: Bread and ajillo.' The closed two-value set; declared in _jjk_page_kento_nanami.decl6.yaml. 'ajillo' links off-wiki (Wikipedia:Al_ajillo) and is kept by the declared-member filter."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-266",
+   "kind": "fact",
+   "question": "What increase does using Overtime result in if Kento Nanami has actively broken the vow to use 100% of his cursed energy, according to the page?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a 1% increase",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overtime binding-vow text: 'Nanami can actively break the vow and use 100% of his cursed energy at any given time, but using Overtime in that case would only result in a 1% increase.' Section 2 (062/063) asked the 80-90% and 110-120% figures."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-267",
+   "kind": "fact",
+   "question": "When did Gege Akutami decide Kento Nanami's name and cursed technique, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "at the same time during the early stages of planning the series",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Fanbook bullet: 'Gege decided his name and cursed technique at the same time during the early stages of planning the series.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-268",
+   "kind": "fact",
+   "question": "Who couldn't Kento Nanami blame for becoming a curse user, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Geto",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Fanbook bullet: 'Nanami couldn't blame Geto for becoming a curse user.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-269",
+   "kind": "fact",
+   "question": "Why does Gege Akutami like Kento Nanami as a character, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "because he's easy to draw",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Fanbook bullet: 'Akutami likes Nanami as a character because he's easy to draw.' Section 4 (199) asked when Nanami's end was decided; this asks why Akutami likes him."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-270",
+   "kind": "fact",
+   "question": "Why did Gege Akutami feel Kento Nanami's character had reached its ceiling, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "based on his role in the story",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Fanbook bullet: 'but felt like Nanami's character had reached its ceiling based on his role in the story.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-271",
+   "kind": "fact",
+   "question": "Where, during the Night Parade of a Hundred Demons, did Kento Nanami first hit the Black Flash four consecutive times, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "in Kyoto against several grade 1 cursed spirits",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Fanbook bullet: 'Nanami first hit the Black Flash four consecutive times during the Night Parade of a Hundred Demons in Kyoto against several grade 1 cursed spirits.' Section 1 (047/050) and section 2 (079) ask the record itself; this asks where it happened."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-272",
+   "kind": "fact",
+   "question": "What was Yoshikage Kira, according to the Trivia's comparison with Kento Nanami?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a self-interested serial killer who murdered to satisfy his own perversions",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia Kira-comparison bullet: 'For all his bluster of wanting a normal life, Kira was a self-interested serial killer who murdered to satisfy his own perversions.' Section 4 (187/188) asks who Kira is and which series; this asks what he was."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-273",
+   "kind": "fact",
+   "question": "What is Kento Nanami, underneath his cool superpowers and jaded irritation, according to the Trivia?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "a genuinely normal guy who wants a pleasant retirement and fights out of a sense of duty",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Trivia Kira-comparison bullet: 'Underneath his cool superpowers and jaded irritation, Nanami is a genuinely normal guy who wants a pleasant retirement and fights out of a sense of duty, being especially insistent on protecting the students placed under his care.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-274",
+   "kind": "fact",
+   "question": "How many years later did Kento Nanami return to working as a jujutsu sorcerer, according to the page's lead?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "four",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Lead: 'Nanami initially left Jujutsu High after graduating to become a salaryman, but returned four years later to continue working as a jujutsu sorcerer.' The word 'four' is the page's exact spelling."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-275",
+   "kind": "fact",
+   "question": "Within what fraction of a second of a physical hit must the impact of cursed energy connect for a Black Flash to occur, according to the page?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "0.000001 seconds",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Black Flash paragraph: 'when a user connects an impact of cursed energy within 0.000001 seconds of a physical hit.' Section 2 (077) asked what Black Flash is with the full definition; this golds the number alone."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-276",
+   "kind": "fact",
+   "question": "How many lines does the Ratio Technique divide a target with, according to the page?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "ten",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Ratio Technique description: 'Divides target with ten lines and forcibly create a weak spot at the ratio point of seven to three.' The word 'ten' is the page's exact spelling; section 2 (053) asked how the technique divides a target."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-277",
+   "kind": "fact",
+   "question": "How many punches did Kento Nanami deliver to Haruta Shigemo using his technique and cursed energy, according to the page?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "three",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Energy Reinforcement: 'Nanami delivered three punches to Shigemo, each blow being powerful enough to send him hurtling and kill him outright.' The word 'three' is the page's exact spelling; section 2 (076) asked what the reinforcement did to Shigemo."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-278",
+   "kind": "fact",
+   "question": "What was Kento Nanami able to do while Mahito was still in the infancy of his existence, according to the Overview?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "keep up in several of the exchanges",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'While Mahito was still in the infancy of his existence, Nanami was able to keep up in several of the exchanges.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-279",
+   "kind": "fact",
+   "question": "What was Kento Nanami unable to do while trapped inside Dagon's domain, according to the Overview?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "take any offensive position whatsoever",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'Trapped inside Dagon's domain, Nanami was unable to take any offensive position whatsoever.' Section 3 (129) asks how long he survived the shikigami stream; this asks the defensive limit."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-280",
+   "kind": "fact",
+   "question": "What did Kento Nanami do to the transfigured humans, despite being heavily injured by Dagon and later burned by Jogo, according to the Overview?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "massacred an entire swarm of transfigured humans attempting to kill him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'Despite being heavily injured by Dagon and later burned by Jogo, Nanami massacred an entire swarm of transfigured humans attempting to kill him.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-281",
+   "kind": "fact",
+   "question": "What did Kento Nanami recognize Mahito was doing while he handled the case, according to the Overview?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "purposely leading them into his hideout",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'He was also able to recognize that Mahito was purposely leading them into his hideout.' Section 2 (090/091) ask the first-encounter realization and countermeasure; this asks the reconnaissance insight."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-282",
+   "kind": "fact",
+   "question": "Why did Kento Nanami decide to go alone to Mahito's hideout, according to the Overview?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "to prevent harm from coming to the others",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overview: 'and decided to go alone to prevent harm from coming to the others.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-283",
+   "kind": "fact",
+   "question": "How did Kento Nanami effectively handle Mahito's case, according to the Intelligence section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "utilize his team to track down the proper clues that eventually lead them right to Mahito",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Intelligence: 'he was able to effectively utilize his team to track down the proper clues that eventually lead them right to Mahito.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-284",
+   "kind": "fact",
+   "question": "What was Kento Nanami able to instantly assess while at the mercy of Mahito's domain expansion, according to the Intelligence section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his situation and what it meant for Mahito's advantage",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Intelligence: 'Nanami was able to instantly assess his situation and what it meant for Mahito's advantage.' Section 2 (099/100) ask the second-fight realization; this asks the domain read."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-285",
+   "kind": "fact",
+   "question": "How does Kento Nanami fight stronger opponents, according to the Physical Prowess section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "by breaking them down and creating constant weak points until they eventually fall",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Superior Precision & Technique: 'Against stronger opponents, Nanami fights by breaking them down and creating constant weak points until they eventually fall.' Section 2 (072) asks what kind of fighter he is; this asks the method."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-286",
+   "kind": "fact",
+   "question": "What does Kento Nanami feel transforms people into adults, according to the Personality section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "the build-up of all the little inconveniences throughout life",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'he feels that it's the build-up of all the little inconveniences throughout life that transform people into adults.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-287",
+   "kind": "fact",
+   "question": "Who does Kento Nanami claim he doesn't respect, despite their mutual trust, according to the Personality section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Satoru",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'Even though Nanami and Satoru are longtime friends, the former claims he doesn't respect Satoru despite their mutual trust in one another.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-288",
+   "kind": "fact",
+   "question": "What did work as a sorcerer allow Kento Nanami to build up, according to the Personality section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "small bits of appreciation from innocent people",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Personality: 'work as a sorcerer allowed him to build up small bits of appreciation from innocent people.' Section 3 (132) asks why he returned from the salaryman life; this asks what the sorcerer work built up."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-289",
+   "kind": "fact",
+   "question": "What allows Kento Nanami to evade his opponent's attacks, according to the Physical Prowess section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "This same level of precision allows Nanami to evade his opponent's attacks with clever maneuvers",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Superior Precision & Technique: 'This same level of precision allows Nanami to evade his opponent's attacks with clever maneuvers.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-290",
+   "kind": "fact",
+   "question": "What usually covers Kento Nanami's small hazel-colored eyes, according to the Appearance section?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "his signature sunglasses",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Appearance: 'small hazel-colored eyes that are usually covered by his signature sunglasses.' Section 4 (175) asks what is distinctive about the sunglasses' arms; this asks what the sunglasses cover."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-291",
+   "kind": "fact",
+   "question": "Why did Kento Nanami ask Megumi Fushiguro if he could last a little while longer, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "since they have to rely on Toji",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shibuya Incident Arc: 'Nanami asks Megumi if he can last for a little while longer since they have to rely on Toji.' Section 3 (141/142) cover the portal arrival and the wonder about Toji's side; this asks the survival reason."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-292",
+   "kind": "fact",
+   "question": "Why does Kento Nanami sympathize with Satoru Gojo in the afterlife, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "they both kept true to themselves in their final moments",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shinjuku Showdown Arc: 'he says it was a death most worthy of him and sympathizes, as they both kept true to themselves in their final moments.' Section 5 (247) asks what he called Gojo's death; this asks why he sympathizes."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-293",
+   "kind": "fact",
+   "question": "What does Kento Nanami say he will do by six, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "finish this by six",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Vs. Mahito Arc: 'Nanami simply looks at his watch and says that he will finish this by six.' Section 5 (217) asks what he wrapped around his hand at 6 o'clock; this asks the statement itself."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-294",
+   "kind": "fact",
+   "question": "Why was Kento Nanami more concerned about the arrival of Jogo, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "since Jogo is stronger than Dagon",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shibuya Incident Arc: 'Nanami is more concerned about the arrival of Jogo since Jogo is stronger than Dagon.' Section 5 (242) asks how Nanami was taken out; this asks the concern."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-295",
+   "kind": "fact",
+   "question": "What did Kento Nanami note about Dagon, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Dagon has a large amount of health",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shibuya Incident Arc: 'Nanami notes how Dagon has a large amount of health.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-296",
+   "kind": "fact",
+   "question": "What did Kento Nanami tell Takuma Ino about his role, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "he is in charge",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shibuya Incident Arc: 'Nanami tells Takuma that he is in charge and that they should explain the situation to Naobito Zenin and Atsuya Kusakabe if they meet with them.' Section 5 (232) asks who they should explain to; this asks Takuma's role."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-297",
+   "kind": "fact",
+   "question": "Where did Kento Nanami say they would be heading after Yuji Itadori announced what had happened to Gojo, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Yuji's location",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shibuya Incident Arc: 'Nanami tells Megumi and Takuma that they will be heading towards Yuji's location.'"
+  },
+  {
+   "id": "jjk-pg-kento_nanami-298",
+   "kind": "fact",
+   "question": "What did Kento Nanami tell Takuma Ino about Megumi Fushiguro and the curtain, according to the Synopsis?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Megumi already knows all of that stuff",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis, Shibuya Incident Arc: 'Nanami tells Takumi that Megumi already knows all of that stuff and to stop trying to impress Megumi.' Section 5 (229) asks what Takuma was told to stop; this asks what he was told Megumi knew."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-299",
+   "kind": "fact",
+   "question": "What can Kento Nanami actively do to use 100% of his cursed energy at any given time, according to the page?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "break the vow",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Overtime binding-vow text: 'Nanami can actively break the vow and use 100% of his cursed energy at any given time.' Section 2 (060/061) ask what the vow does; this asks the escape hatch."
+  },
+  {
+   "id": "jjk-pg-kento_nanami-300",
+   "kind": "fact",
+   "question": "What allowed Kento Nanami to overwhelm Mahito on several occasions, according to the Overview?",
+   "subject": "Kento Nanami",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "quick thinking and masterful execution",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami"
+   ],
+   "verified": "2026-08-23",
+   "note": "Great Tactical Intellect: 'he survived both accounts and overwhelmed Mahito on several occasions thanks to quick thinking and masterful execution.'"
+  }
+ ]
+}

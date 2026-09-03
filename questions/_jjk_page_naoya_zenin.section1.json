@@ -1,0 +1,1104 @@
+{
+ "series": "jjk",
+ "wiki": "https://jujutsu-kaisen.fandom.com",
+ "updated": "2026-08-23",
+ "note": "Section 1 (battles) of the Naoya Zenin cluster. The closed set is the four battle pages listed in the `Battles & Events` section of Naoya Zenin; titles are reused verbatim from _jjk_battles.json. Rosters are declared in _jjk_page_naoya_zenin.decl1.yaml.",
+ "retired": [
+  {
+   "id": "jjk-pg-naoya_zenin-retired-01",
+   "item": "",
+   "question": "In which episode is Maki Zenin & Noritoshi Kamo vs. Naoya Zenin depicted?",
+   "reason": "The battle infobox `episodes` field is empty on this page, so there is no episode gold; the chapter range is golded instead (jjk-pg-naoya_zenin-025).",
+   "retired": true
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-retired-02",
+   "item": "",
+   "question": "In which episode is Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin depicted?",
+   "reason": "The battle infobox `episodes` field is empty on this page, so there is no episode gold; the chapter range is golded instead (jjk-pg-naoya_zenin-036).",
+   "retired": true
+  }
+ ],
+ "questions": [
+  {
+   "id": "jjk-pg-naoya_zenin-001",
+   "kind": "set",
+   "question": "Every battle involving Naoya Zenin",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso vs. Naoya Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Maki Zenin vs. Naoya Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Maki Zenin & Noritoshi Kamo vs. Naoya Zenin",
+     "aliases": []
+    },
+    {
+     "item": "Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin",
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "The four battle pages listed in the Battles & Events section of Naoya Zenin; titles reused verbatim from _jjk_battles.json and all four carry the Naoya Zenin Battles category. The battles-in discovery path returns an 18-member superset (it unions Maki Zenin Battles through the Maki-titled pages), so the set is declared in _jjk_page_naoya_zenin.decl1.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-002",
+   "kind": "fact",
+   "question": "What is the outcome of Choso vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Choso is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox outcome."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-003",
+   "kind": "fact",
+   "question": "Where did Choso vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Shibuya",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox place; the lead says the abandoned remains of Shibuya."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-004",
+   "kind": "fact",
+   "question": "In which episode does Choso vs. Naoya Zenin begin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 48",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox episode range (48-49); the first episode."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-005",
+   "kind": "fact",
+   "question": "Which manga chapter does Choso vs. Naoya Zenin begin in?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 140",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox chapter range (140-142); the first chapter."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-006",
+   "kind": "set",
+   "question": "Which techniques did Choso use in Choso vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation",
+     "aliases": []
+    },
+    {
+     "item": "Flowing Red Scale",
+     "aliases": []
+    },
+    {
+     "item": "Hand-to-Hand Combat",
+     "aliases": []
+    },
+    {
+     "item": "Slicing Exorcism",
+     "aliases": []
+    },
+    {
+     "item": "Supernova",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers1, transcribed as the official bank jjk-cov-13 (Flowing Red Scale: Stack folds to Flowing Red Scale)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-007",
+   "kind": "set",
+   "question": "Which techniques did Naoya Zenin use in Choso vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hand-to-Hand Combat",
+     "aliases": []
+    },
+    {
+     "item": "Projection Sorcery",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers2, transcribed as the official bank jjk-cov-14; the unlinked Non-Cursed Tool: Knife line is not a technique."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-008",
+   "kind": "fact",
+   "question": "How did Naoya Zenin let Yuta Okkotsu past Choso's block?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Naoya uses his blinding speed to kick Choso's arms upward, allowing Yuta to dash right past him",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-009",
+   "kind": "fact",
+   "question": "How did Naoya Zenin get his knife into Choso?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Naoya ducks under Choso's counter and stabs him in the lower abdomen with a knife in a reverse grip",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-010",
+   "kind": "fact",
+   "question": "Which extension of Flowing Red Scale did Choso activate in Choso vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Flowing Red Scale: Stack",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle section; also listed under powers1 in the Infobox."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-011",
+   "kind": "fact",
+   "question": "What did Choso's Supernova do in Choso vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "generating an explosion of blood that fires bullets in every direction like a buckshot",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Choso_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-012",
+   "kind": "fact",
+   "question": "What is the outcome of Maki Zenin vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki Zenin is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox outcome."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-013",
+   "kind": "fact",
+   "question": "Where did Maki Zenin vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Zenin Household",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox place."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-014",
+   "kind": "fact",
+   "question": "When did Maki Zenin vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 12, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox date."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-015",
+   "kind": "fact",
+   "question": "In which episode is Maki Zenin vs. Naoya Zenin depicted?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Episode 51",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox episodes."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-016",
+   "kind": "fact",
+   "question": "Which manga chapter covers Maki Zenin vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 151",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox chapters."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-017",
+   "kind": "set",
+   "question": "Which techniques did Maki Zenin use in Maki Zenin vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Tool",
+     "aliases": []
+    },
+    {
+     "item": "Hand-to-Hand Combat",
+     "aliases": []
+    },
+    {
+     "item": "Shiranui-Gata",
+     "aliases": []
+    },
+    {
+     "item": "Split Soul Katana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers1, transcribed as the official bank jjk-cov-32."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-018",
+   "kind": "set",
+   "question": "Which techniques did Naoya Zenin use in Maki Zenin vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Energy",
+     "aliases": []
+    },
+    {
+     "item": "Hand-to-Hand Combat",
+     "aliases": []
+    },
+    {
+     "item": "Projection Sorcery",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers2, transcribed as the official bank jjk-cov-33; the link resolves to the Cursed Energy Manipulation section."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-019",
+   "kind": "fact",
+   "question": "What did Naoya Zenin do when he activated Projection Sorcery against Maki Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "delivers at least eleven hand strikes in a single second",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-020",
+   "kind": "fact",
+   "question": "How was Naoya Zenin's attempt to call Maki Zenin an imposter interrupted?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki smashes his face into the ground with incredible force",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-021",
+   "kind": "fact",
+   "question": "Who did Maki Zenin go to confront after defeating Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "her mother",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Aftermath section: maki goes to confront her mother (the page only names Maki's mother in an image caption, which the bundle drops)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-022",
+   "kind": "fact",
+   "question": "What is the outcome of Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Hagane Daido & Rokujushi Miyo interrupt the battle.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox outcome."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-023",
+   "kind": "fact",
+   "question": "Where did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sakurajima Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox place."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-024",
+   "kind": "fact",
+   "question": "When did Maki Zenin & Noritoshi Kamo vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 16, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox date."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-025",
+   "kind": "fact",
+   "question": "Which manga chapter does Maki Zenin & Noritoshi Kamo vs. Naoya Zenin begin in?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 191",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox chapter range (191-195); the first chapter. The episodes field is empty, so no episode question (retired-01)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-026",
+   "kind": "set",
+   "question": "Which techniques did Noritoshi Kamo use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Blood Manipulation",
+     "aliases": []
+    },
+    {
+     "item": "Bow & Arrows",
+     "aliases": []
+    },
+    {
+     "item": "Crimson Binding",
+     "aliases": []
+    },
+    {
+     "item": "Flowing Red Scale",
+     "aliases": []
+    },
+    {
+     "item": "Non-Cursed Tools",
+     "aliases": []
+    },
+    {
+     "item": "Piercing Blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers1 (Noritoshi block). Declared in _jjk_page_naoya_zenin.decl1.yaml: the discovery path leaks Maki's Split Soul Katana and drops the unlinked Non-Cursed Tools / Bow & Arrows lines."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-027",
+   "kind": "set",
+   "question": "Which techniques did Maki Zenin use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Split Soul Katana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers1 (Maki block). Declared in _jjk_page_naoya_zenin.decl1.yaml: the discovery path returns the whole side-1 superset."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-028",
+   "kind": "set",
+   "question": "Which techniques did Naoya Zenin use in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Projection Sorcery",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers2. Declared in _jjk_page_naoya_zenin.decl1.yaml."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-029",
+   "kind": "fact",
+   "question": "How did the cursed Naoya reveal his identity to Maki Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "reveals its identity as none other than Naoya Zenin, who became a curse after death",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-030",
+   "kind": "fact",
+   "question": "Which technique did Noritoshi Kamo fire through the cursed womb in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Piercing Blood",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle section; also listed under powers1 in the Infobox."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-031",
+   "kind": "fact",
+   "question": "How did the two newcomers enter the fray in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "one yelling about sumo and the other about katanas",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle section: the newcomers are Hagane Daido and Rokujushi Miyo."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-032",
+   "kind": "fact",
+   "question": "How did Maki Zenin break the stalemate in Maki Zenin & Noritoshi Kamo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki breaks the stalemate by lending her katana to the old man",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin_%26_Noritoshi_Kamo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-033",
+   "kind": "fact",
+   "question": "What is the outcome of Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Maki Zenin is victorious.",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox outcome."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-034",
+   "kind": "fact",
+   "question": "Where did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Sakurajima Colony",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox place."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-035",
+   "kind": "fact",
+   "question": "When did Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin take place?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "November 16, 2018",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox date."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-036",
+   "kind": "fact",
+   "question": "Which manga chapter does Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin begin in?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Chapter 195",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox chapter range (195-199); the first chapter. The episodes field is empty, so no episode question (retired-02)."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-037",
+   "kind": "set",
+   "question": "Which techniques did Hagane Daido use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Cursed Tool",
+     "aliases": []
+    },
+    {
+     "item": "Split Soul Katana",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers1 (Daido block). Declared in _jjk_page_naoya_zenin.decl1.yaml: the discovery path leaks Simple Domain."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-038",
+   "kind": "set",
+   "question": "Which techniques did Rokujushi Miyo use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Simple Domain",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers1 (Miyo block). Declared in _jjk_page_naoya_zenin.decl1.yaml: the discovery path returns the whole side-1 superset."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-039",
+   "kind": "set",
+   "question": "Which techniques did Naoya Zenin use in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "roster",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Domain Expansion",
+     "aliases": []
+    },
+    {
+     "item": "Projection Sorcery",
+     "aliases": []
+    },
+    {
+     "item": "Time Cell Moon Palace",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle Infobox powers2, transcribed as the official bank jjk-cov-38."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-040",
+   "kind": "fact",
+   "question": "How did Hagane Daido cut through Naoya Zenin in Maki Zenin, Hagane Daido & Rokujushi Miyo vs. Naoya Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "He then bisected Naoya with a single slash, surprising Maki",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Hagane_Daido/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Hagane Daido Synopsis section. The battle page's own first-bisection sentence (Daido bisects Naoya at a diagonal across his torso) is not retrieved by the live bundle, so the synopsis version of the same cut is golded instead."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-041",
+   "kind": "fact",
+   "question": "How long did a thousand rounds of sumo take outside the barrier of Miyo's Simple Domain?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "The time it took for a thousand rounds of sumo only lasted one minute outside the barrier",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battle section, on time flow inside the Simple Domain."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-042",
+   "kind": "fact",
+   "question": "What happened the moment Daido and Miyo tried to move inside Naoya Zenin's domain?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "small bleeding injuries rip and tear open all over their body",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin%2C_Hagane_Daido_%26_Rokujushi_Miyo_vs._Naoya_Zenin"
+   ],
+   "verified": "2026-08-23"
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-043",
+   "kind": "fact",
+   "question": "How did Maki Zenin deliver the killing blow inside Naoya Zenin's domain?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "narrative",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "with a swift upward swing, Maki cuts Naoya in half, exorcising the sorcerer-turned-curse for good",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis. The battle page's vertical killing-blow sentence (she effortlessly raises the sword through Naoya's head to cut it in half vertically) is not retrieved in the live bundle, so the synopsis version of the finishing blow is golded instead."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-044",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin head to Shibuya?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "killing two birds with one stone",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis; he meant to hunt Yuji Itadori and Megumi Fushiguro in one move."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-045",
+   "kind": "fact",
+   "question": "How confident was Naoya Zenin about his first exchange with Yuji Itadori?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Naoya expected to take Yuji out in one hit",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battles & Events, Culling Game."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-046",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin resort to his knife against Choso?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Naoya only resorted to cutting Choso with the knife because he proved to be highly resilient to unarmed blows",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battles & Events, Culling Game."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-047",
+   "kind": "fact",
+   "question": "What speed did Naoya Zenin reach by flying around in circles?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Naoya reached mach 3",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Projection Sorcery."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-048",
+   "kind": "fact",
+   "question": "Why did Naoya Zenin's domain lose to Maki Zenin?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "it was unable to detect Maki, leading to Naoya's defeat",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Battles & Events, Culling Game."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-049",
+   "kind": "fact",
+   "question": "What are the can't-miss attacks of Naoya Zenin's Time Cell Moon Palace?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "lines of film that enforce the 24FPS rules of Projection Sorcery on a cellular level",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin"
+   ],
+   "verified": "2026-08-23",
+   "note": "Cursed Technique, Time Cell Moon Palace; the page spells 24fps lowercase."
+  },
+  {
+   "id": "jjk-pg-naoya_zenin-050",
+   "kind": "fact",
+   "question": "How did Naoya Zenin enter the Sakurajima Colony as a curse?",
+   "subject": "Naoya Zenin",
+   "tier": "wiki",
+   "expect_mode": "qa",
+   "scope": "closed",
+   "answer": [
+    {
+     "item": "Naoya enters the colony from the sky",
+     "aliases": []
+    }
+   ],
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Naoya_Zenin/Synopsis"
+   ],
+   "verified": "2026-08-23",
+   "note": "Synopsis: Naoya was reborn as a vengeful cursed spirit because Maki's mother killed him without cursed energy."
+  }
+ ]
+}

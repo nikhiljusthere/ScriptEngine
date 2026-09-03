@@ -1,0 +1,443 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the allies of Dapa?",
+      "set": "Every ally of Dapa",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the enemies of Dapa?",
+      "set": "Every enemy of Dapa",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Dapa?",
+      "set": "Dapa's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the allies of Dapa?",
+      "found": [
+        "Dura Val Bobbidi Mechika",
+        "Cross Val Vol Yelvori"
+      ],
+      "missing": [],
+      "members": [
+        "Cross Val Vol Yelvori",
+        "Dura Val Bobbidi Mechika"
+      ]
+    },
+    {
+      "query": "What are all the enemies of Dapa?",
+      "found": [
+        "Dura Val Bobbidi Mechika",
+        "Cross Val Vol Yelvori"
+      ],
+      "missing": [],
+      "members": [
+        "Cross Val Vol Yelvori",
+        "Dura Val Bobbidi Mechika"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Dapa?",
+      "found": [
+        "Rumel Tribe Osuki"
+      ],
+      "missing": [],
+      "members": [
+        "Rumel Tribe Osuki"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Dapa's name?",
+      "id": "jjk-pg-dapa-001",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "\u30c0\u30d1"
+      ],
+      "found": [
+        "\u30c0\u30d1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Dapa's name?",
+      "id": "jjk-pg-dapa-002",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Dapa"
+      ],
+      "found": [
+        "Dapa"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dapa's race?",
+      "id": "jjk-pg-dapa-003",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Simurian"
+      ],
+      "found": [
+        "Simurian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dapa's gender?",
+      "id": "jjk-pg-dapa-004",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Dapa?",
+      "id": "jjk-pg-dapa-005",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Dapa first appear?",
+      "id": "jjk-pg-dapa-006",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 8"
+      ],
+      "found": [
+        "Modulo Chapter 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Dapa play in the series?",
+      "id": "jjk-pg-dapa-010",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "a minor character in Jujutsu Kaisen Modulo"
+      ],
+      "found": [
+        "a minor character in Jujutsu Kaisen Modulo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dapa's origin, and how did he come to Earth?",
+      "id": "jjk-pg-dapa-011",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "a Simurian of the Rumel Tribe that arrived at Earth in 2086 seeking refuge"
+      ],
+      "found": [
+        "a Simurian of the Rumel Tribe that arrived at Earth in 2086 seeking refuge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Dapa a close friend of?",
+      "id": "jjk-pg-dapa-012",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "one of Osuki's close friends"
+      ],
+      "found": [
+        "one of Osuki's close friends"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dapa look like?",
+      "id": "jjk-pg-dapa-013",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "a moderately muscular man of average height with long, light-green hair"
+      ],
+      "found": [
+        "a moderately muscular man of average height with long, light-green hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dapa wear?",
+      "id": "jjk-pg-dapa-014",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "a long, sleeveless purple robe that reaches below his knees, paired with dark-colored pants"
+      ],
+      "found": [
+        "a long, sleeveless purple robe that reaches below his knees, paired with dark-colored pants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Dapa become bitter toward the Deskunte Tribe?",
+      "id": "jjk-pg-dapa-015",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "after they exiled his people to barren lands and burned down their village"
+      ],
+      "found": [
+        "after they exiled his people to barren lands and burned down their village"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dapa sabotage?",
+      "id": "jjk-pg-dapa-016",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Dura Val Bobbidi Mechika's efforts to build a canal"
+      ],
+      "found": [
+        "Dura Val Bobbidi Mechika's efforts to build a canal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dapa's attitude toward the people of Earth?",
+      "id": "jjk-pg-dapa-017",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "support coexistence with the people of Earth and shows a genuine interest in Earth culture"
+      ],
+      "found": [
+        "support coexistence with the people of Earth and shows a genuine interest in Earth culture"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What tendency does Dapa have regarding Osuki's orders?",
+      "id": "jjk-pg-dapa-018",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "initially agree with Osuki\u2019s orders, only to raise objections afterward"
+      ],
+      "found": [
+        "initially agree with Osuki\u2019s orders, only to raise objections afterward"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dapa witness at the Deskunte fighting tournament?",
+      "id": "jjk-pg-dapa-019",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Dura's victory"
+      ],
+      "found": [
+        "Dura's victory"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who attacked Dapa and his friends in the tent, and why?",
+      "id": "jjk-pg-dapa-020",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "Cross entered the tent and attacked them in retaliation for their sabotage"
+      ],
+      "found": [
+        "Cross entered the tent and attacked them in retaliation for their sabotage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the source of a Simurian's rolloluca?",
+      "id": "jjk-pg-dapa-021",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "a third eye on their foreheads"
+      ],
+      "found": [
+        "a third eye on their foreheads"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When do Rumelians cry from their third eye?",
+      "id": "jjk-pg-dapa-022",
+      "subject": "Dapa",
+      "accept": "all",
+      "expected": [
+        "when a Kalyan dies"
+      ],
+      "found": [
+        "when a Kalyan dies"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 5,
+    "canon_total": 5,
+    "canon_recall": 1.0,
+    "members_returned": 5,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 19,
+    "fact_present": 19
+  }
+}

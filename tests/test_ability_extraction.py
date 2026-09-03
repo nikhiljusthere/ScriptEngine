@@ -13,6 +13,7 @@ what the model says about a given passage is not.
 from __future__ import annotations
 
 import pytest
+from typing import cast
 
 from scriptengine.config import load_overrides, series_paths
 from scriptengine.ingest import abilities as A
@@ -164,7 +165,9 @@ class TestStorage:
             )
             rows = store.abilities_of("Killua Zoldyck")
             assert [row["name"] for row in rows] == ["Godspeed"]
-            assert store.extraction_state("Killua Zoldyck")["prompt_version"] == "b"
+            state = store.extraction_state("Killua Zoldyck")
+            assert state is not None
+            assert state["prompt_version"] == "b"
 
     def test_kinds_filter_the_read(self, tmp_path):
         with FactStore(tmp_path / "facts.db") as store:
@@ -293,5 +296,8 @@ class TestOwnedPages:
 
     def test_no_declaration_means_the_store_is_never_touched(self):
         """`None` as the store proves it: undeclared must not reach a query."""
-        assert A.owned_passages(None, "Anyone", {}) == []
-        assert A.owned_passages(None, "Anyone", {"ability_owner_sections": {}}) == []
+        # The cast is deliberate: the point is that `None` is never dereferenced.
+        assert A.owned_passages(cast("FactStore", None), "Anyone", {}) == []
+        assert A.owned_passages(
+            cast("FactStore", None), "Anyone", {"ability_owner_sections": {}}
+        ) == []

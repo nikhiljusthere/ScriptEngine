@@ -1,0 +1,1853 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Bang?",
+      "set": "Bang's aliases",
+      "confidence": "declared",
+      "returned": 3,
+      "available": 3,
+      "canon": 3,
+      "found": 3,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the named techniques of Bang's Water Stream Rock Smashing Fist in One-Punch Man?",
+      "set": "Every named technique of Bang's Water Stream Rock Smashing Fist in One Punch Man",
+      "confidence": "weak",
+      "returned": 7,
+      "available": 7,
+      "canon": 7,
+      "found": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the aliases of Bang?",
+      "found": [
+        "Silver Fang",
+        "Greatest Treasure of Martial Arts",
+        "Wind of Blood"
+      ],
+      "missing": [],
+      "members": [
+        "Greatest Treasure of Martial Arts",
+        "Silver Fang",
+        "Wind of Blood"
+      ]
+    },
+    {
+      "query": "What are all the named techniques of Bang's Water Stream Rock Smashing Fist in One-Punch Man?",
+      "found": [
+        "Water Stream Encampment",
+        "Instant Movement",
+        "Piercing Fang",
+        "Allsight",
+        "Awakening Breath",
+        "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist",
+        "Whirlwind Water Stream: Cross Fang Dragon Slayer Fist"
+      ],
+      "missing": [],
+      "members": [
+        "Allsight",
+        "Awakening Breath",
+        "Instant Movement",
+        "Piercing Fang",
+        "Water Stream Encampment",
+        "Whirlwind Water Stream: Cross Fang Dragon Slayer Fist",
+        "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is Bang's alias in One-Punch Man?",
+      "id": "opm-pg-bang-003",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Silver Fang"
+      ],
+      "found": [
+        "Silver Fang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's Japanese name in One-Punch Man?",
+      "id": "opm-pg-bang-004",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bangu"
+      ],
+      "found": [
+        "Bangu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's race in One-Punch Man?",
+      "id": "opm-pg-bang-005",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's occupation in One-Punch Man?",
+      "id": "opm-pg-bang-006",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Martial Arts Teacher"
+      ],
+      "found": [
+        "Martial Arts Teacher"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's former hero rank in One-Punch Man?",
+      "id": "opm-pg-bang-007",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "S-Class Rank 3"
+      ],
+      "found": [
+        "S-Class Rank 3"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's former B-Class rank in One-Punch Man?",
+      "id": "opm-pg-bang-008",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "B-Class Rank 77"
+      ],
+      "found": [
+        "B-Class Rank 77"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's current hero rank in One-Punch Man?",
+      "id": "opm-pg-bang-009",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Retired"
+      ],
+      "found": [
+        "Retired"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's height in One-Punch Man?",
+      "id": "opm-pg-bang-010",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "165 cm"
+      ],
+      "found": [
+        "165 cm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's weight in One-Punch Man?",
+      "id": "opm-pg-bang-011",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "55 kg"
+      ],
+      "found": [
+        "55 kg"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's age in One-Punch Man?",
+      "id": "opm-pg-bang-012",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "81"
+      ],
+      "found": [
+        "81"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Bang and Fist Fight Djinn in One-Punch Man?",
+      "id": "opm-pg-bang-013",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bang is victorious"
+      ],
+      "found": [],
+      "missing": [
+        "Bang is victorious"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Bang and Garou in One-Punch Man?",
+      "id": "opm-pg-bang-014",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bang is defeated"
+      ],
+      "found": [],
+      "missing": [
+        "Bang is defeated"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Bang and Bomb and Garou in One-Punch Man?",
+      "id": "opm-pg-bang-015",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bang and Bomb are defeated"
+      ],
+      "found": [],
+      "missing": [
+        "Bang and Bomb are defeated"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to Fist Fight Djinn in One-Punch Man?",
+      "id": "opm-pg-bang-016",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "annihilated it"
+      ],
+      "found": [],
+      "missing": [
+        "annihilated it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to the meteorite fragments in One-Punch Man?",
+      "id": "opm-pg-bang-017",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "destroyed them bare-handed"
+      ],
+      "found": [],
+      "missing": [
+        "destroyed them bare-handed"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to Gums in One-Punch Man?",
+      "id": "opm-pg-bang-018",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "kicked a large hole through"
+      ],
+      "found": [],
+      "missing": [
+        "kicked a large hole through"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to Fuhrer Ugly in One-Punch Man?",
+      "id": "opm-pg-bang-019",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "knocked down"
+      ],
+      "found": [],
+      "missing": [
+        "knocked down"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to the Black Sperm clones in One-Punch Man?",
+      "id": "opm-pg-bang-020",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "dispatched them"
+      ],
+      "found": [],
+      "missing": [
+        "dispatched them"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to Do-S in One-Punch Man?",
+      "id": "opm-pg-bang-021",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "incapacitated her"
+      ],
+      "found": [],
+      "missing": [
+        "incapacitated her"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to the Elder Centipede in One-Punch Man?",
+      "id": "opm-pg-bang-022",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "shattered its carapace"
+      ],
+      "found": [],
+      "missing": [
+        "shattered its carapace"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's primary martial art in One-Punch Man?",
+      "id": "opm-pg-bang-023",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "found": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Water Stream Rock Smashing Fist in One-Punch Man?",
+      "id": "opm-pg-bang-024",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Ry\u016bsui Gansai-ken"
+      ],
+      "found": [
+        "Ry\u016bsui Gansai-ken"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Water Stream Rock Smashing Fist in One-Punch Man?",
+      "id": "opm-pg-bang-025",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Fist of Flowing Water, Crushed Rock"
+      ],
+      "found": [
+        "Fist of Flowing Water, Crushed Rock"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's primary martial art before Water Stream Rock Smashing Fist in One-Punch Man?",
+      "id": "opm-pg-bang-026",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Exploding Heart Release Fist"
+      ],
+      "found": [
+        "Exploding Heart Release Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Exploding Heart Release Fist in One-Punch Man?",
+      "id": "opm-pg-bang-027",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bakushin Kaih\u014d-ken"
+      ],
+      "found": [
+        "Bakushin Kaih\u014d-ken"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Exploding Heart Release Fist in One-Punch Man?",
+      "id": "opm-pg-bang-028",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Fist of Exploding Heart, Liberation"
+      ],
+      "found": [
+        "Fist of Exploding Heart, Liberation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's area creation technique in One-Punch Man?",
+      "id": "opm-pg-bang-029",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Water Stream Encampment"
+      ],
+      "found": [
+        "Water Stream Encampment"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Water Stream Encampment in One-Punch Man?",
+      "id": "opm-pg-bang-030",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Ry\u016bsui-jin"
+      ],
+      "found": [
+        "Ry\u016bsui-jin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's jumping technique in One-Punch Man?",
+      "id": "opm-pg-bang-031",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Instant Movement"
+      ],
+      "found": [
+        "Instant Movement"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Instant Movement in One-Punch Man?",
+      "id": "opm-pg-bang-032",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Shunshink\u014d"
+      ],
+      "found": [],
+      "missing": [
+        "Shunshink\u014d"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's piercing technique in One-Punch Man?",
+      "id": "opm-pg-bang-033",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Piercing Fang"
+      ],
+      "found": [
+        "Piercing Fang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Piercing Fang in One-Punch Man?",
+      "id": "opm-pg-bang-034",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Gas\u014dshi"
+      ],
+      "found": [],
+      "missing": [
+        "Gas\u014dshi"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's visual acuity technique in One-Punch Man?",
+      "id": "opm-pg-bang-035",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Allsight"
+      ],
+      "found": [
+        "Allsight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Allsight in One-Punch Man?",
+      "id": "opm-pg-bang-036",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Mikiri"
+      ],
+      "found": [],
+      "missing": [
+        "Mikiri"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Bang's breathing technique in One-Punch Man?",
+      "id": "opm-pg-bang-037",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Awakening Breath"
+      ],
+      "found": [
+        "Awakening Breath"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability does Bang have in One-Punch Man?",
+      "id": "opm-pg-bang-038",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Immense Strength"
+      ],
+      "found": [
+        "Immense Strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Bang do with his Immense Strength in One-Punch Man?",
+      "id": "opm-pg-bang-039",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "destroy meteorite fragments"
+      ],
+      "found": [
+        "destroy meteorite fragments"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability allows Bang to outrun a falling spaceship in One-Punch Man?",
+      "id": "opm-pg-bang-040",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Immense Speed and Reflexes"
+      ],
+      "found": [
+        "Immense Speed and Reflexes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability allows Bang to survive Melzargard's direct hit in One-Punch Man?",
+      "id": "opm-pg-bang-041",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Immense Durability"
+      ],
+      "found": [
+        "Immense Durability"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability allows Bang to run a few dozen km before getting winded in One-Punch Man?",
+      "id": "opm-pg-bang-042",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Enhanced Stamina and Endurance"
+      ],
+      "found": [
+        "Enhanced Stamina and Endurance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Bang sense with his Enhanced Senses in One-Punch Man?",
+      "id": "opm-pg-bang-043",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "evil presence"
+      ],
+      "found": [
+        "evil presence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang sense inside Garou in One-Punch Man?",
+      "id": "opm-pg-bang-044",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "God"
+      ],
+      "found": [
+        "God"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's fighting style in One-Punch Man?",
+      "id": "opm-pg-bang-045",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Master Martial Artist"
+      ],
+      "found": [
+        "Master Martial Artist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's ability type in One-Punch Man?",
+      "id": "opm-pg-bang-046",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Physical"
+      ],
+      "found": [
+        "Physical"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's total hero rating in One-Punch Man?",
+      "id": "opm-pg-bang-047",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "66"
+      ],
+      "found": [
+        "66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's rank in the character popularity poll in One-Punch Man?",
+      "id": "opm-pg-bang-048",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "13th"
+      ],
+      "found": [
+        "13th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's handedness in One-Punch Man?",
+      "id": "opm-pg-bang-049",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Left-handed"
+      ],
+      "found": [
+        "Left-handed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Bang like according to the databook in One-Punch Man?",
+      "id": "opm-pg-bang-050",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Japanese spiny lobster"
+      ],
+      "found": [
+        "Japanese spiny lobster"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Bang dislike according to the databook in One-Punch Man?",
+      "id": "opm-pg-bang-051",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Dojo Hunters"
+      ],
+      "found": [
+        "Dojo Hunters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's hobby according to the databook in One-Punch Man?",
+      "id": "opm-pg-bang-052",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Go"
+      ],
+      "found": [
+        "Go"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the origin of Bang's hero name in One-Punch Man?",
+      "id": "opm-pg-bang-053",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "silver and fang"
+      ],
+      "found": [],
+      "missing": [
+        "silver and fang"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Bang like eating in One-Punch Man?",
+      "id": "opm-pg-bang-054",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "tofu"
+      ],
+      "found": [
+        "tofu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's second-highest hero rating in One-Punch Man?",
+      "id": "opm-pg-bang-055",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "66"
+      ],
+      "found": [
+        "66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang depicted as in the 2017 OPM Halloween cover in One-Punch Man?",
+      "id": "opm-pg-bang-056",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Taoist Priest"
+      ],
+      "found": [
+        "Taoist Priest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did ONE plan for Bang in the original storyboard of Chapter 85 in One-Punch Man?",
+      "id": "opm-pg-bang-057",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "fight Elder Centipede"
+      ],
+      "found": [
+        "fight Elder Centipede"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Bomb to Bang in One-Punch Man?",
+      "id": "opm-pg-bang-058",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "older brother"
+      ],
+      "found": [
+        "older brother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Charanko to Bang in One-Punch Man?",
+      "id": "opm-pg-bang-059",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "disciple"
+      ],
+      "found": [
+        "disciple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who is Garou to Bang in One-Punch Man?",
+      "id": "opm-pg-bang-060",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "former disciple"
+      ],
+      "found": [],
+      "missing": [
+        "former disciple"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who are Saitama and Genos to Bang in One-Punch Man?",
+      "id": "opm-pg-bang-061",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "recruitment targets"
+      ],
+      "found": [],
+      "missing": [
+        "recruitment targets"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's affiliation in One-Punch Man?",
+      "id": "opm-pg-bang-062",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Saitama Group"
+      ],
+      "found": [
+        "Saitama Group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's former affiliation in One-Punch Man?",
+      "id": "opm-pg-bang-063",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Hero Association"
+      ],
+      "found": [
+        "Hero Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the group Bang belongs to in One-Punch Man?",
+      "id": "opm-pg-bang-064",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Saitama Group"
+      ],
+      "found": [
+        "Saitama Group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the dojo Bang runs in One-Punch Man?",
+      "id": "opm-pg-bang-065",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bang's Dojo"
+      ],
+      "found": [
+        "Bang's Dojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do after the Monster Association incident in One-Punch Man?",
+      "id": "opm-pg-bang-066",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "retired from the Hero Association"
+      ],
+      "found": [
+        "retired from the Hero Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang currently trying to do in One-Punch Man?",
+      "id": "opm-pg-bang-067",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "recruit new disciples"
+      ],
+      "found": [
+        "recruit new disciples"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's current location in One-Punch Man?",
+      "id": "opm-pg-bang-068",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Z-City"
+      ],
+      "found": [
+        "Z-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to Garou in One-Punch Man?",
+      "id": "opm-pg-bang-069",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "trained him"
+      ],
+      "found": [],
+      "missing": [
+        "trained him"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang say about Garou in One-Punch Man?",
+      "id": "opm-pg-bang-070",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "I did not raise Garou to be that weak"
+      ],
+      "found": [],
+      "missing": [
+        "I did not raise Garou to be that weak"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang say about the master-disciple relationship with Garou in One-Punch Man?",
+      "id": "opm-pg-bang-071",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "start over from the beginning"
+      ],
+      "found": [],
+      "missing": [
+        "start over from the beginning"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang say about Garou's departure in One-Punch Man?",
+      "id": "opm-pg-bang-072",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "you'll have to kill me first"
+      ],
+      "found": [],
+      "missing": [
+        "you'll have to kill me first"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do to save the heroes during the Elder Centipede fight in One-Punch Man?",
+      "id": "opm-pg-bang-073",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "used Awakening Breath"
+      ],
+      "found": [],
+      "missing": [
+        "used Awakening Breath"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's role in the Hero Association in One-Punch Man?",
+      "id": "opm-pg-bang-074",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Retired"
+      ],
+      "found": [
+        "Retired"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's status in One-Punch Man?",
+      "id": "opm-pg-bang-075",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Alive"
+      ],
+      "found": [
+        "Alive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's gender in One-Punch Man?",
+      "id": "opm-pg-bang-076",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's Japanese name for his alias in One-Punch Man?",
+      "id": "opm-pg-bang-077",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Shirub\u0101 Fangu"
+      ],
+      "found": [
+        "Shirub\u0101 Fangu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Silver Fang in One-Punch Man?",
+      "id": "opm-pg-bang-078",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Silver Fang"
+      ],
+      "found": [
+        "Silver Fang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Bang's Japanese name for Wind of Blood in One-Punch Man?",
+      "id": "opm-pg-bang-079",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Chi no Kaze"
+      ],
+      "found": [
+        "Chi no Kaze"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Bang first appear in the One-Punch Man webcomic?",
+      "id": "opm-pg-bang-080",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Chapter 20"
+      ],
+      "found": [
+        "Chapter 20"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Bang first appear in the One-Punch Man manga?",
+      "id": "opm-pg-bang-081",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Chapter 21"
+      ],
+      "found": [
+        "Chapter 21"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Bang first appear in the One-Punch Man anime?",
+      "id": "opm-pg-bang-082",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Episode 7"
+      ],
+      "found": [
+        "Episode 7"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does the battle between Bang and Garou take place in One-Punch Man?",
+      "id": "opm-pg-bang-083",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Chapter 153"
+      ],
+      "found": [
+        "Chapter 153"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does the battle between Bang and the Elder Centipede take place in One-Punch Man?",
+      "id": "opm-pg-bang-084",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Chapter 85"
+      ],
+      "found": [
+        "Chapter 85"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Bang retire in One-Punch Man?",
+      "id": "opm-pg-bang-085",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Chapter 175"
+      ],
+      "found": [],
+      "missing": [
+        "Chapter 175"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Greatest Treasure of Martial Arts in One-Punch Man?",
+      "id": "opm-pg-bang-086",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Bujutsu-kai no shih\u014d"
+      ],
+      "found": [],
+      "missing": [
+        "Bujutsu-kai no shih\u014d"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Wind of Blood in One-Punch Man?",
+      "id": "opm-pg-bang-087",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "BloodWind"
+      ],
+      "found": [
+        "BloodWind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang do with the scrolls of Exploding Heart Release Fist in One-Punch Man?",
+      "id": "opm-pg-bang-088",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "locked them in a safe"
+      ],
+      "found": [],
+      "missing": [
+        "locked them in a safe"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang refuse to do when cornered by evolved Garou in One-Punch Man?",
+      "id": "opm-pg-bang-089",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "use Exploding Heart Release Fist"
+      ],
+      "found": [],
+      "missing": [
+        "use Exploding Heart Release Fist"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that combines Water Stream Rock Smashing Fist and Whirlwind Iron Cutting Fist in One-Punch Man?",
+      "id": "opm-pg-bang-090",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist"
+      ],
+      "found": [
+        "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Whirlwind Water Stream: Roaring Aura Sky Ripping Fist in One-Punch Man?",
+      "id": "opm-pg-bang-091",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Senp\u016b Ry\u016bsui: G\u014dki K\u016bretsu-ken"
+      ],
+      "found": [
+        "Senp\u016b Ry\u016bsui: G\u014dki K\u016bretsu-ken"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that is even more powerful than Roaring Aura Sky Ripping Fist in One-Punch Man?",
+      "id": "opm-pg-bang-092",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Whirlwind Water Stream: Cross Fang Dragon Slayer Fist"
+      ],
+      "found": [],
+      "missing": [
+        "Whirlwind Water Stream: Cross Fang Dragon Slayer Fist"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Whirlwind Water Stream: Cross Fang Dragon Slayer Fist in One-Punch Man?",
+      "id": "opm-pg-bang-093",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Senp\u016b Ry\u016bsui: K\u014dga Ry\u016bsatsu-ken"
+      ],
+      "found": [
+        "Senp\u016b Ry\u016bsui: K\u014dga Ry\u016bsatsu-ken"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Bang's Immense Strength allow him to do in One-Punch Man?",
+      "id": "opm-pg-bang-094",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "annihilate Fist Fight Djinn"
+      ],
+      "found": [],
+      "missing": [
+        "annihilate Fist Fight Djinn"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Bang's Immense Speed allow him to do in One-Punch Man?",
+      "id": "opm-pg-bang-095",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "outrun a falling spaceship"
+      ],
+      "found": [
+        "outrun a falling spaceship"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Bang's Immense Durability allow him to do in One-Punch Man?",
+      "id": "opm-pg-bang-096",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "survive Melzargard's direct hit"
+      ],
+      "found": [],
+      "missing": [
+        "survive Melzargard's direct hit"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that Bang and Bomb use together in One-Punch Man?",
+      "id": "opm-pg-bang-097",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist"
+      ],
+      "found": [],
+      "missing": [
+        "Whirlwind Water Stream: Roaring Aura Sky Ripping Fist"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can the Whirlwind Water Stream: Roaring Aura Sky Ripping Fist do in One-Punch Man?",
+      "id": "opm-pg-bang-098",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "reduce to dust"
+      ],
+      "found": [],
+      "missing": [
+        "reduce to dust"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can the Whirlwind Water Stream: Cross Fang Dragon Slayer Fist do in One-Punch Man?",
+      "id": "opm-pg-bang-099",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "kick the opponent away"
+      ],
+      "found": [],
+      "missing": [
+        "kick the opponent away"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that Bang uses to sense an evil presence in One-Punch Man?",
+      "id": "opm-pg-bang-100",
+      "subject": "Bang",
+      "accept": "all",
+      "expected": [
+        "Enhanced Senses"
+      ],
+      "found": [
+        "Enhanced Senses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 10,
+    "canon_total": 10,
+    "canon_recall": 1.0,
+    "members_returned": 10,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 98,
+    "fact_present": 67
+  }
+}

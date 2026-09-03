@@ -1,0 +1,37 @@
+# Staged roster declarations for the Naoya Zenin page campaign
+# (questions/_jjk_page_naoya_zenin.section4.json, section 4: identity).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Naoya Zenin's aliases` is the closed alias set of the page. The infobox
+# `alias` cell is empty, so the set is the page's single listed alias, the
+# romaji `Zen'in Naoya` (the page's `aliases` list). Roster discovery does not
+# read a single romaji alias (the same reason the Toji, Yuji, Sukuna, Maki,
+# Megumi, Kento and Nanami alias declarations exist), so the set is declared
+# and the declared roster wins (G6).
+#
+# `Naoya Zenin's affiliations` is the closed two-entry set of the infobox
+# `affiliation` field. `Hei` is a section of the `Sorcerer Clan/Zenin Clan`
+# page, not a page of its own, and `Zenin Clan` is that page's display name,
+# so neither is a plain page title; the declared-member filter keeps both
+# because they are stated in the infobox itself (the shape `Toji Fushiguro's
+# affiliations` uses for its members).
+#
+# Match phrases carry no `: ` or `&`, so no YAML quoting is required; neither
+# member carries `&` or `:`.
+rosters:
+   - name: Naoya Zenin's aliases
+     match:
+       - what are naoya zenin's aliases
+       - all the aliases of naoya zenin
+       - aliases of naoya zenin
+       - naoya zenin's aliases
+     subject: Naoya Zenin
+     members: [Zen'in Naoya]
+   - name: Naoya Zenin's affiliations
+     match:
+       - what are naoya zenin's affiliations
+       - all the affiliations of naoya zenin
+       - affiliations of naoya zenin
+       - naoya zenin's affiliations
+     subject: Naoya Zenin
+     members: [Zenin Clan, Hei]

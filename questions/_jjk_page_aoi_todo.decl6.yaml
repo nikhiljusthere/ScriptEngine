@@ -1,0 +1,40 @@
+# Staged roster declarations for the Aoi Todo page campaign
+# (questions/_jjk_page_aoi_todo.section6.json, section 6:
+# counts / trivia / misc).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every non-cursed tool Aoi Todo used` is the closed one-row set of the
+# `Equipment > Non-Cursed Tools` group on `Aoi Todo`: the vibraslap, the
+# percussion instrument that replaced his lost left hand (the group's prose
+# says "Todo replaced his lost left hand with one"). It is the same
+# declared-members shape as the section-2 `Cursed Tools` group (single
+# member, Playful Cloud, kept by the declared-member filter because the
+# vibraslap has no wiki page of its own). The companion count question
+# (jjk-pg-aoi_todo-259) golds the member count, `one`.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every kanji of Aoi Todo's name" -- the members would be the CJK
+#     characters 東/堂/葵, which have no wiki pages and exist only as
+#     Nihongo/Ruby template arguments in the lead, so the members =
+#     page-titles contract cannot be met. The surname kanji meanings are
+#     asked as trivia instead (jjk-pg-aoi_todo-255).
+#   * "How many kanji make up Aoi Todo's name?" -- the lead shows three
+#     kanji (東堂葵) but never states the count, and a count with no closed
+#     declared set behind it cannot be golded.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every non-cursed tool Aoi Todo used
+    match:
+      - every non-cursed tool aoi todo used
+      - every non-cursed tools aoi todo used
+      - all the non-cursed tools aoi todo used
+      - non-cursed tools aoi todo used
+      - how many non-cursed tools did aoi todo use
+      - how many non-cursed tools does aoi todo use
+      - how many non-cursed tools does the equipment section list for aoi todo
+    subject: Aoi Todo
+    members:
+      - vibraslap

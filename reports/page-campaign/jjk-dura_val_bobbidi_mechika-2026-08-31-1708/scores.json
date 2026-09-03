@@ -1,0 +1,521 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the named techniques of Dura Val Bobbidi Mechika?",
+      "set": "Every named technique of Dura Val Bobbidi Mechika",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the friends of Dura Val Bobbidi Mechika?",
+      "set": "Every friend of Dura Val Bobbidi Mechika",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the students of Dura Val Bobbidi Mechika?",
+      "set": "Every student of Dura Val Bobbidi Mechika",
+      "confidence": "declared",
+      "returned": 2,
+      "available": 2,
+      "canon": 2,
+      "found": 2,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Dura Val Bobbidi Mechika?",
+      "set": "Dura Val Bobbidi Mechika's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the named techniques of Dura Val Bobbidi Mechika?",
+      "found": [
+        "Enhanced Strength"
+      ],
+      "missing": [],
+      "members": [
+        "Enhanced Strength"
+      ]
+    },
+    {
+      "query": "What are all the friends of Dura Val Bobbidi Mechika?",
+      "found": [
+        "Dabura Karaba",
+        "Marulu Val Vol Yelvori"
+      ],
+      "missing": [],
+      "members": [
+        "Dabura Karaba",
+        "Marulu Val Vol Yelvori"
+      ]
+    },
+    {
+      "query": "What are all the students of Dura Val Bobbidi Mechika?",
+      "found": [
+        "Marulu Val Vol Yelvori",
+        "Cross Val Vol Yelvori"
+      ],
+      "missing": [],
+      "members": [
+        "Cross Val Vol Yelvori",
+        "Marulu Val Vol Yelvori"
+      ]
+    },
+    {
+      "query": "What are all the affiliations of Dura Val Bobbidi Mechika?",
+      "found": [
+        "Rumel Tribe"
+      ],
+      "missing": [],
+      "members": [
+        "Rumel Tribe"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Dura Val Bobbidi Mechika's name?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-001",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "\u30c9\u30a5\u30fc\u30e9\u30fb\u30f4\u30a1\u30eb\u30fb\u30dc\u30d3\u30c7\u30a3\u30fb\u30e1\u30c1\u30ab"
+      ],
+      "found": [
+        "\u30c9\u30a5\u30fc\u30e9\u30fb\u30f4\u30a1\u30eb\u30fb\u30dc\u30d3\u30c7\u30a3\u30fb\u30e1\u30c1\u30ab"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Dura Val Bobbidi Mechika's name?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-002",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "D\u016bra Varu Bobidi Mechika"
+      ],
+      "found": [
+        "D\u016bra Varu Bobidi Mechika"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dura Val Bobbidi Mechika's race?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-003",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "Simurian"
+      ],
+      "found": [
+        "Simurian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dura Val Bobbidi Mechika's gender?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-004",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Dura Val Bobbidi Mechika?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-005",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Dura Val Bobbidi Mechika's occupation?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-006",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "Rumelian Warrior"
+      ],
+      "found": [
+        "Rumelian Warrior"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Dura Val Bobbidi Mechika first appear?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-007",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 8"
+      ],
+      "found": [
+        "Modulo Chapter 8"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Dura Val Bobbidi Mechika play in the series?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-012",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "a supporting character in Jujutsu Kaisen Modulo series"
+      ],
+      "found": [
+        "a supporting character in Jujutsu Kaisen Modulo series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Dura Val Bobbidi Mechika a mentor to?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-013",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "the twin orphans Marulu and Cross Val Vol Yelvori"
+      ],
+      "found": [
+        "the twin orphans Marulu and Cross Val Vol Yelvori"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dura Val Bobbidi Mechika look like?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-014",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "a tall, muscular man with green eyes and waist-length, spiky light-green hair"
+      ],
+      "found": [
+        "a tall, muscular man with green eyes and waist-length, spiky light-green hair"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What distinctive facial feature do Simurians like Dura have?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-015",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "a third eye on his forehead"
+      ],
+      "found": [
+        "a third eye on his forehead"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dura wear?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-016",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "green and white robes with a purple sash tied around his waist"
+      ],
+      "found": [
+        "green and white robes with a purple sash tied around his waist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Dura Val Bobbidi Mechika's personality described?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-017",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "a compassionate, farsighted, and principled individual"
+      ],
+      "found": [
+        "a compassionate, farsighted, and principled individual"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dura advocate for despite losing his village to the Deskunte?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-018",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "peaceful coexistence"
+      ],
+      "found": [
+        "peaceful coexistence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Dura define neighbors?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-019",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "people who understand why the things important to you matter"
+      ],
+      "found": [
+        "people who understand why the things important to you matter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dura believe about true strength?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-020",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "true strength is only realized when one faces an opponent capable of defeating them"
+      ],
+      "found": [
+        "true strength is only realized when one faces an opponent capable of defeating them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was Dura's best friend before Rumel's exile?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-021",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "Dabura Karaba"
+      ],
+      "found": [
+        "Dabura Karaba"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What destroyed the Rumelians' village about 12 years ago?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-022",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "destroyed by the Deskunte Tribe for refusing to kill the Kalyans"
+      ],
+      "found": [
+        "destroyed by the Deskunte Tribe for refusing to kill the Kalyans"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dura assume the religious conflict was a cover for?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-023",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "a cover by the Deskunte to justify invading Rumel for its mul quarry"
+      ],
+      "found": [
+        "a cover by the Deskunte to justify invading Rumel for its mul quarry"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dura construct to connect the Deskunte and Shaama regions?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-024",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "a canal"
+      ],
+      "found": [
+        "a canal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Dura Val Bobbidi Mechika's strength regarded?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-025",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "the strongest of the Rumel Tribe"
+      ],
+      "found": [
+        "the strongest of the Rumel Tribe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What physical feat did Dura demonstrate?",
+      "id": "jjk-pg-dura_val_bobbidi_mechika-026",
+      "subject": "Dura Val Bobbidi Mechika",
+      "accept": "all",
+      "expected": [
+        "break apart a boulder several times larger than himself into pieces with a single strike"
+      ],
+      "found": [
+        "break apart a boulder several times larger than himself into pieces with a single strike"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 4,
+    "canon_found": 6,
+    "canon_total": 6,
+    "canon_recall": 1.0,
+    "members_returned": 6,
+    "exact_answers": 4,
+    "exact_of": 4,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "4/4",
+    "at_recall_zero": 0,
+    "at_recall_80": 4,
+    "confident_and_wrong": [],
+    "fact_questions": 22,
+    "fact_present": 22
+  }
+}

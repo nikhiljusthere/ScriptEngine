@@ -1,0 +1,559 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "Every battle involving Hairpin",
+      "set": "Every battle involving Hairpin",
+      "confidence": "declared",
+      "returned": 4,
+      "available": 4,
+      "canon": 4,
+      "found": 4,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle involving Hairpin",
+      "found": [
+        "Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo",
+        "Nobara Kugisaki vs. Momo Nishimiya",
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+      ],
+      "missing": [],
+      "members": [
+        "Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo",
+        "Nobara Kugisaki vs. Momo Nishimiya",
+        "Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu",
+        "Yuji Itadori & Nobara Kugisaki vs. Mahito"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Hairpin's name?",
+      "id": "jjk-pg-hairpin-001",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "\u7c2a"
+      ],
+      "found": [
+        "\u7c2a"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Hairpin's name?",
+      "id": "jjk-pg-hairpin-002",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Kanzashi"
+      ],
+      "found": [
+        "Kanzashi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Hairpin first appear?",
+      "id": "jjk-pg-hairpin-003",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Chapter 41"
+      ],
+      "found": [
+        "Chapter 41"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Hairpin first depicted?",
+      "id": "jjk-pg-hairpin-004",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo?",
+      "id": "jjk-pg-hairpin-005",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Nobara and Nanami are victorious."
+      ],
+      "found": [
+        "Nobara and Nanami are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+      "id": "jjk-pg-hairpin-006",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Shoto Bunkamura Street\nBunkamura Station"
+      ],
+      "found": [
+        "Shoto Bunkamura Street\nBunkamura Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+      "id": "jjk-pg-hairpin-007",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo begin?",
+      "id": "jjk-pg-hairpin-008",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Chapter 99"
+      ],
+      "found": [
+        "Chapter 99"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo depicted?",
+      "id": "jjk-pg-hairpin-009",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Episode 36"
+      ],
+      "found": [
+        "Episode 36"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Nobara Kugisaki & Kento Nanami vs. Haruta Shigemo take place?",
+      "id": "jjk-pg-hairpin-010",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Nobara Kugisaki vs. Momo Nishimiya?",
+      "id": "jjk-pg-hairpin-011",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Mai interrupts the battle."
+      ],
+      "found": [
+        "Mai interrupts the battle."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-hairpin-012",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Tokyo Jujutsu High"
+      ],
+      "found": [
+        "Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Nobara Kugisaki vs. Momo Nishimiya begin?",
+      "id": "jjk-pg-hairpin-013",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Chapter 40"
+      ],
+      "found": [
+        "Chapter 40"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Nobara Kugisaki vs. Momo Nishimiya depicted?",
+      "id": "jjk-pg-hairpin-014",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Episode 17"
+      ],
+      "found": [
+        "Episode 17"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Nobara Kugisaki vs. Momo Nishimiya take place?",
+      "id": "jjk-pg-hairpin-015",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Kyoto Goodwill Event"
+      ],
+      "found": [
+        "Kyoto Goodwill Event"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu?",
+      "id": "jjk-pg-hairpin-016",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Yuji & Nobara are victorious."
+      ],
+      "found": [
+        "Yuji & Nobara are victorious."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-hairpin-017",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Yasohachi Bridge"
+      ],
+      "found": [
+        "Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu begin?",
+      "id": "jjk-pg-hairpin-018",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Chapter 59"
+      ],
+      "found": [
+        "Chapter 59"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu depicted?",
+      "id": "jjk-pg-hairpin-019",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Episode 23 - 24"
+      ],
+      "found": [
+        "Episode 23 - 24"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Eso & Kechizu take place?",
+      "id": "jjk-pg-hairpin-020",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Death Painting"
+      ],
+      "found": [
+        "Death Painting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Yuji Itadori & Nobara Kugisaki vs. Mahito?",
+      "id": "jjk-pg-hairpin-021",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "found": [
+        "Nobara Kugisaki is defeated.\nAoi Todo joins the fight."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-hairpin-022",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "found": [
+        "Shibuya Station Dogenzaka Alley"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-hairpin-023",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018"
+      ],
+      "found": [
+        "October 31, 2018"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Yuji Itadori & Nobara Kugisaki vs. Mahito begin?",
+      "id": "jjk-pg-hairpin-024",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Chapter 121"
+      ],
+      "found": [
+        "Chapter 121"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Yuji Itadori & Nobara Kugisaki vs. Mahito depicted?",
+      "id": "jjk-pg-hairpin-025",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Episode 42 - 44"
+      ],
+      "found": [
+        "Episode 42 - 44"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Yuji Itadori & Nobara Kugisaki vs. Mahito take place?",
+      "id": "jjk-pg-hairpin-026",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Shibuya Incident"
+      ],
+      "found": [
+        "Shibuya Incident"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can Hairpin do to nails?",
+      "id": "jjk-pg-hairpin-028",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Nails manipulated with the Straw Doll Technique can be used to greatly enhance their output of cursed energy, which expands with explosive force and highly magnifies the nails' destructive capabilities."
+      ],
+      "found": [
+        "Nails manipulated with the Straw Doll Technique can be used to greatly enhance their output of cursed energy, which expands with explosive force and highly magnifies the nails' destructive capabilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did Nobara first use Hairpin?",
+      "id": "jjk-pg-hairpin-029",
+      "subject": "Hairpin",
+      "accept": "all",
+      "expected": [
+        "Nobara first used the technique during the Goodwill Event during her fight with Momo Nishimiya."
+      ],
+      "found": [
+        "Nobara first used the technique during the Goodwill Event during her fight with Momo Nishimiya."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 4,
+    "canon_total": 4,
+    "canon_recall": 1.0,
+    "members_returned": 4,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 28,
+    "fact_present": 28
+  }
+}

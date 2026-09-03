@@ -1,0 +1,61 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:debut",
+        "page-gen:identity:anime debut",
+        "page-gen:battles"
+      ]
+    },
+    {
+      "path": "Description",
+      "covered_by": [
+        "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:outcome",
+        "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:place",
+        "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:date",
+        "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:chapters",
+        "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:episodes",
+        "page-gen:battle:Yuji Itadori & Aoi Todo vs. Mahito:arc"
+      ]
+    },
+    {
+      "path": "Usage",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Usage",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Navigation",
+      "reason": "no prose: navigation"
+    }
+  ]
+}

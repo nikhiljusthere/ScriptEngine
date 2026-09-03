@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Heavenly Restriction's name?",
+      "id": "jjk-pg-heavenly_restriction-001",
+      "subject": "Heavenly Restriction",
+      "accept": "all",
+      "expected": [
+        "\u5929\u4e0e\u546a\u7e1b"
+      ],
+      "found": [
+        "\u5929\u4e0e\u546a\u7e1b"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Heavenly Restriction's name?",
+      "id": "jjk-pg-heavenly_restriction-002",
+      "subject": "Heavenly Restriction",
+      "accept": "all",
+      "expected": [
+        "Ten'yo Jubaku"
+      ],
+      "found": [
+        "Ten'yo Jubaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Heavenly Restriction first appear?",
+      "id": "jjk-pg-heavenly_restriction-003",
+      "subject": "Heavenly Restriction",
+      "accept": "all",
+      "expected": [
+        "Chapter 38"
+      ],
+      "found": [
+        "Chapter 38"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Heavenly Restriction first depicted?",
+      "id": "jjk-pg-heavenly_restriction-004",
+      "subject": "Heavenly Restriction",
+      "accept": "all",
+      "expected": [
+        "Episode 16"
+      ],
+      "found": [
+        "Episode 16"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does a heavenly restriction usually manifest?",
+      "id": "jjk-pg-heavenly_restriction-005",
+      "subject": "Heavenly Restriction",
+      "accept": "all",
+      "expected": [
+        "An individual has their innate cursed energy quantity severely limited, up to and including having a complete lack of cursed energy, in exchange for significantly heightened physical abilities."
+      ],
+      "found": [
+        "An individual has their innate cursed energy quantity severely limited, up to and including having a complete lack of cursed energy, in exchange for significantly heightened physical abilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How can a heavenly restriction manifest inversely?",
+      "id": "jjk-pg-heavenly_restriction-006",
+      "subject": "Heavenly Restriction",
+      "accept": "all",
+      "expected": [
+        "In rarer cases, the inverse may occur: an individual born with an exceptionally weak body may possess greater cursed technique range or higher cursed energy output."
+      ],
+      "found": [
+        "In rarer cases, the inverse may occur: an individual born with an exceptionally weak body may possess greater cursed technique range or higher cursed energy output."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

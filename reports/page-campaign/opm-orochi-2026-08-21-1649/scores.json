@@ -1,0 +1,1831 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Orochi?",
+      "set": "Orochi's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the aliases of Orochi?",
+      "found": [
+        "Monster King"
+      ],
+      "missing": [],
+      "members": [
+        "Monster King"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is Orochi's alias in One-Punch Man?",
+      "id": "opm-pg-orochi-002",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Monster King"
+      ],
+      "found": [
+        "Monster King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's race in One-Punch Man?",
+      "id": "opm-pg-orochi-003",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Mysterious Being"
+      ],
+      "found": [
+        "Mysterious Being"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's gender in One-Punch Man?",
+      "id": "opm-pg-orochi-004",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's status in One-Punch Man?",
+      "id": "opm-pg-orochi-005",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's affiliation in One-Punch Man?",
+      "id": "opm-pg-orochi-006",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Monster Association"
+      ],
+      "found": [
+        "Monster Association"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's disaster level in One-Punch Man?",
+      "id": "opm-pg-orochi-007",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Dragon"
+      ],
+      "found": [
+        "Dragon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's partner in One-Punch Man?",
+      "id": "opm-pg-orochi-008",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Psykos"
+      ],
+      "found": [
+        "Psykos"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's location in One-Punch Man?",
+      "id": "opm-pg-orochi-009",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Monster Association Headquarters"
+      ],
+      "found": [
+        "Monster Association Headquarters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Orochi and Saitama in One-Punch Man?",
+      "id": "opm-pg-orochi-010",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Orochi is defeated"
+      ],
+      "found": [],
+      "missing": [
+        "Orochi is defeated"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Orochi and Garou in One-Punch Man?",
+      "id": "opm-pg-orochi-011",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Orochi is victorious"
+      ],
+      "found": [],
+      "missing": [
+        "Orochi is victorious"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the battle between Orochi and the S-Class heroes in One-Punch Man?",
+      "id": "opm-pg-orochi-012",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Orochi is defeated"
+      ],
+      "found": [],
+      "missing": [
+        "Orochi is defeated"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use against Garou in One-Punch Man?",
+      "id": "opm-pg-orochi-013",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "found": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use against Saitama in One-Punch Man?",
+      "id": "opm-pg-orochi-014",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Gaia Cannon"
+      ],
+      "found": [
+        "Gaia Cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Saitama use to neutralize the Gaia Cannon in One-Punch Man?",
+      "id": "opm-pg-orochi-015",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Serious Squirt Gun"
+      ],
+      "found": [
+        "Serious Squirt Gun"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What happens when Orochi is defeated by Saitama in One-Punch Man?",
+      "id": "opm-pg-orochi-016",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "reduced to gore"
+      ],
+      "found": [],
+      "missing": [
+        "reduced to gore"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi do after being reduced to gore in One-Punch Man?",
+      "id": "opm-pg-orochi-017",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "absorbed monsters"
+      ],
+      "found": [],
+      "missing": [
+        "absorbed monsters"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi do after absorbing the monsters in One-Punch Man?",
+      "id": "opm-pg-orochi-018",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "fused with Psykos"
+      ],
+      "found": [],
+      "missing": [
+        "fused with Psykos"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the fusion between Orochi and Psykos in One-Punch Man?",
+      "id": "opm-pg-orochi-019",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "one mutated body"
+      ],
+      "found": [],
+      "missing": [
+        "one mutated body"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Tatsumaki do to Orochi's body in One-Punch Man?",
+      "id": "opm-pg-orochi-020",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "shredded his body"
+      ],
+      "found": [],
+      "missing": [
+        "shredded his body"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Tatsumaki destroy to kill Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-021",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "his heart"
+      ],
+      "found": [],
+      "missing": [
+        "his heart"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What are Orochi's remains used for after his death in One-Punch Man?",
+      "id": "opm-pg-orochi-022",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "resurrect Sage Centipede"
+      ],
+      "found": [
+        "resurrect Sage Centipede"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do to Gouketsu in One-Punch Man?",
+      "id": "opm-pg-orochi-023",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "captured rather than killed"
+      ],
+      "found": [],
+      "missing": [
+        "captured rather than killed"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do to Awakened Cockroach in One-Punch Man?",
+      "id": "opm-pg-orochi-024",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "ate him alive"
+      ],
+      "found": [],
+      "missing": [
+        "ate him alive"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of Orochi's massive beam technique in One-Punch Man?",
+      "id": "opm-pg-orochi-025",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Gaia Cannon"
+      ],
+      "found": [
+        "Gaia Cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Gaia Cannon in One-Punch Man?",
+      "id": "opm-pg-orochi-026",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Gaia-h\u014d"
+      ],
+      "found": [],
+      "missing": [
+        "Gaia-h\u014d"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does the Gaia Cannon draw energy from in One-Punch Man?",
+      "id": "opm-pg-orochi-027",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Earth's core"
+      ],
+      "found": [
+        "Earth's core"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the martial art Orochi uses in One-Punch Man?",
+      "id": "opm-pg-orochi-028",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "found": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Japanese name for Water Stream Rock Smashing Fist in One-Punch Man?",
+      "id": "opm-pg-orochi-029",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Ry\u016bsui Gansai-ken"
+      ],
+      "found": [
+        "Ry\u016bsui Gansai-ken"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation for Water Stream Rock Smashing Fist in One-Punch Man?",
+      "id": "opm-pg-orochi-030",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Fist of Flowing Water, Crushed Rock"
+      ],
+      "found": [
+        "Fist of Flowing Water, Crushed Rock"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to shift between forms in One-Punch Man?",
+      "id": "opm-pg-orochi-031",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Metamorphosis"
+      ],
+      "found": [
+        "Metamorphosis"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to absorb organisms in One-Punch Man?",
+      "id": "opm-pg-orochi-032",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Absorption"
+      ],
+      "found": [
+        "Absorption"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to generate Monster Cells in One-Punch Man?",
+      "id": "opm-pg-orochi-033",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Monster Cell Generation"
+      ],
+      "found": [
+        "Monster Cell Generation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to draw Earth's core energy in One-Punch Man?",
+      "id": "opm-pg-orochi-034",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Energy Absorption"
+      ],
+      "found": [
+        "Energy Absorption"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to manipulate fire in One-Punch Man?",
+      "id": "opm-pg-orochi-035",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Fire Manipulation"
+      ],
+      "found": [
+        "Fire Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to project energy in One-Punch Man?",
+      "id": "opm-pg-orochi-036",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Energy Projection"
+      ],
+      "found": [
+        "Energy Projection"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to regenerate in One-Punch Man?",
+      "id": "opm-pg-orochi-037",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Regeneration"
+      ],
+      "found": [
+        "Regeneration"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to copy opponents' moves in One-Punch Man?",
+      "id": "opm-pg-orochi-038",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Technique Mimicry"
+      ],
+      "found": [
+        "Technique Mimicry"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi use to create smoke in One-Punch Man?",
+      "id": "opm-pg-orochi-039",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Smoke Generation"
+      ],
+      "found": [
+        "Smoke Generation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability does Orochi have in One-Punch Man?",
+      "id": "opm-pg-orochi-040",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Immense Strength"
+      ],
+      "found": [
+        "Immense Strength"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Orochi's Immense Strength do in One-Punch Man?",
+      "id": "opm-pg-orochi-041",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "pierced Bofoi's robot"
+      ],
+      "found": [],
+      "missing": [
+        "pierced Bofoi's robot"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What physical ability allows Orochi to dig toward the Earth's depths in One-Punch Man?",
+      "id": "opm-pg-orochi-042",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Underground Mobility"
+      ],
+      "found": [
+        "Underground Mobility"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Survivability allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-043",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "regenerate with heart intact"
+      ],
+      "found": [],
+      "missing": [
+        "regenerate with heart intact"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Heat Resistance allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-044",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "wore his own flaming cloak"
+      ],
+      "found": [],
+      "missing": [
+        "wore his own flaming cloak"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Enhanced Growth allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-045",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "grew stronger via Psykos's fusion experiments"
+      ],
+      "found": [],
+      "missing": [
+        "grew stronger via Psykos's fusion experiments"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Metamorphosis allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-046",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "shifts between humanoid and released form"
+      ],
+      "found": [],
+      "missing": [
+        "shifts between humanoid and released form"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Monster Cell Generation do in One-Punch Man?",
+      "id": "opm-pg-orochi-047",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "body generates Monster Cells"
+      ],
+      "found": [],
+      "missing": [
+        "body generates Monster Cells"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Absorption do in One-Punch Man?",
+      "id": "opm-pg-orochi-048",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "absorbs touching organisms"
+      ],
+      "found": [],
+      "missing": [
+        "absorbs touching organisms"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Strong Will allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-049",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "endured Psykos's experiments"
+      ],
+      "found": [],
+      "missing": [
+        "endured Psykos's experiments"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the meaning of the name Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-050",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "great snake"
+      ],
+      "found": [
+        "great snake"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What Greek mythological creature does Orochi's released form resemble in One-Punch Man?",
+      "id": "opm-pg-orochi-051",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Typhon"
+      ],
+      "found": [
+        "Typhon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What kaiju is confirmed as an inspiration for Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-052",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Biollante"
+      ],
+      "found": [
+        "Biollante"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's tail modeled on in One-Punch Man?",
+      "id": "opm-pg-orochi-053",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "sandworm"
+      ],
+      "found": [
+        "sandworm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's rank among the Kings in One-Punch Man?",
+      "id": "opm-pg-orochi-054",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "eighth"
+      ],
+      "found": [
+        "eighth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's size compared to Marugori in One-Punch Man?",
+      "id": "opm-pg-orochi-055",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "10 times smaller"
+      ],
+      "found": [
+        "10 times smaller"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the original chapter 115 design of Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-056",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "condensed slim humanoid form"
+      ],
+      "found": [],
+      "missing": [
+        "condensed slim humanoid form"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's disaster level according to the stream in One-Punch Man?",
+      "id": "opm-pg-orochi-057",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Dragon or above"
+      ],
+      "found": [
+        "Dragon or above"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does ONE tell Murata about Orochi's design in One-Punch Man?",
+      "id": "opm-pg-orochi-058",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "nurtured or cultivated type"
+      ],
+      "found": [],
+      "missing": [
+        "nurtured or cultivated type"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the post-fusion design of Orochi based on in One-Punch Man?",
+      "id": "opm-pg-orochi-059",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "neuron"
+      ],
+      "found": [
+        "neuron"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Psykos's relationship to Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-060",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "creator"
+      ],
+      "found": [
+        "creator"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Gouketsu's relationship to Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-061",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "subordinate"
+      ],
+      "found": [
+        "subordinate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Garou's relationship to Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-062",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "subordinate"
+      ],
+      "found": [],
+      "missing": [
+        "subordinate"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Saitama's relationship to Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-063",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "enemy"
+      ],
+      "found": [],
+      "missing": [
+        "enemy"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Tatsumaki's relationship to Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-064",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "killer"
+      ],
+      "found": [],
+      "missing": [
+        "killer"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Psykos do to Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-065",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "brainwashed him"
+      ],
+      "found": [],
+      "missing": [
+        "brainwashed him"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do to Psykos in One-Punch Man?",
+      "id": "opm-pg-orochi-066",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "tried to absorb her"
+      ],
+      "found": [],
+      "missing": [
+        "tried to absorb her"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the result of the fusion between Orochi and Psykos in One-Punch Man?",
+      "id": "opm-pg-orochi-067",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "coexisting consciousnesses"
+      ],
+      "found": [],
+      "missing": [
+        "coexisting consciousnesses"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi search for before his final battle in One-Punch Man?",
+      "id": "opm-pg-orochi-068",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "worthy sacrifice"
+      ],
+      "found": [
+        "worthy sacrifice"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi find at the Mysterious Shrine in One-Punch Man?",
+      "id": "opm-pg-orochi-069",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "ancient tablet"
+      ],
+      "found": [
+        "ancient tablet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the ancient tablet depict in One-Punch Man?",
+      "id": "opm-pg-orochi-070",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "his resurrection as a god"
+      ],
+      "found": [
+        "his resurrection as a god"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Orochi believe was the worthy sacrifice in One-Punch Man?",
+      "id": "opm-pg-orochi-071",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Saitama"
+      ],
+      "found": [
+        "Saitama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do when the altar was being destroyed in One-Punch Man?",
+      "id": "opm-pg-orochi-072",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "dragged himself to secure it"
+      ],
+      "found": [],
+      "missing": [
+        "dragged himself to secure it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do after being reduced to gore in One-Punch Man?",
+      "id": "opm-pg-orochi-073",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "haphazardly absorbed monsters"
+      ],
+      "found": [],
+      "missing": [
+        "haphazardly absorbed monsters"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do after fusing with Psykos in One-Punch Man?",
+      "id": "opm-pg-orochi-074",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "vowed revenge on Saitama"
+      ],
+      "found": [],
+      "missing": [
+        "vowed revenge on Saitama"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do to Psykos after the fusion in One-Punch Man?",
+      "id": "opm-pg-orochi-075",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "attacked her"
+      ],
+      "found": [],
+      "missing": [
+        "attacked her"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does the fused Orochi use to absorb others' powers in One-Punch Man?",
+      "id": "opm-pg-orochi-076",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Power Incorporation"
+      ],
+      "found": [
+        "Power Incorporation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does the fused Orochi use to manipulate telekinetic force in One-Punch Man?",
+      "id": "opm-pg-orochi-077",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Psychokinesis"
+      ],
+      "found": [
+        "Psychokinesis"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does the fused Orochi use to shift shapes in One-Punch Man?",
+      "id": "opm-pg-orochi-078",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Shapeshifting"
+      ],
+      "found": [
+        "Shapeshifting"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does the fused Orochi use to manipulate electricity in One-Punch Man?",
+      "id": "opm-pg-orochi-079",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Electricity Manipulation"
+      ],
+      "found": [
+        "Electricity Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does the fused Orochi use to fly in One-Punch Man?",
+      "id": "opm-pg-orochi-080",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Flight"
+      ],
+      "found": [
+        "Flight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the potential of the fused Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-081",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "planetary assimilation"
+      ],
+      "found": [
+        "planetary assimilation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Orochi first appear in the One-Punch Man manga?",
+      "id": "opm-pg-orochi-082",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which episode does Orochi first appear in the One-Punch Man anime?",
+      "id": "opm-pg-orochi-083",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Episode 18"
+      ],
+      "found": [
+        "Episode 18"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does the battle between Orochi and Garou take place in One-Punch Man?",
+      "id": "opm-pg-orochi-084",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Chapter 94"
+      ],
+      "found": [
+        "Chapter 94"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does the battle between Orochi and Saitama take place in One-Punch Man?",
+      "id": "opm-pg-orochi-085",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Chapter 131"
+      ],
+      "found": [],
+      "missing": [
+        "Chapter 131"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Orochi's death take place in One-Punch Man?",
+      "id": "opm-pg-orochi-086",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Chapter 144"
+      ],
+      "found": [
+        "Chapter 144"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "In which chapter does Orochi's remains get used in One-Punch Man?",
+      "id": "opm-pg-orochi-087",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Chapter 160"
+      ],
+      "found": [
+        "Chapter 160"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's fighting style in One-Punch Man?",
+      "id": "opm-pg-orochi-088",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Genius Combatant"
+      ],
+      "found": [
+        "Genius Combatant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi learn from Garou in One-Punch Man?",
+      "id": "opm-pg-orochi-089",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "found": [
+        "Water Stream Rock Smashing Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What technique does Orochi take from Gouketsu in One-Punch Man?",
+      "id": "opm-pg-orochi-090",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Gouketsu's techniques"
+      ],
+      "found": [
+        "Gouketsu's techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Immense Speed allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-091",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "broke the robot's self-destruct mechanism"
+      ],
+      "found": [],
+      "missing": [
+        "broke the robot's self-destruct mechanism"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Orochi's Immense Strength allow him to do in One-Punch Man?",
+      "id": "opm-pg-orochi-092",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "casually restrained Garou"
+      ],
+      "found": [],
+      "missing": [
+        "casually restrained Garou"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Orochi do to the Metal Knight Drone in One-Punch Man?",
+      "id": "opm-pg-orochi-093",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "wrecked it"
+      ],
+      "found": [],
+      "missing": [
+        "wrecked it"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Child Emperor not want to fight in One-Punch Man?",
+      "id": "opm-pg-orochi-094",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "whoever wrecked the Metal Knight Drone"
+      ],
+      "found": [],
+      "missing": [
+        "whoever wrecked the Metal Knight Drone"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bofoi describe Orochi as in One-Punch Man?",
+      "id": "opm-pg-orochi-095",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "the strongest monster on Earth"
+      ],
+      "found": [
+        "the strongest monster on Earth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Psykos call Orochi in One-Punch Man?",
+      "id": "opm-pg-orochi-096",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "the ultimate being"
+      ],
+      "found": [
+        "the ultimate being"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Psykos say about Orochi's growth in One-Punch Man?",
+      "id": "opm-pg-orochi-097",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "breaking the limit of growth"
+      ],
+      "found": [],
+      "missing": [
+        "breaking the limit of growth"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's former race in One-Punch Man?",
+      "id": "opm-pg-orochi-098",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Orochi's former location in One-Punch Man?",
+      "id": "opm-pg-orochi-099",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Q-City"
+      ],
+      "found": [
+        "Q-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the name of the technique that allows Orochi to shift between forms in One-Punch Man?",
+      "id": "opm-pg-orochi-100",
+      "subject": "Orochi",
+      "accept": "all",
+      "expected": [
+        "Metamorphosis"
+      ],
+      "found": [
+        "Metamorphosis"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 99,
+    "fact_present": 61
+  }
+}

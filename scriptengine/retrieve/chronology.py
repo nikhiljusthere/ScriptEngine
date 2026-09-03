@@ -35,6 +35,7 @@ import re
 from dataclasses import dataclass
 
 from scriptengine.config import SeriesPaths
+from scriptengine.retrieve import citations as cite
 from scriptengine.retrieve.roster import Member, Roster
 from scriptengine.stores.facts import FactStore
 
@@ -356,8 +357,6 @@ def beats(text: str, episodes: "cite.EpisodeIndex | None" = None) -> list[Beat]:
     beats, and re-cutting prose someone has already written is the tedious half
     of the job.
     """
-    from scriptengine.retrieve import citations as cite
-
     out: list[Beat] = []
     for sentence in cite.attribute(text or "", episodes):
         said = sentence.locator.render() if sentence.locator else ""
@@ -386,8 +385,6 @@ def scaffold(
     `rival`, `enemy` and `ally` to Saitama, and only the last belongs to the
     Ominous Future.
     """
-    from scriptengine.retrieve import citations as cite
-
     found = next(
         (one for one in appearances(store, character) if one.arc == arc), None
     )
@@ -519,6 +516,24 @@ _ASKS_FOR_ARCS = re.compile(
     re.IGNORECASE,
 )
 
+# Order cues at word boundaries (G8c, release R1): the previous test was a
+# substring scan, so "consequences" -- which carries "sequence" inside it --
+# sent a condition question down the order path to a roster that rendered
+# nothing. One live hit in the bank (`jjk-pg-suguru_geto-073`); the family is
+# latent corpus-wide in `consequence(s)`, `consequently` and `subsequent`.
+# `in order` also fires on the purpose clause "in order to ...", which is not an
+# ordering cue (found on the episode pass, Ep 2 `jjk-pg-episode_2-008`); the
+# lookahead keeps "in order to" out while "in order" / "in order of" still match.
+# Standalone `sequence` likewise is not an ordering cue: the episode pass found
+# it naming common-noun segments ("the opening sequence", "the shikigami
+# sequence", "the short sequence the anime adds", Ep 3/4/6), which sent
+# descriptive Trivia questions down the order path. Only the ordering phrase
+# `in sequence` / `in the sequence` still qualifies.
+_CHRONOLOGY_CUES = re.compile(
+    r"\b(?:in order\b(?! to)|chronolog\w*|timeline|in (?:the )?sequence)\b",
+    re.IGNORECASE,
+)
+
 
 def build_chronology(paths: SeriesPaths, query: str, max_members: int = 200) -> Roster | None:
     """The story in order, or ``None`` where the wiki records no order.
@@ -586,7 +601,7 @@ def wants_chronology(query: str) -> bool:
     set-shaped and reaching the roster path is exactly what went wrong.
     """
     lowered = (query or "").lower()
-    if any(word in lowered for word in ("in order", "chronolog", "timeline", "sequence")):
+    if _CHRONOLOGY_CUES.search(lowered):
         return True
     # "Every arc of One Punch Man" is a list of arcs, and the useful list of
     # arcs is the ordered one. One arc by name is not a list of anything.

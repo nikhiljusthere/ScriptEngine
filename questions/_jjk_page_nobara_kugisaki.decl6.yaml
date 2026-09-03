@@ -1,0 +1,39 @@
+# Staged roster declarations for the Nobara Kugisaki page campaign
+# (questions/_jjk_page_nobara_kugisaki.section6.json, section 6:
+# counts / trivia / misc).
+# Merge under `rosters:` in series/jjk/overrides.yaml.
+#
+# `Every conventional weapon Nobara Kugisaki used` is the closed one-row set
+# of the `Equipment > Conventional Weaponry` group on `Nobara Kugisaki`: a
+# Toy Mallet, named in its own cell ('Nobara uses this toy hammer while
+# sparring with humans so she doesn't kill them'). It is the same
+# declared-members shape as the `Cursed Tools` group (section 2,
+# decl2.yaml): the member is a page-stated name, and the declared-member
+# filter keeps it even though it has no wiki page. The companion count
+# question (jjk-pg-nobara_kugisaki-256) golds the member count, `one`.
+#
+# Two candidate enumerations were NOT declared (recorded in the section's
+# `retired[]`):
+#   * "Every kanji of Nobara Kugisaki's name" -- the members would be the
+#     kanji characters, whose Nihongo display arguments are unfilled '?'
+#     placeholders in the wikitext, and none of the readings (kugi, saki,
+#     no, bara) is a wiki page, so the members = page-titles contract
+#     cannot be met. The kanji meanings are asked as trivia instead
+#     (jjk-pg-nobara_kugisaki-251/252/300).
+#   * "How many kanji make up Nobara Kugisaki's name?" -- the page names
+#     four kanji but never states the count, and a count with no closed
+#     declared set behind it cannot be golded.
+#
+# Match phrases carry no `arc`/`saga` (chronology intercepts those) and no
+# `: ` or `&`, so no YAML quoting is required.
+rosters:
+  - name: Every conventional weapon Nobara Kugisaki used
+    match:
+      - every conventional weapon of nobara kugisaki
+      - every conventional weapons of nobara kugisaki
+      - all the conventional weapons of nobara kugisaki
+      - the conventional weapons nobara kugisaki uses
+      - how many conventional weapons did nobara kugisaki use
+    subject: Nobara Kugisaki
+    members:
+      - Toy Mallet

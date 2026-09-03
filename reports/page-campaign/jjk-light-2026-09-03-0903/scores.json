@@ -1,0 +1,149 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Light's name?",
+      "id": "jjk-pg-light-001",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "\u5149"
+      ],
+      "found": [
+        "\u5149"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Light's name?",
+      "id": "jjk-pg-light-002",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "Hikari"
+      ],
+      "found": [
+        "Hikari"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Light first appear?",
+      "id": "jjk-pg-light-003",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "Modulo Chapter 15"
+      ],
+      "found": [
+        "Modulo Chapter 15"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Light technique allow its user to do?",
+      "id": "jjk-pg-light-004",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "This technique allows the user to create and control light, which can be used offensively to wreak mass destruction."
+      ],
+      "found": [
+        "This technique allows the user to create and control light, which can be used offensively to wreak mass destruction."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is the light produced by the Light technique different from normal light?",
+      "id": "jjk-pg-light-005",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "Unlike normal light, the light produced by this technique possesses mass and can form \"hard light\" constructs."
+      ],
+      "found": [
+        "Unlike normal light, the light produced by this technique possesses mass and can form \"hard light\" constructs."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Dabura demonstrate use of Light against for the first time?",
+      "id": "jjk-pg-light-006",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "Following the Simurians' arrival on Earth, Dabura demonstrated use of Light for the first time upon being forced into a duel against the strongest shikigami of Yuka Okkotsu's Ten Shadows Technique: the Divine General Mahoraga."
+      ],
+      "found": [
+        "Following the Simurians' arrival on Earth, Dabura demonstrated use of Light for the first time upon being forced into a duel against the strongest shikigami of Yuka Okkotsu's Ten Shadows Technique: the Divine General Mahoraga."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Dabura damage Mahoraga after the shikigami adapted to his lasers?",
+      "id": "jjk-pg-light-007",
+      "subject": "Light",
+      "accept": "all",
+      "expected": [
+        "Dabura then used Light to accelerate himself to sub-light speed, paying no mind to the immense heat and air resistance, and unleashed a devastating kick upon Mahoraga that nearly annihilated its body while leveling the surrounding city."
+      ],
+      "found": [
+        "Dabura then used Light to accelerate himself to sub-light speed, paying no mind to the immense heat and air resistance, and unleashed a devastating kick upon Mahoraga that nearly annihilated its body while leveling the surrounding city."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 7,
+    "fact_present": 7
+  }
+}

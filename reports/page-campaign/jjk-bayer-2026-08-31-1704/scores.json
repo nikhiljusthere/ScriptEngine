@@ -1,0 +1,579 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Bayer?",
+      "set": "Bayer's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "jjk",
+      "query": "Every battle involving Bayer",
+      "set": "Every battle involving Bayer",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Bayer?",
+      "found": [
+        "Q"
+      ],
+      "missing": [],
+      "members": [
+        "Q"
+      ]
+    },
+    {
+      "query": "Every battle involving Bayer",
+      "found": [
+        "Satoru Gojo & Suguru Geto vs. Bayer & Kokun"
+      ],
+      "missing": [],
+      "members": [
+        "Satoru Gojo & Suguru Geto vs. Bayer & Kokun"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Bayer's name?",
+      "id": "jjk-pg-bayer-001",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "\u30d0\u30a4\u30a8\u30eb"
+      ],
+      "found": [
+        "\u30d0\u30a4\u30a8\u30eb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Bayer's name?",
+      "id": "jjk-pg-bayer-002",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Baieru"
+      ],
+      "found": [
+        "Baieru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Bayer's race?",
+      "id": "jjk-pg-bayer-003",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Bayer's gender?",
+      "id": "jjk-pg-bayer-004",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Bayer?",
+      "id": "jjk-pg-bayer-005",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Unknown"
+      ],
+      "found": [
+        "Unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Bayer's occupation?",
+      "id": "jjk-pg-bayer-006",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Curse User"
+      ],
+      "found": [
+        "Curse User"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Bayer first appear?",
+      "id": "jjk-pg-bayer-007",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which anime episode is Bayer first depicted?",
+      "id": "jjk-pg-bayer-008",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Episode 25"
+      ],
+      "found": [
+        "Episode 25"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Bayer's Japanese voice actor?",
+      "id": "jjk-pg-bayer-009",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Yukitoshi Tokumoto"
+      ],
+      "found": [
+        "Yukitoshi Tokumoto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the outcome of Satoru Gojo & Suguru Geto vs. Bayer & Kokun?",
+      "id": "jjk-pg-bayer-010",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Satoru & Suguru are victorious"
+      ],
+      "found": [
+        "Satoru & Suguru are victorious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When does Satoru Gojo & Suguru Geto vs. Bayer & Kokun take place?",
+      "id": "jjk-pg-bayer-011",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "August 2006"
+      ],
+      "found": [
+        "August 2006"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which manga chapter does Satoru Gojo & Suguru Geto vs. Bayer & Kokun begin?",
+      "id": "jjk-pg-bayer-012",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Chapter 66"
+      ],
+      "found": [
+        "Chapter 66"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which episode is Satoru Gojo & Suguru Geto vs. Bayer & Kokun depicted?",
+      "id": "jjk-pg-bayer-013",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Episode 25 - 26"
+      ],
+      "found": [
+        "Episode 25 - 26"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In which arc does Satoru Gojo & Suguru Geto vs. Bayer & Kokun take place?",
+      "id": "jjk-pg-bayer-014",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Gojo's Past"
+      ],
+      "found": [
+        "Gojo's Past"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which techniques did Bayer use in Satoru Gojo & Suguru Geto vs. Bayer & Kokun?",
+      "id": "jjk-pg-bayer-015",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Non-Cursed Tools: Throwing Knives"
+      ],
+      "found": [
+        "Non-Cursed Tools: Throwing Knives"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Bayer play in the series?",
+      "id": "jjk-pg-bayer-018",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "found": [
+        "a minor antagonist in the Jujutsu Kaisen series"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which faction of curse users was Bayer formerly aligned with?",
+      "id": "jjk-pg-bayer-019",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "a faction of curse users called Q"
+      ],
+      "found": [
+        "a faction of curse users called Q"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Bayer look like?",
+      "id": "jjk-pg-bayer-020",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "long dark hair that extends past his shoulders, light colored eyes, and thin eyebrows"
+      ],
+      "found": [
+        "long dark hair that extends past his shoulders, light colored eyes, and thin eyebrows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Bayer wear on his head?",
+      "id": "jjk-pg-bayer-021",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "a white Breton hat that has a dark colored bill and a Q on the front of it"
+      ],
+      "found": [
+        "a white Breton hat that has a dark colored bill and a Q on the front of it"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Bayer's personality described?",
+      "id": "jjk-pg-bayer-022",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "initially appears respectful",
+        "can be easily angered"
+      ],
+      "found": [
+        "initially appears respectful",
+        "can be easily angered"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Bayer do when he and Kokun arrived at the location?",
+      "id": "jjk-pg-bayer-023",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "waits outside while Kokun takes care of Riko"
+      ],
+      "found": [
+        "waits outside while Kokun takes care of Riko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Bayer fare in his fight with Gojo?",
+      "id": "jjk-pg-bayer-024",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "easily defeated by Gojo"
+      ],
+      "found": [
+        "easily defeated by Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened to Q after Bayer's defeat?",
+      "id": "jjk-pg-bayer-025",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "Q is disbanded"
+      ],
+      "found": [],
+      "missing": [
+        "Q is disbanded"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Bayer's strength described?",
+      "id": "jjk-pg-bayer-026",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "the strongest member of Q"
+      ],
+      "found": [
+        "the strongest member of Q"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What weapons has Bayer been shown to use?",
+      "id": "jjk-pg-bayer-027",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "several throwing daggers"
+      ],
+      "found": [
+        "several throwing daggers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does Bayer's codename originate from?",
+      "id": "jjk-pg-bayer-028",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "a Japanese sausage brand"
+      ],
+      "found": [
+        "a Japanese sausage brand"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Bayer rank in the second Popularity Poll?",
+      "id": "jjk-pg-bayer-029",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "101st in the second Popularity Poll with 2 votes"
+      ],
+      "found": [
+        "101st in the second Popularity Poll with 2 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Bayer rank in the fourth Popularity Poll?",
+      "id": "jjk-pg-bayer-030",
+      "subject": "Bayer",
+      "accept": "all",
+      "expected": [
+        "69th in the fourth Popularity Poll with 13 votes"
+      ],
+      "found": [
+        "69th in the fourth Popularity Poll with 13 votes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 2,
+    "canon_found": 2,
+    "canon_total": 2,
+    "canon_recall": 1.0,
+    "members_returned": 2,
+    "exact_answers": 2,
+    "exact_of": 2,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "2/2",
+    "at_recall_zero": 0,
+    "at_recall_80": 2,
+    "confident_and_wrong": [],
+    "fact_questions": 28,
+    "fact_present": 27
+  }
+}

@@ -14,8 +14,12 @@ supplies.
 
 from __future__ import annotations
 
+from typing import cast
+
 from scriptengine.ingest import abilities as A
 from scriptengine.ingest import narrative_abilities as N
+from scriptengine.llm.client import LLMClient
+from scriptengine.stores.facts import FactStore
 
 
 class TestOwnerSurvivesParsing:
@@ -85,8 +89,11 @@ PASSAGE = (
 
 
 def _extract(answer, characters, passage=PASSAGE):
+    # Duck-typed stand-in for the LLM; the guards under test never touch the
+    # parts of the client the fake does not implement.
     return N.extract_from_passage(
-        _Client(answer), "csm", "Chapter 90", "Summary", passage, characters, set()
+        cast(LLMClient, _Client(answer)), "csm", "Chapter 90", "Summary",
+        passage, characters, set(),
     )
 
 
@@ -153,5 +160,7 @@ class TestDeclaration:
         class _Store:
             connection = None
 
-        assert N.passages(_Store(), {}) == []
-        assert N.passages(_Store(), {"ability_narrative_types": []}) == []
+        assert N.passages(cast(FactStore, _Store()), {}) == []
+        assert N.passages(
+            cast(FactStore, _Store()), {"ability_narrative_types": []}
+        ) == []

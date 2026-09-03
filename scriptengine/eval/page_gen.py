@@ -176,6 +176,13 @@ def _identity_builder(store, paths, title, aliases, overrides, wiki, out, verifi
                 _retire(out, f"What are all the {plural} of {title}?", "",
                         "field is empty on the page", note)
                 continue
+            # One unsplit cell: the declared roster (if any) holds the verified
+            # member split, and its members are what the runtime serves -- a
+            # gold of the whole cell would match none of them.
+            if len(members) == 1:
+                declared = _declared_list(overrides, title, plural)
+                if declared and len(declared) > 1:
+                    members = declared
             s = title.lower()
             out.rosters.append({
                 "name": f"{title}'s {plural}",
@@ -245,6 +252,13 @@ def _page_type_is_battle(store, title: str) -> bool:
     ).fetchone()
     return bool(row and row["page_type"] and "battle" in row["page_type"].lower())
 
+def _page_type_is_episode(store, title: str) -> bool:
+    """True when the page is an episode (the store's own `page_type`)."""
+    row = store.connection.execute(
+        "SELECT page_type FROM documents WHERE title = ? COLLATE NOCASE", (title,)
+    ).fetchone()
+    return bool(row and row["page_type"] and "episode" in row["page_type"].lower())
+
 def _roster_phrase_safe(title: str) -> bool:
     """False when the title would put a banned word into a roster match phrase.
 
@@ -274,6 +288,27 @@ def _declared_battles(overrides, title: str) -> list[str] | None:
             return list(roster.members)
     return None
 
+
+def _declared_list(overrides, title: str, plural: str) -> list[str] | None:
+    """Members of the declared `<title> <plural>` roster (aliases, affiliations),
+    or None.
+
+    A declaration is the verified closed set (it went through the structured
+    pass). When the raw infobox cell is one unsplit string -- Kento Nanami's
+    alias cell reads `7:3 Sorcerer (By Mahito) Nanamin (By Gojo and Yuji)`,
+    two aliases with no newline or <br> between them -- the declaration is the
+    only place the member split is recorded, and a gold of the whole cell
+    matches no member the roster serves.
+    """
+    from scriptengine.retrieve.roster import load_rosters
+
+    for roster in load_rosters(overrides):
+        if roster.subject.lower() != title.lower() or not roster.members:
+            continue
+        if plural in " ".join([roster.name, *roster.match]).lower():
+            return list(roster.members)
+    return None
+
 def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified):
     pairs = battle_relations(overrides)
     if not pairs:
@@ -289,6 +324,19 @@ def _battle_builder(store, paths, title, aliases, overrides, wiki, out, verified
         # so the set/roster is skipped for battle pages.
         battles: dict[str, str] = {title: title}   # battle title -> the name that matched
         own_battle = True
+    elif _page_type_is_episode(store, title):
+        # An episode's battles are the ones *depicted in it*, not the career
+        # fights of the character the episode is named after: `battles_in` on
+        # "Ryomen Sukuna" (Episode 1's own alias) returns Sukuna's entire
+        # Culling-Game list and lands it in Episode 1's batch. Only a declared
+        # `<title> Battles` roster is authoritative for an episode; with none,
+        # its battles are prose-coverage (the "Battles & Events" section), not
+        # structured gold, so the builder produces nothing for the fight.
+        declared = _declared_battles(overrides, title)
+        battles = {m: title for m in declared} if declared else {}
+        own_battle = False
+        if not battles:
+            return
     else:
         # The character's battle pages name her by whichever of her names the
         # infobox side carries, so the union runs over the title and every alias.
@@ -867,7 +915,7 @@ def run_page_gen(
 
     batch_path = Path(batch_path)
     existing_batch = (
-        json.loads(batch_path.read_text(encoding="utf-8"))
+        json.loads(batch_path.read_text(encoding="utf-8-sig"))
         if batch_path.exists() else {})
     series = paths.name
     slug = slug_of(page)
@@ -926,7 +974,7 @@ def write_batch(
     existing_batch = existing
     if existing_batch is None:
         existing_batch = (
-            json.loads(batch_path.read_text(encoding="utf-8"))
+            json.loads(batch_path.read_text(encoding="utf-8-sig"))
             if batch_path.exists() else {}
         )
     kept_questions = [
@@ -1017,7 +1065,14 @@ def write_batch(
     payload = json.dumps(batch, ensure_ascii=False, indent=2)
     tmp = batch_path.with_name(batch_path.name + ".tmp")
     try:
-        tmp.write_text(payload, encoding="utf-8")
+        # G10 (Mei Mei Q001, 2026-08-27): the batch once stored a kanji answer
+        # garbled -- `冥冥` as `å†¥å†¥`, UTF-8 bytes read as cp1252 in a path
+        # that did not name its encoding -- and the question became
+        # unanswerable by construction. The BOM marks the file self-describing
+        # UTF-8, and the round-trip below proves the content made the trip
+        # before the file becomes the batch.
+        tmp.write_text(payload, encoding="utf-8-sig")
+        assert json.loads(tmp.read_text(encoding="utf-8-sig")) == batch
         Q.validate([Q.load_file(tmp)])
         tmp.replace(batch_path)
     except Q.QuestionsError as exc:

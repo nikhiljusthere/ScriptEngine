@@ -16,15 +16,15 @@ current numbers, which are generated from the stores rather than typed here:
 python -m scriptengine.cli catalogue
 ```
 
-**8 series, 23,656 pages, 119 declared enumeration sets.**
+**8 series, 22,945 pages, 211 declared enumeration sets.**
 
 | series | wiki | pages | typed | inline refs | instalment pages |
 |---|---|---:|---:|---:|---:|
-| `db` | Dragon Ball | 8,052 | 100% | 4% | 0 |
 | `onepiece` | One Piece | 7,613 | 94% | 0% | 2,603 |
-| `bleach` | Bleach | 2,126 | 95% | 34% | 0 |
-| `hxh` | Hunterpedia | 2,014 | 96% | 50% | 455 |
-| `opm` | One-Punch Man | 1,565 | 98% | 30% | 263 |
+| `db` | Dragon Ball | 7,205 | 100% | 4% | 0 |
+| `bleach` | Bleach | 2,252 | 95% | 34% | 0 |
+| `hxh` | Hunterpedia | 2,018 | 96% | 50% | 457 |
+| `opm` | One-Punch Man | 1,571 | 98% | 30% | 263 |
 | `jjk` | Jujutsu Kaisen | 987 | 99% | 55% | 393 |
 | `berserk` | Berserk | 762 | 90% | 0% | 451 |
 | `csm` | Chainsaw Man | 537 | 97% | 42% | 268 |
@@ -38,7 +38,7 @@ a claim retrieved from the page titled "Chapter 1015" is sourced to Chapter 1015
 Berserk is the one to be careful with. It scores low on both, because its wiki
 cites cover art and interviews and titles nothing by number.
 
-Five of the six were added without a line of series-specific Python. What each
+Seven of the eight were added without a line of series-specific Python. What each
 one *did* need was a description of how it writes a citation, because no two of
 these wikis agree. See
 [the citation grammar](docs/ADDING_A_SERIES.md#the-citation-grammar).
@@ -136,11 +136,20 @@ python -m scriptengine.cli classify --series jjk --dry-run
 python -m scriptengine.cli rosters --series jjk
 python -m scriptengine.cli eval --series jjk
 
-# 9. Serve it to ComfyUI
+# 9. Write a script for a topic: fetches context, asks the writer model,
+#    verifies every chapter/episode tag against the raw crawl, and expands or
+#    trims until it lands within 500 words of the target. Needs LM Studio with
+#    the writer model loaded (default qwen/qwen3.8-27b).
+python -m scriptengine.cli script-gen "Every Fight Mahoraga Has Ever Been In" --series jjk --words 6000
+
+# 10. Check a finished script's tags against the raw crawl before calling it done
+python -m scriptengine.cli verify "<path to the script>" --series jjk
+
+# 11. Serve it to ComfyUI (or an MCP-speaking agent) over HTTP
 python -m scriptengine.api.main
 
-# 10. Measure it against the researched question bank and read the report.
-#     Needs the server from step 9 already running.
+# 12. Measure it against the researched question bank and read the report.
+#     Needs the server from step 11 already running.
 python -m scriptengine.cli canon-run --dry-run     # validates the bank only
 python -m scriptengine.cli canon-run --skip-eval   # writes reports/<run-id>/REPORT.md
 ```
@@ -150,6 +159,12 @@ break what worked" against the crawl as it exists on disk, and gates the build.
 `canon-run` asks "is the engine right about the series" against answers
 researched online, and is allowed to say no for a long time. It never exits
 non-zero on a bad score.
+
+The same research, verification and save-location calls are exposed as MCP tools
+(`scriptengine/mcp/server.py`: `research`, `verify_script`, `script_path`), so an
+agent host such as opencode or Claude Desktop can drive the engine without the
+HTTP server at all: it wraps the very functions the API serves, not a second
+implementation. See [docs/API.md](docs/API.md#the-mcp-server).
 
 The crawler asks for **50 pages per request**, MediaWiki's cap for anonymous
 callers, which is the difference between 112 and ~2,500 pages a minute. One
@@ -172,8 +187,17 @@ Adding a second series is the same commands with a different `--series` and
 
 ### Writing scripts: the direct path
 
-The AI assistant writes the scripts, not ComfyUI. The whole loop lives in the
-repo:
+The AI assistant writes the scripts, not ComfyUI. There are two ways in. The
+one-shot `script-gen` command does the whole loop for you: it routes the topic
+to a mode, fetches the context bundle, asks the writer model for the script,
+checks every chapter/episode tag against the raw crawl (repairing failures), and
+expands or trims until the draft lands within 500 words of `--words`, then saves
+it into the production tree. That is the path an agent host drives through MCP
+(`research` + `verify_script` + `script_path`). The other way, below, is the
+manual one: fetch the context with `script_writer.ps1` and write from it by hand,
+which keeps a human in the seat on every section.
+
+The manual loop lives in the repo:
 
 | File | What it is |
 |---|---|
@@ -274,6 +298,14 @@ discovered page type, or the distinct values of one infobox field, whichever
 answers the topic best. Grouping is found through the wiki's label for a field,
 so "Every Rank of Curse" reaches the parameter Jujutsu Kaisen keys as `class`
 and labels "Grade" without a line of series-specific code.
+
+A roster also answers **a fighter's whole fight list**. "Every Fight Mahoraga Has
+Ever Been In" and its question-worded twins ("Who did Mahoraga fight?") route to
+the battles-in path, which reads every battle page the wiki has for that fighter
+and says, per fight, whether they were a direct combatant or a tool some side
+deployed. The sides come from this wiki's own infobox vocabulary (`side1`/
+`powers1` on Jujutsu Kaisen, `combatant1`/`abilities1` on One-Punch Man), so the
+same path works on any series that files its fights as pages.
 
 The sections source exists because some sets are never a category: One Piece
 gives no Marine rank its own article, so asking by category returns `Marine
@@ -446,21 +478,27 @@ Two nodes, both read-only HTTP against ScriptEngine:
 ```
 scriptengine/
   config.py       settings; every value here has a caller
+  cli.py          Typer CLI: crawl, audit, index, catalogue, eval, verify,
+                  script-gen, and the rest of the pipeline as commands
   ingest/         crawler, wikitext parser, ontology discovery
   stores/         SQLite facts + graph + FTS5 + categories, Qdrant vectors
   index/          section-driven chunking, embedding
   retrieve/       hybrid search, narrative ordering, reranking,
                   abilities (graph-driven character → ability lookup),
-                  roster (enumeration), citations (chapter/episode locators)
+                  roster (enumeration, incl. the battles-in path), citations
+                  (chapter/episode locators)
+  script/         the writing loop: bundle → prompt → prose → verified file,
+                  with tag repair and length-band enforcement
   llm/            OpenAI-compatible client (Ollama / LM Studio)
   api/            FastAPI service on :8000, plus the script writing rules
+  mcp/            MCP server: research, verify_script, script_path over stdio
   eval/           gold question sets (jjk, db, onepiece), scoring, catalogue,
-                  the questions/ loader, canon scoring, diagnosis and the
-                  report renderer behind `canon-run`
+                  tag verification, the questions/ loader, canon scoring and
+                  the report renderer behind `canon-run`
 questions/        the online-canon question bank, one JSON per series (tracked)
 reports/          one folder per measurement run + index.md (tracked)
 series/           one self-contained folder per series (gitignored)
-legacy/           the previous pipeline, kept until Phase 5 proves the new one
+legacy/           the previous pipeline, kept for reference
 ui/               Electron + React desktop shell
 docs/             architecture, adding a series, API, audits, script style,
                   CATALOGUE (generated), CORPUS_REPORT, RETRIEVAL_SCENARIOS
@@ -484,8 +522,8 @@ copy it and the series moves. Nothing is shared but the code.
 | 2 | SQLite fact/graph/FTS5 store, Qdrant local vectors, section-driven chunking | **done** |
 | 3 | Hybrid retrieval, narrative ordering, gold eval set | **done** |
 | 4 | FastAPI service, Electron UI wired to it | **done** |
-| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | in progress |
-| 6 | Prove universality on Chainsaw Man and Marvel with no new code | |
+| 5 | Fresh crawl, extraction audit, iterate until coverage plateaus | **done** |
+| 6 | Prove universality on Chainsaw Man and Marvel with no new code | in progress (Chainsaw Man done; Marvel untested) |
 | 7 | Graph-driven abilities endpoint (`/abilities`), ComfyUI answer workflow | **done** |
 | 8 | Direct AI script-writing path: `STARTME.md`, `script_writer.ps1`, house style guide (`docs/SCRIPT_STYLE.md`) | **done** |
 | 9 | Subject resolution, roster mode, per-sentence sourcing, rules served with the context | **done** |
@@ -499,8 +537,12 @@ copy it and the series moves. Nothing is shared but the code.
 | 17 | Semantic types: a set admits only what it is made of, so an army stops containing planets | **done** |
 | 18 | Index-time semantic classification for what structure cannot settle: properties, cached, never in the query path | **done** |
 | 19 | Audited against canon sources: subpage folding, per-series canon media, declared members for sets no wiki files | **done** |
-| 20 | Tell a current member from a former one. The Espada holds 18 pages for ten seats | |
-| 21 | Detect an *incomplete* set: one whose name matches exactly but whose category the wiki barely fills | |
+| 20 | Tell a current member from a former one. The Espada holds 18 pages for ten seats | open |
+| 21 | Detect an *incomplete* set: one whose name matches exactly but whose category the wiki barely fills | open |
+| 22 | MCP server (`scriptengine/mcp/server.py`): `research`, `verify_script`, `script_path` over stdio, wrapping the same functions the API serves | **done** |
+| 23 | CLI script-writing loop: `script-gen` (route → fetch → write → verify tags → repair) and `verify` as first-class commands | **done** |
+| 24 | Battles-in roster mode: a fighter's whole fight list, per-fight role read from the wiki's own infobox vocabulary | **done** |
+| 25 | Length-band enforcement (target ± 500 words) and title normalization so filename ≡ content and a rewrite reuses its folder | **done** |
 
 ### Where it stands on the Jujutsu Kaisen wiki
 
@@ -515,7 +557,13 @@ maintenance pages, skipped deliberately).
 | Wikilink edges resolved | 96.4% of 34,112 |
 | Citations captured | 8,830, kept structured *and* inlined in prose |
 | Chunks / vectors | 10,127 / 6,404 |
-| Retrieval eval | 21/21 |
+| Declared enumeration sets | 59 (incl. the battles-in sets) |
+| Retrieval eval | **24/24** |
+
+Jujutsu Kaisen is the development wiki and it is fully green: every gold
+question passes, and its roster registry now carries a battles-in set for each
+major fighter ("Every battle involving Sukuna", "…Maki Zenin", …) that the
+battles-in path answers without any series-specific code.
 
 Phase 5 has already fixed three data-integrity bugs found by auditing that
 crawl:

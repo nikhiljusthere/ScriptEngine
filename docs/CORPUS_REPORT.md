@@ -1,6 +1,6 @@
 # The corpus, the indices, and how pages get here
 
-Eight wikis, 23,656 pages, 119 declared enumeration sets. This is the report on
+Eight wikis, 22,945 pages, 211 declared enumeration sets. This is the report on
 what was built, what broke on the way, what actually happens when a page is
 pulled through the MediaWiki API, and why the crawler now asks for fifty pages
 at a time instead of one.
@@ -19,14 +19,14 @@ catalogue is right and this document is stale.
 
 | series | wiki | pages | typed | prose → chapter | → episode | instalment pages | rosters |
 |---|---|---:|---:|---:|---:|---:|---:|
-| `db` | dragonball | 8,052 | 89% | 3% | 8% | 0 | 14 |
-| `onepiece` | onepiece | 7,613 | 94% | 0% | 0% | 2,603 | 14 |
-| `bleach` | bleach | 2,126 | 95% | 34% | 1% | 0 | 19 |
-| `hxh` | hunterxhunter | 2,014 | 96% | 50% | 1% | 455 | 13 |
-| `opm` | onepunchman | 1,565 | 98% | 30% | 21% | 263 | 17 |
-| `jjk` | jujutsu-kaisen | 987 | 99% | 55% | 37% | 393 | 16 |
-| `berserk` | berserk | 762 | 90% | 0% | 0% | 451 | 11 |
-| `csm` | chainsaw-man | 537 | 97% | 42% | 8% | 268 | 9 |
+| `onepiece` | onepiece | 7,613 | 94% | 0% | 0% | 2,603 | 20 |
+| `db` | dragonball | 7,205 | 100% | 4% | 9% | 0 | 25 |
+| `bleach` | bleach | 2,252 | 95% | 34% | 1% | 0 | 24 |
+| `hxh` | hunterxhunter | 2,018 | 96% | 50% | 1% | 457 | 18 |
+| `opm` | onepunchman | 1,571 | 98% | 30% | 21% | 263 | 24 |
+| `jjk` | jujutsu-kaisen | 987 | 99% | 55% | 36% | 393 | 59 |
+| `berserk` | berserk | 762 | 90% | 0% | 0% | 451 | 21 |
+| `csm` | chainsaw-man | 537 | 97% | 42% | 8% | 268 | 20 |
 
 Each series is a self-contained folder under `series/`: its own SQLite fact
 store, its own Qdrant collection, its own manifest, its own `overrides.yaml`.
@@ -56,7 +56,7 @@ canonical rather than reconstructed from prose with an NER model.
 ### Per-wiki classifiers
 
 The types are discovered from each wiki's own infoboxes, not declared by us,
-89–99% of pages get typed, into whatever taxonomy the wiki actually uses. What
+89–100% of pages get typed, into whatever taxonomy the wiki actually uses. What
 *is* declared, per series, is the vocabulary that matters for enumeration:
 
 * `csm`: devils, fiends, hybrids, Public Safety divisions
@@ -67,15 +67,19 @@ The types are discovered from each wiki's own infoboxes, not declared by us,
 * `berserk`: Apostles, **Pseudo-Apostles as a distinct set**, the God Hand,
   the Band of the Hawk
 * `hxh`: Nen categories, Phantom Troupe, Chimera Ants, Zodiacs
-* `jjk`: curse grades, cursed techniques, sorcerer ranks, the Disaster Curses
+* `jjk`: curse grades, cursed techniques, sorcerer ranks, the Disaster Curses,
+  and a battles-in set for every major fighter (59 sets in total)
 * `db`: Saiyans, Frieza's forces, Androids, Gods of Destruction, transformations
 * `onepiece`: Devil Fruits by class, the pirate crews, Marines by rank, the
   Worst Generation
 
-That is 119 declared sets, and the point of declaring them is that a set has a
+That is 211 declared sets, and the point of declaring them is that a set has a
 *correct size*. `cli rosters --series bleach` lists each one with its member
 count, so an enumeration script can be checked against a number rather than
-against a vibe.
+against a vibe. The Jujutsu Kaisen battles-in sets ("Every battle involving
+Sukuna", "…Maki Zenin", …) are the newest: they exist so a topic like "Every
+Fight Mahoraga Has Ever Been In" resolves to the wiki's own fight pages rather
+than being answered by search.
 
 Declaring a set is also how a wiki's vocabulary is bridged to a viewer's: Dragon
 Ball files its movies under `Films`, and nothing scores "movie" onto that name.

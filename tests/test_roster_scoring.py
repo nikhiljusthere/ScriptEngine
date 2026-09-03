@@ -150,6 +150,7 @@ class TestDeclarationShapes:
                 "categories": ["Races and Tribes", "Artificial Races"],
             }
         )
+        assert definition is not None
         assert definition.categories == ("Races and Tribes", "Artificial Races")
         assert not definition.groups
 
@@ -157,6 +158,7 @@ class TestDeclarationShapes:
         definition = RosterDefinition.parse(
             {"name": "Marine Ranks", "match": ["marine rank"], "sections_of": "Marine Ranks"}
         )
+        assert definition is not None
         assert definition.sections_of == "Marine Ranks"
 
     def test_a_bare_series_name_would_match_everything(self):
@@ -169,6 +171,7 @@ class TestDeclarationShapes:
         greedy = RosterDefinition.parse(
             {"name": "Dragon Balls", "match": ["dragon ball"], "category": "Balls"}
         )
+        assert greedy is not None
         assert greedy.matches("Every race in Dragon Ball")
 
         declared = RosterDefinition.parse(
@@ -178,5 +181,6 @@ class TestDeclarationShapes:
                 "category": "Balls",
             }
         )
+        assert declared is not None
         assert not declared.matches("Every race in Dragon Ball")
         assert declared.matches("All types of Dragon Balls")

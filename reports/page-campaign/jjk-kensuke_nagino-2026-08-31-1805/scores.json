@@ -1,0 +1,283 @@
+{
+  "rows": [
+    {
+      "series": "jjk",
+      "query": "What are all the affiliations of Kensuke Nagino?",
+      "set": "Kensuke Nagino's affiliations",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "What are all the affiliations of Kensuke Nagino?",
+      "found": [
+        "Fukuoka Branch Campus"
+      ],
+      "missing": [],
+      "members": [
+        "Fukuoka Branch Campus"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the kanji for Kensuke Nagino's name?",
+      "id": "jjk-pg-kensuke_nagino-001",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "\u5948\u6728\u91ce \u5065\u4ecb"
+      ],
+      "found": [
+        "\u5948\u6728\u91ce \u5065\u4ecb"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the romaji of Kensuke Nagino's name?",
+      "id": "jjk-pg-kensuke_nagino-002",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "Nagino Kensuke"
+      ],
+      "found": [
+        "Nagino Kensuke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kensuke Nagino's race?",
+      "id": "jjk-pg-kensuke_nagino-003",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "Human"
+      ],
+      "found": [
+        "Human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kensuke Nagino's gender?",
+      "id": "jjk-pg-kensuke_nagino-004",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "Male"
+      ],
+      "found": [
+        "Male"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the status of Kensuke Nagino?",
+      "id": "jjk-pg-kensuke_nagino-005",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "Deceased"
+      ],
+      "found": [
+        "Deceased"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kensuke Nagino's occupation?",
+      "id": "jjk-pg-kensuke_nagino-006",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Sorcerer Principal"
+      ],
+      "found": [
+        "Jujutsu Sorcerer Principal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is Kensuke Nagino's Japanese voice actor?",
+      "id": "jjk-pg-kensuke_nagino-007",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "Rikiya Koyama"
+      ],
+      "found": [
+        "Rikiya Koyama"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What role does Kensuke Nagino play in the series?",
+      "id": "jjk-pg-kensuke_nagino-009",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "a character in Phantom Parade"
+      ],
+      "found": [
+        "a character in Phantom Parade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kensuke Nagino's role at the Fukuoka Branch Campus?",
+      "id": "jjk-pg-kensuke_nagino-010",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "the principal of the Fukuoka Branch Campus of Tokyo Jujutsu High"
+      ],
+      "found": [
+        "the principal of the Fukuoka Branch Campus of Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kensuke look like?",
+      "id": "jjk-pg-kensuke_nagino-011",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "a middle-aged man with shoulder length slicked back hair, a beard, and moustache"
+      ],
+      "found": [
+        "a middle-aged man with shoulder length slicked back hair, a beard, and moustache"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kensuke wear over one eye?",
+      "id": "jjk-pg-kensuke_nagino-012",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "an eyepatch over his other one"
+      ],
+      "found": [
+        "an eyepatch over his other one"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kensuke wear?",
+      "id": "jjk-pg-kensuke_nagino-013",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "a black shirt underneath a standard issue jujutsu uniform"
+      ],
+      "found": [
+        "a black shirt underneath a standard issue jujutsu uniform"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Kensuke's personality described?",
+      "id": "jjk-pg-kensuke_nagino-014",
+      "subject": "Kensuke Nagino",
+      "accept": "all",
+      "expected": [
+        "a bold and confodent individual who is unfazed by minor predicaments"
+      ],
+      "found": [
+        "a bold and confodent individual who is unfazed by minor predicaments"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 1,
+    "canon_found": 1,
+    "canon_total": 1,
+    "canon_recall": 1.0,
+    "members_returned": 1,
+    "exact_answers": 1,
+    "exact_of": 1,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "1/1",
+    "at_recall_zero": 0,
+    "at_recall_80": 1,
+    "confident_and_wrong": [],
+    "fact_questions": 13,
+    "fact_present": 13
+  }
+}

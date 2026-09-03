@@ -1,0 +1,1879 @@
+{
+  "rows": [
+    {
+      "series": "opm",
+      "query": "Every battle of Tatsumaki",
+      "set": "10 battle page(s) naming Tatsumaki",
+      "confidence": "declared",
+      "returned": 10,
+      "available": 10,
+      "canon": 10,
+      "found": 10,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the aliases of Tatsumaki?",
+      "set": "Tatsumaki's aliases",
+      "confidence": "declared",
+      "returned": 1,
+      "available": 1,
+      "canon": 1,
+      "found": 1,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    },
+    {
+      "series": "opm",
+      "query": "What are all the named psychic techniques Tatsumaki uses in One Punch Man?",
+      "set": "Every named psychic technique Tatsumaki uses in One Punch Man",
+      "confidence": "declared",
+      "returned": 7,
+      "available": 7,
+      "canon": 7,
+      "found": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "exact": true,
+      "recall_only": false
+    }
+  ],
+  "detail": [
+    {
+      "query": "Every battle of Tatsumaki",
+      "found": [
+        "Atomic Samurai, Bang, Metal Bat, and Puri-Puri Prisoner vs. Melzargard",
+        "Heroes vs. Do-S",
+        "Heroes vs. Hundred-Eyes Octopus",
+        "Heroes vs. Monster Association Executives",
+        "Heroes vs. Psykos and Orochi",
+        "Tatsumaki vs. Ancient King",
+        "Tatsumaki vs. Apollo",
+        "Tatsumaki vs. Evil Eye",
+        "Tatsumaki vs. Psykos & Orochi",
+        "Tatsumaki vs. Psykos"
+      ],
+      "missing": [],
+      "members": [
+        "Atomic Samurai, Bang, Metal Bat, and Puri-Puri Prisoner vs. Melzargard",
+        "Heroes vs. Do-S",
+        "Heroes vs. Hundred-Eyes Octopus",
+        "Heroes vs. Monster Association Executives",
+        "Heroes vs. Psykos and Orochi",
+        "Tatsumaki vs. Ancient King",
+        "Tatsumaki vs. Apollo",
+        "Tatsumaki vs. Evil Eye",
+        "Tatsumaki vs. Psykos & Orochi",
+        "Tatsumaki vs. Psykos"
+      ]
+    },
+    {
+      "query": "What are all the aliases of Tatsumaki?",
+      "found": [
+        "Tornado of Terror"
+      ],
+      "missing": [],
+      "members": [
+        "Tornado of Terror"
+      ]
+    },
+    {
+      "query": "What are all the named psychic techniques Tatsumaki uses in One Punch Man?",
+      "found": [
+        "Psychic Binding",
+        "Psychic Whirlwind",
+        "Psychic Barriers",
+        "Chi Manipulation",
+        "Psychic Remote",
+        "Flight",
+        "Telepathy"
+      ],
+      "missing": [],
+      "members": [
+        "Chi Manipulation",
+        "Flight",
+        "Psychic Barriers",
+        "Psychic Binding",
+        "Psychic Remote",
+        "Psychic Whirlwind",
+        "Telepathy"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "series": "opm",
+      "query": "What is Tatsumaki's hero alias?",
+      "id": "opm-pg-tatsumaki-004",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Tornado of Terror"
+      ],
+      "found": [
+        "Tornado of Terror"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is the Viz translation of Tatsumaki's hero alias?",
+      "id": "opm-pg-tatsumaki-005",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Terrible Tornado"
+      ],
+      "found": [
+        "Terrible Tornado"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What rank does Tatsumaki hold in the Hero Association?",
+      "id": "opm-pg-tatsumaki-006",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "S-Class Rank 2"
+      ],
+      "found": [
+        "S-Class Rank 2"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who does Tatsumaki self-declare to be the teacher of?",
+      "id": "opm-pg-tatsumaki-007",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Fubuki"
+      ],
+      "found": [
+        "Fubuki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Tatsumaki and her sister known as?",
+      "id": "opm-pg-tatsumaki-008",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Psychic Sisters"
+      ],
+      "found": [
+        "Psychic Sisters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does the page describe Tatsumaki's build?",
+      "id": "opm-pg-tatsumaki-009",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "petite woman"
+      ],
+      "found": [
+        "petite woman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What color are Tatsumaki's eyes?",
+      "id": "opm-pg-tatsumaki-010",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "emerald green"
+      ],
+      "found": [
+        "emerald green"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Tatsumaki wear?",
+      "id": "opm-pg-tatsumaki-011",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a form-fitting V-neck black dress with a high collar"
+      ],
+      "found": [
+        "a form-fitting V-neck black dress with a high collar"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki gain after her battle against the fused Psykos and Orochi?",
+      "id": "opm-pg-tatsumaki-012",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a four-pointed, star-shaped scar on each palm"
+      ],
+      "found": [
+        "a four-pointed, star-shaped scar on each palm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How is Tatsumaki's personality described?",
+      "id": "opm-pg-tatsumaki-013",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "brash, moody, hot-headed and impatient"
+      ],
+      "found": [
+        "brash, moody, hot-headed and impatient"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki slam Genos into for retaliating against her verbal abuse of Saitama?",
+      "id": "opm-pg-tatsumaki-014",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a large piece of rubble"
+      ],
+      "found": [
+        "a large piece of rubble"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who scolded Tatsumaki and made her stop her actions toward Saitama?",
+      "id": "opm-pg-tatsumaki-015",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Bang"
+      ],
+      "found": [
+        "Bang"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What two words is Tatsumaki especially averse to being called?",
+      "id": "opm-pg-tatsumaki-016",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "brat",
+        "runt"
+      ],
+      "found": [
+        "brat",
+        "runt"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How is Tatsumaki towards her younger sister Fubuki?",
+      "id": "opm-pg-tatsumaki-017",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "overprotective and controlling"
+      ],
+      "found": [
+        "overprotective and controlling"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki claim multiple times during the S-Class meeting for Waganma's rescue?",
+      "id": "opm-pg-tatsumaki-018",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "no monster stands a chance against her"
+      ],
+      "found": [
+        "no monster stands a chance against her"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Apollo activate inside Fubuki to force Tatsumaki to back down?",
+      "id": "opm-pg-tatsumaki-019",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a capsule filled with deadly poison"
+      ],
+      "found": [
+        "a capsule filled with deadly poison"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What complex does Tatsumaki suffer from?",
+      "id": "opm-pg-tatsumaki-020",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a massive superiority complex"
+      ],
+      "found": [
+        "a massive superiority complex"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki's explosive temper cause when she became angry at Saitama for calling her a brat and a midget?",
+      "id": "opm-pg-tatsumaki-021",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "earthquakes and multiple threats"
+      ],
+      "found": [
+        "earthquakes and multiple threats"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki call all of Fubuki's contacts and friends?",
+      "id": "opm-pg-tatsumaki-022",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "parasites"
+      ],
+      "found": [
+        "parasites"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki always think about herself as a child?",
+      "id": "opm-pg-tatsumaki-023",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the cooler one of the two"
+      ],
+      "found": [
+        "the cooler one of the two"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who stated that Tatsumaki is one of the few heroes capable of defeating Elder Centipede?",
+      "id": "opm-pg-tatsumaki-024",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Gyoro Gyoro"
+      ],
+      "found": [
+        "Gyoro Gyoro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Superalloy Darkshine tell Garou would happen if he fought Tatsumaki?",
+      "id": "opm-pg-tatsumaki-025",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "he would instantly lose"
+      ],
+      "found": [
+        "he would instantly lose"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who does Tatsumaki's psychokinetic output surpass?",
+      "id": "opm-pg-tatsumaki-026",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Geryuganshoop"
+      ],
+      "found": [
+        "Geryuganshoop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki effortlessly stop from Boros' giant spaceship?",
+      "id": "opm-pg-tatsumaki-027",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a very powerful bombardment attack"
+      ],
+      "found": [
+        "a very powerful bombardment attack"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Tatsumaki lift according to manga illustrator Yusuke Murata?",
+      "id": "opm-pg-tatsumaki-028",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the entirety of Z-City"
+      ],
+      "found": [
+        "the entirety of Z-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How far underground was Psykos when Tatsumaki located and dragged her out?",
+      "id": "opm-pg-tatsumaki-029",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "1500 meters underground"
+      ],
+      "found": [
+        "1500 meters underground"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Tatsumaki crush Hundred-Eyes Octopus in her brief fight?",
+      "id": "opm-pg-tatsumaki-030",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "crushed it into a ball with her telekinesis power"
+      ],
+      "found": [
+        "crushed it into a ball with her telekinesis power"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What weather phenomena can Tatsumaki cause with her power?",
+      "id": "opm-pg-tatsumaki-031",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "large twisters",
+        "big storms"
+      ],
+      "found": [
+        "large twisters",
+        "big storms"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki lift out of the ground when serious?",
+      "id": "opm-pg-tatsumaki-032",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the entire Monster Association Headquarters"
+      ],
+      "found": [
+        "the entire Monster Association Headquarters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki pull out of the ocean during her fight with the fusion of Psykos and Orochi?",
+      "id": "opm-pg-tatsumaki-033",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "meteor-sized rock formations"
+      ],
+      "found": [
+        "meteor-sized rock formations"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki transform the ruins of the Monster Association Headquarters into?",
+      "id": "opm-pg-tatsumaki-034",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a colossal stone spear"
+      ],
+      "found": [
+        "a colossal stone spear"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What happened to Tatsumaki's powers after Psykos ambushed her from behind?",
+      "id": "opm-pg-tatsumaki-035",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "destabilize and to an extent become unusable"
+      ],
+      "found": [
+        "destabilize and to an extent become unusable"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "opm",
+      "query": "How does Tatsumaki fly?",
+      "id": "opm-pg-tatsumaki-036",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "uses psychokinesis to levitate and fly through the air at high speeds"
+      ],
+      "found": [
+        "uses psychokinesis to levitate and fly through the air at high speeds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Tatsumaki erect for defense?",
+      "id": "opm-pg-tatsumaki-037",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "barriers that vary in size"
+      ],
+      "found": [
+        "barriers that vary in size"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Tatsumaki do to a barrier to trap any target within it?",
+      "id": "opm-pg-tatsumaki-038",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "invert and add another layer"
+      ],
+      "found": [
+        "invert and add another layer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who can Tatsumaki psychically contact with her telepathy?",
+      "id": "opm-pg-tatsumaki-039",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "her sister Fubuki"
+      ],
+      "found": [
+        "her sister Fubuki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Fubuki compare using Chi Manipulation on a strong-willed opponent to?",
+      "id": "opm-pg-tatsumaki-040",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "trying to pin down a massive boulder"
+      ],
+      "found": [
+        "trying to pin down a massive boulder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Tatsumaki called for her skill in wielding her psychic abilities?",
+      "id": "opm-pg-tatsumaki-041",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Master Psychic Combatant"
+      ],
+      "found": [
+        "Master Psychic Combatant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki create to distract Psykos while flying discreetly beneath her?",
+      "id": "opm-pg-tatsumaki-042",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a dummy of herself"
+      ],
+      "found": [
+        "a dummy of herself"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki pinpoint inside Fubuki by copying the wavelength of another esper's signals?",
+      "id": "opm-pg-tatsumaki-043",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a poison pill"
+      ],
+      "found": [
+        "a poison pill"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Psychic Binding an ability used to do?",
+      "id": "opm-pg-tatsumaki-044",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "immobilize targets"
+      ],
+      "found": [
+        "immobilize targets"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How does the page describe Psychic Whirlwind?",
+      "id": "opm-pg-tatsumaki-045",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "an anti-psychic technique"
+      ],
+      "found": [
+        "an anti-psychic technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What can Psychic Whirlwind redirect or deflect?",
+      "id": "opm-pg-tatsumaki-046",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "psychic attacks"
+      ],
+      "found": [
+        "psychic attacks"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki tell Saitama in chapter 37?",
+      "id": "opm-pg-tatsumaki-047",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Know your place, B-Class!"
+      ],
+      "found": [
+        "Know your place, B-Class!"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki say about mental strength?",
+      "id": "opm-pg-tatsumaki-048",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Mental strength is secondary. All you really need is overwhelming power."
+      ],
+      "found": [
+        "Mental strength is secondary. All you really need is overwhelming power."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki say she would do to Sekingar if her sister was involved in the Monster Association battle?",
+      "id": "opm-pg-tatsumaki-049",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "I'm coming after you"
+      ],
+      "found": [
+        "I'm coming after you"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki claim in chapter 93 about being beaten?",
+      "id": "opm-pg-tatsumaki-050",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "I don't think I can be beaten."
+      ],
+      "found": [
+        "I don't think I can be beaten."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki say about becoming a pro hero thanks to Blast?",
+      "id": "opm-pg-tatsumaki-051",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "There's no way I can say I became a pro hero thanks to him."
+      ],
+      "found": [
+        "There's no way I can say I became a pro hero thanks to him."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What place did Tatsumaki rank in the character popularity poll?",
+      "id": "opm-pg-tatsumaki-052",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "6th"
+      ],
+      "found": [
+        "6th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Tatsumaki like according to the databook?",
+      "id": "opm-pg-tatsumaki-053",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "her sister",
+        "areas where she could freely use her full abilities"
+      ],
+      "found": [
+        "her sister",
+        "areas where she could freely use her full abilities"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What word was added to Tatsumaki's name?",
+      "id": "opm-pg-tatsumaki-054",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Terror"
+      ],
+      "found": [
+        "Terror"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How much older is Tatsumaki than her sister Fubuki?",
+      "id": "opm-pg-tatsumaki-055",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "5 years older"
+      ],
+      "found": [
+        "5 years older"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who once mistook Tatsumaki as the younger sister of Fubuki?",
+      "id": "opm-pg-tatsumaki-056",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Lily"
+      ],
+      "found": [
+        "Lily"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What is Tatsumaki obsessed with?",
+      "id": "opm-pg-tatsumaki-057",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "candy apples"
+      ],
+      "found": [
+        "candy apples"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What does Tatsumaki fear because of an incident with Saitama?",
+      "id": "opm-pg-tatsumaki-058",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "ghosts"
+      ],
+      "found": [
+        "ghosts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did ONE state Tatsumaki in her best shape would have done?",
+      "id": "opm-pg-tatsumaki-059",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "beaten Golden Sperm"
+      ],
+      "found": [
+        "beaten Golden Sperm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki wear in the 2017 One-Punch Man Halloween cover?",
+      "id": "opm-pg-tatsumaki-060",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a witch hat, an orange scarf and an orange Jack-O'-Lantern-themed pants"
+      ],
+      "found": [
+        "a witch hat, an orange scarf and an orange Jack-O'-Lantern-themed pants"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who took Tatsumaki away from her adopted family at the age of seven?",
+      "id": "opm-pg-tatsumaki-061",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Tsukuyomi"
+      ],
+      "found": [
+        "Tsukuyomi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the scientists give Tatsumaki's parents for complying?",
+      "id": "opm-pg-tatsumaki-062",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "money"
+      ],
+      "found": [
+        "money"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the scientists reward Tatsumaki with for cooperation?",
+      "id": "opm-pg-tatsumaki-063",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "candy and toys"
+      ],
+      "found": [
+        "candy and toys"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did the scientists do whenever Tatsumaki wouldn't use her powers?",
+      "id": "opm-pg-tatsumaki-064",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "locked her up in a cell"
+      ],
+      "found": [
+        "locked her up in a cell"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Tatsumaki left alone to fend off while locked in a cell 18 years ago?",
+      "id": "opm-pg-tatsumaki-065",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a monster outbreak"
+      ],
+      "found": [
+        "a monster outbreak"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who came to Tatsumaki's rescue during the monster outbreak?",
+      "id": "opm-pg-tatsumaki-066",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Blast"
+      ],
+      "found": [
+        "Blast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Tatsumaki's reason for holding back her powers from the scientists?",
+      "id": "opm-pg-tatsumaki-067",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "so that the scientists would deem her useless and let her go"
+      ],
+      "found": [
+        "so that the scientists would deem her useless and let her go"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was Tatsumaki heartbroken by?",
+      "id": "opm-pg-tatsumaki-068",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "her parents for selling her out"
+      ],
+      "found": [
+        "her parents for selling her out"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What advice did Blast give Tatsumaki?",
+      "id": "opm-pg-tatsumaki-069",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "not to expect anyone to save her next time"
+      ],
+      "found": [
+        "not to expect anyone to save her next time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki momentarily lift into the air to retaliate against the kids?",
+      "id": "opm-pg-tatsumaki-070",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the entire building"
+      ],
+      "found": [
+        "the entire building"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki tell Fubuki to do when she was being bullied?",
+      "id": "opm-pg-tatsumaki-071",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "either come to her or retaliate"
+      ],
+      "found": [
+        "either come to her or retaliate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who did Tatsumaki encounter and battle, holding a grudge against him until today?",
+      "id": "opm-pg-tatsumaki-072",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Otento"
+      ],
+      "found": [
+        "Otento"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Where was Tatsumaki sent by plane to fight the Ancient King?",
+      "id": "opm-pg-tatsumaki-073",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the mountains"
+      ],
+      "found": [
+        "the mountains"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Tatsumaki quickly end the fight with the Ancient King?",
+      "id": "opm-pg-tatsumaki-074",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "sending a meteor crashing down on the Ancient King"
+      ],
+      "found": [
+        "sending a meteor crashing down on the Ancient King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Saitama mistake Tatsumaki for at the S-Class meeting?",
+      "id": "opm-pg-tatsumaki-075",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a child"
+      ],
+      "found": [
+        "a child"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki decide to do with the giant spaceship?",
+      "id": "opm-pg-tatsumaki-076",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "take down the spaceship alone"
+      ],
+      "found": [
+        "take down the spaceship alone"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Bang tell Tatsumaki when she was about to attack Saitama?",
+      "id": "opm-pg-tatsumaki-077",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "to act properly as an S-Class hero"
+      ],
+      "found": [
+        "to act properly as an S-Class hero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki admit about fighting Saitama as she panted from exhaustion?",
+      "id": "opm-pg-tatsumaki-078",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "having fun fighting someone on the same level as Blast"
+      ],
+      "found": [
+        "having fun fighting someone on the same level as Blast"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki cause in the city where Do-S and Fubuki were fighting?",
+      "id": "opm-pg-tatsumaki-079",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "an explosion"
+      ],
+      "found": [
+        "an explosion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki immobilize during the fight with Do-S?",
+      "id": "opm-pg-tatsumaki-080",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "all of the love slaves"
+      ],
+      "found": [
+        "all of the love slaves"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki tell Fubuki about the love slaves?",
+      "id": "opm-pg-tatsumaki-081",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "they will only get in her way"
+      ],
+      "found": [
+        "they will only get in her way"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which city did Tatsumaki appear in to kill a wounded Hundred-Eyes Octopus?",
+      "id": "opm-pg-tatsumaki-082",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "I-City"
+      ],
+      "found": [
+        "I-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki brag about the Monster Association?",
+      "id": "opm-pg-tatsumaki-083",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "just a bunch of cowards"
+      ],
+      "found": [
+        "just a bunch of cowards"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki fight at the Z-City Ghost Town?",
+      "id": "opm-pg-tatsumaki-084",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Evil Eye"
+      ],
+      "found": [
+        "Evil Eye"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki do to Evil Eye at the Z-City Ghost Town?",
+      "id": "opm-pg-tatsumaki-085",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "twisting it into oblivion"
+      ],
+      "found": [
+        "twisting it into oblivion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki tear out of Gyoro Gyoro's body?",
+      "id": "opm-pg-tatsumaki-086",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a humanoid figure"
+      ],
+      "found": [
+        "a humanoid figure"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki realize the humanoid inside Gyoro Gyoro was?",
+      "id": "opm-pg-tatsumaki-087",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "another meat puppet"
+      ],
+      "found": [
+        "another meat puppet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki receive word of from King?",
+      "id": "opm-pg-tatsumaki-088",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Tareo's safety"
+      ],
+      "found": [
+        "Tareo's safety"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What impaled both of Tatsumaki's hands?",
+      "id": "opm-pg-tatsumaki-089",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the blades of Psykos and Orochi's quickly-reforming body"
+      ],
+      "found": [
+        "the blades of Psykos and Orochi's quickly-reforming body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos say to Tatsumaki was the disciple's duty to do?",
+      "id": "opm-pg-tatsumaki-090",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "to help with the teacher's work"
+      ],
+      "found": [
+        "to help with the teacher's work"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki twist in an attempt to fully destroy Psykos's monster form?",
+      "id": "opm-pg-tatsumaki-091",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "the entire city"
+      ],
+      "found": [
+        "the entire city"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who interrupted the battle between Tatsumaki and Psykos again?",
+      "id": "opm-pg-tatsumaki-092",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Drive Knight"
+      ],
+      "found": [
+        "Drive Knight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki pull out of the ground to finish off Orochi?",
+      "id": "opm-pg-tatsumaki-093",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "a rock formation in the shape of a spear"
+      ],
+      "found": [
+        "a rock formation in the shape of a spear"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "How did Blast seemingly appear beside Tatsumaki after her barrier vanished?",
+      "id": "opm-pg-tatsumaki-094",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "from a portal"
+      ],
+      "found": [
+        "from a portal"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Who attacked Tatsumaki with countless energy spheres after the Orochi fight?",
+      "id": "opm-pg-tatsumaki-095",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Homeless Emperor"
+      ],
+      "found": [
+        "Homeless Emperor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Genos refuse to resort to so as not to risk Tatsumaki's life?",
+      "id": "opm-pg-tatsumaki-096",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "self-destruction"
+      ],
+      "found": [
+        "self-destruction"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What was King running when he appeared in front of Tatsumaki and Genos?",
+      "id": "opm-pg-tatsumaki-097",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "King Engine"
+      ],
+      "found": [
+        "King Engine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "Which city was Tatsumaki dispatched to take on Aggregation?",
+      "id": "opm-pg-tatsumaki-098",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "P-City"
+      ],
+      "found": [
+        "P-City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What level of mysterious being is Aggregation?",
+      "id": "opm-pg-tatsumaki-099",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "Dragon level"
+      ],
+      "found": [
+        "Dragon level"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "opm",
+      "query": "What did Tatsumaki think humanity won't do unless preventive measures are taken?",
+      "id": "opm-pg-tatsumaki-100",
+      "subject": "Tatsumaki",
+      "accept": "all",
+      "expected": [
+        "survive"
+      ],
+      "found": [
+        "survive"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 3,
+    "canon_found": 18,
+    "canon_total": 18,
+    "canon_recall": 1.0,
+    "members_returned": 18,
+    "exact_answers": 3,
+    "exact_of": 3,
+    "exact_rate": 1.0,
+    "precision_closed": 1.0,
+    "precision_over": "3/3",
+    "at_recall_zero": 0,
+    "at_recall_80": 3,
+    "confident_and_wrong": [],
+    "fact_questions": 97,
+    "fact_present": 97
+  }
+}
