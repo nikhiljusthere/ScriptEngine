@@ -1,0 +1,59 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Why was Ogi Zenin passed over for the head of the Zenin clan?",
+      "id": "jjk-pg-ogi_zenin_synopsis-001",
+      "subject": "Ogi Zenin/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Due to his daughters lacking talent in jujutsu, he was passed over for the position of the 25th head of the clan by his older brother."
+      ],
+      "found": [
+        "Due to his daughters lacking talent in jujutsu, he was passed over for the position of the 25th head of the clan by his older brother."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Naobito Zenin's will reveal about the next clan leader?",
+      "id": "jjk-pg-ogi_zenin_synopsis-002",
+      "subject": "Ogi Zenin/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Ogi listened as Furudate read Naobito's will, which revealed that in the event of Satoru Gojo's disappearance, Megumi Fushiguro was to become the next clan leader."
+      ],
+      "found": [
+        "Ogi listened as Furudate read Naobito's will, which revealed that in the event of Satoru Gojo's disappearance, Megumi Fushiguro was to become the next clan leader."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 2,
+    "fact_present": 2
+  }
+}

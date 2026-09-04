@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (nanako_hasaba_synopsis): +4 prose (ids 001-004) 2 Gojo's Past Arc, 1 Cursed Child Arc, 1 Shibuya Incident Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-nanako_hasaba_synopsis-001",
+      "kind": "fact",
+      "question": "What unusual abilities did Nanako and her twin sister inherit from their parents?",
+      "subject": "Nanako Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "both girls possessed above-average cursed energy, granting them the ability to see curses and use jujutsu",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nanako_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-nanako_hasaba_synopsis-002",
+      "kind": "fact",
+      "question": "What did Suguru Geto do to save the Hasaba twins?",
+      "subject": "Nanako Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "He massacred the entire village to save Nanako and Mimiko and took them under his care",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nanako_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-nanako_hasaba_synopsis-003",
+      "kind": "fact",
+      "question": "What plan did Suguru Geto announce to his commanders in 2017?",
+      "subject": "Nanako Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Geto announced his plan to destroy Jujutsu High and usher in the age of sorcerers",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nanako_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Cursed Child Arc"
+    },
+    {
+      "id": "jjk-pg-nanako_hasaba_synopsis-004",
+      "kind": "fact",
+      "question": "What did Nanako do when she tried to avenge her sister?",
+      "subject": "Nanako Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Nanako prepared to activate her technique on Sukuna but was immediately cut to pieces",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nanako_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc | G27-watch (tail section; ~0.9k-word page)"
+    }
+  ]
 }

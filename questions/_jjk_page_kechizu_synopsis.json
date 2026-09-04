@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (kechizu_synopsis): +4 prose (ids 001-004) 1 History, 1 Kyoto Goodwill Event Arc, 2 Death Painting Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-kechizu_synopsis-001",
+      "kind": "fact",
+      "question": "How long were the Death Paintings sealed away?",
+      "subject": "Kechizu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "For the next 150 years, the cursed wombs were sealed away in Tokyo Jujutsu High's cursed warehouse",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kechizu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-kechizu_synopsis-002",
+      "kind": "fact",
+      "question": "What did Mahito take from the cursed warehouse during the Goodwill Event?",
+      "subject": "Kechizu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Mahito stole six of Sukuna's fingers and Death Painting Wombs 1-3 from the cursed warehouse during the Goodwill Event",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kechizu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Kyoto Goodwill Event Arc"
+    },
+    {
+      "id": "jjk-pg-kechizu_synopsis-003",
+      "kind": "fact",
+      "question": "Who killed Kechizu?",
+      "subject": "Kechizu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Nobara activated Hairpin through the nail in his head, exploding cursed energy out of it and ultimately killing him",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kechizu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Death Painting Arc"
+    },
+    {
+      "id": "jjk-pg-kechizu_synopsis-004",
+      "kind": "fact",
+      "question": "How did the other Death Paintings react to Kechizu's death?",
+      "subject": "Kechizu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kechizu's death was sensed by both of his brothers, with Eso crying for his brother's demise and Choso becoming angry",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kechizu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Death Painting Arc"
+    }
+  ]
 }

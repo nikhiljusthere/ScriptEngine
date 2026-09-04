@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What was Reggie Star before the Culling Game?",
+      "id": "jjk-pg-reggie_star_synopsis-001",
+      "subject": "Reggie Star/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Reggie Star was an ancient sorcerer that was incarnated on the night of October 31, 2018 by Kenjaku to participate in the Culling Game."
+      ],
+      "found": [
+        "Reggie Star was an ancient sorcerer that was incarnated on the night of October 31, 2018 by Kenjaku to participate in the Culling Game."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Reggie gather players for his team during the Culling Game?",
+      "id": "jjk-pg-reggie_star_synopsis-002",
+      "subject": "Reggie Star/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Operating out of a hotel in Shinjuku, Reggie used Remi to lure unsuspecting players to his base, killing them for their points if he considered them too weak, or recruiting them as allies if they were strong."
+      ],
+      "found": [
+        "Operating out of a hotel in Shinjuku, Reggie used Remi to lure unsuspecting players to his base, killing them for their points if he considered them too weak, or recruiting them as allies if they were strong."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Reggie Star's ace card in his battle with Megumi?",
+      "id": "jjk-pg-reggie_star_synopsis-003",
+      "subject": "Reggie Star/Synopsis",
+      "accept": "all",
+      "expected": [
+        "a 132 square-meter, two-floor wooden house that weighted at least 30 tons"
+      ],
+      "found": [
+        "a 132 square-meter, two-floor wooden house that weighted at least 30 tons"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

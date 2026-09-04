@@ -1,0 +1,59 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How much had Kanemori paid the religious group before Geto killed him?",
+      "id": "jjk-pg-manami_suda_synopsis-001",
+      "subject": "Manami Suda/Synopsis",
+      "accept": "all",
+      "expected": [
+        "he paid 150 million yen"
+      ],
+      "found": [
+        "he paid 150 million yen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which side did Manami and Toshihisa choose after Geto's body was taken over?",
+      "id": "jjk-pg-manami_suda_synopsis-002",
+      "subject": "Manami Suda/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Manami and Toshihisa Negi chose to help Pseudo-Geto"
+      ],
+      "found": [
+        "Manami and Toshihisa Negi chose to help Pseudo-Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 2,
+    "fact_present": 2
+  }
+}

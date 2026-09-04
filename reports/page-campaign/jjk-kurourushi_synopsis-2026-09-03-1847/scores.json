@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What kind of cursed spirit is Kurourushi?",
+      "id": "jjk-pg-kurourushi_synopsis-001",
+      "subject": "Kurourushi/Synopsis",
+      "accept": "all",
+      "expected": [
+        "a cockroach cursed spirit born from humanity's fear towards cockroaches"
+      ],
+      "found": [
+        "a cockroach cursed spirit born from humanity's fear towards cockroaches"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Kurourushi killing humans?",
+      "id": "jjk-pg-kurourushi_synopsis-002",
+      "subject": "Kurourushi/Synopsis",
+      "accept": "all",
+      "expected": [
+        "it liked the taste of iron"
+      ],
+      "found": [
+        "it liked the taste of iron"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kurourushi's Festering Life Sword?",
+      "id": "jjk-pg-kurourushi_synopsis-003",
+      "subject": "Kurourushi/Synopsis",
+      "accept": "all",
+      "expected": [
+        "an enchanted blade that mixes life and death"
+      ],
+      "found": [
+        "an enchanted blade that mixes life and death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

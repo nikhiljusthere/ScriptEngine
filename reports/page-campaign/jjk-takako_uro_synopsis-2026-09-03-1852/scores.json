@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What was Takako Uro's role over a thousand years ago?",
+      "id": "jjk-pg-takako_uro_synopsis-001",
+      "subject": "Takako Uro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Takako Uro was the captain of the Sun, Moon, and Stars Squad, a sorcerer squadron of the Toh."
+      ],
+      "found": [
+        "Takako Uro was the captain of the Sun, Moon, and Stars Squad, a sorcerer squadron of the Toh."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takako Uro lose her arm?",
+      "id": "jjk-pg-takako_uro_synopsis-002",
+      "subject": "Takako Uro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "She was subsequently struck in the arm by Kurourushi's Festering Life Sword, severing it before Rika consumed it."
+      ],
+      "found": [
+        "She was subsequently struck in the arm by Kurourushi's Festering Life Sword, severing it before Rika consumed it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Takako Uro react to Sukuna's arrival in the Sendai Colony?",
+      "id": "jjk-pg-takako_uro_synopsis-003",
+      "subject": "Takako Uro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Uro sensed the King of Curses' presence and cowered in fear."
+      ],
+      "found": [
+        "Uro sensed the King of Curses' presence and cowered in fear."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

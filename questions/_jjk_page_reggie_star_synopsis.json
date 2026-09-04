@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (reggie_star_synopsis): +3 prose (ids 001-003) 1 History, 2 Culling Game Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-reggie_star_synopsis-001",
+      "kind": "fact",
+      "question": "What was Reggie Star before the Culling Game?",
+      "subject": "Reggie Star/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Reggie Star was an ancient sorcerer that was incarnated on the night of October 31, 2018 by Kenjaku to participate in the Culling Game.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Reggie_Star/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-reggie_star_synopsis-002",
+      "kind": "fact",
+      "question": "How did Reggie gather players for his team during the Culling Game?",
+      "subject": "Reggie Star/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Operating out of a hotel in Shinjuku, Reggie used Remi to lure unsuspecting players to his base, killing them for their points if he considered them too weak, or recruiting them as allies if they were strong.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Reggie_Star/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch (page tail; ~1.45k-word page, Culling Game Arc is the final section)"
+    },
+    {
+      "id": "jjk-pg-reggie_star_synopsis-003",
+      "kind": "fact",
+      "question": "What was Reggie Star's ace card in his battle with Megumi?",
+      "subject": "Reggie Star/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a 132 square-meter, two-floor wooden house that weighted at least 30 tons",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Reggie_Star/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch (page tail; ~1.45k-word page, Culling Game Arc is the final section)"
+    }
+  ]
 }

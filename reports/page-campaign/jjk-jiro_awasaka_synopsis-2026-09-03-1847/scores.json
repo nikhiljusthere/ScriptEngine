@@ -1,0 +1,59 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What kind of work did Jiro Awasaka do in the past?",
+      "id": "jjk-pg-jiro_awasaka_synopsis-001",
+      "subject": "Jiro Awasaka/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Jiro worked as a killer for hire and tortured his victims in his work."
+      ],
+      "found": [
+        "Jiro worked as a killer for hire and tortured his victims in his work."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Jiro knocked unconscious by Yuji?",
+      "id": "jjk-pg-jiro_awasaka_synopsis-002",
+      "subject": "Jiro Awasaka/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Yuji stopped his fist just before it had hit and adjusted its power, using Jiro's cursed technique against himself and knocking him unconscious with one punch."
+      ],
+      "found": [
+        "Yuji stopped his fist just before it had hit and adjusted its power, using Jiro's cursed technique against himself and knocking him unconscious with one punch."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 2,
+    "fact_present": 2
+  }
+}

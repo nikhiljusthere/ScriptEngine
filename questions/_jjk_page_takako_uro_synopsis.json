@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (takako_uro_synopsis): +3 prose (ids 001-003) 1 History, 2 Culling Game Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-takako_uro_synopsis-001",
+      "kind": "fact",
+      "question": "What was Takako Uro's role over a thousand years ago?",
+      "subject": "Takako Uro/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Takako Uro was the captain of the Sun, Moon, and Stars Squad, a sorcerer squadron of the Toh.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Takako_Uro/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-takako_uro_synopsis-002",
+      "kind": "fact",
+      "question": "How did Takako Uro lose her arm?",
+      "subject": "Takako Uro/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "She was subsequently struck in the arm by Kurourushi's Festering Life Sword, severing it before Rika consumed it.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Takako_Uro/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch: tail section of ~1.0k-word page"
+    },
+    {
+      "id": "jjk-pg-takako_uro_synopsis-003",
+      "kind": "fact",
+      "question": "How did Takako Uro react to Sukuna's arrival in the Sendai Colony?",
+      "subject": "Takako Uro/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Uro sensed the King of Curses' presence and cowered in fear.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Takako_Uro/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch: tail section of ~1.0k-word page"
+    }
+  ]
 }

@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (haruta_shigemo_synopsis): +4 prose (ids 001-004) 1 History, 1 Kyoto Goodwill Event Arc, 2 Shibuya Incident Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-haruta_shigemo_synopsis-001",
+      "kind": "fact",
+      "question": "How did Haruta Shigemo become part of Pseudo-Geto's group?",
+      "subject": "Haruta Shigemo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Haruta met Pseudo-Geto and joined his group",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-haruta_shigemo_synopsis-002",
+      "kind": "fact",
+      "question": "Who was with Haruta when he invaded the school during the Goodwill Event?",
+      "subject": "Haruta Shigemo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Haruta invaded the school with Hanami, Mahito, and Juzo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Kyoto Goodwill Event Arc"
+    },
+    {
+      "id": "jjk-pg-haruta_shigemo_synopsis-003",
+      "kind": "fact",
+      "question": "Who ordered Haruta to patrol the curtain's perimeter and hunt men in suits in Shibuya?",
+      "subject": "Haruta Shigemo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Uraume ordered Haruta to continue patrolling the curtain's perimeter and hunt anybody wearing a suit",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-haruta_shigemo_synopsis-004",
+      "kind": "fact",
+      "question": "Who killed Haruta Shigemo?",
+      "subject": "Haruta Shigemo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Sukuna killed him with his technique as he tried to flee, cutting him in half",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Haruta_Shigemo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc"
+    }
+  ]
 }

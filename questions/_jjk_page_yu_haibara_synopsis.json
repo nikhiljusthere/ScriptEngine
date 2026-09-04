@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-03",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (yu_haibara_synopsis): +4 prose (ids 001-004) 1 History, 1 Gojo's Past Arc, 1 Shibuya Incident Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-yu_haibara_synopsis-001",
+      "kind": "fact",
+      "question": "Who enrolled at Jujutsu High with Yu Haibara in 2006?",
+      "subject": "Yu Haibara/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "In 2006, he enrolled in Jujutsu High as a first-year student along with Kento Nanami.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yu_Haibara/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-yu_haibara_synopsis-002",
+      "kind": "fact",
+      "question": "What did Yu Haibara tell Geto when he asked if he liked being a sorcerer?",
+      "subject": "Yu Haibara/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yu answered that he liked doing things that only he could do.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yu_Haibara/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-yu_haibara_synopsis-003",
+      "kind": "fact",
+      "question": "Who did Yu Haibara's ghost point to for Nanami?",
+      "subject": "Yu Haibara/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "A ghost or hallucination of Haibara then appears before him and points to Yuji Itadori as his answer.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yu_Haibara/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-yu_haibara_synopsis-004",
+      "kind": "fact",
+      "question": "Where was Yu Haibara after Gojo's death?",
+      "subject": "Yu Haibara/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yu was present among the fallen sorcerers in the afterlife after Gojo's death who spoke with him.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yu_Haibara/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (page tail; short page so expected to pass)"
+    }
+  ]
 }

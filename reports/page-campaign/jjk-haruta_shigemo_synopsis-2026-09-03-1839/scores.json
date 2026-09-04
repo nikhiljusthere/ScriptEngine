@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How did Haruta Shigemo become part of Pseudo-Geto's group?",
+      "id": "jjk-pg-haruta_shigemo_synopsis-001",
+      "subject": "Haruta Shigemo/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Haruta met Pseudo-Geto and joined his group"
+      ],
+      "found": [
+        "Haruta met Pseudo-Geto and joined his group"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who was with Haruta when he invaded the school during the Goodwill Event?",
+      "id": "jjk-pg-haruta_shigemo_synopsis-002",
+      "subject": "Haruta Shigemo/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Haruta invaded the school with Hanami, Mahito, and Juzo"
+      ],
+      "found": [
+        "Haruta invaded the school with Hanami, Mahito, and Juzo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who ordered Haruta to patrol the curtain's perimeter and hunt men in suits in Shibuya?",
+      "id": "jjk-pg-haruta_shigemo_synopsis-003",
+      "subject": "Haruta Shigemo/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Uraume ordered Haruta to continue patrolling the curtain's perimeter and hunt anybody wearing a suit"
+      ],
+      "found": [
+        "Uraume ordered Haruta to continue patrolling the curtain's perimeter and hunt anybody wearing a suit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who killed Haruta Shigemo?",
+      "id": "jjk-pg-haruta_shigemo_synopsis-004",
+      "subject": "Haruta Shigemo/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Sukuna killed him with his technique as he tried to flee, cutting him in half"
+      ],
+      "found": [
+        "Sukuna killed him with his technique as he tried to flee, cutting him in half"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

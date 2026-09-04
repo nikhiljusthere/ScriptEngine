@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What was Usami's role as a government official?",
+      "id": "jjk-pg-kou_usami_synopsis-001",
+      "subject": "Kou Usami/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Usami was responsible for overseeing duties that had previously been handled by the Big Three Families"
+      ],
+      "found": [
+        "Usami was responsible for overseeing duties that had previously been handled by the Big Three Families"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the mothership Naunax carry when it appeared above Nevada in 2086?",
+      "id": "jjk-pg-kou_usami_synopsis-002",
+      "subject": "Kou Usami/Synopsis",
+      "accept": "all",
+      "expected": [
+        "nearly 50,000 Simurian refugees"
+      ],
+      "found": [
+        "nearly 50,000 Simurian refugees"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What were Tsurugi, Yuka, and Maru sent to Gifu Prefecture to do?",
+      "id": "jjk-pg-kou_usami_synopsis-003",
+      "subject": "Kou Usami/Synopsis",
+      "accept": "all",
+      "expected": [
+        "exterminate a shark that had been spotted swimming through the forests of Gifu Prefecture"
+      ],
+      "found": [
+        "exterminate a shark that had been spotted swimming through the forests of Gifu Prefecture"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

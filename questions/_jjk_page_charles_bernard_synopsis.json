@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-03",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (charles_bernard_synopsis): +4 prose (ids 001-004) 1 History, 2 Culling Game Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-charles_bernard_synopsis-001",
+      "kind": "fact",
+      "question": "What goes wrong for Charles Bernard when he shows his manga to Shueisha?",
+      "subject": "Charles Bernard/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the employee stated that his Japanese is good however he criticized his story, causing Charles to break his finger and leaves in disgust.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Charles_Bernard/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-charles_bernard_synopsis-002",
+      "kind": "fact",
+      "question": "How does G Warstaff let Charles Bernard see into the future?",
+      "subject": "Charles Bernard/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "The more blood drawn into G Warstaff's tip, the further into the future Charles can see.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Charles_Bernard/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-charles_bernard_synopsis-003",
+      "kind": "fact",
+      "question": "What ends Charles Bernard's fight with Hakari?",
+      "subject": "Charles Bernard/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hakari is given a bonus of infinite cursed energy and kicks directly through Charles's defenses, breaking G Warstaff and defeating the aspiring manga creator in one blow.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Charles_Bernard/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-charles_bernard_synopsis-004",
+      "kind": "fact",
+      "question": "What does Rika consume to copy Charles Bernard's cursed technique?",
+      "subject": "Charles Bernard/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Charles had part of his ribs temporarily removed to be consumed by Rika in order to Copy his Curse technique, with Hakari promising to fix it later.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Charles_Bernard/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc"
+    }
+  ]
 }

@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (kurourushi_synopsis): +3 prose (ids 001-003) 1 History, 2 Culling Game Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-kurourushi_synopsis-001",
+      "kind": "fact",
+      "question": "What kind of cursed spirit is Kurourushi?",
+      "subject": "Kurourushi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a cockroach cursed spirit born from humanity's fear towards cockroaches",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kurourushi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-kurourushi_synopsis-002",
+      "kind": "fact",
+      "question": "Why was Kurourushi killing humans?",
+      "subject": "Kurourushi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "it liked the taste of iron",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kurourushi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch (tail section; ~0.83k-word page, Culling Game Arc is the final section)"
+    },
+    {
+      "id": "jjk-pg-kurourushi_synopsis-003",
+      "kind": "fact",
+      "question": "What is Kurourushi's Festering Life Sword?",
+      "subject": "Kurourushi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "an enchanted blade that mixes life and death",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kurourushi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch (tail section; ~0.83k-word page, Culling Game Arc is the final section)"
+    }
+  ]
 }

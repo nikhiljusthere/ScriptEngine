@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (rokujushi_miyo_synopsis): +4 prose (ids 001-004) 1 History, 2 Culling Game Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-rokujushi_miyo_synopsis-001",
+      "kind": "fact",
+      "question": "Why was Miyo incarnated on the night of October 31, 2018?",
+      "subject": "Rokujushi Miyo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Rokujushi Miyo was a sumo enthusiast who is incarnated on the night of October 31, 2018 by Kenjaku to participate in the Culling Game.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Rokujushi_Miyo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-rokujushi_miyo_synopsis-002",
+      "kind": "fact",
+      "question": "Why did time pass faster inside Miyo's simple domain?",
+      "subject": "Rokujushi Miyo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "As it turns out, due to Miyo's barrier removing any binding vow, time flows faster within the domain, allowing the two to engage in so many sumo bouts when less than one minute's worth of time has passed outside of it.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Rokujushi_Miyo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-rokujushi_miyo_synopsis-003",
+      "kind": "fact",
+      "question": "How did Maki exorcise Naoya while he was in his own domain?",
+      "subject": "Rokujushi Miyo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "he was throwing the Split Soul Katana to Maki, who was behind Naoya and is unaffected by the domain's effects due to her Heavenly Restriction. Maki then singlehandedly exorcises Naoya, freeing the three from the domain, albeit leaving Miyo and Daido severely wounded.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Rokujushi_Miyo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-rokujushi_miyo_synopsis-004",
+      "kind": "fact",
+      "question": "Where did Maki suggest Daido and Miyo hide?",
+      "subject": "Rokujushi Miyo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Maki subtly told the two that Tokyo was the safest location to hide in since it was filled with cursed spirits and declared off-limits by the government, suggesting that they hide there.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Rokujushi_Miyo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (page tail; ~0.95k-word page, Shinjuku Showdown Arc is the final section)"
+    }
+  ]
 }

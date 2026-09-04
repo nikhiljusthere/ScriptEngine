@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What made Ryu Ishigori famous four hundred years ago?",
+      "id": "jjk-pg-ryu_ishigori_synopsis-001",
+      "subject": "Ryu Ishigori/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Ryu Ishigori gained some notoriety by having the highest cursed energy output ever recorded."
+      ],
+      "found": [
+        "Ryu Ishigori gained some notoriety by having the highest cursed energy output ever recorded."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Ryu accept Kenjaku's offer of a second life?",
+      "id": "jjk-pg-ryu_ishigori_synopsis-002",
+      "subject": "Ryu Ishigori/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Ryu was unsatisfied with his life due to never having a satisfying fight, likening it to never having \"dessert\"."
+      ],
+      "found": [
+        "Ryu was unsatisfied with his life due to never having a satisfying fight, likening it to never having \"dessert\"."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Sukuna kill Ryu Ishigori?",
+      "id": "jjk-pg-ryu_ishigori_synopsis-003",
+      "subject": "Ryu Ishigori/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Sukuna slices his head horizontally in three parts, killing him."
+      ],
+      "found": [
+        "Sukuna slices his head horizontally in three parts, killing him."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

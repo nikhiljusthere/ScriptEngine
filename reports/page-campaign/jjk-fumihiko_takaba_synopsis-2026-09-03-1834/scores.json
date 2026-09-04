@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What inspired Takaba to become a comedian?",
+      "id": "jjk-pg-fumihiko_takaba_synopsis-001",
+      "subject": "Fumihiko Takaba/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Takaba started playing jokes to entertain them and make friends. This inspired him to become a comedian."
+      ],
+      "found": [
+        "Takaba started playing jokes to entertain them and make friends. This inspired him to become a comedian."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why couldn't Hazenoki's attacks hurt Fumihiko?",
+      "id": "jjk-pg-fumihiko_takaba_synopsis-002",
+      "subject": "Fumihiko Takaba/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Hazenoki's attacks proceed to deal no damage to Fumihiko as the comedian's skin becomes slick with ankake sauce."
+      ],
+      "found": [
+        "Hazenoki's attacks proceed to deal no damage to Fumihiko as the comedian's skin becomes slick with ankake sauce."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Fumihiko dodge the machine gun fire when soldiers attacked the hotel?",
+      "id": "jjk-pg-fumihiko_takaba_synopsis-003",
+      "subject": "Fumihiko Takaba/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Fumihiko dodges machine gun fire by kick-dancing."
+      ],
+      "found": [
+        "Fumihiko dodges machine gun fire by kick-dancing."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Fumihiko's technique deactivate during his fight with Kenjaku?",
+      "id": "jjk-pg-fumihiko_takaba_synopsis-004",
+      "subject": "Fumihiko Takaba/Synopsis",
+      "accept": "all",
+      "expected": [
+        "This causes Fumihiko's technique to deactivate as he loses faith in himself as a comedian"
+      ],
+      "found": [
+        "This causes Fumihiko's technique to deactivate as he loses faith in himself as a comedian"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

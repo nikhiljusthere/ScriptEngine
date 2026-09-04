@@ -1,8 +1,47 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (manami_suda_synopsis): +2 prose (ids 001-002) 1 Cursed Child Arc, 1 Shibuya Incident Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-manami_suda_synopsis-001",
+      "kind": "fact",
+      "question": "How much had Kanemori paid the religious group before Geto killed him?",
+      "subject": "Manami Suda/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "he paid 150 million yen",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Manami_Suda/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Cursed Child Arc"
+    },
+    {
+      "id": "jjk-pg-manami_suda_synopsis-002",
+      "kind": "fact",
+      "question": "Which side did Manami and Toshihisa choose after Geto's body was taken over?",
+      "subject": "Manami Suda/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Manami and Toshihisa Negi chose to help Pseudo-Geto",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Manami_Suda/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc | G27-watch (tail section; ~0.4k-word page, Shibuya Incident Arc is the final section)"
+    }
+  ]
 }

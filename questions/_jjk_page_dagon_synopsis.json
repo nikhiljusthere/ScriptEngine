@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (dagon_synopsis): +4 prose (ids 001-004) 1 History, 1 Fearsome Womb Arc, 2 Shibuya Incident Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-dagon_synopsis-001",
+      "kind": "fact",
+      "question": "What was Dagon born from?",
+      "subject": "Dagon/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dagon was born from the fear of the sea.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dagon/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-dagon_synopsis-002",
+      "kind": "fact",
+      "question": "How did Dagon use his domain expansion during the Fearsome Womb Arc?",
+      "subject": "Dagon/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dagon used his domain expansion inside an apartment to serve as a hideout for Kenjaku and the cursed spirits.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dagon/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Fearsome Womb Arc"
+    },
+    {
+      "id": "jjk-pg-dagon_synopsis-003",
+      "kind": "fact",
+      "question": "What did Dagon do in Shibuya Station at 9:30 P.M.?",
+      "subject": "Dagon/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dagon used his technique to swallow all of the humans on floor B4F in the Shibuya Station before the group split up.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dagon/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-dagon_synopsis-004",
+      "kind": "fact",
+      "question": "How was Dagon exorcised?",
+      "subject": "Dagon/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Naobito blocked his path and kicked him down to Toji, who repeatedly stabbed Dagon until he was exorcised, freeing the sorcerers from his domain.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dagon/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc | G27-watch (page tail; short page so expected to pass)"
+    }
+  ]
 }

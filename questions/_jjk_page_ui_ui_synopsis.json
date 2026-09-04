@@ -1,8 +1,123 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-03",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (ui_ui_synopsis): +6 prose (ids 001-006) 2 Shibuya Incident Arc, 1 Culling Game Arc, 2 Shinjuku Showdown Arc, 1 Modulo (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-ui_ui_synopsis-001",
+      "kind": "fact",
+      "question": "How did Ui Ui survive Smallpox Deity's attack?",
+      "subject": "Ui Ui/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ui Ui used simple domain to block the effects of Smallpox Deity's ability.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ui_Ui/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-ui_ui_synopsis-002",
+      "kind": "fact",
+      "question": "Where did Ui Ui and Mei Mei end up after the Shibuya Incident?",
+      "subject": "Ui Ui/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ui Ui and Mei Mei are seen in a hotel room in Kuala Lumpur, Malaysia, having escaped \"Pseudo-Geto\" off-panel using Ui Ui's cursed technique.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ui_Ui/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-ui_ui_synopsis-003",
+      "kind": "fact",
+      "question": "What role did Ui Ui play in the Culling Game?",
+      "subject": "Ui Ui/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "During the Culling Game, Ui Ui became affiliated with the group of sorcerers, and was used as the means of communication by group members.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ui_Ui/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-ui_ui_synopsis-004",
+      "kind": "fact",
+      "question": "What can Ui Ui's Spatial Transference do?",
+      "subject": "Ui Ui/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ui Ui explains that his innate technique Spatial Transference can switch the souls of the targets he has marked with their permission",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ui_Ui/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc"
+    },
+    {
+      "id": "jjk-pg-ui_ui_synopsis-005",
+      "kind": "fact",
+      "question": "How did Gojo's body get back to headquarters after the fight?",
+      "subject": "Ui Ui/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ui Ui uses Spatial Transference to teleport his body back to HQ",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ui_Ui/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc"
+    },
+    {
+      "id": "jjk-pg-ui_ui_synopsis-006",
+      "kind": "fact",
+      "question": "Who does Ui Ui meet on January 14, 2087?",
+      "subject": "Ui Ui/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ui Ui meets the Deskunte warrior Dabura Karaba",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ui_Ui/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Modulo | G27-watch (page tail; short page so expected to pass)"
+    }
+  ]
 }

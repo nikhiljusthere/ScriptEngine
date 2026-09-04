@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (kirara_hoshi_synopsis): +3 prose (ids 001-003) 2 Culling Game Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-kirara_hoshi_synopsis-001",
+      "kind": "fact",
+      "question": "What did Hakari and Kirara run together after Hakari was suspended from Jujutsu High?",
+      "subject": "Kirara Hoshi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "an underground fight club between sorcerers",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-kirara_hoshi_synopsis-002",
+      "kind": "fact",
+      "question": "What is Kirara's cursed technique based on?",
+      "subject": "Kirara Hoshi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a constellation of stars called the Southern Cross",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-kirara_hoshi_synopsis-003",
+      "kind": "fact",
+      "question": "Who retrieved Gojo's body after his death?",
+      "subject": "Kirara Hoshi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kirara and Ui Ui retrieved Gojo's body",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kirara_Hoshi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (tail section; ~1.8k-word page, Shinjuku Showdown Arc is the final section)"
+    }
+  ]
 }

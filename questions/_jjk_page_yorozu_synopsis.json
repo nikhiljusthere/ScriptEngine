@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (yorozu_synopsis): +4 prose (ids 001-004) 2 History, 1 Shibuya Incident Arc, 1 Culling Game Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-yorozu_synopsis-001",
+      "kind": "fact",
+      "question": "How did Yorozu first meet Sukuna?",
+      "subject": "Yorozu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "She spotted Sukuna, who had been invited as an idol for worship. Recognizing his imposing strength, Yorozu approached and embraced him, thinking he was lonely because of it.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yorozu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-yorozu_synopsis-002",
+      "kind": "fact",
+      "question": "What became of Yorozu's cursed object after her death?",
+      "subject": "Yorozu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Her cursed object was eventually ingested by Tsumiki Fushiguro, who fell into deep slumber after being marked by Kenjaku",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yorozu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-yorozu_synopsis-003",
+      "kind": "fact",
+      "question": "How did Yorozu come to possess Tsumiki's body?",
+      "subject": "Yorozu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yorozu was incarnated through the body of Tsumiki after Kenjaku remotely altered the latter's soul using Idle Transfiguration, which awakened her and gave her strength to serve as Yorozu's vessel",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yorozu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-yorozu_synopsis-004",
+      "kind": "fact",
+      "question": "Why did Yorozu want to kill Sukuna during the Culling Game?",
+      "subject": "Yorozu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yorozu intended to kill Sukuna to profess her love for him",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yorozu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch (tail section; ~0.7k-word page, Culling Game Arc is the final section)"
+    }
+  ]
 }

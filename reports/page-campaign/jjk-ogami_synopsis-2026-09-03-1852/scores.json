@@ -1,0 +1,59 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What kind of work did Ogami do in the past?",
+      "id": "jjk-pg-ogami_synopsis-001",
+      "subject": "Ogami/Synopsis",
+      "accept": "all",
+      "expected": [
+        "In the past, Ogami worked as an assassin, using her jujutsu to freely commit murders."
+      ],
+      "found": [
+        "In the past, Ogami worked as an assassin, using her jujutsu to freely commit murders."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Ogami die during the Shibuya Incident?",
+      "id": "jjk-pg-ogami_synopsis-002",
+      "subject": "Ogami/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Ironically obeying her orders, Toji proceeded to kill Ogami"
+      ],
+      "found": [
+        "Ironically obeying her orders, Toji proceeded to kill Ogami"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 2,
+    "fact_present": 2
+  }
+}

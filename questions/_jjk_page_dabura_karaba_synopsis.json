@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (dabura_karaba_synopsis): +4 prose (ids 001-004) 2 History, 2 Jujutsu Kaisen Modulo (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-dabura_karaba_synopsis-001",
+      "kind": "fact",
+      "question": "Why did Dabura have to kill his best friend?",
+      "subject": "Dabura Karaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dabura was forced into being their champion because the chief placed a curse on Spejo, holding her hostage. Dura was selected as the representative for the Rumelians and Dabura had no choice but to kill his best friend.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dabura_Karaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-dabura_karaba_synopsis-002",
+      "kind": "fact",
+      "question": "What did Dura ask Dabura to do before their duel?",
+      "subject": "Dabura Karaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Dura had one last request for Dabura, to protect the Rumelians.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dabura_Karaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-dabura_karaba_synopsis-003",
+      "kind": "fact",
+      "question": "What is Dabura's Domain Expansion?",
+      "subject": "Dabura Karaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Domain Expansion: Reverse Transcendence",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dabura_Karaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Jujutsu Kaisen Modulo"
+    },
+    {
+      "id": "jjk-pg-dabura_karaba_synopsis-004",
+      "kind": "fact",
+      "question": "Who did Dabura reunite with when he returned to Earth?",
+      "subject": "Dabura Karaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "he reunited with Yuka and Kyoko",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Dabura_Karaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Jujutsu Kaisen Modulo | G27-watch (page tail; ~1.5k-word page, Jujutsu Kaisen Modulo is the final section)"
+    }
+  ]
 }

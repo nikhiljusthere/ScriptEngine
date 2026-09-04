@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What goes wrong for Charles Bernard when he shows his manga to Shueisha?",
+      "id": "jjk-pg-charles_bernard_synopsis-001",
+      "subject": "Charles Bernard/Synopsis",
+      "accept": "all",
+      "expected": [
+        "the employee stated that his Japanese is good however he criticized his story, causing Charles to break his finger and leaves in disgust."
+      ],
+      "found": [
+        "the employee stated that his Japanese is good however he criticized his story, causing Charles to break his finger and leaves in disgust."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does G Warstaff let Charles Bernard see into the future?",
+      "id": "jjk-pg-charles_bernard_synopsis-002",
+      "subject": "Charles Bernard/Synopsis",
+      "accept": "all",
+      "expected": [
+        "The more blood drawn into G Warstaff's tip, the further into the future Charles can see."
+      ],
+      "found": [
+        "The more blood drawn into G Warstaff's tip, the further into the future Charles can see."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What ends Charles Bernard's fight with Hakari?",
+      "id": "jjk-pg-charles_bernard_synopsis-003",
+      "subject": "Charles Bernard/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Hakari is given a bonus of infinite cursed energy and kicks directly through Charles's defenses, breaking G Warstaff and defeating the aspiring manga creator in one blow."
+      ],
+      "found": [
+        "Hakari is given a bonus of infinite cursed energy and kicks directly through Charles's defenses, breaking G Warstaff and defeating the aspiring manga creator in one blow."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rika consume to copy Charles Bernard's cursed technique?",
+      "id": "jjk-pg-charles_bernard_synopsis-004",
+      "subject": "Charles Bernard/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Charles had part of his ribs temporarily removed to be consumed by Rika in order to Copy his Curse technique, with Hakari promising to fix it later."
+      ],
+      "found": [
+        "Charles had part of his ribs temporarily removed to be consumed by Rika in order to Copy his Curse technique, with Hakari promising to fix it later."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

@@ -1,8 +1,104 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-03",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (akari_nitta_synopsis): +5 prose (ids 001-005) 1 History, 1 Death Painting Arc, 2 Shibuya Incident Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-akari_nitta_synopsis-001",
+      "kind": "fact",
+      "question": "Why did Akari enroll in Kyoto Jujutsu High?",
+      "subject": "Akari Nitta/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "To better watch over her younger brother, Akari enrolled in Kyoto Jujutsu High to become an assistant manager.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Akari_Nitta/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-akari_nitta_synopsis-002",
+      "kind": "fact",
+      "question": "Who was Akari assigned to supervise on the Death Painting mission?",
+      "subject": "Akari Nitta/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Akari was assigned to supervise Yuji Itadori, Megumi Fushiguro and Nobara Kugisaki on their mission to investigate the cause of mysterious deaths where the victims were killed at the entrances to their homes.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Akari_Nitta/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Death Painting Arc"
+    },
+    {
+      "id": "jjk-pg-akari_nitta_synopsis-003",
+      "kind": "fact",
+      "question": "Why did Ijichi want Akari outside the Shibuya curtain?",
+      "subject": "Akari Nitta/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ijichi wanted her to be outside of the curtain so the assistant managers could establish constant communication, since cellphone signals were blocked inside.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Akari_Nitta/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-akari_nitta_synopsis-004",
+      "kind": "fact",
+      "question": "How did Akari escape when Shigemo tried to hold her hostage?",
+      "subject": "Akari Nitta/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Shigemo attempted to hold Akari hostage, but realized too late that she escaped by crawling up an escalator during the confusion.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Akari_Nitta/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shibuya Incident Arc"
+    },
+    {
+      "id": "jjk-pg-akari_nitta_synopsis-005",
+      "kind": "fact",
+      "question": "What did Gakuganji reveal to Akari at the Holy Mountain of Ida?",
+      "subject": "Akari Nitta/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Akari accompanied Utahime Iori and Yoshinobu Gakuganji to the Holy Mountain of Ida, where the latter revealed that Tengen's absorbed vestiges were discovered in the Sukuna's remains after the latter was separated from Megumi Fushiguro.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Akari_Nitta/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc"
+    }
+  ]
 }

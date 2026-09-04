@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (kou_usami_synopsis): +3 prose (ids 001-003) 1 History, 2 Jujutsu Kaisen Modulo (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-kou_usami_synopsis-001",
+      "kind": "fact",
+      "question": "What was Usami's role as a government official?",
+      "subject": "Kou Usami/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Usami was responsible for overseeing duties that had previously been handled by the Big Three Families",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kou_Usami/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-kou_usami_synopsis-002",
+      "kind": "fact",
+      "question": "What did the mothership Naunax carry when it appeared above Nevada in 2086?",
+      "subject": "Kou Usami/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "nearly 50,000 Simurian refugees",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kou_Usami/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Jujutsu Kaisen Modulo | G27-watch (tail section; ~1.45k-word page, Jujutsu Kaisen Modulo is the final section)"
+    },
+    {
+      "id": "jjk-pg-kou_usami_synopsis-003",
+      "kind": "fact",
+      "question": "What were Tsurugi, Yuka, and Maru sent to Gifu Prefecture to do?",
+      "subject": "Kou Usami/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "exterminate a shark that had been spotted swimming through the forests of Gifu Prefecture",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kou_Usami/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Jujutsu Kaisen Modulo | G27-watch (tail section; ~1.45k-word page, Jujutsu Kaisen Modulo is the final section)"
+    }
+  ]
 }

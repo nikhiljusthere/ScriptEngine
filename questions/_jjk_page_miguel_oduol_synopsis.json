@@ -1,8 +1,47 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (miguel_oduol_synopsis): +2 prose (ids 001-002) 1 Cursed Child Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-miguel_oduol_synopsis-001",
+      "kind": "fact",
+      "question": "After the Night Parade of a Hundred Demons, which side did Miguel choose?",
+      "subject": "Miguel Oduol/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "He was eventually recruited by Gojo, leaving Geto's group and allying himself with Japan's jujutsu society.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Miguel_Oduol/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Cursed Child Arc"
+    },
+    {
+      "id": "jjk-pg-miguel_oduol_synopsis-002",
+      "kind": "fact",
+      "question": "On what condition did Miguel agree to Larue's request to fight Sukuna?",
+      "subject": "Miguel Oduol/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "on the condition that they fought after Sukuna could no longer use his domain and after Gojo and Yuta lost",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Miguel_Oduol/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (tail section; ~0.75k-word page, Shinjuku Showdown Arc is the final section)"
+    }
+  ]
 }

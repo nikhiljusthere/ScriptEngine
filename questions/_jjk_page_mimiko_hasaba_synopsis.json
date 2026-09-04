@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (mimiko_hasaba_synopsis): +4 prose (ids 001-004) 2 Gojo's Past Arc, 1 Cursed Child Arc, 1 Shibuya Incident Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-mimiko_hasaba_synopsis-001",
+      "kind": "fact",
+      "question": "What unusual abilities did Mimiko and her twin sister inherit from their parents?",
+      "subject": "Mimiko Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "both girls possessed above-average cursed energy, granting them the ability to see curses and use jujutsu",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mimiko_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-mimiko_hasaba_synopsis-002",
+      "kind": "fact",
+      "question": "What did Suguru Geto do to save the Hasaba twins?",
+      "subject": "Mimiko Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "He massacred the entire village to save Mimiko and Nanako and took them under his care",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mimiko_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-mimiko_hasaba_synopsis-003",
+      "kind": "fact",
+      "question": "What plan did Suguru Geto announce to his commanders in 2017?",
+      "subject": "Mimiko Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Geto announced his plan to destroy Jujutsu High and usher in the age of sorcerers",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mimiko_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Cursed Child Arc"
+    },
+    {
+      "id": "jjk-pg-mimiko_hasaba_synopsis-004",
+      "kind": "fact",
+      "question": "What did Sukuna do when the Hasaba sisters begged him for help?",
+      "subject": "Mimiko Hasaba/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Sukuna responded by using his cursed technique to decapitate Mimiko",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mimiko_Hasaba/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc | G27-watch (tail section; ~0.9k-word page)"
+    }
+  ]
 }

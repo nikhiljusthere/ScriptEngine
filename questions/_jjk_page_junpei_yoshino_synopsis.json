@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (junpei_yoshino_synopsis): +3 prose (ids 001-003) 1 History, 2 Vs. Mahito Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-junpei_yoshino_synopsis-001",
+      "kind": "fact",
+      "question": "How did Junpei get the scars on his forehead?",
+      "subject": "Junpei Yoshino/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "In one such instance, the end result caused him to end up with cigarette burn scars on his forehead.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Junpei_Yoshino/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-junpei_yoshino_synopsis-002",
+      "kind": "fact",
+      "question": "What did Mahito transform Junpei into?",
+      "subject": "Junpei Yoshino/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Mahito uses his Idle Transfiguration technique and transforms Junpei into one of his many ex-human abominations.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Junpei_Yoshino/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Vs. Mahito Arc | G27-watch (page tail; ~1.3k-word page, Vs. Mahito Arc is the final section)"
+    },
+    {
+      "id": "jjk-pg-junpei_yoshino_synopsis-003",
+      "kind": "fact",
+      "question": "What were Junpei's last words?",
+      "subject": "Junpei Yoshino/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "faintly asking Yuji \"...Why?...\"",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Junpei_Yoshino/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Vs. Mahito Arc | G27-watch (page tail; ~1.3k-word page, Vs. Mahito Arc is the final section)"
+    }
+  ]
 }

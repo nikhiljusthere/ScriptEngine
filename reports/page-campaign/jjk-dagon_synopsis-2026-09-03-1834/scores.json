@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What was Dagon born from?",
+      "id": "jjk-pg-dagon_synopsis-001",
+      "subject": "Dagon/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Dagon was born from the fear of the sea."
+      ],
+      "found": [
+        "Dagon was born from the fear of the sea."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Dagon use his domain expansion during the Fearsome Womb Arc?",
+      "id": "jjk-pg-dagon_synopsis-002",
+      "subject": "Dagon/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Dagon used his domain expansion inside an apartment to serve as a hideout for Kenjaku and the cursed spirits."
+      ],
+      "found": [
+        "Dagon used his domain expansion inside an apartment to serve as a hideout for Kenjaku and the cursed spirits."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Dagon do in Shibuya Station at 9:30 P.M.?",
+      "id": "jjk-pg-dagon_synopsis-003",
+      "subject": "Dagon/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Dagon used his technique to swallow all of the humans on floor B4F in the Shibuya Station before the group split up."
+      ],
+      "found": [
+        "Dagon used his technique to swallow all of the humans on floor B4F in the Shibuya Station before the group split up."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How was Dagon exorcised?",
+      "id": "jjk-pg-dagon_synopsis-004",
+      "subject": "Dagon/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Naobito blocked his path and kicked him down to Toji, who repeatedly stabbed Dagon until he was exorcised, freeing the sorcerers from his domain."
+      ],
+      "found": [
+        "Naobito blocked his path and kicked him down to Toji, who repeatedly stabbed Dagon until he was exorcised, freeing the sorcerers from his domain."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

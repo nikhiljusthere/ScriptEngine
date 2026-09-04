@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (toshihisa_negi_synopsis): +4 prose (ids 001-004) 1 History, 1 Cursed Child Arc, 2 Shibuya Incident Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-toshihisa_negi_synopsis-001",
+      "kind": "fact",
+      "question": "How did Toshihisa Negi join Suguru Geto's family?",
+      "subject": "Toshihisa Negi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "He eventually joined Suguru Geto's family after being rescued by him",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toshihisa_Negi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-toshihisa_negi_synopsis-002",
+      "kind": "fact",
+      "question": "What did Toshihisa participate in on December 24, 2017?",
+      "subject": "Toshihisa Negi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the Night Parade of a Hundred Demons",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toshihisa_Negi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Cursed Child Arc"
+    },
+    {
+      "id": "jjk-pg-toshihisa_negi_synopsis-003",
+      "kind": "fact",
+      "question": "Which side did Toshihisa take after Geto's body was taken over by Pseudo-Geto?",
+      "subject": "Toshihisa Negi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Manami Suda and Toshihisa chose to help Pseudo-Geto",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toshihisa_Negi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc | G27-watch (tail section; ~0.3k-word page, Shibuya Incident Arc is the final section)"
+    },
+    {
+      "id": "jjk-pg-toshihisa_negi_synopsis-004",
+      "kind": "fact",
+      "question": "Did Toshihisa survive the Shibuya Incident?",
+      "subject": "Toshihisa Negi/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Toshihisa did not survive the attack.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toshihisa_Negi/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shibuya Incident Arc | G27-watch (tail section; ~0.3k-word page, Shibuya Incident Arc is the final section)"
+    }
+  ]
 }

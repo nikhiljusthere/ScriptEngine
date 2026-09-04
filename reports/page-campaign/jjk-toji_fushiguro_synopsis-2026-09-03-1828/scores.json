@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How did Toji end up with the scar on his lip?",
+      "id": "jjk-pg-toji_fushiguro_synopsis-001",
+      "subject": "Toji Fushiguro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "he would be abused and thrown into the disciplinary pit full of cursed spirits, which caused him to obtain a scar on his lip"
+      ],
+      "found": [],
+      "missing": [
+        "he would be abused and thrown into the disciplinary pit full of cursed spirits, which caused him to obtain a scar on his lip"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji come to have the surname Fushiguro?",
+      "id": "jjk-pg-toji_fushiguro_synopsis-002",
+      "subject": "Toji Fushiguro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Toji eventually married a woman and took her surname, becoming Toji Fushiguro."
+      ],
+      "found": [
+        "Toji eventually married a woman and took her surname, becoming Toji Fushiguro."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji break through Gojo's Infinity?",
+      "id": "jjk-pg-toji_fushiguro_synopsis-003",
+      "subject": "Toji Fushiguro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Attacking from Gojo's blind spot, Toji broke through his Infinity and stabbed him in the throat using the Inverted Spear of Heaven"
+      ],
+      "found": [
+        "Attacking from Gojo's blind spot, Toji broke through his Infinity and stabbed him in the throat using the Inverted Spear of Heaven"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Toji tell Gojo with his dying words?",
+      "id": "jjk-pg-toji_fushiguro_synopsis-004",
+      "subject": "Toji Fushiguro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Toji told his killer that\u00a0his son will be sold to the Zenin Clan in two or three years, and to do whatever he wanted with that information."
+      ],
+      "found": [
+        "Toji told his killer that\u00a0his son will be sold to the Zenin Clan in two or three years, and to do whatever he wanted with that information."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji show up during the Shibuya Incident?",
+      "id": "jjk-pg-toji_fushiguro_synopsis-005",
+      "subject": "Toji Fushiguro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Ogami used her S\u00e9ance Technique to summon Toji's body's information into her grandson, physically transforming him into Toji to gain his physical abilities."
+      ],
+      "found": [
+        "Ogami used her S\u00e9ance Technique to summon Toji's body's information into her grandson, physically transforming him into Toji to gain his physical abilities."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Toji doing in Gojo's afterlife?",
+      "id": "jjk-pg-toji_fushiguro_synopsis-006",
+      "subject": "Toji Fushiguro/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Toji appeared in Gojo's afterlife, wandering in the background."
+      ],
+      "found": [
+        "Toji appeared in Gojo's afterlife, wandering in the background."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 5
+  }
+}

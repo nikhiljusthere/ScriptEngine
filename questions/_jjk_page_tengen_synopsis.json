@@ -1,8 +1,104 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-03",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (tengen_synopsis): +5 prose (ids 001-005) 1 History, 1 Gojo's Past Arc, 2 Culling Game Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-tengen_synopsis-001",
+      "kind": "fact",
+      "question": "What did Master Tengen do during the Nara Period?",
+      "subject": "Tengen/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "During the Nara Period, Master Tengen spread Japanese Buddhism and preached what would become the foundation for jujutsu sorcerers.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tengen/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-tengen_synopsis-002",
+      "kind": "fact",
+      "question": "Why must Tengen merge with a Star Plasma Vessel every 500 years?",
+      "subject": "Tengen/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "To prevent this, every 500 years, Tengen must merge with a compatible Star Plasma Vessel to rewrite her body's information.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tengen/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-tengen_synopsis-003",
+      "kind": "fact",
+      "question": "What is Kenjaku's objective in the Culling Game?",
+      "subject": "Tengen/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Tengen explains Kenjaku's objective: to force the evolution of humankind throughout Japan.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tengen/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-tengen_synopsis-004",
+      "kind": "fact",
+      "question": "How did Kenjaku's fight with Tengen end?",
+      "subject": "Tengen/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "As Kenjaku undoes the seal on the tree and reveals Tengen's true form, he says goodbye to an old friend.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tengen/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-tengen_synopsis-005",
+      "kind": "fact",
+      "question": "Why did Gakuganji preserve Sukuna's remains?",
+      "subject": "Tengen/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yoshinobu Gakuganji opted to preserve Sukuna's remains in order to keep up Tengen's barriers around Japan for the time being until countermeasures and alternatives could be found.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tengen/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc"
+    }
+  ]
 }

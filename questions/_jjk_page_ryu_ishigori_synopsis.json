@@ -1,8 +1,66 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (ryu_ishigori_synopsis): +3 prose (ids 001-003) 2 History, 1 Culling Game Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-ryu_ishigori_synopsis-001",
+      "kind": "fact",
+      "question": "What made Ryu Ishigori famous four hundred years ago?",
+      "subject": "Ryu Ishigori/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ryu Ishigori gained some notoriety by having the highest cursed energy output ever recorded.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ryu_Ishigori/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-ryu_ishigori_synopsis-002",
+      "kind": "fact",
+      "question": "Why did Ryu accept Kenjaku's offer of a second life?",
+      "subject": "Ryu Ishigori/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ryu was unsatisfied with his life due to never having a satisfying fight, likening it to never having \"dessert\".",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ryu_Ishigori/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-ryu_ishigori_synopsis-003",
+      "kind": "fact",
+      "question": "How did Sukuna kill Ryu Ishigori?",
+      "subject": "Ryu Ishigori/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Sukuna slices his head horizontally in three parts, killing him.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ryu_Ishigori/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch: tail section of ~0.77k-word page"
+    }
+  ]
 }

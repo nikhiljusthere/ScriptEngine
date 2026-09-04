@@ -1,0 +1,113 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Why has Misato Kuroi taken care of Riko since she was four?",
+      "id": "jjk-pg-riko_amanai_synopsis-001",
+      "subject": "Riko Amanai/Synopsis",
+      "accept": "all",
+      "expected": [
+        "When she was four years old, her parents died in a car accident. She has been cared for by Misato Kuroi since then."
+      ],
+      "found": [
+        "When she was four years old, her parents died in a car accident. She has been cared for by Misato Kuroi since then."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who attacked Riko's hotel before Gojo and Geto arrived?",
+      "id": "jjk-pg-riko_amanai_synopsis-002",
+      "subject": "Riko Amanai/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Before Gojo and Geto arrived at her hotel, she was attacked by Kokun from Q, causing an explosion that blasted an unconscious Riko out of the room."
+      ],
+      "found": [
+        "Before Gojo and Geto arrived at her hotel, she was attacked by Kokun from Q, causing an explosion that blasted an unconscious Riko out of the room."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Riko die?",
+      "id": "jjk-pg-riko_amanai_synopsis-003",
+      "subject": "Riko Amanai/Synopsis",
+      "accept": "all",
+      "expected": [
+        "As Riko reached out, she was suddenly shot in the head by Toji, killing her instantly."
+      ],
+      "found": [
+        "As Riko reached out, she was suddenly shot in the head by Toji, killing her instantly."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which Star Plasma Vessel did Tengen say had the greatest potential?",
+      "id": "jjk-pg-riko_amanai_synopsis-004",
+      "subject": "Riko Amanai/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Riko was mentioned to have had the greatest potential among the Star Plasma Vessels."
+      ],
+      "found": [
+        "Riko was mentioned to have had the greatest potential among the Star Plasma Vessels."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Riko doing in Gojo's afterlife?",
+      "id": "jjk-pg-riko_amanai_synopsis-005",
+      "subject": "Riko Amanai/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Riko appeared in Gojo's afterlife, in which she was talking with Misato."
+      ],
+      "found": [
+        "Riko appeared in Gojo's afterlife, in which she was talking with Misato."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 5,
+    "fact_present": 5
+  }
+}

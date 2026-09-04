@@ -1,8 +1,104 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (hajime_kashimo_synopsis): +5 prose (ids 001-005) 1 History, 2 Culling Game Arc, 2 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-hajime_kashimo_synopsis-001",
+      "kind": "fact",
+      "question": "What did Kashimo agree to in his deal with Kenjaku?",
+      "subject": "Hajime Kashimo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "to be turned into a cursed object and incarnate in a new body 400 years down the line, on the condition that he would be able to fight Sukuna",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-hajime_kashimo_synopsis-002",
+      "kind": "fact",
+      "question": "What did Kashimo's 9th Rule of the Culling Game allow players to do?",
+      "subject": "Hajime Kashimo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "access information about other players by accessing Kogane",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-hajime_kashimo_synopsis-003",
+      "kind": "fact",
+      "question": "Who won the fight between Kashimo and Hakari?",
+      "subject": "Hajime Kashimo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Hakari emerges from the water and lands another right hook across his opponent's face, finally defeating Kashimo",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-hajime_kashimo_synopsis-004",
+      "kind": "fact",
+      "question": "From what height did Kashimo drop onto the battlefield in Shinjuku?",
+      "subject": "Hajime Kashimo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "two-hundred and three meters",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (page tail; ~3.2k-word page, Shinjuku is the final section)"
+    },
+    {
+      "id": "jjk-pg-hajime_kashimo_synopsis-005",
+      "kind": "fact",
+      "question": "What did Sukuna tell Kashimo his past challengers were after?",
+      "subject": "Hajime Kashimo/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the recognition of the strongest",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (page tail; ~3.2k-word page, Shinjuku is the final section)"
+    }
+  ]
 }

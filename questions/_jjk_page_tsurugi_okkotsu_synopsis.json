@@ -1,8 +1,47 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (tsurugi_okkotsu_synopsis): +2 prose (ids 001-002) 2 History (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-tsurugi_okkotsu_synopsis-001",
+      "kind": "fact",
+      "question": "What did Tsurugi learn about his father from Gojo clan members?",
+      "subject": "Tsurugi Okkotsu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "By secretly asking some prominent Gojo Clan members, he eventually learned that his father had a dignified nature, but hated the weakness of the current generation of jujutsu sorcerers compared to his parents'.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tsurugi_Okkotsu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-tsurugi_okkotsu_synopsis-002",
+      "kind": "fact",
+      "question": "Who gave Tsurugi his ring when he was eleven?",
+      "subject": "Tsurugi Okkotsu/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "At age 11, his mother Mifuyu gave him the ring.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Tsurugi_Okkotsu/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    }
+  ]
 }

@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How did Yorozu first meet Sukuna?",
+      "id": "jjk-pg-yorozu_synopsis-001",
+      "subject": "Yorozu/Synopsis",
+      "accept": "all",
+      "expected": [
+        "She spotted Sukuna, who had been invited as an idol for worship. Recognizing his imposing strength, Yorozu approached and embraced him, thinking he was lonely because of it."
+      ],
+      "found": [
+        "She spotted Sukuna, who had been invited as an idol for worship. Recognizing his imposing strength, Yorozu approached and embraced him, thinking he was lonely because of it."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What became of Yorozu's cursed object after her death?",
+      "id": "jjk-pg-yorozu_synopsis-002",
+      "subject": "Yorozu/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Her cursed object was eventually ingested by Tsumiki Fushiguro, who fell into deep slumber after being marked by Kenjaku"
+      ],
+      "found": [
+        "Her cursed object was eventually ingested by Tsumiki Fushiguro, who fell into deep slumber after being marked by Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Yorozu come to possess Tsumiki's body?",
+      "id": "jjk-pg-yorozu_synopsis-003",
+      "subject": "Yorozu/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Yorozu was incarnated through the body of Tsumiki after Kenjaku remotely altered the latter's soul using Idle Transfiguration, which awakened her and gave her strength to serve as Yorozu's vessel"
+      ],
+      "found": [
+        "Yorozu was incarnated through the body of Tsumiki after Kenjaku remotely altered the latter's soul using Idle Transfiguration, which awakened her and gave her strength to serve as Yorozu's vessel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Yorozu want to kill Sukuna during the Culling Game?",
+      "id": "jjk-pg-yorozu_synopsis-004",
+      "subject": "Yorozu/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Yorozu intended to kill Sukuna to profess her love for him"
+      ],
+      "found": [
+        "Yorozu intended to kill Sukuna to profess her love for him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

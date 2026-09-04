@@ -1,8 +1,104 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-03",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (riko_amanai_synopsis): +5 prose (ids 001-005) 1 History, 2 Gojo's Past Arc, 1 Culling Game Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-riko_amanai_synopsis-001",
+      "kind": "fact",
+      "question": "Why has Misato Kuroi taken care of Riko since she was four?",
+      "subject": "Riko Amanai/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "When she was four years old, her parents died in a car accident. She has been cared for by Misato Kuroi since then.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-riko_amanai_synopsis-002",
+      "kind": "fact",
+      "question": "Who attacked Riko's hotel before Gojo and Geto arrived?",
+      "subject": "Riko Amanai/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Before Gojo and Geto arrived at her hotel, she was attacked by Kokun from Q, causing an explosion that blasted an unconscious Riko out of the room.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-riko_amanai_synopsis-003",
+      "kind": "fact",
+      "question": "How did Riko die?",
+      "subject": "Riko Amanai/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "As Riko reached out, she was suddenly shot in the head by Toji, killing her instantly.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Gojo's Past Arc"
+    },
+    {
+      "id": "jjk-pg-riko_amanai_synopsis-004",
+      "kind": "fact",
+      "question": "Which Star Plasma Vessel did Tengen say had the greatest potential?",
+      "subject": "Riko Amanai/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Riko was mentioned to have had the greatest potential among the Star Plasma Vessels.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-riko_amanai_synopsis-005",
+      "kind": "fact",
+      "question": "What was Riko doing in Gojo's afterlife?",
+      "subject": "Riko Amanai/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Riko appeared in Gojo's afterlife, in which she was talking with Misato.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Riko_Amanai/Synopsis"
+      ],
+      "verified": "2026-09-03",
+      "note": "prose: Shinjuku Showdown Arc | G27-watch (page tail; short page so expected to pass)"
+    }
+  ]
 }

@@ -1,8 +1,85 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (eso_synopsis): +4 prose (ids 001-004) 2 History, 1 Kyoto Goodwill Event Arc, 1 Death Painting Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-eso_synopsis-001",
+      "kind": "fact",
+      "question": "What became the Death Paintings?",
+      "subject": "Eso/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "the nine aborted fetuses became cursed objects known as the Death Paintings.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Eso/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-eso_synopsis-002",
+      "kind": "fact",
+      "question": "What rank did Death Painting Wombs 1-3 hold?",
+      "subject": "Eso/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Death Painting Wombs 1-3 were powerful enough to be ranked as special grade",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Eso/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-eso_synopsis-003",
+      "kind": "fact",
+      "question": "What did Mahito steal from the cursed warehouse during the Goodwill Event?",
+      "subject": "Eso/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Mahito stole six of Sukuna's fingers and Death Painting Wombs 1-3 from the cursed warehouse during the Goodwill Event",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Eso/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Kyoto Goodwill Event Arc"
+    },
+    {
+      "id": "jjk-pg-eso_synopsis-004",
+      "kind": "fact",
+      "question": "Who killed Eso?",
+      "subject": "Eso/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Yuji caught up to the car just as Eso fell off it, the former quietly apologizing before driving a cursed energy-reinforced punch into the latter's abdomen, killing the older Death Painting Womb.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Eso/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Death Painting Arc | G27-watch (page tail; short page so expected to pass)"
+    }
+  ]
 }

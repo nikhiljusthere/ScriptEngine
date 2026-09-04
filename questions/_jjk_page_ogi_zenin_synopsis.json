@@ -1,8 +1,47 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (ogi_zenin_synopsis): +2 prose (ids 001-002) 1 History, 1 Culling Game Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-ogi_zenin_synopsis-001",
+      "kind": "fact",
+      "question": "Why was Ogi Zenin passed over for the head of the Zenin clan?",
+      "subject": "Ogi Zenin/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Due to his daughters lacking talent in jujutsu, he was passed over for the position of the 25th head of the clan by his older brother.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ogi_Zenin/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-ogi_zenin_synopsis-002",
+      "kind": "fact",
+      "question": "What did Naobito Zenin's will reveal about the next clan leader?",
+      "subject": "Ogi Zenin/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Ogi listened as Furudate read Naobito's will, which revealed that in the event of Satoru Gojo's disappearance, Megumi Fushiguro was to become the next clan leader.",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ogi_Zenin/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc | G27-watch (page tail; ~0.48k-word page, Culling Game Arc is the final section)"
+    }
+  ]
 }

@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who enrolled at Jujutsu High with Yu Haibara in 2006?",
+      "id": "jjk-pg-yu_haibara_synopsis-001",
+      "subject": "Yu Haibara/Synopsis",
+      "accept": "all",
+      "expected": [
+        "In 2006, he enrolled in Jujutsu High as a first-year student along with Kento Nanami."
+      ],
+      "found": [
+        "In 2006, he enrolled in Jujutsu High as a first-year student along with Kento Nanami."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yu Haibara tell Geto when he asked if he liked being a sorcerer?",
+      "id": "jjk-pg-yu_haibara_synopsis-002",
+      "subject": "Yu Haibara/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Yu answered that he liked doing things that only he could do."
+      ],
+      "found": [
+        "Yu answered that he liked doing things that only he could do."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who did Yu Haibara's ghost point to for Nanami?",
+      "id": "jjk-pg-yu_haibara_synopsis-003",
+      "subject": "Yu Haibara/Synopsis",
+      "accept": "all",
+      "expected": [
+        "A ghost or hallucination of Haibara then appears before him and points to Yuji Itadori as his answer."
+      ],
+      "found": [
+        "A ghost or hallucination of Haibara then appears before him and points to Yuji Itadori as his answer."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where was Yu Haibara after Gojo's death?",
+      "id": "jjk-pg-yu_haibara_synopsis-004",
+      "subject": "Yu Haibara/Synopsis",
+      "accept": "all",
+      "expected": [
+        "Yu was present among the fallen sorcerers in the afterlife after Gojo's death who spoke with him."
+      ],
+      "found": [
+        "Yu was present among the fallen sorcerers in the afterlife after Gojo's death who spoke with him."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

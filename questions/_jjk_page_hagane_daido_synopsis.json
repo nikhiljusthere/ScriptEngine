@@ -1,8 +1,104 @@
-{
+﻿{
   "series": "jjk",
   "wiki": "https://jujutsu-kaisen.fandom.com",
-  "updated": "2026-08-24",
-  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "updated": "2026-09-04",
+  "note": "page-gen 2026-08-24: 0 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded | CHAR_SYNOPSIS (hagane_daido_synopsis): +5 prose (ids 001-005) 2 History, 2 Culling Game Arc, 1 Shinjuku Showdown Arc (route-one {{Ref}} sourcing).",
   "retired": [],
-  "questions": []
+  "questions": [
+    {
+      "id": "jjk-pg-hagane_daido_synopsis-001",
+      "kind": "fact",
+      "question": "Who was Daido before the Culling Game?",
+      "subject": "Hagane Daido/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a nameless but unmatched master swordsman",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hagane_Daido/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-hagane_daido_synopsis-002",
+      "kind": "fact",
+      "question": "Who reincarnated Daido so he could join the Culling Game?",
+      "subject": "Hagane Daido/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "Kenjaku",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hagane_Daido/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: History"
+    },
+    {
+      "id": "jjk-pg-hagane_daido_synopsis-003",
+      "kind": "fact",
+      "question": "What did Daido find in the box of toys in the abandoned city of Kagoshima?",
+      "subject": "Hagane Daido/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "a DX Nichirin Sword, a toy",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hagane_Daido/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-hagane_daido_synopsis-004",
+      "kind": "fact",
+      "question": "What was Daido actually doing when his hand was cut off in Naoya's domain?",
+      "subject": "Hagane Daido/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "he was throwing the Split Soul Katana to Maki",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hagane_Daido/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Culling Game Arc"
+    },
+    {
+      "id": "jjk-pg-hagane_daido_synopsis-005",
+      "kind": "fact",
+      "question": "Why was Tokyo the safest place for Daido and Miyo to hide?",
+      "subject": "Hagane Daido/Synopsis",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "answer": [
+        {
+          "item": "it was filled with cursed spirits and declared off-limits by the government",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hagane_Daido/Synopsis"
+      ],
+      "verified": "2026-09-04",
+      "note": "prose: Shinjuku Showdown Arc"
+    }
+  ]
 }
