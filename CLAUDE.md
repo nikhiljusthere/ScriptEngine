@@ -190,7 +190,7 @@ misroute, a discourse-opener wh-anchor, `whose`) are fixed and gated; a chunking
 steps: `reports/page-campaign/HANDOFF_PROSE_PASS.md`.
 
 **Gates (re-run before calling any pass done):** `eval --series jjk` = 24/24;
-`canon-run --series opm` ≈ 8/16 exact, 235/237 canon; `pytest tests/ -q` ≈ 1038.
+`canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%; `pytest tests/ -q` = 1,133.
 Batch files are `_`-prefixed so they stay out of the official gold bank. The
 historical accuracy-campaign records (rounds 1/2) are in `reports/page-campaign/STATUS.md`
 and `HANDOFF_ROUND2.md`.
