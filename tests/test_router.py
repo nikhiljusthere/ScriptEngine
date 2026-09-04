@@ -937,3 +937,77 @@ class TestEpisodeAnchoredQa:
         chosen = route(paths, "Toward what does Megumi desperately head?", subject="Megumi Fushiguro")
         assert chosen.mode == "narrative"
         assert "Episode" not in chosen.why
+
+
+class TestG28OoaListAsk:
+    """G28 (Finding B, 2026-09-04): a page's order-of-appearance cast.
+
+    "Which characters appear in X?" wants X's `Characters in Order of
+    Appearance` -- a page-local, order-bearing list whose verbatim source is the
+    page's own section. It is not a declared roster (the roster door serves the
+    overrides.yaml sets, which do not exist yet) and can never reach rule 5:
+    `_PLURAL_WH` is `^(who|what|which)\\s+(are|were)\\b`, so "which characters
+    appear" sets no `plural_ask` and no set is probed. Without the `_OOA_ASK`
+    rescue, a story-typed page (episode, music, chapter, event) fell to the
+story-type rule and narrated the list -- on a 12-name probe, `auto`
+     (narrative) surfaced 1/12 on Aizo and 4/12 on Ao no Sumika, while `qa`
+     returns the full OOA section (Aizo 45, Ao no Sumika 13). The fix routes
+     these to `qa` permanently: the
+    list is page-local and order-bearing, not a declared set, so there is no
+    roster door to defer to. The rescue sits after rules 5 and 6; the guards pin
+    that placement, so a future reorder trips the suite instead of re-routing.
+    """
+
+    @pytest.mark.parametrize(
+        "series,query",
+        [
+            # Finding B: music and chapter pages whose OOA list was narrated.
+            ("jjk", "Which characters appear in Aizo?"),
+            ("jjk", "Which characters appear in Ao no Sumika?"),
+            ("jjk", "Which characters appear in Chapter 1?"),
+        ],
+    )
+    def test_ooa_list_ask_reaches_qa(self, series, query):
+        from scriptengine.config import series_paths
+
+        paths = series_paths(series)
+        if not paths.facts_db.exists():
+            pytest.skip(f"{series} is not indexed")
+        assert route(paths, query).mode == "qa"
+
+    def test_a_plural_set_ask_keeps_its_roster_route(self):
+        # "What are the fighters informed of, per Episode 51?" is worded like an
+        # OOA ask ("what ... fighters") but is really a plural ask over the
+        # episode's set, so rule 5 must claim it as a roster first. If the OOA
+        # rescue were moved above rule 5 this would flip to qa.
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert route(paths, "What are the fighters informed of, per Episode 51?").mode == "roster"
+
+    def test_a_kanji_collision_is_a_lookup_not_a_cast(self):
+        # "kanji characters" is a glyph lookup, not a cast list: the word
+        # `characters` here means the name's glyphs, so it must read from the
+        # page (qa), not summon a roster or a narrative read.
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert (
+            route(paths, "What kanji characters compose the name Domain Amplification?").mode == "qa"
+        )
+
+    def test_an_opm_cover_credit_is_unchanged(self):
+        # The capture set reaches OPM. A "who is featured" credit is a qa lookup
+        # there, and the OOA rescue must not move it.
+        from scriptengine.config import series_paths
+
+        paths = series_paths("opm")
+        if not paths.facts_db.exists():
+            pytest.skip("opm is not indexed")
+        assert (
+            route(paths, "Who is featured on the cover of Volume 1 of One-Punch Man?").mode == "qa"
+        )

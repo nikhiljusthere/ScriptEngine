@@ -1,18 +1,65 @@
 # Checkpoint — stopped before the Hybrid roster build
 
-**Status: PAUSED by decision, 2026-09-04.** Nothing is mid-flight. Every gate is
-green and the tree is in a consistent state. This file is the resume point.
+**Status: PAUSED by decision, 2026-09-04; resumed and advanced 2026-09-04.**
+TODO 1 (commit) is **done** — the four workstreams landed as `3207935`,
+`4ca36b9`, `1058145`, `ab5d66c` (branch `character-scoped-questions`, 4 ahead /
+0 behind `origin`). TODO 2 (Finding B / G28) is **applied and all gates green**
+2026-09-04 — the `_OOA_ASK` detector is in `router.py`, 6 regression+guard tests
+in `test_router.py`, and the full gate triple passes: `pytest` 1,128/0,
+`eval --series jjk` 24/24, all four live OOA pages now route `qa` under `auto`
+with full name coverage (Ch.1 9/9, Ch.59 9/9, Aizo 45/45, Ao no Sumika 13/13),
+and `canon-run --series opm` is 10/16 · 236/236 · 79.0% (unchanged). `qa` is
+permanent: these asks can never reach rule 5, OOA is page-local and
+order-bearing, and the page's own section is the verbatim source.
+This file is the resume point.
 
 ## TODO, in order
 
-- [ ] **1. Commit the work.** It is all uncommitted (see *Risk* below). Decide
-      this first — everything else can wait, this cannot.
-- [ ] **2. Fix Finding B (proposed G28)** — the auto-router sends "which
+- [x] **1. Commit the work.** Done 2026-09-04, four commits on
+      `character-scoped-questions` (identity `nikhiljusthere`, env-var only):
+      `3207935` span-recall harness, `4ca36b9` scroll-box parser fix,
+      `1058145` character_synopsis prose wave (72 batches / 76 reports),
+      `ab5d66c` campaign state & decisions. Working tree clean (minus the
+      standing do-not-commit scratch). Not pushed.
+- [x] **2. Fix Finding B (G28) — APPLIED + gated 2026-09-04.** The auto-router sent "which
       characters appear in X?" to `narrative` on non-chapter pages, which
       under-enumerates (Aizo 1/12, Ao no Sumika 4/12 under `auto`; both 12/12
       under `qa`). Do this **before or with** the roster build: if the natural
       door still narrates instead of enumerating, declaring 550 rosters will not
       make it answer correctly. Router code → propose-and-approve.
+
+      **Diagnosed + drafted (2026-09-04), awaiting sign-off.** Root cause: the
+      OOA / "who's-in-X" list-ask is not recognized as a *set*, so a story-typed
+      page (episode, music, chapter, event) falls through to the story-type rule
+      (`router.py:728`, `media ∈ {EVENT,MEDIA}`) → `narrative`, which
+      under-enumerates the page's `Characters in Order of Appearance`. Chapters
+      only reach `qa` **by accident**: "…in **Chapter** 1?" puts the word
+      "chapter" in `_FIELD_ASKERS` (`"chapter"→"chapters"`, and JJK's fact keys
+      contain `chapters`), so the field rule (`router.py:694`) fires first. Music
+      pages (Aizo, Ao no Sumika — `page_type: music`) have no `_FIELD_ASKERS`
+      word, so they fall to the story rule. Confirmed live: all four pages
+      `semantic_type=media`; Ch.1/59 → `qa`, Aizo/Ao no Sumika → `narrative`.
+      Campaign "In which chapter does X appear?" is a *location fact* (single
+      answer), a different shape — the fix must not capture it.
+      **Fix (draft):** a targeted OOA/"who's-in-X" list-ask detector
+      (`_OOA_ASK`: plural people-word as the wh-object, or "who … appear / who
+      is in") inserted before the story-type rule, routing to `qa`. Verified on a
+      patched copy: Ch.1/59/Aizo/Ao no Sumika → `qa`; the story/account/location
+cases are unchanged. **Applied 2026-09-04** (sign-off given: `qa` is
+       permanent — not a stopgap, not roster). Rationale: roster serves declared
+       sets that do not exist until TODO 3, and these asks can never reach rule 5
+       (`_PLURAL_WH = ^(who|what|which)\s+(are|were)\b`, so "Which characters
+       appear in X?" never sets `plural_ask` and `has_set` is never probed); OOA
+       is page-local and order-bearing, and the page's own section is the verbatim
+       source — a "revisit after the roster build" note would never fire, so none
+       is filed. `_OOA_ASK` + a `if interrogative and _OOA_ASK.search(...)` → `qa`
+       check landed in `router.py` immediately before the story-type rule (after
+       rule 5 and rule 6, so the Episode-51 roster ask still claims roster first).
+       Six tests in `tests/test_router.py` (`TestG28OoaListAsk`): 3 OOA list-asks
+       → `qa`, 3 guards (Episode 51 → roster, kanji collision → `qa`, OPM cover →
+       `qa`). Gates all green: `pytest` 1,128/0 · `eval jjk` 24/24 · 4 live OOA
+       pages route `qa` with full name coverage · `canon-run opm` 10/16 ·
+       236/236 · 79.0%.
 - [ ] **3. Hybrid roster build** — ~550 declared-member entries in
       `series/jjk/overrides.yaml` for `Characters in Order of Appearance` +
       `Battles & Events` across 304 chapter pages. `Locations` + `Jujutsu` are
@@ -20,18 +67,21 @@ green and the tree is in a consistent state. This file is the resume point.
       execution tier → draft the delta, stop for sign-off.
 - [ ] **4. Chapter narrative prose** — `Summary` + `Plot Details` at ~1.5
       questions/section, ≈600–900 questions for the tranche. Only after step 3.
-- [ ] **5. Outstanding gate: `canon-run --series opm`** (expect 10/16 exact ·
-      236/236 canon · 79.0%). This is the last leg of the gate triple for the
-      `span-recall` addition; `pytest` and `eval` are done.
+- [x] **5. `canon-run --series opm` — DONE 2026-09-04:** 10/16 exact · 236/236
+      canon (100%) · 79.0% precision, unchanged from baseline (the G28 capture
+      set reaches OPM but nothing moved there). Last leg of the gate triple for
+      the `span-recall` addition; `pytest` and `eval` done the same day.
 - [ ] **6. Re-index the other series** to collect the Scroll-box fix — see
       *Cross-series* below. Cheap, and it is the concrete test of the standing
       open question about OPM's 1,039 and Bleach's 1,171 unreachable lines.
 - [ ] **7. Decide the fate of `series/jjk/.backup_20260904_074609`** (186 MB).
       Keep until step 1 is done and the index has been exercised for a while.
 
-## Risk: everything is uncommitted
+## Risk: everything is uncommitted — **RESOLVED 2026-09-04**
 
-Branch `character-scoped-questions`, last commit `d531329`. Uncommitted:
+All four workstreams are committed (see TODO 1). The list below is the *historical*
+inventory of what was at risk at the stop point, kept for context; it is now in
+`3207935`/`4ca36b9`/`1058145`/`ab5d66c`.
 
 - `scriptengine/ingest/wikitext.py` — the Scroll-box fix (+13/−0)
 - `tests/test_wikitext.py` — `TestScrollBox`, 4 cases
@@ -50,10 +100,10 @@ gets committed unless explicitly asked — so this is flagged, not acted on.
 
 | gate | value | notes |
 |---|---|---|
-| `pytest tests/ -q` | **1,122 passed / 0 failed** | with the `:8000` API **stopped**. With it running, expect 5 `torch.OutOfMemoryError` + the pre-existing `test_page_sweep_command` = 1,117/5–6. Not regressions. |
+| `pytest tests/ -q` | **1,128 passed / 0 failed** | 1,122 + 6 G28 tests; with the `:8000` API **stopped**. With it running, expect 5 `torch.OutOfMemoryError` + the pre-existing `test_page_sweep_command`. Not regressions. |
 | `eval --series jjk` | **24/24** | |
 | `span-recall --series jjk` | **48,570/48,572, exit 2** | the two known `Chapter 239 / References` misses. Exit 2 is expected here, not a failure. |
-| `canon-run --series opm` | **not run** | outstanding, see TODO 5 |
+| `canon-run --series opm` | **10/16 · 236/236 · 79.0%** | run 2026-09-04 with G28 applied; unchanged baseline |
 | index | 987 docs / 7,601 sections / 19,684 chunks / 14,530 vectors | rebuilt 2026-09-04 |
 
 **Scroll-box fix, verified by chunk membership** — not by span-recall. Old index
@@ -79,7 +129,8 @@ content; that blind spot is what motivated this whole chapter-tranche review.
 - **Finding A** — the `roster` door returns a generic 40-member fallback for
   pages with no declared roster (0/40 overlap on Ao no Sumika). Expected; TODO 3
   closes it. Not a bug.
-- **Finding B (proposed G28)** — router mode-selection gap, see TODO 2.
+- **Finding B (G28) — FIXED 2026-09-04** (see TODO 2). The OOA/"who's-in-X"
+  list-ask now routes `qa` under `auto`; all gates green.
 - **Standing opens carried:** the 5 State-101 opens, G25 (3 instances), G26,
   G27 (2 instances).
 - **Stale constraint, now retired:** the campaign notes carry "the uncommitted

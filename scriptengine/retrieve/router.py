@@ -408,6 +408,29 @@ _SINGLE_VALUE_FIELDS = frozenset(
     {"kanji", "romaji", "japanese", "name",
      "next", "previous", "arc", "place", "event", "outcome", "date"})
 
+# G28 (Finding B, 2026-09-04): an OOA / "who's in X" list-ask. "Which characters
+# appear in X?" wants the page's cast (its `Characters in Order of Appearance`)
+# -- a page-local, order-bearing list whose verbatim source is the page's own
+# section. It is NOT a declared roster (the roster door serves the
+# overrides.yaml sets, which do not exist yet), and it can never reach rule 5:
+# `_PLURAL_WH` is `^(who|what|which)\s+(are|were)\b`, so "which characters
+# appear" sets no `plural_ask` and no set is ever probed. Without this, a
+# story-typed page (episode, music, chapter, event) falls to the story-type rule
+# below and narrates the list (on a 12-name probe, narrative surfaced 1/12 on
+ # Aizo and 4/12 on Ao no Sumika; qa/auto now returns the full OOA section,
+ # Aizo 45/45 and Ao no Sumika 13/13). The cue is a plural people-word as the
+ # wh-object ("which characters")
+# or a "who ... appear / who is in" list; that shape keeps a location fact
+# ("In which chapter does X appear?") and a single actor ("Who killed Ace?")
+# out.
+_OOA_ASK = re.compile(
+    r"\b(?:which|what)\s+(?:[A-Za-z]+?\s+){0,2}?"
+    r"(?:characters|people|persons|members|fighters|sorcerers|combatants)\b"
+    r"|\bwho\b[^?]{0,25}?\b(?:appear|appears|appeared|feature|features|featured)\b"
+    r"|\bwho\b\s+(?:is|are|were)\s+in\b",
+    re.IGNORECASE,
+)
+
 # Packaging only. Skipped when resolving *what a question is about*, because an
 # episode page is never the subject unless it is named, which is how "Who killed
 # Ace?" became a question about an episode called `Legendary Hour`. Events are
@@ -725,6 +748,16 @@ def route(paths: SeriesPaths, query: str, settings=None, subject: str | None = N
             f"a how-mechanism about {subject!r}, read from prose",
             signals,
         )
+    # G28 (Finding B): an OOA / "who's in X" list-ask wants the page's cast, a
+    # page-local, order-bearing list read from the page's own section (qa). It
+    # sits after rules 5 and 6 and the story-verb / how-mechanism rules (so a
+    # plural set-ask or a named field is never shadowed) and immediately before
+    # the story-type rule, which used to hand a story-typed page's cast list to
+    # narrative. "appear" is not a `_NARRATIVE_VERB`, so the story-verb rule
+    # above does not intercept these.
+    if interrogative and _OOA_ASK.search(query or ""):
+        return Route("qa", "an order-of-appearance list, read from the page", signals)
+
     if subject_type in _STORY_TYPES:
         return Route("narrative", f"{subject!r} is an event rather than a thing", signals)
 
