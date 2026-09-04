@@ -369,15 +369,84 @@ complete set the next inventory pass will meet.
   was wrong and it was reversed the same day.)
 
   **Proposed fix (not applied; `scriptengine/` is the execution tier).** In
-  `_beats_from_page`, exempt a subject page's own short `Summary` / `Plot` /
-  `Synopses` sections from the 20-word floor, so the page's summary is always
-  a beat on the narrative path.
+  `NarrativeRetriever._beats_from_page` (`scriptengine/retrieve/narrative.py`,
+  the G15 floor at `:396`), exempt a subject page's own short prose sections from
+  the 20-word floor, so the page's summary is always a beat on the narrative path.
+  The exemption is **title-scoped** (only the page's own prose sections), **not**
+  an unconditional floor-lift — furniture still floors:
 
-  **Gate (when the fix lands).** Re-run the epilogue batch (expect 3/3), then
-  the full gate set (`eval jjk` 24/24, `canon-run opm` 10/16 exact ·
-  236/236 canon · 79.0%, `pytest` 1,133 color mode, `span-recall jjk`
-  48,570/48,572 exit 2); watch the G15 `sourcing-01` gold, which regressed to
-  35/40 when the floor was lifted unconditionally before.
+  ```diff
+  + # G30 (2026-09-04): a page's own short prose section. The G15 floor drops
+  + # 4-word furniture ("Teams", "Navigation", unsourced tables) that carries no
+  + # refs; a page's own Summary/Plot/Synopsis is real prose, not furniture, so a
+  + # short one (e.g. the 12-word Epilogue Summary) must still become a beat.
+  + _PAGE_PROSE_SECTIONS = {"summary", "plot", "plot details", "synopsis", "synopses"}
+   ...
+            for section in self.store.document_sections(title):
+                # G15 (2026-08-31): ... [existing comment kept]
+  +           # G30 (2026-09-04): exempt the page's own short prose section; only
+  +           # furniture (Teams/Navigation/unsourced tables) still floors.
+  +           is_prose = section["title"].strip().lower() in _PAGE_PROSE_SECTIONS
+  -            if not section["text"] or section["word_count"] < 20:
+  +            if not section["text"]:
+                    continue
+  +            if section["word_count"] < 20 and not is_prose:
+                    continue
+  ```
+
+  **Collateral scan (BOM-safe, `utf-8-sig`; full question bank).** Ran over all
+  1,970 `questions/*.json` (394 carry a UTF-8 BOM — read `utf-8-sig`, 0 parse
+  errors; 57,877 questions). Cross-referenced each question's `(subject, top-level
+  note section)` against the 12 short content sections the fix would newly serve
+  (`title in {summary, plot, plot details, synopsis, synopses}` AND `1 ≤ word_count
+  < 20`). **12 questions affected** (one per short section; Episode 50 has two),
+  spanning 11 pages:
+
+  | status | id | page | section (wc) | route |
+  |---|---|---|---|---|
+  | **FAIL → fixed** | `jjk-pg-epilogue-001` | Epilogue | Summary (12w) | narrative |
+  | pass | `jjk-pg-chapter_236-001` | Chapter 236 | Summary (17w) | qa |
+  | pass | `jjk-pg-chapter_242-001` | Chapter 242 | Summary (17w) | qa |
+  | pass | `jjk-pg-chapter_260-001` | Chapter 260 | Summary (17w) | roster |
+  | pass | `jjk-pg-episode_50-012` | Episode 50 | Summary (17w) | qa |
+  | pass | `jjk-pg-episode_50-013` | Episode 50 | Summary (17w) | qa |
+  | pass | `jjk-pg-five_page_special_bonus_chapter-001` | Five-Page Special Bonus Chapter | Summary (18w) | qa |
+  | pass | `jjk-pg-modulo_chapter_3-001` | Modulo Chapter 3 | Summary (16w) | qa |
+  | pass | `jjk-pg-modulo_chapter_4-001` | Modulo Chapter 4 | Summary (18w) | qa |
+  | pass | `jjk-pg-modulo_chapter_6-001` | Modulo Chapter 6 | Summary (17w) | qa |
+  | pass | `jjk-pg-modulo_chapter_7-001` | Modulo Chapter 7 | Summary (15w) | qa |
+  | pass | `jjk-pg-modulo_chapter_8-001` | Modulo Chapter 8 | Summary (15w) | qa |
+
+  So G30 **fixes the 1 currently-failing** question (`epilogue-001`, the
+  regression case) and **adds narrative-path robustness to the 11 currently-
+  passing** ones (their short Summary is served on the qa/roster path today, where
+  the floor is gone in the chunker; the fix additionally serves it on the
+  narrative path). Full artifact: `reports/page-campaign/G30_collateral_scan.json`.
+
+  **Regression case (the one FAIL, `jjk-pg-epilogue-001`).** Its
+  2026-09-04-1529 page-run report shows 3/3, but that run is **stale** — it
+  scored the qa-phrased in-lane form *"Which four characters get short epilogue
+  stories…"*; the on-disk question was reverted to the original narrative-routed
+  *"Whom do the four short epilogue stories feature, per Epilogue?"* in `e16225e`
+  (left failing, 2/3). No post-restoration epilogue report exists, so the live
+  status is **failing** until the fix lands. Do **not** reword it to dodge.
+
+  **Non-regression (G15 `sourcing-01`).** All 12 short content sections are
+  **unsourced** (no inline chapter/episode refs — they are one-line summaries), so
+  the fix adds 12 unsourced beats. That is acceptable here and distinct from the
+  G15 failure mode in two ways: (1) the exemption is **title-scoped**, so the
+  furniture that actually broke `sourcing-01` (an unconditional floor-lift adding
+  `Teams`/`Navigation` to the dense Shibuya Incident page) still floors; (2) the
+  12 sections sit on 12 **distinct, short** pages (none is Shibuya Incident), each
+  gaining at most one short beat, so there is no top-N pushout on a dense page.
+  The `sourcing-01` gold is the empirical guard for the dense-page case.
+
+  **Gate (when the fix lands).** Re-run the epilogue batch (expect 3/3 on the
+  restored original wording), then the full gate set (`eval jjk` 24/24,
+  `canon-run opm` 10/16 exact · 236/236 canon · 79.0%, `pytest` 1,133 color mode,
+  `span-recall jjk` 48,570/48,572 exit 2); **watch the G15 `sourcing-01` gold**
+  (regressed to 35/40 when the floor was lifted unconditionally before) **and the
+  11 collateral passers** (they must stay passing).
 - **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
   `tests/test_page_gen.py::test_page_sweep_command` asserts the literal
   `'swept 0 page(s)'` against Rich's colorized output, which embeds ANSI
