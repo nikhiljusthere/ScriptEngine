@@ -475,6 +475,87 @@ complete set the next inventory pass will meet.
   `_PAGE_PROSE_SECTIONS = {summary, synopsis}` in `_beats_from_page`); the
   regression case passes 3/3, `sourcing-01` held at 37/40, and every gate
   above is green. **G30 is CLOSED** — no further action.
+- **G31 — bare plural copula on a definitional page misroutes to the roster
+   door (OPEN, filed 2026-09-05, Final-campaign Step 1).** The third
+   un-fixed scope of the plural-ask family: F1 (episode-anchored plurals,
+   6 instances) RESOLVED at State 50; F2 char-subject-hijack (5) + F4
+   roster-route prose-fragment (3) RESOLVED at State 66; G29
+   (single-valued "revealed to be" predicate) CLOSED. The remaining scope:
+   a **bare plural copula** asking after the subject page's *own class* —
+   "What are the X?" — with **no episode anchor, no named character, no
+   single-valued predicate**. `_PLURAL_WH` (`^(who|what|which)\s+(are|were)
+   \b`) sets `plural_ask`; `has_set` is True by the membership
+   short-circuit; nothing sets `asks_single_field` (no G29 predicate, no
+   field word), so rule 5 (`plural_ask and has_set and not
+   asks_single_field`) fires → **roster door**, which serves declared-roster
+   facts only. When the expected answer is the page's own prose
+   definition/enumeration, or the subject phrase does not match a declared
+   roster name, the answer is never served.
+
+   **Five affected page types (content-pages campaign; all committed, all
+   page-run 100% on CUDA 2026-09-04 — `a5baaf4` / `4c31859` / `1e6ed67` /
+   `3142714`):**
+
+   | page type | batch | natural plural (fails) | authored form (passes) | receipt |
+   |---|---|---|---|---|
+   | `sorcerer_clan` | `questions/_jjk_page_sorcerer_clan.json` | "What are the Big Three Families?" | Q001 "What do the Big Three Families consist of?" | note 001 (line 26): "plural 'What are...' misroutes to roster; 'consist of' phrasing used" |
+   | `curse_user` | `questions/_jjk_page_curse_user.json` | "What are Non-Curse Users?" | Q002 "What is a Non-Curse User?" | note 002 (line 166): "p1 plural 'What are Non-Curse Users?' hits the roster; singular phrasing used" |
+   | `cursed_tool` | `questions/_jjk_page_cursed_tool.json` | "What are cursed tools?" | Q001 "What is a cursed tool?" | class-consistent singular, no probe note |
+   | `cursed_corpse` | `questions/_jjk_page_cursed_corpse.json` | "What are cursed corpses?" | Q001 "What is a cursed corpse?" | class-consistent singular, no probe note |
+   | `cursed_object` | `questions/_jjk_page_cursed_object.json` | "What are cursed objects?" | Q001 "What is a cursed object?" | class-consistent singular, no probe note |
+
+   **Boundary (why this is not "plurals always misroute"):** the canon
+   bank's "What are the Big Three Sorcerer Families?" — the *exact*
+   declared-roster name — passes on the roster door (2026-09-01-0645:
+   `declared`, 3/3, recall 1.0). G31's scope is the bare-copula definitional
+   ask where the subject phrase does not resolve to a declared roster name
+   and/or the page's prose is the expected answer. Distinct from F1
+   (episode-anchored — its rescue never fires here: no episode anchor) and
+   from G29 (a copular *characterization* predicate over a definite
+   subject; the bare copula carries none).
+
+   **Evidence basis:** the two explicit probes (sorcerer_clan, curse_user)
+   are recorded live `/context` receipts from authoring (2026-09-04, CUDA
+   server); the three item-type phrasings are class-consistent avoidances
+   without probe notes. **Re-probe DEFERRED:** the `:8000` server is down
+   and the GPU is 100% held by the Qwen model (25.5/32.6 GB); a CPU re-probe
+   (5 phrasings + route-signal dumps, `SCRIPTENGINE_DEVICE=cpu`) re-confirms
+   the record. Until then the record stands on the recorded receipts — no
+   fresh claims.
+
+   **Fix proposal (PROPOSED ONLY — `scriptengine/` is execution-forbidden
+   in this pass):** have rule 5 defer to `qa` when a bare plural copula
+   matches no declared roster name (gate on `build_roster`'s matched
+   phrase, mirroring the G29 collateral-scan discipline) and/or when the
+   subject is the page's own definitional media page. Gate with the BOM-safe
+   full-bank collateral scan (G29/G30 method) + re-run of the 5 batches.
+   **No reword:** the authored singular / "consist of" forms stay in the
+   bank; the natural plurals are the RED cases
+   (`reports/page-campaign/RED_LIST.md`).
+- **Standing-open triage (Final-campaign Step 1, 2026-09-05).** Every
+  standing open from "Standing opens carried" (the 5 State-101 opens +
+  G25/G26/G27) gets a disposition: **fixed / filed with a failing
+  regression / explicitly accepted (deferred) with a reason**. No third
+  state.
+
+  | # | open | instances / evidence | disposition |
+  |---|---|---|---|
+  | 1 | **G25** who-agent story-verb misroute (router) | 3: `jjk-pg-yuji_itadori_synopsis-111` (failing), `jjk-pg-shoko_ieiri_synopsis-009` (failing), Toji #001 rephrased → passing | **FILED** — the 2 active failing bank questions are the regressions; fix = router who/why-agent carve-out (G25 record, HANDOFF ENGINE GAPS); deferred to the router pass |
+  | 2 | **G26** past-tense fate misroute (router) | 2: `jjk-pg-panda_synopsis-012`, `jjk-pg-panda_synopsis-015` (both failing) | **FILED** — the 2 active failing bank questions; fix = past-tense "What happened to" carve-out for character subjects (G26 record) |
+  | 3 | **G27** qa tail-section truncation (assembly/budget) | 2: `jjk-pg-maki_zenin_synopsis-015`, `jjk-pg-megumi_fushiguro_synopsis-011` (both failing at tb≤12000; present at tb=30000) | **FILED** — the 2 active failing bank questions; fix = qa assembly/budget, not router (G27 record) |
+  | 4 | **G31** bare-plural-copula definitional misroute (new) | 5 page types (sorcerer_clan + curse_user probed; 3 item types class-consistent) | **FILED** — record above; natural plurals are the RED cases; re-probe deferred |
+  | 5 | 1 conf-wrong on the jjk canon run | "Every cursed technique of Yuta Okkotsu" — `declared`, found 1/9, recall 0.111 (last observed 2026-09-01-0645; the gate triple uses the opm canon, 0 conf-wrong) | **FILED** — a failing canon-bank row (declared confidence over an under-returned set); reconcile the declared roster against the canon 9; re-verify on the next live jjk canon run |
+  | 6 | parser colon-truncation re-index + 17 workaround items | parser fix in HEAD (`strip_markup` `_is_namespaced` guard, `wikitext.py:968-976`); the **stored corpus** is stale; 17 post-colon workarounds in the bank + `ep41-015` re-retired parser-gap (State 66) | **ACCEPTED (deferred)** — a separate corpus-wide pass (`index --series jjk` full re-parse + re-embed, then gold-update the 17 items + un-retire ep41-015); deliberately out of this campaign (State 65 item 3) |
+  | 7 | OOA (Scroll Box) | parser fix applied (JJK) | **CLOSED for JJK** (the "OOA CLOSED" note below); the cross-series re-index measurement is the separate open item in the Cross-series section |
+  | 8 | gallery-body-strip parser gap | `jjk-pg-episode_37-066` ("What is the clip caption in Episode 37?") RETIRED, `reason_class: parser-gap` | **FILED** — the retired row is the regression; fix = parser gallery-body retention, rides item 6's corpus-wide pass |
+  | 9 | Trivia chunking gap (re-scoped) | a Trivia bullet not served for a generic question | **ACCEPTED (deferred)** — re-scoped; not exercised (pages with real Trivia pass their questions); held for the chunker pass |
+  | 10 | F2 char-subject-hijack (5) + F4 roster-route prose-fragment (3) | 8 flagged episode instances | **FIXED (State 66)** — router episode-anchored rescue in `router.py` (gated: pytest 1108, eval 24/24, canon opm 10/16 · 236/236 · 79.0%; all 59 batches re-run 100%); 7 un-retired, ep41-015 re-retired parser-gap (item 6). The later carry notes re-listing F2 as open are **stale** (same class as the retired "against"-fix note) — retired here |
+
+  **Net: 6 FILED with failing regressions** (items 1–5 + item 8, whose
+  regression rides item 6's corpus-wide pass) **· 2 ACCEPTED deferred with
+  reasons** (items 6, 9) **· 1 CLOSED** (item 7) **· 1 FIXED + stale carry
+  retired** (item 10). Every filed row is listed in
+  `reports/page-campaign/RED_LIST.md`.
 - **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
   `tests/test_page_gen.py::test_page_sweep_command` asserts the literal
   `'swept 0 page(s)'` against Rich's colorized output, which embeds ANSI
@@ -487,8 +568,15 @@ complete set the next inventory pass will meet.
   force `NO_COLOR` in the fixture), and until then every pytest figure in the
   campaign should be quoted with the color mode it was run under. Not fixed in
   this pass — outside the current scope, wants its own change.
-- **Standing opens carried:** the 5 State-101 opens, G25 (3 instances), G26,
-  G27 (2 instances).
+- **Standing opens (triaged 2026-09-05, Final-campaign Step 1 — supersedes
+  the 2026-09-04 "Standing opens carried" line):** see the standing-open
+  triage table above. Net: G25/G26/G27/G31 + the conf-wrong canon row + the
+  gallery-body-strip gap (ep37-066) FILED with failing regressions; the
+  colon-truncation re-index (17 workarounds + ep41-015) and the Trivia
+  chunking gap ACCEPTED deferred (the ep37-066 fix rides that same
+  corpus-wide pass); OOA Scroll Box CLOSED for JJK; F2/F4 FIXED (State 66)
+  with the stale carry retired. The full expected-fail list is
+  `reports/page-campaign/RED_LIST.md`.
 - **Stale constraint, now retired:** the campaign notes carry "the uncommitted
   router `against` fix stays uncommitted" (HANDOFF States 85/101 onward). That
   fix is **already in `HEAD`** — `scriptengine/retrieve/router.py:91` has
