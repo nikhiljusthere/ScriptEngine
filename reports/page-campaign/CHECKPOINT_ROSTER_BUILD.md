@@ -123,6 +123,15 @@ content; that blind spot is what motivated this whole chapter-tranche review.
 - `:8000` API **up** on CUDA. `ninfer-serve` PID 3574, 25.5 GB, untouched.
 - GPU was ~29.8/32.6 GB with both up. Stop the API before `pytest` or an `index`.
 - Backup at `series/jjk/.backup_20260904_074609` (facts.db 45 MB + vectors 141 MB).
+- **Cold-start the `:8000` API on CPU while `ninfer-serve` holds the GPU**
+  (the constraint that applies when TODO 3 brings the API back up). `ninfer-serve`
+  serves the session and must not be stopped, so the API has to come up on CPU:
+  start it with `SCRIPTENGINE_DEVICE=cpu` per CLAUDE.md:131-133. On GPU it would
+  CUDA-OOM, because the `bge-reranker-v2-m3` reranker needs more than the headroom
+  ninfer leaves: measured 2026-09-04, `ninfer-serve` (PID 3881) holds **26,535 /
+  32,607 MiB** used with only **5,568 MiB free** (100% util). CPU page-runs are
+  slow (~14 s/question) but safe; the API returns to CUDA only after ninfer's
+  context/KV budget is shrunk (the pending restart) or the GPU is otherwise freed.
 
 ## Open findings
 
@@ -131,6 +140,18 @@ content; that blind spot is what motivated this whole chapter-tranche review.
   closes it. Not a bug.
 - **Finding B (G28) — FIXED 2026-09-04** (see TODO 2). The OOA/"who's-in-X"
   list-ask now routes `qa` under `auto`; all gates green.
+- **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
+  `tests/test_page_gen.py::test_page_sweep_command` asserts the literal
+  `'swept 0 page(s)'` against Rich's colorized output, which embeds ANSI
+  escapes (`\x1b[1;36m0\x1b[0m`): it passes under `NO_COLOR=1 TERM=dumb` and
+  fails in a color-capable terminal. Last touched in `d531329`, so it predates
+  all G28 work — **not a regression** (a color-capable full-suite run reports
+  1 failed / 1,127 passed; a `NO_COLOR` run is 1,128/0). Consequence: the gate's
+  green depends on the terminal it runs in, because the assertion reads
+  un-stripped Rich output; the durable fix is to strip ANSI before asserting (or
+  force `NO_COLOR` in the fixture), and until then every pytest figure in the
+  campaign should be quoted with the color mode it was run under. Not fixed in
+  this pass — outside the current scope, wants its own change.
 - **Standing opens carried:** the 5 State-101 opens, G25 (3 instances), G26,
   G27 (2 instances).
 - **Stale constraint, now retired:** the campaign notes carry "the uncommitted

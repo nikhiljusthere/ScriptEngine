@@ -417,9 +417,9 @@ _SINGLE_VALUE_FIELDS = frozenset(
 # appear" sets no `plural_ask` and no set is ever probed. Without this, a
 # story-typed page (episode, music, chapter, event) falls to the story-type rule
 # below and narrates the list (on a 12-name probe, narrative surfaced 1/12 on
- # Aizo and 4/12 on Ao no Sumika; qa/auto now returns the full OOA section,
- # Aizo 45/45 and Ao no Sumika 13/13). The cue is a plural people-word as the
- # wh-object ("which characters")
+# Aizo and 4/12 on Ao no Sumika; qa/auto now returns the full OOA section,
+# Aizo 45/45 and Ao no Sumika 13/13). The cue is a plural people-word as the
+# wh-object ("which characters")
 # or a "who ... appear / who is in" list; that shape keeps a location fact
 # ("In which chapter does X appear?") and a single actor ("Who killed Ace?")
 # out.

@@ -949,10 +949,10 @@ class TestG28OoaListAsk:
     `_PLURAL_WH` is `^(who|what|which)\\s+(are|were)\\b`, so "which characters
     appear" sets no `plural_ask` and no set is probed. Without the `_OOA_ASK`
     rescue, a story-typed page (episode, music, chapter, event) fell to the
-story-type rule and narrated the list -- on a 12-name probe, `auto`
-     (narrative) surfaced 1/12 on Aizo and 4/12 on Ao no Sumika, while `qa`
-     returns the full OOA section (Aizo 45, Ao no Sumika 13). The fix routes
-     these to `qa` permanently: the
+    story-type rule and narrated the list -- on a 12-name probe, `auto`
+    (narrative) surfaced 1/12 on Aizo and 4/12 on Ao no Sumika, while `qa`
+    returns the full OOA section (Aizo 45, Ao no Sumika 13). The fix routes
+    these to `qa` permanently: the
     list is page-local and order-bearing, not a declared set, so there is no
     roster door to defer to. The rescue sits after rules 5 and 6; the guards pin
     that placement, so a future reorder trips the suite instead of re-routing.
