@@ -13,7 +13,7 @@
 
 ## Headline
 
-**840 / 987 pages covered (85.1%) · 29,587 active questions** across the committed batches.
+**893 / 987 pages covered (90.5%) · 29,819 active questions** across the committed batches.
 
 ## Per-type coverage
 
@@ -27,22 +27,22 @@
 | episode | 59 | 59 | 100.0% | 3,976 |
 | volume | 35 | 0 | 0.0% | 0 |
 | blu_ray_dvd | 20 | 0 | 0.0% | 0 |
-| item | 20 | 0 | 0.0% | 0 |
+| item | 20 | 20 | 100.0% | 69 |
 | music | 20 | 0 | 0.0% | 0 |
-| location | 14 | 0 | 0.0% | 0 |
-| unknown | 11 | 2 | 18.2% | 207 |
+| location | 14 | 14 | 100.0% | 49 |
+| unknown | 11 | 3 | 27.3% | 216 |
 | event | 9 | 9 | 100.0% | 110 |
 | story_arcs | 9 | 9 | 100.0% | 167 |
-| organizations | 6 | 0 | 0.0% | 0 |
-| simple_box | 5 | 0 | 0.0% | 0 |
-| species | 5 | 0 | 0.0% | 0 |
+| organizations | 6 | 6 | 100.0% | 42 |
+| simple_box | 5 | 5 | 100.0% | 18 |
+| species | 5 | 5 | 100.0% | 25 |
 | game | 3 | 0 | 0.0% | 0 |
 | series | 3 | 0 | 0.0% | 0 |
 | anime | 2 | 0 | 0.0% | 0 |
 | novel | 2 | 0 | 0.0% | 0 |
-| occupation | 2 | 0 | 0.0% | 0 |
+| occupation | 2 | 2 | 100.0% | 20 |
 | stage_play | 1 | 0 | 0.0% | 0 |
-| **TOTAL** | **987** | **840** | 85.1% | **29,587** |
+| **TOTAL** | **987** | **893** | 90.5% | **29,819** |
 
 ## In-scope content remainder
 
@@ -53,14 +53,7 @@ scope.
 
 | source | pages |
 |---|---:|
-| item | 20 |
-| location | 14 |
-| organizations | 6 |
-| simple_box | 5 |
-| species | 5 |
-| occupation | 2 |
-| `unknown` (Jujutsu Regulations) | 1 |
-| **total** | **53** |
+| **total** | **0** |
 
 ## Uncovered titles
 
@@ -125,29 +118,6 @@ scope.
 - Blu-ray & DVD Vol. 7
 - Blu-ray & DVD Vol. 8
 
-### item (20)
-
-- Black Rope
-- Chain of a Thousand Miles
-- Cursed Corpse
-- Cursed Tool
-- Cursed Womb: Death Painting
-- Dragon-Bone
-- Festering Life Sword
-- Hiten
-- Honoyagi
-- Inverted Spear of Heaven
-- Kamutoke
-- Mode: Absolute
-- Playful Cloud
-- Prison Realm
-- Ryomen Sukuna's Fingers
-- Slaughter Demon
-- Split Soul Katana
-- Sword of Extermination
-- Talisman
-- Ultimate Mechamaru
-
 ### music (20)
 
 - Aizo
@@ -171,27 +141,9 @@ scope.
 - Vivid Vice
 - Yoake no Uta
 
-### location (14)
-
-- Culling Game/Colonies
-- Gachinko Fight Club
-- Kawasaki City
-- Kyoto Metropolitan Curse Technical College
-- Okinawa
-- Renchoku Girls' Junior High
-- Saitama Urami East Junior High
-- Sendai City
-- Shibuya
-- Shibuya/Tokyo Metro
-- Shinjuku
-- Simuria
-- Tokyo Metropolitan Curse Technical College
-- Yasohachi Bridge
-
-### unknown (9)
+### unknown (8)
 
 - Gege Akutami
-- Jujutsu Regulations
 - List of Battles & Events
 - List of Characters
 - List of Episodes
@@ -199,31 +151,6 @@ scope.
 - Promotional Videos
 - Weekly Shonen Jump
 - Yuji Iwasaki
-
-### organizations (6)
-
-- Jujutsu Headquarters
-- Jujutsu Sorcerer
-- Q
-- Sorcerer Clan
-- Sorcerer Clan/Zenin Clan
-- Time Vessel Association
-
-### simple_box (5)
-
-- Bath
-- Cursed Human
-- Cursed Object
-- Cursed Womb
-- Grade
-
-### species (5)
-
-- Cursed Spirit
-- Finger Bearer
-- Fly Heads
-- Kalyan
-- Transfigured Human
 
 ### game (3)
 
@@ -246,11 +173,6 @@ scope.
 
 - First Light Novel
 - Second Light Novel
-
-### occupation (2)
-
-- Assistant Manager
-- Curse User
 
 ### stage_play (1)
 
