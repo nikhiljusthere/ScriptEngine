@@ -62,13 +62,116 @@ paste, never by prose.
 | **D2** | Every **archetype** (§6) meets its declared depth floor, measured against *populated in-scope sections*, never raw page count. |
 | **D3** | **Zero unfiled engine gaps**, and the red list is **not empty**. A corpus with no expected failures has not been probed. |
 | **D4** | A **held-out probe set**, authored by someone other than the executing agent, passes at a declared threshold. |
+| **D5** | **Line-level reachability** (§2a) is exhaustively measured and its miss file is empty. |
 
-D4 is the load-bearing one and it is new. D1–D3 are all measured by the party
-being scored.
+D4 and D5 are the load-bearing ones. D1–D3 are all measured by the party being
+scored.
 
-**"100%" and "perfection" are retired as targets.** They are why the goal kept
-sliding. The target is the four conditions above. This document keeps its name
-for continuity, not because perfection is the measure.
+**"100%" and "perfection" are retired as slogans** — but D5 gives the phrase a
+real referent for the first time. See below.
+
+---
+
+## 2a. The line-level target — reachability vs answerability
+
+The stated goal is *"every line of every page can be asked about and answered
+accurately, in the same or natural wording, no matter how small."* That fuses
+**two properties with opposite characters**, and every measurement pathology in
+this project comes from grading the first through the machinery of the second.
+
+| | **Reachability** | **Answerability** |
+|---|---|---|
+| question | does the served bundle contain line L? | is the answer meaning-preserving? |
+| domain | **finite** — lines × doors | **infinite** — all natural phrasings |
+| needs | nothing but a substring test | gold spans, judgment, humans |
+| gameable | **no** — the probe *is* the wiki line | yes — this is where both reword violations happened |
+| verdict | **this is the real 100%** | gets a confidence interval, never a gate |
+
+**Reachability is the only one with a denominator, so it is the only one that
+can terminate.** Drive it to zero misses across all three doors and stop.
+Answerability is sampled forever and reported with error bars.
+
+### The measurement that already exists, and the name that hid it
+
+`span-recall` has two tiers and **the number everyone quotes is the wrong one**:
+
+- **Tier 0** — "is this sentence inside some chunk of its own page?" This is an
+  **indexing** check. It is exhaustive and cheap, and it is where
+  *48,570 / 48,572* comes from. A chunker that emits every sentence passes it by
+  construction. It is a tautology, not evidence of retrieval.
+- **Tier 1** — "does the served bundle actually contain the line?" This is
+  retrieval, it is the metric that matters, and it has **never been run
+  exhaustively**. `cli.py` exposes `--probe N` defaulting to `0`, which *skips
+  tier 1 entirely*.
+
+*Measured 2026-09-05 on the committed sample rows:* verbatim **387/400
+(96.75%)**, scoped **110/120 (91.7%)**. Extrapolated, roughly **1,200–1,600 of
+48,572 lines are unreachable** and nobody knows which.
+
+> **Rename `span-recall` to `chunk-containment` for tier 0.** The current name
+> reads as retrieval recall to anyone who has not read the source. That single
+> word bought months of false confidence, and it will keep doing so to every
+> future reader until it is changed.
+
+### Three things the metric does not currently cover
+
+1. **Two of the three doors.** All 520 sampled probes routed `qa`. Roster and
+   narrative have **zero** retrieval measurement. The denominator is lines ×
+   doors, and two thirds of it is dark.
+2. **Short lines.** `sentences()` ends with
+   `len(s.split()) >= min_words and s.count("|") < 3`, so with the default
+   `min_words=6` it drops **1,154 lines (2.3%)** — *precisely* the "no matter
+   how small that line is" case. (Table rows: 0 dropped in this corpus.)
+3. **Cross-page facts.** Nothing measures them. This is the requirement most
+   worth building because it is the one currently at zero.
+
+### Cross-page is the largest uncovered surface
+
+*Measured 2026-09-05 — sections mentioning a character, by host page:*
+
+| subject | own page(s) | elsewhere | % off-page |
+|---|---:|---:|---:|
+| Sukuna | 19 | 1,116 | 98.3% |
+| Satoru Gojo | 6 | 855 | 99.3% |
+| Yuji Itadori | 3 | 664 | 99.6% |
+| Megumi Fushiguro | 2 | 489 | 99.6% |
+
+Across all 146 character pages: **14,194 (entity, off-page section) pairs on 940
+host pages** — roughly half the size of the entire hand-authored bank, and
+**auto-generatable**, since the probe is again the wiki line itself.
+
+Note what this implies: a fact about Yuji sitting on Kenjaku's page is **not a
+missing question — it is a missing edge**. No volume of authored questions
+repairs an index that keys chunks to their host page. Writing questions about it
+paints green over a structural defect.
+
+### Four traps in building a loop on this metric
+
+Verified in source; each one silently invalidates run-to-run comparison.
+
+1. **The sample is not a fixed panel.** Probes are built only from
+   tier-0-passing sentences, then `random.Random(seed).shuffle(probes)[:N]`.
+   Change the chunker and the eligible list changes, so the panel silently
+   swaps. Deltas are sample churn, not progress.
+2. **The seed is fixed at 7 and unexposed.** So every run grades the *same* 400
+   lines — an agent optimising that number overfits a static held-in set.
+   Together with (1): **frozen or incomparable, never a trend.** Pin a hashed
+   probe panel, and hold out a split the executing agent never sees.
+3. **`done` dedupes on bare sentence text.** A resume built naively on it would
+   silently skip the same sentence appearing on a *different page*. The key must
+   be `(title, sentence)`.
+4. **`hit_rate` divides by rows actually run**, so a resumed sweep reports a
+   partial denominator as though it were the whole.
+
+### What this costs, honestly
+
+At roughly 4s per probe on GPU: **~54 GPU-hours per mode**, ~7 GPU-days for
+three modes — on a GPU that another process frequently holds. Resume is not
+currently wired (`recall()` accepts `done`; the CLI never passes it).
+
+**So this is a job with an end, not a perpetual process.** Queue it, checkpoint,
+resume when the GPU frees. A "continuous loop" aimed at an infinite target
+random-walks; a finite sweep terminates.
 
 ---
 
@@ -387,6 +490,47 @@ These were paid for in JJK. They transfer verbatim.
 9. **Coverage is generated, never hand-maintained.** No document states what is
    next or what remains; it points at the generated report.
 10. **Named paths only.** Never `git add -A`.
+
+---
+
+## 9a. The serial closure loop
+
+The executing agent can run **one subagent at a time**. That is not a
+limitation to work around — it is the correct shape, because the agent should
+never be doing discovery in parallel. Discovery is a batch sweep; the agent only
+does closure.
+
+**The separation that makes the loop safe:**
+
+| stage | who | why |
+|---|---|---|
+| **Sweep** (discovery) | a batch job, no agent | the probe is the wiki line — nothing to author, no gold to pick, nothing to reword |
+| **Triage** (queue) | derived from the miss file | MISS_DOC = ranking; MISS_SPAN = chunk selection; each is a class, not a question |
+| **Closure** (fix) | the agent, serially | one engine fix can move thousands of lines; one question moves one |
+| **Re-score** | the next sweep | **the agent never runs the sweep that grades it** |
+
+That last row is the whole design. Every integrity failure in this project's
+history happened where one actor authored, graded, and reported. Here the agent
+cannot reach the scoreboard.
+
+**Loop invariants:**
+
+1. **Work units are engine fixes, never questions.** If a proposed fix closes
+   only one miss row, it is the wrong altitude — find the class it belongs to.
+2. **The queue is pre-triaged.** The agent never chooses what to work on; it
+   takes the top of the miss queue. This removes the judgment call where
+   avoidance lives.
+3. **Every iteration ends with a committed miss-count delta** from a pinned
+   panel, not a fresh sample (§2a trap 1).
+4. **The loop halts on:** an empty miss file (done), a fix that raises the miss
+   count (regression — stop and report), or two consecutive iterations with no
+   net reduction (stuck — escalate, do not grind).
+5. **A council-style confirmation** is invoked only at decision points that
+   change scope or definitions — never per fix. Confirmation loops per iteration
+   would reintroduce the round-trip cost the batch design exists to remove.
+6. **Nothing is unsupervised at the boundary.** The agent proposes engine
+   changes; it does not apply them (§9 rule 3). Serial execution makes that
+   review load tractable.
 
 ---
 
