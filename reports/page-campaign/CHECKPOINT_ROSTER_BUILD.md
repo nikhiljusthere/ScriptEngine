@@ -78,6 +78,30 @@ cases are unchanged. **Applied 2026-09-04** (sign-off given: `qa` is
       open question about OPM's 1,039 and Bleach's 1,171 unreachable lines.
 - [ ] **7. Decide the fate of `series/jjk/.backup_20260904_074609`** (186 MB).
       Keep until step 1 is done and the index has been exercised for a while.
+- [ ] **8. Author-note content gap — parser pass (root cause).** The store holds
+      three author-heading variants: `Author's Comment` (chapter, **247 sections /
+      247 empty**), `Author Quote` (volume, **34 / 3 empty**), and `Author`
+      (series, **1 / 0 empty**). So **250 sections are empty across two
+      headings** (`Author's Comment` 247 + `Author Quote` 3), not "249 under one".
+      **Key inference — template-driven, not heading-driven:** `Author Quote` is
+      *mixed* (31 of 34 populated); those 31 are fed by the `{{Quote|…}}` rule
+      the parser already handles, which proves the heading itself is not the
+      problem — only the template feeding the body. **Suggested first step:**
+      diff a populated `Author Quote` section against an empty one. **That diff,
+      run 2026-09-04, refines the scope:** the 3 empty `Author Quote` sections
+      are the Modulo volumes (`Modulo Volume 1/2/3`) and each carries only
+      `{{Section stub}}` — genuinely unfilled on the wiki, **not** dropped
+      `{{Comment}}`/`{{Comment 2}}`. So the *parser* gap is specifically the 247
+      `Author's Comment` sections (250 `{{Comment}}` ×237 + `{{Comment 2}}` ×13,
+      all stored `text=''` because `wikitext.py` has a `{{Scroll box|content=}}`
+      rule (`wikitext.py:221-230`) and an `<!-- -->` strip (`_HTML_COMMENT`,
+      `wikitext.py:235`/`731`) but **no** rule for the `comment` templates); the
+      3 `Author Quote` empties are a separate no-content case, not a parser gap.
+      **Decision: out of the chapter prose wave** (author meta-commentary, low
+      plot signal); a separate root-cause pass. When done: add a `comment`-template
+      prose rule to `wikitext.py`, re-index, confirm the 247 `Author's Comment`
+      sections carry non-empty `text`. Parser code → propose-and-approve; do
+      **not** fold into the prose wave.
 
 ## Risk: everything is uncommitted — **RESOLVED 2026-09-04**
 
