@@ -222,6 +222,14 @@ TRANSPARENT_TEMPLATES: dict[str, str] = {
     "scroll box": "all",
 }
 
+# {{Scroll box|content= ...}} routes its list into `named`, leaving `positional`
+# empty, so 83 chapter "Characters in Order of Appearance" sections (~830 names)
+# were dropped at index time. Only `content` is prose; the box's height/width/
+# name are layout and stay out.
+TRANSPARENT_NAMED_PARAMS: dict[str, set[str]] = {
+    "scroll box": {"content"},
+}
+
 # Markup that carries no meaning once the text is extracted.
 _HTML_TAG = re.compile(r"<[^>]+>")
 _HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
@@ -918,7 +926,12 @@ def _strip_templates(
                 if marker:
                     out.append(marker)
         elif lowered in TRANSPARENT_TEMPLATES:
+            named_prose = TRANSPARENT_NAMED_PARAMS.get(lowered, ())
             candidates = [p for p in positional if p and not p.startswith("[[Category")]
+            candidates += [
+                named[k] for k in sorted(named_prose & named.keys())
+                if named[k] and not named[k].startswith("[[Category")
+            ]
             if candidates:
                 strategy = TRANSPARENT_TEMPLATES[lowered]
                 if strategy == "first":

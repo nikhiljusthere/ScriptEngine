@@ -340,6 +340,45 @@ class TestMarkupStripping:
         assert "Teams deployed." in text and "The operation began." in text
 
 
+class TestScrollBox:
+    """`{{Scroll box}}` is a transparent template: its character list is prose.
+
+    The list arrives either positionally or as a named `|content=` argument. The
+    named form used to route into `named`, leaving `positional` empty, so the
+    whole list was dropped -- 83 chapter "Characters in Order of Appearance"
+    sections (~830 names) vanished at index time. These pin the fix and its
+    scoping (a box's height/width/name are layout and must not reach prose).
+    """
+
+    def test_a_named_content_list_is_kept(self):
+        # The bug: `|content=` left `positional` empty, so nothing was kept.
+        assert strip_markup(
+            "{{Scroll box\n|content=\n*[[Megumi Fushiguro]]\n*[[Sukuna]]\n}}"
+        ) == "Megumi Fushiguro\nSukuna"
+
+    def test_a_positional_list_is_still_kept(self):
+        assert strip_markup(
+            "{{Scroll box| *[[Megumi Fushiguro]] *[[Sukuna]] }}"
+        ) == "Megumi Fushiguro *Sukuna"
+
+    def test_layout_parameters_never_reach_the_prose(self):
+        out = strip_markup(
+            "{{Scroll box|content= *[[Megumi Fushiguro]]\n|height=200px\n|width=100px}}"
+        )
+        assert out == "Megumi Fushiguro"
+        for junk in ("200px", "100px", "height", "width"):
+            assert junk not in out
+
+    def test_a_bare_scroll_box_still_yields_nothing(self):
+        # The existing contract: a box carrying no list is furniture, whether or
+        # not it also sets layout parameters.
+        assert strip_markup("{{Scroll box}}") == ""
+        assert (
+            strip_markup("{{Scroll box|height=200px|width=100px|name=Chapter 59}}")
+            == ""
+        )
+
+
 class TestTables:
     """Tables carry content on a Fandom wiki, not decoration."""
 
