@@ -72,3 +72,32 @@ class TestNarrativeSectionFloor:
     def test_an_empty_section_is_not_a_beat(self):
         retriever = _retriever([{**_row("Empty", 40), "text": ""}])
         assert retriever._beats_from_page("X", 10) == []
+
+
+class TestG30ShortProseSection:
+    def test_a_short_summary_section_is_a_beat(self):
+        # G30 (2026-09-04): the 12-word Epilogue Summary must beat on the
+        # narrative path even though it is under the G15 20-word floor; a page's
+        # own Summary/Synopsis is prose, not the furniture that floor guards.
+        retriever = _retriever([_row("Summary", 12), _row("Teams", 4)])
+        beats = retriever._beats_from_page("Epilogue", 10)
+        assert [beat.title for beat in beats] == ["Summary"]
+
+    def test_a_short_synopsis_section_is_a_beat(self):
+        # Ko-Guy's 19-word Synopsis is the corpus's only short Synopsis.
+        retriever = _retriever([_row("Synopsis", 19), _row("Navigation", 4)])
+        beats = retriever._beats_from_page("Ko-Guy", 10)
+        assert [beat.title for beat in beats] == ["Synopsis"]
+
+    def test_short_furniture_still_floors(self):
+        # The G15 guard is intact: a short non-prose section is not a beat, so
+        # the `sourcing-01` invariant (every beat sourceable) still holds.
+        retriever = _retriever([_row("Teams", 4), _row("Navigation", 5)])
+        assert retriever._beats_from_page("Shibuya Incident", 10) == []
+
+    def test_a_substantial_nonprose_section_is_still_a_beat(self):
+        # The exemption only lifts the floor for prose titles; a long section
+        # clears the 20-word floor and beats regardless of title.
+        retriever = _retriever([_row("Trivia", 40)])
+        beats = retriever._beats_from_page("A Character", 10)
+        assert [beat.title for beat in beats] == ["Trivia"]

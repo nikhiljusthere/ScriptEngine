@@ -56,6 +56,15 @@ EVENT_TYPES = {"battle", "event", "story_arcs", "chapter", "episode", "arc"}
 # narrative qualify.
 _CHARACTER_EVENT_TYPES = {"battle", "event", "story_arcs", "arc"}
 
+# G30 (2026-09-04): a page's own short prose section. The G15 floor below drops
+# 4-word furniture ("Teams", "Navigation", unsourced tables) that carries no
+# refs; a page's own Summary/Synopsis is real prose, not furniture, so a short
+# one (e.g. the 12-word Epilogue Summary) must still become a beat. Kept narrow
+# on evidence: "plot", "plot details" and "synopses" match zero sections in the
+# JJK corpus, so they stay floored -- add one only when a failing question proves
+# a short section of that title exists.
+_PAGE_PROSE_SECTIONS = {"summary", "synopsis"}
+
 # Pages worth reaching for once the subject's own page is exhausted. Battles
 # describe the fights an event page only summarises, and technique pages carry
 # the usage chapters behind them. Character pages are excluded on purpose: a
@@ -393,7 +402,15 @@ class NarrativeRetriever:
             # script-writing path -- every beat must be sourceable -- so the
             # floor stays here. Short-section reachability lives in the
             # chunker (the qa path), where the floor is gone.
-            if not section["text"] or section["word_count"] < 20:
+            if not section["text"]:
+                continue
+            # G30 (2026-09-04): a short Summary/Synopsis is the page's own prose
+            # and must beat; only furniture still floors (G15: every beat
+            # sourceable). See _PAGE_PROSE_SECTIONS for why the set is narrow.
+            if (
+                section["word_count"] < 20
+                and section["title"].strip().lower() not in _PAGE_PROSE_SECTIONS
+            ):
                 continue
             beats.append(
                 self.annotate(
