@@ -62,12 +62,13 @@ cases are unchanged. **Applied 2026-09-04** (sign-off given: `qa` is
        `qa`). Gates all green: `pytest` 1,128/0 · `eval jjk` 24/24 · 4 live OOA
        pages route `qa` with full name coverage · `canon-run opm` 10/16 ·
        236/236 · 79.0%.
-- [ ] **3. Hybrid roster build** — ~550 declared-member entries in
+- [x] **3. Hybrid roster build — DONE by `5d3f3f4`.** ~550 declared-member entries in
       `series/jjk/overrides.yaml` for `Characters in Order of Appearance` +
       `Battles & Events` across 304 chapter pages. `Locations` + `Jujutsu` are
       **waived** by decision (State 122). `overrides.yaml` is forbidden to the
       execution tier → draft the delta, stop for sign-off.
-- [ ] **4. Chapter narrative prose** — `Summary` + `Plot Details` at ~1.5
+- [x] **4. Chapter narrative prose — DONE by the six chapter-prose commits.**
+      `Summary` + `Plot Details` at ~1.5
       questions/section, ≈600–900 questions for the tranche. Only after step 3.
 - [x] **5. `canon-run --series opm` — DONE 2026-09-04:** 10/16 exact · 236/236
       canon (100%) · 79.0% precision, unchanged from baseline (the G28 capture

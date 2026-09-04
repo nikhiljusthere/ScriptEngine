@@ -131,8 +131,12 @@ re-crawling.
   - **GPU contention → run the API on CPU.** When ninfer's Qwen holds the GPU,
     the `:8000` reranker (bge-reranker-v2-m3) CUDA-OOMs (only tens of MiB free).
     Restart the API with `SCRIPTENGINE_DEVICE=cpu setsid nohup … < /dev/null &`.
-    CPU page-runs are slow (cross-encoder ~14s/question): a 150-question batch
-    takes ~35 min, so kick it off detached and poll rather than blocking.
+     CPU page-runs are slow (cross-encoder ~14s/question): a 150-question batch
+     takes ~35 min, so kick it off detached and poll rather than blocking.
+   - **Coverage is a live artifact, not a sentence.** No document states what is
+     next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
+     which `tools/coverage_report.py` regenerates (never hand-edited). Run it
+     after every batch commit.
 
 ## Layout
 
@@ -183,11 +187,14 @@ sentence-level "fact-like entry" (a question with a **verbatim** answer), ordere
 characters (146) → episodes (59) → battles (90) → techniques (149) → other. The
 method (user mandate): author natural questions; when one fails, **diagnose the root
 cause and fix the gap** (fix gold / retire cross-page / fix router or chunker) — never
-rephrase the question to dodge it. All 14 "redo" characters are done; 132 fresh
-characters + the other page types remain. Three router gaps (a scope-word set
-misroute, a discourse-opener wh-anchor, `whose`) are fixed and gated; a chunking gap
-(a Trivia bullet not served for a generic question) is open. Live state + resume
-steps: `reports/page-campaign/HANDOFF_PROSE_PASS.md`.
+rephrase the question to dodge it. All narrative page types are now 100% covered (characters, episodes, battles,
+techniques, chapters, synopses, story arcs, events); the live remainder is a
+regenerated list, not a number stated here — see
+`reports/page-campaign/COVERAGE.md` (`tools/coverage_report.py`). Three router
+gaps (a scope-word set misroute, a discourse-opener wh-anchor, `whose`) are
+fixed and gated; a chunking gap (a Trivia bullet not served for a generic
+question) is open. Live state + resume steps:
+`reports/page-campaign/HANDOFF_PROSE_PASS.md`.
 
 **Gates (re-run before calling any pass done):** `eval --series jjk` = 24/24;
 `canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%; `pytest tests/ -q` = 1,133.
