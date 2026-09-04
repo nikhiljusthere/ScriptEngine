@@ -329,8 +329,8 @@ complete set the next inventory pass will meet.
   would launder engine gaps at scale and destroy the bank's value as a test
   suite. They unlock only after the G29 commit is reviewed.
 - **G30 — narrative path drops a page's own short `Summary` section, so a
-  `Summary`-only gold is unreachable on a routed narrative read. APPLIED +
-  COMMITTED (2026-09-04), after two review corrections (narrowed set;
+  `Summary`-only gold is unreachable on a routed narrative read. CLOSED
+  (2026-09-04) by `ee9fa2e`, after two review corrections (narrowed set;
   scratch-copy `sourcing-01` check).** Filed from the chapter-prose wave-6 pass. The question
   **"Whom do the four short epilogue stories feature, per Epilogue?"** (gold
   `Yuko Ozawa, Panda, Nobara Kugisaki, and Uraume` — the page's one-line
@@ -469,6 +469,11 @@ complete set the next inventory pass will meet.
   `canon-run opm` **10/16 exact · 236/236 canon · 79.0%**. `span-recall jjk`
   **48,570/48,572 (exit 2)**. `sourcing-01` held at **37/40 = 0.925** (scratch
   before/after + the eval report). The 11 collateral passers stay passing.
+
+  **Closure (2026-09-04, `ee9fa2e`).** The fix landed (title-scoped
+  `_PAGE_PROSE_SECTIONS = {summary, synopsis}` in `_beats_from_page`); the
+  regression case passes 3/3, `sourcing-01` held at 37/40, and every gate
+  above is green. **G30 is CLOSED** — no further action.
 - **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
   `tests/test_page_gen.py::test_page_sweep_command` asserts the literal
   `'swept 0 page(s)'` against Rich's colorized output, which embeds ANSI

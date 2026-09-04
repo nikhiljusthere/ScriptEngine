@@ -1,8 +1,8 @@
 # JJK Chapter Prose — Campaign Final Report
 
-Status: **COMPLETE with one open gap (G30).** All 6 waves committed; 940/941
-questions page-run (one known failure — G30, filed with a proposed fix, not
-applied); standing gates at pre-campaign baselines. This report closes the
+Status: **COMPLETE.** All 6 waves committed; 941/941 questions page-run
+(100%). The one open gap (G30) was closed by `ee9fa2e` on 2026-09-04; standing
+gates at pre-campaign baselines. This report closes the
 chapters wave of the JJK prose pass (see `chapter_prose_template.md` for the
 plan and `HANDOFF_PROSE_PASS.md` for the campaign's method).
 
@@ -15,8 +15,8 @@ plan and `HANDOFF_PROSE_PASS.md` for the campaign's method).
 | 3 | `Chapter 107`–`Chapter 161` | 55 | 168 | 100% | `3176064` |
 | 4 | `Chapter 162`–`Chapter 216` | 55 | 171 | 100% | `18d127c` |
 | 5 | `Chapter 217`–`Chapter 271` | 55 | 171 | 100% | `eb7536f` |
-| 6 | `Modulo Chapter 1`–`25` + `Bonus Manga`, `Five-Page Special Bonus Chapter`, `Special Bonus Chapter`, `Epilogue` | 29 | 96 | **95/96 (99%)** | `c533620` |
-| **Total** | **304** | **304** | **941** | **940/941 (99.0%)** | — |
+| 6 | `Modulo Chapter 1`–`25` + `Bonus Manga`, `Five-Page Special Bonus Chapter`, `Special Bonus Chapter`, `Epilogue` | 29 | 96 | **96/96 (100%)** | `c533620` |
+| **Total** | **304** | **304** | **941** | **941/941 (100%)** | — |
 
 - 941 questions landed against the template's 600–900 band (planned ≈810):
   the overage is density on the special/bonus pages (`4-Koma Bonus`,
@@ -30,7 +30,7 @@ plan and `HANDOFF_PROSE_PASS.md` for the campaign's method).
 ## Triage
 
 One triaged failure across the whole campaign (full entry in
-`CHAPTER_PROSE_TRIAGE.md`):
+`CHAPTER_PROSE_TRIAGE.md`), **now closed**:
 
 - **w6 · Epilogue · Summary** — “Whom do the four short epilogue stories
   feature, per Epilogue?” routed narrative, whose bundle omits the page's own
@@ -41,13 +41,16 @@ One triaged failure across the whole campaign (full entry in
   issue: the in-lane rephrase (Kinji-079 precedent) committed in `c533620`
   was reversed the same day, the question is restored to its original wording
   and left failing (2/3) as the regression case. Filed as **G30** in
-  `CHECKPOINT_ROSTER_BUILD.md` (fix proposed, not applied — execution tier).
+  `CHECKPOINT_ROSTER_BUILD.md`, then **CLOSED by `ee9fa2e` (2026-09-04)**:
+  the short-prose-section floor was lifted (title-scoped to `Summary`/
+  `Synopsis`), the regression case now passes 3/3, and `sourcing-01` held at
+  37/40.
 
-## Standing gates (final, post wave 6)
+## Standing gates (final, post G30)
 
 | Gate | Result | Pre-campaign baseline |
 |---|---|---|
-| `pytest tests/ -q` | **1133 passed** | 1,133 |
+| `pytest tests/ -q` | **1137 passed** | 1,133 |
 | `eval --series jjk` | **24/24 (100%)** | 24/24 |
 | `canon-run --series opm` | **10/16 exact · 236/236 canon · 79.0% precision** | 10/16 · 236/236 · 79.0% |
 | `span-recall --series jjk` | **exit 2 — 2 unreachable lines, both the known `Chapter 239 / References` misses** | 48,570/48,572, exit 2 |
@@ -57,8 +60,8 @@ No gate regressed against baseline.
 ## State left behind
 
 - 304 batch files in `questions/` (`_jjk_page_*.json`, `_`-prefixed so they
-  stay out of the official gold bank); 940/941 questions page-run clean, one
-  known failure (G30, filed).
+  stay out of the official gold bank); 941/941 questions page-run clean (the
+  single open gap, G30, was closed by `ee9fa2e` on 2026-09-04).
 - Reports: per-wave reports + this file + `CHAPTER_PROSE_TRIAGE.md` in
   `reports/page-campaign/`.
 - The `:8000` API is stopped; at final-gate time ninfer-serve held the GPU,
