@@ -328,6 +328,56 @@ complete set the next inventory pass will meet.
   HELD** — the ~644 remaining questions authored under "reword to make it pass"
   would launder engine gaps at scale and destroy the bank's value as a test
   suite. They unlock only after the G29 commit is reviewed.
+- **G30 — narrative path drops a page's own short `Summary` section, so a
+  `Summary`-only gold is unreachable on a routed narrative read. FILED
+  (2026-09-04, chapter-prose wave 6); fix proposed, NOT applied (execution
+  tier).** Filed from the chapter-prose wave-6 pass. The question
+  **"Whom do the four short epilogue stories feature, per Epilogue?"** (gold
+  `Yuko Ozawa, Panda, Nobara Kugisaki, and Uraume` — the page's one-line
+  `Summary`, 12 words) misroutes and fails: `page-run` reports `routed
+  narrative`, and the gold's `Summary` chunk is absent from the bundle (2/3).
+
+  **Mechanism.** The subject `Epilogue` is a media page, so `auto` keeps the
+  narrative read. The narrative path builds the page's own beats in
+  `NarrativeRetriever._beats_from_page` (`scriptengine/retrieve/narrative.py`),
+  which skips sections under the G15 20-word floor — a floor that exists to
+  drop furniture sections (`Teams`, `Navigation`, unsourced tables). The
+  Epilogue's `Summary` is 12 words, so it is skipped: the page's own summary
+  line never becomes a beat, and no narrative bundle for the page can carry
+  it. Only the qa route's chunks do.
+
+  **Phrasing probe (decides authoring-vs-engine; the criterion now lives in
+  `CHAPTER_PROSE_TRIAGE.md`).** Five forms of the same fact: "Whom do the four
+  short epilogue stories feature, per Epilogue?" (narrative, FAIL) · "How many
+  short epilogue stories are there, per Epilogue?" (narrative, FAIL) · "What
+  are the four short epilogue stories about, per Epilogue?" (narrative, FAIL)
+  · "Who appears in the four short epilogue stories, per Epilogue?" (qa, PASS
+  — the G28 OOA trigger) · "Which four characters get short epilogue stories
+  in the Epilogue, per Epilogue?" (qa, PASS). Three of four natural phrasings
+  fail → the fact is **not broadly reachable** → engine gap, not an authoring
+  issue. The Kinji-079 / Yuki-083 rephrase precedent does not cover this
+  case: it applies when a fact is broadly reachable and only stilted,
+  deliberately trigger-y phrasings fail (Yuki-086 note: "4 natural qa
+  alternates all pass"; Yaga-036: the original was genuinely unnatural
+  English). This is the inverse of that.
+
+  **Regression case (restored to fail).** `questions/_jjk_page_epilogue.json`
+  Q1 is back to its original wording + original gold and now fails 2/3 on
+  `page-run` — a failing question is the evidence, as with G29. Do **not**
+  reword it to dodge. (A wave-6 in-lane rephrase was committed in `c533620`
+  under the Kinji-079 precedent; the phrasing probe showed that disposition
+  was wrong and it was reversed the same day.)
+
+  **Proposed fix (not applied; `scriptengine/` is the execution tier).** In
+  `_beats_from_page`, exempt a subject page's own short `Summary` / `Plot` /
+  `Synopses` sections from the 20-word floor, so the page's summary is always
+  a beat on the narrative path.
+
+  **Gate (when the fix lands).** Re-run the epilogue batch (expect 3/3), then
+  the full gate set (`eval jjk` 24/24, `canon-run opm` 10/16 exact ·
+  236/236 canon · 79.0%, `pytest` 1,133 color mode, `span-recall jjk`
+  48,570/48,572 exit 2); watch the G15 `sourcing-01` gold, which regressed to
+  35/40 when the floor was lifted unconditionally before.
 - **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
   `tests/test_page_gen.py::test_page_sweep_command` asserts the literal
   `'swept 0 page(s)'` against Rich's colorized output, which embeds ANSI

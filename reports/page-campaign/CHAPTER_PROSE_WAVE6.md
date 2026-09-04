@@ -1,9 +1,11 @@
 # JJK Chapter Prose — Wave 6 (Modulo 1–25 + 4 special pages)
 
-Status: **COMMITTED.** All 29 batches at 100% (**96/96**). Authored, emitted
-(verbatim-checked against every served chunk), and page-run against the live
-CUDA `:8000` API. One triaged failure (epilogue Summary — in-lane authoring
-fix, Kinji-079 precedent); no engine fix required.
+Status: **COMMITTED.** Authored, emitted (verbatim-checked against every
+served chunk), and page-run against the live CUDA `:8000` API. 28/29 batches
+passed 100%; the `Epilogue` batch stands at 2/3 — its `Summary` gold was
+filed as **G30** (engine gap: the narrative bundle omits the page's own
+`Summary` beat; fix proposed, not applied) and left failing. Wave total:
+**95/96**.
 
 ## Scope
 
@@ -41,33 +43,39 @@ fix, Kinji-079 precedent); no engine fix required.
 Full-batch page-run (29 slugs, one `page-run` per page):
 
 ```
-TOTAL 96/96 (failing batches: 0)
+TOTAL 95/96 (failing batches: 1 — `_jjk_page_epilogue` 2/3, G30 open)
 ```
 
-First full run was 95/96 with `_jjk_page_epilogue.json` at 2/3; after the
-in-lane fix below, the full batch re-ran clean at 96/96.
+First full run was 95/96 with `_jjk_page_epilogue.json` at 2/3. An in-lane
+fix was probed and committed in `c533620` (re-run 96/96); the same-day
+phrasing probe (5 forms, see `CHAPTER_PROSE_TRIAGE.md`) showed the fact is
+**not broadly reachable** — 3 of 4 natural phrasings fail — so the fix was
+reversed and the question restored to its original wording, left failing as
+the G30 regression case. The wave therefore stands at **95/96**.
 
 ## Triage
 
-One failure, diagnosed and fixed in-lane (method: diagnose the gap, never
-dodge). Full entry in `CHAPTER_PROSE_TRIAGE.md`.
+One failure, diagnosed and **filed as G30** (method: diagnose the gap, never
+dodge). Full entry in `CHAPTER_PROSE_TRIAGE.md`; the fix proposal and gate
+live in `CHECKPOINT_ROSTER_BUILD.md`.
 
 - **Epilogue** (page-run 2/3): “Whom do the four short epilogue stories
   feature, per Epilogue?” (gold `Yuko Ozawa, Panda, Nobara Kugisaki, and
   Uraume`, a verbatim substring of the one-line `Summary`) routed **narrative**
-  — story-typed pages keep the narrative read — and the narrative bundle for a
-  chapter page carries the L3 scene beats + OOA + the previous chapter, but
-  **not the page's own `Summary` chunk**, so the Summary-only gold was absent
-  from the bundle. An alternate summary phrasing (“How many short epilogue
-  stories…”) probed live routed narrative the same way. Re-anchored in-lane to
-  “Which four characters get short epilogue stories in the Epilogue, per
-  Epilogue?” (same fact, same section, gold unchanged), which routes `qa` with
-  the Summary chunk in the bundle; re-run 3/3. Kinji-079 / Yuki-083 precedent
-  (misroute on a phrasing → natural alternate, probed live). Non-blocking
-  observation for the engine pass: a chapter page's narrative bundle should
-  include its `Summary` chunk as a beat, so Summary-only facts are served on
-  the default narrative read (recorded, not fixed — this campaign's
-  constraint is authoring-side only).
+  — story-typed pages keep the narrative read — and the narrative path's
+  own-page beat builder drops sections under the G15 20-word floor (the
+  `Summary` is 12 words), so the page's `Summary` never becomes a beat and no
+  narrative bundle for the page carries the gold. **Phrasing probe (5
+  forms):** the original and “How many short epilogue stories are there…” and
+  “What are the four short epilogue stories about…” all route narrative and
+  fail; “Who appears in…” and “Which four characters get short epilogue
+  stories in the Epilogue…” reach qa and pass. 3 of 4 natural phrasings fail
+  → the fact is **not broadly reachable** → engine gap, not authoring-side.
+  A wave-6 in-lane re-anchoring (Kinji-079 precedent) was committed in
+  `c533620` and reversed the same day; the question is restored to its
+  original wording and **left failing (2/3)** as the G30 regression case.
+  Fix proposed (exempt a page's own short `Summary` / `Plot` sections from
+  the floor in `_beats_from_page`), not applied — execution tier.
 
 No other failures: the 28 other pages passed their first page-run.
 
