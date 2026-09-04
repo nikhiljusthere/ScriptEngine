@@ -1509,6 +1509,130 @@ def canon_run(
     console.print(f"\n[bold]{result['folder'] / 'REPORT.md'}[/bold]")
 
 
+@app.command("span-recall")
+def span_recall(
+    series: str = typer.Option(..., "--series", help="The series to sweep."),
+    probe: int = typer.Option(
+        0, "--probe",
+        help="Also probe the live server with this many sampled sentences "
+             "(tier 1). Omit for the offline coverage check alone, which is "
+             "the cheap exhaustive one and needs no server."),
+    mode: str = typer.Option(
+        "verbatim", "--mode",
+        help="Tier 1 query shape: verbatim (reachability floor), scoped "
+             "(prefixes the page title, controlling for a wiki that narrates "
+             "one event on four pages), or terms (stopwords stripped)."),
+    min_words: int = typer.Option(
+        6, "--min-words", help="Ignore sentences shorter than this."),
+    include_boilerplate: bool = typer.Option(
+        False, "--include-boilerplate",
+        help="Also audit Navigation/See Also/External Links sections, which "
+             "are excluded by default because the indexer drops them on "
+             "purpose."),
+    out: Path = typer.Option(
+        None, "--out", help="Write the run folder here instead of reports/."),
+) -> None:
+    """Check every sentence in a series is reachable, not just the sampled ones.
+
+    The gold bank asks about roughly one line in eight. This asks about all of
+    them: tier 0 proves each sentence sits whole inside some chunk (offline,
+    exhaustive, sub-second), and `--probe` samples the live server to see
+    whether the line actually comes back.
+
+    Exit 2 when tier 0 finds unreachable lines -- that is a defect, and the
+    whole point is for a re-index that drops content to fail loudly. A tier 1
+    score never fails the command: a low number is the finding, and a
+    measurement that breaks the build is one nobody runs. Exit 1 is reserved
+    for a run that cannot be trusted at all.
+    """
+    from scriptengine.eval import span_recall as impl
+
+    settings = get_settings()
+    reports_root = Path(out) if out else Path(settings.reports_root)
+    folder = reports_root / "span-recall" / series
+    folder.mkdir(parents=True, exist_ok=True)
+
+    try:
+        tier0 = impl.index_coverage(
+            series, settings, min_words=min_words,
+            include_boilerplate=include_boilerplate)
+    except impl.SpanRecallError as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    _write_jsonl(folder / "index_misses.jsonl", tier0["misses"])
+
+    table = Table(title=f"Span recall: {series}")
+    table.add_column("")
+    table.add_column("", justify="right")
+    table.add_row("sections", str(tier0["sections"]))
+    table.add_row("sentences", str(tier0["sentences"]))
+    table.add_row("present in a chunk", str(tier0["covered"]))
+    table.add_row("unreachable", str(tier0["missing"]))
+    table.add_row("coverage", f"{tier0['coverage']:.4%}")
+    console.print(table)
+    if tier0["boilerplate_skipped"]:
+        console.print(
+            f"[dim]{tier0['boilerplate_skipped']} sentences in link-list "
+            f"boilerplate excluded; --include-boilerplate to audit them.[/dim]")
+
+    if tier0["missing"]:
+        worst: dict[str, int] = {}
+        for row in tier0["misses"]:
+            worst[row["title"]] = worst.get(row["title"], 0) + 1
+        console.print("\n[bold]documents with unreachable lines[/bold]")
+        for title, count in sorted(worst.items(), key=lambda kv: -kv[1])[:20]:
+            console.print(f"  {count:>5}  {title}")
+        console.print(f"\n[bold]{folder / 'index_misses.jsonl'}[/bold]")
+
+    if probe:
+        rows_path = folder / f"recall_{mode}.jsonl"
+        handle = rows_path.open("a", encoding="utf-8")
+
+        def on_row(row: dict) -> None:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+            handle.flush()
+
+        def on_progress(i: int, total: int, counts: dict) -> None:
+            console.print(f"  [dim]{i}/{total}  {counts}[/dim]")
+
+        try:
+            tier1 = impl.recall(
+                series, settings, mode=mode, sample=probe, every=100,
+                min_words=min_words, on_row=on_row, on_progress=on_progress)
+        finally:
+            handle.close()
+
+        counts = tier1["counts"]
+        t1 = Table(title=f"Live probe: {series} ({mode})")
+        t1.add_column("")
+        t1.add_column("", justify="right")
+        t1.add_row("probes", str(tier1["probes"]))
+        t1.add_row("served the line", f"{counts['HIT']} ({tier1['hit_rate']:.1%})")
+        t1.add_row("page not retrieved", str(counts["MISS_DOC"]))
+        t1.add_row("page retrieved, line absent", str(counts["MISS_SPAN"]))
+        t1.add_row("bundle truncated", str(counts["TRUNCATED"]))
+        t1.add_row("errors", str(counts["ERROR"]))
+        console.print(t1)
+        console.print(f"[bold]{rows_path}[/bold]")
+
+    if tier0["missing"]:
+        raise typer.Exit(code=2)
+
+
+def _write_jsonl(path: Path, rows: list[dict]) -> None:
+    """Plain utf-8, no BOM: a BOM corrupts the first record of a JSONL stream."""
+    payload = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    try:
+        tmp.write_text(payload, encoding="utf-8")
+        assert tmp.read_text(encoding="utf-8") == payload
+        tmp.replace(path)
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
+
+
 @app.command("page-run")
 def page_run(
     series: str = typer.Option(..., "--series", help="The series the batch belongs to."),

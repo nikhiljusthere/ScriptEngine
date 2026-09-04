@@ -51,6 +51,8 @@ python -m scriptengine.cli export --series jjk        # Obsidian vault in series
 python -m scriptengine.cli eval   --series jjk        # regression suite
 python -m scriptengine.cli page-run --series jjk --batch <slug>  # score one page's question batch
 python -m scriptengine.cli canon-run --series opm    # cross-series gold regression
+python -m scriptengine.cli span-recall --series jjk   # is EVERY line reachable? (offline, <1s)
+python -m scriptengine.cli span-recall --series jjk --probe 400  # + live retrieval sample
 python -m scriptengine.cli catalogue                  # regenerate docs/CATALOGUE.md
 python -m scriptengine.cli script-path "Title" --create   # where a script goes
 python -m scriptengine.cli verify "<script>" --series jjk # check its tags
@@ -91,6 +93,13 @@ re-crawling.
   failure mode the audit exists to catch. On a new wiki, read `cited directly`
   and `sentences w/ chapter` first: they are how you find out that this wiki
   cites in a shape nothing here reads yet.
+- **Run `span-recall` after `index`.** It proves every sentence in the corpus
+  sits whole inside some chunk -- offline, exhaustive, under a second for a
+  series. A re-index that silently drops content is otherwise invisible until
+  someone happens to ask about the missing line: this is the check that caught
+  the Trivia chunking gap on JJK, and found 1,039 unreachable lines on OPM and
+  1,171 on Bleach. Exit 2 means content is unreachable; fix that before
+  authoring anything against the index. See `reports/span-recall/README.md`.
 - **Never guess what a citation parameter means.** One-Punch Man's `cep` appears
   twice on the whole wiki and is deliberately left unmapped. A guessed mapping
   puts a number nobody verified into a finished script, which is worse than an
