@@ -431,6 +431,21 @@ _OOA_ASK = re.compile(
     re.IGNORECASE,
 )
 
+# G29 (Kinema-Cinema "revealed to be" question, 2026-09-04): a plural ask whose
+# wh-subject carries a single-valued copular predicate ("What are the curses
+# revealed to be?") is ONE characterization, not a set to enumerate. `_PLURAL_WH`
+# sets `plural_ask`, the G17 field guard is field-only, and the membership
+# short-circuit hands it a partial roster that cannot answer the prose, so rule
+# 5 misroutes to `roster`. This predicate is a guard that *blocks* rule 5, so it
+# stays narrowed to the evidenced forms (a speculative form would close the
+# roster door on a genuine set ask -- "What are the cursed techniques
+# classified as?"); add a verb back only when a real failing question demands it.
+_SINGLE_VALUE_PREDICATE = re.compile(
+    r"\b(?:revea|prove|show|find|found|demonstrat|deem|establish)\w*\s+to\s+be"
+    r"|\bturn(?:s|ed)?\s+out\s+to\s+be",
+    re.IGNORECASE,
+)
+
 # Packaging only. Skipped when resolving *what a question is about*, because an
 # episode page is never the subject unless it is named, which is how "Who killed
 # Ace?" became a question about an episode called `Legendary Hour`. Events are
@@ -567,8 +582,10 @@ def route(paths: SeriesPaths, query: str, settings=None, subject: str | None = N
     # string, so on a subject that resolves a set the plural rule used to claim
     # it before rule 6 could rescue it (the kanji is on the qa beat, not the
     # roster). Computed here so both plural rules can defer to it.
-    asks_single_field = (
-        interrogative and _asks_for_field(paths, query, single_only=True)
+    asks_single_field = bool(
+        interrogative
+        and (_asks_for_field(paths, query, single_only=True)
+             or _SINGLE_VALUE_PREDICATE.search(query or ""))
     )
     signals = {
         "set_shaped": set_shaped,

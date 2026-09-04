@@ -243,6 +243,91 @@ complete set the next inventory pass will meet.
   Not a bug; now closed.
 - **Finding B (G28) — FIXED 2026-09-04** (see TODO 2). The OOA/"who's-in-X"
   list-ask now routes `qa` under `auto`; all gates green.
+- **G29 — single-valued-predicate hole in the plural-ask path. APPLIED +
+  COMMITTED (2026-09-04), after two review corrections.** Filed from the
+  chapter-prose wave-1 pass. The natural question
+  **"What are the curses at Kinema Cinema actually revealed to be, per Chapter
+  20?"** (gold `ex-humans that have had their bodies transmogrified by cursed
+  energy`, verbatim in the page's Plot Details) misroutes and fails:
+  `page-run` reports `routed roster / partial`, answer absent.
+
+  **Routing proof (confirmed on the live router, 2026-09-04):** `_PLURAL_WH`
+  (`^(who|what|which)\s+(are|were)\b`) matches "What are…" → `plural_ask=True`.
+  The query is not `set_shaped` (no enumeration word). `asks_single_field=False`
+  — **the hole**: the G17 guard is field-only (`_SINGLE_VALUE_FIELDS` = kanji /
+  romaji / japanese / name / next / previous / arc / place / event / outcome /
+  date) and does not recognise a copular characterization predicate, so
+  "revealed to be" clears nothing. The subject stays `Chapter 20` (`media`, a
+  story type — the query names no resolvable entity), and rule 5
+  (`plural_ask and has_set and not asks_single_field`) fires → `roster`.
+  `has_set` is True by the membership short-circuit: `build_roster` returns
+  `matched: curses`, `confidence: partial`, basis **Cursed Spirits** — a
+  partial set that cannot answer a prose fact.
+
+  **Root cause.** A plural ask over a *definite subject* carrying a
+  single-valued predicate ("What are the X revealed to be?") is ONE
+  characterization, not a set to enumerate. The guard that exists exactly for
+  "a plural-shaped ask is not always a set ask" (G17 `asks_single_field`) is
+  field-only and misses these predicates.
+
+  **Applied fix (2 parts, after review corrections).** In
+  `scriptengine/retrieve/router.py`:
+  (1) a `_SINGLE_VALUE_PREDICATE` regex after `_OOA_ASK`, **narrowed to the
+  evidenced copular forms only** — `revea|prove|show|find|found|demonstrat|
+  deem|establish … to be` + `turn(s|ed) out to be`. The broader speculative
+  third alternation (`classified|referred|described|known … as`) was dropped on
+  review: this predicate is a guard that *blocks* rule 5, so its failure mode
+  is closing the roster door on a genuine set-ask; speculative "described as"
+  phrasings are too easily set-asks to gate on.
+  (2) OR it into `asks_single_field`, wrapped in `bool()` so a `re.Match` never
+  leaks into the route's `signals` (a raw match there is not JSON-serializable
+  and the API 500s on it). Rule 5 then defers.
+  **Correction 1 removed a third part.** The initial draft also added a
+  standalone qa-rescue (`interrogative and _SINGLE_VALUE_PREDICATE.search → qa`)
+  before the story-type rule. Rebuild-without-it proved it dead code: the
+  episode-anchored F2/F4 rescue (and the rule-3 carve-out) already route the
+  regression to `qa`, and across all 16 predicate matches in the bank the block
+  accounts for 0 route changes. It was deleted; the one-line `asks_single_field`
+  OR is sufficient.
+  Tests: `TestG29SingleValuePredicate` (5 cases — 2 qa regression + 3 roster
+  guards) in `tests/test_router.py`, after `TestG28OoaListAsk`. The two flip-
+  probes (`classified as`, `referred to as`) are pinned to `roster` by the
+  guards.
+
+  **Collateral scan (corrected method).** The first pass undercounted
+  (15,798 / 34) because the sweep's `json.load` (bare UTF-8) raised on the
+  **394** of 1,721 question files that carry a UTF-8 BOM, and it reported
+  distinct question strings rather than routing inputs. Redone BOM-safe
+  (`utf-8-sig`) with full (question, subject) enumeration: **42,930** distinct
+  routing inputs (a superset of the 36,852 reference count — per-question
+  subject keying), of which the narrowed predicate matches a **16-question**
+  surface and **exactly 1 changes route** — the regression case (`Chapter 20`,
+  `roster → qa`). The other 15 are unchanged, and the two flip-probes stay
+  `roster`. **No genuine set enumeration is broken.** Verified by full-bank
+  re-scan against the original (neutered-predicate) router.
+
+  **Regression case (restored to fail).** `questions/_jjk_page_chapter_20.json`
+  Q3 is back to the original wording + original gold and now fails 2/3 on
+  `page-run` — a failing question is the evidence. Do **not** reword it to
+  dodge (that was the wave-1 error that surfaced this gap).
+
+  **Wave-1 collateral audit (step 4, 2026-09-04).** All 55 wave-1 batch files
+  were re-checked against their earliest authored page-run reports, on two axes:
+  (a) question wording, (b) gold. Result: **no other question in wave 1 was
+  reworded after a failure, and no gold was changed** — `chapter_20` is the
+  only chapter that ever diverged (its intermediate 0828/0830 reword, since
+  restored in 0904). G29 is therefore the *only* reword-dodge in wave 1.
+
+  **Status: approved + committed (2026-09-04).** Two review corrections applied
+  before commit: (1) dropped the dead standalone qa-rescue block (Correction 1);
+  (2) reverted an unprompted `CLAUDE.md` device-guidance edit and re-proposed it
+  (propose-and-stop; it must not ride along in this commit). Gated: `pytest`
+  **1,133** (1,128 + 5 G29, color mode), `eval jjk` **24/24**, `canon-run opm`
+  **10/16 · 236/236 · 79.0%**, `span-recall jjk` **48,570/48,572 (exit 2)**,
+  `page-run --batch chapter_20` **3/3**. **Waves 2/3 of the chapter prose remain
+  HELD** — the ~644 remaining questions authored under "reword to make it pass"
+  would launder engine gaps at scale and destroy the bank's value as a test
+  suite. They unlock only after the G29 commit is reviewed.
 - **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
   `tests/test_page_gen.py::test_page_sweep_command` asserts the literal
   `'swept 0 page(s)'` against Rich's colorized output, which embeds ANSI

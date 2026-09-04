@@ -1011,3 +1011,58 @@ class TestG28OoaListAsk:
         assert (
             route(paths, "Who is featured on the cover of Volume 1 of One-Punch Man?").mode == "qa"
         )
+
+
+class TestG29SingleValuePredicate:
+    """G29 (Kinema-Cinema 'revealed to be' question, 2026-09-04): a plural ask
+    whose wh-subject carries a single-valued copular predicate is ONE
+    characterization, not a set to enumerate.
+
+    'What are the curses at Kinema Cinema actually revealed to be, per Chapter
+    20?' resolves to the chapter (a story-typed page); the G17 field guard is
+    field-only, so rule 5 handed it a partial roster that cannot answer the
+    prose (page-run chapter_20 was 2/3). The narrowed `_SINGLE_VALUE_PREDICATE`
+    sets `asks_single_field`, clearing rule 5, and a qa rescue before the
+    story-type rule serves the fact. The speculative forms ('classified as',
+    'referred to as', ...) were DROPPED on purpose: a guard that *blocks* rule 5
+    must stay narrow, or it closes the roster door on a genuine set ask. The two
+    spec probes below pin that those set asks keep their roster route.
+    """
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            # The verbatim regression: a chapter-typed subject, one characterization.
+            "What are the curses at Kinema Cinema actually revealed to be, per Chapter 20?",
+            # The group-2 'turn out to be' twin, same page.
+            "What did the victims found at Kinema Cinema turn out to be, per Chapter 20?",
+        ],
+    )
+    def test_single_value_characterization_reaches_qa(self, query):
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert route(paths, query).mode == "qa"
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            # Speculative 'classified as' is NOT in the narrowed predicate, so
+            # rule 5 keeps the roster route the question wants. If a speculative
+            # form were added back to the predicate, these would flip to qa.
+            "What are the cursed techniques classified as?",
+            "What are the special grade sorcerers referred to as?",
+            # A plain plural set ask with no copular predicate (a real bank
+            # question, questions/jjk.json).
+            "What are Sukuna's named cursed techniques?",
+        ],
+    )
+    def test_speculative_and_genuine_set_asks_keep_roster(self, query):
+        from scriptengine.config import series_paths
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        assert route(paths, query).mode == "roster"
