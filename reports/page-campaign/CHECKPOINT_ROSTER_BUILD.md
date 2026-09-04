@@ -23,10 +23,12 @@ This file is the resume point.
       standing do-not-commit scratch). Not pushed.
 - [x] **2. Fix Finding B (G28) — APPLIED + gated 2026-09-04.** The auto-router sent "which
       characters appear in X?" to `narrative` on non-chapter pages, which
-      under-enumerates (Aizo 1/12, Ao no Sumika 4/12 under `auto`; both 12/12
-      under `qa`). Do this **before or with** the roster build: if the natural
-      door still narrates instead of enumerating, declaring 550 rosters will not
-      make it answer correctly. Router code → propose-and-approve.
+under-enumerates (Aizo 1/45, Ao no Sumika 4/13 under `auto`; both 45/45
+       and 13/13 under `qa` — 45/13 are the full OOA section counts, verified in
+       stored wikitext; the live probe sampled 12 of them). Do this **before or
+       with** the roster build: if the natural door still narrates instead of
+       enumerating, declaring 550 rosters will not make it answer correctly.
+       Router code → propose-and-approve.
 
       **Diagnosed + drafted (2026-09-04), awaiting sign-off.** Root cause: the
       OOA / "who's-in-X" list-ask is not recognized as a *set*, so a story-typed
@@ -106,38 +108,115 @@ gets committed unless explicitly asked — so this is flagged, not acted on.
 | `canon-run --series opm` | **10/16 · 236/236 · 79.0%** | run 2026-09-04 with G28 applied; unchanged baseline |
 | index | 987 docs / 7,601 sections / 19,684 chunks / 14,530 vectors | rebuilt 2026-09-04 |
 
+**Re-verified after the 558-entry chapter-tranche splice (2026-09-04):** all four
+gates above re-run and unchanged — `pytest` 1,128/0 (NO_COLOR, API stopped),
+`eval jjk` 24/24, `span-recall jjk` 48,570/48,572 (exit 2, the two known Ch 239
+misses), `canon-run opm` 10/16 · 236/236 · 79.0%. The splice is a pure
+`overrides.yaml` text insertion (no re-index), so the index row is untouched.
+
 **Scroll-box fix, verified by chunk membership** — not by span-recall. Old index
 had 90 empty `Characters in Order of Appearance` sections; new index has **0**.
 Chunks 19,497 → 19,684, vectors 14,434 → 14,530. Chapter 1's 9 recovered names
 confirmed present in its chunks, and live retrieval returns 100% of recovered
-names on all four checked pages (Ch.1 9/9, Ch.59 9/9, Aizo 12/12, Ao no Sumika
-12/12 under `qa`).
+names on all four checked pages (Ch.1 9/9, Ch.59 9/9, Aizo 45/45, Ao no Sumika
+13/13 under `qa`; the live probe sampled 12 names, the full OOA section counts
+are 45 and 13, verified in stored wikitext).
 
 **Do not cite the clean span-recall run as evidence for this fix.** It probes
 353 of the 3,840 OOA name lines (9.2%) — single-name lines fall under
 `min_words=6` and are skipped. The harness is structurally blind to roster-shaped
 content; that blind spot is what motivated this whole chapter-tranche review.
 
-## Environment at the stop point
+## Environment (re-verified on the 2026-09-04 resume)
 
-- `:8000` API **up** on CUDA. `ninfer-serve` PID 3574, 25.5 GB, untouched.
-- GPU was ~29.8/32.6 GB with both up. Stop the API before `pytest` or an `index`.
+- The host **rebooted** since the stop point (uptime ~3 min at the resume
+  check); `ninfer-serve` auto-started as PID **3523** with the same
+  164864/181248 context/KV budget (~25.6 GB). The stop point's PID 3574 is gone.
+  Do not stop or restart `ninfer-serve`.
+- `:8000` API **down** (connection refused at the resume check; it was up on CUDA
+  at the stop point). `ninfer-serve` alone now holds **25,610 / 32,607 MiB**
+  (6,997 MiB free, 100% util). Stop the API before `pytest` or an `index`.
 - Backup at `series/jjk/.backup_20260904_074609` (facts.db 45 MB + vectors 141 MB).
 - **Cold-start the `:8000` API on CPU while `ninfer-serve` holds the GPU**
   (the constraint that applies when TODO 3 brings the API back up). `ninfer-serve`
   serves the session and must not be stopped, so the API has to come up on CPU:
   start it with `SCRIPTENGINE_DEVICE=cpu` per CLAUDE.md:131-133. On GPU it would
   CUDA-OOM, because the `bge-reranker-v2-m3` reranker needs more than the headroom
-  ninfer leaves: measured 2026-09-04, `ninfer-serve` (PID 3881) holds **26,535 /
-  32,607 MiB** used with only **5,568 MiB free** (100% util). CPU page-runs are
-  slow (~14 s/question) but safe; the API returns to CUDA only after ninfer's
-  context/KV budget is shrunk (the pending restart) or the GPU is otherwise freed.
+  ninfer leaves: re-measured on the 2026-09-04 resume, `ninfer-serve` (PID 3523)
+  holds **25,610 / 32,607 MiB** used with **6,997 MiB free** (100% util).
+  CPU page-runs are slow (~14 s/question) but safe. The earlier plan to return
+  the API to CUDA by restarting `ninfer-serve` with a 32k context/KV budget is
+  **retracted**: the session's measured prompt sizes are six digits (61,622 and
+  growing on the current request log; ~197k–202k on the earlier serve logs), so a
+  32k context would break the session. Restarting `ninfer-serve` in any form is
+  forbidden; the API stays on CPU for this pass.
+
+## Roster-build wiki findings (2026-09-04, TODO 3)
+
+Recorded before splicing the 558-entry chapter-tranche delta. All are properties
+of the *wiki text*, not the pipeline: the draft mirrors each page verbatim, so
+none is normalized away.
+
+**SPLICED + GATED 2026-09-04 (TODO 3 applied).** The 558 entries were spliced
+into `series/jjk/overrides.yaml` under `rosters:` as a pure text insertion (5,233
+lines at line 3781, before `ability_headings:`) — a full-file `yaml.safe_dump`
+was avoided so the many preserved comments survive. `rosters:` is now 1,355
+(797 pre-existing, prefix-preserving + 558 new). Verified: all 797 originals
+present in order, no duplicate names, every other top-level key unchanged,
+3,126 new member names. All gates re-run green after the splice (table below),
+and the Finding A acceptance probe passes — the roster door now returns each
+chapter's declared set instead of the generic 40-member fallback.
+
+**Known wiki inconsistencies — the same entity spelled differently across
+pages (do NOT normalize; each roster mirrors its own page):**
+
+1. `Maki and Mai's Mother` (Ch 148) / `Maki and Mai's mother` (Ch 152) — case only.
+2. `Bag-mask Curse User` (Ch 67) / `Bag Mask Curse User` (Ch 68, 69) — hyphen.
+3. `Old Curse User` (Ch 67) / `Old Man Curse User` (Ch 68) — different descriptor.
+4. `Noritoshi's Mother` (Ch 194) / `Noritoshi Kamo's Mother` (Ch 199) — given vs full name.
+5. `Judge` (Ch 166) / `Unnamed Judge` (Ch 159) — with vs without "Unnamed".
+6. `Prosecutor` (Ch 166) / `Unnamed Prosecutor` (Ch 159) — with vs without "Unnamed".
+
+**Linking gap:** `Kaori Itadori` has her own page, but Ch 143 lists her unlinked
+(plain text, not a `[[wikilink]]`). Recorded as a wiki linking gap, not a draft
+defect — the draft keeps the verbatim name.
+
+**Suspected wiki errors (recorded, NOT edited out of the rosters):**
+
+- Ch 200 lists a `World Government Officials` OOA entry — a One Piece concept on
+  a JJK chapter page. Almost certainly a copy/paste error from another series'
+  chapter template.
+- Ch 201 lists `President of the United States` and `Director of National
+  Intelligence` as OOA characters — real-world government titles, not JJK
+  characters. Same suspected template bleed.
+
+All three are kept in the draft verbatim (the roster mirrors the page); they are
+flagged here so a future wiki-cleanup or review knows they are anomalies, and so
+they are not "fixed" by rewording.
+
+**B&E heading forms (reviewer census, 2026-09-04 — recorded for the next
+inventory pass):** exactly **two** forms exist, no fourth variant.
+Corpus-wide census over `series/jjk/wikitext` (verified 2026-09-04):
+`Battles & Events` (ampersand) = **390** sections / 390 pages, `Battles and
+Events` (word) = **18** sections / 18 pages, **408 total**, all L2,
+byte-identical, no non-ASCII. The chapter-tranche delta spliced in this pass
+covers **254** of them (238 ampersand + 16 word, the 254 of the 304 chapter
+pages that carry a B&E section); the other 154 sit on non-chapter pages and are
+out of this tranche's scope. A reviewer regex that earlier located only 253 of
+the tranche set tripped on requiring a newline immediately after the heading
+(a counting/anchor quirk), not on a new form — so the "254th B&E section"
+question resolves to: there is no fourth form, and the two forms above are the
+complete set the next inventory pass will meet.
 
 ## Open findings
 
-- **Finding A** — the `roster` door returns a generic 40-member fallback for
-  pages with no declared roster (0/40 overlap on Ao no Sumika). Expected; TODO 3
-  closes it. Not a bug.
+- **Finding A — CLOSED + verified 2026-09-04 (TODO 3).** The `roster` door
+  returned a generic 40-member fallback for pages with no declared roster (0/40
+  overlap on Ao no Sumika). With the 558-entry chapter-tranche delta spliced in,
+  the acceptance probe (`/tmp/opencode/finding_a_probe.py`, 7 samples across OOA
+  early/mid/late + a `Modulo` page + B&E early/mid/late) returns each page's
+  exact declared set through the roster door, `basis` naming the matched phrase.
+  Not a bug; now closed.
 - **Finding B (G28) — FIXED 2026-09-04** (see TODO 2). The OOA/"who's-in-X"
   list-ask now routes `qa` under `auto`; all gates green.
 - **Pre-existing color-sensitive gate (recorded 2026-09-04, commit 6).**
@@ -196,11 +275,17 @@ Things a fresh session gets wrong by default:
   uncovered. Roster members resolve from *declared* members in `overrides.yaml`
   (`scriptengine/retrieve/roster.py`, `load_rosters`), so the build is a
   declaration exercise, not a generation one.
-- **Heading variants.** `Character in Order of Appearances` (153) /
-  `Characters in Order of Appearance` (149) / `Character in Order of Appearance`
-  (1); `Locations` (290) / `Location` (4); `Battles & Events` (238) /
-  `Battles and Events` (16). Any rule keyed on one spelling silently misses the
-  rest.
+- **Heading variants.** OOA is **four** forms: `Character in Order of
+  Appearances` (153) / `Characters in Order of Appearance` (149) /
+  `Character in Order of Appearance` (1) / `Characters in Appearance` (1,
+  **Chapter 74** — the fourth form, dropped by any regex that requires
+  "order of"; the 2026-09-03 inventory's 3-variant list missed it, so the next
+  inventory pass must carry all four). `Locations` (290) / `Location` (4).
+  B&E is exactly **two** forms — `Battles & Events` (238) /
+  `Battles and Events` (16, Ch 19, 57, 61, 66–74, 88–91); verified 2026-09-04
+  that all 254 B&E headings are byte-identical to one of those two (L2, no
+  non-ASCII), so there is **no** fourth B&E form to add. Any rule keyed on one
+  spelling silently misses the rest.
 - **Re-index, never re-crawl,** unless a re-crawl is separately proposed and
   gated. `index` is a pure function of the stored corpus
   (`scriptengine/index/build.py:1-7`); a re-crawl pulls today's wiki and can move
