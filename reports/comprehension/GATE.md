@@ -486,8 +486,8 @@ it sits on the timeline) is not yet met. Reachability (D5) is **not** met:
 48,572/48,572 is **tier 0** (every line in a chunk — an indexing tautology);
 the retrieval tier was sampled 2026-09-03 over 545 probes (1.1% of lines, now
 stale): verbatim 387/400 (96.8%), scoped 110/120 (91.7%), terms 24/25 (96%). A
-fresh verbatim 400-probe re-ran 2026-09-05 (GPU `:8000`) = **390/400 (97.5%)**
-— consistent with the 2026-09-03 baseline (the index is unchanged since).
+fresh verbatim re-run landed 2026-09-05 (GPU `:8000`) = **97.2%** (478/492 new rows; the append-only jsonl holds ~400 distinct probes ≈ 0.8% of the 48,572 lines)
+— **unchanged** from the 2026-09-03 baseline (96.8%) within sampling noise; the index is healthy. **D5 is still not met:** an exhaustive tier-1 has never run (92 of the 492 rows re-probe across the resume boundary — done-dedupe keyed on bare sentence text, a known defect; a naive all-rows recompute over the 892-row file gives 97.0%).
 Comprehension (D6) is also not met (154 unplaced events, 107 cross-page
 disagreements, narrow `abilities`, era-less social-only `relations`, 0-row
 `semantics`). The prioritised remaining builds (R1 per-line meaning index →

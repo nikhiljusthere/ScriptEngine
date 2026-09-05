@@ -57,11 +57,11 @@ Two tiers, and the number everyone quotes is the wrong one:
   line? Baseline **2026-09-03** over a 545-probe sample (**1.1% of the lines**):
   **verbatim 387/400 (96.8%), scoped 110/120 (91.7%), terms 24/25 (96%)**. Misses
 are `MISS_DOC` (a sibling page is served instead) and `MISS_SPAN` (the page is
-   served, the line is not). A **fresh full verbatim 400-probe re-ran 2026-09-05**
+   served, the line is not). A **fresh verbatim re-run landed 2026-09-05**
    (GPU `:8000`; the index is unchanged since Sep 3 — no re-crawl or re-index):
-   **390/400 HIT (97.5%)**, 3 `MISS_DOC` + 5 `MISS_SPAN` + 2 `TRUNCATED`, 0
-   errors — marginally better than the 2026-09-03 baseline (387/400 = 96.8%). D5
-   is **not met**; tier 1 is ~92–97%, not 100%.
+   **478/492 HIT (97.2%)**, 3 `MISS_DOC` + 9 `MISS_SPAN` + 2 `TRUNCATED`, 0
+   errors — **unchanged, not improved**, from the 2026-09-03 baseline (387/400 = 96.8%): 96.8%→97.2% at n≈400 is inside sampling noise (±~1.7pp at 95%), so the index is confirmed healthy. D5
+   is **still not met** — only ~400 distinct probes (≈0.8% of the 48,572 lines) and an exhaustive tier-1 has never run. *Known measurement defect:* the jsonl is append-mode (892 rows; a naive all-rows recompute gives 97.0%) and 92 rows re-probe across the resume boundary (done-dedupe keyed on bare sentence text) — it inflates row counts and would corrupt any future paired comparison.
 
 The only open *indexing* defect is the Trivia chunking gap (standing open #5);
 it does not affect tier 0 (those lines are still indexed) — it is about
@@ -83,8 +83,8 @@ Same live store, measured 2026-09-05:
 
 **Honest answer: tier-0 indexing is 100% (48,572/48,572 lines in a chunk) and
 event placement is ~94%, but D5 reachability is *not* met (tier 1 ~92–97%; the
-2026-09-05 full 400-probe re-ran at **97.5%**, marginally above the 2026-09-03
-baseline of 96.8%) and we are not at 100% comprehension.** The residuals above
+2026-09-05 verbatim re-run held at **97.2%** on ~400 distinct probes (≈0.8% of lines), unchanged from the 2026-09-03
+baseline of 96.8% within sampling noise — D5 still unmet, an exhaustive tier-1 has never run) and we are not at 100% comprehension.** The residuals above
 are the distance to the goal.
 
 ---
@@ -213,11 +213,16 @@ R4's sibling-propagation stays held (it would copy the same noise).
 - **GPU device rule (CUDA first):** the 27B Qwen model owns the card for any
   LLM batch — stop the `:8000` API (or run it `SCRIPTENGINE_DEVICE=cpu`) and
   confirm ~7 GB free before launching; never run the extraction LLM on CPU as a
-  workaround. The `:8000` API itself: CUDA if the card is free, else CPU.
+  workaround. The `:8000` API itself: CUDA if the card is free, else CPU — with
+  one exception, a **short, bounded `:8000` probe in a Qwen quiet window** may
+  borrow the ~7 GB of pre-reserved headroom (embedder+reranker load lazily, ~5.3 GB)
+  while Qwen idles between prompt bursts (verified 2026-09-05: a 400-probe ran to
+  97.2% with Qwen alive throughout; check Qwen's health after and restore the CPU
+  `:8000` steady-state). Not for `events-extract` / heavy LLM batches.
 - **Four standing gates re-run after each R:** pytest (1,202), span-recall
    jjk (48,572/48,572, rc=0 — **tier 0 only**; the tier-1 reachability sample is
-   separate — full 400-probe re-ran 2026-09-05 on GPU `:8000` = **97.5%**,
-   consistent with the 2026-09-03 baseline of 96.8%), eval jjk (24/24),
+   separate — verbatim re-run 2026-09-05 on GPU `:8000` = **97.2%** (478/492 new rows; ~400 distinct probes ≈ 0.8% of lines),
+   unchanged from the 2026-09-03 baseline of 96.8% within noise; D5 still unmet — an exhaustive tier-1 has never run), eval jjk (24/24),
    canon-run opm (10/16 · 236/236 · 79.0%). `span-recall` after any index;
    `audit` before any index.
 - **Commit:** branch `character-scoped-questions`, named paths only, author
