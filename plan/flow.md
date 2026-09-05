@@ -34,9 +34,35 @@ The run ends when Phase 6 closes, not before.
 > ticked. A gate that fails does not pause the run for permission; it **halts**
 > it, under the conditions below.
 
-### Halt conditions — the only brake on a continuous run
+### Halt conditions — and what to do when one fires
 
-Stop the run and report. Do not work around, do not proceed to the next phase.
+A halt condition suspends the phase. **It does not end the run.** When one
+fires:
+
+1. **Stop the step immediately.** Do not work around it, do not proceed to the
+   next phase, do not paper over it.
+2. **Convene the council on the halt itself** — the framed question is the
+   halt: what fired, the raw evidence, and what the phase was attempting.
+   5 advisors, anonymised peer review, synthesis, serially.
+3. **Then one of two outcomes, and the council does not get to choose freely:**
+   - **Resolvable inside the plan as written** → apply the fix, re-run the
+     check that fired, and **continue the run**. Record the halt, the council,
+     and the resolution in `deviation_reasons.md` and the phase council report.
+   - **Not resolvable inside the plan** — it needs scope that is not written
+     here, or a decision only the owner can make, or it is a genuine
+     irreparable regression → **stop and report.** This is the only stop before
+     Phase 6 closes.
+
+> **The council may repair a halt. It may never re-interpret one.**
+> A council cannot rule that a fired condition did not fire, that a regressed
+> number is acceptable, that lost rows did not matter, or that a floor should
+> be lowered to fit the result. Those are re-interpretations, and a council
+> that can clear its own halts by redefining them is the self-grading loop this
+> whole structure exists to break. **Conditions 1, 2 and 4 below are
+> non-negotiable in this sense:** the council may find and apply a *fix*, but
+> the condition stands until the *evidence* changes.
+
+**The conditions:**
 
 1. **A standing gate regresses** below baseline: `pytest`, `eval jjk` 24/24,
    `canon-run opm` 10/16 · 236/236 · 79.0%, `span-recall`.
@@ -233,9 +259,10 @@ corpus should not be replicated across seven.
 ## Standing rules (all phases)
 
 - **Run continuously to the end of Phase 6.** Do not pause between phases, do
-  not ask for approval to advance, do not stop to report progress. The only
-  reasons to stop are the seven halt conditions above and the completion of
-  Phase 6.
+  not ask for approval to advance, do not stop to report progress. A halt
+  condition suspends a phase and triggers a council; the run stops only when
+  that council finds the halt unresolvable inside this plan, or when Phase 6
+  closes.
 - **Council pass at the close of every phase**, before advancing — 5 advisors,
   then anonymised peer review, then synthesis, run serially since only one
   sub-agent runs at a time. **DB-verify every council claim before recording
