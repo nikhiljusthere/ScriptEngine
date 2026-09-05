@@ -659,6 +659,46 @@ Smallest first, to calibrate the estimate before betting on it.
 **Every schedule estimate in any document is fiction until the CSM pilot
 produces a real number.** Do not commit to a timeline before it exists.
 
+### Wave 0 — the reachability pre-pass (all seven, before any prose)
+
+JJK closed at 0 unreachable lines only after the D5 fix: its `References`
+section carries per-chapter trivia the span-recall oracle deliberately counts as
+reachable, but the chunker skipped it — the chunker's skip-policy and the
+oracle's content-policy had diverged. The other seven are still red, and the
+surface is large (measured wave-0 baseline):
+
+| series | unreachable lines |
+|---|---:|
+| csm | 439 |
+| opm | 1,039 |
+| bleach | 1,171 |
+| hxh | 1,224 |
+| berserk | 1,256 |
+| db | 8,438 |
+| onepiece | 7,088 |
+| **total** | **20,655** |
+
+`opm` (1,039) and `bleach` (1,171) are the already-known Trivia chunking gap;
+the rest is a mix of causes. The first action on each wiki is to **break its
+unreachable lines down by cause** — the D5-class (chunker skips a section the
+oracle counts: `references`/footnote lists, and any other title the oracle treats
+as content), the Trivia bullet gap, and anything else — then fix each cause. The
+D5-class fix is now mechanical: the `effective_boilerplate_sections(overrides)`
+helper subtracts a wiki's `content_sections` override from the chunker's skip
+set, so a per-wiki `content_sections:` in `series/<s>/overrides.yaml` closes it
+without touching the engine's global set or the other six.
+
+Two constraints from the D5 council: (1) keep the oracle the stricter canary —
+the span-recall `BOILERPLATE` stays independent of the chunker's skip policy, or
+it becomes a tautology that can never flag a new gap; (2) route
+`roster._member_prose` and `export._write_document` through the same helper so
+the skip policy has one source.
+
+**Gate, per wiki:** `span-recall` down to 0 unreachable (or a documented floor,
+recorded in the wiki's audit), `pytest` green, `eval` green. **This pass is a
+prerequisite to §5.4** (a per-corpus `prose.db`): prose is not authored against
+an index with unreachable lines.
+
 ### The pilot's job
 
 CSM is not there to be finished. It is there to answer four questions: how many
