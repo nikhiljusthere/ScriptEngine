@@ -144,6 +144,20 @@ re-crawling.
         below), so it cannot be freed — then CPU is the fallback. CPU page-runs
         are slow (cross-encoder ~14s/question): a 150-question batch takes ~35
         min, so kick it off detached and poll rather than blocking.
+      4. **Borrow the headroom for a *short* `:8000` task, even with Qwen on the
+         card.** Qwen's KV pool is *pre-reserved* (`--kv-capacity 155648`), so its
+         ~24.6 GB is a fixed allocation and the ~7 GB "free" is genuinely spare
+         headroom — Qwen only hits ~100% util *while decoding a prompt* and idles
+         between bursts, when the 7 GB is free. For a **short, bounded** `:8000`
+         run (e.g. a `span-recall` 400-probe, ~4 min) you *can* launch it on CUDA
+         co-located with Qwen: the embedder+reranker load lazily per request
+         (~5.3 GB), borrow the 7 GB, and Qwen survives (memory stays pinned, no
+         OOM). Only do it when (a) Qwen is in a quiet window (low util, no
+         extraction batch running), (b) the task is short, (c) you check Qwen's
+         health right after (`nvidia-smi` / `kill -0`), and (d) you restore the
+         safe steady-state (stop the CUDA `:8000`, bring up CPU `:8000`) when
+         done. **Not** for `events-extract` / heavy LLM batches — those keep Qwen
+         under continuous load and are what the hard rule below forbids co-locating.
 - **Coverage is a live artifact, not a sentence.** No document states what is
       next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
       which `tools/coverage_report.py` regenerates (never hand-edited). Run it
@@ -204,7 +218,13 @@ process and ~7 GB free before launching. Never run the extraction's LLM on CPU
 as a workaround — the GPU is the path; just keep the card free for it. For
 launching the `:8000` API itself, the decision order is the working-agreement
 **"GPU device selection for servers/APIs: CUDA first, CPU last"** — free →
-CUDA, can-free → free and CUDA, cannot-free → CPU.
+CUDA, can-free → free and CUDA, cannot-free → CPU. The one sanctioned exception
+is a **short, bounded `:8000` probe** in a Qwen quiet window (working-agreement
+point 4 above): Qwen's KV pool is pre-reserved, so its ~7 GB of headroom is
+genuinely free between prompt bursts and a lazily-loaded embedder+reranker (~5.3 GB)
+can borrow it — verified 2026-09-05 (a span-recall probe ran to completion with Qwen alive
+throughout). The rule still stands for `events-extract` and any long,
+load-sustaining LLM batch.
 
 ## Status
 
