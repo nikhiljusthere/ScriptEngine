@@ -1,0 +1,241 @@
+# ORACLE v1 — held-out, reviewer-authored. JJK.
+#
+# PROVENANCE: authored 2026-09-05 by the reviewer, not by the executing agent.
+# Every `ground_truth` below was read directly out of series/jjk/facts.db on
+# that date — none of it is recalled, inferred, or generated.
+#
+# THE RULE THAT MAKES THIS AN ORACLE: the executing agent RUNS this file and
+# REPORTS results. It never edits it — not a question, not a ground_truth, not
+# an `expect`. If an item looks wrong, that is a finding to report, not a
+# licence to change it. Record this file's sha256 in every report that cites
+# it, so tampering is visible.
+#
+# WHY IT IS SHAPED THIS WAY: a set of labelled wiki sentences scores the
+# extractor, not the goal — and a probe built from the wiki's own sentence
+# tests reachability, not answerability. So every item here starts from a BEAT
+# a writer is actually trying to write, asks in NATURAL phrasing (never the
+# wiki's wording), and checks whether the served bundle carried what the beat
+# needed.
+#
+# `expect` is the reviewer's prediction, recorded BEFORE any run. It makes the
+# oracle falsifiable in both directions: an item that passes where `expect:
+# fail` means the engine is better than believed; an item that fails where
+# `expect: pass` means the reviewer was wrong. Both are findings. Report both.
+
+meta:
+  version: 1
+  series: jjk
+  authored: 2026-09-05
+  author: reviewer
+  editable_by_executing_agent: false
+  scoring: |
+    For each item, ask `question` of the engine under `auto` routing and
+    capture the served bundle.
+      check: contains  -> the bundle text must contain `ground_truth`
+                          (whitespace-normalised, citations stripped).
+      check: value     -> the engine's answer must carry `ground_truth`
+                          as its value for the named subject.
+      check: section   -> the bundle must return content whose breadcrumb
+                          matches `source_section` on `source_page`.
+      check: distinguishes -> the bundle must place the beat in `ground_truth`
+                          and must NOT conflate it with `must_not_confuse_with`.
+    Report per item: PASS / FAIL, what was served, and the routed door.
+    Report totals split by `category`. Do not report an aggregate alone.
+
+items:
+
+  # ---- A. OUTCOMES -------------------------------------------------------
+  # Battle pages carry structured outcome fields; `events` records that a
+  # fight happened but not who won. These test whether the outcome reaches a
+  # writer who asks in plain language.
+
+  - id: A1
+    category: outcome
+    beat: "Closing Nanami's last stand in Shibuya — the audience needs to know how the fight with Mahito ended."
+    question: "How did Nanami's fight against Mahito end?"
+    ground_truth: "Nanami withdraws."
+    source_page: "Kento Nanami vs. Mahito"
+    check: contains
+    expect: fail
+
+  - id: A2
+    category: outcome
+    beat: "Kashimo's death scene — who actually won."
+    question: "Who won the fight between Kashimo and Sukuna?"
+    ground_truth: "Sukuna is victorious."
+    source_page: "Hajime Kashimo vs. Sukuna"
+    check: contains
+    expect: fail
+
+  - id: A3
+    category: outcome
+    beat: "Uraume's end — a script cannot say 'defeated' if it was suicide."
+    question: "How did the confrontation between Hakari and Uraume end?"
+    ground_truth: "Uraume commits suicide."
+    source_page: "Kinji Hakari vs. Uraume"
+    check: contains
+    expect: fail
+
+  - id: A4
+    category: outcome
+    beat: "The finale — stating the result of the final battle."
+    question: "What was the result of the final battle against Sukuna?"
+    ground_truth: "The jujutsu sorcerers are victorious."
+    source_page: "Jujutsu Sorcerers vs. Sukuna"
+    check: contains
+    expect: fail
+
+  # ---- B. STATE AT A MOMENT ---------------------------------------------
+  # Nothing in the store models what was TRUE of a character during an arc.
+  # These are expected to fail; they exist to size the gap, not to pass.
+
+  - id: B1
+    category: state
+    beat: "A Culling Game scene. The writer must not have Gojo appear or act — he is sealed throughout."
+    question: "Where is Gojo during the Culling Game, and can he act?"
+    ground_truth: "she ought to be found so that she may help them unseal Satoru Gojo"
+    source_page: "Angel"
+    source_section: "Synopsis / Culling Game Arc"
+    check: contains
+    expect: fail
+    note: "Also a cross-page case: the fact that pins Gojo's state lives on Angel's page."
+
+  - id: B2
+    category: state
+    beat: "A pre-defection Geto flashback. He must be written as a Jujutsu High sorcerer, not a curse user."
+    question: "Was Geto a jujutsu sorcerer or a curse user, and did that change?"
+    ground_truth: "Jujutsu Sorcerer (Former) Curse User"
+    source_page: "Suguru Geto"
+    check: value
+    expect: fail
+
+  - id: B3
+    category: state
+    beat: "An epilogue beat. The writer needs to know who is still alive at the end."
+    question: "Is Nobara Kugisaki alive at the end of the story?"
+    ground_truth: "Alive"
+    source_page: "Nobara Kugisaki"
+    check: value
+    expect: pass
+
+  - id: B4
+    category: state
+    beat: "Naming Gojo's rank correctly in dialogue."
+    question: "What grade of sorcerer is Gojo?"
+    ground_truth: "Special Grade"
+    source_page: "Satoru Gojo"
+    check: value
+    expect: pass
+
+  # ---- C. TIMELINE PLACEMENT --------------------------------------------
+  # The repeat-encounter problem made concrete: Todo fights Yuji in the Kyoto
+  # Goodwill Event and appears again in Shibuya. A writer placing a beat must
+  # get the right one.
+
+  - id: C1
+    category: timeline
+    beat: "Writing Todo and Yuji's first clash — it is the Goodwill Event, not Shibuya."
+    question: "When do Todo and Yuji first fight each other?"
+    ground_truth: "Kyoto Goodwill Event Arc"
+    must_not_confuse_with: "Shibuya Incident"
+    source_page: "Aoi Todo"
+    check: distinguishes
+    expect: fail
+
+  - id: C2
+    category: timeline
+    beat: "Todo cracking Hanami's shell — placing the moment in the right arc."
+    question: "In which arc does Todo fight Hanami with Playful Cloud?"
+    ground_truth: "Aoi cracks Hanami's hard shell with Playful Cloud"
+    source_page: "Aoi Todo"
+    check: contains
+    expect: pass
+
+  - id: C3
+    category: timeline
+    beat: "A Shibuya scene needing the hour Todo arrives."
+    question: "What time does Todo arrive in Shibuya?"
+    ground_truth: "Todo and Arata originally arrived in Shibuya around 11:09 P.M."
+    source_page: "Aoi Todo"
+    check: contains
+    expect: pass
+
+  # ---- D. CROSS-PAGE ATTRIBUTION ----------------------------------------
+  # The stated requirement: a fact about X held on Y's page must be reachable
+  # when asking about X.
+
+  - id: D1
+    category: cross-page
+    beat: "Establishing why the sorcerers need the Angel — it is about Gojo, but the wiki states it on Angel's page."
+    question: "Why do the sorcerers need to find the Angel?"
+    ground_truth: "she ought to be found so that she may help them unseal Satoru Gojo"
+    source_page: "Angel"
+    source_section: "Synopsis / Culling Game Arc"
+    check: contains
+    expect: pass
+
+  # ---- E. PERSONALITY AND VOICE (RETRIEVAL TEST) -------------------------
+  # These decide whether Personality needs EXTRACTION or just better
+  # retrieval. If the bundle already carries the paragraph, no extraction is
+  # owed and ~42,500 words come off the build list.
+
+  - id: E1
+    category: personality
+    beat: "Writing Nanami's dialogue register — clipped, unsentimental, professional."
+    question: "How does Nanami behave and speak?"
+    ground_truth: "Nanami is a very wise and reserved kind of man"
+    source_page: "Kento Nanami"
+    source_section: "Personality"
+    check: contains
+    expect: pass
+
+  - id: E2
+    category: personality
+    beat: "Gojo talking to students versus talking to the higher-ups — two different registers in one scene."
+    question: "How does Gojo treat his students compared to the sorcerer executives?"
+    ground_truth: "He is usually laidback and playful with his students"
+    source_page: "Satoru Gojo"
+    source_section: "Personality"
+    check: contains
+    expect: pass
+
+  - id: E3
+    category: personality
+    beat: "Writing any Toge line — he speaks only in rice-ball ingredients."
+    question: "Why does Toge Inumaki speak the way he does?"
+    ground_truth: "Toge chooses not to speak in a conventional manner"
+    source_page: "Toge Inumaki"
+    source_section: "Personality"
+    check: contains
+    expect: pass
+
+  - id: E4
+    category: personality
+    beat: "Maki's drive against her clan — the emotional spine of her arc."
+    question: "What motivates Maki Zenin?"
+    ground_truth: "Maki is a very headstrong and straightforward person"
+    source_page: "Maki Zenin"
+    source_section: "Personality"
+    check: contains
+    expect: pass
+
+  # ---- F. EQUIPMENT AND VOICE SOURCES -----------------------------------
+  # Small, unextracted dimensions. Same question: retrieval or extraction?
+
+  - id: F1
+    category: equipment
+    beat: "Todo enters carrying his weapon — naming it correctly."
+    question: "What equipment does Aoi Todo use?"
+    source_page: "Aoi Todo"
+    source_section: "Equipment"
+    check: section
+    expect: pass
+
+  - id: F2
+    category: quotes
+    beat: "Giving Todo a line that sounds like him."
+    question: "What are some things Aoi Todo has said?"
+    source_page: "Aoi Todo"
+    source_section: "Quotes"
+    check: section
+    expect: pass
