@@ -367,6 +367,71 @@ span-recall 48,572/48,572 (0 misses, rc=0); eval 24/24; canon-run opm
 10/16 · 236/236 · 79.0% (report `2026-09-05-1056`, API relaunched on CPU per
 the CUDA-first rule — Qwen holds the GPU).
 
+## Step 1 — recompute `temporal` from the live placement (2026-09-05)
+
+The check-3 event test is keyed on the placement the backfill computes, but the
+`temporal` flag was written once at extraction and never updated — so it sat
+frozen at the 714-event placement-set count while the corpus rows, placed by the
+section signal, were mislabelled `temporal=0`. `recompute_temporal` re-derives
+`temporal` from the placement that already exists: `eventive verb AND
+arc_index IS NOT NULL` → `temporal=1`, else `temporal=0`. Pure SQL, no model,
+idempotent (a second run moves nothing).
+
+**The data change (the point of the step, not the build status):**
+
+| measure | before | after |
+|---|---:|---:|
+| `temporal=1` | **714** | **2,594** (+1,880) |
+| `temporal=1` & `arc_index IS NULL` (dangling — D6 violation) | 0 | **0** |
+| `temporal=0` & `arc_index IS NOT NULL` (placed-but-off-axis — D6 violation) | **1,880** | **0** |
+| `temporal=0` & `arc_index IS NULL` (standing state, expected) | 154 | **154** |
+| total | 2,748 | 2,748 |
+
+Both D6 violations are now **0**: every placed eventive row is `temporal=1`, and
+the only `temporal=0` rows are the 154 genuinely unplaceable ones (recorded
+standing states). Re-verified against the live store independently.
+
+**Beat-ordering guard (the check none of the four standing gates cover).** The
+narrative reorderer only reorders on `temporal=1` events, so the flip from 0 →
+2,594 could have scrambled corpus-page beat order. The GPU-free harness
+re-ran on the five highest-event pages: `Yuji Itadori/Synopsis` (83), `Larue`
+(6), `Chapter 0-4` (12), `Episode 46` (18), `Sendai City` (6). Before the
+recompute every event was `temporal=0`, so the reorderer skipped them all and
+`event_order == article_order`. After, the temporal counts became **81 / 6 / 12
+/ 18 / 6** and the reorderer ran — and `event_order` still equals
+`article_order` on all five (`changed: false`). **No degradation: the new flag
+did not move any page's beat order.**
+
+**`time_rank` clustering (ruled out as a second predicate gap).** Pages with
+many events on one rank (Episode 8 · 51, Chapter 248 · 150 · 246, Episode
+19 · 33 · 38 · 39 · 44) each carry their events in the **single `Plot Details`
+section** — one narrative section, one clock position, so a single rank is
+correct, not a collapse. Across all 508 arc-keys, **507 have distinct ranks ==
+distinct event-sections**. The one exception, `Shibuya Incident` (14 sections,
+12 ranks), shares its two extra ranks on **concurrent scenes at the same
+timestamp** (8:51 P.M. and 9:22 P.M. each run two parallel threads) — correctly
+tied, not a loss. **No second predicate gap.**
+
+Gates re-run green this pass: pytest **1,204** (was 1,202, +2
+`TestRecomputeTemporal`); span-recall 48,572/48,572 (0 misses, rc=0 — tier 0);
+eval 24/24; canon-run opm 10/16 · 236/236 · 79.0% **at baseline** (report
+`2026-09-05-1159`, API on CPU).
+
+## What remains to full comprehension (the updated plan)
+
+All five build phases above are shipped and green; the *goal* (the corpus
+*understands* a character — what each line means, whether it is an event, where
+it sits on the timeline) is not yet met. Reachability (D5) is **not** met:
+48,572/48,572 is **tier 0** (every line in a chunk — an indexing tautology);
+the retrieval tier was sampled 2026-09-03 over 545 probes (1.1% of lines, now
+stale): verbatim 387/400 (96.8%), scoped 110/120 (91.7%), terms 24/25 (96%).
+Comprehension (D6) is also not met (154 unplaced events, 107 cross-page
+disagreements, narrow `abilities`, era-less social-only `relations`, 0-row
+`semantics`). The prioritised remaining builds (R1 per-line meaning index →
+R2 abilities coverage → R3 relations era+eventive → R4 place the 154 →
+R5 typed edges), with done-gates and the standing council/GPU/gate/commit
+requirements, are `COMPREHENSION_REMAINDER.md` in this directory.
+
 ## Commands
 
 ```
