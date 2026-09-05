@@ -393,6 +393,36 @@ writer; and it is deterministically testable.
 D5 first because it is finite and nearly done — but stop describing it as if it
 were D6.
 
+### Build status (2026-09-05) — all five phases built and green; the goal is not yet met
+
+The five phases above are **shipped** on `jjk`: Phase 1 door (`DOOR_TEST`),
+Phase 2 `ingest/events.py` (714-event placement set), Phase 3 time axis
+(`arc_index` on every placed event), Phase 4 targeted extraction (3a 108-page
+placement set → 3b full-corpus 524 pages = **2,748 events**, + the
+section/chapter placement-signal fix), Phase 5 the mechanical gate +
+cross-page agreement (+ the continuity-check scaffold). Records live in
+`reports/comprehension/` (`GATE.md` is the live record; standing gates green:
+pytest 1,202, span-recall 48,572/48,572 (tier 0), eval 24/24, canon-run opm 79.0%).
+
+What is **not** done is the *goal*, not the mechanism. Split the "100%":
+
+- **Reachability (D5): not met** — 48,572/48,572 lines sit whole in a chunk is
+  **tier 0 (indexing, a tautology)**. The retrieval tier (the real D5) was
+  sampled 2026-09-03 over 545 probes (1.1% of lines, now stale): verbatim
+  387/400 (96.8%), scoped 110/120 (91.7%), terms 24/25 (96%).
+- **Comprehension (D6): not 100%** — 154 events unplaced on the axis (the
+  reserved inference residue), 107 cross-page disagreements (31 interaction-verb
+  anachronisms), `abilities` narrow (94 characters), `relations` social-only with
+  64% era-less, `semantics` 0 rows (no per-line meaning layer), 81% of `edges`
+  untyped.
+
+The remaining work, in priority order (R1 per-line meaning index → R2 abilities
+coverage → R3 relations era+eventive → R4 place the 154 → R5 typed edges), with
+its done-gates and the standing council/GPU/gate/commit requirements, is the
+**updated plan** in `reports/comprehension/COMPREHENSION_REMAINDER.md`. Do not
+read the five green phases as "the corpus understands a character"; R1 is what
+makes a writer's line *mean* something the engine can state.
+
 ---
 
 ## 3. What JJK actually cost
@@ -822,5 +852,185 @@ itself gone stale twice — verify before trusting.
 
 ---
 
+## 12. The dimension map — what "everything about a character" means
+
+R1–R5 are retired. They were written against a narrow reading of the goal
+(semantic class + is_event + participants + arc_index) and the owner has
+corrected it: *"I did not mean only those 3 things, I meant everything."*
+
+*Measured 2026-09-05 from `sections` on `character` + `character_synopsis`
+pages. Regenerate per §10.*
+
+| dimension | words | extracted today | consumer — the query this buys | acceptance |
+|---|---:|---|---|---|
+| arc synopses | ~174,000 | 8-verb events only | "what happened, in order" | events placed + agreeing |
+| **Personality** | 42,533 | **none** | how a character *speaks and behaves* | trait rows w/ quote + era |
+| Overview | 16,731 | none | one-paragraph character brief | brief per character |
+| Trivia | 15,887 | none | colour, out-of-universe notes | tagged, in/out of universe |
+| **Appearance** | 14,180 | **none** | how to describe them on screen | descriptor rows, era-scoped |
+| Cursed Technique | 13,611 | names only | what the ability *does* | mechanics per named technique |
+| History | 11,595 | barely | pre-series backstory | placed before arc 0 |
+| Physical Prowess | 10,595 | none | feats, limits | feat rows w/ quote |
+| Intelligence | 9,674 | none | tactics, how they think | same |
+| Abilities and Powers | 8,481 | names only | ability inventory | 146/146 characters |
+| Cursed Energy | 6,416 | none | capacity, output | same |
+| Equipment | 3,782 | none | what they carry | item rows, era-scoped |
+| **Quotes** | 1,518 | **none** | the character's actual voice | attributed lines |
+
+~106,000 words of character prose have zero structured extraction.
+
+> **Word count is not priority.** Two columns above exist because ranking by
+> volume would push work toward Personality and Overview (59k words of
+> subjective prose that may not extract into anything queryable) ahead of
+> Cursed Technique (13k words, mechanically structured, schema half-built, 594
+> names already landed). **A dimension is only scheduled once its consumer
+> column names a real query and its acceptance column names a test that can
+> fail.** A dimension with "NO" → "yes" and no failing test is how an indexing
+> tautology got reported as retrieval coverage.
+
+### Three dimensions the map does not cover, and must
+
+1. **State over time.** What was *true* of a character during an arc — grade,
+   allegiance, alive/dead, sealed, possessed. You cannot write a Shibuya scene
+   without knowing Gojo is sealed from that point. Nothing models this.
+2. **Outcomes.** `events` records that a fight happened, not who won — though
+   battle pages carry result fields already.
+3. **Causality.** Why something happened and what it caused.
+
+---
+
+## 13. Phase 0 — the retention decision (blocks everything downstream)
+
+*Verified in source 2026-09-05.* `FactStore.reset()` drops `events` **and**
+`meaning` first, by design — its own comment says *"an `index` rebuild
+invalidates it: the rows reference this build's ids, so `events-extract` is the
+only way back."* `build.py` calls `reset()` unconditionally at the top of every
+index run.
+
+So **the 2,594 events already in the store are wiped by any routine re-index,
+today.** That is a live exposure, not a hypothetical, and it becomes
+prohibitive the moment a 24,000-sentence GPU batch sits under the same scheme.
+
+`abilities` survives a rebuild because it is keyed on character *name*.
+`events` and `meaning` are keyed on `section_id`, which renumbers.
+
+**The decision, and it is a real one — not a defect to route around:**
+
+- **(a) Durable natural key.** Key on `document.title` + section ordinal +
+  sentence ordinal (+ content hash), and remap survivors on rebuild. Extraction
+  survives a cheap re-embed. Costs a key migration and a remap path.
+- **(b) Accept the wipe.** Keep FK keys; treat re-extraction as the price of a
+  rebuild. Costs the full GPU pass every time the index is rebuilt.
+
+**Decide (a) or (b) before authorising any large extraction pass.** The
+project's stated philosophy favours (b) — "a rebuilt graph has invalidated the
+stored events, so the wipe is the feature." That was written when the batch was
+cheap. At 24k sentences it may no longer hold. This is the owner's call.
+
+---
+
+## 14. Step semantics — suggestion, verification, refusal
+
+Every step in a phase is a **suggestion carrying a premise**. The executing
+agent checks the premise *first*, and only works if it holds.
+
+**A step is written in three parts:**
+
+```
+STEP 3B — widen abilities to full character coverage
+  PREMISE   : 94 of 146 character pages have ability rows; the other 52 have
+              an Abilities section with >0 words.
+  VERIFY    : <the exact query that confirms or refutes it>
+  IF HOLDS  : <the work>
+  IF REFUTED: halt, record in deviation_reasons.md, surface — do not substitute
+```
+
+> **Refusal authority, not substitution authority.** The executing agent has
+> twice declined an instruction and been right both times — and both were
+> *refusals* (declining to rewrite `arc_key`, which would have broken the only
+> consumer). Refusal is cheap to review and fails safe. Substitution — doing
+> something else instead — has no track record here and fails silently. **A
+> refuted premise halts the step and surfaces it. It does not authorise a
+> different action.**
+
+### `deviation_reasons.md`
+
+One entry per refuted premise. **Each entry must carry the query output or the
+file:line citation that refuted it** — a deviation justified by narrative
+rather than evidence is not a deviation, it is a story. This file is
+agent-authored, which puts it in the same class as the self-reports that have
+been wrong five times; the evidence requirement is what makes it checkable.
+
+```
+## <step id> — premise refuted <date>
+- premise as written:
+- what the check actually returned:   <raw output / file:line>
+- why the step cannot proceed as written:
+- halted at:                          <what is now blocked>
+```
+
+---
+
+## 15. `flow.md` — the phase graph, and why it holds no status
+
+The need is real: phases get forgotten while sub-phases run. But a
+hand-maintained checkpoint file is **exactly** the artifact §0 forbids, and for
+a reason this project paid for — four phantom work items in one day came from a
+planning document that claimed work remained when it was already done.
+
+**The resolution: `flow.md` holds structure, never state.**
+
+- **It holds:** the phase graph — phases, their sub-steps, what each depends
+  on, and the gate that closes each phase. This does not change as work
+  proceeds, so it cannot go stale.
+- **It does not hold:** checkboxes, progress counts, "current phase", "next
+  step", or any claim about what is done.
+- **Status comes from a query**, appended by the generator, never typed.
+
+### The phase gate — why the last item is a gate, not a step
+
+The requested pattern is that a phase decomposing into 1A–1E gets a 1F reading
+"continue to Phase 2 now." **Write it as a gate instead:**
+
+```
+1F — GATE: emit the query output proving 1A–1E landed. Council verifies.
+     Only on green does Phase 2 open. Never "continue now."
+```
+
+A bare "continue now" is a checkbox authorising advancement, placed directly
+after steps the agent graded itself on. The campaign once reported as "100%"
+while stepping around the same bug eight times **would have ticked it**. The
+gate makes advancement contingent on evidence rather than on completion of the
+preceding line.
+
+---
+
+## 16. Who runs which work
+
+Two engines, and the split is not about capability — it is about volume,
+judgment, and what each one is metered on.
+
+| work | engine | why |
+|---|---|---|
+| bulk extraction (24k sentences) | **local 27B (ninfer)** | high volume, low judgment, schema-constrained. Costs electricity, not quota. |
+| verification against the store | **reviewer (Claude)** | low volume, high judgment; every defect this project found was caught this way |
+| the **accuracy oracle** | **reviewer (Claude)** | ~100–200 hand-labelled sentences to score a batch against. Currently absent, and it is the gap that matters most |
+| design review, gate adjudication | reviewer | |
+
+**The bulk pass must not move to the reviewer.** A 24,000-sentence batch is
+roughly four orders of magnitude beyond what the reviewer's own quota sustains
+— an attempt to run five council advisors in parallel on 2026-09-05 hit a
+session rate limit after four. The local model is the right engine for this
+work precisely because it is free and resident.
+
+**What should move to the reviewer is the oracle.** Every batch so far has
+proved that the guard fires, never that the labels are right. A hand-labelled
+gold sample is low-volume, high-judgment, and is the one artifact that would
+let a pass be scored rather than merely completed.
+
+---
+
 *Council-reviewed 2026-09-05. The findings in §5 were produced by source and
-database inspection; each is reproducible via §10.*
+database inspection; each is reproducible via §10. §12–§16 added after the
+owner corrected the goal's scope; the §13 retention finding and the §16 quota
+evidence were verified the same day.*
