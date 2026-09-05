@@ -379,9 +379,39 @@ def _qa_context(
             )
             for row in (store.passages_for_subject(subject) if subject else [])
         ]
+        # 2-prep: the subject's own facts lead the slice below. A busy character's
+        # facts sit behind a dozen lesser-linked entities in the entity-link
+        # order, so the flat top-30 cut dropped the subject's own grade (B4: the
+        # bundle carried twelve Hana Kurusu rows and five of Gojo's, and Gojo's
+        # `Special Grade` sat past the cut) while serving a random participant's.
+        # Resolve the subject to its node's canonical name (its own name, then an
+        # editor-maintained alias) and fetch that block.
+        subject_name: str | None = None
+        subject_fact_rows: list[dict[str, Any]] = []
+        if subject:
+            subject_name = store.subject_node_name(subject)
+            if subject_name:
+                subject_fact_rows = [
+                    {
+                        "entity": subject_name,
+                        "key": fact["key"],
+                        "label": fact["label"] or fact["key"],
+                        "value": fact["value"],
+                        "citation": fact["citation"],
+                    }
+                    for fact in store.facts_for(subject_name)[:24]
+                ]
 
     # Facts are cheap and exact, so they are paid for first: a character's grade
-    # is a dozen tokens and is the kind of detail a script gets wrong.
+    # is a dozen tokens and is the kind of detail a script gets wrong. The
+    # subject's block leads (capped at twenty-four), the remainder fills from the
+    # ranked slice excluding the subject's own rows so a fact is not paid for
+    # twice; without a subject that resolves to a node, the flat slice stands.
+    if subject_fact_rows:
+        fill = [fact for fact in result.facts if fact["entity"] != subject_name]
+        raw_facts = (subject_fact_rows + fill)[:30]
+    else:
+        raw_facts = result.facts[:30]
     facts = [
         {
             "entity": fact["entity"],
@@ -389,7 +419,7 @@ def _qa_context(
             "value": fact["value"],
             "citation": fact["citation"],
         }
-        for fact in result.facts[:30]
+        for fact in raw_facts
     ]
     entities = result.entities[:MAX_PARTICIPANTS]
     used = sum(estimate_tokens(f"{f['field']}: {f['value']}") for f in facts)
@@ -414,12 +444,24 @@ def _qa_context(
     beats: list[dict[str, Any]] = []
     # The subject's own passages lead the walk, in the wiki's section order; the
     # ranked beam follows with the subject's own passages removed by id, since
-    # their section-ordered copies are the ones that get paid for.
+    # their section-ordered copies are the ones that get paid for. An uncapped
+    # floor starves the beam: Gojo's page is forty-two passages (~8.5k tokens)
+    # against the 6k default budget, and the walk would spend it all on the
+    # floor and serve the beam nothing, evicting the cross-page beat (B1, the
+    # `Angel` page) that only the ranked beam reaches. Reserve half the budget
+    # for the beam and cap the floor at the other half; the first floor passage
+    # is still never dropped, since the floor is the subject's own page.
+    beam_reserves = token_budget // 2 if floor else 0
     floor_ids = {passage.chunk_id for passage in floor}
     ordered = [*floor, *(p for p in result.passages if p.chunk_id not in floor_ids)]
     for order, passage in enumerate(ordered, start=1):
         cost = estimate_tokens(passage.text) + 30
-        if used + cost > token_budget and beats:
+        limit = (
+            token_budget - beam_reserves
+            if passage.chunk_id in floor_ids
+            else token_budget
+        )
+        if used + cost > limit and beats:
             break
         text = cite.upgrade_markers(passage.text, episodes)
         beats.append(

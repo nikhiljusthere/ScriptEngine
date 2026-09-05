@@ -101,6 +101,40 @@ class TestPassagesForSubject:
         assert store.passages_for_subject(None) == []
 
 
+class TestSubjectNodeName:
+    """The facts-side twin of `passages_for_subject` (2-prep): the node a
+    subject names, by its own name or an editor-maintained alias, so the qa
+    fact floor can fetch the subject's own facts. A subject that is neither a
+    node name nor an alias yields None and the ranked behaviour stands."""
+
+    def test_a_node_name_resolves_to_itself(self, populated):
+        store = populated["store"]
+        assert store.subject_node_name("Aoi Todo") == "Aoi Todo"
+
+    def test_case_and_spacing_do_not_break_the_name_lookup(self, populated):
+        store = populated["store"]
+        assert store.subject_node_name("  yuji itadori ") == "Yuji Itadori"
+
+    def test_an_alias_reaches_its_node(self, populated):
+        # No node is named `Todo`; the editor alias is the fallback.
+        store = populated["store"]
+        assert store.subject_node_name("Todo") == "Aoi Todo"
+
+    def test_the_resolved_name_reaches_the_subjects_facts(self, populated):
+        # The whole point: `facts_for` is a plain node-name match, so the
+        # subject must be resolved before it is called.
+        store = populated["store"]
+        name = store.subject_node_name("Todo")
+        rows = store.facts_for(name)
+        assert [row["value"] for row in rows] == ["Grade 1"]
+
+    def test_a_subject_that_resolves_to_nothing_yields_none(self, populated):
+        store = populated["store"]
+        assert store.subject_node_name("Never Crawled Page") is None
+        assert store.subject_node_name("") is None
+        assert store.subject_node_name(None) is None
+
+
 class TestNodes:
     def test_a_node_is_created_once(self, store):
         first = store.add_node("Aoi Todo", "character")

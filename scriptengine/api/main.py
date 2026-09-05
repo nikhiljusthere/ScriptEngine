@@ -203,9 +203,16 @@ def context(request: ContextRequest) -> dict[str, Any]:
     paths = _paths_or_404(request.series)
     mode = request.mode
     routed = None
+    subject = request.subject
     if mode == "auto":
         routed = route(paths, request.query, subject=request.subject)
         mode = routed.mode
+        # 2-prep: a topic the router reads a character off lands in qa with no
+        # explicit subject, and the qa fact floor is keyed on the subject. Forward
+        # the router's read so the page the question is about gets its own facts
+        # and passages; the narrative no-hint floor it also enables stays a
+        # follow-up.
+        subject = request.subject or routed.signals.get("subject") or None
 
     bundle = build_context(
         paths,
@@ -213,7 +220,7 @@ def context(request: ContextRequest) -> dict[str, Any]:
         mode=mode,
         token_budget=request.token_budget,
         top_k=request.top_k,
-        subject=request.subject,
+        subject=subject,
     )
     # A roster with nothing in it is not an answer. Falling back keeps a topic
     # phrased as a list ("Every fight in Shibuya") from returning an empty

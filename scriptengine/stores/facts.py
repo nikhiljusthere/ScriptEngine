@@ -773,6 +773,34 @@ class FactStore:
             "SELECT * FROM nodes WHERE name = ? COLLATE NOCASE", (name,)
         ).fetchone()
 
+    def subject_node_name(self, subject: str) -> str | None:
+        """The node a subject names, by its own name or an editor-maintained alias.
+
+        The facts-side twin of `passages_for_subject`, which resolves the same
+        way for documents: a node's canonical name so `facts_for` can be called
+        on it, since that lookup is a plain `nodes.name` match with no alias
+        path. A subject that is neither a node name nor an alias (a misspelling,
+        an un-crawled page) returns None and the caller's ranked behaviour stands
+        unchanged. Several nodes sharing an alias: the shortest resolved name
+        wins, the way `passages_for_subject` orders its hits.
+        """
+        if not subject or not subject.strip():
+            return None
+        name = subject.strip()
+        row = self.connection.execute(
+            "SELECT name FROM nodes WHERE name = ? COLLATE NOCASE", (name,)
+        ).fetchone()
+        if row is not None:
+            return row["name"]
+        row = self.connection.execute(
+            "SELECT n.name FROM aliases a"
+            " JOIN nodes n ON n.id = a.node_id"
+            " WHERE a.alias = ?"
+            " ORDER BY n.is_resolved DESC, LENGTH(n.name) ASC LIMIT 1",
+            (name.lower(),),
+        ).fetchone()
+        return row["name"] if row is not None else None
+
     def link_entities(self, text: str) -> list[sqlite3.Row]:
         """Find entities mentioned in `text`, matching on whole words only.
 
