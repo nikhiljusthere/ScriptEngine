@@ -888,6 +888,38 @@ pages. Regenerate per §10.*
 > fail.** A dimension with "NO" → "yes" and no failing test is how an indexing
 > tautology got reported as retrieval coverage.
 
+### The precondition the map rests on, and nobody has measured
+
+**Nothing schedules off this map until the eight-verb coverage is measured.**
+`fought / killed / saved / arrived / departed / awakened / sealed / betrayed`
+was typed by someone; 174,000 words went through it and 2,594 rows came out.
+Nobody has recorded what the *other* verbs were.
+
+> Sample 100 random plot-summary sentences. For each, record whether the eight
+> verbs can express what it describes. **Report the fraction they cannot hold,
+> with the sentences.** That single number decides whether 2,594 events are a
+> foundation or a sample — and it needs no model, only reading.
+
+### Extraction is not always the answer — the test that decides
+
+A dimension reading "NONE" is a defect **only if structure is what it needs.**
+The consumer here is a model that writes; it does not need Personality
+pre-parsed, it needs the right paragraph, cited and placed. **Structure earns
+its cost only where prose cannot do the job:** joins, ordering, filtering,
+aggregation, state-at-a-moment.
+
+By that test the map splits:
+
+- **Genuinely structural** — battle outcomes, state-over-time, causality,
+  chapter→episode. A model cannot infer these reliably from chunks in a window.
+- **Probably retrieval, not extraction** — Personality, Appearance, Overview,
+  Trivia, History. Before scheduling any extraction here, run the retrieval
+  test: for ten "how does X behave / what do they look like" questions, does the
+  served bundle contain the paragraph that answers it? **If yes, no extraction
+  is owed. If no, that is a chunking defect, not a missing table.**
+
+This replaces "last because biggest," which was a restatement, not a reason.
+
 ### Three dimensions the map does not cover, and must
 
 1. **State over time.** What was *true* of a character during an arc — grade,
@@ -914,18 +946,24 @@ prohibitive the moment a 24,000-sentence GPU batch sits under the same scheme.
 `abilities` survives a rebuild because it is keyed on character *name*.
 `events` and `meaning` are keyed on `section_id`, which renumbers.
 
-**The decision, and it is a real one — not a defect to route around:**
+**This was written up as a decision for the owner. The council cancelled it,
+and three of four advisors reached that independently: it is not a choice
+between a known and an unknown — it is a choice about whether to copy something
+already working in this repo.**
 
-- **(a) Durable natural key.** Key on `document.title` + section ordinal +
-  sentence ordinal (+ content hash), and remap survivors on rebuild. Extraction
-  survives a cheap re-embed. Costs a key migration and a remap path.
-- **(b) Accept the wipe.** Keep FK keys; treat re-extraction as the price of a
-  rebuild. Costs the full GPU pass every time the index is rebuilt.
+`abilities` survives rebuilds. The precedent is in-tree. So:
 
-**Decide (a) or (b) before authorising any large extraction pass.** The
-project's stated philosophy favours (b) — "a rebuilt graph has invalidated the
-stored events, so the wipe is the feature." That was written when the batch was
-cheap. At 24k sentences it may no longer hold. This is the owner's call.
+- **Do the durable key.** `document.title` + section ordinal + sentence ordinal
+  + content hash, with a remap on rebuild. Not a memo, a precondition.
+- **First, the five-line guard:** `build.py` refuses to `reset()` while derived
+  tables are non-empty unless `--force`. A reflexive `cli index` destroying a
+  24,000-sentence pass is the one failure that costs days, and this is the
+  cheapest item in the entire plan.
+
+The "wipe is the feature" rationale was written when re-extraction was cheap.
+It also conflates two things: a rebuild invalidates row *ids*, not row
+*content* — and `revid` already tracks whether the source text actually
+changed. Rows are being discarded for a key choice, not for staleness.
 
 ---
 
@@ -1014,7 +1052,7 @@ judgment, and what each one is metered on.
 |---|---|---|
 | bulk extraction (24k sentences) | **local 27B (ninfer)** | high volume, low judgment, schema-constrained. Costs electricity, not quota. |
 | verification against the store | **reviewer (Claude)** | low volume, high judgment; every defect this project found was caught this way |
-| the **accuracy oracle** | **reviewer (Claude)** | ~100–200 hand-labelled sentences to score a batch against. Currently absent, and it is the gap that matters most |
+| the **accuracy oracle** | **reviewer (Claude)** | see below — top-down, not a labelled sentence set |
 | design review, gate adjudication | reviewer | |
 
 **The bulk pass must not move to the reviewer.** A 24,000-sentence batch is
@@ -1023,10 +1061,18 @@ roughly four orders of magnitude beyond what the reviewer's own quota sustains
 session rate limit after four. The local model is the right engine for this
 work precisely because it is free and resident.
 
-**What should move to the reviewer is the oracle.** Every batch so far has
-proved that the guard fires, never that the labels are right. A hand-labelled
-gold sample is low-volume, high-judgment, and is the one artifact that would
-let a pass be scored rather than merely completed.
+**What should move to the reviewer is the oracle — and it is top-down, not
+bottom-up.** Every batch so far has proved that the guard fires, never that the
+labels are right. But a set of hand-labelled sentences scores the *extractor*,
+not the goal: a ruler built on event verbs cannot measure whether a personality
+description was understood.
+
+**The oracle is real script beats.** Take beats a writer actually needs, ask
+what the corpus had to supply, and log what it could not. That is the only
+instrument that distinguishes "this dimension needs structure" from "this
+dimension needs a better chunk" — and it is the distinction the whole dimension
+map turns on. The executing agent must not author it; an agent grading its own
+work is the loop that produced five unreported defects.
 
 ---
 
