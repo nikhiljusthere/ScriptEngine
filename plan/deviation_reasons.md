@@ -82,3 +82,83 @@ what makes it checkable rather than narrative.
   proceeded as written; this entry records the premise's factual inaccuracy for
   the record (VERIFY passed vacuously on the empty live store).
 - **what would unblock it:** nothing; recorded, not a halt.
+
+---
+
+## 2B — "oracle F1/F2 failed at 1A" refuted 2026-09-05
+
+- **premise as written:** flow.md 2B: "PREMISE: oracle F1/F2 failed at 1A
+  (i.e. retrieval does not already serve these). IF REFUTED: no extraction
+  owed — halt and record."
+- **verified on tree:** working tree `/home/goblin/ScriptEngine`, branch
+  `character-scoped-questions`, HEAD `94909d2` (Phase 0); `:8000` on CPU
+  (PID 94330, start 2026-09-05T18:03:22Z — after the commit, so the committed
+  code served every item).
+- **what the check returned:** F1 and F2 both **PASS** at 1A —
+  `reports/comprehension/PHASE1A_ORACLE.md:48-49` (F1: "Todo `Equipment`
+  section served (Playful Cloud entry)"; F2: "Todo `Quotes` section served");
+  raw bundles `reports/comprehension/raw/oracle_1a/F1.json` (sha256
+  `60bafa963b34f8c6d81591d0b31537fd08739add2725fbc4ea8754a6c94e9b7f`) and
+  `F2.json` (sha256
+  `5e05eab1bda323cabe7a06a627e8db4b06cd7a56f004facfffd09747fa0c72ef`),
+  pinned in `reports/comprehension/COUNCIL_1.md`.
+- **why the step cannot proceed as written:** the premise is refuted by its
+  own measure — retrieval already serves Equipment and Quotes in plain
+  phrasing, so no extraction is owed.
+- **what is now blocked:** nothing. 2B halts; the 3,782 (Equipment) + 1,518
+  (Quotes) words leave the build list.
+- **what would unblock it:** nothing; the halt is the end-state. A future
+  phase that needs Equipment/Quotes extraction must bring its own oracle
+  evidence (a new ORACLE_v2 item, council-approved).
+
+---
+
+## Phase 5 — premise gate unmet; the phase closes in full 2026-09-05
+
+- **premise as written:** flow.md:231-243 — Phase 5 (the subjective set:
+  Personality / Appearance / Overview / Trivia / History) is "gated behind
+  retrieval" and "may not exist"; it opens only if retrieval does not already
+  serve the sections (the plan's per-section list, ~106,000 words).
+- **verified on tree:** working tree `/home/goblin/ScriptEngine`, branch
+  `character-scoped-questions`, HEAD `94909d2`; live store
+  `series/jjk/facts.db` probed via copy (read-only store).
+- **what the check returned:** E1–E4 (all `category: personality`) all
+  **PASS** at 1A — `reports/comprehension/PHASE1A_ORACLE.md:44-47`; raw
+  bundles `E1.json`–`E4.json` in `reports/comprehension/raw/oracle_1a/`,
+  sha256s pinned in `COUNCIL_1.md`. Live `sections.word_count` sums:
+  Personality 42,533 / Appearance 14,180 / Overview 18,357 / Trivia 25,012 /
+  History 17,169 = **117,251** — flow.md:243's "~106,000" matches neither the
+  plan's own list (42,533+14,180+16,731+15,887+11,595 = 100,926) nor the live
+  store.
+- **why the step cannot proceed as written:** the 1C rule (flow.md:171-178)
+  makes E1–E4 passing mean Personality is a retrieval problem — ~42,533 words
+  leave the build list — and Phase 5's own gate (oracle evidence that
+  retrieval does not serve the sections) is unmet, so the phase "may not
+  exist" and closes in full. The other four families (74,718 live words)
+  leave the build list by the gating condition, not by section-specific
+  evidence (`COUNCIL_1.md`, P14).
+- **what is now blocked:** nothing. Phase 5 does not open.
+- **what would unblock it:** a future phase needing any of the five section
+  families must bring its own oracle evidence (a new ORACLE_v2 item,
+  council-approved).
+
+---
+
+## Pending owner decisions (not halts — a decision, not an action taken)
+
+## 4C — re-anchor pending owner approval (recorded at the 1C gate, 2026-09-05)
+
+- **as written:** flow.md:226: "4C — GATE. Oracle B-group re-run; B1 and B2
+  must move."
+- **why it goes stale:** after 1A, B1 is already green (the cross-page state
+  fact is reachable through the plain ranked beam); after the 2-prep
+  fact-floor fix, B2 is expected green. "B1 and B2 must move" would then be
+  vacuous, and the B-group would no longer size the state-over-time gap
+  (it measures reachability of *static* state facts, not a time index).
+- **proposed re-anchor** (P26, round-2 reviewer R3): 4C = B-group **holds**
+  (no regression) + the interval state table is non-empty and cited by
+  `/context`; any true time-indexed-state probe is a new ORACLE_v2 item,
+  council-approved. ORACLE_v1 stays frozen and is never edited.
+- **status:** PENDING OWNER DECISION — out of council authority
+  (flow.md:78 condition 7: a decision only the owner can make). Apply at 4C
+  if approved; the gate as written stands until then.
