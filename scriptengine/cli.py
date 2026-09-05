@@ -637,6 +637,84 @@ def events(
 
 
 @app.command()
+def events_extract(
+    series: str = typer.Option(..., "--series"),
+    limit: int = typer.Option(0, "--limit", help="Stop after this many pages."),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Re-extract even where a current answer is stored."
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Show which pages and sections would be read, call no model."
+    ),
+    workers: int = typer.Option(
+        1, "--workers", help="Extract this many pages at once."
+    ),
+) -> None:
+    """Extract the events this wiki's arc, event and battle pages state.
+
+    A relation says how two characters stand to each other; an event says what
+    happened and where on the arc's time axis. Every row keeps the clause it
+    came from, checked against the passage word for word, and both ends must
+    be entities this wiki actually has. Where on the axis an event sits is
+    looked up from its section -- a heading's clock time, or article order --
+    never inferred by the model.
+    """
+    import logging
+
+    from scriptengine.ingest.events import (
+        PROMPT_VERSION,
+        extract_events_series,
+        extractable_sections,
+        placement_pages,
+    )
+    from scriptengine.llm.client import LLMUnavailable
+    from scriptengine.stores.facts import FactStore
+
+    logging.disable(logging.INFO)
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    if dry_run:
+        with FactStore(paths.facts_db) as store:
+            store.ensure_events()
+            pages = placement_pages(store)
+            if limit:
+                pages = pages[:limit]
+            console.print(
+                f"[dim]{len(pages)} pages would be read (prompt {PROMPT_VERSION}):[/dim]"
+            )
+            for page in pages[:40]:
+                sections = extractable_sections(store, page)
+                console.print(f"  {page}  [dim]({len(sections)} sections)[/dim]")
+                for section in sections:
+                    console.print(f"    [dim]{section['title']}[/dim]")
+            if len(pages) > 40:
+                console.print(f"  [dim]… {len(pages) - 40} more[/dim]")
+        return
+
+    def show(page: str, count: int) -> None:
+        console.print(f"  [dim]{count:3} events[/dim]  {page}")
+
+    try:
+        report = extract_events_series(
+            paths, limit=limit or None, refresh=refresh, progress=show,
+            workers=max(1, workers),
+        )
+    except LLMUnavailable as error:
+        console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1) from error
+
+    table = Table(title=f"Events extracted: {series}")
+    table.add_column("outcome")
+    table.add_column("count", justify="right")
+    for key in ("considered", "extracted", "cached", "failed", "events"):
+        table.add_row(key, str(report[key]))
+    console.print(table)
+
+
+@app.command()
 def link(
     series: str = typer.Option(..., "--series"),
     limit: int = typer.Option(0, "--limit", help="Read only the first N pages."),

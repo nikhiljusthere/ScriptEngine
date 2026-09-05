@@ -50,6 +50,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+from typing import Any
 
 import httpx
 
@@ -144,9 +145,12 @@ class LLMClient:
         system: str = "",
         temperature: float = 0.2,
         max_tokens: int = 1024,
+        extra_body: dict | None = None,
     ) -> str:
         """One turn, one answer, from whichever backend is configured."""
-        return self.complete_with_usage(prompt, system, temperature, max_tokens)[0]
+        return self.complete_with_usage(
+            prompt, system, temperature, max_tokens, extra_body
+        )[0]
 
     def complete_with_usage(
         self,
@@ -154,6 +158,7 @@ class LLMClient:
         system: str = "",
         temperature: float = 0.2,
         max_tokens: int = 1024,
+        extra_body: dict | None = None,
     ) -> tuple[str, dict]:
         """The answer, and the endpoint's `usage` block alongside it.
 
@@ -164,13 +169,23 @@ class LLMClient:
         and was being discarded here.
 
         `opencode` reports no usage, so it returns `{}` rather than pretending.
+
+        `extra_body` merges server-specific fields into the request -- e.g.
+        `reasoning_effort` for a thinking model -- for the callers that need
+        them. Absent, the request is exactly what it was before the parameter
+        existed, which is the contract the passes that predate it rely on.
         """
         if (self.settings.llm_backend or "").lower() != "opencode":
-            return self._local(prompt, system, temperature, max_tokens)
+            return self._local(prompt, system, temperature, max_tokens, extra_body)
         return self._opencode(prompt, system), {}
 
     def _local(
-        self, prompt: str, system: str, temperature: float, max_tokens: int
+        self,
+        prompt: str,
+        system: str,
+        temperature: float,
+        max_tokens: int,
+        extra_body: dict | None = None,
     ) -> tuple[str, dict]:
         """An OpenAI-shaped endpoint: LM Studio on 1234, Ollama on 11434.
 
@@ -183,16 +198,19 @@ class LLMClient:
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
         base = (self.settings.llm_base_url or "").rstrip("/")
+        payload: dict[str, Any] = {
+            "model": self.settings.llm_model,
+            "messages": messages,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+            "stream": False,
+        }
+        if extra_body:
+            payload.update(extra_body)
         try:
             response = httpx.post(
                 f"{base}/chat/completions",
-                json={
-                    "model": self.settings.llm_model,
-                    "messages": messages,
-                    "temperature": temperature,
-                    "max_tokens": max_tokens,
-                    "stream": False,
-                },
+                json=payload,
                 headers={"Authorization": f"Bearer {self.settings.llm_api_key}"},
                 timeout=self.settings.llm_timeout_seconds,
             )

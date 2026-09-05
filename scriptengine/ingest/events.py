@@ -9,7 +9,10 @@ organized by stage, not by the clock.
 Phase 1 (the door test) is hand-written: one batch for the Shibuya Incident
 proves the read path -- beats reordered onto the events' time axis under a
 flag that is off by default -- before Phase 2 builds the model extraction.
-Every row still passes the gates Phase 5 will make mechanical:
+
+Phase 2 is the model extraction this module exists for: the arc, event and
+battle pages are asked for the events they state, and every row still passes
+the gates Phase 5 will make mechanical:
 
 * the verb comes from a closed eventive set, not free text;
 * both ends resolve to real nodes (the prose's name or alias, never a guess);
@@ -21,9 +24,18 @@ Every row still passes the gates Phase 5 will make mechanical:
 
 from __future__ import annotations
 
+import json
+import logging
 import re
+import sqlite3
+from typing import Any
 
+from scriptengine.config import SeriesPaths, Settings, get_settings
+from scriptengine.ingest.abilities import _windows
+from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
+
+logger = logging.getLogger(__name__)
 
 # What a placed event may do. Closed on purpose: a verb outside the set is a
 # description, not an event, and descriptions never order a timeline.
@@ -44,6 +56,12 @@ EVENTIVE_VERBS = frozenset(
 # the event/battle pages that are one arc each. A placement in anything else
 # is a finding, not a row.
 PLACEMENT_TYPES = {"arc", "saga", "event", "battle", "story_arcs"}
+
+# Section titles that are extraction-only furniture, on top of the narrative
+# retriever's list set: they state times or links rather than events, and a
+# row placed in one of them sits where the section sits, not where the
+# event did.
+_EXTRACTION_ONLY_EXCLUDED = {"timetable", "interactive map"}
 
 PHASE1_ARC = "Shibuya Incident"
 
@@ -605,3 +623,477 @@ def seed_phase1_rows(
         )
     stored = store.save_events(PHASE1_ARC, rows, revid, prompt_version, model)
     return stored, []
+
+
+# ── Phase 2: model extraction ─────────────────────────────────────────────────
+#
+# The same table, filled by a model over every page that states what happened:
+# the arc, event and battle pages. It mirrors `ingest/relations.py`
+# deliberately -- asked only where the prose is the only source, gated after
+# the model answers, cached on (revid, prompt) -- with one difference the two
+# tables force: a relation carries no time, but an event is a claim about the
+# story's clock, so its `time_rank` is never the model's. The model says what
+# happened; where on the axis it sits is looked up from the section it came
+# from, and a number the model supplies is a number nobody verified.
+
+# Bump to invalidate every stored event, exactly as `relations` does.
+PROMPT_VERSION = "events-2026-09-05.2"
+
+SYSTEM = (
+    "You extract stated events from fiction-wiki prose. You answer with JSON "
+    "only: no prose, no code fences. You never state an event the passage does "
+    "not state, however well you know the series."
+)
+
+_TEMPLATE = """List the events this passage states: things that happen to somebody, or that somebody does, during {page}.
+
+Series: {series}
+Page: {page}
+Section: {section}
+
+Passage:
+{passage}
+
+Answer with JSON exactly in this shape:
+{{"events": [{{"subject": "...", "verb": "...", "object": "...", "quote": "..."}}]}}
+
+`verb` must be exactly one of these words, as written here, never a synonym
+or a different tense of one: {verbs}.
+
+Rules:
+- An event is something the passage says happens: a fight, a killing, an
+  awakening, a sealing, a betrayal, a rescue, an arrival, a departure. A
+  description of who a character is, a list of who is present, or a rule the
+  story follows is not an event.
+- The subject does the verb, the object is the one it is done to, and both
+  must be names the passage uses, given as the passage writes them. One name
+  per role: if the passage says "Gojo and Nanami fight Mahito", that is two
+  events, one for each subject. If the passage names no object -- "Mahito
+  awakens" -- the subject is the object.
+- `quote` must be copied from the passage word for word: the clause that
+  states the event. Do not paraphrase it, shorten it or tidy it.
+- If the passage states no event, answer {{"events": []}}. An empty answer is
+  correct and useful.
+- Only events the passage actually states. Two characters being in the same
+  sentence is not a fight, and a character being present at a place is not an
+  arrival there."""
+
+
+def parse_events_response(text: str) -> list[dict[str, str]]:
+    """The model's JSON, or nothing. Never raises on a bad answer."""
+    body = (text or "").strip()
+    if body.startswith("```"):
+        body = re.sub(r"^```[a-z]*\n?|\n?```$", "", body).strip()
+    start, end = body.find("{"), body.rfind("}")
+    if start < 0 or end <= start:
+        return []
+    try:
+        data = json.loads(body[start : end + 1])
+    except ValueError:
+        return []
+    rows = data.get("events") if isinstance(data, dict) else None
+    if not isinstance(rows, list):
+        return []
+    return [row for row in rows if isinstance(row, dict)]
+
+
+# Page types an event cannot name. A battle, arc or chapter is the *container*
+# of events, not a participant in one, and that is exactly where a model falls
+# back when it cannot find a character's name: it names the page it read.
+# `Jujutsu Sorcerers vs. Dagon fought Dagon` is a claim the wiki does not make,
+# so those page types -- the placement set itself, plus the narrative divisions
+# -- are kept out of the participant set rather than trusted to the gate.
+NON_PARTICIPANT_TYPES = PLACEMENT_TYPES | {"chapter", "episode"}
+
+
+def known_participants(store: FactStore) -> dict[str, tuple[str, int]]:
+    """Every name this wiki has a resolved node for, folded, to (name, id).
+
+    Events name places and things as well as people -- `arrived in Shibuya`,
+    `killed with Playful Cloud` -- so the set is all resolved nodes and their
+    aliases, not characters alone as `relations.known_names` keeps it. Only
+    resolved nodes: the unresolved ones are link targets the wiki never gave a
+    page, and placing an event on a guess is the failure the guard exists to
+    stop. A page title always wins over an alias pointing elsewhere. And a node
+    whose page is a container of events is left out: the set names
+    participants, not the pages that hold them.
+
+    Read once on the thread that owns the connection and handed to the workers
+    as a plain dict, for the reason `relations.known_names` gives: a
+    connection belongs to one thread.
+    """
+    placeholders = ",".join("?" * len(NON_PARTICIPANT_TYPES))
+    # The ids of resolved nodes whose page is a container, to be skipped.
+    container_ids = {
+        int(row["id"])
+        for row in store.connection.execute(
+            f"SELECT n.id FROM nodes n"
+            f" JOIN documents d ON d.id = n.document_id"
+            f" WHERE n.is_resolved = 1 AND d.page_type IN ({placeholders})",
+            tuple(sorted(NON_PARTICIPANT_TYPES)),
+        )
+    }
+    canon: dict[str, tuple[str, int]] = {}
+    for row in store.connection.execute(
+        "SELECT id, name FROM nodes WHERE is_resolved = 1"
+    ):
+        name = (row["name"] or "").strip()
+        if name and int(row["id"]) not in container_ids:
+            canon[name.lower()] = (name, int(row["id"]))
+    for row in store.connection.execute(
+        "SELECT a.alias, n.id, n.name FROM aliases a"
+        " JOIN nodes n ON n.id = a.node_id WHERE n.is_resolved = 1"
+    ):
+        if int(row["id"]) in container_ids:
+            continue
+        alias = (row["alias"] or "").strip().lower()
+        target = (row["name"] or "").strip()
+        # A page title always wins over an alias pointing elsewhere.
+        if alias and target and alias not in canon:
+            canon[alias] = (target, int(row["id"]))
+    return canon
+
+
+def _excluded_section_titles() -> set[str]:
+    """The section titles that state no events: list furniture, and the
+    extraction-only furniture on top of it."""
+    from scriptengine.retrieve.narrative import _LIST_SECTION_TITLES
+
+    return (
+        set(_LIST_SECTION_TITLES) - {"summary", "synopsis", "plot"}
+        | _EXTRACTION_ONLY_EXCLUDED
+    )
+
+
+def extractable_sections(store: FactStore, page: str) -> list[sqlite3.Row]:
+    """The page's sections that state events: prose, not list furniture.
+
+    The list set is the narrative retriever's, minus its scoring exclusions:
+    `summary` and `synopsis` are on that list because a section every arc page
+    carries would make every query look relevant to every arc. For extraction
+    they are the opposite -- the one place an event is stated in full -- so
+    they stay extractable. `timetable` goes the other way: it repeats the
+    stages' clock entries as reference furniture, and a row placed in it reads
+    as the page's end no matter what time it states, while the stage sections
+    that state the same things in context come first in article order.
+    """
+    excluded = _excluded_section_titles()
+    sections = []
+    for section in store.document_sections(page):
+        title = (section["title"] or "").strip()
+        text = (section["text"] or "").strip()
+        if title.lower() in excluded or not text or (section["word_count"] or 0) < 20:
+            continue
+        sections.append(section)
+    return sections
+
+
+def placement_pages(store: FactStore) -> list[str]:
+    """The pages an event may be placed in, ordered by how much prose there is.
+
+    The arc, event and battle pages are where a wiki states what happened, and
+    the order is by prose weight, as `relations.needs_relations`, so `--limit`
+    means the pages that matter rather than the first alphabetically.
+    """
+    excluded = _excluded_section_titles()
+    placeholders = ",".join("?" * len(PLACEMENT_TYPES))
+    rows = store.connection.execute(
+        f"SELECT d.title FROM documents d"
+        f" WHERE d.page_type IN ({placeholders})",
+        tuple(sorted(PLACEMENT_TYPES)),
+    ).fetchall()
+    weight: dict[str, int] = {}
+    for row in rows:
+        page = row["title"]
+        total = 0
+        for section in store.document_sections(page):
+            title = (section["title"] or "").strip()
+            if title.lower() in excluded:
+                continue
+            if (section["text"] or "").strip() and (section["word_count"] or 0) >= 20:
+                total += int(section["word_count"] or 0)
+        if total:
+            weight[page] = total
+    return sorted(weight, key=weight.get, reverse=True)  # type: ignore[arg-type]
+
+
+def _time_to_hours(when: str) -> float:
+    """`9:22 PM` -> 21.3667: the clock the wiki wrote in the heading, verbatim."""
+    match = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", when, re.IGNORECASE)
+    if not match:
+        return 0.0
+    hour = int(match.group(1)) % 12
+    if match.group(3).upper() == "PM":
+        hour += 12
+    return hour + int(match.group(2)) / 60.0
+
+
+def section_time_ranks(sections: list[sqlite3.Row]) -> dict[int, float]:
+    """Where each section sits on the page's time axis: a lookup, not a guess.
+
+    A heading that carries a clock time ("9:22 P.M. Shibuya Station") places
+    its section at that time, which is what the Shibuya Incident page needs:
+    its sections are organised by stage, and the 10:01 C Tower section is
+    written before the 9:22 Shibuya Station one. A heading without a time
+    carries the rank of the last timed section written before it -- the same
+    inheritance the reorder path applies to unranked sections -- and a section
+    written before the first timed one reads before it. A page whose headings
+    carry no time at all keeps article order, which is how a wiki writes
+    chronology when it has no clock.
+    """
+    from scriptengine.retrieve.narrative import extract_time
+
+    timed: list[tuple[int, int, float]] = []
+    for section in sections:
+        when = extract_time((section["title"] or "").strip())
+        if when:
+            timed.append(
+                (int(section["ordinal"]), int(section["id"]), _time_to_hours(when))
+            )
+    if not timed:
+        return {int(s["id"]): float(s["ordinal"]) for s in sections}
+    timed.sort()
+    ranks: dict[int, float] = {}
+    for section in sections:
+        section_id, ordinal = int(section["id"]), int(section["ordinal"])
+        for _, timed_id, hour in timed:
+            if timed_id == section_id:
+                ranks[section_id] = hour
+                break
+        else:
+            before = [h for o, _, h in timed if o < ordinal]
+            after = [h for o, _, h in timed if o > ordinal]
+            if before:
+                ranks[section_id] = before[-1]
+            else:
+                ranks[section_id] = after[0] - 1.0
+    return ranks
+
+
+def extract_from_sections(
+    client: LLMClient,
+    series: str,
+    page: str,
+    sections: list[sqlite3.Row],
+    known: dict[str, tuple[str, int]],
+) -> list[dict[str, Any]]:
+    """Events the page states, over its prose sections.
+
+    `known` is the set of names this wiki has a resolved node for, resolved by
+    the caller. Everything here is prompt-building, network and string work,
+    so it is safe on a worker thread.
+
+    `time_rank` is not the model's: the section's place on the page's axis is
+    looked up from its heading and position, and a number the model supplies
+    is a number nobody verified.
+    """
+    ranks = section_time_ranks(sections)
+    found: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for section in sections:
+        section_id = int(section["id"])
+        text = (section["text"] or "").strip()
+        for window in _windows(text):
+            prompt = _TEMPLATE.format(
+                series=series,
+                page=page,
+                section=(section["title"] or "").strip(),
+                passage=window,
+                verbs=", ".join(sorted(EVENTIVE_VERBS)),
+            )
+            answer = client.complete(
+                prompt,
+                system=SYSTEM,
+                temperature=0.0,
+                max_tokens=_answer_budget(),
+                extra_body=_effort_body(),
+            )
+            for entry in parse_events_response(answer):
+                subject = str(entry.get("subject") or "").strip()
+                verb = str(entry.get("verb") or "").strip().lower()
+                object_ = str(entry.get("object") or "").strip()
+                quote = str(entry.get("quote") or "").strip()
+                if not subject or not object_ or verb not in EVENTIVE_VERBS:
+                    continue
+                # Both ends have to be somebody or somewhere this wiki actually
+                # has a page for, or a model supplies a plausible name from the
+                # series it has read and nothing in the row shows it.
+                subject_resolved = known.get(subject.lower())
+                object_resolved = known.get(object_.lower())
+                if not subject_resolved or not object_resolved:
+                    logger.info(
+                        "unknown participant %r/%r for %s",
+                        subject, object_, page,
+                    )
+                    continue
+                # Self-directed events are real: Toji kills himself, Mahito
+                # awakens. The gate allows subject == object and says so.
+                if not _quoted_in(quote, text):
+                    logger.info("unquoted %s->%s for %s", verb, object_, page)
+                    continue
+                key = (
+                    subject_resolved[0].lower(), verb, object_resolved[0].lower()
+                )
+                if key in seen:
+                    continue
+                seen.add(key)
+                found.append(
+                    {
+                        "subject_node": subject_resolved[1],
+                        "subject_name": subject_resolved[0],
+                        "object_node": object_resolved[1],
+                        "object_name": object_resolved[0],
+                        "verb": verb,
+                        "section_id": section_id,
+                        "quote": quote,
+                        "temporal": True,
+                        "time_rank": ranks[section_id],
+                    }
+                )
+    return found
+
+
+def _effort_body() -> dict[str, str] | None:
+    """The server field that keeps a thinking model from spending ~20k tokens
+    (a hundred seconds) on a passage one pass would read in eight.
+
+    `reasoning_effort` exists only on servers that validate it -- the one on
+    :18080 does, and rejects efforts its chat template does not know -- so it
+    travels as an opt-out, not a default: a run against a model without the
+    knob sets `SCRIPTENGINE_EVENTS_REASONING_EFFORT=""` and answers the full
+    price, which the budget env var then has to cover.
+    """
+    import os
+
+    effort = os.environ.get("SCRIPTENGINE_EVENTS_REASONING_EFFORT", "low").strip()
+    return {"reasoning_effort": effort} if effort else None
+
+
+def _answer_budget() -> int:
+    import os
+
+    # The answer is small JSON, but a reasoning model spends its budget
+    # thinking before it answers; 2048 was entirely consumed on thinking and
+    # never produced a reply. A too-small budget is safe -- a truncated answer
+    # is rejected loudly, not stored -- so the default is the size proven to
+    # clear the thinking, not a guess.
+    return int(os.environ.get("SCRIPTENGINE_ANSWER_TOKENS", "8192"))
+
+
+def _revid(store: FactStore, title: str) -> str:
+    row = store.connection.execute(
+        "SELECT revid FROM documents WHERE title = ? COLLATE NOCASE", (title,)
+    ).fetchone()
+    return str(row["revid"] or "") if row else ""
+
+
+def extract_events_series(
+    paths: SeriesPaths,
+    settings: Settings | None = None,
+    limit: int | None = None,
+    refresh: bool = False,
+    progress: Any = None,
+    workers: int = 1,
+) -> dict[str, Any]:
+    """Extract this series' placed events, skipping what is current.
+
+    Chunked and threaded exactly as `relations.extract_series` is, and for the
+    same reason: the store belongs to this thread, the network wait does not.
+    A page is current when it was read under the same `PROMPT_VERSION` and the
+    document has not been re-crawled since, which is what `refresh` overrides.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    from scriptengine.ingest.abilities import _guarded
+
+    settings = settings or get_settings()
+    client = LLMClient(settings)
+    if not client.available():
+        raise LLMUnavailable(f"No model at {client.settings.llm_base_url}.")
+
+    report = {
+        "considered": 0, "extracted": 0, "cached": 0, "failed": 0, "events": 0,
+    }
+    with FactStore(paths.facts_db) as store:
+        store.ensure_events()
+        # Resolved here, on the thread that owns the connection.
+        known = known_participants(store)
+        pages = placement_pages(store)
+        report["considered"] = len(pages)
+        wanted = pages[:limit] if limit else pages
+
+        todo: list[tuple[str, str]] = []
+        for page in wanted:
+            revid = _revid(store, page)
+            state = store.event_state(page)
+            # `revid` is 0 on a wiki that stores none: `0 or ""` would read as
+            # missing and re-extract the whole corpus on every run.
+            state_revid = (
+                "" if state is None or state["revid"] is None
+                else str(state["revid"])
+            )
+            current = (
+                state is not None
+                and not refresh
+                and state["prompt_version"] == PROMPT_VERSION
+                and state_revid == revid
+            )
+            if current:
+                report["cached"] += 1
+                continue
+            todo.append((page, revid))
+
+        def store_result(page: str, revid: str, found: list[dict[str, Any]]):
+            stored = store.save_events(
+                page, found,
+                revid=int(revid) if revid.isdigit() else None,
+                prompt_version=PROMPT_VERSION, model=settings.llm_model,
+            )
+            report["extracted"] += 1
+            report["events"] += stored
+            if progress is not None:
+                progress(page, stored)
+
+        if workers <= 1:
+            for page, revid in todo:
+                try:
+                    found = extract_from_sections(
+                        client, paths.name, page,
+                        extractable_sections(store, page), known,
+                    )
+                except LLMUnavailable:
+                    raise
+                except Exception as error:  # noqa: BLE001 - one page must not stop the run
+                    logger.warning("Events for %r failed: %s", page, error)
+                    report["failed"] += 1
+                    continue
+                store_result(page, revid, found)
+            return report
+
+        for start in range(0, len(todo), workers * 4):
+            chunk = todo[start : start + workers * 4]
+            work = [
+                (page, revid, extractable_sections(store, page))
+                for page, revid in chunk
+            ]
+
+            def run(job):
+                page, _, sections = job
+                return extract_from_sections(
+                    client, paths.name, page, sections, known,
+                )
+
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                for (page, revid, _), outcome in zip(
+                    work, pool.map(_guarded(run), work)
+                ):
+                    if isinstance(outcome, BaseException):
+                        if isinstance(outcome, LLMRateLimited):
+                            raise outcome
+                        logger.warning(
+                            "Events for %r failed: %s", page, outcome
+                        )
+                        report["failed"] += 1
+                        continue
+                    store_result(page, revid, outcome)
+    return report
