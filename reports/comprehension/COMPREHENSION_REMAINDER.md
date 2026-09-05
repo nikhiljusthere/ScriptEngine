@@ -63,6 +63,8 @@ are `MISS_DOC` (a sibling page is served instead) and `MISS_SPAN` (the page is
    errors — **unchanged, not improved**, from the 2026-09-03 baseline (387/400 = 96.8%): 96.8%→97.2% at n≈400 is inside sampling noise (±~1.7pp at 95%), so the index is confirmed healthy. D5
    is **still not met** — only ~400 distinct probes (≈0.8% of the 48,572 lines) and an exhaustive tier-1 has never run. *Known measurement defect:* the jsonl is append-mode (892 rows; a naive all-rows recompute gives 97.0%) and 92 rows re-probe across the resume boundary (done-dedupe keyed on bare sentence text) — it inflates row counts and would corrupt any future paired comparison.
 
+*These tier-1 figures are also carried in the global opencode memory (`~/.config/opencode/memory.md`) — an un-versioned second location that can drift from this record; check both before relying on the numbers.*
+
 The only open *indexing* defect is the Trivia chunking gap (standing open #5);
 it does not affect tier 0 (those lines are still indexed) — it is about
 *serving* them for generic questions, which is a tier-1 concern.
