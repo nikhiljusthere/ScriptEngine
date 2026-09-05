@@ -1046,10 +1046,19 @@ class FactStore:
             "CREATE TABLE IF NOT EXISTS events ("
             " subject_node INTEGER, subject_name TEXT, object_node INTEGER,"
             " object_name TEXT, verb TEXT, arc_key TEXT, section_id INTEGER,"
-            " quote TEXT, temporal INTEGER, time_rank REAL,"
+            " quote TEXT, temporal INTEGER, time_rank REAL, arc_index INTEGER,"
             " revid INTEGER, prompt_version TEXT, model TEXT, extracted_at TEXT,"
             " PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank))"
         )
+        # Added after the table existed, so a store built before it needs the
+        # column: the story-axis position `ingest.timeaxis` backfills onto each
+        # row, and a global `ORDER BY` needs it to be there.
+        if "arc_index" not in {
+            row[1] for row in self.connection.execute("PRAGMA table_info(events)")
+        }:
+            self.connection.execute(
+                "ALTER TABLE events ADD COLUMN arc_index INTEGER"
+            )
         self.connection.execute(
             "CREATE INDEX IF NOT EXISTS events_by_arc"
             " ON events (arc_key COLLATE NOCASE)"

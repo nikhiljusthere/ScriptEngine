@@ -714,6 +714,59 @@ def events_extract(
     console.print(table)
 
 
+@app.command("time-axis")
+def time_axis(
+    series: str = typer.Option(..., "--series"),
+    subject: str = typer.Option(
+        "", "--subject", help="Show only this participant's events."
+    ),
+    limit: int = typer.Option(
+        0, "--limit", help="Show at most this many events (0 = all)."
+    ),
+) -> None:
+    """The story's time axis: every placed event, in canon order.
+
+    An event's place on the axis is looked up, never inferred: the arc the wiki
+    filed it under (its own page when it is an arc, or its `arc` fact), else the
+    arc its `chapters` citation files it in. Only a page neither signal reaches
+    is residue, and that is where inference goes. Reading the axis in order is
+    what lets a script writer say a line reaches three arcs early.
+    """
+    from scriptengine.ingest import timeaxis as t_axis
+    from scriptengine.stores.facts import FactStore
+
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with FactStore(paths.facts_db) as store:
+        tally = t_axis.backfill_event_arc_index(store)
+        placed = sum(tally[key] for key in ("arc_page", "arc_fact", "chapters"))
+        console.print(
+            f"[dim]Time axis: {placed}/{tally['pages']} placement pages placed by the"
+            f" cheap signals ({tally['arc_page']} arc-page, {tally['arc_fact']} arc-fact,"
+            f" {tally['chapters']} citation); {tally['rows']} events stored.[/dim]"
+        )
+        axis = t_axis.placement_time_axis(store)
+        residue = [page for page, placed_axis in axis.items() if placed_axis.signal == "residue"]
+        if residue:
+            console.print(f"[yellow]{len(residue)} residue page(s) need inference:[/yellow]")
+            for page in residue:
+                console.print(f"  [yellow]{page}[/yellow]")
+
+        rows = t_axis.events_in_story_order(store, subject=subject or None)
+        if limit:
+            rows = rows[:limit]
+        for row in rows:
+            arc = row["arc_name"] or "[residue]"
+            when = f"t={row['time_rank']:g}" if row["temporal"] else "state"
+            console.print(
+                f"  [dim]{arc:26} {when:9}[/dim] "
+                f"{row['subject_name']} [bold]{row['verb']}[/bold] {row['object_name']}"
+            )
+
+
 @app.command()
 def link(
     series: str = typer.Option(..., "--series"),
