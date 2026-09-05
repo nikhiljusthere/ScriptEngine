@@ -231,6 +231,34 @@ cross-arc filings (a scattered arc-pair distribution — (7,8), (6,7), (3,6), (0
 — with real quotes like "Aoi arrived" filed under Fearsome Womb / Kyoto / Shibuya
 / Shinjuku). Not a systematic off-by-one, which would show one dominant arc pair.
 
+**Read it as a rate, not a count (A2 / A5).** The 107 disagreements are
+**27.4% of the 390 multi-page-corroborated groups** (390 groups come from ≥2
+source pages; 283 agree, 107 disagree). The jump from the pre-fix ~38 (≈9.7%)
+to 107 (27.4%) is *not* "the wiki got 3× more contradictory" — the denominator
+is essentially flat (390 multi-page groups; pre-fix 341 → post-fix 390 is new
+corroboration, not new contradiction). The structural cause is placement
+provenance: of the 2,594 placed rows, **1,599 are arc-named (page signal:
+`arc_fact` 1,396 + `arc_page` 200 + `chapters` 3) and 995 are
+section/citation backfill** (a section titled for an arc on a page that is
+itself off the story chain). Splitting the 390 groups by the provenance of
+their rows:
+
+| group row-provenance | multi-page | disagree | rate |
+|---|---:|---:|---:|
+| arc-named only (page signal) | 86 | 9 | **10.5%** |
+| section/citation backfill only | 36 | 5 | 13.9% |
+| mixed (both) | 261 | 93 | **35.6%** |
+| unplaced-only | 7 | 0 | 0% |
+
+**98 of the 107 disagreements (92%) involve at least one section-placed row.**
+Pure arc-named groups sit at ~10.5% (the original ~9.7% — genuine wiki
+self-contradiction, a corpus truth); the 35.6% mixed rate is driven by the
+995-row section backfill filing the same event in a different arc than the
+arc-named pages do. Because D6 is tautological (above), **cross-page agreement
+is the only signal that can flag a wrong placement** — and it points squarely at
+the section backfill. That is **B5**: gate the 995 section-placed rows against
+the arc-named (page-signal) majority before any script line trusts them.
+
 **Test re-derivation (deliberate, non-tautological).** `test_backfill_places_every_row`
 is replaced by pinned invariants: the 995 section-placed count, the
 `temporal=1 ⇒ arc_index` rule, a section-index-agrees-with-the-arc-page check, and
@@ -391,26 +419,50 @@ Both D6 violations are now **0**: every placed eventive row is `temporal=1`, and
 the only `temporal=0` rows are the 154 genuinely unplaceable ones (recorded
 standing states). Re-verified against the live store independently.
 
+**Stated limitation — D6 is a consistency check, not a chronology check.** All
+**2,748 rows are eventive** (the 8 stored verbs are exactly `EVENTIVE_VERBS`;
+0 non-eventive), so the `eventive verb` conjunct in `temporal = eventive AND
+arc_index IS NOT NULL` is always true and `temporal` reduces to
+`arc_index IS NOT NULL` — the *same* signal the backfill used to place the row.
+The two D6 invariants (no dangling `temporal=1 & arc_index IS NULL`; no
+placed-but-off-axis `temporal=0 & arc_index IS NOT NULL`) therefore pass by
+construction: they certify flag↔placement **consistency**, never that the
+placement is **chronologically correct**. A row placed in the *wrong* arc still
+satisfies both invariants. With D6 tautological, the only independent signal
+that can flag a wrong placement is **cross-page agreement** (below) — which is
+why it, not D6, is the load-bearing check for B5.
+
 **Beat-ordering guard (the check none of the four standing gates cover).** The
 narrative reorderer only reorders on `temporal=1` events, so the flip from 0 →
-2,594 could have scrambled corpus-page beat order. The GPU-free harness
-re-ran on the five highest-event pages: `Yuji Itadori/Synopsis` (83), `Larue`
-(6), `Chapter 0-4` (12), `Episode 46` (18), `Sendai City` (6). Before the
-recompute every event was `temporal=0`, so the reorderer skipped them all and
-`event_order == article_order`. After, the temporal counts became **81 / 6 / 12
-/ 18 / 6** and the reorderer ran — and `event_order` still equals
-`article_order` on all five (`changed: false`). **No degradation: the new flag
-did not move any page's beat order.**
+2,594 could have scrambled corpus-page beat order. The guard was re-run on the
+**full corpus — every page with ≥2 stored events (412 pages)**, replicating
+`_reorder_by_events` directly against the store (no model, no GPU): per page,
+article order (sections by ordinal) vs. event order (each section carries the
+earliest `time_rank` of its temporal events; unranked sections inherit the last
+seen rank). The reorderer **moves beats on exactly one page — `Shibuya
+Incident` (70 events, a true top-5) — and is a no-op on the other 411**
+(`changed: false`): their article section order already matches the story clock.
+**No degradation: activating the flag on 2,594 events reorders one page into
+story order and leaves 411 untouched.** (An earlier pass claimed this on "the
+five highest-event pages" but had actually tested one top-5 page plus four
+low-event pages — `Yuji Itadori/Synopsis` (83), `Larue` (6), `Chapter 0-4` (12),
+`Episode 46` (18), `Sendai City` (6) — and *missed* `Shibuya Incident`, the one
+page the flag does move. The full-corpus run above is the real guard.)
 
-**`time_rank` clustering (ruled out as a second predicate gap).** Pages with
-many events on one rank (Episode 8 · 51, Chapter 248 · 150 · 246, Episode
-19 · 33 · 38 · 39 · 44) each carry their events in the **single `Plot Details`
-section** — one narrative section, one clock position, so a single rank is
-correct, not a collapse. Across all 508 arc-keys, **507 have distinct ranks ==
-distinct event-sections**. The one exception, `Shibuya Incident` (14 sections,
-12 ranks), shares its two extra ranks on **concurrent scenes at the same
+**`time_rank` clustering (ruled out as a second predicate gap — closed).** The
+**14 pages with 8+ temporal events on a single rank** (`Chapter 150 · 246 ·
+248`, `Episode 8 · 19 · 33 · 38 · 39 · 44 · 51`, `Naobito Zenin` · `Naoya Zenin`
+· `Ryu Ishigori` synopses, `Yuki Tsukumo & Choso vs. Kenjaku`) each carry their
+*events* in **exactly one event-section** (the page has more sections, but the
+extracted events sit in one, e.g. `Plot Details`) — one narrative section, one
+clock position, so a single rank is correct, not a collapse. Across all **463
+arc-keys with temporal events, 462 have distinct ranks == distinct
+event-sections**. The one exception, `Shibuya Incident` (14 event-sections, 12
+distinct ranks), ties its two extra sections on **concurrent scenes at the same
 timestamp** (8:51 P.M. and 9:22 P.M. each run two parallel threads) — correctly
-tied, not a loss. **No second predicate gap.**
+tied, not a loss. **No second predicate gap.** (Handoff's "12 pages / 508
+arc-keys" was stale — now 14 pages over 463 temporal-event arc-keys; the 508 is
+the all-events distinct-`arc_key` count, of which 463 carry temporal events.)
 
 Gates re-run green this pass: pytest **1,204** (was 1,202, +2
 `TestRecomputeTemporal`); span-recall 48,572/48,572 (0 misses, rc=0 — tier 0);

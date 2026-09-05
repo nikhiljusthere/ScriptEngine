@@ -70,8 +70,8 @@ Same live store, measured 2026-09-05:
 
 | layer | live state | gap vs the goal |
 |---|---|---|
-| `events` (the "X did Y at Z" predicate) | **2,748** rows; **2,594 `temporal=1`** (= placed), **154 `arc_index IS NULL`** | 154 events (5.6%) have no orderable position — 116 under generic headings + 38 chapter pages filed off the story chain. After the Step-1 recompute, `temporal` tracks the live placement (`eventive verb AND arc_index IS NOT NULL`), so the temporal set **is** the 2,594 placed rows (it was 714 before). This is the plan's *residue* (where inference is allowed, not yet run). |
-| cross-page agreement (gate check 2) | **107 disagreements** of 390 multi-page groups | triage (`continuity --triage`): **31 interaction-verb** anachronism core (9 premature + 22 delayed), 50 state-verb keying, 26 adjacent straddles. The 31 are the real comprehension failures. |
+| `events` (the "X did Y at Z" predicate) | **2,748** rows; **2,594 `temporal=1`** (= placed), **154 `arc_index IS NULL`** | 154 events (5.6%) have no orderable position — **116 rows under generic headings + 38 rows on `Modulo Chapter N` docs (17 distinct docs)** filed off the story chain. After the Step-1 recompute, `temporal` tracks the live placement (`eventive verb AND arc_index IS NOT NULL`), so the temporal set **is** the 2,594 placed rows (it was 714 before). This is the plan's *residue* (where inference is allowed, not yet run). |
+| cross-page agreement (gate check 2) | **107 disagreements of 390 multi-page groups (27.4% rate)** | triage (`continuity --triage`): **31 interaction-verb** anachronism core (9 premature + 22 delayed), 50 state-verb keying, 26 adjacent straddles. The 31 are the real comprehension failures. **A5 provenance split:** 98/107 (92%) of the disagreements touch a section-placed row; pure arc-named groups sit at 10.5% vs. 35.6% mixed. Since D6 is tautological, this gate is the *only* wrong-placement detector → **B5** (below, reprioritised first). |
 | `abilities` | **594** rows, **94 distinct characters** (376 technique · 187 trait · 24 item · 7 transformation) | "narrow": only ~94 of the character population carry abilities; characters with an `Abilities and Powers` section the extractor never read (or that predate the prompt) are missing. |
 | `relations` | **821** rows, **136 characters**, only **298 (36%) carry an `era`** | vocabulary is **social-only** (family/ally/enemy/mentor/rival/superior). No eventive predicate (that is what `events` now carries). 523 era-less rows sit in sections naming no arc. |
 | `semantics` | **0 rows** | no per-entity / per-line "what does this mean" classification. (§2b calls the *gate* a red herring; the *goal* still wants a meaning layer — see R1.) |
@@ -92,6 +92,25 @@ the phases were: council pass before a big one, the CUDA-first GPU rule for any
 LLM batch, the four standing gates re-run, and a `comprehension:` commit of the
 named paths. "Do not create a third corpse" (§2c) applies: every new table ships
 with the door that reads it.
+
+### B5 — cross-page agreement gate (now load-bearing; **first, above R1–R5**)
+
+With D6 tautological (Step 1: `temporal` reduces to `arc_index IS NOT NULL`, the
+same signal that placed the row), **cross-page agreement is the only signal
+left that can detect a wrong placement** — so it stops being "a check to pass"
+and becomes the gate a script line clears before its placement is trusted. It is
+already half-built (`gate.cross_page_agreement` + `continuity --triage` read the
+gate's own disagreement list; no new model, no GPU). The A5 split (GATE.md)
+shows the 107 disagreements (27.4% of 390 multi-page groups) are driven by the
+**995 section/citation-backfill rows**: 98/107 (92%) involve ≥1 section-placed
+row; pure arc-named groups sit at ~10.5% while mixed groups hit 35.6%. B5 wires
+the existing gate up to **adjudicate the 995 section-placed rows against the
+arc-named (page-signal) majority** — a section-placed row that disagrees with
+the arc-named filing gets the majority arc (a corpus truth, independent of the
+axis under test) and the disagreement is recorded, so a writer reading an event
+gets the cross-page majority, not the weaker backfill. Lands **first** because
+it is the only placement detector and it is half-built; R1–R5 all rest on a
+placement B5 has vouched for.
 
 ### R1 — the per-line / per-beat *meaning* index (the load-bearing one)
 
@@ -138,8 +157,9 @@ used would surface here; none do) and **0** sit in an arc-named section.
 - 116 are on **non-placement pages** — character `Overview`/`History`,
   location, technique, character_synopsis — whose prose is eventive but names
   no arc to anchor to.
-- 38 are on **`Modulo Chapter N`** chapter pages (residue placement: the wiki
-  does not file them under an arc) in `Plot Details`/`Summary`.
+- 38 **rows** (across **17 `Modulo Chapter N` docs**) are on chapter pages
+  (residue placement: the wiki does not file them under an arc) in
+  `Plot Details`/`Summary`.
 - Data-quality flag: several `Modulo Chapter N` pages carry non-JJK names
   (e.g. "Simurians", "Naunax", "Dabura Karaba") — likely a crawl/translation
   artifact; worth a separate look before R4 inference is spent on them.
@@ -151,9 +171,10 @@ Convert the 28,483 untyped `mentions` toward a typed graph where the infobox
 already types the relation. Cheap where the signal is free; deferred — it does
 not advance the goal as directly as R1–R4.
 
-**Order:** R1 (the goal's core) → R2 ∥ R3 (coverage, independent) → R4
-(residue) → R5. R1 is the only one that changes what a writer *gets*; it goes
-first and gets the full council.
+**Order:** B5 (the only wrong-placement detector, half-built, no model) → R1
+(the goal's core) → R2 ∥ R3 (coverage, independent) → R4 (residue) → R5. B5
+goes first because with D6 tautological it is the only placement detector and it
+is already half-built; R1 is the goal's core and gets the full council.
 
 ---
 
