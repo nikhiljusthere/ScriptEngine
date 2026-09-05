@@ -128,11 +128,22 @@ re-crawling.
   - **Long sequential background work:** `setsid nohup bash -c 'for s in …; do
     cmd "$s" >> /tmp/x.txt; done' > /tmp/x.txt 2>&1 < /dev/null &`, then poll the
     file with a bounded status-printing loop. The job survives the tool timeout.
-  - **GPU contention → run the API on CPU.** When ninfer's Qwen holds the GPU,
-    the `:8000` reranker (bge-reranker-v2-m3) CUDA-OOMs (only tens of MiB free).
-    Restart the API with `SCRIPTENGINE_DEVICE=cpu setsid nohup … < /dev/null &`.
-     CPU page-runs are slow (cross-encoder ~14s/question): a 150-question batch
-     takes ~35 min, so kick it off detached and poll rather than blocking.
+- **GPU device selection for servers/APIs: CUDA first, CPU last.** Whenever
+     you launch a server or API (`:8000` FastAPI, MCP, anything loading the
+     embedder/reranker), decide the device in this order:
+     1. **Check if the GPU is free** (`nvidia-smi`). If the card is free (or has
+        room for the embedder + reranker, ~4–5 GB), **run on CUDA** (the default
+        device — no `SCRIPTENGINE_DEVICE` override).
+     2. **If it is not free, check if it can be freed** — stop a stale
+        long-lived `:8000` server you are about to replace, stop a finished or
+        interruptible GPU batch, etc. If you can free the card, **free it and
+        run on CUDA**.
+     3. **Only if the GPU cannot be freed, run on CPU** (`SCRIPTENGINE_DEVICE=cpu
+        setsid nohup … < /dev/null &`). The standard case: ninfer's Qwen holds
+        the card for extraction and the extraction model owns the GPU (hard rule
+        below), so it cannot be freed — then CPU is the fallback. CPU page-runs
+        are slow (cross-encoder ~14s/question): a 150-question batch takes ~35
+        min, so kick it off detached and poll rather than blocking.
 - **Coverage is a live artifact, not a sentence.** No document states what is
       next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
       which `tools/coverage_report.py` regenerates (never hand-edited). Run it
@@ -190,7 +201,10 @@ run `events-extract` (or any heavy LLM batch) on GPU, **dedicate the GPU to the
 Qwen model**: stop the `:8000` API (or run it on CPU with
 `SCRIPTENGINE_DEVICE=cpu`) first, then confirm `nvidia-smi` shows only the model
 process and ~7 GB free before launching. Never run the extraction's LLM on CPU
-as a workaround — the GPU is the path; just keep the card free for it.
+as a workaround — the GPU is the path; just keep the card free for it. For
+launching the `:8000` API itself, the decision order is the working-agreement
+**"GPU device selection for servers/APIs: CUDA first, CPU last"** — free →
+CUDA, can-free → free and CUDA, cannot-free → CPU.
 
 ## Status
 
