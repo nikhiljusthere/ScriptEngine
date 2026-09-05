@@ -55,24 +55,30 @@ class TestNodeNames:
 
 
 class TestCheck3ArcPlacement:
-    def test_violations_match_the_dangling_rows(self, jjk_store):
+    def test_violations_match_the_unplaced_rows(self, jjk_store):
+        # The residue: eventive rows the axis cannot place (arc_index NULL),
+        # stored as standing states. The recompute aligns first, so this is the
+        # settled off-axis set, not a transient dangling one.
         violations = gate.arc_placement_violations(jjk_store)
         count = jjk_store.connection.execute(
-            "SELECT COUNT(*) FROM events WHERE temporal = 1 AND arc_index IS NULL"
+            "SELECT COUNT(*) FROM events WHERE arc_index IS NULL"
         ).fetchone()[0]
         assert len(violations) == count
 
     def test_enforce_is_idempotent(self, jjk_store):
         first = gate.enforce_arc_placement(jjk_store)
         second = gate.enforce_arc_placement(jjk_store)
-        # Whatever the first pass moved, nothing dangles after it, so the
-        # second pass finds nothing to move.
+        # The first pass aligns temporal to the placement; once aligned, a
+        # second pass moves nothing.
         assert second["flipped"] == 0
         assert first["flipped"] >= 0
 
-    def test_enforce_reports_every_row_it_moved(self, jjk_store):
+    def test_enforce_reports_the_residue_and_its_movement(self, jjk_store):
         result = gate.enforce_arc_placement(jjk_store)
-        assert result["flipped"] == len(result["rows"])
+        # flipped is the rows moved this run (each way); rows is the settled
+        # off-axis residue it records as standing states.
+        assert result["flipped"] == result["promoted"] + result["demoted"]
+        assert len(result["rows"]) == result["unplaced"]
         for row in result["rows"]:
             assert row["arc_key"]
 

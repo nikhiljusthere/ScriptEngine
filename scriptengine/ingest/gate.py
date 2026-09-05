@@ -36,35 +36,48 @@ _MINORITY_SHARE = 0.8
 
 
 def arc_placement_violations(store: FactStore) -> list[dict]:
-    """The temporal rows whose placement the time axis cannot reach.
+    """The eventive rows the time axis cannot place, recorded as standing states.
 
-    A row that states an order (``temporal=1``) but whose page is on the residue
-    -- no ``arc_index`` -- is a dangling placement. Pure: it names the rows, it
-    does not move them.
+    Runs the recompute -- backfill the placement, align ``temporal`` to it --
+    then names the rows still off the axis (``arc_index`` NULL). They are stored
+    with ``temporal=0``, the standing-state answer, rather than left dangling.
+    A pure reader of the settled flags once the recompute has run.
     """
-    timeaxis.backfill_event_arc_index(store)
+    timeaxis.recompute_temporal(store)
     rows = store.connection.execute(
         "SELECT arc_key, subject_name, verb, object_name, quote, time_rank"
-        " FROM events WHERE temporal = 1 AND arc_index IS NULL"
+        " FROM events WHERE arc_index IS NULL"
         " ORDER BY arc_key, time_rank"
     ).fetchall()
     return [dict(row) for row in rows]
 
 
 def enforce_arc_placement(store: FactStore) -> dict:
-    """Check 3, applied: a dangling placement is recorded as a standing state.
+    """Check 3, applied: align ``temporal`` to the placement, record the residue.
 
-    Flips every temporal row the axis cannot place to ``temporal=0`` in the
-    events table, so a later read never sees a temporal event with no arc.
-    Idempotent -- a second run finds nothing to move.
+    The recompute keys the event test on the placement that exists -- an
+    eventive verb the axis can place -- not on whether ``arc_key`` resolves to a
+    placement page. That is what unfreezes ``temporal=1`` from the placement-set
+    count: the corpus rows the section signal placed become events, and the rows
+    the axis cannot reach stay standing states. Idempotent -- a second run moves
+    nothing. ``rows`` is the residue (the unplaced set a report reads);
+    ``flipped`` is how many rows this run moved, each way.
     """
-    violations = arc_placement_violations(store)
-    if violations:
-        store.connection.execute(
-            "UPDATE events SET temporal = 0 WHERE temporal = 1 AND arc_index IS NULL"
-        )
-        store.connection.commit()
-    return {"flipped": len(violations), "rows": violations}
+    tally = timeaxis.recompute_temporal(store)
+    rows = store.connection.execute(
+        "SELECT arc_key, subject_name, verb, object_name, quote, time_rank"
+        " FROM events WHERE arc_index IS NULL"
+        " ORDER BY arc_key, time_rank"
+    ).fetchall()
+    return {
+        "flipped": tally["temporal_promoted"] + tally["temporal_demoted"],
+        "promoted": tally["temporal_promoted"],
+        "demoted": tally["temporal_demoted"],
+        "unplaced": tally["temporal_unplaced"],
+        "temporal_before": tally["temporal_before"],
+        "temporal_after": tally["temporal_after"],
+        "rows": [dict(row) for row in rows],
+    }
 
 
 def _arc_names(store: FactStore) -> dict[int, str]:
@@ -94,7 +107,7 @@ def cross_page_agreement(store: FactStore) -> dict:
     returned in full -- both rows, their pages, quotes, ``arc_key`` and
     ``arc_index`` -- not a summary count.
     """
-    timeaxis.backfill_event_arc_index(store)
+    timeaxis.recompute_temporal(store)
     names = _arc_names(store)
     rows = [
         dict(row)

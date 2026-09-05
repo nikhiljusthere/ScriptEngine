@@ -22,7 +22,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from scriptengine.ingest.events import placement_pages
+from scriptengine.ingest.events import EVENTIVE_VERBS, placement_pages
 from scriptengine.retrieve import chronology
 from scriptengine.stores.facts import FactStore
 
@@ -315,6 +315,57 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
     store.connection.commit()
     tally["pages"] = len(axis)
     tally["rows"] = store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+    return tally
+
+
+def recompute_temporal(store: FactStore) -> dict:
+    """Re-derive the ``temporal`` flag from the placement that already exists.
+
+    The check-3 event test, keyed on the placement the backfill just computed:
+    a row with an eventive verb the axis can place (``arc_index`` not null) is
+    an event, ``temporal=1``; a row the axis cannot place is a standing state,
+    ``temporal=0``. It does not ask whether ``arc_key`` resolves to a placement
+    page -- a character or synopsis page title never will, by contract -- which
+    is what froze ``temporal=1`` at the placement-set count while the corpus
+    rows, placed by the section signal, sat mislabelled ``temporal=0``.
+
+    Pure SQL over the columns the backfill wrote: no model, no GPU. Idempotent --
+    a second run moves nothing. Returns the backfill tally plus the before/after
+    ``temporal`` counts and how many rows each way moved.
+    """
+    store.ensure_events()
+    tally = backfill_event_arc_index(store)
+    marks = ",".join("?" for _ in EVENTIVE_VERBS)
+    before = store.connection.execute(
+        "SELECT COUNT(*) FROM events WHERE temporal = 1"
+    ).fetchone()[0]
+    promoted = store.connection.execute(
+        f"SELECT COUNT(*) FROM events WHERE temporal = 0"
+        f" AND arc_index IS NOT NULL AND verb IN ({marks})",
+        tuple(EVENTIVE_VERBS),
+    ).fetchone()[0]
+    demoted = store.connection.execute(
+        "SELECT COUNT(*) FROM events WHERE temporal = 1 AND arc_index IS NULL"
+    ).fetchone()[0]
+    store.connection.execute(
+        f"UPDATE events SET temporal = CASE"
+        f" WHEN arc_index IS NOT NULL AND verb IN ({marks}) THEN 1 ELSE 0 END",
+        tuple(EVENTIVE_VERBS),
+    )
+    store.connection.commit()
+    after = store.connection.execute(
+        "SELECT COUNT(*) FROM events WHERE temporal = 1"
+    ).fetchone()[0]
+    unplaced = store.connection.execute(
+        "SELECT COUNT(*) FROM events WHERE arc_index IS NULL"
+    ).fetchone()[0]
+    tally.update(
+        temporal_before=before,
+        temporal_after=after,
+        temporal_promoted=promoted,
+        temporal_demoted=demoted,
+        temporal_unplaced=unplaced,
+    )
     return tally
 
 

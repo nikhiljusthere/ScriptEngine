@@ -14,6 +14,7 @@ import pytest
 
 from scriptengine.config import series_paths
 from scriptengine.ingest import timeaxis
+from scriptengine.ingest.events import EVENTIVE_VERBS
 from scriptengine.stores.facts import FactStore
 
 
@@ -235,3 +236,35 @@ class TestBackfill:
                 (sid, page, pos),
             ).fetchone()[0]
             assert foreign == 0
+
+
+class TestRecomputeTemporal:
+    def test_temporal_tracks_the_placement(self, jjk_store):
+        # After the recompute the flag agrees with the placement: no temporal
+        # row sits off the axis, and no placed eventive row is left recorded as
+        # a state. That is the invariant a time-axis ordering depends on.
+        tally = timeaxis.recompute_temporal(jjk_store)
+        connection = jjk_store.connection
+        dangling = connection.execute(
+            "SELECT COUNT(*) FROM events WHERE temporal = 1 AND arc_index IS NULL"
+        ).fetchone()[0]
+        assert dangling == 0
+        hidden = connection.execute(
+            "SELECT COUNT(*) FROM events WHERE temporal = 0"
+            f" AND arc_index IS NOT NULL AND verb IN ({', '.join('?' * len(EVENTIVE_VERBS))})",
+            tuple(EVENTIVE_VERBS),
+        ).fetchone()[0]
+        assert hidden == 0
+        assert (
+            tally["temporal_after"]
+            == tally["temporal_before"]
+            + tally["temporal_promoted"]
+            - tally["temporal_demoted"]
+        )
+
+    def test_recompute_is_idempotent(self, jjk_store):
+        first = timeaxis.recompute_temporal(jjk_store)
+        second = timeaxis.recompute_temporal(jjk_store)
+        assert second["temporal_promoted"] == 0
+        assert second["temporal_demoted"] == 0
+        assert second["temporal_after"] == first["temporal_after"]

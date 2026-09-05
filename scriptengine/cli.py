@@ -684,6 +684,7 @@ def events_extract(
         extract_events_series,
         scope_plan,
     )
+    from scriptengine.ingest import timeaxis as t_axis
     from scriptengine.llm.client import LLMUnavailable
     from scriptengine.stores.facts import FactStore
 
@@ -733,6 +734,14 @@ def events_extract(
         table.add_row(key, str(report[key]))
     console.print(table)
 
+    with FactStore(paths.facts_db) as store:
+        alignment = t_axis.recompute_temporal(store)
+    console.print(
+        f"[dim]temporal alignment: {alignment['temporal_after']:,} of"
+        f" {alignment['rows']:,} events sit on the time axis"
+        f" ({alignment['temporal_unplaced']} off it).[/dim]"
+    )
+
 
 @app.command("time-axis")
 def time_axis(
@@ -761,12 +770,14 @@ def time_axis(
         raise typer.Exit(code=1)
 
     with FactStore(paths.facts_db) as store:
-        tally = t_axis.backfill_event_arc_index(store)
+        tally = t_axis.recompute_temporal(store)
         placed = sum(tally[key] for key in ("arc_page", "arc_fact", "chapters"))
         console.print(
             f"[dim]Time axis: {placed}/{tally['pages']} placement pages placed by the"
             f" cheap signals ({tally['arc_page']} arc-page, {tally['arc_fact']} arc-fact,"
-            f" {tally['chapters']} citation); {tally['rows']} events stored.[/dim]"
+            f" {tally['chapters']} citation); {tally['rows']} events stored,"
+            f" {tally['temporal_after']:,} of them on the axis"
+            f" ({tally['temporal_unplaced']} off it).[/dim]"
         )
         axis = t_axis.placement_time_axis(store)
         residue = [page for page, placed_axis in axis.items() if placed_axis.signal == "residue"]
@@ -824,8 +835,10 @@ def comprehension_gate(
 
         console.print("[bold]Comprehension gate[/bold]")
         console.print(
-            f"  [dim]arc placement:[/dim] {check3['flipped']} temporal row(s) had a dangling"
-            " placement and were recorded as standing states."
+            f"  [dim]arc placement:[/dim] {check3['unplaced']} eventive row(s) the axis"
+            " cannot place are recorded as standing states; the temporal set is"
+            f" {check3['temporal_after']:,} (was {check3['temporal_before']:,} before"
+            " this alignment)."
         )
 
         s = agreement["stats"]
