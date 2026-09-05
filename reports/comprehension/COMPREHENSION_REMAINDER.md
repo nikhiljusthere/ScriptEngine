@@ -54,11 +54,14 @@ Two tiers, and the number everyone quotes is the wrong one:
   chunker, not of retrieval; a chunker that emits every sentence passes it by
   construction. It is *not* reachability.
 - **Tier 1 (retrieval, the real D5)** — does `/context` actually *serve* the
-  line? Last measured **2026-09-03** over a 545-probe sample (**1.1% of the
-  lines**, now two days stale): **verbatim 387/400 (96.8%), scoped 110/120
-  (91.7%), terms 24/25 (96%)**. Misses are `MISS_DOC` (a sibling page is
-  served instead) and `MISS_SPAN` (the page is served, the line is not). So
-  D5 is **not met**, and the tier-1 number has not been re-run since Sep 3.
+  line? Baseline **2026-09-03** over a 545-probe sample (**1.1% of the lines**):
+  **verbatim 387/400 (96.8%), scoped 110/120 (91.7%), terms 24/25 (96%)**. Misses
+  are `MISS_DOC` (a sibling page is served instead) and `MISS_SPAN` (the page is
+  served, the line is not). A **fresh full verbatim re-run was launched 2026-09-05**
+  (400-probe, CPU `:8000`; the index is unchanged since Sep 3 — no re-crawl or
+  re-index — so the number is expected to hold). Early 73-row sample: **70/73
+  HIT (96%), 3 `MISS_SPAN`** — tracking the baseline. D5 is **not met**; tier 1
+  is ~92–97%, not 100%.
 
 The only open *indexing* defect is the Trivia chunking gap (standing open #5);
 it does not affect tier 0 (those lines are still indexed) — it is about
@@ -79,9 +82,10 @@ Same live store, measured 2026-09-05:
 | temporal keys in `facts` | `arc` 431 · `date` 374 · `anime episode` 185 = **990 lines (<1% of 48,572)** | only events+`arc_index` now carry "when"; a standing-state line still has no time. |
 
 **Honest answer: tier-0 indexing is 100% (48,572/48,572 lines in a chunk) and
-event placement is ~94%, but D5 reachability is *not* met (tier 1 sampled at
-91.7–96.8% on 2026-09-03, two days stale) and we are not at 100%
-comprehension.** The residuals above are the distance to the goal.
+event placement is ~94%, but D5 reachability is *not* met (tier 1 ~92–97%; the
+2026-09-05 full re-run is in progress, early sample 96% — consistent with the
+2026-09-03 baseline) and we are not at 100% comprehension.** The residuals
+above are the distance to the goal.
 
 ---
 
@@ -211,8 +215,9 @@ R4's sibling-propagation stays held (it would copy the same noise).
   confirm ~7 GB free before launching; never run the extraction LLM on CPU as a
   workaround. The `:8000` API itself: CUDA if the card is free, else CPU.
 - **Four standing gates re-run after each R:** pytest (1,202), span-recall
-   jjk (48,572/48,572, rc=0 — **tier 0 only**; the tier-1 reachability sample
-   is separate and has not been re-run since 2026-09-03), eval jjk (24/24),
+   jjk (48,572/48,572, rc=0 — **tier 0 only**; the tier-1 reachability sample is
+   separate — full 400-probe re-run launched 2026-09-05, in progress; early 73-row
+   sample 96%, consistent with the 2026-09-03 baseline), eval jjk (24/24),
    canon-run opm (10/16 · 236/236 · 79.0%). `span-recall` after any index;
    `audit` before any index.
 - **Commit:** branch `character-scoped-questions`, named paths only, author
