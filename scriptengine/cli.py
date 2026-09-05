@@ -653,9 +653,11 @@ def events_extract(
         "placement",
         "--scope",
         help=(
-            "placement = the arc/event/battle set; corpus = the narrative sections"
-            " that name two or more of the wiki's characters (a character's own"
-            " Synopsis/History, a chapter's Plot Details)."
+            "placement = the arc/event/battle set; corpus = the narrative"
+            " sections that name two or more of the wiki's characters (a"
+            " character's own Synopsis/History, a chapter's Plot Details);"
+            " all = the union of both, the complete-coverage path for a"
+            " --refresh run (the rules can be disjoint)."
         ),
     ),
 ) -> None:
@@ -671,16 +673,16 @@ def events_extract(
     `--scope placement` (default) reads the arc/event/battle set. `--scope
     corpus` reaches the rest of the story: the narrative sections that name two
     or more of the wiki's characters, where most of what a wiki says about a
-    character lives off that character's own page.
+    character lives off that character's own page. `--scope all` is the union
+    of both; the rules can be disjoint, so a `--refresh` run wants `all` or a
+    corpus-only run silently stops reading the placement set.
     """
     import logging
 
     from scriptengine.ingest.events import (
         PROMPT_VERSION,
-        corpus_scope,
         extract_events_series,
-        extractable_sections,
-        placement_pages,
+        scope_plan,
     )
     from scriptengine.llm.client import LLMUnavailable
     from scriptengine.stores.facts import FactStore
@@ -694,27 +696,17 @@ def events_extract(
     if dry_run:
         with FactStore(paths.facts_db) as store:
             store.ensure_events()
-            if scope == "corpus":
-                scope_map = corpus_scope(store)
-                pages = list(scope_map)
-            else:
-                scope_map = None
-                pages = placement_pages(store)
-
-            def sections_for(page: str) -> list:
-                if scope_map is not None:
-                    return scope_map.get(page, [])
-                return extractable_sections(store, page)
+            pages, by_page = scope_plan(store, scope)
 
             if limit:
                 pages = pages[:limit]
-            total = sum(len(sections_for(page)) for page in pages)
+            total = sum(len(by_page[page]) for page in pages)
             console.print(
                 f"[dim]{len(pages)} pages / {total} sections would be read"
                 f" (scope={scope}, prompt {PROMPT_VERSION}):[/dim]"
             )
             for page in pages[:40]:
-                sections = sections_for(page)
+                sections = by_page[page]
                 console.print(f"  {page}  [dim]({len(sections)} sections)[/dim]")
                 for section in sections:
                     console.print(f"    [dim]{section['title']}[/dim]")

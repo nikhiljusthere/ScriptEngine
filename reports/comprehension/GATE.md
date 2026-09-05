@@ -72,7 +72,7 @@ acceptance set (the plan's twenty failures) is meant to pin down.
 
 | gate | baseline | gate |
 |---|---|---|
-| pytest | 1152 passed | **1,194 passed** (2026-09-05, post continuity-check scaffold) |
+| pytest | 1152 passed | **1,198 passed** (2026-09-05, post scope-shrink fix) |
 | eval jjk | 24/24 | 24/24 |
 | span-recall jjk | 48,570/48,572 (2 misses, rc=2) | **48,572/48,572 (0 misses, rc=0)** |
 | canon-run opm | 10/16 · 236/236 · 79.0% | 10/16 · 236/236 · 79.0% |
@@ -97,7 +97,8 @@ background}`, or the wiki named it after the arc it walks, e.g. a character's
 wiki's own character nodes. Character-family page types are read off the wiki's
 own type names (any type carrying `character`) — nothing about which types count
 is a series name. Exposed as `events-extract --scope corpus` (placement set is
-`--scope placement`).
+`--scope placement`); the two rule sets proved disjoint on JJK, so the
+complete-coverage path is `--scope all` (the "Scope-shrink check" section).
 
 Measured on JJK: **524 pages / 964 sections / ~1,279 LLM windows**, reaching
 character `Synopsis`/`History` and chapter `Plot Details`, where most of a
@@ -180,8 +181,11 @@ invariant (a lost temporal row still fails it), not a tautology.
   **miss, never a wrong arc**. The FK is still absent (a re-crawl would dangle the
   838 refs); the guard makes the consequence safe, but the queued FK / re-extract
   fix stands.
-- *Scope-shrink check:* diff the pre/post-scope candidate sets to rule out a
-  masked recall loss (the new scope replaced the old node-degree-2 scope).
+- *Scope-shrink check — RESOLVED* (the "Scope-shrink check + `--scope all`"
+  section below): the pre/post candidate sets are **disjoint** on JJK (0 of
+  388/964 sections overlap; all 714 temporal events sit in placement-only
+  sections), so a corpus-only re-extract would mask a total recall loss of the
+  placement set. Fixed in code: `scope_plan` + the `--scope all` union.
 
 ## Placement-signal fix (complete)
 
@@ -279,6 +283,43 @@ generic-heading placement residual is owned by this consumer's **write-layer
 (D6)** — not yet built. The real *script-line* harvest is deferred:
 `scripts output/` is thin (no per-beat `sourced:` headers yet), so the gold set
 is corpus-derived (the 31 filings), not harvested script lines.
+
+## Scope-shrink check + `--scope all` (complete)
+
+The follow-up the 3b record queued — diff the pre/post-scope candidate sets to
+rule out a masked recall loss — is run, and it **fails**: the two rule sets are
+disjoint, and a corpus-only run would silently stop reading the entire placement
+set.
+
+**The check** (against `series/jjk/facts.db`):
+
+| | placement rule (old scope) | corpus rule (3b scope) |
+|---|---|---|
+| pages | 108 | 524 |
+| sections | 388 | 964 |
+| overlap | **0 pages / 0 sections** | — |
+
+JJK's placement pages (arc/event/battle) carry no narrative-family headings —
+their sections are titled Battle/Aftermath/Prologue, stage names, "Setting" — so
+the corpus rule never admits one of them. The 388 placement-only sections hold
+165,941 words, and **all 714 `temporal=1` events** (prompt `events-2026-09-05.2`)
+sit in them. A future `--scope corpus --refresh` would have re-extracted the 524
+corpus pages and frozen the placement set: its rows would stop matching
+`PROMPT_VERSION`/revid, the gate would see 714 dangling temporal rows, and
+nothing would say why.
+
+**The fix** (`events.py`): a testable `scope_plan(store, scope)` now drives both
+the extract and the dry-run. `placement` and `corpus` keep their exact prior
+semantics (locked by tests), and the new `all` scope is the union — a page both
+rules cover reads the union of its sections, deduped by section id. On JJK the
+union is additive: the three dry-runs print 108/388, 524/964, **632/1352**
+(= 108+524 / 388+964, zero dedup needed). On a wiki whose rules do overlap, the
+dedup branch applies. `--scope all` is the documented complete-coverage path for
+`--refresh` runs.
+
+Gates re-run green: pytest **1,198** (was 1,194, +4 scope-plan tests);
+span-recall 48,572/48,572 (rc=0); eval 24/24; canon-run opm 10/16 · 236/236 ·
+79.0% (report `2026-09-05-1041`, API relaunched on CPU per the CUDA-first rule).
 
 ## Commands
 

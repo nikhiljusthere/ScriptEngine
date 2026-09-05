@@ -903,6 +903,46 @@ def corpus_scope(store: FactStore) -> dict[str, list[sqlite3.Row]]:
     }
 
 
+def scope_plan(
+    store: FactStore, scope: str
+) -> tuple[list[str], dict[str, list[sqlite3.Row]]]:
+    """`(pages, sections_by_page)` for the extraction scope.
+
+    `placement` reads the arc/event/battle set, every extractable section of
+    it; `corpus` reads the corpus rule only (the narrative sections that name
+    two or more of the wiki's characters); `all` reads the union, and a page
+    both rules cover reads the union of its sections, deduped.
+
+    The union exists because the rules can be disjoint: on JJK no placement
+    section satisfies the corpus rule, so a corpus-only re-extract would
+    silently stop reading the 388 sections (165,941 words) that hold all 714
+    placed events -- the scope-shrink check in reports/comprehension/GATE.md.
+    """
+    placement = placement_pages(store)
+    corpus = corpus_scope(store) if scope in ("corpus", "all") else {}
+    if scope == "placement":
+        pages = list(placement)
+    elif scope == "corpus":
+        pages = list(corpus)
+    else:
+        seen = set(placement)
+        pages = list(placement) + [p for p in corpus if p not in seen]
+
+    base_pages = set(placement) if scope in ("placement", "all") else set()
+    by_page: dict[str, list[sqlite3.Row]] = {}
+    for page in pages:
+        base = extractable_sections(store, page) if page in base_pages else []
+        extra = list(corpus.get(page, [])) if scope in ("corpus", "all") else []
+        if not base:
+            by_page[page] = extra
+        elif not extra:
+            by_page[page] = base
+        else:
+            seen = {s["id"] for s in base}
+            by_page[page] = base + [s for s in extra if s["id"] not in seen]
+    return pages, by_page
+
+
 def _time_to_hours(when: str) -> float:
     """`9:22 PM` -> 21.3667: the clock the wiki wrote in the heading, verbatim."""
     match = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", when, re.IGNORECASE)
@@ -1089,12 +1129,13 @@ def extract_events_series(
     A page is current when it was read under the same `PROMPT_VERSION` and the
     document has not been re-crawled since, which is what `refresh` overrides.
 
-    `scope` chooses which pages to read. `placement` (the default) is the
-    arc/event/battle set, where a wiki states events in the round. `corpus`
-    reaches the rest of the story: the narrative-family sections that name two
-    or more of the wiki's characters (a character's own Synopsis/History, a
-    chapter's Plot Details), which is where most of what a wiki says about a
-    character actually lives.
+    `scope` chooses which pages to read, via `scope_plan`. `placement` (the
+    default) is the arc/event/battle set, where a wiki states events in the
+    round. `corpus` reaches the rest of the story: the narrative-family
+    sections that name two or more of the wiki's characters (a character's own
+    Synopsis/History, a chapter's Plot Details), which is where most of what a
+    wiki says about a character actually lives. `all` is the union of the two,
+    the complete-coverage path for a `--refresh` run.
     """
     from concurrent.futures import ThreadPoolExecutor
 
@@ -1112,22 +1153,9 @@ def extract_events_series(
         store.ensure_events()
         # Resolved here, on the thread that owns the connection.
         known = known_participants(store)
-        if scope == "corpus":
-            scope_map = corpus_scope(store)
-            pages = list(scope_map)
-        else:
-            scope_map = None
-            pages = placement_pages(store)
+        pages, by_page = scope_plan(store, scope)
         report["considered"] = len(pages)
         wanted = pages[:limit] if limit else pages
-
-        def sections_for(page: str) -> list[sqlite3.Row]:
-            # The corpus scope reads only the in-scope sections of a page, not
-            # all its prose: a character page's Appearance and Trivia state no
-            # events and would only spend model calls to find that.
-            if scope_map is not None:
-                return scope_map.get(page, [])
-            return extractable_sections(store, page)
 
         todo: list[tuple[str, str]] = []
         for page in wanted:
@@ -1166,7 +1194,7 @@ def extract_events_series(
                 try:
                     found = extract_from_sections(
                         client, paths.name, page,
-                        sections_for(page), known,
+                        by_page[page], known,
                     )
                 except LLMUnavailable:
                     raise
@@ -1180,7 +1208,7 @@ def extract_events_series(
         for start in range(0, len(todo), workers * 4):
             chunk = todo[start : start + workers * 4]
             work = [
-                (page, revid, sections_for(page))
+                (page, revid, by_page[page])
                 for page, revid in chunk
             ]
 

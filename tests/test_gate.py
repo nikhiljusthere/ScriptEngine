@@ -15,7 +15,13 @@ import pytest
 
 from scriptengine.config import series_paths
 from scriptengine.ingest import gate
-from scriptengine.ingest.events import corpus_scope, is_narrative_heading
+from scriptengine.ingest.events import (
+    corpus_scope,
+    extractable_sections,
+    is_narrative_heading,
+    placement_pages,
+    scope_plan,
+)
 from scriptengine.stores.facts import FactStore
 
 
@@ -149,3 +155,34 @@ class TestCorpusScope:
         assert list(a) == list(b)
         assert {id for secs in a.values() for id in (s["id"] for s in secs)} == \
                {id for secs in b.values() for id in (s["id"] for s in secs)}
+
+
+class TestScopePlan:
+    def test_all_covers_both_rule_sets(self, jjk_store):
+        pages, _ = scope_plan(jjk_store, "all")
+        placement = set(placement_pages(jjk_store))
+        corpus = set(corpus_scope(jjk_store))
+        assert set(pages) == placement | corpus
+        assert len(pages) == len(placement | corpus)
+
+    def test_all_dedupes_sections_where_both_rules_cover_a_page(self, jjk_store):
+        _, by_page = scope_plan(jjk_store, "all")
+        for page, sections in by_page.items():
+            ids = [s["id"] for s in sections]
+            assert len(ids) == len(set(ids)), page
+
+    def test_corpus_scope_keeps_reading_only_its_rule(self, jjk_store):
+        corpus = corpus_scope(jjk_store)
+        pages, by_page = scope_plan(jjk_store, "corpus")
+        assert pages == list(corpus)
+        for page in pages:
+            assert [s["id"] for s in by_page[page]] == \
+                   [s["id"] for s in corpus[page]]
+
+    def test_placement_scope_keeps_reading_every_extractable_section(self, jjk_store):
+        pages = placement_pages(jjk_store)
+        all_pages, by_page = scope_plan(jjk_store, "placement")
+        assert all_pages == pages
+        for page in pages:
+            assert [s["id"] for s in by_page[page]] == \
+                   [s["id"] for s in extractable_sections(jjk_store, page)]
