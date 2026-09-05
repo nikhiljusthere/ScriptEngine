@@ -50,6 +50,7 @@ EVENTIVE_VERBS = frozenset(
         "saved",
         "arrived",
         "departed",
+        "met",
     }
 )
 
@@ -617,7 +618,7 @@ def seed_phase1_rows(
 # from, and a number the model supplies is a number nobody verified.
 
 # Bump to invalidate every stored event, exactly as `relations` does.
-PROMPT_VERSION = "events-2026-09-05.2"
+PROMPT_VERSION = "events-2026-09-05.3"
 
 SYSTEM = (
     "You extract stated events from fiction-wiki prose. You answer with JSON "
@@ -642,9 +643,12 @@ or a different tense of one: {verbs}.
 
 Rules:
 - An event is something the passage says happens: a fight, a killing, an
-  awakening, a sealing, a betrayal, a rescue, an arrival, a departure. A
-  description of who a character is, a list of who is present, or a rule the
-  story follows is not an event.
+  awakening, a sealing, a betrayal, a rescue, an arrival, a departure, a
+  meeting. A description of who a character is, a list of who is present, or
+  a rule the story follows is not an event.
+- A stated meeting or encounter between named characters is an event, with
+  the verb `met` ("they meet", "their paths cross"). Sharing a place or a
+  sentence, with no stated meeting, is not one.
 - The subject does the verb, the object is the one it is done to, and both
   must be names the passage uses, given as the passage writes them. One name
   per role: if the passage says "Gojo and Nanami fight Mahito", that is two
