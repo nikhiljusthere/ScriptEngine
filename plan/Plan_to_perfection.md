@@ -63,7 +63,7 @@ paste, never by prose.
 | **D3** | **Zero unfiled engine gaps**, and the red list is **not empty**. A corpus with no expected failures has not been probed. |
 | **D4** | A **held-out probe set**, authored by someone other than the executing agent, passes at a declared threshold. |
 | **D5** | **Line-level reachability** (§2a) is exhaustively measured and its miss file is empty. |
-| **D6** | **Comprehension** (§2b): a declared fraction of event-bearing lines carry a type, an arc index and a participant set, and the consistency checks return zero violations. |
+| **D6** | **Comprehension** (§2b, §2c): every extracted row is either a placed **event** (type + arc index + participants) or an explicitly marked **standing state**; all three survival checks pass; and cross-page accounts of the same event agree on placement. |
 
 D4, D5 and D6 are the load-bearing ones. D1–D3 are all measured by the party
 being scored.
@@ -254,37 +254,127 @@ unmeasured. Add it as **D6**.
 |---|---|
 | **D6** | **Placement coverage and consistency.** A declared fraction of event-bearing lines carry a type, an arc index and a participant set; and the consistency checks above return zero violations. |
 
-### What to build
+---
 
-`ingest/relations.py` is the working template and should be copied, not
-reinvented: a per-section LLM pass, cached on `revid`, emitting a **source
-quote** for provenance and an **`era`** for arc placement, with `--dry-run`.
-Its `_era_for` docstring is the model of honesty to follow — it records that
-"63 of 109 Jujutsu Kaisen rows sit under an arc-named section while only 28
-carried an era of their own."
+## 2c. The comprehension build
 
-1. **`ingest/events.py`** — the missing predicate. Emit
-   `(subject, event, arc, section, quote)` over the pages already known
-   tractable. Same prompt shape, same cache, same dry-run.
-2. **Placement** — join event rows to `chronology.py`'s arc chain so every event
-   carries an **arc index**, not just an arc name. An index is orderable; a name
-   is not.
-3. **Cross-page attribution** — the 14,194 (entity, off-page section) pairs
-   (§2a). A fight lives on the opponent's page; a character's history is mostly
-   other characters' pages.
+### The finding that shapes the whole design
 
-Then the 28,483 untyped `mentions` edges stop being debt: each is a
-pre-located, pre-linked **candidate event awaiting a type**.
+The `relations` table places only 36% of its rows in an arc, and the obvious
+reading is "the extractor fails 64% of the time." **That reading is wrong**, and
+the measurement says so:
 
-> **What this unlocks, and why it is the real product.** Once every event
-> carries an arc index, you can ask what a character *knew at a given moment* —
-> and reject a script line where someone references an event three arcs early.
-> That is continuity checking, it is what "understanding" actually buys a script
-> writer, and it is deterministically testable.
+| relations from… | rows | carry an `era` |
+|---|---:|---:|
+| **arc-named sections** | 207 | **207 — 100%** |
+| every other section | 614 | 91 — 15% |
 
-**Sequencing:** reachability (D5) and comprehension (D6) are independent and can
-run in parallel. Ship D5 first because it is finite and nearly done — but stop
-describing it as if it were D6.
+And every one of the 523 era-less rows comes from a section naming no arc. The
+top such sections are `Personality` (158), `Synopsis / History` (41),
+`Abilities and Powers / Overview` (17), `Trivia` (15), `History` (13).
+
+Two conclusions follow, and they are the foundation of this design:
+
+1. **Placement is structural, not inferential.** Where the wiki files prose
+   under an arc heading, placement is free and perfect. A better model buys
+   almost nothing; more arc-named headings and citation parsing buy everything.
+2. **Most of what was "unplaced" is correctly unplaced.** Personality is a
+   standing trait. Abilities are capabilities. Trivia is out-of-universe. These
+   are **atemporal by nature**, and dating them would be an error.
+
+> **So the schema must distinguish a standing state from an event, and "no arc"
+> must be a valid, correct answer — never a miss.** A design that tries to put
+> every line on a timeline will manufacture false precision on roughly two
+> thirds of the corpus.
+
+### What is already built, and barely used
+
+`chunk_nodes` holds **192,192 chunk-to-entity links** with alias resolution —
+Yuji Itadori is linked to 3,567 chunks, **3,547 of them on other pages**. The
+cross-page index the goal requires already exists.
+
+It is referenced **7 times in the entire codebase**: the schema, the writer, a
+table list, and **exactly one read query** (`stores/facts.py:1142`).
+
+> **The lesson, and the sequencing rule that follows: wire the door before you
+> fill the room.** `semantics` (0 rows) and `prose.db` (0 bytes, no tables) are
+> two corpses of the same pattern — a structure built with no door reading it.
+> Do not create a third. Prove a consumer exists using data already on disk
+> *before* spending a GPU-week on extraction.
+
+### The build, in order
+
+**Step 1 — prove the door, with no extraction at all.** Hand-write ~25 event
+rows for one arc into an `events` table. Point `narrative.py`'s beat ordering at
+them instead of the `_INSTALMENT` title regex. Read the beats. **If a script
+writer cannot tell the difference, no extractor is worth 5,507 sections.** One
+round-trip, zero GPU. Equally cheap: make the narrative path read the 431 `arc`
+facts and the 207 era-carrying relations that already exist. If free existing
+data does not visibly beat the title regex, 50,000 extracted events will not
+either.
+
+**Step 2 — clone `ingest/relations.py`; do not invent.** It already carries
+`revid` caching, `--dry-run`, verbatim-quote verification, `_era_for()` arc
+mapping and work-gating. Copy to **`ingest/events.py`** and change only the
+prompt, the vocabulary (social → eventive: fought, killed, awakened, sealed,
+betrayed, saved, arrived, departed) and the row schema:
+`(subject_node, verb, object_node, arc_key, section_id, quote, temporal)` —
+where `temporal` is an explicit boolean, so a standing state is recorded *as*
+one rather than as a placement failure.
+
+**Step 3 — target extraction with the index you already have.** A chunk holding
+one entity is description; a chunk holding **two or more character nodes is an
+interaction** — an event candidate, already localised, already citable, already
+alias-resolved. Filter the 19,684 chunks on node degree ≥ 2 **and** a
+narrative-family heading. That collapses the target by an order of magnitude and
+costs nothing, because `chunk_nodes` already computed it. **Per-section, gated —
+not per-line.** Per-line buys resolution nothing consumes.
+
+**Step 4 — build the time axis from the cheap signals first, model last.**
+- arc-named headings: **100% reliable** where present (207/207)
+- `(Chapter N)` / `(Episode N)` citations: present in **15.1%** of chunks and
+  **15.9%** of sections — deterministic, parsed already by `citations.py`
+- `chronology.py`'s arc chain: converts an arc *name* into an orderable **arc
+  index**. A name does not sort; an index does.
+
+Spend inference only on the residue none of those three reach.
+
+### The gate: three equality checks, nothing to grade
+
+An extracted row survives only if all three hold:
+
+1. its `quote` appears **verbatim** in the source passage,
+2. every participant resolves to a real `nodes.id`,
+3. its `arc_key` exists in the known arc set — **or** `temporal` is false.
+
+String and foreign-key equality. No judgment, no gold to author, nothing an
+agent can be generous about. Report the **percentage of narrative beats carrying
+a surviving row**, split by temporal and atemporal.
+
+**Second, ungameable, and better: cross-page agreement.** The Shibuya fight is
+described on Yuji's page, on Sukuna's page and on the arc page — by different
+human editors. Extract independently from each and check the same event surfaces
+with a consistent arc placement. **An agent cannot reword its way into agreement
+between authors it did not write.**
+
+### Before any of this: write down twenty failures
+
+No script line that came out wrong has been recorded anywhere. Every number in
+this document describes the corpus, not a defect. Write **twenty real failing
+script lines with their correct output**, frozen as acceptance cases, before
+spending a GPU-week. If twenty cannot be produced, the event graph is not yet
+the highest-value work — and that is worth knowing for the cost of an afternoon.
+
+### What it unlocks
+
+Once events carry an arc index you can ask what a character **knew at a given
+moment**, and reject a script line referencing an event three arcs early. That
+is continuity checking; it is what "understanding" actually buys a script
+writer; and it is deterministically testable.
+
+**Sequencing:** D5 (reachability) and D6 (comprehension) are independent. Ship
+D5 first because it is finite and nearly done — but stop describing it as if it
+were D6.
 
 ---
 
