@@ -93,7 +93,7 @@ LLM batch, the four standing gates re-run, and a `comprehension:` commit of the
 named paths. "Do not create a third corpse" (§2c) applies: every new table ships
 with the door that reads it.
 
-### B5 — cross-page agreement gate (now load-bearing; **first, above R1–R5**)
+### B5 — cross-page agreement gate (load-bearing; **first, above R1–R5**)
 
 With D6 tautological (Step 1: `temporal` reduces to `arc_index IS NOT NULL`, the
 same signal that placed the row), **cross-page agreement is the only signal
@@ -103,14 +103,37 @@ already half-built (`gate.cross_page_agreement` + `continuity --triage` read the
 gate's own disagreement list; no new model, no GPU). The A5 split (GATE.md)
 shows the 107 disagreements (27.4% of 390 multi-page groups) are driven by the
 **995 section/citation-backfill rows**: 98/107 (92%) involve ≥1 section-placed
-row; pure arc-named groups sit at ~10.5% while mixed groups hit 35.6%. B5 wires
-the existing gate up to **adjudicate the 995 section-placed rows against the
-arc-named (page-signal) majority** — a section-placed row that disagrees with
-the arc-named filing gets the majority arc (a corpus truth, independent of the
-axis under test) and the disagreement is recorded, so a writer reading an event
-gets the cross-page majority, not the weaker backfill. Lands **first** because
-it is the only placement detector and it is half-built; R1–R5 all rest on a
-placement B5 has vouched for.
+row; pure arc-named groups sit at ~10.5% while mixed groups hit 35.6%.
+
+**What the council round 2 (`COUNCIL_b5-premise.md`) added — the premise is
+unverified.** The arc-named majority is cross-page but **not independent**: every
+observation shares one epistemic source (the wiki's editors), so a majority proves
+*self-consistency*, not correctness. Mixed groups disagree at 35.6% — *higher*
+than pure arc-named's 10.5% — so the "trusted" signal has its own error rate and
+the two signals' errors are correlated. **Do not build B5 as a majority-
+overwrite.** Concretely:
+
+1. **Spot-check first (the one thing to do).** Ground `arc_index` (what an arc is
+   + its chapter range), validate the `(verb, subject, object)` key, then verify
+   the **5 pure arc-named residual** disagreements (both rows arc-named — cleanest)
+   plus ~15 mixed against an independent oracle (event's chapter ∈ its arc's
+   chapter range? raw-wiki read). This decides whether the majority is even the
+   right side.
+2. **One-way gate, not promotion.** B5 **records** the disagreement (an
+   `event_disagreements` table) and **demotes/flags** the losing section row's
+   confidence; it **never promotes** the majority arc onto a row the wiki never
+   filed — promotion fabricates a placement the editors never made (worse than a
+   NULL). If the spot-check says the section signal is the better source, the gate
+   inverts.
+3. **The 107 are a corpus, not a defect to wipe.** 91 are *two-sided* (both rows
+   carry distinct non-null `arc_index`) — keep them as a gold/correction set.
+
+Lands **first** because it is the only placement detector and it is half-built;
+R1–R5 all rest on a placement B5 has vouched for. The **105/154 sibling-
+propagation** lead (recover the unplaced rows by copying a placed twin's `arc_index`)
+is a recoverable-residue move for R4, but the council's correlated-error warning
+stands until the spot-check says the section rows are trustworthy — gate it behind
+the same check.
 
 ### R1 — the per-line / per-beat *meaning* index (the load-bearing one)
 
