@@ -22,6 +22,54 @@ step. It does not authorise doing something else instead.
 **Every phase ends in a GATE, never a hand-off.** A gate requires emitted query
 output. It is never "continue to the next phase now."
 
+**The run is continuous.** A green gate advances to the next phase
+automatically — no pause for approval, no waiting for a human between phases.
+The run ends when Phase 6 closes, not before.
+
+> **What a gate is, now that nobody is waiting at it.** It is not a checkpoint
+> for a human; it is a *precondition on advancement*. Advancement is contingent
+> on emitted evidence and a council pass — never on having reached the last
+> line of the phase. A bare "continue now" placed after steps the agent graded
+> itself on is exactly the checkbox the false "100%" campaign would have
+> ticked. A gate that fails does not pause the run for permission; it **halts**
+> it, under the conditions below.
+
+### Halt conditions — the only brake on a continuous run
+
+Stop the run and report. Do not work around, do not proceed to the next phase.
+
+1. **A standing gate regresses** below baseline: `pytest`, `eval jjk` 24/24,
+   `canon-run opm` 10/16 · 236/236 · 79.0%, `span-recall`.
+2. **An oracle item that previously passed now fails.** Regression in served
+   behaviour outranks progress on any dimension.
+3. **A premise is refuted** (per the step contract) — always a halt.
+4. **Derived-row loss:** any table's row count drops without an explicit step
+   in this file that intends it.
+5. **A batch scores below its stated floor** — the extraction is wrong, not the
+   data.
+6. **Two consecutive phases close with no movement on their own metric** —
+   stuck, escalate rather than grind.
+7. **Any action that would require scope not written in this file.**
+
+### Authorising the large GPU pass without a human
+
+The 24,000-sentence `meaning` pass was held as "not authorised." Under a
+continuous run nobody is waiting to authorise it, so **its preconditions are
+the authorisation.** It proceeds automatically once all four are green, and
+not before:
+
+1. **Retention solved** — Phase 0C landed; a rebuild demonstrably remaps
+   survivors instead of wiping them.
+2. **Frozen class spec + prompt v1**, coupled to `PROMPT_VERSION`, with the
+   participant guard in place.
+3. **A pilot** on the 1,748 chapter-anchored rows, **scored against
+   `ORACLE_v1.yaml`** — not merely "the guard fired."
+4. **The pilot's accuracy is at or above its stated floor.** Below it, halt
+   (condition 5): the extraction is wrong, not the data.
+
+Record which of the four were green, with evidence, in the phase's council
+report. Never run the pass on the strength of three.
+
 ---
 
 ## Phase 0 — Answer the open question; make the store durable
@@ -65,8 +113,8 @@ whether to apply three pre-commit fixes and how to handle retention.*
   conflates row *ids* with row *content*; `revid` already tracks real staleness.
 
 **0D — GATE.** Emit: the diff; the guard refusing a `reset()` on a non-empty
-store; a rebuild showing `events` rows surviving with remapped keys. Council
-verifies. Only on green does Phase 1 open.
+store; a rebuild showing `events` rows surviving with remapped keys. Run the
+council. On green, continue into Phase 1 without pausing.
 
 ---
 
@@ -94,7 +142,9 @@ verifies. Only on green does Phase 1 open.
   cannot hold, with the sentences.** No model needed — only reading.
 - This decides whether 2,594 events are a foundation or a sample.
 
-**1C — GATE.** Emit both reports. Two results change the plan directly:
+**1C — GATE.** Emit both reports, run the council, and continue into Phase 2 on
+green. Two results change the plan directly, and you act on them yourself
+rather than asking:
 - **Oracle E1–E4 pass** → Personality is a retrieval problem, no extraction is
   owed, and ~42,500 words leave the build list. **E1–E4 fail** → a chunking
   defect, still not a missing table.
@@ -116,7 +166,8 @@ Oracle F1–F2 measure it.
 - PREMISE: oracle F1/F2 failed at 1A (i.e. retrieval does not already serve
   these). IF REFUTED: no extraction owed — halt and record.
 
-**2C — GATE.** Emit oracle A- and F-group re-runs showing the change.
+**2C — GATE.** Emit oracle A- and F-group re-runs showing the change. Council,
+then continue into Phase 3 on green.
 
 ---
 
@@ -130,7 +181,7 @@ characters.
 - **3A** widen `abilities` to all 146 characters, with an explicit "no
   abilities" for those that genuinely have none.
 - **3B** extract mechanics, not just names.
-- **3C — GATE.**
+- **3C — GATE.** Council, then continue into Phase 4 on green.
 
 ---
 
@@ -146,7 +197,8 @@ today and exist to size the gap.
 - **4A** model intervals (state, start arc, end arc, source quote).
 - **4B** populate from infobox facts carrying "(Former)" markers and from
   synopsis prose.
-- **4C — GATE.** Oracle B-group re-run; B1 and B2 must move.
+- **4C — GATE.** Oracle B-group re-run; B1 and B2 must move. Council, then
+  continue into Phase 5 (or close it, per its premise) on green.
 
 ---
 
@@ -180,9 +232,19 @@ corpus should not be replicated across seven.
 
 ## Standing rules (all phases)
 
-- Council pass at each GATE; **DB-verify every council claim before recording
-  it.** Advisors assert things that are wrong — one "verified" that half the
-  codebase was missing, having read a stale worktree.
+- **Run continuously to the end of Phase 6.** Do not pause between phases, do
+  not ask for approval to advance, do not stop to report progress. The only
+  reasons to stop are the seven halt conditions above and the completion of
+  Phase 6.
+- **Council pass at the close of every phase**, before advancing — 5 advisors,
+  then anonymised peer review, then synthesis, run serially since only one
+  sub-agent runs at a time. **DB-verify every council claim before recording
+  it.** Advisors assert things that are wrong: one recently "verified" that
+  half the codebase was missing, having read a stale worktree. A council claim
+  that fails verification is struck, with the correction noted.
+- **Write each council to `reports/comprehension/COUNCIL_<phase>.md` and commit
+  it with that phase's work.** The council is evidence, not a conversation —
+  if it is not on disk it did not happen.
 - Bulk extraction runs on the local model. The reviewer takes verification and
   the oracle. A 24k batch is ~4 orders of magnitude beyond reviewer quota.
 - Standing gates stay green: `pytest`, `eval jjk` 24/24, `canon-run opm`
