@@ -69,18 +69,14 @@ def story_arc_index(store: FactStore) -> dict[str, int]:
     return index
 
 
-def match_arc(store: FactStore, value: str | None) -> str | None:
-    """Match an arc reference to the arc page the wiki actually has.
+def _match_arc_value(pages: dict[str, str], value: str | None) -> str | None:
+    """The arc-reference shapes against a precomputed `{arc-lower: arc page}` table.
 
-    The `arc` fact names the arc with or without its `Arc` suffix, and a
-    double-arc event page writes both ("Culling Game Arc Shinjuku Showdown
-    Arc"). Each shape is a lookup, not a guess: the value, the value with the
-    suffix stripped, the value with the suffix added, and the first arc the
-    value names when it names several.
+    Split from `match_arc` so a caller that matches many values (the section
+    signal) pays for the `arc_pages` read once, not per value.
     """
     if not value:
         return None
-    pages = {a.lower(): a for a in chronology.arc_pages(store)}
     v = value.lower().strip()
     if v in pages:
         return pages[v]
@@ -95,6 +91,69 @@ def match_arc(store: FactStore, value: str | None) -> str | None:
             if candidate in pages:
                 return pages[candidate]
     return None
+
+
+def match_arc(store: FactStore, value: str | None) -> str | None:
+    """Match an arc reference to the arc page the wiki actually has.
+
+    The `arc` fact names the arc with or without its `Arc` suffix, and a
+    double-arc event page writes both ("Culling Game Arc Shinjuku Showdown
+    Arc"). Each shape is a lookup, not a guess: the value, the value with the
+    suffix stripped, the value with the suffix added, and the first arc the
+    value names when it names several.
+    """
+    return _match_arc_value(
+        {a.lower(): a for a in chronology.arc_pages(store)}, value
+    )
+
+
+def section_arc_index(store: FactStore) -> dict[int, tuple[int, str]]:
+    """section_id -> (the story-axis index of the arc the section is named for,
+    the section's owning page, lowercased).
+
+    A character or synopsis page files its per-arc prose under sections titled
+    after the arc ("Culling Game Arc"). The section *is* the placement: an event
+    stated in that section sits in that arc even when the page itself is off the
+    story chain (a character's own page is not on it). Resolved through the live
+    `sections` table by id and the owning page is returned so the backfill can
+    guard: a section only places the events it actually belongs to. A dangling or
+    reused id -- a re-crawl that renumbered the section table -- yields no row and
+    so no placement. That is a miss, never a wrong arc, because the wiki filed no
+    placement there and none is invented.
+    """
+    index = story_arc_index(store)
+    pages = {a.lower(): a for a in chronology.arc_pages(store)}
+    out: dict[int, tuple[int, str]] = {}
+    rows = store.connection.execute(
+        "SELECT s.id, s.title, d.title AS page FROM sections s"
+        " JOIN documents d ON d.id = s.document_id"
+        " WHERE s.title IS NOT NULL AND TRIM(s.title) <> ''"
+    )
+    for row in rows:
+        arc = _match_arc_value(pages, row["title"].strip())
+        if arc is None:
+            continue
+        pos = index.get(arc.lower())
+        if pos is None:
+            continue
+        out[row["id"]] = (pos, (row["page"] or "").lower())
+    return out
+
+
+def _supplementary_pages(store: FactStore) -> list[str]:
+    """The chapter and episode pages, which file themselves under an arc.
+
+    `placement_pages` is the prose-weight-ordered arc/event/battle set, where a
+    wiki states what happened. A chapter or episode page states it too and
+    carries its own `arc` fact, but it is not a placement type, so the axis
+    walks these separately and applies the same `arc_fact`/`chapters` signals
+    rather than leaving their events off the axis for want of a page-type match.
+    """
+    rows = store.connection.execute(
+        "SELECT title FROM documents"
+        " WHERE LOWER(page_type) IN ('chapter', 'episode')"
+    )
+    return [row["title"] for row in rows]
 
 
 def _chapter_numbers(value: str | None) -> list[int]:
@@ -175,11 +234,13 @@ def placement_time_axis(store: FactStore) -> dict[str, PlacementAxis]:
     The page-level signal, not the section's: an event is stored under the page
     that stated it, and that page's place on the axis is what orders it. The
     cheap signals run in the plan's order and stop at the first that reaches.
+    The walk covers the placement pages plus the chapter/episode pages, which
+    file themselves under an arc but are not placement types.
     """
     index = story_arc_index(store)
     chapter_map = chapter_arc_index(store)
     arc_set = {a.lower() for a in chronology.arc_pages(store)}
-    pages = placement_pages(store)
+    pages = placement_pages(store) + _supplementary_pages(store)
     facts = _placement_facts(store, pages)
 
     out: dict[str, PlacementAxis] = {}
@@ -225,18 +286,31 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
         store.connection.commit()
 
     axis = placement_time_axis(store)
-    page_index = {page: placed.index for page, placed in axis.items()}
+    page_index = {page.lower(): placed.index for page, placed in axis.items()}
+    section_map = section_arc_index(store)
     tally = {"arc_page": 0, "arc_fact": 0, "chapters": 0, "residue": 0}
     for placed in axis.values():
         tally[placed.signal] += 1
 
-    for page in {
-        row["arc_key"]
-        for row in store.connection.execute("SELECT DISTINCT arc_key FROM events")
-    }:
+    # The section signal refines the page signal: an event stated in a section the
+    # wiki named for an arc sits in that arc even when the page is off the story
+    # chain. Guarded by the section's owning page (the backfill only applies it to
+    # an event whose page the section actually belongs to), so a dangling or
+    # reused section id -- a renumbering re-crawl -- misses, never misplaces.
+    for pair in store.connection.execute(
+        "SELECT DISTINCT arc_key, section_id FROM events WHERE arc_key IS NOT NULL"
+    ):
+        page = pair["arc_key"]
+        section_id = pair["section_id"]
+        page_lower = page.lower()
+        index = page_index.get(page_lower)
+        section = section_map.get(section_id) if section_id is not None else None
+        if section is not None and section[1] == page_lower:
+            index = section[0]
         store.connection.execute(
-            "UPDATE events SET arc_index = ? WHERE arc_key = ? COLLATE NOCASE",
-            (page_index.get(page), page),
+            "UPDATE events SET arc_index = ?"
+            " WHERE arc_key = ? COLLATE NOCASE AND section_id IS ?",
+            (index, page, section_id),
         )
     store.connection.commit()
     tally["pages"] = len(axis)

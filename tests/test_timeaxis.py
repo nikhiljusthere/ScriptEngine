@@ -137,34 +137,101 @@ class TestEventsInStoryOrder:
         assert all(r["subject_name"] == "Yuji Itadori" for r in rows)
 
 
-class TestBackfill:
-    def test_backfill_places_every_row(self, jjk_store):
-        tally = timeaxis.backfill_event_arc_index(jjk_store)
-        assert tally["rows"] > 0
-        # A row may sit off the axis only if it is atemporal (temporal=0: a
-        # standing state the axis cannot order) or it is filed under a residue
-        # page the cheap signals did not reach. Every temporal row is placed.
-        # Temporality, not page provenance, is what decides: corpus pages whose
-        # events the axis cannot order are stored atemporal, so they are the
-        # expected off-axis set, not a leak.
-        residue = [
-            page
-            for page, placed in timeaxis.placement_time_axis(jjk_store).items()
-            if placed.signal == "residue"
-        ]
+class TestSectionArcIndex:
+    def test_only_on_chain_arc_sections_resolve(self, jjk_store):
+        # A section places events only when its title names an arc the wiki has
+        # AND that arc is on the story chain; everything else resolves to nothing.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        assert section_map, "at least one section is named for an on-chain arc"
+
+    def test_section_index_agrees_with_the_arc_page(self, jjk_store):
+        # A section titled for an arc lands on the same axis position as the arc
+        # page itself: the section and the page that names the arc cannot diverge.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        index = timeaxis.story_arc_index(jjk_store)
         connection = jjk_store.connection
-        null_rows = connection.execute(
-            "SELECT COUNT(*) FROM events WHERE arc_index IS NULL"
+        for sid, (pos, _page) in section_map.items():
+            title = connection.execute(
+                "SELECT title FROM sections WHERE id = ?", (sid,)
+            ).fetchone()["title"]
+            arc = timeaxis.match_arc(jjk_store, title.strip())
+            assert arc is not None
+            assert index[arc.lower()] == pos
+
+    def test_non_arc_section_does_not_place(self, jjk_store):
+        # A section the wiki did not name for an arc ("Plot Details", "Summary",
+        # "History") carries no placement of its own and stays out of the map.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        generic = {"plot details", "summary", "synopsis", "overview", "history", "plot"}
+        connection = jjk_store.connection
+        for sid, _ in section_map.items():
+            title = connection.execute(
+                "SELECT title FROM sections WHERE id = ?", (sid,)
+            ).fetchone()["title"]
+            assert title.strip().lower() not in generic
+
+
+class TestBackfill:
+    def test_total_rows_are_intact(self, jjk_store):
+        # The backfill re-derives placement; it must never add or drop a row.
+        tally = timeaxis.backfill_event_arc_index(jjk_store)
+        rows = jjk_store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+        assert tally["rows"] == rows
+
+    def test_temporal_rows_are_placed(self, jjk_store):
+        # The invariant a continuity check depends on: a row that states an order
+        # (temporal=1) carries an arc_index, so it can be ordered canonically. A
+        # row that states no order may sit off the axis; a row that does, may not.
+        timeaxis.backfill_event_arc_index(jjk_store)
+        dangling = jjk_store.connection.execute(
+            "SELECT COUNT(*) FROM events WHERE temporal = 1 AND arc_index IS NULL"
         ).fetchone()[0]
-        if residue:
-            placeholders = ",".join("?" * len(residue))
-            allowed_off = connection.execute(
-                f"SELECT COUNT(*) FROM events "
-                f"WHERE temporal = 0 OR arc_key IN ({placeholders})",
-                residue,
+        assert dangling == 0
+
+    def test_section_signal_recovers_the_arc_named_rows(self, jjk_store):
+        # The ledger: 995 events sit under arc-named sections on off-chain pages
+        # (mostly character/synopsis). The section signal places exactly those.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        timeaxis.backfill_event_arc_index(jjk_store)
+        connection = jjk_store.connection
+        placed = 0
+        for sid, (pos, page) in section_map.items():
+            placed += connection.execute(
+                "SELECT COUNT(*) FROM events WHERE section_id = ? AND arc_key = ?"
+                " COLLATE NOCASE AND arc_index = ?",
+                (sid, page, pos),
             ).fetchone()[0]
-        else:
-            allowed_off = connection.execute(
-                "SELECT COUNT(*) FROM events WHERE temporal = 0"
+        assert placed == 995
+
+    def test_arc_named_section_places_its_events(self, jjk_store):
+        # An event stated in a section the wiki named for an on-chain arc sits in
+        # that arc even when the owning page (a character) is off the story chain.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        timeaxis.backfill_event_arc_index(jjk_store)
+        connection = jjk_store.connection
+        checked = 0
+        for sid, (pos, page) in section_map.items():
+            for row in connection.execute(
+                "SELECT arc_index FROM events WHERE section_id = ? AND arc_key = ?"
+                " COLLATE NOCASE",
+                (sid, page),
+            ):
+                assert row["arc_index"] == pos
+                checked += 1
+        assert checked > 0
+
+    def test_section_guard_requires_the_owning_page(self, jjk_store):
+        # A section only places the events on its own page. An event that carries
+        # the section id from a *different* page is left to the page signal and
+        # never given the section's arc -- the guard that keeps a dangling or
+        # reused id (a renumbering re-crawl) a miss, not a wrong arc.
+        section_map = timeaxis.section_arc_index(jjk_store)
+        timeaxis.backfill_event_arc_index(jjk_store)
+        connection = jjk_store.connection
+        for sid, (pos, page) in section_map.items():
+            foreign = connection.execute(
+                "SELECT COUNT(*) FROM events WHERE section_id = ? AND arc_key <> ?"
+                " COLLATE NOCASE AND arc_index = ?",
+                (sid, page, pos),
             ).fetchone()[0]
-        assert null_rows == allowed_off
+            assert foreign == 0

@@ -164,20 +164,72 @@ asserts off-axis rows are *justified by temporality* — `arc_index IS NULL` ==
 invariant (a lost temporal row still fails it), not a tautology.
 
 **Known hazards / follow-ups (queued, not resolved here).**
-- *Placement-signal gap (the continuity-check placement pass):* extend
-  `backfill_event_arc_index` to also map by **section heading** (995 rows) and
-  by **in-text `Chapter`/`Episode` citation** (~209 more), registering the
-  corpus pages that carry them on the axis. A rescue that only writes
-  `arc_index` is clobbered by the next gate run, so the corpus pages must be in
-  the placement axis, not just patched per-row.
-- *Re-index id-dangling (pre-existing, latent, amplified by 3b):* `reset()`
-  drops `nodes`+`sections` (reassigning rowids) but keeps `events`, whose PK
-  carries node/section ids with no FKs. A routine `index` after extraction would
-  dangle the 139 node + 838 section refs; the gate (groups by node-id pair)
-  would silently stop grouping. Currently clean (no re-index since extraction).
-  Fix: add FKs, or re-extract events after a reset. (Out of 3b's additive scope.)
+- *Placement-signal gap — RESOLVED* (the "Placement-signal fix (complete)" section
+  below). `backfill_event_arc_index` now maps by section heading (995) and
+  chapter/episode `arc` fact (885). The in-text `(Chapter N)` regex (sparser,
+  ~62/1,039) is deliberately **not** added — a documented residual, never a guess.
+- *Re-index id-dangling (pre-existing, now load-bearing but safe):* the section
+  signal resolves `section_id` through the live `sections` table with a document
+  guard, so a renumbering re-crawl that dangles or reuses an id degrades to a
+  **miss, never a wrong arc**. The FK is still absent (a re-crawl would dangle the
+  838 refs); the guard makes the consequence safe, but the queued FK / re-extract
+  fix stands.
 - *Scope-shrink check:* diff the pre/post-scope candidate sets to rule out a
   masked recall loss (the new scope replaced the old node-degree-2 scope).
+
+## Placement-signal fix (complete)
+
+The placement-key gap 3b flagged — the backfill mapped by **page** only, so the
+995 arc-named-section rows and the chapter/episode rows stayed off-axis — is now
+closed **in code** (`timeaxis.py`), not a data-UPDATE (which the next gate run
+would clobber). Two cheap, model-free signals, both reading only the wiki's own
+facts:
+
+1. **Section signal.** A character/synopsis page files its per-arc prose under
+   sections titled after the arc ("Culling Game Arc"). `section_arc_index` maps
+   `section_id → arc_index` by matching the section title to an on-chain arc page
+   (`match_arc` + `story_arc_index`), resolved through the live `sections` table
+   with a document guard (the section's owning page must be the event's page). A
+   dangling or reused id (a renumbering re-crawl) degrades to a **miss, never a
+   wrong arc** — which also makes the queued id-dangling hazard load-bearing but
+   safe.
+2. **Chapter/episode page signal.** Those pages carry their own `arc` fact ("Chapter
+   0-1 → Cursed Child Arc"); the axis now walks them (they are not placement types),
+   placing their events by the same `arc_fact`/`chapters` signals trusted for
+   placement pages.
+
+The backfill places per **(page, section)**: the section index refines the page
+index. Measured on JJK:
+
+| | before | after |
+|---|---|---|
+| `arc_index IS NULL` | 2,034 | **154** |
+| section signal placed | — | 995 |
+| chapter/episode page signal placed | — | 885 |
+| placement-page rows preserved | 714 | 714/714 |
+| `temporal=1 AND arc_index IS NULL` | 0 | 0 |
+| cross-page disagreements | 38 | **107** |
+
+The **154 residual** is not placeable by a cheap verifiable signal: 116 sit under
+generic headings on character/synopsis/location/technique pages (no arc the wiki
+names), 38 are chapter pages filed under an arc **off the story chain** (a real
+arc, but no orderable position). Forcing them would manufacture misplacements;
+NULL is the correct answer. Owner of the 116: the continuity-check consumer.
+
+**The 38 → 107 disagreement jump is the fix working, not a regression.** The
+cross-page check ignores `arc_index IS NULL`, so before the fix a group filed as
+`{NULL, 6}` read as *agreeing*; placing the 1,880 rows surfaces the wiki's genuine
+cross-arc filings (a scattered arc-pair distribution — (7,8), (6,7), (3,6), (0,8)…
+— with real quotes like "Aoi arrived" filed under Fearsome Womb / Kyoto / Shibuya
+/ Shinjuku). Not a systematic off-by-one, which would show one dominant arc pair.
+
+**Test re-derivation (deliberate, non-tautological).** `test_backfill_places_every_row`
+is replaced by pinned invariants: the 995 section-placed count, the
+`temporal=1 ⇒ arc_index` rule, a section-index-agrees-with-the-arc-page check, and
+negative tests (a non-arc section places nothing; a section only places its own
+page's events — the document guard). Full suite 1,168 → 1,175 (+7, all green).
+
+Record: `COUNCIL_placement-signal.md` (5 advisors + 5 peer reviews + verified ledger).
 
 ## Commands
 
