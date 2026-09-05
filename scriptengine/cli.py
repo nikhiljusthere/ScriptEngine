@@ -545,6 +545,98 @@ def relations(
 
 
 @app.command()
+def events(
+    series: str = typer.Option(..., "--series"),
+    arc: str = typer.Option("Shibuya Incident", "--arc"),
+    seed_phase1: bool = typer.Option(
+        False,
+        "--seed-phase1",
+        help="Gate and store the hand-written Phase-1 batch for this arc.",
+    ),
+) -> None:
+    """Placed, time-ranked events an arc's article states as events.
+
+    A relation says how two characters stand to each other; an event says what
+    happened and where on the arc's time axis, which is what a script's beat
+    order needs. Rows carry the clause they came from verbatim and both ends
+    must resolve to nodes this wiki actually has. `--seed-phase1` stores the
+    hand-written door-test batch; without it the command reports what is
+    stored and under which prompt and revision.
+    """
+    from scriptengine.ingest.events import (
+        PHASE1_ARC,
+        PHASE1_ROWS,
+        seed_phase1_rows,
+        validate_phase1_rows,
+    )
+    from scriptengine.stores.facts import FactStore
+
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with FactStore(paths.facts_db) as store:
+        if seed_phase1:
+            if arc != PHASE1_ARC:
+                console.print(
+                    f"[red]The Phase-1 batch is hand-written for {PHASE1_ARC!r};"
+                    f" --arc {arc!r} has no batch to seed.[/red]"
+                )
+                raise typer.Exit(code=1)
+            stored, findings = seed_phase1_rows(store)
+            if findings:
+                console.print(f"[red]Phase-1 batch did not pass its gates:[/red]")
+                for finding in findings:
+                    console.print(f"  [red]{finding}[/red]")
+                raise typer.Exit(code=1)
+            console.print(
+                f"[green]Stored {stored} of {len(PHASE1_ROWS)} Phase-1 events for"
+                f" {arc!r} (model hand-written).[/green]"
+            )
+            return
+
+        state = store.event_state(arc)
+        if state is None:
+            findings = validate_phase1_rows(store)
+            console.print(f"No events stored for {arc!r} in {series}.")
+            if findings:
+                console.print(f"[yellow]Phase-1 batch fails its gates:[/yellow]")
+                for finding in findings:
+                    console.print(f"  [yellow]{finding}[/yellow]")
+            else:
+                console.print(
+                    f"[dim]The Phase-1 batch ({len(PHASE1_ROWS)} rows) passes its"
+                    " gates. Store it with --seed-phase1.[/dim]"
+                )
+            return
+
+        table = Table(title=f"Events stored: {arc} ({series})")
+        table.add_column("model")
+        table.add_column("prompt")
+        table.add_column("revid")
+        table.add_row(
+            state["model"], state["prompt_version"], str(state["revid"] if state["revid"] is not None else "-")
+        )
+        console.print(table)
+
+        rows = store.events_of(arc)
+        placed = [row for row in rows if row["temporal"]]
+        console.print(
+            f"[dim]{len(rows)} rows, {len(placed)} on the time axis"
+            f" ({len(rows) - len(placed)} standing state).[/dim]"
+        )
+        for row in rows:
+            when = (
+                f"t={row['time_rank']:g}" if row["temporal"] else "state"
+            )
+            console.print(
+                f"  [dim]{when:9}[/dim] {row['subject_name']} [bold]{row['verb']}[/bold]"
+                f" {row['object_name']}"
+            )
+
+
+@app.command()
 def link(
     series: str = typer.Option(..., "--series"),
     limit: int = typer.Option(0, "--limit", help="Read only the first N pages."),

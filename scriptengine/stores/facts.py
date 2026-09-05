@@ -1028,6 +1028,114 @@ class FactStore:
         )
         self.connection.commit()
 
+    def ensure_events(self) -> None:
+        """Create the extracted-events table if this store predates it.
+
+        Survives `reset()` for the same reason `relations` does: a placed
+        event is local inference an `index` run must not throw away.
+
+        Keyed on (subject, verb, object, section, time_rank): the same pair
+        meets twice on one page (Sukuna fights Jogo in the station and again
+        outside it) and each meeting is a separate event at a separate place
+        on the arc's time axis. `time_rank` is the event's position on that
+        axis -- lower is earlier, fractions allowed within a section;
+        `temporal=0` marks a standing state (or an off-axis event, like a
+        death that predates the arc) the axis cannot place.
+        """
+        self.connection.execute(
+            "CREATE TABLE IF NOT EXISTS events ("
+            " subject_node INTEGER, subject_name TEXT, object_node INTEGER,"
+            " object_name TEXT, verb TEXT, arc_key TEXT, section_id INTEGER,"
+            " quote TEXT, temporal INTEGER, time_rank REAL,"
+            " revid INTEGER, prompt_version TEXT, model TEXT, extracted_at TEXT,"
+            " PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank))"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS events_by_arc"
+            " ON events (arc_key COLLATE NOCASE)"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS events_by_subject"
+            " ON events (subject_node)"
+        )
+        self.connection.commit()
+
+    def events_of(self, arc_key: str) -> list[sqlite3.Row]:
+        """Placed events for one arc, in time-axis order. A keyed lookup."""
+        try:
+            return self.connection.execute(
+                "SELECT subject_node, subject_name, object_node, object_name,"
+                "        verb, section_id, quote, temporal, time_rank"
+                " FROM events WHERE arc_key = ? COLLATE NOCASE"
+                " ORDER BY time_rank",
+                (arc_key,),
+            ).fetchall()
+        except sqlite3.OperationalError:
+            # A store built before events existed. Nothing is extracted in it,
+            # which is a complete answer.
+            return []
+
+    def event_state(self, arc_key: str) -> sqlite3.Row | None:
+        """What prompt and revision this arc's events were read under."""
+        try:
+            return self.connection.execute(
+                "SELECT revid, prompt_version, model FROM events"
+                " WHERE arc_key = ? COLLATE NOCASE LIMIT 1",
+                (arc_key,),
+            ).fetchone()
+        except sqlite3.OperationalError:
+            return None
+
+    def save_events(
+        self,
+        arc_key: str,
+        found: Sequence[dict[str, Any]],
+        revid: int | None,
+        prompt_version: str,
+        model: str,
+    ) -> int:
+        """Replace everything stored for one arc, in one transaction.
+
+        Replaced rather than merged, exactly as `save_relations` is: a re-run
+        under a new prompt is the whole answer for that arc.
+        """
+        stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        self.connection.execute(
+            "DELETE FROM events WHERE arc_key = ? COLLATE NOCASE", (arc_key,)
+        )
+        self.connection.executemany(
+            "INSERT OR REPLACE INTO events"
+            " (subject_node, subject_name, object_node, object_name, verb,"
+            "  arc_key, section_id, quote, temporal, time_rank, revid,"
+            "  prompt_version, model, extracted_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            [
+                (
+                    int(row["subject_node"]),
+                    str(row["subject_name"]).strip(),
+                    int(row["object_node"]),
+                    str(row["object_name"]).strip(),
+                    str(row["verb"]).strip().lower(),
+                    arc_key,
+                    int(row["section_id"]),
+                    str(row.get("quote") or "").strip()[:400],
+                    1 if row.get("temporal", True) else 0,
+                    float(row["time_rank"]),
+                    revid,
+                    prompt_version,
+                    model,
+                    stamp,
+                )
+                for row in found
+                if row.get("subject_node") and row.get("object_node") and row.get("verb")
+            ],
+        )
+        self.connection.commit()
+        return self.connection.execute(
+            "SELECT COUNT(*) FROM events WHERE arc_key = ? COLLATE NOCASE",
+            (arc_key,),
+        ).fetchone()[0]
+
     def semantics_of(self, title: str) -> dict[str, Any] | None:
         """The stored classification for one page, or ``None``.
 

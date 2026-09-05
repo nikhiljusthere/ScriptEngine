@@ -21,6 +21,7 @@ how wikis work, not how Jujutsu Kaisen works.
 
 from __future__ import annotations
 
+import os
 import re
 import sqlite3
 from dataclasses import dataclass, field
@@ -70,6 +71,17 @@ _PAGE_PROSE_SECTIONS = {"summary", "synopsis"}
 # the usage chapters behind them. Character pages are excluded on purpose: a
 # biography is not a beat, and an event links dozens of them.
 NEIGHBOUR_TYPES = {"battle", "event", "story_arcs", "arc", "technique"}
+
+
+def events_order_enabled() -> bool:
+    """Whether beats are reordered onto the extracted events' time axis.
+
+    Read on every call, so a process serving both paths can flip the door
+    test without a restart. Off by default: the reorder is under test and
+    the narrative path's default behaviour must not move until the gates
+    have passed (comprehension build, Phase 1).
+    """
+    return os.environ.get("SCRIPTENGINE_EVENTS_ORDER", "0") == "1"
 
 # Words that carry no information about what a script wants to hear about.
 _QUERY_STOPWORDS = {
@@ -349,6 +361,17 @@ class NarrativeRetriever:
             for order, beat in enumerate(narrative.beats, start=1):
                 beat.order = order
 
+        # The article's section order is organized by stage, not by the
+        # story's clock: the 10:01 C Tower beat is written before 9:22
+        # Shibuya Station. Where the arc carries extracted events, their time
+        # axis orders the beats, and a section that carries none inherits the
+        # last placed position, so a Prologue still reads first and an
+        # Aftermath still reads last.
+        if events_order_enabled() and len(narrative.beats) >= 2:
+            narrative.beats = self._reorder_by_events(narrative.beats)
+            for order, beat in enumerate(narrative.beats, start=1):
+                beat.order = order
+
         return narrative
 
     def authored_floor(self, subject: str, max_beats: int) -> list[Beat]:
@@ -388,6 +411,60 @@ class NarrativeRetriever:
         beat.citations = [locator.render() for locator in found]
         beat.source_span = cite.span(found)
         return beat
+
+    def _reorder_by_events(self, beats: list[Beat]) -> list[Beat]:
+        """Reorder the subject page's beats onto the extracted events' time axis.
+
+        The subject's own page always leads the stream (its sections come
+        first, and the multi-page fallback and the neighbour stream only ever
+        append), so its beats are the first document in the list. Only those
+        are reordered: the neighbour beats are a separate stream of related
+        pages whose order the events do not cover, and they keep their
+        relative order behind the reordered page. A beat's section carries the
+        event with the earliest `time_rank` in that section, and a section
+        with no event inherits the rank of the last section that had one, so
+        an unranked Prologue stays first and an unranked Aftermath stays last.
+        Beats keep their `order` until `timeline` renumbers them.
+        """
+        if len(beats) < 2:
+            return beats
+        doc_title = beats[0].doc_title
+        events = self.store.events_of(doc_title)
+        if not events:
+            return beats
+        section_rank: dict[int, float] = {}
+        for event in events:
+            if not event["temporal"]:
+                continue
+            rank = float(event["time_rank"])
+            section_id = int(event["section_id"])
+            if section_id not in section_rank or rank < section_rank[section_id]:
+                section_rank[section_id] = rank
+        if not section_rank:
+            return beats
+        # Section id -> the beat that is that section, by the section's title.
+        title_to_section: dict[str, int] = {}
+        for section in self.store.document_sections(doc_title):
+            title_to_section.setdefault(
+                str(section["title"]).strip(), int(section["id"])
+            )
+
+        main = [beat for beat in beats if beat.doc_title == doc_title]
+        others = [beat for beat in beats if beat.doc_title != doc_title]
+
+        # Walk the page's beats in article order, carrying the last seen rank
+        # forward so unranked sections inherit position rather than sorting
+        # to the end.
+        last_rank = float("-inf")
+        keys: list[tuple[float, int]] = []
+        for index, beat in enumerate(main):
+            section_id = title_to_section.get(beat.title.strip())
+            rank = section_rank.get(section_id) if section_id is not None else None
+            if rank is not None:
+                last_rank = rank
+            keys.append((last_rank, index))
+        reordered = [main[index] for _, index in sorted(keys)]
+        return reordered + others
 
     def _beats_from_page(self, title: str, max_beats: int) -> list[Beat]:
         """A page's own sections, in the order the article presents them."""

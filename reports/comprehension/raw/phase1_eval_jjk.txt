@@ -1,0 +1,24 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 23029.77it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 22373.72it/s]
+     Retrieval eval: jjk      
+┏━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ kind      ┃ passed ┃ score ┃
+┡━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ alias     │    2/2 │  100% │
+│ fact      │    6/6 │  100% │
+│ lexical   │    3/3 │  100% │
+│ multihop  │    3/3 │  100% │
+│ narrative │    2/2 │  100% │
+│ roster    │    2/2 │  100% │
+│ semantic  │    5/5 │  100% │
+│ sourcing  │    1/1 │  100% │
+└───────────┴────────┴───────┘
+
+24/24 (100%)   report: /home/goblin/ScriptEngine/series/jjk/audit/eval.json
+Exception ignored in: <function QdrantClient.__del__ at 0x7a5f81102b60>
+Traceback (most recent call last):
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 169, in __del__
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 178, in close
+  File "/home/goblin/ScriptEngine/scriptengine/.venv/lib/python3.12/site-packages/qdrant_client/local/qdrant_local.py", line 108, in close
+ImportError: sys.meta_path is None, Python is likely shutting down
