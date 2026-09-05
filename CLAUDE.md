@@ -133,10 +133,17 @@ re-crawling.
     Restart the API with `SCRIPTENGINE_DEVICE=cpu setsid nohup … < /dev/null &`.
      CPU page-runs are slow (cross-encoder ~14s/question): a 150-question batch
      takes ~35 min, so kick it off detached and poll rather than blocking.
-   - **Coverage is a live artifact, not a sentence.** No document states what is
-     next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
-     which `tools/coverage_report.py` regenerates (never hand-edited). Run it
-     after every batch commit.
+- **Coverage is a live artifact, not a sentence.** No document states what is
+      next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
+      which `tools/coverage_report.py` regenerates (never hand-edited). Run it
+      after every batch commit.
+- **Council reviews run 5 advisors (then 5 peer reviewers) in parallel.** A single
+  message spawns all five sub-agents at once and it works well: independence is
+  preserved because every sub-agent starts with a fresh context and never sees the
+  other responses. This is council-only — it does NOT extend the parallelism to
+  other sequential work (e.g. a closure loop), which still runs one sub-agent at a
+  time. (Recorded in the `llm-council` skill; the passes that use it live in
+  `reports/comprehension/`.)
 
 ## Layout
 

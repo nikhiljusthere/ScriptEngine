@@ -74,6 +74,19 @@ BOILERPLATE_SECTIONS = {
 }
 
 
+def effective_boilerplate_sections(overrides: dict | None = None) -> set[str]:
+    """The section titles a wiki treats as boilerplate.
+
+    A wiki may promote engine-default boilerplate to content: JJK's `References`
+    section carries trivia the span-recall oracle must reach (it is deliberately
+    in the oracle's scope, so the chunker has to index it too). The override's
+    `content_sections` are subtracted from the global set; the 555 empty JJK
+    References still die in the `word_count == 0` guard, so no empty chunk forms.
+    """
+    extra = ((overrides or {}).get("content_sections") or [])
+    return BOILERPLATE_SECTIONS - {title.strip().lower() for title in extra}
+
+
 @dataclass
 class Chunk:
     level: int
@@ -263,6 +276,7 @@ def chunk_page(
     target_words: int = 350,
     overlap_words: int = 60,
     min_words: int = 20,
+    boilerplate: set[str] | None = None,
 ) -> list[Chunk]:
     """Produce every chunk for one page, in document order.
 
@@ -290,7 +304,8 @@ def chunk_page(
         ordinal += 1
 
     for index, section in enumerate(page.sections):
-        if section.title.strip().lower() in BOILERPLATE_SECTIONS:
+        skip = boilerplate if boilerplate is not None else BOILERPLATE_SECTIONS
+        if section.title.strip().lower() in skip:
             continue
         # G15 (2026-08-27): the old `word_count < min_words` floor silently
         # dropped whole factual sections -- Kaito Yuki's 19-word Personality

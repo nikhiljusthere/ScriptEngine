@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 from scriptengine.index.chunker import (
+    BOILERPLATE_SECTIONS,
     chunk_page,
+    effective_boilerplate_sections,
     embeddable,
     render_document_card,
     split_passage,
@@ -154,6 +156,32 @@ class TestChunkPage:
             section("Appearance", "Todo is tall. " * 30),
         ])
         assert {c.breadcrumb for c in chunk_page(page) if c.level == 1} == {"Appearance"}
+
+    def test_effective_set_subtracts_overridden_content_sections(self):
+        # JJK promotes `References` from boilerplate to content (its per-chapter
+        # trivia must be reachable), so the override subtracts it from the skip
+        # set; other boilerplate stays skipped.
+        assert "references" in BOILERPLATE_SECTIONS
+        assert "references" in effective_boilerplate_sections(None)
+        assert "references" not in effective_boilerplate_sections(
+            {"content_sections": ["References"]}
+        )
+        assert "navigation" in effective_boilerplate_sections(
+            {"content_sections": ["references"]}
+        )
+
+    def test_a_nonempty_references_section_is_chunked_when_promoted(self):
+        # D5: with the override the section is content; by default it is dropped.
+        # An empty `References` dies in the `word_count == 0` guard either way.
+        page = make_page(sections=[
+            section("References", "The chapter's name references a Bobobo cameo. " * 3),
+            section("Appearance", "Todo is tall. " * 30),
+        ])
+        assert {c.breadcrumb for c in chunk_page(page) if c.level == 1} == {"Appearance"}
+        promoted = effective_boilerplate_sections({"content_sections": ["references"]})
+        assert {
+            c.breadcrumb for c in chunk_page(page, boilerplate=promoted) if c.level == 1
+        } == {"References", "Appearance"}
 
     def test_a_short_factual_section_is_chunked_not_dropped(self):
         # G15 (2026-08-27): the old 20-word floor silently dropped whole

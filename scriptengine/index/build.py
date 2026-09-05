@@ -14,7 +14,12 @@ import logging
 from typing import Any, Callable, Iterable
 
 from scriptengine.config import Settings, SeriesPaths, get_settings, load_overrides
-from scriptengine.index.chunker import Chunk, chunk_page, embeddable
+from scriptengine.index.chunker import (
+    Chunk,
+    chunk_page,
+    effective_boilerplate_sections,
+    embeddable,
+)
 from scriptengine.ingest.canon import (
     discounted_works,
     keep_sections,
@@ -94,7 +99,13 @@ def build_index(
 
     with FactStore(paths.facts_db) as store:
         store.reset()
-        chunks_by_page = _load_documents(store, pages, progress, works, dropped)
+        # A wiki can promote engine-default boilerplate to content (JJK's
+        # `References` carries trivia the span-recall oracle must reach), so the
+        # chunker skips the wiki's effective set, not just the global one.
+        boilerplate = effective_boilerplate_sections(load_overrides(paths))
+        chunks_by_page = _load_documents(
+            store, pages, progress, works, dropped, boilerplate
+        )
         _load_graph(store, pages, progress, dropped)
         chunk_rows = _load_chunks(store, pages, chunks_by_page, progress)
         store.rebuild_fts()
@@ -128,6 +139,7 @@ def _load_documents(
     progress: Progress | None,
     works: tuple[str, ...] = (),
     dropped: set[str] | None = None,
+    boilerplate: set[str] | None = None,
 ) -> dict[str, list[Chunk]]:
     """Insert documents and sections, and chunk each page."""
     chunks_by_page: dict[str, list[Chunk]] = {}
@@ -174,7 +186,7 @@ def _load_documents(
                 word_count=section.word_count,
             )
 
-        chunks_by_page[page.title] = chunk_page(page)
+        chunks_by_page[page.title] = chunk_page(page, boilerplate=boilerplate)
 
         if progress and index % 100 == 0:
             progress("documents", index + 1, len(pages))

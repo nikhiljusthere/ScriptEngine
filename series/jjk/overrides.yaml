@@ -3,6 +3,17 @@
 # The only place a wiki-specific decision may live. If a fix names a series and
 # sits in a .py file, it is in the wrong place: the next wiki breaks.
 
+# Section titles this wiki treats as *content* even though the engine's default
+# boilerplate set skips them. JJK writes its per-chapter trivia under a
+# `References` heading (e.g. `Chapter 239 / References` notes the Bobobo-bo
+# Bo-bobo and Dragon Ball cameos). The span-recall oracle deliberately counts
+# those lines as reachable, so the chunker must index them too; without this,
+# the two non-empty chapter-References lines on the whole wiki (both on
+# `Chapter 239`) were the only unreachable prose left. The 555 empty
+# `References` sections still die in the chunker's `word_count == 0` guard.
+content_sections:
+  - references
+
 # Which works this wiki's citations distinguish between.
 #
 # `Jujutsu Kaisen: Modulo` is a sequel, and its chapters are numbered from 1
