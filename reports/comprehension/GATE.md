@@ -72,10 +72,16 @@ acceptance set (the plan's twenty failures) is meant to pin down.
 
 | gate | baseline | gate |
 |---|---|---|
-| pytest | 1152 passed | 1163 passed (+11 gate tests) |
+| pytest | 1152 passed | **1,194 passed** (2026-09-05, post continuity-check scaffold) |
 | eval jjk | 24/24 | 24/24 |
-| span-recall jjk | 48,570/48,572 (2 misses, rc=2) | 48,570/48,572 (2 misses, rc=2) |
+| span-recall jjk | 48,570/48,572 (2 misses, rc=2) | **48,572/48,572 (0 misses, rc=0)** |
 | canon-run opm | 10/16 · 236/236 · 79.0% | 10/16 · 236/236 · 79.0% |
+
+The two historical span-recall misses are now excluded as link-list boilerplate
+(52 such sentences are excluded by default; `--include-boilerplate` audits
+them), so the gate reads 100% / rc=0. 2026-09-05 re-run after the
+continuity-check scaffold: all four gates green (`:8000` on CPU per the
+CUDA-first device rule — Qwen holds the GPU and cannot be freed).
 
 The gate is reachable only from `comprehension-gate` and `gate.py`; nothing on a
 default retrieval path touches it, so the gates are structurally unaffected and
@@ -231,10 +237,56 @@ page's events — the document guard). Full suite 1,168 → 1,175 (+7, all green
 
 Record: `COUNCIL_placement-signal.md` (5 advisors + 5 peer reviews + verified ledger).
 
+## Continuity-check scaffold (D6 consumer, shipped)
+
+The placement-signal fix named an owner of the 116 generic-heading rows above:
+the continuity-check consumer. This section is that consumer, shipped as a
+scaffold — a **validation layer, not a rejector**. A gap is a *flag, not a
+verdict*: it names a beat that references an event out of order (three arcs
+early, or a filing two arcs off the wiki's own cross-page majority) and leaves
+the flashback/recap call to the writer. Model-free. Design record:
+`COUNCIL_continuity-check.md`.
+
+Ships with: `scriptengine/ingest/continuity.py` (`adjudicated_arc`, `beat_gap`,
+`walk_monotonicity`, `knowledge_frontier`, `triage_filings`, `run_gold`);
+`scriptengine/eval/gold_continuity.json` (frozen top-20 draw of the 31
+interaction-verb filings); the `continuity` CLI door; 19 tests. Full suite
+1,175 → 1,194 (+19, all green); `test_gold_hygiene` now skips non-question gold
+sets (the `cases` schema is not a `questions` bank).
+
+**Measured on JJK (post placement-signal fix).** The 107 cross-arc filings
+triage as: **26 adjacent** (span=1 boundary straddle, not anachronisms),
+**50 state-verb** (arrived 30 + departed 20 — a coarse `(verb, participant)`
+keying problem, not a wiki contradiction), **31 interaction-verb** (fought 12 +
+saved 10 + killed 5 + awakened 4). The 31 is the anachronism core, split
+**9 premature + 22 delayed** (0 both). The plan's "twenty real failures"
+bouncer passes either-direction (31 ≥ 20); the literal what-X-knew subset is
+the 9 premature — an honest thin signal, recorded, not rephased away. 62
+filings are `modeling_problem` (group ≥4, majority <0.8) — recorded, not
+auto-fixed. Span histogram: 1:26, 2:17, 3:8, 4:5, 5:10, 6:11, 7:17, 8:13.
+Knowledge frontier: Yuji Itadori → 386 events ≤ arc 7 (298 ≤ arc 6; 447 total).
+The frozen gold set holds 20/20 against the live store.
+
+**Non-circular by construction.** The "actual" arc a gap is measured against is
+the wiki's own cross-page majority filing — a corpus truth, independent of the
+`events.arc_index` axis under test (`chapter_arc_index` reads the `facts`
+table, timeaxis.py:183). A re-index that silently moved an event breaks a gold
+case and is caught by `tests/test_continuity.py`.
+
+**Hazards / hand-off.** The 50 state-verb and 26 adjacent filings are excluded
+from the core (keying + boundary straddles, not anachronisms). The 116
+generic-heading placement residual is owned by this consumer's **write-layer
+(D6)** — not yet built. The real *script-line* harvest is deferred:
+`scripts output/` is thin (no per-beat `sourced:` headers yet), so the gold set
+is corpus-derived (the 31 filings), not harvested script lines.
+
 ## Commands
 
 ```
 python -m scriptengine.cli comprehension-gate --series jjk
 python -m scriptengine.cli comprehension-gate --series jjk --only-problems
 python -m scriptengine.cli comprehension-gate --series jjk --limit 10
+python -m scriptengine.cli continuity --series jjk --triage
+python -m scriptengine.cli continuity --series jjk --subject "Yuji Itadori" --upto 7 --limit 6
+python -m scriptengine.cli continuity --series jjk --no-gold --triage
 ```

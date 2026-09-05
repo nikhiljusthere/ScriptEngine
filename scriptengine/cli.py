@@ -872,6 +872,89 @@ def comprehension_gate(
         )
 
 
+@app.command("continuity")
+def continuity(
+    series: str = typer.Option(..., "--series"),
+    subject: str = typer.Option("", "--subject", help="Knowledge-frontier subject."),
+    upto: int = typer.Option(
+        -1, "--upto", help="Frontier: show events the subject took part in at or before this arc index."
+    ),
+    show_triage: bool = typer.Option(
+        False, "--triage", help="Print the cross-arc triage (classes + gap histogram)."
+    ),
+    run_gold: bool = typer.Option(
+        True, "--gold/--no-gold", help="Run the frozen continuity gold set (default)."
+    ),
+    limit: int = typer.Option(0, "--limit", help="Show at most N rows (0 = all)."),
+) -> None:
+    """The continuity-check scaffold: the D6-consumer, validation layer.
+
+    A gap is a flag, not a verdict: it names a beat that references an event
+    out of order -- three arcs early, or a filing two arcs off the wiki's own
+    cross-page majority -- and leaves the flashback/recap call to the writer.
+    Model-free. Design record: reports/comprehension/COUNCIL_continuity-check.md.
+    """
+    import json
+    import pathlib
+
+    from scriptengine.ingest import continuity as continuity_mod
+    from scriptengine.stores.facts import FactStore
+
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with FactStore(paths.facts_db) as store:
+        if subject:
+            if upto < 0:
+                console.print("[red]--subject needs --upto N.[/red]")
+                raise typer.Exit(code=1)
+            frontier = continuity_mod.knowledge_frontier(store, subject, upto)
+            console.print(f"[bold]Knowledge frontier: {subject}, at or before arc {upto}[/bold]")
+            console.print(
+                f"  [dim]{len(frontier)} event(s) the subject took part in on or before that arc.[/dim]"
+            )
+            for row in (frontier[:limit] if limit else frontier):
+                console.print(
+                    f"  [dim]arc {row['arc_index']}[/dim] {row['subject_name']} "
+                    f"[bold]{row['verb']}[/bold] {row['object_name']}"
+                )
+
+        if show_triage:
+            triage = continuity_mod.triage_filings(store)
+            classes = triage["classes"]
+            console.print("\n[bold]Cross-arc triage[/bold]")
+            console.print(
+                f"  [dim]{triage['total']} filings:[/dim] {classes['adjacent']} adjacent"
+                f" (boundary straddle), {classes['state_verb']} state-verb (coarse keying),"
+                f" [bold]{classes['interaction_verb']} interaction-verb.[/bold]"
+            )
+            console.print(
+                f"  [dim]anachronism core (gap>=2): {triage['anachronism_core']}"
+                f" ([bold]{len(triage['premature'])} premature[/bold] + "
+                f"{len(triage['delayed'])} delayed); "
+                f"the 'what-X-knew' subset is the {len(triage['premature'])} premature.[/dim]"
+            )
+            console.print(f"  [dim]span histogram:[/dim] {triage['span_histogram']}")
+
+        if run_gold:
+            gold_path = pathlib.Path(__file__).with_name("eval") / "gold_continuity.json"
+            gold = json.loads(gold_path.read_text(encoding="utf-8"))
+            result = continuity_mod.run_gold(store, gold["cases"])
+            console.print("\n[bold]Continuity gold set[/bold]")
+            console.print(
+                f"  [dim]{result['held']}/{result['total']} frozen cases still hold against the"
+                f" live store ({result['broken']} broken).[/dim]"
+            )
+            for row in (result["cases"][:limit] if limit else result["cases"]):
+                mark = "[green]ok[/green]" if row["held"] else "[red]BROKEN[/red]"
+                console.print(
+                    f"  {mark} [bold]{row['verb']}[/bold] {' '.join(row['participants'])}"
+                    f" [dim]({row['direction']}; expected arc {row['expected_actual']})[/dim]"
+                )
+
+
 @app.command()
 def link(
     series: str = typer.Option(..., "--series"),

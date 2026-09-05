@@ -22,6 +22,12 @@ GOLD = sorted(Path("scriptengine/eval").glob("gold_*.json"))
 def _cases():
     for path in GOLD:
         data = json.loads(path.read_text(encoding="utf-8"))
+        # gold_continuity.json is a frozen set of cross-arc *filings*, not
+        # questions: its contract (a re-index must not move an adjudicated arc)
+        # is enforced by tests/test_continuity.py, not by this module's
+        # question-hygiene rules.
+        if "questions" not in data:
+            continue
         for question in data["questions"]:
             yield path.name, question
 
