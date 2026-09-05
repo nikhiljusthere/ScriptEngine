@@ -63,9 +63,14 @@ paste, never by prose.
 | **D3** | **Zero unfiled engine gaps**, and the red list is **not empty**. A corpus with no expected failures has not been probed. |
 | **D4** | A **held-out probe set**, authored by someone other than the executing agent, passes at a declared threshold. |
 | **D5** | **Line-level reachability** (§2a) is exhaustively measured and its miss file is empty. |
+| **D6** | **Comprehension** (§2b): a declared fraction of event-bearing lines carry a type, an arc index and a participant set, and the consistency checks return zero violations. |
 
-D4 and D5 are the load-bearing ones. D1–D3 are all measured by the party being
-scored.
+D4, D5 and D6 are the load-bearing ones. D1–D3 are all measured by the party
+being scored.
+
+**D5 and D6 are different layers and neither substitutes for the other.** D5
+certifies a line is *delivered*; D6 certifies something knows what it *means*.
+A corpus can pass D5 at 100% while placing every event in the wrong arc.
 
 **"100%" and "perfection" are retired as slogans** — but D5 gives the phrase a
 real referent for the first time. See below.
@@ -172,6 +177,114 @@ currently wired (`recall()` accepts `done`; the CLI never passes it).
 **So this is a job with an end, not a perpetual process.** Queue it, checkpoint,
 resume when the GPU frees. A "continuous loop" aimed at an infinite target
 random-walks; a finite sweep terminates.
+
+---
+
+## 2b. The comprehension layer — what "understanding" would require
+
+Reachability (§2a) certifies that a line is **delivered**. It says nothing about
+whether anything knows what the line *means*. Those are different layers, and
+the honest answer to "does the plan as written deliver understanding?" is **no** —
+reachability is a plumbing gate, and passing it at 100% is compatible with
+placing every event in the wrong arc.
+
+This is the same substitution the project has already made twice: `span-recall`
+was an indexing check wearing a retrieval name; reachability is a retrieval
+check wearing a comprehension name.
+
+### What exists today
+
+*Measured 2026-09-05.*
+
+| asset | state | verdict |
+|---|---|---|
+| `chronology.py` (608 lines) | walks arc `previous`/`next` as a linked list; deterministic, no model | **real, and the timeline spine** |
+| `relations` table | 821 rows, 136/146 characters, **6.0 per character**; **100%** carry a source quote, **36%** carry an `era` | real, thin, **social-only** |
+| `abilities` table | 594 rows | real, narrow |
+| `narrative.py` beat order | `_INSTALMENT` regex on the page title (`chapter|episode|volume|…`), then section order | ordering by instalment number, not by story time |
+| `semantics` table | **0 rows** | see the trap below |
+| `edges` | 35,026 rows, **28,483 (81%) are untyped `mentions`** | a concordance, not a graph |
+| temporal keys in `facts` | `arc` 431 · `date` 374 · `anime episode` 185, against 48,572 lines | **under 1% of the corpus knows when it happened** |
+
+### The trap: `semantics` being empty is not the gap
+
+It is tempting to read "0 rows" as "the comprehension layer was built and never
+switched on." It was not. `cli classify` is an **ability classifier by
+construction** — `ingest/classify.py:needs_classifying()` skips any page whose
+type is not in `semantics.ABILITY_TYPES` (`TECHNIQUE, TRANSFORMATION, POWER_UP,
+FUSION, TRAIT`). Fully populated, its ceiling is a few hundred rows of booleans
+about cursed techniques. **Filling that table would not tell you that a line is
+an event, or when it happened.**
+
+Note also that the `semantics` *module* is live and load-bearing — the router
+imports it and `semantic_type()` drives the story-type rule. But
+`semantic_type()` reads `documents.page_type` and the infobox `Class` field. It
+knows a page *is a character*; it does not know what a sentence *means*.
+
+### The actual gap
+
+**The relation vocabulary is entirely social** — family, ally, enemy, friend,
+mentor, rival. There is no predicate anywhere in the store for *X did Y at time
+Z*. Fights, deaths, awakenings, arrivals, betrayals — the events a script is
+made of — are stored only as prose, and prose is what reachability delivers
+without understanding.
+
+### The gate that makes this checkable
+
+The previous council relegated answerability to "a confidence interval, never a
+gate" because it quantifies over infinite phrasings. **That reasoning does not
+apply here.** You are not quantifying over phrasings; you are quantifying over
+**commitments**, and a line's commitments are finite and enumerable: an entity,
+a time, a relation, a state change.
+
+So the comprehension gate is not *correctness* (which needs gold) but
+**consistency** (which does not):
+
+- Does any served bundle place one event in **two different arcs**?
+- Does any extracted relation or event ship **without an `era`**?
+- Does any beat ordering **contradict an `anime episode` number already in
+  `facts`**?
+- Does any cross-page fact about an entity **disagree** with the same fact on
+  that entity's own page?
+
+Zero human judgment, zero agent-authored gold, ungameable, and currently
+unmeasured. Add it as **D6**.
+
+| # | Condition |
+|---|---|
+| **D6** | **Placement coverage and consistency.** A declared fraction of event-bearing lines carry a type, an arc index and a participant set; and the consistency checks above return zero violations. |
+
+### What to build
+
+`ingest/relations.py` is the working template and should be copied, not
+reinvented: a per-section LLM pass, cached on `revid`, emitting a **source
+quote** for provenance and an **`era`** for arc placement, with `--dry-run`.
+Its `_era_for` docstring is the model of honesty to follow — it records that
+"63 of 109 Jujutsu Kaisen rows sit under an arc-named section while only 28
+carried an era of their own."
+
+1. **`ingest/events.py`** — the missing predicate. Emit
+   `(subject, event, arc, section, quote)` over the pages already known
+   tractable. Same prompt shape, same cache, same dry-run.
+2. **Placement** — join event rows to `chronology.py`'s arc chain so every event
+   carries an **arc index**, not just an arc name. An index is orderable; a name
+   is not.
+3. **Cross-page attribution** — the 14,194 (entity, off-page section) pairs
+   (§2a). A fight lives on the opponent's page; a character's history is mostly
+   other characters' pages.
+
+Then the 28,483 untyped `mentions` edges stop being debt: each is a
+pre-located, pre-linked **candidate event awaiting a type**.
+
+> **What this unlocks, and why it is the real product.** Once every event
+> carries an arc index, you can ask what a character *knew at a given moment* —
+> and reject a script line where someone references an event three arcs early.
+> That is continuity checking, it is what "understanding" actually buys a script
+> writer, and it is deterministically testable.
+
+**Sequencing:** reachability (D5) and comprehension (D6) are independent and can
+run in parallel. Ship D5 first because it is finite and nearly done — but stop
+describing it as if it were D6.
 
 ---
 
