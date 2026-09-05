@@ -322,13 +322,30 @@ betrayed, saved, arrived, departed) and the row schema:
 where `temporal` is an explicit boolean, so a standing state is recorded *as*
 one rather than as a placement failure.
 
-**Step 3 — target extraction with the index you already have.** A chunk holding
-one entity is description; a chunk holding **two or more character nodes is an
-interaction** — an event candidate, already localised, already citable, already
-alias-resolved. Filter the 19,684 chunks on node degree ≥ 2 **and** a
-narrative-family heading. That collapses the target by an order of magnitude and
-costs nothing, because `chunk_nodes` already computed it. **Per-section, gated —
-not per-line.** Per-line buys resolution nothing consumes.
+**Step 3 — target extraction with the index you already have, in two passes.**
+A chunk holding one entity is description; a chunk holding **two or more
+character nodes is an interaction** — an event candidate, already localised,
+already citable, already alias-resolved.
+
+- **3a — the placement set (proof of mechanism, cheap).** Page-type scoping to
+  `event` + `battle` + `story_arcs` (108 pages on JJK) is a valid, cheaper
+  operationalisation of this filter than a raw chunk sweep, and it is where the
+  container-gate problem (a battle/arc page standing in for its own
+  participants) is easiest to catch and fix. **Build and prove the gate here
+  first** — it is a fraction of the corpus and surfaces the failure modes
+  cheaply.
+- **3b — widen to the full corpus (do not skip this).** Once the gate (§ below)
+  is proven on 3a, re-run extraction filtered on node degree ≥ 2 **and** a
+  narrative-family heading across **all 19,684 chunks**, not just the 108
+  placement pages. This specifically reaches character `Synopsis`/`History`
+  sections and chapter `Plot Details` — excluded from 3a — which is where most
+  of a character's own history actually lives (96–99.6% of what a corpus says
+  about a character sits **off** that character's own page; see §2a). Skipping
+  3b leaves D6 satisfied only for battles and arcs, not for characters, which
+  is the case the user asked for by name (a Yuji stat on Kenjaku's page).
+
+**Per-section, gated — not per-line**, in both passes. Per-line buys resolution
+nothing consumes.
 
 **Step 4 — build the time axis from the cheap signals first, model last.**
 - arc-named headings: **100% reliable** where present (207/207)
