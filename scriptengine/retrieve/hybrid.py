@@ -217,12 +217,25 @@ class HybridRetriever:
         #     out of the bundle unless the rank happened to surface the page.
         #     The phrasing-robustness requirement (2026-08-24) pays for those
         #     facts up front, the way the entity facts above are paid for.
-        from scriptengine.retrieve.roster import battle_facts
+        from scriptengine.retrieve.roster import battle_facts, battle_outcome
 
         battle = battle_facts(self.store, query)
         if battle and battle[0]["entity"] not in result.entities:
             result.facts = battle + result.facts
             result.entities.insert(0, battle[0]["entity"])
+        # 3c. The fallback for when the question names the fight by its fighters
+        #     ("Nanami's fight against Mahito", "the final battle against
+        #     Sukuna") rather than spelling the battle's full title: `battle_outcome`
+        #     resolves that to the one battle page whose sides name the fighters
+        #     and pays for its own infobox, so the fight's `Outcome` reaches the
+        #     bundle the same way. It runs only when the full-title match above
+        #     found nothing, and it returns empty unless it resolves to a single
+        #     fight, so it never surfaces a similar-but-wrong result.
+        if not battle:
+            outcome = battle_outcome(self.store, query)
+            if outcome and outcome[0]["entity"] not in result.entities:
+                result.facts = outcome + result.facts
+                result.entities.insert(0, outcome[0]["entity"])
         # Graph edges say X is linked to Y; they carry no words. The
         # LLM-extracted `relations` rows carry the verbatim `quote` and `era`
         # that actually answer "who is X to Y" / "what is the relationship

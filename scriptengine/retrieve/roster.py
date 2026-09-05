@@ -642,6 +642,141 @@ def battle_facts(store: FactStore, query: str) -> list[dict]:
     ]
 
 
+# "The final battle against Sukuna": one fighter plus an ordering word. That
+# fighter has several fights and "Sukuna is victorious." is the recorded outcome
+# of seven of them, so the ordering word is what picks the one the story ends
+# on -- the fight with the highest manga chapter, not the one that merely
+# shares a side. Without the word, no single fight is named and nothing is
+# bound rather than a guess is surfaced.
+_FINAL_BATTLE = re.compile(
+    r"\b(?:final|last|decisive|deciding|concluding|closing)\s+"
+    r"(?:\w+\s+){0,2}(?:battle|fight|duel|match|showdown|stand)\w*\b",
+    re.IGNORECASE,
+)
+
+_CHAPTER_NUMS = re.compile(r"\d+")
+# The infobox fields that name the two sides of a fight. Jujutsu Kaisen writes
+# `side1`/`side2`, One-Punch Man `combatant1`/`combatant2`, Bleach `forces1`;
+# the technique fields (`powers1`) are deliberately not matched, so a fighter's
+# technique named after another fighter cannot make a wrong page look like the
+# fight asked about.
+_SIDE_FACT_KEY = re.compile(r"^(side|combatant|forces|fighter|participant)")
+
+
+def asks_for_battle_outcome(query: str) -> bool:
+    """Whether the question asks how one fight ended rather than listing fights.
+
+    The inverse of `asks_for_battles_in`: that wants a fighter's whole fight
+    list, this wants the result of a single fight. "How did X's fight against Y
+    end", "who won", and "the result of the [final] battle" all ask for the
+    fight's own `Outcome` cell, which only the fight's page carries and is only
+    right bound to the specific fight named.
+    """
+    q = (query or "").lower()
+    if re.search(r"\bwho\s+(won|lost)\b", q):
+        return True
+    if re.search(r"\bresult\w*\b", q) and re.search(
+        r"\b(battle|fight|duel|match|confrontation|showdown|clash)\w*", q
+    ):
+        return True
+    return bool(re.search(
+        r"\b(?:how|what)\b.*\b(end\w*|conclud\w*|finish\w*|close\w*|wrap\w*"
+        r"|resolv\w*)\b",
+        q,
+    ))
+
+
+def _outcome_participants(query: str) -> list[str]:
+    """The fighter names an outcome question says, in the question's own words."""
+    return [word for word in content_words(query) if word not in _OUTCOME_PHRASING]
+
+
+def battle_outcome(store: FactStore, query: str) -> list[dict]:
+    """The named fight's own infobox facts, the `Outcome` cell among them.
+
+    `battle_facts` needs the query to spell the battle's full title; this one
+    resolves the question to the battle page whose sides name the fighters it
+    says and returns that page's infobox, so "Nanami's fight against Mahito"
+    reaches the same `Outcome` as "Kento Nanami vs. Mahito". A fighter with
+    several fights is resolved by the question's own words: a second named
+    fighter picks the one fight both share, the tightest roster winning so the
+    two-fighter `Kento Nanami vs. Mahito` beats `Yuji Itadori & Kento Nanami
+    vs. Mahito`; and "the final battle" takes the latest by manga chapter. A
+    question that resolves to no single fight returns nothing rather than a
+    similar-but-wrong outcome (Sukuna's win over Jogo for the sorcerers' final
+    battle).
+    """
+    if not asks_for_battle_outcome(query):
+        return []
+    participants = _outcome_participants(query)
+    if not participants:
+        return []
+    final = bool(_FINAL_BATTLE.search(query or ""))
+
+    candidates: list[tuple[int, int, int, str]] = []
+    best_score = 0
+    for row in store.connection.execute(
+        "SELECT d.title AS title, n.id AS node_id"
+        " FROM documents d"
+        " JOIN nodes n ON n.name = d.title COLLATE NOCASE"
+        " WHERE d.page_type LIKE '%battle%' COLLATE NOCASE"
+    ):
+        title = (row["title"] or "").strip()
+        if not title:
+            continue
+        side_values: list[str] = []
+        max_chapter = 0
+        for fact in store.connection.execute(
+            "SELECT key, value FROM facts WHERE node_id = ?", (row["node_id"],)
+        ):
+            key = (fact["key"] or "").lower()
+            value = fact["value"] or ""
+            if _SIDE_FACT_KEY.match(key):
+                side_values.append(value)
+            if "chapter" in key:
+                nums = [int(n) for n in _CHAPTER_NUMS.findall(value)]
+                if nums:
+                    max_chapter = max(max_chapter, max(nums))
+        side_text = _fold(title + " " + " ".join(side_values))
+        score = sum(
+            1 for word in participants if _fighter_match(_fold(word), side_text)
+        )
+        if score <= 0:
+            continue
+        candidates.append(
+            (score, max_chapter, len(content_words(" ".join(side_values))), title)
+        )
+        if score > best_score:
+            best_score = score
+
+    if not candidates:
+        return []
+    # Two named fighters: only a fight whose sides name both is the one asked
+    # about; a partial match is a different fight and its outcome is wrong.
+    if len(participants) >= 2 and best_score < len(participants):
+        return []
+    # One fighter and no ordering word: which of their fights is asked is not
+    # said, so no outcome is bound rather than a guess is surfaced.
+    if len(participants) == 1 and not final:
+        return []
+    winners = [c for c in candidates if c[0] == best_score]
+    if len(participants) == 1:
+        winners.sort(key=lambda c: (-c[1], c[3]))
+    else:
+        winners.sort(key=lambda c: (c[2], c[1], c[3]))
+    title = winners[0][3]
+    return [
+        {
+            "entity": title,
+            "key": fact["key"],
+            "label": fact["label"] or fact["key"],
+            "value": fact["value"],
+            "citation": fact["citation"],
+        }
+        for fact in store.facts_for(title)
+    ]
+
+
 # A question that asks for the *set* of fights a fighter was in, as opposed to
 # one named fight. "Every Fight Mahoraga Has Ever Been In" is the inverse of
 # `battle_named`: there the query names the battle and we read who fought; here
@@ -685,6 +820,28 @@ _RESULT_PHRASING = {
     "result", "results", "battle", "battles", "fight", "fights",
     "duel", "duels", "match", "matches", "fusion", "fusions",
     "won", "lost", "between", "versus", "against",
+}
+
+# The words an outcome question uses that name no fighter. A superset of
+# `_RESULT_PHRASING` (that one keys a fighter's own battle table, this one has no
+# table owner) plus the question words, the battle nouns the phrasing may use,
+# the words that say the fight ended, and the words that order one fighter's
+# fights against each other. `battle_facts` reaches a battle only when the query
+# spells its full title; the natural phrasing names the fighters instead and the
+# fight's page never links, so its `Outcome` cell stays out of the bundle unless
+# these are stripped off the question and the sides matched.
+_OUTCOME_PHRASING = _RESULT_PHRASING | {
+    "did", "does", "do", "was", "were", "is", "are", "been", "who", "whom",
+    "when", "where", "which", "have", "has", "had",
+    "confrontation", "showdown", "clash", "skirmish", "encounter", "bout",
+    "stand", "contest",
+    "end", "ended", "ending", "ends", "conclude", "concluded", "conclusion",
+    "concludes", "finish", "finished", "finishes", "wrap", "wrapped", "wraps",
+    "close", "closed", "closes", "resolved", "resolution",
+    "final", "last", "decisive", "deciding", "concluding", "closing",
+    "first", "second", "third",
+    "victory", "victories", "defeat", "defeats", "winner", "winners",
+    "loser", "losers", "outcome", "outcomes",
 }
 
 # A table column name. A `Result` cell that came back equal to a column name
