@@ -767,6 +767,83 @@ def time_axis(
             )
 
 
+@app.command("comprehension-gate")
+def comprehension_gate(
+    series: str = typer.Option(..., "--series"),
+    only_problems: bool = typer.Option(
+        False,
+        "--only-problems",
+        help="Show only the disagreements flagged as a modelling problem.",
+    ),
+    limit: int = typer.Option(
+        0, "--limit", help="Show at most this many disagreements (0 = all)."
+    ),
+) -> None:
+    """The comprehension gate: three mechanical checks, nothing to grade.
+
+    1. arc placement -- a temporal event's page must sit on the time axis; a
+       dangling one is recorded as a standing state (reported as a count).
+    2. cross-page agreement -- the same event, stated on several pages by
+       editors who did not write each other's pages, must carry one arc
+       placement. Every disagreement is printed in full, not a summary count.
+    3. coverage split -- the share of narrative beats carrying a surviving row,
+       temporal versus atemporal.
+    """
+    from scriptengine.ingest import gate
+    from scriptengine.stores.facts import FactStore
+
+    paths = series_paths(series)
+    if not paths.facts_db.exists():
+        console.print(f"[red]Series {series!r} is not indexed. Run `index` first.[/red]")
+        raise typer.Exit(code=1)
+
+    with FactStore(paths.facts_db) as store:
+        check3 = gate.enforce_arc_placement(store)
+        agreement = gate.cross_page_agreement(store)
+        coverage = gate.coverage_split(store)
+
+        console.print("[bold]Comprehension gate[/bold]")
+        console.print(
+            f"  [dim]arc placement:[/dim] {check3['flipped']} temporal row(s) had a dangling"
+            " placement and were recorded as standing states."
+        )
+
+        s = agreement["stats"]
+        console.print(
+            f"  [dim]cross-page:[/dim] {s['groups']} (verb, participant-pair) groups;"
+            f" {s['multi_page_groups']} from 2+ pages; {s['agreeing']} agree on one arc;"
+            f" [bold]{s['disagreeing']} disagree.[/bold]"
+        )
+
+        disagreements = agreement["disagreements"]
+        if only_problems:
+            disagreements = [d for d in disagreements if d["modeling_problem"]]
+        if limit:
+            disagreements = disagreements[:limit]
+        for d in disagreements:
+            flag = "  [red][modelling problem][/red]" if d["modeling_problem"] else ""
+            console.print(
+                f"\n  [bold]{d['verb']}[/bold] "
+                f"{' '.join(d['participants'])}{flag}"
+                f"[dim]  (span {d['arc_span']}, majority {d['majority_share']:.0%})[/dim]"
+            )
+            for row in d["rows"]:
+                arc = row["arc"] or "[unplaced]"
+                when = f"t={row['time_rank']:g}" if row["temporal"] else "state"
+                console.print(
+                    f"     [dim]{row['arc_key']:32} {arc:26} {when:9}[/dim] "
+                    f"{row['direction']}"
+                )
+                console.print(f"     [dim]       quote: {row['quote']!r}[/dim]")
+
+        c = coverage
+        console.print(
+            f"\n  [dim]coverage:[/dim] {c['beats']} narrative beats;"
+            f" {c['any']:.1%} carry a surviving row"
+            f" ({c['temporal']:.1%} temporal, {c['atemporal']:.1%} atemporal)."
+        )
+
+
 @app.command()
 def link(
     series: str = typer.Option(..., "--series"),
