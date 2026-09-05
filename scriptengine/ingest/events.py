@@ -32,6 +32,7 @@ from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings
 from scriptengine.ingest.abilities import _windows
+from scriptengine.ingest.verbatim import fold as _fold, quoted_in as _quoted_in
 from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
 
@@ -474,27 +475,6 @@ PHASE1_ROWS: list[dict[str, object]] = [
         "temporal": True,
     },
 ]
-
-
-def _fold(text: str) -> str:
-    """Lowercase and fold diacritics the way the passage's words would."""
-    import unicodedata
-
-    normalized = unicodedata.normalize("NFKD", text)
-    return "".join(c for c in normalized if not unicodedata.combining(c)).lower()
-
-
-def _quoted_in(quote: str, passage: str) -> bool:
-    """The passage really contains the clause, word for word.
-
-    Whitespace is normalised and diacritics folded, because a reflowed line
-    is still the clause. Nothing else is relaxed: this is the check that
-    stops a quote the section never says being stored as its evidence.
-    """
-    if len(quote.strip()) < 12:
-        return False
-    tidy = lambda s: re.sub(r"\s+", " ", _fold(s)).strip()
-    return tidy(quote) in tidy(passage)
 
 
 def _name_in(name: str, aliases: tuple[str, ...], passage: str) -> bool:

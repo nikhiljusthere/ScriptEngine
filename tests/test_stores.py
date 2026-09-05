@@ -4,8 +4,9 @@ from __future__ import annotations
 
 import pytest
 
+from scriptengine.index.chunker import sentence_content_hash
 from scriptengine.stores import lexical
-from scriptengine.stores.facts import FactStore
+from scriptengine.stores.facts import FactStore, ResetRefusedError
 
 
 @pytest.fixture()
@@ -385,10 +386,16 @@ class TestPagesPerSection:
 class TestEventsForeignKeys:
     """The events table is a child of the graph, so it dies with it."""
 
-    def _section(self, store, document_id):
+    # One section, shared by the remap tests: the text and the quote are the
+    # same pair `remap_derived` re-checks, so a row survives a rebuild only
+    # while the section still says what the row says.
+    SECTION_TEXT = "Aoi Todo arrived in the courtyard and faced the curse head on."
+    QUOTE = "Aoi Todo arrived in the courtyard"
+
+    def _section(self, store, document_id, text=SECTION_TEXT):
         return store.add_section(
             document_id=document_id, title="History", breadcrumb="History",
-            level=1, ordinal=0, text="It happened.", word_count=2,
+            level=1, ordinal=0, text=text, word_count=len(text.split()),
         )
 
     def _document(self, store, title):
@@ -396,16 +403,33 @@ class TestEventsForeignKeys:
             "SELECT id FROM documents WHERE title = ?", (title,)
         ).fetchone()[0]
 
-    def _save(self, store, todo, yuji, section_id, time_rank=1.0):
+    def _save(self, store, todo, yuji, section_id, time_rank=1.0, quote=QUOTE, revid=1):
         return store.save_events(
             "Test Arc",
             [{
                 "subject_node": todo, "subject_name": "Aoi Todo",
                 "object_node": yuji, "object_name": "Yuji Itadori",
                 "verb": "fights", "section_id": section_id, "time_rank": time_rank,
+                "quote": quote,
             }],
-            revid=1, prompt_version="test", model="test",
+            revid=revid, prompt_version="test", model="test",
         )
+
+    def _rebuild(self, store, revid=1, section_text=SECTION_TEXT, add_nodes=True):
+        """Re-run the base load after a reset: same doc / section /
+        participants, fresh ids. ``section_text`` lets a test move the
+        section's content under a parser fix."""
+        new_document_id = store.add_document(
+            title="Aoi Todo", url="", page_type="character",
+            infobox_template="Character Infobox", lead="Aoi Todo is a sorcerer.",
+            word_count=4, revid=revid, fetched_at="",
+        )
+        new_section_id = self._section(store, new_document_id, text=section_text)
+        nodes = {}
+        if add_nodes:
+            nodes["todo"] = store.add_node("Aoi Todo", "character", new_document_id)
+            nodes["yuji"] = store.add_node("Yuji Itadori", "character")
+        return new_document_id, new_section_id, nodes
 
     def test_a_fresh_table_references_nodes_and_sections(self, store):
         assert store.ensure_events() == 0
@@ -430,9 +454,11 @@ class TestEventsForeignKeys:
         )
 
     def test_reset_drops_the_events(self, populated):
-        # The rows are this build's local inference: a rebuild drops them and
-        # `events-extract` is the way back. The table itself comes back with
-        # the schema, FKs and all, so the unguarded readers keep working.
+        # A bare reset() drops the events table (returning its rows as a
+        # snapshot, for `remap_derived` to re-key onto a new build) and brings
+        # the table back with the schema, FKs and all, so the unguarded readers
+        # keep working. A real `index` rebuild (build_index) does the snapshot
+        # + remap, so the rows survive -- see the remap test below.
         store = populated["store"]
         section_id = self._section(store, self._document(store, "Aoi Todo"))
         assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
@@ -446,6 +472,395 @@ class TestEventsForeignKeys:
         ).fetchall()
         # and the next `ensure_events` sees an FK table and migrates nothing
         assert store.ensure_events() == 0
+
+    def test_require_rebuild_refuses_a_non_forced_rebuild(self, populated):
+        # The 0B guard: a non-forced rebuild is refused while `events` is
+        # non-empty, so a reflexive `index` never destroys the extraction pass.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+        with pytest.raises(ResetRefusedError):
+            store.require_rebuild()
+        # An empty derived layer passes the guard.
+        store.connection.execute("DELETE FROM events")
+        assert store.require_rebuild() is None
+
+    def test_a_forced_rebuild_remaps_the_events(self, populated):
+        # The 0C durable key: a rebuild renumbers the section/node ids, but the
+        # events' durable key (doc_title, section_ordinal, participant names)
+        # still resolves, so the row survives re-keyed onto the new graph.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        assert len(snapshot["events"]) == 1
+
+        # Simulate the rebuild: the same document / section / participants come
+        # back under fresh ids, the document's revid unchanged (not stale), and
+        # the section's text unchanged (verified).
+        _, new_section_id, nodes = self._rebuild(store)
+
+        report = store.remap_derived(snapshot)
+        assert report["events"] == {
+            "before": 1, "remapped": 1, "stale": 0, "orphaned": 0,
+            "unverified": 0,
+        }
+        row = store.connection.execute(
+            "SELECT section_id, subject_node, object_node,"
+            " subject_name, object_name FROM events"
+        ).fetchone()
+        assert row["section_id"] == new_section_id
+        assert row["subject_node"] == nodes["todo"]
+        assert row["object_node"] == nodes["yuji"]
+        assert row["subject_name"] == "Aoi Todo"
+        assert row["object_name"] == "Yuji Itadori"
+
+    def test_remap_drops_a_row_its_document_revid_changed(self, populated):
+        # The stale branch: the source document was re-crawled since the
+        # extraction, so its revid moved. The row's text no longer matches and
+        # it is dropped, not re-keyed onto a document it was never read from.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, revid=2)
+
+        report = store.remap_derived(snapshot)
+        assert report["events"] == {
+            "before": 1, "remapped": 0, "stale": 1, "orphaned": 0,
+            "unverified": 0,
+        }
+        assert store.connection.execute(
+            "SELECT COUNT(*) FROM events"
+        ).fetchone()[0] == 0
+
+    def test_a_null_revid_row_survives_a_rebuild(self, populated):
+        # The live shape: a crawl revid of 0 is stored as NULL, so every JJK
+        # row carries a NULL revid. The stale check must skip such a row --
+        # there is no recorded revid that could have moved, and the
+        # unverified check (the quote must still sit in the section) is what
+        # guards it. Without the NULL guard, the first forced rebuild after
+        # any re-crawl would mark the whole layer stale and wipe it.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(
+            store, populated["todo"], populated["yuji"], section_id, revid=None
+        ) == 1
+        assert (
+            store.connection.execute("SELECT revid FROM events").fetchone()[0]
+            is None
+        )
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, revid=2)
+
+        report = store.remap_derived(snapshot)
+        assert report["events"] == {
+            "before": 1, "remapped": 1, "stale": 0, "orphaned": 0,
+            "unverified": 0,
+        }
+
+    def test_remap_drops_a_row_whose_section_vanished(self, populated):
+        # The orphaned branch: the rebuild kept no "Aoi Todo" page at all, so
+        # the durable key (doc_title, section_ordinal) resolves to nothing and
+        # the row has nowhere to sit.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        # The rebuild dropped the page: a different document comes back instead.
+        other_document_id = store.add_document(
+            title="Sukuna", url="", page_type="character",
+            infobox_template="Character Infobox", lead="Sukuna is a curse.",
+            word_count=4, revid=1, fetched_at="",
+        )
+        self._section(store, other_document_id)
+
+        report = store.remap_derived(snapshot)
+        assert report["events"] == {
+            "before": 1, "remapped": 0, "stale": 0, "orphaned": 1,
+            "unverified": 0,
+        }
+        assert store.connection.execute(
+            "SELECT COUNT(*) FROM events"
+        ).fetchone()[0] == 0
+
+    def test_remap_drops_a_row_its_section_no_longer_says_it(self, populated):
+        # The unverified branch: the section resolved -- same doc, same
+        # ordinal, even the same revid -- but a parser fix moved its content,
+        # so the row's quote no longer occurs in it. Ordinals are assigned by
+        # enumeration, so this shift costs no revid change: the quote is the
+        # only thing that proves the row still belongs here. It does not, so
+        # the row is dropped for re-extraction, never re-attributed to text
+        # that does not say it.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, section_text="The battle raged through the night.")
+
+        report = store.remap_derived(snapshot)
+        assert report["events"] == {
+            "before": 1, "remapped": 0, "stale": 0, "orphaned": 0,
+            "unverified": 1,
+        }
+        assert store.connection.execute(
+            "SELECT COUNT(*) FROM events"
+        ).fetchone()[0] == 0
+
+    def test_remap_drops_a_row_with_no_quote(self, populated):
+        # A row stored without a verbatim quote cannot be re-verified against
+        # any section, so a rebuild drops it rather than guess its section.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(
+            store, populated["todo"], populated["yuji"], section_id, quote=""
+        ) == 1
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store)
+
+        report = store.remap_derived(snapshot)
+        assert report["events"]["unverified"] == 1
+        assert store.connection.execute(
+            "SELECT COUNT(*) FROM events"
+        ).fetchone()[0] == 0
+
+    def test_a_crashed_rebuild_recovers_the_rows_from_the_snapshot_file(self, populated):
+        # The crash-recovery path: a build that dies between `reset` (which has
+        # already dropped the derived tables) and the remap used to wipe the
+        # extraction rows for good. `reset` writes the snapshot to a file
+        # beside the database, and a re-run -- which finds the derived layers
+        # empty, so the guard lets it through, and whose own reset must not
+        # clobber the file -- recovers the rows from it.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+
+        store.require_rebuild(force=True)
+        store.reset()  # drops the tables, writes the snapshot file
+        # -- the build dies here; the base load and the remap never ran --
+
+        # The re-run: the guard passes on the empty layers, and its own reset
+        # must leave the crash snapshot in place.
+        store.require_rebuild()
+        store.reset()
+        assert store._snapshot_path().exists()
+
+        self._rebuild(store)
+        report = store.remap_derived()  # no in-memory snapshot: the file
+
+        assert report["events"] == {
+            "before": 1, "remapped": 1, "stale": 0, "orphaned": 0,
+            "unverified": 0,
+        }
+        assert not store._snapshot_path().exists()
+
+    def test_a_legacy_table_backfills_a_dangling_section(self, populated):
+        # D3: a pre-durable-key table carries a row whose section no longer
+        # resolves. The backfill must keep its NOT NULL columns honest through
+        # the dangling section (the COALESCE holds the defaults; a bare
+        # subquery would assign NULL, raise IntegrityError and block the
+        # rebuild), and hand the row to the FK migration, which drops it as
+        # orphaned -- the same fate its dangling ref already gave it.
+        store = populated["store"]
+        todo, yuji = populated["todo"], populated["yuji"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        store.connection.execute("DROP TABLE events")
+        store.connection.execute(
+            "CREATE TABLE events ("
+            " subject_node INTEGER, subject_name TEXT, object_node INTEGER,"
+            " object_name TEXT, verb TEXT, arc_key TEXT, section_id INTEGER,"
+            " quote TEXT, temporal INTEGER, time_rank REAL, arc_index INTEGER,"
+            " revid INTEGER, prompt_version TEXT, model TEXT, extracted_at TEXT,"
+            " PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank))"
+        )
+        for time_rank, section in ((1.0, section_id), (2.0, 999999)):
+            store.connection.execute(
+                "INSERT INTO events"
+                " (subject_node, subject_name, object_node, object_name, verb,"
+                "  arc_key, section_id, temporal, time_rank, revid, prompt_version,"
+                "  model, extracted_at)"
+                " VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, 1, 'test', 'test', '')",
+                (todo, "Aoi Todo", yuji, "Yuji Itadori", "fights",
+                 "Test Arc", section, time_rank),
+            )
+        assert store.ensure_events() == 1
+        row = store.connection.execute(
+            "SELECT section_id, doc_title, section_ordinal FROM events"
+        ).fetchone()
+        assert row["section_id"] == section_id
+        assert row["doc_title"] == "Aoi Todo"
+        assert row["section_ordinal"] == 0
+
+
+class TestMeaningRemap:
+    """The `meaning` layer is a child of the graph too: its durable key plus
+    the sentence's content hash carry it across a rebuild."""
+
+    TEXT = "Aoi Todo arrived in the courtyard. He faced the curse head on."
+    REVERSED = "He faced the curse head on. Aoi Todo arrived in the courtyard."
+
+    def _section(self, store, document_id, text=TEXT):
+        return store.add_section(
+            document_id=document_id, title="History", breadcrumb="History",
+            level=1, ordinal=0, text=text, word_count=len(text.split()),
+        )
+
+    def _document(self, store, title):
+        return store.connection.execute(
+            "SELECT id FROM documents WHERE title = ?", (title,)
+        ).fetchone()[0]
+
+    def _meaning(self, store, section_id, sentence_ordinal, sentence, revid=1):
+        store.connection.execute(
+            "INSERT INTO meaning (section_id, sentence_ordinal, content_hash,"
+            " class, is_event, participants, arc_index, chapter,"
+            " doc_title, section_ordinal, revid, prompt_version, model, extracted_at)"
+            " VALUES (?, ?, ?, 'trivia', 0, NULL, NULL, NULL,"
+            " 'Aoi Todo', 0, ?, 'test', 'test', '')",
+            (section_id, sentence_ordinal, sentence_content_hash(sentence), revid),
+        )
+
+    def _rebuild(self, store, revid=1, text=TEXT):
+        document_id = store.add_document(
+            title="Aoi Todo", url="", page_type="character",
+            infobox_template="Character Infobox", lead="Aoi Todo is a sorcerer.",
+            word_count=4, revid=revid, fetched_at="",
+        )
+        return self._section(store, document_id, text=text)
+
+    def test_a_forced_rebuild_remaps_a_meaning_row(self, populated):
+        # Unchanged section, unchanged revid: the sentence's hash sits at the
+        # same ordinal it was read from, so the row survives re-keyed.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        self._meaning(store, section_id, 1, "He faced the curse head on.")
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        assert len(snapshot["meaning"]) == 1
+        self._rebuild(store)
+
+        report = store.remap_derived(snapshot)
+        assert report["meaning"] == {
+            "before": 1, "remapped": 1, "stale": 0, "orphaned": 0,
+            "unverified": 0,
+        }
+        row = store.connection.execute(
+            "SELECT sentence_ordinal, content_hash FROM meaning"
+        ).fetchone()
+        assert row["sentence_ordinal"] == 1
+        assert row["content_hash"] == sentence_content_hash("He faced the curse head on.")
+
+    def test_remap_drops_a_meaning_row_its_document_revid_changed(self, populated):
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        self._meaning(store, section_id, 1, "He faced the curse head on.")
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, revid=2)
+
+        report = store.remap_derived(snapshot)
+        assert report["meaning"] == {
+            "before": 1, "remapped": 0, "stale": 1, "orphaned": 0,
+            "unverified": 0,
+        }
+
+    def test_remap_drops_a_meaning_row_whose_section_vanished(self, populated):
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        self._meaning(store, section_id, 1, "He faced the curse head on.")
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        other_document_id = store.add_document(
+            title="Sukuna", url="", page_type="character",
+            infobox_template="Character Infobox", lead="Sukuna is a curse.",
+            word_count=4, revid=1, fetched_at="",
+        )
+        self._section(store, other_document_id)
+
+        report = store.remap_derived(snapshot)
+        assert report["meaning"]["orphaned"] == 1
+
+    def test_remap_drops_a_meaning_row_its_sentence_moved(self, populated):
+        # The section's content changed, so the stored sentence's hash no
+        # longer occurs in it: the row is unverified and dropped for
+        # re-extraction, never re-anchored to text that no longer says it.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        self._meaning(store, section_id, 1, "He faced the curse head on.")
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, text="The battle raged through the night.")
+
+        report = store.remap_derived(snapshot)
+        assert report["meaning"] == {
+            "before": 1, "remapped": 0, "stale": 0, "orphaned": 0,
+            "unverified": 1,
+        }
+
+    def test_remap_rekeys_a_meaning_rows_sentence_ordinal(self, populated):
+        # The section's sentences were reflowed but this one survived: its
+        # ordinal follows the sentence (now first, where it was second), not
+        # the old number.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        self._meaning(store, section_id, 0, "Aoi Todo arrived in the courtyard.")
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, text=self.REVERSED)
+
+        report = store.remap_derived(snapshot)
+        assert report["meaning"]["remapped"] == 1
+        row = store.connection.execute(
+            "SELECT sentence_ordinal FROM meaning"
+        ).fetchone()
+        assert row["sentence_ordinal"] == 1
+
+    def test_remap_keeps_two_rows_for_a_sentence_that_appears_twice(self, populated):
+        # The section holds one sentence twice, so two rows share one content
+        # hash. An ordinal shift must keep BOTH rows (k-th stored row takes
+        # the k-th occurrence); the (section, ordinal) primary key would
+        # otherwise collapse them into one silently via INSERT OR REPLACE.
+        store = populated["store"]
+        duplicated = (
+            "He faced the curse head on. Aoi Todo arrived in the courtyard."
+            " He faced the curse head on."
+        )
+        section_id = self._section(
+            store, self._document(store, "Aoi Todo"), text=duplicated
+        )
+        self._meaning(store, section_id, 0, "He faced the curse head on.")
+        self._meaning(store, section_id, 2, "He faced the curse head on.")
+
+        store.require_rebuild(force=True)
+        snapshot = store.reset()
+        self._rebuild(store, text="The bell rang. " + duplicated)
+
+        report = store.remap_derived(snapshot)
+        assert report["meaning"] == {
+            "before": 2, "remapped": 2, "stale": 0, "orphaned": 0,
+            "unverified": 0,
+        }
+        rows = store.connection.execute(
+            "SELECT sentence_ordinal FROM meaning ORDER BY sentence_ordinal"
+        ).fetchall()
+        assert [r["sentence_ordinal"] for r in rows] == [1, 3]
 
     def test_a_pre_fk_table_migrates_dropping_dangling_rows(self, populated):
         # A store that predates the FKs: one row still resolvable, one whose

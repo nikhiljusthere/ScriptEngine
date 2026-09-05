@@ -1067,6 +1067,13 @@ def index(
     no_embed: bool = typer.Option(
         False, "--no-embed", help="Skip vectors. Facts, graph and BM25 still work."
     ),
+force: bool = typer.Option(
+        False, "--force",
+        help="Rebuild even though the derived model layers (events, meaning) "
+              "are non-empty. Their rows are remapped onto the rebuilt graph, "
+              "not wiped; stale, orphaned or unverified rows are dropped, "
+              "each counted and reported.",
+    ),
 ) -> None:
     """Build the fact store, graph, BM25 index and vectors."""
     import logging
@@ -1075,7 +1082,7 @@ def index(
     from rich.progress import TaskID
 
     from scriptengine.index.build import build_index, write_status
-    from scriptengine.stores.facts import FactStore
+    from scriptengine.stores.facts import ResetRefusedError
 
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s | %(levelname)-7s | %(message)s",
@@ -1083,15 +1090,6 @@ def index(
     )
 
     paths = series_paths(series)
-
-    with FactStore(paths.facts_db) as pre:
-        has_events = pre.connection.execute(
-            "SELECT name FROM sqlite_master WHERE name = 'events'"
-        ).fetchone()
-        events_before = (
-            pre.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
-            if has_events else 0
-        )
 
     with RichProgress(transient=True) as bar:
         tasks: dict[str, TaskID] = {}
@@ -1101,7 +1099,17 @@ def index(
                 tasks[stage] = bar.add_task(stage, total=total)
             bar.update(tasks[stage], completed=done, total=total)
 
-        report = build_index(paths, embed=not no_embed, progress=on_progress)
+        try:
+            report = build_index(
+                paths, embed=not no_embed, force=force, progress=on_progress
+            )
+        except ResetRefusedError as error:
+            console.print(f"[red]{error}[/red]")
+            console.print(
+                "[yellow]Pass --force to rebuild; the derived rows are remapped"
+                " onto the new graph, not wiped.[/yellow]"
+            )
+            raise typer.Exit(code=1)
 
     if "error" in report:
         console.print(f"[red]{report['error']}[/red]")
@@ -1118,17 +1126,34 @@ def index(
     console.print(table)
 
     console.print(f"\nStatus: {write_status(paths, report)}")
-    if events_before:
-        with FactStore(paths.facts_db) as post:
-            events_after = post.connection.execute(
-                "SELECT COUNT(*) FROM events").fetchone()[0]
-        if events_after < events_before:
+    remap = report.get("remap") or {}
+    lost = sum(
+        (remap.get(name) or {}).get(key, 0)
+        for name in ("events", "meaning")
+        for key in ("stale", "orphaned", "unverified")
+    )
+    for name in ("events", "meaning"):
+        stats_r = remap.get(name)
+        if not stats_r:
+            continue
+        dropped = (stats_r.get("stale") or 0) \
+            + (stats_r.get("orphaned") or 0) \
+            + (stats_r.get("unverified") or 0)
+        if dropped:
             console.print(
-                f"[yellow]{events_before - events_after} extracted events were"
-                " dropped with the rebuilt graph (the events table now"
-                " references it). Re-run `events-extract --scope all` to"
-                " repopulate.[/yellow]"
+                f"[yellow]{name}: {stats_r['remapped']:,} of "
+                f"{stats_r['before']:,} rows re-keyed onto the rebuilt graph;"
+                f" {stats_r['stale']:,} stale + {stats_r['orphaned']:,}"
+                f" orphaned + {stats_r['unverified']:,} unverified rows"
+                " dropped (an unverified row no longer matches its section's"
+                " text and is re-extracted, never misattributed).[/yellow]"
             )
+    if lost:
+        console.print(
+            f"[yellow]{lost} extracted rows could not be re-keyed onto the"
+            " rebuilt graph. Re-run the extraction pass (e.g."
+            " `events-extract --scope all`) to repopulate.[/yellow]"
+        )
     if no_embed:
         console.print(
             "[yellow]No vectors built. Lexical and graph retrieval work; "

@@ -19,6 +19,7 @@ whole hierarchy was inert.
 
 from __future__ import annotations
 
+import hashlib
 import re
 from dataclasses import dataclass, field
 
@@ -131,6 +132,21 @@ def split_sentences(text: str) -> list[str]:
         else:
             merged.append(part)
     return merged
+
+
+def sentence_content_hash(sentence: str) -> str:
+    """The stable identity of one sentence: the sha256 of exactly the text
+    `split_sentences` emits it as.
+
+    A section re-splits to the same set of sentence hashes only while its text
+    is unchanged, which is exactly the condition under which a stored
+    per-sentence row may be re-keyed onto the rebuilt section:
+    `FactStore.remap_derived` re-splits the target section and checks the
+    stored hash against it, so a parser fix that merges or reflows the
+    sentences fails the check and the row is dropped for re-extraction,
+    never re-anchored to text that no longer says what it said.
+    """
+    return hashlib.sha256((sentence or "").strip().encode("utf-8")).hexdigest()
 
 
 def _section_items(text: str) -> list[str]:

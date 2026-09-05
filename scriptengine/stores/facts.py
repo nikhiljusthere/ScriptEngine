@@ -21,7 +21,39 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from scriptengine.ingest.verbatim import quoted_in
+from scriptengine.index.chunker import sentence_content_hash, split_sentences
+
 SCHEMA_PATH = Path(__file__).with_name("schema.sql")
+
+# The frozen four-word semantic vocabulary for the per-line meaning index (R1).
+# A `CHECK` in the `meaning` table enforces it so a stored row can never carry
+# a class the pass does not emit. Deliberately a constant: the pass and the
+# store must agree on the words, and neither may drift.
+MEANING_CLASSES = ("event", "standing state", "trait", "trivia")
+
+# The `meaning` table's full DDL, shared by the fresh-create and the contract
+# migration so the two paths cannot diverge. Carries the durable key
+# (doc_title, section_ordinal, sentence_ordinal, content_hash) and the quality
+# contract: the class vocabulary CHECK and the `is_event` derivation CHECK.
+_MEANING_TABLE_DDL = (
+    "CREATE TABLE IF NOT EXISTS meaning ("
+    " section_id INTEGER NOT NULL REFERENCES sections(id)"
+    "   ON DELETE CASCADE,"
+    " sentence_ordinal INTEGER NOT NULL DEFAULT 0,"
+    " content_hash TEXT,"
+    " class TEXT CHECK (class IS NULL OR class IN"
+    "   ('event', 'standing state', 'trait', 'trivia')),"
+    " is_event INTEGER NOT NULL DEFAULT 0 CHECK (is_event ="
+    "   CASE WHEN class = 'event' AND arc_index IS NOT NULL"
+    "   THEN 1 ELSE 0 END),"
+    " participants TEXT, arc_index INTEGER, chapter TEXT,"
+    " doc_title TEXT NOT NULL DEFAULT '',"
+    " section_ordinal INTEGER NOT NULL DEFAULT 0,"
+    " revid INTEGER, prompt_version TEXT, model TEXT,"
+    " extracted_at TEXT,"
+    " PRIMARY KEY (section_id, sentence_ordinal))"
+)
 
 # Longest alias phrase considered when linking a query to entities. "Kyoto
 # Metropolitan Curse Technical College" is six words; beyond that the cost of
@@ -136,6 +168,13 @@ def _tail_pattern(leaf: str) -> re.Pattern[str]:
     )
 
 
+class ResetRefusedError(RuntimeError):
+    """A rebuild was refused because the derived model layers are non-empty and
+    the rebuild was not forced. See `FactStore.require_rebuild`. This is the
+    reset guard (0B): a reflexive `index` must never destroy an extraction
+    pass; an explicit `--force` rebuilds and remaps the rows instead of wiping."""
+
+
 class FactStore:
     """Read/write access to one series' `facts.db`."""
 
@@ -160,13 +199,62 @@ class FactStore:
         self.connection.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
         self.connection.commit()
 
-    def reset(self) -> None:
-        """Drop everything and recreate. Indexing is idempotent by rebuilding."""
+    def reset(self) -> dict[str, list[dict[str, Any]]]:
+        """Drop everything, recreate it, and return the derived layers' rows.
+
+        The two derived, model-built tables -- ``events`` and ``meaning`` --
+        are keyed on this build's ``nodes``/``sections`` ids, which a rebuild
+        renumbers, so a plain drop would orphan their rows. Before dropping,
+        their rows are snapshotted -- each carrying its durable key,
+        (doc_title, section_ordinal) plus the participant names for ``events``
+        and sentence_ordinal / content_hash for ``meaning`` -- and, when
+        non-empty, written to the crash-recovery file beside the database
+        (:meth:`_snapshot_path`). The in-memory snapshot is what a live build
+        hands back to :meth:`remap_derived` after the base tables are
+        repopulated, which re-keys each surviving row onto its new ids and
+        drops only what went stale (its document's ``revid`` changed),
+        orphaned (its section or node no longer exists) or unverified (the
+        section's content moved under a parser fix and no longer proves the
+        row). A build that dies between the drop and the remap recovers from
+        the file instead: the next run finds the derived layers empty, passes
+        the guard, and :meth:`remap_derived` -- called with no snapshot --
+        reads the file. The guard that stops a reflexive rebuild from ever
+        reaching this point lives in :meth:`require_rebuild`, not here.
+
+        Returns the snapshot (possibly empty); hand it to ``remap_derived``.
+        """
+        # Guarantee the durable-key columns exist and are backfilled before the
+        # snapshot, so a store that predates them can still be remapped. Only
+        # touch a derived table that actually exists: on a fresh store neither
+        # does, and its base tables (which the backfills read) do not yet.
+        snapshot: dict[str, list[dict[str, Any]]] = {}
+        for table in ("events", "meaning"):
+            exists = self.connection.execute(
+                "SELECT name FROM sqlite_master"
+                " WHERE type = 'table' AND name = ?", (table,)
+            ).fetchone()
+            if exists is None:
+                continue
+            (self.ensure_events if table == "events"
+             else self.ensure_meaning)()
+            snapshot[table] = [
+                dict(row) for row in self.connection.execute(
+                    f"SELECT * FROM {table}"
+                )
+            ]
+        # Written before the drop, so the file and the tables can never both
+        # be gone: a crash after the drop is exactly the case the file
+        # recovers. An empty snapshot never overwrites the file, because a
+        # re-run after a crash finds the derived layers already empty and
+        # must leave the recovery copy in place.
+        if any(snapshot.values()):
+            self._write_snapshot_file(snapshot)
         tables = [
-            # `events` first: it is the child of `nodes`/`sections` (its FKs),
-            # and an `index` rebuild invalidates it -- the rows reference this
-            # build's ids, so `events-extract` is the only way back.
+            # `events` + `meaning` drop with the base tables on every rebuild;
+            # the snapshot this method returns keeps their rows alive for
+            # `remap_derived` to re-key onto the new build's ids.
             "events",
+            "meaning",
             "chunk_nodes", "chunks_fts", "chunks", "facts", "edges",
             "aliases", "nodes", "categories", "emphasis", "sections",
             "documents", "meta",
@@ -175,6 +263,312 @@ class FactStore:
             self.connection.execute(f"DROP TABLE IF EXISTS {table}")
         self.connection.commit()
         self.initialise()
+        return snapshot
+
+    def _snapshot_path(self) -> Path:
+        """The crash-recovery copy of the last ``reset``'s snapshot.
+
+        A forced rebuild is a multi-minute base load between the drop and the
+        remap, so a death in that window used to wipe the extraction rows for
+        good. ``reset`` writes the file before dropping the derived tables
+        and :meth:`remap_derived` deletes it once the rows are back in the
+        new build; anything in between is recoverable.
+        """
+        return self.path.with_name(self.path.name + ".reset-snapshot")
+
+    def _write_snapshot_file(self, snapshot: dict[str, list[dict[str, Any]]]) -> None:
+        self._snapshot_path().write_text(
+            json.dumps(snapshot, ensure_ascii=False), encoding="utf-8"
+        )
+
+    def _read_snapshot_file(self) -> dict[str, list[dict[str, Any]]]:
+        path = self._snapshot_path()
+        if not path.exists():
+            return {}
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as error:
+            raise RuntimeError(
+                f"the reset snapshot {path.name} is unreadable ({error}); the "
+                "derived rows it holds cannot be remapped. Restore the file, "
+                "or delete it deliberately and re-extract, then re-run the "
+                "forced index"
+            ) from error
+
+    def _drop_snapshot_file(self) -> None:
+        self._snapshot_path().unlink(missing_ok=True)
+
+    def require_rebuild(self, *, force: bool = False) -> None:
+        """The reset guard (0B): refuse a rebuild while the derived model
+        layers are non-empty, unless ``force``.
+
+        ``build.py`` calls this before :meth:`reset`. A reflexive ``index``
+        must not destroy an extraction pass (the 24,000-sentence ``meaning``
+        one) -- that is the one failure that costs days. An explicit
+        ``--force`` rebuild is allowed; its rows are *remapped* onto the new
+        graph by :meth:`remap_derived`, not wiped, so even a forced rebuild
+        loses nothing that is stale, orphaned or unverified. Raises
+        :class:`ResetRefusedError` when the guard fires.
+        """
+        present = []
+        for table in ("events", "meaning"):
+            exists = self.connection.execute(
+                "SELECT name FROM sqlite_master"
+                " WHERE type = 'table' AND name = ?", (table,)
+            ).fetchone()
+            if exists is None:
+                continue
+            count = self.connection.execute(
+                f"SELECT COUNT(*) FROM {table}"
+            ).fetchone()[0]
+            if count:
+                present.append(f"`{table}` ({count:,} rows)")
+        if present and not force:
+            raise ResetRefusedError(
+                "refusing to rebuild: the derived model layers are non-empty"
+                f" -- {', '.join(present)}. A rebuild renumbers the section/"
+                "node ids their rows are keyed on. Pass --force to rebuild;"
+                " the rows are remapped onto the new graph, not wiped."
+            )
+
+    def remap_derived(
+        self, snapshot: dict[str, list[dict[str, Any]]] | None = None
+    ) -> dict[str, dict[str, int]]:
+        """Re-key a :meth:`reset` snapshot onto the freshly built tables.
+
+        Call this after the base tables (``documents`` / ``sections`` /
+        ``nodes``) have been repopulated by an ``index`` rebuild. For each
+        derived row its durable key is resolved to this build's new ids:
+
+        * ``events``: (doc_title, section_ordinal) -> the new ``section_id``;
+          ``subject_name`` / ``object_name`` -> the new ``subject_node`` /
+          ``object_node`` (via ``nodes.name``);
+        * ``meaning``: (doc_title, section_ordinal) -> the new ``section_id``,
+          and the ``sentence_ordinal`` follows the sentence itself, re-keyed
+          to where its ``content_hash`` now sits in the re-split section --
+          order-preservingly, the k-th stored copy of a sentence taking the
+          k-th occurrence, so identical sentences never collapse into one row.
+
+        A row is dropped, and counted, in three cases:
+
+        * *stale* -- its document's ``revid`` changed between the extract and
+          this build, so the text it was read from no longer matches;
+        * *orphaned* -- its section or a participant node no longer exists in
+          this build;
+        * *unverified* -- its section resolved but no longer proves the row:
+          an ordinal shift can re-key a row onto a different section with no
+          ``revid`` change at all (ordinals are assigned by enumeration after
+          the section filter, so a parser fix that adds or removes a section
+          shifts every later ordinal). The row is therefore re-checked
+          against the target section's own text with the same predicate the
+          extraction passes used to store it -- the quote for ``events``, the
+          sentence's ``content_hash`` for ``meaning`` -- and drops rather
+          than silently inheriting an attribution to text that does not say
+          it. A section that never changed passes both checks untouched. The
+           re-keyed rows are committed in a single transaction, all or
+           nothing: a crash mid-remap recovers the whole snapshot from the
+           file, never half of it.
+
+        When ``snapshot`` is not given (the crash-recovery path: a build that
+        died after :meth:`reset` and before the remap left the derived
+        layers empty, so the guard let this re-run through), the snapshot is
+        read from the crash-recovery file :meth:`reset` wrote, and the file
+        is deleted once the rows are back in the new build. Returns a
+        per-table report::
+
+            {"events":  {"before": n, "remapped": x, "stale": y,
+                         "orphaned": z, "unverified": w},
+             "meaning": {"before": n, "remapped": x, "stale": y,
+                         "orphaned": z, "unverified": w}}
+        """
+        report: dict[str, dict[str, int]] = {}
+        if not snapshot:
+            snapshot = self._read_snapshot_file()
+        if not snapshot:
+            return report
+
+        # (doc_title, section_ordinal) -> (new section_id, the doc's new revid).
+        section_key = {
+            (row[0], row[1]): (row[2], row[3])
+            for row in self.connection.execute(
+                "SELECT d.title, s.ordinal, s.id, d.revid"
+                " FROM sections s JOIN documents d ON s.document_id = d.id"
+            )
+        }
+        # The target sections' own text, for the unverified check: a row is
+        # re-anchored only while the section still says what the row says.
+        section_text = {
+            row[0]: row[1] or ""
+            for row in self.connection.execute("SELECT id, text FROM sections")
+        }
+        # node name (case-insensitive) -> new node id.
+        node_key = {
+            row[0].lower(): row[1]
+            for row in self.connection.execute("SELECT name, id FROM nodes")
+        }
+        # Per-section sentence identity, computed once per section and cached:
+        # the re-split set of sentence hashes a stored meaning row must sit in.
+        section_sentences: dict[int, list[str]] = {}
+        section_hashes: dict[int, list[str]] = {}
+
+        def sentences_of(section_id: int) -> list[str]:
+            if section_id not in section_sentences:
+                section_sentences[section_id] = split_sentences(
+                    section_text.get(section_id, "")
+                )
+            return section_sentences[section_id]
+
+        def hashes_of(section_id: int) -> list[str]:
+            if section_id not in section_hashes:
+                section_hashes[section_id] = [
+                    sentence_content_hash(s) for s in sentences_of(section_id)
+                ]
+            return section_hashes[section_id]
+
+        # ── events ─────────────────────────────────────────────────────────
+        events = snapshot.get("events")
+        if events:
+            stats = {"before": len(events), "remapped": 0, "stale": 0,
+                     "orphaned": 0, "unverified": 0}
+            rows = []
+            for row in events:
+                new_section, doc_revid = section_key.get(
+                    (row["doc_title"], row["section_ordinal"]), (None, None)
+                )
+                if new_section is None:
+                    stats["orphaned"] += 1
+                    continue
+                if row["revid"] is not None and doc_revid is not None \
+                        and row["revid"] != doc_revid:
+                    stats["stale"] += 1
+                    continue
+                new_subject = node_key.get((row["subject_name"] or "").lower())
+                new_object = node_key.get((row["object_name"] or "").lower())
+                if new_subject is None or new_object is None:
+                    stats["orphaned"] += 1
+                    continue
+                if not quoted_in(
+                    row["quote"] or "", section_text.get(new_section, "")
+                ):
+                    stats["unverified"] += 1
+                    continue
+                rows.append((
+                    new_subject, row["subject_name"],
+                    new_object, row["object_name"],
+                    row["verb"], row["arc_key"],
+                    new_section, row["quote"], row["temporal"], row["time_rank"],
+                    row["arc_index"], row["doc_title"], row["section_ordinal"],
+                    row["revid"], row["prompt_version"], row["model"],
+                    row["extracted_at"],
+                ))
+            self.connection.executemany(
+                "INSERT OR REPLACE INTO events"
+                " (subject_node, subject_name, object_node, object_name, verb,"
+                "  arc_key, section_id, quote, temporal, time_rank,"
+                "  arc_index, doc_title, section_ordinal,"
+                "  revid, prompt_version, model, extracted_at)"
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                rows,
+            )
+            stats["remapped"] = len(rows)
+            report["events"] = stats
+
+        # ── meaning ────────────────────────────────────────────────────────
+        meanings = snapshot.get("meaning")
+        if meanings:
+            stats = {"before": len(meanings), "remapped": 0, "stale": 0,
+                     "orphaned": 0, "unverified": 0}
+            # First pass: resolve each row's destination section and drop the
+            # stale, orphaned and unverified ones, exactly as the events pass.
+            survivors: list[tuple[dict[str, Any], int]] = []
+            for row in meanings:
+                new_section, doc_revid = section_key.get(
+                    (row["doc_title"], row["section_ordinal"]), (None, None)
+                )
+                if new_section is None:
+                    stats["orphaned"] += 1
+                    continue
+                if row["revid"] is not None and doc_revid is not None \
+                        and row["revid"] != doc_revid:
+                    stats["stale"] += 1
+                    continue
+                if not (row["content_hash"]
+                        and row["content_hash"] in hashes_of(new_section)):
+                    stats["unverified"] += 1
+                    continue
+                survivors.append((row, new_section))
+            # Second pass, per section in old-ordinal order: the k-th
+            # surviving row with a given content_hash takes the k-th
+            # occurrence of that hash in the re-split sentence list. On a
+            # section that did not change, that is exactly the row's old
+            # ordinal; and two identical sentences keep two rows instead of
+            # both landing on the first occurrence, where the (section,
+            # ordinal) primary key would collapse them into one silently.
+            groups: dict[int, list[tuple[dict[str, Any], int]]] = {}
+            for row, new_section in survivors:
+                groups.setdefault(new_section, []).append((row, new_section))
+            rows = []
+            for new_section, group in groups.items():
+                group.sort(key=lambda pair: pair[0]["sentence_ordinal"])
+                occurrences: dict[str, list[int]] = {}
+                for position, h in enumerate(hashes_of(new_section)):
+                    occurrences.setdefault(h, []).append(position)
+                taken: dict[str, int] = {}
+                for row, _ in group:
+                    h = row["content_hash"]
+                    k = taken.get(h, 0)
+                    positions = occurrences.get(h, [])
+                    if k >= len(positions):
+                        # The re-split section holds fewer copies of this
+                        # sentence than the stored rows: the extras lost their
+                        # proof and drop, counted.
+                        stats["unverified"] += 1
+                        continue
+                    rows.append((
+                        new_section, positions[k], h,
+                        row["class"], row["is_event"], row["participants"],
+                        row["arc_index"], row["chapter"],
+                        row["doc_title"], row["section_ordinal"],
+                        row["revid"], row["prompt_version"], row["model"],
+                        row["extracted_at"],
+                    ))
+                    taken[h] = k + 1
+            self.connection.executemany(
+                "INSERT OR REPLACE INTO meaning"
+                " (section_id, sentence_ordinal, content_hash, class, is_event,"
+                "  participants, arc_index, chapter,"
+                "  doc_title, section_ordinal,"
+                "  revid, prompt_version, model, extracted_at)"
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                rows,
+            )
+            stats["remapped"] = len(rows)
+            report["meaning"] = stats
+
+        # One commit for the whole remap, all or nothing. If the events were
+        # committed on their own, a crash in between would leave the meaning
+        # rows only in the crash file; the re-run's non-empty snapshot would
+        # then clobber that file and the loss would be silent. With a single
+        # commit, a crash before it recovers from the file, and a crash after
+        # it re-snapshots the fully remapped store (idempotent, same rows).
+        if events or meanings:
+            self.connection.commit()
+        unverified = sum(r["unverified"] for r in report.values())
+        if unverified:
+            logger.warning(
+                "remap dropped %d row(s) as unverified -- their section no "
+                "longer proves them: %s",
+                unverified,
+                " ".join(
+                    f"{name} {r['unverified']}"
+                    for name, r in report.items()
+                    if r["unverified"]
+                ),
+            )
+        # The rows are back in the new build; the crash-recovery copy has done
+        # its job and stays behind only if it was the last word on them.
+        self._drop_snapshot_file()
+        return report
 
     def set_meta(self, key: str, value: str) -> None:
         self.connection.execute(
@@ -1038,19 +1432,30 @@ class FactStore:
     def ensure_events(self) -> int:
         """Create the extracted-events table, or rebuild it with its FKs.
 
-        The rows reference `nodes` and `sections`, so a ref can never dangle:
-        an `index` run rebuilds those tables and drops the events with them,
-        and `events-extract` is the only way back. That is the id-stability
-        fix the 3b council queued: before it, a renumbering re-crawl left the
-        numeric refs pointing at ids that no longer existed, and every reader
-        had to guard against it individually. The cost is deliberate -- the
-        rows are local inference keyed on this graph build, and a build that
-        renumbers has invalidated them anyway.
+        The rows reference `nodes` and `sections`, whose ids renumber on every
+        rebuild. Each row therefore also carries its durable key -- (doc_title,
+        section_ordinal) plus the participant names and `time_rank` -- and an
+        `index` rebuild remaps the rows onto the new ids through it
+        (`remap_derived`), so nothing is wiped. A row is only ever dropped when
+        the remap finds it stale (its document's `revid` changed), orphaned
+        (its section or a participant no longer exists) or unverified (its
+        section moved under a parser fix and no longer says what the row
+        says). `revid` is the
+        staleness signal the remap trusts: a row whose source document was
+        re-crawled since extraction is dropped for re-extraction, not remapped
+        onto text it no longer matches. That is the id-stability fix the 3b
+        council queued, made durable: before the FKs a renumbering re-crawl left
+        the numeric refs pointing at ids that no longer existed and every reader
+        had to guard individually; before the durable key the guard was a wipe,
+        so a reflexive `cli index` destroyed the extracted pass. Now the guard
+        (`require_rebuild`) refuses a non-forced rebuild while the layer is
+        non-empty, and a forced rebuild remaps instead of wiping.
 
-        Stores that predate the FKs are migrated here: the table is rebuilt
-        with the references and only the rows whose refs still resolve are
-        kept (a dangling row is a miss every reader already guards for, so
-        dropping it loses nothing the guards allowed).
+        Stores that predate the FKs (or the durable-key columns) are migrated
+        here: missing columns are added and backfilled from `sections` and
+        `documents`, and the table is rebuilt with its references keeping only
+        rows whose refs still resolve (a dangling row is a miss every reader
+        already guards for, so dropping it loses nothing the guards allowed).
 
         Returns the number of rows the migration dropped; 0 on a clean
         store or a fresh table.
@@ -1071,14 +1476,49 @@ class FactStore:
             is not None
         )
         if legacy:
-            # The `arc_index` check runs first so the migration's SELECT sees
-            # every column the new table carries.
-            if "arc_index" not in {
+            columns = {
                 row[1] for row in self.connection.execute(
                     "PRAGMA table_info(events)")
-            }:
+            }
+            # The `arc_index` check runs first so the migration's SELECT sees
+            # every column the new table carries.
+            if "arc_index" not in columns:
                 self.connection.execute(
                     "ALTER TABLE events ADD COLUMN arc_index INTEGER"
+                )
+            # The durable-key columns (0C) were added after the table existed,
+            # so a store built before them needs the columns plus a one-time
+            # backfill, not a migration script.
+            added_durable = False
+            if "doc_title" not in columns:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN doc_title"
+                    " TEXT NOT NULL DEFAULT ''"
+                )
+                added_durable = True
+            if "section_ordinal" not in columns:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN section_ordinal"
+                    " INTEGER NOT NULL DEFAULT 0"
+                )
+                added_durable = True
+            if added_durable:
+                # Backfill the rows written before the columns existed. A row
+                # whose section no longer resolves keeps the column defaults
+                # (the COALESCE is what makes the NOT NULLs hold for it: the
+                # scalar subquery yields no row, and a bare NULL assignment
+                # would raise IntegrityError, blocking the rebuild) and is
+                # dropped as orphaned by the next remap -- the same fate its
+                # dangling FK already gave it.
+                self.connection.execute(
+                    "UPDATE events SET doc_title = COALESCE(("
+                    "   SELECT d.title FROM sections s"
+                    "   JOIN documents d ON s.document_id = d.id"
+                    "   WHERE s.id = events.section_id), '')"
+                    ", section_ordinal = COALESCE(("
+                    "   SELECT s.ordinal FROM sections s"
+                    "   WHERE s.id = events.section_id), 0)"
+                    " WHERE doc_title = ''"
                 )
             if not self.connection.execute(
                 "PRAGMA foreign_key_list(events)"
@@ -1093,7 +1533,10 @@ class FactStore:
                 " object_name TEXT, verb TEXT, arc_key TEXT,"
                 " section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,"
                 " quote TEXT, temporal INTEGER, time_rank REAL,"
-                " arc_index INTEGER, revid INTEGER, prompt_version TEXT,"
+                " arc_index INTEGER,"
+                " doc_title TEXT NOT NULL DEFAULT '',"
+                " section_ordinal INTEGER NOT NULL DEFAULT 0,"
+                " revid INTEGER, prompt_version TEXT,"
                 " model TEXT, extracted_at TEXT,"
                 " PRIMARY KEY (subject_node, verb, object_node, section_id,"
                 " time_rank))"
@@ -1119,7 +1562,10 @@ class FactStore:
             " object_name TEXT, verb TEXT, arc_key TEXT,"
             " section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,"
             " quote TEXT, temporal INTEGER, time_rank REAL,"
-            " arc_index INTEGER, revid INTEGER, prompt_version TEXT,"
+            " arc_index INTEGER,"
+            " doc_title TEXT NOT NULL DEFAULT '',"
+            " section_ordinal INTEGER NOT NULL DEFAULT 0,"
+            " revid INTEGER, prompt_version TEXT,"
             " model TEXT, extracted_at TEXT,"
             " PRIMARY KEY (subject_node, verb, object_node, section_id,"
             " time_rank))"
@@ -1128,10 +1574,19 @@ class FactStore:
             "INSERT INTO events_fk_migrated"
             " (subject_node, subject_name, object_node, object_name, verb,"
             "  arc_key, section_id, quote, temporal, time_rank, arc_index,"
+            "  doc_title, section_ordinal,"
             "  revid, prompt_version, model, extracted_at)"
             " SELECT subject_node, subject_name, object_node, object_name,"
             "  verb, arc_key, section_id, quote, temporal, time_rank,"
-            "  arc_index, revid, prompt_version, model, extracted_at"
+            "  arc_index,"
+            "  COALESCE(("
+            "   SELECT d.title FROM sections s"
+            "   JOIN documents d ON s.document_id = d.id"
+            "   WHERE s.id = events.section_id), ''),"
+            "  COALESCE(("
+            "   SELECT s.ordinal FROM sections s"
+            "   WHERE s.id = events.section_id), 0),"
+            "  revid, prompt_version, model, extracted_at"
             " FROM events"
             " WHERE (subject_node IS NULL"
             "        OR subject_node IN (SELECT id FROM nodes))"
@@ -1153,6 +1608,111 @@ class FactStore:
                 "events FK migration dropped %d/%d row(s) whose node or "
                 "section refs no longer resolve; re-run events-extract to "
                 "repopulate", dropped, before,
+            )
+        return dropped
+
+    def ensure_meaning(self) -> int:
+        """Create the per-line meaning index (R1) if this store predates it.
+
+        Keyed on `sections` ids, which renumber on every rebuild, so the row
+        also carries its durable key -- (doc_title, section_ordinal) +
+        sentence_ordinal + content_hash -- and an `index` rebuild remaps it
+        onto the new section id through that key (`remap_derived`), so nothing
+        is wiped: a row is only dropped when the remap finds it stale,
+        orphaned or unverified (its section's content moved and no longer
+        proves it). The two
+        locators that make a line addressable, `arc_index` (story axis; NULL = a
+        line the extractor could not place there -- unverified, not asserted
+        atemporal) and `chapter` (the owning page's own `chapters` fact,
+        verbatim; NULL = the wiki gives none), are backfilled in SQL. `class`
+        is drawn from `MEANING_CLASSES`, `participants` is the model's, and
+        `is_event` is derived (class = 'event' AND arc_index IS NOT NULL), not
+        an independent model channel -- the DDL CHECK keeps it that way.
+
+        Returns the number of rows a contract migration dropped; 0 on a clean
+        store or a fresh table.
+        """
+        legacy = (
+            self.connection.execute(
+                "SELECT sql FROM sqlite_master"
+                " WHERE type = 'table' AND name = 'meaning'"
+            ).fetchone()
+            is not None
+        )
+        if legacy:
+            return self._migrate_meaning_to_contract()
+        self.connection.execute(_MEANING_TABLE_DDL)
+        self._create_meaning_indexes()
+        self.connection.commit()
+        return 0
+
+    def _create_meaning_indexes(self) -> None:
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS meaning_by_class"
+            " ON meaning (class)"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS meaning_by_arc"
+            " ON meaning (arc_index)"
+        )
+
+    def _migrate_meaning_to_contract(self) -> int:
+        """Rebuild a pre-contract `meaning` table with the durable key + checks.
+
+        SQLite cannot add a CHECK to an existing column, so a table built
+        before the quality contract is rebuilt with the full DDL and its rows
+        carried over. A row whose `class` falls outside `MEANING_CLASSES`, or
+        whose `is_event` drifted from its inputs, is dropped and counted: it is
+        a model output the contract rejects, and the pass refills it.
+        """
+        sql = self.connection.execute(
+            "SELECT sql FROM sqlite_master"
+            " WHERE type = 'table' AND name = 'meaning'"
+        ).fetchone()[0]
+        columns = {
+            row[1] for row in self.connection.execute(
+                "PRAGMA table_info(meaning)")
+        }
+        has_class_check = "CHECK (class IS NULL" in sql
+        if "doc_title" in columns and "section_ordinal" in columns \
+                and has_class_check:
+            return 0
+        has_durable = "doc_title" in columns and "section_ordinal" in columns
+        durable_select = (
+            "COALESCE(doc_title, ''), COALESCE(section_ordinal, 0)"
+            if has_durable else "'', 0"
+        )
+        self.connection.execute("ALTER TABLE meaning RENAME TO meaning_old")
+        self.connection.execute(_MEANING_TABLE_DDL.replace(
+            "CREATE TABLE IF NOT EXISTS meaning", "CREATE TABLE meaning"))
+        before = self.connection.execute(
+            "SELECT COUNT(*) FROM meaning_old").fetchone()[0]
+        self.connection.execute(
+            "INSERT INTO meaning ("
+            " section_id, sentence_ordinal, content_hash, class, is_event,"
+            " participants, arc_index, chapter,"
+            " doc_title, section_ordinal,"
+            " revid, prompt_version, model, extracted_at)"
+            " SELECT section_id, sentence_ordinal, content_hash, class,"
+            "   is_event, participants, arc_index, chapter,"
+            f"   {durable_select},"
+            "   revid, prompt_version, model, extracted_at"
+            " FROM meaning_old"
+            " WHERE class IS NULL OR class IN"
+            "   ('event', 'standing state', 'trait', 'trivia')"
+            " AND is_event = CASE WHEN class = 'event'"
+            "   AND arc_index IS NOT NULL THEN 1 ELSE 0 END"
+        )
+        kept = self.connection.execute(
+            "SELECT COUNT(*) FROM meaning").fetchone()[0]
+        dropped = before - kept
+        self.connection.execute("DROP TABLE meaning_old")
+        self._create_meaning_indexes()
+        if dropped:
+            logger.warning(
+                "meaning contract migration dropped %d/%d row(s) whose class "
+                "or is_event violates the frozen contract; re-run the pass "
+                "to repopulate", dropped, before,
             )
         return dropped
 
@@ -1196,15 +1756,38 @@ class FactStore:
         under a new prompt is the whole answer for that arc.
         """
         stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        # The durable key is resolved once for the arc's sections, not per row:
+        # `section_id` renumbers on a rebuild, but (doc_title, section_ordinal)
+        # does not, so a remap can re-key this arc's rows onto a new build.
+        section_ids = {
+            int(row["section_id"]) for row in found if row.get("section_id")
+        }
+        durable: dict[int, tuple[str, int]] = {}
+        if section_ids:
+            placeholders = ",".join("?" for _ in section_ids)
+            durable = {
+                row[0]: (row[1], row[2])
+                for row in self.connection.execute(
+                    "SELECT s.id, d.title, s.ordinal"
+                    " FROM sections s JOIN documents d ON s.document_id = d.id"
+                    f" WHERE s.id IN ({placeholders})",
+                    list(section_ids),
+                )
+            }
+
+        def durable_of(section_id: Any) -> tuple[str, int]:
+            return durable.get(int(section_id), ("", 0))
+
         self.connection.execute(
             "DELETE FROM events WHERE arc_key = ? COLLATE NOCASE", (arc_key,)
         )
         self.connection.executemany(
             "INSERT OR REPLACE INTO events"
             " (subject_node, subject_name, object_node, object_name, verb,"
-            "  arc_key, section_id, quote, temporal, time_rank, revid,"
+            "  arc_key, section_id, quote, temporal, time_rank,"
+            "  doc_title, section_ordinal, revid,"
             "  prompt_version, model, extracted_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             [
                 (
                     int(row["subject_node"]),
@@ -1217,6 +1800,7 @@ class FactStore:
                     str(row.get("quote") or "").strip()[:400],
                     1 if row.get("temporal", True) else 0,
                     float(row["time_rank"]),
+                    *durable_of(row["section_id"]),
                     revid,
                     prompt_version,
                     model,

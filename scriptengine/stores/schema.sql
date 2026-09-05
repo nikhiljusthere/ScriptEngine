@@ -223,12 +223,23 @@ CREATE INDEX IF NOT EXISTS idx_emphasis_name ON emphasis(name COLLATE NOCASE);
 
 -- Extracted story events (the `events-extract` LLM pass). Unlike `relations`,
 -- the rows are keyed on `nodes`/`sections` ids, so the FKs are load-bearing:
--- an `index` run renumbers those ids and rebuilds this table empty, which the
--- cascade here makes automatic. A rebuilt graph has invalidated the stored
--- events (they are local inference about *this* build's sections), so the
--- wipe is the feature and `events-extract` is the only way back. The table
--- always exists -- `initialise` and `reset` both end with it -- because the
--- continuity gate and time-axis readers query it unguarded.
+-- an `index` run renumbers those ids. A rebuilt graph has invalidated the
+-- stored events (they are local inference about *this* build's sections), so
+-- the rebuild remaps them onto the new ids through the durable key below
+-- rather than wiping them. The table always exists -- `initialise` and `reset`
+-- both end with it -- because the continuity gate and time-axis readers query
+-- it unguarded.
+-- `section_id` renumbers on every rebuild, so the row also carries its
+-- durable key: (doc_title, section_ordinal) + the participant names +
+-- time_rank. An `index` rebuild remaps the row onto the new ids through that
+-- key (`remap_derived`); a row is dropped when the remap finds it stale (the
+-- document's `revid` changed since extraction), orphaned (its section or a
+-- participant node no longer exists), or unverified (the section's content
+-- moved under a parser fix and no longer proves the row -- the quote fails
+-- against the new text; ordinals are assigned by enumeration, so a parser fix
+-- can shift them with no revid change at all). The snapshot a rebuild takes
+-- is also written to a file beside the database, so a build that dies between
+-- the drop and the remap is recoverable from it.
 CREATE TABLE IF NOT EXISTS events (
     subject_node    INTEGER REFERENCES nodes(id) ON DELETE CASCADE,
     subject_name    TEXT,
@@ -241,6 +252,8 @@ CREATE TABLE IF NOT EXISTS events (
     temporal        INTEGER,
     time_rank       REAL,
     arc_index       INTEGER,
+    doc_title       TEXT NOT NULL DEFAULT '',
+    section_ordinal INTEGER NOT NULL DEFAULT 0,
     revid           INTEGER,
     prompt_version  TEXT,
     model           TEXT,
@@ -250,3 +263,47 @@ CREATE TABLE IF NOT EXISTS events (
 
 CREATE INDEX IF NOT EXISTS events_by_arc ON events (arc_key COLLATE NOCASE);
 CREATE INDEX IF NOT EXISTS events_by_subject ON events (subject_node);
+
+-- The per-line meaning index (R1): one row per source sentence, FK-keyed on
+-- `sections` exactly like `events`. The FK id renumbers on every rebuild, so
+-- the row also carries its durable key: (doc_title, section_ordinal) +
+-- sentence_ordinal + content_hash. An `index` rebuild remaps the row onto the
+-- new section id through that key (`remap_derived`), re-keying the
+-- sentence_ordinal to where the sentence's content_hash now sits in the
+-- re-split section; nothing is wiped -- a row is only dropped when the remap
+-- finds it stale (the document's revid changed), orphaned (its section no
+-- longer exists) or unverified (the sentence's content_hash no longer occurs
+-- in the section, i.e. the section's text moved and no longer proves the row).
+-- The two locators that make a line addressable:
+-- `arc_index` (story-axis position; NULL = a line the extractor could not place
+-- on the axis -- unverified, not asserted atemporal; the two-thirds the events
+-- pass never saw) and `chapter` (the owning page's own `chapters` fact,
+-- verbatim; NULL = the wiki gives none -- never a guess). `class` is drawn
+-- from a frozen four-word vocabulary; `participants` is a JSON list of
+-- `{node, name, unresolved}` where event-class rows carry FK-resolved node ids
+-- and trait/trivia rows may mark non-node entities `unresolved` rather than
+-- drop them. `is_event` is NOT an independent model channel: it is derived as
+-- (class = 'event' AND arc_index IS NOT NULL) and the CHECK below enforces that
+-- so a stored value can never drift from its inputs.
+CREATE TABLE IF NOT EXISTS meaning (
+    section_id       INTEGER NOT NULL REFERENCES sections(id) ON DELETE CASCADE,
+    sentence_ordinal INTEGER NOT NULL DEFAULT 0,
+    content_hash     TEXT,
+    class            TEXT CHECK (class IS NULL OR class IN
+                      ('event', 'standing state', 'trait', 'trivia')),
+    is_event         INTEGER NOT NULL DEFAULT 0 CHECK (is_event =
+                      CASE WHEN class = 'event' AND arc_index IS NOT NULL
+                           THEN 1 ELSE 0 END),
+    participants     TEXT,
+    arc_index        INTEGER,
+    chapter          TEXT,
+    doc_title        TEXT NOT NULL DEFAULT '',
+    section_ordinal  INTEGER NOT NULL DEFAULT 0,
+    revid            INTEGER,
+    prompt_version   TEXT,
+    model            TEXT,
+    extracted_at     TEXT,
+    PRIMARY KEY (section_id, sentence_ordinal)
+);
+CREATE INDEX IF NOT EXISTS meaning_by_class ON meaning (class);
+CREATE INDEX IF NOT EXISTS meaning_by_arc ON meaning (arc_index);

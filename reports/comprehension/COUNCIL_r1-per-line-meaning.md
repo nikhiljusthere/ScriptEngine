@@ -57,7 +57,7 @@ the door that reads it.
    sentence, a beat, or a section window? And the chapter in the key: the line's
    *source* chapter, the *arc's* chapter range, or a *placement* chapter? How does
    the chapter component disambiguate the 60 repeat-encounters **without
-   manufacturing false precision** on the atemporal two-thirds (§2c)?
+   manufacturing false precision** on the unverified two-thirds (§2c)?
 2. **Class boundaries + the escape hatch.** The event / standing-state / trait /
    trivia boundaries (e.g. "Gojo is the strongest sorcerer" = trait or standing
    state? "Shibuya fell" = event or standing state?). LLM-classified vs.
@@ -135,13 +135,13 @@ goal-scope), then this synthesis. Position letters: **A**=Outsider,
   — not a section window, not a writer-composed beat. (A/B/C/E)
 - The chapter component = the line's **source locator or NULL** — the section's
   own `chapters` fact (a real wiki locator; 99 nodes carry it, mapped to an arc by
-  `timeaxis.chapter_arc_index`, `timeaxis.py:183`), recorded NULL for the atemporal
+  `timeaxis.chapter_arc_index`, `timeaxis.py:183`), recorded NULL for the unverified
   two-thirds that carry none. **Not** an arc range, **not** a placement inference.
   (A/B/C/E. Source confirmed: the `events` table has **no chapter column**, so the
   `meaning` table must carry it as a **new column sourced from the `chapters`
   fact, never guessed**.)
 - `arc_index` for event-class lines **reuses `timeaxis`'s three cheap signals**
-  (`section_arc_index`, `timeaxis.py:110`, 338/7,601 sections); atemporal lines
+  (`section_arc_index`, `timeaxis.py:110`, 338/7,601 sections); unplaced lines
   are **structurally NULL** — the wiki doesn't place them, and NULL-as-standing-
   state (mirroring `events.temporal=0`) is the *recorded* answer, never a dropped
   row (span-recall is the gate). (A/B/C/D/E)
@@ -156,13 +156,13 @@ goal-scope), then this synthesis. Position letters: **A**=Outsider,
   answers, so a weaker model costs recall, not truth. (B/C/D/E)
 
 **Where the council clashes (the rulings the build needs):**
-1. **Scope / price: whole-corpus (48,572) vs complement (~32k atemporal).** B
+1. **Scope / price: whole-corpus (48,572) vs complement (~32k unverified).** B
    wants 100% row coverage (every line gets a row); E scopes R1 to the
-   *complement* — the atemporal two-thirds `events` can't see (events' 2,748 rows
-   already carry the event 1/3). The atemporal ~32k is the real cost center and
+*complement* — the unverified two-thirds `events` can't see (events' 2,748 rows
+    already carry the event 1/3). The unverified ~32k is the real cost center and
    **no one priced it** (D names the OOM-class risk + unpriced `PROMPT_VERSION`
    iteration; C's `--refresh` is the unpriced full re-run). *Ruling: bound R1 to
-   the atemporal complement + a bounded harvest, not 48k; event-class lines stay
+   the unverified complement + a bounded harvest, not 48k; event-class lines stay
    in `events`, R1 points to them or stores a thin `class=event` row — do not
    re-run events' 2,748 through a new unbounded window.*
 2. **R1 vs R4 shared-pass.** E: R4's 154-residue (the 154 `events` rows with
@@ -172,11 +172,11 @@ goal-scope), then this synthesis. Position letters: **A**=Outsider,
    one-pass contradicts B5's "sibling-propagation multiplies correlated errors,
    gate behind a spot-check." *Ruling: keep R4's 154-residue placement as its own
    bounded pass that **reads R1's output**; R1's `arc_index` is class-conditional
-   (event-class lines reuse timeaxis; atemporal lines structurally NULL) — do not
+   (event-class lines reuse timeaxis; unplaced lines structurally NULL) — do not
    manufacture placement for lines the wiki left unplaced.*
 3. **Participants: strict FK-guard vs unresolved marking.** D: the cloned
    "never a guess" FK guard (`events.py:709`, `_name_in:500,578`) **guts the
-   atemporal payload** — it empties `participants` on exactly the trait/trivia
+   unverified payload** — it empties `participants` on exactly the trait/trivia
    lines the writer narrates (a voice actor, e.g. Gojo's VA Junya Enoue, is not a
    node). A's fix: make "never a guess" **class-conditional** — strict FK for
    event-class, mark non-node entities `unresolved` (don't drop) for trait/trivia.
@@ -200,7 +200,7 @@ goal-scope), then this synthesis. Position letters: **A**=Outsider,
   `section_id`; no chapter). The "fixed" chapter-in-key premise has no schema
   backing — it must be a **new column on the `meaning` table**, sourced from the
   `chapters` fact (`timeaxis.chapter_arc_index`, `timeaxis.py:183`), NULL for the
-  atemporal 2/3. (Reviewer 4)
+  unverified 2/3. (Reviewer 4)
 - **The "7,548/48,572 (87%)" stat is wrong** (A): 7,548 is a corpus-wide *ref
   count* (not in `facts.db`/reports) and 7,548/48,572 = 15.5%, not 87%; E's
   12.8%/24% are mis-scoped (Shibuya-Incident-page, pre-Ref-backfill). The honest
@@ -228,17 +228,18 @@ goal-scope), then this synthesis. Position letters: **A**=Outsider,
 
 **The one thing to do first (Monday, no GPU):**
 Decide the two rulings that change the schema — (1) **classifier+locator now,
-gloss later** (record the open values call), and (2) **bound R1 to the atemporal
+gloss later** (record the open values call), and (2) **bound R1 to the unverified
 complement + a bounded harvest, R4's 154 stays separate** — then write
 `ensure_meaning()` + the `meaning` table DDL in `stores/facts.py` (FK-keyed
 sentence rows: `section_id`, `sentence_ordinal`, `content_hash`, `class`,
 `is_event`, `participants` [FK-resolved + `unresolved`], `arc_index` NULLable,
 **`chapter` NULLable (new column, from the `chapters` fact)**, `revid`,
-`prompt_version`), plus a pure-SQL backfill that (i) proves the
-`(subject, verb, object, chapter/arc_index)` key **splits the 112 live triples
-today**, and (ii) prints the atemporal-complement size + the `chapters`-fact
-coverage so the batch is bounded and priced. This proves the key and bounds the
-price before any GPU window.
+`prompt_version`), plus a pure-SQL backfill that (i) demonstrates the
+events-key lookup **splits the 112 live triples today** (a lookup, not proof of
+the meaning key — the meaning PK is unique by construction), and (ii) prints the
+unverified-complement size + the `chapters`-fact coverage so the batch is bounded
+and priced. This demonstrates the key lookup and bounds the price before any GPU
+window.
 
 ## Open (recorded, not acted on)
 

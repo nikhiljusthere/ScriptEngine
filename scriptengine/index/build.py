@@ -42,6 +42,7 @@ def build_index(
     settings: Settings | None = None,
     *,
     embed: bool = True,
+    force: bool = False,
     progress: Progress | None = None,
 ) -> dict[str, Any]:
     """Populate `facts.db` and the vector store from `series/<name>/wikitext`.
@@ -49,6 +50,15 @@ def build_index(
     `embed=False` builds everything except the vectors, which is useful when
     the GPU is busy: the fact store, the graph and BM25 search are all fully
     functional without them.
+
+    `force` controls what a rebuild does to the two derived, model-built
+    layers (`events`, `meaning`). By default a rebuild is *refused* while they
+    are non-empty (`ResetRefusedError`) -- a reflexive `index` must not destroy
+    an extraction pass. With `force=True` the rebuild proceeds and the rows are
+    snapshotted with their durable key then re-keyed onto the new build's ids by
+`remap_derived`, so nothing is wiped: only rows that went stale (their
+     document's `revid` changed), orphaned, or unverified (their section no
+     longer proves them) are dropped, each counted and reported.
     """
     settings = settings or get_settings()
     manifest = load_manifest(paths)
@@ -98,7 +108,12 @@ def build_index(
         dropped = set()
 
     with FactStore(paths.facts_db) as store:
-        store.reset()
+        # The reset guard (0B): refuse a non-forced rebuild while the derived
+        # layers are non-empty, so a reflexive `index` never destroys an
+        # extraction pass. A forced rebuild proceeds; the rows are snapshotted
+        # by `reset` and re-keyed onto the new build's ids below, not wiped.
+        store.require_rebuild(force=force)
+        snapshot = store.reset()
         # A wiki can promote engine-default boilerplate to content (JJK's
         # `References` carries trivia the span-recall oracle must reach), so the
         # chunker skips the wiki's effective set, not just the global one.
@@ -109,6 +124,20 @@ def build_index(
         _load_graph(store, pages, progress, dropped)
         chunk_rows = _load_chunks(store, pages, chunks_by_page, progress)
         store.rebuild_fts()
+        # Re-key the snapshotted derived layers onto the build that just ran:
+        # their section/node ids were renumbered, but their durable keys
+        # (doc_title + section_ordinal, participant names) still resolve. Rows
+        # whose document's revid changed, whose section/node vanished, or whose
+        # section moved under a parser fix and no longer proves the row (the
+        # quote / sentence hash fails against the new text) are dropped and
+        # reported, so a stale extraction can never masquerade as current.
+        # `reset` also wrote the snapshot to a file beside the database, so a
+        # build that dies in the minutes between the drop and this call is
+        # recoverable: the next run finds the layers empty, passes the guard,
+        # and `remap_derived` reads the file (the call here passes the
+        # in-memory copy, which takes precedence). A fresh build (no derived
+        # layers yet) has an empty snapshot: no-op.
+        report["remap"] = store.remap_derived(snapshot)
         # What was removed, recorded for the query path.
         #
         # Retrieval cannot re-derive it: the page is gone, so there is no

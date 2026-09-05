@@ -45,7 +45,8 @@ import re
 from typing import Any
 
 from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
-from scriptengine.ingest.abilities import _fold, _windows
+from scriptengine.ingest.abilities import _windows
+from scriptengine.ingest.verbatim import quoted_in as _quoted_in
 from scriptengine.llm.client import LLMClient, LLMRateLimited, LLMUnavailable
 from scriptengine.stores.facts import FactStore
 
@@ -206,20 +207,6 @@ def parse_response(text: str) -> list[dict[str, str]]:
     if not isinstance(rows, list):
         return []
     return [row for row in rows if isinstance(row, dict)]
-
-
-def _quoted_in(quote: str, passage: str) -> bool:
-    """Whether the passage really contains the clause the model quoted.
-
-    Whitespace is normalised and diacritics folded, because a model reflows a
-    line it copied correctly. Nothing else is relaxed: this is the check that
-    stops a real pair of characters being handed a relationship the page never
-    states, which is the failure that would be invisible in the stored row.
-    """
-    if not quote or len(quote.strip()) < 12:
-        return False
-    tidy = lambda s: re.sub(r"\s+", " ", _fold(s).lower()).strip()
-    return tidy(quote) in tidy(passage)
 
 
 def known_arcs(store: FactStore) -> dict[str, str]:

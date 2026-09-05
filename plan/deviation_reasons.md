@@ -54,3 +54,31 @@ what makes it checkable rather than narrative.
   documents present on the executing branch and verified — already holds.
 - **what would unblock it:** nothing; the step is skipped, not substituted.
   The next step (reading the four plan files) proceeds as written.
+
+---
+
+## 0A — "the `meaning` DDL is committed-but-unconfirmed" inaccurate 2026-09-05
+
+- **premise as written:** the `meaning` DDL is committed-but-unconfirmed, its
+  model columns empty, and three defects its own council found are cheap to fix.
+- **verified on tree:** working tree `/home/goblin/ScriptEngine`, branch
+  `character-scoped-questions`.
+- **what the check returned:**
+  - the `meaning` DDL was **uncommitted working-tree** (`stores/facts.py` and
+    `schema.sql` not yet in git), not "committed-but-unconfirmed" as the premise
+    stated.
+  - the `meaning` table was **absent from the live store**
+    (`series/jjk/facts.db`), so "meaning exists" held only in the DDL, not the
+    live DB.
+  - the model-populated columns (`class`, `is_event`, `participants`,
+    `arc_index`, `chapter`) were empty, as the premise said.
+- **why the step still proceeded as written:** VERIFY (`meaning` exists; its
+  model-populated columns are empty) passed on the tree, and all three fixes
+  (the "unverified complement" rename, the stop-citing-the-events-key edit, and
+  the class-vocabulary `CHECK` + `is_event`-derived statement) applied cleanly
+  to the DDL. The premise's "committed" is a git-state description, not a
+  description of the defect being fixed, so it did not block the step.
+- **what is now blocked:** nothing. **No halt, no substitution** — the step
+  proceeded as written; this entry records the premise's factual inaccuracy for
+  the record (VERIFY passed vacuously on the empty live store).
+- **what would unblock it:** nothing; recorded, not a halt.
