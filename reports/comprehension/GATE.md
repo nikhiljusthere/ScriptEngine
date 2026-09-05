@@ -72,7 +72,7 @@ acceptance set (the plan's twenty failures) is meant to pin down.
 
 | gate | baseline | gate |
 |---|---|---|
-| pytest | 1152 passed | **1,198 passed** (2026-09-05, post scope-shrink fix) |
+| pytest | 1152 passed | **1,202 passed** (2026-09-05, post id-stability FK) |
 | eval jjk | 24/24 | 24/24 |
 | span-recall jjk | 48,570/48,572 (2 misses, rc=2) | **48,572/48,572 (0 misses, rc=0)** |
 | canon-run opm | 10/16 · 236/236 · 79.0% | 10/16 · 236/236 · 79.0% |
@@ -175,12 +175,10 @@ invariant (a lost temporal row still fails it), not a tautology.
   below). `backfill_event_arc_index` now maps by section heading (995) and
   chapter/episode `arc` fact (885). The in-text `(Chapter N)` regex (sparser,
   ~62/1,039) is deliberately **not** added — a documented residual, never a guess.
-- *Re-index id-dangling (pre-existing, now load-bearing but safe):* the section
-  signal resolves `section_id` through the live `sections` table with a document
-  guard, so a renumbering re-crawl that dangles or reuses an id degrades to a
-  **miss, never a wrong arc**. The FK is still absent (a re-crawl would dangle the
-  838 refs); the guard makes the consequence safe, but the queued FK / re-extract
-  fix stands.
+- *Re-index id-dangling — RESOLVED* (the "Id-stability FK on `events`" section
+  below): `events` now carries CASCADE FKs to `nodes`/`sections`, so a
+  renumbering re-crawl can no longer dangle a ref. The section signal's
+  document guard remains as defence in depth.
 - *Scope-shrink check — RESOLVED* (the "Scope-shrink check + `--scope all`"
   section below): the pre/post candidate sets are **disjoint** on JJK (0 of
   388/964 sections overlap; all 714 temporal events sit in placement-only
@@ -320,6 +318,54 @@ dedup branch applies. `--scope all` is the documented complete-coverage path for
 Gates re-run green: pytest **1,198** (was 1,194, +4 scope-plan tests);
 span-recall 48,572/48,572 (rc=0); eval 24/24; canon-run opm 10/16 · 236/236 ·
 79.0% (report `2026-09-05-1041`, API relaunched on CPU per the CUDA-first rule).
+
+## Id-stability FK on `events` (complete)
+
+The 3b council queued this one: the `events` table is keyed on `nodes`/`sections`
+ids, but those ids are **not stable** across an `index` run (a re-crawl
+re-numbers them). Without a constraint, a renumbering re-crawl would leave the
+stored event rows pointing at ids that no longer exist (or worse, that now mean
+something else) — a silent id-dangling the section-signal guard made a *miss*
+but never prevented. The fix is the FK, not a rephrase.
+
+**The contract** (`schema.sql`, `facts.py`):
+- `events.subject_node` / `events.object_node` → `nodes(id)`,
+  `events.section_id` → `sections(id)`, all **ON DELETE CASCADE**. The table now
+  dies with the graph that gave its rows meaning.
+- An `index` run (which renumbers) drops the events with the graph and rebuilds
+  the table empty; `events-extract` is the only way back. The rows are local
+  inference keyed on *this* build's ids, so a renumbering build has invalidated
+  them anyway — the wipe is the feature, not the loss. `reset()` lists `events`
+  first (it is the child), then `initialise()` brings the empty table back so the
+  unguarded gate/time-axis readers keep working.
+- The CLI `index` command counts the events before and after and prints a yellow
+  note when rows were dropped, telling the writer to re-run
+  `events-extract --scope all`.
+
+**Migration for pre-FK stores** (`ensure_events` → `_migrate_events_to_fk`): a
+store that predates the FKs has its `events` table rebuilt with the references,
+keeping only the rows whose refs still resolve (a dangling row is a miss every
+reader already guards for, so dropping it loses nothing). It returns how many it
+dropped and logs them. On a clean store the migration is a no-op (returns 0); a
+second call sees an FK table and migrates nothing.
+
+**Verified on JJK** (`series/jjk/facts.db`, read-only): all **2,748** event rows
+survived the migration with `dropped=0`, the three CASCADE FKs are attached,
+`integrity_check=ok`, 0 dangling refs, and no leftover `events_fk_migrated`
+table. The four new `TestEventsForeignKeys` cases pin: the FKs on a fresh table;
+a graph rebuild (drop `sections`) cascades the events away; `reset()` empties the
+events but brings the FK table back; and a pre-FK table migrates, dropping only
+its dangling row.
+
+**Accepted cost.** After any `index` the stored events are gone until a full
+re-extract (~1,670 LLM windows on the Qwen GPU). That is deliberate: a stale
+event set referencing a renumbered graph is worse than an empty one. The
+re-extract is the documented recovery, not a bug.
+
+Gates re-run green this pass: pytest **1,202** (was 1,198, +4 FK tests);
+span-recall 48,572/48,572 (0 misses, rc=0); eval 24/24; canon-run opm
+10/16 · 236/236 · 79.0% (report `2026-09-05-1056`, API relaunched on CPU per
+the CUDA-first rule — Qwen holds the GPU).
 
 ## Commands
 

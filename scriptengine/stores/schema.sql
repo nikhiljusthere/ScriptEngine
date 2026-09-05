@@ -220,3 +220,33 @@ CREATE TABLE IF NOT EXISTS emphasis (
 );
 
 CREATE INDEX IF NOT EXISTS idx_emphasis_name ON emphasis(name COLLATE NOCASE);
+
+-- Extracted story events (the `events-extract` LLM pass). Unlike `relations`,
+-- the rows are keyed on `nodes`/`sections` ids, so the FKs are load-bearing:
+-- an `index` run renumbers those ids and rebuilds this table empty, which the
+-- cascade here makes automatic. A rebuilt graph has invalidated the stored
+-- events (they are local inference about *this* build's sections), so the
+-- wipe is the feature and `events-extract` is the only way back. The table
+-- always exists -- `initialise` and `reset` both end with it -- because the
+-- continuity gate and time-axis readers query it unguarded.
+CREATE TABLE IF NOT EXISTS events (
+    subject_node    INTEGER REFERENCES nodes(id) ON DELETE CASCADE,
+    subject_name    TEXT,
+    object_node     INTEGER REFERENCES nodes(id) ON DELETE CASCADE,
+    object_name     TEXT,
+    verb            TEXT,
+    arc_key         TEXT,
+    section_id      INTEGER REFERENCES sections(id) ON DELETE CASCADE,
+    quote           TEXT,
+    temporal        INTEGER,
+    time_rank       REAL,
+    arc_index       INTEGER,
+    revid           INTEGER,
+    prompt_version  TEXT,
+    model           TEXT,
+    extracted_at    TEXT,
+    PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank)
+);
+
+CREATE INDEX IF NOT EXISTS events_by_arc ON events (arc_key COLLATE NOCASE);
+CREATE INDEX IF NOT EXISTS events_by_subject ON events (subject_node);

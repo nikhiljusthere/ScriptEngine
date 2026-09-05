@@ -1062,6 +1062,7 @@ def index(
     from rich.progress import TaskID
 
     from scriptengine.index.build import build_index, write_status
+    from scriptengine.stores.facts import FactStore
 
     logging.basicConfig(
         level=logging.INFO, format="%(asctime)s | %(levelname)-7s | %(message)s",
@@ -1069,6 +1070,15 @@ def index(
     )
 
     paths = series_paths(series)
+
+    with FactStore(paths.facts_db) as pre:
+        has_events = pre.connection.execute(
+            "SELECT name FROM sqlite_master WHERE name = 'events'"
+        ).fetchone()
+        events_before = (
+            pre.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+            if has_events else 0
+        )
 
     with RichProgress(transient=True) as bar:
         tasks: dict[str, TaskID] = {}
@@ -1095,6 +1105,17 @@ def index(
     console.print(table)
 
     console.print(f"\nStatus: {write_status(paths, report)}")
+    if events_before:
+        with FactStore(paths.facts_db) as post:
+            events_after = post.connection.execute(
+                "SELECT COUNT(*) FROM events").fetchone()[0]
+        if events_after < events_before:
+            console.print(
+                f"[yellow]{events_before - events_after} extracted events were"
+                " dropped with the rebuilt graph (the events table now"
+                " references it). Re-run `events-extract --scope all` to"
+                " repopulate.[/yellow]"
+            )
     if no_embed:
         console.print(
             "[yellow]No vectors built. Lexical and graph retrieval work; "

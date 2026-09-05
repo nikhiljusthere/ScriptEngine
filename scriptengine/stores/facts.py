@@ -13,6 +13,7 @@ two concrete defects in the previous design:
 from __future__ import annotations
 
 import json
+import logging
 import re
 import sqlite3
 from collections.abc import Iterable, Sequence
@@ -28,6 +29,8 @@ SCHEMA_PATH = Path(__file__).with_name("schema.sql")
 MAX_ALIAS_WORDS = 6
 
 _WORD = re.compile(r"[\w'’-]+", re.UNICODE)
+
+logger = logging.getLogger(__name__)
 
 # Instalment-style aliases ("chapter 5", "episode 19") and bare numbers ("19")
 # are harvested from instalment page titles. They only count as mentions when
@@ -160,6 +163,10 @@ class FactStore:
     def reset(self) -> None:
         """Drop everything and recreate. Indexing is idempotent by rebuilding."""
         tables = [
+            # `events` first: it is the child of `nodes`/`sections` (its FKs),
+            # and an `index` rebuild invalidates it -- the rows reference this
+            # build's ids, so `events-extract` is the only way back.
+            "events",
             "chunk_nodes", "chunks_fts", "chunks", "facts", "edges",
             "aliases", "nodes", "categories", "emphasis", "sections",
             "documents", "meta",
@@ -1028,11 +1035,25 @@ class FactStore:
         )
         self.connection.commit()
 
-    def ensure_events(self) -> None:
-        """Create the extracted-events table if this store predates it.
+    def ensure_events(self) -> int:
+        """Create the extracted-events table, or rebuild it with its FKs.
 
-        Survives `reset()` for the same reason `relations` does: a placed
-        event is local inference an `index` run must not throw away.
+        The rows reference `nodes` and `sections`, so a ref can never dangle:
+        an `index` run rebuilds those tables and drops the events with them,
+        and `events-extract` is the only way back. That is the id-stability
+        fix the 3b council queued: before it, a renumbering re-crawl left the
+        numeric refs pointing at ids that no longer existed, and every reader
+        had to guard against it individually. The cost is deliberate -- the
+        rows are local inference keyed on this graph build, and a build that
+        renumbers has invalidated them anyway.
+
+        Stores that predate the FKs are migrated here: the table is rebuilt
+        with the references and only the rows whose refs still resolve are
+        kept (a dangling row is a miss every reader already guards for, so
+        dropping it loses nothing the guards allowed).
+
+        Returns the number of rows the migration dropped; 0 on a clean
+        store or a fresh table.
 
         Keyed on (subject, verb, object, section, time_rank): the same pair
         meets twice on one page (Sukuna fights Jogo in the station and again
@@ -1042,22 +1063,40 @@ class FactStore:
         `temporal=0` marks a standing state (or an off-axis event, like a
         death that predates the arc) the axis cannot place.
         """
-        self.connection.execute(
-            "CREATE TABLE IF NOT EXISTS events ("
-            " subject_node INTEGER, subject_name TEXT, object_node INTEGER,"
-            " object_name TEXT, verb TEXT, arc_key TEXT, section_id INTEGER,"
-            " quote TEXT, temporal INTEGER, time_rank REAL, arc_index INTEGER,"
-            " revid INTEGER, prompt_version TEXT, model TEXT, extracted_at TEXT,"
-            " PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank))"
-        )
-        # Added after the table existed, so a store built before it needs the
-        # column: the story-axis position `ingest.timeaxis` backfills onto each
-        # row, and a global `ORDER BY` needs it to be there.
-        if "arc_index" not in {
-            row[1] for row in self.connection.execute("PRAGMA table_info(events)")
-        }:
+        legacy = (
             self.connection.execute(
-                "ALTER TABLE events ADD COLUMN arc_index INTEGER"
+                "SELECT name FROM sqlite_master"
+                " WHERE type = 'table' AND name = 'events'"
+            ).fetchone()
+            is not None
+        )
+        if legacy:
+            # The `arc_index` check runs first so the migration's SELECT sees
+            # every column the new table carries.
+            if "arc_index" not in {
+                row[1] for row in self.connection.execute(
+                    "PRAGMA table_info(events)")
+            }:
+                self.connection.execute(
+                    "ALTER TABLE events ADD COLUMN arc_index INTEGER"
+                )
+            if not self.connection.execute(
+                "PRAGMA foreign_key_list(events)"
+            ).fetchall():
+                return self._migrate_events_to_fk()
+        else:
+            self.connection.execute(
+                "CREATE TABLE IF NOT EXISTS events ("
+                " subject_node INTEGER REFERENCES nodes(id) ON DELETE CASCADE,"
+                " subject_name TEXT,"
+                " object_node INTEGER REFERENCES nodes(id) ON DELETE CASCADE,"
+                " object_name TEXT, verb TEXT, arc_key TEXT,"
+                " section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,"
+                " quote TEXT, temporal INTEGER, time_rank REAL,"
+                " arc_index INTEGER, revid INTEGER, prompt_version TEXT,"
+                " model TEXT, extracted_at TEXT,"
+                " PRIMARY KEY (subject_node, verb, object_node, section_id,"
+                " time_rank))"
             )
         self.connection.execute(
             "CREATE INDEX IF NOT EXISTS events_by_arc"
@@ -1068,6 +1107,54 @@ class FactStore:
             " ON events (subject_node)"
         )
         self.connection.commit()
+        return 0
+
+    def _migrate_events_to_fk(self) -> int:
+        """Rebuild `events` with its FKs, keeping only resolvable rows."""
+        self.connection.execute(
+            "CREATE TABLE events_fk_migrated ("
+            " subject_node INTEGER REFERENCES nodes(id) ON DELETE CASCADE,"
+            " subject_name TEXT,"
+            " object_node INTEGER REFERENCES nodes(id) ON DELETE CASCADE,"
+            " object_name TEXT, verb TEXT, arc_key TEXT,"
+            " section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,"
+            " quote TEXT, temporal INTEGER, time_rank REAL,"
+            " arc_index INTEGER, revid INTEGER, prompt_version TEXT,"
+            " model TEXT, extracted_at TEXT,"
+            " PRIMARY KEY (subject_node, verb, object_node, section_id,"
+            " time_rank))"
+        )
+        self.connection.execute(
+            "INSERT INTO events_fk_migrated"
+            " (subject_node, subject_name, object_node, object_name, verb,"
+            "  arc_key, section_id, quote, temporal, time_rank, arc_index,"
+            "  revid, prompt_version, model, extracted_at)"
+            " SELECT subject_node, subject_name, object_node, object_name,"
+            "  verb, arc_key, section_id, quote, temporal, time_rank,"
+            "  arc_index, revid, prompt_version, model, extracted_at"
+            " FROM events"
+            " WHERE (subject_node IS NULL"
+            "        OR subject_node IN (SELECT id FROM nodes))"
+            "   AND (object_node IS NULL"
+            "        OR object_node IN (SELECT id FROM nodes))"
+            "   AND (section_id IS NULL"
+            "        OR section_id IN (SELECT id FROM sections))"
+        )
+        before = self.connection.execute(
+            "SELECT COUNT(*) FROM events").fetchone()[0]
+        kept = self.connection.execute(
+            "SELECT COUNT(*) FROM events_fk_migrated").fetchone()[0]
+        dropped = before - kept
+        self.connection.execute("DROP TABLE events")
+        self.connection.execute(
+            "ALTER TABLE events_fk_migrated RENAME TO events")
+        if dropped:
+            logger.warning(
+                "events FK migration dropped %d/%d row(s) whose node or "
+                "section refs no longer resolve; re-run events-extract to "
+                "repopulate", dropped, before,
+            )
+        return dropped
 
     def events_of(self, arc_key: str) -> list[sqlite3.Row]:
         """Placed events for one arc, in time-axis order. A keyed lookup."""

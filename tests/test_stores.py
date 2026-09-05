@@ -380,3 +380,106 @@ class TestPagesPerSection:
         assert counts["abilities"] == 4          # and the answer is still right
         assert counts["heading 7"] == 0
         assert len(counts) == len(many)
+
+
+class TestEventsForeignKeys:
+    """The events table is a child of the graph, so it dies with it."""
+
+    def _section(self, store, document_id):
+        return store.add_section(
+            document_id=document_id, title="History", breadcrumb="History",
+            level=1, ordinal=0, text="It happened.", word_count=2,
+        )
+
+    def _document(self, store, title):
+        return store.connection.execute(
+            "SELECT id FROM documents WHERE title = ?", (title,)
+        ).fetchone()[0]
+
+    def _save(self, store, todo, yuji, section_id, time_rank=1.0):
+        return store.save_events(
+            "Test Arc",
+            [{
+                "subject_node": todo, "subject_name": "Aoi Todo",
+                "object_node": yuji, "object_name": "Yuji Itadori",
+                "verb": "fights", "section_id": section_id, "time_rank": time_rank,
+            }],
+            revid=1, prompt_version="test", model="test",
+        )
+
+    def test_a_fresh_table_references_nodes_and_sections(self, store):
+        assert store.ensure_events() == 0
+        refs = {
+            (row["table"], row["from"], row["on_delete"])
+            for row in store.connection.execute("PRAGMA foreign_key_list(events)")
+        }
+        assert ("nodes", "subject_node", "CASCADE") in refs
+        assert ("nodes", "object_node", "CASCADE") in refs
+        assert ("sections", "section_id", "CASCADE") in refs
+
+    def test_rebuilding_the_graph_drops_the_events(self, populated):
+        # The exact hazard: an `index` run renumbers `sections`; without the
+        # FK the events would keep pointing at the old ids.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+        store.connection.execute("DROP TABLE sections")
+        assert (
+            store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+            == 0
+        )
+
+    def test_reset_drops_the_events(self, populated):
+        # The rows are this build's local inference: a rebuild drops them and
+        # `events-extract` is the way back. The table itself comes back with
+        # the schema, FKs and all, so the unguarded readers keep working.
+        store = populated["store"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        assert self._save(store, populated["todo"], populated["yuji"], section_id) == 1
+        store.reset()
+        assert (
+            store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+            == 0
+        )
+        assert store.connection.execute(
+            "PRAGMA foreign_key_list(events)"
+        ).fetchall()
+        # and the next `ensure_events` sees an FK table and migrates nothing
+        assert store.ensure_events() == 0
+
+    def test_a_pre_fk_table_migrates_dropping_dangling_rows(self, populated):
+        # A store that predates the FKs: one row still resolvable, one whose
+        # subject no longer exists. The migration keeps the first and drops
+        # the second, reporting how many it dropped.
+        store = populated["store"]
+        todo, yuji = populated["todo"], populated["yuji"]
+        section_id = self._section(store, self._document(store, "Aoi Todo"))
+        store.connection.execute("DROP TABLE events")
+        store.connection.execute(
+            "CREATE TABLE events ("
+            " subject_node INTEGER, subject_name TEXT, object_node INTEGER,"
+            " object_name TEXT, verb TEXT, arc_key TEXT, section_id INTEGER,"
+            " quote TEXT, temporal INTEGER, time_rank REAL, arc_index INTEGER,"
+            " revid INTEGER, prompt_version TEXT, model TEXT, extracted_at TEXT,"
+            " PRIMARY KEY (subject_node, verb, object_node, section_id, time_rank))"
+        )
+        for time_rank, subject_node in ((1.0, todo), (2.0, 999999)):
+            store.connection.execute(
+                "INSERT INTO events"
+                " (subject_node, subject_name, object_node, object_name, verb,"
+                "  arc_key, section_id, temporal, time_rank, revid, prompt_version,"
+                "  model, extracted_at)"
+                " VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, 1, 'test', 'test', '')",
+                (subject_node, "Aoi Todo", yuji, "Yuji Itadori", "fights",
+                 "Test Arc", section_id, time_rank),
+            )
+        assert store.ensure_events() == 1
+        assert (
+            store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+            == 1
+        )
+        assert store.connection.execute(
+            "PRAGMA foreign_key_list(events)"
+        ).fetchall()
+        # a second pass sees an FK table and migrates nothing
+        assert store.ensure_events() == 0
