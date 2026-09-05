@@ -71,7 +71,7 @@ Same live store, measured 2026-09-05:
 | layer | live state | gap vs the goal |
 |---|---|---|
 | `events` (the "X did Y at Z" predicate) | **2,748** rows; **2,594 `temporal=1`** (= placed), **154 `arc_index IS NULL`** | 154 events (5.6%) have no orderable position — **116 rows under generic headings + 38 rows on `Modulo Chapter N` docs (17 distinct docs)** filed off the story chain. After the Step-1 recompute, `temporal` tracks the live placement (`eventive verb AND arc_index IS NOT NULL`), so the temporal set **is** the 2,594 placed rows (it was 714 before). This is the plan's *residue* (where inference is allowed, not yet run). |
-| cross-page agreement (gate check 2) | **107 disagreements of 390 multi-page groups (27.4% rate)** | triage (`continuity --triage`): **31 interaction-verb** anachronism core (9 premature + 22 delayed), 50 state-verb keying, 26 adjacent straddles. The 31 are the real comprehension failures. **A5 provenance split:** 98/107 (92%) of the disagreements touch a section-placed row; pure arc-named groups sit at 10.5% vs. 35.6% mixed. Since D6 is tautological, this gate is the *only* wrong-placement detector → **B5** (below, reprioritised first). |
+| cross-page agreement (gate check 2) | **107 disagreements of 390 multi-page groups (27.4% rate)** | triage (`continuity --triage`): **31 interaction-verb** anachronism core (9 premature + 22 delayed), 50 state-verb keying, 26 adjacent straddles. The 31 are the real comprehension failures. **A5 provenance split:** 98/107 (92%) of the disagreements touch a section-placed row; pure arc-named groups sit at 10.5% vs. 35.6% mixed. Since D6 is tautological, this is the *only* non-tautological placement signal → **B5**, now a **diagnostic + key-refinement** (spot-check showed 60% of the 107 are key-coarse repeat-encounters, 21% boundary noise — not a demotion gate; see B5 below). |
 | `abilities` | **594** rows, **94 distinct characters** (376 technique · 187 trait · 24 item · 7 transformation) | "narrow": only ~94 of the character population carry abilities; characters with an `Abilities and Powers` section the extractor never read (or that predate the prompt) are missing. |
 | `relations` | **821** rows, **136 characters**, only **298 (36%) carry an `era`** | vocabulary is **social-only** (family/ally/enemy/mentor/rival/superior). No eventive predicate (that is what `events` now carries). 523 era-less rows sit in sections naming no arc. |
 | `semantics` | **0 rows** | no per-entity / per-line "what does this mean" classification. (§2b calls the *gate* a red herring; the *goal* still wants a meaning layer — see R1.) |
@@ -93,47 +93,45 @@ LLM batch, the four standing gates re-run, and a `comprehension:` commit of the
 named paths. "Do not create a third corpse" (§2c) applies: every new table ships
 with the door that reads it.
 
-### B5 — cross-page agreement gate (load-bearing; **first, above R1–R5**)
+### B5 — cross-page agreement: **diagnostic + key-refinement, not a demotion gate**
+(spotted-check done 2026-09-05 — *the "first, above R1–R5" call is superseded*)
 
 With D6 tautological (Step 1: `temporal` reduces to `arc_index IS NOT NULL`, the
-same signal that placed the row), **cross-page agreement is the only signal
-left that can detect a wrong placement** — so it stops being "a check to pass"
-and becomes the gate a script line clears before its placement is trusted. It is
-already half-built (`gate.cross_page_agreement` + `continuity --triage` read the
-gate's own disagreement list; no new model, no GPU). The A5 split (GATE.md)
-shows the 107 disagreements (27.4% of 390 multi-page groups) are driven by the
-**995 section/citation-backfill rows**: 98/107 (92%) involve ≥1 section-placed
-row; pure arc-named groups sit at ~10.5% while mixed groups hit 35.6%.
+same signal that placed the row), **cross-page agreement is the only non-
+tautological placement signal.** It is half-built (`gate.cross_page_agreement` +
+`continuity --triage`). The A5 split (GATE.md) shows the 107 disagreements
+(27.4% of 390 multi-page groups) are driven by the **995 section/citation-backfill
+rows** (98/107 touch a section-placed row; mixed groups disagree at 35.6% vs
+pure-arc-named 10.5%).
 
-**What the council round 2 (`COUNCIL_b5-premise.md`) added — the premise is
-unverified.** The arc-named majority is cross-page but **not independent**: every
-observation shares one epistemic source (the wiki's editors), so a majority proves
-*self-consistency*, not correctness. Mixed groups disagree at 35.6% — *higher*
-than pure arc-named's 10.5% — so the "trusted" signal has its own error rate and
-the two signals' errors are correlated. **Do not build B5 as a majority-
-overwrite.** Concretely:
+**Council round 2 + the spot-check (`COUNCIL_b5-premise.md`) re-scoped B5.**
+The premise — *adjudicate the section rows against the arc-named majority, demote
+the loser* — **fails the empirical test.** Grounding the 9-arc chapter table and
+classifying all 107 with a chapter-in-range oracle:
 
-1. **Spot-check first (the one thing to do).** Ground `arc_index` (what an arc is
-   + its chapter range), validate the `(verb, subject, object)` key, then verify
-   the **5 pure arc-named residual** disagreements (both rows arc-named — cleanest)
-   plus ~15 mixed against an independent oracle (event's chapter ∈ its arc's
-   chapter range? raw-wiki read). This decides whether the majority is even the
-   right side.
-2. **One-way gate, not promotion.** B5 **records** the disagreement (an
-   `event_disagreements` table) and **demotes/flags** the losing section row's
-   confidence; it **never promotes** the majority arc onto a row the wiki never
-   filed — promotion fabricates a placement the editors never made (worse than a
-   NULL). If the spot-check says the section signal is the better source, the gate
-   inverts.
-3. **The 107 are a corpus, not a defect to wipe.** 91 are *two-sided* (both rows
-   carry distinct non-null `arc_index`) — keep them as a gold/correction set.
+| Class | Groups | Share | What it actually is |
+|-------|--------|-------|---------------------|
+| Repeat-encounter (every row's chapter validly inside its *own* arc) | 60 | 56% | the `(verb, subject, object)` key is **too coarse** — it merges the same pair genuinely spanning arcs (Gojo *fights* Jogo in Fearsome Womb, vs. Mahito, *and* Shibuya). No single right arc → **nothing to demote** |
+| Out-of-range row | 23 | 21% | almost all **arc-boundary artifacts** (ch 53 just past Kyoto, ch 222/269 around Shinjuku); only ~2 non-nearest. Likely correct filings |
+| No chapter signal (both sides synopsis sections) | 24 | 22% | unjudgeable mechanically; a raw-wiki read (R1's job) |
 
-Lands **first** because it is the only placement detector and it is half-built;
-R1–R5 all rest on a placement B5 has vouched for. The **105/154 sibling-
-propagation** lead (recover the unplaced rows by copying a placed twin's `arc_index`)
-is a recoverable-residue move for R4, but the council's correlated-error warning
-stands until the spot-check says the section rows are trustworthy — gate it behind
-the same check.
+**~0 of the 107 are unambiguous misplacements.** So B5 is **not** a corrective
+gate — one that demoted the "loser" would demote legitimate multi-arc events and
+amplify the key's coarseness. Re-scoped:
+
+1. **Diagnostic, not corrective.** Surface the repeat-encounter + boundary groups
+   to a human; `continuity --triage` already lists them. No `event_disagreements`
+   overwrite, no confidence demotion.
+2. **Refine the key.** Add a chapter/temporal component to the grouping key so
+   "the same pair in different arcs" stops reading as a contradiction. This is
+   the real fix the 60 repeat-encounters point at.
+3. **The 107 stay a corpus** (91 two-sided) for R1's per-line meaning index, not a
+   gate target.
+
+The **105/154 sibling-propagation** lead (copy a placed twin's `arc_index` onto an
+unplaced row) is now **deprioritized**: if the section rows are mostly
+repeat/boundary noise, propagation copies that noise onto ~105 more rows. Hold it
+until the key is refined and the 24 unjudgeable are read.
 
 ### R1 — the per-line / per-beat *meaning* index (the load-bearing one)
 
@@ -194,10 +192,13 @@ Convert the 28,483 untyped `mentions` toward a typed graph where the infobox
 already types the relation. Cheap where the signal is free; deferred — it does
 not advance the goal as directly as R1–R4.
 
-**Order:** B5 (the only wrong-placement detector, half-built, no model) → R1
-(the goal's core) → R2 ∥ R3 (coverage, independent) → R4 (residue) → R5. B5
-goes first because with D6 tautological it is the only placement detector and it
-is already half-built; R1 is the goal's core and gets the full council.
+**Order:** R1 (the goal's core — per-line meaning index; full council) → R2 ∥ R3
+(coverage, independent) → R4 (residue) → R5. **B5 is no longer "first."** The
+spot-check showed the cross-page signal is dominated by key-coarseness (60% repeat-
+encounters) + boundary noise (21%), so it is a **diagnostic + key-refinement** that
+feeds R1 (its 107-group corpus and the refined `(verb, subject, object, chapter)`
+key are inputs to the per-line meaning index), not a gate that runs ahead of it.
+R4's sibling-propagation stays held (it would copy the same noise).
 
 ---
 

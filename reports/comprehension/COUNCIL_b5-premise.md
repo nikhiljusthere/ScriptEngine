@@ -119,6 +119,40 @@ mixed against an independent oracle (event's chapter ∈ its arc's chapter range
 raw-wiki read). It decides whether B5's premise is even true and whether the gate
 demotes or inverts. No model, no GPU; it is the fact the whole B5 plan depends on.
 
+## Spot-check result (done 2026-09-05; read-only, no model)
+
+Grounded the arc table (9 arcs, non-overlapping chapter ranges from battle pages:
+Cursed Child 0-3, Fearsome Womb 4-18, Vs. Mahito 19-30, Kyoto 34-52, Death
+Painting 57-62, Gojo's Past 66-75, Shibuya 80-137, Culling Game 139-219, Shinjuku
+223-268). Then classified all 107 disagreements with a mechanical
+**chapter-in-range** oracle: a row is *self-consistent* when its page's own chapter
+reference falls inside its claimed arc's range.
+
+**The premise fails.** The 107 "disagreements" are almost never wrong placements:
+
+| Class | Groups | Share | What it actually is |
+|-------|--------|-------|---------------------|
+| **Repeat-encounter** — every row's chapter is validly inside its *own* claimed arc | 60 | 56% | the `(verb, subject, object)` key is **too coarse**: it merges the same pair genuinely spanning arcs (Gojo *fights* Jogo in Fearsome Womb, vs. Mahito, *and* Shibuya). There is no single right arc, so a majority/demotion gate has **nothing to correct** |
+| **Out-of-range row** | 23 | 21% | almost all are **arc-boundary artifacts**: the flagged chapter sits in a gap *adjacent* to the claimed arc (ch 53 just past Kyoto 34-52, ch 222 just before Shinjuku 223-268, ch 269 just past it). The battle-page-derived ranges simply don't sample boundary chapters → likely correct filings. Only ~2 (ch 79 filed under Gojo's Past, really pre-Shibuya) are non-nearest-arc |
+| **No chapter signal** (both sides are synopsis sections) | 24 | 22% | unjudgeable mechanically; needs a raw-wiki read |
+
+**Net: ~0 of the 107 are unambiguous misplacements.** The cross-page
+"disagreement" signal is dominated by key-coarseness (60%) and boundary noise
+(21%), not wrong placements. A gate that "adjudicates" the 995 section rows
+against the arc-named majority would **demote legitimate multi-arc events** — it
+amplifies the key's coarseness, it does not fix placement.
+
+**Consequence for B5 (re-scoped, supersedes the "first, above R1–R5" call):**
+1. **Do NOT build B5 as a demotion/overwrite gate.** There is no correct loser to
+   demote in 60/107 groups.
+2. B5's real value is **diagnostic, not corrective**: surface the repeat-encounter
+   and boundary groups to a human, and **refine the key** to carry a chapter/
+   temporal component so "the same pair in different arcs" stops reading as a
+   contradiction. The 24 unjudgeable ones stay a raw-wiki read (R1's job).
+3. This closes the council's #1 blind spot with a negative: the `(verb, s, o)`
+   key was never validated — and it does not validate. It is the coarseness
+   itself, not the placement, that produces the "disagreement."
+
 ## Verified-claims ledger (checked against code/DB before recording)
 
 - 2,748 events; `temporal=1` = 2,594; `arc_index IS NULL` = 154; 8 verbs

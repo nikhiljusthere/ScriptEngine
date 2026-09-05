@@ -256,8 +256,15 @@ self-contradiction, a corpus truth); the 35.6% mixed rate is driven by the
 995-row section backfill filing the same event in a different arc than the
 arc-named pages do. Because D6 is tautological (above), **cross-page agreement
 is the only signal that can flag a wrong placement** — and it points squarely at
-the section backfill. That is **B5**: gate the 995 section-placed rows against
-the arc-named (page-signal) majority before any script line trusts them.
+the section backfill. That is **B5**. *Re-scoped by the spot-check*
+(`COUNCIL_b5-premise.md`): grounding the 9-arc chapter table and classifying all 107
+shows **56% are key-coarse repeat-encounters** (the same pair genuinely spanning
+arcs — Gojo fights Jogo in three different arcs) and **21% are arc-boundary
+artifacts**, leaving ~0 unambiguous misplacements. So B5 is a **diagnostic +
+key-refinement** (add a chapter component to the `(verb, subject, object)` key;
+surface the 107 to R1's per-line meaning index), **not** a demotion gate that
+overwrites section rows with the arc-named majority — that would demote
+legitimate multi-arc events.
 
 **Test re-derivation (deliberate, non-tautological).** `test_backfill_places_every_row`
 is replaced by pinned invariants: the 995 section-placed count, the
@@ -428,9 +435,11 @@ The two D6 invariants (no dangling `temporal=1 & arc_index IS NULL`; no
 placed-but-off-axis `temporal=0 & arc_index IS NOT NULL`) therefore pass by
 construction: they certify flag↔placement **consistency**, never that the
 placement is **chronologically correct**. A row placed in the *wrong* arc still
-satisfies both invariants. With D6 tautological, the only independent signal
-that can flag a wrong placement is **cross-page agreement** (below) — which is
-why it, not D6, is the load-bearing check for B5.
+satisfies both invariants. With D6 tautological, the only non-tautological signal
+is **cross-page agreement** (below). The spot-check (`COUNCIL_b5-premise.md`)
+showed it is *mostly* key-coarseness, not a misplacement detector — 56% of the
+107 are repeat-encounters (the pair genuinely spans arcs) and 21% boundary noise —
+so B5 is a **diagnostic + key-refinement**, not a demotion gate.
 
 **Beat-ordering guard (the check none of the four standing gates cover).** The
 narrative reorderer only reorders on `temporal=1` events, so the flip from 0 →
