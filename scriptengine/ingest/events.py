@@ -817,6 +817,92 @@ def placement_pages(store: FactStore) -> list[str]:
     return sorted(weight, key=weight.get, reverse=True)  # type: ignore[arg-type]
 
 
+# Section titles that narrate what happened, in story order. The complement of
+# the list/reference/attribute furniture: a character's own history lives in
+# its Synopsis/History and its per-arc sections, a chapter's in its
+# Plot Details. A section under any other heading states traits or links, not
+# events, and an event placed in one sits where the section sits, not where the
+# event did.
+NARRATIVE_SECTION_TITLES = {
+    "synopsis", "summary", "plot", "plot details", "history",
+    "overview", "story", "development", "background",
+}
+
+
+def is_narrative_heading(title: str) -> bool:
+    """A heading that narrates: a narrative-family title, or a section the wiki
+    named after the arc it walks (the character's `Culling Game Arc` section)."""
+    lowered = (title or "").strip().lower()
+    return lowered in NARRATIVE_SECTION_TITLES or lowered.endswith(" arc")
+
+
+def corpus_scope(store: FactStore) -> dict[str, list[sqlite3.Row]]:
+    """The sections an interaction may state, keyed by page.
+
+    The placement set (arc/event/battle pages) is where a wiki states events in
+    the round. Most of what a wiki says about a character sits OFF that
+    character's page -- in the character's own Synopsis/History and in the
+    chapter's Plot Details -- so the corpus pass reaches those. A section is in
+    scope only when its heading narrates (see `is_narrative_heading`) AND the
+    section's chunks name at least two of the wiki's own character nodes: one
+    character is description, two is an interaction, the event candidate.
+
+    Character-family page types are read off the wiki's own type names (any type
+    whose name carries `character`), so nothing about which types count is a
+    series name in this file.
+    """
+    char_types = sorted(
+        str(row["page_type"])
+        for row in store.connection.execute(
+            "SELECT DISTINCT page_type FROM documents"
+        )
+        if row["page_type"] and "character" in str(row["page_type"]).lower()
+    )
+    if not char_types:
+        return {}
+    placeholders = ",".join("?" * len(char_types))
+    counts = {
+        int(row["sid"]): int(row["cn"])
+        for row in store.connection.execute(
+            "SELECT ch.section_id AS sid, COUNT(DISTINCT cn.node_id) AS cn"
+            " FROM chunk_nodes cn"
+            " JOIN chunks ch ON ch.id = cn.chunk_id"
+            " JOIN nodes n ON n.id = cn.node_id AND n.is_resolved = 1"
+            " JOIN documents d ON d.id = n.document_id"
+            f" WHERE d.page_type IN ({placeholders})"
+            " AND ch.section_id IS NOT NULL"
+            " GROUP BY ch.section_id",
+            char_types,
+        )
+    }
+    multi = {sid for sid, cn in counts.items() if cn >= 2}
+    if not multi:
+        return {}
+    by_doc: dict[int, list[sqlite3.Row]] = {}
+    for row in store.connection.execute(
+        "SELECT s.* FROM sections s"
+        f" WHERE s.id IN ({','.join('?' * len(multi))})"
+        " ORDER BY s.document_id, s.ordinal",
+        tuple(multi),
+    ):
+        if is_narrative_heading(row["title"]):
+            by_doc.setdefault(int(row["document_id"]), []).append(row)
+    if not by_doc:
+        return {}
+    titles = {
+        int(row["id"]): row["title"]
+        for row in store.connection.execute("SELECT id, title FROM documents")
+    }
+
+    def weight(rows: list[sqlite3.Row]) -> int:
+        return sum(int(row["word_count"] or 0) for row in rows)
+
+    return {
+        titles[doc_id]: by_doc[doc_id]
+        for doc_id in sorted(by_doc, key=lambda d: weight(by_doc[d]), reverse=True)
+    }
+
+
 def _time_to_hours(when: str) -> float:
     """`9:22 PM` -> 21.3667: the clock the wiki wrote in the heading, verbatim."""
     match = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", when, re.IGNORECASE)
@@ -994,6 +1080,7 @@ def extract_events_series(
     refresh: bool = False,
     progress: Any = None,
     workers: int = 1,
+    scope: str = "placement",
 ) -> dict[str, Any]:
     """Extract this series' placed events, skipping what is current.
 
@@ -1001,6 +1088,13 @@ def extract_events_series(
     same reason: the store belongs to this thread, the network wait does not.
     A page is current when it was read under the same `PROMPT_VERSION` and the
     document has not been re-crawled since, which is what `refresh` overrides.
+
+    `scope` chooses which pages to read. `placement` (the default) is the
+    arc/event/battle set, where a wiki states events in the round. `corpus`
+    reaches the rest of the story: the narrative-family sections that name two
+    or more of the wiki's characters (a character's own Synopsis/History, a
+    chapter's Plot Details), which is where most of what a wiki says about a
+    character actually lives.
     """
     from concurrent.futures import ThreadPoolExecutor
 
@@ -1018,9 +1112,22 @@ def extract_events_series(
         store.ensure_events()
         # Resolved here, on the thread that owns the connection.
         known = known_participants(store)
-        pages = placement_pages(store)
+        if scope == "corpus":
+            scope_map = corpus_scope(store)
+            pages = list(scope_map)
+        else:
+            scope_map = None
+            pages = placement_pages(store)
         report["considered"] = len(pages)
         wanted = pages[:limit] if limit else pages
+
+        def sections_for(page: str) -> list[sqlite3.Row]:
+            # The corpus scope reads only the in-scope sections of a page, not
+            # all its prose: a character page's Appearance and Trivia state no
+            # events and would only spend model calls to find that.
+            if scope_map is not None:
+                return scope_map.get(page, [])
+            return extractable_sections(store, page)
 
         todo: list[tuple[str, str]] = []
         for page in wanted:
@@ -1059,7 +1166,7 @@ def extract_events_series(
                 try:
                     found = extract_from_sections(
                         client, paths.name, page,
-                        extractable_sections(store, page), known,
+                        sections_for(page), known,
                     )
                 except LLMUnavailable:
                     raise
@@ -1073,7 +1180,7 @@ def extract_events_series(
         for start in range(0, len(todo), workers * 4):
             chunk = todo[start : start + workers * 4]
             work = [
-                (page, revid, extractable_sections(store, page))
+                (page, revid, sections_for(page))
                 for page, revid in chunk
             ]
 

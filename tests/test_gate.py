@@ -15,6 +15,7 @@ import pytest
 
 from scriptengine.config import series_paths
 from scriptengine.ingest import gate
+from scriptengine.ingest.events import corpus_scope, is_narrative_heading
 from scriptengine.stores.facts import FactStore
 
 
@@ -123,3 +124,28 @@ class TestGateReport:
         assert "flipped" in report["check3"]
         assert "stats" in report["agreement"]
         assert "beats" in report["coverage"]
+
+
+class TestCorpusScope:
+    def test_narrative_headings_are_recognised(self):
+        for title in ("Synopsis", "Plot Details", "History", "Culling Game Arc",
+                     "Shibuya Incident Arc", "  Overview "):
+            assert is_narrative_heading(title), title
+        for title in ("Powers", "Trivia", "Appearance", "Relationships", "", None):
+            assert not is_narrative_heading(title), title
+
+    def test_scope_reaches_only_narrative_sections_of_pages_naming_two_characters(self, jjk_store):
+        scope = corpus_scope(jjk_store)
+        assert scope
+        for page, sections in scope.items():
+            assert sections
+            for section in sections:
+                assert is_narrative_heading(section["title"]), (page, section["title"])
+                assert section["id"] is not None
+
+    def test_scope_is_deterministic(self, jjk_store):
+        a = corpus_scope(jjk_store)
+        b = corpus_scope(jjk_store)
+        assert list(a) == list(b)
+        assert {id for secs in a.values() for id in (s["id"] for s in secs)} == \
+               {id for secs in b.values() for id in (s["id"] for s in secs)}

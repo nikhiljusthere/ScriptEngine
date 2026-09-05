@@ -649,6 +649,15 @@ def events_extract(
     workers: int = typer.Option(
         1, "--workers", help="Extract this many pages at once."
     ),
+    scope: str = typer.Option(
+        "placement",
+        "--scope",
+        help=(
+            "placement = the arc/event/battle set; corpus = the narrative sections"
+            " that name two or more of the wiki's characters (a character's own"
+            " Synopsis/History, a chapter's Plot Details)."
+        ),
+    ),
 ) -> None:
     """Extract the events this wiki's arc, event and battle pages state.
 
@@ -658,11 +667,17 @@ def events_extract(
     be entities this wiki actually has. Where on the axis an event sits is
     looked up from its section -- a heading's clock time, or article order --
     never inferred by the model.
+
+    `--scope placement` (default) reads the arc/event/battle set. `--scope
+    corpus` reaches the rest of the story: the narrative sections that name two
+    or more of the wiki's characters, where most of what a wiki says about a
+    character lives off that character's own page.
     """
     import logging
 
     from scriptengine.ingest.events import (
         PROMPT_VERSION,
+        corpus_scope,
         extract_events_series,
         extractable_sections,
         placement_pages,
@@ -679,14 +694,27 @@ def events_extract(
     if dry_run:
         with FactStore(paths.facts_db) as store:
             store.ensure_events()
-            pages = placement_pages(store)
+            if scope == "corpus":
+                scope_map = corpus_scope(store)
+                pages = list(scope_map)
+            else:
+                scope_map = None
+                pages = placement_pages(store)
+
+            def sections_for(page: str) -> list:
+                if scope_map is not None:
+                    return scope_map.get(page, [])
+                return extractable_sections(store, page)
+
             if limit:
                 pages = pages[:limit]
+            total = sum(len(sections_for(page)) for page in pages)
             console.print(
-                f"[dim]{len(pages)} pages would be read (prompt {PROMPT_VERSION}):[/dim]"
+                f"[dim]{len(pages)} pages / {total} sections would be read"
+                f" (scope={scope}, prompt {PROMPT_VERSION}):[/dim]"
             )
             for page in pages[:40]:
-                sections = extractable_sections(store, page)
+                sections = sections_for(page)
                 console.print(f"  {page}  [dim]({len(sections)} sections)[/dim]")
                 for section in sections:
                     console.print(f"    [dim]{section['title']}[/dim]")
@@ -700,7 +728,7 @@ def events_extract(
     try:
         report = extract_events_series(
             paths, limit=limit or None, refresh=refresh, progress=show,
-            workers=max(1, workers),
+            workers=max(1, workers), scope=scope,
         )
     except LLMUnavailable as error:
         console.print(f"[red]{error}[/red]")

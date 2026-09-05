@@ -173,6 +173,18 @@ for the RTX 5090). Everything works on CPU, slowly. The embedder and reranker
 load on first use and unload when idle, because ComfyUI and a resident model
 cannot share VRAM.
 
+**Hard rule — the extraction model owns the GPU.** The 27B Qwen model
+(`ninfer-serve` on `:18080`) holds ~24.6 GB of the 32 GB card, leaving ~7 GB for
+its KV cache. When the `:8000` API's reranker also sits on the GPU it takes a
+further ~4 GB, and the Qwen model OOM-crashes under load. That is exactly what
+took down the first full-corpus extraction: **508/524 pages failed with
+`[Errno 111] Connection refused`** because the model died mid-run. So when you
+run `events-extract` (or any heavy LLM batch) on GPU, **dedicate the GPU to the
+Qwen model**: stop the `:8000` API (or run it on CPU with
+`SCRIPTENGINE_DEVICE=cpu`) first, then confirm `nvidia-smi` shows only the model
+process and ~7 GB free before launching. Never run the extraction's LLM on CPU
+as a workaround — the GPU is the path; just keep the card free for it.
+
 ## Status
 
 Eight Fandom wikis are indexed: Jujutsu Kaisen (the development + active-campaign

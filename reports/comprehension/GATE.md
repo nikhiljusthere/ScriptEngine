@@ -81,12 +81,103 @@ The gate is reachable only from `comprehension-gate` and `gate.py`; nothing on a
 default retrieval path touches it, so the gates are structurally unaffected and
 were re-run clean (`:8000` CUDA API stopped for pytest, relaunched for canon-run).
 
-## Next (step 3b)
+## Step 3b — corpus scope (complete)
 
 The gate is proven on the 108-page placement set. Step 3b widens extraction to the
-full corpus (node degree ≥ 2 under a narrative-family heading, ~19,684 chunks)
-using this same gate — the pass that reaches character `Synopsis`/`History` and
-chapter `Plot Details`, where most of a character's own history actually lives.
+full corpus: a section is in scope when its heading **narrates** (title in
+`{synopsis, summary, plot, plot details, history, overview, story, development,
+background}`, or the wiki named it after the arc it walks, e.g. a character's
+`Culling Game Arc`) **and** the section's chunks name at least **two** of the
+wiki's own character nodes. Character-family page types are read off the wiki's
+own type names (any type carrying `character`) — nothing about which types count
+is a series name. Exposed as `events-extract --scope corpus` (placement set is
+`--scope placement`).
+
+Measured on JJK: **524 pages / 964 sections / ~1,279 LLM windows**, reaching
+character `Synopsis`/`History` and chapter `Plot Details`, where most of a
+character's own history actually lives.
+
+**First run failed 508/524 pages** with `[Errno 111] Connection refused`: the
+27B Qwen model OOM-crashed because the `:8000` API's GPU reranker (4.1 GB)
+competed with Qwen (24.6 GB) for the 32 GB card, leaving only 3.3 GB. Fix:
+**dedicate the GPU to the Qwen model** (stop the `:8000` API → 7.4 GB free) and
+raise the answer budget (`SCRIPTENGINE_ANSWER_TOKENS=16384`, one page had spent
+its whole 8192 on reasoning and never answered). Hard rule now in `CLAUDE.md`:
+the extraction model owns the GPU. Re-launched on the dedicated GPU; re-runs skip
+the cached pages, so a mid-run crash resumes cheaply.
+
+**Results** (dedicated-GPU re-run, 2026-09-05). This is a **data step, not a
+comprehension win**: it widens the event set and re-runs the gate, but adds no
+placed events.
+
+Extraction: 524 considered, **509 extracted, 15 cached, 0 failed** → the event
+set grows **714 → 2,748** (+2,034). Reconciled: the crashed first run completed
+16 of 524 (508 failed on the OOM); on the re-run 15 of those were cached and 1
+re-extracted (a zero-event / revid-changed page — zero-event pages never cache,
+so they re-extract every run), giving the tidy 509 + 15 = 524.
+
+The 2,034 new rows are **all `temporal=0` and off-axis** (`arc_index IS NULL`);
+the placeable set is unchanged — **`temporal=1` is still 714**, the pre-corpus
+baseline. How the 2,034 got there: `backfill_event_arc_index` maps the **page**
+(`arc_key`) to an `arc_index`, and the gate flips `temporal=1 AND arc_index IS
+NULL` to a standing state (`temporal=0`, gate.py:48,64). So **1,160** were
+temporal rows on *non-axis pages* that dangled and were demoted; the **874**
+rest (2,034 − 1,160, exact by construction) were already `temporal=0` at
+extraction. The gate leaves no per-row marker, so the 874 aren't individually
+isolable post-gate — the count is exact, the per-row label is not.
+
+**Why the number came out flat — the real mechanism (verified, not a floor).**
+The off-axis rows are not *unplaceable*; the placement logic simply never reads
+the one free signal that would place them:
+- **995 of the 2,034 (48%) sit under a section heading that names an arc — and
+  all nine such headings (`Culling Game`, `Shibuya Incident`, `Shinjuku
+  Showdown`, `Gojo's Past`, `Fearsome Womb`, `Kyoto Goodwill Event`, `Cursed
+  Child`, `Death Painting`, `Vs. Mahito`) are on the placement axis.** The
+  backfill keys on the *page*, so a character `Synopsis` page is off-axis even
+  though its `Shibuya Incident Arc` section names the exact arc to attach to.
+- The other **1,039** sit under generic headings (`Plot Details` 708, `Summary`
+  215, `Overview` 98, `History` 18); **~209 of those carry a `Chapter`/`Episode`
+  citation in the section text**, a second free signal, and many come from
+  Episode/Chapter pages themselves.
+
+So "flat 714" is a **symptom of the placement key, not a content floor**: the
+backfill maps by page only and ignores the section heading and the in-text
+citation. Extending `backfill_event_arc_index` to consult both is the
+continuity-check placement pass (below); it is not a 3b defect — the same gap
+already left the baseline's non-axis temporal rows dangling.
+
+- **Cross-page agreement: 684 groups, 390 from 2+ pages, 352 agree, 38
+  disagree.** Against the 714-event baseline (341 / 153 / 115 / 38): agreeing
+  *groups* roughly triple (115 → 352), the agreeing *fraction* rises 75% → 90%,
+  and the **disagreement count holds at 38** — the widening corroborates the
+  same events from more pages and surfaces no new disagreement *classes*. (A
+  self-consistency check on one wiki: it catches the extractor contradicting
+  itself, not the wiki being wrong.)
+- **Coverage: 61.9%** of the 388 placement-page narrative beats carry a
+  surviving temporal row (0.0% atemporal) — unchanged, because the beat set is
+  the fixed placement pages and only the off-axis event set grew.
+
+**Test-invariant change (deliberate).** `test_backfill_places_every_row` now
+asserts off-axis rows are *justified by temporality* — `arc_index IS NULL` ==
+`count(temporal=0 OR residue-page)` — not that *everything* is placed. Verified:
+`count(arc_index IS NULL AND temporal=1) = 0` (no temporal row lost). A real
+invariant (a lost temporal row still fails it), not a tautology.
+
+**Known hazards / follow-ups (queued, not resolved here).**
+- *Placement-signal gap (the continuity-check placement pass):* extend
+  `backfill_event_arc_index` to also map by **section heading** (995 rows) and
+  by **in-text `Chapter`/`Episode` citation** (~209 more), registering the
+  corpus pages that carry them on the axis. A rescue that only writes
+  `arc_index` is clobbered by the next gate run, so the corpus pages must be in
+  the placement axis, not just patched per-row.
+- *Re-index id-dangling (pre-existing, latent, amplified by 3b):* `reset()`
+  drops `nodes`+`sections` (reassigning rowids) but keeps `events`, whose PK
+  carries node/section ids with no FKs. A routine `index` after extraction would
+  dangle the 139 node + 838 section refs; the gate (groups by node-id pair)
+  would silently stop grouping. Currently clean (no re-index since extraction).
+  Fix: add FKs, or re-extract events after a reset. (Out of 3b's additive scope.)
+- *Scope-shrink check:* diff the pre/post-scope candidate sets to rule out a
+  masked recall loss (the new scope replaced the old node-degree-2 scope).
 
 ## Commands
 

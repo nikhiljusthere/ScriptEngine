@@ -141,8 +141,12 @@ class TestBackfill:
     def test_backfill_places_every_row(self, jjk_store):
         tally = timeaxis.backfill_event_arc_index(jjk_store)
         assert tally["rows"] > 0
-        # The only rows allowed off the axis are the ones filed under a residue
-        # page -- the cheap signals reach every other placement page.
+        # A row may sit off the axis only if it is atemporal (temporal=0: a
+        # standing state the axis cannot order) or it is filed under a residue
+        # page the cheap signals did not reach. Every temporal row is placed.
+        # Temporality, not page provenance, is what decides: corpus pages whose
+        # events the axis cannot order are stored atemporal, so they are the
+        # expected off-axis set, not a leak.
         residue = [
             page
             for page, placed in timeaxis.placement_time_axis(jjk_store).items()
@@ -154,10 +158,13 @@ class TestBackfill:
         ).fetchone()[0]
         if residue:
             placeholders = ",".join("?" * len(residue))
-            residue_rows = connection.execute(
-                f"SELECT COUNT(*) FROM events WHERE arc_key IN ({placeholders})",
+            allowed_off = connection.execute(
+                f"SELECT COUNT(*) FROM events "
+                f"WHERE temporal = 0 OR arc_key IN ({placeholders})",
                 residue,
             ).fetchone()[0]
         else:
-            residue_rows = 0
-        assert null_rows == residue_rows
+            allowed_off = connection.execute(
+                "SELECT COUNT(*) FROM events WHERE temporal = 0"
+            ).fetchone()[0]
+        assert null_rows == allowed_off
