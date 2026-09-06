@@ -442,26 +442,21 @@ def _qa_context(
     relations += [row for row in ranked if not connects_named(row)]
 
     beats: list[dict[str, Any]] = []
-    # The subject's own passages lead the walk, in the wiki's section order; the
-    # ranked beam follows with the subject's own passages removed by id, since
-    # their section-ordered copies are the ones that get paid for. An uncapped
-    # floor starves the beam: Gojo's page is forty-two passages (~8.5k tokens)
-    # against the 6k default budget, and the walk would spend it all on the
-    # floor and serve the beam nothing, evicting the cross-page beat (B1, the
-    # `Angel` page) that only the ranked beam reaches. Reserve half the budget
-    # for the beam and cap the floor at the other half; the first floor passage
-    # is still never dropped, since the floor is the subject's own page.
-    beam_reserves = token_budget // 2 if floor else 0
-    floor_ids = {passage.chunk_id for passage in floor}
-    ordered = [*floor, *(p for p in result.passages if p.chunk_id not in floor_ids)]
+    # The ranked beam is walked first so a cross-page beat (B1, the `Angel` page)
+    # or a non-leading section the beam reaches (Equipment, Quotes, the arc
+    # timeline) is paid before the subject's own floor can evict it; the floor
+    # then fills leftover budget in the wiki's section order, still guaranteeing
+    # the subject's page on a keyword-miss (Kechizu 036, Tsumiki's kanji, Toge
+    # 051). The old floor-first walk with a half-budget reservation capped the
+    # floor without protecting the beam: B1's cross-page beat was evicted even at
+    # 50%, and the Appearance-first floor burned budget before reaching the
+    # sections F1/F2/C2/C3 actually need.
+    beam_ids = {p.chunk_id for p in result.passages}
+    floor_fill = [p for p in floor if p.chunk_id not in beam_ids]
+    ordered = [*result.passages, *floor_fill]
     for order, passage in enumerate(ordered, start=1):
         cost = estimate_tokens(passage.text) + 30
-        limit = (
-            token_budget - beam_reserves
-            if passage.chunk_id in floor_ids
-            else token_budget
-        )
-        if used + cost > limit and beats:
+        if used + cost > token_budget and beats:
             break
         text = cite.upgrade_markers(passage.text, episodes)
         beats.append(
