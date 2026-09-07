@@ -28,8 +28,32 @@ prose gets a one-line fix, committed.
 
 ## 2. Standing behavior rules (the "customizations")
 
-These are the working agreements of `CLAUDE.md`, restated as the agent's
-own defaults:
+### The three standing rules — `plan/STANDING_RULES.md` (verbatim authority,
+repeated at the top of `flow.md`, `Plan_to_perfection.md`, `drift_log.md`)
+
+1. **No user input. None, for the duration of the plan.** Every wall — a
+   design fork, an ambiguous result, a blocked step, a judgement call, two
+   defensible options — **run `llm-council` instead**: the council decides,
+   the agent acts on its verdict and records it. No asking for approval,
+   which option, or whether to proceed; no stopping to report progress and
+   wait. The only stop is the halt path in `flow.md`, and it runs a council
+   first. Council claims are **DB-verified before recording**; a council that
+   cannot be verified against the store did not happen.
+2. **The GPU is available. Do not default to CPU.** Check `nvidia-smi` free
+   memory first and size the job against it. Short retrieval jobs co-locate
+   with Qwen safely; a sustained 27B extraction batch wants the card to
+   itself (one OOM-crashed at 508/524 beside the reranker). CPU fallback is
+   a decision needing a measured VRAM shortfall, not a habit.
+3. **Council cadence — three mandatory points.** (a) Every 2–3 completed
+   todos: a council reviewing *the fixes just made*. (b) At the end of every
+   sub-list, **before the return pointer fires**: a council assessing whether
+   the sub-list actually completed. (c) At every phase gate: the gate council
+   specified in `flow.md`. Each is written to
+   `reports/comprehension/COUNCIL_<subject>.md` and committed with the work
+   it reviewed. **If it is not on disk, it did not happen.**
+
+### Kit rules — the working agreements of `CLAUDE.md`, restated as the
+agent's own defaults:
 
 1. **Checkpoint-first.** Never start real work without knowing the live
    position (drift §4). End significant work with the `switchpoint` skill
@@ -37,12 +61,14 @@ own defaults:
 2. **Drift discipline.** Trunk steps are `P<phase>.<step>`, excursions
    `X<n>.<step>` (never a phase number). Append-only `drift_log.md` §5
    format. Every excursion gets its return pointer **when it opens**.
-3. **Council, not user input, at forks.** Big decisions / big builds go
-   through `llm-council` (5 advisors in parallel → 5 peer reviews →
-   chairman verdict), recorded in `reports/comprehension/COUNCIL_<subject>.md`
-   with claims DB-verified before recording. Cadence: every 2–3 todos, end
-   of every sub-list, every phase gate. If it is not on disk, it did not
-   happen.
+3. **Council, not user input, at forks** (standing rule 1, operationalized).
+   Big decisions / big builds go through `llm-council` (**all 5 advisors in
+   parallel in one message → all 5 peer reviewers in parallel → chairman
+   verdict** — the project convention, which overrides the skill's
+   sequential default), recorded in
+   `reports/comprehension/COUNCIL_<subject>.md` with claims DB-verified
+   before recording. Cadence per standing rule 3. If it is not on disk, it
+   did not happen.
 4. **Gates discipline.** `audit` before `index`, `span-recall` after
    `index`, the four standing gates after any build (see the
    `scriptengine-gates` skill). A pass is done only when its gate re-ran
@@ -76,7 +102,7 @@ They appear in pi's startup header; force-load with `/skill:<name>`.
 | `qwen-switch` | before/after any GPU phase; the autonomous mode switch |
 | `switchpoint` | before a switch, at council cadence, on "checkpoint" |
 | `scriptengine-gates` | after any build / before calling a pass done |
-| `llm-council` | every fork, big build, phase gate (5+5, recorded) |
+| `llm-council` | every fork, big build, phase gate — **5 advisors in parallel (one message), then 5 peers in parallel** (project convention; overrides the skill's sequential default); record + commit |
 
 ## 4. Autonomous Qwen mode switching
 
@@ -125,3 +151,6 @@ exception).
 | live mode record | `ninfer-work/qwen_mode.txt` |
 | coverage | `reports/page-campaign/COVERAGE.md` (regenerated) |
 | writing rules | `scriptengine/api/rules.py` + `docs/ANTI_AI_SCRIPTING.md` |
+| the three standing rules (plan-level, verbatim) | `plan/STANDING_RULES.md` (copies in `flow.md`, `Plan_to_perfection.md`, `drift_log.md`) |
+| dimension map (R1–R5 retired) | `plan/Plan_to_perfection.md` §12 (+ §13 durable-key precondition) |
+| council methodology | `llm-council` skill (`~/.claude/skills/llm-council/SKILL.md`, exposed to pi via `.pi/settings.json`) |
