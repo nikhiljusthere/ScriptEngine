@@ -129,6 +129,7 @@ def cross_page_agreement(store: FactStore) -> dict:
 
     stats = {"groups": len(groups), "multi_page_groups": 0, "agreeing": 0, "disagreeing": 0}
     disagreements: list[dict] = []
+    agreements: list[dict] = []
     for verb, pair, group in ordered:
         pages = {row["arc_key"].strip().lower() for row in group}
         if len(pages) < 2:
@@ -137,6 +138,29 @@ def cross_page_agreement(store: FactStore) -> dict:
         arcs = sorted({row["arc_index"] for row in group if row["arc_index"] is not None})
         if len(arcs) <= 1:
             stats["agreeing"] += 1
+            # Kept in full, not just counted: the 3d false-negative audit
+            # re-grounds these against the chapter-in-range oracle (a group that
+            # "agrees" on an arc a row's own chapter contradicts is a
+            # false agreement the gate never flags).
+            agreements.append(
+                {
+                    "verb": verb,
+                    "participants": _node_names(pair, group),
+                    "arc_index": arcs[0] if arcs else None,
+                    "arc": names.get(arcs[0], "[unplaced]") if arcs else "[unplaced]",
+                    "row_count": len(group),
+                    "pages": sorted(pages),
+                    "rows": [
+                        {
+                            "arc_key": row["arc_key"],
+                            "arc_index": row["arc_index"],
+                            "direction": f'{row["subject_name"]} -> {row["object_name"]}',
+                            "quote": row["quote"],
+                        }
+                        for row in sorted(group, key=lambda r: (r["arc_index"] is None, r["arc_index"] or 0, r["arc_key"]))
+                    ],
+                }
+            )
             continue
         stats["disagreeing"] += 1
 
@@ -169,7 +193,7 @@ def cross_page_agreement(store: FactStore) -> dict:
                 "modeling_problem": len(group) >= _WELL_POPULATED and majority < _MINORITY_SHARE,
             }
         )
-    return {"stats": stats, "disagreements": disagreements, "arc_names": names}
+    return {"stats": stats, "disagreements": disagreements, "agreements": agreements, "arc_names": names}
 
 
 def _node_names(pair: frozenset[int], rows: Sequence[dict]) -> list[str]:

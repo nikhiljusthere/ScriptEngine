@@ -531,6 +531,136 @@ unchanged. Spot-checked placements (Sukuna/Synopsis ch. 264 -> Shinjuku
 Showdown; Episode 38's section -> Shibuya Incident; Maki vs Naoya
 ch. 197 -> Culling Game) are the wiki's own filings, not inferences.
 
+## X2.d — door censuses, D1 + D2 (complete 2026-09-07)
+
+Phase 2 of the D6-completion plan: 100 fixed roster enumeration
+questions + 100 fixed narrative chronological questions, run through
+the same in-process path the `:8000` `/context` endpoint uses
+(`build_context`, explicit door mode; `tools/census_doors.py`,
+CENSUS_DEVICE=cuda, 98 s). The question sets are frozen data:
+`reports/comprehension/census_roster_100.json` (stratified 70
+character / 21 technique / 4 organization / 5 item, drawn from the
+wiki's own ~1,355 declared rosters — each question is a declaration's
+`name`, so every one is a question the wiki itself asks) and
+`census_narrative_100.json` (60 character timelines / 9 arc overviews /
+31 character-during-arc; arcs from the 9-arc story axis post-R4).
+Re-runs execute the same 200; `--regen` only rebuilds.
+
+| door | reached | bar (D1/D2) | |
+|---|---:|---:|---|
+| roster | **100/100 (100%)** | ≥99% | met |
+| narrative | **99/100 (99.0%)** | ≥99% | met |
+
+**Triage ledger (every non-ideal result has a recorded reason):**
+
+- 1 narrative MISS — "What happened to Garry K. Johnson, in order?":
+  the minor Culling-Game character has **0 extracted event rows**
+  (extraction-coverage property of a one-arc side character, not a
+  retrieval defect — there is nothing for the door to retrieve). His
+  story prose *is* reachable: the qa door serves it (Culling Game
+  Synopsis / Plot Details passages verified live). Class: corpus
+  property, like `reached-uncited` in the 545 census.
+- 13 roster `short` (retrieved < declared, all 100 still *reached*):
+  12 "Every battle involving X" + 1 "Every battle involving Yuji
+  Itadori" (23/24). The roster door pays members one at a time within
+  the 6,000-token budget (the documented design — a 67-battle roster
+  cannot fit in 6k tokens), so long sets truncate in order. Class:
+  budget truncation by design; full-set enumeration is the R7
+  roster-precision territory, not reachability. 87/100 enumerate fully.
+
+Result file: `reports/comprehension/census_doors_results.jsonl`.
+Both D1 and D2 hold with every miss triaged — the pre-committed
+"red door → 2 repair iterations → council" branch never fired.
+
+## X2.e — comprehension measurements 3a + 3b + 3d (complete 2026-09-07)
+
+Phase 3 of the D6-completion plan: the measurement battery that decides
+what (if anything) Phase 4 owes. All three ran on the settled post-R4
+store (unplaced 64, temporal 2,684, cross-page 109 disagree / 281 agree).
+
+### 3a — inexpressible-sentence cross-check (GREEN)
+
+The 58 inexpressible sentences of the 8-verb spot-check
+(`reports/comprehension/census_3a_inexpressible.json`; 61 uncovered − 3
+now-`met` after the 1C verb ruling) probed verbatim against the `:8000`
+qa door, auto-route, 2 independent runs — identical result:
+
+- **56/58 HIT (96.6%)**, 2 MISS_DOC, persistent across runs:
+  - item 086 (Chapter 102, "Yuji reveals Eso and Kechizu's last words…")
+  - item 088 (Chapter 120, "Yuji regains control… Sukuna's rampage")
+- Both pages **are** reachable by direct title/content query ("Chapter
+  102" / "Chapter 120" both top their own beat). Diagnosis: the
+  long-sentence-as-query ranking-granularity class — the whole sentence
+  as query shape does not lift the page's own page into the top bundle.
+  Same class as the historical span-recall background (2–3% miss at
+  n=400; 2/58 ≈ expected 1.2 at this shape).
+- **3a = GREEN: gate-coarseness diagnostic (B5 class), no build.** The
+  R1 double-gate (3a >10 AND 3b red on the same content) is not met —
+  3a is ≤10 and every red is the same content shape, not a meaning gap.
+
+Result: `reports/comprehension/census_3a_inexpressible.probed.json`.
+
+### 3b — per-dimension retrieval-not-extraction (GREEN, no extraction owed)
+
+The frozen 140-question bank — 14 classes × 10 (the 12 §12 character
+prose dimensions + Outcomes + Causality), `reports/comprehension/
+census_3b_dimensions.json` — through the qa door in-process
+(`tools/census_dimensions.py`; mechanical 3-term coverage first, then a
+second anchored pass with `subject` set, then full-bundle human reading
+of the surviving reds).
+
+| pass | mech-green | notes |
+|---|---:|---|
+| auto-routed (no subject) | 115/140 | 25 mech-reds |
+| + anchored (subject) | 130/140 | 15 of the 25 are routing-granularity (the door finds the answer when anchored on the subject) |
+| full-bundle judgment of the 10 remaining reds | **139/140 substantively green** | 9 of the 10 were mechanical term misses — the answer content *is* in the served bundle (e.g. OC05: the battle infobox `Outcome` field is served verbatim; CT06: Idle Transfiguration mechanics served; HI08: "salaryman" served by a directly-worded probe) |
+
+**The 1 genuine red:** EQ03 "What equipment does Hakari use?" — the
+wiki records **no equipment for Hakari** (his page has no Equipment /
+Cursed Tools section; he is a technique + hand-to-hand fighter). The
+full anchored bundle (20k chars: every section of his page) contains no
+equipment content. Class: **dimension-coverage property of the wiki**,
+not an engine defect — Equipment is a thin §12 dimension (3,782 words
+corpus-wide) and is served where the wiki has content (9/10 of the
+class green, incl. Todo's shuriken, Nanami's blade, Maki's sword).
+
+Consequences for Phase 4 (the council's contingent list):
+- **Outcomes: 10/10 green** (battle infobox `Outcome` fields are served
+  verbatim — the field already exists; no outcomes layer owed).
+- **Causality: 10/10 green** (no causality layer owed — the "most
+  likely owed" item is not owed).
+- No extraction is owed by 3b; the single red names a wiki-coverage
+  property, not a buildable layer (there is no content to extract).
+
+Result: `reports/comprehension/census_3b_results.jsonl`.
+
+### 3d — placement-gate false-negative audit (MET)
+
+`tools/placement_audit.py`, model-free, using the B5 chapter-in-range
+oracle (the council's B5 spot-check ranges: 9 arcs from
+`timeaxis.chapter_arc_index`). Every post-R4 disagreeing group (109) is
+re-grounded, plus a 40-group agreeing sample (seed 42) for false-
+agreement. Classes: repeat-encounter (key too coarse) / boundary
+(nearest arc within one index step — gap-chapter artifacts) /
+out-of-range (≥2 index steps, flagged) / no-signal (no chapter fact).
+
+| set | result |
+|---|---|
+| disagreeing 109 | 86 repeat-encounter / 11 boundary / 12 no-signal / **0 out-of-range** |
+| agreeing sample 40 | **0 false agreements** |
+| bar | 0 unflagged unambiguous misplacements → **MET** |
+
+Consistent with the B5 baseline shape (pre-R4: 60/23/24; the R4-placed
+rows moved groups from no-signal/boundary toward repeat-encounter).
+Result: `reports/comprehension/placement_audit_3d.json`.
+
+### X2.e net
+
+All three measurements green/met. **Phase 4 (contingent extraction)
+fires nothing**: no red door, no 3b red naming an owed layer, no 3d
+flag. The remaining open item of Phase 3 is **3c** (the 50-question
+open-ended census that can only *grow* the dimension map).
+
 ## What remains to full comprehension (the updated plan)
 
 All five build phases above are shipped and green; the *goal* (the corpus

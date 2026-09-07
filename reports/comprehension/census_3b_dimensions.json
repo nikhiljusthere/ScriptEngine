@@ -1,0 +1,1542 @@
+[
+ {
+  "id": "PE01",
+  "class": "Personality",
+  "subject": "Mahito",
+  "q": "How does Mahito behave toward the people he tortures?",
+  "expect": [
+   "distort",
+   "torture",
+   "bodies"
+  ]
+ },
+ {
+  "id": "PE02",
+  "class": "Personality",
+  "subject": "Satoru Gojo",
+  "q": "What is Gojo's general attitude toward his students?",
+  "expect": [
+   "student",
+   "joke",
+   "irresponsible"
+  ]
+ },
+ {
+  "id": "PE03",
+  "class": "Personality",
+  "subject": "Kento Nanami",
+  "q": "How does Nanami feel about his work as a sorcerer?",
+  "expect": [
+   "salaryman",
+   "work",
+   "regret"
+  ]
+ },
+ {
+  "id": "PE04",
+  "class": "Personality",
+  "subject": "Toge Inumaki",
+  "q": "How does Inumaki's cursed technique shape the way he behaves?",
+  "expect": [
+   "words",
+   "food",
+   "speak"
+  ]
+ },
+ {
+  "id": "PE05",
+  "class": "Personality",
+  "subject": "Panda",
+  "q": "What kind of person is Panda, aside from being a cursed corpse?",
+  "expect": [
+   "kind",
+   "rice",
+   "gentle"
+  ]
+ },
+ {
+  "id": "PE06",
+  "class": "Personality",
+  "subject": "Jogo",
+  "q": "How does Jogo act toward the people he meets?",
+  "expect": [
+   "fire",
+   "strong",
+   "respect"
+  ]
+ },
+ {
+  "id": "PE07",
+  "class": "Personality",
+  "subject": "Choso",
+  "q": "What is Choso's attitude toward his brothers?",
+  "expect": [
+   "brother",
+   "avenge",
+   "family"
+  ]
+ },
+ {
+  "id": "PE08",
+  "class": "Personality",
+  "subject": "Kinji Hakari",
+  "q": "How does Hakari behave when things are going well for him?",
+  "expect": [
+   "gamble",
+   "luck",
+   "win"
+  ]
+ },
+ {
+  "id": "PE09",
+  "class": "Personality",
+  "subject": "Maki Zenin",
+  "q": "What is Maki's attitude toward the Zenin clan?",
+  "expect": [
+   "Zenin",
+   "clan",
+   "resent"
+  ]
+ },
+ {
+  "id": "PE10",
+  "class": "Personality",
+  "subject": "Kenjaku",
+  "q": "How does Kenjaku view ordinary humans?",
+  "expect": [
+   "human",
+   "merge",
+   "weak"
+  ]
+ },
+ {
+  "id": "OV01",
+  "class": "Overview",
+  "subject": "Kokichi Muta",
+  "q": "Who is Kokichi Muta?",
+  "expect": [
+   "Muta",
+   "criminal",
+   "curse"
+  ]
+ },
+ {
+  "id": "OV02",
+  "class": "Overview",
+  "subject": "Hanami",
+  "q": "Who is Hanami?",
+  "expect": [
+   "Hanami",
+   "special grade",
+   "plant"
+  ]
+ },
+ {
+  "id": "OV03",
+  "class": "Overview",
+  "subject": "Yuta Okkotsu",
+  "q": "Who is Yuta Okkotsu?",
+  "expect": [
+   "Yuta",
+   "Rika",
+   "vessel"
+  ]
+ },
+ {
+  "id": "OV04",
+  "class": "Overview",
+  "subject": "Kenjaku",
+  "q": "Who is Kenjaku?",
+  "expect": [
+   "Kenjaku",
+   "cursed",
+   "sorcerer"
+  ]
+ },
+ {
+  "id": "OV05",
+  "class": "Overview",
+  "subject": "Toji Fushiguro",
+  "q": "Who is Toji Fushiguro?",
+  "expect": [
+   "Toji",
+   "Zenin",
+   "sorcerer"
+  ]
+ },
+ {
+  "id": "OV06",
+  "class": "Overview",
+  "subject": "Suguru Geto",
+  "q": "Who is Suguru Geto?",
+  "expect": [
+   "Geto",
+   "sorcerer",
+   "cursed"
+  ]
+ },
+ {
+  "id": "OV07",
+  "class": "Overview",
+  "subject": "Jogo",
+  "q": "Who is Jogo?",
+  "expect": [
+   "Jogo",
+   "flame",
+   "curse"
+  ]
+ },
+ {
+  "id": "OV08",
+  "class": "Overview",
+  "subject": "Choso",
+  "q": "Who is Choso?",
+  "expect": [
+   "Choso",
+   "cursed",
+   "blood"
+  ]
+ },
+ {
+  "id": "OV09",
+  "class": "Overview",
+  "subject": "Aoi Todo",
+  "q": "Who is Aoi Todo?",
+  "expect": [
+   "Todo",
+   "jujutsu",
+   "sorcerer"
+  ]
+ },
+ {
+  "id": "OV10",
+  "class": "Overview",
+  "subject": "Panda",
+  "q": "Who is Panda?",
+  "expect": [
+   "Panda",
+   "cursed",
+   "rice"
+  ]
+ },
+ {
+  "id": "TR01",
+  "class": "Trivia",
+  "subject": "Panda",
+  "q": "What is recorded about Panda's head?",
+  "expect": [
+   "rice",
+   "head",
+   "bowl"
+  ]
+ },
+ {
+  "id": "TR02",
+  "class": "Trivia",
+  "subject": "Sukuna",
+  "q": "What trivia is recorded about Sukuna?",
+  "expect": [
+   "Sukuna",
+   "finger",
+   "king"
+  ]
+ },
+ {
+  "id": "TR03",
+  "class": "Trivia",
+  "subject": "Yuji Itadori",
+  "q": "What fun facts or trivia are recorded about Yuji?",
+  "expect": [
+   "Yuji",
+   "cursed",
+   "Sukuna"
+  ]
+ },
+ {
+  "id": "TR04",
+  "class": "Trivia",
+  "subject": "Toge Inumaki",
+  "q": "What trivia is recorded about Inumaki?",
+  "expect": [
+   "Inumaki",
+   "words",
+   "food"
+  ]
+ },
+ {
+  "id": "TR05",
+  "class": "Trivia",
+  "subject": "Maki Zenin",
+  "q": "What trivia is recorded about Maki?",
+  "expect": [
+   "Maki",
+   "Zenin",
+   "cursed"
+  ]
+ },
+ {
+  "id": "TR06",
+  "class": "Trivia",
+  "subject": "Aoi Todo",
+  "q": "What trivia is recorded about Todo?",
+  "expect": [
+   "Todo",
+   "shuriken",
+   "jujutsu"
+  ]
+ },
+ {
+  "id": "TR07",
+  "class": "Trivia",
+  "subject": "Kento Nanami",
+  "q": "What trivia is recorded about Nanami?",
+  "expect": [
+   "Nanami",
+   "salaryman",
+   "blade"
+  ]
+ },
+ {
+  "id": "TR08",
+  "class": "Trivia",
+  "subject": "Suguru Geto",
+  "q": "What trivia is recorded about Geto?",
+  "expect": [
+   "Geto",
+   "sorcerer",
+   "staff"
+  ]
+ },
+ {
+  "id": "TR09",
+  "class": "Trivia",
+  "subject": "Jogo",
+  "q": "What trivia is recorded about Jogo?",
+  "expect": [
+   "Jogo",
+   "flame",
+   "fire"
+  ]
+ },
+ {
+  "id": "TR10",
+  "class": "Trivia",
+  "subject": "Kinji Hakari",
+  "q": "What trivia is recorded about Hakari?",
+  "expect": [
+   "Hakari",
+   "gamble",
+   "luck"
+  ]
+ },
+ {
+  "id": "AP01",
+  "class": "Appearance",
+  "subject": "Hanami",
+  "q": "What does Hanami look like?",
+  "expect": [
+   "Hanami",
+   "petal",
+   "plant"
+  ]
+ },
+ {
+  "id": "AP02",
+  "class": "Appearance",
+  "subject": "Jogo",
+  "q": "What does Jogo look like?",
+  "expect": [
+   "Jogo",
+   "flame",
+   "fire"
+  ]
+ },
+ {
+  "id": "AP03",
+  "class": "Appearance",
+  "subject": "Sukuna",
+  "q": "What does Sukuna look like when he takes a full form?",
+  "expect": [
+   "Sukuna",
+   "horns",
+   "mouth"
+  ]
+ },
+ {
+  "id": "AP04",
+  "class": "Appearance",
+  "subject": "Mahito",
+  "q": "What does Mahito look like?",
+  "expect": [
+   "Mahito",
+   "pale",
+   "skin"
+  ]
+ },
+ {
+  "id": "AP05",
+  "class": "Appearance",
+  "subject": "Yuta Okkotsu",
+  "q": "Describe Yuta Okkotsu's appearance.",
+  "expect": [
+   "Yuta",
+   "hair",
+   "Rika"
+  ]
+ },
+ {
+  "id": "AP06",
+  "class": "Appearance",
+  "subject": "Choso",
+  "q": "What does Choso look like?",
+  "expect": [
+   "Choso",
+   "ears",
+   "skin"
+  ]
+ },
+ {
+  "id": "AP07",
+  "class": "Appearance",
+  "subject": "Maki Zenin",
+  "q": "Describe Maki's appearance (hair, build).",
+  "expect": [
+   "Maki",
+   "hair",
+   "build"
+  ]
+ },
+ {
+  "id": "AP08",
+  "class": "Appearance",
+  "subject": "Kinji Hakari",
+  "q": "What does Hakari look like?",
+  "expect": [
+   "Hakari",
+   "face",
+   "body"
+  ]
+ },
+ {
+  "id": "AP09",
+  "class": "Appearance",
+  "subject": "Toji Fushiguro",
+  "q": "What does Toji Fushiguro look like?",
+  "expect": [
+   "Toji",
+   "hair",
+   "body"
+  ]
+ },
+ {
+  "id": "AP10",
+  "class": "Appearance",
+  "subject": "Kenjaku",
+  "q": "What does Kenjaku look like in his vessel body?",
+  "expect": [
+   "Kenjaku",
+   "body",
+   "skin"
+  ]
+ },
+ {
+  "id": "CT01",
+  "class": "Cursed Technique",
+  "subject": "Aoi Todo",
+  "q": "How does Todo's cursed technique work?",
+  "expect": [
+   "Todo",
+   "shuriken",
+   "cursed tool"
+  ]
+ },
+ {
+  "id": "CT02",
+  "class": "Cursed Technique",
+  "subject": "Toge Inumaki",
+  "q": "How does Inumaki's technique work?",
+  "expect": [
+   "Inumaki",
+   "words",
+   "prohibition"
+  ]
+ },
+ {
+  "id": "CT03",
+  "class": "Cursed Technique",
+  "subject": "Maki Zenin",
+  "q": "What can Maki do without cursed energy?",
+  "expect": [
+   "Maki",
+   "hand-to-hand",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "CT04",
+  "class": "Cursed Technique",
+  "subject": "Kinji Hakari",
+  "q": "How does Hakari's technique work?",
+  "expect": [
+   "Hakari",
+   "gamble",
+   "luck"
+  ]
+ },
+ {
+  "id": "CT05",
+  "class": "Cursed Technique",
+  "subject": "Jogo",
+  "q": "How does Jogo's technique work?",
+  "expect": [
+   "Jogo",
+   "flame",
+   "fire"
+  ]
+ },
+ {
+  "id": "CT06",
+  "class": "Cursed Technique",
+  "subject": "Mahito",
+  "q": "What can Mahito do with his technique?",
+  "expect": [
+   "Mahito",
+   "distort",
+   "flesh"
+  ]
+ },
+ {
+  "id": "CT07",
+  "class": "Cursed Technique",
+  "subject": "Hanami",
+  "q": "How does Hanami's technique work?",
+  "expect": [
+   "Hanami",
+   "plant",
+   "tree"
+  ]
+ },
+ {
+  "id": "CT08",
+  "class": "Cursed Technique",
+  "subject": "Satoru Gojo",
+  "q": "What does Gojo's Infinity do?",
+  "expect": [
+   "Gojo",
+   "infinity",
+   "curse"
+  ]
+ },
+ {
+  "id": "CT09",
+  "class": "Cursed Technique",
+  "subject": "Choso",
+  "q": "How does Choso's blood technique work?",
+  "expect": [
+   "Choso",
+   "blood",
+   "cursed"
+  ]
+ },
+ {
+  "id": "CT10",
+  "class": "Cursed Technique",
+  "subject": "Kenjaku",
+  "q": "What is Kenjaku's technique?",
+  "expect": [
+   "Kenjaku",
+   "cursed energy",
+   "human"
+  ]
+ },
+ {
+  "id": "HI01",
+  "class": "History",
+  "subject": "Yuji Itadori",
+  "q": "What happened in Yuji's past before the series began?",
+  "expect": [
+   "Yuji",
+   "orphanage",
+   "cursed object"
+  ]
+ },
+ {
+  "id": "HI02",
+  "class": "History",
+  "subject": "Yuta Okkotsu",
+  "q": "What is Yuta Okkotsu's backstory?",
+  "expect": [
+   "Yuta",
+   "Rika",
+   "sister"
+  ]
+ },
+ {
+  "id": "HI03",
+  "class": "History",
+  "subject": "Suguru Geto",
+  "q": "What happened to Geto before he left the sorcerers?",
+  "expect": [
+   "Geto",
+   "cursed",
+   "sorcerer"
+  ]
+ },
+ {
+  "id": "HI04",
+  "class": "History",
+  "subject": "Toji Fushiguro",
+  "q": "What is Toji Fushiguro's backstory?",
+  "expect": [
+   "Toji",
+   "Zenin",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "HI05",
+  "class": "History",
+  "subject": "Choso",
+  "q": "What happened in Choso's past?",
+  "expect": [
+   "Choso",
+   "brother",
+   "Karuha"
+  ]
+ },
+ {
+  "id": "HI06",
+  "class": "History",
+  "subject": "Panda",
+  "q": "What is Panda's backstory?",
+  "expect": [
+   "Panda",
+   "cursed corpse",
+   "rice"
+  ]
+ },
+ {
+  "id": "HI07",
+  "class": "History",
+  "subject": "Kenjaku",
+  "q": "What is Kenjaku's history?",
+  "expect": [
+   "Kenjaku",
+   "cursed",
+   "fusion"
+  ]
+ },
+ {
+  "id": "HI08",
+  "class": "History",
+  "subject": "Kento Nanami",
+  "q": "What was Nanami's life like before he became a sorcerer?",
+  "expect": [
+   "Nanami",
+   "salaryman",
+   "company"
+  ]
+ },
+ {
+  "id": "HI09",
+  "class": "History",
+  "subject": "Sukuna",
+  "q": "What is Sukuna's history as the King of Curses?",
+  "expect": [
+   "Sukuna",
+   "king",
+   "shrine"
+  ]
+ },
+ {
+  "id": "HI10",
+  "class": "History",
+  "subject": "Maki Zenin",
+  "q": "What happened to Maki at the Zenin clan?",
+  "expect": [
+   "Maki",
+   "Zenin",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "PP01",
+  "class": "Physical Prowess",
+  "subject": "Yuji Itadori",
+  "q": "What physical feats has Yuji shown?",
+  "expect": [
+   "Yuji",
+   "strength",
+   "speed"
+  ]
+ },
+ {
+  "id": "PP02",
+  "class": "Physical Prowess",
+  "subject": "Maki Zenin",
+  "q": "How strong is Maki in hand-to-hand combat?",
+  "expect": [
+   "Maki",
+   "sword",
+   "hand-to-hand"
+  ]
+ },
+ {
+  "id": "PP03",
+  "class": "Physical Prowess",
+  "subject": "Choso",
+  "q": "What physical feats has Choso shown?",
+  "expect": [
+   "Choso",
+   "speed",
+   "strength"
+  ]
+ },
+ {
+  "id": "PP04",
+  "class": "Physical Prowess",
+  "subject": "Toge Inumaki",
+  "q": "How physically capable is Inumaki?",
+  "expect": [
+   "Inumaki",
+   "speed",
+   "physical"
+  ]
+ },
+ {
+  "id": "PP05",
+  "class": "Physical Prowess",
+  "subject": "Kinji Hakari",
+  "q": "What physical feats has Hakari shown?",
+  "expect": [
+   "Hakari",
+   "speed",
+   "strength"
+  ]
+ },
+ {
+  "id": "PP06",
+  "class": "Physical Prowess",
+  "subject": "Satoru Gojo",
+  "q": "How fast is Gojo in combat?",
+  "expect": [
+   "Gojo",
+   "speed",
+   "fight"
+  ]
+ },
+ {
+  "id": "PP07",
+  "class": "Physical Prowess",
+  "subject": "Aoi Todo",
+  "q": "What physical feats has Todo shown?",
+  "expect": [
+   "Todo",
+   "speed",
+   "shuriken"
+  ]
+ },
+ {
+  "id": "PP08",
+  "class": "Physical Prowess",
+  "subject": "Mahito",
+  "q": "How strong is Mahito physically?",
+  "expect": [
+   "Mahito",
+   "regeneration",
+   "flesh"
+  ]
+ },
+ {
+  "id": "PP09",
+  "class": "Physical Prowess",
+  "subject": "Toji Fushiguro",
+  "q": "What physical feats has Toji shown?",
+  "expect": [
+   "Toji",
+   "speed",
+   "strength"
+  ]
+ },
+ {
+  "id": "PP10",
+  "class": "Physical Prowess",
+  "subject": "Jogo",
+  "q": "What physical feats has Jogo shown?",
+  "expect": [
+   "Jogo",
+   "flame",
+   "fire"
+  ]
+ },
+ {
+  "id": "IN01",
+  "class": "Intelligence",
+  "subject": "Satoru Gojo",
+  "q": "How does Gojo plan during battles?",
+  "expect": [
+   "Gojo",
+   "strategy",
+   "plan"
+  ]
+ },
+ {
+  "id": "IN02",
+  "class": "Intelligence",
+  "subject": "Megumi Fushiguro",
+  "q": "What tactics does Megumi use?",
+  "expect": [
+   "Megumi",
+   "tactic",
+   "curse"
+  ]
+ },
+ {
+  "id": "IN03",
+  "class": "Intelligence",
+  "subject": "Mahito",
+  "q": "How does Mahito outsmart his opponents?",
+  "expect": [
+   "Mahito",
+   "trick",
+   "deceive"
+  ]
+ },
+ {
+  "id": "IN04",
+  "class": "Intelligence",
+  "subject": "Yuji Itadori",
+  "q": "How does Yuji think in battle?",
+  "expect": [
+   "Yuji",
+   "instinct",
+   "fight"
+  ]
+ },
+ {
+  "id": "IN05",
+  "class": "Intelligence",
+  "subject": "Kinji Hakari",
+  "q": "What is Hakari's tactical approach?",
+  "expect": [
+   "Hakari",
+   "gamble",
+   "luck"
+  ]
+ },
+ {
+  "id": "IN06",
+  "class": "Intelligence",
+  "subject": "Maki Zenin",
+  "q": "What is Maki's game plan for fighting without cursed energy?",
+  "expect": [
+   "Maki",
+   "strategy",
+   "hand-to-hand"
+  ]
+ },
+ {
+  "id": "IN07",
+  "class": "Intelligence",
+  "subject": "Suguru Geto",
+  "q": "How did Geto use his intelligence to build his following?",
+  "expect": [
+   "Geto",
+   "manipulat",
+   "recruit"
+  ]
+ },
+ {
+  "id": "IN08",
+  "class": "Intelligence",
+  "subject": "Kenjaku",
+  "q": "How does Kenjaku plan across centuries?",
+  "expect": [
+   "Kenjaku",
+   "plan",
+   "long"
+  ]
+ },
+ {
+  "id": "IN09",
+  "class": "Intelligence",
+  "subject": "Aoi Todo",
+  "q": "What is Todo like as a strategist?",
+  "expect": [
+   "Todo",
+   "tactic",
+   "strategy"
+  ]
+ },
+ {
+  "id": "IN10",
+  "class": "Intelligence",
+  "subject": "Nobara Kugisaki",
+  "q": "How does Nobara approach her attacks?",
+  "expect": [
+   "Nobara",
+   "hammer",
+   "improvise"
+  ]
+ },
+ {
+  "id": "AB01",
+  "class": "Abilities and Powers",
+  "subject": "Satoru Gojo",
+  "q": "List Gojo's main abilities.",
+  "expect": [
+   "infinity",
+   "six eyes",
+   "hollow technique"
+  ]
+ },
+ {
+  "id": "AB02",
+  "class": "Abilities and Powers",
+  "subject": "Sukuna",
+  "q": "List Sukuna's techniques.",
+  "expect": [
+   "dismantle",
+   "cleave",
+   "technique"
+  ]
+ },
+ {
+  "id": "AB03",
+  "class": "Abilities and Powers",
+  "subject": "Mahito",
+  "q": "List Mahito's abilities.",
+  "expect": [
+   "distort",
+   "idiot",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB04",
+  "class": "Abilities and Powers",
+  "subject": "Choso",
+  "q": "List Choso's abilities.",
+  "expect": [
+   "blood",
+   "maze",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB05",
+  "class": "Abilities and Powers",
+  "subject": "Kinji Hakari",
+  "q": "List Hakari's abilities.",
+  "expect": [
+   "game",
+   "luck",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB06",
+  "class": "Abilities and Powers",
+  "subject": "Aoi Todo",
+  "q": "List Todo's abilities.",
+  "expect": [
+   "shuriken",
+   "cursed tool",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB07",
+  "class": "Abilities and Powers",
+  "subject": "Toge Inumaki",
+  "q": "List Inumaki's abilities.",
+  "expect": [
+   "prohibition",
+   "words",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB08",
+  "class": "Abilities and Powers",
+  "subject": "Maki Zenin",
+  "q": "List Maki's fighting abilities.",
+  "expect": [
+   "black flash",
+   "hand-to-hand",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB09",
+  "class": "Abilities and Powers",
+  "subject": "Kenjaku",
+  "q": "List Kenjaku's abilities.",
+  "expect": [
+   "cursed energy",
+   "fusion",
+   "ability"
+  ]
+ },
+ {
+  "id": "AB10",
+  "class": "Abilities and Powers",
+  "subject": "Jogo",
+  "q": "List Jogo's abilities.",
+  "expect": [
+   "flame",
+   "fire",
+   "ability"
+  ]
+ },
+ {
+  "id": "CE01",
+  "class": "Cursed Energy",
+  "subject": "Yuji Itadori",
+  "q": "What is known about Yuji's cursed energy?",
+  "expect": [
+   "Yuji",
+   "quality",
+   "quantity"
+  ]
+ },
+ {
+  "id": "CE02",
+  "class": "Cursed Energy",
+  "subject": "Satoru Gojo",
+  "q": "How is Gojo's cursed energy different?",
+  "expect": [
+   "Gojo",
+   "six eyes",
+   "limitless"
+  ]
+ },
+ {
+  "id": "CE03",
+  "class": "Cursed Energy",
+  "subject": "Mahito",
+  "q": "What is known about Mahito's cursed energy?",
+  "expect": [
+   "Mahito",
+   "distort",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "CE04",
+  "class": "Cursed Energy",
+  "subject": "Choso",
+  "q": "What is known about Choso's cursed energy?",
+  "expect": [
+   "Choso",
+   "blood",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "CE05",
+  "class": "Cursed Energy",
+  "subject": "Kenjaku",
+  "q": "What is known about Kenjaku's cursed energy?",
+  "expect": [
+   "Kenjaku",
+   "cursed energy",
+   "power"
+  ]
+ },
+ {
+  "id": "CE06",
+  "class": "Cursed Energy",
+  "subject": "Sukuna",
+  "q": "How is Sukuna's cursed energy described?",
+  "expect": [
+   "Sukuna",
+   "cursed energy",
+   "power"
+  ]
+ },
+ {
+  "id": "CE07",
+  "class": "Cursed Energy",
+  "subject": "Aoi Todo",
+  "q": "What is known about Todo's cursed energy?",
+  "expect": [
+   "Todo",
+   "cursed energy",
+   "quantity"
+  ]
+ },
+ {
+  "id": "CE08",
+  "class": "Cursed Energy",
+  "subject": "Kento Nanami",
+  "q": "What is known about Nanami's cursed energy?",
+  "expect": [
+   "Nanami",
+   "cursed energy",
+   "blade"
+  ]
+ },
+ {
+  "id": "CE09",
+  "class": "Cursed Energy",
+  "subject": "Maki Zenin",
+  "q": "Maki has no cursed energy -- what is recorded about that?",
+  "expect": [
+   "Maki",
+   "cursed energy",
+   "none"
+  ]
+ },
+ {
+  "id": "CE10",
+  "class": "Cursed Energy",
+  "subject": "Kinji Hakari",
+  "q": "What is known about Hakari's cursed energy?",
+  "expect": [
+   "Hakari",
+   "cursed energy",
+   "luck"
+  ]
+ },
+ {
+  "id": "EQ01",
+  "class": "Equipment",
+  "subject": "Aoi Todo",
+  "q": "What equipment does Todo carry into battle?",
+  "expect": [
+   "Todo",
+   "shuriken",
+   "weapon"
+  ]
+ },
+ {
+  "id": "EQ02",
+  "class": "Equipment",
+  "subject": "Maki Zenin",
+  "q": "What equipment does Maki use?",
+  "expect": [
+   "Maki",
+   "sword",
+   "weapon"
+  ]
+ },
+ {
+  "id": "EQ03",
+  "class": "Equipment",
+  "subject": "Kinji Hakari",
+  "q": "What equipment does Hakari use?",
+  "expect": [
+   "Hakari",
+   "weapon",
+   "dagger"
+  ]
+ },
+ {
+  "id": "EQ04",
+  "class": "Equipment",
+  "subject": "Satoru Gojo",
+  "q": "What equipment does Gojo use?",
+  "expect": [
+   "Gojo",
+   "blindfold",
+   "eye"
+  ]
+ },
+ {
+  "id": "EQ05",
+  "class": "Equipment",
+  "subject": "Kento Nanami",
+  "q": "What equipment does Nanami use?",
+  "expect": [
+   "Nanami",
+   "blade",
+   "weapon"
+  ]
+ },
+ {
+  "id": "EQ06",
+  "class": "Equipment",
+  "subject": "Toji Fushiguro",
+  "q": "What equipment did Toji use?",
+  "expect": [
+   "Toji",
+   "weapon",
+   "cursed tool"
+  ]
+ },
+ {
+  "id": "EQ07",
+  "class": "Equipment",
+  "subject": "Jogo",
+  "q": "What equipment does Jogo use?",
+  "expect": [
+   "Jogo",
+   "weapon",
+   "fire"
+  ]
+ },
+ {
+  "id": "EQ08",
+  "class": "Equipment",
+  "subject": "Choso",
+  "q": "What equipment does Choso use?",
+  "expect": [
+   "Choso",
+   "weapon",
+   "cursed"
+  ]
+ },
+ {
+  "id": "EQ09",
+  "class": "Equipment",
+  "subject": "Suguru Geto",
+  "q": "What equipment did Geto use?",
+  "expect": [
+   "Geto",
+   "staff",
+   "weapon"
+  ]
+ },
+ {
+  "id": "EQ10",
+  "class": "Equipment",
+  "subject": "Sukuna",
+  "q": "What equipment does Sukuna use?",
+  "expect": [
+   "Sukuna",
+   "weapon",
+   "vessel"
+  ]
+ },
+ {
+  "id": "QU01",
+  "class": "Quotes",
+  "subject": "Mahito",
+  "q": "Give some memorable lines spoken by Mahito.",
+  "expect": [
+   "Mahito",
+   "human",
+   "face"
+  ]
+ },
+ {
+  "id": "QU02",
+  "class": "Quotes",
+  "subject": "Satoru Gojo",
+  "q": "Give some memorable lines spoken by Gojo.",
+  "expect": [
+   "Gojo",
+   "strongest",
+   "joy"
+  ]
+ },
+ {
+  "id": "QU03",
+  "class": "Quotes",
+  "subject": "Kento Nanami",
+  "q": "Give some memorable lines spoken by Nanami.",
+  "expect": [
+   "Nanami",
+   "salaryman",
+   "work"
+  ]
+ },
+ {
+  "id": "QU04",
+  "class": "Quotes",
+  "subject": "Yuji Itadori",
+  "q": "Give some memorable lines spoken by Yuji.",
+  "expect": [
+   "Yuji",
+   "protect",
+   "friend"
+  ]
+ },
+ {
+  "id": "QU05",
+  "class": "Quotes",
+  "subject": "Sukuna",
+  "q": "Give some memorable lines spoken by Sukuna.",
+  "expect": [
+   "Sukuna",
+   "human",
+   "king"
+  ]
+ },
+ {
+  "id": "QU06",
+  "class": "Quotes",
+  "subject": "Toge Inumaki",
+  "q": "Give some memorable lines spoken by Inumaki (his food speech).",
+  "expect": [
+   "Inumaki",
+   "food",
+   "eat"
+  ]
+ },
+ {
+  "id": "QU07",
+  "class": "Quotes",
+  "subject": "Suguru Geto",
+  "q": "Give some memorable lines spoken by Geto.",
+  "expect": [
+   "Geto",
+   "human",
+   "cursed"
+  ]
+ },
+ {
+  "id": "QU08",
+  "class": "Quotes",
+  "subject": "Yuta Okkotsu",
+  "q": "Give some memorable lines spoken by Yuta.",
+  "expect": [
+   "Yuta",
+   "Rika",
+   "protect"
+  ]
+ },
+ {
+  "id": "QU09",
+  "class": "Quotes",
+  "subject": "Maki Zenin",
+  "q": "Give some memorable lines spoken by Maki.",
+  "expect": [
+   "Maki",
+   "sword",
+   "fight"
+  ]
+ },
+ {
+  "id": "QU10",
+  "class": "Quotes",
+  "subject": "Kinji Hakari",
+  "q": "Give some memorable lines spoken by Hakari.",
+  "expect": [
+   "Hakari",
+   "gamble",
+   "luck"
+  ]
+ },
+ {
+  "id": "OC01",
+  "class": "Outcomes",
+  "subject": "Yuji Itadori vs Mahito",
+  "q": "Who won the fight between Yuji and Mahito in Shibuya?",
+  "expect": [
+   "Mahito",
+   "victory",
+   "defeat"
+  ]
+ },
+ {
+  "id": "OC02",
+  "class": "Outcomes",
+  "subject": "Satoru Gojo vs Sukuna",
+  "q": "What was the outcome of the Gojo vs Sukuna fight?",
+  "expect": [
+   "Gojo",
+   "Sukuna",
+   "seal"
+  ]
+ },
+ {
+  "id": "OC03",
+  "class": "Outcomes",
+  "subject": "Shibuya Incident",
+  "q": "Who won the Shibuya Incident -- the sorcerers or the curses?",
+  "expect": [
+   "Shibuya",
+   "outcome",
+   "survivor"
+  ]
+ },
+ {
+  "id": "OC04",
+  "class": "Outcomes",
+  "subject": "Yuji Itadori vs Choso",
+  "q": "What was the outcome of the Yuji vs Choso fight?",
+  "expect": [
+   "Choso",
+   "victory",
+   "defeat"
+  ]
+ },
+ {
+  "id": "OC05",
+  "class": "Outcomes",
+  "subject": "Kinji Hakari vs Yuji Itadori",
+  "q": "Who won the fight between Hakari and Yuji?",
+  "expect": [
+   "Hakari",
+   "victory",
+   "defeat"
+  ]
+ },
+ {
+  "id": "OC06",
+  "class": "Outcomes",
+  "subject": "Culling Game",
+  "q": "What was the outcome of the Culling Game?",
+  "expect": [
+   "Culling Game",
+   "outcome",
+   "survivor"
+  ]
+ },
+ {
+  "id": "OC07",
+  "class": "Outcomes",
+  "subject": "Kento Nanami vs Jogo",
+  "q": "Who won the fight between Nanami and Jogo?",
+  "expect": [
+   "Nanami",
+   "Jogo",
+   "defeat"
+  ]
+ },
+ {
+  "id": "OC08",
+  "class": "Outcomes",
+  "subject": "Aoi Todo vs Mahito",
+  "q": "What was the outcome of the Todo vs Mahito fight?",
+  "expect": [
+   "Todo",
+   "Mahito",
+   "defeat"
+  ]
+ },
+ {
+  "id": "OC09",
+  "class": "Outcomes",
+  "subject": "Maki Zenin vs Hanami",
+  "q": "What was the outcome of the Maki vs Hanami fight?",
+  "expect": [
+   "Maki",
+   "Hanami",
+   "defeat"
+  ]
+ },
+ {
+  "id": "OC10",
+  "class": "Outcomes",
+  "subject": "Satoru Gojo vs Suguru Geto",
+  "q": "Who won the fight between Gojo and Geto?",
+  "expect": [
+   "Gojo",
+   "Geto",
+   "victory"
+  ]
+ },
+ {
+  "id": "CA01",
+  "class": "Causality",
+  "subject": "Suguru Geto",
+  "q": "Why did Geto betray the sorcerers?",
+  "expect": [
+   "Geto",
+   "human",
+   "coexist"
+  ]
+ },
+ {
+  "id": "CA02",
+  "class": "Causality",
+  "subject": "Yuji Itadori",
+  "q": "Why did Yuji swallow Sukuna's finger?",
+  "expect": [
+   "Yuji",
+   "finger",
+   "Sukuna"
+  ]
+ },
+ {
+  "id": "CA03",
+  "class": "Causality",
+  "subject": "Kenjaku",
+  "q": "Why did Kenjaku want to merge with humans?",
+  "expect": [
+   "Kenjaku",
+   "human",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "CA04",
+  "class": "Causality",
+  "subject": "Culling Game",
+  "q": "Why did the Culling Game start?",
+  "expect": [
+   "Culling Game",
+   "Kenjaku",
+   "sorcerer"
+  ]
+ },
+ {
+  "id": "CA05",
+  "class": "Causality",
+  "subject": "Mahito",
+  "q": "Why did Mahito attack during the Shibuya Incident?",
+  "expect": [
+   "Mahito",
+   "Shibuya",
+   "human"
+  ]
+ },
+ {
+  "id": "CA06",
+  "class": "Causality",
+  "subject": "Sukuna",
+  "q": "Why did Sukuna take over Yuji's body?",
+  "expect": [
+   "Sukuna",
+   "finger",
+   "Yuji"
+  ]
+ },
+ {
+  "id": "CA07",
+  "class": "Causality",
+  "subject": "Satoru Gojo",
+  "q": "Why did Gojo seal himself in the Prison World?",
+  "expect": [
+   "Gojo",
+   "Prison",
+   "Sukuna"
+  ]
+ },
+ {
+  "id": "CA08",
+  "class": "Causality",
+  "subject": "Maki Zenin",
+  "q": "Why did the Zenin clan discard Maki?",
+  "expect": [
+   "Maki",
+   "Zenin",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "CA09",
+  "class": "Causality",
+  "subject": "Kenjaku",
+  "q": "Why did Kenjaku target Geto?",
+  "expect": [
+   "Kenjaku",
+   "Geto",
+   "cursed energy"
+  ]
+ },
+ {
+  "id": "CA10",
+  "class": "Causality",
+  "subject": "Yuji Itadori",
+  "q": "Why did Yuji volunteer for the Culling Game?",
+  "expect": [
+   "Yuji",
+   "Culling Game",
+   "brother"
+  ]
+ }
+]
