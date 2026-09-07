@@ -2015,6 +2015,65 @@ class FactStore:
             (row["id"],),
         ).fetchall()
 
+    def synopsis_subpage_passages(self, subject: str) -> list[sqlite3.Row]:
+        """The passages of a character's separate /Synopsis page (where this
+        wiki files a character's story beats when the main page carries no
+        History of its own), shaped exactly like `passages_for_subject`.
+
+        The entity-anchored floor (R6) reads the page a question is authored
+        against, and a story question ("what is the history of X?") authored on
+        a character whose main page has no History section must still reach the
+        /Synopsis subpage that carries it (the F2 gap: the qa door resolved to
+        the main page and never bridged, so six characters' History sat on the
+        subpage and out of the bundle at once). Resolution is structural, not
+        by name: the subject's own character page plus its character_synopsis
+        sibling, titled '<character>/Synopsis' -- the wiki's own filing
+        convention. A subject that is not a character, or a character with no
+        synopsis page, yields [] and the caller's floor stands unchanged.
+        """
+        if not subject or not subject.strip():
+            return []
+        name = subject.strip()
+        row = self.connection.execute(
+            "SELECT d.id FROM documents d WHERE d.title = ? COLLATE NOCASE",
+            (name,),
+        ).fetchone()
+        if row is None:
+            row = self.connection.execute(
+                "SELECT n.document_id AS id FROM aliases a"
+                " JOIN nodes n ON n.id = a.node_id"
+                " WHERE a.alias = ? AND n.document_id IS NOT NULL"
+                " ORDER BY n.is_resolved DESC, LENGTH(n.name) ASC LIMIT 1",
+                (name.lower(),),
+            ).fetchone()
+        if row is None or row["id"] is None:
+            return []
+        # The main page must be a character the wiki filed a separate synopsis
+        # under; a battle or technique subject has no /Synopsis twin.
+        node = self.connection.execute(
+            "SELECT n.label AS label, d.title AS title FROM nodes n"
+            " JOIN documents d ON d.id = n.document_id"
+            " WHERE n.document_id = ? AND n.is_resolved = 1 LIMIT 1",
+            (row["id"],),
+        ).fetchone()
+        if node is None or node["label"] != "character" or not node["title"]:
+            return []
+        sub = self.connection.execute(
+            "SELECT d.id FROM documents d JOIN nodes n ON n.document_id = d.id"
+            " WHERE d.title = ? || '/Synopsis' COLLATE NOCASE"
+            " AND n.label = 'character_synopsis' LIMIT 1",
+            (node["title"],),
+        ).fetchone()
+        if sub is None:
+            return []
+        return self.connection.execute(
+            "SELECT c.*, p.text AS parent_text"
+            " FROM chunks c LEFT JOIN chunks p ON p.id = c.parent_id"
+            " WHERE c.document_id = ? AND c.level = 2"
+            " ORDER BY c.ordinal",
+            (sub["id"],),
+        ).fetchall()
+
     # ── enumeration ──────────────────────────────────────────────────────────
     #
     # Three ways a wiki already states "these things belong together". A roster

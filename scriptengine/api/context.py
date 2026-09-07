@@ -367,8 +367,8 @@ def _qa_context(
         # beam (the first passage is never dropped, even if it alone exceeds
         # the budget). A subject that resolves to no document yields an empty
         # floor and the ranked behaviour stands unchanged.
-        floor = [
-            Passage(
+        def _to_passage(row: Any) -> "Passage":
+            return Passage(
                 chunk_id=row["id"],
                 text=row["text"],
                 doc_title=row["doc_title"],
@@ -377,8 +377,50 @@ def _qa_context(
                 score=0.0,
                 parent_text=row["parent_text"] or "",
             )
-            for row in (store.passages_for_subject(subject) if subject else [])
-        ]
+
+        def _section(breadcrumb: str | None) -> str:
+            # The de-dup below keys on the section a beat actually sits in --
+            # the breadcrumb's last component -- not its whole path
+            # ("Abilities and Powers / Cursed Technique" is Cursed Technique).
+            return (breadcrumb or "").split(" / ")[-1].strip()
+
+        # F2b (council 14): the floor used to serve EVERY sub-chunk of EVERY
+        # section -- a long section fragments into many chunks (Yuji's Personality
+        # is 8, his /Synopsis Culling Game arc 63; a main character's whole floor
+        # is ~220 passages) -- so the 6000-token walk exhausted on the front-of-page
+        # sections and never reached the one a question needs (the subpage History
+        # sat ~15th in the floor and past the budget at once). The recall contract
+        # is that each SECTION of the subject's page is present, not every fragment:
+        # keep the leading chunk of each section (the store returns ordinal order,
+        # so the first is the section's head), bounding the footprint to the number
+        # of sections. Query-independent and beam-untouched (B1 holds).
+        def _cap_sections(passages):
+            kept: list = []
+            seen: set[str] = set()
+            for p in passages:
+                key = p.breadcrumb or p.doc_title
+                if key in seen:
+                    continue
+                seen.add(key)
+                kept.append(p)
+            return kept
+
+        floor = _cap_sections(
+            [_to_passage(row) for row in (store.passages_for_subject(subject) if subject else [])]
+        )
+        # F2: a character whose story beats the wiki filed off the main page (its
+        # /Synopsis subpage) -- e.g. a "history of X" question authored on a
+        # character whose main page has no History section. The subpage's
+        # sections join the floor, but only those the main page does not already
+        # carry, so a main-cast character with a History on the main page is not
+        # double-served.
+        if subject:
+            sub = _cap_sections(
+                [_to_passage(row) for row in store.synopsis_subpage_passages(subject)]
+            )
+            if sub:
+                have = {_section(p.breadcrumb) for p in floor}
+                floor += [p for p in sub if _section(p.breadcrumb) not in have]
         # 2-prep: the subject's own facts lead the slice below. A busy character's
         # facts sit behind a dozen lesser-linked entities in the entity-link
         # order, so the flat top-30 cut dropped the subject's own grade (B4: the
@@ -453,6 +495,35 @@ def _qa_context(
     # sections F1/F2/C2/C3 actually need.
     beam_ids = {p.chunk_id for p in result.passages}
     floor_fill = [p for p in floor if p.chunk_id not in beam_ids]
+    # F2b stage 2 (council 14): now that the floor is bounded to one chunk per
+    # section, order it so the section a question actually asks about is paid
+    # first -- a "history of X" question ranks the History section ahead of the
+    # Appearance/Personality sections that used to burn the whole budget. The
+    # score is the overlap of the query's content-terms with the section title;
+    # the subject's own name is excluded (it is in every beat of its own page and
+    # discriminates nothing), so a neutral query scores 0 everywhere and the wiki
+    # section order is preserved exactly where it already worked. A fixed rule,
+    # not a per-question knob: a section titled "Tragedy" instead of "History" is
+    # handled by widening the matched terms, never by re-tuning this sort.
+    _STOP = {
+        "the", "of", "a", "an", "is", "are", "was", "were", "what", "who",
+        "which", "how", "when", "where", "why", "to", "in", "on", "for", "and",
+        "or", "its", "his", "her", "their", "with", "as", "by", "at", "does",
+        "did", "do", "be", "can", "could", "would", "should", "that", "this",
+    }
+
+    def _content_tokens(s: str | None) -> set[str]:
+        return {
+            t for t in re.findall(r"[a-z0-9]+", (s or "").lower())
+            if len(t) >= 3 and t not in _STOP
+        }
+
+    qterms = _content_tokens(query) - (_content_tokens(subject) if subject else set())
+
+    def _qrank(p) -> tuple[int, int]:
+        return (-len(qterms & _content_tokens(p.breadcrumb)), p.ordinal)
+
+    floor_fill.sort(key=_qrank)
     ordered = [*result.passages, *floor_fill]
     for order, passage in enumerate(ordered, start=1):
         cost = estimate_tokens(passage.text) + 30
