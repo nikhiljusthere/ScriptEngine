@@ -9225,3 +9225,24 @@ template_lists:
   - Gachinko Fight Club
   - Time Vessel Association
   - Shibuya Incident Timeline
+
+# Facts the extractor cannot derive: they hold only inside a story window
+# (an interval state), while the infobox states the entity's current state.
+# The builder upserts them after the graph load (node by name), so a re-index
+# recreates them; each (node, key) is replaced, never appended.
+#
+# Without these, a question about a character's state *during the Culling
+# Game* is answered with the infobox's current state (the P4 4A oracle
+# S-group, plan/ORACLE_v2.yaml): Nanami reads as "Deceased" with no window,
+# Gojo as "Sealed" with no start point.
+extra_facts:
+  - node: Kento Nanami
+    key: state_during_culling_game
+    label: State during the Culling Game
+    value: "Deceased (killed by Mahito during the Shibuya Incident — 'Mahito then kills Nanami')"
+    citation: "Pin 'Mahito then kills Nanami' (Shibuya Incident Arc, Right and Wrong)"
+  - node: Satoru Gojo
+    key: state_at_start_of_culling_game
+    label: State at the start of the Culling Game
+    value: "Alive but sealed ('With Satoru Gojo sealed and Geto's motives unknown')"
+    citation: "Pin 'With Satoru Gojo sealed and Geto's motives unknown' (Culling Game Arc, Synopsis)"

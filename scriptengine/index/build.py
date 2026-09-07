@@ -62,11 +62,12 @@ def build_index(
     """
     settings = settings or get_settings()
     manifest = load_manifest(paths)
+    overrides = load_overrides(paths)
 
     # Loading, discovery and re-extraction all happen in `load_extracted`, so
     # that `audit` and `index` can never disagree about what the corpus holds.
     logger.info("loading and re-extracting the corpus")
-    pages, ontology = load_extracted(paths, load_overrides(paths))
+    pages, ontology = load_extracted(paths, overrides)
     if not pages:
         return {"error": "no crawled pages found; run `crawl` first"}
     logger.info("vocabulary: %s types across %s pages", len(ontology.types), len(pages))
@@ -75,7 +76,7 @@ def build_index(
 
     # The works this series does not count are dropped here rather than
     # filtered later, so nothing downstream can reach them at all.
-    works = discounted_works(load_overrides(paths))
+    works = discounted_works(overrides)
     if works:
         before = len(pages)
         # A debut target is judged on its own title *and* its own categories,
@@ -117,11 +118,19 @@ def build_index(
         # A wiki can promote engine-default boilerplate to content (JJK's
         # `References` carries trivia the span-recall oracle must reach), so the
         # chunker skips the wiki's effective set, not just the global one.
-        boilerplate = effective_boilerplate_sections(load_overrides(paths))
+        boilerplate = effective_boilerplate_sections(overrides)
         chunks_by_page = _load_documents(
             store, pages, progress, works, dropped, boilerplate
         )
-        _load_graph(store, pages, progress, dropped)
+        node_ids = _load_graph(store, pages, progress, dropped)
+        # Facts the wiki declares and the extractor cannot derive (interval
+        # states: what a character's state was *during* an arc, which the
+        # infobox's current-state read cannot express). Per-wiki data in
+        # `overrides.yaml` (`extra_facts`); applied after the graph, when the
+        # node ids exist, so a re-index recreates them.
+        report["declared_facts"] = _apply_declared_facts(
+            store, node_ids, overrides.get("extra_facts") or [], dropped
+        )
         chunk_rows = _load_chunks(store, pages, chunks_by_page, progress)
         store.rebuild_fts()
         # Re-key the snapshotted derived layers onto the build that just ran:
@@ -229,7 +238,7 @@ def _load_graph(
     pages: Iterable[WikiPage],
     progress: Progress | None,
     dropped: set[str] | None = None,
-) -> None:
+) -> dict[str, int]:
     """Insert nodes, aliases, facts and edges.
 
     Nodes are created for every page first, so that an edge pointing at a page
@@ -237,6 +246,9 @@ def _load_graph(
     never reached) are created as bare nodes and flagged, rather than dropped:
     knowing that Todo is affiliated with something is worth more than silence,
     even when that something has no page here.
+
+    Returns the title-to-node-id map, so a later build step can resolve a
+    declared fact by the name the wiki wrote it under.
     """
     pages = list(pages)
     dropped = dropped or set()
@@ -294,6 +306,52 @@ def _load_graph(
             progress("graph", index + 1, len(pages))
 
     store.commit()
+    return node_ids
+
+
+def _apply_declared_facts(
+    store: FactStore,
+    node_ids: dict[str, int],
+    declared: Iterable[dict[str, Any]],
+    dropped: set[str] | None,
+) -> dict[str, Any]:
+    """Upsert the facts a wiki declares in `overrides.yaml` under `extra_facts`.
+
+    These hold only inside a story window (a character dead before the arc
+    being written), so the infobox extractor, which reads the entity's current
+    page, cannot derive them. Declared by node name; a node the build dropped
+    or never crawled is skipped, not created: a declaration about an absent
+    page is a fix, not content to invent. Each (node, key) is replaced, never
+    appended, so a key the infobox already carries cannot double.
+    """
+    dropped = dropped or set()
+    applied: list[str] = []
+    skipped: list[str] = []
+    for fact in declared:
+        name = str(fact.get("node") or "")
+        key = str(fact.get("key") or "")
+        value = str(fact.get("value") or "")
+        if not name or not key or not value:
+            skipped.append(f"{name or '(unnamed)'}: node, key and value are required")
+            continue
+        node_id = node_ids.get(name)
+        if node_id is None or name in dropped:
+            skipped.append(f"{name}: no node in this build")
+            continue
+        store.connection.execute(
+            "DELETE FROM facts WHERE node_id = ? AND key = ?", (node_id, key)
+        )
+        store.add_fact(
+            node_id=node_id,
+            key=key,
+            label=str(fact.get("label") or key),
+            value=value,
+            citation=str(fact.get("citation") or ""),
+        )
+        applied.append(f"{name}/{key}")
+    for reason in skipped:
+        logger.warning("declared fact skipped: %s", reason)
+    return {"applied": applied, "skipped": skipped}
 
 
 def _harvest_link_aliases(
