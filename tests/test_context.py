@@ -251,6 +251,33 @@ class TestBattleFactsReachTheQaBundle:
         rendered = [f"{f.get('field')} {f.get('value')}" for f in out["facts"]]
         assert any("Gachinko Fight Club" in line for line in rendered), rendered
 
+    def test_a_low_ranked_named_fight_outcome_still_leads_the_facts(self):
+        # A4: "the final battle against Sukuna" resolves (via `battle_outcome`)
+        # to "Jujutsu Sorcerers vs. Sukuna", but that page ranks just outside
+        # the top-5 that step 3 pays for -- it is still *linked* (in
+        # result.entities), so the old `if entity not in result.entities` guard
+        # skipped the prepend and the fight's `Outcome` was lost while a wrong
+        # fight inside the top-5 ("Sukuna vs. Jogo") was served. The resolved
+        # fight's infobox must lead the facts regardless of rank.
+        import pytest
+
+        from scriptengine.api.context import build_context
+        from scriptengine.config import series_paths
+        from scriptengine.retrieve.router import route
+
+        paths = series_paths("jjk")
+        if not paths.facts_db.exists():
+            pytest.skip("jjk is not indexed")
+        question = "What was the result of the final battle against Sukuna?"
+        routed = route(paths, question, subject=None)
+        subject = routed.signals.get("subject") or None
+        bundle = build_context(
+            paths, question, mode="qa", subject=subject
+        )
+        rendered = [f"{f.get('field')} {f.get('value')}" for f in bundle["facts"]]
+        joined = " ".join(rendered)
+        assert "The jujutsu sorcerers are victorious." in joined, rendered
+
 
 class TestQaRecallFloor:
     """The subject page's own passages lead the qa budget walk (R6).

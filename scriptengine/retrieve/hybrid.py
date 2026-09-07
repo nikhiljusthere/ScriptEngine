@@ -210,32 +210,35 @@ class HybridRetriever:
                     }
                 )
 
-        # 3b. A named battle page is the question's own subject even when
-        #     `link_entities` missed it: `vs.` tokenises apart from the
-        #     stored alias, so "Yuji Itadori vs. Panda" never links and the
-        #     fight's own infobox (arc, place, outcome, chapters) would stay
-        #     out of the bundle unless the rank happened to surface the page.
-        #     The phrasing-robustness requirement (2026-08-24) pays for those
-        #     facts up front, the way the entity facts above are paid for.
+        # 3b/3c. The fight the question names is its own subject. `battle_facts`
+        #     handles the query spelling the battle's full title ("Yuji Itadori
+        #     vs. Panda"); `battle_outcome` is the fallback for when the query
+        #     names the fight by its fighters ("Nanami's fight against Mahito",
+        #     "the final battle against Sukuna"), resolving it to the one battle
+        #     page whose sides name the fighters. Either way the page's infobox
+        #     (arc, place, outcome, chapters, the sides' techniques) must reach
+        #     the bundle, so its `Outcome` is not left to the rank.
         from scriptengine.retrieve.roster import battle_facts, battle_outcome
 
         battle = battle_facts(self.store, query)
-        if battle and battle[0]["entity"] not in result.entities:
-            result.facts = battle + result.facts
-            result.entities.insert(0, battle[0]["entity"])
-        # 3c. The fallback for when the question names the fight by its fighters
-        #     ("Nanami's fight against Mahito", "the final battle against
-        #     Sukuna") rather than spelling the battle's full title: `battle_outcome`
-        #     resolves that to the one battle page whose sides name the fighters
-        #     and pays for its own infobox, so the fight's `Outcome` reaches the
-        #     bundle the same way. It runs only when the full-title match above
-        #     found nothing, and it returns empty unless it resolves to a single
-        #     fight, so it never surfaces a similar-but-wrong result.
         if not battle:
-            outcome = battle_outcome(self.store, query)
-            if outcome and outcome[0]["entity"] not in result.entities:
-                result.facts = outcome + result.facts
-                result.entities.insert(0, outcome[0]["entity"])
+            # `battle_outcome` returns empty unless it resolves to a single
+            # fight, so it never surfaces a similar-but-wrong result.
+            battle = battle_outcome(self.store, query)
+        if battle:
+            # The resolved fight's infobox leads the facts. Step 3 above paid
+            # for the top-5 entities' facts only, so a battle page that ranked
+            # just outside them had its `Outcome` lost while a wrong fight
+            # inside the top-5 was served instead (A4: "Jujutsu Sorcerers vs.
+            # Sukuna" ranked 6th, its outcome gone, "Sukuna vs. Jogo" 2nd and
+            # served). The old guard skipped the prepend because the page was
+            # *linked* (in result.entities), not because its facts were already
+            # paid for. Drop any rows step 3 added for this entity, then lead
+            # with the full block.
+            entity = battle[0]["entity"]
+            result.facts = battle + [f for f in result.facts if f["entity"] != entity]
+            if entity not in result.entities:
+                result.entities.insert(0, entity)
         # Graph edges say X is linked to Y; they carry no words. The
         # LLM-extracted `relations` rows carry the verbatim `quote` and `era`
         # that actually answer "who is X to Y" / "what is the relationship
