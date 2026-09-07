@@ -13,7 +13,7 @@ is superseded by this record. Nothing here is pending.
    reference.
 2. **Untracked `jjk-*-2026-09-*` run dirs** — committed (623 dirs / 1,767
    files, ~1.9 MB), consistent with the tracked 76 synopsis dirs: the
-   completed prose pass's archive is whole in one place. The 14 untracked
+   completed prose pass's archive is whole in one place. The 31 untracked
    dated `reports/2026-09-*` run dirs committed too (the committed
    `reports/index.md` links them; without them the index dangles).
    `questions/_jjk_page_chapter_1.{coverage.json,decl.yaml,verify.json}`
@@ -28,6 +28,23 @@ is superseded by this record. Nothing here is pending.
    contract is `CLAUDE.md`.
 4. **`reports/comprehension/council1/`** — committed (referenced by tracked
    `COUNCIL_1.md` + `PHASE1A_ORACLE.md`; ledger row #9).
+
+## Second sweep (the checkpoint's list was truncated by `head -50`)
+
+The first `git status` was cut off at 50 lines, so the run-dir count (14) and
+the top-level file list were incomplete. The sweep found, and handled:
+
+- **31** untracked dated run dirs (not 14), all linked by `reports/index.md` —
+  committed.
+- `reports/span-recall/{berserk,csm,db,hxh,onepiece}/index_misses.jsonl`
+  (the P6 Wave-0 per-wiki miss baselines cited by `COUNCIL_p6-kickoff.md`) —
+  committed. `tools/meaning_probe.py` (the R1 go/no-go probe) — committed.
+- **12 more stale one-shot session handoffs/prompts** (tracked, git-recoverable
+  @ `faf6ce6`), deleted: `NEW_SESSION_PROMPT.md`, `OPENCODE_PROMPT_R1/R5/R6/
+  R6_PARTC_AMENDMENT/R6_STOP_AT_REPORT/R7/VOLUME.md`, `PLAN_NEXT_PHASE.md`,
+  `QWEN35B_OPERATING_CONTRACT.md`, `SCROLL_BOX_SELFTEST.md`,
+  `TEMP_WRITE_PATH_AUDIT.md` — all Windows-era (`E:\`) one-shots superseded by
+  `PROSE_PASS_FINAL.md` + `RED_LIST.md` + `CHECKPOINT_ROSTER_BUILD.md`.
 
 ## Untracked deletes (moved to `/tmp/opencode/trash-2026-09-07/`, not
 hard-deleted — the session's `rm` permission denies them; recoverable from
