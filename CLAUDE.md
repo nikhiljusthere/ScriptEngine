@@ -240,6 +240,18 @@ can borrow it — verified 2026-09-05 (a span-recall probe ran to completion wit
 throughout). The rule still stands for `events-extract` and any long,
 load-sustaining LLM batch.
 
+**Qwen context modes (262k exploratory ↔ 100k service).** Qwen's `--kv-capacity`
+pre-reserves its int8 KV pool, so context length is a VRAM dial: the 262k
+profile leaves ~3.5 GiB headroom (`:8000` must run on CPU — the old "short
+CUDA probe" exception above was measured at a smaller KV pool and does not
+apply to the current 262k profile), while the 100k service profile frees
+~7–8 GB so the embedder+reranker co-locate on CUDA and up to 2 subagents run
+in parallel (llm-council still runs 5 — the standing exception). Switching is
+checkpoint (`plan/SWITCHPOINT.md`) → `ninfer-work/qwen-switch.sh` → reopen pi;
+the agent has no model during the reload window, so the switch is a
+human-terminal step between turns. Full method + guardrails:
+`docs/ops/QWEN_MODES.md`.
+
 ## Status
 
 Eight Fandom wikis are indexed: Jujutsu Kaisen (the development + active-campaign
