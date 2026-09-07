@@ -11,11 +11,19 @@ the contract travels with the context.
 
 ## Start here
 
-1. **Active work: the JJK prose pass.** The live checkpoint is
-   `reports/page-campaign/HANDOFF_PROSE_PASS.md` — read it before touching the
-   character/episode/battle/technique batches or the router. It carries the method
-   (author natural questions; on a failure, diagnose the gap and fix it — never
-   rephrase to dodge), the per-character state, the open engine gaps, and resume steps.
+1. **Active work: completing JJK D6 comprehension** (JJK only; this run stops
+   before P6). "JJK 100%" here means full D6 comprehension — the corpus
+   *understands* everything about a character (what each line/fact/prose/event
+   means, whether it is an event, where it sits on the timeline, all
+   structured dimensions), not just line retrieval (D5 is the separate
+   reachability layer; `docs/ROADMAP.md` "current goal" states the exit
+   condition). Live checkpoint: `plan/drift_log.md` §4 (current position) +
+   `reports/comprehension/GATE.md` (gate state) + `reports/comprehension/
+   COMPREHENSION_REMAINDER.md` (the remainder plan + the two-100%s + the
+   checkable definition of 100% comprehension). The JJK prose pass is
+   **complete** (100% on every in-scope narrative page type) — its single
+   final record is `reports/page-campaign/PROSE_PASS_FINAL.md` (method, the
+   crucial engine fixes, final state).
 2. Read `docs/ARCHITECTURE.md`, the design and why it is this way.
 3. Read `graphify-out/GRAPH_REPORT.md`, the knowledge graph of this codebase:
    god nodes, communities, and the legacy→current supersession map.
@@ -39,8 +47,8 @@ the wrong place.** Per-wiki handling goes in `series/<name>/overrides.yaml`.
 
 ## Commands
 
-```powershell
-.\scriptengine\.venv\Scripts\Activate.ps1
+```bash
+source scriptengine/.venv/bin/activate    # or call scriptengine/.venv/bin/python directly
 
 python -m scriptengine.cli crawl  --series jjk --start-url <any wiki page>
 python -m scriptengine.cli audit  --series jjk        # ALWAYS before indexing
@@ -193,6 +201,12 @@ scriptengine/
 series/<name>/    self-contained corpus + stores (gitignored)
 legacy/           the retired pipeline, kept for reference
 graphify-out/     knowledge graph of this repo
+plan/             campaign governance: flow.md (trunk structure), drift_log.md
+                  (append-only history + §4 current position), standing rules
+reports/          dated run dirs + page-campaign/ (question batches, wave
+                  records, COVERAGE.md) + comprehension/ (GATE.md, council
+                  records + COUNCIL_HISTORY.md ledger)
+tools/            offline harnesses: census_545.py, coverage_report.py, …
 ```
 
 ## Infrastructure
@@ -233,31 +247,38 @@ wiki), Bleach, Hunterpedia, One-Punch Man, Berserk, Chainsaw Man, Dragon Ball an
 One Piece. The engine serves the writer through three doors that wrap the same
 functions: the HTTP API on :8000, the Typer CLI, and an MCP server over stdio.
 
-**Active: the JJK prose pass.** The structured layer is done (per-page-type rosters
-+ infobox facts, ~797 declared rosters / 283 subjects in `series/jjk/overrides.yaml`,
-verified against `facts.db`). Interval facts — a character's state *during* an arc,
-which the infobox's current-state read cannot express (the P4 4A S-group) — are
-declared per-wiki under `extra_facts` in the same file and re-landed on every
-`index` by `scriptengine/index/build.py` (P4.A). Now every uncovered factual prose
-section becomes a
-sentence-level "fact-like entry" (a question with a **verbatim** answer), ordered
-characters (146) → episodes (59) → battles (90) → techniques (149) → other. The
-method (user mandate): author natural questions; when one fails, **diagnose the root
-cause and fix the gap** (fix gold / retire cross-page / fix router or chunker) — never
-rephrase the question to dodge it. All narrative page types are now 100% covered (characters, episodes, battles,
-techniques, chapters, synopses, story arcs, events); the live remainder is a
+**The JJK prose pass is complete (2026-09-07): 100% on every in-scope narrative
+page type** (characters, episodes, battles, techniques, chapters, synopses,
+story arcs, events; in-scope content remainder 0). Final record — method,
+crucial engine fixes, final state: `reports/page-campaign/PROSE_PASS_FINAL.md`.
+The structured layer: ~1,355 declared roster entries in
+`series/jjk/overrides.yaml` (verified against `facts.db`). Interval facts — a
+character's state *during* an arc, which the infobox's current-state read cannot
+express (the P4 4A S-group) — are declared per-wiki under `extra_facts` in the
+same file and re-landed on every `index` by `scriptengine/index/build.py`
+(P4.A). The method (user mandate): author natural questions; when one fails,
+**diagnose the root cause and fix the gap** (fix gold / retire cross-page / fix
+router or chunker) — never rephrase the question to dodge it. Coverage is a
 regenerated list, not a number stated here — see
-`reports/page-campaign/COVERAGE.md` (`tools/coverage_report.py`). Three router
-gaps (a scope-word set misroute, a discourse-opener wh-anchor, `whose`) and the
-chunking gap (a Trivia bullet not served for a generic question) are all fixed
-and gated. Live state + resume steps:
-`reports/page-campaign/HANDOFF_PROSE_PASS.md`.
+`reports/page-campaign/COVERAGE.md` (`tools/coverage_report.py`).
+
+**Now active: JJK D6-comprehension completion (JJK only; stops before P6).**
+The goal: the corpus *understands* everything about a character — what each
+line/fact/prose/event means, whether it is an event, where it sits on the
+anime's timeline, all structured dimensions (facts, history, fights); new
+tables/modules (`relations`, `abilities`, a meaning layer, …) are in scope
+where prose cannot do the job. Live remainder + the checkable definition of
+"100% comprehension": `reports/comprehension/COMPREHENSION_REMAINDER.md`;
+gate state: `reports/comprehension/GATE.md`; current position:
+`plan/drift_log.md` §4. P6 (cross-corpus, `plan/Plan_to_perfection.md` §7)
+waits until this run closes.
 
 **Gates (re-run before calling any pass done):** `eval --series jjk` = 31/31;
 `canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%; `pytest tests/ -q` = 1,239.
 Batch files are `_`-prefixed so they stay out of the official gold bank. The
-historical accuracy-campaign records (rounds 1/2) are in `reports/page-campaign/STATUS.md`
-and `HANDOFF_ROUND2.md`.
+historical accuracy-campaign records (rounds 1/2, OPM + JJK waves) are in
+`reports/page-campaign/STATUS.md` (the OPM handoffs `HANDOFF_OPM.md` /
+`HANDOFF_ROUND2.md` were deleted 2026-09-07 — git-recoverable @ `faf6ce6`).
 
 Two corpus quirks are the wiki's, not the pipeline's: Berserk cites cover art and
 interviews (not instalments) so it sources 0%, and One Piece writes one page per
