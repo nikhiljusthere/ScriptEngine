@@ -151,9 +151,11 @@ return address.
 
 ## 4. Current position
 
-**Trunk:** `P0` done · `P1` done · `P2` done (oracle 17/18, only C1 open — the
-documented repeat-encounter expected-fail) · **`P3` next** · `P4` not started ·
-`P5` closed by D1 · `P6` not started.
+**Trunk:** `P0` done · `P1` done · `P2` done · **`P3` done** (P3.3C gate closed
+`8e924aa`, CONDITIONAL GREEN) · **`P4` in progress at `P4.A`** (4C gate found
+vacuous at 2C — B-group 4/4 PASS; re-scoped by council, D6: real gate = new
+pre-registered arc-scoped probe set, live-verified) · `P5` closed by D1 · `P6`
+not started.
 
 **Excursion:** X1 open at `X1.d`, `X1.e`; returns to `P3.A` at `X1.g`.
 
@@ -178,3 +180,45 @@ Append; never edit a past entry. One entry per drift.
 ```
 
 A drift entry is not an apology and not a justification. It is an address.
+
+### D5 — P4's 4C gate found vacuous; re-scope routed to council
+- **Trunk step:** `P4` (state over time; 4A model / 4B populate / 4C gate)
+- **What happened:** DB-verified the 2C oracle (sha `a788fa`) B-group before
+  building 4A: `B1` (expect fail) **PASS** (`contains` — the Angel-page Gojo
+  quote is in the bundle), `B2` (expect fail) **PASS** (`value_match` — Geto's
+  infobox `occupation` `Jujutsu Sorcerer (Former) Curse User` is served verbatim
+  by the 2-prep fact floor), `B3`/`B4` PASS. The 4C success criterion "B1 and B2
+  must move (fail→pass)" is therefore **already met**; the gate is vacuous as
+  written.
+- **Why:** premise refuted. The infobox `(Former)` facts + the qa fact floor
+  already serve *terminal* state. What is unmodeled is *when* a state held
+  (intervals over arcs), not the terminal value — so a new probe set (earlier-
+  state / arc-scoped questions) is the thing an interval model would actually add.
+- **Return address:** `P4.A` — re-scope the 4C probe set via llm-council
+  (`reports/comprehension/COUNCIL_p4-rescope.md`); user directed (2026-09-07)
+  that the council decide this fork.
+
+### D6 — Council re-scopes 4C: new arc-scoped probe set replaces the vacuous B1/B2 criterion
+- **Trunk step:** `P4` (4A interval model)
+- **What happened:** the llm-council the user directed (2026-09-07) ruled the
+  4C gate vacuous-as-written (D5) and re-scoped it: (1) author 3–5 arc-scoped
+  earlier-state probes with wiki-pinned verbatim ground truth, pre-registered
+  with a recorded reason each; (2) verify each **fails** against live
+  `/context` before any build — no green on paper; (3) all pass → close 4C on
+  that evidence, interval model to the backlog; any fail → that probe set
+  becomes the real 4C gate and 4A builds **bounded** to the characters the
+  failing probes touch, reusing `events` + the infobox fact floor (not a
+  wiki-wide 4B table); (4) a serving-path spike (hand-insert 2 interval rows;
+  confirm they reach `/context` with zero router/chunker changes) is a hard
+  prerequisite; (5) re-label A1/A2/A3/B1/B2 (P3.3C condition 5) as a recorded
+  ORACLE v2 — v1 is reviewer-owned (`editable_by_executing_agent: false`);
+  (6) regression re-runs (`eval`, `canon-run`, `span-recall`) after any 4A
+  build. Cross-wiki / new-door upside → backlog ticket, not this fork.
+- **Why:** council verdict (`reports/comprehension/COUNCIL_p4-rescope.md`).
+  A gate green before its feature exists has zero discriminating power (B1's
+  PASS is also beam-dependent — it regressed under `RED_floorfirst`); the
+  un-modeled gap is *when* a state held (intervals over arcs), which no
+  existing probe touches; 4A as specified is a dead table (no serving path;
+  the router is in nobody's scope).
+- **Return address:** `P4.A` — probe authoring + pinning (offline, against the
+  crawl), then server start (GPU-first) + live probe run.
