@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Simuria?",
+      "id": "jjk-pg-simuria-001",
+      "subject": "Simuria",
+      "accept": "all",
+      "expected": [
+        "an alien planet that closely resembles Earth in its overall geography"
+      ],
+      "found": [
+        "an alien planet that closely resembles Earth in its overall geography"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Simurians possess that earthlings do not?",
+      "id": "jjk-pg-simuria-002",
+      "subject": "Simuria",
+      "accept": "all",
+      "expected": [
+        "a third eye, an essential organ and the source of their Rolloluca"
+      ],
+      "found": [
+        "a third eye, an essential organ and the source of their Rolloluca"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mul?",
+      "id": "jjk-pg-simuria-003",
+      "subject": "Simuria",
+      "accept": "all",
+      "expected": [
+        "a special ore that can convert Rolloluca into all forms of energy"
+      ],
+      "found": [
+        "a special ore that can convert Rolloluca into all forms of energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Maru and Cross use to construct the Naunax?",
+      "id": "jjk-pg-simuria-004",
+      "subject": "Simuria",
+      "accept": "all",
+      "expected": [
+        "a stash of high purity Mul"
+      ],
+      "found": [
+        "a stash of high purity Mul"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What suspicious case do Yuka, Tsurugi, and Maru investigate, per Modulo Chapter 4?",
+      "id": "jjk-pg-modulo_chapter_4-001",
+      "subject": "Modulo Chapter 4",
+      "accept": "all",
+      "expected": [
+        "a first-grader repeating his grade for three years straight"
+      ],
+      "found": [
+        "a first-grader repeating his grade for three years straight"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "At which school does the boy repeat first grade for three consecutive years, per Modulo Chapter 4?",
+      "id": "jjk-pg-modulo_chapter_4-002",
+      "subject": "Modulo Chapter 4",
+      "accept": "all",
+      "expected": [
+        "Shuei Elementary"
+      ],
+      "found": [
+        "Shuei Elementary"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Under which three names does the same boy reappear each year, per Modulo Chapter 4?",
+      "id": "jjk-pg-modulo_chapter_4-003",
+      "subject": "Modulo Chapter 4",
+      "accept": "all",
+      "expected": [
+        "Masayoshi, Masaaki, and now Masaki"
+      ],
+      "found": [
+        "Masayoshi, Masaaki, and now Masaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

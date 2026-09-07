@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Which four characters get short epilogue stories in the Epilogue, per Epilogue?",
+      "id": "jjk-pg-epilogue-001",
+      "subject": "Epilogue",
+      "accept": "all",
+      "expected": [
+        "Yuko Ozawa, Panda, Nobara Kugisaki, and Uraume"
+      ],
+      "found": [
+        "Yuko Ozawa, Panda, Nobara Kugisaki, and Uraume"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does Yuko return from Tokyo, per Epilogue?",
+      "id": "jjk-pg-epilogue-002",
+      "subject": "Epilogue",
+      "accept": "all",
+      "expected": [
+        "Sendai City"
+      ],
+      "found": [
+        "Sendai City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do a young girl and boy discover in 2080, per Epilogue?",
+      "id": "jjk-pg-epilogue-003",
+      "subject": "Epilogue",
+      "accept": "all",
+      "expected": [
+        "Panda in a storage room"
+      ],
+      "found": [
+        "Panda in a storage room"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

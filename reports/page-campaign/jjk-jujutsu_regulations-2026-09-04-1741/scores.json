@@ -1,0 +1,185 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who agree with the Japanese government to stipulate the Jujutsu Regulations?",
+      "id": "jjk-pg-jujutsu_regulations-001",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "the Zenin, Gojo, and Kamo families"
+      ],
+      "found": [
+        "the Zenin, Gojo, and Kamo families"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is a sorcerer's mission under the Jujutsu Regulations?",
+      "id": "jjk-pg-jujutsu_regulations-002",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "to prevent harm to humanity caused by jujutsu, cursed spirits, and cursed objects"
+      ],
+      "found": [
+        "to prevent harm to humanity caused by jujutsu, cursed spirits, and cursed objects"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Jujutsu Headquarters described as?",
+      "id": "jjk-pg-jujutsu_regulations-003",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "the division of the Japanese government that is the highest body governing sorcerers"
+      ],
+      "found": [
+        "the division of the Japanese government that is the highest body governing sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is one punishment the Jujutsu Inspector General can impose?",
+      "id": "jjk-pg-jujutsu_regulations-004",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "Secret execution"
+      ],
+      "found": [
+        "Secret execution"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are retired sorcerers forbidden from doing?",
+      "id": "jjk-pg-jujutsu_regulations-005",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "forbidden from using any manner of jujutsu"
+      ],
+      "found": [],
+      "missing": [
+        "forbidden from using any manner of jujutsu"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What are threats defined as in the Jujutsu Regulations?",
+      "id": "jjk-pg-jujutsu_regulations-006",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "cursed spirits, cursed objects, and curse users"
+      ],
+      "found": [
+        "cursed spirits, cursed objects, and curse users"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What must sorcerers never do to non-sorcerers?",
+      "id": "jjk-pg-jujutsu_regulations-007",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "Sorcerers must never harm non-sorcerers through the use of jujutsu, cursed spirits, or cursed objects"
+      ],
+      "found": [
+        "Sorcerers must never harm non-sorcerers through the use of jujutsu, cursed spirits, or cursed objects"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What provision was created during the Culling Game?",
+      "id": "jjk-pg-jujutsu_regulations-008",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "the Hakari Provision"
+      ],
+      "found": [
+        "the Hakari Provision"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did the Hakari Provision legally permit?",
+      "id": "jjk-pg-jujutsu_regulations-009",
+      "subject": "Jujutsu Regulations",
+      "accept": "all",
+      "expected": [
+        "sorcerers contracted with Jujutsu Headquarters to battle each other for monetary compensation"
+      ],
+      "found": [
+        "sorcerers contracted with Jujutsu Headquarters to battle each other for monetary compensation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 9,
+    "fact_present": 8
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What decisive battle has begun, per Chapter 224?",
+      "id": "jjk-pg-chapter_224-001",
+      "subject": "Chapter 224",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo vs. Ryomen Sukuna"
+      ],
+      "found": [
+        "Satoru Gojo vs. Ryomen Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna compare Gojo to, per Chapter 224?",
+      "id": "jjk-pg-chapter_224-002",
+      "subject": "Chapter 224",
+      "accept": "all",
+      "expected": [
+        "a fancy fish"
+      ],
+      "found": [
+        "a fancy fish"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Gojo use to defend Sukuna's initial attacks, per Chapter 224?",
+      "id": "jjk-pg-chapter_224-003",
+      "subject": "Chapter 224",
+      "accept": "all",
+      "expected": [
+        "the Infinity"
+      ],
+      "found": [
+        "the Infinity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

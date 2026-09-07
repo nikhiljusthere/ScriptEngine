@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who is left to stand against Mahito, per Chapter 131?",
+      "id": "jjk-pg-chapter_131-001",
+      "subject": "Chapter 131",
+      "accept": "all",
+      "expected": [
+        "only Yuji"
+      ],
+      "found": [
+        "only Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What has allowed Mahito to ascend to his true form, per Chapter 131?",
+      "id": "jjk-pg-chapter_131-002",
+      "subject": "Chapter 131",
+      "accept": "all",
+      "expected": [
+        "Idle Transfiguration: Instant Spirit Body of Distorted Killing"
+      ],
+      "found": [
+        "Idle Transfiguration: Instant Spirit Body of Distorted Killing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji realize he can only win using, per Chapter 131?",
+      "id": "jjk-pg-chapter_131-003",
+      "subject": "Chapter 131",
+      "accept": "all",
+      "expected": [
+        "a Black Flash infused with maximum cursed energy"
+      ],
+      "found": [
+        "a Black Flash infused with maximum cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

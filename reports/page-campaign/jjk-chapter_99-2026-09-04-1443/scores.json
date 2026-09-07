@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Nanami arrive to put an end to his reign of terror, per Chapter 99?",
+      "id": "jjk-pg-chapter_99-001",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "Shigemo"
+      ],
+      "found": [
+        "Shigemo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where do Nobara and Akari confront Haruta Shigemo, per Chapter 99?",
+      "id": "jjk-pg-chapter_99-002",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "on Shoto Bunkamura Street"
+      ],
+      "found": [
+        "on Shoto Bunkamura Street"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Maki stay with while Nobara and Akari check on Ijichi, per Chapter 99?",
+      "id": "jjk-pg-chapter_99-003",
+      "subject": "Chapter 99",
+      "accept": "all",
+      "expected": [
+        "the lazy old man Zenin"
+      ],
+      "found": [
+        "the lazy old man Zenin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

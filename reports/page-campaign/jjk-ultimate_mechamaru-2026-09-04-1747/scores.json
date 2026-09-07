@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Mechamaru?",
+      "id": "jjk-pg-ultimate_mechamaru-001",
+      "subject": "Ultimate Mechamaru",
+      "accept": "all",
+      "expected": [
+        "a mechanical humanoid puppet with a robotic appearance"
+      ],
+      "found": [
+        "a mechanical humanoid puppet with a robotic appearance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What allows Kokichi to control multiple Mechamarus at once?",
+      "id": "jjk-pg-ultimate_mechamaru-002",
+      "subject": "Ultimate Mechamaru",
+      "accept": "all",
+      "expected": [
+        "Kokichi's Puppet Manipulation"
+      ],
+      "found": [
+        "Kokichi's Puppet Manipulation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kokichi's finishing move for Mechamaru?",
+      "id": "jjk-pg-ultimate_mechamaru-003",
+      "subject": "Ultimate Mechamaru",
+      "accept": "all",
+      "expected": [
+        "Ultimate Cannon"
+      ],
+      "found": [
+        "Ultimate Cannon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

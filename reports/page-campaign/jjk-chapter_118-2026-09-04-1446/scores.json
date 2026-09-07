@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Sukuna face in battle to rescue Megumi, per Chapter 118?",
+      "id": "jjk-pg-chapter_118-001",
+      "subject": "Chapter 118",
+      "accept": "all",
+      "expected": [
+        "the out-of-control shikigami Mahoraga"
+      ],
+      "found": [
+        "the out-of-control shikigami Mahoraga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What specialized blade does Sukuna recognize as a cursed tool for cursed spirits, per Chapter 118?",
+      "id": "jjk-pg-chapter_118-002",
+      "subject": "Chapter 118",
+      "accept": "all",
+      "expected": [
+        "the Sword of Extermination"
+      ],
+      "found": [
+        "the Sword of Extermination"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What Domain Expansion does Sukuna activate, per Chapter 118?",
+      "id": "jjk-pg-chapter_118-003",
+      "subject": "Chapter 118",
+      "accept": "all",
+      "expected": [
+        "Malevolent Shrine"
+      ],
+      "found": [
+        "Malevolent Shrine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

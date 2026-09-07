@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Maki deliver to her allies, per Chapter 211?",
+      "id": "jjk-pg-chapter_211-001",
+      "subject": "Chapter 211",
+      "accept": "all",
+      "expected": [
+        "the bad news about Tengen and Tsukumo"
+      ],
+      "found": [
+        "the bad news about Tengen and Tsukumo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens as the Culling Game colonies activate one after the other, per Chapter 211?",
+      "id": "jjk-pg-chapter_211-002",
+      "subject": "Chapter 211",
+      "accept": "all",
+      "expected": [
+        "the pre-prep for the merger concludes"
+      ],
+      "found": [
+        "the pre-prep for the merger concludes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do all the group's collective points get transferred to, per Chapter 211?",
+      "id": "jjk-pg-chapter_211-003",
+      "subject": "Chapter 211",
+      "accept": "all",
+      "expected": [
+        "Megumi"
+      ],
+      "found": [],
+      "missing": [
+        "Megumi"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is the man from the second page, per the Chapter 211 Trivia?",
+      "id": "jjk-pg-chapter_211-004",
+      "subject": "Chapter 211",
+      "accept": "all",
+      "expected": [
+        "the waiter who quit his job in Chapter 12"
+      ],
+      "found": [
+        "the waiter who quit his job in Chapter 12"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 3
+  }
+}

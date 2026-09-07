@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is crushed by the relentless slashes of Malevolent Shrine, per Chapter 226?",
+      "id": "jjk-pg-chapter_226-001",
+      "subject": "Chapter 226",
+      "accept": "all",
+      "expected": [
+        "barrier of Unlimited Void"
+      ],
+      "found": [
+        "barrier of Unlimited Void"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why can't Gojo escape while his technique is burnt out, per Chapter 226?",
+      "id": "jjk-pg-chapter_226-002",
+      "subject": "Chapter 226",
+      "accept": "all",
+      "expected": [
+        "Gojo can only teleport by applying his Limitless"
+      ],
+      "found": [
+        "Gojo can only teleport by applying his Limitless"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Gojo activate to protect himself from the domain, per Chapter 226?",
+      "id": "jjk-pg-chapter_226-003",
+      "subject": "Chapter 226",
+      "accept": "all",
+      "expected": [
+        "simple domain"
+      ],
+      "found": [
+        "simple domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

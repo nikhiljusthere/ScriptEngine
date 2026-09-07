@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What cursed technique does Yuka reveal upon arriving at the duel, per Modulo Chapter 15?",
+      "id": "jjk-pg-modulo_chapter_15-001",
+      "subject": "Modulo Chapter 15",
+      "accept": "all",
+      "expected": [
+        "the Ten Shadows Technique"
+      ],
+      "found": [
+        "the Ten Shadows Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Yuka wish she could be reborn as, per Modulo Chapter 15?",
+      "id": "jjk-pg-modulo_chapter_15-002",
+      "subject": "Modulo Chapter 15",
+      "accept": "all",
+      "expected": [
+        "an older sister"
+      ],
+      "found": [
+        "an older sister"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who confronts Dabura in Tokyo accompanied by a flock of crows, per Modulo Chapter 15?",
+      "id": "jjk-pg-modulo_chapter_15-003",
+      "subject": "Modulo Chapter 15",
+      "accept": "all",
+      "expected": [
+        "Ui Ui"
+      ],
+      "found": [
+        "Ui Ui"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

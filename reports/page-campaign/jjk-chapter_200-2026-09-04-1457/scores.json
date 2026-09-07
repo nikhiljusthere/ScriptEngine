@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Sukuna reveal is the Angel's target, per Chapter 200?",
+      "id": "jjk-pg-chapter_200-001",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "the one they call the Disgraced One"
+      ],
+      "found": [
+        "the one they call the Disgraced One"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kogane display entering the colony, per Chapter 200?",
+      "id": "jjk-pg-chapter_200-002",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "over eight hundred of them entering one after the other"
+      ],
+      "found": [
+        "over eight hundred of them entering one after the other"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kenjaku propose as an alternative energy source, per Chapter 200?",
+      "id": "jjk-pg-chapter_200-003",
+      "subject": "Chapter 200",
+      "accept": "all",
+      "expected": [
+        "cursed energy"
+      ],
+      "found": [
+        "cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

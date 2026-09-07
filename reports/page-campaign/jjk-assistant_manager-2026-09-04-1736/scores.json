@@ -1,0 +1,185 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is an assistant manager?",
+      "id": "jjk-pg-assistant_manager-001",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "a jujutsu sorcerer who does not specialize in combat"
+      ],
+      "found": [
+        "a jujutsu sorcerer who does not specialize in combat"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What roles do assistant managers serve for other sorcerers?",
+      "id": "jjk-pg-assistant_manager-002",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "acting as helpers to other sorcerers, such as driving, communicating, or assisting the Jujutsu High students"
+      ],
+      "found": [
+        "acting as helpers to other sorcerers, such as driving, communicating, or assisting the Jujutsu High students"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Are assistant managers permitted to engage in battle?",
+      "id": "jjk-pg-assistant_manager-003",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "forbidden from engaging in battle"
+      ],
+      "found": [
+        "forbidden from engaging in battle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What combat training do assistant managers receive as students?",
+      "id": "jjk-pg-assistant_manager-004",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "receive minimal combat training"
+      ],
+      "found": [
+        "receive minimal combat training"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How do assistant managers differ from windows?",
+      "id": "jjk-pg-assistant_manager-005",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "assistant managers have the necessary brain structure to manipulate cursed energy"
+      ],
+      "found": [
+        "assistant managers have the necessary brain structure to manipulate cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What techniques do assistant managers use to assist students?",
+      "id": "jjk-pg-assistant_manager-006",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "simple shikigami and barrier techniques"
+      ],
+      "found": [
+        "simple shikigami and barrier techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which student aspired to become an assistant manager?",
+      "id": "jjk-pg-assistant_manager-007",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "Akari Nitta"
+      ],
+      "found": [
+        "Akari Nitta"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who killed several assistant managers during the Shibuya Incident?",
+      "id": "jjk-pg-assistant_manager-008",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "Haruta Shigemo killing several of them"
+      ],
+      "found": [
+        "Haruta Shigemo killing several of them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is noted as qualified to be an assistant manager?",
+      "id": "jjk-pg-assistant_manager-009",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "Kyoko Tomoe has the qualifications to be an assistant manager"
+      ],
+      "found": [
+        "Kyoko Tomoe has the qualifications to be an assistant manager"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 9,
+    "fact_present": 9
+  }
+}

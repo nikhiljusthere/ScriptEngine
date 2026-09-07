@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is a cursed human?",
+      "id": "jjk-pg-cursed_human-001",
+      "subject": "Cursed Human",
+      "accept": "all",
+      "expected": [
+        "generally non-sorcerers who have been cursed"
+      ],
+      "found": [
+        "generally non-sorcerers who have been cursed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Suguru Geto's religious organization do with cursed humans?",
+      "id": "jjk-pg-cursed_human-002",
+      "subject": "Cursed Human",
+      "accept": "all",
+      "expected": [
+        "It allowed him to collect cursed spirits from them while appearing to alleviate symptoms as a spiritual priest"
+      ],
+      "found": [
+        "It allowed him to collect cursed spirits from them while appearing to alleviate symptoms as a spiritual priest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What grade was Yuta Okkotsu initially registered as?",
+      "id": "jjk-pg-cursed_human-003",
+      "subject": "Cursed Human",
+      "accept": "all",
+      "expected": [
+        "a special grade cursed human"
+      ],
+      "found": [
+        "a special grade cursed human"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

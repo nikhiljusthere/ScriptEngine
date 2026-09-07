@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What kanji does the name 'Zenin' contain?",
+      "id": "jjk-pg-sorcerer_clan_zenin_clan-001",
+      "subject": "Sorcerer Clan/Zenin Clan",
+      "accept": "all",
+      "expected": [
+        "the kanji for"
+      ],
+      "found": [
+        "the kanji for"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Hei unit?",
+      "id": "jjk-pg-sorcerer_clan_zenin_clan-002",
+      "subject": "Sorcerer Clan/Zenin Clan",
+      "accept": "all",
+      "expected": [
+        "a unit composed of the strongest group of jujutsu sorcerers within the Zenin Clan"
+      ],
+      "found": [
+        "a unit composed of the strongest group of jujutsu sorcerers within the Zenin Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Kukuru Unit?",
+      "id": "jjk-pg-sorcerer_clan_zenin_clan-003",
+      "subject": "Sorcerer Clan/Zenin Clan",
+      "accept": "all",
+      "expected": [
+        "a lower branch of the Hei comprised of male Zenin Clan members who don't possess innate techniques"
+      ],
+      "found": [
+        "a lower branch of the Hei comprised of male Zenin Clan members who don't possess innate techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the Akashi?",
+      "id": "jjk-pg-sorcerer_clan_zenin_clan-004",
+      "subject": "Sorcerer Clan/Zenin Clan",
+      "accept": "all",
+      "expected": [
+        "members of the Zenin Clan who have cursed techniques, but do not meet the requirements for joining the Hei"
+      ],
+      "found": [
+        "members of the Zenin Clan who have cursed techniques, but do not meet the requirements for joining the Hei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Toji Zenin rejected by the clan?",
+      "id": "jjk-pg-sorcerer_clan_zenin_clan-005",
+      "subject": "Sorcerer Clan/Zenin Clan",
+      "accept": "all",
+      "expected": [
+        "his lack of cursed energy"
+      ],
+      "found": [
+        "his lack of cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Mai ask Maki to do in exchange for their combined cursed energy?",
+      "id": "jjk-pg-sorcerer_clan_zenin_clan-006",
+      "subject": "Sorcerer Clan/Zenin Clan",
+      "accept": "all",
+      "expected": [
+        "destroy everything"
+      ],
+      "found": [
+        "destroy everything"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

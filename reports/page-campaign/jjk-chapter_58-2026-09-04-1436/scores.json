@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Inspired by Gojo's recent words of wisdom, what does Megumi do, per Chapter 58?",
+      "id": "jjk-pg-chapter_58-001",
+      "subject": "Chapter 58",
+      "accept": "all",
+      "expected": [
+        "abandons his restraints and allows his true power to run wild"
+      ],
+      "found": [
+        "abandons his restraints and allows his true power to run wild"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which Domain does Megumi activate, impassioned and crazed, per Chapter 58?",
+      "id": "jjk-pg-chapter_58-002",
+      "subject": "Chapter 58",
+      "accept": "all",
+      "expected": [
+        "Domain Expansion: Chimera Shadow Garden"
+      ],
+      "found": [
+        "Domain Expansion: Chimera Shadow Garden"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Gojo say Megumi doesn't know how to do, per Chapter 58?",
+      "id": "jjk-pg-chapter_58-003",
+      "subject": "Chapter 58",
+      "accept": "all",
+      "expected": [
+        "try his best"
+      ],
+      "found": [
+        "try his best"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

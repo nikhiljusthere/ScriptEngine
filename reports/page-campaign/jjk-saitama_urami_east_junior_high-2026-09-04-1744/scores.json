@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Saitama Urami East Junior High?",
+      "id": "jjk-pg-saitama_urami_east_junior_high-001",
+      "subject": "Saitama Urami East Junior High",
+      "accept": "all",
+      "expected": [
+        "a normal middle school composed of a few different buildings"
+      ],
+      "found": [
+        "a normal middle school composed of a few different buildings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the student uniforms composed of?",
+      "id": "jjk-pg-saitama_urami_east_junior_high-002",
+      "subject": "Saitama Urami East Junior High",
+      "accept": "all",
+      "expected": [
+        "a tan suit jacket with a navy trim over a white dress shirt with a maroon tie"
+      ],
+      "found": [],
+      "missing": [
+        "a tan suit jacket with a navy trim over a white dress shirt with a maroon tie"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Where would Megumi often get into fights?",
+      "id": "jjk-pg-saitama_urami_east_junior_high-003",
+      "subject": "Saitama Urami East Junior High",
+      "accept": "all",
+      "expected": [
+        "a courtyard in another that also serves as a parking lot"
+      ],
+      "found": [
+        "a courtyard in another that also serves as a parking lot"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 2
+  }
+}

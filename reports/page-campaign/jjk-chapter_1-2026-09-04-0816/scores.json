@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Megumi Fushiguro sent to find at Sugisawa Municipal High School, per Chapter 1?",
+      "id": "jjk-pg-chapter_1-001",
+      "subject": "Chapter 1",
+      "accept": "all",
+      "expected": [
+        "a powerful cursed object"
+      ],
+      "found": [
+        "a powerful cursed object"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the student council president threaten to do to the Occult Research club, per Chapter 1?",
+      "id": "jjk-pg-chapter_1-002",
+      "subject": "Chapter 1",
+      "accept": "all",
+      "expected": [
+        "close down the club and re-assign the space to the girl's track team"
+      ],
+      "found": [
+        "close down the club and re-assign the space to the girl's track team"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What game does the track coach challenge Yuji to, staking his club membership on the result, per Chapter 1?",
+      "id": "jjk-pg-chapter_1-003",
+      "subject": "Chapter 1",
+      "accept": "all",
+      "expected": [
+        "shot put"
+      ],
+      "found": [
+        "shot put"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

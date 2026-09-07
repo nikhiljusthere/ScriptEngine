@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Satoru Gojo reunite with, per Chapter 236?",
+      "id": "jjk-pg-chapter_236-001",
+      "subject": "Chapter 236",
+      "accept": "all",
+      "expected": [
+        "those fallen"
+      ],
+      "found": [
+        "those fallen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Gojo meet first in the limbo fantasy, per Chapter 236?",
+      "id": "jjk-pg-chapter_236-002",
+      "subject": "Chapter 236",
+      "accept": "all",
+      "expected": [
+        "Geto"
+      ],
+      "found": [
+        "Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What bisects Gojo's body back in reality, per Chapter 236?",
+      "id": "jjk-pg-chapter_236-003",
+      "subject": "Chapter 236",
+      "accept": "all",
+      "expected": [
+        "a Dismantle that targets the world"
+      ],
+      "found": [
+        "a Dismantle that targets the world"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

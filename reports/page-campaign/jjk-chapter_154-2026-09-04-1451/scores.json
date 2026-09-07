@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Megumi team up with to infiltrate the fight club from the outside, per Chapter 154?",
+      "id": "jjk-pg-chapter_154-001",
+      "subject": "Chapter 154",
+      "accept": "all",
+      "expected": [
+        "Panda"
+      ],
+      "found": [
+        "Panda"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Panda compare Kirara Hoshi's cursed technique to, per Chapter 154?",
+      "id": "jjk-pg-chapter_154-002",
+      "subject": "Chapter 154",
+      "accept": "all",
+      "expected": [
+        "the stopping effect of Satoru Gojo's Infinity"
+      ],
+      "found": [
+        "the stopping effect of Satoru Gojo's Infinity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Megumi use to hide in the shadow of the man on the phone with Hakari, per Chapter 154?",
+      "id": "jjk-pg-chapter_154-003",
+      "subject": "Chapter 154",
+      "accept": "all",
+      "expected": [
+        "his cursed technique"
+      ],
+      "found": [
+        "his cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

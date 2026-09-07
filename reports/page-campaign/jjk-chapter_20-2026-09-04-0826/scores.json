@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does the only known witness, Junpei, discuss the origin of curses with, per Chapter 20?",
+      "id": "jjk-pg-chapter_20-001",
+      "subject": "Chapter 20",
+      "accept": "all",
+      "expected": [
+        "Mahito"
+      ],
+      "found": [
+        "Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of Yuji's newly developed double-impacted strike, per Chapter 20?",
+      "id": "jjk-pg-chapter_20-002",
+      "subject": "Chapter 20",
+      "accept": "all",
+      "expected": [
+        "Divergent Fist"
+      ],
+      "found": [
+        "Divergent Fist"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the curses at Kinema Cinema actually revealed to be, per Chapter 20?",
+      "id": "jjk-pg-chapter_20-003",
+      "subject": "Chapter 20",
+      "accept": "all",
+      "expected": [
+        "ex-humans that have had their bodies transmogrified by cursed energy"
+      ],
+      "found": [],
+      "missing": [
+        "ex-humans that have had their bodies transmogrified by cursed energy"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "partial",
+      "routed": "roster"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 2
+  }
+}

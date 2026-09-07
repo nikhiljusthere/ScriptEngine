@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whose success in the Culling Game impresses all those observing him, per Chapter 174?",
+      "id": "jjk-pg-chapter_174-001",
+      "subject": "Chapter 174",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu"
+      ],
+      "found": [],
+      "missing": [
+        "Yuta Okkotsu"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Ryu use his Kogane to identify as Dhruv's attacker, per Chapter 174?",
+      "id": "jjk-pg-chapter_174-002",
+      "subject": "Chapter 174",
+      "accept": "all",
+      "expected": [
+        "Yuta Okkotsu"
+      ],
+      "found": [
+        "Yuta Okkotsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool does Kurourushi reveal in response to Yuta's battle stance, per Chapter 174?",
+      "id": "jjk-pg-chapter_174-003",
+      "subject": "Chapter 174",
+      "accept": "all",
+      "expected": [
+        "the Festering Life Sword"
+      ],
+      "found": [
+        "the Festering Life Sword"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 2
+  }
+}

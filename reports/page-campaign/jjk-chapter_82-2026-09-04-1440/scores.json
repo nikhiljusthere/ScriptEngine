@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Kokichi use to turn the tables on Mahito, per Chapter 82?",
+      "id": "jjk-pg-chapter_82-001",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "New Shadow Style: Simple Domain"
+      ],
+      "found": [
+        "New Shadow Style: Simple Domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In what era was Simple Domain invented, per Chapter 82?",
+      "id": "jjk-pg-chapter_82-002",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "the Heian Era"
+      ],
+      "found": [
+        "the Heian Era"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What fateful day arrives ten days later, per Chapter 82?",
+      "id": "jjk-pg-chapter_82-003",
+      "subject": "Chapter 82",
+      "accept": "all",
+      "expected": [
+        "October 31, 2018, in Shibuya"
+      ],
+      "found": [
+        "October 31, 2018, in Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

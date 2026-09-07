@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Kashimo seek to learn, per Chapter 237?",
+      "id": "jjk-pg-chapter_237-001",
+      "subject": "Chapter 237",
+      "accept": "all",
+      "expected": [
+        "what it truly means to be the strongest"
+      ],
+      "found": [
+        "what it truly means to be the strongest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How far off the ground does Kashimo leap onto the battlefield, per Chapter 237?",
+      "id": "jjk-pg-chapter_237-002",
+      "subject": "Chapter 237",
+      "accept": "all",
+      "expected": [
+        "two hundred and three meters"
+      ],
+      "found": [
+        "two hundred and three meters"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What cursed tool replica arms Sukuna, per Chapter 237?",
+      "id": "jjk-pg-chapter_237-003",
+      "subject": "Chapter 237",
+      "accept": "all",
+      "expected": [
+        "Kamutoke"
+      ],
+      "found": [
+        "Kamutoke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

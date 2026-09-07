@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Pseudo-Geto summon for Mei Mei to exorcise, per Chapter 101?",
+      "id": "jjk-pg-chapter_101-001",
+      "subject": "Chapter 101",
+      "accept": "all",
+      "expected": [
+        "a special grade disease curse"
+      ],
+      "found": [
+        "a special grade disease curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the special grade disease curse that Geto summons, per Chapter 101?",
+      "id": "jjk-pg-chapter_101-002",
+      "subject": "Chapter 101",
+      "accept": "all",
+      "expected": [
+        "Smallpox Deity"
+      ],
+      "found": [
+        "Smallpox Deity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Choso activate to compress blood outside his body into a single point, per Chapter 101?",
+      "id": "jjk-pg-chapter_101-003",
+      "subject": "Chapter 101",
+      "accept": "all",
+      "expected": [
+        "Blood Manipulation: Convergence"
+      ],
+      "found": [
+        "Blood Manipulation: Convergence"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

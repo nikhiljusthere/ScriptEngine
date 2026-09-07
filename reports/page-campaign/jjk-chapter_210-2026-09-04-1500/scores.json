@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Hana aspire to be like, per Chapter 210?",
+      "id": "jjk-pg-chapter_210-001",
+      "subject": "Chapter 210",
+      "accept": "all",
+      "expected": [
+        "Megumi"
+      ],
+      "found": [
+        "Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the curse leave the trapped girls in, per Chapter 210?",
+      "id": "jjk-pg-chapter_210-002",
+      "subject": "Chapter 210",
+      "accept": "all",
+      "expected": [
+        "filthy conditions"
+      ],
+      "found": [
+        "filthy conditions"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What hound is the dog Hana follows, per Chapter 210?",
+      "id": "jjk-pg-chapter_210-003",
+      "subject": "Chapter 210",
+      "accept": "all",
+      "expected": [
+        "Megumi's Divine Dog"
+      ],
+      "found": [
+        "Megumi's Divine Dog"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

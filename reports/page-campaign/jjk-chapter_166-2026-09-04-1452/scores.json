@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who sentences Yuji to death, per Chapter 166?",
+      "id": "jjk-pg-chapter_166-001",
+      "subject": "Chapter 166",
+      "accept": "all",
+      "expected": [
+        "Judgeman"
+      ],
+      "found": [
+        "Judgeman"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Higuruma's gavel transform into, per Chapter 166?",
+      "id": "jjk-pg-chapter_166-002",
+      "subject": "Chapter 166",
+      "accept": "all",
+      "expected": [
+        "the Executioner's Sword"
+      ],
+      "found": [
+        "the Executioner's Sword"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Higuruma say he remembered, per Chapter 166?",
+      "id": "jjk-pg-chapter_166-003",
+      "subject": "Chapter 166",
+      "accept": "all",
+      "expected": [
+        "why he got into law in the first place"
+      ],
+      "found": [
+        "why he got into law in the first place"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

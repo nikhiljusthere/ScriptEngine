@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do the Jujutsu High first-years work at as part-time jobs, per Bonus Manga?",
+      "id": "jjk-pg-bonus_manga-001",
+      "subject": "Bonus Manga",
+      "accept": "all",
+      "expected": [
+        "a cosmetics shop"
+      ],
+      "found": [
+        "a cosmetics shop"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "At which shop do the first-years work, per Bonus Manga?",
+      "id": "jjk-pg-bonus_manga-002",
+      "subject": "Bonus Manga",
+      "accept": "all",
+      "expected": [
+        "Tamatina Castle"
+      ],
+      "found": [
+        "Tamatina Castle"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which customer arrives at the shop wanting to redeem a coupon, per Bonus Manga?",
+      "id": "jjk-pg-bonus_manga-003",
+      "subject": "Bonus Manga",
+      "accept": "all",
+      "expected": [
+        "Utahime"
+      ],
+      "found": [
+        "Utahime"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What release was this chapter made to celebrate, per Bonus Manga?",
+      "id": "jjk-pg-bonus_manga-004",
+      "subject": "Bonus Manga",
+      "accept": "all",
+      "expected": [
+        "Jujutsu Kaisen 0: The Movie"
+      ],
+      "found": [
+        "Jujutsu Kaisen 0: The Movie"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

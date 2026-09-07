@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whose dream has been achieved, per Chapter 271?",
+      "id": "jjk-pg-chapter_271-001",
+      "subject": "Chapter 271",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobara find on the woman after examining her, per Chapter 271?",
+      "id": "jjk-pg-chapter_271-002",
+      "subject": "Chapter 271",
+      "accept": "all",
+      "expected": [
+        "no cursed seals"
+      ],
+      "found": [
+        "no cursed seals"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where does the last finger of Ryomen Sukuna lie at the end, per Chapter 271?",
+      "id": "jjk-pg-chapter_271-003",
+      "subject": "Chapter 271",
+      "accept": "all",
+      "expected": [
+        "a thermometer shed"
+      ],
+      "found": [
+        "a thermometer shed"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

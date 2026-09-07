@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does delirious Megumi apologize for regarding his sister, per Chapter 59?",
+      "id": "jjk-pg-chapter_59-001",
+      "subject": "Chapter 59",
+      "accept": "all",
+      "expected": [
+        "apologizes for not appreciating her kindness sooner"
+      ],
+      "found": [
+        "apologizes for not appreciating her kindness sooner"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Megumi tell the punks is the basis for human interaction, per Chapter 59?",
+      "id": "jjk-pg-chapter_59-002",
+      "subject": "Chapter 59",
+      "accept": "all",
+      "expected": [
+        "never crossing any line that violates someone else's dignity"
+      ],
+      "found": [
+        "never crossing any line that violates someone else's dignity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which technique does Eso activate to sprout wasp-like wings of black blood, per Chapter 59?",
+      "id": "jjk-pg-chapter_59-003",
+      "subject": "Chapter 59",
+      "accept": "all",
+      "expected": [
+        "Rot Technique, Maximum: Wing King"
+      ],
+      "found": [
+        "Rot Technique, Maximum: Wing King"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

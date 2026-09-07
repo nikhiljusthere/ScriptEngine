@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How does Jujutsu High assign sorcerer grades?",
+      "id": "jjk-pg-grade-001",
+      "subject": "Grade",
+      "accept": "all",
+      "expected": [
+        "ascending from grade 4 to grade 1"
+      ],
+      "found": [
+        "ascending from grade 4 to grade 1"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What distinguishes a grade 2 curse from a semi-grade 1 curse?",
+      "id": "jjk-pg-grade-002",
+      "subject": "Grade",
+      "accept": "all",
+      "expected": [
+        "whether or not it is capable of using cursed techniques"
+      ],
+      "found": [
+        "whether or not it is capable of using cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is a special grade sorcerer capable of?",
+      "id": "jjk-pg-grade-003",
+      "subject": "Grade",
+      "accept": "all",
+      "expected": [
+        "wiping out a nation singlehandedly"
+      ],
+      "found": [
+        "wiping out a nation singlehandedly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How can jujutsu sorcerers be promoted up in rank?",
+      "id": "jjk-pg-grade-004",
+      "subject": "Grade",
+      "accept": "all",
+      "expected": [
+        "by receiving a recommendation from a sorcerer of a higher rank"
+      ],
+      "found": [
+        "by receiving a recommendation from a sorcerer of a higher rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

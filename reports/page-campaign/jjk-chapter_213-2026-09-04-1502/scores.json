@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Sukuna possess, per Chapter 213?",
+      "id": "jjk-pg-chapter_213-001",
+      "subject": "Chapter 213",
+      "accept": "all",
+      "expected": [
+        "Megumi's body"
+      ],
+      "found": [
+        "Megumi's body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could Megumi have turned out to be, per Chapter 213?",
+      "id": "jjk-pg-chapter_213-002",
+      "subject": "Chapter 213",
+      "accept": "all",
+      "expected": [
+        "a cage-like Yuji instead of a proper vessel"
+      ],
+      "found": [
+        "a cage-like Yuji instead of a proper vessel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hana use to hit Sukuna with maximum cursed energy output, per Chapter 213?",
+      "id": "jjk-pg-chapter_213-003",
+      "subject": "Chapter 213",
+      "accept": "all",
+      "expected": [
+        "Jacob's Ladder"
+      ],
+      "found": [
+        "Jacob's Ladder"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

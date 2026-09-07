@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom is Yuji able to finally reach Shibuya Station with help from, per Chapter 100?",
+      "id": "jjk-pg-chapter_100-001",
+      "subject": "Chapter 100",
+      "accept": "all",
+      "expected": [
+        "his favorite cursed speech user"
+      ],
+      "found": [
+        "his favorite cursed speech user"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nanami use to create a weak point in his opponent's body, per Chapter 100?",
+      "id": "jjk-pg-chapter_100-002",
+      "subject": "Chapter 100",
+      "accept": "all",
+      "expected": [
+        "his Ratio Technique"
+      ],
+      "found": [
+        "his Ratio Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "At what time does Yuji enter Shibuya Station, per Chapter 100?",
+      "id": "jjk-pg-chapter_100-003",
+      "subject": "Chapter 100",
+      "accept": "all",
+      "expected": [
+        "10:10 P.M."
+      ],
+      "found": [
+        "10:10 P.M."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

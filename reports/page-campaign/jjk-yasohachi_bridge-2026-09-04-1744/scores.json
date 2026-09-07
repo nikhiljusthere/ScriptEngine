@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Yasohachi Bridge?",
+      "id": "jjk-pg-yasohachi_bridge-001",
+      "subject": "Yasohachi Bridge",
+      "accept": "all",
+      "expected": [
+        "a large stone commercial bridge in the mountains of Koinokuchi Canyon"
+      ],
+      "found": [
+        "a large stone commercial bridge in the mountains of Koinokuchi Canyon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yasohachi Bridge known for?",
+      "id": "jjk-pg-yasohachi_bridge-002",
+      "subject": "Yasohachi Bridge",
+      "accept": "all",
+      "expected": [
+        "a place known for suicides and a famous hotspot for paranormal activity"
+      ],
+      "found": [
+        "a place known for suicides and a famous hotspot for paranormal activity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened to the four students who didn't show up to school?",
+      "id": "jjk-pg-yasohachi_bridge-003",
+      "subject": "Yasohachi Bridge",
+      "accept": "all",
+      "expected": [
+        "all four of them were found unconscious below Yasohachi Bridge"
+      ],
+      "found": [
+        "all four of them were found unconscious below Yasohachi Bridge"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Megumi desire, no matter what, per Chapter 44?",
+      "id": "jjk-pg-chapter_44-001",
+      "subject": "Chapter 44",
+      "accept": "all",
+      "expected": [
+        "to save Yuji"
+      ],
+      "found": [
+        "to save Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shikigami does Megumi summon, per Chapter 44?",
+      "id": "jjk-pg-chapter_44-002",
+      "subject": "Chapter 44",
+      "accept": "all",
+      "expected": [
+        "Max Elephant"
+      ],
+      "found": [
+        "Max Elephant"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Noritoshi openly reveal that he plans to do, per Chapter 44?",
+      "id": "jjk-pg-chapter_44-003",
+      "subject": "Chapter 44",
+      "accept": "all",
+      "expected": [
+        "kill Yuji"
+      ],
+      "found": [
+        "kill Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

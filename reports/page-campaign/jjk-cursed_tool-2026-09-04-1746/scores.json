@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are cursed tools?",
+      "id": "jjk-pg-cursed_tool-001",
+      "subject": "Cursed Tool",
+      "accept": "all",
+      "expected": [
+        "weapons infused with cursed energy"
+      ],
+      "found": [],
+      "missing": [
+        "weapons infused with cursed energy"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "How are cursed tools categorized?",
+      "id": "jjk-pg-cursed_tool-002",
+      "subject": "Cursed Tool",
+      "accept": "all",
+      "expected": [
+        "from grade one to four based on their power and potency"
+      ],
+      "found": [
+        "from grade one to four based on their power and potency"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What can special grade cursed tools be worth?",
+      "id": "jjk-pg-cursed_tool-003",
+      "subject": "Cursed Tool",
+      "accept": "all",
+      "expected": [
+        "upwards of five hundred million yen"
+      ],
+      "found": [
+        "upwards of five hundred million yen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where were the cursed tools collected by the Big Three Sorcerer Families stored?",
+      "id": "jjk-pg-cursed_tool-004",
+      "subject": "Cursed Tool",
+      "accept": "all",
+      "expected": [
+        "in a vault called the cursed warehouse within Tokyo Jujutsu High"
+      ],
+      "found": [
+        "in a vault called the cursed warehouse within Tokyo Jujutsu High"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 3
+  }
+}

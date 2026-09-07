@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do the Jujutsu High students do for their sensei, per Chapter 222?",
+      "id": "jjk-pg-chapter_222-001",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "encourage their sensei"
+      ],
+      "found": [
+        "encourage their sensei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Uraume present to Sukuna, per Chapter 222?",
+      "id": "jjk-pg-chapter_222-002",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "three more of his fingers"
+      ],
+      "found": [
+        "three more of his fingers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What game is Mei Mei hosting in the dojo, per Chapter 222?",
+      "id": "jjk-pg-chapter_222-003",
+      "subject": "Chapter 222",
+      "accept": "all",
+      "expected": [
+        "an online betting game"
+      ],
+      "found": [
+        "an online betting game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

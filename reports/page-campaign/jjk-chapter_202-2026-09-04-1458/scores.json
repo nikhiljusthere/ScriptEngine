@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Where does Kenjaku make his move, per Chapter 202?",
+      "id": "jjk-pg-chapter_202-001",
+      "subject": "Chapter 202",
+      "accept": "all",
+      "expected": [
+        "the Tombs of the Star"
+      ],
+      "found": [
+        "the Tombs of the Star"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kenjaku manipulate to create a movie theater, per Chapter 202?",
+      "id": "jjk-pg-chapter_202-002",
+      "subject": "Chapter 202",
+      "accept": "all",
+      "expected": [
+        "the empty barrier around them"
+      ],
+      "found": [
+        "the empty barrier around them"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Choso prepare to fire at Kenjaku, per Chapter 202?",
+      "id": "jjk-pg-chapter_202-003",
+      "subject": "Chapter 202",
+      "accept": "all",
+      "expected": [
+        "Piercing Blood"
+      ],
+      "found": [
+        "Piercing Blood"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

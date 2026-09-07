@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Yuji dream of, per Chapter 143?",
+      "id": "jjk-pg-chapter_143-001",
+      "subject": "Chapter 143",
+      "accept": "all",
+      "expected": [
+        "his mother"
+      ],
+      "found": [
+        "his mother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuta offer to do for Naoya if he tells his superiors that Yuji died, per Chapter 143?",
+      "id": "jjk-pg-chapter_143-002",
+      "subject": "Chapter 143",
+      "accept": "all",
+      "expected": [
+        "heal him with reverse cursed technique"
+      ],
+      "found": [
+        "heal him with reverse cursed technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Yuta enter into to get approved as Yuji's executioner, per Chapter 143?",
+      "id": "jjk-pg-chapter_143-003",
+      "subject": "Chapter 143",
+      "accept": "all",
+      "expected": [
+        "a Binding Vow to kill him"
+      ],
+      "found": [
+        "a Binding Vow to kill him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

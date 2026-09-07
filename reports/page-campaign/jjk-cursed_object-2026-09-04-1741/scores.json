@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are cursed objects?",
+      "id": "jjk-pg-cursed_object-001",
+      "subject": "Cursed Object",
+      "accept": "all",
+      "expected": [
+        "items that contain cursed energy are referred to as cursed objects"
+      ],
+      "found": [],
+      "missing": [
+        "items that contain cursed energy are referred to as cursed objects"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "How are particularly dangerous cursed objects ranked?",
+      "id": "jjk-pg-cursed_object-002",
+      "subject": "Cursed Object",
+      "accept": "all",
+      "expected": [
+        "special grade"
+      ],
+      "found": [
+        "special grade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is incarnation?",
+      "id": "jjk-pg-cursed_object-003",
+      "subject": "Cursed Object",
+      "accept": "all",
+      "expected": [
+        "a phenomenon where an ancient \"curse\" (a cursed object) obtains a physical body"
+      ],
+      "found": [
+        "a phenomenon where an ancient \"curse\" (a cursed object) obtains a physical body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which special grade cursed object is the remains of the Buddhist monk Genshin?",
+      "id": "jjk-pg-cursed_object-004",
+      "subject": "Cursed Object",
+      "accept": "all",
+      "expected": [
+        "Prison Realm"
+      ],
+      "found": [
+        "Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 3
+  }
+}

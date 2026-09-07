@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Festering Life Sword?",
+      "id": "jjk-pg-festering_life_sword-001",
+      "subject": "Festering Life Sword",
+      "accept": "all",
+      "expected": [
+        "an enchanted blade that mixes life and death"
+      ],
+      "found": [
+        "an enchanted blade that mixes life and death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the six firing barrels on the Festering Life Sword used for?",
+      "id": "jjk-pg-festering_life_sword-002",
+      "subject": "Festering Life Sword",
+      "accept": "all",
+      "expected": [
+        "launch close-range projectiles at its target"
+      ],
+      "found": [
+        "launch close-range projectiles at its target"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who wielded the Festering Life Sword?",
+      "id": "jjk-pg-festering_life_sword-003",
+      "subject": "Festering Life Sword",
+      "accept": "all",
+      "expected": [
+        "Kurourushi"
+      ],
+      "found": [
+        "Kurourushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

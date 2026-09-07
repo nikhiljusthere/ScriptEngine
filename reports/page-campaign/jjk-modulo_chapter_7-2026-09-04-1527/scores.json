@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "In what state is Maru when Cross impersonates him, per Modulo Chapter 7?",
+      "id": "jjk-pg-modulo_chapter_7-001",
+      "subject": "Modulo Chapter 7",
+      "accept": "all",
+      "expected": [
+        "injured and unconscious"
+      ],
+      "found": [
+        "injured and unconscious"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuka's hospital check-up reveal, per Modulo Chapter 7?",
+      "id": "jjk-pg-modulo_chapter_7-002",
+      "subject": "Modulo Chapter 7",
+      "accept": "all",
+      "expected": [
+        "a malignant brain tumor"
+      ],
+      "found": [
+        "a malignant brain tumor"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What historical practice does Yuka mention when discussing faith with Cross, per Modulo Chapter 7?",
+      "id": "jjk-pg-modulo_chapter_7-003",
+      "subject": "Modulo Chapter 7",
+      "accept": "all",
+      "expected": [
+        "the fumi-e"
+      ],
+      "found": [
+        "the fumi-e"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

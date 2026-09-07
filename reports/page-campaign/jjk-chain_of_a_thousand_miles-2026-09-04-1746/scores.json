@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does the Chain of a Thousand Miles have the ability to do?",
+      "id": "jjk-pg-chain_of_a_thousand_miles-001",
+      "subject": "Chain of a Thousand Miles",
+      "accept": "all",
+      "expected": [
+        "keep extending endlessly as long as its user doesn't allow one of the ends of the chain to be seen"
+      ],
+      "found": [
+        "keep extending endlessly as long as its user doesn't allow one of the ends of the chain to be seen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the clip on the front end of the chain used for?",
+      "id": "jjk-pg-chain_of_a_thousand_miles-002",
+      "subject": "Chain of a Thousand Miles",
+      "accept": "all",
+      "expected": [
+        "connect to other cursed tools in order to extend their range"
+      ],
+      "found": [
+        "connect to other cursed tools in order to extend their range"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji use the chain in his second fight with Gojo?",
+      "id": "jjk-pg-chain_of_a_thousand_miles-003",
+      "subject": "Chain of a Thousand Miles",
+      "accept": "all",
+      "expected": [
+        "Toji connected the chain to another one of his special grade cursed tools; the Inverted Spear of Heaven"
+      ],
+      "found": [
+        "Toji connected the chain to another one of his special grade cursed tools; the Inverted Spear of Heaven"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

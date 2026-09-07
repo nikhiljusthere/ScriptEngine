@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What has changed Maki in unexpected ways, per Chapter 197?",
+      "id": "jjk-pg-chapter_197-001",
+      "subject": "Chapter 197",
+      "accept": "all",
+      "expected": [
+        "Sumo wrestling with Miyo"
+      ],
+      "found": [
+        "Sumo wrestling with Miyo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How long did one thousand sumo bouts take outside the barrier, per Chapter 197?",
+      "id": "jjk-pg-chapter_197-002",
+      "subject": "Chapter 197",
+      "accept": "all",
+      "expected": [
+        "less than one minute"
+      ],
+      "found": [
+        "less than one minute"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Naoya cast at the end of the chapter, per Chapter 197?",
+      "id": "jjk-pg-chapter_197-003",
+      "subject": "Chapter 197",
+      "accept": "all",
+      "expected": [
+        "domain expansion"
+      ],
+      "found": [
+        "domain expansion"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

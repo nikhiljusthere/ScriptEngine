@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What has the conflict escalated into beyond a fight for the Zenin clan, per Chapter 151?",
+      "id": "jjk-pg-chapter_151-001",
+      "subject": "Chapter 151",
+      "accept": "all",
+      "expected": [
+        "a battle of who will stand beside Toji and Satoru Gojo as the strongest"
+      ],
+      "found": [
+        "a battle of who will stand beside Toji and Satoru Gojo as the strongest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was Naoya recognized as when he was a child, per Chapter 151?",
+      "id": "jjk-pg-chapter_151-002",
+      "subject": "Chapter 151",
+      "accept": "all",
+      "expected": [
+        "a genius"
+      ],
+      "found": [
+        "a genius"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Naoya not believe understood Toji other than, per Chapter 151?",
+      "id": "jjk-pg-chapter_151-003",
+      "subject": "Chapter 151",
+      "accept": "all",
+      "expected": [
+        "Satoru"
+      ],
+      "found": [
+        "Satoru"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

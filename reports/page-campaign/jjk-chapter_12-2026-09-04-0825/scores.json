@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom do the evil spirits hatch a plan to take down, per Chapter 12?",
+      "id": "jjk-pg-chapter_12-001",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Satoru Gojo"
+      ],
+      "found": [
+        "Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What taboo object is Pseudo-Geto in possession of, per Chapter 12?",
+      "id": "jjk-pg-chapter_12-002",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Prison Realm"
+      ],
+      "found": [
+        "Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Megumi visit to apologize for being unable to save Tadashi, per Chapter 12?",
+      "id": "jjk-pg-chapter_12-003",
+      "subject": "Chapter 12",
+      "accept": "all",
+      "expected": [
+        "Tadashi's mother"
+      ],
+      "found": [
+        "Tadashi's mother"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Black Rope?",
+      "id": "jjk-pg-black_rope-001",
+      "subject": "Black Rope",
+      "accept": "all",
+      "expected": [
+        "a mysterious cursed tool imbued with a curse with the ability to disrupt and cancel out the effects of other cursed techniques"
+      ],
+      "found": [
+        "a mysterious cursed tool imbued with a curse with the ability to disrupt and cancel out the effects of other cursed techniques"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who apparently wove the Black Rope?",
+      "id": "jjk-pg-black_rope-002",
+      "subject": "Black Rope",
+      "accept": "all",
+      "expected": [
+        "woven by Miguel's clan of sorcerers in Africa over the course of several decades"
+      ],
+      "found": [
+        "woven by Miguel's clan of sorcerers in Africa over the course of several decades"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens to the Black Rope when its cursed technique is used?",
+      "id": "jjk-pg-black_rope-003",
+      "subject": "Black Rope",
+      "accept": "all",
+      "expected": [
+        "rope burns away every time its own cursed technique is used, making it smaller with every hit until nothing is left"
+      ],
+      "found": [
+        "rope burns away every time its own cursed technique is used, making it smaller with every hit until nothing is left"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

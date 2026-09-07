@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who is ready to embrace his role until the end, per Chapter 247?",
+      "id": "jjk-pg-chapter_247-001",
+      "subject": "Chapter 247",
+      "accept": "all",
+      "expected": [
+        "Higuruma"
+      ],
+      "found": [
+        "Higuruma"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna use to cut half of Yuji's lower torso into pieces, per Chapter 247?",
+      "id": "jjk-pg-chapter_247-002",
+      "subject": "Chapter 247",
+      "accept": "all",
+      "expected": [
+        "Cleave"
+      ],
+      "found": [
+        "Cleave"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Higuruma toss away, per Chapter 247?",
+      "id": "jjk-pg-chapter_247-003",
+      "subject": "Chapter 247",
+      "accept": "all",
+      "expected": [
+        "the cross inside the Executioner's Sword"
+      ],
+      "found": [
+        "the cross inside the Executioner's Sword"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

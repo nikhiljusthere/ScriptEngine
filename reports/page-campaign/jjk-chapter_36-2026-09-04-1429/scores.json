@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Aoi decide to do, realizing Yuji's potential, per Chapter 36?",
+      "id": "jjk-pg-chapter_36-001",
+      "subject": "Chapter 36",
+      "accept": "all",
+      "expected": [
+        "help take him to the next level"
+      ],
+      "found": [
+        "help take him to the next level"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Panda realize about the Kyoto Team's movements, per Chapter 36?",
+      "id": "jjk-pg-chapter_36-002",
+      "subject": "Chapter 36",
+      "accept": "all",
+      "expected": [
+        "the entire Kyoto Team is moving around Yuji"
+      ],
+      "found": [
+        "the entire Kyoto Team is moving around Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What task did Toge accept, per Chapter 36?",
+      "id": "jjk-pg-chapter_36-003",
+      "subject": "Chapter 36",
+      "accept": "all",
+      "expected": [
+        "hunting down the grade 2 cursed spirit"
+      ],
+      "found": [
+        "hunting down the grade 2 cursed spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

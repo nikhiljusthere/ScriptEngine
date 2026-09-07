@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do the Big Three Families consist of?",
+      "id": "jjk-pg-sorcerer_clan-001",
+      "subject": "Sorcerer Clan",
+      "accept": "all",
+      "expected": [
+        "the Zenin Clan, the Gojo Clan, and the Kamo Clan"
+      ],
+      "found": [
+        "the Zenin Clan, the Gojo Clan, and the Kamo Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which two clans have especially bad blood?",
+      "id": "jjk-pg-sorcerer_clan-002",
+      "subject": "Sorcerer Clan",
+      "accept": "all",
+      "expected": [
+        "the Gojo and Zenin Clans"
+      ],
+      "found": [
+        "the Gojo and Zenin Clans"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which clan descends from Michizane Sugawara?",
+      "id": "jjk-pg-sorcerer_clan-003",
+      "subject": "Sorcerer Clan",
+      "accept": "all",
+      "expected": [
+        "is a clan that descends from Michizane Sugawara"
+      ],
+      "found": [
+        "is a clan that descends from Michizane Sugawara"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "When did the Kamo Clan rise to prominence?",
+      "id": "jjk-pg-sorcerer_clan-004",
+      "subject": "Sorcerer Clan",
+      "accept": "all",
+      "expected": [
+        "during the Heian era"
+      ],
+      "found": [
+        "during the Heian era"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What clan is made up of Cursed Speech users marked with the Snake Eyes and Fangs sigil?",
+      "id": "jjk-pg-sorcerer_clan-005",
+      "subject": "Sorcerer Clan",
+      "accept": "all",
+      "expected": [
+        "a widely recognized sorcerer clan made up of Cursed Speech users marked with the Snake Eyes and Fangs sigil"
+      ],
+      "found": [
+        "a widely recognized sorcerer clan made up of Cursed Speech users marked with the Snake Eyes and Fangs sigil"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What sorcerer family was prominent during the golden age of jujutsu?",
+      "id": "jjk-pg-sorcerer_clan-006",
+      "subject": "Sorcerer Clan",
+      "accept": "all",
+      "expected": [
+        "was a prominent sorcerer family during the golden age of jujutsu"
+      ],
+      "found": [
+        "was a prominent sorcerer family during the golden age of jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 6
+  }
+}

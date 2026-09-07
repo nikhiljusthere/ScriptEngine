@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What takes precedence over all the chaos, per Chapter 114?",
+      "id": "jjk-pg-chapter_114-001",
+      "subject": "Chapter 114",
+      "accept": "all",
+      "expected": [
+        "a grand battle between two special grades"
+      ],
+      "found": [
+        "a grand battle between two special grades"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which two curse users interrupt the Kusakabe Team, per Chapter 114?",
+      "id": "jjk-pg-chapter_114-002",
+      "subject": "Chapter 114",
+      "accept": "all",
+      "expected": [
+        "Manami Suda and Toshihisa Negi"
+      ],
+      "found": [
+        "Manami Suda and Toshihisa Negi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "By what time is the Kusakabe Team in front of Shibuya Stream, per Chapter 114?",
+      "id": "jjk-pg-chapter_114-003",
+      "subject": "Chapter 114",
+      "accept": "all",
+      "expected": [
+        "11:01 P.M."
+      ],
+      "found": [
+        "11:01 P.M."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

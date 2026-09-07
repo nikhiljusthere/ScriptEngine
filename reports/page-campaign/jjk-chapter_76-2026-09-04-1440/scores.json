@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What happens to Satoru's standing a year later, per Chapter 76?",
+      "id": "jjk-pg-chapter_76-001",
+      "subject": "Chapter 76",
+      "accept": "all",
+      "expected": [
+        "becomes known as the strongest"
+      ],
+      "found": [
+        "becomes known as the strongest"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What ability does Satoru demonstrate to Suguru and Shoko a year later, per Chapter 76?",
+      "id": "jjk-pg-chapter_76-002",
+      "subject": "Chapter 76",
+      "accept": "all",
+      "expected": [
+        "his ability to automatically activate and utilize the infinity"
+      ],
+      "found": [
+        "his ability to automatically activate and utilize the infinity"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In what month and year does the one-year-later scene take place, per Chapter 76?",
+      "id": "jjk-pg-chapter_76-003",
+      "subject": "Chapter 76",
+      "accept": "all",
+      "expected": [
+        "August 2007"
+      ],
+      "found": [
+        "August 2007"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

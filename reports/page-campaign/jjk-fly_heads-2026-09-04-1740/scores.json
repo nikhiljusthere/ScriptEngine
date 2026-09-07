@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How do sorcerers consider Fly Heads?",
+      "id": "jjk-pg-fly_heads-001",
+      "subject": "Fly Heads",
+      "accept": "all",
+      "expected": [
+        "small-time curses"
+      ],
+      "found": [
+        "small-time curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How are Fly Heads used by Jujutsu High?",
+      "id": "jjk-pg-fly_heads-002",
+      "subject": "Fly Heads",
+      "accept": "all",
+      "expected": [
+        "used by Jujutsu High to test if civilians can see curses or not"
+      ],
+      "found": [
+        "used by Jujutsu High to test if civilians can see curses or not"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did Toji Fushiguro use Fly Heads?",
+      "id": "jjk-pg-fly_heads-003",
+      "subject": "Fly Heads",
+      "accept": "all",
+      "expected": [
+        "keep a swarm of Fly Heads inside his inventory curse"
+      ],
+      "found": [
+        "keep a swarm of Fly Heads inside his inventory curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

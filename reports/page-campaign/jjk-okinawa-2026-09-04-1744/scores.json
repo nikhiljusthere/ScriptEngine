@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Okinawa?",
+      "id": "jjk-pg-okinawa-001",
+      "subject": "Okinawa",
+      "accept": "all",
+      "expected": [
+        "a coastal prefecture and a vacation spot for tourists"
+      ],
+      "found": [
+        "a coastal prefecture and a vacation spot for tourists"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Riko's escort team go to Okinawa?",
+      "id": "jjk-pg-okinawa-002",
+      "subject": "Okinawa",
+      "accept": "all",
+      "expected": [
+        "After Misato Kuroi is abducted by the Time Vessel Association, Riko Amanai's escort team takes a plane to the Naha Airport"
+      ],
+      "found": [
+        "After Misato Kuroi is abducted by the Time Vessel Association, Riko Amanai's escort team takes a plane to the Naha Airport"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Naha Airport?",
+      "id": "jjk-pg-okinawa-003",
+      "subject": "Okinawa",
+      "accept": "all",
+      "expected": [
+        "a large airport in Okinawa that the jujutsu students used to travel to the prefecture"
+      ],
+      "found": [
+        "a large airport in Okinawa that the jujutsu students used to travel to the prefecture"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

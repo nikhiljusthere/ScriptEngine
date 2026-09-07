@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Nobara encounter in town, and what does she learn, per Chapter 64?",
+      "id": "jjk-pg-chapter_64-001",
+      "subject": "Chapter 64",
+      "accept": "all",
+      "expected": [
+        "a young girl named Yuko and learns about her relationship with Yuji"
+      ],
+      "found": [
+        "a young girl named Yuko and learns about her relationship with Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What rank is a sorcerer deemed after recommendations from two or more grade 1 sorcerers, per Chapter 64?",
+      "id": "jjk-pg-chapter_64-002",
+      "subject": "Chapter 64",
+      "accept": "all",
+      "expected": [
+        "a semi-grade 1 rank"
+      ],
+      "found": [
+        "a semi-grade 1 rank"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuko show Nobara, which also shows her standing next to Yuji, per Chapter 64?",
+      "id": "jjk-pg-chapter_64-003",
+      "subject": "Chapter 64",
+      "accept": "all",
+      "expected": [
+        "a picture of her from Junior High graduation"
+      ],
+      "found": [
+        "a picture of her from Junior High graduation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is notable about the Japanese title of Chapter 64, per its Trivia?",
+      "id": "jjk-pg-chapter_64-004",
+      "subject": "Chapter 64",
+      "accept": "all",
+      "expected": [
+        "written entirely in Hiragana without using a single Kanji"
+      ],
+      "found": [
+        "written entirely in Hiragana without using a single Kanji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Gojo plan on doing before Sukuna can fully adapt, per Chapter 231?",
+      "id": "jjk-pg-chapter_231-001",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "winning"
+      ],
+      "found": [
+        "winning"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do Yuta and Hakari admit the punches made them do, per Chapter 231?",
+      "id": "jjk-pg-chapter_231-002",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "vomit"
+      ],
+      "found": [
+        "vomit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many more spins of Mahoraga's wheel will it take to adapt to the Infinity, per Chapter 231?",
+      "id": "jjk-pg-chapter_231-003",
+      "subject": "Chapter 231",
+      "accept": "all",
+      "expected": [
+        "three spins"
+      ],
+      "found": [
+        "three spins"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

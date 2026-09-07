@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What must the team act quickly to do, per Chapter 91?",
+      "id": "jjk-pg-chapter_91-001",
+      "subject": "Chapter 91",
+      "accept": "all",
+      "expected": [
+        "rescue Gojo before the entire world as they know it is upended"
+      ],
+      "found": [
+        "rescue Gojo before the entire world as they know it is upended"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "On what date was Kokichi Muta killed by Mahito, per Chapter 91?",
+      "id": "jjk-pg-chapter_91-002",
+      "subject": "Chapter 91",
+      "accept": "all",
+      "expected": [
+        "October 19th"
+      ],
+      "found": [
+        "October 19th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many of these Mechamaru puppets are there in separate locations, per Chapter 91?",
+      "id": "jjk-pg-chapter_91-003",
+      "subject": "Chapter 91",
+      "accept": "all",
+      "expected": [
+        "three"
+      ],
+      "found": [
+        "three"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "exact",
+      "routed": "roster"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

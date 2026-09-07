@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Which two elite players remain standing in the Sendai Colony, per Chapter 180?",
+      "id": "jjk-pg-chapter_180-001",
+      "subject": "Chapter 180",
+      "accept": "all",
+      "expected": [
+        "Yuta and Ryu"
+      ],
+      "found": [
+        "Yuta and Ryu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuta intend to do in order to win the exchange, per Chapter 180?",
+      "id": "jjk-pg-chapter_180-002",
+      "subject": "Chapter 180",
+      "accept": "all",
+      "expected": [
+        "rapidly building cursed energy and firing first"
+      ],
+      "found": [
+        "rapidly building cursed energy and firing first"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuta use to redirect Ryu's Granite Blast into the air, per Chapter 180?",
+      "id": "jjk-pg-chapter_180-003",
+      "subject": "Chapter 180",
+      "accept": "all",
+      "expected": [
+        "Takako Uro's ability to warp space"
+      ],
+      "found": [
+        "Takako Uro's ability to warp space"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

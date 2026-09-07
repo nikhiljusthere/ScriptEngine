@@ -1,0 +1,26 @@
+# Page campaign jjk/chapter_136 — 2026-09-04-1448
+
+Batch `_jjk_page_chapter_136.json`: 3 questions (0 set, 3 fact), scored against the live server (started 2026-09-04T14:06:10+00:00), 3.3s wall clock.
+
+## Headline
+
+| | |
+|---|---:|
+| **questions passed** | **3/3** |
+| set questions exact | 0/0 (0.0%) |
+| canon items recovered | 0/0 (0.0%) |
+| fact answers present | 3/3 |
+
+## Failures to triage
+
+None. The batch is at 100%.
+
+## All questions
+
+| passed | kind | question | basis / confidence | detail |
+|---|---|---|---|---|
+| **yes** | fact | What do Pseudo-Geto and Yuki Tsukumo disagree on, per Chapter 136? | `routed qa` / `-` | the role cursed energy will play in the evolution of humanity |
+| **yes** | fact | What did Yuki and Geto both want to create, per Chapter 136? | `routed qa` / `-` | a world where cursed spirits could no longer exist |
+| **yes** | fact | What does Pseudo-Geto use Idle Transfiguration on, per Chapter 136? | `routed qa` / `-` | two different types of people who have already been marked with the same seal |
+
+Triage rule: a miss is either a **gold error** (the batch's answer is not what the cited page documents -- fix the batch) or an **engine gap** (undeclared roster, stolen routing, missing link -- declare it in `series/<name>/overrides.yaml` with a comment naming this question).

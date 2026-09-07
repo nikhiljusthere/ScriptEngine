@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Dragon-Bone?",
+      "id": "jjk-pg-dragon_bone-001",
+      "subject": "Dragon-Bone",
+      "accept": "all",
+      "expected": [
+        "a thick single-edged blade with three engine-type holes in the back"
+      ],
+      "found": [
+        "a thick single-edged blade with three engine-type holes in the back"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What ability does Dragon-Bone have?",
+      "id": "jjk-pg-dragon_bone-002",
+      "subject": "Dragon-Bone",
+      "accept": "all",
+      "expected": [
+        "the ability to build up kinetic force as well as cursed energy"
+      ],
+      "found": [
+        "the ability to build up kinetic force as well as cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who created Dragon-Bone?",
+      "id": "jjk-pg-dragon_bone-003",
+      "subject": "Dragon-Bone",
+      "accept": "all",
+      "expected": [
+        "Juzo Kumiya"
+      ],
+      "found": [
+        "Juzo Kumiya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Maki use Dragon-Bone to do against Ogi Zenin?",
+      "id": "jjk-pg-dragon_bone-004",
+      "subject": "Dragon-Bone",
+      "accept": "all",
+      "expected": [
+        "Maki used Dragon-Bone to engage him in a duel of swordplay"
+      ],
+      "found": [
+        "Maki used Dragon-Bone to engage him in a duel of swordplay"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

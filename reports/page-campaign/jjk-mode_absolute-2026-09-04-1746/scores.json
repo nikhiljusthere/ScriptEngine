@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Ultimate Mechamaru Mode: Absolute?",
+      "id": "jjk-pg-mode_absolute-001",
+      "subject": "Mode: Absolute",
+      "accept": "all",
+      "expected": [
+        "a giant mechanical armored puppet created under the trial production number zero"
+      ],
+      "found": [
+        "a giant mechanical armored puppet created under the trial production number zero"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is Mode: Absolute piloted?",
+      "id": "jjk-pg-mode_absolute-002",
+      "subject": "Mode: Absolute",
+      "accept": "all",
+      "expected": [
+        "piloted using the cockpit area in the head"
+      ],
+      "found": [
+        "piloted using the cockpit area in the head"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mode: Absolute fueled by?",
+      "id": "jjk-pg-mode_absolute-003",
+      "subject": "Mode: Absolute",
+      "accept": "all",
+      "expected": [
+        "Kokichi's entire life's worth of cursed energy; 17 years, 5 months, and 6 days"
+      ],
+      "found": [
+        "Kokichi's entire life's worth of cursed energy; 17 years, 5 months, and 6 days"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

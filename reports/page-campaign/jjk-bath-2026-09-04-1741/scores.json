@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What was the Bath originally used on?",
+      "id": "jjk-pg-bath-001",
+      "subject": "Bath",
+      "accept": "all",
+      "expected": [
+        "items treasured as family heirlooms"
+      ],
+      "found": [
+        "items treasured as family heirlooms"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is kodoku?",
+      "id": "jjk-pg-bath-002",
+      "subject": "Bath",
+      "accept": "all",
+      "expected": [
+        "a Japanese derivative of gu, an ancient Chinese witchcraft"
+      ],
+      "found": [
+        "a Japanese derivative of gu, an ancient Chinese witchcraft"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Uraume reconstruct the Bath ritual for?",
+      "id": "jjk-pg-bath-003",
+      "subject": "Bath",
+      "accept": "all",
+      "expected": [
+        "for Sukuna to gain complete control over his vessel"
+      ],
+      "found": [
+        "for Sukuna to gain complete control over his vessel"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

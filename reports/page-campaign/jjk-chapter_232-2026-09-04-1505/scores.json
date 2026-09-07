@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What must Gojo defeat before Mahoraga can adapt to the Infinity, per Chapter 232?",
+      "id": "jjk-pg-chapter_232-001",
+      "subject": "Chapter 232",
+      "accept": "all",
+      "expected": [
+        "Sukuna"
+      ],
+      "found": [
+        "Sukuna"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many rotations remain before Mahoraga adapts to the Infinity, per Chapter 232?",
+      "id": "jjk-pg-chapter_232-002",
+      "subject": "Chapter 232",
+      "accept": "all",
+      "expected": [
+        "one rotation"
+      ],
+      "found": [
+        "one rotation"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Gojo land that knocks the King of Curses unconscious, per Chapter 232?",
+      "id": "jjk-pg-chapter_232-003",
+      "subject": "Chapter 232",
+      "accept": "all",
+      "expected": [
+        "a powerful Black Flash"
+      ],
+      "found": [
+        "a powerful Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

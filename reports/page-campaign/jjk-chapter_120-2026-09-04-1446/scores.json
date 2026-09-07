@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Nanami reluctantly reunite with, per Chapter 120?",
+      "id": "jjk-pg-chapter_120-001",
+      "subject": "Chapter 120",
+      "accept": "all",
+      "expected": [
+        "a familiar foe"
+      ],
+      "found": [
+        "a familiar foe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does the curtain inside the photo booth reveal, per Chapter 120?",
+      "id": "jjk-pg-chapter_120-002",
+      "subject": "Chapter 120",
+      "accept": "all",
+      "expected": [
+        "Mahito"
+      ],
+      "found": [
+        "Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mahito do to Nanami in his final moments, per Chapter 120?",
+      "id": "jjk-pg-chapter_120-003",
+      "subject": "Chapter 120",
+      "accept": "all",
+      "expected": [
+        "totally destroying the top half of his body"
+      ],
+      "found": [
+        "totally destroying the top half of his body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

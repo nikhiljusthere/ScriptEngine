@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Hakari turn their fight into, per Chapter 183?",
+      "id": "jjk-pg-chapter_183-001",
+      "subject": "Chapter 183",
+      "accept": "all",
+      "expected": [
+        "a game of luck"
+      ],
+      "found": [
+        "a game of luck"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Hakari's domain based on, per Chapter 183?",
+      "id": "jjk-pg-chapter_183-002",
+      "subject": "Chapter 183",
+      "accept": "all",
+      "expected": [
+        "a pachinko machine"
+      ],
+      "found": [
+        "a pachinko machine"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hakari slot to hit the jackpot at the end, per Chapter 183?",
+      "id": "jjk-pg-chapter_183-003",
+      "subject": "Chapter 183",
+      "accept": "all",
+      "expected": [
+        "three consecutive threes"
+      ],
+      "found": [
+        "three consecutive threes"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

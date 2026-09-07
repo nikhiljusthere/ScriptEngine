@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What ace does Gojo still have, per Chapter 234?",
+      "id": "jjk-pg-chapter_234-001",
+      "subject": "Chapter 234",
+      "accept": "all",
+      "expected": [
+        "the Unlimited Hollow of the Limitless"
+      ],
+      "found": [
+        "the Unlimited Hollow of the Limitless"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who demands Yuta sit back down, per Chapter 234?",
+      "id": "jjk-pg-chapter_234-002",
+      "subject": "Chapter 234",
+      "accept": "all",
+      "expected": [
+        "Hajime Kashimo"
+      ],
+      "found": [
+        "Hajime Kashimo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shikigami does Gojo destroy with Blue at maximum output, per Chapter 234?",
+      "id": "jjk-pg-chapter_234-003",
+      "subject": "Chapter 234",
+      "accept": "all",
+      "expected": [
+        "Agito"
+      ],
+      "found": [
+        "Agito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

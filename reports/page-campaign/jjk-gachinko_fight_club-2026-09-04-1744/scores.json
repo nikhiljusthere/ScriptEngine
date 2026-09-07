@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Where does the Gachinko Fight Club operate?",
+      "id": "jjk-pg-gachinko_fight_club-001",
+      "subject": "Gachinko Fight Club",
+      "accept": "all",
+      "expected": [
+        "inside an abandoned multistory parking garage in Tochigi"
+      ],
+      "found": [
+        "inside an abandoned multistory parking garage in Tochigi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are the two rules for fighters at the Gachinko Fight Club?",
+      "id": "jjk-pg-gachinko_fight_club-002",
+      "subject": "Gachinko Fight Club",
+      "accept": "all",
+      "expected": [
+        "no jujutsu and no retreating"
+      ],
+      "found": [
+        "no jujutsu and no retreating"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why are the two rules for fighters there?",
+      "id": "jjk-pg-gachinko_fight_club-003",
+      "subject": "Gachinko Fight Club",
+      "accept": "all",
+      "expected": [
+        "Non-sorcerers can't see jujutsu and the fight needs to be where the spectators can see"
+      ],
+      "found": [
+        "Non-sorcerers can't see jujutsu and the fight needs to be where the spectators can see"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is Hakari located during the fights?",
+      "id": "jjk-pg-gachinko_fight_club-004",
+      "subject": "Gachinko Fight Club",
+      "accept": "all",
+      "expected": [
+        "inside the monitor room on the roof of the building"
+      ],
+      "found": [
+        "inside the monitor room on the roof of the building"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

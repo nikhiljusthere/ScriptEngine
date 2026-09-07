@@ -1,0 +1,26 @@
+# Page campaign jjk/chapter_37 — 2026-09-04-1429
+
+Batch `_jjk_page_chapter_37.json`: 3 questions (0 set, 3 fact), scored against the live server (started 2026-09-04T14:06:10+00:00), 3.5s wall clock.
+
+## Headline
+
+| | |
+|---|---:|
+| **questions passed** | **3/3** |
+| set questions exact | 0/0 (0.0%) |
+| canon items recovered | 0/0 (0.0%) |
+| fact answers present | 3/3 |
+
+## Failures to triage
+
+None. The batch is at 100%.
+
+## All questions
+
+| passed | kind | question | basis / confidence | detail |
+|---|---|---|---|---|
+| **yes** | fact | What does Yuji begin to do, with Aoi's guiding expertise, per Chapter 37? | `routed qa` / `-` | grow toward new heights of power |
+| **yes** | fact | What does Aoi reveal is the source of Yuji's Divergent Fist, per Chapter 37? | `routed qa` / `-` | the cursed energy left behind by Yuji's superhuman speed |
+| **yes** | fact | What does Yuji realize he must do to make his attack effective, per Chapter 37? | `routed qa` / `-` | apply cursed energy at the exact moment his attack hits |
+
+Triage rule: a miss is either a **gold error** (the batch's answer is not what the cited page documents -- fix the batch) or an **engine gap** (undeclared roster, stolen routing, missing link -- declare it in `series/<name>/overrides.yaml` with a comment naming this question).

@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What are the two Jujutsu Highs considered?",
+      "id": "jjk-pg-kyoto_metropolitan_curse_technical_college-001",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "the pillars of the jujutsu community in Japan"
+      ],
+      "found": [],
+      "missing": [
+        "the pillars of the jujutsu community in Japan"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Kyoto Sister-School Goodwill Event?",
+      "id": "jjk-pg-kyoto_metropolitan_curse_technical_college-002",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "both Jujutsu Highs hold a competition between two teams comprised of their first, second, and third-year students"
+      ],
+      "found": [
+        "both Jujutsu Highs hold a competition between two teams comprised of their first, second, and third-year students"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is Kyoto Jujutsu High located?",
+      "id": "jjk-pg-kyoto_metropolitan_curse_technical_college-003",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "in Kyoto, which is jujutsu's sacred land"
+      ],
+      "found": [
+        "in Kyoto, which is jujutsu's sacred land"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who lives beneath Tokyo Jujutsu High in the Tombs of the Star?",
+      "id": "jjk-pg-kyoto_metropolitan_curse_technical_college-004",
+      "subject": "Kyoto Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "Master Tengen"
+      ],
+      "found": [
+        "Master Tengen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 3
+  }
+}

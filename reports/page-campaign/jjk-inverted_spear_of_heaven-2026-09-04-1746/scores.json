@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Inverted Spear of Heaven?",
+      "id": "jjk-pg-inverted_spear_of_heaven-001",
+      "subject": "Inverted Spear of Heaven",
+      "accept": "all",
+      "expected": [
+        "a spearhead with a shortened handle (thus resembling a large dagger) and a two-pronged, jitte-like blade"
+      ],
+      "found": [
+        "a spearhead with a shortened handle (thus resembling a large dagger) and a two-pronged, jitte-like blade"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happens on contact with the Inverted Spear of Heaven's blade?",
+      "id": "jjk-pg-inverted_spear_of_heaven-002",
+      "subject": "Inverted Spear of Heaven",
+      "accept": "all",
+      "expected": [
+        "any active cursed technique is immediately nullified"
+      ],
+      "found": [
+        "any active cursed technique is immediately nullified"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who possessed the Inverted Spear of Heaven?",
+      "id": "jjk-pg-inverted_spear_of_heaven-003",
+      "subject": "Inverted Spear of Heaven",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro"
+      ],
+      "found": [
+        "Toji Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the Inverted Spear of Heaven based on?",
+      "id": "jjk-pg-inverted_spear_of_heaven-004",
+      "subject": "Inverted Spear of Heaven",
+      "accept": "all",
+      "expected": [
+        "the Ama no Sakahoko spear from Japanese mythology"
+      ],
+      "found": [
+        "the Ama no Sakahoko spear from Japanese mythology"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

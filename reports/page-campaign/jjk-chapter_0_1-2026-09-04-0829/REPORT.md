@@ -1,0 +1,26 @@
+# Page campaign jjk/chapter_0_1 — 2026-09-04-0829
+
+Batch `_jjk_page_chapter_0_1.json`: 3 questions (0 set, 3 fact), scored against the live server (started 2026-09-04T08:23:53+00:00), 4.0s wall clock.
+
+## Headline
+
+| | |
+|---|---:|
+| **questions passed** | **3/3** |
+| set questions exact | 0/0 (0.0%) |
+| canon items recovered | 0/0 (0.0%) |
+| fact answers present | 3/3 |
+
+## Failures to triage
+
+None. The batch is at 100%.
+
+## All questions
+
+| passed | kind | question | basis / confidence | detail |
+|---|---|---|---|---|
+| **yes** | fact | Who haunts Yuta Okkotsu and has become a special grade vengeful cursed spirit, per Chapter 0-1? | `routed qa` / `-` | Rika Orimoto |
+| **yes** | fact | What does Rika do to the four bullies when she suddenly appears at Yuta's school, per Chapter 0-1? | `routed qa` / `-` | stuffs all four of the bullies into a locker |
+| **yes** | fact | How does Maki threaten the new transfer student when he introduces himself, per Chapter 0-1? | `routed qa` / `-` | stabs her spear into the blackboard next to Yuta's face |
+
+Triage rule: a miss is either a **gold error** (the batch's answer is not what the cited page documents -- fix the batch) or an **engine gap** (undeclared roster, stolen routing, missing link -- declare it in `series/<name>/overrides.yaml` with a comment naming this question).

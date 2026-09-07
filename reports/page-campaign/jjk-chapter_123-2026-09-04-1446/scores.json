@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the special grade curse forced to discover, per Chapter 123?",
+      "id": "jjk-pg-chapter_123-001",
+      "subject": "Chapter 123",
+      "accept": "all",
+      "expected": [
+        "Yuji isn't his only natural enemy"
+      ],
+      "found": [
+        "Yuji isn't his only natural enemy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobara activate after hammering a nail directly into Mahito's forehead, per Chapter 123?",
+      "id": "jjk-pg-chapter_123-002",
+      "subject": "Chapter 123",
+      "accept": "all",
+      "expected": [
+        "Resonance"
+      ],
+      "found": [
+        "Resonance"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobara use as the effigy to attack Mahito's soul, per Chapter 123?",
+      "id": "jjk-pg-chapter_123-003",
+      "subject": "Chapter 123",
+      "accept": "all",
+      "expected": [
+        "Mahito's body"
+      ],
+      "found": [
+        "Mahito's body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

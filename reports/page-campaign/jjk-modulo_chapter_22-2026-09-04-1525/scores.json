@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Maru restore to full power in order to subjugate him, per Modulo Chapter 22?",
+      "id": "jjk-pg-modulo_chapter_22-001",
+      "subject": "Modulo Chapter 22",
+      "accept": "all",
+      "expected": [
+        "Mahito"
+      ],
+      "found": [
+        "Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Into what realm does Mahito reshape the pathway of souls, per Modulo Chapter 22?",
+      "id": "jjk-pg-modulo_chapter_22-002",
+      "subject": "Modulo Chapter 22",
+      "accept": "all",
+      "expected": [
+        "Shibuya"
+      ],
+      "found": [
+        "Shibuya"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Mahito reduced to when Maru gathers the components for harmonization, per Modulo Chapter 22?",
+      "id": "jjk-pg-modulo_chapter_22-003",
+      "subject": "Modulo Chapter 22",
+      "accept": "all",
+      "expected": [
+        "a plush doll"
+      ],
+      "found": [
+        "a plush doll"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

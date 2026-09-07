@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Sword of Extermination?",
+      "id": "jjk-pg-sword_of_extermination-001",
+      "subject": "Sword of Extermination",
+      "accept": "all",
+      "expected": [
+        "a long, double-edged blade coated in positive energy"
+      ],
+      "found": [
+        "a long, double-edged blade coated in positive energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What makes the Sword of Extermination a natural enemy to cursed spirits?",
+      "id": "jjk-pg-sword_of_extermination-002",
+      "subject": "Sword of Extermination",
+      "accept": "all",
+      "expected": [
+        "Its positive energy can easily compromise bodies composed entirely of cursed energy"
+      ],
+      "found": [
+        "Its positive energy can easily compromise bodies composed entirely of cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is the Sword of Extermination attached to Mahoraga?",
+      "id": "jjk-pg-sword_of_extermination-003",
+      "subject": "Sword of Extermination",
+      "accept": "all",
+      "expected": [
+        "crudely attached to Mahoraga's right forearm under several layers of bandage wrappings"
+      ],
+      "found": [
+        "crudely attached to Mahoraga's right forearm under several layers of bandage wrappings"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

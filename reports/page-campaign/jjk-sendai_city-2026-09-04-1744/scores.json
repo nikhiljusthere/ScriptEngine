@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "How is Sendai described?",
+      "id": "jjk-pg-sendai_city-001",
+      "subject": "Sendai City",
+      "accept": "all",
+      "expected": [
+        "a large city filled with small, modern houses built close together surrounded by many trees"
+      ],
+      "found": [
+        "a large city filled with small, modern houses built close together surrounded by many trees"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Sugisawa Municipal High School #3?",
+      "id": "jjk-pg-sendai_city-002",
+      "subject": "Sendai City",
+      "accept": "all",
+      "expected": [
+        "one of the area's high schools where Yuji attended along with Iguchi and Sasaki"
+      ],
+      "found": [
+        "one of the area's high schools where Yuji attended along with Iguchi and Sasaki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What formed around Sendai City as part of Kenjaku's Culling Game?",
+      "id": "jjk-pg-sendai_city-003",
+      "subject": "Sendai City",
+      "accept": "all",
+      "expected": [
+        "a massive barrier with a radius of five to six kilometers formed around Sendai City as part of Kenjaku's Culling Game, covering nearly all of Sendai City"
+      ],
+      "found": [
+        "a massive barrier with a radius of five to six kilometers formed around Sendai City as part of Kenjaku's Culling Game, covering nearly all of Sendai City"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

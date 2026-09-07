@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Sukuna decide to hear, per Chapter 112?",
+      "id": "jjk-pg-chapter_112-001",
+      "subject": "Chapter 112",
+      "accept": "all",
+      "expected": [
+        "whatever Nanako, Mimiko, and Jogo have to ask of him"
+      ],
+      "found": [
+        "whatever Nanako, Mimiko, and Jogo have to ask of him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many Sukuna fingers does Jogo believe Yuji has consumed overall, per Chapter 112?",
+      "id": "jjk-pg-chapter_112-002",
+      "subject": "Chapter 112",
+      "accept": "all",
+      "expected": [
+        "fifteen fingers"
+      ],
+      "found": [
+        "fifteen fingers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna challenge Jogo to do in a fight, per Chapter 112?",
+      "id": "jjk-pg-chapter_112-003",
+      "subject": "Chapter 112",
+      "accept": "all",
+      "expected": [
+        "land even one hit on him"
+      ],
+      "found": [
+        "land even one hit on him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

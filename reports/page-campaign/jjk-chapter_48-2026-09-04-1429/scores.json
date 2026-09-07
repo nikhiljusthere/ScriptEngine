@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What technique does Aoi instruct Yuji to unleash, per Chapter 48?",
+      "id": "jjk-pg-chapter_48-001",
+      "subject": "Chapter 48",
+      "accept": "all",
+      "expected": [
+        "Black Flash"
+      ],
+      "found": [
+        "Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Under what condition will Aoi intervene in the fight, per Chapter 48?",
+      "id": "jjk-pg-chapter_48-002",
+      "subject": "Chapter 48",
+      "accept": "all",
+      "expected": [
+        "until Yuji uses Black Flash"
+      ],
+      "found": [
+        "until Yuji uses Black Flash"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji create by hitting the river, per Chapter 48?",
+      "id": "jjk-pg-chapter_48-003",
+      "subject": "Chapter 48",
+      "accept": "all",
+      "expected": [
+        "a giant splash of water"
+      ],
+      "found": [
+        "a giant splash of water"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

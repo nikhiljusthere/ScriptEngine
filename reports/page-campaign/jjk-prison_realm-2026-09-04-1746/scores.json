@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Prison Realm?",
+      "id": "jjk-pg-prison_realm-001",
+      "subject": "Prison Realm",
+      "accept": "all",
+      "expected": [
+        "the final remains of the Buddhist Monk Genshin"
+      ],
+      "found": [
+        "the final remains of the Buddhist Monk Genshin"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How is the Prison Realm curse activated?",
+      "id": "jjk-pg-prison_realm-002",
+      "subject": "Prison Realm",
+      "accept": "all",
+      "expected": [
+        "the curse is activated with the incantation \"gate open\""
+      ],
+      "found": [
+        "the curse is activated with the incantation \"gate open\""
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What must be met for Prison Realm to activate?",
+      "id": "jjk-pg-prison_realm-003",
+      "subject": "Prison Realm",
+      "accept": "all",
+      "expected": [
+        "they must be kept within a four-meter radius for a minute's worth of time within their mind"
+      ],
+      "found": [
+        "they must be kept within a four-meter radius for a minute's worth of time within their mind"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the limit on occupants in Prison Realm?",
+      "id": "jjk-pg-prison_realm-004",
+      "subject": "Prison Realm",
+      "accept": "all",
+      "expected": [
+        "Only one occupant can be contained at a time"
+      ],
+      "found": [
+        "Only one occupant can be contained at a time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

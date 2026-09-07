@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who is Yuta Okkotsu's next Culling Game opponent, per Chapter 175?",
+      "id": "jjk-pg-chapter_175-001",
+      "subject": "Chapter 175",
+      "accept": "all",
+      "expected": [
+        "the special grade cockroach curse: Kurourushi"
+      ],
+      "found": [
+        "the special grade cockroach curse: Kurourushi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Yuta disarm Kurourushi at the start of their fight, per Chapter 175?",
+      "id": "jjk-pg-chapter_175-002",
+      "subject": "Chapter 175",
+      "accept": "all",
+      "expected": [
+        "pin the curse's severed arm to a rock"
+      ],
+      "found": [
+        "pin the curse's severed arm to a rock"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why can't Yuta call on Rika, per Chapter 175?",
+      "id": "jjk-pg-chapter_175-003",
+      "subject": "Chapter 175",
+      "accept": "all",
+      "expected": [
+        "it's protecting everyone at the stadium"
+      ],
+      "found": [
+        "it's protecting everyone at the stadium"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who must Yuta answer to for his role in the raid, per Chapter 269?",
+      "id": "jjk-pg-chapter_269-001",
+      "subject": "Chapter 269",
+      "accept": "all",
+      "expected": [
+        "Maki"
+      ],
+      "found": [
+        "Maki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Higuruma say Sukuna would have done if Yuta was around, per Chapter 269?",
+      "id": "jjk-pg-chapter_269-002",
+      "subject": "Chapter 269",
+      "accept": "all",
+      "expected": [
+        "killed him"
+      ],
+      "found": [
+        "killed him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who reveals himself as the current head of New Shadow Style, per Chapter 269?",
+      "id": "jjk-pg-chapter_269-003",
+      "subject": "Chapter 269",
+      "accept": "all",
+      "expected": [
+        "Kusakabe"
+      ],
+      "found": [
+        "Kusakabe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

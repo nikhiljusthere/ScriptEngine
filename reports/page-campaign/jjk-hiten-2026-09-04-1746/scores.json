@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Hiten?",
+      "id": "jjk-pg-hiten-001",
+      "subject": "Hiten",
+      "accept": "all",
+      "expected": [
+        "a trishula-like trident with an incredibly long shaft and a light-colored cloth tied around it, near its top"
+      ],
+      "found": [
+        "a trishula-like trident with an incredibly long shaft and a light-colored cloth tied around it, near its top"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Hiten's abilities currently?",
+      "id": "jjk-pg-hiten-002",
+      "subject": "Hiten",
+      "accept": "all",
+      "expected": [
+        "Hiten's abilities are unknown"
+      ],
+      "found": [
+        "Hiten's abilities are unknown"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What could the name Hiten be a reference to?",
+      "id": "jjk-pg-hiten-003",
+      "subject": "Hiten",
+      "accept": "all",
+      "expected": [
+        "the angelic beings called Tennin in Japanese Buddhism, also called Hiten"
+      ],
+      "found": [
+        "the angelic beings called Tennin in Japanese Buddhism, also called Hiten"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

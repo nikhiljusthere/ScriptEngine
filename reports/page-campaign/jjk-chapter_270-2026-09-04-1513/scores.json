@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do the jujutsu sorcerers and their allies do after the raid in Shinjuku, per Chapter 270?",
+      "id": "jjk-pg-chapter_270-001",
+      "subject": "Chapter 270",
+      "accept": "all",
+      "expected": [
+        "pick up the pieces"
+      ],
+      "found": [
+        "pick up the pieces"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Megumi thank at Tsumiki's grave, per Chapter 270?",
+      "id": "jjk-pg-chapter_270-002",
+      "subject": "Chapter 270",
+      "accept": "all",
+      "expected": [
+        "Shoko"
+      ],
+      "found": [
+        "Shoko"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Maki give Daido, per Chapter 270?",
+      "id": "jjk-pg-chapter_270-003",
+      "subject": "Chapter 270",
+      "accept": "all",
+      "expected": [
+        "a katana cursed tool"
+      ],
+      "found": [
+        "a katana cursed tool"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

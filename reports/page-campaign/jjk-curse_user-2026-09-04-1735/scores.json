@@ -1,0 +1,185 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is a curse user?",
+      "id": "jjk-pg-curse_user-001",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "A curse user is an evil human sorcerer who uses jujutsu with evil intent. (Chapter 21, Episode 9)"
+      ],
+      "found": [
+        "A curse user is an evil human sorcerer who uses jujutsu with evil intent. (Chapter 21, Episode 9)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What are Non-Curse Users?",
+      "id": "jjk-pg-curse_user-002",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "Evil non-sorcerers who possess knowledge of jujutsu and are active in the curse user community are known as Non-Curse Users. (Chapter 66, Episode 25)"
+      ],
+      "found": [],
+      "missing": [
+        "Evil non-sorcerers who possess knowledge of jujutsu and are active in the curse user community are known as Non-Curse Users. (Chapter 66, Episode 25)"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "partial",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Since when have curse users existed?",
+      "id": "jjk-pg-curse_user-003",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "They have existed as long as jujutsu sorcerers have, and were also prominent threats during the Heian Era alongside cursed spirits. (Chapter 82, Episode 31)"
+      ],
+      "found": [
+        "They have existed as long as jujutsu sorcerers have, and were also prominent threats during the Heian Era alongside cursed spirits. (Chapter 82, Episode 31)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was a bounty placed on the young Satoru Gojo?",
+      "id": "jjk-pg-curse_user-004",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "The threat of the Six Eyes was enough for a bounty of over a hundred thousand to be placed on the child's head. However, no one was ever able to claim it. (Chapter 96, Episode 35)"
+      ],
+      "found": [],
+      "missing": [
+        "The threat of the Six Eyes was enough for a bounty of over a hundred thousand to be placed on the child's head. However, no one was ever able to claim it. (Chapter 96, Episode 35)"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What effect did Satoru Gojo's presence have on curse users?",
+      "id": "jjk-pg-curse_user-005",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "Satoru's overwhelming presence altered the balance of the jujutsu world. He stripped curse users of their freedom, keeping all evil forces in check. (Chapter 96, Episode 35)"
+      ],
+      "found": [
+        "Satoru's overwhelming presence altered the balance of the jujutsu world. He stripped curse users of their freedom, keeping all evil forces in check. (Chapter 96, Episode 35)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How did the Star Religious Group operate against the Star Plasma Vessel?",
+      "id": "jjk-pg-curse_user-006",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "The Star Religious Group hired Toji Zenin to assassinate the Star Plasma Vessel while masquerading themselves as a religious order. (Chapter 68, Episode 26)"
+      ],
+      "found": [],
+      "missing": [
+        "The Star Religious Group hired Toji Zenin to assassinate the Star Plasma Vessel while masquerading themselves as a religious order. (Chapter 68, Episode 26)"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why was Suguru Geto branded a curse user?",
+      "id": "jjk-pg-curse_user-007",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "Suguru Geto, a former student of Tokyo Jujutsu High, was expelled from the school after murdering over a hundred civilians. In accordance with article nine of jujutsu regulations, he was branded a curse user. (Chapter 77, Episode 29)"
+      ],
+      "found": [
+        "Suguru Geto, a former student of Tokyo Jujutsu High, was expelled from the school after murdering over a hundred civilians. In accordance with article nine of jujutsu regulations, he was branded a curse user. (Chapter 77, Episode 29)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What was the goal of the Night Parade of a Hundred Demons?",
+      "id": "jjk-pg-curse_user-008",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "In a major curse user terrorist incident known as the Night Parade of a Hundred Demons, Suguru's group attempted to introduce an era where non-sorcerers would be exterminated. (Chapter 0-3)"
+      ],
+      "found": [
+        "In a major curse user terrorist incident known as the Night Parade of a Hundred Demons, Suguru's group attempted to introduce an era where non-sorcerers would be exterminated. (Chapter 0-3)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What categories are listed under the list of curse users?",
+      "id": "jjk-pg-curse_user-009",
+      "subject": "Curse User",
+      "accept": "all",
+      "expected": [
+        "Geto's Original Group, Sukuna & Kenjaku's Alliance, Q, Other Curse Users, and Non-Curse Users."
+      ],
+      "found": [],
+      "missing": [
+        "Geto's Original Group, Sukuna & Kenjaku's Alliance, Q, Other Curse Users, and Non-Curse Users."
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 9,
+    "fact_present": 5
+  }
+}

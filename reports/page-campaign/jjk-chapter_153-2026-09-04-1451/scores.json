@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What has Kinji Hakari been running, per Chapter 153?",
+      "id": "jjk-pg-chapter_153-001",
+      "subject": "Chapter 153",
+      "accept": "all",
+      "expected": [
+        "an underground fight club between sorcerers"
+      ],
+      "found": [
+        "an underground fight club between sorcerers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is the underground fight club located, per Chapter 153?",
+      "id": "jjk-pg-chapter_153-002",
+      "subject": "Chapter 153",
+      "accept": "all",
+      "expected": [
+        "inside an abandoned parking garage in Tochigi Prefecture"
+      ],
+      "found": [
+        "inside an abandoned parking garage in Tochigi Prefecture"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What two rules does the tournament have, per Chapter 153?",
+      "id": "jjk-pg-chapter_153-003",
+      "subject": "Chapter 153",
+      "accept": "all",
+      "expected": [
+        "no retreating and no jujutsu"
+      ],
+      "found": [
+        "no retreating and no jujutsu"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

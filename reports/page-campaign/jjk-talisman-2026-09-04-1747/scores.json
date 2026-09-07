@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is wrapping cursed objects in talismans?",
+      "id": "jjk-pg-talisman-001",
+      "subject": "Talisman",
+      "accept": "all",
+      "expected": [
+        "an old-fashioned method of sealing that degrades over time"
+      ],
+      "found": [
+        "an old-fashioned method of sealing that degrades over time"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What do shikigami conjured using talismans appear from?",
+      "id": "jjk-pg-talisman-002",
+      "subject": "Talisman",
+      "accept": "all",
+      "expected": [
+        "the cursed energy channeled through the tag"
+      ],
+      "found": [
+        "the cursed energy channeled through the tag"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Kenjaku use stakes wrapped in talismans for?",
+      "id": "jjk-pg-talisman-003",
+      "subject": "Talisman",
+      "accept": "all",
+      "expected": [
+        "to commission curtains with advanced customizations to less proficient barrier users"
+      ],
+      "found": [
+        "to commission curtains with advanced customizations to less proficient barrier users"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

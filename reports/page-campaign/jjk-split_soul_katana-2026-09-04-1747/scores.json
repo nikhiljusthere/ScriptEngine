@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Split Soul Katana?",
+      "id": "jjk-pg-split_soul_katana-001",
+      "subject": "Split Soul Katana",
+      "accept": "all",
+      "expected": [
+        "a large, curved Japanese broadsword with a distinctive feature: a fur-wrapped tsuba (hand guard)"
+      ],
+      "found": [
+        "a large, curved Japanese broadsword with a distinctive feature: a fur-wrapped tsuba (hand guard)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does the Split Soul Katana ignore to cut through?",
+      "id": "jjk-pg-split_soul_katana-002",
+      "subject": "Split Soul Katana",
+      "accept": "all",
+      "expected": [
+        "all physical toughness"
+      ],
+      "found": [
+        "all physical toughness"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How much is the Split Soul Katana worth?",
+      "id": "jjk-pg-split_soul_katana-003",
+      "subject": "Split Soul Katana",
+      "accept": "all",
+      "expected": [
+        "500 million yen"
+      ],
+      "found": [
+        "500 million yen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What did Maki destroy using the Split Soul Katana?",
+      "id": "jjk-pg-split_soul_katana-004",
+      "subject": "Split Soul Katana",
+      "accept": "all",
+      "expected": [
+        "the entire Zenin Clan"
+      ],
+      "found": [
+        "the entire Zenin Clan"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

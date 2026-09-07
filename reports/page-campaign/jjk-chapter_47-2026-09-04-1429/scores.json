@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What special grade cursed tool does Maki fight Hanami with, per Chapter 47?",
+      "id": "jjk-pg-chapter_47-001",
+      "subject": "Chapter 47",
+      "accept": "all",
+      "expected": [
+        "Playful Cloud"
+      ],
+      "found": [
+        "Playful Cloud"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How much is Maki's especially strong cursed tool worth, per Chapter 47?",
+      "id": "jjk-pg-chapter_47-002",
+      "subject": "Chapter 47",
+      "accept": "all",
+      "expected": [
+        "at least five hundred million yen"
+      ],
+      "found": [
+        "at least five hundred million yen"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Megumi summon from the shadows, per Chapter 47?",
+      "id": "jjk-pg-chapter_47-003",
+      "subject": "Chapter 47",
+      "accept": "all",
+      "expected": [
+        "Totality"
+      ],
+      "found": [
+        "Totality"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

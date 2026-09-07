@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do Yuki Tsukumo and Tengen execute, per Chapter 206?",
+      "id": "jjk-pg-chapter_206-001",
+      "subject": "Chapter 206",
+      "accept": "all",
+      "expected": [
+        "their plan to counter Kenjaku's domain"
+      ],
+      "found": [
+        "their plan to counter Kenjaku's domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Tengen want Kenjaku to feel, per Chapter 206?",
+      "id": "jjk-pg-chapter_206-002",
+      "subject": "Chapter 206",
+      "accept": "all",
+      "expected": [
+        "comfortable"
+      ],
+      "found": [
+        "comfortable"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Tengen believe they can dispel if Yuki gets Kenjaku to open his domain, per Chapter 206?",
+      "id": "jjk-pg-chapter_206-003",
+      "subject": "Chapter 206",
+      "accept": "all",
+      "expected": [
+        "the empty barrier along with Kenjaku's domain"
+      ],
+      "found": [
+        "the empty barrier along with Kenjaku's domain"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

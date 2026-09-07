@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Shibuya?",
+      "id": "jjk-pg-shibuya-001",
+      "subject": "Shibuya",
+      "accept": "all",
+      "expected": [
+        "a major city-level ward comprised of several highly populated commercial, business, and residential districts"
+      ],
+      "found": [
+        "a major city-level ward comprised of several highly populated commercial, business, and residential districts"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What made Shibuya the perfect setting for Pseudo-Geto's plan?",
+      "id": "jjk-pg-shibuya-002",
+      "subject": "Shibuya",
+      "accept": "all",
+      "expected": [
+        "The hundreds of thousands of non-sorcerers gathered in one area made Shibuya the perfect setting for Pseudo-Geto's plan to seal Satoru Gojo"
+      ],
+      "found": [
+        "The hundreds of thousands of non-sorcerers gathered in one area made Shibuya the perfect setting for Pseudo-Geto's plan to seal Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What resulted from the Shibuya Incident?",
+      "id": "jjk-pg-shibuya-003",
+      "subject": "Shibuya",
+      "accept": "all",
+      "expected": [
+        "the release of at least ten million cursed spirits"
+      ],
+      "found": [
+        "the release of at least ten million cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is Shibuya Station located?",
+      "id": "jjk-pg-shibuya-004",
+      "subject": "Shibuya",
+      "accept": "all",
+      "expected": [
+        "in the Dogenzaka Nichome East district"
+      ],
+      "found": [
+        "in the Dogenzaka Nichome East district"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do Yuji and his friends toss around ideas about, per Special Bonus Chapter?",
+      "id": "jjk-pg-special_bonus_chapter-001",
+      "subject": "Special Bonus Chapter",
+      "accept": "all",
+      "expected": [
+        "what to do during said chapter"
+      ],
+      "found": [
+        "what to do during said chapter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Gojo announce after the dart lands on the beach option, per Special Bonus Chapter?",
+      "id": "jjk-pg-special_bonus_chapter-002",
+      "subject": "Special Bonus Chapter",
+      "accept": "all",
+      "expected": [
+        "a swimsuit chapter"
+      ],
+      "found": [
+        "a swimsuit chapter"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who ends up being the only one on the beach setting, per Special Bonus Chapter?",
+      "id": "jjk-pg-special_bonus_chapter-003",
+      "subject": "Special Bonus Chapter",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo"
+      ],
+      "found": [
+        "Aoi Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "The final page pose matches the one Yuji does by himself at the end of what, per Special Bonus Chapter?",
+      "id": "jjk-pg-special_bonus_chapter-004",
+      "subject": "Special Bonus Chapter",
+      "accept": "all",
+      "expected": [
+        "the anime's first ending"
+      ],
+      "found": [
+        "the anime's first ending"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "narrative"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

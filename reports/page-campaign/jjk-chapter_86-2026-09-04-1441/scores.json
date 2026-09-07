@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who does the jujutsu student come face to face with, per Chapter 86?",
+      "id": "jjk-pg-chapter_86-001",
+      "subject": "Chapter 86",
+      "accept": "all",
+      "expected": [
+        "a very \"smart\" cursed spirit"
+      ],
+      "found": [
+        "a very \"smart\" cursed spirit"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many basement floors are in the station, per Chapter 86?",
+      "id": "jjk-pg-chapter_86-002",
+      "subject": "Chapter 86",
+      "accept": "all",
+      "expected": [
+        "five basement floors"
+      ],
+      "found": [
+        "five basement floors"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Yuji discover devouring a deceased man's head in B2F, per Chapter 86?",
+      "id": "jjk-pg-chapter_86-003",
+      "subject": "Chapter 86",
+      "accept": "all",
+      "expected": [
+        "a grasshopper curse"
+      ],
+      "found": [
+        "a grasshopper curse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

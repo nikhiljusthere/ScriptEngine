@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Sukuna impersonate to lure Hana, per Chapter 214?",
+      "id": "jjk-pg-chapter_214-001",
+      "subject": "Chapter 214",
+      "accept": "all",
+      "expected": [
+        "Megumi"
+      ],
+      "found": [
+        "Megumi"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna rip off Hana's, per Chapter 214?",
+      "id": "jjk-pg-chapter_214-002",
+      "subject": "Chapter 214",
+      "accept": "all",
+      "expected": [
+        "right arm and wing"
+      ],
+      "found": [
+        "right arm and wing"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna figure Kenjaku did, per Chapter 214?",
+      "id": "jjk-pg-chapter_214-003",
+      "subject": "Chapter 214",
+      "accept": "all",
+      "expected": [
+        "something twisted involving another time period"
+      ],
+      "found": [
+        "something twisted involving another time period"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

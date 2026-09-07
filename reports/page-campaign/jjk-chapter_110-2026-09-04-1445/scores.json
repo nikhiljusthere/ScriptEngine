@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Toji Fushiguro acting as in this chapter, per Chapter 110?",
+      "id": "jjk-pg-chapter_110-001",
+      "subject": "Chapter 110",
+      "accept": "all",
+      "expected": [
+        "a puppet of carnage"
+      ],
+      "found": [
+        "a puppet of carnage"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What special grade cursed tool does Toji snatch from Maki, per Chapter 110?",
+      "id": "jjk-pg-chapter_110-002",
+      "subject": "Chapter 110",
+      "accept": "all",
+      "expected": [
+        "Playful Cloud"
+      ],
+      "found": [
+        "Playful Cloud"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why does the s\u00e9ance technique never end, per Chapter 110?",
+      "id": "jjk-pg-chapter_110-003",
+      "subject": "Chapter 110",
+      "accept": "all",
+      "expected": [
+        "Toji's body that overwrote it does not consume cursed energy"
+      ],
+      "found": [
+        "Toji's body that overwrote it does not consume cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

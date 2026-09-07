@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Yorozu determine to teach Sukuna, per Chapter 218?",
+      "id": "jjk-pg-chapter_218-001",
+      "subject": "Chapter 218",
+      "accept": "all",
+      "expected": [
+        "love"
+      ],
+      "found": [
+        "love"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "In what aspect did Yorozu lack behind her peers, per Chapter 218?",
+      "id": "jjk-pg-chapter_218-002",
+      "subject": "Chapter 218",
+      "accept": "all",
+      "expected": [
+        "inefficiency in utiliizing cursed energy"
+      ],
+      "found": [
+        "inefficiency in utiliizing cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shikigami does Sukuna summon to heal himself and dispel liquid metal, per Chapter 218?",
+      "id": "jjk-pg-chapter_218-003",
+      "subject": "Chapter 218",
+      "accept": "all",
+      "expected": [
+        "Round Deer"
+      ],
+      "found": [
+        "Round Deer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

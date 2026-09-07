@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does the Mei Mei Team learn is headed for Shibuya, per Chapter 88?",
+      "id": "jjk-pg-chapter_88-001",
+      "subject": "Chapter 88",
+      "accept": "all",
+      "expected": [
+        "a train headed for Shibuya filled with a surprise just for him"
+      ],
+      "found": [
+        "a train headed for Shibuya filled with a surprise just for him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many blood arrows does Choso shoot from a good distance, per Chapter 88?",
+      "id": "jjk-pg-chapter_88-002",
+      "subject": "Chapter 88",
+      "accept": "all",
+      "expected": [
+        "three blood arrows"
+      ],
+      "found": [
+        "three blood arrows"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Mei Mei say Yuji's strength is on par with, per Chapter 88?",
+      "id": "jjk-pg-chapter_88-003",
+      "subject": "Chapter 88",
+      "accept": "all",
+      "expected": [
+        "a grade 1 sorcerer"
+      ],
+      "found": [
+        "a grade 1 sorcerer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

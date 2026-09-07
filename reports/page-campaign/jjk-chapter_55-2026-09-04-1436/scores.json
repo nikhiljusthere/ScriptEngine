@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do Jujutsu High's first-years investigate after the Goodwill Event, per Chapter 55?",
+      "id": "jjk-pg-chapter_55-001",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "the mysterious deaths connected to Megumi's old junior high school"
+      ],
+      "found": [
+        "the mysterious deaths connected to Megumi's old junior high school"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many years had passed since the junior-high victims graduated when the first-years investigate, per Chapter 55?",
+      "id": "jjk-pg-chapter_55-002",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "twenty years"
+      ],
+      "found": [
+        "twenty years"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Yasohachi Bridge known for, per Chapter 55?",
+      "id": "jjk-pg-chapter_55-003",
+      "subject": "Chapter 55",
+      "accept": "all",
+      "expected": [
+        "a place known for suicides"
+      ],
+      "found": [
+        "a place known for suicides"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

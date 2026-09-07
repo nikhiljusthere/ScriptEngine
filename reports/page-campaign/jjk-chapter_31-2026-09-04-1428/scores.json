@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Nanami talk with Yuji about, after Yuji is upset by his prior actions, per Chapter 31?",
+      "id": "jjk-pg-chapter_31-001",
+      "subject": "Chapter 31",
+      "accept": "all",
+      "expected": [
+        "what it means to die a natural death"
+      ],
+      "found": [
+        "what it means to die a natural death"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What form does Mahito mutate into in order to avoid death, per Chapter 31?",
+      "id": "jjk-pg-chapter_31-002",
+      "subject": "Chapter 31",
+      "accept": "all",
+      "expected": [
+        "a tall, bloated form"
+      ],
+      "found": [
+        "a tall, bloated form"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Nanami call to intercept Mahito in the sewers, per Chapter 31?",
+      "id": "jjk-pg-chapter_31-003",
+      "subject": "Chapter 31",
+      "accept": "all",
+      "expected": [
+        "Ino"
+      ],
+      "found": [
+        "Ino"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

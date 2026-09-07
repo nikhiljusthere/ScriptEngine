@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What creature are the Okkotsu siblings and Maru sent into the forest to face, per Modulo Chapter 3?",
+      "id": "jjk-pg-modulo_chapter_3-001",
+      "subject": "Modulo Chapter 3",
+      "accept": "all",
+      "expected": [
+        "a man-eating shark"
+      ],
+      "found": [
+        "a man-eating shark"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why are the Okkotsu siblings confused about the shark mission, per Modulo Chapter 3?",
+      "id": "jjk-pg-modulo_chapter_3-002",
+      "subject": "Modulo Chapter 3",
+      "accept": "all",
+      "expected": [
+        "Gifu is landlocked"
+      ],
+      "found": [
+        "Gifu is landlocked"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of the true culprit behind the attacks in Gifu, per Modulo Chapter 3?",
+      "id": "jjk-pg-modulo_chapter_3-003",
+      "subject": "Modulo Chapter 3",
+      "accept": "all",
+      "expected": [
+        "Toranosuke"
+      ],
+      "found": [
+        "Toranosuke"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

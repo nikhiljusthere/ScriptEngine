@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the curtain built specifically to do, per Chapter 45?",
+      "id": "jjk-pg-chapter_45-001",
+      "subject": "Chapter 45",
+      "accept": "all",
+      "expected": [
+        "keep Gojo out"
+      ],
+      "found": [
+        "keep Gojo out"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who casts a curtain over Tokyo Jujutsu High, per Chapter 45?",
+      "id": "jjk-pg-chapter_45-002",
+      "subject": "Chapter 45",
+      "accept": "all",
+      "expected": [
+        "Juzo"
+      ],
+      "found": [
+        "Juzo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What technique does Noritoshi use that does little damage to Hanami, per Chapter 45?",
+      "id": "jjk-pg-chapter_45-003",
+      "subject": "Chapter 45",
+      "accept": "all",
+      "expected": [
+        "Slicing Exorcism"
+      ],
+      "found": [
+        "Slicing Exorcism"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

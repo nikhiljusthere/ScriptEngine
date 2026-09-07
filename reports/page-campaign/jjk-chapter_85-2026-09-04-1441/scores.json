@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What continues below Shibuya Station, per Chapter 85?",
+      "id": "jjk-pg-chapter_85-001",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "The battle between Satoru Gojo and the special grade curses"
+      ],
+      "found": [
+        "The battle between Satoru Gojo and the special grade curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Satoru snap clean off, per Chapter 85?",
+      "id": "jjk-pg-chapter_85-002",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "Jogo's arm"
+      ],
+      "found": [
+        "Jogo's arm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Satoru realize the curses cannot use at the same time, per Chapter 85?",
+      "id": "jjk-pg-chapter_85-003",
+      "subject": "Chapter 85",
+      "accept": "all",
+      "expected": [
+        "the barrier technique and their innate technique"
+      ],
+      "found": [
+        "the barrier technique and their innate technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

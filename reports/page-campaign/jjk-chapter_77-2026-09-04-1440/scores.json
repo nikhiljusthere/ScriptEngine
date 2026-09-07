@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who does Suguru meet, the third special grade sorcerer, per Chapter 77?",
+      "id": "jjk-pg-chapter_77-001",
+      "subject": "Chapter 77",
+      "accept": "all",
+      "expected": [
+        "Yuki Tsukumo"
+      ],
+      "found": [
+        "Yuki Tsukumo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How many non-sorcerers does Suguru murder in the village, per Chapter 77?",
+      "id": "jjk-pg-chapter_77-002",
+      "subject": "Chapter 77",
+      "accept": "all",
+      "expected": [
+        "one hundred and twelve"
+      ],
+      "found": [
+        "one hundred and twelve"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuki say she would like for the three special grades, per Chapter 77?",
+      "id": "jjk-pg-chapter_77-003",
+      "subject": "Chapter 77",
+      "accept": "all",
+      "expected": [
+        "she'd like the three special grades to get along"
+      ],
+      "found": [
+        "she'd like the three special grades to get along"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

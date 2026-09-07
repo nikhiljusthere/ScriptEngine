@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who takes responsibility by going all out, per Chapter 249?",
+      "id": "jjk-pg-chapter_249-001",
+      "subject": "Chapter 249",
+      "accept": "all",
+      "expected": [
+        "Yuta"
+      ],
+      "found": [],
+      "missing": [
+        "Yuta"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "exact",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rika intercept, per Chapter 249?",
+      "id": "jjk-pg-chapter_249-002",
+      "subject": "Chapter 249",
+      "accept": "all",
+      "expected": [
+        "the stampede of curses"
+      ],
+      "found": [
+        "the stampede of curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What domain expansion does Yuta activate, per Chapter 249?",
+      "id": "jjk-pg-chapter_249-003",
+      "subject": "Chapter 249",
+      "accept": "all",
+      "expected": [
+        "Authentic Mutual Love"
+      ],
+      "found": [
+        "Authentic Mutual Love"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 2
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Gojo feel instead of fear, per Chapter 233?",
+      "id": "jjk-pg-chapter_233-001",
+      "subject": "Chapter 233",
+      "accept": "all",
+      "expected": [
+        "an overwhelming sense of satisfaction"
+      ],
+      "found": [
+        "an overwhelming sense of satisfaction"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whose memory flashes in Gojo's mind, per Chapter 233?",
+      "id": "jjk-pg-chapter_233-002",
+      "subject": "Chapter 233",
+      "accept": "all",
+      "expected": [
+        "Toji Fushiguro"
+      ],
+      "found": [
+        "Toji Fushiguro"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What technique does Gojo plan to finish the battle with, per Chapter 233?",
+      "id": "jjk-pg-chapter_233-003",
+      "subject": "Chapter 233",
+      "accept": "all",
+      "expected": [
+        "Hollow Technique: Purple"
+      ],
+      "found": [
+        "Hollow Technique: Purple"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

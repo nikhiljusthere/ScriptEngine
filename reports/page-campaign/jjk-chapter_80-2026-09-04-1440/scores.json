@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Kokichi's only chance, per Chapter 80?",
+      "id": "jjk-pg-chapter_80-001",
+      "subject": "Chapter 80",
+      "accept": "all",
+      "expected": [
+        "use Mechamaru's best abilities to exorcise Mahito and warn Satoru Gojo"
+      ],
+      "found": [
+        "use Mechamaru's best abilities to exorcise Mahito and warn Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What mode does Kokichi's giant cursed corpse take, per Chapter 80?",
+      "id": "jjk-pg-chapter_80-002",
+      "subject": "Chapter 80",
+      "accept": "all",
+      "expected": [
+        "Ultimate Mechamaru Mode: Absolute"
+      ],
+      "found": [
+        "Ultimate Mechamaru Mode: Absolute"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How much accumulated cursed energy does Kokichi plan to use to win, per Chapter 80?",
+      "id": "jjk-pg-chapter_80-003",
+      "subject": "Chapter 80",
+      "accept": "all",
+      "expected": [
+        "all seventeen years, five minutes, and six days' worth"
+      ],
+      "found": [
+        "all seventeen years, five minutes, and six days' worth"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

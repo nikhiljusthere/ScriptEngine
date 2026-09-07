@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What do Yuji and Yuta give Maki so she can strike, per Chapter 252?",
+      "id": "jjk-pg-chapter_252-001",
+      "subject": "Chapter 252",
+      "accept": "all",
+      "expected": [
+        "the opening to strike"
+      ],
+      "found": [
+        "the opening to strike"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event triggers Maki's surprise attack on Sukuna, per Chapter 252?",
+      "id": "jjk-pg-chapter_252-002",
+      "subject": "Chapter 252",
+      "accept": "all",
+      "expected": [
+        "Yuta deliberately damages the domain barrier"
+      ],
+      "found": [
+        "Yuta deliberately damages the domain barrier"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Rika deliver Yuta to after retrieving his unconscious body, per Chapter 252?",
+      "id": "jjk-pg-chapter_252-003",
+      "subject": "Chapter 252",
+      "accept": "all",
+      "expected": [
+        "Ui Ui"
+      ],
+      "found": [
+        "Ui Ui"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

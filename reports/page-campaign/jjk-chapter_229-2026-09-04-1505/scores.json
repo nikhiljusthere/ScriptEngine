@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What trump card does Sukuna still have, per Chapter 229?",
+      "id": "jjk-pg-chapter_229-001",
+      "subject": "Chapter 229",
+      "accept": "all",
+      "expected": [
+        "the Ten Shadows Technique"
+      ],
+      "found": [
+        "the Ten Shadows Technique"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What difference do Yuta and Higuruma notice in the domain expansion, per Chapter 229?",
+      "id": "jjk-pg-chapter_229-002",
+      "subject": "Chapter 229",
+      "accept": "all",
+      "expected": [
+        "less than 0.01 seconds"
+      ],
+      "found": [
+        "less than 0.01 seconds"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What shikigami is summoned within the domain to protect Sukuna, per Chapter 229?",
+      "id": "jjk-pg-chapter_229-003",
+      "subject": "Chapter 229",
+      "accept": "all",
+      "expected": [
+        "Mahoraga"
+      ],
+      "found": [
+        "Mahoraga"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

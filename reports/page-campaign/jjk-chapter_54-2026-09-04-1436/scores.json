@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is the Goodwill Event reorganized into in Chapter 54?",
+      "id": "jjk-pg-chapter_54-001",
+      "subject": "Chapter 54",
+      "accept": "all",
+      "expected": [
+        "a game of baseball"
+      ],
+      "found": [
+        "a game of baseball"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Which player comes up to bat next and asks the catcher Yuji why he became a sorcerer, per Chapter 54?",
+      "id": "jjk-pg-chapter_54-002",
+      "subject": "Chapter 54",
+      "accept": "all",
+      "expected": [
+        "Kamo"
+      ],
+      "found": [
+        "Kamo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does the 30th Annual Kyoto Goodwill Event finally conclude, per Chapter 54?",
+      "id": "jjk-pg-chapter_54-003",
+      "subject": "Chapter 54",
+      "accept": "all",
+      "expected": [
+        "with Tokyo High as the winner"
+      ],
+      "found": [
+        "with Tokyo High as the winner"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

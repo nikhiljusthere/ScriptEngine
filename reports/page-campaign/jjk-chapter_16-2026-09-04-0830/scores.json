@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom do Jogo's allies return to after rescuing him, per Chapter 16?",
+      "id": "jjk-pg-chapter_16-001",
+      "subject": "Chapter 16",
+      "accept": "all",
+      "expected": [
+        "Mahito"
+      ],
+      "found": [
+        "Mahito"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Hanami's spike grow in the ground, distracting the sorcerers long enough for him to save Jogo, per Chapter 16?",
+      "id": "jjk-pg-chapter_16-002",
+      "subject": "Chapter 16",
+      "accept": "all",
+      "expected": [
+        "a garden of flowers"
+      ],
+      "found": [
+        "a garden of flowers"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "On what date do the curses plan to seal Satoru in Shibuya, per Chapter 16?",
+      "id": "jjk-pg-chapter_16-003",
+      "subject": "Chapter 16",
+      "accept": "all",
+      "expected": [
+        "October 31st"
+      ],
+      "found": [
+        "October 31st"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

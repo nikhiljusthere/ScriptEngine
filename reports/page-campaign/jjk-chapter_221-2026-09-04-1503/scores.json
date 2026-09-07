@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does the world's strongest sorcerer immediately confront, per Chapter 221?",
+      "id": "jjk-pg-chapter_221-001",
+      "subject": "Chapter 221",
+      "accept": "all",
+      "expected": [
+        "Kenjaku"
+      ],
+      "found": [
+        "Kenjaku"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Kenjaku place in the subduction zone, per Chapter 221?",
+      "id": "jjk-pg-chapter_221-002",
+      "subject": "Chapter 221",
+      "accept": "all",
+      "expected": [
+        "Prison Realm"
+      ],
+      "found": [
+        "Prison Realm"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What date does Gojo suggest for the final battle, per Chapter 221?",
+      "id": "jjk-pg-chapter_221-003",
+      "subject": "Chapter 221",
+      "accept": "all",
+      "expected": [
+        "December 24th"
+      ],
+      "found": [
+        "December 24th"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

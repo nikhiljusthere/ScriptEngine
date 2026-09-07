@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who does Todo fight alongside to bring down Sukuna, per Chapter 260?",
+      "id": "jjk-pg-chapter_260-001",
+      "subject": "Chapter 260",
+      "accept": "all",
+      "expected": [
+        "Yuji"
+      ],
+      "found": [
+        "Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "declared",
+      "routed": "roster"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Todo replace his severed left hand with, per Chapter 260?",
+      "id": "jjk-pg-chapter_260-002",
+      "subject": "Chapter 260",
+      "accept": "all",
+      "expected": [
+        "a vibraslap"
+      ],
+      "found": [
+        "a vibraslap"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Sukuna destroy with a kick just as Todo strikes the vibraslap, per Chapter 260?",
+      "id": "jjk-pg-chapter_260-003",
+      "subject": "Chapter 260",
+      "accept": "all",
+      "expected": [
+        "the bird"
+      ],
+      "found": [
+        "the bird"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

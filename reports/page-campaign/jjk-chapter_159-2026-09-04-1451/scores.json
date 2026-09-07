@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What profession is Hiromi Higuruma, per Chapter 159?",
+      "id": "jjk-pg-chapter_159-001",
+      "subject": "Chapter 159",
+      "accept": "all",
+      "expected": [
+        "a criminal defense lawyer"
+      ],
+      "found": [
+        "a criminal defense lawyer"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Hiromi Higuruma speak with as his client, per Chapter 159?",
+      "id": "jjk-pg-chapter_159-002",
+      "subject": "Chapter 159",
+      "accept": "all",
+      "expected": [
+        "Keita Oe"
+      ],
+      "found": [
+        "Keita Oe"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What percentage of criminal trials end in a guilty verdict, per Chapter 159?",
+      "id": "jjk-pg-chapter_159-003",
+      "subject": "Chapter 159",
+      "accept": "all",
+      "expected": [
+        "ninety-nine percent"
+      ],
+      "found": [
+        "ninety-nine percent"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

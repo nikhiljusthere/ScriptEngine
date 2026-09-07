@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom does Nanami join up with to encounter Dagon in Shibuya Station, per Chapter 106?",
+      "id": "jjk-pg-chapter_106-001",
+      "subject": "Chapter 106",
+      "accept": "all",
+      "expected": [
+        "the Zenin Team"
+      ],
+      "found": [
+        "the Zenin Team"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "At what time do Nanami and the Zenins head toward B5F, per Chapter 106?",
+      "id": "jjk-pg-chapter_106-002",
+      "subject": "Chapter 106",
+      "accept": "all",
+      "expected": [
+        "10:20 P.M."
+      ],
+      "found": [
+        "10:20 P.M."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Dagon vomit up after the impact severely injures him, per Chapter 106?",
+      "id": "jjk-pg-chapter_106-003",
+      "subject": "Chapter 106",
+      "accept": "all",
+      "expected": [
+        "the skeletal remains of the numerous non-sorcerers he ate"
+      ],
+      "found": [
+        "the skeletal remains of the numerous non-sorcerers he ate"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

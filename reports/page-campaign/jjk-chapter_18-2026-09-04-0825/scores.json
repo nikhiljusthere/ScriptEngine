@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Nobara learn about Maki, per Chapter 18?",
+      "id": "jjk-pg-chapter_18-001",
+      "subject": "Chapter 18",
+      "accept": "all",
+      "expected": [
+        "Maki has no cursed energy"
+      ],
+      "found": [
+        "Maki has no cursed energy"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What event is Aoi trying to make it in time for, per Chapter 18?",
+      "id": "jjk-pg-chapter_18-002",
+      "subject": "Chapter 18",
+      "accept": "all",
+      "expected": [
+        "the Tall Idol Takada's meet in greet"
+      ],
+      "found": [
+        "the Tall Idol Takada's meet in greet"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Why did Maki become a jujutsu sorcerer, per Chapter 18?",
+      "id": "jjk-pg-chapter_18-003",
+      "subject": "Chapter 18",
+      "accept": "all",
+      "expected": [
+        "prove her doubters wrong"
+      ],
+      "found": [
+        "prove her doubters wrong"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Why is Megumi fighting Sukuna, per Chapter 9?",
+      "id": "jjk-pg-chapter_9-001",
+      "subject": "Chapter 9",
+      "accept": "all",
+      "expected": [
+        "to rescue Yuji"
+      ],
+      "found": [
+        "to rescue Yuji"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the name of the girl Megumi knew whose life was unfair, per Chapter 9?",
+      "id": "jjk-pg-chapter_9-002",
+      "subject": "Chapter 9",
+      "accept": "all",
+      "expected": [
+        "Tsumiki"
+      ],
+      "found": [
+        "Tsumiki"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Megumi proclaim he will do because he isn't a hero but a jujutsu sorcerer, per Chapter 9?",
+      "id": "jjk-pg-chapter_9-003",
+      "subject": "Chapter 9",
+      "accept": "all",
+      "expected": [
+        "save people unfairly"
+      ],
+      "found": [
+        "save people unfairly"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

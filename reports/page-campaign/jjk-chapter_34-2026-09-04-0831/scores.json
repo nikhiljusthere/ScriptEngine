@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who makes a mad dash for the Tokyo Team at the start of the Goodwill Event, per Chapter 34?",
+      "id": "jjk-pg-chapter_34-001",
+      "subject": "Chapter 34",
+      "accept": "all",
+      "expected": [
+        "Aoi Todo"
+      ],
+      "found": [
+        "Aoi Todo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji deliver to Aoi's face, per Chapter 34?",
+      "id": "jjk-pg-chapter_34-002",
+      "subject": "Chapter 34",
+      "accept": "all",
+      "expected": [
+        "a powerful lead flying knee"
+      ],
+      "found": [
+        "a powerful lead flying knee"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who does Gojo introduce over the loudspeaker before the event begins, per Chapter 34?",
+      "id": "jjk-pg-chapter_34-003",
+      "subject": "Chapter 34",
+      "accept": "all",
+      "expected": [
+        "Utahime"
+      ],
+      "found": [
+        "Utahime"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

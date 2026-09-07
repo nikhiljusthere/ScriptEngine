@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Whom is Mechamaru being controlled remotely by, per Chapter 38?",
+      "id": "jjk-pg-chapter_38-001",
+      "subject": "Chapter 38",
+      "accept": "all",
+      "expected": [
+        "a sorcerer who cannot use their own body"
+      ],
+      "found": [
+        "a sorcerer who cannot use their own body"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What option does Mechamaru switch to with Boost On, per Chapter 38?",
+      "id": "jjk-pg-chapter_38-002",
+      "subject": "Chapter 38",
+      "accept": "all",
+      "expected": [
+        "Sword Option"
+      ],
+      "found": [
+        "Sword Option"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What kind of cursed corpse is Panda, per Chapter 38?",
+      "id": "jjk-pg-chapter_38-003",
+      "subject": "Chapter 38",
+      "accept": "all",
+      "expected": [
+        "an Abrupt-Mutation cursed corpse"
+      ],
+      "found": [
+        "an Abrupt-Mutation cursed corpse"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is an assistant manager?",
+      "id": "jjk-pg-assistant_manager-001",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "A jujutsu sorcerer who does not specialize in combat, only acting as helpers to other sorcerers, such as driving, communicating, or assisting the Jujutsu High students. (Volume 2) (Fanbook)"
+      ],
+      "found": [
+        "A jujutsu sorcerer who does not specialize in combat, only acting as helpers to other sorcerers, such as driving, communicating, or assisting the Jujutsu High students. (Volume 2) (Fanbook)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What combat training do assistant managers receive as students?",
+      "id": "jjk-pg-assistant_manager-002",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "During their years as students, managers receive minimal combat training (Fanbook) and are forbidden from engaging in battle. (Volume 2)"
+      ],
+      "found": [],
+      "missing": [
+        "During their years as students, managers receive minimal combat training (Fanbook) and are forbidden from engaging in battle. (Volume 2)"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How do assistant managers differ from windows?",
+      "id": "jjk-pg-assistant_manager-003",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "Unlike windows, who can only see cursed spirits, assistant managers have the necessary brain structure to manipulate cursed energy, which makes them sorcerers. (Chapter 20, Episode 9)"
+      ],
+      "found": [
+        "Unlike windows, who can only see cursed spirits, assistant managers have the necessary brain structure to manipulate cursed energy, which makes them sorcerers. (Chapter 20, Episode 9)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What techniques can assistant managers use to assist students?",
+      "id": "jjk-pg-assistant_manager-004",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "They can use simple shikigami and barrier techniques to assist students, (Volume 2) (Fanbook) and Tengen helps their barriers with their own cursed energy. (Chapter 220)"
+      ],
+      "found": [
+        "They can use simple shikigami and barrier techniques to assist students, (Volume 2) (Fanbook) and Tengen helps their barriers with their own cursed energy. (Chapter 220)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened to assistant managers during the Shibuya Incident?",
+      "id": "jjk-pg-assistant_manager-005",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "During the Shibuya Incident, they were once again targeted, with Haruta Shigemo killing several of them. (Chapter 92, Episode 34)"
+      ],
+      "found": [],
+      "missing": [
+        "During the Shibuya Incident, they were once again targeted, with Haruta Shigemo killing several of them. (Chapter 92, Episode 34)"
+      ],
+      "intruders": [],
+      "passed": false,
+      "confidence": "-",
+      "routed": "narrative"
+    },
+    {
+      "series": "jjk",
+      "query": "Who is noted as having the qualifications to be an assistant manager?",
+      "id": "jjk-pg-assistant_manager-006",
+      "subject": "Assistant Manager",
+      "accept": "all",
+      "expected": [
+        "Kyoko Tomoe has the qualifications to be an assistant manager. (Modulo Volume 2)"
+      ],
+      "found": [
+        "Kyoko Tomoe has the qualifications to be an assistant manager. (Modulo Volume 2)"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 6,
+    "fact_present": 4
+  }
+}

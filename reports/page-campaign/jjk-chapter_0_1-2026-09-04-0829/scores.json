@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Who haunts Yuta Okkotsu and has become a special grade vengeful cursed spirit, per Chapter 0-1?",
+      "id": "jjk-pg-chapter_0_1-001",
+      "subject": "Chapter 0-1",
+      "accept": "all",
+      "expected": [
+        "Rika Orimoto"
+      ],
+      "found": [
+        "Rika Orimoto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Rika do to the four bullies when she suddenly appears at Yuta's school, per Chapter 0-1?",
+      "id": "jjk-pg-chapter_0_1-002",
+      "subject": "Chapter 0-1",
+      "accept": "all",
+      "expected": [
+        "stuffs all four of the bullies into a locker"
+      ],
+      "found": [
+        "stuffs all four of the bullies into a locker"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "How does Maki threaten the new transfer student when he introduces himself, per Chapter 0-1?",
+      "id": "jjk-pg-chapter_0_1-003",
+      "subject": "Chapter 0-1",
+      "accept": "all",
+      "expected": [
+        "stabs her spear into the blackboard next to Yuta's face"
+      ],
+      "found": [
+        "stabs her spear into the blackboard next to Yuta's face"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

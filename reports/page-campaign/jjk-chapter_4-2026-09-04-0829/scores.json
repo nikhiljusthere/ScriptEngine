@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "Where does Gojo send Yuji and Nobara to exorcise cursed spirits as a field test, per Chapter 4?",
+      "id": "jjk-pg-chapter_4-001",
+      "subject": "Chapter 4",
+      "accept": "all",
+      "expected": [
+        "an abandoned building near a cemetery"
+      ],
+      "found": [
+        "an abandoned building near a cemetery"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What weapon does Yuji use to slice the curse in the abandoned house, per Chapter 4?",
+      "id": "jjk-pg-chapter_4-002",
+      "subject": "Chapter 4",
+      "accept": "all",
+      "expected": [
+        "the Slaughter Demon knife"
+      ],
+      "found": [
+        "the Slaughter Demon knife"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Nobara discover about curses in the city compared to those from her hometown, per Chapter 4?",
+      "id": "jjk-pg-chapter_4-003",
+      "subject": "Chapter 4",
+      "accept": "all",
+      "expected": [
+        "much more powerful"
+      ],
+      "found": [
+        "much more powerful"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

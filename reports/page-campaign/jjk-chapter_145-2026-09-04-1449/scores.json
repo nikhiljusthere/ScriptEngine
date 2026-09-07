@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Tengen willing to provide information on, per Chapter 145?",
+      "id": "jjk-pg-chapter_145-001",
+      "subject": "Chapter 145",
+      "accept": "all",
+      "expected": [
+        "the identity of Pseudo-Geto and on how to unseal Satoru Gojo"
+      ],
+      "found": [
+        "the identity of Pseudo-Geto and on how to unseal Satoru Gojo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Kenjaku the name of, per Chapter 145?",
+      "id": "jjk-pg-chapter_145-002",
+      "subject": "Chapter 145",
+      "accept": "all",
+      "expected": [
+        "the body-switching entity that was once Noritoshi Kamo and now inhabits the body of Suguru Geto"
+      ],
+      "found": [
+        "the body-switching entity that was once Noritoshi Kamo and now inhabits the body of Suguru Geto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Tengen require the group to pick to serve as guards, per Chapter 145?",
+      "id": "jjk-pg-chapter_145-003",
+      "subject": "Chapter 145",
+      "accept": "all",
+      "expected": [
+        "a combination of Yuta, Yuki, and Choso"
+      ],
+      "found": [
+        "a combination of Yuta, Yuki, and Choso"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

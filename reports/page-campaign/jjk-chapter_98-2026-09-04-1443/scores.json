@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is finally lifted, allowing the Jujutsu High teams to progress, per Chapter 98?",
+      "id": "jjk-pg-chapter_98-001",
+      "subject": "Chapter 98",
+      "accept": "all",
+      "expected": [
+        "the curtain preventing sorcerers from entering Shibuya Station"
+      ],
+      "found": [
+        "the curtain preventing sorcerers from entering Shibuya Station"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "At what time does the curtain deactivation take place, per Chapter 98?",
+      "id": "jjk-pg-chapter_98-002",
+      "subject": "Chapter 98",
+      "accept": "all",
+      "expected": [
+        "10:04 P.M."
+      ],
+      "found": [
+        "10:04 P.M."
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Ui Ui say a person's life value is in proportion to, per Chapter 98?",
+      "id": "jjk-pg-chapter_98-003",
+      "subject": "Chapter 98",
+      "accept": "all",
+      "expected": [
+        "how useful they are to Mei Mei"
+      ],
+      "found": [
+        "how useful they are to Mei Mei"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

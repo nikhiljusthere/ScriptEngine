@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Tokyo Jujutsu High serve as?",
+      "id": "jjk-pg-tokyo_metropolitan_curse_technical_college-001",
+      "subject": "Tokyo Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "a training ground for the next generation of sorcerers but a headquarters for all alumni"
+      ],
+      "found": [
+        "a training ground for the next generation of sorcerers but a headquarters for all alumni"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Over how long is the school's curriculum taught?",
+      "id": "jjk-pg-tokyo_metropolitan_curse_technical_college-002",
+      "subject": "Tokyo Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "four years"
+      ],
+      "found": [
+        "four years"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is the male school uniform?",
+      "id": "jjk-pg-tokyo_metropolitan_curse_technical_college-003",
+      "subject": "Tokyo Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "asymmetrical blue jackets with high collars and two pins on the left side engraved with the school logo"
+      ],
+      "found": [
+        "asymmetrical blue jackets with high collars and two pins on the left side engraved with the school logo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where is Tokyo Jujutsu High located?",
+      "id": "jjk-pg-tokyo_metropolitan_curse_technical_college-004",
+      "subject": "Tokyo Metropolitan Curse Technical College",
+      "accept": "all",
+      "expected": [
+        "in Tokyo's outskirts, far and high in the mountains"
+      ],
+      "found": [
+        "in Tokyo's outskirts, far and high in the mountains"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Megumi ask for Yuji's strength to help save, per Chapter 144?",
+      "id": "jjk-pg-chapter_144-001",
+      "subject": "Chapter 144",
+      "accept": "all",
+      "expected": [
+        "Tsumiki from the Culling Game"
+      ],
+      "found": [
+        "Tsumiki from the Culling Game"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What does Yuji ask Yuta to do in the event that Sukuna should take over his body again, per Chapter 144?",
+      "id": "jjk-pg-chapter_144-002",
+      "subject": "Chapter 144",
+      "accept": "all",
+      "expected": [
+        "kill him"
+      ],
+      "found": [
+        "kill him"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What concealing barrier shuffles over one thousand doors continuously, per Chapter 144?",
+      "id": "jjk-pg-chapter_144-003",
+      "subject": "Chapter 144",
+      "accept": "all",
+      "expected": [
+        "Master Tengen's"
+      ],
+      "found": [
+        "Master Tengen's"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}

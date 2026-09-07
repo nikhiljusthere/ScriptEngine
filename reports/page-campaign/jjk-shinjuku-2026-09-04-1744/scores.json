@@ -1,0 +1,95 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What is Shinjuku?",
+      "id": "jjk-pg-shinjuku-001",
+      "subject": "Shinjuku",
+      "accept": "all",
+      "expected": [
+        "a city-level ward that serves as a major commercial and administrative district in Tokyo"
+      ],
+      "found": [
+        "a city-level ward that serves as a major commercial and administrative district in Tokyo"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What is Shinjuku considered according to Suguru Geto?",
+      "id": "jjk-pg-shinjuku-002",
+      "subject": "Shinjuku",
+      "accept": "all",
+      "expected": [
+        "the crucible of curses"
+      ],
+      "found": [
+        "the crucible of curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Where did the Night Parade of a Hundred Demons take place?",
+      "id": "jjk-pg-shinjuku-003",
+      "subject": "Shinjuku",
+      "accept": "all",
+      "expected": [
+        "in Shinjuku and Kyoto"
+      ],
+      "found": [
+        "in Shinjuku and Kyoto"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "What happened to Shinjuku following the Shibuya Incident?",
+      "id": "jjk-pg-shinjuku-004",
+      "subject": "Shinjuku",
+      "accept": "all",
+      "expected": [
+        "Shinjuku was left desolate, off-limits to the public, and home to only cursed spirits"
+      ],
+      "found": [
+        "Shinjuku was left desolate, off-limits to the public, and home to only cursed spirits"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 4,
+    "fact_present": 4
+  }
+}

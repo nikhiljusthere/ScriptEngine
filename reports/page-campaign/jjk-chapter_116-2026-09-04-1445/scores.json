@@ -1,0 +1,77 @@
+{
+  "rows": [],
+  "detail": [],
+  "facts": [
+    {
+      "series": "jjk",
+      "query": "What does Jogo earn from the King of Curses, per Chapter 116?",
+      "id": "jjk-pg-chapter_116-001",
+      "subject": "Chapter 116",
+      "accept": "all",
+      "expected": [
+        "the acknowledgment of the King of Curses"
+      ],
+      "found": [
+        "the acknowledgment of the King of Curses"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Whom does Jogo enter a fantasy alongside, per Chapter 116?",
+      "id": "jjk-pg-chapter_116-002",
+      "subject": "Chapter 116",
+      "accept": "all",
+      "expected": [
+        "his deceased allies Hanami and Dagon"
+      ],
+      "found": [
+        "his deceased allies Hanami and Dagon"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    },
+    {
+      "series": "jjk",
+      "query": "Who comes to escort Master Sukuna, per Chapter 116?",
+      "id": "jjk-pg-chapter_116-003",
+      "subject": "Chapter 116",
+      "accept": "all",
+      "expected": [
+        "the curse user Uraume"
+      ],
+      "found": [
+        "the curse user Uraume"
+      ],
+      "missing": [],
+      "intruders": [],
+      "passed": true,
+      "confidence": "-",
+      "routed": "qa"
+    }
+  ],
+  "summary": {
+    "questions": 0,
+    "canon_found": 0,
+    "canon_total": 0,
+    "canon_recall": 0.0,
+    "members_returned": 0,
+    "exact_answers": 0,
+    "exact_of": 0,
+    "exact_rate": 0.0,
+    "precision_closed": 0.0,
+    "precision_over": "0/0",
+    "at_recall_zero": 0,
+    "at_recall_80": 0,
+    "confident_and_wrong": [],
+    "fact_questions": 3,
+    "fact_present": 3
+  }
+}
