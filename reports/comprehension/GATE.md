@@ -654,12 +654,35 @@ Consistent with the B5 baseline shape (pre-R4: 60/23/24; the R4-placed
 rows moved groups from no-signal/boundary toward repeat-encounter).
 Result: `reports/comprehension/placement_audit_3d.json`.
 
+### 3c — open-ended 50-question census (map verified, no growth)
+
+A fresh-context subagent (no map reference, no engine context —
+`delegate`, 2026-09-07) generated 50 natural scriptwriter questions over
+the JJK cast (`reports/comprehension/census_3c_open_50.json`). Each was
+classified against the verified map (12 §12 prose dimensions + Outcomes +
+Causality + the shipped structural layers: relations, interval facts,
+rosters):
+
+- **0 off-map questions in any class** — the council's growth trigger
+  (≥3 off-map in one class → add the dimension and measure under 3b)
+  never fired. The map stays as verified; done is declared against it.
+- The 4 relational/era-shaped questions (Q03 Choso–Yuji motive, Q25
+  Geto–Gojo relationship, Q27 Toji's betrayal → Megumi, Q09 Zenin-clan
+  treatment of Megumi) are the closest call: they land on the shipped
+  relations/interval/History layers, and all four were **probed live
+  through the qa door — all green** (each bundle carries the relational
+  content: Choso's executioner conclusion, the Geto–Gojo history, Toji's
+  Gojo's-Past arc + the Megumi deal, the Zenin clan deal). R3 (relations
+  era) **stays retired** — its reopen condition (relational questions red
+  under 3b) is not met.
+
 ### X2.e net
 
-All three measurements green/met. **Phase 4 (contingent extraction)
-fires nothing**: no red door, no 3b red naming an owed layer, no 3d
-flag. The remaining open item of Phase 3 is **3c** (the 50-question
-open-ended census that can only *grow* the dimension map).
+All four measurements green/met. **Phase 4 (contingent extraction) fires
+nothing**: no red door, no 3a >10, no 3b red naming an owed layer, no 3d
+flag, no 3c map growth, R3's reopen condition unmet. The `semantics`
+table has no R1 home — per D7 it must be formally retired before the
+done-declaration (no door-less table survives into done).
 
 ## What remains to full comprehension (the updated plan)
 
