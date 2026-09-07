@@ -61,7 +61,10 @@ edit those.
     `docs/ops/QWEN_MODES.md`).
   - verify the switch: `cat /home/goblin/ninfer-work/qwen_mode.txt` +
     `nvidia-smi` (expect 100k mode, ~7–8 GB free).
-  - `python -m pytest tests/ -q` on CUDA (default device) → expect 1,243.
+  - `python -m pytest tests/ -q` on CUDA (default device) → **done 2026-09-07
+    22:3x: 1,242 passed in 176s** (baseline was 1,239 pre-R4 + 3 new R4
+    tests; the 6 `test_context.py` failures under 262k were confirmed GPU-
+    contention OOM artifacts — all green on CUDA).
   - launch `:8000` on CUDA (detached: `setsid nohup python -m
     scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 < /dev/null &`,
     no `SCRIPTENGINE_DEVICE` override), then `eval --series jjk` +
@@ -84,3 +87,5 @@ edit those.
 ## Switch log (machine-appended by qwen-switch.sh)
 
 - (none yet)- 2026-09-07T22:05:09+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=8988MiB
+- 2026-09-07T22:17:58+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=8986MiB
+- 2026-09-07T22:19:34+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=8986MiB

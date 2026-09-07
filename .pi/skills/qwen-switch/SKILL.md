@@ -14,10 +14,13 @@ Switcher: `/home/goblin/ninfer-work/qwen-switch.sh` (has `--dry-run`, `--api`, `
 Each flip costs a 30–60 s model reload + a cold re-prefill. One switch per
 phase boundary; never thrash.
 
-- **SWITCH DOWN (262k → 100k / dial-down)** when the upcoming phase needs,
-  *simultaneously*: Qwen alive (I keep working) **and** the `:8000`
-  embedder+reranker on CUDA (~5.3 GB — live span-recall probes, page-runs,
-  `/context` work) **or** up to 2 parallel subagents.
+- **SWITCH DOWN (262k → 100k / dial-down)** when the upcoming phase needs, on
+  a 100k card that stays alive: **use case 1 — the GPU** (the `:8000`
+  embedder+reranker on CUDA, ~5.3 GB, beside Qwen — live span-recall probes,
+  page-runs, `/context` work) **or use case 2 — subagent parallelism**
+  (extraction/reading/review fan-out, ≤2 in parallel). 262k is the inline-
+  linear-work mode; the only >2 parallelism is `llm-council` (5, the
+  standing exception, any mode).
 - **NO SWITCH for a heavy Qwen LLM batch** (`events-extract` / 27B
   extraction). The hard rule is the opposite: stop `:8000` (or run it on CPU),
   Qwen owns the card. Context mode is irrelevant there.

@@ -106,13 +106,18 @@ that is the designed working mode, not an exception. Protocol (skill:
 `.pi/skills/qwen-switch`, kit doc: `pi.md` §5):
 
 1. **Decide at phase boundaries, not per step.** Each flip costs a reload +
-   cold re-prefill, so one switch per GPU phase. Triggers:
+   cold re-prefill, so one switch per GPU phase. 262k is for *inline*
+   linear work; 100k has exactly two use cases — (1) the GPU is needed
+   (the `:8000` embedder+reranker co-locate on CUDA beside Qwen), and
+   (2) subagent parallelism (extraction/reading/review batches, ≤2 in
+   parallel; `llm-council`'s 5 is the standing exception in any mode). Both
+   trigger the same switch:
    | upcoming work | action |
    |---|---|
    | `:8000` embedder+reranker needed on CUDA *alongside* Qwen (live span-recall probes, page-runs, `/context` work) | switch **down** (100k) |
-   | up to 2 parallel subagents | switch **down** (100k) |
+   | ≥2 parallel subagents (extraction / reading / review fan-out) | switch **down** (100k) |
    | heavy Qwen LLM batch (`events-extract`) | **no switch** — the hard rule: stop `:8000` (or CPU), Qwen owns the card |
-   | GPU phase finished, linear work remains | switch **back** to 262k |
+   | GPU phase + subagent phase finished, inline work remains | switch **back** to 262k |
 2. **Pre-flight (model alive):** `switchpoint` checkpoint (commit +
    `plan/SWITCHPOINT.md`); fit check — the current session's transcript
    (`$PI_SESSION_FILE`, bytes/4) must fit the target context; no
