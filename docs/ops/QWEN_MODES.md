@@ -116,16 +116,28 @@ that is the designed working mode, not an exception. Protocol (skill:
 2. **Pre-flight (model alive):** `switchpoint` checkpoint (commit +
    `plan/SWITCHPOINT.md`); fit check — the current session's transcript
    (`$PI_SESSION_FILE`, bytes/4) must fit the target context; no
-   `events-extract` in flight.
+   `events-extract` in flight. The bytes/4 estimate is conservative (~2.7x
+   the real token count — it counts jsonl overhead), so a refusal often
+   means "conservatively refused", not "cannot fit": the running session
+   survives if its *real* context fits, and if it overflows mid-work, pi
+   auto-compacts (step 5).
 3. **The switch:** one `bash` tool call, `timeout: 300000`. The fit guard
-   hard-refuses (exit 2) an un-fitting target; `--force` + full checkpoint +
-   fresh-session handoff is the only bypass.
+   hard-refuses (exit 2) an un-fitting target per its estimate; `--force`
+   (full checkpoint first) is the bypass — for the running session it is a
+   "continue anyway, overflow auto-handles itself" bypass, and for a clean
+   state it is the fresh-session handoff below.
+   The script also syncs `~/.pi/agent/models.json`'s `contextWindow` to the
+   mode, so the pi header + the *proactive* auto-compact threshold are
+   honest for sessions started after the switch.
 4. **Post-flight:** `qwen_mode.txt` + `nvidia-smi`; the `:8000` device was
    already corrected by the script; continue from the switchpoint.
-5. **Overflow handoff:** if the transcript can't fit, the agent ends the
-   session cleanly after a `--force` switch and hands the user the one-
-   liner: *"Open a fresh `pi` and say: Read plan/SWITCHPOINT.md and continue
-   from there."* (A fresh session's tiny transcript always fits.)
+5. **Overflow is self-handling (no user action).** If the running session's
+   context exceeds the server cap, ninfer returns `400
+   context_length_exceeded`; pi-ai's generic overflow pattern matches it and
+   the agent session auto-compacts + retries the turn (`_runAutoCompaction
+   ("overflow")`) — no approval, no session switch. A *fresh-session*
+   handoff (open `pi`, say "Read plan/SWITCHPOINT.md and continue from
+   there.") is for wanting clean state, not for survival.
 
 **Subagent policy per mode:** 262k → linear, no parallel subagents; 100k →
 ≤ 2 parallel; `llm-council` runs 5 in parallel in **any** mode (the standing
@@ -140,7 +152,9 @@ exception).
   first turn re-prefills from cold. Budget ~1–2 min of slow first turn.
 - pi sessions are JSONL files on disk — the conversation survives the switch
   either way; the only question is whether it *fits* the new context. The
-  script checks the latest transcript size and says.
+  script checks the latest transcript size (conservatively) and says; an
+  overflow mid-work is auto-compacted by pi itself (step 5 of the
+  autonomous protocol above).
 - The old "short, bounded `:8000` CUDA probe while Qwen runs" exception
   (working-agreement point 4, measured at `--kv-capacity 155648` → ~7 GB
   headroom) **does not apply to the current 262k profile** (~3.5 GiB

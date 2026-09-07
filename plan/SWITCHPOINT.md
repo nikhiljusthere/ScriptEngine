@@ -52,10 +52,16 @@ edit those.
     100k cap mid-window and the return switch keeps its margin.
   - `:8000` is currently down (was stopped after the X2.b CPU pre-check).
 - first action on resume:
+  - **No session handoff needed** — the seeded session's real context (~56k
+    per pi's own count; the fit guard's 149k is its conservative bytes/4)
+    fits the 100k cap, so the CUDA window runs in that session. If it dies
+    anyway: open fresh `pi`, "Read plan/SWITCHPOINT.md and continue from
+    there." Overflow mid-work self-handles (ninfer 400
+    context_length_exceeded → pi auto-compacts + retries; see
+    `docs/ops/QWEN_MODES.md`).
   - verify the switch: `cat /home/goblin/ninfer-work/qwen_mode.txt` +
-    `nvidia-smi` (expect 100k mode, ~7–8 GB free, `:8000` on CUDA per the
-    switcher's headroom rule).
-  - `python -m pytest tests/ -q` on CUDA → expect 1,243.
+    `nvidia-smi` (expect 100k mode, ~7–8 GB free).
+  - `python -m pytest tests/ -q` on CUDA (default device) → expect 1,243.
   - launch `:8000` on CUDA (detached: `setsid nohup python -m
     scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 < /dev/null &`,
     no `SCRIPTENGINE_DEVICE` override), then `eval --series jjk` +
@@ -66,6 +72,14 @@ edit those.
     stratified characters/techniques/organizations/items; narrative = 100
     fixed chronological queries stratified characters/arcs, on the post-R4
     timeline (it is — R4 is done).
+  - X2.e measurement batch, then **switch back to 262k** (`./qwen-switch.sh
+    262k` — in place, no handoff; target > transcript, the guard passes
+    without `--force`), then X2.f/g per the drift log.
+- done this turn (2026-09-07, post-switch infra): `qwen-switch.sh` now syncs
+  `~/.pi/agent/models.json` contextWindow per mode (header + proactive
+  auto-compact threshold honest); overflow is self-handling (pi-ai matches
+  ninfer's 400 context_length_exceeded → auto compact-and-retry). Updated:
+  `qwen-switch.sh`, `docs/ops/QWEN_MODES.md`, the qwen-switch skill.
 
 ## Switch log (machine-appended by qwen-switch.sh)
 

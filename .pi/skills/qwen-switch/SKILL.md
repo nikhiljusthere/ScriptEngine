@@ -58,10 +58,20 @@ cd /home/goblin/ninfer-work && ./qwen-switch.sh 100k
 
 1. `cat /home/goblin/ninfer-work/qwen_mode.txt` (mode, ctx, free MiB, api device).
 2. `nvidia-smi` sanity. The script already placed `:8000` on the right device
-   (CUDA iff headroom ≥ 6 GiB, else CPU).
+   (CUDA iff headroom ≥ 6 GiB, else CPU) and synced `~/.pi/agent/models.json`
+   `contextWindow` to the mode (header + proactive auto-compact threshold).
 3. Continue the plan from the switchpoint. First turn is a cold prefill (~1–2 min).
 
-## The overflow handoff (transcript did not fit)
+## Overflow is self-handling (no user action)
+
+The fit guard is conservative (bytes/4 overstates the real token count ~2.7x).
+If the running session's context actually exceeds the server cap mid-work,
+ninfer returns `400 context_length_exceeded`; pi-ai's generic overflow
+pattern matches it and the session auto-compacts + retries the turn — no
+approval, no session switch, no user involvement. A fresh-session handoff is
+for clean state, not survival.
+
+## The overflow handoff (only if you want clean state)
 
 After a `--force` down-switch the current session is done (its transcript
 overflows the new cap). Everything is on disk — hand off with:
@@ -73,6 +83,11 @@ overflows the new cap). Everything is on disk — hand off with:
 ## Never
 
 - Switch before the checkpoint is complete.
-- `--force` past a fit refusal without a full checkpoint + handoff.
-- Rely on pi's compaction to make the transcript fit — the declared context in
-  config is larger than the server's real cap; measure the transcript myself.
+- `--force` past a fit refusal without a full checkpoint (the handoff one-
+  liner is still owed if you want clean state; the running session itself
+  survives via auto-compaction).
+- Rely on *proactive* compaction in a session started under a different mode
+  than the current one (its declared contextWindow is stale; the sync now
+  happens per switch, but pre-existing sessions need the real transcript
+  size measured). Reactive overflow is different and IS automatic: ninfer's
+  `400 context_length_exceeded` triggers pi's built-in compact-and-retry.
