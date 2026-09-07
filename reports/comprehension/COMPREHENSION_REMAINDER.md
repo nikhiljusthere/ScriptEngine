@@ -241,3 +241,30 @@ where the wiki names one — an `arc_index`; the cross-page and continuity check
 return zero *interaction-verb* violations; and a writer can ask, of any line,
 what it means and where it sits.** R1 is what makes the first clause true; R4
 the second; the gate + `continuity` the third.
+
+## 6. 2026-09-07 — d6-completion council: the R1–R5 order above is re-scoped
+
+**`COUNCIL_d6-completion.md` (ledger row 19) supersedes the §3 order.**
+"Done" is now the checkable **D1–D10 set** (roster + narrative 100-question
+censuses ≥99% on the post-R4 timeline; tier-0/tier-1 re-verified on the final
+corpus; 8-verb 100-sentence sample with a pre-committed ≤10/>10 branch; 140-
+question per-dimension retrieval-not-extraction test *including outcomes and
+causality*; a 50-question open-ended census that can only *grow* the dimension
+map; a placement-gate false-negative audit (40 agreeing groups + the 107
+re-grounded); unplaced = 0 or triaged; the empty `semantics` table resolved —
+no door-less table survives into done; contingent builds or an honest not-done
+memo; standing gates green; **halt before P6**).
+
+Sequencing: **P0 door pre-check → P1 R4 (place the 154 — the only non-
+contingent build, and the narrative census is input-stale before it) → P2 door
+censuses → P3 measurement batch → P4 contingent extraction → P5 done-
+declaration memo.** Contingent-extraction triggers: R1 only iff the 8-verb
+sample shows >10 inexpressible AND the per-dimension test is red on that
+content (R1 is retired-by-default, re-queued-by-evidence, priced as extractor
++ consumer door + reach census, and is the home that populates `semantics`);
+outcomes/causality layers iff the test is red and a chunking repair doesn't
+close it; R3 (relations era + eventive cross-refs) iff era/relation questions
+are red. **R2 and R5 are retired, not deferred** — re-queued only on new red
+evidence. Failure branches are pre-committed at every measurement (red door →
+2 repair iterations → fresh council; an owed build that cannot fit the Qwen
+window → terminal not-done + diagnostic memo).

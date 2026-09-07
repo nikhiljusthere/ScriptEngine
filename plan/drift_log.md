@@ -152,17 +152,30 @@ return address.
 ## 4. Current position
 
 **Trunk:** `P0` done · `P1` done · `P2` done · **`P3` done** (P3.3C gate closed
-`8e924aa`, CONDITIONAL GREEN) · **`P4` in progress at `P4.A`** (4C gate
-re-scoped by council, D6, and **closed D7 2026-09-07**: pre-registered S-group
-2/4 pre-build → bounded 4A build (2 interval facts, serving-path spike, zero
-router/chunker changes) → 4/4 post-build; wiki-wide interval model 4B →
-backlog; open: durable 4A build so the spike rows survive `index`) · `P5`
-closed by D1 · `P6` not started.
+`8e924aa`, CONDITIONAL GREEN; all five ability dims 3C-GREEN per
+`P3A_ABILITY_CENSUS.md`) · **`P4` done** (4C closed D7; 4A durable D8
+`61311c2` — interval facts re-land on every `index` via `extra_facts`; wiki-
+wide 4B → backlog) · `P5` closed by D1 · **`P6` not started — blocked by the
+2026-09-07 owner directive (JJK only; halt before P6)**.
 
 **Excursion:** X1 **closed** (`ebe83cf`, end-of-sub-list council
 `COUNCIL_X1.md`): X1.d 2 not-reached faults fixed + tracked (`a5e93c3`), X1.e
 milestone recorded (`STEP5_CENSUS_545.md`; global not-reached 7 → 5, 99.08%,
 the 5 residual sit in the 471-pair minor tier), returned to P3.A at X1.g.
+
+**Excursion:** **X2 open (2026-09-07, D9 — the JJK d6-completion plan, council
+row 19, `COUNCIL_d6-completion.md`)**. Items: X2.a council **done**; X2.b
+Phase-0 door pre-check (roster/narrative doors exist + callable); X2.c
+Phase-1 **R4 — place the 154 unplaced events** (the only non-contingent
+build, and the narrative census is input-stale before it); X2.d Phase-2 door
+censuses (roster + narrative, 100 fixed questions each, ≥99% reached, every
+miss triaged); X2.e Phase-3 measurement (8-verb 100-sentence sample;
+140-question per-dimension retrieval-not-extraction incl. outcomes +
+causality; 50-question open-ended census; gate false-negative audit);
+X2.f Phase-4 contingent extraction (R1 / outcomes / causality / R3 only if a
+red measurement names it); X2.g Phase-5 done-declaration memo + standing
+gates re-run; X2.h **RETURN: HALT before P6** (the owner directive closes the
+trunk at P6-not-started; no cross-corpus work).
 
 **The unmeasured block** — five ability dimensions, ~48,800 words — **was
 measured at P3.A** (`P3A_ABILITY_CENSUS.md`, 315-pair pool, 3C-GREEN fork);
@@ -292,4 +305,46 @@ A drift entry is not an apology and not a justification. It is an address.
   (cross-corpus, `plan/Plan_to_perfection.md` §7) is next: Wave-0
   reachability pre-pass on the seven non-JJK corpora.
 - **Return address:** `P6` Wave 0 (smallest corpus first: csm → berserk →
-  opm → hxh → bleach → db → onepiece).
+  opm → hxh → bleach → db → onepiece). **Superseded 2026-09-07 by the owner
+directive: JJK only, halt before P6 — see D9 / X2.**
+
+### D9 — D6-completion plan by council: R4 first, doors censused, preconditions, contingent extraction
+- **Trunk step:** none — new excursion **X2** opened (d6-completion; JJK only,
+  halt before P6)
+- **What happened:** the todo-2 council ran (standing rule 1) — 5 fresh-context
+  advisors in parallel → anonymized → 5 peer reviewers in parallel → chairman
+  (`COUNCIL_d6-completion.md`, ledger row 19; full transcript in
+  `raw/council_d6-completion/`). Every load-bearing claim DB-verified in this
+  session before recording: events 2,748 / 2,594 temporal / 154 unplaced;
+  live `comprehension-gate` (107/390 disagree, 283 agree, 154 standing,
+  temporal 2,594); span-recall rc=0; the 154 = 116 non-placement pages
+  (character 99, character_synopsis 11, location 4, technique 2) + 38 chapter
+  rows across 17 `Modulo Chapter` docs; abilities 594/94, relations 821/298,
+  semantics 0, edges 35,026; roster/narrative doors exist at
+  `/context?mode=` (code-verified); the `semantics` table is **not** door-less
+  (upsert + read in `stores/facts.py`) — corrected claim: empty, no extractor.
+  Verdict: **"done" = the checkable D1–D10 set** (D1 roster census 100q ≥99% ·
+  D2 narrative census 100q ≥99% *post-R4* · D3 tier-0/tier-1 re-verified on
+  the final corpus · D4 preconditions: 8-verb 100-sentence sample + 140-
+  question per-dimension retrieval-not-extraction incl. outcomes & causality +
+  50-question open-ended census that can only *grow* the map · D5 placement-
+  gate false-negative audit (40 agreeing groups + the 107 re-grounded) · D6
+  unplaced = 0 or triaged · D7 `semantics` resolved (no door-less table) · D8
+  contingent builds or an honest not-done memo · D9 standing gates green ·
+  D10 halt before P6). Sequencing: P0 door pre-check → P1 **R4** → P2 door
+  censuses → P3 measurement batch → P4 contingent extraction (R1 only iff
+  3a>10 inexpressible AND 3b red; outcomes/causality layers iff 3b red; R3 iff
+  relation questions red) → P5 done-declaration memo. **R2 + R5 retired, not
+  deferred** (re-queued only on new red evidence).
+- **Why:** standing rule 1 (no user input; the fork goes to the council). The
+  peer reviews caught what all five advisors missed: the **R4 → narrative
+  input-stale dependency** (a narrative census before the 154 are placed
+  measures a stale timeline), the **empty `semantics` table** (done cannot be
+  declared with a door-less/extractor-less table standing in the store), the
+  **missing 8-verb failure branch** (pre-committed ≤10/>10 rule now),
+  **outcomes + causality** absent from every done criterion (joined the 3b
+  regime), and the map-as-pre-correction-proxy risk (3c's open-ended census
+  makes "everything" checkable — the map can only grow via measured evidence).
+- **Return address:** the X2 sequence — X2.b → X2.c (R4) → X2.d → X2.e →
+  X2.f → X2.g (done-declaration + gates) → X2.h **RETURN: HALT before P6**
+  (trunk stays at P6-not-started; the owner directive closes it).
