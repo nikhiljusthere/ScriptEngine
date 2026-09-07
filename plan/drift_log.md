@@ -159,10 +159,15 @@ router/chunker changes) → 4/4 post-build; wiki-wide interval model 4B →
 backlog; open: durable 4A build so the spike rows survive `index`) · `P5`
 closed by D1 · `P6` not started.
 
-**Excursion:** X1 open at `X1.d`, `X1.e`; returns to `P3.A` at `X1.g`.
+**Excursion:** X1 **closed** (`ebe83cf`, end-of-sub-list council
+`COUNCIL_X1.md`): X1.d 2 not-reached faults fixed + tracked (`a5e93c3`), X1.e
+milestone recorded (`STEP5_CENSUS_545.md`; global not-reached 7 → 5, 99.08%,
+the 5 residual sit in the 471-pair minor tier), returned to P3.A at X1.g.
 
-**The unmeasured block, and why P3 is next:** five ability dimensions —
-Cursed Technique 13,611 w, Physical Prowess 10,595 w, Intelligence 9,674 w,
+**The unmeasured block** — five ability dimensions, ~48,800 words — **was
+measured at P3.A** (`P3A_ABILITY_CENSUS.md`, 315-pair pool, 3C-GREEN fork);
+the paragraph below is the historical record of why P3 was next:
+Cursed Technique 13,611 w, Physical Prowess 10,595 w, Intelligence 9,674 w, Intelligence 9,674 w,
 Abilities and Powers 8,481 w, Cursed Energy 6,416 w — **~48,800 words with zero
 measurement of any kind.** The census harness that answered this question for
 the prose dimensions now exists in `tools/` and runs in ~9 minutes on GPU.
