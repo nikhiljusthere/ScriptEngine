@@ -62,6 +62,17 @@ MAX_ALIAS_WORDS = 6
 
 _WORD = re.compile(r"[\w'’-]+", re.UNICODE)
 
+# A qualified title the query names outright, "Noritoshi Kamo (Ancestor)".
+# `_WORD` drops the parentheses, so the word n-grams above yield "noritoshi kamo
+# ancestor" and never the alias's "noritoshi kamo (ancestor)" -- the qualified
+# entity then links only through its unqualified base, whose `exact` flag loses
+# to the base-name entity's. Capture the "Name (Qualifier)" span verbatim and
+# offer its lowercased form as an extra candidate. Each base word must start
+# uppercase (a proper-noun run), so the base is the entity's name, not the
+# sentence that leads into it ("...about Noritoshi Kamo (Ancestor)" captures
+# "Noritoshi Kamo", not "What are ... about Noritoshi Kamo").
+_QUALIFIED = re.compile(r"([A-Z][\w'’\-]*(?:\s+[A-Z][\w'’\-]*)*)\s*\(([^()]+)\)")
+
 logger = logging.getLogger(__name__)
 
 # Instalment-style aliases ("chapter 5", "episode 19") and bare numbers ("19")
@@ -834,6 +845,12 @@ class FactStore:
                     phrase = " ".join(sequence[start : start + size]).strip()
                     if phrase:
                         candidates.add(phrase)
+
+        # A qualified title named outright ("Noritoshi Kamo (Ancestor)") links
+        # exactly through its parenthetical, so the qualified entity's `exact`
+        # flag can win over the unqualified base name (see `_QUALIFIED`).
+        for base, qual in _QUALIFIED.findall(text):
+            candidates.add(f"{base} ({qual})".lower())
 
         mentions_instalment = any(word in _INSTALMENT_WORDS for word in lowered)
         placeholders = ",".join("?" * len(candidates))

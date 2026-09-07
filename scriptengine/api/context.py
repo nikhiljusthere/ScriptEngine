@@ -524,7 +524,28 @@ def _qa_context(
         return (-len(qterms & _content_tokens(p.breadcrumb)), p.ordinal)
 
     floor_fill.sort(key=_qrank)
-    ordered = [*result.passages, *floor_fill]
+    # Guarded floor-lead (Kenjaku/Trivia census fault): when the query points at
+    # exactly one of the subject's sections with a distinctive term ("trivia" ->
+    # Trivia, "cursed technique" -> Cursed Techniques), pay that section's
+    # leading chunk BEFORE the ranked beam, or a busy character's big
+    # Personality/Abilities sections fill the 6000-token budget and the targeted
+    # section never appears (the beam is walked to exhaustion before the floor).
+    # The guard -- the top floor section must strictly beat every other on
+    # query-term overlap with its title -- keeps the beam-first walk for neutral
+    # and cross-page questions, which is what protects B1 (a cross-page question
+    # names no single section of the subject's page, so no lead fires).
+    lead = None
+    if floor_fill:
+        best = floor_fill[0]
+        best_score = -_qrank(best)[0]
+        if best_score >= 1 and all(
+            -_qrank(p)[0] < best_score for p in floor_fill[1:]
+        ):
+            lead = best
+    if lead is not None:
+        ordered = [lead, *[p for p in [*result.passages, *floor_fill] if p is not lead]]
+    else:
+        ordered = [*result.passages, *floor_fill]
     for order, passage in enumerate(ordered, start=1):
         cost = estimate_tokens(passage.text) + 30
         if used + cost > token_budget and beats:

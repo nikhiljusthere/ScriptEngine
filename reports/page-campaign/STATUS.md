@@ -1097,3 +1097,16 @@ the directional semantics are a design decision with campaign-wide blast radius.
   `_relations_builder` (TDD + gate), then campaign-wide re-declare + re-gold.
   Campaign state stays uncommitted (`questions/_jjk_page_*`, `series/jjk/overrides.yaml`,
   `reports/page-campaign/`).
+
+## 545 census (step 5 of the retrieval sequence)
+
+Full (dimension, page) census: **98.7% reachability**, 0 main-cast misses; the
+reached-uncited 280 (51.4%) are the corpus property (minor sections described
+but not chapter-cited), not retrieval failures. Per-dimension × per-tier
+sourceability + the not-reached pairs live in
+`reports/comprehension/STEP5_CENSUS_545.md`. Re-run: `CENSUS_DEVICE=cuda
+python tools/census_545.py` (pairs: `tools/census_545_pairs.json`). The 2
+genuine faults (Trivia/Kenjaku beam-starves-floor; Trivia/Noritoshi Kamo
+(Ancestor) qualified-title disambiguation) are **fixed**, retrieval-only,
+gated (pytest 1,239 / eval 31 / main-cast reprobe 0 not-reached). Remaining
+not-reached are thin minor-profile pages (depth limit), not fixable misses.
