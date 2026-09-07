@@ -9,39 +9,32 @@ Generated 2026-09-07 from `tools/census_545.py` (pairs: `tools/census_545_pairs.
 | class | n | % |
 |---|---:|---:|
 | reached | 258 | 47.3% |
-| reached-uncited | 280 | 51.4% |
-| not-reached | 7 | 1.3% |
+| reached-uncited | 282 | 51.7% |
+| not-reached | 5 | 0.9% |
 | no-section | 0 | 0.0% |
 | errors | 0 | 0.0% |
 | **total** | **545** | |
 
-**Reached at all: 538/545 (98.7%).** Retrieval-controlled misses: **7**.
+**Reached at all: 540/545 (99.1%).** Retrieval-controlled misses: **5**. Figures reflect the post-a5e93c3 re-run (the Trivia-section fix): the two previously-not-reached cases (Kenjaku, Noritoshi Kamo) now resolve to reached-uncited, which is why not-reached fell 7 → 5 and reached-uncited rose 280 → 282.
 
 ## By tier
 
 | tier | n | reached | reached-uncited | not-reached | sourceable % |
 |---|---:|---:|---:|---:|---:|
 | main-cast | 74 | 47 | 27 | 0 | 63.5% |
-| minor | 471 | 211 | 253 | 7 | 44.8% |
+| minor | 471 | 211 | 255 | 5 | 44.8% |
 
-## Sourceable % by dimension × tier
+## Per-dimension totals
 
-Sourceable % = reached-and-sourced ÷ total for that cell.
+| Dimension | n | reached | reached-uncited | not-reached | miss % | thin n | thin % |
+|---|---|---|---|---|---|---|---|
+| Appearance | 145 | 26 | 119 | 0 | 0.0 | 3 | 2.1 |
+| History | 100 | 79 | 18 | 3 | 3.0 | 3 | 3.0 |
+| Overview | 41 | 30 | 11 | 0 | 0.0 | 0 | 0.0 |
+| Personality | 138 | 87 | 49 | 2 | 1.4 | 4 | 2.9 |
+| Trivia | 121 | 36 | 85 | 0 | 0.0 | 13 | 10.7 |
 
-| dimension | tier | n | sourced | sourceable % | reached-uncited | not-reached |
-|---|---|---:|---:|---:|---:|---:|
-| Personality | main-cast | 15 | 14 | **93.3%** | 1 | 0 |
-| Personality | minor | 123 | 73 | **59.3%** | 48 | 2 |
-| Appearance | main-cast | 15 | 6 | **40.0%** | 9 | 0 |
-| Appearance | minor | 130 | 20 | **15.4%** | 110 | 0 |
-| Overview | main-cast | 14 | 10 | **71.4%** | 4 | 0 |
-| Overview | minor | 27 | 20 | **74.1%** | 7 | 0 |
-| Trivia | main-cast | 15 | 5 | **33.3%** | 10 | 0 |
-| Trivia | minor | 106 | 31 | **29.2%** | 73 | 2 |
-| History | main-cast | 15 | 12 | **80.0%** | 3 | 0 |
-| History | minor | 85 | 67 | **78.8%** | 15 | 3 |
-
-## Not-reached pairs (7)
+## Not-reached pairs (5)
 
 The retrieval-controlled misses — the target section exists but no beat reached it. `sub` distinguishes a wrong section on the right page from a bundle that landed on another page entirely.
 
@@ -52,10 +45,8 @@ The retrieval-controlled misses — the target section exists but no beat reache
 | History | Nanako Hasaba/Synopsis | minor | cross-page | Nanako Hasaba | Nanako Hasaba |
 | Personality | Phantom Cursed Spirit | minor | wrong-section | Phantom Cursed Spirit | Appearance |
 | Personality | Sara Kozuki | minor | wrong-section | Sara Kozuki | Sara Kozuki |
-| Trivia | Kenjaku | minor | wrong-section | Kenjaku | Personality |
-| Trivia | Noritoshi Kamo (Ancestor) | minor | cross-page | Noritoshi Kamo | Appearance |
 
-By sub-class: `wrong-section` 5, `cross-page` 2.
+By sub-class: `wrong-section` 3, `cross-page` 2.
 
 ## Follow-up (tracked)
 
@@ -85,6 +76,6 @@ depth/length limit, not a fixable miss). Both fixes are retrieval-only and gated
 74 (unchanged from baseline). Both fault pairs now classify `reached-uncited`
 (the section is reached; uncited because minor Trivia sections are not
 chapter-cited — a corpus property). A full 545 re-run
-(`CENSUS_DEVICE=cuda python tools/census_545.py`) refreshes the global
+(`CENSUS_DEVICE=cuda python tools/census_545.py`) refreshed the global
 not-reached count 7 → 5.
 

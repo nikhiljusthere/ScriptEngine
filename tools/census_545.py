@@ -44,10 +44,12 @@ os.environ.setdefault("SCRIPTENGINE_DEVICE", DEVICE)
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "tools"))
 
 from scriptengine.config import series_paths          # noqa: E402
 from scriptengine.retrieve.router import route        # noqa: E402
 from scriptengine.api.context import build_context    # noqa: E402
+from build_ability_pairs import LEAF_TO_DIM           # noqa: E402
 
 DEFAULT_PAIRS = Path(__file__).with_name("census_545_pairs.json")
 
@@ -77,9 +79,23 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip()).lower()
 
 
+# The ability pool folds variant section leaves into a canonical dim
+# (LEAF_TO_DIM: "cursed techniques" -> Cursed Technique, "great intellect" ->
+# Intelligence, ...). The strict component match made a beat on a variant
+# section count as not-reached: the pool knows
+# "Abilities and Powers / Cursed Techniques" answers the Cursed Technique
+# question, but in_section only saw the canonical name. Reverse the fold so
+# reach accepts every variant. Prose dims have no entry and fall back to the
+# exact component match, so the 545 census is unaffected.
+DIM_LEAVES: dict = {}
+for _leaf, _dim in LEAF_TO_DIM.items():
+    DIM_LEAVES.setdefault(norm(_dim), set()).add(norm(_leaf))
+
+
 def in_section(breadcrumb: str, dim: str) -> bool:
     # F1: the dimension is reached when it appears as ANY breadcrumb component.
-    return any(norm(c) == norm(dim) for c in (breadcrumb or "").split(" / "))
+    leaves = DIM_LEAVES.get(norm(dim), {norm(dim)})
+    return any(norm(c) in leaves for c in (breadcrumb or "").split(" / "))
 
 
 def tier(name: str) -> str:

@@ -1,0 +1,110 @@
+oracle sha256 verified: a788fa29652a58152edf0f2ce16caea626db35d7e4463ec66176b5635a15935e
+
+ID   category     expect result door      detail
+
+A1   outcome      fail  PASS   qa        {'contains': True}
+     served: Appearance :: Nanami is a tall, well-built man with blonde hair styled with a neat part. Nanami has very thin eyebrows as we | Appearance :: Befitting a former office worker, Nanami is usually fully dressed in a formal business suit. His usual suit co | Appearance :: After graduating from Jujutsu High and working for corporate, Nanami wore a vertical striped jacket over a whi
+     facts: name: Kento Nanami | Kanji: 七海建人 | Rōmaji: Nanami Kento | Alias: 7:3 Sorcerer (By Mahito) Nanamin (By Gojo and Yuji) | Species: Human
+   <-- SURPRISE (expected fail)
+
+A2   outcome      fail  PASS   qa        {'contains': True}
+     served: Appearance :: Sukuna's true body is that of a tall, muscular man with four arms, four eyes, and a large mouth on his midriff | Appearance :: Sukuna's monstrous appearance led many to describe him as a demon with four arms and two faces,(Chapter 3, Epi | Appearance :: Previously, Sukuna took on the appearance of his former host: Yuji Itadori, but with the latter’s pink spiked 
+     facts: name: Sukuna | Kanji: 両面宿儺 | Rōmaji: Ryōmen Sukuna | Alias: King of Curses Imaginary Demon Disgraced One The Strongest Sorcerer in History | Species: Human
+Incarnation
+   <-- SURPRISE (expected fail)
+
+A3   outcome      fail  PASS   qa        {'contains': True}
+     served: Appearance :: Uraume appears as a slim, white haired monk with chin-length white hair, an irregular line of dark plum pink r | Personality :: Uraume is usually seen with a stoic and calm expression, their main trait being their loyalty to Sukuna, to th | Personality :: Uraume is shown to be ruthless when Kenjaku tells them to leave the sorcerers alive, but they say only Yuji is
+     facts: name: Uraume | Kanji: 裏梅 | Rōmaji: Uraume | Alias: The Frozen Star Shiori Himi (Vessel) | Species: Human Incarnation
+   <-- SURPRISE (expected fail)
+
+A4   outcome      fail  FAIL   qa        {'contains': False}
+     served: Appearance :: Sukuna's true body is that of a tall, muscular man with four arms, four eyes, and a large mouth on his midriff | Appearance :: Sukuna's monstrous appearance led many to describe him as a demon with four arms and two faces,(Chapter 3, Epi | Appearance :: Previously, Sukuna took on the appearance of his former host: Yuji Itadori, but with the latter’s pink spiked 
+     facts: name: Sukuna | Kanji: 両面宿儺 | Rōmaji: Ryōmen Sukuna | Alias: King of Curses Imaginary Demon Disgraced One The Strongest Sorcerer in History | Species: Human
+Incarnation
+
+B1   state        fail  FAIL   qa        {'contains': False}
+     served: Appearance :: Satoru is a very tall, lean, and muscular man in his late twenties who is considered relatively attractive, ma | Appearance :: While working, Satoru wears a dark blue zip-up jacket with a high collar, which is also fairly broad. He wears | Appearance :: During the Shinjuku Showdown Arc, Gojo didn’t wear his blindfold, letting his hair fall and eyes shown. He wor
+     facts: name: Satoru Gojo | Kanji: 五条悟 | Rōmaji: Gojō Satoru | Alias: The Strongest
+Blindfolded Idiot (By Maki) | Species: Human
+
+B2   state        fail  PASS   qa        {'subject': 'Suguru Geto', 'served_values': ['name: Suguru Geto', 'Kanji: 夏油 傑', 'Rōmaji: Getō Suguru', 'Species: Human', 'Age: 27', 'Birthday: February 3, 1990', 'Gender: Male', 'Hair Color: Black', 'Eye Color: Purple (Manga) Brown (Anime)', 'Relatives: Unnamed parents', 'Height: Over 180 cm (Over 5\'11")', 'Status: Deceased', 'Occupation: Jujutsu Sorcerer (Former) Curse User', 'Affiliation: Tokyo Jujutsu High (Former) Geto\'s "Family"', 'Grade: Special Grade', 'Manga Debut: Chapter 0-2 Chapter 10 (Imposter) Chapter 18 (Flashback) Chapter 65', 'Japanese Voice: Takahiro Sakurai', 'Anime Debut: Episode 5 (Imposter) Episode 8 (Flashback) Jujutsu Kaisen 0: The Movie Episode 25', 'English Voice: Lex Lang'], 'value_match': True}
+     served: Appearance :: Suguru is a tall, slim, and muscular man with long black hair partially tied up in a man bun while the rest dr | Personality :: Suguru Geto hated non-sorcerers, usually referring to them as "monkeys". He felt sorcerers are the superior ra | Personality :: In contrast, Suguru cared deeply for his fellow curse users, referring to his comrades as family. Each of them
+     facts: name: Suguru Geto | Kanji: 夏油 傑 | Rōmaji: Getō Suguru | Species: Human | Age: 27
+   <-- SURPRISE (expected fail)
+
+B3   state        pass  PASS   qa        {'subject': 'Nobara Kugisaki', 'served_values': ['name: Nobara Kugisaki', 'Kanji: 釘崎野薔薇', 'Rōmaji: Kugisaki Nobara', 'Species: Human', 'Birthday: August 7th, 2002', 'Age: 16\n84 (Modulo)', 'Gender: Female', 'Height: 160 cm (5\'3")', 'Hair Color: Ginger (Dyed)', 'Eye Color: Orange', 'Status: Alive', 'Relatives: Unnamed Grandmother Unnamed Mother', 'Occupation: Jujutsu Sorcerer Student', 'Affiliation: Tokyo Jujutsu High', 'Grade: Grade 3', 'Manga Debut: Chapter 1 (Cover Only) Chapter 3', 'Anime Debut: Episode 2', 'Japanese Voice: Asami Seto', 'English Voice: Anne Yatco'], 'value_match': True}
+     served: Appearance :: Nobara is slim fair-skinned young woman with neck-length light brown hair that reaches to her neck that is sty | Appearance :: Nobara's Jujutsu High uniform consists of a dark blue gakuran-style top (a button-down jacket) and a long matc | Appearance :: As someone who enjoys dressing up, Nobara has several different outfits. She didn't have a tracksuit prior to 
+     facts: name: Nobara Kugisaki | Kanji: 釘崎野薔薇 | Rōmaji: Kugisaki Nobara | Species: Human | Birthday: August 7th, 2002
+
+B4   state        pass  PASS   qa        {'subject': 'Satoru Gojo', 'served_values': ['name: Satoru Gojo', 'Kanji: 五条悟', 'Rōmaji: Gojō Satoru', 'Alias: The Strongest\nBlindfolded Idiot (By Maki)', 'Species: Human', 'Birthday: December 7, 1989', 'Age: 28\n29', 'Gender: Male', 'Height: Over 190 cm (Over 6\'3")', 'Hair Color: White', 'Eye Color: Light Blue', 'Status: Deceased', 'Occupation: Jujutsu Sorcerer Teacher', 'Affiliation: Tokyo Metropolitan Curse Technical College Gojo Clan', 'Grade: Special Grade', 'Relatives: Yuta Okkotsu (Distant Relative) Michizane Sugawara (Ancestor)', 'Manga Debut: Chapter 0-1 Chapter 1 (Voice and Cover Only) Chapter 2', 'Anime Debut: Episode 1', 'Japanese Voice: Yuichi Nakamura Mariya Ise (Child)', 'English Voice: Kaiji Tang Cristina Vee (Child)'], 'value_match': True}
+     served: Appearance :: Satoru is a very tall, lean, and muscular man in his late twenties who is considered relatively attractive, ma | Appearance :: While working, Satoru wears a dark blue zip-up jacket with a high collar, which is also fairly broad. He wears | Appearance :: During the Shinjuku Showdown Arc, Gojo didn’t wear his blindfold, letting his hair fall and eyes shown. He wor
+     facts: name: Satoru Gojo | Kanji: 五条悟 | Rōmaji: Gojō Satoru | Alias: The Strongest
+Blindfolded Idiot (By Maki) | Species: Human
+
+C1   timeline     fail  FAIL   qa        {'has_ground_truth': False, 'confused_with_other': True}
+     served: Appearance :: Todo is a tall young man who stands about the same height as Satoru Gojo.(Volume 5) He has a very defined, hea | Appearance :: While Todo sports his jujutsu high uniform, he usually takes his jacket off and rips the undershirt before or  | Appearance :: In his fantasy of attending junior high with Yuji Itadori and Takada, Todo wears a school uniform that consist
+     facts: name: Aoi Todo | Kanji: 東堂葵 | Rōmaji: Tōdō Aoi | Species: Human | Age: 18 86 (Modulo)
+
+C2   timeline     pass  FAIL   qa        {'contains': False}
+     served: Appearance :: Hanami is a large, tan cursed spirit with black lines running across their entire body. They have a helmet-lik | Personality :: Hanami is the type of spirit who cares for the planet that the humans have been abusing for thousands of years | Personality :: In contrast to Hanami's peaceful convictions, Mahito has encouraged them to embrace their savagery as a spirit
+     facts: name: Hanami | Kanji: 花御 | Rōmaji: Hanami | Species: Cursed Spirit | Status: Deceased
+   <-- SURPRISE (expected pass)
+
+C3   timeline     pass  FAIL   qa        {'contains': False}
+     served: Appearance :: Todo is a tall young man who stands about the same height as Satoru Gojo.(Volume 5) He has a very defined, hea | Appearance :: While Todo sports his jujutsu high uniform, he usually takes his jacket off and rips the undershirt before or  | Appearance :: In his fantasy of attending junior high with Yuji Itadori and Takada, Todo wears a school uniform that consist
+     facts: name: Aoi Todo | Kanji: 東堂葵 | Rōmaji: Tōdō Aoi | Species: Human | Age: 18 86 (Modulo)
+   <-- SURPRISE (expected pass)
+
+D1   cross-page   pass  PASS   qa        {'contains': True}
+     served: Appearance :: The Angel's original appearance is unknown. Under her influence, Hana has permanently manifested a pair of fea | Personality :: The Angel is a well-mannered, straightforward, and reasonable individual who seems to want what is best for th | Personality :: Being pragmatic, the Angel was quick to ally herself with present-day sorcerers whose objective of stopping Ke
+     facts: name: Angel | Kanji: 天使 | Rōmaji: Tenshi | Species: Human Incarnation | Age: 1000+
+
+E1   personality  pass  PASS   qa        {'contains': True}
+     served: Appearance :: Nanami is a tall, well-built man with blonde hair styled with a neat part. Nanami has very thin eyebrows as we | Appearance :: Befitting a former office worker, Nanami is usually fully dressed in a formal business suit. His usual suit co | Appearance :: After graduating from Jujutsu High and working for corporate, Nanami wore a vertical striped jacket over a whi
+     facts: name: Kento Nanami | Kanji: 七海建人 | Rōmaji: Nanami Kento | Alias: 7:3 Sorcerer (By Mahito) Nanamin (By Gojo and Yuji) | Species: Human
+
+E2   personality  pass  PASS   qa        {'contains': True}
+     served: Appearance :: Satoru is a very tall, lean, and muscular man in his late twenties who is considered relatively attractive, ma | Appearance :: While working, Satoru wears a dark blue zip-up jacket with a high collar, which is also fairly broad. He wears | Appearance :: During the Shinjuku Showdown Arc, Gojo didn’t wear his blindfold, letting his hair fall and eyes shown. He wor
+     facts: name: Satoru Gojo | Kanji: 五条悟 | Rōmaji: Gojō Satoru | Alias: The Strongest
+Blindfolded Idiot (By Maki) | Species: Human
+
+E3   personality  pass  PASS   qa        {'contains': True}
+     served: Appearance :: Toge is a slim young man with light skin, greyish-purple eyes, and mid-length straight hair. He was born with  | Appearance :: In 2017, Toge had shorter, spiky hair similar to Yuji's that eventually grew into his new hairstyle in 2018. H | Personality :: Toge's initial impression leads people to believe he's a quiet, aloof, and distant person. Even after knowing 
+     facts: name: Toge Inumaki | Kanji: 狗巻棘 | Rōmaji: Inumaki Toge | Species: Human | Age: 16 (Prequel) 17
+
+E4   personality  pass  PASS   qa        {'contains': True}
+     served: Appearance :: Maki is a young woman above average height with an athletic build. She has small green eyes (amber in the anim | Appearance :: While still a member of the Zenin clan, Maki wore a traditional outfit, a white yukata, and a black hakama.(Ch | Appearance :: While training for the Goodwill Event, Maki wore a purple tracksuit a black jersey with tan shorts over her le
+     facts: name: Maki Zenin | Kanji: 禪院真希 | Rōmaji: Zen'in Maki | Alias: Big Sis (by Mai) | Species: Human
+
+F1   equipment    pass  FAIL   qa        {'section_present': False}
+     served: Appearance :: Todo is a tall young man who stands about the same height as Satoru Gojo.(Volume 5) He has a very defined, hea | Appearance :: While Todo sports his jujutsu high uniform, he usually takes his jacket off and rips the undershirt before or  | Appearance :: In his fantasy of attending junior high with Yuji Itadori and Takada, Todo wears a school uniform that consist
+     facts: name: Aoi Todo | Kanji: 東堂葵 | Rōmaji: Tōdō Aoi | Species: Human | Age: 18 86 (Modulo)
+   <-- SURPRISE (expected pass)
+
+F2   quotes       pass  FAIL   qa        {'section_present': False}
+     served: Appearance :: Todo is a tall young man who stands about the same height as Satoru Gojo.(Volume 5) He has a very defined, hea | Appearance :: While Todo sports his jujutsu high uniform, he usually takes his jacket off and rips the undershirt before or  | Appearance :: In his fantasy of attending junior high with Yuji Itadori and Takada, Todo wears a school uniform that consist
+     facts: name: Aoi Todo | Kanji: 東堂葵 | Rōmaji: Tōdō Aoi | Species: Human | Age: 18 86 (Modulo)
+   <-- SURPRISE (expected pass)
+
+
+=== totals by category ===
+
+outcome      3/4  {'id': 'A1', 'category': 'outcome', 'beat': "Closing Nanami's last stand in Shibuya — the audience needs to know how the fight with Mahito ended.", 'question': "How did Nanami's fight against Mahito end?", 'ground_truth': 'Nanami withdraws.', 'source_page': 'Kento Nanami vs. Mahito', 'check': 'contains', 'expect': 'fail'}=PASS(qa), {'id': 'A2', 'category': 'outcome', 'beat': "Kashimo's death scene — who actually won.", 'question': 'Who won the fight between Kashimo and Sukuna?', 'ground_truth': 'Sukuna is victorious.', 'source_page': 'Hajime Kashimo vs. Sukuna', 'check': 'contains', 'expect': 'fail'}=PASS(qa), {'id': 'A3', 'category': 'outcome', 'beat': "Uraume's end — a script cannot say 'defeated' if it was suicide.", 'question': 'How did the confrontation between Hakari and Uraume end?', 'ground_truth': 'Uraume commits suicide.', 'source_page': 'Kinji Hakari vs. Uraume', 'check': 'contains', 'expect': 'fail'}=PASS(qa), {'id': 'A4', 'category': 'outcome', 'beat': 'The finale — stating the result of the final battle.', 'question': 'What was the result of the final battle against Sukuna?', 'ground_truth': 'The jujutsu sorcerers are victorious.', 'source_page': 'Jujutsu Sorcerers vs. Sukuna', 'check': 'contains', 'expect': 'fail'}=FAIL(qa)
+state        3/4  {'id': 'B1', 'category': 'state', 'beat': 'A Culling Game scene. The writer must not have Gojo appear or act — he is sealed throughout.', 'question': 'Where is Gojo during the Culling Game, and can he act?', 'ground_truth': 'she ought to be found so that she may help them unseal Satoru Gojo', 'source_page': 'Angel', 'source_section': 'Synopsis / Culling Game Arc', 'check': 'contains', 'expect': 'fail', 'note': "Also a cross-page case: the fact that pins Gojo's state lives on Angel's page."}=FAIL(qa), {'id': 'B2', 'category': 'state', 'beat': 'A pre-defection Geto flashback. He must be written as a Jujutsu High sorcerer, not a curse user.', 'question': 'Was Geto a jujutsu sorcerer or a curse user, and did that change?', 'ground_truth': 'Jujutsu Sorcerer (Former) Curse User', 'source_page': 'Suguru Geto', 'check': 'value', 'expect': 'fail'}=PASS(qa), {'id': 'B3', 'category': 'state', 'beat': 'An epilogue beat. The writer needs to know who is still alive at the end.', 'question': 'Is Nobara Kugisaki alive at the end of the story?', 'ground_truth': 'Alive', 'source_page': 'Nobara Kugisaki', 'check': 'value', 'expect': 'pass'}=PASS(qa), {'id': 'B4', 'category': 'state', 'beat': "Naming Gojo's rank correctly in dialogue.", 'question': 'What grade of sorcerer is Gojo?', 'ground_truth': 'Special Grade', 'source_page': 'Satoru Gojo', 'check': 'value', 'expect': 'pass'}=PASS(qa)
+timeline     0/3  {'id': 'C1', 'category': 'timeline', 'beat': "Writing Todo and Yuji's first clash — it is the Goodwill Event, not Shibuya.", 'question': 'When do Todo and Yuji first fight each other?', 'ground_truth': 'Kyoto Goodwill Event Arc', 'must_not_confuse_with': 'Shibuya Incident', 'source_page': 'Aoi Todo', 'check': 'distinguishes', 'expect': 'fail'}=FAIL(qa), {'id': 'C2', 'category': 'timeline', 'beat': "Todo cracking Hanami's shell — placing the moment in the right arc.", 'question': 'In which arc does Todo fight Hanami with Playful Cloud?', 'ground_truth': "Aoi cracks Hanami's hard shell with Playful Cloud", 'source_page': 'Aoi Todo', 'check': 'contains', 'expect': 'pass'}=FAIL(qa), {'id': 'C3', 'category': 'timeline', 'beat': 'A Shibuya scene needing the hour Todo arrives.', 'question': 'What time does Todo arrive in Shibuya?', 'ground_truth': 'Todo and Arata originally arrived in Shibuya around 11:09 P.M.', 'source_page': 'Aoi Todo', 'check': 'contains', 'expect': 'pass'}=FAIL(qa)
+cross-page   1/1  {'id': 'D1', 'category': 'cross-page', 'beat': "Establishing why the sorcerers need the Angel — it is about Gojo, but the wiki states it on Angel's page.", 'question': 'Why do the sorcerers need to find the Angel?', 'ground_truth': 'she ought to be found so that she may help them unseal Satoru Gojo', 'source_page': 'Angel', 'source_section': 'Synopsis / Culling Game Arc', 'check': 'contains', 'expect': 'pass'}=PASS(qa)
+personality  4/4  {'id': 'E1', 'category': 'personality', 'beat': "Writing Nanami's dialogue register — clipped, unsentimental, professional.", 'question': 'How does Nanami behave and speak?', 'ground_truth': 'Nanami is a very wise and reserved kind of man', 'source_page': 'Kento Nanami', 'source_section': 'Personality', 'check': 'contains', 'expect': 'pass'}=PASS(qa), {'id': 'E2', 'category': 'personality', 'beat': 'Gojo talking to students versus talking to the higher-ups — two different registers in one scene.', 'question': 'How does Gojo treat his students compared to the sorcerer executives?', 'ground_truth': 'He is usually laidback and playful with his students', 'source_page': 'Satoru Gojo', 'source_section': 'Personality', 'check': 'contains', 'expect': 'pass'}=PASS(qa), {'id': 'E3', 'category': 'personality', 'beat': 'Writing any Toge line — he speaks only in rice-ball ingredients.', 'question': 'Why does Toge Inumaki speak the way he does?', 'ground_truth': 'Toge chooses not to speak in a conventional manner', 'source_page': 'Toge Inumaki', 'source_section': 'Personality', 'check': 'contains', 'expect': 'pass'}=PASS(qa), {'id': 'E4', 'category': 'personality', 'beat': "Maki's drive against her clan — the emotional spine of her arc.", 'question': 'What motivates Maki Zenin?', 'ground_truth': 'Maki is a very headstrong and straightforward person', 'source_page': 'Maki Zenin', 'source_section': 'Personality', 'check': 'contains', 'expect': 'pass'}=PASS(qa)
+equipment    0/1  {'id': 'F1', 'category': 'equipment', 'beat': 'Todo enters carrying his weapon — naming it correctly.', 'question': 'What equipment does Aoi Todo use?', 'source_page': 'Aoi Todo', 'source_section': 'Equipment', 'check': 'section', 'expect': 'pass'}=FAIL(qa)
+quotes       0/1  {'id': 'F2', 'category': 'quotes', 'beat': 'Giving Todo a line that sounds like him.', 'question': 'What are some things Aoi Todo has said?', 'source_page': 'Aoi Todo', 'source_section': 'Quotes', 'check': 'section', 'expect': 'pass'}=FAIL(qa)
+
+=== surprises vs recorded expect ===
+
+A1: expected fail, got PASS
+A2: expected fail, got PASS
+A3: expected fail, got PASS
+B2: expected fail, got PASS
+C2: expected pass, got FAIL
+C3: expected pass, got FAIL
+F1: expected pass, got FAIL
+F2: expected pass, got FAIL

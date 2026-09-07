@@ -83,5 +83,37 @@ the rule is fixed now. The oracle is the gate; reach/thin only decide
 - **545 re-run (council "one thing first")**: _pending —_ re-run on current code
   (post-`a5e93c3`), commit per-pair results, record the corrected global
   (not-reached 7 → 5, 99.08%) and confirm the two fixed Trivia faults now reach.
-- **ability census (315 pairs)**: _pending —_ per-dim reach / thin / miss + the
-  not-reached list; then the 3B fork per the table above; then the 3C oracle.
+- **ability census (315 pairs)**: final clean GPU pass, 2026-09-07. Raw results
+  in `reports/comprehension/raw/census_ability_results.json` (315 records).
+
+  **Overall.** reached **264/315 (83.8%)**, reached-uncited **49/315 (15.6%)**,
+  not-reached **2/315 (0.6%)**, reached-at-all **313/315 (99.4%)**.
+
+  **Per dimension.**
+
+  | Dimension | n | reached | reached-uncited | not-reached | miss % | thin n | thin % |
+  |---|---|---|---|---|---|---|---|
+  | Abilities and Powers | 121 | 103 | 17 | 1 | 0.8 | 1 | 0.8 |
+  | Cursed Energy | 36 | 31 | 5 | 0 | 0.0 | 0 | 0.0 |
+  | Cursed Technique | 88 | 76 | 11 | 1 | 1.1 | 0 | 0.0 |
+  | Intelligence | 33 | 23 | 10 | 0 | 0.0 | 0 | 0.0 |
+  | Physical Prowess | 37 | 31 | 6 | 0 | 0.0 | 0 | 0.0 |
+
+  **The 2 not-reached residuals.**
+  - [Abilities and Powers] Kensuke Nagino — wrong-section (top section "Kensuke Nagino").
+  - [Cursed Technique] Ui Ui — cross-page (top section "Synopsis / Entering the Station").
+
+### Fork decision (3B rule)
+
+- No ability dim hits the fork thresholds (miss > 10% or thin > 30%): max miss
+  is 1.1% (Cursed Technique), max thin is 1% (Abilities and Powers). Reach is
+  high and thin is low across all five dims.
+- The 3C held-out oracle (`reports/comprehension/raw/oracle_2c/oracle_2c_summary.json`)
+  passed **16/18 = 88.9%**, sha256
+  `a788fa29652a58152edf0f2ce16caea626db35d7e4463ec66176b5635a15935e`, which is
+  above the 80% bar (>=15/18). Note for transparency: the outcome-category
+  sub-rate is 3/4 (75%); 5 oracle rows were surprises (expected-fail -> PASS:
+  A1-A3, B1-B2).
+- Verdict: **3C-GREEN for all five ability dims** — retrieval suffices, no
+  3A-widen or 3B-extract is owed. Proceed to Phase 4 (state over time) on the
+  gate.

@@ -1,0 +1,310 @@
+{
+  "sha256": "a788fa29652a58152edf0f2ce16caea626db35d7e4463ec66176b5635a15935e",
+  "category_totals": {
+    "outcome": {
+      "passed": 3,
+      "total": 4
+    },
+    "state": {
+      "passed": 4,
+      "total": 4
+    },
+    "timeline": {
+      "passed": 2,
+      "total": 3
+    },
+    "cross-page": {
+      "passed": 1,
+      "total": 1
+    },
+    "personality": {
+      "passed": 4,
+      "total": 4
+    },
+    "equipment": {
+      "passed": 1,
+      "total": 1
+    },
+    "quotes": {
+      "passed": 1,
+      "total": 1
+    }
+  },
+  "surprises": [
+    {
+      "id": "A1",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "A2",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "A3",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "B1",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "B2",
+      "expect": "fail",
+      "got": "PASS"
+    }
+  ],
+  "rows": [
+    {
+      "id": "A1",
+      "category": "outcome",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "A2",
+      "category": "outcome",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "A3",
+      "category": "outcome",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "A4",
+      "category": "outcome",
+      "expect": "fail",
+      "result": "FAIL",
+      "door": "qa",
+      "detail": {
+        "contains": false
+      }
+    },
+    {
+      "id": "B1",
+      "category": "state",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "B2",
+      "category": "state",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "subject": "Suguru Geto",
+        "served_values": [
+          "name: Suguru Geto",
+          "Kanji: \u590f\u6cb9 \u5091",
+          "R\u014dmaji: Get\u014d Suguru",
+          "Species: Human",
+          "Age: 27",
+          "Birthday: February 3, 1990",
+          "Gender: Male",
+          "Hair Color: Black",
+          "Eye Color: Purple (Manga) Brown (Anime)",
+          "Relatives: Unnamed parents",
+          "Height: Over 180 cm (Over 5'11\")",
+          "Status: Deceased",
+          "Occupation: Jujutsu Sorcerer (Former) Curse User",
+          "Affiliation: Tokyo Jujutsu High (Former) Geto's \"Family\"",
+          "Grade: Special Grade",
+          "Manga Debut: Chapter 0-2 Chapter 10 (Imposter) Chapter 18 (Flashback) Chapter 65",
+          "Japanese Voice: Takahiro Sakurai",
+          "Anime Debut: Episode 5 (Imposter) Episode 8 (Flashback) Jujutsu Kaisen 0: The Movie Episode 25",
+          "English Voice: Lex Lang"
+        ],
+        "value_match": true
+      }
+    },
+    {
+      "id": "B3",
+      "category": "state",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "subject": "Nobara Kugisaki",
+        "served_values": [
+          "name: Nobara Kugisaki",
+          "Kanji: \u91d8\u5d0e\u91ce\u8594\u8587",
+          "R\u014dmaji: Kugisaki Nobara",
+          "Species: Human",
+          "Birthday: August 7th, 2002",
+          "Age: 16\n84 (Modulo)",
+          "Gender: Female",
+          "Height: 160 cm (5'3\")",
+          "Hair Color: Ginger (Dyed)",
+          "Eye Color: Orange",
+          "Status: Alive",
+          "Relatives: Unnamed Grandmother Unnamed Mother",
+          "Occupation: Jujutsu Sorcerer Student",
+          "Affiliation: Tokyo Jujutsu High",
+          "Grade: Grade 3",
+          "Manga Debut: Chapter 1 (Cover Only) Chapter 3",
+          "Anime Debut: Episode 2",
+          "Japanese Voice: Asami Seto",
+          "English Voice: Anne Yatco"
+        ],
+        "value_match": true
+      }
+    },
+    {
+      "id": "B4",
+      "category": "state",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "subject": "Satoru Gojo",
+        "served_values": [
+          "name: Satoru Gojo",
+          "Kanji: \u4e94\u6761\u609f",
+          "R\u014dmaji: Goj\u014d Satoru",
+          "Alias: The Strongest\nBlindfolded Idiot (By Maki)",
+          "Species: Human",
+          "Birthday: December 7, 1989",
+          "Age: 28\n29",
+          "Gender: Male",
+          "Height: Over 190 cm (Over 6'3\")",
+          "Hair Color: White",
+          "Eye Color: Light Blue",
+          "Status: Deceased",
+          "Occupation: Jujutsu Sorcerer Teacher",
+          "Affiliation: Tokyo Metropolitan Curse Technical College Gojo Clan",
+          "Grade: Special Grade",
+          "Relatives: Yuta Okkotsu (Distant Relative) Michizane Sugawara (Ancestor)",
+          "Manga Debut: Chapter 0-1 Chapter 1 (Voice and Cover Only) Chapter 2",
+          "Anime Debut: Episode 1",
+          "Japanese Voice: Yuichi Nakamura Mariya Ise (Child)",
+          "English Voice: Kaiji Tang Cristina Vee (Child)"
+        ],
+        "value_match": true
+      }
+    },
+    {
+      "id": "C1",
+      "category": "timeline",
+      "expect": "fail",
+      "result": "FAIL",
+      "door": "qa",
+      "detail": {
+        "has_ground_truth": false,
+        "confused_with_other": true
+      }
+    },
+    {
+      "id": "C2",
+      "category": "timeline",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "C3",
+      "category": "timeline",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "D1",
+      "category": "cross-page",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "E1",
+      "category": "personality",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "E2",
+      "category": "personality",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "E3",
+      "category": "personality",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "E4",
+      "category": "personality",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      }
+    },
+    {
+      "id": "F1",
+      "category": "equipment",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "section_present": true
+      }
+    },
+    {
+      "id": "F2",
+      "category": "quotes",
+      "expect": "pass",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "section_present": true
+      }
+    }
+  ]
+}
