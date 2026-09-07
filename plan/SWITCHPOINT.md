@@ -9,15 +9,58 @@ edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
 
-- mode: 262k (current) → ____ (target)
-- git: ____________ (sha of a clean commit)
-- trunk/excursion address (drift_log §4): ____________
+- mode: 262k (current) → **100k** (target — the CUDA co-location window for
+  X2.d/X2.e: pytest suite on CUDA, `:8000` embedder+reranker on CUDA beside
+  Qwen, the door censuses + measurement batch)
+- git: `6abb05b` (clean work commit: R4 in-text-citation placement) + this
+  switchpoint commit
+- trunk/excursion address (drift_log §4): **X2 open** (d6-completion, JJK
+  only, halt before P6) — X2.a council done (D9), X2.b door pre-check done
+  + X2.c R4 done (D10); **X2.d is next**
 - work explanation (what's done, what's in flight, the exact next step):
-  -
+  - X2.b: roster + narrative doors verified callable on the live `:8000`
+    (CPU by measured decision — 262k left ~4 GB < 5.3 GB).
+  - X2.c (R4): 90 of the 154 unplaced events placed by the new in-text-
+    citation signal (`timeaxis.py`); the 64 remainder triaged with
+    machine-derived reasons (`comprehension-gate --triage`). Cross-page gate
+    107 → 109; temporal 2,594 → 2,684. 3 new tests; targeted suite green.
+  - In flight — the CUDA window, in order: (1) full `pytest tests/ -q` on
+    CUDA (expect 1,243; the 6 `test_context.py` failures under 262k are
+    GPU-contention OOM artifacts, not code); (2) launch `:8000` on CUDA and
+    re-run the standing gates (eval jjk 31/31 · span-recall 48,572/48,572
+    rc=0 · canon opm 10/16 · 236/236 · 79.0%); (3) **X2.d** — the door
+    censuses (roster 100 + narrative 100 fixed questions, post-R4 corpus,
+    ≥99% bar, every miss triaged), in-process `CENSUS_DEVICE=cuda` harness
+    (the `tools/census_545.py` pattern) or through `:8000`; (4) **X2.e** —
+    the measurement batch (8-verb 100-sentence sample; 140-question
+    per-dimension retrieval test incl. outcomes + causality; 50-question
+    open-ended census; placement-gate false-negative audit).
 - open questions / risks:
-  -
+  - The 6 `test_context.py` failures are a *contention hypothesis*, not yet
+    confirmed: if any stay red on CUDA, isolate before accepting the
+    baseline (re-run with the R4 change stashed; if still red, diagnose as a
+    real regression).
+  - 100k subagent policy: ≤2 parallel (council stays 5 — standing
+    exception). When the CUDA window ends (after X2.e): switch **back to
+    262k** — unless X2.f triggers a heavy Qwen LLM batch, which is the
+    *opposite* rule (stop `:8000`, Qwen owns the card, context mode
+    irrelevant).
+  - `:8000` is currently down (was stopped after the X2.b CPU pre-check).
 - first action on resume:
-  -
+  - verify the switch: `cat /home/goblin/ninfer-work/qwen_mode.txt` +
+    `nvidia-smi` (expect 100k mode, ~7–8 GB free, `:8000` on CUDA per the
+    switcher's headroom rule).
+  - `python -m pytest tests/ -q` on CUDA → expect 1,243.
+  - launch `:8000` on CUDA (detached: `setsid nohup python -m
+    scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 < /dev/null &`,
+    no `SCRIPTENGINE_DEVICE` override), then `eval --series jjk` +
+    `canon-run --series opm` + `span-recall --series jjk` (the post-R4
+    standing-gate re-run).
+  - X2.d census per the council's D1/D2 definitions
+    (`COUNCIL_d6-completion.md`): roster = 100 fixed enumeration questions
+    stratified characters/techniques/organizations/items; narrative = 100
+    fixed chronological queries stratified characters/arcs, on the post-R4
+    timeline (it is — R4 is done).
 
 ## Switch log (machine-appended by qwen-switch.sh)
 
