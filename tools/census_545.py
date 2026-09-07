@@ -62,7 +62,15 @@ MAIN_CAST = {
     "Kinji Hakari", "Mahito", "Jogo", "Hanami",
 }
 
-DIMS = ["Personality", "Appearance", "Overview", "Trivia", "History"]
+# The ability census (P3.A) needs non-prose dimensions, so dims are derived
+# from the pairs file in main(), not hard-coded. (X1: the 545 file carries the
+# five prose dims; the ability file carries Cursed Technique / Cursed Energy / ...)
+
+THIN_CHARS = 120
+# A names-only ability line (e.g. "Cursed Technique: Blue") is far shorter than
+# the mechanics prose that actually answers "how does it work". A reached beat
+# whose longest text is under this is content-thin: the section is reached but
+# the bundle did not carry its mechanics (a P3.A/3B fork signal, see COUNCIL_X1).
 
 
 def norm(s: str) -> str:
@@ -85,11 +93,13 @@ def classify(p: dict, beats: list) -> tuple:
                      if norm(b.get("doc_title")) == tgt
                      and in_section(b.get("breadcrumb"), dim)]
     cits = set()
+    max_reach_text = 0
     for b in reached_beats:
         cits.update(b.get("citations") or [])
+        max_reach_text = max(max_reach_text, len(b.get("text") or ""))
     if reached_beats:
         cls = "reached" if cits else "reached-uncited"
-        return cls, bool(cits), len(reached_beats), sorted(cits), None
+        return cls, bool(cits), len(reached_beats), sorted(cits), max_reach_text, None
     top = beats[0] if beats else {}
     if not beats:
         sub = "empty"
@@ -97,7 +107,7 @@ def classify(p: dict, beats: list) -> tuple:
         sub = "cross-page"
     else:
         sub = "wrong-section"
-    return "not-reached", False, 0, [], sub
+    return "not-reached", False, 0, [], 0, sub
 
 
 def run_pair(paths, p: dict) -> dict:
@@ -114,16 +124,19 @@ def run_pair(paths, p: dict) -> dict:
                                token_budget=6000, top_k=None, subject=None)
         mode = "narrative"
     beats = bundle.get("beats") or []
-    cls, sourced, n_reach, cits, sub = classify(p, beats)
+    cls, sourced, n_reach, cits, max_reach_text, sub = classify(p, beats)
     top = beats[0] if beats else {}
     rec.update({"mode": mode, "subject": subj, "class": cls, "sub": sub,
                 "sourced": sourced, "n_reached": n_reach, "citations": cits[:4],
                 "top_doc": top.get("doc_title"), "top_sec": top.get("breadcrumb"),
-                "n_beats": len(beats), "elapsed": round(time.time() - s0, 1)})
+                "n_beats": len(beats), "reached_chars": max_reach_text,
+                "thin": cls in ("reached", "reached-uncited")
+                and max_reach_text < THIN_CHARS,
+                "elapsed": round(time.time() - s0, 1)})
     return rec
 
 
-def summarize(results: list) -> None:
+def summarize(results: list, dims: list) -> None:
     print("\n=== census summary ===", flush=True)
     total = len(results)
     nr_all = sum(1 for r in results if r.get("class") == "not-reached")
@@ -138,7 +151,7 @@ def summarize(results: list) -> None:
         print(f"  {tier_name:<10} not-reached {nr}/{len(rows)}   "
               f"sourced {src}/{len(rows)}", flush=True)
     print("\n  per-dimension x per-tier:", flush=True)
-    for d in DIMS:
+    for d in dims:
         for tier_name in ("main-cast", "minor"):
             rows = [r for r in results if r.get("dimension") == d
                     and r.get("tier") == tier_name]
@@ -172,6 +185,7 @@ def main() -> None:
         pass
 
     pairs = json.load(open(args.pairs))
+    dims = sorted({p["dimension"] for p in pairs})
     done = {}
     if os.path.exists(args.out):
         for r in json.load(open(args.out)):
@@ -198,7 +212,7 @@ def main() -> None:
             print(f"  [{i+1}/{len(todo)}] {rec['page']}/{rec['dimension']} -> "
                   f"{rec['class']} (elapsed {rec.get('elapsed')}s, "
                   f"wall {time.time()-t_start:.0f}s)", flush=True)
-    summarize(results)
+    summarize(results, dims)
 
 
 if __name__ == "__main__":
