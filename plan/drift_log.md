@@ -152,10 +152,12 @@ return address.
 ## 4. Current position
 
 **Trunk:** `P0` done · `P1` done · `P2` done · **`P3` done** (P3.3C gate closed
-`8e924aa`, CONDITIONAL GREEN) · **`P4` in progress at `P4.A`** (4C gate found
-vacuous at 2C — B-group 4/4 PASS; re-scoped by council, D6: real gate = new
-pre-registered arc-scoped probe set, live-verified) · `P5` closed by D1 · `P6`
-not started.
+`8e924aa`, CONDITIONAL GREEN) · **`P4` in progress at `P4.A`** (4C gate
+re-scoped by council, D6, and **closed D7 2026-09-07**: pre-registered S-group
+2/4 pre-build → bounded 4A build (2 interval facts, serving-path spike, zero
+router/chunker changes) → 4/4 post-build; wiki-wide interval model 4B →
+backlog; open: durable 4A build so the spike rows survive `index`) · `P5`
+closed by D1 · `P6` not started.
 
 **Excursion:** X1 open at `X1.d`, `X1.e`; returns to `P3.A` at `X1.g`.
 
@@ -221,4 +223,40 @@ A drift entry is not an apology and not a justification. It is an address.
   existing probe touches; 4A as specified is a dead table (no serving path;
   the router is in nobody's scope).
 - **Return address:** `P4.A` — probe authoring + pinning (offline, against the
-  crawl), then server start (GPU-first) + live probe run.
+   crawl), then server start (GPU-first) + live probe run.
+
+### D7 — 4C gate executed: S-group 4/4 post-build; 4C closed, interval model to backlog
+- **Trunk step:** `P4` (4C gate per D6)
+- **What happened:** executed the re-scoped gate end-to-end. (1) Pre-registered
+  S-group (S1–S4, `plan/ORACLE_v2.yaml` sha `e5f28608…`) ran live against CPU
+  `:8000` (Qwen owned the GPU): **2/4 pre-build** — S1 (Nanami during Culling
+  Game) and S2 (Gojo at start of Culling Game) FAIL as the real gate; S3/S4
+  surprised PASS (character pages' own arc-scoped sections already serve those
+  states — the gap is specifically the death/sealing event pages). (2)
+  Serving-path spike PASS with zero router/chunker changes: two hand-inserted
+  `facts` rows (ids 10065/10066, `state_during_culling_game` /
+  `state_at_start_of_culling_game`) ride the subject's own fact floor into the
+  bundle. (3) The floor alone failed the oracle's `contains` check (the pin
+  must be verbatim in the checked text, and the floor renders `label: value`
+  only) → the interval fact `value` now carries the pin verbatim (data fix,
+  looked-up wording). (4) Post-build S-group **4/4** (re-verified after rows
+  restored). (5) Regressions: `span-recall --series jjk` 100% (0
+  unreachable); `eval --series jjk` 29/31 — **eval-neutral w.r.t. the 4A
+  build** (identical 29/31 with the rows present and deleted); the 2 red items
+  (`personality-01`, `trivia-01`, added in `19c8b75`) are the documented open
+  Trivia/personality chunking gap, pre-existing and orthogonal to P4 — the
+  "24/24" gate figure is stale (bank grew 24 → 31). `canon-run --series opm`
+  (run folder `reports/2026-09-07-1136/`): 10/16 exact, 236/236 canon,
+  79.0% — identical to the 2C-era baseline; no P4-related movement in any of
+  the three re-runs.
+- **Why:** D6's verdict, executed: the re-scoped gate is "every failing
+  pre-build probe passes post-build" — satisfied; per D6(3) the wiki-wide
+  interval model (4B) goes to the backlog.
+- **Open items:** the two interval rows are spike rows — wiped by the next
+  `index` (facts rebuild from wikitext); the durable 4A build needs an
+  extractor or override-driven interval-fact mechanism so the S-group stays
+  green across re-index. `personality-01`/`trivia-01` remain open prose-pass
+  chunking gaps.
+- **Return address:** `P4.A` (durable 4A build design) + the prose-pass
+  chunking gap; 4C itself is **closed** on this evidence
+  (`reports/comprehension/COUNCIL_p4-rescope.md`, Gate outcome section).

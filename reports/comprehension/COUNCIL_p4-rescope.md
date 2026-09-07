@@ -192,3 +192,61 @@ A/B/C fork.
 - **Cross-wiki / new-door upside** → backlog ticket.
 - **Next work step (this session):** probe authoring + pinning (offline,
   against the crawl), then server start (GPU-first) + live probe run.
+
+## Gate outcome (2026-09-07, executed per this record)
+
+Evidence trail: pre-registered S-group in `plan/ORACLE_v2.yaml` (sha256
+`e5f28608…`), runner + results in `reports/comprehension/raw/oracle_4c/`
+(`oracle_4c_probes.py`, `oracle_4c_summary.json`). Server on CPU
+(`SCRIPTENGINE_DEVICE=cpu`) because Qwen owned the GPU (100% util, 24.2 GB);
+steady state restored after the run.
+
+1. **Pre-build live run: 2/4.** S1 (Nanami during Culling Game) FAIL,
+   S2 (Gojo at start of Culling Game) FAIL — as pre-registered, they are the
+   real 4C gate. Surprise: S3 (Geto during Shibuya) and S4 (Naobito during
+   Culling Game) PASS pre-build — the character pages' own arc-scoped sections
+   (History / Culling Game Arc; the Angel page's unsealing thread) already
+   deliver those states. The cross-page gap is specifically the *death/sealing
+   event* pages (Shibuya Incident Arc, Culling Game Arc synopsis), not the
+   characters.
+2. **Serving-path spike: PASS, zero router/chunker changes.** Two hand-inserted
+   `facts` rows (ids 10065/10066, keys `state_during_culling_game` /
+   `state_at_start_of_culling_game`, nodes Kento Nanami / Satoru Gojo) ride the
+   subject's own fact floor into the `/context` bundle: the subject block
+   leads (`context.py:436`, cap 24; Nanami 20 facts, Gojo 21 — under cap).
+3. **Gate check found the floor alone insufficient:** the oracle's `contains`
+   check requires the *verbatim pin* in the bundle text, and the fact floor
+   renders `label: value` (the `citation` field is not in the checked text).
+   Fix (data, not code): the interval fact `value` carries the pin verbatim —
+   e.g. Nanami: `Deceased (killed by Mahito during the Shibuya Incident —
+   'Mahito then kills Nanami')`. Looked-up wording from the named page, never
+   inferred.
+4. **Post-build S-group: 4/4 PASS** (both re-runs after the value update;
+   final-state re-run after rows restored).
+5. **Regressions:** `span-recall --series jjk` = 100% (0 unreachable).
+   `eval --series jjk` = 29/31 — **eval-neutral with respect to the 4A
+   build**: identical 29/31 with the two rows present and with them deleted.
+   The 2 red items (`personality-01`, `trivia-01`, both Nanami prose-dimension
+   guards added in `19c8b75`) are the documented open Trivia/personality
+   chunking gap, pre-existing and orthogonal to P4. The gate figure "24/24"
+   is stale: the gold bank grew 24 → 31 since it was recorded; honest current
+   state is 29/31 with the 2 open gaps above. `canon-run --series opm`
+   (run folder `reports/2026-09-07-1136/`): **10/16 exact (62.5%),
+   236/236 canon (100%), 79.0% precision over 16/19, 0 recall-0, 0
+   confident-wrong, 20/20 fact answers in bundle** — identical to the
+   2C-era baseline figure. All three regression re-runs: no P4-related
+   movement.
+
+**Verdict on the record:** 4C **closed on this evidence** — the re-scoped
+gate (every failing pre-build probe passes post-build) is satisfied; S1+S2
+were the real gate, both pass after the bounded 4A build. The wiki-wide
+interval model (4B) goes to the backlog as decided.
+
+**Open items (post-gate):**
+- The two interval rows are **spike rows**: hand-inserted into
+  `series/jjk/facts.db`, they are wiped by the next `index` (facts rebuild
+  from wikitext). The durable 4A build needs an extractor or an
+  override-driven interval-fact mechanism so the rows survive re-index and the
+  S-group stays green.
+- `personality-01` / `trivia-01` remain open prose-pass chunking gaps
+  (Trivia bullet not served for the natural writer question).

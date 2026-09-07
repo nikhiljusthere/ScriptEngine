@@ -1,0 +1,109 @@
+{
+  "oracle_file": "plan/ORACLE_v2.yaml",
+  "sha256": "e5f28608383f8aa92f9d749ceefd5db136a92a3650346a85e2ec3c4105505eb9",
+  "relabels": [
+    {
+      "id": "A1",
+      "v1_expect": "fail",
+      "v2_expect": "pass",
+      "reason": "2C PASS \u2014 the battle page's outcome (Nanami withdraws) reached the bundle. The outcome layer that was supposed to be missing is served.\n",
+      "evidence": "oracle_2c_summary.json, run sha a788fa (2026-09-06): A1 PASS"
+    },
+    {
+      "id": "A2",
+      "v1_expect": "fail",
+      "v2_expect": "pass",
+      "reason": "2C PASS \u2014 'Sukuna is victorious' served for the Kashimo beat.",
+      "evidence": "oracle_2c_summary.json, run sha a788fa (2026-09-06): A2 PASS"
+    },
+    {
+      "id": "A3",
+      "v1_expect": "fail",
+      "v2_expect": "pass",
+      "reason": "2C PASS \u2014 the suicide outcome (vs 'defeated') served verbatim.",
+      "evidence": "oracle_2c_summary.json, run sha a788fa (2026-09-06): A3 PASS"
+    },
+    {
+      "id": "B1",
+      "v1_expect": "fail",
+      "v2_expect": "pass",
+      "reason": "2C PASS on the default beam (the Angel-page Gojo quote is in the bundle) but FAIL under RED_floorfirst (11/18) \u2014 the PASS is beam-dependent and the case is cross-page (pin lives on Angel's page). Re-labelled pass with a beam-sensitivity note; it must not anchor a gate.\n",
+      "evidence": "oracle_2c_summary.json (16/18) vs oracle_2c_summary_RED_floorfirst.json (11/18)"
+    },
+    {
+      "id": "B2",
+      "v1_expect": "fail",
+      "v2_expect": "pass",
+      "reason": "2C PASS on both beams \u2014 Geto's infobox occupation 'Jujutsu Sorcerer (Former) Curse User' is served verbatim by the fact floor. Terminal state is already served; the un-modeled gap is the interval (when the change happened) \u2014 that is what the S-group tests.\n",
+      "evidence": "oracle_2c_summary.json, run sha a788fa (2026-09-06): B2 PASS"
+    }
+  ],
+  "s_group": [
+    {
+      "id": "S1",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      },
+      "ground_truth": "Mahito then kills Nanami",
+      "source_page": "Shibuya Incident Arc"
+    },
+    {
+      "id": "S2",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      },
+      "ground_truth": "With Satoru Gojo sealed and Geto's motives unknown",
+      "source_page": "Culling Game Arc"
+    },
+    {
+      "id": "S3",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      },
+      "ground_truth": "officially becoming a curse user and leaving his Jujutsu High pin behind",
+      "source_page": "Suguru Geto"
+    },
+    {
+      "id": "S4",
+      "expect": "fail",
+      "result": "PASS",
+      "door": "qa",
+      "detail": {
+        "contains": true
+      },
+      "ground_truth": "since he is on his death bed",
+      "source_page": "Culling Game Arc"
+    }
+  ],
+  "surprises": [
+    {
+      "id": "S1",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "S2",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "S3",
+      "expect": "fail",
+      "got": "PASS"
+    },
+    {
+      "id": "S4",
+      "expect": "fail",
+      "got": "PASS"
+    }
+  ]
+}
