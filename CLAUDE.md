@@ -235,7 +235,11 @@ functions: the HTTP API on :8000, the Typer CLI, and an MCP server over stdio.
 
 **Active: the JJK prose pass.** The structured layer is done (per-page-type rosters
 + infobox facts, ~797 declared rosters / 283 subjects in `series/jjk/overrides.yaml`,
-verified against `facts.db`). Now every uncovered factual prose section becomes a
+verified against `facts.db`). Interval facts — a character's state *during* an arc,
+which the infobox's current-state read cannot express (the P4 4A S-group) — are
+declared per-wiki under `extra_facts` in the same file and re-landed on every
+`index` by `scriptengine/index/build.py` (P4.A). Now every uncovered factual prose
+section becomes a
 sentence-level "fact-like entry" (a question with a **verbatim** answer), ordered
 characters (146) → episodes (59) → battles (90) → techniques (149) → other. The
 method (user mandate): author natural questions; when one fails, **diagnose the root
@@ -244,13 +248,13 @@ rephrase the question to dodge it. All narrative page types are now 100% covered
 techniques, chapters, synopses, story arcs, events); the live remainder is a
 regenerated list, not a number stated here — see
 `reports/page-campaign/COVERAGE.md` (`tools/coverage_report.py`). Three router
-gaps (a scope-word set misroute, a discourse-opener wh-anchor, `whose`) are
-fixed and gated; a chunking gap (a Trivia bullet not served for a generic
-question) is open. Live state + resume steps:
+gaps (a scope-word set misroute, a discourse-opener wh-anchor, `whose`) and the
+chunking gap (a Trivia bullet not served for a generic question) are all fixed
+and gated. Live state + resume steps:
 `reports/page-campaign/HANDOFF_PROSE_PASS.md`.
 
-**Gates (re-run before calling any pass done):** `eval --series jjk` = 24/24;
-`canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%; `pytest tests/ -q` = 1,133.
+**Gates (re-run before calling any pass done):** `eval --series jjk` = 31/31;
+`canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%; `pytest tests/ -q` = 1,239.
 Batch files are `_`-prefixed so they stay out of the official gold bank. The
 historical accuracy-campaign records (rounds 1/2) are in `reports/page-campaign/STATUS.md`
 and `HANDOFF_ROUND2.md`.

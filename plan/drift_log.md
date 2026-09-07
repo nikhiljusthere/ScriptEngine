@@ -265,3 +265,31 @@ A drift entry is not an apology and not a justification. It is an address.
 - **Return address:** `P4.A` (durable 4A build design) + the prose-pass
   chunking gap; 4C itself is **closed** on this evidence
   (`reports/comprehension/COUNCIL_p4-rescope.md`, Gate outcome section).
+
+### D8 — P4.A executed: interval facts durable via `extra_facts`; 4A closed
+- **Trunk step:** `P4.A` (durable 4A build, D7 return address)
+- **What happened:** (1) Designed per the architecture rule (per-wiki data in
+  `overrides.yaml`, generic code in the engine): a new `extra_facts:` key in
+  `series/jjk/overrides.yaml` declares the two 4A interval facts by node name
+  (Nanami `state_during_culling_game`, Gojo `state_at_start_of_culling_game`,
+  values carrying the verbatim pins from D7). `scriptengine/index/build.py`
+  upserts them after the graph load (`_apply_declared_facts`): a node absent
+  from the build is skipped, not invented; each (node, key) is replaced, never
+  appended. (2) Full `index --series jjk --force` (CUDA co-located with the
+  bursty Qwen session, ~3.5 min embed, Qwen survived): both facts re-landed
+  (ids 10065/10066), derived events remapped 2748/2748 (0 stale/orphaned/
+  unverified), vectors 14,531. (3) Regressions on the rebuilt store: S-group
+  **4/4** (live `:8000` probe, `oracle_4c_results.txt` re-landed), `eval`
+  **31/31** (the two D7-era red items `personality-01`/`trivia-01` are now
+  green — the Trivia/personality chunking gap was fixed since D7; the 29/31
+  figure was stale), `span-recall` 48,572/48,572 (0 unreachable), audit gates
+  all PASS. (4) Committed `61311c2` (build.py + overrides.yaml + oracle
+  results).
+- **Why:** D7's open item — "the two interval rows are spike rows, wiped by
+  the next index" — is the defect this closes: the S-group now stays green
+  across re-index without hand-editing `facts.db`.
+- **Open items:** none from P4; 4C closed at D7, 4A now durable. P6
+  (cross-corpus, `plan/Plan_to_perfection.md` §7) is next: Wave-0
+  reachability pre-pass on the seven non-JJK corpora.
+- **Return address:** `P6` Wave 0 (smallest corpus first: csm → berserk →
+  opm → hxh → bleach → db → onepiece).
