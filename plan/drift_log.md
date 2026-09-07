@@ -165,17 +165,18 @@ the 5 residual sit in the 471-pair minor tier), returned to P3.A at X1.g.
 
 **Excursion:** **X2 open (2026-09-07, D9 — the JJK d6-completion plan, council
 row 19, `COUNCIL_d6-completion.md`)**. Items: X2.a council **done**; X2.b
-Phase-0 door pre-check (roster/narrative doors exist + callable); X2.c
-Phase-1 **R4 — place the 154 unplaced events** (the only non-contingent
-build, and the narrative census is input-stale before it); X2.d Phase-2 door
-censuses (roster + narrative, 100 fixed questions each, ≥99% reached, every
-miss triaged); X2.e Phase-3 measurement (8-verb 100-sentence sample;
-140-question per-dimension retrieval-not-extraction incl. outcomes +
-causality; 50-question open-ended census; gate false-negative audit);
-X2.f Phase-4 contingent extraction (R1 / outcomes / causality / R3 only if a
-red measurement names it); X2.g Phase-5 done-declaration memo + standing
-gates re-run; X2.h **RETURN: HALT before P6** (the owner directive closes the
-trunk at P6-not-started; no cross-corpus work).
+Phase-0 door pre-check **done** (roster/narrative doors exist and are callable
+on the live `:8000` — CPU by measured decision, 262k left ~4 GB < 5.3 GB);
+X2.c Phase-1 **R4 done** (D10 — 90 of the 154 placed by the in-text-citation
+signal, 64 triaged with recorded reasons via `comprehension-gate --triage`);
+X2.d Phase-2 door censuses (roster + narrative, 100 fixed questions each,
+≥99% reached, every miss triaged); X2.e Phase-3 measurement (8-verb
+100-sentence sample; 140-question per-dimension retrieval-not-extraction incl.
+outcomes + causality; 50-question open-ended census; gate false-negative
+audit); X2.f Phase-4 contingent extraction (R1 / outcomes / causality / R3
+only if a red measurement names it); X2.g Phase-5 done-declaration memo +
+standing gates re-run; X2.h **RETURN: HALT before P6** (the owner directive
+closes the trunk at P6-not-started; no cross-corpus work).
 
 **The unmeasured block** — five ability dimensions, ~48,800 words — **was
 measured at P3.A** (`P3A_ABILITY_CENSUS.md`, 315-pair pool, 3C-GREEN fork);
@@ -348,3 +349,53 @@ directive: JJK only, halt before P6 — see D9 / X2.**
 - **Return address:** the X2 sequence — X2.b → X2.c (R4) → X2.d → X2.e →
   X2.f → X2.g (done-declaration + gates) → X2.h **RETURN: HALT before P6**
   (trunk stays at P6-not-started; the owner directive closes it).
+
+### D10 — X2.b + X2.c: doors verified callable; R4 places 90 of 154, 64 triaged with reasons
+- **Trunk step:** `X2.b` + `X2.c` (Phase 0 + Phase 1 of the X2 sequence)
+- **What happened:** (1) **X2.b** — the Phase-0 pre-check ran against the live
+  `:8000` (launched on CPU by measured decision: Qwen held 28.6/32.6 GB in 262k
+  mode, ~4 GB free < the ~5.3 GB the embedder+reranker need — no CUDA
+  co-location possible in-mode): the roster door answered a Culling-Game
+  enumeration with 15 members (facts + citations + source spans); the
+  narrative door answered "what happened in Shibuya, in order" with 5 ordered
+  beats (order/title/breadcrumb/text/citations). Both doors exist and are
+  callable; the "door missing -> build plumbing" branch never fired. (2)
+  **X2.c (R4)** — extended `backfill_event_arc_index` with the third,
+  weakest, model-free signal: the wiki's own in-text citation
+  (`citation_arc_maps` + `_citation_groups` + `_citation_decision` in
+  `timeaxis.py`). Paragraph rule: the paragraph that states the event is the
+  one its citation files (citations cover the sentences before them) — all
+  mapping to one arc places the row. Section-scope rule: a section cited
+  >=2x into a single arc has its scope fixed by the wiki; one citation files
+  no scope. The maps are lookups on the wiki's own filings (`chapter_arc_index`
+  from the battle pages' `chapters` fact; episode pages' `arc` fact) — a
+  chapter no page files stays unmapped, never guessed. Modulo side-story
+  citations are excluded (miss, never a wrong arc). Result: **90 of the 154
+  placed** (unplaced 154 -> 64; `temporal` 2,594 -> 2,684); cross-page gate
+  re-run: 107 -> 109 disagreements (281 agree — two groups that read as
+  agreeing while their rows were NULL now carry arcs and disagree, the same
+  mechanism the 38 -> 107 jump was). The 64 remainder are triaged, not
+  silent: new ledger door `comprehension-gate --triage`
+  (`timeaxis.triage_unplaced`) derives per-row reasons from the same lookups —
+  53 `no-citation` (incl. the 38 JJK-Modulo side-story chapters) + 11
+  `citations-span-arcs`. (3) Tests: `test_citation_signal_places_the_cited_rows`
+  (pins 90 / 64; the tally counts rows placed *by right* so it is stable
+  across settled re-runs), `test_side_story_citations_place_nothing`,
+  `test_triage_ledger_accounts_for_every_unplaced_row`; the 995 section-signal
+  count unchanged; targeted suite green (64 tests, incl. gate + continuity).
+  Record: `GATE.md` "R4 — in-text citation placement (complete)".
+- **Why:** R4 is the council's only non-contingent build (D9) and the
+  narrative census is input-stale before it. Bar met: "unplaced = 0 or each
+  remainder explicitly triaged with a recorded reason" — 64 triaged with
+  machine-derived reasons; the multi-arc and side-story rows were left
+  unplaced because forcing them would manufacture misplacements (the
+  council's pre-committed branch).
+- **Open items:** the standing gates' re-run on the updated corpus (D9 of the
+  council's done-set): the full `pytest` under 262k mode OOMs on the
+  in-process CUDA reranker (Qwen holds the card; 6 `test_context.py`
+  failures are GPU-contention artifacts, not code) — re-run on CUDA after
+  the 100k switch, then `:8000` on CUDA for `eval` + `canon-run`.
+- **Return address:** **X2.d** — the door censuses (100 roster + 100
+  narrative fixed questions, post-R4 corpus, >=99% bar, every miss triaged),
+  on the CUDA window (Qwen 100k + `:8000` on CUDA, per the qwen-switch
+  protocol).

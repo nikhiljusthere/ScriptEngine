@@ -204,6 +204,43 @@ class TestBackfill:
             ).fetchone()[0]
         assert placed == 995
 
+    def test_citation_signal_places_the_cited_rows(self, jjk_store):
+        # The third, weakest signal (R4): a row the page and section signals left
+        # off the axis is grounded by the wiki's own in-text citation -- the
+        # paragraph that states it, or a section cited at least twice into one
+        # arc. The tally counts rows placed by right, so a settled re-run reports
+        # the same number; the residue it cannot ground keeps arc_index NULL.
+        tally = timeaxis.backfill_event_arc_index(jjk_store)
+        assert tally["citations"] == 90
+        unplaced = jjk_store.connection.execute(
+            "SELECT COUNT(*) FROM events WHERE arc_index IS NULL"
+        ).fetchone()[0]
+        assert unplaced == 64
+
+    def test_side_story_citations_place_nothing(self, jjk_store):
+        # "Modulo Chapter N" citations name the wiki's side-story numbering, which
+        # files under no arc on the main chain. The signal must skip them: a
+        # miss, never a wrong arc.
+        timeaxis.backfill_event_arc_index(jjk_store)
+        placed = jjk_store.connection.execute(
+            "SELECT COUNT(*) FROM events WHERE arc_key LIKE ?"
+            " AND arc_index IS NOT NULL",
+            ("Modulo Chapter%",),
+        ).fetchone()[0]
+        assert placed == 0
+
+    def test_triage_ledger_accounts_for_every_unplaced_row(self, jjk_store):
+        # The R4 done-criterion: an unplaced event is a legal outcome only with a
+        # recorded reason. One ledger row per unplaced row, each carrying the
+        # reason -- which wiki filing is missing -- not a bare NULL.
+        timeaxis.backfill_event_arc_index(jjk_store)
+        ledger = timeaxis.triage_unplaced(jjk_store)
+        unplaced = jjk_store.connection.execute(
+            "SELECT COUNT(*) FROM events WHERE arc_index IS NULL"
+        ).fetchone()[0]
+        assert len(ledger) == unplaced
+        assert all(entry["reason"] for entry in ledger)
+
     def test_arc_named_section_places_its_events(self, jjk_store):
         # An event stated in a section the wiki named for an on-chain arc sits in
         # that arc even when the owning page (a character) is off the story chain.

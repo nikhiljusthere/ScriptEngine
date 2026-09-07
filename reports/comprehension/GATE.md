@@ -478,6 +478,59 @@ Gates re-run green this pass: pytest **1,204** (was 1,202, +2
 eval 24/24; canon-run opm 10/16 · 236/236 · 79.0% **at baseline** (report
 `2026-09-05-1159`, API on CPU).
 
+## R4 — in-text citation placement (complete)
+
+The 154 unplaced rows of the placement-signal fix were not all
+unplaceable. Phase 1 of the D6-completion plan (`COUNCIL_d6-completion.md`)
+ordered: place them, bar "unplaced = 0 or each remainder explicitly
+triaged with a recorded reason". The third, weakest, model-free signal --
+the wiki's own in-text citation -- reaches 90 of them (`timeaxis.py`:
+`citation_arc_maps`, `_citation_groups`, `_citation_decision`, and the
+citation pass in `backfill_event_arc_index`):
+
+- **Paragraph rule.** A citation covers the sentences before it (the
+  wiki's citation grammar, the same rule the `sourced:` headers use), so
+  the paragraph that states the event is the one that files it: its
+  citations all mapping to one arc places the row in that arc.
+- **Section-scope rule.** A section cited at least twice into a single
+  arc has its scope fixed by the wiki; every event stated in it sits in
+  that arc. One citation files no scope (it covers one sentence, not
+  the section).
+- **The maps are the wiki's own filings** -- `chapter_arc_index` (the
+  battle pages' `chapters` fact files each chapter under that battle's
+  arc) and the episode pages' `arc` fact (the axis already walks episode
+  pages). A number no page files stays unmapped, not guessed. The
+  side-story citations ("Modulo Chapter N") name the JJK Modulo
+  numbering and are skipped: a miss, never a wrong arc (pinned by
+  `test_side_story_citations_place_nothing`).
+
+Measured on JJK:
+
+| | before | after |
+|---|---:|---:|
+| `arc_index IS NULL` | 154 | **64** |
+| rows placed by the citation signal (tally, stable across settled re-runs) | — | **90** |
+| `temporal=1` | 2,594 | **2,684** |
+| cross-page disagreements | 107 | **109** (281 agree; two groups that read as agreeing while their rows were NULL now carry arcs and disagree) |
+
+**The 64 remainder is triaged, not silent** (`comprehension-gate
+--triage` -> `triage_unplaced`, the ledger door): 53 `no-citation`
+(including the 38 JJK-Modulo side-story chapters, whose citations are
+the Modulo numbering) + 11 `citations-span-arcs` (a character's whole
+life cited across 2-6 arcs; no single placement is determinate). Every
+ledger row carries its reason, *derived* from the same lookups the
+backfill runs, so a re-crawl that moves a wiki filing moves the ledger
+with it. No unplaced row stands without a recorded reason (D6).
+
+**Verified.** The backfill stays idempotent: the citation tally counts
+rows the signal places *by right*, not rows it UPDATEd this run, so a
+second (settled) run reports the same 90. `test_citation_signal_places_
+the_cited_rows` pins 90 / 64; `test_triage_ledger_accounts_for_every_
+unplaced_row` pins ledger completeness; the 995 section-signal count is
+unchanged. Spot-checked placements (Sukuna/Synopsis ch. 264 -> Shinjuku
+Showdown; Episode 38's section -> Shibuya Incident; Maki vs Naoya
+ch. 197 -> Culling Game) are the wiki's own filings, not inferences.
+
 ## What remains to full comprehension (the updated plan)
 
 All five build phases above are shipped and green; the *goal* (the corpus

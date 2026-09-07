@@ -268,6 +268,133 @@ def placement_time_axis(store: FactStore) -> dict[str, PlacementAxis]:
     return out
 
 
+def citation_arc_maps(
+    store: FactStore,
+) -> tuple[dict[int, int], dict[int, int]]:
+    """chapter / episode number -> story-axis index, from the wiki's own filings.
+
+    Chapters: the battle pages' `chapters` fact, which files every chapter a
+    battle spans under that battle's arc (a `chapter_arc_index` lookup).
+    Episodes: each episode page files itself under an arc in its own `arc`
+    fact, and the axis already walks those pages. A number no wiki page files
+    stays unmapped -- a wiki gap, not a number to invent.
+    """
+    index = story_arc_index(store)
+    chapter_map = {
+        chapter: index[arc.lower()]
+        for chapter, arc in chapter_arc_index(store).items()
+        if index.get(arc.lower()) is not None
+    }
+    episode_map: dict[int, int] = {}
+    for title, placed in placement_time_axis(store).items():
+        match = re.fullmatch(r"episode\s+(\d+)", title.strip(), re.IGNORECASE)
+        if match is not None and placed.index is not None:
+            episode_map[int(match.group(1))] = placed.index
+    return chapter_map, episode_map
+
+
+_PARENTHETICAL = re.compile(r"\(([^()]+)\)")
+_CHAPTER_IN = re.compile(r"[Cc]hapters?\s*(\d+(?:\s*[-\u2013]\s*\d+)?)")
+_EPISODE_IN = re.compile(r"[Ee]pisodes?\s*(\d+(?:\s*[-\u2013]\s*\d+)?)")
+
+
+def _citation_groups(text: str | None) -> list[tuple[str, int]]:
+    """The in-text chapter/episode citations in a stretch of section text.
+
+    One `('ch', n)` / `('ep', n)` per cited number, ranges expanded. The
+    wiki's side-story citations ("Modulo Chapter N") name a different
+    numbering that files under no arc on the main chain, so their
+    parentheticals are skipped: a miss, never a wrong arc.
+    """
+    out: list[tuple[str, int]] = []
+    for group in _PARENTHETICAL.finditer(text or ""):
+        inner = group.group(1)
+        if "modulo" in inner.lower():
+            continue
+        for kind, pattern in (("ch", _CHAPTER_IN), ("ep", _EPISODE_IN)):
+            for raw in pattern.findall(inner):
+                pieces = re.split(r"\s*[-\u2013]\s*", raw)
+                if len(pieces) == 2 and all(p.strip().isdigit() for p in pieces):
+                    lo, hi = int(pieces[0]), int(pieces[1])
+                    if lo > hi:
+                        lo, hi = hi, lo
+                    out.extend((kind, n) for n in range(lo, hi + 1))
+                elif raw.strip().isdigit():
+                    out.append((kind, int(raw.strip())))
+    return out
+
+
+def _citation_decision(
+    maps: tuple[dict[int, int], dict[int, int]],
+    arc_names: dict[int, str],
+    quote: str | None,
+    section_text: str | None,
+) -> tuple[int | None, str, str]:
+    """The arc a row's in-text citations ground it in -- or the triage reason.
+
+    Returns ``(index, signal, detail)``: an index when one arc is determinate,
+    else ``None`` with the reason the placement is owed but ungroundable. The
+    paragraph rule: the wiki's citation follows the sentences it covers, so
+    the paragraph that states the event is the one that files it; a paragraph
+    whose citations all map to one arc places the row. The section rule: a
+    section cited at least twice into a single arc has its scope fixed by the
+    wiki, and every event stated in it sits in that arc. One citation files
+    no scope; citations that span arcs file no single placement.
+    """
+    chapter_map, episode_map = maps
+    text = section_text or ""
+
+    def arcs_of(cites: list[tuple[str, int]]) -> set[int]:
+        arcs = set()
+        for kind, number in cites:
+            index = (chapter_map if kind == "ch" else episode_map).get(number)
+            if index is not None:
+                arcs.add(index)
+        return arcs
+
+    para_cites: list[tuple[str, int]] = []
+    located = False
+    head = (quote or "").strip()[:60]
+    if text and len(head) >= 20:
+        # Whitespace-tolerant: the stored quote is the extraction's normalised
+        # form, the section text is the page's; the first 60 chars still pin it.
+        pattern = r"\s+".join(re.escape(part) for part in head.split())
+        match = re.search(pattern, text)
+        if match:
+            located = True
+            end = text.find("\n\n", match.start())
+            para_cites = _citation_groups(
+                text[match.start() : end if end > 0 else len(text)]
+            )
+    section_cites = _citation_groups(text)
+    para_arcs = arcs_of(para_cites)
+    section_arcs = arcs_of(section_cites)
+
+    if len(para_arcs) == 1:
+        return next(iter(para_arcs)), "para-citation", ""
+    if len(section_cites) >= 2 and len(section_arcs) == 1:
+        return next(iter(section_arcs)), "section-scope", ""
+
+    prefix = "" if located else "quote-not-located; "
+    if not section_cites:
+        return None, prefix + "no-citation", ""
+    if len(section_cites) == 1:
+        return (
+            None,
+            prefix + "single-citation",
+            "one in-text citation files no section scope",
+        )
+    if not section_arcs:
+        refs = ", ".join(f"{k}{n}" for k, n in section_cites[:6])
+        return None, prefix + "refs-unfiled", f"cited {refs} file under no arc"
+    names = [arc_names[i] for i in sorted(section_arcs) if i in arc_names]
+    return (
+        None,
+        prefix + "citations-span-arcs",
+        "citations span " + " / ".join(names),
+    )
+
+
 def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
     """Store every event's position on the story axis, no model.
 
@@ -297,6 +424,9 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
     # chain. Guarded by the section's owning page (the backfill only applies it to
     # an event whose page the section actually belongs to), so a dangling or
     # reused section id -- a renumbering re-crawl -- misses, never misplaces.
+    # `pair_index` records what the page+section signals gave each pair; the
+    # citation pass below works only where they reached nothing.
+    pair_index: dict[tuple[str, int | None], int | None] = {}
     for pair in store.connection.execute(
         "SELECT DISTINCT arc_key, section_id FROM events WHERE arc_key IS NOT NULL"
     ):
@@ -307,15 +437,119 @@ def backfill_event_arc_index(store: FactStore) -> dict[str, int]:
         section = section_map.get(section_id) if section_id is not None else None
         if section is not None and section[1] == page_lower:
             index = section[0]
+        pair_index[(page_lower, section_id)] = index
         store.connection.execute(
             "UPDATE events SET arc_index = ?"
             " WHERE arc_key = ? COLLATE NOCASE AND section_id IS ?",
             (index, page, section_id),
         )
+
+    # The third, weakest signal: the wiki's own in-text citation (R4, the D6
+    # completion plan -- place what the citations ground, triage the rest).
+    # It is per-row, because the quote decides which paragraph files the event:
+    # the page and section signals above set one index per (page, section).
+    # Modulo side-story citations are excluded by _citation_groups, so their
+    # rows stay unplaced and land in the triage ledger with a reason. The tally
+    # counts rows the citation signal places by right, not rows it UPDATEd this
+    # run, so a second (settled) backfill reports the same number.
+    maps = citation_arc_maps(store)
+    arc_names = {i: a for a, i in story_arc_index(store).items()}
+    section_texts = {
+        row["id"]: (row["text"] or "")
+        for row in store.connection.execute("SELECT id, text FROM sections")
+    }
+    citation_placed = 0
+    for (page_lower, section_id) in sorted(
+        (key for key, value in pair_index.items() if value is None),
+        key=lambda key: (key[0], key[1] or -1),
+    ):
+        text = section_texts.get(section_id, "") if section_id is not None else ""
+        for row in store.connection.execute(
+            "SELECT subject_node, verb, object_node, section_id, time_rank,"
+            " arc_index, quote FROM events WHERE arc_key = ? COLLATE NOCASE"
+            " AND section_id IS ?",
+            (page_lower, section_id),
+        ):
+            index, _signal, _detail = _citation_decision(
+                maps, arc_names, row["quote"], text
+            )
+            if index is None:
+                continue
+            citation_placed += 1
+            if row["arc_index"] is None:
+                store.connection.execute(
+                    "UPDATE events SET arc_index = ? WHERE subject_node = ?"
+                    " AND verb = ? AND object_node IS ? AND section_id IS ?"
+                    " AND time_rank IS ?",
+                    (
+                        index,
+                        row["subject_node"],
+                        row["verb"],
+                        row["object_node"],
+                        row["section_id"],
+                        row["time_rank"],
+                    ),
+                )
     store.connection.commit()
+    tally["citations"] = citation_placed
     tally["pages"] = len(axis)
     tally["rows"] = store.connection.execute("SELECT COUNT(*) FROM events").fetchone()[0]
     return tally
+
+
+def triage_unplaced(store: FactStore) -> list[dict]:
+    """The ledger of every row the axis cannot place: the row and the reason.
+
+    The R4 done-criterion (``COUNCIL_d6-completion.md``): an unplaced event is
+    a legal outcome only with a recorded reason. The reasons are *derived*,
+    not stored -- the same lookups the backfill ran -- so a re-crawl that moves
+    a wiki filing moves the ledger with it. Run it on a settled store (the
+    backfill ran; every door into the axis goes through ``recompute_temporal``,
+    which runs it), or the ledger would list rows the backfill could place.
+    """
+    store.ensure_events()
+    maps = citation_arc_maps(store)
+    arc_names = {i: a for a, i in story_arc_index(store).items()}
+    section_texts = {
+        row["id"]: (row["text"] or "")
+        for row in store.connection.execute("SELECT id, text FROM sections")
+    }
+    out: list[dict] = []
+    for row in store.connection.execute(
+        "SELECT e.doc_title AS page, s.title AS section, e.section_id,"
+        " e.verb, e.subject_name, e.object_name, e.time_rank, e.quote"
+        " FROM events e LEFT JOIN sections s ON s.id = e.section_id"
+        " WHERE e.arc_index IS NULL ORDER BY e.doc_title, e.time_rank"
+    ):
+        text = (
+            section_texts.get(row["section_id"], "")
+            if row["section_id"] is not None
+            else ""
+        )
+        index, reason, detail = _citation_decision(
+            maps, arc_names, row["quote"], text
+        )
+        if index is not None:
+            # The backfill runs before this door (recompute_temporal); a row it
+            # could place but did not is a store the backfill never saw -- fail
+            # loud rather than publish a wrong ledger.
+            raise RuntimeError(
+                f"triage ledger: {row['page']}:{row['verb']} "
+                "is placeable but unplaced; run the backfill first"
+            )
+        out.append(
+            {
+                "page": row["page"],
+                "section": row["section"],
+                "subject": row["subject_name"],
+                "verb": row["verb"],
+                "object": row["object_name"],
+                "time_rank": row["time_rank"],
+                "reason": reason,
+                "detail": detail,
+            }
+        )
+    return out
 
 
 def recompute_temporal(store: FactStore) -> dict:

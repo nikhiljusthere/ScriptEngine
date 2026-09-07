@@ -775,7 +775,8 @@ def time_axis(
         console.print(
             f"[dim]Time axis: {placed}/{tally['pages']} placement pages placed by the"
             f" cheap signals ({tally['arc_page']} arc-page, {tally['arc_fact']} arc-fact,"
-            f" {tally['chapters']} citation); {tally['rows']} events stored,"
+            f" {tally['chapters']} citation); {tally.get('citations', 0)} event rows placed by"
+            f" in-text citation (R4); {tally['rows']} events stored,"
             f" {tally['temporal_after']:,} of them on the axis"
             f" ({tally['temporal_unplaced']} off it).[/dim]"
         )
@@ -808,6 +809,12 @@ def comprehension_gate(
     ),
     limit: int = typer.Option(
         0, "--limit", help="Show at most this many disagreements (0 = all)."
+    ),
+    triage: bool = typer.Option(
+        False,
+        "--triage",
+        help="Print the unplaced-event ledger: every row the axis cannot place, "
+        "with the reason (R4 -- an unplaced event is legal only with a recorded reason).",
     ),
 ) -> None:
     """The comprehension gate: three mechanical checks, nothing to grade.
@@ -875,6 +882,23 @@ def comprehension_gate(
             f" {c['any']:.1%} carry a surviving row"
             f" ({c['temporal']:.1%} temporal, {c['atemporal']:.1%} atemporal)."
         )
+
+        if triage:
+            from collections import Counter
+            from scriptengine.ingest import timeaxis as t_axis
+
+            ledger = t_axis.triage_unplaced(store)
+            by_reason = Counter(entry["reason"] for entry in ledger)
+            console.print(f"\n[bold]Unplaced-event ledger ({len(ledger)})[/bold]")
+            for reason, count in sorted(by_reason.items(), key=lambda kv: -kv[1]):
+                console.print(f"  [dim]{reason:28}[/dim] {count}")
+            for entry in ledger:
+                detail = f"  [dim]({entry['detail']})[/dim]" if entry["detail"] else ""
+                console.print(
+                    f"  [dim]{entry['page']} / {entry['section']}[/dim] "
+                    f"{entry['subject']} [bold]{entry['verb']}[/bold] {entry['object']}"
+                    f" — [yellow]{entry['reason']}[/yellow]{detail}"
+                )
 
 
 @app.command("continuity")
