@@ -131,14 +131,16 @@ re-crawling.
     tool time out if needed), then poll with separate *fast* commands. For long
     runs, pass a larger `timeout` (ms) to the bash call.
   - **Never a bare `sleep N`** — it reads as a hung shell and gets aborted. To
-    wait, run a **bounded loop that prints a status line every ~15s** (short
+    wait, run a **bounded loop that prints a status line every 10–15s** (short
     sleeps inside, status on every iteration), so the shell is visibly working.
+    Always pass an explicit `timeout` to the bash call (loop horizon plus
+    headroom) — an un-timed call that outlives its work reads as a hang.
   - **Long sequential background work:** `setsid nohup bash -c 'for s in …; do
     cmd "$s" >> /tmp/x.txt; done' > /tmp/x.txt 2>&1 < /dev/null &`, then poll the
     file with a bounded status-printing loop. The job survives the tool timeout.
-- **GPU device selection for servers/APIs: CUDA first, CPU last.** Whenever
+- **GPU device selection for servers/APIs and any job: CUDA first, CPU last.** Whenever
      you launch a server or API (`:8000` FastAPI, MCP, anything loading the
-     embedder/reranker), decide the device in this order:
+     embedder/reranker) or a job that loads them, decide the device in this order:
      1. **Check if the GPU is free** (`nvidia-smi`). If the card is free (or has
         room for the embedder + reranker, ~4–5 GB), **run on CUDA** (the default
         device — no `SCRIPTENGINE_DEVICE` override).
@@ -166,6 +168,13 @@ re-crawling.
          safe steady-state (stop the CUDA `:8000`, bring up CPU `:8000`) when
          done. **Not** for `events-extract` / heavy LLM batches — those keep Qwen
          under continuous load and are what the hard rule below forbids co-locating.
+     5. **No CPU job longer than 15 minutes (2026-09-07 user directive).** Any
+        job that would run >15 min on CPU — or that would simply be *faster*
+        on the GPU — runs on CUDA. If the 262k Qwen profile is holding the
+        card, switch it to 100k first (`ninfer-work/qwen-switch.sh 100k --api`;
+        frees ~9 GB and the embedder+reranker co-locate on CUDA — this is 100k
+        mode's use case 1). CPU is reserved for short (<15 min) jobs and for
+        the hard-rule case where Qwen owns the card for a long LLM batch.
 - **Coverage is a live artifact, not a sentence.** No document states what is
       next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
       which `tools/coverage_report.py` regenerates (never hand-edited). Run it

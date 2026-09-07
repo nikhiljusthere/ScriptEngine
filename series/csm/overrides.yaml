@@ -16,6 +16,29 @@ citation_positional:
     m: {as: chapter}
     a: {as: episode}
 
+# Engine-default boilerplate this wiki treats as content. The chunker skips
+# `notes` and `references` MediaWiki-wide, but on this wiki both carry
+# substance the span-recall oracle counts, and the divergence was the last 17
+# unreachable lines of the 439-line wave-0 miss file (2026-09-07, 537-page
+# corpus, 97.45% tier-0):
+#
+#   * `Notes` (8 non-empty sections, all on episode pages) holds the
+#     anime-vs-manga diff notes -- "This was not featured in the manga.",
+#     "In the anime, the puke that Himeno vomited in Denji's mouth is
+#     censored." -- which is exactly the kind of line a script question asks
+#     about. 16 miss lines.
+#   * `References` (2 non-empty sections) holds the page's alias blocks the
+#     crawler files there ("Chainsaw Man (Anime) / (anime) / (Аниме)") -- the
+#     multilingual names are queryable content, not footnotes. 1 miss line
+#     (the other holds a 3-word line below the oracle's 6-word floor).
+#
+# Subtracted from the chunker's skip set by
+# `effective_boilerplate_sections`; empty sections still die in the
+# `word_count == 0` guard (the JJK References precedent).
+content_sections:
+  - Notes
+  - References
+
 # The sets this wiki maintains, declared so an enumeration topic resolves the
 # same way every time instead of being scored against category names at query
 # time. Anything not declared here still goes through discovery.
