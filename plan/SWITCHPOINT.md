@@ -45,6 +45,11 @@ edit those.
     262k** — unless X2.f triggers a heavy Qwen LLM batch, which is the
     *opposite* rule (stop `:8000`, Qwen owns the card, context mode
     irrelevant).
+  - The return switch (100k → 262k) needs **no session handoff**: the fit
+    guard only refuses a *down* switch (target < transcript), and 262k is
+    bigger. Keep the window's transcript slim — big batch outputs (census,
+    X2.e) go to files, read summaries only — so the session never nears the
+    100k cap mid-window and the return switch keeps its margin.
   - `:8000` is currently down (was stopped after the X2.b CPU pre-check).
 - first action on resume:
   - verify the switch: `cat /home/goblin/ninfer-work/qwen_mode.txt` +
@@ -64,4 +69,4 @@ edit those.
 
 ## Switch log (machine-appended by qwen-switch.sh)
 
-- (none yet)
+- (none yet)- 2026-09-07T22:05:09+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=8988MiB
