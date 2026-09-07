@@ -12,7 +12,8 @@ the re-label stays owed).
 
 - **Subject:** Phase 4 (state over time). 4C's success criterion "B1 and B2 must
   move (fail→pass)" is **already met at the 2C baseline** — the B-group is 4/4
-  PASS (run sha `a788fa`, 2026-09-06; DB-verified again 2026-09-07). The gate as
+  PASS (oracle sha `a788fa` = sha256 of `ORACLE_v1.yaml`, run 2026-09-06;
+   DB-verified again 2026-09-07). The gate as
   written discriminates nothing. What should Phase 4 actually test, and how much
   of 4A/4B is real work vs. already done?
 - **Date:** 2026-09-07
@@ -23,9 +24,11 @@ the re-label stays owed).
   de-anonymized positions follow the round-2 mapping (A=Outsider, B=Executor,
   C=Contrarian, D=First Principles, E=Expansionist).
 - **DB-verified before recording** (standing rule). Evidence:
-  `reports/comprehension/raw/oracle_2c/oracle_2c_summary.json` (run sha
-  `a788fa…`, the internal run-content hash; the on-disk file hash is
-  `d712adfa…` — both recorded, cite the run sha), `series/jjk/facts.db` census
+  `reports/comprehension/raw/oracle_2c/oracle_2c_summary.json` (its `sha256`
+  field, `a788fa…`, is the sha256 of `plan/ORACLE_v1.yaml` — the oracle the
+  run was based on, recorded per the oracle header's own convention "Record
+  this file's sha256 in every report that cites it"; the on-disk
+  summary-file hash is `d712adfa…`), `series/jjk/facts.db` census
   re-verified 2026-09-07, `plan/flow.md:251-264`, `plan/ORACLE_v1.yaml:88-128`.
 
 ## Gate question
@@ -42,7 +45,7 @@ oracle's B-group (`plan/ORACLE_v1.yaml:88-128`) is:
 - **B3** "How old is Nobara Kugisaki in the Modulo timeline?" (`expect: pass`).
 - **B4** "Who won the Tokyo Jujutsu High Special Grade exam?" (`expect: pass`).
 
-DB-verified at the 2C baseline (run sha `a788fa`, 2026-09-06): **B1 PASS
+DB-verified at the 2C baseline (oracle sha `a788fa`, run 2026-09-06): **B1 PASS
 (`contains`)** — the Angel-page Gojo quote is in the bundle; **B2 PASS
 (`value_match`)** — Geto's infobox `occupation` `Jujutsu Sorcerer (Former)
 Curse User` is served verbatim by the 2-prep fact floor (the same bundle also
@@ -60,7 +63,7 @@ gets the terminal fact, which is wrong for that framing.
 
 | Measure | Value | Note |
 |---|---|---|
-| 2C oracle B-group | **4/4 PASS** (B1 `contains`, B2 `value_match`, B3, B4) | run sha `a788fa`, 2026-09-06 |
+| 2C oracle B-group | **4/4 PASS** (B1 `contains`, B2 `value_match`, B3, B4) | oracle sha `a788fa` (v1), run 2026-09-06 |
 | 2C oracle total | **16/18 = 88.9%** (Wilson 95% CI ≈ [67%, 97%] at n=18) | 5 of the 2 "failures" are surprises |
 | 2C surprises | **5** — `A1, A2, A3, B1, B2` (`expect=fail` → PASS) | labels miscalibrated; 88.9% is inflated |
 | RED_floorfirst variant | **11/18 (61%)** | B1 regressed → its PASS is beam-dependent |
@@ -129,10 +132,13 @@ gets the terminal fact, which is wrong for that framing.
 
 ## DB-verify: claims struck / corrected
 
-- **Corrected (this record):** the session note quoted the run's sha as
-  `a788fa` — that is the *run-content* sha recorded inside
-  `oracle_2c_summary.json`; the on-disk file hash is `d712adfa…`. Both
-  recorded; cite the run sha.
+- **Corrected (this record):** an earlier session note described `a788fa…` as
+  the *run-content* sha of `oracle_2c_summary.json`. DB-verified today: it is
+  the sha256 of `plan/ORACLE_v1.yaml` — the oracle the 2C run was based on; the
+  summary's `sha256` field records the *oracle's* sha, per the oracle header's
+  convention ("Record this file's sha256 in every report that cites it").
+  `d712adfa…` is the on-disk hash of the summary JSON itself. Neither is a
+  run-content hash; cite the oracle sha.
 - **Amplified (Contrarian + reviewers):** B1's PASS is **not stable** — it
   regressed under `RED_floorfirst` (11/18) and is a cross-page case by the
   oracle's own note; the B-group cannot be trusted as a gate.

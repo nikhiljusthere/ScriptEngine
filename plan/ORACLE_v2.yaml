@@ -1,0 +1,139 @@
+# ORACLE v2 — pre-registered arc-scoped probe set + re-labels. JJK.
+#
+# PROVENANCE: authored 2026-09-07 by the EXECUTING AGENT, by explicit council
+# ruling (reports/comprehension/COUNCIL_p4-rescope.md, verdict RE-SCOPE; user
+# directed 2026-09-07). v1 is untouched and remains reviewer-owned: v2 is a
+# RECORD (re-labels of v1's miscalibrated surprises + a new probe group), not
+# an edit of v1. Every v1 item is carried forward unmodified by reference
+# (file + sha256 below); only the items listed in `relabels` change `expect`.
+#
+# THE NEW S-GROUP: arc-scoped EARLIER-STATE probes. Each ground_truth is a
+# VERBATIM substring read directly from series/jjk/wikitext/ on 2026-09-07 —
+# none is recalled, inferred, or generated. `expect: fail` is the pre-run
+# hypothesis: the terminal-state fact floor serves *what* a state is now, not
+# *when* it held; if a probe passes, that is a finding (the interval is
+# already served for that case) and 4C closes on that evidence.
+#
+# FREEZE: like v1, this file is held-out from the moment a run cites it.
+# A fix to a pin is v3, not an edit of v2.
+
+meta:
+  version: 2
+  series: jjk
+  authored: 2026-09-07
+  author: executing agent (council-ratified pre-registration; see COUNCIL_p4-rescope.md)
+  supersedes:
+    file: plan/ORACLE_v1.yaml
+    sha256: a788fa29652a58152edf0f2ce16caea626db35d7e4463ec66176b5635a15935e
+  editable_by_executing_agent: false
+  scoring: |
+    Same as v1 (contains / value / section / distinguishes against the served
+    bundle under `auto` routing). Report per item + totals per category.
+    The 4C gate this file defines: every S-group probe that FAILS becomes a
+    pass-required item of the re-scoped 4C gate after the 4A build; if all
+    pass at pre-run, 4C closes on that evidence and the interval model goes
+    to the backlog.
+
+# ---------------------------------------------------------------------------
+# Re-labels — P3.3C gate condition 5 (due at the 4C gate): the five 2C
+# surprises (expect: fail -> PASS). Evidence: reports/comprehension/raw/
+# oracle_2c/oracle_2c_summary.json (oracle sha a788fa; run 2026-09-06,
+# 16/18; RED_floorfirst variant 11/18).
+# ---------------------------------------------------------------------------
+relabels:
+  - id: A1
+    v1_expect: fail
+    v2_expect: pass
+    reason: >
+      2C PASS — the battle page's outcome (Nanami withdraws) reached the
+      bundle. The outcome layer that was supposed to be missing is served.
+    evidence: "oracle_2c_summary.json, run sha a788fa (2026-09-06): A1 PASS"
+  - id: A2
+    v1_expect: fail
+    v2_expect: pass
+    reason: "2C PASS — 'Sukuna is victorious' served for the Kashimo beat."
+    evidence: "oracle_2c_summary.json, run sha a788fa (2026-09-06): A2 PASS"
+  - id: A3
+    v1_expect: fail
+    v2_expect: pass
+    reason: "2C PASS — the suicide outcome (vs 'defeated') served verbatim."
+    evidence: "oracle_2c_summary.json, run sha a788fa (2026-09-06): A3 PASS"
+  - id: B1
+    v1_expect: fail
+    v2_expect: pass
+    reason: >
+      2C PASS on the default beam (the Angel-page Gojo quote is in the
+      bundle) but FAIL under RED_floorfirst (11/18) — the PASS is
+      beam-dependent and the case is cross-page (pin lives on Angel's page).
+      Re-labelled pass with a beam-sensitivity note; it must not anchor a gate.
+    evidence: "oracle_2c_summary.json (16/18) vs oracle_2c_summary_RED_floorfirst.json (11/18)"
+  - id: B2
+    v1_expect: fail
+    v2_expect: pass
+    reason: >
+      2C PASS on both beams — Geto's infobox occupation
+      'Jujutsu Sorcerer (Former) Curse User' is served verbatim by the fact
+      floor. Terminal state is already served; the un-modeled gap is the
+      interval (when the change happened) — that is what the S-group tests.
+    evidence: "oracle_2c_summary.json, run sha a788fa (2026-09-06): B2 PASS"
+
+# ---------------------------------------------------------------------------
+# S. STATE INTERVALS (arc-scoped earlier state) — pre-registered 2026-09-07.
+# Ground truth pinned verbatim to the named wiki page (crawl), 2026-09-07.
+# ---------------------------------------------------------------------------
+items:
+
+  - id: S1
+    category: state_interval
+    beat: "A Culling Game beat — the writer must not place Nanami; he died at Shibuya, before this arc."
+    question: "Was Kento Nanami alive during the Culling Game?"
+    ground_truth: "Mahito then kills Nanami"
+    source_page: "Shibuya Incident Arc"
+    pin: "verbatim, Shibuya Incident Arc.json (section 'Right and Wrong'): '...when Nanami starts to wonder why he is doing this. Suddenly Nanami sees Haibara, who is pointing to his right, and sees Yuji. Nanami tells Yuji that he'll leave it all to Yuji, which Mahito then kills Nanami.'"
+    check: contains
+    expect: fail
+    why_terminal_fact_is_insufficient: >
+      Infobox status 'Deceased' is true but unanchored in time; a writer
+      composing a Culling Game beat could wrongly place Nanami in it. The
+      interval (died at Shibuya) is what the beat needs.
+
+  - id: S2
+    category: state_interval
+    beat: "Start of the Culling Game — Gojo is alive but sealed; the writer must not have him act, nor call him dead."
+    question: "What was Satoru Gojo's state at the start of the Culling Game?"
+    ground_truth: "With Satoru Gojo sealed and Geto's motives unknown"
+    source_page: "Culling Game Arc"
+    pin: "verbatim, Culling Game Arc.json (Synopsis): 'With Yuta and Choso, Megumi and Yuji return to Jujutsu High to form an unlikely team and contact Master Tengen. ... With Satoru Gojo sealed and Geto's motives unknown, Yuki believes...' Secondary pin, Angel.json: 'so that she may help them unseal Satoru Gojo'."
+    check: contains
+    expect: fail
+    why_terminal_fact_is_insufficient: >
+      Terminal 'Status: Deceased' is the end state; the start-of-arc state
+      (alive, sealed) is an interval value, not a terminal one.
+
+  - id: S3
+    category: state_interval
+    beat: "Pre-Shibuya Geto flashback — the writer must know WHEN the sorcerer->curse-user transition happened (time-skip, before Shibuya)."
+    question: "When did Suguru Geto become a curse user?"
+    ground_truth: "officially becoming a curse user and leaving his Jujutsu High pin behind"
+    source_page: "Suguru Geto"
+    pin: "verbatim, Suguru Geto.json: 'He rescued the two girls, Mimiko and Nanako Hasaba, and killed all 112 residents of the village, officially becoming a curse user and leaving his Jujutsu High pin behind.(Chapter 77, Episode 29)'"
+    check: contains
+    expect: fail
+    why_terminal_fact_is_insufficient: >
+      B2's terminal occupation 'Jujutsu Sorcerer (Former) Curse User' says
+      the state changed, not when; the Shibuya-era beat needs the transition
+      anchored to before the arc.
+
+  - id: S4
+    category: state_interval
+    beat: "Start of the Culling Game — Naobito is alive (on his deathbed) and dies during the arc; the writer must not write him as already dead."
+    question: "Was Naobito Zenin alive at the start of the Culling Game?"
+    ground_truth: "since he is on his death bed"
+    source_page: "Culling Game Arc"
+    pin: "verbatim, Culling Game Arc.json: 'Naoya Zenin, Ogi Zenin and Jinichi Zenin are called to stay by Naobito Zenin's side, since he is on his death bed. When the 26th head of the Zenin clan passes away, Naoya seemingly is appointed to be the new leader...'"
+    check: contains
+    expect: fail
+    why_terminal_fact_is_insufficient: >
+      Infobox status 'Deceased' + occupation '26th Head of the Zenin Clan'
+      say the end, not the start; the start-of-arc state (alive, dying) is
+      the interval.
