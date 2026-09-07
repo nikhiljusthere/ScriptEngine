@@ -104,6 +104,14 @@ They appear in pi's startup header; force-load with `/skill:<name>`.
 | `scriptengine-gates` | after any build / before calling a pass done |
 | `llm-council` | every fork, big build, phase gate — **5 advisors in parallel (one message), then 5 peers in parallel** (project convention; overrides the skill's sequential default); record + commit |
 
+### Packages (version-pinned in `.pi/settings.json`; installs live in the
+gitignored `.pi/npm/`)
+
+| package | gives the session | when |
+|---|---|---|
+| `npm:pi-subagents@0.66.0` | `subagent` / `bg_wait` / `subagent_supervisor` tools — child pi sessions with their own fresh context (builtin agents: `scout` / `researcher` / `worker` / `reviewer` / `oracle` / `delegate`; parallel fan-out via `workflowScript` + `runs.all([...])`, background children via detached runner) | the council convention is now one parallel `subagent` call instead of hand-spawned `pi -p` processes; parallel reviews; background work. Sessions started **before** the install do not have the tool; every new session does. Subagent-policy limits (262k → linear; 100k → ≤2; councils 5 in any mode) still apply — Qwen's `--max-concurrency 3` is the hard ceiling. |
+| `npm:@juicesharp/rpiv-todo@2.9.0` | `todo` tool + `/todos` command + a live todo panel **above the editor** (rebuilt from the conversation, so it survives `/reload` and compaction; `ctrl+shift+t` collapses it; per-session state, no disk writes) | long campaign runs: keeps the plan on screen. Note: pi 0.85's TUI has **no right-side panel surface** (widgets: above/below editor; overlays: floating, 9 anchors) — the registry has no right-panel plugin; this is the closest thing. |
+
 ## 4. Autonomous Qwen mode switching
 
 The model serving pi is the local Qwen 27B (`ninfer-serve` :18080). Its
