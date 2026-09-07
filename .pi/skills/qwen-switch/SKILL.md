@@ -6,6 +6,7 @@ description: Switch the local Qwen 3.8 27B (ninfer, :18080) between context mode
 # qwen-switch — autonomous Qwen context-mode switching
 
 Full doc: `docs/ops/QWEN_MODES.md` (repo = /home/goblin/ScriptEngine).
+Kit doc: `pi.md` §5 (autonomous protocol).
 Switcher: `/home/goblin/ninfer-work/qwen-switch.sh` (has `--dry-run`, `--api`, `--force`).
 
 ## When to switch — decide at phase boundaries, not per step

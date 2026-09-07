@@ -103,7 +103,7 @@ survives the window — everything needed to continue must be on disk.
 
 The pi agent may switch modes **on its own** while executing a long plan —
 that is the designed working mode, not an exception. Protocol (skill:
-`.pi/skills/qwen-switch`, kit doc: `pi.md` §4):
+`.pi/skills/qwen-switch`, kit doc: `pi.md` §5):
 
 1. **Decide at phase boundaries, not per step.** Each flip costs a reload +
    cold re-prefill, so one switch per GPU phase. Triggers:

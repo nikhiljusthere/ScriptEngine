@@ -112,7 +112,20 @@ gitignored `.pi/npm/`)
 | `npm:pi-subagents@0.66.0` | `subagent` / `bg_wait` / `subagent_supervisor` tools — child pi sessions with their own fresh context (builtin agents: `scout` / `researcher` / `worker` / `reviewer` / `oracle` / `delegate`; parallel fan-out via `workflowScript` + `runs.all([...])`, background children via detached runner) | the council convention is now one parallel `subagent` call instead of hand-spawned `pi -p` processes; parallel reviews; background work. Sessions started **before** the install do not have the tool; every new session does. Subagent-policy limits (262k → linear; 100k → ≤2; councils 5 in any mode) still apply — Qwen's `--max-concurrency 3` is the hard ceiling. |
 | `npm:@juicesharp/rpiv-todo@2.9.0` | `todo` tool + `/todos` command + a live todo panel **above the editor** (rebuilt from the conversation, so it survives `/reload` and compaction; `ctrl+shift+t` collapses it; per-session state, no disk writes) | long campaign runs: keeps the plan on screen. Note: pi 0.85's TUI has **no right-side panel surface** (widgets: above/below editor; overlays: floating, 9 anchors) — the registry has no right-panel plugin; this is the closest thing. |
 
-## 4. Autonomous Qwen mode switching
+## 4. Installed capabilities (tools on this machine)
+
+Installed 2026-09-07 (git log for provenance). All additive — they extend
+reach, they do not change the standing rules.
+
+| tool | where | what / when |
+|---|---|---|
+| **`workflow` tool** (pi-dynamic-workflows, user pi-package) | auto-loads every pi session | Claude-Code-style fan-out: the model writes a small JS script; the tool runs it across isolated subagents and synthesizes. Use for codebase audits, multi-perspective review, fan-out research — including running the council's 5+5 as one workflow. **GPU interaction: keep fan-out inside the active mode's subagent policy** (≤ 2 in 100k; 5 is the council exception) — each subagent is a live Qwen context. |
+| **ponytail** (pi-extension, user pi-package) | auto-loads; `/ponytail [lite\|full\|ultra\|off]` | "Lazy senior dev" code discipline: minimal, working code (benchmarked ~54% less LOC, safety tier held). Reinforces "no dependency without a caller" + minimal diff. On for code work. |
+| **`headroom`** | `~/.local/bin/headroom` (venv `~/.venvs/headroom`) | Compresses big tool outputs / JSON / RAG chunks *before* they reach the model — **68% measured on a 191 KB JSON payload** (51k→16k tokens). Library: `~/.venvs/headroom/bin/python` + `from headroom import compress(messages, model='qwen3.8-27b', model_limit=<ctx>)` (user messages are protected; tool payloads compress). Use when a big output must be re-fed (crawl dumps, query banks) — slows transcript growth, keeps the 100k fit guard green longer. **Proxy/wrap modes (full-agent integration) change pi's provider path — enable only with the user's sign-off.** |
+| **`agent-reach`** | `~/.local/bin/agent-reach` (venv `~/.venvs/agent-reach`) | Web reach: `agent-reach get rss.feed <q>`, `agent-reach get youtube.<cmd> <q>` (channels rss + youtube ready, no auth; `agent-reach doctor` to check). Skill: `~/.pi/agent/skills/agent-reach/SKILL.md`. For research outside the wikis. |
+| pi-subagents, rpiv-todo (project pi-packages) | `.pi/npm/` | Already load: the subagent + todo tools this kit uses. |
+
+## 5. Autonomous Qwen mode switching
 
 The model serving pi is the local Qwen 27B (`ninfer-serve` :18080). Its
 `--kv-capacity` pre-reserves the int8 KV pool, so **context length is a VRAM
@@ -146,7 +159,7 @@ subagents). Full method: `docs/ops/QWEN_MODES.md`. Protocol:
 parallel. `llm-council` runs 5 in parallel in **any** mode (the standing
 exception).
 
-## 5. Reference map
+## 6. Reference map
 
 | question | file |
 |---|---|
@@ -162,3 +175,4 @@ exception).
 | the three standing rules (plan-level, verbatim) | `plan/STANDING_RULES.md` (copies in `flow.md`, `Plan_to_perfection.md`, `drift_log.md`) |
 | dimension map (R1–R5 retired) | `plan/Plan_to_perfection.md` §12 (+ §13 durable-key precondition) |
 | council methodology | `llm-council` skill (`~/.claude/skills/llm-council/SKILL.md`, exposed to pi via `.pi/settings.json`) |
+| installed tools / capabilities | §4 above + `pi list` |

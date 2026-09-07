@@ -107,6 +107,20 @@ Four skills are the right inventory — no more: the campaign's work is
 plan-driven (council), checkpoint-driven (switchpoint), gate-driven
 (scriptengine-gates), and mode-driven (qwen-switch).
 
+### 3b. Installed capabilities (on request — not plan-critical)
+
+- **`workflow` tool** (pi-dynamic-workflows, auto-loads) — fan-out
+  subagents; e.g. run the 5+5 council as one workflow. Keep fan-out inside
+  the active mode's subagent policy (≤ 2 in 100k; 5 = council exception).
+- **ponytail** (pi-extension, auto-loads; `/ponytail`) — minimal-code
+  discipline for any code this plan writes; keep its safety tier.
+- **`headroom`** (`~/.local/bin/headroom`) — compress big tool outputs / JSON
+  before re-feeding the model (68% measured on a 191 KB JSON payload); slows
+  transcript growth so the 100k fit guard stays green longer.
+- **`agent-reach`** (`~/.local/bin/agent-reach`) — `agent-reach get
+  rss.feed|youtube.<cmd>` for research outside the wikis (skill:
+  `~/.pi/agent/skills/agent-reach/SKILL.md`).
+
 ### 4. Todos (continue from the checkpoint)
 
 - [✓] Ground live D5/D6 state from on-disk docs (drift_log,
