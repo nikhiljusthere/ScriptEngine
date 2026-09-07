@@ -684,22 +684,26 @@ flag, no 3c map growth, R3's reopen condition unmet. The `semantics`
 table has no R1 home — per D7 it must be formally retired before the
 done-declaration (no door-less table survives into done).
 
-## What remains to full comprehension (the updated plan)
+## Status: JJK D6-comprehension is CLOSED (2026-09-07)
 
-All five build phases above are shipped and green; the *goal* (the corpus
-*understands* a character — what each line means, whether it is an event, where
-it sits on the timeline) is not yet met. Reachability (D5) is **not** met:
-48,572/48,572 is **tier 0** (every line in a chunk — an indexing tautology);
-the retrieval tier was sampled 2026-09-03 over 545 probes (1.1% of lines, now
-stale): verbatim 387/400 (96.8%), scoped 110/120 (91.7%), terms 24/25 (96%). A
-fresh verbatim re-run landed 2026-09-05 (GPU `:8000`) = **97.2%** (478/492 new rows; the append-only jsonl holds ~400 distinct probes ≈ 0.8% of the 48,572 lines)
-— **unchanged** from the 2026-09-03 baseline (96.8%) within sampling noise; the index is healthy. **D5 is still not met:** an exhaustive tier-1 has never run (92 of the 492 rows re-probe across the resume boundary — done-dedupe keyed on bare sentence text, a known defect; a naive all-rows recompute over the 892-row file gives 97.0%).
-Comprehension (D6) is also not met (154 unplaced events, 107 cross-page
-disagreements, narrow `abilities`, era-less social-only `relations`, 0-row
-`semantics`). The prioritised remaining builds (R1 per-line meaning index →
-R2 abilities coverage → R3 relations era+eventive → R4 place the 154 →
-R5 typed edges), with done-gates and the standing council/GPU/gate/commit
-requirements, are `COMPREHENSION_REMAINDER.md` in this directory.
+The "what remains" plan above (R1 → R2 → R3 → R4 → R5) was superseded by
+the D6-completion campaign (council `COUNCIL_d6-completion.md`, excursion
+X2). Final state: **R4 shipped** (154 → 64 unplaced, all 64 triaged);
+**R1 not triggered** (3a cross-check 56/58, no red on the same content as
+3b); **R2 retired** (abilities classes green under 3b); **R3 stays
+retired** (relational/era questions green; 3c map verified, 0 off-map);
+**R5 parked** (unchanged); **no contingent layers owed** (Outcomes and
+Causality fully green). `semantics` formally retired (D7). The checkable
+done-set D1–D10 all hold — the terminal state is **done**.
+
+The authoritative record: `reports/comprehension/DONE_DECLARATION.md`
+(census numbers + the 12-row triage log). Halt before P6 per the owner
+directive; next authorized work is the CSM campaign (todo #9).
+
+This section's older paragraphs (the R1–R5 remainder plan, the stale
+tier-1 samples) are kept as the historical record of why the campaign
+existed; every "not met" claim in them is superseded by the R4 + X2
+sections above and by the done-declaration.
 
 ## Commands
 

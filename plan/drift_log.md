@@ -163,20 +163,16 @@ wide 4B → backlog) · `P5` closed by D1 · **`P6` not started — blocked by t
 milestone recorded (`STEP5_CENSUS_545.md`; global not-reached 7 → 5, 99.08%,
 the 5 residual sit in the 471-pair minor tier), returned to P3.A at X1.g.
 
-**Excursion:** **X2 open (2026-09-07, D9 — the JJK d6-completion plan, council
-row 19, `COUNCIL_d6-completion.md`)**. Items: X2.a council **done**; X2.b
-Phase-0 door pre-check **done** (roster/narrative doors exist and are callable
-on the live `:8000` — CPU by measured decision, 262k left ~4 GB < 5.3 GB);
-X2.c Phase-1 **R4 done** (D10 — 90 of the 154 placed by the in-text-citation
-signal, 64 triaged with recorded reasons via `comprehension-gate --triage`);
-X2.d Phase-2 door censuses (roster + narrative, 100 fixed questions each,
-≥99% reached, every miss triaged); X2.e Phase-3 measurement (8-verb
-100-sentence sample; 140-question per-dimension retrieval-not-extraction incl.
-outcomes + causality; 50-question open-ended census; gate false-negative
-audit); X2.f Phase-4 contingent extraction (R1 / outcomes / causality / R3
-only if a red measurement names it); X2.g Phase-5 done-declaration memo +
-standing gates re-run; X2.h **RETURN: HALT before P6** (the owner directive
-closes the trunk at P6-not-started; no cross-corpus work).
+**Excursion:** **X2 closed (2026-09-07, D9 — the JJK d6-completion plan, council
+row 19, `COUNCIL_d6-completion.md`)**: X2.a council · X2.b door pre-check ·
+X2.c R4 · X2.d door censuses (roster 100/100, narrative 99/100) · X2.e
+measurements (3a 56/58, 3b 139/140, 3c map-verified, 3d 0-flagged) · X2.f
+(contingent extraction — the red set is empty, nothing built) · X2.g done-
+declaration (`reports/comprehension/DONE_DECLARATION.md`, D1–D10 all hold) ·
+X2.h **RETURN: HALT before P6** — the JJK D6 campaign is closed. The owner
+directive (2026-09-07) next authorizes the **CSM (Chainsaw Man) campaign**
+to 100% per `plan/Plan_to_perfection.md` (todo #9; up to 3 simultaneous
+agents authorized, context windows free to vary per analysis).
 
 **The unmeasured block** — five ability dimensions, ~48,800 words — **was
 measured at P3.A** (`P3A_ABILITY_CENSUS.md`, 315-pair pool, 3C-GREEN fork);
@@ -399,3 +395,26 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   narrative fixed questions, post-R4 corpus, >=99% bar, every miss triaged),
   on the CUDA window (Qwen 100k + `:8000` on CUDA, per the qwen-switch
   protocol).
+
+### D11 — X2.d–X2.h: censuses, measurements, done-declaration, HALT before P6
+- **Trunk step:** none — X2 excursion (JJK d6-completion, D9)
+- **What happened:** X2.d door censuses (roster 100/100, narrative 99/100;
+  the 1 miss = 0-event-row character, triaged; 13 `short` = budget design;
+  `87fe80c`). X2.e measurements: 3a 56/58 verbatim (2 MISS_DOC = ranking
+  granularity, R1 not triggered) · 3b 139/140 substantively green (1 red =
+  wiki-coverage property, Hakari equipment; Outcomes/Causality fully green →
+  no layers owed) · 3c 50 open questions, 0 off-map (map verified; R3 stays
+  retired) · 3d 0 flagged misplacements (86 repeat-encounter / 11 boundary /
+  12 no-signal; 40-group agreeing sample clean) (`87fe80c`, `8ffce8e`). X2.f
+  fired nothing (the red set is empty). X2.g done-declaration
+  (`reports/comprehension/DONE_DECLARATION.md`): D1–D10 all hold; `semantics`
+  formally retired (D7); standing gates green on the final store (pytest
+  1,242; eval 31/31; span-recall 0 unreachable + 390/400 probe; canon opm
+  10/16 · 236/236 · 79.0%). X2.h HALT before P6, per the owner directive.
+- **Why:** every checkable item of the council's done-set (D1–D10) was
+  measured and met on the settled post-R4 store; the terminal state is
+  done, not not-done — no contingent build was named by any red
+  measurement.
+- **Return address:** trunk closed at P6-not-started (JJK campaign over);
+  next owner-authorized work is the **CSM campaign** (todo #9,
+  `plan/Plan_to_perfection.md` to 100%).
