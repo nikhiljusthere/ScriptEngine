@@ -3,7 +3,14 @@
 What ScriptEngine is trying to become, and where it currently stands. The
 phase table below is the canonical status list (also mirrored in
 `README.md`'s Roadmap section). This document adds the narrative behind the
-open phases and what comes after phase 21.
+open phases and what comes after phase 25.
+
+> **Current position (2026-09-07):** phases 0–25 below are the *history* of
+> the engine. The live campaign plan since then lives in `plan/`
+> (`Plan_to_perfection.md` = the trunk, `flow.md` = phase structure,
+> `drift_log.md` §4 = current position), and the standing gate state in
+> `reports/comprehension/GATE.md`. This file is not updated per-campaign;
+> read it as the design history it is.
 
 ## The goal
 
@@ -13,6 +20,33 @@ should scale to a new series by pointing it at a URL and, at most, describing
 that wiki's citation grammar in `overrides.yaml`. Everything else (page
 types, relationships, sections, sources) should come from the wiki's own
 structure.
+
+### The current goal: JJK "100%" = full D6 comprehension (stop before P6)
+
+The active campaign is **JJK only**. "JJK 100%" is the plan's Definition of
+Done (`plan/Plan_to_perfection.md` §2, D1–D6) — and **D5 and D6 are different
+layers; neither substitutes for the other**:
+
+- **D5 (reachability)** — "the real 100%": every line of the corpus is
+  *delivered* by the served bundle, exhaustively measured across all three
+  doors. It is the only property with a finite denominator. (Tier-0
+  chunk-containment — `span-recall` 48,572/48,572 — is a chunker tautology and
+  does not count as D5.)
+- **D6 (comprehension) — the goal of this run:** the corpus *understands*
+  everything about a character. Not just line retrieval: for every line a
+  writer serves — wiki data, prose, history, fights — ScriptEngine says
+  **what it means, whether it is an event, where that event sits on the
+  anime's timeline**, and the other details (participants, era, source). All
+  the structured dimensions count (facts, prose, history, fights, …); new
+  tables and modules (`relations`, `abilities`, a meaning layer, …) are in
+  scope where prose cannot do the job.
+
+**Exit condition for this run: full D6 comprehension on JJK, then stop —
+before the P6 cross-corpus pass.** The live remainder, the two-100%s
+analysis, and the checkable definition of "100% comprehension" are
+`reports/comprehension/COMPREHENSION_REMAINDER.md` (§2, §5); the live gate
+record is `reports/comprehension/GATE.md`; current position is
+`plan/drift_log.md` §4.
 
 ## Phase status
 

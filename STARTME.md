@@ -69,12 +69,13 @@ python -m scriptengine.cli catalogue                # every series, regenerated
 how much of each wiki's prose can carry a chapter, and every declared set with
 its size. It is generated, so run it rather than trusting the copy on disk.
 
-211 sets are declared across the eight series: devils, hunters, hybrids and
+1,545 sets are declared across the eight series: devils, hunters, hybrids and
 fiends on Chainsaw Man; apostles, pseudo-apostles and the God Hand on Berserk;
 mysterious beings and each hero class on One-Punch Man; the six Nen types, the
 Phantom Troupe and the Zoldycks on Hunterpedia; espada, quincy and all thirteen
 Gotei divisions on Bleach; cursed spirits, sorcerers, domain expansions and a
-battles-in set for every major fighter on Jujutsu Kaisen (59 sets in total);
+battles-in set for every major fighter on Jujutsu Kaisen (1,355 sets in total —
+the per-page rosters the chapter/episode tranche declared);
 races, transformations and films on Dragon Ball; races, Devil Fruit types and the
 Marine rank ladder on One Piece. A topic outside the list still works, it is just
 found by search rather than declared.

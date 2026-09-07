@@ -16,7 +16,13 @@ ScriptEngine/
   legacy/              the retired first-generation pipeline, kept for reference
   docs/                architecture and operational docs (this file included)
   questions/           the online-canon question bank, one JSON per series (tracked)
-  reports/             one folder per measurement run, plus index.md (tracked)
+  reports/             one folder per measurement run + index.md, plus
+                       page-campaign/ (JJK/OPM accuracy-campaign batches, wave
+                       records, COVERAGE.md) and comprehension/ (gate + council
+                       records, COUNCIL_HISTORY.md ledger)
+  plan/                campaign governance: Plan_to_perfection.md, flow.md,
+                       drift_log.md (history + current position), standing rules
+  tools/               offline harnesses (census_545.py, coverage_report.py, …)
   tests/               pytest suite, mirrors scriptengine/ module layout
   sample scripts/      published reference scripts defining the house style
   scripts output/      gitignored working dir: fetched context + finished scripts
@@ -41,7 +47,7 @@ servers: SQLite and embedded Qdrant only.
 
 | Command | What it does |
 |---|---|
-| `python -m scriptengine.cli <command>` | Typer CLI: `crawl`, `prune`, `audit`, `index`, `classify`, `export`, `query`, `timeline`, `rosters`, `eval`, `canon-run`, `catalogue`, `script-path`, `verify`, `cite` |
+| `python -m scriptengine.cli <command>` | Typer CLI: `crawl`, `audit`, `prune`, `resolve-templates`, `index`, `classify`, `abilities`, `narrative-abilities`, `relations`, `events`, `events-extract`, `time-axis`, `comprehension-gate`, `continuity`, `link`, `export`, `query`, `timeline`, `chronicle`, `rosters`, `catalogue`, `cite`, `verify`, `script-path`, `script-gen`, `eval`, `canon-run`, `span-recall`, `page-run`, `page-gen`, `page-sweep`, `page-merge`, `list` |
 | `python -m scriptengine.cli canon-run` | Measures the engine against `questions/` and writes a run folder under `reports/`. Refuses to start against a down or stale server; never exits non-zero on a bad score |
 | `python -m scriptengine.api.main` | FastAPI service on `:8000`; `POST /context` is the endpoint that matters |
 | `start_scriptengine.py` / `.bat` | Resolves the venv Python and launches the API without an activation step |
@@ -149,6 +155,8 @@ vectors, wikitext, and more). Run with `python -m pytest tests/ -q`.
 | `SCRIPT_STYLE_ANALYSIS.md` | What the published scripts look like, measured; what the engine owes them |
 | `TRIAGE.md` | Corpus/ontology triage notes |
 | `ANTI_AI_SCRIPTING.md` | Anti-AI-writing rules distilled into `VOICE_RULES` |
+| `ops/` | local-model ops runbook (NInfer + opencode, `qwen38_ninfer_opencode_config.md`) |
+| `superpowers/plans/`, `superpowers/specs/` | dated design docs from the page-gen campaign (2026-08, historical) |
 
 ## Other top-level docs
 

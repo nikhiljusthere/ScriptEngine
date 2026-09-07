@@ -32,7 +32,8 @@ python -m scriptengine.cli catalogue
 A script line gets its chapter one of two ways, and a series needs only one of
 them. **Inline refs** is the share of sentences the wiki footnotes itself.
 **Instalment pages** is the other route: One Piece footnotes almost nothing but
-writes 1,191 chapter pages and 1,172 episode pages, each with a full summary, so
+writes 1,264 chapter pages and 1,232 episode pages (plus 130 volumes and 4
+specials), each with a full summary, so
 a claim retrieved from the page titled "Chapter 1015" is sourced to Chapter 1015.
 
 Berserk is the one to be careful with. It scores low on both, because its wiki
@@ -556,9 +557,9 @@ maintenance pages, skipped deliberately).
 | Facts per page | 10.2 |
 | Wikilink edges resolved | 96.4% of 34,112 |
 | Citations captured | 8,830, kept structured *and* inlined in prose |
-| Chunks / vectors | 10,127 / 6,404 |
-| Declared enumeration sets | 59 (incl. the battles-in sets) |
-| Retrieval eval | **24/24** |
+| Chunks / vectors | 19,686 / 14,531 |
+| Declared enumeration sets | 1,355 (incl. the battles-in sets) |
+| Retrieval eval | **31/31** |
 
 Jujutsu Kaisen is the development wiki and it is fully green: every gold
 question passes, and its roster registry now carries a battles-in set for each
