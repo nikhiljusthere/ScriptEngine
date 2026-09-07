@@ -1,0 +1,127 @@
+# pi.md — the ScriptEngine agent kit (for pi sessions)
+
+Read this at the start of a pi session (pointed to by `CLAUDE.md`). It
+defines the standing rules the agent works under, the skill inventory, and
+the **autonomous Qwen mode-switch protocol**. Details live in the referenced
+docs; this file is the index plus the non-negotiables.
+
+Companions: `docs/ops/QWEN_MODES.md` (the mode-switch method in full),
+`plan/SWITCHPOINT.md` (the resume file), `.pi/skills/` (the skills).
+
+---
+
+## 1. Startup ritual (every session, in order)
+
+1. `plan/drift_log.md` §4 — the live checkpoint (trunk/excursion position).
+2. `reports/comprehension/GATE.md` + `COMPREHENSION_REMAINDER.md` — gate
+   state and what remains to the comprehension goal.
+3. `plan/SWITCHPOINT.md` — the last switchpoint (work in flight across
+   sessions; if a fresh session was seeded from it, continue from there).
+4. Mode check: `cat /home/goblin/ninfer-work/qwen_mode.txt` + `nvidia-smi`
+   — which Qwen context mode is active, and where `:8000` should live.
+5. If batch files were committed since: `reports/page-campaign/COVERAGE.md`
+   (regenerate with `tools/coverage_report.py` when stale — never hand-edit).
+
+**Status prose in docs can be stale; the checkpoint files above are
+authoritative.** When they disagree, the checkpoint wins — and the stale
+prose gets a one-line fix, committed.
+
+## 2. Standing behavior rules (the "customizations")
+
+These are the working agreements of `CLAUDE.md`, restated as the agent's
+own defaults:
+
+1. **Checkpoint-first.** Never start real work without knowing the live
+   position (drift §4). End significant work with the `switchpoint` skill
+   (commit + SWITCHPOINT), not with a transcript.
+2. **Drift discipline.** Trunk steps are `P<phase>.<step>`, excursions
+   `X<n>.<step>` (never a phase number). Append-only `drift_log.md` §5
+   format. Every excursion gets its return pointer **when it opens**.
+3. **Council, not user input, at forks.** Big decisions / big builds go
+   through `llm-council` (5 advisors in parallel → 5 peer reviews →
+   chairman verdict), recorded in `reports/comprehension/COUNCIL_<subject>.md`
+   with claims DB-verified before recording. Cadence: every 2–3 todos, end
+   of every sub-list, every phase gate. If it is not on disk, it did not
+   happen.
+4. **Gates discipline.** `audit` before `index`, `span-recall` after
+   `index`, the four standing gates after any build (see the
+   `scriptengine-gates` skill). A pass is done only when its gate re-ran
+   green on the current store.
+5. **GPU discipline.** CUDA-first, CPU-last. The extraction model (Qwen)
+   owns the card for LLM batches — stop `:8000` (or run it on CPU) first.
+   Servers launch detached (`setsid nohup … < /dev/null &`); poll with
+   bounded status-printing loops, never a bare `sleep`.
+6. **Commit discipline.** Branch `character-scoped-questions`, named paths
+   only, area-prefixed messages, no push. `series/` gitignored; dated
+   `reports/` dirs untracked.
+7. **Code rules.** If a fix names a series and lives in a `.py` file, it is
+   in the wrong place (`series/<name>/overrides.yaml` is the only per-wiki
+   surface). Never guess a citation parameter's meaning. No dependency
+   without a caller. Comments name the bug. "No third corpse": every new
+   table ships with the door that reads it. Verify against live wiki output,
+   not just tests. Script output follows the anti-AI rules in
+   `docs/ANTI_AI_SCRIPTING.md`.
+8. **Docs as live artifacts.** Nothing states "what is next" in prose —
+   docs point at regenerated files (`COVERAGE.md`, `qwen_mode.txt`,
+   switchpoint). Fix stale status lines when you find them; commit the fix.
+
+## 3. Skill inventory
+
+Skills live in `.pi/skills/` (project, versioned) plus `~/.claude/skills`
+(exposed via `.pi/settings.json` — that's where `llm-council` comes from).
+They appear in pi's startup header; force-load with `/skill:<name>`.
+
+| skill | when |
+|---|---|
+| `qwen-switch` | before/after any GPU phase; the autonomous mode switch |
+| `switchpoint` | before a switch, at council cadence, on "checkpoint" |
+| `scriptengine-gates` | after any build / before calling a pass done |
+| `llm-council` | every fork, big build, phase gate (5+5, recorded) |
+
+## 4. Autonomous Qwen mode switching
+
+The model serving pi is the local Qwen 27B (`ninfer-serve` :18080). Its
+`--kv-capacity` pre-reserves the int8 KV pool, so **context length is a VRAM
+dial**: 262k leaves ~3.5 GiB headroom (no CUDA co-location); 100k frees
+~7–8 GiB (the `:8000` embedder+reranker co-locates on CUDA, ≤2 parallel
+subagents). Full method: `docs/ops/QWEN_MODES.md`. Protocol:
+
+1. **Decide at phase boundaries.** Switch **down** when the next phase needs
+   the CUDA reranker *alongside* me, or 2 parallel subagents. Switch **back
+   up** when the GPU phase ends. One switch per phase — no thrashing.
+   A heavy Qwen LLM batch is the *opposite* rule (stop `:8000`, no switch).
+2. **Pre-flight (model alive):** `switchpoint` checkpoint (commit +
+   SWITCHPOINT); fit check `wc -c $PI_SESSION_FILE / 4 < target ctx`;
+   confirm no `events-extract` in flight.
+3. **The switch is ONE atomic tool call:**
+   `cd /home/goblin/ninfer-work && ./qwen-switch.sh 100k` via `bash` with
+   `timeout: 300000`. Never split it across calls (a harness model call
+   between calls would die mid-reload). For ~30–60 s of the call there is
+   **no model** — by design; the pi process survives, the transcript is on
+   disk, the same model-id/port comes back.
+4. **Post-flight:** read `qwen_mode.txt` + `nvidia-smi`; the script already
+   placed `:8000` on the right device; continue from the switchpoint (first
+   turn is a cold prefill).
+5. **Overflow handoff:** if the transcript doesn't fit the target context,
+   the switcher hard-refuses (exit 2). Do a full checkpoint, re-run with
+   `--force`, and hand the user the fresh-session one-liner (*"Read
+   plan/SWITCHPOINT.md and continue from there"*). A fresh session's tiny
+   transcript always fits.
+
+**Subagent policy:** 262k → linear, no parallel subagents. 100k → ≤2
+parallel. `llm-council` runs 5 in parallel in **any** mode (the standing
+exception).
+
+## 5. Reference map
+
+| question | file |
+|---|---|
+| where is the trunk / what happened | `plan/drift_log.md` (§4 position, §3 ledger) |
+| what remains to comprehension | `reports/comprehension/COMPREHENSION_REMAINDER.md` |
+| gate state | `reports/comprehension/GATE.md` |
+| council decisions | `reports/comprehension/COUNCIL_*.md` + `COUNCIL_HISTORY.md` |
+| Qwen modes + switch method | `docs/ops/QWEN_MODES.md` |
+| resume across sessions | `plan/SWITCHPOINT.md` |
+| live mode record | `ninfer-work/qwen_mode.txt` |
+| coverage | `reports/page-campaign/COVERAGE.md` (regenerated) |
+| writing rules | `scriptengine/api/rules.py` + `docs/ANTI_AI_SCRIPTING.md` |

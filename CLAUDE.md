@@ -247,10 +247,19 @@ CUDA probe" exception above was measured at a smaller KV pool and does not
 apply to the current 262k profile), while the 100k service profile frees
 ~7–8 GB so the embedder+reranker co-locate on CUDA and up to 2 subagents run
 in parallel (llm-council still runs 5 — the standing exception). Switching is
-checkpoint (`plan/SWITCHPOINT.md`) → `ninfer-work/qwen-switch.sh` → reopen pi;
-the agent has no model during the reload window, so the switch is a
-human-terminal step between turns. Full method + guardrails:
+checkpoint (`plan/SWITCHPOINT.md`) → `ninfer-work/qwen-switch.sh` (one atomic
+call — the pi agent may switch autonomously at phase boundaries, `pi.md` §4)
+→ resume; the agent has no model during the ~30–60 s reload window, but the
+pi process survives and the transcript is on disk. Full method + guardrails:
 `docs/ops/QWEN_MODES.md`.
+
+**The pi-session agent kit is `pi.md` (repo root).** Standing behavior rules
+(checkpoint-first, drift/council/gate/GPU/commit discipline, the code rules),
+the skill inventory (`.pi/skills/` — `qwen-switch`, `switchpoint`,
+`scriptengine-gates`; `llm-council` via `.pi/settings.json` →
+`~/.claude/skills`), and the **autonomous** Qwen mode-switch protocol (phase-
+boundary switches as one atomic tool call, hard transcript fit-guard,
+overflow handoff). A fresh pi session reads `pi.md` §1 (startup ritual) first.
 
 ## Status
 

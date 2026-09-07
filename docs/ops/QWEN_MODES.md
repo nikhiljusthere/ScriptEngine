@@ -54,12 +54,17 @@ compaction is a *lossy summarization of your reasoning*. A 100k — let alone
    "Current position" section of `plan/SWITCHPOINT.md` (mode, sha,
    trunk/excursion address, what's in flight, the exact next step). Mid
    trunk/excursion step → add the drift pointer too.
-2. **Switch (plain terminal, between agent turns).**
-   `cd /home/goblin/ninfer-work && ./qwen-switch.sh <262k|100k|<tokens>> [--api]`
-   The script: refuses while an extraction batch is in flight → fixes the
-   `:8000` device to match the new headroom (CUDA iff ≥ 6 GiB) → unloads
+2. **Switch (one atomic call).**
+   `cd /home/goblin/ninfer-work && ./qwen-switch.sh <262k|100k|<tokens>> [--api] [--force]`
+   The script: refuses while an extraction batch is in flight → **hard-refuses
+   (exit 2) if the pi transcript can't fit the target context** (the fit
+   guard; `--force` is only for a deliberate fresh-session handoff) → fixes
+   the `:8000` device to match the new headroom (CUDA iff ≥ 6 GiB) → unloads
    Qwen → loads the target profile → health-polls (~30–60 s reload) → writes
    `qwen_mode.txt` + a switch-log line → prints the reopen handoff.
+   A human runs it from a terminal; **the pi agent runs it as a single
+   blocking `bash` tool call** (the autonomous protocol, next section) —
+   never split across calls.
 3. **Reopen pi (terminal, project dir).**
    - `pi -c` — continue the same session; only right for 262k (the script's
      handoff says which when the transcript fits).
@@ -71,14 +76,60 @@ compaction is a *lossy summarization of your reasoning*. A 100k — let alone
    + `nvidia-smi`; run `qwen-switch.sh <current-mode>` as a no-op self-check
    (it re-corrects the `:8000` device if anything drifted); continue the work.
 
-## Why the switch is a human-terminal step
+## Why the switch is a single atomic call
 
-pi's model *is* this Qwen server. From the `pkill` until the health-check
-passes there is no model serving pi — **the agent has no thinking and no
-editing power for that window**, and any in-flight turn dies. So: never run
-`qwen-switch.sh` from inside an agent session (not even as a last tool call);
-the checkpoint (step 1) must be complete before step 2, which a human runs
-from a terminal between turns.
+pi's model *is* this Qwen server. During the reload window (~30–60 s) there
+is no model serving pi — **the agent has no thinking and no editing power for
+that window**. That is safe *iff* the whole switch is **one blocking tool
+call**: the model has already emitted the tool call and is idle while the
+harness executes the shell command (no LLM involved), so recycling the
+server mid-turn kills nothing. When the call returns, the next model request
+hits the reloaded server on the same model-id/port, and the same pi session
+continues — the transcript is on disk, and only the server-side KV cache was
+lost (the next turn re-prefills, ~1–2 min slower).
+
+The failure mode is splitting the switch across tool calls: the harness
+makes a model call *between* calls, and that call would die mid-reload. So
+pkill→reload→health is always one invocation (`qwen-switch.sh` does exactly
+that), issued with a generous `timeout` (300 000 ms; the default 120 s is
+shorter than the reload — a timeout is still fine, the load is detached and
+survives, then poll `/v1/models`).
+
+The pre-condition holds in both human and agent use: the checkpoint (step
+1) must be complete *before* the switch, because nothing on the model side
+survives the window — everything needed to continue must be on disk.
+
+## Autonomous switching (pi agent)
+
+The pi agent may switch modes **on its own** while executing a long plan —
+that is the designed working mode, not an exception. Protocol (skill:
+`.pi/skills/qwen-switch`, kit doc: `pi.md` §4):
+
+1. **Decide at phase boundaries, not per step.** Each flip costs a reload +
+   cold re-prefill, so one switch per GPU phase. Triggers:
+   | upcoming work | action |
+   |---|---|
+   | `:8000` embedder+reranker needed on CUDA *alongside* Qwen (live span-recall probes, page-runs, `/context` work) | switch **down** (100k) |
+   | up to 2 parallel subagents | switch **down** (100k) |
+   | heavy Qwen LLM batch (`events-extract`) | **no switch** — the hard rule: stop `:8000` (or CPU), Qwen owns the card |
+   | GPU phase finished, linear work remains | switch **back** to 262k |
+2. **Pre-flight (model alive):** `switchpoint` checkpoint (commit +
+   `plan/SWITCHPOINT.md`); fit check — the current session's transcript
+   (`$PI_SESSION_FILE`, bytes/4) must fit the target context; no
+   `events-extract` in flight.
+3. **The switch:** one `bash` tool call, `timeout: 300000`. The fit guard
+   hard-refuses (exit 2) an un-fitting target; `--force` + full checkpoint +
+   fresh-session handoff is the only bypass.
+4. **Post-flight:** `qwen_mode.txt` + `nvidia-smi`; the `:8000` device was
+   already corrected by the script; continue from the switchpoint.
+5. **Overflow handoff:** if the transcript can't fit, the agent ends the
+   session cleanly after a `--force` switch and hands the user the one-
+   liner: *"Open a fresh `pi` and say: Read plan/SWITCHPOINT.md and continue
+   from there."* (A fresh session's tiny transcript always fits.)
+
+**Subagent policy per mode:** 262k → linear, no parallel subagents; 100k →
+≤ 2 parallel; `llm-council` runs 5 in parallel in **any** mode (the standing
+exception).
 
 ## Guardrails (carry-overs from the standing GPU rules)
 
@@ -105,6 +156,6 @@ from a terminal between turns.
 | `ninfer-work/serve.sh` | 262k exploratory profile |
 | `ninfer-work/serve_100k.sh` | 100k service profile |
 | `ninfer-work/serve_ctx_<N>.sh` | generated dial-down profiles |
-| `ninfer-work/qwen-switch.sh` | the switch (with `--dry-run`, `--api`) |
+| `ninfer-work/qwen-switch.sh` | the switch (`--dry-run`, `--api`, `--force`; hard fit guard) |
 | `ninfer-work/qwen_mode.txt` | live mode record (machine-written) |
 | `plan/SWITCHPOINT.md` | the resume file (hand-written section + machine log) |
