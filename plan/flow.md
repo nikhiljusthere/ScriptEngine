@@ -1,5 +1,42 @@
 # flow.md — the phase graph
 
+## STANDING RULES — repeated in every plan document, deliberately
+
+*Verbatim copy of `plan/STANDING_RULES.md`. Duplicated across `flow.md`,
+`Plan_to_perfection.md` and `drift_log.md` so that reading any one plan
+document is sufficient, even if work drifts far enough that only one is in
+view.*
+
+**1. No user input. None, for the duration of this plan.** Every wall where you
+would normally stop and ask — a design fork, an ambiguous result, a blocked
+step, a judgement call — **run `llm-council` instead.** The council decides;
+you act on its verdict and record it. Do not ask for approval, which option, or
+whether to proceed. The only stop is the halt path in `flow.md`, and that runs
+a council first. Council claims are DB-verified before recording; one that
+cannot be verified did not happen.
+
+**2. The GPU is available. Do not default to CPU.** Qwen's compute idles while
+a shell command runs, and its resident weights leave ~7.4 GB free on the 32 GB
+card — enough for the ~5.3 GB retrieval stack. Tests, the `:8000` server and
+the census run on GPU **without stopping Qwen**. *(Measured 2026-09-07:
+ninfer-serve 24,670 MiB + a co-located retrieval process 6,186 MiB, 991 MiB
+spare — co-location working under real load.)* Two qualifications: check
+`nvidia-smi` free memory first and size the job against it, since with a job
+already co-located the spare can fall under 1 GB; and a sustained 27B
+extraction batch wants the card to itself (one OOM-crashed at 508/524 beside
+the reranker). GPU is the default; CPU needs a measured reason.
+
+**3. Council cadence — three mandatory points.** (a) **Every 2–3 completed
+todos**, a council reviewing *the fixes just made* — did they do what they
+claimed? (b) **At the end of every sub-list** (`1a–1d`, `X1.a–X1.f`), a council
+assessing whether the sub-list actually completed, **before the return pointer
+fires** — a sub-list is done when a council says the work holds, not when its
+last line is reached. (c) **At every phase gate**, the gate council already
+specified. Write each to `reports/comprehension/COUNCIL_<subject>.md` and
+commit it with the work it reviewed. If it is not on disk, it did not happen.
+
+---
+
 **This file holds structure, never status.** No checkboxes, no progress counts,
 no "current phase". Structure does not go stale; status does — four phantom
 work items came from a document that tracked what remained. Status comes from a
