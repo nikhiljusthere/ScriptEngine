@@ -591,6 +591,19 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   those 3 passages draw on. `Toji-clean.md` regenerated (5,589 words; strips
   the `[covers X-Y]` + `·` lines). `cli verify` still clean (104 tags).
 
+- **Addendum 6 (opening framing line, same session):** the owner asked for
+  (a) the "no one ever sensed him standing behind them" line (the Gojo-notice
+  beat) and (b) a "Gojo has only been overwhelmed twice" framing in the
+  opening 2-3 paragraphs. (a) was already in the script (passage 7, Ch 71).
+  (b) added to the cold open: "Gojo has been truly overwhelmed exactly twice…
+  the second was Shibuya, where the special-grade curses came with a
+  countermeasure to the Infinity and a plan to seal him in the Prison Realm"
+  — sourced from the Shibuya Incident page (Jogo/Hanami/Choso + the Infinity
+  countermeasure + the Prison Realm), cited `(Chapter 94, Episode 35)`.
+  Deliberately no count of "special grades": the wiki gives no clean number,
+  so it says "the special-grade curses" rather than invent one. `cli verify`
+  now 105 tags (all clean). `Toji-clean.md` regenerated (5,658 words).
+
 ### D15 — the Toji script conventions made permanent in the pipeline (out-of-campaign, 2026-09-08)
 - **Trunk step:** none — out-of-campaign (the JJK campaign closed at D11; CSM
   todos stay parked).
