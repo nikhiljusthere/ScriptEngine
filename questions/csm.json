@@ -59,24 +59,17 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-14",
+      "verified": "2026-09-08",
       "sources": [
         "https://chainsaw-man.fandom.com/wiki/Power",
         "https://www.cbr.com/power-chainsaw-man/"
       ],
-      "note": "Added 2026-08-04, and the question that exposed a whole class of subject-resolution failure: Chainsaw Man has a character called Power, so `Every ability of Power` had both of its words struck out as kind words and returned nothing at all. A strict fallback accepting only an outright `character` page now runs when nothing else resolves. 0 to 4/6. Bank audit 2026-08-14: added 8 item(s) the wiki documents and the bank omitted: Blood Knife, Blood Scythe, Blood Dagger, Blood Axe, Blood Transfer, Knifemanship, Acting Skills, Blood Empowerment. Each verified against the cited page's raw wikitext.",
+      "note": "Added 2026-08-04, and the question that exposed a whole class of subject-resolution failure: Chainsaw Man has a character called Power, so `Every ability of Power` had both of its words struck out as kind words and returned nothing at all. A strict fallback accepting only an outright `character` page now runs when nothing else resolves. 0 to 4/6. Bank audit 2026-08-14: added 8 item(s) the wiki documents and the bank omitted: Blood Knife, Blood Scythe, Blood Dagger, Blood Axe, Blood Transfer, Knifemanship, Acting Skills, Blood Empowerment. Each verified against the cited page's raw wikitext. CSM-1b 2026-09-08 (re-stamped-bank validation): removed `Blood Weaponization` — the current Power page documents no such item (live wikitext verified 2026-09-08, revid 44435, last edit 2026-07-11); weapon formation is documented under `Blood Manipulation`, whose seven named weapon items the engine returns in full; 0 store hits. Item is a 2026-08-04 authoring artifact.",
       "answer": [
         {
           "item": "Blood Manipulation",
           "aliases": [
             "blood control"
-          ]
-        },
-        {
-          "item": "Blood Weaponization",
-          "aliases": [
-            "blood weapon",
-            "blood weaponisation"
           ]
         },
         {
@@ -792,11 +785,11 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-14",
+      "verified": "2026-09-08",
       "sources": [
         "https://chainsaw-man.fandom.com/wiki/Makima"
       ],
-      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page's Abilities section is a bounded named list of eight entries. Part 1, Control Devil arc: Makima dies in the Control Devil arc and reincarnates as Nayuta in Part 2, so nothing recorded here carries into the Academy Saga. Control and Force Manipulation are the page's two supernatural ability headings; the Prime Minister Contract (the fatal-damage transfer pact) is recorded even though it appears in the section's prose rather than as a bolded heading, because it is her defining defensive ability. `Shihai` is the romanised Nihongo name recorded for Control.",
+      "note": "Added 2026-08-14, per-character abilities batch. `closed` -- the page's Abilities section is a bounded named list of eight entries. Part 1, Control Devil arc: Makima dies in the Control Devil arc and reincarnates as Nayuta in Part 2, so nothing recorded here carries into the Academy Saga. Control and Force Manipulation are the page's two supernatural ability headings; the Prime Minister Contract (the fatal-damage transfer pact) is recorded even though it appears in the section's prose rather than as a bolded heading, because it is her defining defensive ability. `Shihai` is the romanised Nihongo name recorded for Control. CSM-1b 2026-09-08: `Prime Minister Contract` renamed to the corpus's own wording `Contract with the Prime Minister of Japan` (old name kept as alias) — the wiki and store never name it `Prime Minister Contract` (0 store hits); the Contract page's Occurred-Contracts table and the Makima prose say `a contract with the Prime Minister of Japan`. The underlying fact is unchanged; whether the abilities path returns it is a separate engine question (see reports/csm/CSM1B_BANK_VALIDATION.md).",
       "answer": [
         {
           "item": "Immense Strength",
@@ -817,9 +810,9 @@
           "aliases": []
         },
         {
-          "item": "Prime Minister Contract",
+          "item": "Contract with the Prime Minister of Japan",
           "aliases": [
-            "contract with the Prime Minister of Japan"
+            "Prime Minister Contract"
           ]
         },
         {
@@ -895,14 +888,14 @@
       "scope": "closed",
       "expect_mode": "qa",
       "tier": "wiki",
-      "verified": "2026-08-15",
+      "verified": "2026-09-08",
       "sources": [
         "https://chainsaw-man.fandom.com/wiki/Denji"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Denji transforms by pulling the cord on his chest",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `attribute`. Denji transforms by pulling the cord on his chest CSM-1b 2026-09-08: expected phrase `Pulling the cord on his chest` corrected to `Pulling a cord on his chest` — corpus wording on the Denji page (live wikitext and store: `can become the Chainsaw Man by pulling a cord on his chest`); the fact scorer is word-boundary containment, so the article difference was a guaranteed miss.",
       "answer": [
         {
-          "item": "Pulling the cord on his chest",
+          "item": "Pulling a cord on his chest",
           "aliases": [
             "ripcord"
           ]
@@ -1287,12 +1280,16 @@
       "scope": "closed",
       "expect_mode": "roster",
       "tier": "wiki",
-      "verified": "2026-08-15",
+      "verified": "2026-09-08",
       "sources": [
-        "https://chainsaw-man.fandom.com/wiki/Makima"
+        "https://chainsaw-man.fandom.com/wiki/Public_Safety_Devil_Hunters"
       ],
-      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. Two special divisions mentioned",
+      "note": "Added 2026-08-15 by the bank expansion. Shape `count`. CSM-1b 2026-09-08: the original canon counted what its single source page (Makima) mentioned (2 divisions); the 2026-08-15 roster audit (series/csm/overrides.yaml, declared roster `The Public Safety special divisions`) found five divisions named in the corpus (Tokyo Special Division 1/4/5/6/7) and the wiki states no total. Answer now matches the declared roster; source moved to the Public Safety Devil Hunters page. The count-phrasing routing gap (declared-roster door not reached under qa routing) is recorded separately in reports/csm/CSM1B_BANK_VALIDATION.md.",
       "answer": [
+        {
+          "item": "Tokyo Special Division 1",
+          "aliases": []
+        },
         {
           "item": "Tokyo Special Division 4",
           "aliases": []
@@ -1300,9 +1297,17 @@
         {
           "item": "Tokyo Special Division 5",
           "aliases": []
+        },
+        {
+          "item": "Tokyo Special Division 6",
+          "aliases": []
+        },
+        {
+          "item": "Tokyo Special Division 7",
+          "aliases": []
         }
       ],
-      "source_revid": 44595,
+      "source_revid": 44432,
       "revid_fetched": "2026-09-08"
     },
     {
@@ -1570,6 +1575,13 @@
       "revid": 44435,
       "timestamp": "2026-07-11T20:27:21Z",
       "redirects": []
+    },
+    "Public Safety Devil Hunters": {
+      "revid": 44432,
+      "timestamp": "2026-07-11T10:19:44Z",
+      "redirects": [
+        "Devil Hunter"
+      ]
     },
     "Tokyo Special Division 4": {
       "revid": 43635,

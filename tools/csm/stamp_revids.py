@@ -66,7 +66,10 @@ def fetch_revids(titles):
                 urllib.request.Request(f"{API}?{q}", headers={"User-Agent": UA}), timeout=30) as r:
             data = json.load(r)
         pages = data.get("query", {}).get("pages", {})
-        redir = {p["from"]: p["to"] for p in data.get("query", {}).get("normalized", []) or []}
+        # redirects (not normalized — that maps underscore/space spellings, a
+        # different field): without this, a source URL that redirects reports
+        # "no page found" and its revid lands under the redirect target key
+        redir = {p["from"]: p["to"] for p in data.get("query", {}).get("redirects", []) or []}
         for p in pages.values():
             rev = (p.get("revisions") or [{}])[0]
             title = p["title"]
@@ -76,13 +79,20 @@ def fetch_revids(titles):
                 result[title] = {"revid": rev.get("revid"),
                                  "timestamp": rev.get("timestamp"),
                                  "redirects": [redir[t] for t in redir if p.get("redirected") and t in redir]}
-        # any title that was neither in pages nor normalized = not found
+        # any title that was neither in pages nor normalized = not found;
+        # a redirected title resolves to the target's entry (the API returns
+        # the target page, so stamp the requested title with the target's revid)
         seen = {p["title"] for p in pages.values()} | set(redir.values())
         for t in batch:
             key = t
             while key in redir:
                 key = redir[key]
-            if key not in seen and t not in result:
+            if t in result:
+                continue
+            if key in result:
+                result[t] = dict(result[key])
+                result[t]["redirects"] = [key]
+            elif key not in seen:
                 result[t] = {"error": "no page found"}
     return result
 
