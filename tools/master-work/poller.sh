@@ -36,11 +36,15 @@ while :; do
   # 4. new ESC: newest ESC line with no matching DEC (judgment — wake A; gated on model up)
   esc=$(grep -oP '^\[.*\] ESC \K[^: ]+' $STATE 2>/dev/null | tail -1)
   if [ -n "$esc" ] && ! grep -q "DEC $esc" $DEC && [ "$mup" = up ]; then wake "ESC $esc"; fi
-  # 5. B liveness — UNIT-AWARE (council fix 2): stale = no work_log line for max(300, ETA); model-DOWN never counts
-  eta=$(sed -n 's/.*ETA: *\([0-9]*\).*/\1/p' $STATE | tail -1); eta=${eta:-0}; lim=$(( eta > 300 ? eta : 300 ))   # newest ETA line (B appends them to §B updates, §4.3)
+  # 5. B liveness — UNIT-AWARE (council fix 2 + no-unit guard 2026-09-08): B-STALE fires only while a
+  # unit is actually in progress — §state's A-owned ETA cell holds a number. An idle B with no unit
+  # is the expected state, not an event (the 11:15–12:46 no-unit churn produced 22 one-shots: B was
+  # parked idle and the ETA-blind cadence kept waking A every 300 s). model-DOWN never counts.
+  eta=$(sed -n 's/^- ETA: *\([0-9][0-9]*\).*/\1/p' $STATE | tail -1)   # §state cell (current truth), not §B history lines
+  lim=300; [ -n "$eta" ] && [ "$eta" -gt 300 ] && lim=$eta
   wl=$(stat -c %Y $WORKLOG 2>/dev/null || echo $now)
-  if [ "$live" = up ] && [ "$mup" = up ] && [ $(( now - wl )) -gt $lim ]; then
-    last_wl=$now; wake "B-STALE (no work_log line for >${lim}s; ETA-aware, model up — decide: extend ETA / VETO / REDO / kill+respawn §6.1-6.2)"; last_wl=$(stat -c %Y $WORKLOG)
+  if [ -n "$eta" ] && [ "$live" = up ] && [ "$mup" = up ] && [ $(( now - wl )) -gt $lim ]; then
+    last_wl=$now; wake "B-STALE (no work_log line for >${lim}s; unit in progress (ETA $eta) — decide: extend ETA / VETO / REDO / kill+respawn §6.1-6.2)"; last_wl=$(stat -c %Y $WORKLOG)
   fi
   [ "$wl" -gt "$last_wl" ] && last_wl=$wl
   sleep 60

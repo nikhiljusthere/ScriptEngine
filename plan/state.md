@@ -2,13 +2,13 @@
 
 ## §state (A's one-shot edits in place; the poller writes only the `model:` cell)
 
-- position: T0 round-trip gate complete — unit-t0-1 ESC ruled APPROVE (exactly one A wake, one DEC)
-- next-unit: B launches the PC loop per PLAN §5.4 (fresh MAX_TICKS budget)
-- ETA: 300
+- position: B-DOWN (12:46:15) ruled RESUME-on-relaunch (fit check FITS — record only, no respawn: STOP still on disk): work session GONE (tmux server down entirely = the poller's STOP tick killed B after the 12:41:01 STOP write; pane pid 55150 no longer exists), pcloop still absent (the §5.4 loop never launched), model up (health+v1/models 200); fit check §6.2: b_session 43,411B/4 ≈10.9k ≤ 135k (qwen_mode.txt still missing → last-known dial-down fallback, re-checked 12:46:15) → FITS → RESUME path (tmux new-session -d -s work -c /home/goblin/ScriptEngine "pi --session <b_session>"), NOT fresh spawn §4.3; per the committed 21st-fire §state: A-side NO respawn before STOP clears — STOP still on disk (12:41:01, 338B) → record only, owner relaunch stays explicit; new work_log line 12:45:00 (gpu-handoff protocol, council 0204d37f) is supervisor-side, not from the stopped B
+- next-unit: OWNER RELAUNCH (explicit, fresh MAX_TICKS budget): owner clears STOP → RESUME via tmux (fit re-confirmed 12:46:15: 43,411B/4 ≈10.9k ≤ 135k fallback; fresh spawn §4.3 only if the session file grows past ~540kB before the relaunch); B's first work_log line declares the unit ETA AND launches the §5.4 PC loop (fresh MAX_TICKS) + records the session-org outcome + owns/restores ninfer-work/qwen_mode.txt + reads docs/ops/PC_GPU_HANDOFF.md (the gpu-handoff protocol landed 12:45:00, dry-run PASS); A-side: NO respawn before STOP clears (B-DOWN/STOP wakes record only)
+- ETA: -   # B-DOWN 12:46:15 record-only (B stopped via the 12:41:01 STOP; ETA void until the owner relaunch). Poller stays ETA-blind (reads B's newest declared ETA: 300 from 11:13:48) — the ETA-blind cadence resumes after relaunch when B declares a unit ETA
 - model: up
-- b_session: -
-- loop: not started (B launches per PLAN §5.4, after T0)
-- open-risks: none
+- b_session: /home/goblin/.pi/agent/sessions/--home-goblin-ScriptEngine--/2026-09-08T05-43-04-167Z_01a07f8a-96e7-71df-8324-32636ef4fe43.jsonl
+- loop: PC-DEMO closed 11:34:48 (owner-watched; Qwen+:8000 verified 200 after); session-org (owner-watched GUI) recorded 11:48:03; full §5.4 loop launch never happened (no pcloop process, re-confirmed 12:46:15); B stopped via reports/master-work/STOP written 12:41:01; work session GONE 12:46:15 (tmux server down; pane pid 55150 gone); session file UNWRITTEN since the 12:05:57 respawn (43,411B, mtime 11:46:31 = ~60 min idle as of 12:46:15); 12:45:00 work_log gpu-handoff line is council 0204d37f (supervisor-side), not B
+- open-risks: (1) owner relaunch pending — STOP on disk (12:41:01); B-DOWN confirmed 12:46:15 (work session gone); resume conditions: explicit relaunch + fresh MAX_TICKS, RESUME path fit-confirmed (10.9k ≤ 135k fallback); B's first line = unit ETA + §5.4 loop launch + session-org record + qwen_mode ownership. (2) kill+respawn exhausted (2) + REDO (1) + VETO→STOP (1) — no further A-side respawns; B-DOWN/STOP wakes: record only until the owner clears STOP. (3) ninfer-work/qwen_mode.txt still missing (re-checked 12:46:15) — fit-check falls back to last-known 135k dial-down; B to own/restore at relaunch. (4) gpu-handoff protocol landed 12:45:00 (council 0204d37f: tools/master-work/gpu-handoff.sh tier1 no-flip / tier2 chain, dry-run PASS, docs/ops/PC_GPU_HANDOFF.md + pi.md §5 pointer) — the §5.4 loop's GPU-handoff method; B reads it at relaunch
 
 ## §B updates (B appends here; A reads. Line formats — never write example lines live, only real ones):
 #   [ts] ESC <unit>-<seq>: hit <X> — recommend <Y> (evidence: <path>)
