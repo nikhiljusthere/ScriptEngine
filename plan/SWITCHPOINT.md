@@ -258,6 +258,20 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 5. CSM resume remains on hold (owner-paused; the stuck session 01a07cab
    resumption is a separate, later flip).
 
+## Campaign todos (live list — every CSM session rebuilds its todo panel from this section and syncs it back after each status change; the panel is per-session volatile state, disk is the tiebreaker)
+
+- [x] 0. Wave-0 tier-0 reachability — 439→0 unreachable, span-recall csm rc=0 (record only; 6-word floor note in the audit)
+- [x] 1. Seed-bank inventory + revid-stamp (CSM-1 — `064093e`)
+- [x] 2. Classify every CSM page type + generalize the scoreboard (CSM-2 — `42aa296`; 14 unknowns resolved, JJK output byte-identical)
+- [x] Standing-gate re-baselining ×2 — gpu-live2 (`GATE_REBASELINE.md`, 1,242) + gpu-gate3 (`GATE_REBASELINE_2.md`, 1,249; CLAUDE.md + gates-skill baselines updated, `2c80867`)
+- [ ] 3. D5 measurement infrastructure — close the four §2a traps (pinned hashed panel, wired resume, full-denominator hit_rate, all three doors, tier-0 rename `span-recall` → `chunk-containment`)
+- [ ] 4. D5 exhaustive tier-1 × 3 doors (~51 GPU-h; batched in 100k side sessions via the gpu-handoff chain; standing 400-probe gate stays)
+- [ ] 5. Phase-0 remainder — 5.3 pilot fixtures / 5.5 no-LLM-judge / 5.4 door-first (extraction only on red) / §13 awareness line / the twenty-failures set (named author)
+- [ ] 6. D6 oracle + bounded instrument — parameterize the two jjk-hardcoded tools, CSM dimension map, eight-verb sample, frozen census sets (seeded + revid-stamped, D4 authored by a fresh-context subagent), T0 pilot, cross-page fact census
+- [ ] 7. §9a closure loop (D1–D6; one class per fix, never reword to pass, halt on regression / two no-reduction iterations)
+- [ ] 8. Done-declaration + pilot memo (pasted raw output + the four pilot numbers; JJK baseline diff-empty; halt before P6)
+- Standing items (whole campaign): council every 2–3 todos — **one agent at a time** (owner rule 2026-09-08); raw receipts, never "100%" prose; `coverage_report` regenerated after every commit; the four standing gates before any pass is declared done; per-wiki handling in `series/csm/overrides.yaml` / `tools/csm/` only; JJK baseline untouched; **no CPU fallback for jobs** (100k switch + side session; CPU = `:8000` service + <15 min jobs only).
+
 ## Switch log (machine-appended by qwen-switch.sh)
 
 - (none yet)- 2026-09-07T22:05:09+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=8988MiB
