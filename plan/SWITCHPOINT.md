@@ -59,10 +59,13 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   - The master-work A/B deploy is in flight on this box (the untracked /
     modified files above); CSM commits stay CSM-area paths only, and the
     master-work files are managed by that process.
-- first action on resume: **start CSM-2** from its council item 2 scope +
-  done-criteria (`reports/csm/COUNCIL_csm-campaign.md`); read `reports/csm/
-  CSM1_INVENTORY.md` for the bank's stamped state; todos CSM-1..8 are recreated
-  from the council plan if the panel was lost (CSM-1 = done).
+- first action on resume: **the gpu-live2 chain** (above) is the live item —
+  on the typed RESUME line, follow its 5 steps; then **CSM-2** from its
+  council item 2 scope + done-criteria (`reports/csm/COUNCIL_csm-campaign.md`);
+  `reports/csm/CSM1_INVENTORY.md` (stamped bank) and `reports/csm/
+  CSM1B_BANK_VALIDATION.md` (CSM-1b state: gold fixes, gaps G-CSM-1..4) are
+  the read-first records; todos CSM-1..8 are recreated from the council plan
+  if the panel was lost (CSM-1 = done, CSM-1b = done pending live2 report).
 - done this turn (2026-09-08, CSM-1, fresh 262k+vision session): CSM-1
   DONE + committed `064093e` (stamped bank + inventory artifact, CSM-area
   paths only). Tool fixes committed with it: Fandom-403 UA, tuple-swap
@@ -79,6 +82,37 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   Two new owner rules persisted in CLAUDE.md (GPU >15 min; 10–15 s polling
   + explicit timeout). CSM campaign todos created (#11–#15). Council on
   the CSM plan launched. Committed `281fe2e`.
+
+## gpu-live2 handoff (2026-09-08 — A=01a07ff0 → chain → C on 100k → A resume)
+
+Second live run of the gpu-handoff chain (docs/ops/PC_GPU_HANDOFF.md):
+`gpu-handoff.sh --tier2 plan/gpu_live2.spec` flips 262k→100k, opens C
+(visible terminal `GPU-gpu_live2`, fresh 100k pi) which runs the
+**standing-gates re-baseline** per `plan/gpu_live2_task.md` (pytest full on
+CUDA incl. the 6 OOM cases, eval jjk, span-recall jjk offline + --probe 400
+on a CUDA :8000, canon opm --skip-eval) → `reports/csm/GATE_REBASELINE.md`,
+flips back 262k, and the gated typer types the resume line into A's window
+(51768426). A sits idle at its prompt meanwhile (frozen context, zero cost).
+Context: CSM-1b (owner directive 2026-09-08) is DONE + committed — bank
+validation + 4 in-place gold fixes + relations runner + 4 numbered engine
+gaps (G-CSM-1..4); the gate re-baseline moved to this side session (owner
+correction: 262k holds the card → 100k+CUDA, never CPU fallback).
+
+**On resume (the typed RESUME line is my next user message):**
+1. Read `reports/csm/GATE_REBASELINE.md` (C's re-baseline).
+2. Restore `:8000` to CPU (C left it on CUDA; 262k co-location rule —
+   headroom 1,604 MiB < 6 GiB).
+3. Check chain state: `reports/master-work/gpu_handoff_state/gpu_live2.{log,stalled,typed}`
+   + `/tmp/gpu_live2_chain.log`. A `STALLED` flag = inspect, then replay:
+   `setsid nohup bash tools/master-work/gpu-handoff.sh --tier2 plan/gpu_live2.spec >/dev/null 2>&1 &`
+   (gates are idempotent).
+4. Trash C's transcript (`reports/master-work/gpu_handoff_state/c_session`)
+   — only AFTER reading the report (deleting it earlier poisons the
+   switch-back fit guard).
+5. Update CLAUDE.md's stale gate values with the re-baselined numbers + run
+   timestamps (the 1,239 vs 1,242 self-contradiction), commit, then resume
+   **CSM-2** (scoreboard/classification, council item 2 — its grounding data
+   is in `plan/SWITCHPOINT.md`'s CSM-1b todo note / `reports/csm/`).
 
 ## gpu-live1 handoff (2026-09-08 — A=01a07f33 → chain → C on 100k → A resume)
 
