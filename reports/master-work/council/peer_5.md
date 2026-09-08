@@ -1,0 +1,7 @@
+Peer review #5
+
+1. Agree most: **B**. The only answer that challenges the premise: the triggering overflow (100k) is already fixed at 135k, and the real pain (strategy buried under tool output) is a transcript-discipline problem, not an architecture one — so CSM wants single-session + checkpoints and the loop wants the split. Also the only T2 spec/test catch (the stale rule kills B mid-council; T2 masks it because loop heartbeats keep work_log fresh).
+
+2. Disagree most: **C**. "Against the split as instantiated" is a verdict on the plan as written, but C's own "what changes my mind" list (event-driven A, unit-aware staleness, per-unit terrain summaries) *is* the consensus redesign — C rejects the split and prescribes its fix in the same breath, and deferring A until measurements delay the decision channel the resumption's first unit (a decision call) needs.
+
+3. **All five miss the owner's control path.** Claim 3 (disk is tiebreaker) implies human override, but nobody specifies it: how to retract a DEC B is already executing; how to stop A (STOP stops the loop; killing A is an unrecorded tmux kill that loses A's state); how to revive A (D's a_session handle exists; no procedure — E names an "owner-availability protocol" without content). The tiebreaker itself has no interface.
