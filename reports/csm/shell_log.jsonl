@@ -17,3 +17,5 @@ echo launched; for i in $(seq 1 10); do h=$(curl -s --max-ti"}
 {"ts":"2026-09-08T18:08:16+05:30","event":"START","pid":"103567","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"span-recall --series jjk\" >/dev/null; then echo \"$(date +%H:%M:%S) iter $i: probe running; $(tail -1 /tmp/spanrec_jjk_csm3b.log 2>/dev/null | cut -c1-60)\"; sleep 15; else"}
 {"ts":"2026-09-08T18:10:27+05:30","event":"END","pid":"103567","dur_s":"131"}
 {"ts":"2026-09-08T18:10:32+05:30","event":"START","pid":"104284","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"span-recall --series jjk\" >/dev/null; then echo \"$(date +%H:%M:%S) iter $i: probe running\"; sleep 15; else echo \"$(date +%H:%M:%S) iter $i: probe DONE\"; break; fi; done; "}
+{"ts":"2026-09-08T18:12:48+05:30","event":"END","pid":"104284","dur_s":"136"}
+{"ts":"2026-09-08T18:13:03+05:30","event":"START","pid":"105015","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && (t0=$(date +%s); python -m scriptengine.cli canon-run --series opm --skip-eval > /tmp/canon_opm_csm3b.log 2>&1; echo \"CANON_OPM rc=$?"}
