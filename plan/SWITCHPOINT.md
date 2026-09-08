@@ -16,10 +16,12 @@ edit those.
   gpu-handoff chain (`docs/ops/PC_GPU_HANDOFF.md` + `tools/master-work/
 gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   the GPU, never `--api` on a chain switch.
-- git: head `42aa296` (csm: CSM-2 — page-type classification + scoreboard
-  generalization) on the campaign trail `… → b526298` (csm: CSM-1b) →
-  `4aa534f` (control: gpu-live2 launch) → `9e13815` (control: gates
-  re-baselined) → `42aa296`. Untracked (master-work, not CSM area):
+- git: head `1f46f33` (csm: COUNCIL_csm-1b-2 record + rulings + receipt
+  hygiene) on the campaign trail `… → 9e13815` (control: gates re-baselined)
+  → `42aa296` (csm: CSM-2) → `1f46f33` → (this launch checkpoint). The
+  master-work process committed `1eb85eb`/`42fb946` (docs rules) in parallel
+  — separate area, no CSM-path overlap. Untracked (master-work, not CSM
+  area):
   `plan/AB_DEPLOYMENT.md`,
   `reports/master-work/{GPU_LIVE1_REPORT.md,STOP,gpu_handoff_state/}`;
   modified by the master-work process (do not commit from the CSM session):
@@ -91,6 +93,16 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   open the CSM gate section in `reports/comprehension/GATE.md`, commit — then
   start **CSM-3** from the council item 3 scope + the addendum in
   `reports/csm/COUNCIL_csm-campaign.md`.
+- done this turn (2026-09-08, gpu-gate3 launch — fresh CSM session 01a08064,
+  inheriting from disk; the retired session 01a07ff0's window 51768426 is
+  BadWindow, so the spec's A-side fields were retargeted): a_win=51286464
+  (my terminal — the pts/1 `pi` pid 78300 start 09:41:24Z matches this
+  session's 09:41:25Z; the other "π - ScriptEngine" window 50331658 is the
+  live master-work session 01a07f33's terminal), a_session = this session's
+  jsonl, a_title unchanged. Committed the spec + task + this switchpoint
+  (launch checkpoint), then launched the tier-2 chain (setsid
+  gpu-handoff.sh --tier2 plan/gpu_gate3.spec). Sitting idle at the prompt
+  until the typed RESUME.
 - done this turn (2026-09-08, COUNCIL_csm-1b-2 + rulings): cadence council
   completed (5 advisors + 5 peers; round 1's peer/chairman rounds void on a
   harness text-capture bug — round 2 re-ran on recovered advisor text, noted
@@ -132,7 +144,7 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   + explicit timeout). CSM campaign todos created (#11–#15). Council on
   the CSM plan launched. Committed `281fe2e`.
 
-## gpu-gate3 handoff (2026-09-08 — A=01a07ff0 → chain → C on 100k → A resume)
+## gpu-gate3 handoff (2026-09-08 — A=01a08064 (fresh CSM session; retargeted from the retired 01a07ff0) → chain → C on 100k → A resume)
 
 **Gate re-baseline, round 2 (council blocker, COUNCIL_csm-1b-2).** The
 GATE_REBASELINE record (1,242, git `9e13815`) predates CSM-2's +7 tests
@@ -144,7 +156,7 @@ opens C (visible terminal, fresh 100k pi) which runs the four standing gates
 the 6 VRAM-sensitive `test_context` cases must pass; eval jjk; span-recall
 jjk offline + --probe 400 on a CUDA `:8000`; canon opm --skip-eval) →
 `reports/csm/GATE_REBASELINE_2.md`, flips back 262k, typed RESUME into A's
-window (51768426).
+window (51286464).
 
 **On resume (the typed RESUME line is my next user message):**
 1. Read `reports/csm/GATE_REBASELINE_2.md` (C's 1,249-tree re-baseline).
