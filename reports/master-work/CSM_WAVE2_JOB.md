@@ -37,7 +37,11 @@ raw receipts → next pair; councils are a separate cadence, one agent at a time
 4. **Phase close.** The four standing gates on CUDA (pytest 1,254 / eval jjk
    31/31 / span-recall 48,572 + 400-probe / canon opm 236/236 · 79.0% — a
    regression = halt + fix, not a note); the phase-completion council
-   (trigger §3a of the plan); commit; `tools/coverage_report.py`.
+   (trigger §3a of the plan); commit; `tools/coverage_report.py`. **Last act,
+   before anything else: write the completion marker**
+   `echo "PHASE_A_COMPLETE $(date -Iseconds)" >> reports/master-work/phase_status.txt`
+   — the orchestrator session polls that file (not the prose) to start the
+   100k switch + restart into Phase B.
 
 ## File discipline (JJK-100% invariant)
 

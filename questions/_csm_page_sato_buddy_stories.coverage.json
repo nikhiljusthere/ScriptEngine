@@ -1,0 +1,39 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:gender",
+        "page-gen:identity:status"
+      ]
+    },
+    {
+      "path": "Relationships",
+      "covered_by": []
+    },
+    {
+      "path": "Relationships / Unnamed family",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Relationships",
+    "Relationships / Unnamed family"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    }
+  ]
+}

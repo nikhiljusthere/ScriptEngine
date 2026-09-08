@@ -1,0 +1,715 @@
+{
+ "meta": {
+  "series": "csm",
+  "generated": "2026-09-09",
+  "seed": 42,
+  "documents_revid_max": 0,
+  "source": "generated fresh from series/csm/overrides.yaml rosters + facts.db character/arc structure; the JJK frozen sets are a shape reference only, never copied",
+  "revids": {
+   "Aki Hayakawa": {
+    "revid": 44532,
+    "timestamp": "2026-07-27T08:43:32Z",
+    "redirects": []
+   },
+   "Asa Mitaka": {
+    "revid": 44657,
+    "timestamp": "2026-09-04T05:25:07Z",
+    "redirects": []
+   },
+   "Chocolate": {
+    "revid": 40844,
+    "timestamp": "2025-12-02T16:01:06Z",
+    "redirects": []
+   },
+   "Death Devil": {
+    "revid": 44650,
+    "timestamp": "2026-08-31T05:32:37Z",
+    "redirects": []
+   },
+   "Denji": {
+    "revid": 43187,
+    "timestamp": "2026-03-25T19:02:48Z",
+    "redirects": []
+   },
+   "Devil": {
+    "revid": 44646,
+    "timestamp": "2026-08-28T19:47:08Z",
+    "redirects": []
+   },
+   "Famine Devil": {
+    "revid": 44656,
+    "timestamp": "2026-09-04T05:23:35Z",
+    "redirects": []
+   },
+   "Four Horsemen": {
+    "revid": 44644,
+    "timestamp": "2026-08-27T11:24:52Z",
+    "redirects": []
+   },
+   "Future Devil": {
+    "revid": 44404,
+    "timestamp": "2026-07-07T11:39:40Z",
+    "redirects": []
+   },
+   "Himeno": {
+    "revid": 44498,
+    "timestamp": "2026-07-24T07:08:02Z",
+    "redirects": []
+   },
+   "Hybrid": {
+    "revid": 44379,
+    "timestamp": "2026-07-05T08:33:14Z",
+    "redirects": []
+   },
+   "Makima": {
+    "revid": 44595,
+    "timestamp": "2026-08-05T20:12:58Z",
+    "redirects": []
+   },
+   "Meowy": {
+    "revid": 43176,
+    "timestamp": "2026-03-25T18:25:06Z",
+    "redirects": []
+   },
+   "Pochita": {
+    "revid": 43189,
+    "timestamp": "2026-03-25T19:08:40Z",
+    "redirects": []
+   },
+   "Power": {
+    "revid": 44435,
+    "timestamp": "2026-07-11T20:27:21Z",
+    "redirects": []
+   },
+   "Public Safety Devil Hunters": {
+    "revid": 44432,
+    "timestamp": "2026-07-11T10:19:44Z",
+    "redirects": [
+     "Devil Hunter"
+    ]
+   },
+   "Tokyo Special Division 4": {
+    "revid": 43635,
+    "timestamp": "2026-05-20T20:04:03Z",
+    "redirects": []
+   },
+   "Weapon Devils": {
+    "revid": 43348,
+    "timestamp": "2026-04-06T08:02:46Z",
+    "redirects": []
+   },
+   "Yoru": {
+    "revid": 44649,
+    "timestamp": "2026-08-30T06:47:37Z",
+    "redirects": []
+   }
+  },
+  "revid_stamp": {
+   "fetched": "2026-09-08",
+   "api": "https://chainsaw-man.fandom.com/api.php",
+   "note": "current revid of each source page at fetch time; a re-run reports pages that moved (drift = re-verify)"
+  }
+ },
+ "items": [
+  {
+   "q": "What happened to Denji, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Devil, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Makima, in order?",
+   "mode": "narrative",
+   "subject": "Makima",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Pochita, in order?",
+   "mode": "narrative",
+   "subject": "Pochita",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Aki Hayakawa, in order?",
+   "mode": "narrative",
+   "subject": "Aki Hayakawa",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Devil Hunter, in order?",
+   "mode": "narrative",
+   "subject": "Devil Hunter",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Yoru, in order?",
+   "mode": "narrative",
+   "subject": "Yoru",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Asa Mitaka, in order?",
+   "mode": "narrative",
+   "subject": "Asa Mitaka",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Power, in order?",
+   "mode": "narrative",
+   "subject": "Power",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Gun Devil, in order?",
+   "mode": "narrative",
+   "subject": "Gun Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Katana Man, in order?",
+   "mode": "narrative",
+   "subject": "Katana Man",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Kishibe, in order?",
+   "mode": "narrative",
+   "subject": "Kishibe",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Quanxi, in order?",
+   "mode": "narrative",
+   "subject": "Quanxi",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Death Devil, in order?",
+   "mode": "narrative",
+   "subject": "Death Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Hirofumi Yoshida, in order?",
+   "mode": "narrative",
+   "subject": "Hirofumi Yoshida",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Himeno, in order?",
+   "mode": "narrative",
+   "subject": "Himeno",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Kobeni Higashiyama, in order?",
+   "mode": "narrative",
+   "subject": "Kobeni Higashiyama",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Nayuta, in order?",
+   "mode": "narrative",
+   "subject": "Nayuta",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Angel Devil, in order?",
+   "mode": "narrative",
+   "subject": "Angel Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Falling Devil, in order?",
+   "mode": "narrative",
+   "subject": "Falling Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Santa Claus, in order?",
+   "mode": "narrative",
+   "subject": "Santa Claus",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Beam, in order?",
+   "mode": "narrative",
+   "subject": "Beam",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fami, in order?",
+   "mode": "narrative",
+   "subject": "Fami",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fire Devil, in order?",
+   "mode": "narrative",
+   "subject": "Fire Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Aging Devil, in order?",
+   "mode": "narrative",
+   "subject": "Aging Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Akane Sawatari, in order?",
+   "mode": "narrative",
+   "subject": "Akane Sawatari",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Reze, in order?",
+   "mode": "narrative",
+   "subject": "Reze",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Eternity Devil, in order?",
+   "mode": "narrative",
+   "subject": "Eternity Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fumiko Mifune, in order?",
+   "mode": "narrative",
+   "subject": "Fumiko Mifune",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fox Devil, in order?",
+   "mode": "narrative",
+   "subject": "Fox Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fake Chainsaw Man, in order?",
+   "mode": "narrative",
+   "subject": "Fake Chainsaw Man",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Barem Bridge, in order?",
+   "mode": "narrative",
+   "subject": "Barem Bridge",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Haruka Iseumi, in order?",
+   "mode": "narrative",
+   "subject": "Haruka Iseumi",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Yuko, in order?",
+   "mode": "narrative",
+   "subject": "Yuko",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Hybrid, in order?",
+   "mode": "narrative",
+   "subject": "Hybrid",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Nobana Higashiyama, in order?",
+   "mode": "narrative",
+   "subject": "Nobana Higashiyama",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Ghost Devil, in order?",
+   "mode": "narrative",
+   "subject": "Ghost Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Darkness Devil, in order?",
+   "mode": "narrative",
+   "subject": "Darkness Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Meowy, in order?",
+   "mode": "narrative",
+   "subject": "Meowy",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Miri Sugo, in order?",
+   "mode": "narrative",
+   "subject": "Miri Sugo",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Asa Mitaka's Mother, in order?",
+   "mode": "narrative",
+   "subject": "Asa Mitaka's Mother",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Class President, in order?",
+   "mode": "narrative",
+   "subject": "Class President",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Curse Devil, in order?",
+   "mode": "narrative",
+   "subject": "Curse Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Division 4 Female Member, in order?",
+   "mode": "narrative",
+   "subject": "Division 4 Female Member",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Division 4 Male Member, in order?",
+   "mode": "narrative",
+   "subject": "Division 4 Male Member",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fairness Devil, in order?",
+   "mode": "narrative",
+   "subject": "Fairness Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Fish Devil, in order?",
+   "mode": "narrative",
+   "subject": "Fish Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Future Devil, in order?",
+   "mode": "narrative",
+   "subject": "Future Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to House Devil, in order?",
+   "mode": "narrative",
+   "subject": "House Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Joey, in order?",
+   "mode": "narrative",
+   "subject": "Joey",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Long, in order?",
+   "mode": "narrative",
+   "subject": "Long",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Miki Takanashi, in order?",
+   "mode": "narrative",
+   "subject": "Miki Takanashi",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Nazi Devil, in order?",
+   "mode": "narrative",
+   "subject": "Nazi Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Octopus Devil, in order?",
+   "mode": "narrative",
+   "subject": "Octopus Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Seigi Akoku, in order?",
+   "mode": "narrative",
+   "subject": "Seigi Akoku",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Sickness Devil, in order?",
+   "mode": "narrative",
+   "subject": "Sickness Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Stone Devil, in order?",
+   "mode": "narrative",
+   "subject": "Stone Devil",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Takagi, in order?",
+   "mode": "narrative",
+   "subject": "Takagi",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Tanaka, in order?",
+   "mode": "narrative",
+   "subject": "Tanaka",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened to Tsugihagi, in order?",
+   "mode": "narrative",
+   "subject": "Tsugihagi",
+   "stratum": "character"
+  },
+  {
+   "q": "What happened in the Introduction, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Bat Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Eternity Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Katana Man, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Bomb Girl, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the International Assassins, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Gun Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Control Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Justice Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Dating Denji, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Falling Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Chainsaw Man Church, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Aging Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the War Devil, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Public Safety Saga, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened in the Academy Saga, in order?",
+   "mode": "narrative",
+   "subject": null,
+   "stratum": "arc"
+  },
+  {
+   "q": "What happened to Denji during the Introduction, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Bat Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Eternity Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Katana Man, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Bomb Girl, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the International Assassins, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Gun Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Control Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Justice Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Dating Denji, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Falling Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Chainsaw Man Church, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Aging Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the War Devil, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Public Safety Saga, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Denji during the Academy Saga, in order?",
+   "mode": "narrative",
+   "subject": "Denji",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Introduction, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Bat Devil, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Eternity Devil, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Katana Man, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Bomb Girl, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the International Assassins, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Gun Devil, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  },
+  {
+   "q": "What happened to Devil during the Control Devil, in order?",
+   "mode": "narrative",
+   "subject": "Devil",
+   "stratum": "char-arc"
+  }
+ ]
+}

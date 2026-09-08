@@ -1,0 +1,46 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:gender",
+        "page-gen:identity:status",
+        "page-gen:identity:romaji",
+        "page-gen:identity:kanji"
+      ]
+    },
+    {
+      "path": "Plot",
+      "covered_by": []
+    },
+    {
+      "path": "Plot / History",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Plot",
+    "Plot / History",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    }
+  ]
+}

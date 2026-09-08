@@ -25,8 +25,17 @@ Reached (the D1/D2 bar):
 miss list; a short member set on a reached question is flagged
 `short` for triage, not counted a miss).
 
+Sets are frozen per series: JJK keeps its bare-list sets in the legacy
+reports/comprehension/ home (JJK-100%); other series freeze under
+reports/<series>/ (census_roster_100_<series>.json, census_narrative_100_
+<series>.json) as {meta, items} with the seed + revid stamp, generated fresh
+from that wiki's own rosters/structure (never copied from JJK). A wiki that
+declares fewer rosters than the 100 budget (a corpus property) freezes its
+whole declared set; the shortfall is printed, not padded.
+
 Usage:
-  CENSUS_DEVICE=cuda python tools/census_doors.py [--regen]
+  CENSUS_DEVICE=cuda python tools/census_doors.py --series jjk [--regen]
+  CENSUS_DEVICE=cuda python tools/census_doors.py --series csm --regen
 """
 from __future__ import annotations
 
@@ -50,10 +59,64 @@ import yaml  # noqa: E402
 from scriptengine.config import series_paths          # noqa: E402
 from scriptengine.api.context import build_context    # noqa: E402
 
-OUT_DIR = ROOT / "reports" / "comprehension"
-ROSTER_SET = OUT_DIR / "census_roster_100.json"
-NARRATIVE_SET = OUT_DIR / "census_narrative_100.json"
-RESULTS = OUT_DIR / "census_doors_results.jsonl"
+def _set_paths(series: str) -> tuple[Path, Path, Path]:
+    """(roster set, narrative set, results) per series. JJK keeps the frozen
+    door sets in their legacy home (JJK-100%); other series keep them under
+    reports/<series>/ so a JJK run can never clobber another corpus' sets."""
+    if series == "jjk":
+        d = ROOT / "reports/comprehension"
+        return (d / "census_roster_100.json",
+                d / "census_narrative_100.json",
+                d / "census_doors_results.jsonl")
+    d = ROOT / "reports" / series
+    return (d / f"census_roster_100_{series}.json",
+            d / f"census_narrative_100_{series}.json",
+            d / f"census_doors_results_{series}.jsonl")
+
+
+def _set_meta(series: str) -> dict:
+    """The freeze stamp for a non-legacy set: the seed the tiering samples
+    with, and the source-revid pin the corpus was crawled against.
+
+    `documents.revid` is the crawl's per-page stamp when the crawl carries
+    one (JJK); a crawl that predates revid-pinning leaves it 0, and the pin
+    then comes from the series' own gold bank (`revids` map + `revid_stamp`
+    in questions/<series>.json) when it exists."""
+    from datetime import date
+
+    import sqlite3
+    db = sqlite3.connect(series_paths(series).facts_db)
+    doc_revid = db.execute("SELECT MAX(revid) FROM documents").fetchone()[0]
+    meta = {
+        "series": series,
+        "generated": date.today().isoformat(),
+        "seed": 42,  # the tiering sample (the legacy JJK seed), fixed for the freeze
+        "documents_revid_max": doc_revid,
+        "source": (f"generated fresh from series/{series}/overrides.yaml rosters + "
+                   "facts.db character/arc structure; the JJK frozen sets are a "
+                   "shape reference only, never copied"),
+    }
+    bank = ROOT / "questions" / f"{series}.json"
+    if bank.exists():
+        data = json.loads(bank.read_text())
+        if isinstance(data, dict) and data.get("revids"):
+            meta["revids"] = data["revids"]
+            meta["revid_stamp"] = data.get("revid_stamp")
+    return meta
+
+
+def _write_set(path: Path, items: list[dict], series: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if series == "jjk":  # the legacy files stay bare lists, byte-identical
+        path.write_text(json.dumps(items, indent=1))
+        return
+    path.write_text(json.dumps({"meta": _set_meta(series), "items": items},
+                               indent=1))
+
+
+def _read_set(path: Path) -> list[dict]:
+    data = json.loads(path.read_text())
+    return data if isinstance(data, list) else data["items"]
 
 # Census data, not engine config: the stratification picks are recorded here
 # (and in the frozen set files) so a later run measures the same 200.
@@ -89,11 +152,46 @@ def _character_subjects(series: str) -> list[str]:
     return [r[0] for r in rows]
 
 
-def _subject_tiers(subjects: list[str]) -> tuple[list[str], list[str], list[str]]:
+def _degree_ranked(series: str, subjects: list[str]) -> list[str]:
+    """The corpus's own protagonists: characters ranked by graph degree
+    (most-linked page first, ties by title -- deterministic, no model)."""
+    import sqlite3
+    db = sqlite3.connect(series_paths(series).facts_db)
+    placeholders = ",".join("?" * len(subjects))
+    rows = db.execute(
+        f"""
+        WITH cn AS (
+            SELECT n.id node_id, d.title title
+            FROM nodes n JOIN documents d ON d.id = n.document_id
+            WHERE d.page_type = 'character'
+        )
+        SELECT c.title,
+               (SELECT COUNT(*) FROM edges e WHERE e.source_id = c.node_id)
+             + (SELECT COUNT(*) FROM edges e WHERE e.target_id = c.node_id) deg
+        FROM cn c WHERE c.title IN ({placeholders})
+        ORDER BY deg DESC, c.title
+        """, subjects).fetchall()
+    ranked = [r[0] for r in rows]
+    for s in subjects:  # degree-0 characters keep their place (title order)
+        if s not in ranked:
+            ranked.append(s)
+    return ranked
+
+
+def _subject_tiers(series: str, subjects: list[str]) -> tuple[list[str], list[str], list[str]]:
     main = [s for s in MAIN20 if s in subjects]
-    rest = [s for s in subjects if s not in main]
-    mid = rest[:20]
-    minor = sorted(random.Random(42).sample(rest[20:], 20)) if len(rest) > 20 else sorted(rest[20:])
+    if main:
+        # JJK's named campaign mains (the legacy path, byte-identical).
+        rest = [s for s in subjects if s not in main]
+        mid = rest[:20]
+        minor = sorted(random.Random(42).sample(rest[20:], 20)) if len(rest) > 20 else sorted(rest[20:])
+        return main, mid, minor
+    # A corpus without the JJK campaign mains: derive the tiers from the
+    # corpus itself -- top-20 by graph degree, the next 20, a seeded 20 from
+    # the rest (the legacy seed, so the sample is reproducible).
+    ranked = _degree_ranked(series, subjects)
+    main, mid, rest = ranked[:20], ranked[20:40], ranked[40:]
+    minor = sorted(random.Random(42).sample(rest, 20)) if len(rest) > 20 else sorted(rest)
     return main, mid, minor
 
 
@@ -109,7 +207,7 @@ def build_roster_set(series: str, out: Path) -> list[dict]:
     for r in rosters:
         by_stratum.setdefault(_stratum(r["name"]), []).append(r)
 
-    main, mid, minor = _subject_tiers(_character_subjects(series))
+    main, mid, minor = _subject_tiers(series, _character_subjects(series))
     char_pool: list[dict] = []
     for tier, cap in ((main, 35), (mid, 20), (minor, 15)):
         taken = 0
@@ -126,7 +224,16 @@ def build_roster_set(series: str, out: Path) -> list[dict]:
     items = by_size(by_stratum.get("item", []), 5)
     take = char_pool[: 100 - len(tech) - len(orgs) - len(items)]
     if len(take) + len(tech) + len(orgs) + len(items) != 100:
-        raise SystemExit(f"strata do not fill 100: char={len(take)} tech={len(tech)} org={len(orgs)} item={len(items)}")
+        # The wiki declares fewer rosters than the 100 budget (a corpus
+        # property: JJK declares 1355, CSM 11). Freeze every remaining
+        # declared roster (capped at the budget) so the census measures the
+        # wiki's whole enumeration surface; JJK's strata fill is exact, so
+        # this branch never fires there (JJK-100%).
+        have = {r["name"] for r in take + tech + orgs + items}
+        need = 100 - (len(take) + len(tech) + len(orgs) + len(items))
+        take += [r for r in rosters if r["name"] not in have][:need]
+        print(f"roster strata fill {len(take)+len(tech)+len(orgs)+len(items)}/100 "
+              f"(corpus property; shortfall frozen, not padded)")
 
     set_ = []
     for r, stratum in ([(r, "character") for r in take]
@@ -135,7 +242,7 @@ def build_roster_set(series: str, out: Path) -> list[dict]:
                        + [(r, "item") for r in items]):
         set_.append({"q": r["name"], "mode": "roster", "subject": None,
                      "stratum": stratum, "declared": len(r["members"])})
-    out.write_text(json.dumps(set_, indent=1))
+    _write_set(out, set_, series)
     print(f"froze {len(set_)} roster questions -> {out.name}")
     return set_
 
@@ -151,7 +258,7 @@ def _story_arcs(series: str) -> list[str]:
 
 def build_narrative_set(series: str, out: Path) -> list[dict]:
     subjects = _character_subjects(series)
-    main, mid, minor = _subject_tiers(subjects)
+    main, mid, minor = _subject_tiers(series, subjects)
     for s in main + mid + minor:
         if s not in subjects:
             raise SystemExit(f"stratification names a page not in the corpus: {s}")
@@ -168,22 +275,28 @@ def build_narrative_set(series: str, out: Path) -> list[dict]:
     for arc in arcs:
         set_.append({"q": f"What happened in the {_arc_display(arc)}, in order?",
                      "mode": "narrative", "subject": None, "stratum": "arc"})
-    grid = [(c, a) for c in main[:5] for a in arcs][: 100 - len(set_)]
+    grid = [(c, a) for c in main[:5] for a in arcs][: max(0, 100 - len(set_))]
     set_.extend({"q": f"What happened to {c} during the {_arc_display(a)}, in order?",
                  "mode": "narrative", "subject": c, "stratum": "char-arc"}
                 for c, a in grid)
     if len(set_) != 100:
-        raise SystemExit(f"narrative set is {len(set_)} != 100")
-    out.write_text(json.dumps(set_, indent=1))
+        # A corpus that holds fewer narrative questions than the 100 budget
+        # (fewer characters or arcs) freezes what it holds (JJK-100%: JJK
+        # fills exactly 100, so this branch never fires there).
+        print(f"narrative strata fill {len(set_)}/100 (corpus property; "
+              f"shortfall frozen, not padded)")
+    _write_set(out, set_, series)
     print(f"froze {len(set_)} narrative questions -> {out.name}")
     return set_
 
 
-def run(series: str, roster_set: list[dict], narrative_set: list[dict]) -> None:
+def run(series: str, roster_set: list[dict], narrative_set: list[dict],
+            results_path: Path) -> None:
     paths = series_paths(series)
     declared = {r["name"]: len(r.get("members", [])) for r in
                 yaml.safe_load((ROOT / "series" / series / "overrides.yaml").read_text())["rosters"]}
     t0 = time.time()
+    total = len(roster_set) + len(narrative_set)
     results = []
     for i, item in enumerate(roster_set + narrative_set, 1):
         try:
@@ -202,8 +315,8 @@ def run(series: str, roster_set: list[dict], narrative_set: list[dict]) -> None:
             rec = {**item, "reached": False, "error": f"{type(e).__name__}: {e}"}
         results.append(rec)
         if i % 25 == 0 or not rec["reached"]:
-            print(f"  {i:3d}/200 {'OK ' if rec['reached'] else 'MISS'} {item['q'][:70]}")
-    RESULTS.write_text("\n".join(json.dumps(r) for r in results) + "\n")
+            print(f"  {i:3d}/{total} {'OK ' if rec['reached'] else 'MISS'} {item['q'][:70]}")
+    results_path.write_text("\n".join(json.dumps(r) for r in results) + "\n")
     for name, sel in (("roster", roster_set), ("narrative", narrative_set)):
         rs = [r for r in results if r["mode"] == name]
         hit = sum(1 for r in rs if r["reached"])
@@ -213,24 +326,26 @@ def run(series: str, roster_set: list[dict], narrative_set: list[dict]) -> None:
                 print(f"  MISS [{r['stratum']}] {r['q'][:75]}  {r.get('error') or ''}")
             elif r["mode"] == "roster" and r["retrieved"] < r["declared"]:
                 print(f"  short [{r['stratum']}] {r['q'][:60]} ({r['retrieved']}/{r['declared']})")
-    print(f"\n{time.time() - t0:.0f}s; results -> {RESULTS}")
+    print(f"\n{time.time() - t0:.0f}s; results -> {results_path}")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--series", default="jjk")
+    ap.add_argument("--series", default="jjk",
+                    help="the corpus to census (jjk keeps its legacy frozen sets)")
     ap.add_argument("--regen", action="store_true", help="rebuild the frozen sets")
     args = ap.parse_args()
 
-    if args.regen or not ROSTER_SET.exists():
-        roster_set = build_roster_set(args.series, ROSTER_SET)
+    roster_path, narrative_path, results_path = _set_paths(args.series)
+    if args.regen or not roster_path.exists():
+        roster_set = build_roster_set(args.series, roster_path)
     else:
-        roster_set = json.loads(ROSTER_SET.read_text())
-    if args.regen or not NARRATIVE_SET.exists():
-        narrative_set = build_narrative_set(args.series, NARRATIVE_SET)
+        roster_set = _read_set(roster_path)
+    if args.regen or not narrative_path.exists():
+        narrative_set = build_narrative_set(args.series, narrative_path)
     else:
-        narrative_set = json.loads(NARRATIVE_SET.read_text())
-    run(args.series, roster_set, narrative_set)
+        narrative_set = _read_set(narrative_path)
+    run(args.series, roster_set, narrative_set, results_path)
 
 
 if __name__ == "__main__":

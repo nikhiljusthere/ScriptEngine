@@ -10,8 +10,11 @@ sees one arc, but a row's own chapter contradicts it).
 Bar (pre-committed): 0 unflagged unambiguous misplacements.
 
 Model-free, offline. Usage:
-  python tools/placement_audit.py [--agree-sample 40]
-Writes reports/comprehension/placement_audit_3d.json + prints the summary.
+  python tools/placement_audit.py --series jjk [--agree-sample 40]
+  python tools/placement_audit.py --series csm
+JJK writes reports/comprehension/placement_audit_3d.json (the legacy 3d home,
+untouched); other series write reports/<series>/placement_audit_<series>.json
++ print the summary.
 """
 from __future__ import annotations
 
@@ -110,13 +113,15 @@ def classify_row(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--series", default="jjk",
+                        help="the corpus to audit (jjk keeps its legacy 3d file)")
     parser.add_argument("--agree-sample", type=int, default=40)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
     from scriptengine.config import series_paths
 
-    paths = series_paths("jjk")
+    paths = series_paths(args.series)
     with FactStore(paths.facts_db) as store:
         report = gate.cross_page_agreement(store)
         name_to_pos = timeaxis.story_arc_index(store)
@@ -181,7 +186,11 @@ def main() -> None:
         "agree_sample": len(sample),
         "false_agreements": false_agreements,
     }
-    dest = ROOT / "reports/comprehension/placement_audit_3d.json"
+    if args.series == "jjk":  # JJK-100%: the 3d audit stays in its legacy home
+        dest = ROOT / "reports/comprehension/placement_audit_3d.json"
+    else:
+        dest = ROOT / "reports" / args.series / f"placement_audit_{args.series}.json"
+        dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(out, indent=1))
     print(f"disagreeing {report['stats']['disagreeing']} -> {dict(disagree_classes)}")
     print(f"flagged out-of-range rows: {len(flagged)}")

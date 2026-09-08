@@ -28,3 +28,11 @@ echo launched; for i in $(seq 1 10); do h=$(curl -s --max-ti"}
 {"ts":"2026-09-08T18:24:21+05:30","event":"START","pid":"107784","cmd":"python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm.json.heldout.json --sanity 4 "}
 {"ts":"2026-09-08T18:24:36+05:30","event":"END","pid":"107784","dur_s":"15"}
 {"ts":"2026-09-08T18:24:36+05:30","event":"END","pid":"107783","dur_s":"15"}
+{"ts":"2026-09-08T19:07:10+05:30","event":"START","pid":"119053","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 180 scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm.json.heldout.json --door qa --sanity 1 2>&1 | tail -14; ec"}
+{"ts":"2026-09-08T19:07:30+05:30","event":"START","pid":"119123","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && timeout 900 scriptengine/.venv/bin/python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm.json --door qa --sanity 168 2>&1 | tail -20; echo \"rc=$?\" "}
+{"ts":"2026-09-08T19:07:30+05:30","event":"END","pid":"119053","dur_s":"20"}
+{"ts":"2026-09-08T19:08:15+05:30","event":"END","pid":"119123","dur_s":"45"}
+{"ts":"2026-09-08T19:12:16+05:30","event":"START","pid":"120042","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && { echo \"== PRE-STATE ==\"; wc -l reports/span-recall/csm/sweep_qa_e3d73720.jsonl reports/span-recall/csm/sweep_qa_ec15e0d8.jsonl; echo; echo \"== GRADE 1: pinned panel --sanity "}
+{"ts":"2026-09-08T19:12:16+05:30","event":"START","pid":"120043","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && { echo \"== PRE-STATE ==\"; wc -l reports/span-recall/csm/sweep_qa_e3d73720.jsonl reports/span-recall/csm/sweep_qa_ec15e0d8.jsonl; echo; echo \"== GRADE 1: pinned panel --sanity "}
+{"ts":"2026-09-08T19:12:21+05:30","event":"END","pid":"120042","dur_s":"5"}
+{"ts":"2026-09-08T19:12:21+05:30","event":"END","pid":"120043","dur_s":"5"}

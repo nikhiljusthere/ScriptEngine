@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is Debt Collector's gender?",
+    "kind": "fact",
+    "answer": [
+      "Male"
+    ],
+    "source": "identity:gender",
+    "page_span": "Male",
+    "section": "infobox"
+  },
+  {
+    "question": "What is the status of Debt Collector?",
+    "kind": "fact",
+    "answer": [
+      "Deceased"
+    ],
+    "source": "identity:status",
+    "page_span": "Deceased",
+    "section": "infobox"
+  },
+  {
+    "question": "What is Debt Collector's occupation?",
+    "kind": "fact",
+    "answer": [
+      "Yakuza Boss"
+    ],
+    "source": "identity:occupation",
+    "page_span": "Yakuza Boss",
+    "section": "infobox"
+  },
+  {
+    "question": "What are all the affiliations of Debt Collector?",
+    "kind": "set",
+    "answer": [
+      "Yakuza"
+    ],
+    "source": "affiliation",
+    "page_span": "Yakuza",
+    "section": "infobox"
+  }
+]

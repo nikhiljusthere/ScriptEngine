@@ -1,0 +1,125 @@
+﻿{
+  "series": "csm",
+  "wiki": "https://chainsaw-man.fandom.com",
+  "updated": "2026-09-09",
+  "note": "page-gen 2026-09-09: 5 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "retired": [],
+  "questions": [
+    {
+      "id": "csm-pg-meowy-001",
+      "kind": "fact",
+      "question": "What are the kanji for Meowy's name?",
+      "subject": "Meowy",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "ニャーコ",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Meowy"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:kanji"
+    },
+    {
+      "id": "csm-pg-meowy-002",
+      "kind": "fact",
+      "question": "What is the romaji of Meowy's name?",
+      "subject": "Meowy",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Nyāko",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Meowy"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:romaji"
+    },
+    {
+      "id": "csm-pg-meowy-003",
+      "kind": "fact",
+      "question": "What is the status of Meowy?",
+      "subject": "Meowy",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Deceased (original timeline) Alive (new timeline)",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Meowy"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:status"
+    },
+    {
+      "id": "csm-pg-meowy-004",
+      "kind": "set",
+      "question": "What are all the allies of Meowy?",
+      "subject": "Meowy",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Kishibe",
+          "aliases": []
+        },
+        {
+          "item": "Power",
+          "aliases": []
+        },
+        {
+          "item": "Denji",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Meowy"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:relation:ally"
+    },
+    {
+      "id": "csm-pg-meowy-005",
+      "kind": "set",
+      "question": "What are all the superiors of Meowy?",
+      "subject": "Meowy",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Power",
+          "aliases": []
+        },
+        {
+          "item": "Denji",
+          "aliases": []
+        },
+        {
+          "item": "Nayuta",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Meowy"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:relation:superior"
+    }
+  ]
+}

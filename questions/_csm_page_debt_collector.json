@@ -1,0 +1,89 @@
+﻿{
+  "series": "csm",
+  "wiki": "https://chainsaw-man.fandom.com",
+  "updated": "2026-09-09",
+  "note": "page-gen 2026-09-09: 4 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "retired": [],
+  "questions": [
+    {
+      "id": "csm-pg-debt_collector-001",
+      "kind": "fact",
+      "question": "What is Debt Collector's gender?",
+      "subject": "Debt Collector",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Male",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Debt_Collector"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:gender"
+    },
+    {
+      "id": "csm-pg-debt_collector-002",
+      "kind": "fact",
+      "question": "What is the status of Debt Collector?",
+      "subject": "Debt Collector",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Deceased",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Debt_Collector"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:status"
+    },
+    {
+      "id": "csm-pg-debt_collector-003",
+      "kind": "fact",
+      "question": "What is Debt Collector's occupation?",
+      "subject": "Debt Collector",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yakuza Boss",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Debt_Collector"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:occupation"
+    },
+    {
+      "id": "csm-pg-debt_collector-004",
+      "kind": "set",
+      "question": "What are all the affiliations of Debt Collector?",
+      "subject": "Debt Collector",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yakuza",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Debt_Collector"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:affiliation"
+    }
+  ]
+}

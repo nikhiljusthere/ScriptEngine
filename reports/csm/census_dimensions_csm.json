@@ -1,0 +1,920 @@
+{
+ "meta": {
+  "series": "csm",
+  "generated": "2026-09-09",
+  "seed": "author-derived (no sampling: each dimension's 10 subjects chosen by corpus rank - ability count, section word count, causal-sentence census)",
+  "dimensions": [
+   "abilities",
+   "appearance",
+   "arc-narrative",
+   "causality",
+   "personality",
+   "state-over-time"
+  ],
+  "expect_verified": "all 180 expect terms verbatim in series/csm/facts.db (sections.text + facts.value + abilities.name + documents.title), checked 2026-09-09",
+  "revid_note": "documents.revid all 0 on CSM (crawl predates revid pinning); the corpus pin is questions/csm.json `revids` (19 pages, stamped 2026-09-09)",
+  "source": "generated fresh from series/csm; the JJK census_3b_dimensions.json (140 Q, 14 classes x 10) is a shape reference only, never copied"
+ },
+ "items": [
+  {
+   "id": "csm-dim-arcn-01",
+   "class": "arc-narrative",
+   "subject": "Fake Chainsaw Man",
+   "q": "What happened to the Fake Chainsaw Man during the War Devil arc, in order?",
+   "expect": [
+    "reveals himself by declaring that he will stop her in the name of justice",
+    "hacking the devil to pieces",
+    "assures himself that he did the right thing"
+   ],
+   "source": {
+    "page": "Fake Chainsaw Man",
+    "section": "War Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-02",
+   "class": "arc-narrative",
+   "subject": "Hirokazu Arai",
+   "q": "What happened to Hirokazu Arai during the Eternity Devil arc, in order?",
+   "expect": [
+    "wondered if they could be trusted to guard their backs",
+    "the person who kills the devil will receive a kiss on the cheek",
+    "Hirokazu and Denji rush down the corridors"
+   ],
+   "source": {
+    "page": "Hirokazu Arai",
+    "section": "Eternity Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-03",
+   "class": "arc-narrative",
+   "subject": "Santa Claus",
+   "q": "What happened to Santa Claus during the International Assassins arc, in order?",
+   "expect": [
+    "hunting the woods with Tolka",
+    "cook the fox",
+    "hunt and kill a sixteen-year old boy"
+   ],
+   "source": {
+    "page": "Santa Claus",
+    "section": "International Assassins arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-04",
+   "class": "arc-narrative",
+   "subject": "Yuko",
+   "q": "What happened to Yuko during the Justice Devil arc, in order?",
+   "expect": [
+    "introduces herself to Asa",
+    "will share one of hers with Asa",
+    "giving her both shoes"
+   ],
+   "source": {
+    "page": "Yuko",
+    "section": "Justice Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-05",
+   "class": "arc-narrative",
+   "subject": "Falling Devil",
+   "q": "What happened to the Falling Devil during the Falling Devil arc, in order?",
+   "expect": [
+    "arriving on Earth at East District's Tamano Apartments",
+    "influencing the humans living there into committing suicide",
+    "assembles a body for herself out of the human corpses"
+   ],
+   "source": {
+    "page": "Falling Devil",
+    "section": "Falling Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-06",
+   "class": "arc-narrative",
+   "subject": "Yutaro Kurose",
+   "q": "What happened to Yutaro Kurose during the Katana Man arc, in order?",
+   "expect": [
+    "waiting at a train station in Kyoto for Makima's arrival",
+    "Makima disembarks the train covered in blood but unharmed",
+    "should go to Tokyo to assist the rest of the Special Division"
+   ],
+   "source": {
+    "page": "Yutaro Kurose",
+    "section": "Katana Man arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-07",
+   "class": "arc-narrative",
+   "subject": "Gun Devil",
+   "q": "What happened to the Gun Devil during the Gun Devil arc, in order?",
+   "expect": [
+    "the Gun Devil is already defeated and its separated pieces are held by various countries",
+    "contracts with 20% of the Gun Devil",
+    "the Gun Devil hits the city"
+   ],
+   "source": {
+    "page": "Gun Devil",
+    "section": "Gun Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-08",
+   "class": "arc-narrative",
+   "subject": "Beam",
+   "q": "What happened to Beam during the Bomb Girl arc, in order?",
+   "expect": [
+    "assigned to be Denji's partner at his own request",
+    "calls him Lord Chainsaw continuously",
+    "swimming through the floor"
+   ],
+   "source": {
+    "page": "Beam",
+    "section": "Bomb Girl arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-09",
+   "class": "arc-narrative",
+   "subject": "Spear Hybrid",
+   "q": "What happened to the Spear Hybrid during the Control Devil arc, in order?",
+   "expect": [
+    "summoned as part of Makima's newly-formed Special Division 5",
+    "turning their first operation into a competition",
+    "each member activates their weapon"
+   ],
+   "source": {
+    "page": "Spear Hybrid",
+    "section": "Control Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-arcn-10",
+   "class": "arc-narrative",
+   "subject": "Bat Devil",
+   "q": "What happened to the Bat Devil during the Bat Devil arc, in order?",
+   "expect": [
+    "rescuing Meowy from a devil that kidnapped it",
+    "devouring the blood which pours from his wounds",
+    "complains that Denji's blood tastes disgusting"
+   ],
+   "source": {
+    "page": "Bat Devil",
+    "section": "Bat Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-01",
+   "class": "state-over-time",
+   "subject": "Nobana Higashiyama",
+   "q": "What was true of Nobana Higashiyama during the Aging Devil arc?",
+   "expect": [
+    "captured and locked up within the Tokyo Devil Detention Center by Public Safety",
+    "Nobana is freed alongside Haruka and Seigi",
+    "Chainsaw Man Church leaders"
+   ],
+   "source": {
+    "page": "Nobana Higashiyama",
+    "section": "Aging Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-02",
+   "class": "state-over-time",
+   "subject": "Haruka Iseumi",
+   "q": "What was true of Haruka Iseumi during the Aging Devil arc?",
+   "expect": [
+    "the starter on his chest is actually a surgical implant",
+    "he's just a massive fan",
+    "Haruka"
+   ],
+   "source": {
+    "page": "Haruka Iseumi",
+    "section": "Aging Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-03",
+   "class": "state-over-time",
+   "subject": "Nail Fiend",
+   "q": "What was true of the Nail Fiend during the Aging Devil arc?",
+   "expect": [
+    "sent to guard Tokyo Devil Detention Center",
+    "Nail Fiend partner",
+    "effigy form"
+   ],
+   "source": {
+    "page": "Nail Fiend",
+    "section": "Aging Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-04",
+   "class": "state-over-time",
+   "subject": "Aldo",
+   "q": "What was true of Aldo during the International Assassins arc?",
+   "expect": [
+    "In New York, U.S.A. Joey and his brothers eat at their home",
+    "expresses fear of dying",
+    "Aldo"
+   ],
+   "source": {
+    "page": "Aldo",
+    "section": "International Assassins arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-05",
+   "class": "state-over-time",
+   "subject": "Michiko Tendo",
+   "q": "What was true of Michiko Tendo during the Katana Man arc?",
+   "expect": [
+    "Makima tells Michiko to rent out a nearby shrine with the highest possible altitude",
+    "Michiko and Yutaro were waiting at a train station in Kyoto",
+    "Michiko"
+   ],
+   "source": {
+    "page": "Michiko Tendo",
+    "section": "Katana Man arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-06",
+   "class": "state-over-time",
+   "subject": "Pingtsi",
+   "q": "What was true of Pingtsi during the International Assassins arc?",
+   "expect": [
+    "she doesn't understand Japanese",
+    "friends with some rather dangerous Devils",
+    "no body parts left to sacrifice for contracts"
+   ],
+   "source": {
+    "page": "Pingtsi",
+    "section": "International Assassins arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-07",
+   "class": "state-over-time",
+   "subject": "Joey",
+   "q": "What was true of Joey during the International Assassins arc?",
+   "expect": [
+    "they will be paid $2 million if they kill the man",
+    "Joey and his brothers eat at their home",
+    "Joey"
+   ],
+   "source": {
+    "page": "Joey",
+    "section": "International Assassins arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-08",
+   "class": "state-over-time",
+   "subject": "Seigi Akoku",
+   "q": "What was true of Seigi Akoku during the Dating Denji arc?",
+   "expect": [
+    "the Devil cannot be found",
+    "convenes inside a lounge room",
+    "Seigi and Yoshida bring fish for them to cook and eat"
+   ],
+   "source": {
+    "page": "Seigi Akoku",
+    "section": "Dating Denji arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-09",
+   "class": "state-over-time",
+   "subject": "Tolka",
+   "q": "What was true of Tolka during the International Assassins arc?",
+   "expect": [
+    "hunting in the woods when they come across a fox",
+    "cook the fox",
+    "hunt and kill a sixteen-year-old boy"
+   ],
+   "source": {
+    "page": "Tolka",
+    "section": "International Assassins arc"
+   }
+  },
+  {
+   "id": "csm-dim-state-10",
+   "class": "state-over-time",
+   "subject": "Bucky",
+   "q": "What was true of Bucky during the War Devil arc?",
+   "expect": [
+    "Asa felt when she accidentally killed Bucky",
+    "Asa hates seeing",
+    "Bucky"
+   ],
+   "source": {
+    "page": "Bucky",
+    "section": "War Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-abl-01",
+   "class": "abilities",
+   "subject": "Yoru",
+   "q": "Every ability of Yoru",
+   "expect": [
+    "Building Sword",
+    "Chainsaw Whip",
+    "Flesh Weapon Creation"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Yoru"
+   }
+  },
+  {
+   "id": "csm-dim-abl-02",
+   "class": "abilities",
+   "subject": "Denji",
+   "q": "Every ability of Denji",
+   "expect": [
+    "Blood Chainsaw",
+    "Chain Entanglement",
+    "Chainsaw Devil Contract"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Denji"
+   }
+  },
+  {
+   "id": "csm-dim-abl-03",
+   "class": "abilities",
+   "subject": "Falling Devil",
+   "q": "Every ability of the Falling Devil",
+   "expect": [
+    "Gravity Manipulation",
+    "Emotion Manipulation",
+    "Area Denial"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Falling Devil"
+   }
+  },
+  {
+   "id": "csm-dim-abl-04",
+   "class": "abilities",
+   "subject": "Aki Hayakawa",
+   "q": "Every ability of Aki Hayakawa",
+   "expect": [
+    "Fox Devil Contract",
+    "Bullet Projection",
+    "Control Devil Contract"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Aki Hayakawa"
+   }
+  },
+  {
+   "id": "csm-dim-abl-05",
+   "class": "abilities",
+   "subject": "Power",
+   "q": "Every ability of Power",
+   "expect": [
+    "Blood Scythe",
+    "Blood Spear",
+    "Blood Manipulation"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Power"
+   }
+  },
+  {
+   "id": "csm-dim-abl-06",
+   "class": "abilities",
+   "subject": "Reze",
+   "q": "Every ability of Reze",
+   "expect": [
+    "Explosion Creation",
+    "Hybrid Transformation",
+    "Explosive Propulsion"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Reze"
+   }
+  },
+  {
+   "id": "csm-dim-abl-07",
+   "class": "abilities",
+   "subject": "Quanxi",
+   "q": "Every ability of Quanxi",
+   "expect": [
+    "Hybrid Transformation",
+    "Nigh-Immortality",
+    "Archery"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Quanxi"
+   }
+  },
+  {
+   "id": "csm-dim-abl-08",
+   "class": "abilities",
+   "subject": "Santa Claus",
+   "q": "Every ability of Santa Claus",
+   "expect": [
+    "Doll Creation",
+    "Mind Transfer",
+    "Curse Devil Contract"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Santa Claus"
+   }
+  },
+  {
+   "id": "csm-dim-abl-09",
+   "class": "abilities",
+   "subject": "Asa Mitaka",
+   "q": "Every ability of Asa Mitaka",
+   "expect": [
+    "War Devil Possession",
+    "Room 606 Sword",
+    "Flesh Weapon Creation"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Asa Mitaka"
+   }
+  },
+  {
+   "id": "csm-dim-abl-10",
+   "class": "abilities",
+   "subject": "Darkness Devil",
+   "q": "Every ability of the Darkness Devil",
+   "expect": [
+    "Blade of Darkness",
+    "Shapeshifting",
+    "Nigh-Absolute Immortality"
+   ],
+   "source": {
+    "table": "abilities",
+    "character": "Darkness Devil"
+   }
+  },
+  {
+   "id": "csm-dim-pers-01",
+   "class": "personality",
+   "subject": "Denji",
+   "q": "What is Denji's personality like?",
+   "expect": [
+    "brash and na\u00efve",
+    "crass and vulgar",
+    "kind-hearted"
+   ],
+   "source": {
+    "page": "Denji",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-02",
+   "class": "personality",
+   "subject": "Death Devil",
+   "q": "What is the Death Devil's personality like?",
+   "expect": [
+    "always calm, cold, and composed",
+    "very good at reading others",
+    "mysterious personality"
+   ],
+   "source": {
+    "page": "Death Devil",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-03",
+   "class": "personality",
+   "subject": "Asa Mitaka",
+   "q": "What is Asa Mitaka's personality like?",
+   "expect": [
+    "quiet and unsociable",
+    "very negative outlook",
+    "fond of cats"
+   ],
+   "source": {
+    "page": "Asa Mitaka",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-04",
+   "class": "personality",
+   "subject": "Power",
+   "q": "What is Power's personality like?",
+   "expect": [
+    "childish, greedy, and almost entirely self-motivated",
+    "boast her superiority",
+    "no loyalty to humans or Devils"
+   ],
+   "source": {
+    "page": "Power",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-05",
+   "class": "personality",
+   "subject": "Fumiko Mifune",
+   "q": "What is Fumiko Mifune's personality like?",
+   "expect": [
+    "very upbeat woman who constantly has a smile",
+    "fa\u00e7ade",
+    "psychopath"
+   ],
+   "source": {
+    "page": "Fumiko Mifune",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-06",
+   "class": "personality",
+   "subject": "Nayuta",
+   "q": "What is Nayuta's personality like?",
+   "expect": [
+    "huge-problem child with an extreme personality",
+    "natural inclination towards humans",
+    "protective of Denji"
+   ],
+   "source": {
+    "page": "Nayuta",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-07",
+   "class": "personality",
+   "subject": "Fami",
+   "q": "What is Fami's personality like?",
+   "expect": [
+    "always calm, cold, and composed",
+    "very good at reading others",
+    "mysterious personality"
+   ],
+   "source": {
+    "page": "Fami",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-08",
+   "class": "personality",
+   "subject": "Hirofumi Yoshida",
+   "q": "What is Hirofumi Yoshida's personality like?",
+   "expect": [
+    "playful and mischievous",
+    "small talk with his opponents during battle",
+    "ruthless"
+   ],
+   "source": {
+    "page": "Hirofumi Yoshida",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-09",
+   "class": "personality",
+   "subject": "Yoru",
+   "q": "What is Yoru's personality like?",
+   "expect": [
+    "confident and prideful",
+    "treating her opponents as mere warm-ups",
+    "aware of her limitations"
+   ],
+   "source": {
+    "page": "Yoru",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-pers-10",
+   "class": "personality",
+   "subject": "Aki Hayakawa",
+   "q": "What is Aki Hayakawa's personality like?",
+   "expect": [
+    "very stoic man",
+    "softhearted",
+    "normal person"
+   ],
+   "source": {
+    "page": "Aki Hayakawa",
+    "section": "Personality"
+   }
+  },
+  {
+   "id": "csm-dim-appr-01",
+   "class": "appearance",
+   "subject": "Asa Mitaka",
+   "q": "What does Asa Mitaka look like?",
+   "expect": [
+    "high school girl of average height",
+    "dark blue eyes",
+    "black and is sometimes colored with a brown tint"
+   ],
+   "source": {
+    "page": "Asa Mitaka",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-02",
+   "class": "appearance",
+   "subject": "Nail Fiend",
+   "q": "What does the Nail Fiend look like?",
+   "expect": [
+    "office worker and jacket attire",
+    "completely split in half",
+    "nail-riddled brain matter"
+   ],
+   "source": {
+    "page": "Nail Fiend",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-03",
+   "class": "appearance",
+   "subject": "Death Devil",
+   "q": "What does the Death Devil look like?",
+   "expect": [
+    "high school uniform and a black cap",
+    "grayish-mountbatten pink-colored neck-length hair",
+    "multiple-ringed eyes"
+   ],
+   "source": {
+    "page": "Death Devil",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-04",
+   "class": "appearance",
+   "subject": "Santa Claus",
+   "q": "What does Santa Claus look like?",
+   "expect": [
+    "dark blue-haired, green eyed woman with a mole under her eye",
+    "orange sweater",
+    "doll arms and appendages"
+   ],
+   "source": {
+    "page": "Santa Claus",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-05",
+   "class": "appearance",
+   "subject": "Fumiko Mifune",
+   "q": "What does Fumiko Mifune look like?",
+   "expect": [
+    "short black hair",
+    "two ponytails",
+    "giant black irises"
+   ],
+   "source": {
+    "page": "Fumiko Mifune",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-06",
+   "class": "appearance",
+   "subject": "Falling Devil",
+   "q": "What does the Falling Devil look like?",
+   "expect": [
+    "assembled herself a form out of mangled human corpses",
+    "headless humanoid creature composed of corpses",
+    "hands for feet"
+   ],
+   "source": {
+    "page": "Falling Devil",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-07",
+   "class": "appearance",
+   "subject": "Locust Devil",
+   "q": "What does the Locust Devil look like?",
+   "expect": [
+    "tall, broad-shouldered humanoid",
+    "insectoid mask",
+    "long, thin antennae"
+   ],
+   "source": {
+    "page": "Locust Devil",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-08",
+   "class": "appearance",
+   "subject": "Makima",
+   "q": "What does Makima look like?",
+   "expect": [
+    "long light red/pale auburn hair",
+    "loose braid",
+    "yellow with multiple red rings"
+   ],
+   "source": {
+    "page": "Makima",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-09",
+   "class": "appearance",
+   "subject": "Hirofumi Yoshida",
+   "q": "What does Hirofumi Yoshida look like?",
+   "expect": [
+    "mid-length smooth black hair",
+    "beauty mark under his lips",
+    "eight piercings on his left ear"
+   ],
+   "source": {
+    "page": "Hirofumi Yoshida",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-appr-10",
+   "class": "appearance",
+   "subject": "Aging Devil",
+   "q": "What does the Aging Devil look like?",
+   "expect": [
+    "thin and gaunt physique",
+    "several holes in it",
+    "split head of an old person with long hair"
+   ],
+   "source": {
+    "page": "Aging Devil",
+    "section": "Appearance"
+   }
+  },
+  {
+   "id": "csm-dim-caus-01",
+   "class": "causality",
+   "subject": "Beam",
+   "q": "Why does Denji tell Beam to stay out of sight?",
+   "expect": [
+    "he'll cause a scene",
+    "Denji tells him to stay out of sight",
+    "Beam"
+   ],
+   "source": {
+    "page": "Beam",
+    "section": "Bomb Girl arc"
+   }
+  },
+  {
+   "id": "csm-dim-caus-02",
+   "class": "causality",
+   "subject": "Aki Hayakawa",
+   "q": "Why must Aki contract with a stronger devil?",
+   "expect": [
+    "loss of the Fox Devil",
+    "getting on its bad side",
+    "limited use of the Curse Devil's sword"
+   ],
+   "source": {
+    "page": "Aki Hayakawa",
+    "section": "History"
+   }
+  },
+  {
+   "id": "csm-dim-caus-03",
+   "class": "causality",
+   "subject": "Asa Mitaka",
+   "q": "Why can Asa not bring herself to kill Denji?",
+   "expect": [
+    "unwilling to kill Denji",
+    "wrong thing to do",
+    "terrified of making the wrong choice"
+   ],
+   "source": {
+    "page": "Asa Mitaka",
+    "section": "History"
+   }
+  },
+  {
+   "id": "csm-dim-caus-04",
+   "class": "causality",
+   "subject": "Fake Chainsaw Man",
+   "q": "Why does the Fake Chainsaw Man deride Denji for saving the civilian?",
+   "expect": [
+    "because she is a woman",
+    "derides him for only saving her",
+    "Fake Chainsaw Man"
+   ],
+   "source": {
+    "page": "Fake Chainsaw Man",
+    "section": "War Devil arc"
+   }
+  },
+  {
+   "id": "csm-dim-caus-05",
+   "class": "causality",
+   "subject": "Denji",
+   "q": "Why is Denji initially hesitant about swimming with Reze?",
+   "expect": [
+    "he cannot swim",
+    "fears his growing feelings for her",
+    "offers to teach him how to swim"
+   ],
+   "source": {
+    "page": "Denji",
+    "section": "History"
+   }
+  },
+  {
+   "id": "csm-dim-caus-06",
+   "class": "causality",
+   "subject": "Death Devil",
+   "q": "Why does the Death Devil want Nayuta to work with her?",
+   "expect": [
+    "if they combine their strengths the age of Devils could be avoided",
+    "persisted for Nayuta to work with her",
+    "Death Devil"
+   ],
+   "source": {
+    "page": "Death Devil",
+    "section": "History"
+   }
+  },
+  {
+   "id": "csm-dim-caus-07",
+   "class": "causality",
+   "subject": "Asa Mitaka",
+   "q": "Why did the caretaker kill Crambon?",
+   "expect": [
+    "jealous that Asa still had someone she considered family",
+    "lied to Asa",
+    "Crambon"
+   ],
+   "source": {
+    "page": "Asa Mitaka",
+    "section": "History"
+   }
+  },
+  {
+   "id": "csm-dim-caus-08",
+   "class": "causality",
+   "subject": "Pingtsi",
+   "q": "Why can't Pingtsi beat Denji, by her own account?",
+   "expect": [
+    "no body parts left to sacrifice for contracts",
+    "gobble him up",
+    "Pingtsi"
+   ],
+   "source": {
+    "page": "Pingtsi",
+    "section": "International Assassins arc"
+   }
+  },
+  {
+   "id": "csm-dim-caus-09",
+   "class": "causality",
+   "subject": "Yoru",
+   "q": "Why can Yoru get away with slamming the cake on Yoshida's face?",
+   "expect": [
+    "because she's a Devil",
+    "Yoru proceeds to slam it right onto Yoshida's face",
+    "Yoru"
+   ],
+   "source": {
+    "page": "Denji",
+    "section": "History"
+   }
+  },
+  {
+   "id": "csm-dim-caus-10",
+   "class": "causality",
+   "subject": "Haruka Iseumi",
+   "q": "Why does Haruka have a starter on his chest?",
+   "expect": [
+    "surgical implant",
+    "massive fan",
+    "Haruka"
+   ],
+   "source": {
+    "page": "Haruka Iseumi",
+    "section": "Aging Devil arc"
+   }
+  }
+ ]
+}

@@ -1,0 +1,2678 @@
+{
+  "meta": {
+    "series": "csm",
+    "generated": "2026-09-09",
+    "rule": "generator-sliced gold (plan §5.5.1): every verbatim_in_store is a confirmed substring of sections.text or a declared-roster member; null = no verbatim slice (prose mode, never fabricated)",
+    "source_files": [
+      "questions/csm.json",
+      "reports/csm/d4_open50_csm.json",
+      "reports/csm/census_roster_100_csm.json",
+      "reports/csm/census_narrative_100_csm.json"
+    ],
+    "roster_count": 20
+  },
+  "questions": {
+    "csm-set-01": {
+      "set": "seed",
+      "question": "Every form of Denji",
+      "revid": 43187,
+      "gold_terms": [
+        {
+          "term": "Human",
+          "verbatim_in_store": "human",
+          "source_doc": "Denji",
+          "source_section": "Devil Form"
+        },
+        {
+          "term": "Chainsaw Man",
+          "verbatim_in_store": "Chainsaw Man",
+          "source_doc": "Denji",
+          "source_section": "Personality"
+        },
+        {
+          "term": "Chainsaw Devil",
+          "verbatim_in_store": "Chainsaw Devil",
+          "source_doc": "Denji",
+          "source_section": "Devil Form"
+        },
+        {
+          "term": "Combined Form",
+          "verbatim_in_store": "combined form",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-set-02": {
+      "set": "seed",
+      "question": "Every ability of Power",
+      "revid": 44435,
+      "gold_terms": [
+        {
+          "term": "Blood Manipulation",
+          "verbatim_in_store": "Blood Manipulation",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Spear",
+          "verbatim_in_store": "Blood Spear",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Hammer",
+          "verbatim_in_store": "Blood Hammer",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Chainsaw",
+          "verbatim_in_store": "Blood Chainsaw",
+          "source_doc": "Power",
+          "source_section": "Abilities"
+        },
+        {
+          "term": "Thousand Tera Blood Rain",
+          "verbatim_in_store": "Thousand Tera Blood Rain",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Knife",
+          "verbatim_in_store": "Blood Knife",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Scythe",
+          "verbatim_in_store": "Blood Scythe",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Dagger",
+          "verbatim_in_store": "Blood Dagger",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Axe",
+          "verbatim_in_store": "Blood Axe",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Transfer",
+          "verbatim_in_store": "Blood Transfer",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Knifemanship",
+          "verbatim_in_store": "Knifemanship",
+          "source_doc": "Power",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Acting Skills",
+          "verbatim_in_store": "Acting Skills",
+          "source_doc": "Power",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Blood Empowerment",
+          "verbatim_in_store": "Blood Empowerment",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-set-03": {
+      "set": "seed",
+      "question": "Every devil contract of Aki Hayakawa",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Fox Devil",
+          "verbatim_in_store": "Fox Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Aki Hayakawa's devil contracts"
+        },
+        {
+          "term": "Curse Devil",
+          "verbatim_in_store": "Curse Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Aki Hayakawa's devil contracts"
+        },
+        {
+          "term": "Future Devil",
+          "verbatim_in_store": "Future Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Aki Hayakawa's devil contracts"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Aki Hayakawa's devil contracts"
+    },
+    "csm-set-04": {
+      "set": "seed",
+      "question": "Every member of the Four Horsemen",
+      "revid": 44644,
+      "gold_terms": [
+        {
+          "term": "Control Devil",
+          "verbatim_in_store": "Control Devil",
+          "source_doc": "Four Horsemen",
+          "source_section": "Overview"
+        },
+        {
+          "term": "War Devil",
+          "verbatim_in_store": "War Devil",
+          "source_doc": "Four Horsemen",
+          "source_section": "Intergroup Relations & Ambitions"
+        },
+        {
+          "term": "Famine Devil",
+          "verbatim_in_store": "Famine Devil",
+          "source_doc": "Four Horsemen",
+          "source_section": "Intergroup Relations & Ambitions"
+        },
+        {
+          "term": "Death Devil",
+          "verbatim_in_store": "Death Devil",
+          "source_doc": "Four Horsemen",
+          "source_section": "Intergroup Relations & Ambitions"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-set-05": {
+      "set": "seed",
+      "question": "Every Weapon Devil",
+      "revid": 43348,
+      "gold_terms": [
+        {
+          "term": "Katana Man",
+          "verbatim_in_store": "Katana Man",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        },
+        {
+          "term": "Reze",
+          "verbatim_in_store": "Reze",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        },
+        {
+          "term": "Quanxi",
+          "verbatim_in_store": "Quanxi",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        },
+        {
+          "term": "Miri Sugo",
+          "verbatim_in_store": "Miri Sugo",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        },
+        {
+          "term": "Barem Bridge",
+          "verbatim_in_store": "Barem Bridge",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        },
+        {
+          "term": "Whip Hybrid",
+          "verbatim_in_store": "Whip Hybrid",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        },
+        {
+          "term": "Spear Hybrid",
+          "verbatim_in_store": "Spear Hybrid",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Weapon Devils"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Weapon Devils"
+    },
+    "csm-set-06": {
+      "set": "seed",
+      "question": "Every Hybrid",
+      "revid": 44379,
+      "gold_terms": [
+        {
+          "term": "Chainsaw Hybrid",
+          "verbatim_in_store": "Chainsaw Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        },
+        {
+          "term": "Katana Hybrid",
+          "verbatim_in_store": null,
+          "source_doc": "Hybrid",
+          "source_section": null
+        },
+        {
+          "term": "Bomb Hybrid",
+          "verbatim_in_store": "Bomb Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        },
+        {
+          "term": "Bow Hybrid",
+          "verbatim_in_store": "Bow Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        },
+        {
+          "term": "Longsword Hybrid",
+          "verbatim_in_store": "Longsword Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        },
+        {
+          "term": "Flamethrower Hybrid",
+          "verbatim_in_store": "Flamethrower Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        },
+        {
+          "term": "Spear Hybrid",
+          "verbatim_in_store": "Spear Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        },
+        {
+          "term": "Whip Hybrid",
+          "verbatim_in_store": "Whip Hybrid",
+          "source_doc": "Hybrid",
+          "source_section": "Overview"
+        }
+      ],
+      "gold_mode": "partial"
+    },
+    "csm-set-07": {
+      "set": "seed",
+      "question": "Every Primal Fear Devil",
+      "revid": 44646,
+      "gold_terms": [
+        {
+          "term": "Darkness Devil",
+          "verbatim_in_store": "Darkness Devil",
+          "source_doc": "Devil",
+          "source_section": "Primal Devils"
+        },
+        {
+          "term": "Falling Devil",
+          "verbatim_in_store": "Falling Devil",
+          "source_doc": "Devil",
+          "source_section": "Origin"
+        },
+        {
+          "term": "Aging Devil",
+          "verbatim_in_store": "Aging Devil",
+          "source_doc": "Devil",
+          "source_section": "Physiology"
+        },
+        {
+          "term": "Death Devil",
+          "verbatim_in_store": "Death Devil",
+          "source_doc": "Devil",
+          "source_section": "Primal Devils"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-set-08": {
+      "set": "seed",
+      "question": "Every named member of Tokyo Special Division 4",
+      "revid": 43635,
+      "gold_terms": [
+        {
+          "term": "Makima",
+          "verbatim_in_store": "Makima",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Kishibe",
+          "verbatim_in_store": "Kishibe",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Denji",
+          "verbatim_in_store": "Denji",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Aki Hayakawa",
+          "verbatim_in_store": "Aki Hayakawa",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Power",
+          "verbatim_in_store": "Power",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Himeno",
+          "verbatim_in_store": "Himeno",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Kobeni Higashiyama",
+          "verbatim_in_store": "Kobeni Higashiyama",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Hirokazu Arai",
+          "verbatim_in_store": "Hirokazu Arai",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Angel Devil",
+          "verbatim_in_store": "Angel Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Beam",
+          "verbatim_in_store": "Beam",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Galgali",
+          "verbatim_in_store": "Galgali",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Princi",
+          "verbatim_in_store": "Princi",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Fushi",
+          "verbatim_in_store": "Fushi",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Madoka",
+          "verbatim_in_store": "Madoka",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Tokyo Special Division 4"
+    },
+    "csm-fact-01": {
+      "set": "seed",
+      "question": "Who killed Makima?",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Denji",
+          "verbatim_in_store": "Denji",
+          "source_doc": "Makima",
+          "source_section": "Personality"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-02": {
+      "set": "seed",
+      "question": "Who is the host of the War Devil?",
+      "revid": 44657,
+      "gold_terms": [
+        {
+          "term": "Asa Mitaka",
+          "verbatim_in_store": "Asa Mitaka",
+          "source_doc": "Asa Mitaka",
+          "source_section": "Barem Bridge"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-03": {
+      "set": "seed",
+      "question": "Who is the Chainsaw Devil?",
+      "revid": 43189,
+      "gold_terms": [
+        {
+          "term": "Pochita",
+          "verbatim_in_store": "Pochita",
+          "source_doc": "Pochita",
+          "source_section": "Near-death State"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-04": {
+      "set": "seed",
+      "question": "Who is the Gun Fiend?",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Aki Hayakawa",
+          "verbatim_in_store": "Aki Hayakawa",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Trivia"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-char-01": {
+      "set": "seed",
+      "question": "Every ability of Denji",
+      "revid": 43187,
+      "gold_terms": [
+        {
+          "term": "Enhanced Human Condition",
+          "verbatim_in_store": "Enhanced Human Condition",
+          "source_doc": "Denji",
+          "source_section": "Physical Prowess"
+        },
+        {
+          "term": "Enhanced Endurance",
+          "verbatim_in_store": "Enhanced Endurance",
+          "source_doc": "Denji",
+          "source_section": "Physical Prowess"
+        },
+        {
+          "term": "Hybrid Transformation",
+          "verbatim_in_store": "Hybrid Transformation",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Augmented Strength",
+          "verbatim_in_store": "Augmented Strength",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Augmented Durability",
+          "verbatim_in_store": "Augmented Durability",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Augmented Stamina",
+          "verbatim_in_store": "Augmented Stamina",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Chainsaw Manifestation",
+          "verbatim_in_store": "Chainsaw Manifestation",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Chainsaw Retraction",
+          "verbatim_in_store": "Chainsaw Retraction",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Chain Entanglement",
+          "verbatim_in_store": "Chain Entanglement",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Chain Grappling",
+          "verbatim_in_store": "Chain Grappling",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Devil Transformation",
+          "verbatim_in_store": "Devil Transformation",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Blood Consumption",
+          "verbatim_in_store": "Blood Consumption",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Nigh-Immortality",
+          "verbatim_in_store": "Nigh-Immortality",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Body Duplication",
+          "verbatim_in_store": "Body Duplication",
+          "source_doc": "Denji",
+          "source_section": "Hybrid Powers"
+        },
+        {
+          "term": "Hand-to-Hand Combat",
+          "verbatim_in_store": "Hand-to-Hand Combat",
+          "source_doc": "Denji",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Strategic Intelligence",
+          "verbatim_in_store": "Strategic Intelligence",
+          "source_doc": "Denji",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Swimming",
+          "verbatim_in_store": "Swimming",
+          "source_doc": "Denji",
+          "source_section": "Skillset"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-char-02": {
+      "set": "seed",
+      "question": "Every documented ability of Power",
+      "revid": 44435,
+      "gold_terms": [
+        {
+          "term": "Enhanced Strength",
+          "verbatim_in_store": "Enhanced Strength",
+          "source_doc": "Power",
+          "source_section": "Physical Abilities"
+        },
+        {
+          "term": "Enhanced Speed",
+          "verbatim_in_store": "Enhanced Speed",
+          "source_doc": "Power",
+          "source_section": "Physical Abilities"
+        },
+        {
+          "term": "Blood Manipulation",
+          "verbatim_in_store": "Blood Manipulation",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Hammer",
+          "verbatim_in_store": "Blood Hammer",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Knife",
+          "verbatim_in_store": "Blood Knife",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Spear",
+          "verbatim_in_store": "Blood Spear",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Scythe",
+          "verbatim_in_store": "Blood Scythe",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Dagger",
+          "verbatim_in_store": "Blood Dagger",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Axe",
+          "verbatim_in_store": "Blood Axe",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Chainsaw",
+          "verbatim_in_store": "Blood Chainsaw",
+          "source_doc": "Power",
+          "source_section": "Abilities"
+        },
+        {
+          "term": "Thousand Tera Blood Rain",
+          "verbatim_in_store": "Thousand Tera Blood Rain",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Transfer",
+          "verbatim_in_store": "Blood Transfer",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Empowerment",
+          "verbatim_in_store": "Blood Empowerment",
+          "source_doc": "Power",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Knifemanship",
+          "verbatim_in_store": "Knifemanship",
+          "source_doc": "Power",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Acting Skills",
+          "verbatim_in_store": "Acting Skills",
+          "source_doc": "Power",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Enhanced Smell",
+          "verbatim_in_store": "Enhanced Smell",
+          "source_doc": "Power",
+          "source_section": "Other Abilities"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-char-03": {
+      "set": "seed",
+      "question": "Every ability of Aki Hayakawa",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Precognition",
+          "verbatim_in_store": "precognition",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Physical Prowess"
+        },
+        {
+          "term": "Summoning",
+          "verbatim_in_store": "Summoning",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Devil Contracts"
+        },
+        {
+          "term": "Swordsmanship",
+          "verbatim_in_store": "Swordsmanship",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Hand-to-Hand Combat",
+          "verbatim_in_store": "Hand-to-Hand Combat",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Cooking",
+          "verbatim_in_store": "Cooking",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Driving",
+          "verbatim_in_store": "Driving",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Skillset"
+        },
+        {
+          "term": "Strong Willpower",
+          "verbatim_in_store": "Strong Willpower",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Other Abilities"
+        },
+        {
+          "term": "Enhanced Durability",
+          "verbatim_in_store": "Enhanced Durability",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Physical Prowess"
+        },
+        {
+          "term": "Enhanced Speed",
+          "verbatim_in_store": "Enhanced Speed",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Physical Prowess"
+        },
+        {
+          "term": "Bullet Projection",
+          "verbatim_in_store": "Bullet Projection",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Devil Powers"
+        },
+        {
+          "term": "Blood Consumption",
+          "verbatim_in_store": "Blood Consumption",
+          "source_doc": "Aki Hayakawa",
+          "source_section": "Devil Powers"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-char-04": {
+      "set": "seed",
+      "question": "Every ability of Makima",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Immense Strength",
+          "verbatim_in_store": "Immense Strength",
+          "source_doc": "Makima",
+          "source_section": "Physical Abilities"
+        },
+        {
+          "term": "Enhanced Smell",
+          "verbatim_in_store": "Enhanced Smell",
+          "source_doc": "Makima",
+          "source_section": "Physical Abilities"
+        },
+        {
+          "term": "Control",
+          "verbatim_in_store": "control",
+          "source_doc": "Makima",
+          "source_section": "Personality"
+        },
+        {
+          "term": "Force Manipulation",
+          "verbatim_in_store": "Force Manipulation",
+          "source_doc": "Makima",
+          "source_section": "Supernatural Abilities"
+        },
+        {
+          "term": "Contract with the Prime Minister of Japan",
+          "verbatim_in_store": "contract with the Prime Minister of Japan",
+          "source_doc": "Makima",
+          "source_section": "Abilities"
+        },
+        {
+          "term": "High Alcohol Tolerance",
+          "verbatim_in_store": null,
+          "source_doc": "Makima",
+          "source_section": null
+        },
+        {
+          "term": "Hand-to-Hand Combat",
+          "verbatim_in_store": "hand-to-hand combat",
+          "source_doc": "Makima",
+          "source_section": "Physical Abilities"
+        },
+        {
+          "term": "High Intelligence",
+          "verbatim_in_store": null,
+          "source_doc": "Makima",
+          "source_section": null
+        }
+      ],
+      "gold_mode": "partial"
+    },
+    "csm-char-05": {
+      "set": "seed",
+      "question": "Every ability of Himeno",
+      "revid": 44498,
+      "gold_terms": [
+        {
+          "term": "Ghost Devil Contract",
+          "verbatim_in_store": "Ghost Devil Contract",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Himeno's abilities"
+        },
+        {
+          "term": "Hand-to-Hand Combat",
+          "verbatim_in_store": "Hand-to-Hand Combat",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Himeno's abilities"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Himeno's abilities"
+    },
+    "csm-fact-05": {
+      "set": "seed",
+      "question": "Who is Denji's devil partner that became his heart?",
+      "revid": 43187,
+      "gold_terms": [
+        {
+          "term": "Pochita",
+          "verbatim_in_store": "Pochita",
+          "source_doc": "Denji",
+          "source_section": "Human Form (Pre-Fusion)"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-06": {
+      "set": "seed",
+      "question": "What is Denji's hybrid transformation trigger?",
+      "revid": 43187,
+      "gold_terms": [
+        {
+          "term": "Pulling a cord on his chest",
+          "verbatim_in_store": null,
+          "source_doc": "Denji",
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-set-09": {
+      "set": "seed",
+      "question": "Every devil contract Denji has made",
+      "revid": 43187,
+      "gold_terms": [
+        {
+          "term": "Chainsaw Devil Contract",
+          "verbatim_in_store": "Chainsaw Devil Contract",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil contract Denji has made"
+        },
+        {
+          "term": "Blood Devil Contract",
+          "verbatim_in_store": "Blood Devil Contract",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil contract Denji has made"
+        },
+        {
+          "term": "Aging Devil Contract",
+          "verbatim_in_store": "Aging Devil Contract",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil contract Denji has made"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Every devil contract Denji has made"
+    },
+    "csm-fact-07": {
+      "set": "seed",
+      "question": "Who is Power's pet cat?",
+      "revid": 44435,
+      "gold_terms": [
+        {
+          "term": "Meowy",
+          "verbatim_in_store": "Meowy",
+          "source_doc": "Power",
+          "source_section": "Personality"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-08": {
+      "set": "seed",
+      "question": "What is Power's devil classification?",
+      "revid": 44435,
+      "gold_terms": [
+        {
+          "term": "Blood Fiend",
+          "verbatim_in_store": null,
+          "source_doc": "Power",
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-set-10": {
+      "set": "seed",
+      "question": "Every blood weapon Power can create",
+      "revid": 44435,
+      "gold_terms": [
+        {
+          "term": "Blood Hammer",
+          "verbatim_in_store": "Blood Hammer",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        },
+        {
+          "term": "Blood Knife",
+          "verbatim_in_store": "Blood Knife",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        },
+        {
+          "term": "Blood Spear",
+          "verbatim_in_store": "Blood Spear",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        },
+        {
+          "term": "Blood Scythe",
+          "verbatim_in_store": "Blood Scythe",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        },
+        {
+          "term": "Blood Dagger",
+          "verbatim_in_store": "Blood Dagger",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        },
+        {
+          "term": "Blood Axe",
+          "verbatim_in_store": "Blood Axe",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        },
+        {
+          "term": "Blood Chainsaw",
+          "verbatim_in_store": "Blood Chainsaw",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every blood weapon Power can create"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Every blood weapon Power can create"
+    },
+    "csm-fact-09": {
+      "set": "seed",
+      "question": "Who is Aki Hayakawa's younger brother?",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Taiyo Hayakawa",
+          "verbatim_in_store": null,
+          "source_doc": "Aki Hayakawa",
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-fact-10": {
+      "set": "seed",
+      "question": "What division was Aki Hayakawa assigned to in Public Safety?",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Tokyo Special Division 4",
+          "verbatim_in_store": null,
+          "source_doc": "Aki Hayakawa",
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-set-11": {
+      "set": "seed",
+      "question": "Every devil Aki Hayakawa contracted with",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Fox Devil",
+          "verbatim_in_store": "Fox Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil Aki Hayakawa contracted with"
+        },
+        {
+          "term": "Curse Devil",
+          "verbatim_in_store": "Curse Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil Aki Hayakawa contracted with"
+        },
+        {
+          "term": "Future Devil",
+          "verbatim_in_store": "Future Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil Aki Hayakawa contracted with"
+        },
+        {
+          "term": "Control Devil",
+          "verbatim_in_store": "Control Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil Aki Hayakawa contracted with"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Every devil Aki Hayakawa contracted with"
+    },
+    "csm-fact-11": {
+      "set": "seed",
+      "question": "Who is Makima's reincarnation?",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Nayuta",
+          "verbatim_in_store": "Nayuta",
+          "source_doc": "Makima",
+          "source_section": "Abilities"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-12": {
+      "set": "seed",
+      "question": "What is Makima's devil identity?",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Control Devil",
+          "verbatim_in_store": "Control Devil",
+          "source_doc": "Makima",
+          "source_section": "Personality"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-set-12": {
+      "set": "seed",
+      "question": "Every devil whose power Makima can channel through her control ability",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Angel Devil",
+          "verbatim_in_store": "Angel Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+        },
+        {
+          "term": "Future Devil",
+          "verbatim_in_store": "Future Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+        },
+        {
+          "term": "Snake Devil",
+          "verbatim_in_store": "Snake Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+        },
+        {
+          "term": "Punishment Devil",
+          "verbatim_in_store": "Punishment Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+        },
+        {
+          "term": "Spider Devil",
+          "verbatim_in_store": "Spider Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+        },
+        {
+          "term": "Zombie Devil",
+          "verbatim_in_store": "Zombie Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Every devil whose power Makima can channel through her control ability"
+    },
+    "csm-fact-13": {
+      "set": "seed",
+      "question": "Who is Himeno's devil contract partner?",
+      "revid": 44498,
+      "gold_terms": [
+        {
+          "term": "Ghost Devil",
+          "verbatim_in_store": "Ghost Devil",
+          "source_doc": "Himeno",
+          "source_section": "Personality"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-fact-14": {
+      "set": "seed",
+      "question": "What did Himeno sacrifice to the Ghost Devil for her contract?",
+      "revid": 44498,
+      "gold_terms": [
+        {
+          "term": "Her right eye",
+          "verbatim_in_store": "her right eye",
+          "source_doc": "Himeno",
+          "source_section": "Appearance"
+        }
+      ],
+      "gold_mode": "sliced"
+    },
+    "csm-set-13": {
+      "set": "seed",
+      "question": "Every division Himeno was affiliated with in Public Safety",
+      "revid": 44498,
+      "gold_terms": [
+        {
+          "term": "Tokyo Special Division 4",
+          "verbatim_in_store": "Tokyo Special Division 4",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Every division Himeno was affiliated with in Public Safety"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Every division Himeno was affiliated with in Public Safety"
+    },
+    "csm-set-14": {
+      "set": "seed",
+      "question": "How many special divisions exist in Public Safety Devil Hunters?",
+      "revid": 44432,
+      "gold_terms": [
+        {
+          "term": "Tokyo Special Division 1",
+          "verbatim_in_store": "Tokyo Special Division 1",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:The Public Safety special divisions"
+        },
+        {
+          "term": "Tokyo Special Division 4",
+          "verbatim_in_store": "Tokyo Special Division 4",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:The Public Safety special divisions"
+        },
+        {
+          "term": "Tokyo Special Division 5",
+          "verbatim_in_store": "Tokyo Special Division 5",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:The Public Safety special divisions"
+        },
+        {
+          "term": "Tokyo Special Division 6",
+          "verbatim_in_store": "Tokyo Special Division 6",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:The Public Safety special divisions"
+        },
+        {
+          "term": "Tokyo Special Division 7",
+          "verbatim_in_store": "Tokyo Special Division 7",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:The Public Safety special divisions"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:The Public Safety special divisions"
+    },
+    "csm-set-15": {
+      "set": "seed",
+      "question": "How many members are in the Four Horsemen?",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Control Devil",
+          "verbatim_in_store": "Control Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:How many members are in the Four Horsemen"
+        },
+        {
+          "term": "War Devil",
+          "verbatim_in_store": "War Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:How many members are in the Four Horsemen"
+        },
+        {
+          "term": "Famine Devil",
+          "verbatim_in_store": "Famine Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:How many members are in the Four Horsemen"
+        },
+        {
+          "term": "Death Devil",
+          "verbatim_in_store": "Death Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:How many members are in the Four Horsemen"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:How many members are in the Four Horsemen"
+    },
+    "csm-set-17": {
+      "set": "seed",
+      "question": "Who are the members of Tokyo Special Division 4?",
+      "revid": 44532,
+      "gold_terms": [
+        {
+          "term": "Makima",
+          "verbatim_in_store": "Makima",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Kishibe",
+          "verbatim_in_store": "Kishibe",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Denji",
+          "verbatim_in_store": "Denji",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Aki Hayakawa",
+          "verbatim_in_store": "Aki Hayakawa",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Power",
+          "verbatim_in_store": "Power",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Himeno",
+          "verbatim_in_store": "Himeno",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Kobeni Higashiyama",
+          "verbatim_in_store": "Kobeni Higashiyama",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Hirokazu Arai",
+          "verbatim_in_store": "Hirokazu Arai",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Angel Devil",
+          "verbatim_in_store": "Angel Devil",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Beam",
+          "verbatim_in_store": "Beam",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Galgali",
+          "verbatim_in_store": "Galgali",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Princi",
+          "verbatim_in_store": "Princi",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Fushi",
+          "verbatim_in_store": "Fushi",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        },
+        {
+          "term": "Madoka",
+          "verbatim_in_store": "Madoka",
+          "source_doc": "series/csm/overrides.yaml",
+          "source_section": "rosters:Tokyo Special Division 4"
+        }
+      ],
+      "gold_mode": "declared-roster",
+      "source_doc": "series/csm/overrides.yaml",
+      "source_section": "rosters:Tokyo Special Division 4"
+    },
+    "csm-fact-15": {
+      "set": "seed",
+      "question": "Who leads the Four Horsemen?",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Control Devil (Makima)",
+          "verbatim_in_store": null,
+          "source_doc": "Four Horsemen",
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-fact-16": {
+      "set": "seed",
+      "question": "What is the Chainsaw Devil's signature ability?",
+      "revid": 43187,
+      "gold_terms": [
+        {
+          "term": "Devil erasure",
+          "verbatim_in_store": null,
+          "source_doc": null,
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-fact-17": {
+      "set": "seed",
+      "question": "Who is the Chief Cabinet Secretary's Personal Devil Hunter in Chainsaw Man?",
+      "revid": 44595,
+      "gold_terms": [
+        {
+          "term": "Makima",
+          "verbatim_in_store": null,
+          "source_doc": null,
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "csm-fact-18": {
+      "set": "seed",
+      "question": "What concept does the Blood Devil embody?",
+      "revid": 44435,
+      "gold_terms": [
+        {
+          "term": "Blood",
+          "verbatim_in_store": null,
+          "source_doc": null,
+          "source_section": null
+        }
+      ],
+      "gold_mode": "prose"
+    },
+    "Q01": {
+      "set": "d4-open50",
+      "question": "Why did a boy with a heart condition end up becoming a devil hunter in the first place - what is the chain from his father's death and the Yakuza debt, to meeting a wounded dog at a grave, to waking up as a hybrid?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q02": {
+      "set": "d4-open50",
+      "question": "What exactly happened the night the Yakuza and the Zombie Devil ambushed Denji at the abandoned factory, and what did Pochita sacrifice to pull him back as the Chainsaw Man?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q03": {
+      "set": "d4-open50",
+      "question": "Why did Denji strike a deal with Power before facing the Bat Devil, what did the Bat Devil actually do to Meowy and to Power, and how did the Bat Devil's leech girlfriend turn the rescue into a trap?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q04": {
+      "set": "d4-open50",
+      "question": "Why did Makima recruit Power into the division, and how did the Division 4 household change after Power moved in with Denji and Aki?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q05": {
+      "set": "d4-open50",
+      "question": "How does the Eternity Devil's trap actually work - the endless eighth floor, the feeding on fear, the growing with every kill - and why was Denji's willingness to be eaten the only way out?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q06": {
+      "set": "d4-open50",
+      "question": "How did Himeno keep going after losing five partners in a row, and what changed in her the day Aki sat down next to her in a graveyard?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q07": {
+      "set": "d4-open50",
+      "question": "What exactly happened in Himeno's last fight with the Katana Man, and why did she give all of herself to the Ghost Devil when she had nothing left?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q08": {
+      "set": "d4-open50",
+      "question": "What happened to Aki's family on the day the Gun Devil came to Japan, and how did one afternoon turn him into a devil hunter with a single, unchanging goal?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q09": {
+      "set": "d4-open50",
+      "question": "Why did Aki keep hunting a devil that had already been killed long ago and split between the world's powers, and what did the Future Devil's vision cost him to know?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q10": {
+      "set": "d4-open50",
+      "question": "What was the real plan behind the Katana Man's attack - the shooting, the thirty life-sentence convicts, the shrine - and why did the Katana Man believe Denji was responsible for his grandfather's death?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q11": {
+      "set": "d4-open50",
+      "question": "Why did Makima take Denji on that movie-marathon date, and what was she hiding from him while he thought he was finally getting close to her?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q12": {
+      "set": "d4-open50",
+      "question": "What did Denji learn about his own heart while he spent time with Reze - the flower, the school, the swimming lesson - and why did a serial killer working with the Typhoon Devil choose her as bait for Denji?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q13": {
+      "set": "d4-open50",
+      "question": "How did the girl who introduced herself as a cafe worker come to carry part of the Bomb Devil inside her - the Soviet super-soldier program - and what happened when Denji found out who she really was?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q14": {
+      "set": "d4-open50",
+      "question": "What did the Angel Devil lose in that coastal village, and why did Makima make him forget it before hiring him into Public Safety?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q15": {
+      "set": "d4-open50",
+      "question": "What exactly did each of the international assassins want - the American brothers, the Russian hunter, the Chinese fiend team, Santa Claus - and why did the entire world turn on one boy at the same time?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q16": {
+      "set": "d4-open50",
+      "question": "Why did Makima make Denji her dog, and what was the door Pochita had warned him never to open?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q17": {
+      "set": "d4-open50",
+      "question": "What exactly happened in the moment Makima killed Power, and how was that the first step of the trap she had been setting all along?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q18": {
+      "set": "d4-open50",
+      "question": "How did Kishibe's Anti-Makima Squad take down a woman whose injuries were transferred to every Japanese citizen, and why was summoning the Hell Devil their only real option?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q19": {
+      "set": "d4-open50",
+      "question": "What happened between Pochita, the Four Horsemen and the Weapon Devils in Hell, and why did the Horsemen arrive on Earth and go their separate ways?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q20": {
+      "set": "d4-open50",
+      "question": "What did the Gun Devil arc actually reveal - that Aki's lifelong target had been dead for years, its flesh divided among the great powers - and how did that change what his fight was really about?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q21": {
+      "set": "d4-open50",
+      "question": "Why did the Angel Devil turn on Makima at the beach, what did he suddenly remember, and how did that memory end Aki's story?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q22": {
+      "set": "d4-open50",
+      "question": "What did Pochita do to the World War II, Nazi and Nuclear Weapons Devils in Hell, and why did it cost the War Devil the last of her strength?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q23": {
+      "set": "d4-open50",
+      "question": "What happened to Power after the Control Devil arc, and what promise kept Denji looking for her even though the two would be complete strangers if they met again?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q24": {
+      "set": "d4-open50",
+      "question": "Why did the War Devil fix her attention on a classroom where a chicken devil was the class pet, and what happened the day Bucky was crushed?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q25": {
+      "set": "d4-open50",
+      "question": "What is the War Devil's actual plan for Asa's body, and how do Asa's trauma and Yoru's guilt keep trading control of the same body back and forth?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q26": {
+      "set": "d4-open50",
+      "question": "What happened to Asa at the riverbank, in the orphanage, and with Crambon, and why do those specific memories hand control of her body back from Yoru to her?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q27": {
+      "set": "d4-open50",
+      "question": "Why did the class president make a contract with the Justice Devil, and what exactly did the devil order her to do?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q28": {
+      "set": "d4-open50",
+      "question": "What exactly did the Falling Devil do to Asa's apartment complex, and how did Yoru keep Asa from becoming one of the bodies stacked in the street?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q29": {
+      "set": "d4-open50",
+      "question": "Why did Yoshida order Asa to cut off contact with Denji, and what do the two of them share that she doesn't know yet?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q30": {
+      "set": "d4-open50",
+      "question": "What happened on Asa and Denji's aquarium date - the Famine Devil's trap, the starfish, the million yen - and how did a spear made from guilt defeat the Eternity Devil in a single blow?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q31": {
+      "set": "d4-open50",
+      "question": "Why did Fami build a church around a hero that she wasn't, and why did she want both Asa and Yoru working on the inside?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q32": {
+      "set": "d4-open50",
+      "question": "How did Haruka Iseumi found the Chainsaw Man Church, and why did the public start mistaking Asa's deeds for Denji's?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q33": {
+      "set": "d4-open50",
+      "question": "Who are the Weapons, why do they call themselves that, and what did they propose for bringing the Chainsaw Man back to the fight?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q34": {
+      "set": "d4-open50",
+      "question": "Why did Denji defy Public Safety and end up dismembered at the Tokyo Devil Detention Center, and how did Asa's group put him back together without knowing who he was?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q35": {
+      "set": "d4-open50",
+      "question": "What did Barem Bridge do to Nayuta, and why was Denji at his breaking point the moment he saw her head?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q36": {
+      "set": "d4-open50",
+      "question": "What deal did Public Safety make with the Aging Devil - ten thousand youths in exchange for Pochita devouring them - and what did Pochita erase to make Denji remember why he stayed alive?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q37": {
+      "set": "d4-open50",
+      "question": "Why did both Asa and Yoru end up caring about Denji, and what did Yoru mean when she said that both of them liked him?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q38": {
+      "set": "d4-open50",
+      "question": "What exactly happened when the Death Devil revealed herself behind Fami's alias, and how did the fight with Yoru end - the pawns, the surrender?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q39": {
+      "set": "d4-open50",
+      "question": "Why does the Death Devil still go to karaoke with her friends as a high schooler, and what happened when Yoru threatened the friends she was holding hostage?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q40": {
+      "set": "d4-open50",
+      "question": "How did the War Devil arc end - Pochita eating himself to make a world where the Chainsaw Man never existed - and what state was Denji left in?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q41": {
+      "set": "d4-open50",
+      "question": "How did Asa and Yoru come to be separated, and what does Asa's life look like in the final chapter - a normal high schooler with Bucky at her side?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q42": {
+      "set": "d4-open50",
+      "question": "Why did Yoru come to Earth to hunt the Chainsaw Man, and what had happened to her body in the battle in Hell that left her at the edge of being forgotten?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q43": {
+      "set": "d4-open50",
+      "question": "What is Nayuta now - the Control Devil reincarnated as Denji's little sister - and why does she end up ordering Denji and Power around at the end of the series?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q44": {
+      "set": "d4-open50",
+      "question": "What happened to Fumiko at fourteen when she made her contract with the STD Devil, and how did the Gun Fiend battle take her parents away from her?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q45": {
+      "set": "d4-open50",
+      "question": "Why did Kishibe keep chasing after Quanxi for nine years, and how did the assassin who would have won a bare-knuckle tournament end up beheaded at the Detention Center?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q46": {
+      "set": "d4-open50",
+      "question": "Why did the Four Horsemen scatter across Earth - Control ruling as Makima, War hiding in Asa's body, Famine posing as a classmate, Death working under Fami's alias - and what did each of them actually want?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q47": {
+      "set": "d4-open50",
+      "question": "Why did the Chainsaw Man Church marry off its young members and turn them into weapons, and what did Denji's refusal say to them?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q48": {
+      "set": "d4-open50",
+      "question": "How did Kobeni go from a terrified girl who tripped over her ice cream to a devil hunter who survived the Eternity Devil, and what had changed in her by the time of the Control Devil arc?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q49": {
+      "set": "d4-open50",
+      "question": "What is the Loneliness Fiend, how does his crossbow actually work, and why was Aki the only one it had no effect on?",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Q50": {
+      "set": "d4-open50",
+      "question": "Trace Denji's own state from the boy with the heart disease to the end of the Public Safety Saga - what he started out wanting, what he was made to want, and how each devil he fought changed what he was fighting for.",
+      "revid": "2026-09-09",
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Every devil contract Denji has made": {
+      "set": "census-roster",
+      "question": "Every devil contract Denji has made",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Every devil Aki Hayakawa contracted with": {
+      "set": "census-roster",
+      "question": "Every devil Aki Hayakawa contracted with",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Every devil whose power Makima can channel through her control ability": {
+      "set": "census-roster",
+      "question": "Every devil whose power Makima can channel through her control ability",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Every division Himeno was affiliated with in Public Safety": {
+      "set": "census-roster",
+      "question": "Every division Himeno was affiliated with in Public Safety",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Aki Hayakawa's devil contracts": {
+      "set": "census-roster",
+      "question": "Aki Hayakawa's devil contracts",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Himeno's abilities": {
+      "set": "census-roster",
+      "question": "Himeno's abilities",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "The Public Safety special divisions": {
+      "set": "census-roster",
+      "question": "The Public Safety special divisions",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Tokyo Special Division 4": {
+      "set": "census-roster",
+      "question": "Tokyo Special Division 4",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "How many members are in the Four Horsemen": {
+      "set": "census-roster",
+      "question": "How many members are in the Four Horsemen",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Every blood weapon Power can create": {
+      "set": "census-roster",
+      "question": "Every blood weapon Power can create",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "Weapon Devils": {
+      "set": "census-roster",
+      "question": "Weapon Devils",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Makima, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Makima, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Pochita, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Pochita, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Aki Hayakawa, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Aki Hayakawa, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil Hunter, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil Hunter, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Yoru, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Yoru, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Asa Mitaka, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Asa Mitaka, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Power, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Power, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Gun Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Gun Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Katana Man, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Katana Man, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Kishibe, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Kishibe, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Quanxi, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Quanxi, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Death Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Death Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Hirofumi Yoshida, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Hirofumi Yoshida, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Himeno, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Himeno, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Kobeni Higashiyama, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Kobeni Higashiyama, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Nayuta, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Nayuta, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Angel Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Angel Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Falling Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Falling Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Santa Claus, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Santa Claus, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Beam, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Beam, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fami, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fami, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fire Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fire Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Aging Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Aging Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Akane Sawatari, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Akane Sawatari, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Reze, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Reze, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Eternity Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Eternity Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fumiko Mifune, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fumiko Mifune, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fox Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fox Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fake Chainsaw Man, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fake Chainsaw Man, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Barem Bridge, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Barem Bridge, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Haruka Iseumi, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Haruka Iseumi, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Yuko, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Yuko, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Hybrid, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Hybrid, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Nobana Higashiyama, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Nobana Higashiyama, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Ghost Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Ghost Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Darkness Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Darkness Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Meowy, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Meowy, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Miri Sugo, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Miri Sugo, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Asa Mitaka's Mother, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Asa Mitaka's Mother, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Class President, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Class President, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Curse Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Curse Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Division 4 Female Member, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Division 4 Female Member, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Division 4 Male Member, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Division 4 Male Member, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fairness Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fairness Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Fish Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Fish Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Future Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Future Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to House Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to House Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Joey, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Joey, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Long, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Long, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Miki Takanashi, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Miki Takanashi, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Nazi Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Nazi Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Octopus Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Octopus Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Seigi Akoku, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Seigi Akoku, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Sickness Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Sickness Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Stone Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Stone Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Takagi, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Takagi, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Tanaka, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Tanaka, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Tsugihagi, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Tsugihagi, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Introduction, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Introduction, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Bat Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Bat Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Eternity Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Eternity Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Katana Man, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Katana Man, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Bomb Girl, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Bomb Girl, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the International Assassins, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the International Assassins, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Gun Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Gun Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Control Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Control Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Justice Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Justice Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Dating Denji, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Dating Denji, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Falling Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Falling Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Chainsaw Man Church, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Chainsaw Man Church, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Aging Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Aging Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the War Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the War Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Public Safety Saga, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Public Safety Saga, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened in the Academy Saga, in order?": {
+      "set": "census-narrative",
+      "question": "What happened in the Academy Saga, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Introduction, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Introduction, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Bat Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Bat Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Eternity Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Eternity Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Katana Man, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Katana Man, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Bomb Girl, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Bomb Girl, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the International Assassins, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the International Assassins, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Gun Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Gun Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Control Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Control Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Justice Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Justice Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Dating Denji, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Dating Denji, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Falling Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Falling Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Chainsaw Man Church, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Chainsaw Man Church, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Aging Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Aging Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the War Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the War Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Public Safety Saga, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Public Safety Saga, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Denji during the Academy Saga, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Denji during the Academy Saga, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Introduction, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Introduction, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Bat Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Bat Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Eternity Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Eternity Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Katana Man, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Katana Man, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Bomb Girl, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Bomb Girl, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the International Assassins, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the International Assassins, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Gun Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Gun Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    },
+    "What happened to Devil during the Control Devil, in order?": {
+      "set": "census-narrative",
+      "question": "What happened to Devil during the Control Devil, in order?",
+      "revid": null,
+      "gold_terms": [],
+      "gold_mode": "prose",
+      "note": "open-ended / no structured answer — left to the retrieval test"
+    }
+  }
+}

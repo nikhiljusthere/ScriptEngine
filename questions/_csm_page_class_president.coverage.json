@@ -1,0 +1,67 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:gender",
+        "page-gen:identity:status",
+        "page-gen:identity:occupation",
+        "page-gen:affiliation"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Personality",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities",
+      "covered_by": [
+        "page-gen:techniques"
+      ]
+    },
+    {
+      "path": "Abilities / Devil Contracts",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities / Physical Prowess",
+      "covered_by": []
+    },
+    {
+      "path": "Chapter Appearances",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Personality",
+    "Abilities / Devil Contracts",
+    "Abilities / Physical Prowess",
+    "Chapter Appearances",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    }
+  ]
+}

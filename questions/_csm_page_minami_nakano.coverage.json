@@ -1,0 +1,67 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:japanese",
+        "page-gen:identity:romaji",
+        "page-gen:alias",
+        "page-gen:identity:gender",
+        "page-gen:identity:status",
+        "page-gen:identity:occupation",
+        "page-gen:affiliation"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Personality",
+      "covered_by": []
+    },
+    {
+      "path": "Past",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities",
+      "covered_by": []
+    },
+    {
+      "path": "Abilities / Skillset",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    },
+    {
+      "path": "Site Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Personality",
+    "Past",
+    "Abilities",
+    "Abilities / Skillset"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    },
+    {
+      "path": "Site Navigation",
+      "reason": "no prose: site navigation"
+    }
+  ]
+}

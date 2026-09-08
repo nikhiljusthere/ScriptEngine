@@ -1,0 +1,93 @@
+﻿{
+  "series": "csm",
+  "wiki": "https://chainsaw-man.fandom.com",
+  "updated": "2026-09-09",
+  "note": "page-gen 2026-09-09: 4 structured questions (note page-gen:-marked), 0 auto-retires, 0 hand-authored kept, 0 superseded",
+  "retired": [],
+  "questions": [
+    {
+      "id": "csm-pg-denji_s_father-001",
+      "kind": "fact",
+      "question": "What is Denji's Father's gender?",
+      "subject": "Denji's Father",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Male",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji's_Father"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:gender"
+    },
+    {
+      "id": "csm-pg-denji_s_father-002",
+      "kind": "fact",
+      "question": "What is the status of Denji's Father?",
+      "subject": "Denji's Father",
+      "tier": "wiki",
+      "expect_mode": "qa",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Deceased",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji's_Father"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:identity:status"
+    },
+    {
+      "id": "csm-pg-denji_s_father-003",
+      "kind": "set",
+      "question": "What are all the families of Denji's Father?",
+      "subject": "Denji's Father",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Denji",
+          "aliases": []
+        },
+        {
+          "item": "Asa Mitaka",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji's_Father"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:relation:family"
+    },
+    {
+      "id": "csm-pg-denji_s_father-004",
+      "kind": "set",
+      "question": "What are all the affiliations of Denji's Father?",
+      "subject": "Denji's Father",
+      "tier": "wiki",
+      "expect_mode": "roster",
+      "scope": "closed",
+      "answer": [
+        {
+          "item": "Yakuza",
+          "aliases": []
+        }
+      ],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Denji's_Father"
+      ],
+      "verified": "2026-09-09",
+      "note": "page-gen:affiliation"
+    }
+  ]
+}

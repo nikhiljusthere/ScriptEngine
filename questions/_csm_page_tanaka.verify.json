@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is Tanaka's gender?",
+    "kind": "fact",
+    "answer": [
+      "Male"
+    ],
+    "source": "identity:gender",
+    "page_span": "Male",
+    "section": "infobox"
+  },
+  {
+    "question": "What is the status of Tanaka?",
+    "kind": "fact",
+    "answer": [
+      "Deceased"
+    ],
+    "source": "identity:status",
+    "page_span": "Deceased",
+    "section": "infobox"
+  },
+  {
+    "question": "What is Tanaka's occupation?",
+    "kind": "fact",
+    "answer": [
+      "Teacher"
+    ],
+    "source": "identity:occupation",
+    "page_span": "Teacher",
+    "section": "infobox"
+  },
+  {
+    "question": "What are all the affiliations of Tanaka?",
+    "kind": "set",
+    "answer": [
+      "Fourth East High School"
+    ],
+    "source": "affiliation",
+    "page_span": "Fourth East High School",
+    "section": "infobox"
+  },
+  {
+    "question": "What are the kanji for Tanaka's name?",
+    "kind": "fact",
+    "answer": [
+      "田中"
+    ],
+    "source": "identity:kanji",
+    "page_span": "田中",
+    "section": "infobox"
+  },
+  {
+    "question": "What is the romaji of Tanaka's name?",
+    "kind": "fact",
+    "answer": [
+      "Tanaka"
+    ],
+    "source": "identity:romaji",
+    "page_span": "Tanaka",
+    "section": "infobox"
+  }
+]

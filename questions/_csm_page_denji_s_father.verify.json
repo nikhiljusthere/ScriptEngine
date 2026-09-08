@@ -1,0 +1,43 @@
+[
+  {
+    "question": "What is Denji's Father's gender?",
+    "kind": "fact",
+    "answer": [
+      "Male"
+    ],
+    "source": "identity:gender",
+    "page_span": "Male",
+    "section": "infobox"
+  },
+  {
+    "question": "What is the status of Denji's Father?",
+    "kind": "fact",
+    "answer": [
+      "Deceased"
+    ],
+    "source": "identity:status",
+    "page_span": "Deceased",
+    "section": "infobox"
+  },
+  {
+    "question": "What are all the affiliations of Denji's Father?",
+    "kind": "set",
+    "answer": [
+      "Yakuza"
+    ],
+    "source": "affiliation",
+    "page_span": "Yakuza",
+    "section": "infobox"
+  },
+  {
+    "question": "What are all the families of Denji's Father?",
+    "kind": "set",
+    "answer": [
+      "Denji",
+      "Asa Mitaka"
+    ],
+    "source": "relation:family",
+    "page_span": "Denji, Asa Mitaka",
+    "section": ""
+  }
+]
