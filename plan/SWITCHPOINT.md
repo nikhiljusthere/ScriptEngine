@@ -27,12 +27,19 @@ edit those.
     (owner: "i started ninfer with ninfer-start" — the fresh process
     reconnects to the new server). Self-restart convention: detached helper,
     never ask the owner.
-  - **The fresh session does, in order:** (1) read this +
-    `plan/CSM_WAVE2_RESUME.md`; (2) dial `qwen-switch.sh 150000 --force`
-    (fit guard after the checkpoint commit) + verify `--vision` + `:8000`
-    decision (150k ≈ 5.2 GB free → CPU service); (3) launch the A/B bay per
-    `ab-bay` (bootstrap lines: `reports/master-work/CSM_WAVE2_JOB.md`
-    §Bootstrap); (4) B executes the Wave-2 units; (5) council per the trigger.
+  - **Progress (02:00-02:02, this session):** (1)-(2) done — dial 150k
+    (qwen pid 4348, 26.5 GB, 5397 MiB free, `--vision` verified in
+    `serve_ctx_150000.sh`), `:8000` up on **CPU** (venv python — a bare
+    `python` launch fails: not on PATH); **(3) the bay is UP**: tmux
+    `control` (A, pi 4576, boot line logged, monitor `csm-control.sh`
+    4867 polling B's shells) + `work` (B, pi 4699, reading the job spec,
+    units in order). Both visible windows open (pilot-control 54657750,
+    pilot-work 54662792). (4) B works now; (5) council per the trigger.
+  - **After Phase 1 (A) completes → 100k switch for GPU tasks** (owner
+    2026-09-09): `qwen-switch.sh 100k --force` + **restart this session +
+    terminal immediately via `tools/master-work/pi_restart.sh` (grace ≤10 s
+    — owner rule: no 45 s waits)**; at 100k the :8000 embeds may go back on
+    CUDA (headroom rule).
   - If the owner wants Wave 2 at 262k instead of the 150k dial: the wave rule
     degrades to one worker subagent at a time (say so; default = 150k per the
     2-phase plan).
@@ -298,3 +305,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T21:47:43+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1464MiB
 - 2026-09-08T22:41:06+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6967MiB
 - 2026-09-08T23:35:06+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1486MiB
+- 2026-09-09T01:53:56+05:30 qwen-switch: ctx=150000 (mode 150000), api=off, free=5397MiB

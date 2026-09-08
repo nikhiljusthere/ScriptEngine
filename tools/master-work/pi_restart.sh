@@ -21,8 +21,9 @@
 # never kills the session):
 #   DISPLAY=:0 setsid gnome-terminal -- tmux attach -t pi-csm
 #
-# GRACE env: seconds before the kill (default 45 — let the dying session
-# finish its turn and flush its session file).
+# GRACE env: seconds before the kill (default 10 — owner rule 2026-09-09:
+# restarts are immediate, max 10 s; let the dying session flush, no more
+# stalling).
 set -u
 OLD=${1:?old pi pid}
 SESS=${2:-pi-csm}
@@ -31,7 +32,7 @@ MSGFILE=${4:-}
 shift $(( $# < 4 ? 0 : 4 ))
 EXCL=("$OLD" "$@")
 LOG=${LOG:-/tmp/pi_restart.log}
-GRACE=${GRACE:-45}
+GRACE=${GRACE:-10}
 exec >>"$LOG" 2>&1
 say() { echo "[$(date '+%F %T')] $*"; }
 say "start: old=$OLD sess=$SESS dir=$DIR msg=$MSGFILE grace=${GRACE}s"
