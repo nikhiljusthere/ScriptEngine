@@ -8,41 +8,42 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
-- **2026-09-08 (transcript import + A/B deployment, owner-directed):**
-  - JJK transcript Phase 1 COMPLETE (drift D12): 48 docs (S1 E1–24, S2 E25–47,
-    JJK0), 15,411 dialogue lines, `series/jjk/transcripts.db` (FTS5, separate
-    from facts.db) + CLI doors `transcripts-import` / `transcript` /
-    `dialogue`. Campaign-neutral; committed.
-  - Owner directive (this switch): Qwen 262k → **100k** (the low dial), then
-    launch the A/B terminals: tmux `control` = **A** (GPU supervisor —
-    controls and monitors every shell that runs on the GPU: Qwen :18080,
-    :8000, in-process CUDA jobs) + tmux `work` = **B** (the worker; next
-    authorized campaign = CSM). Charter: `plan/AB_CHARTER.md`; kill/resume
-    discipline: `plan/AB_DEPLOYMENT.md` §6–8. Master-work PC loop stays parked.
-  - `:8000` moves to **CUDA** with the 100k dial (co-located; one-copy-of-
-    embedder rule for in-process jobs — stop :8000, run, restart).
+- **2026-09-08 (transcript Phase 2 + bay closed + dial-back, owner-directed):**
+  - JJK transcript Phase 2 COMPLETE (drift D13, commit `f86ed7a`): all
+    **16,226 lines embedded** (separate `series/jjk/qdrant-transcripts/` dir,
+    CUDA, BAAI/bge-large-en-v1.5 1024-d, `embed_meta.json` staleness
+    marker); CLI doors `transcripts-embed` + `transcript-search` (episode
+    filter, stale warnings); `(Movie <name>)` verify branch + 3 tests; plan
+    + drift D13. Read doors: `transcript` (time-window) / `dialogue`
+    (per-character FTS) / `transcript-search` (semantic).
+  - A/B bay CLOSED (~23:3x): machine monitor (csm-control.sh, generalized @
+    `c81be85`) + tmux `control` (A) + tmux `work` (B) all killed; visible
+    windows gone. Skills: `ab-bay` (new) + `terminal-pilot` (user-level,
+    outside repo); `qwen-switch` use-case-3 committed with this checkpoint.
+  - Owner directive (this switch): Qwen **100k → 262k** (full context);
+    `:8000` → **CPU** (262k steady state, ~3.5 GiB headroom).
+- **Next task (owner-directed):** REWRITE the Toji Fushiguro script at
+  `E:\Personal\Plot Works\Video 1 - Toji\Script\Toji.md` (4,044 words, 91
+  tags, verify-clean as of `c9ff57e`; the transcript dataset is now
+  available as a dialogue source). Owner gives the rewrite direction in the
+  restarted session.
 - **Resume / post-switch steps (a fresh session executes these in order):**
-  1. `cat /home/goblin/ninfer-work/qwen_mode.txt` (expect mode=100k) +
-     `nvidia-smi` (Qwen + :8000 on CUDA) + `curl -s -m 3 localhost:8000/health`.
-  2. A: `tmux new-session -d -s control -c /home/goblin/ScriptEngine 'pi'`,
-     then bootstrap (send-keys): "You are A, the GPU supervisor (tmux
-     control). First: read plan/AB_CHARTER.md + plan/AB_DEPLOYMENT.md
-     sections 6-8. Job: control and monitor every shell that runs on the GPU.
-     Report current GPU state (qwen_mode.txt, nvidia-smi, :8000 health) to
-     reports/master-work/decisions.md."
-  3. B: `tmux new-session -d -s work -c /home/goblin/ScriptEngine 'pi'`,
-     then bootstrap: "You are B, the worker (tmux work). First: read
-     plan/AB_CHARTER.md + plan/CSM_2PHASE_PLAN.md + plan/SWITCHPOINT.md
-     'Campaign todos'. Sync the campaign todos, write a work_log line with
-     ETA, then wait for the owner's directive before starting a work unit."
-  4. Verify: `tmux ls` (control + work), both pi processes alive, no 400
-     overflow in either session.
-- git: head `$(git -C /home/goblin/ScriptEngine rev-parse --short HEAD)` —
-  transcript work (transcripts.py, cli.py, config.py, plan + drift log) +
-  `plan/AB_DEPLOYMENT.md` (tracked) + `plan/AB_CHARTER.md` (new) + this file.
-- Campaign state: JJK campaign CLOSED (D11, 2026-09-07). CSM campaign = next
-  owner-authorized work (CSM-1/1b/2 + councils done; CSM-3 is the next unit —
-  see the "Campaign todos" section below + `reports/csm/`).
+  1. `cat /home/goblin/ninfer-work/qwen_mode.txt` (expect mode=262k) +
+     `nvidia-smi` (Qwen only on the card, ~25 GB used) +
+     `curl -s -m 3 localhost:8000/health` (expect device=cpu).
+  2. The owner's pi (this session) is restarted by the owner: fresh `pi` in
+     /home/goblin/ScriptEngine, then *Read plan/SWITCHPOINT.md and
+     continue from there*.
+  3. Read `plan/drift_log.md` §4 + this file; wait for the owner's Toji
+     rewrite direction (humanscope Mode A sheet before drafting, Mode B
+     audit after — the voice contract).
+- git: head `f86ed7a` (+ this checkpoint commit: SWITCHPOINT +
+  `.pi/skills/qwen-switch/SKILL.md`).
+- Campaign state: JJK campaign CLOSED (D11, 2026-09-07). CSM campaign =
+  next owner-authorized work (CSM-1/1b/2 + councils done; CSM-3 is the next
+  unit — see the "Campaign todos" section below + `reports/csm/`).
+  Transcript work is campaign-neutral (D12/D13).
+
 ## gpu-gate3 handoff (2026-09-08 — A=01a08064 (fresh CSM session; retargeted from the retired 01a07ff0) → chain → C on 100k → A resume)
 
 **DONE 15:30 local — chain complete (state=done, no STALLED, typed RESUME
@@ -183,3 +184,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T19:05:00+05:30 manual (orchestrator): council CSM-3b complete (workflow 5dcd56b8, 11 sequential agents, one-agent-at-a-time per owner rule) — record `reports/csm/COUNCIL_csm-3b.md` + artifacts `reports/csm/council_csm-3b/` @ `ccd4523`; **verdict: RATIFY the CSM-3b close**; rulings R-CSM3B-1..7 on disk; ledger row #20 in `reports/comprehension/COUNCIL_HISTORY.md`; GATE.md Phase-2 pre-flight lines (R-CSM3B-6) + self-contained receipt header (R-CSM3B-7) same commit; next = Wave 2 pre-step (R-CSM3B-2 F1 ledger fix + R-CSM3B-3 live roster probe, sequential, orchestrator-graded) → the two parallel Wave-2 subs (CSM-6 instrument + CSM-5 remainder) → §9a closure loop iteration 1
 - 2026-09-08T19:45:00+05:30 manual (orchestrator): Wave-2 pre-step GRADED PASS (live interleaved 2-panel survival: pinned 168->172 + heldout 9->13, both keyed ledgers retain their own rows, all stamped cuda+commit+panel_hash; log /tmp/prestep_grade.log) + pre-step committed; F1 (R-CSM3B-2) and roster probe (R-CSM3B-3: 31/88 members, 16,231 chars, 0 pre-fix) closed; next = deploy the 2 parallel Wave-2 subs (CSM-6 instrument + CSM-5 remainder + R-CSM3B-4 pre-checks) -> §9a closure loop iteration 1
 - 2026-09-08T21:47:43+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1464MiB
+- 2026-09-08T22:41:06+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6967MiB

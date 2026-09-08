@@ -21,6 +21,13 @@ phase boundary; never thrash.
   (extraction/reading/review fan-out, ≤2 in parallel). 262k is the inline-
   linear-work mode; the only >2 parallelism is `llm-council` (5, the
   standing exception, any mode).
+- **Use case 3 — the A/B two-terminal bay** (`ab-bay` skill): the 100k dial
+  is what lets in-process CUDA jobs and `:8000` co-locate. The bay's full
+  sequence is switch → restart the invoking terminal → open the two
+  terminals (A controls the GPU, B works the job); this skill owns only
+  the switch step. Inside the bay, A enforces the no-CPU->15 s rule (stop a
+  slow CPU process, rerun on CUDA) with the dial already at 100k — no
+  further switch needed for that.
 - **NO SWITCH for a heavy Qwen LLM batch** (`events-extract` / 27B
   extraction). The hard rule is the opposite: stop `:8000` (or run it on CPU),
   Qwen owns the card. Context mode is irrelevant there.
