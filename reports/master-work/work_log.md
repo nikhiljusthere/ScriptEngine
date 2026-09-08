@@ -18,3 +18,24 @@
 [2026-09-08T17:00:00+05:30] ACT Phase-1 setup completed (with deviations): 150k dial done (qwen_pid=91197, free_mib=5182 — the standing gates' co-located models may NOT fit under 150k; if the GPU gates OOM, dial down toward 100k per the plan's "even smaller context" clause). :8000 restarted on CPU (5182 < 6144 MiB co-locate threshold — service role; in-process CLI jobs use the one-copy CUDA rule: stop :8000 first). Old CSM session 01a08064 retired (pid 78300 verified-killed, file trashed). Fresh Phase-1 CSM session 01a080c1 running in tmux `csm-phase1` (gnome-terminal refused to open a new window from the supervisor shell — tmux send-keys bootstrap is the reliable path; owner attaches via `tmux a -t csm-phase1`). A-session restart requested by owner: same session 01a07f33 in window 50331658 (auto-restart script, post-kill)
 [2026-09-08T17:10:00+05:30] INCIDENT + FIX — A-restart false success: /tmp/restart_a_phase1.sh killed A (78017) and "typed" `pi --session 01a07f33…` into window 50331658, but the window's shell had already exited with the killed pi — the type landed nowhere and the script reported success anyway (no verification). Owner restarted A manually (new pid 92158, same session, 150k — working). Fixed tool: tools/master-work/restart-pi.sh — types `touch /tmp/a_restart_verify && pi --session <sid>`, polls the side-channel file (24 s), and falls back to tmux `a-supervisor` only when unverified. State: A=01a07f33 (92158), CSM=01a080c1 (91571, tmux csm-phase1, mid Phase-1 sanity checks, inheriting the killed session's untracked CSM-3b files), qwen 150k (91197), :8000 CPU
 [2026-09-08T17:35:00+05:30] OPS LESSON (window typing) — vte (gnome-terminal) IGNORES synthetic XSendEvent keypresses (`xdotool key --window <id>`): text typed with `type --window` sits at the prompt unexecuted (the 17:2x "writing in terminal only" failure — `pi --session` never ran in 50331658, three attempts). The working pattern is FOCUSED XTEST: `xdotool windowactivate --sync <id>` → `xdotool type ...` → `xdotool key Return` (no --window on key). Always verify with a file side-channel (`... > /tmp/probe.txt` + poll) before assuming a command landed. State: A = 01a07f33 (pid 92817, window 71303178), CSM Phase-1 = 01a080c1 (pid 93388, window 50331658, turn running — resumed the killed tmux run from disk, nudged to finish the CSM-3b recheck + commit)
+
+## 2026-09-08 17:4x — Control-plan architecture (owner directive: Terminal A checks every shell Terminal B runs)
+
+**The 1200-s incident, root-caused:** the CSM session's `span-recall --series csm
+--panel <pinned>` is the EXHAUSTIVE tier-1 D5 sweep (17,381 probes; each probe =
+HTTP round-trip to :8000 for embed+rerank) — not the offline tier-0 check. :8000
+was serving on CPU (measured 1025 % util) → ≈1–2 s/probe → a multi-hour run
+behind a plain shell (the 15-s rule violated). Never hung: CPU-slow. Stopped
+(93499/93497 + the CPU :8000 91391), per the owner's "stop everything".
+
+**New architecture (plan/CSM_CONTROL_PLAN.md):** Terminal A = Control (fresh pi
+session; launches Terminal B + a detached monitor `tools/master-work/csm-control.sh`
+that logs every B-shell with duration to reports/csm/shell_log.jsonl, kills
+CPU model work >15 s with a typed re-run hint, flags >300 s for A's judgment,
+backstops :18080 health; interventions only while a shell is active in B).
+Terminal B = the CSM Phase-1 worker (fresh session; 2-subagent waves; GPU-only
+shells). Qwen dials 150k → 100k (150k left 5.2 GB — cannot co-locate :8000 +
+one-copy jobs; the "even smaller context if necessary" clause, applied at
+setup). :8000 runs CUDA. Poller retired (its health job moved into the
+monitor). Setup runs detached (/tmp/csm_control_setup.sh) after the 100k
+switch; A then launches B + monitor itself.
