@@ -123,3 +123,21 @@ section synced.
 - KEPT (records, not rules): all `reports/` council records, the
   gpu-live1/live2/gate3 specs + receipts, `plan/gpu_live2_directive.md`
   (historical directive with its supersession note).
+
+## Execution notes (2026-09-08, supervisor)
+
+- The 150k dial is `qwen-switch.sh 150000` **with `--force`**: the fit guard
+  blocks a clean dial because the supervisor's A-session file is 840k tokens
+  (file-based, conservative). Checkpoint `42eb017` precedes the dial; the
+  post-switch discipline is the established one (fresh sessions declare 150k
+  from `models.json`; any 262k-declared session with a big live context is
+  overflow-class → swap, don't resume).
+- Old CSM session (`01a08064`) is retired by the setup script (`/tmp/
+csm_phase1_setup.sh`, detached, log `/tmp/csm_phase1_setup.log`): kill its
+  verified pid (ppid-chain walk, never from memory), trash its file
+  (reversible), launch the fresh CSM session in window 51286464 (bootstrap
+  `/tmp/csm_boot3.txt` content, typed as two short messages), and queue a
+  resume note into the A window.
+- `:8000` after the dial: the script moves it to CUDA if free VRAM ≥ 6 GiB,
+  else keeps it CPU for its service role (in-process CLI jobs use the
+  one-copy CUDA rule either way).
