@@ -534,3 +534,25 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   comma-separated span. `cli verify` still clean (104 tags / 29 distinct);
   the square-bracket timestamps do not affect the chapter/episode tag
   check. 6,082 words.
+
+- **Addendum 2 (event ranges + glossary + clean version, same session):**
+  the owner asked that (a) a line covering several events cite all of them
+  (the cast-list line named both the Gojo's Past and Shibuya arcs but cited
+  only one), (b) fight/span lines carry a chapter/episode **range** in the
+  citation ("X fought Y" → the span the fight actually runs), (c) a
+  glossary of every event's range, and (d) a second, citation-free version.
+  Ranges were **sourced from the wiki's own adaptation data** (the
+  `anime episode` edges in `series/jjk/facts.db`: ch 66→ep 25 … ch 79→ep 30
+  for Gojo's Past, ch 94→ep 35 … ch 113→ep 40 for Shibuya, fight spans
+  derived from the same mapping) — never invented. Added 5 `[range: …]`
+  annotations (the multi-arc cast-list line now cites both arcs; the
+  Toji-vs-Gojo / vs-Geto / vs-Dagon / vs-Megumi fight lines carry their
+  ch+ep span plus a start timestamp) **appended after** the existing single
+  `(Chapter, Episode)` tags, so `cli verify` stays clean (104 tags; the
+  range annotations are a new human-curated format, not verify-checked).
+  Added a `## Event ranges` glossary at the end (11 events, each with its
+  ch+ep range and start time where it is a distinct scene). Created
+  `Toji-clean.md` alongside (5,589 words, zero citation markers, glossary
+  excluded — pure narrative for the editor). Main file 6,378 words (the
+  +~290 over 6,082 is the range annotations + glossary, reference not
+  narration); the clean version's 5,589 words ≈ 43 min at 130 wpm.
