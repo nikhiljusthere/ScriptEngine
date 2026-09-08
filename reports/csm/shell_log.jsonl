@@ -11,3 +11,9 @@
 {"ts":"2026-09-08T18:02:20+05:30","event":"END","pid":"101081","dur_s":"136"}
 {"ts":"2026-09-08T18:02:35+05:30","event":"START","pid":"102087","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"cli eval --series jjk\" >/dev/null 2>&1; then echo \"$(date +%H:%M:%S) iter $i: eval jjk running; gpu=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader|cut -d' ' -"}
 {"ts":"2026-09-08T18:04:51+05:30","event":"END","pid":"102087","dur_s":"136"}
+{"ts":"2026-09-08T18:08:01+05:30","event":"START","pid":"103422","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && setsid nohup scriptengine/.venv/bin/python -m scriptengine.api.main > /tmp/scriptengine_api.log 2>&1 < /dev/null &
+echo launched; for i in $(seq 1 10); do h=$(curl -s --max-ti"}
+{"ts":"2026-09-08T18:08:06+05:30","event":"END","pid":"103422","dur_s":"5"}
+{"ts":"2026-09-08T18:08:16+05:30","event":"START","pid":"103567","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"span-recall --series jjk\" >/dev/null; then echo \"$(date +%H:%M:%S) iter $i: probe running; $(tail -1 /tmp/spanrec_jjk_csm3b.log 2>/dev/null | cut -c1-60)\"; sleep 15; else"}
+{"ts":"2026-09-08T18:10:27+05:30","event":"END","pid":"103567","dur_s":"131"}
+{"ts":"2026-09-08T18:10:32+05:30","event":"START","pid":"104284","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"span-recall --series jjk\" >/dev/null; then echo \"$(date +%H:%M:%S) iter $i: probe running\"; sleep 15; else echo \"$(date +%H:%M:%S) iter $i: probe DONE\"; break; fi; done; "}
