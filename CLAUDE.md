@@ -303,8 +303,13 @@ gate state: `reports/comprehension/GATE.md`; current position:
 `plan/drift_log.md` §4. P6 (cross-corpus, `plan/Plan_to_perfection.md` §7)
 waits until this run closes.
 
-**Gates (re-run before calling any pass done):** `eval --series jjk` = 31/31;
-`canon-run --series opm` = 10/16 exact, 236/236 canon, 79.0%; `pytest tests/ -q` = 1,239.
+**Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
+gpu-live2 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE.md`):**
+`pytest tests/ -q` = 1,242 (13:47–13:50, CUDA; the old 1,239 was stale — the
+suite grew by 3); `eval --series jjk` = 31/31 (13:50–13:51); `span-recall
+--series jjk` = 48,572/48,572 offline (rc=0) + 390/400 live probe (97.5%;
+13:51–13:54, CUDA `:8000`); `canon-run --series opm` = 10/16 exact,
+236/236 canon, 79.0% (13:54–13:55, `--skip-eval` one-copy rule).
 Batch files are `_`-prefixed so they stay out of the official gold bank. The
 historical accuracy-campaign records (rounds 1/2, OPM + JJK waves) are in
 `reports/page-campaign/STATUS.md` (the OPM handoffs `HANDOFF_OPM.md` /

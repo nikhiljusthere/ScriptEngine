@@ -59,13 +59,19 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   - The master-work A/B deploy is in flight on this box (the untracked /
     modified files above); CSM commits stay CSM-area paths only, and the
     master-work files are managed by that process.
-- first action on resume: **the gpu-live2 chain** (above) is the live item —
-  on the typed RESUME line, follow its 5 steps; then **CSM-2** from its
-  council item 2 scope + done-criteria (`reports/csm/COUNCIL_csm-campaign.md`);
-  `reports/csm/CSM1_INVENTORY.md` (stamped bank) and `reports/csm/
-  CSM1B_BANK_VALIDATION.md` (CSM-1b state: gold fixes, gaps G-CSM-1..4) are
-  the read-first records; todos CSM-1..8 are recreated from the council plan
-  if the panel was lost (CSM-1 = done, CSM-1b = done pending live2 report).
+- first action on resume: **start CSM-2** from its council item 2 scope +
+  done-criteria (`reports/csm/COUNCIL_csm-campaign.md`); read-first records:
+  `reports/csm/CSM1_INVENTORY.md` (stamped bank), `reports/csm/
+  CSM1B_BANK_VALIDATION.md` (CSM-1b state: gold fixes, gaps G-CSM-1..4),
+  `reports/csm/GATE_REBASELINE.md` (current gate numbers). Todos CSM-1..8 are
+  recreated from the council plan if the panel was lost (CSM-1 + CSM-1b =
+  done; CSM-2 next).
+- done this turn (2026-09-08, gpu-live2 RESUME): read C's report (all 4 gates
+  PASS on CUDA), `:8000` verified on CPU, chain state clean (no STALLED, one
+  typed resume), C transcript trashed, CLAUDE.md + gates-skill baselines
+  re-baselined with run timestamps + committed. **Next: CSM-2** (page-type
+  classification + scoreboard generalization, council item 2 — grounding data
+  in the CSM-1b todo note + `reports/csm/`).
 - done this turn (2026-09-08, CSM-1, fresh 262k+vision session): CSM-1
   DONE + committed `064093e` (stamped bank + inventory artifact, CSM-area
   paths only). Tool fixes committed with it: Fandom-403 UA, tuple-swap
@@ -84,6 +90,15 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   the CSM plan launched. Committed `281fe2e`.
 
 ## gpu-live2 handoff (2026-09-08 — A=01a07ff0 → chain → C on 100k → A resume)
+
+**DONE 13:57 local — chain complete (state=done, no STALLED; C transcript
+trashed after the report was read; `:8000` back on CPU, pid 62983).** All 4
+gates PASS on CUDA (receipts `reports/csm/GATE_REBASELINE.md`):
+pytest **1,242/1,242** (the 6 OOM cases pass on GPU) · eval jjk **31/31** ·
+span-recall jjk **48,572/48,572** offline + **390/400 (97.5%)** probe ·
+canon opm **10/16 exact, 236/236, 79.0%**. CLAUDE.md + the gates skill
+baseline updated with these numbers + run timestamps (the 1,239-vs-1,242
+stale pair is resolved: the suite is 1,242).
 
 Second live run of the gpu-handoff chain (docs/ops/PC_GPU_HANDOFF.md):
 `gpu-handoff.sh --tier2 plan/gpu_live2.spec` flips 262k→100k, opens C
@@ -149,3 +164,5 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T10:14:37+05:30 qwen-switch: ctx=135168 (owner manual +--vision; profile = serve_ctx_135168.sh), api=cpu, free=5575MiB
 - 2026-09-08T12:51:22+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7072MiB
 - 2026-09-08T12:56:08+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1604MiB
+- 2026-09-08T13:47:15+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6932MiB
+- 2026-09-08T13:56:00+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1488MiB

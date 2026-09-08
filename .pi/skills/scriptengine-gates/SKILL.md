@@ -19,11 +19,11 @@ All commands from the repo root (`/home/goblin/ScriptEngine`), venv =
 
 ## The four standing gates (re-run after every build)
 
-| gate | command | baseline (2026-09-07) |
+| gate | command | baseline (2026-09-08, gpu-live2 re-baseline — `reports/csm/GATE_REBASELINE.md`) |
 |---|---|---|
-| tests | `python -m pytest tests/ -q` | 1,239 passed |
+| tests | `python -m pytest tests/ -q` | 1,242 passed (CUDA; the old 1,239 was stale — suite grew by 3) |
 | eval jjk | `python -m scriptengine.cli eval --series jjk` | 31/31 |
-| span-recall jjk | `python -m scriptengine.cli span-recall --series jjk` | 48,572/48,572 (rc=0) |
+| span-recall jjk | `python -m scriptengine.cli span-recall --series jjk` | 48,572/48,572 (rc=0); live probe: 390/400 (97.5%) |
 | canon opm | `python -m scriptengine.cli canon-run --series opm` | 10/16 exact · 236/236 · 79.0% |
 
 Device rule for gate runs that load the reranker: CUDA-first order from
