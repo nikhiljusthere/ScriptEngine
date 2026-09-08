@@ -91,8 +91,8 @@ edit those.
   Gojo's death; 3 = Shibuya + the aftermath). Each block lists only the
   distinct arcs/events that act draws on, so no range repeats. `Toji-clean.md`
   (5,589 words, pure narrative; strips the `[passage N of 3]` + `·` lines).
-  Ranges sourced from the wiki's `anime episode` edges in `series/jjk/`
-  `facts.db`, never invented. `cli verify --series jjk` still clean
+  Ranges sourced from the wiki's `anime episode` edges in
+  `series/jjk/facts.db`, never invented. `cli verify --series jjk` still clean
   (104 tags; the `[passage N of 3]` blocks are a new human-curated format,
   not verify-checked).
 
