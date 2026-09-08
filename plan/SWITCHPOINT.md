@@ -14,10 +14,10 @@ edit those.
   9002 MiB)** → the CSM campaign runs its CUDA windows in 100k; return to 262k
   at the campaign's close (no handoff needed — 262k > transcript, reloads
   in place).
-- git: `281fe2e` (CSM Wave-0 + two standing rules) on the campaign trail
-  `6abb05b` (R4) → `0d1425f` (ops/gates) → `87fe80c` (X2.d + 3a/3b/3d) →
-  `8ffce8e` (3c) → `1b6fba3` (X2.g/X2.h) → `14eaae3` (JJK close checkpoint) →
-  `281fe2e` (CSM Wave-0).
+- git: `8f8ffdb` (council verdict: SKIP T0–T4 bank, 8-item revised plan) on the
+  campaign trail `281fe2e` (CSM Wave-0) → `4e7c304` (checkpoint: wave-0 closed,
+  council in flight) → `8f8ffdb` (verdict). Untracked: `tools/csm/` (CSM-1's
+  revid-stamp tool, committed with this checkpoint).
 - trunk/excursion address (drift_log §4): **X2 CLOSED** (JJK D6-completion
   done, D11) · trunk P6 not-started by owner directive (JJK-only halt).
   **Next authorized work: the CSM (Chainsaw Man) campaign to 100% per
@@ -41,27 +41,29 @@ edit those.
     per-wiki mechanism, zero engine changes; JJK precedent). Gates green on
     the new store: pytest 1,242, eval jjk 31/31, canon opm 236/236 · 79.0%,
     span-recall jjk 390/400, span-recall csm rc=0.
-  - **In flight: llm-council on the CSM campaign plan** (5 advisors → 5
-    reviewers → chairman; async). It must decide (a) whether the T0–T4
-    question-bank build is necessary for CSM 100% (owner: skip it if not
-    necessary), (b) item scope/order, (c) which JJK learnings to port from
-    day one. Verdict lands in `reports/csm/COUNCIL_csm-campaign.md`.
+  - **Council verdict landed (`8f8ffdb`): SKIP the T0–T4 question-bank build;
+    8-item revised plan CSM-1..8** (text in `reports/csm/COUNCIL_csm-campaign.md`;
+    n=4 stable sample; the existing bank `questions/csm.json` (39 questions,
+    zero revid stamps) must be inventoried + revid-stamped (CSM-1), never
+    clobbered — council point 3 / §5.6).
+  - **In flight: CSM-1 (inventory + revid-stamp the CSM seed bank)** —
+    `tools/csm/stamp_revids.py` authored (untracked at write time); verify
+    on resume whether it has stamped `questions/csm.json` yet (0 stamps at
+    council time), run it if not, commit tool + stamped bank. CSM-2..8
+    pending per the verdict; the per-session todo list died with the
+    overflowed session, so recreate it from the verdict file.
   - **New standing rules (owner, 2026-09-07, persisted in CLAUDE.md):**
     no CPU job >15 min (switch Qwen to 100k and run CUDA instead; or run on
     GPU whenever faster); polling loops print a status line every 10–15 s
     and every bash call carries an explicit `timeout`; a tool that doesn't
     work on both JJK and CSM gets a CSM-specific script (never mutate
     JJK-verified tooling; per-wiki config in `series/csm/overrides.yaml`).
-  - **Exact next step: read the council verdict, restructure the CSM todos
-    to its revised plan, then work the revised items** (Phase-0 blockers
-    §5.1–5.6 and archetype mapping §6 are the likely first items; the
-    D1–D6 gap-closure loop §9a follows; done-declaration + final gates
-    close it).
+  - **Exact next step: finish CSM-1, then CSM-2** (classify every CSM page
+    type + generalize the scoreboard: 5.1 + archetypes).
 - open questions / risks:
-  - The council verdict decides the question-bank question; if it says
-    KEEP, the bank must be CSM-generated (fresh, seeded, frozen — never
-    copied from JJK's fixed data) and every question tier justified by a
-    D1–D6 requirement.
+  - The verdict decided the bank question: SKIP. The seed bank survives as
+    CSM-1's inventory target (fresh stamps, never copied from JJK's fixed
+    data).
   - CSM is smaller and differently shaped than JJK (537 pages vs ~1,500;
     infobox `Character` family; positional `{{Ref|m|216|3-4}}` citations
     already mapped). Per-wiki handling stays in `series/csm/overrides.yaml`
@@ -73,14 +75,18 @@ edit those.
   - `:8000` is on CUDA with 9 GB headroom (100k profile). Long LLM batches
     still follow the hard rule: dedicate the GPU (stop `:8000` or CPU it
     first).
-- first action on resume:
-  1. `git log --oneline -3` (expect `281fe2e` head; clean tree).
-  2. Read `reports/csm/COUNCIL_csm-campaign.md` (the council verdict; if
-     the run died before the chairman wrote it, restart the council and
-     keep Wave-0 as the done item).
-  3. Restructure the CSM todos to the verdict's revised plan; start the
-     first revised item. Standing gates after any build: pytest / eval jjk
-     / span-recall jjk / canon opm.
+- first action on resume (**fresh session — overflow handoff, 2026-09-08**:
+  the 100k session died on `context_length_exceeded` 102518 > 102400 and
+  summarization recovery failed too; pi.md §5.5 — a fresh transcript always
+  fits, this file is the resume):
+  1. Recreate the CSM-1..8 todos from `reports/csm/COUNCIL_csm-campaign.md`
+     (the per-session todo panel was lost with the dead session).
+  2. `git log --oneline -3` (expect `8f8ffdb` head; only untracked
+     `tools/csm/`).
+  3. Finish CSM-1 (revid-stamp state of `questions/csm.json` via
+     `tools/csm/stamp_revids.py`; commit), then CSM-2.
+  Standing gates after any build: pytest / eval jjk / span-recall jjk /
+  canon opm.
 - done this turn (2026-09-07 23:3x, CSM Wave-0 + campaign start): CSM
   grounded (537 pages, 5,081 facts, 11 types, audit 5/5 PASS, span-recall
   rc=2 with 439 unreachable) → diagnosed (pre-G15 index + Notes/References
