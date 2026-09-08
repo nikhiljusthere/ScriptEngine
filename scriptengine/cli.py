@@ -2582,6 +2582,77 @@ def config() -> None:
     console.print_json(json.dumps(dumped, default=str))
 
 
+@app.command("transcripts-import")
+def transcripts_import(
+    series: str = typer.Option(..., "--series"),
+    refresh: bool = typer.Option(
+        False, "--refresh", help="Re-download even when the local raw export's hash matches."
+    ),
+) -> None:
+    """Import the anime's closed captions (SubArchivist) into the dialogue store.
+
+    Phase 1 of plan/JJK_TRANSCRIPTS_PLAN.md: campaign-neutral, no GPU, no gates.
+    Idempotent: unchanged exports are reused by hash; --refresh forces a download.
+    """
+    from scriptengine.transcripts import import_series
+
+    paths = series_paths(series)
+    summary = import_series(paths, refresh=refresh)
+    console.print(
+        f"[green]{summary['episodes']} episodes imported: {summary['lines']} dialogue lines, "
+        f"{summary['signs']} sign lines.[/green]"
+    )
+    console.print(f"Store: {summary['db']}")
+    console.print(
+        "[dim]Speaker labels are the archive's best effort; re-import when the anime adds "
+        "episodes (hash-compare skips unchanged seasons).[/dim]"
+    )
+
+
+@app.command()
+def transcript(
+    series: str = typer.Option(..., "--series"),
+    episode: int = typer.Option(None, "--episode", help="Episode number (1-47)."),
+    movie: bool = typer.Option(False, "--movie", help="The JJK0 movie transcript."),
+    from_t: str = typer.Option(None, "--from", help="Start at MM:SS."),
+    to_t: str = typer.Option(None, "--to", help="Stop at MM:SS."),
+) -> None:
+    """Print an episode's closed captions as [ts] speaker: text."""
+    from scriptengine.transcripts import transcript_text
+
+    if movie:
+        target = "M1"
+    elif episode is not None:
+        target = str(episode)
+    else:
+        console.print("[red]Give --episode N or --movie.[/red]")
+        raise typer.Exit(code=1)
+    text = transcript_text(series_paths(series), target, from_t, to_t)
+    if not text:
+        console.print(f"[red]No transcript for {target}. Run `transcripts-import` first.[/red]")
+        raise typer.Exit(code=1)
+    console.print(text)
+
+
+@app.command()
+def dialogue(
+    series: str = typer.Option(..., "--series"),
+    character: str = typer.Option(..., "--character", help="Character name (aliases like Itadori->Yuji are applied)."),
+    episode: int = typer.Option(None, "--episode", help="Restrict to one episode."),
+    limit: int = typer.Option(0, "--limit", help="Cap the number of lines (0 = all)."),
+) -> None:
+    """A character's lines from the anime's closed captions, alias-aware."""
+    from scriptengine.transcripts import dialogue_lines
+
+    rows = dialogue_lines(series_paths(series), character, None if episode is None else str(episode), limit)
+    console.print(
+        f"[dim]{character}: {len(rows)} line(s). Labels are the archive's best effort "
+        "(generic labels like Student/Woman are kept as-is).[/dim]"
+    )
+    for ep, ts, speaker, text in rows:
+        console.print(f"[{ep} {ts}] {speaker}: {text}")
+
+
 def main() -> None:
     app()
 

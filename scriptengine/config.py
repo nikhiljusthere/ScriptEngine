@@ -242,6 +242,16 @@ class SeriesPaths:
         return self.root / "vectors"
 
     @property
+    def transcripts(self) -> Path:
+        """Anime closed-caption corpus (plan/JJK_TRANSCRIPTS_PLAN.md), campaign-neutral."""
+        return self.root / "transcripts"
+
+    @property
+    def transcripts_db(self) -> Path:
+        """SQLite dialogue store for the closed captions; separate from facts.db."""
+        return self.root / "transcripts.db"
+
+    @property
     def manifest(self) -> Path:
         """What was crawled, when, and from which wiki. Small enough to commit."""
         return self.root / "manifest.json"

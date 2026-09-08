@@ -174,6 +174,12 @@ directive (2026-09-07) next authorizes the **CSM (Chainsaw Man) campaign**
 to 100% per `plan/Plan_to_perfection.md` (todo #9; up to 3 simultaneous
 agents authorized, context windows free to vary per analysis).
 
+**Addition, out-of-campaign (D12, 2026-09-08):** the JJK anime closed
+captions (E1–47 + JJK0) are imported as a separate dialogue store —
+`series/jjk/transcripts.db` + per-episode JSONs, CLI doors
+`transcripts-import` / `transcript` / `dialogue`. Outside the D6 denominator
+and the four standing gates; plan + checks in `plan/JJK_TRANSCRIPTS_PLAN.md`.
+
 **The unmeasured block** — five ability dimensions, ~48,800 words — **was
 measured at P3.A** (`P3A_ABILITY_CENSUS.md`, 315-pair pool, 3C-GREEN fork);
 the paragraph below is the historical record of why P3 was next:
@@ -418,3 +424,23 @@ directive: JJK only, halt before P6 — see D9 / X2.**
 - **Return address:** trunk closed at P6-not-started (JJK campaign over);
   next owner-authorized work is the **CSM campaign** (todo #9,
   `plan/Plan_to_perfection.md` to 100%).
+
+### D12 — anime closed-caption corpus import (out-of-campaign, owner-directed 2026-09-08)
+- **Trunk step:** none — out-of-campaign, after the JJK campaign closed (D11)
+- **What happened:** Phase 1 of `plan/JJK_TRANSCRIPTS_PLAN.md` (council v2,
+  run `ea58f12b`): SubArchivist S1 E1–24 + S2 E25–47 + JJK0 (M1) imported →
+  48 per-episode JSONs + `series/jjk/transcripts.db` (SQLite FTS5, separate
+  from `facts.db`) + hash manifest. 15,411 dialogue lines, 815 sign lines;
+  100% dialogue-line coverage vs the raw exports (count check + E1 spot-check
+  against the live page). Speaker labels stored verbatim (the archive's best
+  effort); deterministic alias rule = `(Flashback) X` → X + 8-entry variant
+  map (`VARIANT_MAP`, `scriptengine/transcripts.py` — no guessing, the map is
+  a closed list checked against the 368-label inventory). New CLI doors:
+  `transcripts-import` / `transcript` / `dialogue`. Campaign-neutral by
+  construction: no `facts.db` writes, four standing gates untouched,
+  transcripts outside the D6 denominator (D6 is closed anyway, D11).
+- **Why:** the owner wants a per-character dialogue dataset alongside the
+  wiki; council verdict 5/5 — Phase 1 is parse/SQL only (no GPU), Phase 2
+  (embedding) stays deferred to a concrete FTS retrieval failure.
+- **Return address:** trunk unchanged (JJK campaign closed; P6 not started;
+  next owner-authorized work is the CSM campaign).
