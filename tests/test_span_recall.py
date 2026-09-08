@@ -282,3 +282,63 @@ def test_roster_shaped_bundle_hits_and_counts_member_names(tmp_path, monkeypatch
     rows = [json.loads(l) for l in
             results.read_text(encoding="utf-8").splitlines() if l]
     assert rows[0]["returned_docs"] == ["Character X"]  # member name is a returned doc
+
+
+def test_two_panel_ledgers_survive_interleaved_runs(tmp_path, monkeypatch):
+    """The F-CSM-3b-1 ledger trap: the csm pinned-panel ledger pair was shared
+    per series/door, so a heldout-panel run rewrote `sweep_qa.jsonl` with
+    only its own keys while the pinned sidecar sat next to it unlinked --
+    the 168 pinned rows dropped from disk. Ledger pairs are now keyed by the
+    8-char panel hash (council CSM-3b R-CSM3B-2); interleaved runs must each
+    keep their own ledger, and a row without this panel's hash stamp refuses
+    the resume (Ruling 7 tamper, exit 2 via the CLI). The LIVE interleaved
+    two-panel grade (pinned sanity -> heldout sanity -> assert both keyed
+    ledgers survive) is the orchestrator's step, not this unit test.
+    """
+    import json
+
+    panel_a = [("Chapter 1", "Plot Details",
+                f"Panel A probe sentence number {i} for the survival test.")
+               for i in range(3)]
+    panel_b = [("Chapter 2", "Plot Details",
+                f"Panel B probe sentence number {i} for the survival test.")
+               for i in range(3)]
+    hash_a = sr._panel_hash([list(p) for p in panel_a])
+    hash_b = sr._panel_hash([list(p) for p in panel_b])
+    assert hash_a[:8] != hash_b[:8]
+    results_a = tmp_path / sr.sweep_ledger_path(tmp_path, "qa", hash_a).name
+    results_b = tmp_path / sr.sweep_ledger_path(tmp_path, "qa", hash_b).name
+    assert results_a.name == f"sweep_qa_{hash_a[:8]}.jsonl"
+
+    def fixed(query, series_, timeout, base, door=None):
+        return _bundle("Chapter 1", query)
+
+    monkeypatch.setattr(sr, "_ask", fixed)
+    # interleaved: A sanity -> B sanity -> resume A. B's run must not touch
+    # A's ledger, and A's resume must not see B's rows.
+    r1 = sr.recall("demo", panel=panel_a, results_path=results_a,
+                   door="qa", limit=1)
+    r2 = sr.recall("demo", panel=panel_b, results_path=results_b,
+                   door="qa", limit=1)
+    r3 = sr.recall("demo", panel=panel_a, results_path=results_a,
+                   door="qa", limit=2)
+    assert r1["probes"] == 1 and r2["probes"] == 1 and r3["probes"] == 3
+
+    a_rows = [json.loads(l) for l in
+              results_a.read_text(encoding="utf-8").splitlines() if l]
+    b_rows = [json.loads(l) for l in
+              results_b.read_text(encoding="utf-8").splitlines() if l]
+    assert len(a_rows) == 3  # A's first row survived B's run and the resume
+    assert len(b_rows) == 1  # B kept exactly its own row
+    assert all(row["panel_hash"] == hash_a for row in a_rows)
+    assert all(row["panel_hash"] == hash_b for row in b_rows)
+
+    # tamper: a row missing this panel's hash stamp refuses the resume
+    with results_a.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps({"verdict": "HIT", "title": "T",
+                                 "sentence": "an unstamped row"}) + "\n")
+    with pytest.raises(sr.SpanRecallError, match="hash stamp"):
+        sr.recall("demo", panel=panel_a, results_path=results_a, door="qa")
+    with pytest.raises(sr.SpanRecallError, match="does not parse"):
+        results_a.write_text("{not json\n", encoding="utf-8")
+        sr.recall("demo", panel=panel_a, results_path=results_a, door="qa")

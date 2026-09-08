@@ -274,6 +274,19 @@ def _panel_hash(rows: list[list[str]]) -> str:
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
+def sweep_ledger_path(folder: Path, door: str, panel_hash: str) -> Path:
+    """The pinned-panel sweep ledger, keyed by the panel's 8-char hash.
+
+    A per-series shared name (F-CSM-3b-1) let a heldout-panel run rewrite
+    the pinned panel's `sweep_qa.jsonl` with only its own keys while a
+    pinned sidecar sat next to it unlinked -- the 168 pinned rows were
+    dropped from disk. Each panel keeps its own `<door>_<hash8>.jsonl` pair
+    so interleaved runs cannot drop each other's rows (council CSM-3b
+    R-CSM3B-2).
+    """
+    return Path(folder) / f"sweep_{door}_{panel_hash[:8]}.jsonl"
+
+
 def build_panel(series: str, settings: Settings | None = None,
                 min_words: int = 6, seed: int = 42,
                 held_out: int = 200) -> dict[str, Any]:
@@ -319,11 +332,20 @@ def build_panel(series: str, settings: Settings | None = None,
 
 
 def _read_jsonl(path: Path) -> list[dict[str, Any]]:
+    """Strict reader for the sweep ledger: a line that does not parse
+    refuses the resume (Ruling 7 tamper) instead of a raw traceback or a
+    silent start-over."""
     rows: list[dict[str, Any]] = []
     if path.exists():
-        for line in path.read_text(encoding="utf-8").splitlines():
+        for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
             if line.strip():
-                rows.append(json.loads(line))
+                try:
+                    rows.append(json.loads(line))
+                except json.JSONDecodeError as error:
+                    raise SpanRecallError(
+                        f"ledger {path} does not parse at line {number} -- "
+                        f"corrupted ledger; refusing to resume (restore it "
+                        f"from git or delete it and re-probe)") from error
     return rows
 
 
@@ -355,6 +377,7 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
            results_path: Path | None = None,
            door: str | None = None,
            limit: int | None = None,
+           stamps: dict[str, str] | None = None,
            ) -> dict[str, Any]:
     """Tier 1: does the served bundle actually contain the line?
 
@@ -379,11 +402,22 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
     """
     if panel is not None:
         probes = [tuple(p) for p in panel]
+        if panel_hash is None:
+            panel_hash = _panel_hash([list(p) for p in probes])
         prior: dict[tuple[str, str], dict[str, Any]] = {}
         sidecar = (Path(results_path).with_name(Path(results_path).name + ".new")
                    if results_path else None)
         for source in filter(None, [results_path, sidecar]):
             for row in _read_jsonl(source):  # the sidecar is newer; it wins
+                # Ruling 7 tamper: every ledger row must carry this panel's
+                # hash stamp; a row without it (or stamped for another panel)
+                # means the file at this key is not this panel's own ledger --
+                # refusing beats silently re-probing or double-counting.
+                if row.get("panel_hash") != panel_hash:
+                    raise SpanRecallError(
+                        f"ledger {source} carries a row without this panel's "
+                        f"hash stamp -- refusing to resume; restore the "
+                        f"ledger from git or delete it and re-probe")
                 if row.get("verdict") == "ERROR":
                     continue  # a transient failure is re-probed on resume
                 key = (row.get("title"), row.get("sentence"))
@@ -428,6 +462,9 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
                 "mode_routed": bundle.get("mode"),
                 "truncated": bundle.get("truncated"),
                 "returned_docs": returned[:8], "error": error,
+                # F1 provenance (council CSM-3b R-CSM3B-2): the panel hash is
+                # the tamper guard, device/commit the run's provenance stamps.
+                "panel_hash": panel_hash, **(stamps or {}),
             }
             if sidecar is not None:
                 with sidecar.open("a", encoding="utf-8") as handle:

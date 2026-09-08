@@ -1995,6 +1995,36 @@ def canon_run(
     console.print(f"\n[bold]{result['folder'] / 'REPORT.md'}[/bold]")
 
 
+def _sweep_stamps() -> dict[str, str]:
+    """Provenance stamps for sweep-ledger rows (council CSM-3b R-CSM3B-2):
+    which device served the probes, and which commit was running. Both fall
+    back to "unknown" rather than blocking the sweep -- a missing stamp is
+    a provenance gap, not a reason to stop measuring."""
+    import subprocess
+    import urllib.request
+
+    from scriptengine.eval.span_recall import BASE
+
+    device = "unknown"
+    try:
+        with urllib.request.urlopen(f"{BASE}/health", timeout=10) as response:
+            device = json.loads(response.read()).get("device", "unknown")
+    except Exception:
+        pass  # the sweep's first probe will surface a dead server
+
+    commit = "unknown"
+    try:
+        out = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=Path(__file__).resolve().parents[1],
+            capture_output=True, text=True, timeout=10)
+        commit = (out.stdout or "").strip() or "unknown"
+    except Exception:
+        pass
+
+    return {"device": device, "commit": commit}
+
+
 @app.command("chunk-containment")
 @app.command("span-recall")
 def span_recall(
@@ -2138,15 +2168,21 @@ def span_recall(
                 f"{panel_hash[:16]}… -- the panel was edited after stamping; "
                 f"re-pin before sweeping.[/red]")
             raise typer.Exit(code=1)
-        rows_path = folder / f"sweep_{door}.jsonl"
+        rows_path = impl.sweep_ledger_path(folder, door, panel_hash)
 
         def on_progress(i: int, total: int, counts: dict) -> None:
             console.print(f"  [dim]{i}/{total}  {counts}[/dim]")
 
-        run = impl.recall(
-            series, settings, mode=mode, panel=probes,
-            panel_hash=panel_hash, results_path=rows_path, door=door,
-            limit=sanity or None, on_progress=on_progress)
+        try:
+            run = impl.recall(
+                series, settings, mode=mode, panel=probes,
+                panel_hash=panel_hash, results_path=rows_path, door=door,
+                limit=sanity or None, stamps=_sweep_stamps(),
+                on_progress=on_progress)
+        except impl.SpanRecallError as error:
+            # a tampered/corrupted ledger refuses the resume (Ruling 7)
+            console.print(f"[red]{error}[/red]", err=True)
+            raise typer.Exit(code=2) from error
 
         if sanity and run["counts"]["HIT"] == 0:
             console.print(

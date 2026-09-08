@@ -13,7 +13,8 @@ Usage (from the repo root):
     python tools/csm/panel_heldout.py --series csm --door qa [--sanity N]
     [--out VALIDATION_FOLDER]
 
-Exit codes: 0 = sweep ran (see the table + the folder's sweep_<door>.jsonl);
+Exit codes: 0 = sweep ran (see the table + the folder's
+sweep_<door>_<panelhash8>.jsonl, R-CSM3B-2);
 1 = side file is not the pinned held-out shape (re-pin the panel);
 3 = the CLI's dead-door sanity halt.
 """
