@@ -82,14 +82,18 @@ edit those.
   next owner-authorized work (CSM-1/1b/2 + councils done; CSM-3 is the next
   unit — see the "Campaign todos" section below + `reports/csm/`).
   Transcript work is campaign-neutral (D12/D13).
-- Toji script (D14 addendum 2, same session): now also carries 5 `[range: …]`
-  event-span annotations (the multi-arc cast-list line cites both arcs; the
-  four Toji fights — vs Gojo / vs Geto / vs Dagon / vs Megumi — carry their
-  ch+ep span plus a start time), a `## Event ranges` glossary (11 events),
-  and a citation-free `Toji-clean.md` (5,589 words, pure narrative). Ranges
-  sourced from the wiki's `anime episode` edges in `series/jjk/facts.db`,
-  never invented. `cli verify --series jjk` still clean (104 tags; the range
-  annotations are a new human-curated format, not verify-checked).
+- Toji script (D14 addendum 3, same session): the owner corrected the
+  cast-list range to cite **Toji's appearance** in each arc (not the arc's
+  full span). The 5 inline `[range: …]` notes + the end-glossary are gone,
+  replaced by a **passage pass**: each of the 25 body passages carries a
+  `[covers: …]` line directly beneath it (arc/event + ch/ep range; Toji in
+  Gojo's Past = Ch 66-75/Ep 25-28, Toji in Shibuya = Ch 95-113/Ep 35-40,
+  the four fights, the Zenin, the afterlife, the mechanics, the arsenal).
+  `Toji-clean.md` (5,589 words, pure narrative, also strips the `[covers:]`
+  lines). Ranges sourced from the wiki's `anime episode` edges in
+  `series/jjk/facts.db`, never invented. `cli verify --series jjk` still
+  clean (104 tags; `[covers:]` lines are a new human-curated format, not
+  verify-checked).
 
 ## gpu-gate3 handoff (2026-09-08 — A=01a08064 (fresh CSM session; retargeted from the retired 01a07ff0) → chain → C on 100k → A resume)
 

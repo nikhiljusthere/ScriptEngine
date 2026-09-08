@@ -556,3 +556,17 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   excluded — pure narrative for the editor). Main file 6,378 words (the
   +~290 over 6,082 is the range annotations + glossary, reference not
   narration); the clean version's 5,589 words ≈ 43 min at 130 wpm.
+
+- **Addendum 3 (passage pass + cast-list correction, same session):** the
+  owner corrected the cast-list range — it must cite **Toji's appearance**
+  in each arc, not the arc's full span (sentence-level citations cite only
+  what the sentence talks about). Removed the 5 inline `[range: …]`
+  annotations and the end-glossary; replaced with a **passage pass** — each
+  of the 25 body passages now carries a `[covers: …]` line directly beneath
+  it, listing the arc/event(s) + ch/ep range(s) that passage draws from
+  (Toji in Gojo's Past = Ch 66-75, Ep 25-28; Toji in Shibuya = Ch 95-113,
+  Ep 35-40; the four fights, the Zenin massacre, the afterlife, the
+  mechanics, the arsenal). Ranges still sourced from the wiki's `anime
+  episode` edges, never invented. `Toji-clean.md` regenerated (5,589 words;
+  it now also strips the `[covers:]` reference lines, so it is pure
+  narrative). `cli verify` still clean (104 tags).
