@@ -260,14 +260,20 @@ can borrow it — verified 2026-09-05 (a span-recall probe ran to completion wit
 throughout). The rule still stands for `events-extract` and any long,
 load-sustaining LLM batch.
 
-**Qwen context modes (262k exploratory ↔ 100k service).** Qwen's `--kv-capacity`
+**Qwen context modes (262k exploratory ↔ 100k service ↔ 150k Phase-1).** Qwen's `--kv-capacity`
 pre-reserves its int8 KV pool, so context length is a VRAM dial: the 262k
 profile leaves ~3.5 GiB headroom (`:8000` must run on CPU — the old "short
 CUDA probe" exception above was measured at a smaller KV pool and does not
 apply to the current 262k profile), while the 100k service profile frees
 ~7–8 GB so the embedder+reranker co-locate on CUDA and up to 2 subagents run
 in parallel (llm-council runs one agent at a time in any mode — owner rule
-2026-09-08). Switching is
+2026-09-08). The **150k Phase-1 mode** (owner rule 2026-09-08, CSM two-phase
+plan `plan/CSM_2PHASE_PLAN.md`) sits between: the campaign's *fixing process*
+runs at 150k with **up to 2 parallel working subagents per wave** (deploy 2 →
+access results → deploy the next 2, never queued) and **all model/GPU work on
+CUDA — no CPU shell command may exceed 15 s**. The gpu-handoff switching plan
+is **reserved for Phase 2 (extraction)**; it is not used per-step in Phase 1.
+Switching is
 checkpoint (`plan/SWITCHPOINT.md`) → `ninfer-work/qwen-switch.sh` (one atomic
 call — the pi agent may switch autonomously at phase boundaries, `pi.md` §4)
 → resume; the agent has no model during the ~30–60 s reload window, but the
@@ -318,7 +324,10 @@ waits until this run closes.
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
 gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
 `pytest tests/ -q` = 1,249 (15:19–15:22, CUDA; the 1,242 baseline was stale —
-CSM-2 added 7 tests); `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
+CSM-2 added 7 tests). Suite since: **1,254** = 1,249 + 4 CSM-3 tests + 1
+CSM-3b roster-door test (`f93d396` + COUNCIL_csm-3 Ruling 1); per Ruling 5e a
+known +N test delta does not re-run the gates — the full four-gate re-run
+happens at CSM-4's start. `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
 --series jjk` = 48,572/48,572 offline (rc=0) + 390/400 live probe (97.5%;
 15:23–15:26, CUDA `:8000`); `canon-run --series opm` = 10/16 exact,
 236/236 canon, 79.0% (15:26, `--skip-eval` one-copy rule).

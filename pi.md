@@ -160,15 +160,22 @@ subagents). Full method: `docs/ops/QWEN_MODES.md`. Protocol:
    transcript always fits.
 
 **Subagent policy:** 262k → linear, no parallel subagents. 100k → ≤2
-parallel. `llm-council` runs **one agent at a time in any mode** (owner rule
-2026-09-08 — at full 262k context the five children fight the shared KV pool
-for answering; the standing exception is retired).
+parallel. 150k (CSM Phase 1, 2026-09-08) → up to 2 parallel *working*
+subagents per wave (deploy 2 → access results → deploy the next 2, never
+queued) — `plan/CSM_2PHASE_PLAN.md`. `llm-council` runs **one agent at a
+time in any mode** (owner rule 2026-09-08 — at full 262k context the five
+children fight the shared KV pool for answering; the standing exception is
+retired).
 
-### GPU handoff (cross-session, council-verified 2026-09-08)
+### GPU handoff (cross-session, council-verified 2026-09-08; **reserved for
+Phase 2 / extraction — owner rule 2026-09-08**)
 
-When the plan hits a GPU step I cannot run inline (262k context, :8000
-device rules): full protocol in `docs/ops/PC_GPU_HANDOFF.md`, executable
-chain `tools/master-work/gpu-handoff.sh`. Gist:
+Phase 1 (the CSM fixing process) runs at the 150k dial with co-located CUDA
+and 2-subagent waves (`plan/CSM_2PHASE_PLAN.md`) — no per-step switching.
+When the plan hits a Phase-2 GPU step I cannot run inline (extraction,
+exhaustive sweeps; smaller context if VRAM demands): full protocol in
+`docs/ops/PC_GPU_HANDOFF.md`, executable chain
+`tools/master-work/gpu-handoff.sh`. Gist:
 
 - **Tier 1 (no mode flip):** deterministic Qwen batches (`events-extract`)
   run under 262k — Qwen owns the GPU, `:8000` stays CPU. Just detach batch +

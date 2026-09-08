@@ -12,7 +12,9 @@ edit those.
 - mode: **262k + `--vision` (this session started under it, 2026-09-08; the
   old stuck 100k CSM session 01a07cab is retired/trashed — everything it held
   is on disk)** → CSM campaign RESUMED. Items 1–2 are zero-GPU disk work,
-  fine under 262k. Item 4 (D5 exhaustive sweep, ~51 GPU-h) goes through the
+  fine under 262k. Item 4 (D5 exhaustive sweep; GPU-h pending the measured
+  s/probe — COUNCIL_csm-3: 4 s/probe is an unmeasured JJK number, the sanity
+  runs measure CSM's rate and re-estimate before the batches) goes through the
   gpu-handoff chain (`docs/ops/PC_GPU_HANDOFF.md` + `tools/master-work/
 gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   the GPU, never `--api` on a chain switch.
@@ -79,7 +81,10 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   - **Next: COUNCIL_csm-3** (cadence: 2 todos since COUNCIL_csm-1b-2 — the
     gate re-baseline + CSM-3; one agent at a time in any mode), **then
     CSM-4**: the D5 exhaustive tier-1 × 3 doors sweep on the pinned panel
-    (17,181 × 3 ≈ 58 GPU-h) runs in a 100k-mode side session via the tier-2
+    (17,181 × 3 doors; the ≈58-GPU-h figure assumes the unmeasured 4 s/probe —
+    the sanity runs measure CSM s/probe first, JJK's warm 0.47 s/probe ≈ 8 h;
+    the re-estimate lands in GATE.md before the batches, COUNCIL_csm-3 Ruling 4)
+    runs in a 100k-mode side session via the tier-2
     chain — C runs the sweep, never the fixer (§9a: the agent never runs the
     sweep that grades a fix it made).
   - Council cadence: last fired after CSM-2 (`COUNCIL_csm-1b-2`); next fires
@@ -88,7 +93,8 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   - GPU at check time: Qwen 262k owns the card, `:8000` on CPU (headroom
     1,202 MiB after the gpu-gate3 262k switch-back, 15:29 → CPU is correct;
     do not co-locate). CSM-3 is code + panel work (zero-GPU up to the sweep);
-    the ~51-GPU-hour D5 exhaustive sweep is CSM-4 (item 4) and goes through
+    the D5 exhaustive sweep (GPU-h pending the measured s/probe, COUNCIL_csm-3)
+    is CSM-4 (item 4) and goes through
     the tier-2 chain again in a 100k-mode side session.
   - The master-work A/B deploy is in flight on this box (the untracked /
     modified files above); CSM commits stay CSM-area paths only, and the
@@ -289,12 +295,12 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - [x] 2. Classify every CSM page type + generalize the scoreboard (CSM-2 — `42aa296`; 14 unknowns resolved, JJK output byte-identical)
 - [x] Standing-gate re-baselining ×2 — gpu-live2 (`GATE_REBASELINE.md`, 1,242) + gpu-gate3 (`GATE_REBASELINE_2.md`, 1,249; CLAUDE.md + gates-skill baselines updated, `2c80867`)
 - [x] 3. D5 measurement infrastructure (CSM-3 — `f93d396`: pinned hashed panel + held-out split, csm panel pinned hash e3d73720… (17,181 + 200); wired (title,sentence) resume, jsonl rewritten; full-denominator hit_rate; three doors + --sanity dead-door halt; tier-0 rename `chunk-containment` (alias kept); <6-word floor recorded (775-line census, exclusion stands); pytest 1,253)
-- [ ] 4. D5 exhaustive tier-1 × 3 doors (~51 GPU-h; batched in 100k side sessions via the gpu-handoff chain; standing 400-probe gate stays)
-- [ ] 5. Phase-0 remainder — 5.3 pilot fixtures / 5.5 no-LLM-judge / 5.4 door-first (extraction only on red) / §13 awareness line / the twenty-failures set (named author)
-- [ ] 6. D6 oracle + bounded instrument — parameterize the two jjk-hardcoded tools, CSM dimension map, eight-verb sample, frozen census sets (seeded + revid-stamped, D4 authored by a fresh-context subagent), T0 pilot, cross-page fact census
-- [ ] 7. §9a closure loop (D1–D6; one class per fix, never reword to pass, halt on regression / two no-reduction iterations)
-- [ ] 8. Done-declaration + pilot memo (pasted raw output + the four pilot numbers; JJK baseline diff-empty; halt before P6)
-- Standing items (whole campaign): council every 2–3 todos — **one agent at a time** (owner rule 2026-09-08); raw receipts, never "100%" prose; `coverage_report` regenerated after every commit; the four standing gates before any pass is declared done; per-wiki handling in `series/csm/overrides.yaml` / `tools/csm/` only; JJK baseline untouched; **no CPU fallback for jobs** (100k switch + side session; CPU = `:8000` service + <15 min jobs only).
+- [ ] 4. D5 exhaustive tier-1 × 3 doors (**PHASE 2 — extraction**; GPU-h pending measured s/probe — sanity runs measure it first, COUNCIL_csm-3 Ruling 4; batched via the gpu-handoff chain in Qwen quiet windows, smaller dial if VRAM demands; standing 400-probe gate stays)
+- [ ] 5. Phase-0 remainder (**PHASE 1 — Wave 2, sub 4**) — 5.3 pilot fixtures / 5.5 no-LLM-judge / 5.4 door-first (extraction only on red) / §13 awareness line / the twenty-failures set (named author)
+- [ ] 6. D6 oracle + bounded instrument (**PHASE 1 — instrument half**: parameterize the two jjk-hardcoded tools, CSM dimension map, eight-verb sample, frozen census sets (seeded + revid-stamped, D4 authored by a fresh-context subagent), T0 pilot, cross-page fact census; **PHASE 2 — extraction half**, only on red census)
+- [ ] 7. §9a closure loop (D1–D6; **PHASE 1 iteration 1**: one class per fix, never reword to pass, halt on regression / two no-reduction iterations)
+- [ ] 8. Done-declaration + pilot memo (**PHASE 2**; pasted raw output + the four pilot numbers; JJK baseline diff-empty; halt before P6)
+- Standing items (whole campaign): council every 2–3 todos — **one agent at a time** (owner rule 2026-09-08); raw receipts, never "100%" prose; `coverage_report` regenerated after every commit; the four standing gates before any pass is declared done; per-wiki handling in `series/csm/overrides.yaml` / `tools/csm/` only; JJK baseline untouched; **Phase 1 (owner rule 2026-09-08): all model/GPU work on CUDA at the 150k dial, no CPU shell command >15 s, 2-subagent waves; the gpu-handoff switching plan is Phase 2 only**.
 
 ## Switch log (machine-appended by qwen-switch.sh)
 

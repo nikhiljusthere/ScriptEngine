@@ -1,5 +1,12 @@
 # PC GPU-handoff protocol (council-verified 2026-09-08)
 
+**RESERVED FOR PHASE 2 (EXTRACTION PHASE) — owner rule 2026-09-08.** Phase 1
+(the CSM fixing process) runs at the 150k Qwen dial with co-located CUDA and
+2-subagent waves (`plan/CSM_2PHASE_PLAN.md`) and does NOT use this chain
+per-step. Sanctioned uses: the D5 exhaustive sweep and D6 extraction —
+batched side sessions in Qwen quiet windows, an even smaller dial if VRAM
+demands it.
+
 How a full-context (262k) campaign session **A** hands a GPU-heavy step to a
 fresh 100k session **C** in a new terminal, gets a report back, and resumes —
 without vision, without losing A's context, and without the mode dial stranding

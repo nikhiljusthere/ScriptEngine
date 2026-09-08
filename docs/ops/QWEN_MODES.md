@@ -145,9 +145,12 @@ that is the designed working mode, not an exception. Protocol (skill:
    there.") is for wanting clean state, not for survival.
 
 **Subagent policy per mode:** 262k → linear, no parallel subagents; 100k →
-≤ 2 parallel; `llm-council` runs **one agent at a time in any mode** (owner
-rule 2026-09-08 — at full 262k context the five children fight the shared KV
-pool for answering; the standing exception is retired).
+≤ 2 parallel; 150k (CSM Phase 1, 2026-09-08) → up to 2 parallel *working*
+subagents per wave (deploy 2 → access results → deploy the next 2, never
+queued — `plan/CSM_2PHASE_PLAN.md`); `llm-council` runs **one agent at a
+time in any mode** (owner rule 2026-09-08 — at full 262k context the five
+children fight the shared KV pool for answering; the standing exception is
+retired).
 
 ## Guardrails (carry-overs from the standing GPU rules)
 
