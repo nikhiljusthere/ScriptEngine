@@ -159,6 +159,26 @@ subagents). Full method: `docs/ops/QWEN_MODES.md`. Protocol:
 parallel. `llm-council` runs 5 in parallel in **any** mode (the standing
 exception).
 
+### GPU handoff (cross-session, council-verified 2026-09-08)
+
+When the plan hits a GPU step I cannot run inline (262k context, :8000
+device rules): full protocol in `docs/ops/PC_GPU_HANDOFF.md`, executable
+chain `tools/master-work/gpu-handoff.sh`. Gist:
+
+- **Tier 1 (no mode flip):** deterministic Qwen batches (`events-extract`)
+  run under 262k — Qwen owns the GPU, `:8000` stays CPU. Just detach batch +
+  gated typer. No new session.
+- **Tier 2 (the chain):** I write spec + SWITCHPOINT + commit, then my final
+  action launches `gpu-handoff.sh --tier2` (plain shell B) → `100k --force`
+  → fresh 100k pi session C (new terminal, runs the GPU task, writes the
+  report) → script does the `262k` switch-back (absorbs "D") → a plain-shell
+  gated typer types my fixed resume line into my window (no vision). I sit
+  idle at my prompt meanwhile and continue from the report. C's transcript
+  is trashed by me after I read the report; B/D have none.
+- Fit-guard note: both switches take `--force` (deliberate handoff); never
+  `--api` (the batch needs `:8000` on CPU); never delete C's transcript
+  before the switch-back (poisons the 262k guard).
+
 ## 6. Reference map
 
 | question | file |
