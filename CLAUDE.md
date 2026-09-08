@@ -88,6 +88,16 @@ re-crawling.
   audit after). Its compact form lives in `scriptengine/api/rules.py`
   (`VOICE_RULES`) and is appended to every context bundle; when reviewing or
   generating script output, run the skill's Mode B audit on the draft.
+- **A script's shape comes from the owner's essence, not from the research**
+  (owner rule 2026-09-09): before drafting any script, ask the owner for the
+  essence — the opening (what the video starts on and how heavy it is), the
+  pacing (anime scripts pace slowly), the resolution (the thematic verdict the
+  video lands on, a reading not a literal claim), and the bad things /
+  tragedies it works through in between. The research supplies the facts; the
+  owner supplies the shape. If the owner asks, offer some options per element
+  and let them pick. The engine serves this contract as `ESSENCE_RULES` in
+  `scriptengine/api/rules.py` (folded into `writing_rules`, so `script-gen`
+  and `/context` carry it with every bundle).
 - **Every line of a script must be traceable to a chapter.** The `sourced:`
   header on each beat is computed in `scriptengine/retrieve/citations.py` by
   reading each `{{Ref}}` as covering the sentences before it and resolving the

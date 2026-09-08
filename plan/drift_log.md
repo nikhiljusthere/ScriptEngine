@@ -625,3 +625,36 @@ directive: JJK only, halt before P6 — see D9 / X2.**
 - **Why:** the owner asked the conventions to be permanent — reproducible on
   every future `script-gen`, not a hand-edit to one script.
 - **Return address:** none — out-of-campaign; CSM campaign todos stay parked.
+
+### D16 — Gojo script v2 (essence-driven) + the essence contract made permanent in the pipeline (out-of-campaign, owner-directed 2026-09-09)
+
+- **What:** the owner gave the *essence* of the Gojo script (open dark — the
+  world without Gojo, slow pacing, the tragedies in between, resolution
+  "even the strongest, you were overpowered [thematically] by Sukuna") and
+  directed that for **all future scripts the agent asks the owner for the
+  essence first** (offering options when asked). The Gojo script
+  (`E:\Personal\Plot Works\Video 2 - Gojo\Script\Gojo.md`, 3,780 w /
+  56 tags / 30 distinct, verify-clean; clean companion 3,126 w) was rewritten
+  around that essence: the dark open uses E34 "Pandemonium" (the seal told
+  by a first-year through the robot-faced device) — the owner's "19 days"
+  image was kept only where the corpus supports a number (the Culling Game
+  inactivity rule, Ch 158, as the slow "days" beat; there is no "19 days
+  without Gojo" fact in the corpus, and numbers are looked up, never
+  inferred). The close lands on the owner's verdict in the story's own
+  grammar ("The King did not beat the man. The King beat the strongest.").
+  The rule is permanent in the engine: `scriptengine/api/rules.py`
+  `ESSENCE_RULES` (folded into `writing_rules()`, so `script-gen` and
+  `/context` carry it with every bundle) + a `CLAUDE.md` working agreement.
+  Same session: the Toji script was reverted to the 6,520-word Gojo-quote-open
+  version and the Script dir trimmed to `Toji.md` + `Toji-clean.md`
+  (owner instruction).
+- **Why:** shape belongs to the owner, facts belong to the research — the
+  two were conflated until now (the first Gojo draft opened light on the
+  "I'm the strongest" line; the owner wanted the dark reality).
+- **Note:** 6 `tests/test_context.py` QA-retrieval tests fail under the 262k
+  Qwen profile with `torch.OutOfMemoryError` at embedder load (Qwen holds
+  ~30 GB of the 32 GB card) — environmental, pre-existing, unrelated to D16
+  (the rules/contract tests pass). Re-run them at the 100k dial.
+- **Return address:** none — out-of-campaign; CSM campaign todos stay parked.
+The owner powers the machine off at the end of the session that closed this
+entry.

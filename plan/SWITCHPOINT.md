@@ -8,6 +8,31 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-09 (Gojo script v2 — ESSENCE-driven; machine powers off at end of this session):**
+  - **Gojo script rewritten per owner essence** (`E:\Personal\Plot Works\Video 2 - Gojo\Script\Gojo.md`,
+    3,780 w tagged / 3,126 w clean, 56 tags / 30 distinct, verify-clean): dark open
+    (the morning the world learns Gojo is sealed — E34 "Pandemonium" facts, no
+    fabricated "19 days" number: the corpus's only 19-day fact is the Culling
+    Game inactivity rule, Ch 158, used as the slow "days" beat); slow pacing;
+    the bad things in between (Toji, Geto's break/kill, Jogo, Shibuya);
+    resolution close per owner: "even the strongest, you were overpowered —
+    the King beat the title, not the man" (thematic, not literal, per owner's
+    "don't take this literally"). Clean companion regenerated.
+  - **Standing rule (owner 2026-09-09): for ALL future scripts, ask the owner
+    for the ESSENCE before drafting** (opening, pacing, resolution, the
+    tragedies in between); offer options when asked; anime scripts pace slowly.
+    Implemented in the engine: `scriptengine/api/rules.py` `ESSENCE_RULES`
+    (folded into `writing_rules()` → travels with `script-gen` + `/context`),
+    + CLAUDE.md working agreement.
+  - **Toji script state (owner-directed):** `Toji.md` = the 6,520-word
+    Gojo-quote-open version (the one that opened on "since he has no cursed
+    energy, I can't read his presence" [E27 14:17]); the "I'm glad." rewrite
+    (6,530 w) and all backups deleted on owner instruction — the Script dir
+    holds only `Toji.md` + `Toji-clean.md` (5,658 w).
+  - Next on the owner's list: nothing pending — **the owner powers the
+    machine off at the end of this session** (Qwen 262k + :8000 CPU API die
+    with it; the CSM campaign todos below stay parked until the next session).
+- **2026-09-08 (Toji script rewrite COMPLETE, owner-directed — drift D14):**
 - **2026-09-08 (Toji script rewrite COMPLETE, owner-directed — drift D14):**
   - The owner-directed autonomous rewrite of the Toji Fushiguro script
     (`E:\Personal\Plot Works\Video 1 - Toji\Script\Toji.md`) is done and

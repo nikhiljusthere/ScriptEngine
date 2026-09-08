@@ -17,6 +17,9 @@ the other way round. One copy, served to every client.
   story's *structure*, so the writer decides the shape (ten structure
   decisions, budget rule) before drafting. Full skill (30-feature audit,
   model fingerprints): `.pi/skills/humanscope/`.
+* `ESSENCE_RULES`: the essence contract (owner rule 2026-09-09) — the owner
+  supplies the script's shape (opening, pacing, resolution, the tragedies in
+  between) before any drafting; anime scripts pace slowly.
 * `ANNOTATION_RULES`: how a line states the chapter and episode it came from.
 """
 
@@ -107,6 +110,21 @@ ANNOTATION_RULES = """\
 """
 
 
+ESSENCE_RULES = """\
+=== ESSENCE RULES: the owner's essence comes before the draft ===
+- Before drafting a script, ask the owner for its ESSENCE: the opening (what
+  the video starts on and how heavy it is), the pacing, the resolution (the
+  thematic verdict the video lands on — a reading of the story, not a literal
+  claim), and the bad things / tragedies the video works through in between.
+- Anime scripts pace slowly: long deliberate passages, fewer beats per breath.
+- Do not guess the essence from the research. The research supplies the facts;
+  the owner supplies the shape. If the owner asks, offer some options per
+  element and let them pick.
+- The essence is the spine: every section serves it, and the closing lands on
+  the resolution the owner gave.
+"""
+
+
 def writing_rules(intro: bool = True, words: int = 0) -> str:
     """The full contract, with the two choices the user makes folded in."""
     length = (
@@ -123,6 +141,7 @@ def writing_rules(intro: bool = True, words: int = 0) -> str:
             STYLE_RULES + (INTRO_ON if intro else INTRO_OFF) + length,
             SCRIPT_FORMAT,
             VOICE_RULES,
+            ESSENCE_RULES,
             ANNOTATION_RULES,
         ]
     )
