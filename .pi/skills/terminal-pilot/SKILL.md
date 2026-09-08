@@ -78,10 +78,17 @@ Record `{"a_win":…,"b_win":…}` in `reports/csm/windows.json` (campaign) or y
   Command success alone is NOT proof the input reached the pi TUI.
 - **Boot**: type `pi` → wait for BOTH window title `π - ScriptEngine` AND a NEW session file
   in `~/.pi/agent/sessions/<project>/`. Title alone is NOT success — a pi that resumed the
-  wrong session (PI_* inheritance) shows the same title with no new file. Wrong-session
-  diagnostic: no new file after ~60 s → newest `pgrep -x pi` (not yours), check
-  `tr '\0' '\n' < /proc/<pid>/environ | grep '^PI_'`, kill it, retype
-  `env -u PI_SESSION_FILE -u PI_SESSION_ID -u PI_SUBAGENT_PARENT_SESSION pi`.
+  wrong session (PI_* inheritance) shows the same title with no new file. **But**: pi writes
+  the session file on the FIRST model exchange, so no file ~1 min after boot is not itself
+  proof of failure — check for a live pi process first. Wrong-session diagnostic: the session
+  file that appears belongs to another session id, or the pi's `/proc/<pid>/environ` still
+  carries `PI_*` → kill it, retype `env -u PI_SESSION_FILE -u PI_SESSION_ID -u PI_SUBAGENT_PARENT_SESSION pi`.
+- **A pi already running in the target window receives your typing in ITS TUI, not the shell**
+  (2026-09-08 21:48: a 7-min-old pi in the TOJI window ate the `env -u … pi` launch line as a
+  user message — harmless only because it refused to run it). Before typing anything: find
+  pi procs descended from the window's shell and kill them — walk the ppid chain TWO levels
+  (pi → bash → `gnome-terminal-server`; a one-level check misses it), excluding your own pid
+  list explicitly.
 - **Pasting an actual prompt (the step the 2026-09-08 21:42 TOJI run skipped — never omit):**
   1. Prompt goes in `/tmp/<name>_prompt.txt` (write tool; no shell-escaping of long text).
   2. Only after pi is verified (new session file + title + ~2 s TUI settle). Probe line first,
