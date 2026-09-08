@@ -20,3 +20,13 @@ The 10-minute B-append → A-decide round trip (plan §8), run with the supervis
 5. **Owner terminal-kill during the run**: the attached terminal died; every setsid/detached process (Qwen `:18080`, `:8000`, the poller, the detached `work` pane) survived — the §6.2 replay path was not needed.
 
 Status: **deploy authorized** (plan header flipped). Next unit per A's DEC: B launches the PC loop (plan §5.4, fresh MAX_TICKS budget, day-1 dedicated window per guard 6e).
+
+## Post-T0: visible GUI demo (pcloop-demo-1, same day)
+
+Owner asked to *see* terminal close/open. Both open terminals were load-bearing and **not closable**: the “server” terminal hosts the Qwen model (its own session on pts/1 inside that gnome-terminal window — close ⇒ SIGHUP ⇒ model down ⇒ total SPOF), and the “π” terminal hosts the pi agent itself. Demo therefore ran on a third, disposable terminal: open `gnome-terminal` (visible) → `xdotool type` of `echo PC-control demo $(date +%T)` (visible keystrokes) → **mouse click on the X button** (visible) → window closed; Qwen `:18080` and `:8000` verified 200 after.
+
+Findings (action items in parens):
+1. **Display is 1920×1080, not 1440×1200** (stale note). `loop.py`'s guard reads `xdotool getdisplaygeometry` live — correct. The demo's ad-hoc VLM prompt hardcoded 1440x1200 and confused the model (it started doubting the image resolution). *(Never hardcode display dims in prompts; the loop's live guard already covers it.)*
+2. **CSD window geometry**: `getwindowgeometry` client-top (90,59) sits ~31 px *above* the visible headerbar buttons (shadow/headerbar inside the client window) — VLM-pixel and naive client-math both missed the X button (6 clicks at y 68–86 all no-ops). **AT-SPI is the deterministic source**: `Atspi` (gi, installed) walked to the Close button's exact on-screen rect ((890,90) 34×30 → click (907,105) closed the window first try). *(Loop should prefer AT-SPI rects for window controls over VLM pixel estimates; VLM stays for content.)*
+3. **Qwen is window-bound** (own session, pts/1, ppid = gnome-terminal-server subreaper). *(Ops fix at a safe boundary: launch serve detached — tmux or `setsid` + no tty — so the server terminal can be closed freely. Not mid-turn: a model restart is forbidden inside an agent turn.)*
+4. **preserve-thinking eats explicit `max_tokens`**: vision Q&A with explicit `max_tokens` ≤ 2048 came back `finish_reason=length` with empty `content` (thinking burned the budget). *(If the loop ever sets an explicit `max_tokens` on screenshot calls, use ≥ 4096; otherwise leave the server default 20480.)*
