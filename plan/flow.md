@@ -315,3 +315,39 @@ corpus should not be replicated across seven.
   10/16 · 236/236 · 79.0%, `span-recall`.
 - Named paths only. Never `git add -A`. Do not push.
 - Halt rather than work around. Log to `deviation_reasons.md` with evidence.
+
+---
+
+## CSM 100% (owner update 2026-09-09 — the resume structure)
+
+The CSM corpus run (Chainsaw Man, `plan/CSM_2PHASE_PLAN.md`) resumed 2026-09-09
+under a new deployment + two standing rules. Structure only — status lives in
+`plan/SWITCHPOINT.md` and `plan/drift_log.md`; the full resume plan is
+`plan/CSM_WAVE2_RESUME.md`, the worker job spec
+`reports/master-work/CSM_WAVE2_JOB.md`.
+
+- **A/B bay (owner 2026-09-09).** Two tmux sessions behind visible windows:
+  **A = the GPU supervisor** (eyes = `tools/master-work/csm-control.sh`, the
+  5-s process-tree poll: every B shell logged with duration, auto-kill of
+  provably-CPU model work >15 s, LONG >300 s flagged, MODEL_DOWN backstop;
+  the LLM half of A judges only from `shell_log.jsonl` +
+  `interventions.jsonl` every ~3 min) and **B = the worker** (executes the
+  job spec; wave rule = exactly 2 worker subagents in flight, never queued).
+  A's hints are typed through the monitor and file-probed; B re-runs per
+  hints.
+- **Council trigger (supersedes Standing Rules 3a "every 2–3 todos" for CSM
+  work).** The LLM council (sequential, one agent at a time, DB-verified
+  claims, on disk + ledger) assesses correctness **after every CSM phase
+  completes, at every big decision, and at every big engine change** (a fix
+  landing in `scriptengine/`, not a per-wiki override).
+- **JJK-100% invariant.** Whatever CSM requires, JJK stays at 100%: the four
+  standing gates stay at their re-baseline (pytest 1,254 / eval jjk 31/31 /
+  span-recall 48,572 + 400-probe / canon opm 236/236 · 79.0%), re-run after
+  every engine change; CSM work lands in CSM-centric files only
+  (`tools/csm/*`, `series/csm/overrides.yaml`, `reports/csm/*`) — never the
+  JJK baseline; a gate regression halts under the halt conditions above,
+  never "record and move on."
+- **Dial.** Phase 1 runs at the 150k dial (setup step 1 of
+  `CSM_2PHASE_PLAN.md`: checkpoint → `qwen-switch.sh 150000 --force` → verify
+  `--vision` → `:8000` CPU service, in-process CUDA one-copy). The gpu-handoff
+  switching plan stays reserved for Phase 2.

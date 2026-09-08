@@ -658,3 +658,40 @@ directive: JJK only, halt before P6 — see D9 / X2.**
 - **Return address:** none — out-of-campaign; CSM campaign todos stay parked.
 The owner powers the machine off at the end of the session that closed this
 entry.
+
+### D17 — CSM resume: Wave 2 + §9a closure loop under the A/B bay (out-of-campaign resume of CSM, owner-directed 2026-09-09)
+
+- **What:** the owner directed the CSM campaign resume ("carry it back up
+  from where you left it") deployed via the A/B terminal bay (`ab-bay` skill
+  + `terminal-pilot` + `tools/master-work/csm-control.sh`): **A monitors
+  shells** (the machine monitor as its eyes: 5-s process-tree poll, every B
+  shell → `shell_log.jsonl`, auto-kill of provably-CPU model work >15 s,
+  LONG >300 s flagged, MODEL_DOWN backstop; the LLM half of A judges only
+  from the jsonl files every ~3 min, typed hints probed via file
+  side-channel), **B works** (executes `reports/master-work/CSM_WAVE2_JOB.md`:
+  CSM-6 instrument + CSM-5 remainder as the 2-subagent wave pair → §9a
+  closure loop iteration 1 → phase close). Two new standing rules (owner
+  2026-09-09): **(1) the council trigger** — the LLM council (sequential, one
+  agent at a time, DB-verified claims, on disk + ledger) assesses
+  correctness *after every CSM phase completes, at every big decision, and
+  at every big engine change* (supersedes the "every 2–3 todos" cadence for
+  CSM work); **(2) the JJK-100% invariant** — whatever CSM requires, JJK
+  stays at 100%: the four standing gates (pytest 1,254 / eval jjk 31/31 /
+  span-recall 48,572+400-probe / canon opm 236/236 · 79.0%) re-run after
+  every engine change, CSM work lands in CSM-centric files only
+  (`tools/csm/*`, `series/csm/overrides.yaml`, `reports/csm/*`), the JJK
+  baseline is untouched. New plan: `plan/CSM_WAVE2_RESUME.md` (progress
+  review: Wave 1 + CSM-3b + the 19:45 pre-step all done with receipts; next
+  = Wave 2). Job spec: `reports/master-work/CSM_WAVE2_JOB.md` (units + the
+  A/B bootstrap type-lines). Doc updates: `plan/flow.md` (CSM node),
+  `CLAUDE.md` (working agreements), this entry, `plan/SWITCHPOINT.md`.
+- **Why:** the machine state changed (the owner powered the box off at the
+  end of the Toji/Gojo script session, rebooted, and started Qwen fresh via
+  `ninfer-start` at 262k), and the owner wants the campaign to move under the
+  supervised A/B deployment rather than the old single-session pattern.
+- **Machine note:** 2026-09-09 ~01:50 — post-reboot; Qwen 262k (pid 3550,
+  `--vision --max-context 262144`, 30.3 GB on the card); `:8000` down; no
+  tmux sessions. The session that wrote this entry restarts first (owner:
+  "this current session will restart first, because i started ninfer with
+  ninfer-start"); the fresh session dials 150k (plan §2) and launches the bay.
+- **Return address:** the A/B bay + Wave 2 per `plan/CSM_WAVE2_RESUME.md`.

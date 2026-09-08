@@ -8,6 +8,35 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-09 (CSM resume — the session restarts first, then the A/B bay; drift D17):**
+  - **Owner directive (this session):** resume the CSM campaign ("carry it
+    back up") under the A/B terminal bay — **A monitors shells**
+    (csm-control.sh as its eyes), **B works** (Wave-2 units). New standing
+    rules: **council after every CSM phase completes, at every big decision,
+    and at every big engine change** (sequential, one agent at a time, on
+    disk + ledger; supersedes "every 2–3 todos" for CSM); **JJK stays at
+    100%** (four standing gates re-run after every engine change; CSM work in
+    CSM-centric files only, JJK baseline untouched).
+  - **State at handoff:** post-reboot (owner powered off at the Toji/Gojo
+    session's end, booted, started Qwen 262k via `ninfer-start` — pid 3550,
+    `--vision`, 30.3 GB on card); `:8000` down; no tmux; CSM progress = Wave 1
+    + CSM-3b (council ledger #20) + the 19:45 Wave-2 pre-step (graded PASS)
+    all done — next = **Wave 2 (CSM-6 instrument + CSM-5 remainder) → §9a
+    closure loop iteration 1 → phase close (gates + council)**.
+  - **The current session (pi pid 3702, window 54525962) restarts first**
+    (owner: "i started ninfer with ninfer-start" — the fresh process
+    reconnects to the new server). Self-restart convention: detached helper,
+    never ask the owner.
+  - **The fresh session does, in order:** (1) read this +
+    `plan/CSM_WAVE2_RESUME.md`; (2) dial `qwen-switch.sh 150000 --force`
+    (fit guard after the checkpoint commit) + verify `--vision` + `:8000`
+    decision (150k ≈ 5.2 GB free → CPU service); (3) launch the A/B bay per
+    `ab-bay` (bootstrap lines: `reports/master-work/CSM_WAVE2_JOB.md`
+    §Bootstrap); (4) B executes the Wave-2 units; (5) council per the trigger.
+  - If the owner wants Wave 2 at 262k instead of the 150k dial: the wave rule
+    degrades to one worker subagent at a time (say so; default = 150k per the
+    2-phase plan).
+- **2026-09-09 (Gojo script v2 — ESSENCE-driven; machine powers off at end of that session):**
 - **2026-09-09 (Gojo script v2 — ESSENCE-driven; machine powers off at end of this session):**
   - **Gojo script rewritten per owner essence** (`E:\Personal\Plot Works\Video 2 - Gojo\Script\Gojo.md`,
     3,780 w tagged / 3,126 w clean, 56 tags / 30 distinct, verify-clean): dark open

@@ -210,7 +210,14 @@ re-crawling.
 - **Council reviews deploy one agent at a time (owner rule 2026-09-08; the old
   "5 in parallel" convention is retired).** 5 advisors sequentially, then 5 peer
   reviewers, then the chairman — one sub-agent at a time, waiting for each result
-  before spawning the next, in any Qwen mode. Independence is preserved either
+  before spawning the next, in any Qwen mode. **Council trigger for CSM work
+  (owner rule 2026-09-09): after every CSM phase completes, at every big
+  decision, and at every big engine change — to assess correctness (the old
+  "every 2–3 todos" cadence is retired for CSM; full form:
+  `plan/CSM_WAVE2_RESUME.md` §3, `plan/flow.md` CSM node).** Whatever CSM
+  requires, JJK stays at 100% — the four standing gates re-run after every
+  engine change, and CSM work lands in CSM-centric files only (JJK baseline
+  untouched). Independence is preserved either
   way (every sub-agent starts with a fresh context and never sees the other
   responses); the cost is wall-clock time only. Why: at full 262k context all five
   children fight Qwen's shared KV pool (`--max-concurrency 3`) for answering — the
