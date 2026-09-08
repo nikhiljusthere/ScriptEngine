@@ -31,12 +31,10 @@ hint(){ # pid reason hint
   sleep 1
 }
 is_model(){ grep -qE "$MODEL_RX" <<< "$1" && return 0; grep -q 'SCRIPTENGINE_DEVICE' <<< "$1" && return 0; return 1; }
-cpu_bound(){ # true only when THIS pid (a python interpreter) shows no CUDA context
-  local p=$1
-  ls -l "/proc/$p/fd" 2>/dev/null | grep -q 'nvidia' && return 1
-  grep -q 'SCRIPTENGINE_DEVICE=cpu' "/proc/$p/environ" 2>/dev/null && return 0
-  grep -q 'scriptengine' <<< "$(tr '\0' ' ' < "/proc/$p/cmdline" 2>/dev/null)" && return 0
-  return 1
+http_client(){ # model command that runs against :8000 (no in-process model) —
+  # a probe/canon client NEVER has nvidia fds of its own (the model is server-side),
+  # so for these the CPU proof is the SERVER's device, not the client's fds
+  grep -qE 'span-recall|canon-run' <<< "$1"
 }
 while :; do
   if [ ! -d "/proc/$BPID" ]; then
@@ -64,16 +62,30 @@ while :; do
   for p in "${!START[@]}"; do
     [ -d "/proc/$p" ] || { d=$(( $(NOW) - ${START[$p]} )); J "$SLOG" event=END pid="$p" dur_s="$d"; unset "START[$p]" "CMD[$p]" "LONGF[$p]"; continue; }
     age=$(( $(NOW) - ${START[$p]} )); cmd=${CMD[$p]}
-    # rule 2: model-heavy python, CPU-bound, >15 s — kill + hint (the 1200-s incident, structurally)
-    if [ "$age" -gt 15 ] && [[ "$cmd" == *python* ]] && is_model "$cmd" && cpu_bound "$p"; then
-      s8000=$(pgrep -f 'scriptengine.api.main' | head -1); srvcpu=""
-      if [ -n "$s8000" ] && grep -q 'SCRIPTENGINE_DEVICE=cpu' "/proc/$s8000/environ" 2>/dev/null; then
-        srvcpu=" — :8000 is also on CPU: restart it on CUDA, then re-run"
+    # rule 2: PROVABLY-CPU model work, >15 s — kill + hint (the 1200-s incident,
+    # structurally). 2026-09-08 17:53 lesson: the old nvidia-fd test killed a
+    # correctly-ordered one-copy CUDA pytest at 16 s (the bash wrapper never has
+    # nvidia fds, and a cold CUDA init takes >15 s, so "no fd yet" proved
+    # nothing). Only two cases are provable: an in-process job carrying an
+    # explicit CPU device (environ — the inline-string case is rule 1), or a
+    # probe/canon HTTP client running against a :8000 that is on CPU. Default-
+    # device in-process jobs are assumed CUDA: no auto-kill — a stuck one trips
+    # the 300-s LONG flag for A's judgment.
+    if [ "$age" -gt 15 ] && is_model "$cmd"; then
+      if http_client "$cmd"; then
+        s8000=$(pgrep -f 'scriptengine.api.main' | head -1)
+        if [ -n "$s8000" ] && grep -q 'SCRIPTENGINE_DEVICE=cpu' "/proc/$s8000/environ" 2>/dev/null; then
+          kill "$(pgrep -P "$p" 2>/dev/null)" 2>/dev/null; kill "$p" 2>/dev/null
+          J "$FLOG" event=KILLED pid="$p" age_s="$age" reason="probe/canon client against a CPU :8000 (1200-s incident)" cmd="${cmd:0:150}"
+          hint "$p" "CPU :8000" "restart :8000 on CUDA (no SCRIPTENGINE_DEVICE override), then re-run"
+          unset "START[$p]" "CMD[$p]" "LONGF[$p]"
+        fi
+      elif grep -q 'SCRIPTENGINE_DEVICE=cpu' "/proc/$p/environ" 2>/dev/null; then
+        kill "$(pgrep -P "$p" 2>/dev/null)" 2>/dev/null; kill "$p" 2>/dev/null
+        J "$FLOG" event=KILLED pid="$p" age_s="$age" reason="in-process model job on explicit CPU device (environ)" cmd="${cmd:0:150}"
+        hint "$p" "CPU device" "drop the SCRIPTENGINE_DEVICE=cpu override (CUDA is free under 100k)"
+        unset "START[$p]" "CMD[$p]" "LONGF[$p]"
       fi
-      kill "$p" 2>/dev/null
-      J "$FLOG" event=KILLED pid="$p" age_s="$age" reason="model work CPU-bound >15s" cmd="${cmd:0:150}"
-      hint "$p" "CPU-bound ${age}s" "same command via the GPU path (no CPU override)$srvcpu"
-      unset "START[$p]" "CMD[$p]" "LONGF[$p]"
     fi
     # rule 3: any shell >300 s — flag for A's judgment (no auto-kill)
     if [ "$age" -gt 300 ] && [ $(( age / 300 )) -gt "${LONGF[$p]}" ]; then
