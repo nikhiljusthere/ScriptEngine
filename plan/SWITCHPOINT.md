@@ -34,9 +34,12 @@ edit those.
   2. The owner's pi (this session) is restarted by the owner: fresh `pi` in
      /home/goblin/ScriptEngine, then *Read plan/SWITCHPOINT.md and
      continue from there*.
-  3. Read `plan/drift_log.md` §4 + this file; wait for the owner's Toji
-     rewrite direction (humanscope Mode A sheet before drafting, Mode B
-     audit after — the voice contract).
+  3. Read `plan/drift_log.md` §4 + this file; REWRITE the Toji script
+     AUTONOMOUSLY (owner directive 23:4x — no further direction: "you will
+     do it on your own"): humanscope Mode A sheet before drafting, Mode B
+     30-feature audit after, citation rules (one tag per (chapter, episode)
+     run, tag every sentence on source change), `cli verify` before
+     calling it done. Keep what works, fix the AI tells.
 - git: head `f86ed7a` (+ this checkpoint commit: SWITCHPOINT +
   `.pi/skills/qwen-switch/SKILL.md`).
 - Campaign state: JJK campaign CLOSED (D11, 2026-09-07). CSM campaign =
@@ -185,3 +188,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T19:45:00+05:30 manual (orchestrator): Wave-2 pre-step GRADED PASS (live interleaved 2-panel survival: pinned 168->172 + heldout 9->13, both keyed ledgers retain their own rows, all stamped cuda+commit+panel_hash; log /tmp/prestep_grade.log) + pre-step committed; F1 (R-CSM3B-2) and roster probe (R-CSM3B-3: 31/88 members, 16,231 chars, 0 pre-fix) closed; next = deploy the 2 parallel Wave-2 subs (CSM-6 instrument + CSM-5 remainder + R-CSM3B-4 pre-checks) -> §9a closure loop iteration 1
 - 2026-09-08T21:47:43+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1464MiB
 - 2026-09-08T22:41:06+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6967MiB
+- 2026-09-08T23:35:06+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1486MiB
