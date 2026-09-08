@@ -517,3 +517,20 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   between; the transcript store (D13) made verbatim dialogue sourceable.
 - **Return address:** trunk edit — no return (out-of-campaign; CSM campaign
   todos stay parked).
+
+- **Addendum (timestamp annotation + JJK0 check, same session):** the owner
+  asked for (a) timestamps on the transcript data and (b) the JJK0 movie
+  included if done. Both were already in the data — D12's import stored
+  `ts` (MM:SS) on every line of all 48 episodes + the JJK0 movie (M1,
+  1,433 lines), in both `series/jjk/transcripts/*.json` and
+  `transcripts.db`; D13 embedded them. No new fixing run was needed, so no
+  council (per the owner's fallback: "if already done, forget it, just add
+  the timestamps"). **Toji does not appear in the JJK0 movie (0 mentions),**
+  so there are no movie quotes to fold into this (Toji) script; the movie's
+  timestamps are in the dataset for a Yuta/Okkotsu video. Added 21
+  `[E<n> mm:ss]` timestamp annotations to the Toji script's verbatim quotes
+  (exact `ts` pulled from `transcripts.db`), so the editor can find each
+  line's footage. Format is episode + MM:SS; multi-line quotes carry a
+  comma-separated span. `cli verify` still clean (104 tags / 29 distinct);
+  the square-bracket timestamps do not affect the chapter/episode tag
+  check. 6,082 words.

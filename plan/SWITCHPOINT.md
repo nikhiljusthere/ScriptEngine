@@ -37,6 +37,14 @@ edit those.
     his dad kept on hand against the Zen'in clan” (Ch 79/E29); plus the
     already-woven Toji verbatim lines. Original backed up as
     `Toji.md.orig-20260908-2343` (alongside the file, untracked).
+  - **Timestamps added (same session):** all 21 verbatim quotes now carry a
+    `[E<n> mm:ss]` timestamp (exact `ts` pulled from `transcripts.db`), so
+    the editor can find each line's footage. The JJK0 movie (M1) was already
+    imported + embedded with timestamps (D12/D13), but **Toji does not
+    appear in it (0 mentions)**, so there are no movie quotes in this script
+    (the movie's timestamps are ready for a Yuta/Okkotsu video). No new
+    fixing run was needed, so no council (owner fallback). `cli verify`
+    still clean (104 tags / 29 distinct); 6,082 words.
 - **2026-09-08 (transcript Phase 2 + bay closed + dial-back, owner-directed):**
   - JJK transcript Phase 2 COMPLETE (drift D13, commit `f86ed7a`): all
     **16,226 lines embedded** (separate `series/jjk/qdrant-transcripts/` dir,
