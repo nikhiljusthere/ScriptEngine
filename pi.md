@@ -89,8 +89,8 @@ agent's own defaults:
    surface). Never guess a citation parameter's meaning. No dependency
    without a caller. Comments name the bug. "No third corpse": every new
    table ships with the door that reads it. Verify against live wiki output,
-   not just tests. Script output follows the anti-AI rules in
-   `docs/ANTI_AI_SCRIPTING.md`.
+   not just tests. Script output follows the `humanscope` skill
+   (`.pi/skills/humanscope/`); its compact form is served as `VOICE_RULES`.
 8. **Docs as live artifacts.** Nothing states "what is next" in prose —
    docs point at regenerated files (`COVERAGE.md`, `qwen_mode.txt`,
    switchpoint). Fix stale status lines when you find them; commit the fix.
@@ -106,6 +106,7 @@ They appear in pi's startup header; force-load with `/skill:<name>`.
 | `qwen-switch` | before/after any GPU phase; the autonomous mode switch |
 | `switchpoint` | before a switch, at council cadence, on "checkpoint" |
 | `scriptengine-gates` | after any build / before calling a pass done |
+| `humanscope` | every script: the voice contract — Structure Sheet before drafting, 30-feature audit on the finished draft (served in compact form as `VOICE_RULES`) |
 | `llm-council` | every fork, big build, phase gate — **5 advisors one at a time, then 5 peers one at a time** (owner rule 2026-09-08; sequential in any mode — 5-parallel retired, 262k KV contention); record + commit |
 
 ### Packages (version-pinned in `.pi/settings.json`; installs live in the
@@ -203,7 +204,7 @@ exhaustive sweeps; smaller context if VRAM demands): full protocol in
 | resume across sessions | `plan/SWITCHPOINT.md` |
 | live mode record | `ninfer-work/qwen_mode.txt` |
 | coverage | `reports/page-campaign/COVERAGE.md` (regenerated) |
-| writing rules | `scriptengine/api/rules.py` + `docs/ANTI_AI_SCRIPTING.md` |
+| writing rules | `scriptengine/api/rules.py` + the `humanscope` skill (`.pi/skills/humanscope/`) |
 | the three standing rules (plan-level, verbatim) | `plan/STANDING_RULES.md` (copies in `flow.md`, `Plan_to_perfection.md`, `drift_log.md`) |
 | dimension map (R1–R5 retired) | `plan/Plan_to_perfection.md` §12 (+ §13 durable-key precondition) |
 | council methodology | `llm-council` skill (`~/.claude/skills/llm-council/SKILL.md`, exposed to pi via `.pi/settings.json`) |

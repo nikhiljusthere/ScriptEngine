@@ -82,11 +82,12 @@ re-crawling.
   the output, not by reading code. Tables being silently deleted, `{{Ruby}}`
   returning furigana, stale Qdrant vectors resolving to unrelated text: all
   found by looking at results.
-- **Scripts must not sound AI-written.** `docs/ANTI_AI_SCRIPTING.md` distills
-  Wikipedia:Signs of AI writing for spoken narration. Its rules live in
-  `scriptengine/api/rules.py` (`VOICE_RULES`) and are appended to every context
-  bundle; when reviewing or generating script output, apply the audit at the
-  bottom of that doc.
+- **Scripts must not sound AI-written.** The voice contract is the
+  `humanscope` skill (`.pi/skills/humanscope/` — the AI fingerprint is in the
+  story's structure, not its words: Structure Sheet before drafting, 30-feature
+  audit after). Its compact form lives in `scriptengine/api/rules.py`
+  (`VOICE_RULES`) and is appended to every context bundle; when reviewing or
+  generating script output, run the skill's Mode B audit on the draft.
 - **Every line of a script must be traceable to a chapter.** The `sourced:`
   header on each beat is computed in `scriptengine/retrieve/citations.py` by
   reading each `{{Ref}}` as covering the sentences before it and resolving the

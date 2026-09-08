@@ -13,8 +13,10 @@ the other way round. One copy, served to every client.
 * `STYLE_RULES`: the house format, from the finished scripts in `sample scripts/`.
 * `SCRIPT_FORMAT`: how a *narrative* script is built from a beat list (the
   through-line, flashbacks, which beats to skip).
-* `VOICE_RULES`: the anti-AI voice, distilled from Wikipedia:Signs of AI
-  writing. The full learning is `docs/ANTI_AI_SCRIPTING.md`.
+* `VOICE_RULES`: the HumanScope voice contract — the AI fingerprint is in the
+  story's *structure*, so the writer decides the shape (ten structure
+  decisions, budget rule) before drafting. Full skill (30-feature audit,
+  model fingerprints): `.pi/skills/humanscope/`.
 * `ANNOTATION_RULES`: how a line states the chapter and episode it came from.
 """
 
@@ -49,21 +51,44 @@ SCRIPT_FORMAT = """\
 """
 
 VOICE_RULES = """\
-=== VOICE RULES: you are a person, not a writer-bot ===
-- Write like a fan explaining this arc to a friend out loud. Not like a wiki article, a trailer, or a summary.
-- Specificity is everything: name the chapter, the technique, the exact thing that happened. Never trade a fact from the context for a vague superlative ("legendary", "revolutionary", "unforgettable").
-- No significance inflation: no "a pivotal moment", "a crucial turning point", "changing everything". State what happened; the facts carry the weight.
-- No "It's not X, it's Y" reframes. No "Most people think X, but..." openers. Make the direct claim.
-- No -ing tail analyses: "…, highlighting his growth", "…, underscoring the stakes". Cut them or make them a real sentence.
-- No rule-of-three packing. No symmetric listicles ("He trains, he fights, he wins.").
-- Vary sentence length. Let a short one land, then one breathe. Same-length sentences in a row read robotic.
-- Avoid AI vocabulary: delve, realm, testament, pivotal, crucial, transformative, intricate, showcase, underscore, captivate, embark, unleash, tapestry, foster, seamless, empower, elevate, revolutionize, journey, nuanced, rich.
-- Use plain verbs: is, has, does, fights, says. Not "serves as", "stands as", "marks a", "boasts", "plays a role in".
-- No em dashes. Use periods and commas.
-- No weasel wording: "many fans believe", "some argue", "critics say". If the context doesn't name them, the script doesn't either.
-- Say the name again rather than inventing epithets ("the young sorcerer", "the vessel").
-- Don't repeat the same point twice. No "In conclusion"-style ending that recaps.
-- Test every sentence: could an AI writing about any anime have produced it? If yes, rewrite it with a fact only this wiki has.
+=== VOICE RULES (HumanScope): shape the story before you write it ===
+The AI fingerprint is in the story's structure, not its words: a professional
+rewrite that removed every stylistic tell moved detection only 1.6 points,
+and structure alone still detects at 93.2. So decide the shape first, then
+draft from that decision. Never fix a draft by rewording it.
+
+Before any prose, write a 10-line Structure Sheet. One line per decision,
+each with a one-clause reason (say why even when you keep the common option):
+ 1. Timeline: straight through, or jumps? (humans use more flashback/flash-forward)
+ 2. Subplots: none, one parallel, one contrasting, one unrelated? (humans: no subplots 57%)
+ 3. What causes the ending: protagonist's choice, mixed, or outside force? (humans: choice 46%)
+ 4. How it ends: internal acceptance, external action, or unresolved? (humans: acceptance 27%)
+ 5. The moral: does the narrator ever say what the story means? (humans: says it 52%)
+ 6. How emotion arrives: body sensation, plain word, or behaviour? (humans: plain word 29%)
+ 7. How the lead enters: described, mid-action, in dialogue, or in thought? (humans: described 30%)
+ 8. References: real named things, or vague echoes? (humans: about half and half)
+ 9. Reader address: does the piece ever acknowledge someone is reading? (humans: sometimes, rarely)
+ 10. Is the lead morally clean or ambivalent? (humans: ambivalent 59%)
+
+Budget rule: break hard on three or four of the ten, let the rest sit where the
+story naturally wants them. A piece that breaks every axis is a new formula,
+not a human one. Target the human rate — never the opposite of the AI rate.
+
+While drafting:
+- Say the feeling out loud ("he was scared") about a third of the time; do not
+  reach for body sensation (tight chest, cold sweat, throat closing) — the
+  single biggest AI tell.
+- Cut the closing line that explains. If the last paragraph tells the reader
+  what the story was about, delete it. Check the second-to-last one too.
+- Specificity is everything: name the chapter, the technique, the exact thing
+  that happened. Never trade a fact from the context for a vague superlative.
+  Plain verbs (is, has, does, fights, says). Vary sentence length. No "It's
+  not X, it's Y" reframes, no -ing tail analyses, no rule-of-three packing,
+  no weasel wording, no em dashes.
+
+Full 30-feature audit and model fingerprints: the `humanscope` skill
+(`.pi/skills/humanscope/`). For a finished draft, run its Mode B audit and fix
+only the structural items.
 """
 
 ANNOTATION_RULES = """\

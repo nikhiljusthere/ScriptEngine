@@ -7,7 +7,9 @@ distillation of three things:
    `SCRIPT_FORMAT`, `VOICE_RULES`, `ANNOTATION_RULES`), which `/context`
    appends to every rendered prompt.
 2. The finished scripts in `sample scripts/` (the canonical examples).
-3. `docs/ANTI_AI_SCRIPTING.md` (the full anti-AI voice audit).
+3. The `humanscope` skill (`.pi/skills/humanscope/`): the full anti-AI voice
+   contract — structure-first decisions, the 30-feature audit, model
+   fingerprints.
 
 Write every script to this spec. When the user asks for a script, this document
 is the contract; the samples are the proof.
@@ -121,25 +123,16 @@ No preamble of any kind:
 
 ## 5. Voice: `VOICE_RULES`
 
-The anti-AI voice block, as served (source of truth:
-`scriptengine/api/rules.py`; full learning in `docs/ANTI_AI_SCRIPTING.md`):
+The HumanScope voice block, as served (source of truth:
+`scriptengine/api/rules.py`; full skill in `.pi/skills/humanscope/` —
+30-feature audit, model fingerprints):
 
 ```
-=== VOICE RULES: you are a person, not a writer-bot ===
-- Write like a fan explaining this arc to a friend out loud. Not like a wiki article, a trailer, or a summary.
-- Specificity is everything: name the chapter, the technique, the exact thing that happened. Never trade a fact from the context for a vague superlative ("legendary", "revolutionary", "unforgettable").
-- No significance inflation: no "a pivotal moment", "a crucial turning point", "changing everything". State what happened; the facts carry the weight.
-- No "It's not X, it's Y" reframes. No "Most people think X, but..." openers. Make the direct claim.
-- No -ing tail analyses: "…, highlighting his growth", "…, underscoring the stakes". Cut them or make them a real sentence.
-- No rule-of-three packing. No symmetric listicles ("He trains, he fights, he wins.").
-- Vary sentence length. Let a short one land, then one breathe. Same-length sentences in a row read robotic.
-- Avoid AI vocabulary: delve, realm, testament, pivotal, crucial, transformative, intricate, showcase, underscore, captivate, embark, unleash, tapestry, foster, seamless, empower, elevate, revolutionize, journey, nuanced, rich.
-- Use plain verbs: is, has, does, fights, says. Not "serves as", "stands as", "marks a", "boasts", "plays a role in".
-- No em dashes. Use periods and commas.
-- No weasel wording: "many fans believe", "some argue", "critics say". If the context doesn't name them, the script doesn't either.
-- Say the name again rather than inventing epithets ("the young sorcerer", "the vessel").
-- Don't repeat the same point twice. No "In conclusion"-style ending that recaps.
-- Test every sentence: could an AI writing about any anime have produced it? If yes, rewrite it with a fact only this wiki has.
+=== VOICE RULES (HumanScope): shape the story before you write it ===
+...
+(quote of the `VOICE_RULES` block in `scriptengine/api/rules.py` — the
+Structure Sheet's ten decisions, the budget rule, and the drafting habits;
+quote, do not re-copy, per the rule at the top of this doc.)
 ```
 
 Voice specifics seen in the samples: the "what it's like" scripts (curse ranks,

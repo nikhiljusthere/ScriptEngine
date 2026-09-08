@@ -457,10 +457,12 @@ Two nodes, both read-only HTTP against ScriptEngine:
   plus debuts, usage chapters and anime debuts, are the only ones that may be
   used; unsourced facts get a plain line.
 - **Anti-AI voice rules.** Every generation gets a `VOICE_RULES` block
-  (distilled from Wikipedia:Signs of AI writing, full learning in
-  `docs/ANTI_AI_SCRIPTING.md`): no significance inflation, no "it's not X
-  it's Y" reframes, no rule-of-three packing, no AI vocabulary, plain verbs,
-  varied sentence length, no em dashes, no weasel wording.
+  (the HumanScope contract, full skill in `.pi/skills/humanscope/`): the
+  AI fingerprint is in the story's *shape*, so the writer decides the
+  structure first — a ten-decision Structure Sheet under a budget rule —
+  then drafts from the sheet: feelings said out loud, the closing line that
+  explains cut, facts kept specific. For a finished draft, run the skill's
+  30-feature audit and fix only the structural items.
 - **House script format + intro toggle.** Every narrative script ships in
   the sample-script format (`sample scripts/`): a bold title line, then
   `* **Heading**` sections with the narration as plain spoken paragraphs, and

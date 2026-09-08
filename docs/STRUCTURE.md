@@ -154,7 +154,7 @@ vectors, wikitext, and more). Run with `python -m pytest tests/ -q`.
 | `SCRIPT_STYLE.md` | The house script-writing style spec |
 | `SCRIPT_STYLE_ANALYSIS.md` | What the published scripts look like, measured; what the engine owes them |
 | `TRIAGE.md` | Corpus/ontology triage notes |
-| `ANTI_AI_SCRIPTING.md` | Anti-AI-writing rules distilled into `VOICE_RULES` |
+| `humanscope` skill | `.pi/skills/humanscope/` — anti-AI voice contract (Structure Sheet, 30-feature audit) distilled into `VOICE_RULES` |
 | `ops/` | local-model ops runbook (NInfer + opencode, `qwen38_ninfer_opencode_config.md`) |
 | `superpowers/plans/`, `superpowers/specs/` | dated design docs from the page-gen campaign (2026-08, historical) |
 
