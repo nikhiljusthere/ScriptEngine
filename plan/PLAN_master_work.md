@@ -1,6 +1,6 @@
 # Master/Work (A/B) Deployment Plan
 
-Owner: goblin · 2026-09-08 · status: **council-approved, modifications applied** (§10; deploy pending T0). One local Qwen 27B (ninfer `:18080`, ctx 135168, vision on) serves A, B, the loop and all subagents; the `:8000` ScriptEngine API runs on CPU.
+Owner: goblin · 2026-09-08 · status: **council-approved, modifications applied, T0 PASSED 2026-09-08 — deploy authorized** (§10; findings: `reports/master-work/T0_RESULT.md`). One local Qwen 27B (ninfer `:18080`, ctx 135168, vision on) serves A, B, the loop and all subagents; the `:8000` ScriptEngine API runs on CPU.
 
 ## 1. Purpose — the failure this fixes
 
@@ -71,7 +71,7 @@ setsid nohup tools/master-work/poller.sh >> /tmp/master-work-poller.log 2>&1 < /
 ### 4.3 Spawn B (work session)
 
 ```bash
-tmux new-session -d -s work -c /home/goblin/ScriptEngine 'pi "Boot: read plan/CONTROL.md + plan/state.md §state. FIRST action: append your own session path to reports/master-work/work_log.md: `[ts] ACT boot: b_session=$PI_SESSION_FILE` (your env var — never `ls` the session dir; council blind spot 4). At each unit start, append an `ETA: <seconds>` line to plan/state.md §B updates (your unit's expected duration — the §4.4 liveness rule reads the newest one; a 35-min page-run declares ETA: 2100). Execute §next-unit. Append DONE/ACT/FAIL/HALT lines to reports/master-work/work_log.md; escalate via plan/state.md §B updates (hit X, recommend Y). Launch the PC-control loop per §5."'
+tmux new-session -d -s work -c /home/goblin/ScriptEngine 'pi "Boot: read plan/CONTROL.md + plan/state.md §state. FIRST action: append your own session path to reports/master-work/work_log.md: `[ts] ACT boot: b_session=$PI_SESSION_FILE` (your env var — never `ls` the session dir; council blind spot 4). At each unit start, append an `ETA: <seconds>` line to plan/state.md §B updates (your unit's expected duration — the §4.4 liveness rule reads the newest one; a 35-min page-run declares ETA: 2100). Execute §next-unit. If a unit ends in a wait, run the wait as ONE bounded tool call (e.g. a 10×30 s status-printing loop), then end the turn (T0 finding 4). Append DONE/ACT/FAIL/HALT lines to reports/master-work/work_log.md; escalate via plan/state.md §B updates (hit X, recommend Y). Launch the PC-control loop per §5."'
 # The A wake (B-UP event, §4.4) copies B's boot line into state.md §state `b_session` — $PI_SESSION_FILE is authoritative;
 # the old `ls -1t *.jsonl | head -1` discovery raced foreign pi sessions and is gone (council blind spot 4).
 ```
@@ -92,12 +92,14 @@ A has **no long-lived process** (council catch #1: a 60 s-polling LLM session ac
 | B liveness (unit-aware) | `work_log` mtime vs `max(300, ETA)` | **wake A** on `B-STALE` (§4.4 rule below) |
 
 ```bash
+#!/usr/bin/env bash
 # tools/master-work/poller.sh — the A-loop, shell-only (one-time bootstrap artifact; B commits it; T0 exercises it)
 cd /home/goblin/ScriptEngine
 STATE=plan/state.md; DEC=plan/decisions.md; STOP=reports/master-work/STOP; LOG=reports/master-work/a_wake_log.md; WORKLOG=reports/master-work/work_log.md
 model=up; pane=""; stop_seen=""; last_wl=$(stat -c %Y $WORKLOG 2>/dev/null || echo 0)
 wake() { local ev="$1" sid="a-$(date +%s)";   # judgment events → fresh one-shot A (charter in CONTROL.md)
-  pi -p --session-id "$sid" "You are A (charter: plan/CONTROL.md). Event: $ev. Read plan/state.md, plan/decisions.md (head -20), reports/master-work/work_log.md (tail -20). Rule/act per the charter: write state.md §state FIRST, then the DEC line to decisions.md (prepend, newest first; include the exact ESC token). Never execute campaign work. Then stop." >>$LOG 2>&1
+  [ -s "$DEC" ] && [ -n "$(tail -c 1 $DEC 2>/dev/null)" ] && echo >> $DEC   # LLM edits drop trailing newlines; a glued prepend corrupts the next line
+  pi -p --session-id "$sid" "You are A (charter: plan/CONTROL.md). Event: $ev. Read plan/state.md, plan/decisions.md (head -20), reports/master-work/work_log.md (tail -20). Rule/act per the charter: write state.md §state FIRST, then the DEC line to decisions.md (prepend, newest first; include the exact ESC token; end your line with a newline). Never execute campaign work. Then stop." >>$LOG 2>&1
   echo "[$(date -Is)] EVENT $ev → a_session=$sid" >> $LOG; }
 while :; do
   now=$(date +%s)

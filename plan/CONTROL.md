@@ -16,11 +16,12 @@ read set; you end the turn after writing your output to disk. You are **not** a 
 ## Every wake, in order
 
 1. Read: `plan/state.md`, `plan/decisions.md` (head -20), `reports/master-work/work_log.md` (tail -20).
-2. Rule on the event (the wake prompt names it).
-3. **Write-order invariant: edit `state.md §state` FIRST, then prepend the `decisions.md` line** (newest first,
-   include the exact ESC token). A wake that touched `§state` must end with a `decisions.md` line —
+2. Hygiene: if `§state b_session` is `-` and the work_log has a `ACT boot: b_session=…` line, copy it into `§state` (the §6.2 fit-check needs it). If `decisions.md`'s last line has no trailing newline, add one before prepending.
+3. Rule on the event (the wake prompt names it).
+4. **Write-order invariant: edit `state.md §state` FIRST, then prepend the `decisions.md` line** (newest first,
+   include the exact ESC token, end the line with a newline). A wake that touched `§state` must end with a `decisions.md` line —
    `DEC` when an ESC is pending, `NOTE` otherwise (keeps the poller's ESC detection honest).
-4. Stop. Your context dies with the process; everything that matters is on disk.
+5. Stop. Your context dies with the process; everything that matters is on disk.
 
 ## Rulings per event
 

@@ -1,9 +1,11 @@
+#!/usr/bin/env bash
 # tools/master-work/poller.sh — the A-loop, shell-only (one-time bootstrap artifact; B commits it; T0 exercises it)
 cd /home/goblin/ScriptEngine
 STATE=plan/state.md; DEC=plan/decisions.md; STOP=reports/master-work/STOP; LOG=reports/master-work/a_wake_log.md; WORKLOG=reports/master-work/work_log.md
 model=up; pane=""; stop_seen=""; last_wl=$(stat -c %Y $WORKLOG 2>/dev/null || echo 0)
 wake() { local ev="$1" sid="a-$(date +%s)";   # judgment events → fresh one-shot A (charter in CONTROL.md)
-  pi -p --session-id "$sid" "You are A (charter: plan/CONTROL.md). Event: $ev. Read plan/state.md, plan/decisions.md (head -20), reports/master-work/work_log.md (tail -20). Rule/act per the charter: write state.md §state FIRST, then the DEC line to decisions.md (prepend, newest first; include the exact ESC token). Never execute campaign work. Then stop." >>$LOG 2>&1
+  [ -s "$DEC" ] && [ -n "$(tail -c 1 $DEC 2>/dev/null)" ] && echo >> $DEC   # LLM edits drop trailing newlines; a glued prepend corrupts the next line
+  pi -p --session-id "$sid" "You are A (charter: plan/CONTROL.md). Event: $ev. Read plan/state.md, plan/decisions.md (head -20), reports/master-work/work_log.md (tail -20). Rule/act per the charter: write state.md §state FIRST, then the DEC line to decisions.md (prepend, newest first; include the exact ESC token; end your line with a newline). Never execute campaign work. Then stop." >>$LOG 2>&1
   echo "[$(date -Is)] EVENT $ev → a_session=$sid" >> $LOG; }
 while :; do
   now=$(date +%s)
