@@ -42,8 +42,12 @@ repeated at the top of `flow.md`, `Plan_to_perfection.md`, `drift_log.md`)
 2. **The GPU is available. Do not default to CPU.** Check `nvidia-smi` free
    memory first and size the job against it. Short retrieval jobs co-locate
    with Qwen safely; a sustained 27B extraction batch wants the card to
-   itself (one OOM-crashed at 508/524 beside the reranker). CPU fallback is
-   a decision needing a measured VRAM shortfall, not a habit.
+   itself (one OOM-crashed at 508/524 beside the reranker). When the card
+   cannot be freed, the job's fallback is the 100k switch — a campaign
+   session runs it in a 100k side session via the gpu-handoff chain
+   (`docs/ops/PC_GPU_HANDOFF.md`); CPU is reserved for the `:8000` service
+   and short (<15 min) jobs (2026-09-08 owner correction: the old "CPU is
+   the fallback" branch is retired).
 3. **Council cadence — three mandatory points.** (a) Every 2–3 completed
    todos: a council reviewing *the fixes just made*. (b) At the end of every
    sub-list, **before the return pointer fires**: a council assessing whether
@@ -62,10 +66,10 @@ agent's own defaults:
    `X<n>.<step>` (never a phase number). Append-only `drift_log.md` §5
    format. Every excursion gets its return pointer **when it opens**.
 3. **Council, not user input, at forks** (standing rule 1, operationalized).
-   Big decisions / big builds go through `llm-council` (**all 5 advisors in
-   parallel in one message → all 5 peer reviewers in parallel → chairman
-   verdict** — the project convention, which overrides the skill's
-   sequential default), recorded in
+   Big decisions / big builds go through `llm-council` (**5 advisors one at a
+   time → 5 peer reviewers one at a time → chairman verdict** — owner rule
+   2026-09-08: sequential in any mode; the 5-parallel convention is retired —
+   at 262k the children fight Qwen's shared KV pool for answering), recorded in
    `reports/comprehension/COUNCIL_<subject>.md` with claims DB-verified
    before recording. Cadence per standing rule 3. If it is not on disk, it
    did not happen.
@@ -102,14 +106,14 @@ They appear in pi's startup header; force-load with `/skill:<name>`.
 | `qwen-switch` | before/after any GPU phase; the autonomous mode switch |
 | `switchpoint` | before a switch, at council cadence, on "checkpoint" |
 | `scriptengine-gates` | after any build / before calling a pass done |
-| `llm-council` | every fork, big build, phase gate — **5 advisors in parallel (one message), then 5 peers in parallel** (project convention; overrides the skill's sequential default); record + commit |
+| `llm-council` | every fork, big build, phase gate — **5 advisors one at a time, then 5 peers one at a time** (owner rule 2026-09-08; sequential in any mode — 5-parallel retired, 262k KV contention); record + commit |
 
 ### Packages (version-pinned in `.pi/settings.json`; installs live in the
 gitignored `.pi/npm/`)
 
 | package | gives the session | when |
 |---|---|---|
-| `npm:pi-subagents@0.66.0` | `subagent` / `bg_wait` / `subagent_supervisor` tools — child pi sessions with their own fresh context (builtin agents: `scout` / `researcher` / `worker` / `reviewer` / `oracle` / `delegate`; parallel fan-out via `workflowScript` + `runs.all([...])`, background children via detached runner) | the council convention is now one parallel `subagent` call instead of hand-spawned `pi -p` processes; parallel reviews; background work. Sessions started **before** the install do not have the tool; every new session does. Subagent-policy limits (262k → linear; 100k → ≤2; councils 5 in any mode) still apply — Qwen's `--max-concurrency 3` is the hard ceiling. |
+| `npm:pi-subagents@0.66.0` | `subagent` / `bg_wait` / `subagent_supervisor` tools — child pi sessions with their own fresh context (builtin agents: `scout` / `researcher` / `worker` / `reviewer` / `oracle` / `delegate`; parallel fan-out via `workflowScript` + `runs.all([...])`, background children via detached runner) | the council convention is now one parallel `subagent` call instead of hand-spawned `pi -p` processes; parallel reviews; background work. Sessions started **before** the install do not have the tool; every new session does. Subagent-policy limits (262k → linear; 100k → ≤2; councils one agent at a time in any mode — owner rule 2026-09-08) still apply — Qwen's `--max-concurrency 3` is the hard ceiling. |
 | `npm:@juicesharp/rpiv-todo@2.9.0` | `todo` tool + `/todos` command + a live todo panel **above the editor** (rebuilt from the conversation, so it survives `/reload` and compaction; `ctrl+shift+t` collapses it; per-session state, no disk writes) | long campaign runs: keeps the plan on screen. Note: pi 0.85's TUI has **no right-side panel surface** (widgets: above/below editor; overlays: floating, 9 anchors) — the registry has no right-panel plugin; this is the closest thing. |
 
 ## 4. Installed capabilities (tools on this machine)
@@ -156,8 +160,9 @@ subagents). Full method: `docs/ops/QWEN_MODES.md`. Protocol:
    transcript always fits.
 
 **Subagent policy:** 262k → linear, no parallel subagents. 100k → ≤2
-parallel. `llm-council` runs 5 in parallel in **any** mode (the standing
-exception).
+parallel. `llm-council` runs **one agent at a time in any mode** (owner rule
+2026-09-08 — at full 262k context the five children fight the shared KV pool
+for answering; the standing exception is retired).
 
 ### GPU handoff (cross-session, council-verified 2026-09-08)
 

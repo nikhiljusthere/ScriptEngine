@@ -148,12 +148,17 @@ re-crawling.
         long-lived `:8000` server you are about to replace, stop a finished or
         interruptible GPU batch, etc. If you can free the card, **free it and
         run on CUDA**.
-     3. **Only if the GPU cannot be freed, run on CPU** (`SCRIPTENGINE_DEVICE=cpu
-        setsid nohup … < /dev/null &`). The standard case: ninfer's Qwen holds
-        the card for extraction and the extraction model owns the GPU (hard rule
-        below), so it cannot be freed — then CPU is the fallback. CPU page-runs
-        are slow (cross-encoder ~14s/question): a 150-question batch takes ~35
-        min, so kick it off detached and poll rather than blocking.
+     3. **If the GPU cannot be freed, do NOT default a *job* to CPU** (2026-09-08
+        owner correction — the old "CPU is the fallback" branch is retired; it
+        caused the CSM pytest CPU misrun). The job's fallback is the 100k
+        switch: `qwen-switch.sh 100k` frees ~7–8 GB so the embedder+reranker
+        co-locate on CUDA (100k use case 1). For a campaign session that must
+        not block on the GPU, that 100k job runs in a FRESH 100k side session
+        via the gpu-handoff chain (`docs/ops/PC_GPU_HANDOFF.md`, tier 2) — the
+        campaign session sits idle, the side session does the GPU work, the
+        chain flips back and types the resume. CPU is reserved for: the
+        `:8000` *service* (it just runs slower) and short (<15 min) jobs
+        (point 5).
       4. **Borrow the headroom for a *short* `:8000` task, even with Qwen on the
          card.** Qwen's KV pool is *pre-reserved* (`--kv-capacity 155648`), so its
          ~24.6 GB is a fixed allocation and the ~7 GB "free" is genuinely spare
@@ -174,18 +179,23 @@ re-crawling.
         card, switch it to 100k first (`ninfer-work/qwen-switch.sh 100k --api`;
         frees ~9 GB and the embedder+reranker co-locate on CUDA — this is 100k
         mode's use case 1). CPU is reserved for short (<15 min) jobs and for
-        the hard-rule case where Qwen owns the card for a long LLM batch.
+        running the `:8000` *service* while Qwen owns the card for a long LLM
+        batch (the hard rule below — that clause is about the service, never
+        about a job's own models).
 - **Coverage is a live artifact, not a sentence.** No document states what is
       next or what remains — docs point at `reports/page-campaign/COVERAGE.md`,
       which `tools/coverage_report.py` regenerates (never hand-edited). Run it
       after every batch commit.
-- **Council reviews run 5 advisors (then 5 peer reviewers) in parallel.** A single
-  message spawns all five sub-agents at once and it works well: independence is
-  preserved because every sub-agent starts with a fresh context and never sees the
-  other responses. This is council-only — it does NOT extend the parallelism to
-  other sequential work (e.g. a closure loop), which still runs one sub-agent at a
-  time. (Recorded in the `llm-council` skill; the passes that use it live in
-  `reports/comprehension/`.)
+- **Council reviews deploy one agent at a time (owner rule 2026-09-08; the old
+  "5 in parallel" convention is retired).** 5 advisors sequentially, then 5 peer
+  reviewers, then the chairman — one sub-agent at a time, waiting for each result
+  before spawning the next, in any Qwen mode. Independence is preserved either
+  way (every sub-agent starts with a fresh context and never sees the other
+  responses); the cost is wall-clock time only. Why: at full 262k context all five
+  children fight Qwen's shared KV pool (`--max-concurrency 3`) for answering — the
+  2026-09-05 5-parallel attempt failed, and the 2026-09-07 CSM council expired 2 of
+  5 advisors while waiting for admission. The `llm-council` skill's sequential
+  default is now the project convention.
 
 ## Layout
 
@@ -241,7 +251,8 @@ process and ~7 GB free before launching. Never run the extraction's LLM on CPU
 as a workaround — the GPU is the path; just keep the card free for it. For
 launching the `:8000` API itself, the decision order is the working-agreement
 **"GPU device selection for servers/APIs: CUDA first, CPU last"** — free →
-CUDA, can-free → free and CUDA, cannot-free → CPU. The one sanctioned exception
+CUDA, can-free → free and CUDA, cannot-free → 100k switch for the job
+(`:8000` service → CPU). The one sanctioned exception
 is a **short, bounded `:8000` probe** in a Qwen quiet window (working-agreement
 point 4 above): Qwen's KV pool is pre-reserved, so its ~7 GB of headroom is
 genuinely free between prompt bursts and a lazily-loaded embedder+reranker (~5.3 GB)
@@ -255,7 +266,8 @@ profile leaves ~3.5 GiB headroom (`:8000` must run on CPU — the old "short
 CUDA probe" exception above was measured at a smaller KV pool and does not
 apply to the current 262k profile), while the 100k service profile frees
 ~7–8 GB so the embedder+reranker co-locate on CUDA and up to 2 subagents run
-in parallel (llm-council still runs 5 — the standing exception). Switching is
+in parallel (llm-council runs one agent at a time in any mode — owner rule
+2026-09-08). Switching is
 checkpoint (`plan/SWITCHPOINT.md`) → `ninfer-work/qwen-switch.sh` (one atomic
 call — the pi agent may switch autonomously at phase boundaries, `pi.md` §4)
 → resume; the agent has no model during the ~30–60 s reload window, but the

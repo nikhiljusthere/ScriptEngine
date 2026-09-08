@@ -52,7 +52,7 @@ PLAN §5.3) are B's/owner's invariants; you stop and relaunch, you never bypass 
 One Qwen 27B (`:18080`, max-concurrency 3) serves you, B, B's subagents and the loop; simultaneous turns
 **serialize at the KV pool** — contention is queue, not failure. A 60 s no-activity nudge on a queued child is a
 **known false positive**: never kill or retry on it; act only on a child actually failed/stale > 5 min.
-Council runs (5-parallel, the standing exception) hold the pool for minutes — the loop's model-down ticks during
+Council runs (one agent at a time since the 2026-09-08 owner rule) hold the pool for one child turn at a time — the loop's model-down ticks during
 that window are *retries*, not no-ops (PLAN §5.3 guard 2).
 
 ## Bootstrap note (first wake only)

@@ -49,7 +49,7 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
     the identical panel; resumed run idempotent; per-door raw counts;
     renamed command + alias work; pytest green.
   - Council cadence: fires after CSM-2 (2 completed todos) → `reports/csm/
-    COUNCIL_csm-1-2.md` (5 advisors in parallel, then 5 peers; raw receipts).
+    COUNCIL_csm-1-2.md` (5 advisors one at a time, then 5 peers — owner rule 2026-09-08; raw receipts).
 - open questions / risks:
   - GPU at check time: Qwen 262k owns the card (util 100%), `:8000` on CPU
     (headroom 1,604 MiB < 6 GiB → CPU is correct; do not co-locate). CSM-2 is
