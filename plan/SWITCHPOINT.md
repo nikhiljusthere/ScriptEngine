@@ -8,6 +8,7 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-08 (owner re-architecture, active):** CSM two-phase plan (`plan/CSM_2PHASE_PLAN.md`) — Phase 1 (fixing) at the 150k dial with 2-subagent waves + GPU-only; Qwen is now 150k (pid 91197, free 5182 MiB); :8000 on CPU; fresh CSM session `01a080c1` (tmux `csm-phase1`) runs Phase 1; A-session restarted same-session per owner directive
 
 - mode: **262k + `--vision` (this session started under it, 2026-09-08; the
   old stuck 100k CSM session 01a07cab is retired/trashed — everything it held
@@ -316,3 +317,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T13:56:00+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1488MiB
 - 2026-09-08T15:18:32+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6699MiB
 - 2026-09-08T15:29:18+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1202MiB
+- 2026-09-08T16:50:27+05:30 qwen-switch: ctx=150000 (mode 150000), api=cpu, free=5182MiB
