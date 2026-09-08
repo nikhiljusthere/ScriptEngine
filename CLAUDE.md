@@ -316,12 +316,12 @@ gate state: `reports/comprehension/GATE.md`; current position:
 waits until this run closes.
 
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
-gpu-live2 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE.md`):**
-`pytest tests/ -q` = 1,242 (13:47–13:50, CUDA; the old 1,239 was stale — the
-suite grew by 3); `eval --series jjk` = 31/31 (13:50–13:51); `span-recall
+gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
+`pytest tests/ -q` = 1,249 (15:19–15:22, CUDA; the 1,242 baseline was stale —
+CSM-2 added 7 tests); `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
 --series jjk` = 48,572/48,572 offline (rc=0) + 390/400 live probe (97.5%;
-13:51–13:54, CUDA `:8000`); `canon-run --series opm` = 10/16 exact,
-236/236 canon, 79.0% (13:54–13:55, `--skip-eval` one-copy rule).
+15:23–15:26, CUDA `:8000`); `canon-run --series opm` = 10/16 exact,
+236/236 canon, 79.0% (15:26, `--skip-eval` one-copy rule).
 Batch files are `_`-prefixed so they stay out of the official gold bank. The
 historical accuracy-campaign records (rounds 1/2, OPM + JJK waves) are in
 `reports/page-campaign/STATUS.md` (the OPM handoffs `HANDOFF_OPM.md` /

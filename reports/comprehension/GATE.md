@@ -715,3 +715,35 @@ python -m scriptengine.cli continuity --series jjk --triage
 python -m scriptengine.cli continuity --series jjk --subject "Yuji Itadori" --upto 7 --limit 6
 python -m scriptengine.cli continuity --series jjk --no-gold --triage
 ```
+
+## CSM campaign — live gate record (opened 2026-09-08)
+
+The CSM 100%-campaign's designated live gate record (council
+`reports/csm/COUNCIL_csm-1b-2.md`, peer-C finding: this section did not
+exist, so the re-baseline sat in an untracked file while CLAUDE.md cited the
+stale number). Every CSM pass re-runs the four standing gates before
+declaring done; state lands here — raw numbers, never "100%" prose. The JJK
+history above is untouched.
+
+### Gate re-baseline on the 1,249 tree (gpu-gate3, 2026-09-08)
+
+All four gates **PASS on CUDA** (100k+CUDA side session, the tier-2 chain;
+raw receipts `reports/csm/GATE_REBASELINE_2.md`, tree `118ab37`):
+
+| gate | result | run |
+|---|---|---|
+| pytest (full suite, CUDA in-process) | **1,249/1,249 passed**, rc 0 — the 6 VRAM-sensitive `test_context` cases PASS-on-CUDA | 15:18–15:22 |
+| eval jjk (CUDA in-process) | **31/31 (100%)**, rc 0 | 15:22–15:23 |
+| span-recall jjk (offline) | **48,572/48,572 (100%)**, rc 0 | 15:23 |
+| span-recall jjk probe 400 (live CUDA `:8000`) | **390/400 (97.5%)** — 6 MISS_DOC, 4 MISS_SPAN, 0 TRUNCATED, 0 ERROR, rc 0 | 15:23–15:26 |
+| canon opm (`--skip-eval`, one-copy) | **10/16 exact (62.5%) · 236/236 canon (100%) · 79.0% precision (16/19)**, 0 confident-wrong, rc 0 | 15:26 |
+
+The 1,242 record (`reports/csm/GATE_REBASELINE.md`, tree `9e13815`) is
+**superseded** — it predates CSM-2's +7 tests. The CLAUDE.md + gates-skill
+baselines were rewritten to these numbers the same day.
+
+CSM-3 (D5 measurement infrastructure) opens on this baseline. Its
+done-criteria (council addendum, `reports/csm/COUNCIL_csm-campaign.md`):
+per-door sanity floor; the <6-word short-line floor decided *before* panel
+pinning; the tier-0 rename `span-recall` → `chunk-containment` (alias kept);
+§7's four pilot cost numbers produced and carried to the done-declaration.

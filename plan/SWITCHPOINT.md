@@ -31,8 +31,8 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   (Chainsaw Man) campaign** (owner-authorized 2026-09-07): the 8-item plan in
   `reports/csm/COUNCIL_csm-campaign.md` is the campaign plan; **CSM-1, CSM-1b,
   CSM-2 DONE; the COUNCIL_csm-1b-2 cadence council is complete with 5 rulings
-  applied; CSM-3 is next — blocked on the gate re-baseline side session
-  (gpu-gate3, 100k+CUDA).**
+  applied; the gate re-baseline LANDED (gpu-gate3: all 4 gates PASS on the
+  1,249 tree, 2026-09-08 15:26); **CSM-3 starts.**
 - work explanation (what's done, what's in flight, the exact next step):
   - **CSM-1 DONE (`064093e`)** — inventory + revid-stamp, zero new
     questions: `questions/csm.json` 39/39 active + `questions/
@@ -78,21 +78,30 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   - Council cadence: last fired after CSM-2 (`COUNCIL_csm-1b-2`); next fires
     after CSM-3 (2 completed todos).
 - open questions / risks:
-  - GPU at check time: Qwen 262k owns the card (util 100%), `:8000` on CPU
-    (headroom 1,604 MiB < 6 GiB → CPU is correct; do not co-locate). CSM-2 is
-    zero-GPU, so no action needed.
+  - GPU at check time: Qwen 262k owns the card, `:8000` on CPU (headroom
+    1,202 MiB after the gpu-gate3 262k switch-back, 15:29 → CPU is correct;
+    do not co-locate). CSM-3 is code + panel work (zero-GPU up to the sweep);
+    the ~51-GPU-hour D5 exhaustive sweep is CSM-4 (item 4) and goes through
+    the tier-2 chain again in a 100k-mode side session.
   - The master-work A/B deploy is in flight on this box (the untracked /
     modified files above); CSM commits stay CSM-area paths only, and the
     master-work files are managed by that process.
-- first action on resume: **if the gpu-gate3 RESUME line has not landed yet:
-  the gate re-baseline side session is in flight (100k+CUDA tier-2 chain,
-  `plan/gpu_gate3.spec` + `plan/gpu_gate3_task.md`) — poll per the gpu-gate3
-  handoff section below. Once its report (`reports/csm/GATE_REBASELINE_2.md`)
-  lands: restore `:8000` to CPU, check chain state, trash C's transcript,
-  rewrite the CLAUDE.md + gates-skill baselines (1,242 → 1,249 + timestamps),
-  open the CSM gate section in `reports/comprehension/GATE.md`, commit — then
-  start **CSM-3** from the council item 3 scope + the addendum in
-  `reports/csm/COUNCIL_csm-campaign.md`.
+- first action on resume: **CSM-3** (item 3 scope + the addendum in
+  `reports/csm/COUNCIL_csm-campaign.md`) — the gpu-gate3 RESUME landed
+  (15:30:08) and its steps are done (report read, `:8000` on CPU, baselines
+  rewritten, CSM gate section opened, C transcript trashed).
+- done this turn (2026-09-08, gpu-gate3 RESUME 15:30:08): read C's report —
+  all 4 gates PASS on CUDA on the 1,249 tree (pytest 1,249/1,249 incl. the 6
+  OOM cases, eval jjk 31/31, span-recall jjk 48,572/48,572 + 390/400 probe,
+  canon opm 10/16 · 236/236 · 79.0%; receipts
+  `reports/csm/GATE_REBASELINE_2.md` committed). `:8000` verified on CPU (the
+  262k switch-back had already placed it — pid 80967, /health device=cpu;
+  Qwen pid 80906 is the only GPU process). Chain state clean (state=done, no
+  STALLED, one typed RESUME 15:30:08). C transcript trashed after reading the
+  report. CLAUDE.md + gates-skill baselines re-baselined 1,242 → 1,249 with
+  run timestamps; the 1,242 `GATE_REBASELINE.md` marked superseded; the CSM
+  gate section opened in `reports/comprehension/GATE.md` as the live record.
+  Committed. **Next: CSM-3** (D5 measurement infrastructure).
 - done this turn (2026-09-08, gpu-gate3 launch — fresh CSM session 01a08064,
   inheriting from disk; the retired session 01a07ff0's window 51768426 is
   BadWindow, so the spec's A-side fields were retargeted): a_win=51286464
@@ -145,6 +154,17 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   the CSM plan launched. Committed `281fe2e`.
 
 ## gpu-gate3 handoff (2026-09-08 — A=01a08064 (fresh CSM session; retargeted from the retired 01a07ff0) → chain → C on 100k → A resume)
+
+**DONE 15:30 local — chain complete (state=done, no STALLED, typed RESUME
+15:30:08; C transcript trashed after the report was read; `:8000` back on CPU
+via the 262k switch-back, pid 80967, /health device=cpu).** All 4 gates PASS
+on CUDA on the 1,249 tree (receipts `reports/csm/GATE_REBASELINE_2.md`):
+pytest **1,249/1,249** (the 6 OOM cases pass on GPU) · eval jjk **31/31** ·
+span-recall jjk **48,572/48,572** offline + **390/400 (97.5%)** probe · canon
+opm **10/16 exact, 236/236, 79.0%**. CLAUDE.md + gates-skill baselines
+re-baselined 1,242 → 1,249; the 1,242 `GATE_REBASELINE.md` record is
+superseded; the CSM gate section is now open in
+`reports/comprehension/GATE.md` as the live record.
 
 **Gate re-baseline, round 2 (council blocker, COUNCIL_csm-1b-2).** The
 GATE_REBASELINE record (1,242, git `9e13815`) predates CSM-2's +7 tests
@@ -250,3 +270,5 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T12:56:08+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1604MiB
 - 2026-09-08T13:47:15+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6932MiB
 - 2026-09-08T13:56:00+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1488MiB
+- 2026-09-08T15:18:32+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6699MiB
+- 2026-09-08T15:29:18+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1202MiB
