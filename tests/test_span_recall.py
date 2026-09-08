@@ -250,3 +250,35 @@ def test_door_is_forwarded_to_the_context_request(tmp_path, monkeypatch):
               panel=[("Chapter 1", "Plot", "One narrative door probe sentence here.")],
               results_path=tmp_path / "sweep_narrative.jsonl", door="narrative")
     assert seen == ["narrative"]
+
+
+def test_roster_shaped_bundle_hits_and_counts_member_names(tmp_path, monkeypatch):
+    """A roster bundle serves its content in members[].text / passages[] with
+    beats: [] -- before COUNCIL_csm-3 Ruling 1 the harness flattened only
+    beats/facts/relations/participants, so every roster probe structurally
+    verdicted MISS_DOC (live probe: 31 members, 0 served chars) and no roster
+    probe could ever HIT. All four earlier tests fake a beats-shaped bundle;
+    this one is roster-shaped.
+    """
+    import json
+
+    def roster_bundle(query, series_, timeout, base, door=None):
+        return {"mode": "roster", "truncated": False, "beats": [],
+                "participants": [],
+                "members": [{"name": "Character X", "label": "Character X",
+                             "text": "Character X did a very memorable thing "
+                                      "that night, and it changed everything."}],
+                "passages": [{"doc_title": "Character X",
+                               "text": "More Character X prose follows here."}]}
+
+    monkeypatch.setattr(sr, "_ask", roster_bundle)
+    results = tmp_path / "sweep_roster.jsonl"
+    r = sr.recall("demo",
+                  panel=[("Character X", "Synopsis",
+                          "Character X did a very memorable thing that night, "
+                          "and it changed everything.")],
+                  results_path=results, door="roster")
+    assert r["counts"]["HIT"] == 1 and r["counts"]["MISS_DOC"] == 0
+    rows = [json.loads(l) for l in
+            results.read_text(encoding="utf-8").splitlines() if l]
+    assert rows[0]["returned_docs"] == ["Character X"]  # member name is a returned doc

@@ -21,7 +21,7 @@ All commands from the repo root (`/home/goblin/ScriptEngine`), venv =
 
 | gate | command | baseline (2026-09-08, gpu-gate3 re-baseline on the 1,249 tree — `reports/csm/GATE_REBASELINE_2.md`) |
 |---|---|---|
-| tests | `python -m pytest tests/ -q` | 1,249 passed (CUDA; the 1,242 baseline was stale — CSM-2 added 7 tests) |
+| tests | `python -m pytest tests/ -q` | 1,249 passed (CUDA; the 1,242 baseline was stale — CSM-2 added 7 tests). Suite since: **1,254** (+4 CSM-3, +1 CSM-3b roster-door test); full four-gate re-run at CSM-4's start (COUNCIL_csm-3 Ruling 5e) |
 | eval jjk | `python -m scriptengine.cli eval --series jjk` | 31/31 |
 | span-recall jjk | `python -m scriptengine.cli span-recall --series jjk` | 48,572/48,572 (rc=0); live probe: 390/400 (97.5%) |
 | canon opm | `python -m scriptengine.cli canon-run --series opm` | 10/16 exact · 236/236 · 79.0% |

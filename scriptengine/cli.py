@@ -2043,8 +2043,8 @@ def span_recall(
 ) -> None:
     """Check every sentence in a series is reachable, not just the sampled ones.
 
-    Tier 0 (the offline check, renamed from `span-recall` in CSM-3(f): the old
-    name stayed the tautology's alias -- a chunker that emits every sentence
+    Tier 0 (the offline check, renamed from `span-recall` -- the old name
+    stayed the tautology's alias: a chunker that emits every sentence
     passes tier 0 *by construction*, so its rc=0 proves containment, not D5
     reachability; `span-recall` remains an alias for old docs) proves each
     sentence sits whole inside some chunk, sub-second, no server. `--probe`
@@ -2119,7 +2119,25 @@ def span_recall(
 
     if panel_path is not None:
         data = json.loads(panel_path.read_text(encoding="utf-8"))
-        probes = [tuple(r) for r in data["panel"]]
+        # The pin is {"panel": [...], "hash": ...}; the held-out side file is
+        # a bare row array (COUNCIL_csm-3 Ruling 7) -- both load.
+        if isinstance(data, list):
+            rows, stored_hash = data, None
+        else:
+            rows = data.get("panel") or []
+            stored_hash = data.get("hash")
+        probes = [tuple(r) for r in rows]
+        # Recompute the hash from the rows actually probed: the pin's stored
+        # hash is only checked against them, so a pin edited after stamping
+        # cannot report the stale hash (COUNCIL_csm-3 Ruling 7).
+        panel_hash = impl._panel_hash([list(r) for r in rows])
+        if stored_hash and stored_hash != panel_hash:
+            console.print(
+                f"[red]panel hash mismatch: the pin stamps "
+                f"{stored_hash[:16]}… but the rows load as "
+                f"{panel_hash[:16]}… -- the panel was edited after stamping; "
+                f"re-pin before sweeping.[/red]")
+            raise typer.Exit(code=1)
         rows_path = folder / f"sweep_{door}.jsonl"
 
         def on_progress(i: int, total: int, counts: dict) -> None:
@@ -2127,7 +2145,7 @@ def span_recall(
 
         run = impl.recall(
             series, settings, mode=mode, panel=probes,
-            panel_hash=data.get("hash"), results_path=rows_path, door=door,
+            panel_hash=panel_hash, results_path=rows_path, door=door,
             limit=sanity or None, on_progress=on_progress)
 
         if sanity and run["counts"]["HIT"] == 0:

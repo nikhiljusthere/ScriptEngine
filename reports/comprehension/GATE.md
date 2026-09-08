@@ -744,6 +744,16 @@ baselines were rewritten to these numbers the same day.
 
 CSM-3 (D5 measurement infrastructure) opens on this baseline. Its
 done-criteria (council addendum, `reports/csm/COUNCIL_csm-campaign.md`):
-per-door sanity floor; the <6-word short-line floor decided *before* panel
-pinning; the tier-0 rename `span-recall` → `chunk-containment` (alias kept);
-§7's four pilot cost numbers produced and carried to the done-declaration.
+per-door sanity floor ✓; the <6-word short-line floor decided *before* panel
+pinning ✓ (recorded — 775-line census, `reports/csm/floor_census_csm.md`);
+the tier-0 rename `span-recall` → `chunk-containment` (alias kept) ✓; §7's
+four pilot cost numbers: **not producible at the CSM-3 stage** (a
+measurement-infra pass has no T0 pilot and no closure loop to emit them) —
+carried, owner CSM-4/CSM-7 + item 6e (COUNCIL_csm-3 Ruling 5f).
+CSM-3b (post-council, COUNCIL_csm-3 Rulings 1/7): roster-door fix
+(`served_text` flattens members/passages; member names count as returned
+docs) + roster-shaped test; panel-hash recompute-and-enforce in the sweep
+branch; held-out consumer named (`tools/csm/panel_heldout.py`). Live
+re-probe of the council's 31-members/0-chars line: 14–16k chars served.
+Its four done-criteria are all met; the full four-gate re-run on the 1,254
+suite happens at CSM-4's start (Ruling 5e).

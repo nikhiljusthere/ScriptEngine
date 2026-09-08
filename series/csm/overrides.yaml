@@ -34,13 +34,17 @@ citation_positional:
 #
 # D5 floor decision (2026-09-08, CSM-3; council ruling 4b: decide BEFORE
 # panel pinning): the <6-word line floor is a declared measurement boundary,
-# not a silent scope -- the sub-floor lines are chapter/volume-list rows
-# ("College Fund 158.", 1-5 words) that carry too little signal to query
-# with, and their misses would be ranking noise, not reachability defects.
+# not a silent scope -- the sub-floor lines are list-shaped rows (chapter/
+# volume/episode lists, arc lists, 44 Summary + 99 poll rows; section
+# histogram in reports/csm/floor_census_csm.md) that carry too little
+# signal to query with, and their misses would be ranking noise, not
+# reachability defects.
 # Census on the current tree: 775 sub-6-word lines in non-boilerplate
 # sections, all tier-0-eligible (whole inside a chunk); all are excluded
-# from the pinned D5 panel (17,382 probes, reports/csm/panel_csm.json),
-# which records the floor (min_words) in its metadata.
+# from the pinned D5 panel (17,381 unique rows = 17,181 sweep + 200
+# held-out; 17,382 is the tier-0 *occurrence* count -- one line duplicates
+# inside its section, COUNCIL_csm-3 clash 5), which records the floor
+# (min_words) in its metadata: reports/csm/panel_csm.json.
 #
 # Subtracted from the chunker's skip set by
 # `effective_boilerplate_sections`; empty sections still die in the

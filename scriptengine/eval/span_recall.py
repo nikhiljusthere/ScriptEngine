@@ -222,7 +222,11 @@ def _ask(query: str, series: str, timeout: float,
 def served_text(bundle: dict[str, Any]) -> str:
     """Everything the caller actually receives, flattened for the substring test."""
     parts: list[str] = []
-    for key in ("beats", "facts", "relations", "participants"):
+    # A roster bundle carries its content in members[].text / passages[]
+    # with beats: [] -- without the two keys the roster door serves 0 chars
+    # and every probe structurally verdicts MISS_DOC (COUNCIL_csm-3 Ruling 1).
+    for key in ("beats", "facts", "relations", "participants",
+                "members", "passages"):
         value = bundle.get(key)
         if not isinstance(value, list):
             continue
@@ -286,7 +290,7 @@ def build_panel(series: str, settings: Settings | None = None,
     scope: sub-floor lines (chapter-list rows like "Fearsome 163.") carry
     too little signal to query with, and their misses would be ranking
     noise, not reachability defects. The exclusion is recorded in the
-    series' audit (CSM: 775 lines, all tier-0-eligible, 2026-09-08).
+    series' audit (per-wiki census, see the series' overrides.yaml).
     """
     docs, secs, chunks = _corpus(series, settings)
     probes: set[tuple[str, str, str]] = set()
@@ -402,6 +406,10 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
                 text = served_text(bundle)
                 returned = [b.get("doc_title") for b in bundle.get("beats", [])
                             if isinstance(b, dict)]
+                # a roster bundle returns members/passages with beats: [] --
+                # the members' names are the returned docs that door (COUNCIL_csm-3 Ruling 1)
+                returned += [m.get("name") for m in bundle.get("members", [])
+                             if isinstance(m, dict)]
                 if sentence in text or decite(sentence) in decite(text):
                     verdict = "HIT"
                 elif bundle.get("truncated"):
@@ -493,6 +501,9 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
             text = served_text(bundle)
             returned = [b.get("doc_title") for b in bundle.get("beats", [])
                         if isinstance(b, dict)]
+            # same as the pinned branch: roster bundles serve through members
+            returned += [m.get("name") for m in bundle.get("members", [])
+                         if isinstance(m, dict)]
             if sentence in text or decite(sentence) in decite(text):
                 verdict = "HIT"
             elif bundle.get("truncated"):
