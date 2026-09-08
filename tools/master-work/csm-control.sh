@@ -1,21 +1,24 @@
 #!/bin/bash
-# csm-control.sh <b_pi_pid> <b_win>  — Terminal A's monitor (plan/CSM_CONTROL_PLAN.md)
+# csm-control.sh <b_pi_pid> <b_win> [logdir] — A's monitor (plan/CSM_CONTROL_PLAN.md;
+# generic bay eyes since 2026-09-08: logdir defaults to reports/master-work, and
+# <b_win> may be a tmux session (bay) or an X window id (CSM vte, XTEST typing))
 #
 # Watches every shell Terminal B's pi process runs (pi -> `bash -c` -> python),
-# logs each with its duration (reports/csm/shell_log.jsonl), and enforces the
+# logs each with its duration (<logdir>/shell_log.jsonl), and enforces the
 # Phase-1 GPU rule: model-heavy work that sits on CPU for >15 s gets killed
-# with a typed re-run hint (focused XTEST — vte ignores `key --window`).
-# LONG (>300 s) runs are flagged, not killed — A the LLM judges those.
-# Interventions fire only while a shell is active in B (owner rule: "fire when
-# qwen stops in B"). Detached: setsid nohup bash csm-control.sh <pid> <win>
+# with a typed re-run hint (tmux send-keys, or focused XTEST — vte ignores
+# `key --window`). LONG (>300 s) runs are flagged, not killed — A the LLM
+# judges those. Interventions fire only while a shell is active in B (owner
+# rule: "fire when qwen stops in B"). Detached: setsid nohup bash
+# csm-control.sh <pid> <win> [logdir]
 set -u
-BPID=${1:?usage: csm-control.sh <b_pi_pid> <b_win>}
+BPID=${1:?usage: csm-control.sh <b_pi_pid> <b_win> [logdir]}
 BWIN=${2:?}
-LOGDIR=/home/goblin/ScriptEngine/reports/csm
+LOGDIR=${3:-/home/goblin/ScriptEngine/reports/master-work}
 mkdir -p "$LOGDIR"
 SLOG="$LOGDIR/shell_log.jsonl"
 FLOG="$LOGDIR/interventions.jsonl"
-MODEL_RX='span-recall.*(--panel|--probe)|--probe [0-9]|canon-run|pytest tests/|scriptengine\.cli (eval|span-recall)|events-extract'
+MODEL_RX='span-recall.*(--panel|--probe)|--probe [0-9]|canon-run|pytest tests/|scriptengine\.cli (eval|span-recall|transcripts-embed|transcript-search)|events-extract'
 declare -A START CMD LONGF
 DOWN_S=""
 NOW(){ date +%s; }
@@ -24,10 +27,15 @@ J(){ # J <target-file> k1=v1 k2=v2 ...
   for pair in "$@"; do k=${pair%%=*}; v=${pair#*=}; kv+="\"$k\":\"$v\","; done
   printf '{"ts":"%s",%s}\n' "$(date -Iseconds)" "${kv%,}" >> "$f"
 }
-hint(){ # pid reason hint
-  xdotool windowactivate --sync "$BWIN" 2>/dev/null; sleep 0.5
-  xdotool type --delay 8 "Control A killed your shell (pid $1: $2). Re-run on GPU: $3" 2>/dev/null
-  xdotool key Return
+hint(){ # pid reason hint — tmux session (bay) or X window (CSM vte: XTEST only)
+  local msg="Control A killed your shell (pid $1: $2). Re-run on GPU: $3"
+  if tmux has-session -t "$BWIN" 2>/dev/null; then
+    tmux send-keys -t "$BWIN" "$msg" Enter 2>/dev/null
+  else
+    xdotool windowactivate --sync "$BWIN" 2>/dev/null; sleep 0.5
+    xdotool type --delay 8 "$msg" 2>/dev/null
+    xdotool key Return
+  fi
   sleep 1
 }
 is_model(){ grep -qE "$MODEL_RX" <<< "$1" && return 0; grep -q 'SCRIPTENGINE_DEVICE' <<< "$1" && return 0; return 1; }
@@ -45,7 +53,7 @@ while :; do
   # starts
   for p in $kids; do
     [ -d "/proc/$p" ] || continue
-    cmd=$(tr '\0' ' ' < "/proc/$p/cmdline" 2>/dev/null | head -c 220)
+    cmd=$(tr '\0' ' ' < "/proc/$p/cmdline" 2>/dev/null | head -c 220 | tr '\n' ' ')
     case "$cmd" in *bash*|*python*|*scriptengine*|*pytest*) ;; *) continue ;; esac
     [ -n "${START[$p]:-}" ] && continue
     START[$p]=$(NOW); CMD[$p]="$cmd"; LONGF[$p]=0
