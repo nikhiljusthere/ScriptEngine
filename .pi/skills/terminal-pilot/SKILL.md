@@ -76,9 +76,24 @@ Record `{"a_win":…,"b_win":…}` in `reports/csm/windows.json` (campaign) or y
 - **Prove every type landed via a file side-channel** before typing the next:
   type `touch /tmp/b_probe && echo M1 > /tmp/b_probe.out` and poll that file's content.
   Command success alone is NOT proof the input reached the pi TUI.
-- Boot sequence: type `pi` → wait for window title to become `π - ScriptEngine` AND a NEW
-  session file in `~/.pi/agent/sessions/--home-goblin-ScriptEngine--/` → probe → then type
-  the bootstrap messages, probe between each.
+- **Boot**: type `pi` → wait for BOTH window title `π - ScriptEngine` AND a NEW session file
+  in `~/.pi/agent/sessions/<project>/`. Title alone is NOT success — a pi that resumed the
+  wrong session (PI_* inheritance) shows the same title with no new file. Wrong-session
+  diagnostic: no new file after ~60 s → newest `pgrep -x pi` (not yours), check
+  `tr '\0' '\n' < /proc/<pid>/environ | grep '^PI_'`, kill it, retype
+  `env -u PI_SESSION_FILE -u PI_SESSION_ID -u PI_SUBAGENT_PARENT_SESSION pi`.
+- **Pasting an actual prompt (the step the 2026-09-08 21:42 TOJI run skipped — never omit):**
+  1. Prompt goes in `/tmp/<name>_prompt.txt` (write tool; no shell-escaping of long text).
+  2. Only after pi is verified (new session file + title + ~2 s TUI settle). Probe line first,
+     then `xdotool type --clearmodifiers --file /tmp/<name>_prompt.txt` → `xdotool key Return`.
+  3. Verify the paste landed: grep the NEW session file for a distinctive prompt snippet (pi
+     records typed user messages). A file probe only proves pi runs shell commands — it does
+     NOT prove the prompt was received. Missing after ~60 s → check focus
+     (`xdotool getactivewindow` vs target), retype once, re-verify.
+- **Interrupt-resilience**: every poll loop ≤60 s (an aborted call must not outlive its work);
+  persist the window id to `/tmp/<name>_win.txt` at discovery and resume from disk state after
+  any abort. A window left at a bare bash (pi died/never started) → close it or start pi in
+  it; never spawn a second window for the same job.
 - `b_pid` = newest `pgrep -x pi` that is not your own pid.
 
 **Resume bootstrap** (fresh session has no memory — disk is the tiebreaker): point it at the
