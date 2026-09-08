@@ -5,6 +5,10 @@
 // House format follows reports/csm/COUNCIL_csm-1b-2.md; the chairman writes
 // the record to reports/csm/COUNCIL_csm-3.md (the campaign session commits).
 
+// The workflow sandbox exposes `emit` (not `log`); guard so a missing
+// global can never kill the run after the expensive children have run.
+const say = (typeof emit === 'function') ? emit : function () {};
+
 const QUESTION = [
   'CSM 100% campaign (ScriptEngine repo, /home/goblin/ScriptEngine) — cadence council (standing rule 3a: review the fixes just made, before the next item starts).',
   '',
@@ -78,7 +82,7 @@ for (const [name, style] of ADVISORS) {
     task: advisorTask(name, style)
   });
   responses[name] = flat(r);
-  log('advisor complete: ' + name);
+  say('advisor complete: ' + name);
 }
 
 // Letter mapping (deliberately not list order; disclosed in the peer prompt,
@@ -98,7 +102,7 @@ for (let i = 0; i < 5; i++) {
     task: peerTask(letter, mapping, bodies)
   });
   reviews['Peer ' + letter] = flat(r);
-  log('peer complete: ' + letter);
+  say('peer complete: ' + letter);
 }
 
 let named = '';
@@ -121,7 +125,7 @@ const chairTask = (
 );
 
 const chair = await runs.run('chairman', { agent: 'delegate', task: chairTask });
-log('chairman complete');
+say('chairman complete');
 
 emit('council complete: report at reports/csm/COUNCIL_csm-3.md');
 return {
