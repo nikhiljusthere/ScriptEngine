@@ -2653,6 +2653,56 @@ def dialogue(
         console.print(f"[{ep} {ts}] {speaker}: {text}")
 
 
+@app.command("transcripts-embed")
+def transcripts_embed(
+    series: str = typer.Option(..., "--series"),
+    force: bool = typer.Option(
+        False, "--force", help="Re-embed even when the manifest is unchanged."
+    ),
+) -> None:
+    """Embed the dialogue lines into a separate Qdrant directory (Phase 2).
+
+    GPU job under the one-copy rule: stop the :8000 service (or run it on CPU)
+    first, restart it after. Idempotent - unchanged manifests skip the embed.
+    """
+    from scriptengine.transcripts import embed_series
+
+    summary = embed_series(series_paths(series), force=force)
+    if summary.get("skipped"):
+        console.print(
+            f"[green]Unchanged since the last embed ({summary['points']} points) - skipped. "
+            "Use --force to re-embed.[/green]"
+        )
+    else:
+        console.print(
+            f"[green]{summary['embedded']} lines embedded on {summary['device']} "
+            f"with {summary['model']} -> {summary['dir']}[/green]"
+        )
+
+
+@app.command("transcript-search")
+def transcript_search(
+    series: str = typer.Option(..., "--series"),
+    query: str = typer.Argument(..., help="What the line says or is about."),
+    limit: int = typer.Option(10, "--limit"),
+    episode: str = typer.Option(
+        None, "--episode", help="Restrict to one episode (1-47, or M1 for the movie)."
+    ),
+) -> None:
+    """Semantic search over the anime's dialogue (separate transcript collection).
+
+    GPU job under the one-copy rule, same as transcripts-embed.
+    """
+    from scriptengine.transcripts import search_series
+
+    hits, warnings = search_series(series_paths(series), query, limit=limit, episode=episode)
+    for warning in warnings:
+        console.print(f"[yellow]STALE: {warning} - re-run transcripts-embed[/yellow]")
+    for hit in hits:
+        speaker = hit["speaker"] or "[sign]"
+        console.print(f"{hit['episode']} [{hit['ts']}] {speaker} ({hit['score']}): {hit['text']}")
+
+
 def main() -> None:
     app()
 

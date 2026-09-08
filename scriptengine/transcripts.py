@@ -390,3 +390,168 @@ def dialogue_lines(paths, character: str, episode: str | None, limit: int) -> li
         return conn.execute(query, args).fetchall()
     finally:
         conn.close()
+
+
+# ── Phase 2: embeddings, in a SEPARATE Qdrant directory ───────────────────
+# The council's v2 design (plan/JJK_TRANSCRIPTS_PLAN.md): the main `index`
+# store's recreate() rmtree's its own directory and keys points by wiki
+# chunk rowids, so transcript vectors live in series/<name>/qdrant-transcripts/
+# under their own store instance. Zero changes to the gated store code;
+# zero contamination of wiki bundles by construction.
+
+def transcript_vector_dir(paths) -> Path:
+    return paths.transcripts.parent / "qdrant-transcripts"
+
+
+def _manifest_sha(paths) -> str:
+    m = paths.transcripts / "manifest.json"
+    return _sha256(m.read_bytes()) if m.exists() else ""
+
+
+def _export_shas(paths) -> dict:
+    m = paths.transcripts / "manifest.json"
+    if not m.exists():
+        return {}
+    # The import manifest identifies each export by its url; there is no
+    # separate key field (the 23:06 embed run crashed on e["key"]).
+    return {e["url"]: e["sha256"] for e in json.loads(m.read_text(encoding="utf-8"))["exports"]}
+
+
+def stale_reasons(paths) -> list[str]:
+    """The plan's stale-vector invalidation: re-import changed the corpus
+    since the embedding, so these vectors are stale (re-run transcripts-embed).
+    ponytail: invalidation is at export (season) granularity; per-episode
+    invalidation only matters once an archive revises a single episode."""
+    meta_path = transcript_vector_dir(paths) / "embed_meta.json"
+    if not meta_path.exists():
+        return []
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    reasons = []
+    if meta.get("manifest_sha") and meta["manifest_sha"] != _manifest_sha(paths):
+        reasons.append("transcripts.db was re-imported since the embedding")
+    if meta.get("export_shas") is not None and meta["export_shas"] != _export_shas(paths):
+        reasons.append("an export's hash changed (new episodes or corrected subs)")
+    return reasons
+
+
+def embed_series(paths, force: bool = False) -> dict:
+    """Embed every line into the separate transcript collection.
+
+    GPU job: load the embedder in-process, so the one-copy rule applies —
+    stop the :8000 service (or run it on CPU) before this, restart after.
+    Idempotent: skips when the manifest and all export hashes are unchanged.
+    """
+    from qdrant_client.models import PointStruct
+
+    from scriptengine.config import get_settings
+    from scriptengine.index.embedder import Embedder
+    from scriptengine.stores.vectors import COLLECTION, VectorStore
+
+    vdir = transcript_vector_dir(paths)
+    meta_path = vdir / "embed_meta.json"
+    sha = _manifest_sha(paths)
+    if not force and meta_path.exists():
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if sha and meta.get("manifest_sha") == sha and meta.get("export_shas") == _export_shas(paths):
+            return {"skipped": True, "points": meta.get("points"), "dir": str(vdir)}
+
+    conn = _connect(paths)
+    rows = conn.execute(
+        "SELECT id, episode, season, ts, speaker, text, kind FROM lines ORDER BY id"
+    ).fetchall()
+    conn.close()
+    if not rows:
+        raise RuntimeError("transcripts.db is empty - run transcripts-import first")
+
+    settings = get_settings()
+    embedder = Embedder(settings)
+    device = None
+    store = VectorStore(vdir)
+    store.recreate(embedder.dimensions)
+    batch = max(settings.embed_batch_size * 8, 128)
+    for start in range(0, len(rows), batch):
+        chunk = rows[start : start + batch]
+        vectors = embedder.encode_passages([r[5] for r in chunk])
+        device = device or embedder.device
+        points = [
+            PointStruct(
+                id=int(r[0]),
+                vector=list(v),
+                payload={
+                    "episode": r[1],
+                    "season": r[2],
+                    "ts": r[3],
+                    "speaker": r[4],
+                    "text": r[5],
+                    "kind": r[6],
+                },
+            )
+            for r, v in zip(chunk, vectors)
+        ]
+        # The transcript payload is this store's own shape, so it goes through
+        # the client directly rather than VectorStore.upsert (wiki-chunk payload).
+        store.client.upsert(collection_name=COLLECTION, points=points, wait=True)
+        print(f"  embedded {min(start + batch, len(rows))}/{len(rows)} lines")
+    store.close()
+    embedder.unload()
+    meta = {
+        "manifest_sha": sha,
+        "export_shas": _export_shas(paths),
+        "points": len(rows),
+        "model": settings.embed_model,
+        "dimensions": embedder.dimensions,
+        "device": device,
+        "embedded_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    return {"embedded": len(rows), "dir": str(vdir), "model": settings.embed_model, "device": device}
+
+
+def search_series(
+    paths, query: str, limit: int = 10, episode: str | None = None
+) -> tuple[list[dict], list[str]]:
+    """Semantic search over the dialogue. Returns (hits, stale_warnings).
+
+    Also a GPU job (query embedding) - one-copy rule as in embed_series.
+    """
+    from qdrant_client.models import FieldCondition, Filter, MatchValue
+
+    from scriptengine.config import get_settings
+    from scriptengine.index.embedder import Embedder
+    from scriptengine.stores.vectors import COLLECTION, VectorStore
+
+    vdir = transcript_vector_dir(paths)
+    if not (vdir / "embed_meta.json").exists():
+        raise RuntimeError("no transcript embeddings - run `transcripts-embed` first")
+    warnings = stale_reasons(paths)
+
+    settings = get_settings()
+    embedder = Embedder(settings)
+    vector = embedder.encode_query(query)
+    store = VectorStore(vdir)
+    qfilter = None
+    if episode:
+        ep_key = f"E{episode}" if episode.isdigit() else episode.upper()
+        qfilter = Filter(must=[FieldCondition(key="episode", match=MatchValue(value=ep_key))])
+    hits = store.client.query_points(
+        collection_name=COLLECTION,
+        query=list(vector),
+        query_filter=qfilter,
+        limit=limit,
+        with_payload=True,
+    ).points
+    store.close()
+    embedder.unload()
+    out = []
+    for hit in hits:
+        p = hit.payload or {}
+        out.append(
+            {
+                "episode": p.get("episode"),
+                "ts": p.get("ts"),
+                "speaker": p.get("speaker"),
+                "text": p.get("text"),
+                "score": round(float(hit.score), 3),
+            }
+        )
+    return out, warnings

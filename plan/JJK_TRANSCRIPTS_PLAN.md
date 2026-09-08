@@ -1,6 +1,6 @@
 # JJK Anime Transcript Ingestion — Plan (2026-09-08, v2 post-council)
 
-Status: **Phase 1 EXECUTED (2026-09-08, drift log D12).** Council-reviewed
+Status: **Phase 1 EXECUTED (2026-09-08, drift log D12) + Phase 2 EXECUTED (2026-09-08, D13).** Council-reviewed
 (run ea58f12b; verdict `/tmp/jjk-transcript-council/verdict.md`).
 v1's shared-collection Phase 2 was rejected as technically broken (code-verified:
 no `doc_type` payload field exists; point ids are the wiki `chunks` rowids and
@@ -91,7 +91,7 @@ wiki page titled "Episode N" exists — it never checks the quoted line is in
 the transcript (blind spot #2: false green). No "already verified" claim
 anywhere; line-level cross-checking is a later task.
 
-## Phase 2 — embedding (post-campaign, on demonstrated need)
+## Phase 2 — embedding — **EXECUTED 2026-09-08 (D13)**
 
 **Rejected (v1 design):** shared Qdrant collection + `doc_type` payload —
 mechanically impossible/contaminating as analyzed above.
@@ -114,6 +114,59 @@ mechanically impossible/contaminating as analyzed above.
 - Optional later: `[MM:SS]` time-rank anchor for the timeline door
   (blind spot #7); the tier-0 transcript containment check, if ever added,
   is a **fifth gate** and needs its own governance sign-off (blind spot #5).
+
+## Phase 2 execution record (2026-09-08)
+
+- Code (pre-written before the run; the run verified it): `embed_series()` /
+  `search_series()` / `stale_reasons()` in `scriptengine/transcripts.py`; CLI
+  doors `transcripts-embed` (idempotent, `--force`) + `transcript-search`
+  (`--limit`, `--episode`). Separate `series/jjk/qdrant-transcripts/` Qdrant
+  dir + `embed_meta.json` (manifest-sha + per-export sha staleness marker).
+  Zero changes to the gated store code.
+- One-line fix during the run: `_export_shas` keyed the manifest's export
+  entries on a `key` field that does not exist (the import manifest keys
+  them by `url`) — the first two embed runs (23:01, 23:06) crashed with
+  `KeyError: 'key'` after writing the vectors but before the meta file; the
+  crash was invisible twice because the pipeline rc was masked by `| tail`
+  (caught on the third run, RC=1). Fixed: key by `url` (1 line + comment).
+- Receipts: **16,226 points** (15,411 dialogue lines + 815 sign lines),
+  `device=cuda`, model `BAAI/bge-large-en-v1.5` (1024 dims), ~3.5 min in the
+  one-copy window (A stopped `:8000` 22:51:42, restarted it on CUDA
+  23:17:41, pid 23306 — `reports/master-work/decisions.md`). Idempotency:
+  immediate re-run = "Unchanged since the last embed (16226 points) -
+  skipped" (RC=0). Staleness marker live: `embed_meta.json` holds the
+  manifest sha + the 3 export shas (S1/S2/movie).
+- Smoke (no STALE warnings either way): plain query "Sukuna threatens the
+  students at the school" → top hit E21 `[03:26]` Geto "Sukuna's actions"
+  (0.754); `--episode E22` filter → all 5 hits E22 (top: `[09:29]` Mahito
+  "Sukuna's fingers cause harm, though." 0.683).
+- Movie-tag branch (recorded here per the plan's blind spot #1): the
+  `(Movie <name>)` citation branch in `scriptengine/eval/verify.py` does a
+  structural check against the corpus film page ("Jujutsu Kaisen 0" matches
+  "Jujutsu Kaisen 0: The Movie"), like the episode branch; the line-level
+  cross-check against the transcript store remains a later task (same shape
+  as Phase 1's blind spot #2). `tests/test_verify_movie.py` 3/3 green
+  (offline, run first per the job spec).
+- Deliberate exclusions (with reasons):
+  - **LLM speaker attribution** = a separate campaign on demonstrated need
+    (unverifiable guesswork in a never-guess corpus + heavy GPU job under the
+    hard rule + re-runs on every re-export) — carried over from Phase 1.
+  - **Tier-0 transcript containment as a 5th standing gate** = needs its own
+    governance sign-off (blind spot #5); not added.
+  - **`/transcript` HTTP endpoint** = YAGNI; the `transcript-search` CLI door
+    covers the demonstrated need.
+  - **`[MM:SS]` time-rank anchors** for the timeline door (blind spot #7)
+    = optional later; the payload already carries `ts`, so this is a
+    retriever-side feature when the timeline ask appears.
+- Campaign-neutral as planned: no `facts.db` writes, the four standing gates
+  untouched, transcripts stay out of the D6 denominator.
+
+**What Phase 2 does NOT claim:** `transcript-search` ranks by cosine
+similarity over the whole store (episode filter is a payload match, not a
+re-rank within the episode); speaker labels remain the archive's best effort
+until the attribution campaign; "no STALE warnings" at run time only proves
+the manifest matched — a re-import must re-run `transcripts-embed` (the
+marker exists exactly so that re-run is detectable).
 
 ## Governance
 

@@ -444,3 +444,37 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   (embedding) stays deferred to a concrete FTS retrieval failure.
 - **Return address:** trunk unchanged (JJK campaign closed; P6 not started;
   next owner-authorized work is the CSM campaign).
+
+### D13 — anime transcript embedding + movie-tag verify branch (out-of-campaign, 2026-09-08)
+- **Trunk step:** none — out-of-campaign, after the JJK campaign closed (D11/D12)
+- **What happened:** Phase 2 of `plan/JJK_TRANSCRIPTS_PLAN.md` executed in
+  the open one-copy CUDA window (A stopped `:8000` 22:51:42, restarted it on
+  CUDA 23:17:41 pid 23306 — `reports/master-work/decisions.md`):
+  `transcripts-embed --series jjk` → **16,226 points** (15,411 dialogue +
+  815 sign lines) in the separate `series/jjk/qdrant-transcripts/` Qdrant
+  dir, `device=cuda`, `BAAI/bge-large-en-v1.5` (1024 dims), ~3.5 min; the
+  `embed_meta.json` staleness marker (manifest sha + 3 export shas, S1/S2/
+  movie) landed and an immediate re-run skips ("Unchanged … 16226 points");
+  smoke search plain + `--episode E22` filter passed with no STALE warnings
+  (top hits: E21 Geto "Sukuna's actions" 0.754 plain; E22 Mahito
+  "Sukuna's fingers cause harm, though." 0.683 filtered). The
+  `(Movie <name>)` citation branch in `scriptengine/eval/verify.py`
+  (structural check vs the corpus film page; line-level transcript
+  cross-check stays a later task, like Phase 1's blind spot #2) is in
+  `tests/test_verify_movie.py`, 3/3 green, run first per the job spec.
+  One-line fix during the run: `_export_shas` keyed the import manifest's
+  export entries on a `key` field that does not exist (they are keyed by
+  `url`) — the first two embed runs crashed with `KeyError: 'key'` after
+  writing the vectors but before the meta, invisibly (the pipeline rc was
+  masked by `| tail`); caught on the third run (RC=1) and fixed by keying
+  on `url`. Deliberate exclusions, recorded with reasons in the plan:
+  LLM speaker attribution (separate campaign), tier-0 transcript
+  containment as a 5th gate (governance sign-off), `/transcript` HTTP
+  endpoint (YAGNI), `[MM:SS]` time-rank anchors (optional later).
+- **Why:** the v2 council design (run `ea58f12b`) with the owner-directed
+  trigger (TRANSCRIPT_JOB.md, B session of the A/B deployment); the
+  embedding question was demonstrable in the open window, so it ran then
+  instead of waiting for an FTS failure.
+- **Return address:** trunk edit — no return (out-of-campaign; CSM campaign
+  todos stay parked per the job spec). The pilot transcript skill lives
+  outside this repo (subarchive tooling) and is deliberately not committed.

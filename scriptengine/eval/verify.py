@@ -27,10 +27,13 @@ from typing import Any
 
 from scriptengine.config import SeriesPaths
 
-# "(Chapter 118, Episode 41)", "(Modulo Chapter 16)", "(Manga Episode 137)".
+# "(Chapter 118, Episode 41)", "(Modulo Chapter 16)", "(Manga Episode 137)",
+# "(Movie Jujutsu Kaisen 0)" (a film citation; the wiki has no Chapter/Episode
+# numbering for the movie, and its lines live in the transcript store).
 TAG = re.compile(
     r"\((?:([A-Z][A-Za-z']*)\s+)?Chapter\s+([\d.\-]+)(?:,\s*Episode\s+([\d.\-]+))?\)"
     r"|\((?:([A-Z][A-Za-z']*)\s+)?Episode\s+([\d.\-]+)\)"
+    r"|\(Movie\s+([^()]+)\)"
 )
 _REF = re.compile(r"\{\{\s*[Rr]ef[^|}]*\|([^{}]*)\}\}")
 _REF_TAG = re.compile(r"<ref[^>/]*(?:/\s*>|>(.*?)</ref\s*>)", re.S | re.IGNORECASE)
@@ -120,6 +123,19 @@ def verify_script(text: str, paths: SeriesPaths) -> dict[str, Any]:
 
     for match in TAG.finditer(text):
         tag = match.group(0)
+        if match.group(6):
+            # Movie citation: a film page matching the name must exist in the
+            # corpus ("Jujutsu Kaisen 0" matches "Jujutsu Kaisen 0: The
+            # Movie"). Structural, like the episode branch; the line-level
+            # cross-check against the transcript store remains a later task.
+            name = match.group(6).strip()
+            issues: list[str] = []
+            if not any(t == name or t.startswith(name) for t in corpus["titles"]):
+                issues.append(f"no movie page matching {name!r} in the crawl")
+            seen.add(tag)
+            if issues:
+                findings.append({"tag": tag, "issues": issues})
+            continue
         if match.group(2):
             work, number, episode, kind = (
                 match.group(1) or "", match.group(2), match.group(3), "Chapter"
