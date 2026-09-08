@@ -19,3 +19,12 @@ echo launched; for i in $(seq 1 10); do h=$(curl -s --max-ti"}
 {"ts":"2026-09-08T18:10:32+05:30","event":"START","pid":"104284","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"span-recall --series jjk\" >/dev/null; then echo \"$(date +%H:%M:%S) iter $i: probe running\"; sleep 15; else echo \"$(date +%H:%M:%S) iter $i: probe DONE\"; break; fi; done; "}
 {"ts":"2026-09-08T18:12:48+05:30","event":"END","pid":"104284","dur_s":"136"}
 {"ts":"2026-09-08T18:13:03+05:30","event":"START","pid":"105015","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && (t0=$(date +%s); python -m scriptengine.cli canon-run --series opm --skip-eval > /tmp/canon_opm_csm3b.log 2>&1; echo \"CANON_OPM rc=$?"}
+{"ts":"2026-09-08T18:15:29+05:30","event":"END","pid":"105015","dur_s":"146"}
+{"ts":"2026-09-08T18:15:44+05:30","event":"START","pid":"105823","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm.json.heldout.json --sanity 4 2>&1 | tail -18; echo "}
+{"ts":"2026-09-08T18:15:49+05:30","event":"END","pid":"105823","dur_s":"5"}
+{"ts":"2026-09-08T18:15:54+05:30","event":"START","pid":"105859","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && (t0=$(date +%s); python -m scriptengine.cli canon-run --series csm > /tmp/canon_csm_csm3b.log 2>&1; echo \"CANON_CSM rc=$? duration=$("}
+{"ts":"2026-09-08T18:18:20+05:30","event":"END","pid":"105859","dur_s":"146"}
+{"ts":"2026-09-08T18:24:21+05:30","event":"START","pid":"107783","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm.json.heldout.json --sanity 4 > /tmp/spanrec_csm_hel"}
+{"ts":"2026-09-08T18:24:21+05:30","event":"START","pid":"107784","cmd":"python -m scriptengine.cli span-recall --series csm --panel reports/csm/panel_csm.json.heldout.json --sanity 4 "}
+{"ts":"2026-09-08T18:24:36+05:30","event":"END","pid":"107784","dur_s":"15"}
+{"ts":"2026-09-08T18:24:36+05:30","event":"END","pid":"107783","dur_s":"15"}
