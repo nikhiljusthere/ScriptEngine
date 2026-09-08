@@ -499,9 +499,19 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   (“in one breath …” theme-restate) deleted, the ending now lands on the
   unexplained afterlife image; “not X, it is Y” reframes, rule-of-three
   packs, -ing-tail analyses and weasel wording removed; plain emotion
-  words kept (“Toji is proud / glad”). Result: 3,925 words, **89 tags /
+  words kept (“Toji is proud / glad”). The owner then set the target at a
+  ~45-min runtime (~6,000 words), so the script was expanded with sourced
+  material (not padding): a full Arsenal section (Split Soul Katana,
+  Inverted Spear of Heaven, Chain of a Thousand Miles, the inventory
+  curse, Playful Cloud, the broadsword/knives/handgun), a How-he-hunts /
+  tactics section (the bounty design, the boat-race/Shiu beat, the
+  infiltration, the read-and-counter method), deeper mechanics (the
+  Physically Gifted, tracking by footprint/odor, endurance in a long
+  fight), the Naobito beat in the Dagon fight, and more Geto/Gojo
+  transcript dialogue. Final: **6,037 words, 104 tags /
   29 distinct, `cli verify` clean** (every tag checks out against the raw
-  wiki). Original backed up alongside the file (`Toji.md.orig-20260908-2343`).
+  wiki; ~46 min at 132 wpm). Original backed up alongside the file
+  (`Toji.md.orig-20260908-2343`).
 - **Why:** owner directive 23:4x (“you will do it on your own”) + the follow-
   up to add Gojo / old-man-Dagon / “fangs” citations at the start and in
   between; the transcript store (D13) made verbatim dialogue sourceable.

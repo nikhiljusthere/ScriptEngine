@@ -11,8 +11,9 @@ edit those.
 - **2026-09-08 (Toji script rewrite COMPLETE, owner-directed — drift D14):**
   - The owner-directed autonomous rewrite of the Toji Fushiguro script
     (`E:\Personal\Plot Works\Video 1 - Toji\Script\Toji.md`) is done and
-    **verify-clean: 89 tags / 29 distinct, every tag checks out against the
-    raw wiki** (`cli verify --series jjk`), 3,925 words (was 4,044 / 91 tags).
+    **verify-clean: 104 tags / 29 distinct, every tag checks out against the
+    raw wiki** (`cli verify --series jjk`), 6,037 words (was 4,044 / 91 tags;
+    ~46 min at 132 wpm — the owner's ~45-min target).
     Method: `humanscope` Mode A structure sheet before drafting, Mode B
     30-feature audit before/after, citation discipline (one tag per
     (chapter, episode) run, tag every sentence on source change), `cli verify`
@@ -20,7 +21,15 @@ edit those.
     “in one breath …” paragraph deleted; ending now lands on the
     unexplained afterlife image); removed “not X, it is Y” reframes /
     rule-of-three / -ing-tail / weasel wording; kept plain emotion words.
-    Added 5 verbatim citation clusters from the D13 transcript store: Gojo
+    Added verbatim citation clusters from the D13 transcript store, then
+    expanded to the ~45-min target with sourced material (not padding): a
+    full Arsenal section (Split Soul Katana, Inverted Spear of Heaven,
+    Chain of a Thousand Miles, the inventory curse, Playful Cloud, the
+    broadsword/knives/handgun), a How-he-hunts/tactics section (bounty
+    design, the boat-race/Shiu beat, the infiltration, the read-and-counter
+    method), deeper mechanics (Physically Gifted, footprint/odor tracking,
+    long-fight endurance), the Naobito Dagon beat, and more Geto/Gojo
+    dialogue. The 5 key citation clusters: Gojo
     “since he has no cursed energy, I can't read his presence” (cold-open,
     Ch 71/E27); Dagon-fight narrator VO “he had become a murder machine, his
     fangs constantly directed toward the strongest” (Ch 110/E39); Gojo
