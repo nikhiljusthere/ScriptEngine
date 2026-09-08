@@ -94,6 +94,16 @@ re-crawling.
   chapter to its episode through the graph. Numbers are looked up, never
   inferred: a chapter the anime never adapted gets no episode. `cli audit`
   reports the coverage and fails when citations stop reaching the prose.
+- **A script ships in three layers.** The contract is in `scriptengine/api/
+  rules.py` (`ANNOTATION_RULES`): a chapter/episode tag per contiguous run;
+  verbatim quotes marked with their transcript timestamp `[E<n> mm:ss]`;
+  and a `[covers X-Y]` source-span line after every third passage naming the
+  events/battles and ch/ep ranges those passages draw on. `script-gen`
+  (`scriptengine/script/writer.py`) always writes a words-only companion,`
+  `<title>-clean.md`, beside the tagged script, and a deterministic backstop
+  rebuilds the `[covers]` lines from the tags if the model left them out.
+  A tag cites the thing the line is about (a character's span in an arc, a
+  fight's span), not the whole arc. Full spec: `docs/SCRIPT_STYLE.md` §6.
 - **Run `eval` after touching chunking, fusion, retrieval or the parser.** It is
   a regression suite, not a scoreboard. If a gold question is wrong, fix the
   question and record why in `gold_jjk.json`. Do not tune the retriever to make

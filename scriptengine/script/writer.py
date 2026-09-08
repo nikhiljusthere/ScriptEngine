@@ -41,7 +41,7 @@ from scriptengine.config import (
     script_destination,
     series_paths,
 )
-from scriptengine.eval.verify import verify_script
+from scriptengine.eval.verify import TAG, verify_script
 from scriptengine.llm.client import LLMClient
 from scriptengine.retrieve.router import Route, route
 
@@ -58,6 +58,15 @@ _FENCE = re.compile(r"^```[^\n]*\n(.*?)\n```\s*$", re.S)
 
 # First line is the title: `**A Clean Name**`.
 _TITLE = re.compile(r"^\*\*(.+?)\*\*\s*$")
+
+# Marker families a finished script may carry. verify_script reads only the
+# round-bracket (Chapter/Episode) tags, so the square-bracket ones are free to
+# use in the script and free to strip for the words-only companion.
+_COVERS_BLOCK = re.compile(
+    r"(?:^[ \t]*\[covers \d[\d\-]*\][^\n]*\n?|^[ \t]*·[^\n]*\n?)+", re.M
+)
+_TS = re.compile(r"\[E\d+(?:[ ,:][^\]]+)?\]")
+_ANY_PAREN = re.compile(r"\([^()]*\)")
 
 # The same budget rule as script_writer.ps1's Get-AutoBudget: words times
 # eight, clamped so a short topic still gets a workable bundle and a huge one
@@ -213,6 +222,81 @@ def write_script(
 def word_count(text: str) -> int:
     """Prose words, roughly: whitespace-separated tokens."""
     return len(text.split())
+
+
+def make_clean_version(text: str) -> str:
+    """The script with every citation, timestamp and source-span marker removed.
+
+    The words-only companion an editor records from: the chapter/episode tags,
+    the [E<n> mm:ss] transcript timestamps and the [covers X-Y] source-span
+    blocks (header lines plus their '·' event lines) are stripped, and the
+    whitespace they leave behind is collapsed. The prose is never touched.
+    """
+    out = _COVERS_BLOCK.sub("", text)
+    out = _TS.sub("", out)
+    out = _ANY_PAREN.sub("", out)
+    out = re.sub(r"[ \t]{2,}", " ", out)
+    out = re.sub(r" ?\n", "\n", out)
+    return re.sub(r"\n{3,}", "\n\n", out).strip() + "\n"
+
+
+def _passage_tags(line: str) -> list[str]:
+    """The distinct chapter/episode tags a line carries, in order."""
+    seen: set[str] = set()
+    out: list[str] = []
+    for match in TAG.finditer(line):
+        if match.group(0) not in seen:
+            seen.add(match.group(0))
+            out.append(match.group(0))
+    return out
+
+
+def _compact_tag(tag: str) -> str:
+    """A tag in the covers shorthand: '(Chapter 66, Episode 25)' -> 'Ch 66, Ep 25'."""
+    chapter = re.search(r"Chapter\s+([\d.\-]+)", tag)
+    episode = re.search(r"Episode\s+([\d.\-]+)", tag)
+    if not chapter and not episode:
+        return ""
+    text = f"Ch {chapter.group(1)}" if chapter else ""
+    if episode:
+        text = f"{text}, Ep {episode.group(1)}" if text else f"Ep {episode.group(1)}"
+    return text
+
+
+def ensure_covers_blocks(text: str) -> str:
+    """Guarantee a [covers X-Y] source-span line after every three passages.
+
+    rules.py asks the model to write them, labelled with the event names; this
+    is the deterministic backstop and it only fires when the model wrote none,
+    so a labelled set is never clobbered. When it does fire, each block lists
+    the distinct chapter/episode spans the three passages already carry, so the
+    locators are the real ones, never invented. A passage is a non-blank line
+    that is neither a marker nor a section heading nor the title line.
+    """
+    if re.search(r"^\s*\[covers ", text, re.M):
+        return text
+    lines = text.splitlines()
+    passages = [
+        i for i, line in enumerate(lines)
+        if line.strip() and not re.match(r"^\s*(\[covers |·|\*)", line.strip())
+    ]
+    passage_set = set(passages)
+    out: list[str] = []
+    number = 0
+    for i, line in enumerate(lines):
+        out.append(line)
+        if i in passage_set:
+            number += 1
+            if number % 3 == 0:
+                tags: list[str] = []
+                for gi in passages[number - 3:number]:
+                    for tag in _passage_tags(lines[gi]):
+                        compact = _compact_tag(tag)
+                        if compact and compact not in tags:
+                            tags.append(compact)
+                body = " · ".join(tags) if tags else "no locator in these three passages"
+                out.append(f"[covers {number - 2}-{number}] {body}")
+    return "\n".join(out)
 
 
 def expand_script(
@@ -451,20 +535,28 @@ def generate_script(
     # on every regenerate; the user's own subject is the one that stays.
     saved_title = title or subject
     text = _apply_title(text, saved_title)
+    prose_words = word_count(text)
+    text = ensure_covers_blocks(text)
+    clean = make_clean_version(text)
     path = None
+    clean_path = None
     if write:
         path = script_destination(saved_title, settings)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text + "\n", encoding="utf-8")
+        clean_path = path.with_name(path.stem + "-clean.md")
+        clean_path.write_text(clean, encoding="utf-8")
 
     return {
         "script": text,
         "title": saved_title,
         "path": path,
+        "clean_script": clean,
+        "clean_path": clean_path,
         "bundle": bundle,
         "report": report,
         "attempts": attempts,
-        "words": word_count(text),
+        "words": prose_words,
         "target_words": words,
         "expanded": expanded,
         "trimmed": trimmed,

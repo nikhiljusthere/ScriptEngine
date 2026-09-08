@@ -590,3 +590,25 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   and the lone 25th), each citing the distinct events/battles + ch/ep ranges
   those 3 passages draw on. `Toji-clean.md` regenerated (5,589 words; strips
   the `[covers X-Y]` + `·` lines). `cli verify` still clean (104 tags).
+
+### D15 — the Toji script conventions made permanent in the pipeline (out-of-campaign, 2026-09-08)
+- **Trunk step:** none — out-of-campaign (the JJK campaign closed at D11; CSM
+  todos stay parked).
+- **What happened:** the three citation conventions the owner set on the Toji
+  script — verbatim `[E<n> mm:ss]` timestamps, a `[covers X-Y]` source-span
+  line after every 3 passages, a words-only companion, and the "cite the
+  thing the line is about, not the whole arc" principle — are now baked into
+  the pipeline, not just the one Toji file. `scriptengine/api/rules.py`
+  (`ANNOTATION_RULES`, the contract every prompt gets) now states all four.
+  `scriptengine/script/writer.py` always writes the words-only
+  `<title>-clean.md` companion (`make_clean_version`) and a deterministic
+  backstop (`ensure_covers_blocks`) rebuilds the `[covers]` lines from the
+  tags if the model omits them. `docs/SCRIPT_STYLE.md` §6 + a `CLAUDE.md`
+  working-agreement quote the new rules. 6 new tests in
+  `tests/test_script_gen.py` (all 47 script-gen tests green; the Toji
+  `Toji-clean.md` regenerated through the pipeline function, 5,589 words,
+  0 markers). The square-bracket markers are invisible to `cli verify`
+  (which only reads the round-bracket `(Chapter/Episode)` tags).
+- **Why:** the owner asked the conventions to be permanent — reproducible on
+  every future `script-gen`, not a hand-edit to one script.
+- **Return address:** none — out-of-campaign; CSM campaign todos stay parked.

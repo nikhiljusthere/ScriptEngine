@@ -100,7 +100,10 @@ ANNOTATION_RULES = """\
 - Never invent a chapter or episode number. Only numbers stated in the research context may be used: the `sourced:` headers, the inline locators, debut lines, and "Used by <character> in: Chapter N" lines.
 - When the context gives no chapter or episode for a fact, write that line plainly with no tag. Do not guess.
 - Tags name the chapter/episode of the moment being described. They are not a citation list.
-- Never write a bare retriever marker such as "[1]" or "[12]" in the script.
+- Cite the thing the line is about, not the whole arc. A line on a character's appearance in an arc cites that character's span in it (Toji in Gojo's Past is Ch 66-75, not the arc's full Ch 66-79); a line on a fight cites the fight's span, Chapters X-Y, Episodes A-B, plus a start timestamp when it is a distinct scene.
+- A verbatim quote the context carries as a transcript line (speaker + MM:SS) is marked with its timestamp in square brackets, [E27 14:17]; a multi-line quote takes a comma-separated span, [E27 14:17, 14:22].
+- Every third passage (paragraph) carries a source-span line directly beneath it, `[covers 4-6]` for the second group of three, naming the distinct events/battles and their ch/ep ranges that those passages draw on, deduplicated. It is a reference line, not narration, and the only list a script may contain.
+- Never write a bare retriever marker such as "[1]" (a number alone). A timestamp `[E<n> mm:ss]` and a source-span `[covers n-m]` line are the only square-bracket markers a script may contain.
 """
 
 

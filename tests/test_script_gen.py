@@ -436,3 +436,64 @@ class TestApplyTitle:
         text = writer._apply_title("* **The Sealing**\n\nprose", "Shibuya Incident")
         assert text.splitlines()[0] == "**Shibuya Incident**"
         assert "prose" in text
+
+
+class TestMakeCleanVersion:
+    def test_strips_tags_timestamps_and_covers(self):
+        text = (
+            "**Title**\n\n"
+            "* **The Sealing**\n\n"
+            "Gojo is sealed. (Chapter 83, Episode 32) [E32 01:02]\n"
+            "He says it plain. [E32 01:10, 01:15]\n\n"
+            "[covers 1-3] Ch 83, Ep 32\n"
+            "  · the sealing, Ch 83, Ep 32\n"
+            "The end. (Chapter 84)\n"
+        )
+        out = writer.make_clean_version(text)
+        assert "(Chapter" not in out
+        assert "[E32" not in out
+        assert "[covers" not in out
+        assert "·" not in out
+        assert "Gojo is sealed." in out
+        assert "He says it plain." in out
+        assert "The end." in out
+
+    def test_prose_is_untouched(self):
+        text = "A line. (Chapter 1)\nAnother line. [E1 00:05]\n"
+        assert writer.make_clean_version(text) == "A line.\nAnother line.\n"
+
+
+class TestEnsureCoversBlocks:
+    def test_adds_a_block_after_every_three_passages(self):
+        text = (
+            "**Title**\n\n"
+            "one (Chapter 1)\n\ntwo (Chapter 2)\n\nthree (Chapter 3)\n\n"
+            "four (Chapter 4)\n\nfive (Chapter 5)\n\nsix (Chapter 6)\n"
+        )
+        out = writer.ensure_covers_blocks(text)
+        assert "[covers 1-3] Ch 1 · Ch 2 · Ch 3" in out
+        assert "[covers 4-6] Ch 4 · Ch 5 · Ch 6" in out
+
+    def test_existing_covers_blocks_are_not_clobbered(self):
+        text = "**Title**\n\none (Chapter 1)\n\n[covers 1-3] Ch 1\n\ntwo (Chapter 2)\n"
+        assert writer.ensure_covers_blocks(text) == text
+
+    def test_repeated_tags_within_a_group_are_deduplicated(self):
+        text = (
+            "**Title**\n\n"
+            "a (Chapter 5, Episode 3)\n\nb (Chapter 5, Episode 3)\n\n"
+            "c (Chapter 5, Episode 3)\n"
+        )
+        out = writer.ensure_covers_blocks(text)
+        block = next(line for line in out.splitlines() if line.startswith("[covers"))
+        assert block.count("Ch 5") == 1
+
+    def test_generate_script_writes_the_clean_companion(self, fake_client, tmp_path: Path):
+        fake_client.answers = [CLEAN_SCRIPT]
+        settings = Settings(scripts_root=tmp_path)
+        result = writer.generate_script("Shibuya Incident", series="jjk", words=20, settings=settings)
+        assert result["clean_path"] is not None
+        assert result["clean_path"].name == "Shibuya Incident-clean.md"
+        saved_clean = result["clean_path"].read_text(encoding="utf-8")
+        assert "(Chapter" not in saved_clean
+        assert "The curtain falls on Shibuya" in saved_clean

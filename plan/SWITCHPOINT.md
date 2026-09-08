@@ -94,6 +94,13 @@ edit those.
   `series/jjk/facts.db`, never invented. `cli verify --series jjk` still clean
   (104 tags; the `[covers X-Y]` blocks are a new human-curated format, not
   verify-checked).
+- Toji conventions made **permanent in the pipeline** (D15, same session):
+  `rules.py` `ANNOTATION_RULES` now states all four conventions (timestamps,
+  `[covers X-Y]` after every 3 passages, words-only companion, cite-the-thing
+  not-the-arc); `writer.py` always writes `<title>-clean.md` and a
+  `ensure_covers_blocks` backstop rebuilds the `[covers]` lines from the tags
+  if the model omits them; `docs/SCRIPT_STYLE.md` §6 + a `CLAUDE.md`
+  working-agreement quote the rules. 6 new script-gen tests (47 green).
 
 ## gpu-gate3 handoff (2026-09-08 — A=01a08064 (fresh CSM session; retargeted from the retired 01a07ff0) → chain → C on 100k → A resume)
 
