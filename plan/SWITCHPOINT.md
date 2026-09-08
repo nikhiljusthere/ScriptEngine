@@ -110,6 +110,31 @@ edit those.
   + explicit timeout). CSM campaign todos created (#11–#15). Council on
   the CSM plan launched. Committed `281fe2e`.
 
+## gpu-live1 handoff (2026-09-08 — A=01a07f33 → chain → C on 100k → A resume)
+
+First LIVE run of the gpu-handoff chain (docs/ops/PC_GPU_HANDOFF.md):
+`gpu-handoff.sh --tier2 plan/gpu_live1.spec` flips 262k→100k, opens C
+(visible terminal `GPU-gpu_live1`, fresh 100k pi) which runs the JJK gate
+baseline per `plan/gpu_live1_task.md` (→ `reports/master-work/GPU_LIVE1_REPORT.md`),
+flips back 262k, and a gated plain-shell typer types the resume line into A's
+window (50331658). A sits idle at its prompt meanwhile (frozen context, zero
+cost). Engine was untouched by today's MASTER_WORK deploy, so the baseline
+should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
+
+**On resume (the typed RESUME line is my next user message):**
+1. Read `reports/master-work/GPU_LIVE1_REPORT.md` (C's baseline).
+2. Restore `:8000` to CPU (C left it on CUDA; 262k co-location rule —
+   headroom 3.5 GiB < 6 GiB).
+3. Check chain state: `reports/master-work/gpu_handoff_state/gpu_live1.{log,stalled,typed}`
+   + `/tmp/gpu_live1_chain.log`. A `STALLED` flag = inspect, then replay:
+   `setsid nohup bash tools/master-work/gpu-handoff.sh --tier2 plan/gpu_live1.spec >/dev/null 2>&1 &`
+   (gates are idempotent).
+4. Trash C's transcript (`reports/master-work/gpu_handoff_state/c_session`)
+   — only AFTER reading the report (deleting it earlier poisons the
+   switch-back fit guard).
+5. CSM resume remains on hold (owner-paused; the stuck session 01a07cab
+   resumption is a separate, later flip).
+
 ## Switch log (machine-appended by qwen-switch.sh)
 
 - (none yet)- 2026-09-07T22:05:09+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=8988MiB

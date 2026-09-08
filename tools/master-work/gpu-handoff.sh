@@ -137,8 +137,10 @@ if [ "$MODE" = tier2 ] || [ "$MODE" = test ]; then
   else
     say "opening C terminal (title GPU-$SPECNAME) with task + wrapper"
     setsid nohup gnome-terminal --title "GPU-$SPECNAME" -- bash -c "
-      pi -p \"\$0\" >/dev/null 2>&1
+      CID=\"c-$(basename "$SPECNAME")-\$(date +%s)\"
+      pi -p --session-id \"\$CID\" \"\$0\" >/dev/null 2>&1
       rc=\$?
+      ls -t /home/goblin/.pi/agent/sessions/*/*\"\$CID\".jsonl 2>/dev/null | head -1 > '$STATE_DIR/c_session'
       [ \$rc -eq 0 ] && echo \"state=done\" > '$STATE' || echo \"state=failed\" > '$STATE'
       date -Is >> '$STATE'
     " "$TASK" >/dev/null 2>&1 &
@@ -173,8 +175,12 @@ if { [ "$MODE" = tier2 ] || [ "$MODE" = test ]; } && [ -n "${STATEV:-}" ]; then
     echo "mode=262k" > /tmp/gpu_handoff_test_mode   # typer gate reads this in test mode
   else
     say "switch-back 100k -> 262k (PI_SESSION_FILE=C transcript, --force backstop)"
-    # C's transcript: newest session file is C's (it started after A's checkpoint)
-    CSESS=$(ls -t /home/goblin/.pi/agent/sessions/*/*.jsonl 2>/dev/null | head -1)
+    # C's transcript: the wrapper recorded it under a deterministic session id
+    # (newest-file fallback is wrong here — the MASTER_WORK poller spawns a-*
+    # one-shots in the same window and would win the "newest" race)
+    CSESS=$(cat "$STATE_DIR/c_session" 2>/dev/null)
+    [ -n "$CSESS" ] || { CSESS=$(ls -t /home/goblin/.pi/agent/sessions/*/*.jsonl 2>/dev/null | head -1); say "c_session missing — newest-file fallback"; }
+    say "switch-back reference: $CSESS"
     ( cd "$NW" && PI_SESSION_FILE="$CSESS" ./qwen-switch.sh 262k --force ) >> "$LOG" 2>&1 \
       || { echo "state=stalled-switch-back" > "$STALLED"; exit 1; }
   fi
