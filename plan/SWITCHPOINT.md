@@ -9,11 +9,15 @@ edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
 
-- mode: **100k (current; the 2026-09-07 23:32 switch, `--force` — file-bytes
-  guard overstates, live context well under; `:8000` back on CUDA, headroom
-  9002 MiB)** → the CSM campaign runs its CUDA windows in 100k; return to 262k
-  at the campaign's close (no handoff needed — 262k > transcript, reloads
-  in place).
+- mode: **100k + `--vision` (2026-09-08: owner added the vision flag to the
+  serve profiles — `serve_100k.sh` + the `serve.sh` 262k template — for a
+  local-LLM PC-control experiment; the reload keeps ctx 102400. Pre-reload
+  headroom was 9002 MiB with `:8000` on CUDA — re-check `nvidia-smi` AFTER
+  the reload: the fixed vision GPU allocation eats into that headroom; if
+  free < 6 GiB, move `:8000` to CPU)** → CSM is paused (owner, 2026-09-08);
+  its CUDA windows still run in 100k when it resumes; 262k at the
+  campaign's close (no handoff needed — 262k > transcript, reloads in
+  place).
 - git: `8f8ffdb` (council verdict: SKIP T0–T4 bank, 8-item revised plan) on the
   campaign trail `281fe2e` (CSM Wave-0) → `4e7c304` (checkpoint: wave-0 closed,
   council in flight) → `8f8ffdb` (verdict). Untracked: `tools/csm/` (CSM-1's
@@ -46,12 +50,14 @@ edit those.
     n=4 stable sample; the existing bank `questions/csm.json` (39 questions,
     zero revid stamps) must be inventoried + revid-stamped (CSM-1), never
     clobbered — council point 3 / §5.6).
-  - **In flight: CSM-1 (inventory + revid-stamp the CSM seed bank)** —
-    `tools/csm/stamp_revids.py` authored (untracked at write time); verify
-    on resume whether it has stamped `questions/csm.json` yet (0 stamps at
-    council time), run it if not, commit tool + stamped bank. CSM-2..8
-    pending per the verdict; the per-session todo list died with the
-    overflowed session, so recreate it from the verdict file.
+  - **Owner paused the CSM campaign (2026-09-08)** — CSM-1 stays in flight
+    but on hold; todos re-created when it resumes. Current activity: a
+    local-LLM PC-control experiment — vision on the 27B via ninfer's
+    `--vision` flag (was off; the API returned 400 `vision_disabled`);
+    the box is an X11 session (tty2) so xdotool is the input path; survey
+    (Reddit/web, 2026-09-08): off-the-shelf = bytedance/UI-TARS-desktop
+    (34k★, local VLM, "Remote Computer Operator"), or the DIY loop
+    screenshot → VLM (`:18080` now multimodal) → xdotool actions.
   - **New standing rules (owner, 2026-09-07, persisted in CLAUDE.md):**
     no CPU job >15 min (switch Qwen to 100k and run CUDA instead; or run on
     GPU whenever faster); polling loops print a status line every 10–15 s
@@ -75,14 +81,22 @@ edit those.
   - `:8000` is on CUDA with 9 GB headroom (100k profile). Long LLM batches
     still follow the hard rule: dedicate the GPU (stop `:8000` or CPU it
     first).
+  - **`--vision` (2026-09-08)**: now in `serve_100k.sh` + `serve.sh`
+    (262k template). VRAM delta unknown until reload (fixed vision GPU
+    allocation) — check `nvidia-smi` after; rollback = drop the flag and
+    re-run the profile. Pre-existing generated `serve_ctx_*.sh` profiles do
+    NOT carry the flag (regenerated from the template only when the file is
+    recreated). ninfer-work is not a git repo — the flag lives in those two
+    files only.
 - first action on resume (**fresh session — overflow handoff, 2026-09-08**:
   the 100k session died on `context_length_exceeded` 102518 > 102400 and
   summarization recovery failed too; pi.md §5.5 — a fresh transcript always
   fits, this file is the resume):
   1. Recreate the CSM-1..8 todos from `reports/csm/COUNCIL_csm-campaign.md`
      (the per-session todo panel was lost with the dead session).
-  2. `git log --oneline -3` (expect `8f8ffdb` head; only untracked
-     `tools/csm/`).
+  2. `git log --oneline -3` (expect `6a87479` head, clean tree — the
+     overflow-handoff checkpoint committed the switchpoint +
+     `tools/csm/stamp_revids.py`).
   3. Finish CSM-1 (revid-stamp state of `questions/csm.json` via
      `tools/csm/stamp_revids.py`; commit), then CSM-2.
   Standing gates after any build: pytest / eval jjk / span-recall jjk /
