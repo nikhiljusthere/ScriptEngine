@@ -54,3 +54,13 @@ Council item 2 (5.1 + archetype mapping merged). Raw receipts.
   the CSM-6 census runs (council item 6: "a dimension is scheduled only
   when its consumer column names a real query and its acceptance column
   names a test that can fail").
+
+## Known exceptions (council ruling, COUNCIL_csm-1b-2, 2026-09-08)
+
+- `default="jjk"` at `tools/coverage_report.py` (argparse, ~line 224) is an
+  **explicit exception** to the no-series-name-in-.py rule: a CLI default,
+  not per-wiki logic; pre-existing (47e483a). Recorded, not churned.
+- `reports/span-recall/jjk/recall_verbatim.jsonl` carries a 400-line append
+  from the GATE_REBASELINE probe (append-mode bug, dedupe/`done` unwired —
+  §2a trap #2). Fix lands in CSM-3(b); re-running the probe before then
+  appends a duplicate block.

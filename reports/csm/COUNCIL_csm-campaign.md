@@ -516,3 +516,26 @@ on it; item 6f of the revised plan stands.
 sample count: the record is **n=4, not n=5**, because the Expansionist's
 re-run produced no advisory content (expired mid-tool-call, as in the first
 pass); a fifth substantive response requires another fresh run.
+
+## CSM-3 addendum — COUNCIL_csm-1b-2 rulings (2026-09-08)
+
+Item 3 (D5 measurement infra) done-criteria, extended by the cadence council
+(`reports/csm/COUNCIL_csm-1b-2.md`, ruling 4):
+
+1. **Per-door sanity floor** — if any door's raw count is 0 on a sanity
+   subset, halt the sweep (protects the ~51-GPU-hour sweep from grading a
+   dead qa door per G-CSM-2).
+2. **The <6-word short-line floor is decided *before* the panel is pinned**
+   (include it, or record the exclusion in the CSM audit).
+3. **Tier-0 rename** `span-recall` → `chunk-containment` (alias kept).
+4. **§7's four pilot cost numbers** (T0 emergence, T0 survival, new gaps,
+   round-trips) are produced and carried to the done-declaration.
+
+Also per the same record: **G-CSM-4 (the relations door) is ruled OUT of
+CSM-3's three doors** — named owner is the CSM-7 fix phase (router work); the
+11 relations questions stay frozen until it lands. **Hard blocker before
+CSM-3 starts:** the gate re-baseline (100k+CUDA side session; the suite is
+1,249, the GATE_REBASELINE record's 1,242 predates CSM-2's +7 tests) must
+land; on landing, the CLAUDE.md + gates-skill baselines are rewritten
+(1,242 → 1,249) and a CSM gate section is opened in
+`reports/comprehension/GATE.md` as the live record.

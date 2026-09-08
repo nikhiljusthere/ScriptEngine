@@ -1,0 +1,7 @@
+# Peer E — CSM-1b + CSM-2 cadence council
+
+**1. Strongest: B.** Its pre-CSM-3 items are the most rule-grounded and verifiable. The stale gate baseline is a real blocker: git proves `9e13815` (pytest 1,242) predates `42aa296` (+7 tests), so the tree is 1,249 and the standing "1,242" no longer reproduces. B alone flags the in-tree rule breaks — G-CSM-1's "verified in process" has no persisted raw receipt, and G-CSM-4 (relations) has no home in CSM-3's three doors. B's set-14 read (roster = floor, not a wiki total) is the deepest, and B correctly flags `default="jjk"` (line 224). C is runner-up on ops (live 262k OOMs 6 VRAM-sensitive tests — confirmed on nvidia-smi; uncommitted receipts). D has the sharpest catch: 0752 buckets the Makima item as an extraction gap, but the REFUTED note says the prompt was correct.
+
+**2. Biggest blind spot: A.** A signs "no blockers" on three soft items while missing two hard prerequisites: the 1,242→1,249 gate re-baseline, and the uncommitted receipts (`reports/2026-09-08-0746/0752/0824` + `GATE_REBASELINE.md` are untracked).
+
+**3. All five miss §7's four pilot cost numbers as the deliverable.** None lists "produce all four (T0 emergence, T0 survival, new gaps, round-trips) and carry them to the done-declaration"; only E names two. None mention the tier-0 rename `span-recall`→`chunk-containment` (item 3(f)) — without it CSM inherits JJK's misread rc=0.

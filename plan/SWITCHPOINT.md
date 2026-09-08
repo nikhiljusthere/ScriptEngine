@@ -16,18 +16,21 @@ edit those.
   gpu-handoff chain (`docs/ops/PC_GPU_HANDOFF.md` + `tools/master-work/
 gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   the GPU, never `--api` on a chain switch.
-- git: `064093e` (csm: CSM-1 — revid-stamp the seed bank + inventory) on the
-  campaign trail `281fe2e` (wave-0) → `4e7c304` → `8f8ffdb` (council verdict)
-  → `6a87479` (overflow-handoff checkpoint) → `064093e`. Untracked
-  (master-work, not CSM area): `plan/AB_DEPLOYMENT.md`,
+- git: head `42aa296` (csm: CSM-2 — page-type classification + scoreboard
+  generalization) on the campaign trail `… → b526298` (csm: CSM-1b) →
+  `4aa534f` (control: gpu-live2 launch) → `9e13815` (control: gates
+  re-baselined) → `42aa296`. Untracked (master-work, not CSM area):
+  `plan/AB_DEPLOYMENT.md`,
   `reports/master-work/{GPU_LIVE1_REPORT.md,STOP,gpu_handoff_state/}`;
   modified by the master-work process (do not commit from the CSM session):
   `plan/decisions.md`, `plan/state.md`, `reports/master-work/a_wake_log.md`.
 - trunk/excursion address (drift_log §4): **X2 CLOSED** (JJK D6 done, D11) ·
   trunk P6 not-started by owner directive (JJK-only halt). **Active: the CSM
   (Chainsaw Man) campaign** (owner-authorized 2026-09-07): the 8-item plan in
-  `reports/csm/COUNCIL_csm-campaign.md` is the campaign plan; CSM-1 DONE (this
-  checkpoint); **CSM-2 is next**.
+  `reports/csm/COUNCIL_csm-campaign.md` is the campaign plan; **CSM-1, CSM-1b,
+  CSM-2 DONE; the COUNCIL_csm-1b-2 cadence council is complete with 5 rulings
+  applied; CSM-3 is next — blocked on the gate re-baseline side session
+  (gpu-gate3, 100k+CUDA).**
 - work explanation (what's done, what's in flight, the exact next step):
   - **CSM-1 DONE (`064093e`)** — inventory + revid-stamp, zero new
     questions: `questions/csm.json` 39/39 active + `questions/
@@ -41,15 +44,37 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
     same fix batch: Fandom-403 UA + CRLF/indent whole-file churn.
   - Standing four gates NOT re-run for CSM-1: no engine/store change (question
     files + a CSM-only tool in `tools/csm/`); JJK baseline untouched.
-  - **Next: CSM-3** (council item 3): D5 measurement infrastructure —
-    pinned hashed probe panel + held-out split, wired CLI resume, hit_rate
-    over the full panel, the declared short-line floor, all three doors
-    (qa + roster + narrative), and the tier-0 rename span-recall →
-    chunk-containment (alias kept). Done: two consecutive sweeps reproduce
-    the identical panel; resumed run idempotent; per-door raw counts;
-    renamed command + alias work; pytest green.
-  - Council cadence: fires after CSM-2 (2 completed todos) → `reports/csm/
-    COUNCIL_csm-1-2.md` (5 advisors one at a time, then 5 peers — owner rule 2026-09-08; raw receipts).
+  - **CSM-1b DONE (`b526298`)** — stamped-bank validation: 4 in-place gold
+    fixes (reasons in bank notes), 4 numbered engine gaps (G-CSM-1..4),
+    relations bank measured 0/11 (runner `tools/csm/validate_relations.py`).
+    Receipts: `reports/csm/CSM1B_BANK_VALIDATION.md` +
+    `CSM1B_RELATIONS_BANK.md` + raw runs `reports/2026-09-08-{0746,0752}/`.
+  - **CSM-2 DONE (`42aa296`)** — see the done-this-turn line below.
+  - **COUNCIL_csm-1b-2 DONE (2026-09-08)** — 5 advisors + 5 peers (round 1's
+    peer/chairman rounds were void: a harness text-capture bug made them
+    review failure stubs; round 2 re-ran on the recovered advisor text; the
+    run-log section in the record says so). Record:
+    `reports/csm/COUNCIL_csm-1b-2.md` (+ `reports/csm/council-1b-2/peers/`).
+    Rulings applied in the tree: (1) csm-set-14 accepted as corpus-compiled
+    gold with the floor caveat in the bank note; (2) G-CSM-2 = retrieval-side
+    (the 2026-08-17 REFUTED note wins; do NOT patch `ingest/abilities.py`);
+    (3) G-CSM-4 ruled OUT of CSM-3's three doors — owner = CSM-7 fix phase;
+    (4) CSM-3 done-criteria additions: per-door sanity floor, <6-word floor
+    decided pre-pinning, tier-0 rename span-recall→chunk-containment, §7's
+    four pilot cost numbers (addendum in `reports/csm/COUNCIL_csm-campaign.md`);
+    (5) receipt hygiene: bank-changed caveat + G-CSM-1 raw receipt
+    (`reports/csm/GCSM1_ROSTER_DOOR.md`) + `default="jjk"` recorded exception
+    (comment in `tools/coverage_report.py` + scoreboard) + the untracked
+    receipts committed.
+  - **Next: CSM-3** (council item 3 + the addendum above): D5 measurement
+    infrastructure — pinned hashed probe panel + held-out split, wired CLI
+    resume, hit_rate over the full panel, the declared short-line floor, all
+    three doors (qa + roster + narrative), and the tier-0 rename span-recall →
+    chunk-containment (alias kept). **Starts only after the gate re-baseline
+    report lands** (hard blocker, council ruling): the suite is 1,249 and the
+    GATE_REBASELINE record's 1,242 predates CSM-2's +7 tests.
+  - Council cadence: last fired after CSM-2 (`COUNCIL_csm-1b-2`); next fires
+    after CSM-3 (2 completed todos).
 - open questions / risks:
   - GPU at check time: Qwen 262k owns the card (util 100%), `:8000` on CPU
     (headroom 1,604 MiB < 6 GiB → CPU is correct; do not co-locate). CSM-2 is
@@ -57,13 +82,23 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   - The master-work A/B deploy is in flight on this box (the untracked /
     modified files above); CSM commits stay CSM-area paths only, and the
     master-work files are managed by that process.
-- first action on resume: **start CSM-2** from its council item 2 scope +
-  done-criteria (`reports/csm/COUNCIL_csm-campaign.md`); read-first records:
-  `reports/csm/CSM1_INVENTORY.md` (stamped bank), `reports/csm/
-  CSM1B_BANK_VALIDATION.md` (CSM-1b state: gold fixes, gaps G-CSM-1..4),
-  `reports/csm/GATE_REBASELINE.md` (current gate numbers). Todos CSM-1..8 are
-  recreated from the council plan if the panel was lost (CSM-1 + CSM-1b =
-  done; CSM-2 next).
+- first action on resume: **if the gpu-gate3 RESUME line has not landed yet:
+  the gate re-baseline side session is in flight (100k+CUDA tier-2 chain,
+  `plan/gpu_gate3.spec` + `plan/gpu_gate3_task.md`) — poll per the gpu-gate3
+  handoff section below. Once its report (`reports/csm/GATE_REBASELINE_2.md`)
+  lands: restore `:8000` to CPU, check chain state, trash C's transcript,
+  rewrite the CLAUDE.md + gates-skill baselines (1,242 → 1,249 + timestamps),
+  open the CSM gate section in `reports/comprehension/GATE.md`, commit — then
+  start **CSM-3** from the council item 3 scope + the addendum in
+  `reports/csm/COUNCIL_csm-campaign.md`.
+- done this turn (2026-09-08, COUNCIL_csm-1b-2 + rulings): cadence council
+  completed (5 advisors + 5 peers; round 1's peer/chairman rounds void on a
+  harness text-capture bug — round 2 re-ran on recovered advisor text, noted
+  in the record's run-log). Record + peer files committed with the 5 rulings
+  applied in the tree (bank note, CSM1B receipt, tool comment, scoreboard,
+  campaign-plan addendum, G-CSM-1 raw receipt, untracked receipts committed).
+  Hard blocker now: the gate re-baseline (suite 1,249 vs the record's 1,242)
+  runs in the gpu-gate3 100k+CUDA side session; CSM-3 opens on its report.
 - done this turn (2026-09-08, CSM-2): scoreboard generalized — `page_scope`
   + `unknown_pages` + `archetypes` + `remainder_note` in `series/csm/`
   overrides.yaml (13 types classified; the 14 unknowns each disposed; 4 in
@@ -96,6 +131,35 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   Two new owner rules persisted in CLAUDE.md (GPU >15 min; 10–15 s polling
   + explicit timeout). CSM campaign todos created (#11–#15). Council on
   the CSM plan launched. Committed `281fe2e`.
+
+## gpu-gate3 handoff (2026-09-08 — A=01a07ff0 → chain → C on 100k → A resume)
+
+**Gate re-baseline, round 2 (council blocker, COUNCIL_csm-1b-2).** The
+GATE_REBASELINE record (1,242, git `9e13815`) predates CSM-2's +7 tests
+(`42aa296` → suite 1,249): the "JJK baseline" is no longer reproducible and
+CSM-3's gate re-verification would start broken. Same tier-2 chain as
+gpu-live2: `gpu-handoff.sh --tier2 plan/gpu_gate3.spec` flips 262k→100k,
+opens C (visible terminal, fresh 100k pi) which runs the four standing gates
+**on CUDA on the 1,249 tree** per `plan/gpu_gate3_task.md` (pytest full —
+the 6 VRAM-sensitive `test_context` cases must pass; eval jjk; span-recall
+jjk offline + --probe 400 on a CUDA `:8000`; canon opm --skip-eval) →
+`reports/csm/GATE_REBASELINE_2.md`, flips back 262k, typed RESUME into A's
+window (51768426).
+
+**On resume (the typed RESUME line is my next user message):**
+1. Read `reports/csm/GATE_REBASELINE_2.md` (C's 1,249-tree re-baseline).
+2. Restore `:8000` to CPU (C leaves it on CUDA; 262k co-location rule).
+3. Check chain state: `reports/master-work/gpu_handoff_state/gpu_gate3.
+{log,stalled,typed}` + `/tmp/gpu_gate3_chain.log`; a `STALLED` flag =
+   inspect, then replay the same setsid line (gates are idempotent).
+4. Trash C's transcript (`…/gpu_handoff_state/c_session`) — only AFTER
+   reading the report.
+5. Rewrite the CLAUDE.md + gates-skill baselines (1,242 → 1,249 + run
+   timestamps; the record's 1,242 line is superseded), open the CSM gate
+   section in `reports/comprehension/GATE.md` as the live record (council
+   peer-C finding: the campaign's designated live gate record did not exist),
+   commit — then start **CSM-3** (item 3 scope + the addendum in
+   `reports/csm/COUNCIL_csm-campaign.md`).
 
 ## gpu-live2 handoff (2026-09-08 — A=01a07ff0 → chain → C on 100k → A resume)
 

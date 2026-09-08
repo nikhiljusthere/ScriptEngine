@@ -1,0 +1,66 @@
+{
+  "buckets": {
+    "corpus gap": 1,
+    "extraction gap": 1,
+    "unlinked page": 4,
+    "retrieval gap": 2
+  },
+  "items": [
+    {
+      "series": "csm",
+      "question": "Every ability of Power",
+      "item": "Blood Weaponization",
+      "bucket": "corpus gap",
+      "evidence": "not in 'Power''s ability prose; appears on 'Angel Devil'"
+    },
+    {
+      "series": "csm",
+      "question": "Every ability of Makima",
+      "item": "Prime Minister Contract",
+      "bucket": "extraction gap",
+      "evidence": "named under 'Abilities' on 'Makima', not extracted"
+    },
+    {
+      "series": "csm",
+      "question": "How many special divisions exist in Public Safety Devil Hunters?",
+      "item": "Tokyo Special Division 4",
+      "bucket": "unlinked page",
+      "evidence": "page 'Tokyo Special Division 4' exists, nothing ties it to 'Public Safety Devil Hunters'"
+    },
+    {
+      "series": "csm",
+      "question": "How many special divisions exist in Public Safety Devil Hunters?",
+      "item": "Tokyo Special Division 5",
+      "bucket": "unlinked page",
+      "evidence": "page 'Tokyo Special Division 5' exists, nothing ties it to 'Public Safety Devil Hunters'"
+    },
+    {
+      "series": "csm",
+      "question": "How many members are in the Four Horsemen?",
+      "item": "Control Devil (Makima)",
+      "bucket": "retrieval gap",
+      "evidence": "reachable as heading 'Plot / Public Safety Saga / Control Devil arc'"
+    },
+    {
+      "series": "csm",
+      "question": "How many members are in the Four Horsemen?",
+      "item": "War Devil (Yoru)",
+      "bucket": "retrieval gap",
+      "evidence": "reachable as heading 'Plot / Academy Saga / War Devil arc'"
+    },
+    {
+      "series": "csm",
+      "question": "How many members are in the Four Horsemen?",
+      "item": "Famine Devil",
+      "bucket": "unlinked page",
+      "evidence": "page 'Famine Devil' exists, nothing ties it to 'Four Horsemen'"
+    },
+    {
+      "series": "csm",
+      "question": "How many members are in the Four Horsemen?",
+      "item": "Death Devil",
+      "bucket": "unlinked page",
+      "evidence": "page 'Death Devil' exists, nothing ties it to 'Four Horsemen'"
+    }
+  ]
+}

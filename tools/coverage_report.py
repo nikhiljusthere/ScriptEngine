@@ -221,6 +221,8 @@ def render(series: str, docs, batches: dict[str, Path], ps: dict) -> tuple[str, 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Regenerate the page-campaign coverage report.")
+    # A CLI default, not per-wiki logic: the recorded exception to the
+    # no-series-name-in-.py rule (COUNCIL_csm-1b-2 ruling 5; pre-existing).
     ap.add_argument("series", nargs="?", default="jjk")
     ap.add_argument("--out", default=None,
                     help="markdown path (default reports/page-campaign/COVERAGE.md)")

@@ -13,6 +13,11 @@ Raw receipts only.
 | post-fix | `cli canon-run --series csm` | `reports/2026-09-08-0752` — 11/19 exact, 138/148 canon (93.2%), 2 at recall 0, facts 17/18 |
 | relations bank | `tools/csm/validate_relations.py` | `reports/csm/CSM1B_RELATIONS_BANK.md` — 0/11 complete (see G-CSM-4) |
 
+> **The bank changed between the pre- and post-fix runs** (csm-set-02 −1 item;
+> csm-set-14 +3 canon items): the 94.5% → 93.2% precision dip is a bank
+> change, not a regression (council ruling note, COUNCIL_csm-1b-2,
+> 2026-09-08).
+
 The relations bank (`questions/_csm_relations.json`, 11 questions,
 `expect_mode: relations`) is underscore-prefixed, so it stays out of the
 official canon bank (`questions.load_all` skips `_` files) — the runner is the
@@ -62,14 +67,22 @@ this pass — standing rule)
   sends both count questions to `qa` (entity hits: 'Devil', organization
   'Four Horsemen'); the QA bundle then carries 0 members, so
   `csm-set-14` (0/5) and `csm-set-15` (0/4) sit at recall 0. The roster door
-  itself answers both correctly — `build_roster` returns the 5 declared
-  divisions and the 4 Horsemen for the exact question texts (verified in
-  process). Fix belongs to CSM-3's door work.
+  itself answers both correctly — raw receipt `reports/csm/GCSM1_ROSTER_DOOR.md`
+  (2026-09-08: `build_roster` returns all 5 declared divisions and the 4
+  Horsemen, declared mode; replaces the earlier "verified in process" claim,
+  which had no persisted receipt — council ruling, COUNCIL_csm-1b-2).
+  Fix belongs to CSM-3's door work.
 - **G-CSM-2 — the qa passage leg returns nothing on CSM for subject-named
   questions.** "What is Denji's hybrid transformation trigger?" returns
   **0 passages even with explicit `subject: "Denji"`**; the bundle is
   answered by facts (23–30) + relations (20) channels alone. Facts documented
   only in prose (the Denji trigger; Makima's PM contract) are unreachable.
+  *Ruling (COUNCIL_csm-1b-2, 2026-09-08): the 2026-08-17 REFUTED note in
+  `series/csm/overrides.yaml` wins over the 0752 bucket table's "extraction
+  gap — fix the prompt in `ingest/abilities.py`" — the extraction prompt
+  correctly returned `[]` (the wiki never names the PM contract). The gap is
+  the qa passage / retrieval leg, NOT an extraction-prompt fix; CSM-7's
+  fixer must not patch the prompt (cached answers would survive it).*
 - **G-CSM-3 — section-scoped intruders on "Every ability of X"** (known
   class, from the 2026-09-08-0746 run: "Every ability of Aki Hayakawa" 7
   intruders, mostly `Abilities / Antemortem Abilities / Devil Contracts`;
@@ -108,3 +121,14 @@ OOMed on CUDA for 6 cases in `tests/test_context.py` (Qwen holds ~29.6 GiB;
 ~1.6 GiB free < the ~5.3 GiB the embedder needs) and passed 1242/1242 with
 `SCRIPTENGINE_DEVICE=cpu` (265 s). The 6 cases are listed in the live-2
 brief and must pass on GPU.
+
+## Known exceptions (council ruling, COUNCIL_csm-1b-2)
+
+- `reports/span-recall/jjk/recall_verbatim.jsonl` gained a **400-line append**
+  from GATE_REBASELINE's 400-probe: the probe path writes in append mode with
+  dedupe/`done` unwired (§2a trap #2) — the appended block is the probe's raw
+  record; the wiring fix is CSM-3(b). Re-running the probe before CSM-3(b)
+  appends a duplicate block.
+- `reports/csm/GATE_REBASELINE.md` was left untracked by the live-2 chain;
+  it (with the 0746/0752/0824 run folders) is committed with this ruling
+  pass.
