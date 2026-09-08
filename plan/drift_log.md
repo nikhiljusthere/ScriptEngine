@@ -478,3 +478,32 @@ directive: JJK only, halt before P6 — see D9 / X2.**
 - **Return address:** trunk edit — no return (out-of-campaign; CSM campaign
   todos stay parked per the job spec). The pilot transcript skill lives
   outside this repo (subarchive tooling) and is deliberately not committed.
+
+### D14 — Toji script rewrite + transcript-sourced citations (out-of-campaign, owner-directed 2026-09-08)
+- **Trunk step:** none — out-of-campaign, after D12/D13 (the JJK campaign is
+  closed, D11; CSM campaign todos stay parked)
+- **What happened:** the owner-directed autonomous rewrite of the Toji
+  Fushiguro script (the `Video 1 - Toji` file, 4,044 words / 91 tags as of
+  `c9ff57e`) executed in the fresh 262k session resumed from `plan/
+  SWITCHPOINT.md`. Method: the `humanscope` skill Mode A structure sheet
+  before drafting, Mode B 30-feature audit before/after, the citation
+  discipline (one tag per (chapter, episode) run, tag every sentence on
+  source change), and `cli verify --series jjk` before calling it done.
+  The D13 transcript dataset was used as a verbatim dialogue source: 5 new
+  citation clusters added (Gojo “since he has no cursed energy, I can't
+  read his presence” cold-open; the Dagon-fight narrator VO “he had become
+  a murder machine, his fangs constantly directed toward the strongest”;
+  Gojo “any last words?”; Gojo-to-Megumi “the ultimate card that his dad
+  kept on hand against the Zen'in clan”; plus the already-woven Toji
+  verbatim lines). Structural AI tells cut: the explaining closing
+  (“in one breath …” theme-restate) deleted, the ending now lands on the
+  unexplained afterlife image; “not X, it is Y” reframes, rule-of-three
+  packs, -ing-tail analyses and weasel wording removed; plain emotion
+  words kept (“Toji is proud / glad”). Result: 3,925 words, **89 tags /
+  29 distinct, `cli verify` clean** (every tag checks out against the raw
+  wiki). Original backed up alongside the file (`Toji.md.orig-20260908-2343`).
+- **Why:** owner directive 23:4x (“you will do it on your own”) + the follow-
+  up to add Gojo / old-man-Dagon / “fangs” citations at the start and in
+  between; the transcript store (D13) made verbatim dialogue sourceable.
+- **Return address:** trunk edit — no return (out-of-campaign; CSM campaign
+  todos stay parked).

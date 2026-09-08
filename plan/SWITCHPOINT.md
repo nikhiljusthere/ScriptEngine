@@ -8,6 +8,26 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-08 (Toji script rewrite COMPLETE, owner-directed — drift D14):**
+  - The owner-directed autonomous rewrite of the Toji Fushiguro script
+    (`E:\Personal\Plot Works\Video 1 - Toji\Script\Toji.md`) is done and
+    **verify-clean: 89 tags / 29 distinct, every tag checks out against the
+    raw wiki** (`cli verify --series jjk`), 3,925 words (was 4,044 / 91 tags).
+    Method: `humanscope` Mode A structure sheet before drafting, Mode B
+    30-feature audit before/after, citation discipline (one tag per
+    (chapter, episode) run, tag every sentence on source change), `cli verify`
+    before calling it done. Cut the explaining closing (theme-restate
+    “in one breath …” paragraph deleted; ending now lands on the
+    unexplained afterlife image); removed “not X, it is Y” reframes /
+    rule-of-three / -ing-tail / weasel wording; kept plain emotion words.
+    Added 5 verbatim citation clusters from the D13 transcript store: Gojo
+    “since he has no cursed energy, I can't read his presence” (cold-open,
+    Ch 71/E27); Dagon-fight narrator VO “he had become a murder machine, his
+    fangs constantly directed toward the strongest” (Ch 110/E39); Gojo
+    “any last words?” (Ch 75/E28); Gojo-to-Megumi “the ultimate card that
+    his dad kept on hand against the Zen'in clan” (Ch 79/E29); plus the
+    already-woven Toji verbatim lines. Original backed up as
+    `Toji.md.orig-20260908-2343` (alongside the file, untracked).
 - **2026-09-08 (transcript Phase 2 + bay closed + dial-back, owner-directed):**
   - JJK transcript Phase 2 COMPLETE (drift D13, commit `f86ed7a`): all
     **16,226 lines embedded** (separate `series/jjk/qdrant-transcripts/` dir,
@@ -22,11 +42,10 @@ edit those.
     outside repo); `qwen-switch` use-case-3 committed with this checkpoint.
   - Owner directive (this switch): Qwen **100k → 262k** (full context);
     `:8000` → **CPU** (262k steady state, ~3.5 GiB headroom).
-- **Next task (owner-directed):** REWRITE the Toji Fushiguro script at
-  `E:\Personal\Plot Works\Video 1 - Toji\Script\Toji.md` (4,044 words, 91
-  tags, verify-clean as of `c9ff57e`; the transcript dataset is now
-  available as a dialogue source). Owner gives the rewrite direction in the
-  restarted session.
+- **Next task (owner-authorized):** CSM (Chainsaw Man) campaign — the next
+  owner-authorized work after the JJK campaign closed (D11). Live state: see
+  the “Campaign todos” section below + `reports/csm/`. (The Toji rewrite
+  above was the owner-directed intermission; it is now complete, D14.)
 - **Resume / post-switch steps (a fresh session executes these in order):**
   1. `cat /home/goblin/ninfer-work/qwen_mode.txt` (expect mode=262k) +
      `nvidia-smi` (Qwen only on the card, ~25 GB used) +
@@ -34,14 +53,14 @@ edit those.
   2. The owner's pi (this session) is restarted by the owner: fresh `pi` in
      /home/goblin/ScriptEngine, then *Read plan/SWITCHPOINT.md and
      continue from there*.
-  3. Read `plan/drift_log.md` §4 + this file; REWRITE the Toji script
-     AUTONOMOUSLY (owner directive 23:4x — no further direction: "you will
-     do it on your own"): humanscope Mode A sheet before drafting, Mode B
-     30-feature audit after, citation rules (one tag per (chapter, episode)
-     run, tag every sentence on source change), `cli verify` before
-     calling it done. Keep what works, fix the AI tells.
-- git: head `f86ed7a` (+ this checkpoint commit: SWITCHPOINT +
-  `.pi/skills/qwen-switch/SKILL.md`).
+  3. Read `plan/drift_log.md` §4 (current position) + this file. The Toji
+     rewrite is done (D14, verify-clean). Next owner-authorized work is the
+     CSM campaign — pick up from the “Campaign todos” section below (Wave-2
+     pre-step + the two parallel Wave-2 subs, or whichever the owner points
+     at).
+- git: the Toji script is untracked (`E:\...` dir is intentionally outside
+  git); the plan checkpoint for this session (SWITCHPOINT + drift_log D14)
+  is committed. (Previous head before this session: `998c673`.)
 - Campaign state: JJK campaign CLOSED (D11, 2026-09-07). CSM campaign =
   next owner-authorized work (CSM-1/1b/2 + councils done; CSM-3 is the next
   unit — see the "Campaign todos" section below + `reports/csm/`).
