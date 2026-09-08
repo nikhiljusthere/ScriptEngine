@@ -28,6 +28,7 @@ hide both.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import random
 import re
@@ -204,10 +205,15 @@ def index_coverage(series: str, settings: Settings | None = None,
 
 
 def _ask(query: str, series: str, timeout: float,
-         base: str = BASE) -> dict[str, Any]:
-    body = json.dumps({"series": series, "query": query}).encode()
+         base: str = BASE, door: str | None = None) -> dict[str, Any]:
+    body: dict[str, Any] = {"series": series, "query": query}
+    if door:
+        # The /context mode param forces one retrieval door; the D5 sweep
+        # measures each door (qa / roster / narrative) separately, so a dead
+        # passage leg cannot be averaged away by the router.
+        body["mode"] = door
     request = urllib.request.Request(
-        f"{base}/context", data=body,
+        f"{base}/context", data=json.dumps(body).encode(),
         headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(request, timeout=timeout) as response:
         return json.loads(response.read())
@@ -253,14 +259,111 @@ should may might must who whom whose which what when where why how there here al
 out up down over under after before""".split())
 
 
+def _panel_hash(rows: list[list[str]]) -> str:
+    """Stable identity of a pinned panel; stamped in every sweep report.
+
+    A sweep that reports a different hash than the pin it was told to run
+    did not run the panel it claims -- the §2a sample-churn trap with a
+    name on it.
+    """
+    payload = json.dumps(rows, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def build_panel(series: str, settings: Settings | None = None,
+                min_words: int = 6, seed: int = 42,
+                held_out: int = 200) -> dict[str, Any]:
+    """Pin the tier-1 probe panel: every tier-0-eligible sentence, once.
+
+    Deterministic `(title, section, sentence)` order instead of a seed-7
+    sample, so a chunker fix cannot swap the panel and read its own
+    regression as progress (§2a trap 1). The hash is stamped in every sweep
+    report. The held-out split is drawn with a fixed seed and written to a
+    side file the executing agent never opens -- the sweep that grades a fix
+    must not be chosen by the fixer (§9a).
+
+    The `<min_words` floor is a declared measurement boundary, not a silent
+    scope: sub-floor lines (chapter-list rows like "Fearsome 163.") carry
+    too little signal to query with, and their misses would be ranking
+    noise, not reachability defects. The exclusion is recorded in the
+    series' audit (CSM: 775 lines, all tier-0-eligible, 2026-09-08).
+    """
+    docs, secs, chunks = _corpus(series, settings)
+    probes: set[tuple[str, str, str]] = set()
+    for doc_id, breadcrumb, text in secs:
+        if is_boilerplate(breadcrumb):
+            continue
+        doc_chunks = chunks.get(doc_id, [])
+        title = docs.get(doc_id, ("?", ""))[0]
+        for sentence in sentences(text, min_words):
+            if any(sentence in chunk for chunk in doc_chunks):
+                probes.add((title, breadcrumb, sentence))
+    ordered = [list(p) for p in sorted(probes)]
+    k = min(held_out, len(ordered) // 2)
+    if k:
+        held = set(random.Random(seed).sample(range(len(ordered)), k))
+        held_rows = [ordered[i] for i in sorted(held)]
+        sweep_rows = [row for i, row in enumerate(ordered) if i not in held]
+    else:
+        sweep_rows, held_rows = ordered, []
+    return {
+        "series": series, "min_words": min_words, "seed": seed,
+        "panel": sweep_rows, "held_out": held_rows,
+        "hash": _panel_hash(sweep_rows),
+        "panel_size": len(sweep_rows), "held_out_size": len(held_rows),
+    }
+
+
+def _read_jsonl(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
+def _atomic_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
+    """Rewrite, never append: a resumed sweep must not duplicate the panel.
+
+    The probe path used to append into the results file with dedupe
+    unwired (§2a trap 2, caught live in GATE_REBASELINE's +400-line
+    append); each run now rewrites the file from the merged row set.
+    """
+    payload = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+    tmp = path.with_name(path.name + ".tmp")
+    try:
+        tmp.write_text(payload, encoding="utf-8")
+        tmp.replace(path)
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
+
+
 def recall(series: str, settings: Settings | None = None, mode: str = "verbatim",
            sample: int = 400, every: int | None = None, seed: int = 7,
            timeout: float = 120.0, min_words: int = 6, base: str = BASE,
            done: set[str] | None = None,
            on_row: Callable[[dict[str, Any]], None] | None = None,
            on_progress: Callable[[int, int, dict[str, int]], None] | None = None,
+           panel: list[tuple[str, str, str]] | None = None,
+           panel_hash: str | None = None,
+           results_path: Path | None = None,
+           door: str | None = None,
+           limit: int | None = None,
            ) -> dict[str, Any]:
     """Tier 1: does the served bundle actually contain the line?
+
+    Two call shapes:
+
+    - legacy (`panel is None`): a seed-7 sample of tier-0-eligible
+      sentences -- the standing 400-probe gate. Behaviour unchanged.
+    - pinned (`panel` given): the exhaustive D5 sweep. Probes come from the
+      pin (no corpus read, so a re-index cannot swap the panel under a
+      running sweep, §2a trap 1), resume is keyed `(title, sentence)` over
+      `results_path` (rewritten, never append-duped, §2a trap 2; transient
+      ERROR rows are re-probed on resume), and `hit_rate` divides by the
+      FULL panel, not the rows this run executed (§2a trap 3).
 
     Verdicts are split so a number is actionable. ``MISS_DOC`` (the line's own
     page never reached the bundle) is a ranking problem; ``MISS_SPAN`` (the page
@@ -270,6 +373,94 @@ def recall(series: str, settings: Settings | None = None, mode: str = "verbatim"
     Only sentences tier 0 has already cleared are probed -- otherwise an
     indexing gap would be counted twice, once in each tier.
     """
+    if panel is not None:
+        probes = [tuple(p) for p in panel]
+        prior: dict[tuple[str, str], dict[str, Any]] = {}
+        sidecar = (Path(results_path).with_name(Path(results_path).name + ".new")
+                   if results_path else None)
+        for source in filter(None, [results_path, sidecar]):
+            for row in _read_jsonl(source):  # the sidecar is newer; it wins
+                if row.get("verdict") == "ERROR":
+                    continue  # a transient failure is re-probed on resume
+                key = (row.get("title"), row.get("sentence"))
+                if key[1]:
+                    prior[key] = row
+        to_run = [p for p in probes if (p[0], p[2]) not in prior]
+        if limit:
+            to_run = to_run[:limit]
+
+        counts = {"HIT": 0, "MISS_DOC": 0, "MISS_SPAN": 0,
+                  "TRUNCATED": 0, "ERROR": 0}
+        started = time.time()
+        for index, (title, breadcrumb, sentence) in enumerate(to_run, 1):
+            query = make_query(sentence, mode, title)
+            returned: list[str] = []
+            error = None
+            bundle: dict[str, Any] = {}
+            try:
+                bundle = _ask(query, series, timeout, base, door=door)
+                text = served_text(bundle)
+                returned = [b.get("doc_title") for b in bundle.get("beats", [])
+                            if isinstance(b, dict)]
+                if sentence in text or decite(sentence) in decite(text):
+                    verdict = "HIT"
+                elif bundle.get("truncated"):
+                    verdict = "TRUNCATED"
+                elif title not in returned:
+                    verdict = "MISS_DOC"
+                else:
+                    verdict = "MISS_SPAN"
+            except Exception as exc:  # a probe failing must not end the sweep
+                verdict, error = "ERROR", str(exc)[:200]
+
+            counts[verdict] += 1
+            row = {
+                "verdict": verdict, "title": title, "breadcrumb": breadcrumb,
+                "query": query, "sentence": sentence, "door": door,
+                "mode_routed": bundle.get("mode"),
+                "truncated": bundle.get("truncated"),
+                "returned_docs": returned[:8], "error": error,
+            }
+            if sidecar is not None:
+                with sidecar.open("a", encoding="utf-8") as handle:
+                    handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+            if on_row:
+                on_row(row)
+            if on_progress and index % 100 == 0:
+                on_progress(index, len(to_run), counts)
+
+        # Merge prior rows + this run's sidecar rows, rewrite the results
+        # file in panel order (deterministic, idempotent resume).
+        if results_path is not None:
+            fresh: dict[tuple[str, str], dict[str, Any]] = {}
+            for row in _read_jsonl(sidecar) if sidecar else []:
+                fresh[(row.get("title"), row.get("sentence"))] = row
+            merged: list[dict[str, Any]] = []
+            for (title, _breadcrumb, sentence) in probes:
+                row = fresh.get((title, sentence)) or prior.get((title, sentence))
+                if row:
+                    merged.append(row)
+            _atomic_jsonl(Path(results_path), merged)
+            sidecar.unlink(missing_ok=True)
+            counts = {"HIT": 0, "MISS_DOC": 0, "MISS_SPAN": 0,
+                      "TRUNCATED": 0, "ERROR": 0}
+            for row in merged:
+                counts[row["verdict"]] = counts.get(row["verdict"], 0) + 1
+            done_count = len(merged)
+        else:
+            done_count = sum(counts.values())
+
+        return {
+            "series": series, "mode": mode, "door": door,
+            "probes": done_count, "panel_size": len(probes),
+            "panel_hash": panel_hash, "counts": counts,
+            # trap 3: the denominator is the panel, not the rows run this
+            # invocation -- a resumed sweep must not read its partial run
+            # as a better rate.
+            "hit_rate": counts["HIT"] / len(probes) if probes else 1.0,
+            "elapsed": time.time() - started,
+        }
+
     docs, secs, chunks = _corpus(series, settings)
     probes: list[tuple[str, str, str]] = []
     for doc_id, breadcrumb, text in secs:

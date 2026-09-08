@@ -1995,6 +1995,7 @@ def canon_run(
     console.print(f"\n[bold]{result['folder'] / 'REPORT.md'}[/bold]")
 
 
+@app.command("chunk-containment")
 @app.command("span-recall")
 def span_recall(
     series: str = typer.Option(..., "--series", help="The series to sweep."),
@@ -2008,6 +2009,28 @@ def span_recall(
         help="Tier 1 query shape: verbatim (reachability floor), scoped "
              "(prefixes the page title, controlling for a wiki that narrates "
              "one event on four pages), or terms (stopwords stripped)."),
+    door: str = typer.Option(
+        "qa", "--door",
+        help="The retrieval door to measure (the /context mode param, forced "
+             "per probe): qa | roster | narrative, or auto (router picks). "
+             "The D5 sweep runs once per door, each with its own results "
+             "file, so a dead passage leg cannot be averaged away."),
+    panel_path: Path = typer.Option(
+        None, "--panel",
+        help="Sweep this pinned panel JSON (written by --make-panel) "
+             "instead of sampling: exhaustive, deterministic order, wired "
+             "resume, hit_rate over the full panel. Implies a live-server "
+             "sweep; --probe is ignored when a panel is given."),
+    make_panel: Path = typer.Option(
+        None, "--make-panel",
+        help="Write the pinned tier-1 panel for this series (+ a held-out "
+             "side file the executing agent never opens), print its hash, "
+             "and exit without probing. Offline, no server."),
+    sanity: int = typer.Option(
+        0, "--sanity",
+        help="With --panel: first probe only the first N unprobed panel "
+             "entries on this door; a zero-hit sanity subset halts (exit 3) "
+             "so a dead door never burns the exhaustive sweep."),
     min_words: int = typer.Option(
         6, "--min-words", help="Ignore sentences shorter than this."),
     include_boilerplate: bool = typer.Option(
@@ -2020,16 +2043,20 @@ def span_recall(
 ) -> None:
     """Check every sentence in a series is reachable, not just the sampled ones.
 
-    The gold bank asks about roughly one line in eight. This asks about all of
-    them: tier 0 proves each sentence sits whole inside some chunk (offline,
-    exhaustive, sub-second), and `--probe` samples the live server to see
-    whether the line actually comes back.
+    Tier 0 (the offline check, renamed from `span-recall` in CSM-3(f): the old
+    name stayed the tautology's alias -- a chunker that emits every sentence
+    passes tier 0 *by construction*, so its rc=0 proves containment, not D5
+    reachability; `span-recall` remains an alias for old docs) proves each
+    sentence sits whole inside some chunk, sub-second, no server. `--probe`
+    samples the live server (tier 1); `--panel` sweeps a pinned panel
+    exhaustively with wired resume.
 
     Exit 2 when tier 0 finds unreachable lines -- that is a defect, and the
     whole point is for a re-index that drops content to fail loudly. A tier 1
     score never fails the command: a low number is the finding, and a
     measurement that breaks the build is one nobody runs. Exit 1 is reserved
-    for a run that cannot be trusted at all.
+    for a run that cannot be trusted at all; exit 3 is a dead-door halt
+    (`--sanity` found zero hits on the door's sanity subset).
     """
     from scriptengine.eval import span_recall as impl
 
@@ -2048,7 +2075,7 @@ def span_recall(
 
     _write_jsonl(folder / "index_misses.jsonl", tier0["misses"])
 
-    table = Table(title=f"Span recall: {series}")
+    table = Table(title=f"Chunk containment: {series}")
     table.add_column("")
     table.add_column("", justify="right")
     table.add_row("sections", str(tier0["sections"]))
@@ -2071,7 +2098,65 @@ def span_recall(
             console.print(f"  {count:>5}  {title}")
         console.print(f"\n[bold]{folder / 'index_misses.jsonl'}[/bold]")
 
-    if probe:
+    if make_panel:
+        pin = impl.build_panel(series, settings, min_words=min_words)
+        make_panel.parent.mkdir(parents=True, exist_ok=True)
+        make_panel.write_text(
+            json.dumps(pin, ensure_ascii=False, indent=1), encoding="utf-8")
+        held = make_panel.with_name(make_panel.name + ".heldout.json")
+        held.write_text(
+            json.dumps(pin["held_out"], ensure_ascii=False, indent=1),
+            encoding="utf-8")
+        console.print(
+            f"[bold]pinned panel[/bold] {make_panel} hash={pin['hash'][:16]}… "
+            f"size={pin['panel_size']} held_out={pin['held_out_size']} "
+            f"(min_words={min_words}; sub-floor lines excluded by the "
+            f"declared floor, recorded in the series audit)")
+        console.print(
+            f"[dim]{held} — the held-out split; the executing agent never "
+            f"opens it (§9a).[/dim]")
+        raise typer.Exit()
+
+    if panel_path is not None:
+        data = json.loads(panel_path.read_text(encoding="utf-8"))
+        probes = [tuple(r) for r in data["panel"]]
+        rows_path = folder / f"sweep_{door}.jsonl"
+
+        def on_progress(i: int, total: int, counts: dict) -> None:
+            console.print(f"  [dim]{i}/{total}  {counts}[/dim]")
+
+        run = impl.recall(
+            series, settings, mode=mode, panel=probes,
+            panel_hash=data.get("hash"), results_path=rows_path, door=door,
+            limit=sanity or None, on_progress=on_progress)
+
+        if sanity and run["counts"]["HIT"] == 0:
+            console.print(
+                f"[red]dead-door halt: {sanity} sanity probes on the {door} "
+                f"door returned zero hits. Do not run the full sweep "
+                f"against a door that serves nothing (council addendum: "
+                f"per-door sanity floor).[/red]")
+            raise typer.Exit(code=3)
+
+        counts = run["counts"]
+        t1 = Table(title=(f"D5 sweep: {series} — {door} door, panel "
+                          f"{(run['panel_hash'] or 'unpinned')[:16]}…"))
+        t1.add_column("")
+        t1.add_column("", justify="right")
+        t1.add_row("panel size (denominator)", str(run["panel_size"]))
+        t1.add_row("probes done", str(run["probes"]))
+        t1.add_row("served the line", f"{counts['HIT']} ({run['hit_rate']:.1%})")
+        t1.add_row("page not retrieved", str(counts["MISS_DOC"]))
+        t1.add_row("page retrieved, line absent", str(counts["MISS_SPAN"]))
+        t1.add_row("bundle truncated", str(counts["TRUNCATED"]))
+        t1.add_row("errors", str(counts["ERROR"]))
+        console.print(t1)
+        if run["probes"] < run["panel_size"]:
+            console.print(
+                f"[dim]{run['panel_size'] - run['probes']} probes remain — "
+                f"re-run the same command to resume (idempotent).[/dim]")
+        console.print(f"[bold]{rows_path}[/bold]")
+    elif probe:
         rows_path = folder / f"recall_{mode}.jsonl"
         handle = rows_path.open("a", encoding="utf-8")
 

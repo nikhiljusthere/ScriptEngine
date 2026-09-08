@@ -59,8 +59,8 @@ python -m scriptengine.cli export --series jjk        # Obsidian vault in series
 python -m scriptengine.cli eval   --series jjk        # regression suite
 python -m scriptengine.cli page-run --series jjk --batch <slug>  # score one page's question batch
 python -m scriptengine.cli canon-run --series opm    # cross-series gold regression
-python -m scriptengine.cli span-recall --series jjk   # is EVERY line reachable? (offline, <1s)
-python -m scriptengine.cli span-recall --series jjk --probe 400  # + live retrieval sample
+python -m scriptengine.cli chunk-containment --series jjk   # tier 0: EVERY line whole in a chunk (offline, <1s; alias: span-recall)
+python -m scriptengine.cli chunk-containment --series jjk --probe 400  # + tier 1 live retrieval sample
 python -m scriptengine.cli catalogue                  # regenerate docs/CATALOGUE.md
 python -m scriptengine.cli script-path "Title" --create   # where a script goes
 python -m scriptengine.cli verify "<script>" --series jjk # check its tags

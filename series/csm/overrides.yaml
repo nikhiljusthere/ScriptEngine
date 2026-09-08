@@ -32,6 +32,16 @@ citation_positional:
 #     multilingual names are queryable content, not footnotes. 1 miss line
 #     (the other holds a 3-word line below the oracle's 6-word floor).
 #
+# D5 floor decision (2026-09-08, CSM-3; council ruling 4b: decide BEFORE
+# panel pinning): the <6-word line floor is a declared measurement boundary,
+# not a silent scope -- the sub-floor lines are chapter/volume-list rows
+# ("College Fund 158.", 1-5 words) that carry too little signal to query
+# with, and their misses would be ranking noise, not reachability defects.
+# Census on the current tree: 775 sub-6-word lines in non-boilerplate
+# sections, all tier-0-eligible (whole inside a chunk); all are excluded
+# from the pinned D5 panel (17,382 probes, reports/csm/panel_csm.json),
+# which records the floor (min_words) in its metadata.
+#
 # Subtracted from the chunker's skip set by
 # `effective_boilerplate_sections`; empty sections still die in the
 # `word_count == 0` guard (the JJK References precedent).

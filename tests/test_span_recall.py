@@ -123,3 +123,130 @@ def test_missing_index_is_an_error_not_a_score(tmp_path):
 
     with pytest.raises(sr.SpanRecallError):
         sr.index_coverage("nope", Settings(series_root=tmp_path))
+
+
+# --------------------------------------------------- CSM-3 (D5 infrastructure)
+
+def test_tier0_command_is_registered_under_both_names():
+    """CSM-3(f): tier 0 is `chunk-containment`; `span-recall` stays an alias."""
+    from scriptengine.cli import app
+
+    names = {c.name for c in app.registered_commands}
+    assert {"chunk-containment", "span-recall"} <= names
+
+
+@pytest.fixture()
+def panel_series(tmp_path, monkeypatch):
+    """Two fully-chunked documents: 7 in-floor sentences + one 5-word line."""
+    root = tmp_path / "series"
+    (root / "demo").mkdir(parents=True)
+    store = FactStore(root / "demo" / "facts.db")
+    store.initialise()
+    docs = [
+        ("Chapter 1", [
+            "Yuji throws the chunk of building at the man standing there.",
+            "The chapter title is a reference to a song by another artist.",
+            "Maki walks to the edge of the street and waits for the bus.",
+            "Nobara's hammer is stored in a closet behind the school gate.",
+        ]),
+        ("Chapter 2", [
+            "Suguru Geto watches the festival from the rooftop of the hall.",
+            "The festival lantern is hung from the old cherry tree outside.",
+            "A crowd gathers around the food stalls before the parade begins.",
+        ]),
+    ]
+    for title, sents in docs:
+        doc = store.add_document(
+            title=title, url=f"http://example/{title}", page_type="chapter",
+            infobox_template="", lead="", word_count=0, revid=1, fetched_at="",
+        )
+        text = " ".join(sents) + " This is a short line."
+        store.add_section(document_id=doc, title="Plot Details",
+                          breadcrumb="Plot Details", level=2, ordinal=1,
+                          text=text, word_count=len(text.split()))
+        store.add_chunk(document_id=doc, section_id=None, parent_id=None, level=2,
+                        ordinal=1, doc_title=title, breadcrumb="Plot Details",
+                        text=text)
+    store.commit()
+    store.close()
+    monkeypatch.setenv("SCRIPTENGINE_SERIES_ROOT", str(root))
+    return root
+
+
+def test_build_panel_is_deterministic_and_held_out_is_disjoint(panel_series):
+    """A pinned panel must not shuffle: two builds, same order, same hash."""
+    from scriptengine.config import Settings
+
+    settings = Settings(series_root=panel_series)
+    a = sr.build_panel("demo", settings, min_words=6, held_out=2)
+    b = sr.build_panel("demo", settings, min_words=6, held_out=2)
+    assert a["panel"] == b["panel"]
+    assert a["hash"] == b["hash"]
+    assert a["panel_size"] == 5 and a["held_out_size"] == 2  # 7 in-floor lines
+    assert not (set(map(tuple, a["panel"])) & set(map(tuple, a["held_out"])))
+    # the 5-word line stays out of the panel (the declared floor)
+    all_rows = [tuple(r) for r in a["panel"] + a["held_out"]]
+    assert all(len(row[2].split()) >= 6 for row in all_rows)
+
+
+def _bundle(title: str, sentence: str) -> dict:
+    return {"mode": "qa", "truncated": False,
+            "beats": [{"doc_title": title, "text": sentence}]}
+
+
+def test_panel_resume_is_idempotent_and_hit_rate_uses_full_panel(tmp_path,
+                                                                   monkeypatch):
+    """Resume keyed (title, sentence), jsonl rewritten not append-duped, and
+    hit_rate over the full panel (a partial run must not read as a rate).
+    """
+    import json
+
+    panel = [("Chapter 1", "Plot Details",
+              f"Probe sentence number {i} for the panel test.") for i in range(4)]
+    results = tmp_path / "sweep_qa.jsonl"
+
+    calls = {"n": 0}
+
+    def flaky(query, series_, timeout, base, door=None):
+        calls["n"] += 1
+        if calls["n"] <= 2:  # a crash-like run: two served, two failed
+            return _bundle("Chapter 1", query)
+        raise ConnectionError("server went away")
+
+    monkeypatch.setattr(sr, "_ask", flaky)
+    r1 = sr.recall("demo", panel=panel, results_path=results, door="qa")
+    assert r1["counts"] == {"HIT": 2, "MISS_DOC": 0, "MISS_SPAN": 0,
+                            "TRUNCATED": 0, "ERROR": 2}
+    assert r1["hit_rate"] == 0.5  # 2 of the 4-probe panel, not 2/2
+
+    def fixed(query, series_, timeout, base, door=None):
+        return _bundle("Chapter 1", query)
+
+    monkeypatch.setattr(sr, "_ask", fixed)
+    r2 = sr.recall("demo", panel=panel, results_path=results, door="qa")
+    assert r2["probes"] == 4 and r2["counts"]["HIT"] == 4
+    assert r2["hit_rate"] == 1.0
+    rows = [json.loads(l) for l in
+            results.read_text(encoding="utf-8").splitlines() if l]
+    assert len(rows) == 4  # the ERROR rows were re-probed, nothing duplicated
+
+    r3 = sr.recall("demo", panel=panel, results_path=results, door="qa")
+    assert r3["probes"] == 4 and r3["counts"]["HIT"] == 4
+    rows = [json.loads(l) for l in
+            results.read_text(encoding="utf-8").splitlines() if l]
+    assert len(rows) == 4  # a second resume is a no-op
+
+
+def test_door_is_forwarded_to_the_context_request(tmp_path, monkeypatch):
+    seen = []
+
+    def spy(query, series_, timeout, base, door=None):
+        seen.append(door)
+        return {"mode": "narrative", "truncated": False,
+                "beats": [{"doc_title": "Chapter 1", "text": query}]}
+
+    monkeypatch.setattr(sr, "_ask", spy)
+    sr.recall("demo",
+              panel=[("Chapter 1", "Plot", "One narrative door probe sentence here.")],
+              results_path=tmp_path / "sweep_narrative.jsonl", door="narrative")
+    assert seen == ["narrative"]
