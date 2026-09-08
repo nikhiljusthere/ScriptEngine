@@ -1,0 +1,15 @@
+# The Outsider — CSM unit-3 sweep fork (council 2026-09-09)
+
+**The options table rests on three unstated assumptions that do not survive the on-disk files.**
+
+**1. "17,381 rows" does not exist.** `panel_csm.json` (verified): 17,181 sweep rows + 200 held-out. The ledger denominator is 17,181; 17,009 = 17,181 − 172 probed. Option C's "17,381-row panel completion" double-counts the 200 held-out rows, which live in a separate ledger (`sweep_qa_ec15e0d8`, 13 rows) and are by definition never swept. The team is conflating sweep and holdout in its own option text.
+
+**2. The 49/60 gate number contradicts its raw receipt.** `census_dimensions_csm_results.jsonl` (mtime 09-09 03:39 — the one-copy 150k window) parses to 39/60 green, 21 RED: arc-narrative 8/10, abilities 6/10, state-over-time 5/10, causality 1, appearance 1. The work_log 03:43 line says 49/60 with a reds list summing to 13. Freeze the miss queue from the raw file's 21-red set, not the summary. (The extraction-gate-LIVE verdict stands — the structural reds are worse, not better.)
+
+**3. Options B/C misstate the 150k device rule; A pays for it.** The 2-phase plan at 150k: "no CPU shell command may exceed 15 s — anything that would (…probe…) runs on GPU"; in-process CUDA one-copy co-location is proven today (census 52 s, Qwen alive, footprint unchanged). A's premise (sweep ⇒ service-on-CUDA ⇒ 100k switch) is real for the sweep CLI (it probes the service; the stamp comes from the service's /health, CSM3B_PRESTEP §1) — but A then pays: 100k switch, a 5–10 h continuous load in the campaign's main session (the plan's exhaustive-sweep pattern is Phase-2 *batched via gpu-handoff side sessions*), switch back to 150k, then the orchestrator's own spec update switches 100k again at phase close. Three reload windows to complete a ledger that is stale twice: `door_precheck` says the 5.4 extraction build will move hit rates, and every serial fix re-stamps the commit. Exhaustive tier-1 is already scheduled as CSM-4 in Phase 2.
+
+**What iteration 1 must deliver** is a well-specified miss queue: the 400-probe baseline (the halt rule's denominator) + the frozen miss inputs (twenty_failures 20, red_list 5, the 21 census reds) + targeted re-sweeps per fix (orchestrator grades). None of it needs 17,009 rows. B's 26-h CPU marathon produces the same stale ledger, slower.
+
+OPTION: C (corrected — no switch; 400-probe gate in a 150k in-process CUDA one-copy window, or LONG-flagged CPU-service run; exhaustive pinned-panel completion deferred to CSM-4 @100k)
+FIRST STEP: Reconcile `census_dimensions_csm_results.jsonl` (21 reds / 39 green) against the 49/60 work_log line and freeze the miss-queue inputs from the raw file — then launch the 400-probe gate on the pinned panel, resuming from the 172-row `e3d73720` ledger.
+CHANGE-OF-MIND IF: the halt rule is found to require a full-panel miss count (not gate + miss queue) to judge "two no-reduction iterations" — then fold the full sweep into the orchestrator's existing 100k switch at phase close, one switch, not two.
