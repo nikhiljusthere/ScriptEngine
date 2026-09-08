@@ -570,3 +570,15 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   episode` edges, never invented. `Toji-clean.md` regenerated (5,589 words;
   it now also strips the `[covers:]` reference lines, so it is pure
   narrative). `cli verify` still clean (104 tags).
+
+- **Addendum 4 (passage pass → 3 acts, same session):** the per-passage
+  `[covers:]` lines (25 of them) read crowded and repeated the same ranges
+  over and over. Grouped into **3 acts, one deduplicated block each**: the
+  script is split into passage 1 (who he is, how the body works — through the
+  arsenal), passage 2 (the Riko job + the two strongest — through Gojo's
+  death), passage 3 (Shibuya + the aftermath — through the afterlife). Each
+  act ends with a `[passage N of 3 · <label>]` block listing only the
+  distinct arcs/events that act draws on (fights, arcs, the Zenin, the
+  afterlife, mechanics, arsenal), so no range is repeated across blocks.
+  Ranges unchanged (sourced, never invented). `Toji-clean.md` regenerated
+  (5,589 words; now strips the `[passage N of 3]` + `·` reference lines).
