@@ -8,3 +8,6 @@
 {"ts":"2026-09-08T17:58:43+05:30","event":"START","pid":"100500","cmd":"/bin/bash -c cd /home/goblin/ScriptEngine && source scriptengine/.venv/bin/activate && t0=$(date +%s) && python -m pytest tests/ -q 2>&1 | tee /tmp/pytest_csm3b.log | tail -4; rc=${PIPESTATUS[0]}; t1=$(date +%s); echo \"P"}
 {"ts":"2026-09-08T17:59:51+05:30","event":"START","pid":"101081","cmd":"/bin/bash -c for i in $(seq 1 10); do if pgrep -f \"pytest tests/ \" >/dev/null 2>&1; then echo \"$(date +%H:%M:%S) iter $i: pytest running; gpu=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader | cut -d' ' -f1); t"}
 {"ts":"2026-09-08T18:00:04+05:30","event":"START","pid":"101081","cmd":"/bin/bash -c for i in $(seq 1 10); do if pgrep -f \"pytest tests/ \" >/dev/null 2>&1; then echo \"$(date +%H:%M:%S) iter $i: pytest running; gpu=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader | cut -d' ' -f1); t"}
+{"ts":"2026-09-08T18:02:20+05:30","event":"END","pid":"101081","dur_s":"136"}
+{"ts":"2026-09-08T18:02:35+05:30","event":"START","pid":"102087","cmd":"/bin/bash -c for i in $(seq 1 9); do if pgrep -f \"cli eval --series jjk\" >/dev/null 2>&1; then echo \"$(date +%H:%M:%S) iter $i: eval jjk running; gpu=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader|cut -d' ' -"}
+{"ts":"2026-09-08T18:04:51+05:30","event":"END","pid":"102087","dur_s":"136"}
