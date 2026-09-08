@@ -582,3 +582,11 @@ directive: JJK only, halt before P6 — see D9 / X2.**
   afterlife, mechanics, arsenal), so no range is repeated across blocks.
   Ranges unchanged (sourced, never invented). `Toji-clean.md` regenerated
   (5,589 words; now strips the `[passage N of 3]` + `·` reference lines).
+
+- **Addendum 5 (passage pass → every 3 passages, same session):** corrected
+  the addendum-4 grouping — the owner wanted a covers block after **every 3
+  passages**, not 3 total. Removed the 3 `[passage N of 3]` blocks; added
+  **9 `[covers X-Y]` blocks** (after passages 3, 6, 9, 12, 15, 18, 21, 24,
+  and the lone 25th), each citing the distinct events/battles + ch/ep ranges
+  those 3 passages draw on. `Toji-clean.md` regenerated (5,589 words; strips
+  the `[covers X-Y]` + `·` lines). `cli verify` still clean (104 tags).

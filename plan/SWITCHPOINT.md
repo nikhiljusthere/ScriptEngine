@@ -82,19 +82,18 @@ edit those.
   next owner-authorized work (CSM-1/1b/2 + councils done; CSM-3 is the next
   unit — see the "Campaign todos" section below + `reports/csm/`).
   Transcript work is campaign-neutral (D12/D13).
-- Toji script (D14 addendum 4, same session): the owner corrected the
+- Toji script (D14 addendum 5, same session): the owner corrected the
   cast-list range to cite **Toji's appearance** in each arc (not the arc's
   full span). The inline `[range:]` notes + end-glossary are gone; the
-  per-passage pass is now grouped into **3 acts, one deduplicated
-  `[passage N of 3 · <label>]` block each** (1 = who he is / how the body
-  works, through the arsenal; 2 = the Riko job + the two strongest, through
-  Gojo's death; 3 = Shibuya + the aftermath). Each block lists only the
-  distinct arcs/events that act draws on, so no range repeats. `Toji-clean.md`
-  (5,589 words, pure narrative; strips the `[passage N of 3]` + `·` lines).
-  Ranges sourced from the wiki's `anime episode` edges in
+  passage pass is now a **`[covers X-Y]` block after every 3 passages**
+  (9 blocks: after passages 3, 6, 9, …, 24, and the lone 25th), each citing
+  the distinct events/battles + ch/ep ranges those 3 passages draw on. Toji
+  in Gojo's Past = Ch 66-75/Ep 25-28; Toji in Shibuya = Ch 95-113/Ep 35-40.
+  `Toji-clean.md` (5,589 words, pure narrative; strips the `[covers X-Y]`
+  + `·` lines). Ranges sourced from the wiki's `anime episode` edges in
   `series/jjk/facts.db`, never invented. `cli verify --series jjk` still clean
-  (104 tags; the `[passage N of 3]` blocks are a new human-curated format,
-  not verify-checked).
+  (104 tags; the `[covers X-Y]` blocks are a new human-curated format, not
+  verify-checked).
 
 ## gpu-gate3 handoff (2026-09-08 — A=01a08064 (fresh CSM session; retargeted from the retired 01a07ff0) → chain → C on 100k → A resume)
 
