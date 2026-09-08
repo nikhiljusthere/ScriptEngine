@@ -321,7 +321,7 @@ T0 first (manual, 10 min — the council's gate to anything unattended); then al
 
 **T2 — A + B + loop + council under the shared KV** (re-specified as the post-fix council case — the original spec could not pass: a saturated pool timed out the 90 s vision call, the old guard counted it as a no-op, and the streak HALT'd the loop on every council).
 
-- *Trigger*: B runs a unit that launches a 5-parallel council (worst pool case, the standing exception) while the loop ticks mid-council; the poller runs its normal 60 s cycle and A wakes only on events.
+- *Trigger*: B runs a unit that launches a council (sequential since the 2026-09-08 owner rule — the old 5-parallel worst case is retired) while the loop ticks mid-council; the poller runs its normal 60 s cycle and A wakes only on events.
 - *Pass*: the council completes 5/5; the loop's mid-council tick either completes (pool drains within 90 s) or logs `FAIL pcloop: model-down — retry next tick` lines that **do not** count toward `MAX_NOOPS` (fix 3), and the loop resumes after the council (timestamped ACT line); **no** `HALT pcloop: no-op streak` fires during the council; A wakes at most once (only if an ESC is pending) and completes; the 60 s nudge fires at least once and nobody kills or retries on it.
 - *Fail*: the council incomplete, a loop step dropped without a retry line, a no-op-streak HALT during the council, or a kill/restart triggered by the nudge.
 

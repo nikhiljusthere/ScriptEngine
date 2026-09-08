@@ -145,8 +145,9 @@ that is the designed working mode, not an exception. Protocol (skill:
    there.") is for wanting clean state, not for survival.
 
 **Subagent policy per mode:** 262k → linear, no parallel subagents; 100k →
-≤ 2 parallel; `llm-council` runs 5 in parallel in **any** mode (the standing
-exception).
+≤ 2 parallel; `llm-council` runs **one agent at a time in any mode** (owner
+rule 2026-09-08 — at full 262k context the five children fight the shared KV
+pool for answering; the standing exception is retired).
 
 ## Guardrails (carry-overs from the standing GPU rules)
 
