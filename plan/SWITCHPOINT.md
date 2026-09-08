@@ -68,13 +68,20 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
     (`reports/csm/GCSM1_ROSTER_DOOR.md`) + `default="jjk"` recorded exception
     (comment in `tools/coverage_report.py` + scoreboard) + the untracked
     receipts committed.
-  - **Next: CSM-3** (council item 3 + the addendum above): D5 measurement
-    infrastructure — pinned hashed probe panel + held-out split, wired CLI
-    resume, hit_rate over the full panel, the declared short-line floor, all
-    three doors (qa + roster + narrative), and the tier-0 rename span-recall →
-    chunk-containment (alias kept). **Starts only after the gate re-baseline
-    report lands** (hard blocker, council ruling): the suite is 1,249 and the
-    GATE_REBASELINE record's 1,242 predates CSM-2's +7 tests.
+  - **CSM-3 DONE (`f93d396`)** — D5 measurement infrastructure: the four
+    §2a traps closed (pinned hashed panel + seeded held-out split, wired
+    (title, sentence) resume with jsonl rewrite + ERROR re-probe,
+    full-denominator hit_rate, three doors + the per-door sanity floor,
+    tier-0 rename `chunk-containment` with the `span-recall` alias, the
+    <6-word floor recorded as a declared boundary — CSM census 775 lines).
+    The csm panel is pinned: `reports/csm/panel_csm.json`, hash
+    e3d73720… (17,181 sweep + 200 held-out = 17,382 tier-0-eligible).
+  - **Next: COUNCIL_csm-3** (cadence: 2 todos since COUNCIL_csm-1b-2 — the
+    gate re-baseline + CSM-3; one agent at a time in any mode), **then
+    CSM-4**: the D5 exhaustive tier-1 × 3 doors sweep on the pinned panel
+    (17,181 × 3 ≈ 58 GPU-h) runs in a 100k-mode side session via the tier-2
+    chain — C runs the sweep, never the fixer (§9a: the agent never runs the
+    sweep that grades a fix it made).
   - Council cadence: last fired after CSM-2 (`COUNCIL_csm-1b-2`); next fires
     after CSM-3 (2 completed todos).
 - open questions / risks:
@@ -90,6 +97,23 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   `reports/csm/COUNCIL_csm-campaign.md`) — the gpu-gate3 RESUME landed
   (15:30:08) and its steps are done (report read, `:8000` on CPU, baselines
   rewritten, CSM gate section opened, C transcript trashed).
+- done this turn (2026-09-08, CSM-3): D5 measurement infrastructure, the
+  four §2a traps closed (`f93d396`): `build_panel` (deterministic order,
+  sha256 hash stamped, seeded held-out split written to a side file the
+  executor never opens; csm panel pinned: hash e3d73720…, 17,181 sweep +
+  200 held-out, tier-0 17,382/17,382 re-confirmed); pinned `recall()`
+  (no corpus read under a running sweep, resume keyed (title, sentence),
+  jsonl rewritten not append-duped, transient ERROR rows re-probed,
+  hit_rate over the FULL panel, crash-tolerant sidecar); the `door` param
+  forces the /context mode per door (qa / roster / narrative) with
+  per-door `sweep_<door>.jsonl` + `--sanity N` dead-door halt (exit 3);
+  tier-0 renamed `chunk-containment` (`span-recall` alias kept, both
+  registered + tested); the <6-word floor decided pre-pinning per ruling
+  4b = record the exclusion (CSM census: 775 sub-6-word lines, all in
+  chunks, all chapter-list rows; recorded in `series/csm/overrides.yaml`).
+  CLAUDE.md command line updated. pytest **1,253** green on CPU (1,249 +
+  4 new; the 6 VRAM-sensitive cases pass on CPU, 127 s). Council cadence:
+  COUNCIL_csm-3 fires next (2 todos since COUNCIL_csm-1b-2), then CSM-4.
 - done this turn (2026-09-08, gpu-gate3 RESUME 15:30:08): read C's report —
   all 4 gates PASS on CUDA on the 1,249 tree (pytest 1,249/1,249 incl. the 6
   OOM cases, eval jjk 31/31, span-recall jjk 48,572/48,572 + 390/400 probe,
@@ -264,7 +288,7 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - [x] 1. Seed-bank inventory + revid-stamp (CSM-1 — `064093e`)
 - [x] 2. Classify every CSM page type + generalize the scoreboard (CSM-2 — `42aa296`; 14 unknowns resolved, JJK output byte-identical)
 - [x] Standing-gate re-baselining ×2 — gpu-live2 (`GATE_REBASELINE.md`, 1,242) + gpu-gate3 (`GATE_REBASELINE_2.md`, 1,249; CLAUDE.md + gates-skill baselines updated, `2c80867`)
-- [ ] 3. D5 measurement infrastructure — close the four §2a traps (pinned hashed panel, wired resume, full-denominator hit_rate, all three doors, tier-0 rename `span-recall` → `chunk-containment`)
+- [x] 3. D5 measurement infrastructure (CSM-3 — `f93d396`: pinned hashed panel + held-out split, csm panel pinned hash e3d73720… (17,181 + 200); wired (title,sentence) resume, jsonl rewritten; full-denominator hit_rate; three doors + --sanity dead-door halt; tier-0 rename `chunk-containment` (alias kept); <6-word floor recorded (775-line census, exclusion stands); pytest 1,253)
 - [ ] 4. D5 exhaustive tier-1 × 3 doors (~51 GPU-h; batched in 100k side sessions via the gpu-handoff chain; standing 400-probe gate stays)
 - [ ] 5. Phase-0 remainder — 5.3 pilot fixtures / 5.5 no-LLM-judge / 5.4 door-first (extraction only on red) / §13 awareness line / the twenty-failures set (named author)
 - [ ] 6. D6 oracle + bounded instrument — parameterize the two jjk-hardcoded tools, CSM dimension map, eight-verb sample, frozen census sets (seeded + revid-stamped, D4 authored by a fresh-context subagent), T0 pilot, cross-page fact census
