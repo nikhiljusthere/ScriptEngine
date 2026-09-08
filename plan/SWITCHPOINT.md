@@ -9,98 +9,68 @@ edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
 
-- mode: **100k + `--vision` (2026-09-08: owner added the vision flag to the
-  serve profiles — `serve_100k.sh` + the `serve.sh` 262k template — for a
-  local-LLM PC-control experiment; the reload keeps ctx 102400. Pre-reload
-  headroom was 9002 MiB with `:8000` on CUDA — re-check `nvidia-smi` AFTER
-  the reload: the fixed vision GPU allocation eats into that headroom; if
-  free < 6 GiB, move `:8000` to CPU)** → CSM is paused (owner, 2026-09-08);
-  its CUDA windows still run in 100k when it resumes; 262k at the
-  campaign's close (no handoff needed — 262k > transcript, reloads in
-  place).
-- git: `8f8ffdb` (council verdict: SKIP T0–T4 bank, 8-item revised plan) on the
-  campaign trail `281fe2e` (CSM Wave-0) → `4e7c304` (checkpoint: wave-0 closed,
-  council in flight) → `8f8ffdb` (verdict). Untracked: `tools/csm/` (CSM-1's
-  revid-stamp tool, committed with this checkpoint).
-- trunk/excursion address (drift_log §4): **X2 CLOSED** (JJK D6-completion
-  done, D11) · trunk P6 not-started by owner directive (JJK-only halt).
-  **Next authorized work: the CSM (Chainsaw Man) campaign to 100% per
-  `plan/Plan_to_perfection.md`** (todo #9; owner-authorized 2026-09-07).
+- mode: **262k + `--vision` (this session started under it, 2026-09-08; the
+  old stuck 100k CSM session 01a07cab is retired/trashed — everything it held
+  is on disk)** → CSM campaign RESUMED. Items 1–2 are zero-GPU disk work,
+  fine under 262k. Item 4 (D5 exhaustive sweep, ~51 GPU-h) goes through the
+  gpu-handoff chain (`docs/ops/PC_GPU_HANDOFF.md` + `tools/master-work/
+gpu-handoff.sh`) in a 100k-mode side session — never block this session on
+  the GPU, never `--api` on a chain switch.
+- git: `064093e` (csm: CSM-1 — revid-stamp the seed bank + inventory) on the
+  campaign trail `281fe2e` (wave-0) → `4e7c304` → `8f8ffdb` (council verdict)
+  → `6a87479` (overflow-handoff checkpoint) → `064093e`. Untracked
+  (master-work, not CSM area): `plan/AB_DEPLOYMENT.md`,
+  `reports/master-work/{GPU_LIVE1_REPORT.md,STOP,gpu_handoff_state/}`;
+  modified by the master-work process (do not commit from the CSM session):
+  `plan/decisions.md`, `plan/state.md`, `reports/master-work/a_wake_log.md`.
+- trunk/excursion address (drift_log §4): **X2 CLOSED** (JJK D6 done, D11) ·
+  trunk P6 not-started by owner directive (JJK-only halt). **Active: the CSM
+  (Chainsaw Man) campaign** (owner-authorized 2026-09-07): the 8-item plan in
+  `reports/csm/COUNCIL_csm-campaign.md` is the campaign plan; CSM-1 DONE (this
+  checkpoint); **CSM-2 is next**.
 - work explanation (what's done, what's in flight, the exact next step):
-  - **JJK D6 is closed** (`reports/comprehension/DONE_DECLARATION.md`). All
-    standing gates green: pytest 1,242, eval jjk 31/31, canon opm 236/236 ·
-    79.0%, span-recall jjk offline 0 unreachable. The 400-probe CPU re-run
-    **completed** — full live verbatim sweep: 1,366/1,407 HIT (97.1%, 18
-    MISS_DOC / 21 MISS_SPAN / 2 TRUNCATED — the established [qa] noise band,
-    consistent with the 390/400 CUDA probe); 285 records carry `urlopen`
-    errors (the CPU `:8000` instance died mid-run) — a run-hygiene artifact,
-    not a corpus signal. D3's tier-1 number stands.
-  - **CSM campaign started — Wave-0 (plan §7 reachability pre-pass) is
-    DONE**: 439 unreachable lines → **0 (100.0000%)**. Diagnosis: the CSM
-    index predated the G15 chunker fix (422/439) + 17 lines in `Notes`
-    (8 episode diff-note sections) and 2 `References` (crawler-filed alias
-    blocks) that the chunker's MediaWiki-wide skip set treats as boilerplate
-    but the oracle treats as content. Fix = re-index + `content_sections:
-    [Notes, References]` in `series/csm/overrides.yaml` (the sanctioned
-    per-wiki mechanism, zero engine changes; JJK precedent). Gates green on
-    the new store: pytest 1,242, eval jjk 31/31, canon opm 236/236 · 79.0%,
-    span-recall jjk 390/400, span-recall csm rc=0.
-  - **Council verdict landed (`8f8ffdb`): SKIP the T0–T4 question-bank build;
-    8-item revised plan CSM-1..8** (text in `reports/csm/COUNCIL_csm-campaign.md`;
-    n=4 stable sample; the existing bank `questions/csm.json` (39 questions,
-    zero revid stamps) must be inventoried + revid-stamped (CSM-1), never
-    clobbered — council point 3 / §5.6).
-  - **Owner paused the CSM campaign (2026-09-08)** — CSM-1 stays in flight
-    but on hold; todos re-created when it resumes. Current activity: a
-    local-LLM PC-control experiment — vision on the 27B via ninfer's
-    `--vision` flag (was off; the API returned 400 `vision_disabled`);
-    the box is an X11 session (tty2) so xdotool is the input path; survey
-    (Reddit/web, 2026-09-08): off-the-shelf = bytedance/UI-TARS-desktop
-    (34k★, local VLM, "Remote Computer Operator"), or the DIY loop
-    screenshot → VLM (`:18080` now multimodal) → xdotool actions.
-  - **New standing rules (owner, 2026-09-07, persisted in CLAUDE.md):**
-    no CPU job >15 min (switch Qwen to 100k and run CUDA instead; or run on
-    GPU whenever faster); polling loops print a status line every 10–15 s
-    and every bash call carries an explicit `timeout`; a tool that doesn't
-    work on both JJK and CSM gets a CSM-specific script (never mutate
-    JJK-verified tooling; per-wiki config in `series/csm/overrides.yaml`).
-  - **Exact next step: finish CSM-1, then CSM-2** (classify every CSM page
-    type + generalize the scoreboard: 5.1 + archetypes).
+  - **CSM-1 DONE (`064093e`)** — inventory + revid-stamp, zero new
+    questions: `questions/csm.json` 39/39 active + `questions/
+    _csm_relations.json` 11/11 stamped `source_revid` (18 distinct wiki
+    source pages pinned, 0 unpinnable; the 1 retired entry has no `sources`
+    key → null, documented; `csm-set-02`'s cbr.com source unpinnable);
+    `reports/csm/CSM1_INVENTORY.md` committed (counts, revid table, the 20
+    declared rosters, verification output, incident receipt). Raw receipts
+    only. The tool's first run wiped the questions lists (tuple-unpack swap)
+    — restored from git, fixed, recorded in the inventory's Incident section;
+    same fix batch: Fandom-403 UA + CRLF/indent whole-file churn.
+  - Standing four gates NOT re-run for CSM-1: no engine/store change (question
+    files + a CSM-only tool in `tools/csm/`); JJK baseline untouched.
+  - **Next: CSM-2** (council item 2): classify all 537 CSM pages / 12 page
+    types (incl. the 14 `unknown`s) in `series/csm/overrides.yaml` —
+    in-scope / excluded-in-writing + archetype (one reusable schema); that
+    list IS 5.1's scope list + §6's archetype mapping. `tools/
+    coverage_report.py` reads scope from overrides (the JJK-hardcoded
+    `IN_SCOPE_TYPES` retired), exits non-zero on an unclassified `page_type`.
+    Done-criteria: csm denominator 537 / 0 unclassified / 0 unknown; `--series
+    jjk` output byte-identical; non-zero-exit path + a CSM scope test in
+    `tests/`; pytest green. No series name in any `.py`.
+  - Council cadence: fires after CSM-2 (2 completed todos) → `reports/csm/
+    COUNCIL_csm-1-2.md` (5 advisors in parallel, then 5 peers; raw receipts).
 - open questions / risks:
-  - The verdict decided the bank question: SKIP. The seed bank survives as
-    CSM-1's inventory target (fresh stamps, never copied from JJK's fixed
-    data).
-  - CSM is smaller and differently shaped than JJK (537 pages vs ~1,500;
-    infobox `Character` family; positional `{{Ref|m|216|3-4}}` citations
-    already mapped). Per-wiki handling stays in `series/csm/overrides.yaml`
-    or CSM-specific scripts — the closed JJK baseline (1,242 tests) is
-    untouchable.
-  - 5-parallel council children on shared Qwen KV produce 60 s no-activity
-    nudges (false positives; the KV pool serializes them). Do not steer or
-    interrupt on those; only act on a child that is failed/stale for >5 min.
-  - `:8000` is on CUDA with 9 GB headroom (100k profile). Long LLM batches
-    still follow the hard rule: dedicate the GPU (stop `:8000` or CPU it
-    first).
-  - **`--vision` (2026-09-08)**: now in `serve_100k.sh` + `serve.sh`
-    (262k template). VRAM delta unknown until reload (fixed vision GPU
-    allocation) — check `nvidia-smi` after; rollback = drop the flag and
-    re-run the profile. Pre-existing generated `serve_ctx_*.sh` profiles do
-    NOT carry the flag (regenerated from the template only when the file is
-    recreated). ninfer-work is not a git repo — the flag lives in those two
-    files only.
-- first action on resume (**fresh session — overflow handoff, 2026-09-08**:
-  the 100k session died on `context_length_exceeded` 102518 > 102400 and
-  summarization recovery failed too; pi.md §5.5 — a fresh transcript always
-  fits, this file is the resume):
-  1. Recreate the CSM-1..8 todos from `reports/csm/COUNCIL_csm-campaign.md`
-     (the per-session todo panel was lost with the dead session).
-  2. `git log --oneline -3` (expect `6a87479` head, clean tree — the
-     overflow-handoff checkpoint committed the switchpoint +
-     `tools/csm/stamp_revids.py`).
-  3. Finish CSM-1 (revid-stamp state of `questions/csm.json` via
-     `tools/csm/stamp_revids.py`; commit), then CSM-2.
-  Standing gates after any build: pytest / eval jjk / span-recall jjk /
-  canon opm.
+  - GPU at check time: Qwen 262k owns the card (util 100%), `:8000` on CPU
+    (headroom 1,604 MiB < 6 GiB → CPU is correct; do not co-locate). CSM-2 is
+    zero-GPU, so no action needed.
+  - The master-work A/B deploy is in flight on this box (the untracked /
+    modified files above); CSM commits stay CSM-area paths only, and the
+    master-work files are managed by that process.
+- first action on resume: **start CSM-2** from its council item 2 scope +
+  done-criteria (`reports/csm/COUNCIL_csm-campaign.md`); read `reports/csm/
+  CSM1_INVENTORY.md` for the bank's stamped state; todos CSM-1..8 are recreated
+  from the council plan if the panel was lost (CSM-1 = done).
+- done this turn (2026-09-08, CSM-1, fresh 262k+vision session): CSM-1
+  DONE + committed `064093e` (stamped bank + inventory artifact, CSM-area
+  paths only). Tool fixes committed with it: Fandom-403 UA, tuple-swap
+  data-loss (restored from git, then fixed), CRLF/indent churn. Coverage
+  regenerated (JJK 893/987, in-scope remainder 0 — date-line only change).
+  Standing gates not re-run: CSM-1 made no engine/store change. Next: CSM-2
+  (page-type classification + scoreboard generalization, council item 2);
+  council fires after CSM-2 (cadence: every 2–3 todos).
 - done this turn (2026-09-07 23:3x, CSM Wave-0 + campaign start): CSM
   grounded (537 pages, 5,081 facts, 11 types, audit 5/5 PASS, span-recall
   rc=2 with 439 unreachable) → diagnosed (pre-G15 index + Notes/References

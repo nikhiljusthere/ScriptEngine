@@ -9,7 +9,7 @@
 > (`scriptengine/eval/page_gen.py`) — lowercase, non-alphanumeric runs
 > become `_` (so `&` collapses away).
 >
-> Generated: 2026-09-07
+> Generated: 2026-09-08
 
 ## Headline
 
