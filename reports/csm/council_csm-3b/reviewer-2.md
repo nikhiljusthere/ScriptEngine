@@ -1,0 +1,7 @@
+# Reviewer 2 — CSM-3b council
+
+**1. Strongest: C (the contrarian).** The only response that surfaced a new landmine instead of adjudicating the record: the csm3b gate cycle ran zero live roster-door probes (sanity-4 is qa-door; the only live roster evidence, `GCSM1_ROSTER_DOOR.md`, predates CSM-3), yet a third of the Phase-2 sweep is roster — a 30-second `/context` probe at door=roster closes it. C also correctly notes the 168-row sidecar is armed *right now* on disk, CPU-provenance, with no device/commit stamp. A's "guard ≠ progress" framing is a close second — cleanest epistemics, no new findings.
+
+**2. Biggest blind spot: E (the expansionist).** All upside, no downside: no cost for the F1 ledger keying (migration of the live 168+8 rows, interplay with Ruling-7 hash enforcement), and unverified expansion claims (JJK D5 exhaustive "never ran"; the heldout as standing gate #5) asserted without checking.
+
+**3. What ALL five missed:** F1 is framed as a Phase-2 blocker, but the §9a closure-loop iteration 1 — the next pinned-panel batch sweep, due right after Wave 2 and *before* Phase 2 — is the first unattended GPU event that can fire the trap (pinned-vs-heldout interleaving) and the first sweep needing C's roster probe. So the F1 fix + roster probe is a **§9a precondition (Wave-2 pre-step), not merely "before Phase 2"**; and the 168/8-row migration with device/commit stamps remains unspecified.

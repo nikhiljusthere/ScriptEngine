@@ -1,0 +1,11 @@
+# Advisor 1 — The Contrarian (CSM-3b close council)
+
+**Close the 3b gate cycle; CSM-3b as declared is not safe to close. One receipt is missing from the close record; one live landmine sits in a temp file on disk.**
+
+**Roster door: no live proof this cycle.** CSM-3 Ruling 1 required a live re-probe (31 members / 0 chars → must serve chars). The 3b gate cycle ran only the held-out sanity-4, default door (qa) — zero roster probes in the csm3b logs or the ledger pair; the only live "roster works" evidence on disk is `GCSM1_ROSTER_DOOR.md`, a raw `build_roster` at git head 42aa296, pre-CSM-3, before `served_text`/`returned_docs` were touched. Phase 2's roster sweep (1/3 of the ~51 GPU-h) would launch on fake-bundle unit proof only (the 13th `test_span_recall` test monkeypatches `_ask`), on a failure mode this council already found live once. One 30-second `/context` probe at door=roster on that line closes it — required before Phase 2.
+
+**F1: Phase-2 blocker, not a "documented workaround."** The 168-row sidecar sits on disk *right now* at the temp path the merge contract unlinks on the next csm span-recall run; the rows are CPU-provenance (1200-s incident) with no device/commit field; Phase 2 runs in a fresh side session with no memory of the git-recovery step. Recurrence means 50+ GPU-h lost, recoverable only by a human remembering a git command. Fix now, while the ledger pair is 176 rows: key the ledger by panel hash (or make the merge preserve cross-panel keys), stamp device/commit onto rows, and re-probe the 168 on GPU (~3 min) for provenance purity.
+
+**Wave 2: F1 is item 0** — fold it into the CSM-6 worker (both are `span_recall.py` / sweep-infra territory); **G-CSM-1/2 stay at CSM-4/CSM-5** — plan sequencing, and the 2-worker wave budget is already full (CSM-6 + CSM-5). Don't pull the known gaps forward.
+
+**Rulings:** F1 — Phase-2 blocker, fix in Wave 2, not a workaround. F2 — absent-by-design upheld; a csm eval-gold bank is a separate design change if ever wanted. F3 — the rule-2 replacement is acceptable only with an ack loop: A acks each LONG flag within one control batch and kills provably-CPU in-process work over 15 s; without that loop the flag is theater.

@@ -757,3 +757,27 @@ branch; held-out consumer named (`tools/csm/panel_heldout.py`). Live
 re-probe of the council's 31-members/0-chars line: 14–16k chars served.
 Its four done-criteria are all met; the full four-gate re-run on the 1,254
 suite happens at CSM-4's start (Ruling 5e).
+
+### CSM-3b gate cycle + council CSM-3b (2026-09-08, Terminal B, 100k)
+
+Full four-gate re-run on the 1,254 suite matches the re-baseline above exactly
+(receipt `reports/csm/CSM3B_GATES.md` @ `78b5cf3`; deviations: two false-positive
+monitor kills under the OLD rule-2, F3). Seed bank (39 questions, `canon-run
+--series csm`) shows no new FAILs vs the CSM-1b post-fix baseline; held-out
+sanity 8/8 cumulative HIT. Council CSM-3b (`reports/csm/COUNCIL_csm-3b.md`,
+sequential one-agent-at-a-time per the owner rule) **ratifies the CSM-3b close
+(R-CSM3B-1)** and adds the **Phase-2 pre-flight lines (R-CSM3B-6)**:
+
+1. **Re-verify monitor rule-2 (the 18:00:06 replacement) before any unattended
+   GPU window** — the old rule killed two CUDA pytest jobs as false positives
+   (F3); a kill heuristic that already killed two CUDA jobs is a pre-flight
+   check, not a formality. Control A acks each 300 s LONG flag within one
+   control batch (the ack loop — without it the flag is theater).
+2. **§9a preconditions (R-CSM3B-2/3)**: before §9a iteration 1 / the Phase-2
+   400-probe standing gate, BOTH (a) the F1 ledger fix — re-key the csm sweep
+   ledger pair by the 8-char panel hash, device+commit stamp on rows, migrate
+   the committed pair, re-probe the 168 CPU-provenance rows on CUDA, add the
+   interleaved two-panel survival test — and (b) the live roster-door probe
+   (Ruling-1's 31-member line at `door=roster` must serve chars; escalate to
+   Ruling-3's N=100 roster sanity if low-yield) — must land. Sequential
+   Wave-2 pre-step; the orchestrator, never the fixing subagent, grades them.

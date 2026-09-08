@@ -1,5 +1,28 @@
 # CSM-3b gate cycle (CSM3B_GATES) — 2026-09-08, Terminal B
 
+## What this wave delivered (five lines — Phase-2 side sessions read receipts alone; R-CSM3B-7)
+
+1. **Scope**: CSM-3b = COUNCIL_csm-3 Rulings 1+7 (roster-door fix + panel-hash
+   enforcement) landed and verified, plus the full standing-gate cycle re-run on
+   the 1,254 suite (one-copy ordering, CUDA).
+2. **R1+R7 landed**: engine `f93d396` (roster-door `served_text` flattens
+   members/passages; roster-shaped test) + close-out `bc73795` (panel-hash
+   recompute/enforce, tampered pin → exit 1; bare-list held-out load;
+   `tools/csm/panel_heldout.py`).
+3. **Gates = re-baseline**: pytest 1,254 · eval jjk 31/31 · span-recall jjk
+   48,572/48,572 offline + 390/400 live · canon opm 10/16 · 236/236 · 79.0% —
+   all exactly the 2026-09-08 15:22–15:26 re-baseline; zero new fails.
+4. **Seed bank (39 questions, canon-run shaped — `canon-run --series csm`, no
+   eval-harness gold by design)**: 11/19 exact · 138/148 canon = CSM-1b
+   post-fix baseline; G-CSM-1 (csm-set-14 recall 0/5) + G-CSM-2 (csm-fact-06
+   empty qa bundle) persist, scheduled CSM-4/5.
+5. **Open items → §9a preconditions (council CSM-3b, Rulings 2/3)**: F1 the
+   ledger sidecar trap (ledger pair shared per series, not per panel — a
+   held-out run dropped 168 pinned rows from disk) gets fixed as the zero-GPU
+   sequential Wave-2 pre-step, and the Ruling-1 31-member roster line needs a
+   live `door=roster` probe — both land before §9a iteration 1 / the Phase-2
+   400-probe gate; the orchestrator (never the fixing subagent) grades them.
+
 **Context (one-copy ordering).** Stop `:8000` → in-process gates on CUDA (pytest, eval jjk) →
 restart `:8000` on CUDA (pid 103425, started 18:08:01 per its `/health` `started` field) →
 HTTP gates (span-recall jjk probe-400, canon opm) + seed bank via `canon-run`. Worker 2
