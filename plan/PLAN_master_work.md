@@ -171,10 +171,10 @@ The model replies with exactly one JSON object `{"action": "<name>", ...fields, 
 | `done` | `note` — goal reached; loop exits cleanly |
 | `abort` | `reason` — goal unreachable/unsafe; loop exits |
 
-### 5.2 Pseudocode (stdlib + `requests`)
+### 5.2 Pseudocode (stdlib only — the venv has no `requests`; urllib POSTs the same JSON)
 
 ```python
-import base64, json, re, subprocess, time, pathlib, requests
+import base64, json, re, subprocess, time, pathlib, urllib.request, urllib.error
 URL, MODEL = "http://localhost:18080/v1/chat/completions", "qwen3.8-27b-ninfer"
 class ModelDown(Exception): pass                                   # council fix 3/5: model-unavailable ≠ no-op (§6.5 named state)
 DENY = ("XF86", "SUPER", "CTRL+ALT+BACKSPACE", "CTRL+ALT+DELETE")  # guard 6a: consequence combos (X restart, power, media)
@@ -188,12 +188,17 @@ def shot():
     subprocess.run(["scrot", "/tmp/pcloop.png"], check=True, stdout=subprocess.DEVNULL); return base64.b64encode(pathlib.Path("/tmp/pcloop.png").read_bytes()).decode()
 def ask(img):
     tail = "\n".join(LOG.read_text().splitlines()[-K:]) if LOG.exists() else ""
-    r = requests.post(URL, timeout=90, json={"model": MODEL, "max_tokens": 2048, "messages": [{"role": "user", "content": [
+    req = urllib.request.Request(URL, data=json.dumps({"model": MODEL, "max_tokens": 2048, "messages": [{"role": "user", "content": [
         {"type": "text", "text": f"Task: {TASK}\nRecent work_log:\n{tail}\nReply with ONE JSON object; action in: " + "|".join(ALLOW)},
-        {"type": "image_url", "image_url": {"url": "data:image/png;base64," + img}}]}]})
-    if r.status_code >= 500: raise ModelDown(f"HTTP {r.status_code}")   # fix 3: saturated/dead model = transient, retry next tick
-    r.raise_for_status()
-    return json.loads(re.search(r"\{.*\}", r.json()["choices"][0]["message"]["content"], re.S).group(0))
+        {"type": "image_url", "image_url": {"url": "data:image/png;base64," + img}}]}]}).encode(), headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r: body = r.read()     # 90 s hard timeout (guard 2)
+    except urllib.error.HTTPError as e:
+        if e.code >= 500: raise ModelDown(f"HTTP {e.code}")                     # fix 3: saturated/dead model = transient, retry next tick
+        raise RuntimeError(f"HTTP {e.code} (4xx — a real error, counts as no-op)") from e
+    except (TimeoutError, urllib.error.URLError) as e:
+        raise ConnectionError(str(e)[:60])                                      # fix 3: unreachable → main's builtin-ConnectionError path (retry, not a no-op)
+    return json.loads(re.search(r"\{.*\}", json.loads(body)["choices"][0]["message"]["content"], re.S).group(0))
 def run(a):  # argv-list xdotool only: model-supplied text/combo can never become shell injection
     n, x, y = a.get("action"), a.get("x", 0), a.get("y", 0)
     if n not in ALLOW: return "reject"
@@ -215,7 +220,7 @@ def main():
         if STOP.exists(): log(f"HALT pcloop: STOP veto ({STOP.read_text().strip()})"); return
         try: a = ask(shot())
         except ModelDown as e: log(f"FAIL pcloop: model-down ({str(e)[:60]}) — named state §6.5, retry next tick, NOT a no-op"); res = "model-down"
-        except (requests.ConnectionError, requests.Timeout): log("FAIL pcloop: model unreachable (timeout incl. the 90 s read-timeout) — retry next tick, NOT a no-op (fix 3)"); res = "model-down"
+        except ConnectionError as e: log(f"FAIL pcloop: model unreachable ({str(e)[:60]}) — timeout incl. the 90 s read-timeout; retry next tick, NOT a no-op (fix 3)"); res = "model-down"
         except Exception as e: log(f"FAIL pcloop: vision ({str(e)[:80]})"); res = "no-op"
         else: res = run(a); log(f"ACT pcloop: {json.dumps(a)} -> {res}")
         ticks += 1
