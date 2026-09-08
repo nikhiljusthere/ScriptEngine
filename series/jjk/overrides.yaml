@@ -9246,3 +9246,172 @@ extra_facts:
     label: State at the start of the Culling Game
     value: "Alive but sealed ('With Satoru Gojo sealed and Geto's motives unknown')"
     citation: "Pin 'With Satoru Gojo sealed and Geto's motives unknown' (Culling Game Arc, Synopsis)"
+
+# ── CSM-2 (2026-09-08): campaign scope + archetypes ─────────────────────────
+# Retires the IN_SCOPE_TYPES / IN_SCOPE_PAGES the coverage tool had
+# hardcoded: `tools/coverage_report.py` now reads the scope from this file,
+# and a page_type it has not been told how to classify exits non-zero.
+# The six in-scope types are the legacy campaign-scoping decision verbatim
+# (media / nav / release pages deliberately out); the JJK coverage output
+# must stay byte-identical with this encoding (regression check).
+page_scope:
+  item:
+    in_scope: true
+    archetype: item
+  location:
+    in_scope: true
+    archetype: location
+  organizations:
+    in_scope: true
+    archetype: organisation
+  species:
+    in_scope: true
+    archetype: character
+  simple_box:
+    in_scope: true
+    archetype: item
+  occupation:
+    in_scope: true
+    archetype: item
+  chapter:
+    in_scope: false
+    archetype: chapter
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  technique:
+    in_scope: false
+    archetype: technique
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  character:
+    in_scope: false
+    archetype: character
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  battle:
+    in_scope: false
+    archetype: battle
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  character_synopsis:
+    in_scope: false
+    archetype: character
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  episode:
+    in_scope: false
+    archetype: episode
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  event:
+    in_scope: false
+    archetype: chapter
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  story_arcs:
+    in_scope: false
+    archetype: chapter
+    reason: "Measured in the prose-campaign batches (not the content remainder)"
+  volume:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  blu_ray_dvd:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  music:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  game:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  series:
+    in_scope: false
+    archetype: release
+    reason: "Series-level overview page (out of scope)"
+  anime:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  novel:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  stage_play:
+    in_scope: false
+    archetype: release
+    reason: "Media release page (out of scope)"
+  unknown:
+    in_scope: false
+    archetype: item
+    reason: "Unclassified infobox shape — every page carries its own
+      disposition under `unknown_pages` below"
+
+# The 11 pages the infobox detector filed under `unknown` (the legacy
+# IN_SCOPE_PAGES = {Jujutsu Regulations} is the in one, excluded in
+# writing).
+unknown_pages:
+  Jujutsu Regulations:
+    in_scope: true
+    archetype: item
+    reason: "Lore-content page: the jujutsu rules/grades (the legacy IN_SCOPE_PAGES entry)"
+  Gege Akutami:
+    in_scope: false
+    archetype: character
+    reason: "Author page (out of scope)"
+  Yuji Iwasaki:
+    in_scope: false
+    archetype: character
+    reason: "Editor/author page (out of scope)"
+  List of Battles & Events:
+    in_scope: false
+    archetype: chapter
+    reason: "Reference list (list pages out of scope)"
+  List of Characters:
+    in_scope: false
+    archetype: character
+    reason: "Reference list (list pages out of scope)"
+  List of Episodes:
+    in_scope: false
+    archetype: episode
+    reason: "Reference list (list pages out of scope)"
+  Popularity Polls:
+    in_scope: false
+    archetype: item
+    reason: "Meta/reference (fan polls)"
+  Promotional Videos:
+    in_scope: false
+    archetype: release
+    reason: "Promo page (out of scope)"
+  Story Arcs:
+    in_scope: false
+    archetype: chapter
+    reason: "Reference index of arcs; arc content sits on the story_arcs pages"
+  Volumes & Chapters:
+    in_scope: false
+    archetype: release
+    reason: "Reference list of releases (out of scope)"
+  Weekly Shonen Jump:
+    in_scope: false
+    archetype: item
+    reason: "Publisher/magazine page (meta, out of scope)"
+
+# The reusable archetype schema (defined once in the CSM pilot —
+# `series/csm/overrides.yaml` — and inherited here by reference):
+# in-scope archetypes floor at 1 content section for D2; release floors
+# at 0 (no CSM/JJK release page is in scope).
+archetypes:
+  character:    {depth_floor: 1}
+  chapter:      {depth_floor: 1}
+  episode:      {depth_floor: 1}
+  battle:       {depth_floor: 1}
+  technique:    {depth_floor: 1}
+  location:     {depth_floor: 1}
+  organisation: {depth_floor: 1}
+  item:         {depth_floor: 1}
+  release:      {depth_floor: 0}
+
+# The coverage report's "In-scope content remainder" paragraph, verbatim
+# from the tool's former hardcoded text (byte-identity regression target;
+# literal block: the lines print verbatim).
+remainder_note: |
+  Content-bearing pages not yet covered (authorable prose). Media / nav /
+  release pages (volume, blu_ray_dvd, music, game, series, anime, novel,
+  stage_play and the remaining `unknown` list/author/promo pages) are out of
+  scope.

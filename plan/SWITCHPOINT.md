@@ -41,15 +41,13 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
     same fix batch: Fandom-403 UA + CRLF/indent whole-file churn.
   - Standing four gates NOT re-run for CSM-1: no engine/store change (question
     files + a CSM-only tool in `tools/csm/`); JJK baseline untouched.
-  - **Next: CSM-2** (council item 2): classify all 537 CSM pages / 12 page
-    types (incl. the 14 `unknown`s) in `series/csm/overrides.yaml` —
-    in-scope / excluded-in-writing + archetype (one reusable schema); that
-    list IS 5.1's scope list + §6's archetype mapping. `tools/
-    coverage_report.py` reads scope from overrides (the JJK-hardcoded
-    `IN_SCOPE_TYPES` retired), exits non-zero on an unclassified `page_type`.
-    Done-criteria: csm denominator 537 / 0 unclassified / 0 unknown; `--series
-    jjk` output byte-identical; non-zero-exit path + a CSM scope test in
-    `tests/`; pytest green. No series name in any `.py`.
+  - **Next: CSM-3** (council item 3): D5 measurement infrastructure —
+    pinned hashed probe panel + held-out split, wired CLI resume, hit_rate
+    over the full panel, the declared short-line floor, all three doors
+    (qa + roster + narrative), and the tier-0 rename span-recall →
+    chunk-containment (alias kept). Done: two consecutive sweeps reproduce
+    the identical panel; resumed run idempotent; per-door raw counts;
+    renamed command + alias work; pytest green.
   - Council cadence: fires after CSM-2 (2 completed todos) → `reports/csm/
     COUNCIL_csm-1-2.md` (5 advisors in parallel, then 5 peers; raw receipts).
 - open questions / risks:
@@ -66,6 +64,16 @@ gpu-handoff.sh`) in a 100k-mode side session — never block this session on
   `reports/csm/GATE_REBASELINE.md` (current gate numbers). Todos CSM-1..8 are
   recreated from the council plan if the panel was lost (CSM-1 + CSM-1b =
   done; CSM-2 next).
+- done this turn (2026-09-08, CSM-2): scoreboard generalized — `page_scope`
+  + `unknown_pages` + `archetypes` + `remainder_note` in `series/csm/`
+  overrides.yaml (13 types classified; the 14 unknowns each disposed; 4 in
+  scope) and the same encoding in `series/jjk/overrides.yaml` (retired
+  hardcoded behavior verbatim); `tools/coverage_report.py` reads the scope,
+  exits 3 on unclassified; JJK output byte-identical (modulo Generated);
+  csm denominator 537, in-scope remainder 227; 7 new tests (pytest 1249).
+  Receipt: `reports/csm/CSM2_SCOREBOARD.md`. **Next: CSM-3** (D5
+  measurement infrastructure). Council fires on the 2 completed todos
+  (CSM-1b + CSM-2) → `reports/csm/COUNCIL_csm-1b-2.md`.
 - done this turn (2026-09-08, gpu-live2 RESUME): read C's report (all 4 gates
   PASS on CUDA), `:8000` verified on CPU, chain state clean (no STALLED, one
   typed resume), C transcript trashed, CLAUDE.md + gates-skill baselines

@@ -5,8 +5,17 @@ remains" in a series' prose campaign. Run it after every batch commit; do NOT
 hand-edit the generated markdown. Other docs must not state what is next or
 what remains — they point here.
 
+The campaign scope (which page types are in-scope, how the `unknown` pages
+are disposed, the remainder paragraph) is read from `series/<name>/
+overrides.yaml` (`page_scope` + `unknown_pages` + `remainder_note`) — the
+former JJK-hardcoded `IN_SCOPE_TYPES` / `IN_SCOPE_PAGES` were retired in
+CSM-2. Silence is an error: a page_type the series has not been told how to
+classify exits non-zero (3), never a silent default.
+
 Usage:
     python tools/coverage_report.py [series] [--out PATH]
+
+Exit codes: 2 = no facts.db (not indexed), 3 = scope not fully classified.
 """
 from __future__ import annotations
 
@@ -21,16 +30,49 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from scriptengine.config import series_paths          # noqa: E402
+from scriptengine.config import load_overrides, series_paths  # noqa: E402
 from scriptengine.stores.facts import FactStore       # noqa: E402
 from scriptengine.eval.page_gen import slug_of        # noqa: E402
 
-# Content-bearing page types that carry authorable prose, plus the specific
-# content page the infobox detector filed under `unknown`. This is a stable
-# campaign-scoping decision (media / nav / release pages are deliberately out
-# of scope), not per-wiki engine logic.
-IN_SCOPE_TYPES = {"item", "location", "organizations", "species", "simple_box", "occupation"}
-IN_SCOPE_PAGES = {"Jujutsu Regulations"}
+
+class ScopeError(RuntimeError):
+    """The series has not declared its campaign scope — silence is an error."""
+
+
+def load_page_scope(paths) -> dict:
+    """The series' campaign scope from its overrides (CSM-2).
+
+    `page_scope` is mandatory: a series whose page types are not classified
+    cannot be measured. Raises ScopeError when it is missing."""
+    ovr = load_overrides(paths)
+    types = ovr.get("page_scope")
+    if not isinstance(types, dict) or not types:
+        raise ScopeError(
+            f"no `page_scope` declared in {paths.overrides} — every page_type "
+            f"must be classified in-scope or excluded-in-writing (CSM-2)")
+    return {
+        "types": types,
+        "unknown_pages": ovr.get("unknown_pages") or {},
+        "remainder_note": ovr.get("remainder_note"),
+    }
+
+
+def scope_violations(docs, ps: dict) -> list[str]:
+    """Unclassified page types + `unknown` pages without a per-page
+    disposition. Empty = the series is fully classified."""
+    out: set[str] = set()
+    for title, pt in docs:
+        if pt not in ps["types"]:
+            out.add(f"page_type {pt!r} is not classified in `page_scope`")
+        if pt == "unknown" and title not in ps["unknown_pages"]:
+            out.add(f"unknown page {title!r} has no disposition in `unknown_pages`")
+    return sorted(out)
+
+
+def in_scope(pt: str, title: str, ps: dict) -> bool:
+    if ps["types"].get(pt, {}).get("in_scope"):
+        return True
+    return pt == "unknown" and bool(ps["unknown_pages"].get(title, {}).get("in_scope"))
 
 
 def base_batches(qdir: Path, series: str) -> dict[str, Path]:
@@ -57,7 +99,7 @@ def active_questions(path: Path) -> int | None:
     return len(q) if isinstance(q, list) else 0
 
 
-def render(series: str, docs, batches: dict[str, Path]) -> tuple[str, dict]:
+def render(series: str, docs, batches: dict[str, Path], ps: dict) -> tuple[str, dict]:
     pages = collections.Counter(pt for _, pt in docs)
     covered = collections.Counter()
     questions = collections.Counter()
@@ -81,7 +123,7 @@ def render(series: str, docs, batches: dict[str, Path]) -> tuple[str, dict]:
                 covered_zero.append(title)
         else:
             uncovered[pt].append(title)
-            if pt in IN_SCOPE_TYPES or title in IN_SCOPE_PAGES:
+            if in_scope(pt, title, ps):
                 in_scope_uncovered.append((pt, title))
 
     orphans = sorted(set(batches) - doc_slugs)
@@ -123,20 +165,25 @@ def render(series: str, docs, batches: dict[str, Path]) -> tuple[str, dict]:
     ap("")
     ap("## In-scope content remainder")
     ap("")
-    ap("Content-bearing pages not yet covered (authorable prose). Media / nav /")
-    ap("release pages (volume, blu_ray_dvd, music, game, series, anime, novel,")
-    ap("stage_play and the remaining `unknown` list/author/promo pages) are out of")
-    ap("scope.")
+    if ps.get("remainder_note"):
+        for line in ps["remainder_note"].rstrip("\n").splitlines():
+            ap(line)
+    else:
+        ap("Content-bearing pages not yet covered (authorable prose). Excluded")
+        ap("types carry a one-line reason in the series' overrides.yaml")
+        ap("`page_scope` (excluded-in-writing).")
     ap("")
     by_type = collections.Counter(pt for pt, _ in in_scope_uncovered)
-    n_pages_in = sum(1 for _, t in in_scope_uncovered if t in IN_SCOPE_PAGES)
+    unknown_in_scope = sorted(t for t, disp in ps["unknown_pages"].items() if disp.get("in_scope"))
+    n_pages_in = sum(1 for pt, _ in in_scope_uncovered if pt == "unknown")
     ap("| source | pages |")
     ap("|---|---:|")
-    for t in sorted(IN_SCOPE_TYPES, key=lambda x: (-by_type.get(x, 0), x)):
+    in_scope_types = [pt for pt, v in ps["types"].items() if v.get("in_scope")]
+    for t in sorted(in_scope_types, key=lambda x: (-by_type.get(x, 0), x)):
         if by_type.get(t):
             ap(f"| {t} | {by_type[t]} |")
     if n_pages_in:
-        ap(f"| `unknown` ({', '.join(sorted(IN_SCOPE_PAGES))}) | {n_pages_in} |")
+        ap(f"| `unknown` ({', '.join(unknown_in_scope)}) | {n_pages_in} |")
     ap(f"| **total** | **{len(in_scope_uncovered)}** |")
     ap("")
     ap("## Uncovered titles")
@@ -195,7 +242,23 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         st.close()
 
-    md, stats = render(series, docs, batches)
+    # CSM-2: the scope comes from the series' overrides; an unclassified
+    # page_type (or an `unknown` page without a per-page disposition) is an
+    # error, not a silent default.
+    try:
+        ps = load_page_scope(paths)
+    except ScopeError as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 3
+    violations = scope_violations(docs, ps)
+    if violations:
+        for v in violations:
+            print(f"error: {v}", file=sys.stderr)
+        print(f"error: {len(violations)} unclassified — declare them in "
+              f"{paths.overrides} (`page_scope` / `unknown_pages`)", file=sys.stderr)
+        return 3
+
+    md, stats = render(series, docs, batches, ps)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(md, encoding="utf-8")
     print(f"{series}: {stats['total_covered']}/{stats['total_pages']} pages "

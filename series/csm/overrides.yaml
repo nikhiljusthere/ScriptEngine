@@ -325,3 +325,147 @@ relation_sections: [Relationships, History, Plot, Synopsis]
 # from being live if a wiki is ever found whose abilities genuinely exist only
 # in its story pages. Chainsaw Man is not that wiki, and it was chosen as the
 # best case.
+
+# ── CSM-2 (2026-09-08): campaign scope + archetypes (council item 2) ─────────
+# The per-type campaign scope — the 5.1 scope list and the §6 archetype
+# mapping, one artifact. `tools/coverage_report.py` reads this; a page_type
+# not classified below exits non-zero (silence must become an error).
+# In-scope = authorable prose the campaign must cover; media / nav / release
+# pages are out of scope (JJK precedent, the coverage report's paragraph).
+page_scope:
+  character:
+    in_scope: true
+    archetype: character
+  character_history:
+    in_scope: true
+    archetype: character
+  episode:
+    in_scope: true
+    archetype: episode
+  organization:
+    in_scope: true
+    archetype: organisation
+  establishment:
+    in_scope: true
+    archetype: organisation
+  chapter_box:
+    in_scope: false
+    archetype: chapter
+    reason: "Manga chapter nav/summary box (nav page)"
+  volume_box:
+    in_scope: false
+    archetype: release
+    reason: "Manga volume release page (media)"
+  story_arcs_box:
+    in_scope: false
+    archetype: chapter
+    reason: "Arc-grouping nav box; the arc content sits on the chapter pages"
+  saga_box:
+    in_scope: false
+    archetype: chapter
+    reason: "Saga-grouping nav box"
+  music:
+    in_scope: false
+    archetype: release
+    reason: "Music release page (media)"
+  anime:
+    in_scope: false
+    archetype: release
+    reason: "Anime release page (media)"
+  blu_ray_dvd:
+    in_scope: false
+    archetype: release
+    reason: "Home-video release page (media)"
+  unknown:
+    in_scope: false
+    archetype: item
+    reason: "Unclassified infobox shape — every page carries its own
+      disposition under `unknown_pages` below"
+
+# The 14 pages the infobox detector filed under `unknown`, each classified or
+# excluded in writing (council item 2: "the 14 unknowns classified or
+# excluded in writing"). JJK precedent: the lore-content page in, the
+# author / list / promo pages out.
+unknown_pages:
+  Contract:
+    in_scope: true
+    archetype: item
+    reason: "Lore-content page: contract types + the occurred contracts (62 chunks)"
+  Hell:
+    in_scope: true
+    archetype: location
+    reason: "Setting page (overview / inhabitants / plot)"
+  World:
+    in_scope: true
+    archetype: location
+    reason: "Setting page: the wiki's locations, organised by country"
+  Aging's World:
+    in_scope: true
+    archetype: location
+    reason: "Setting page for the Aging Devil's world (inhabitants / plot)"
+  Timeline:
+    in_scope: false
+    archetype: chapter
+    reason: "Chronological reference list, not a single narrative page (JJK list-page precedent)"
+  Story Arcs:
+    in_scope: false
+    archetype: chapter
+    reason: "Reference index of arcs; arc content sits on the story_arcs_box / chapter pages (JJK Story Arcs precedent)"
+  Popularity Polls:
+    in_scope: false
+    archetype: item
+    reason: "Meta/reference (fan polls)"
+  Tatsuki Fujimoto:
+    in_scope: false
+    archetype: character
+    reason: "Author page (JJK author-page precedent)"
+  Chainsaw Man (Manga):
+    in_scope: false
+    archetype: release
+    reason: "Series-level overview page (the JJK `series` type is out of scope)"
+  Chainsaw Man The Stage:
+    in_scope: false
+    archetype: release
+    reason: "Stage-play release page (the JJK `stage_play` type is out of scope)"
+  Chainsaw Man x BanG Dream!:
+    in_scope: false
+    archetype: release
+    reason: "Promo/collab page"
+  Chainsaw Man x Monster Strike:
+    in_scope: false
+    archetype: release
+    reason: "Game-collab page (the JJK `game` type is out of scope)"
+  Real Chainsaw Man:
+    in_scope: false
+    archetype: release
+    reason: "Gallery/promo page (posters, making-of video)"
+  Chain Run:
+    in_scope: false
+    archetype: release
+    reason: "Game page (the JJK `game` type is out of scope)"
+
+# The reusable archetype schema (council item 2: "defined once here,
+# inherited by the other six"). `depth_floor`: the minimum number of
+# non-boilerplate content sections a page of this archetype must carry to
+# count as "deep enough" for D2 — declared 1 for the in-scope archetypes
+# (content must exist); deeper per-archetype floors are set when the CSM-6
+# census runs, never guessed here. `release` floors at 0: every CSM
+# release page is excluded in writing, so nothing is measured.
+archetypes:
+  character:    {depth_floor: 1}
+  chapter:      {depth_floor: 1}
+  episode:      {depth_floor: 1}
+  battle:       {depth_floor: 1}
+  technique:    {depth_floor: 1}
+  location:     {depth_floor: 1}
+  organisation: {depth_floor: 1}
+  item:         {depth_floor: 1}
+  release:      {depth_floor: 0}
+
+# The coverage report's "In-scope content remainder" paragraph, kept here so
+# the tool carries no series name (literal block: the lines print verbatim).
+remainder_note: |
+  Content-bearing pages not yet covered (authorable prose). Nav boxes
+  (chapter_box, story_arcs_box, saga_box), release pages (volume_box,
+  music, anime, blu_ray_dvd) and the excluded `unknown` list/author/
+  meta/release pages are out of scope.
