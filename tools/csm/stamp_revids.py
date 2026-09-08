@@ -34,6 +34,9 @@ FILES = [
 ]
 API = "https://chainsaw-man.fandom.com/api.php"
 WIKI_HOST = "chainsaw-man.fandom.com"
+# Fandom 403s the bare urllib UA (bot filter); the crawler's UA is the one the
+# API answers (config.py user_agent, crawler.py:180).
+UA = "ScriptEngine/0.1 (wiki knowledge indexer; https://github.com/nikhiljusthere/ScriptEngine)"
 
 
 def wiki_titles(sources):
@@ -59,7 +62,8 @@ def fetch_revids(titles):
             "rvprop": "ids|timestamp", "redirects": "1",
             "titles": "|".join(batch), "limit": str(len(batch)),
         })
-        with urllib.request.urlopen(f"{API}?{q}", timeout=30) as r:
+        with urllib.request.urlopen(
+                urllib.request.Request(f"{API}?{q}", headers={"User-Agent": UA}), timeout=30) as r:
             data = json.load(r)
         pages = data.get("query", {}).get("pages", {})
         redir = {p["from"]: p["to"] for p in data.get("query", {}).get("normalized", []) or []}
@@ -84,9 +88,15 @@ def fetch_revids(titles):
 
 
 def indent_of(path):
-    text = path.read_text()
-    m = re.match(r"^\{\n ?+", text)
-    return len(m.group(0)) - 1 if m else 2
+    """Leading spaces of the first content line (line 2) — json.dumps must
+    re-emit the file's existing indent or the whole file re-indents in the
+    diff (the bug that made the first stamp run rewrite 1,400 lines)."""
+    lines = path.read_text().splitlines()
+    if len(lines) > 1:
+        m = re.match(r"^( *)\S", lines[1])
+        if m:
+            return len(m.group(1))
+    return 2
 
 
 def stamp_file(path, fetched):
@@ -123,7 +133,7 @@ def main():
               + (f" (moved from {prev_maps[FILES[0]][0].get(t, {}).get('revid')})"
                  if t in prev_maps[FILES[0]][0] and prev_maps[FILES[0]][0][t].get("revid") != info.get("revid") else ""))
     for f in FILES:
-        data, prev = prev_maps[f]
+        prev, data = prev_maps[f]  # stored order is (prev, data) — reversed once, that run wrote the empty prev map and wiped the questions lists
         new_map = {}
         for t in titles:
             info = revids.get(t)
@@ -140,7 +150,12 @@ def main():
                                        "a re-run reports pages that moved (drift = re-verify)"}
         if not dry:
             ind = indent_of(f)
-            f.write_text(json.dumps(data, indent=ind, ensure_ascii=False) + "\n")
+            text = json.dumps(data, indent=ind, ensure_ascii=False) + "\n"
+            # The bank files are CRLF; an LF rewrite churns every line in the
+            # diff (bug: first CSM-1 run). Preserve the file's own endings.
+            if b"\r\n" in f.read_bytes()[:4096]:
+                text = text.replace("\n", "\r\n")
+            f.write_bytes(text.encode())
         print(f"{'would write' if dry else 'wrote'} {f.relative_to(REPO)}: "
               f"{len(new_map)} pinned, {len(titles) - len(new_map)} unpinnable, "
               f"{len(data.get('questions', [])) + len(data.get('retired', []))} questions stamped")
