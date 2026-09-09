@@ -69,6 +69,18 @@ survival; cross-page edges 11,261 (96.7 % cross-document).
    registered items (R-6, R-7, the close-steps, the gate legs) remain
    **no-council checklists**. The directing session runs/commissions the
    council at each trigger; a triggered council blocks the phase boundary.
+1b. **Council concurrency = 1, and it is now measured, not conventional
+   (owner 2026-09-10).** Qwen runs `--kv-capacity 102400` while one council
+   member's context measures 50,000–86,751 tokens, so two members cannot be
+   resident at once — they evict each other's prefix and every turn
+   re-prefills the whole conversation. Over 60 consecutive calls during the
+   R-5 council: `full_reset` on **56 of 60**, **6.1 %** of prompt tokens from
+   the prefix cache, **3,755,807 prompt tokens sent to generate 109,681
+   completion tokens**. A member's "646 k spent" is that same context re-sent
+   ~13 times, not 646 k of reasoning. Serial is therefore *faster* in
+   wall-clock, not slower: one member fits the pool, so its prefix stays
+   resident and each turn appends. The 2-per-wave rule applies to
+   **non-council** model-free workers only.
 2. **Worker timeout: 90 min, or split** — verify/record as a separate short
    pass (wave-2 lesson: both workers died at 60 min in the final loop).
 3. **Gate-green ⇒ auto-commit.** Verified state + ledgers + records commit

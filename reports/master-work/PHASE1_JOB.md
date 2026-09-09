@@ -49,9 +49,10 @@ gate. B's last act of Phase 1 is the marker + a stop.
 2. **P1.2** — the R-5 relations-mode wave: split draft (90-min-or-split,
    R-5 core only: 4th series-agnostic router mode `relations` + budgeted
    bundle builder + MODES/endpoint update) → B grades → the §3 council
-   (the kept trigger — 5 advisors in parallel per the owner 23:2x rule,
-   then reviewers, then chairman; the R-6 floor-inheritance question is
-   pre-registered in the brief, council_r2r3/chairman.md:43) → four gates
+   (the kept trigger — **one member at a time, never 2/wave: see "Council
+   concurrency" below**; 5 advisors, then reviewers, then chairman; the R-6
+   floor-inheritance question is pre-registered in the brief,
+   council_r2r3/chairman.md:43) → four gates
    → R5-meter re-sweep (own-new-row HIT ≥ 1 of the class's own new/stamped
    rows, or halt; JJK/OPM invariant pins) → auto-commit. R-6
    (`subject_aliases`) + R-7 (`identity_fields`, 61-key map) run as
@@ -73,6 +74,29 @@ gate. B's last act of Phase 1 is the marker + a stop.
    `PHASE_A_COMPLETE <ts>` into `reports/master-work/phase_status.txt`.
    **A regression halt = no marker, no Phase 2** (council state; return to
    the halt-meter loop).
+
+## Council concurrency — ONE member at a time (owner 2026-09-10, measured)
+
+**Never run council members 2-per-wave.** Qwen runs `--kv-capacity 102400`
+and a single council member's context measures 50,000–86,751 tokens, so two
+members can never be resident at once: each evicts the other's prefix and
+every turn re-prefills the whole conversation from scratch.
+
+Measured on the live server over 60 consecutive calls during the R-5 council:
+
+- `prefix_reuse_path` = `full_reset` on **56 of 60 calls**; only 4 reused
+- **6.1 %** of prompt tokens served from the prefix cache (227,838 of 3,755,807)
+- **3,755,807 prompt tokens sent to generate 109,681 completion tokens** — the
+  same ~50–86 k context re-sent every turn (this is the whole of what a
+  member's "646 k spent" counter is measuring; it is not 646 k of reasoning)
+
+Serial is **faster in wall-clock here, not slower**: one member alone fits the
+pool (86 k < 102.4 k), so its prefix stays resident and each turn appends
+instead of re-prefilling. This also restores the standing owner rule (councils
+= one agent at a time, 2026-09-08).
+
+The 2-subagent wave rule still holds for **non-council** work — short,
+model-free workers whose contexts are small enough to co-reside.
 
 ## B's last act (Phase 1 end) — AMENDED (owner directive 2026-09-10, `[STEER]`)
 
