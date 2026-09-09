@@ -43,7 +43,7 @@ say "model loaded: mode=$MODE ctx=$CTX qwen_pid=$QPID"
 # 2) the LLM call, typed into the directing pane — this is the shell
 #    "sending a call to the llm": it lands as a user turn the model must
 #    execute (the model has bash tools; this shell does not restart pi).
-CALL="LLM CALL from the switch shell (switch_restart2.sh): the model is loaded — mode=$MODE ctx=$CTX qwen_pid=$QPID. Do this NOW in one bash tool call: (1) terminate this switch shell: pkill -f switch_restart2.sh; (2) restart the pi agent: setsid nohup bash tools/master-work/relaunch_pi.sh $OLD /tmp/resume_msg.txt < /dev/null > /dev/null 2>&1 & (it grace-kills you after 5 s, relaunches pi in tmux pi-csm, types the resume line); (3) verify the relaunch helper is alive (kill -0 on its pid) and END YOUR TURN — you die at the grace; the new pi verifies /262k and reports to the owner."
+CALL="LLM CALL from the switch shell (switch_restart2.sh): the model is loaded — mode=$MODE ctx=$CTX qwen_pid=$QPID. Do this NOW in one bash tool call: (1) terminate this switch shell: pkill -f switch_restart2.sh; (2) restart the pi agent: setsid nohup GRACE=2 bash tools/master-work/relaunch_pi.sh $OLD /tmp/resume_msg.txt < /dev/null > /dev/null 2>&1 & (it grace-kills you, relaunches pi in tmux pi-csm, types the resume line); (3) verify the relaunch helper is alive (kill -0 on its pid) and END YOUR TURN — you die at the grace; the new pi verifies the $MODE window and reports to the owner."
 tmux send-keys -t "$SESS" "$CALL" Enter
 say "LLM call sent to $SESS (directing pi $OLD): ${CALL:0:80}..."
 

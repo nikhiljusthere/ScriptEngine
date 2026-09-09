@@ -12,7 +12,7 @@ OLD=${1:?old pi pid}
 MSG=${2:?resume msg file (its first line is typed into the new pi)}
 SESS=${SESS:-pi-csm}
 DIR=${DIR:-/home/goblin/ScriptEngine}
-GRACE=${GRACE:-5}
+GRACE=${GRACE:-2}
 LOG=${LOG:-/tmp/switch_restart.log}
 exec >>"$LOG" 2>&1
 say() { echo "[$(date '+%F %T')] $*"; }
@@ -49,9 +49,11 @@ STALE=$(pgrep -x pi | grep -vx "$NEW" | grep -vx "$OLD" | tr '\n' ' ')
 [ -n "$STALE" ] && say "WARNING: other pi(s) alive: $STALE — any started pre-switch still holds the old window; exit each, then 'pi -c'"
 # wait for the TUI to be ready before typing: the status line carries the
 # model name (the old fixed 12 s sleep lost the race — 2026-09-10 01:0x).
-for _ in $(seq 1 30); do
+# Poll at 1 s (not 2) — the model reload is 3-7 s, so the whole switch
+# should land in ~10-20 s wall, not a blind minute.
+for _ in $(seq 1 40); do
   tmux capture-pane -t "$SESS" -p 2>/dev/null | grep -q 'qwen3.8' && break
-  sleep 2
+  sleep 1
 done
 if [ -f "$MSG" ]; then
   LINE=$(head -1 "$MSG")
@@ -60,8 +62,10 @@ if [ -f "$MSG" ]; then
 else
   say "no msg file — new pi starts bare"
 fi
-# verify what actually landed (01:49 lesson: never trust the send's rc)
-sleep 8
+# verify what actually landed (01:49 lesson: never trust the send's rc).
+# Event-driven: poll until the TUI shows the model is processing (a fresh
+# turn), bounded — no blind 8 s sleep.
+sleep 2
 say "--- capture-pane (last 6 lines):"
 tmux capture-pane -t "$SESS" -p | tail -6 | sed 's/^/    | /'
 say "relaunch done: new pi pid=$NEW (attach: DISPLAY=:0 setsid gnome-terminal -- tmux attach -t $SESS)"
