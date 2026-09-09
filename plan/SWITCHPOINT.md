@@ -9,6 +9,15 @@ edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
 - **2026-09-09 (CSM Phase 1 under the A/B bay — 262k→100k switch now; drift D20):**
+  - **00:5x addendum (directing session pi 53523):** the bay was opened 00:38–00:39
+    (tmux `control` = A, `work` = B + `csm-control.sh` monitor) and terminated on
+    owner direction — the visible pilot windows would not scroll (tmux `mouse off`
+    → the wheel fell through to pi; wheel-up showed the previous prompt in the
+    entry field). Fixed at the root: `~/.tmux.conf` `set -g mouse on` (live
+    server set as well) + rule lines in the terminal-pilot / ab-bay skills;
+    wheel = tmux copy-mode scrollback, `Esc` = live pane. Owner then directed:
+    demo 262k→100k switch pair (both inline; session fit 85k est < 102k), then
+    re-launch A/B per ab-bay step 5 with the fixed windows.
   - **Owner directive (this session, 2026-09-09 night):** (1) switch to the
     100k context by reloading ninfer (qwen-switch skill); (2) close this pi
     agent + session as ninfer restarts (pi_restart.sh, grace ≤10 s — the
