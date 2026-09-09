@@ -364,3 +364,9 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-10T00:37:25+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7084MiB
 - 2026-09-10T00:52:47+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1610MiB
 - 2026-09-10T00:54:16+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1610MiB
+- 2026-09-10T00:58:08+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7080MiB
+  - **01:0x (owner-directed):** 100k→262k return switch via the same
+    `switch_restart.sh` helper (resume line = report 262k state to the owner,
+    then stop). Helper bug fixed + committed (new-pi detection was `head -1`
+    = oldest surviving pi → typed into the owner's pi; now `sort -n | tail -1`
+    = newest = the spawned one).

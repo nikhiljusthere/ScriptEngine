@@ -56,7 +56,11 @@ tmux new-session -d -s "$SESS" -c "$DIR" pi
 say "tmux session $SESS launched"
 NEW=""
 for _ in $(seq 1 30); do
-  NEW=$(pgrep -x pi | grep -vxF "$OLD" | head -1)
+  # newest pi (max pid) = the one we just spawned; the owner's older pi
+  # loses on pid order, not on name. (2026-09-10 00:58 incident: head -1
+  # = oldest surviving pi, which typed the resume line into the owner's
+  # pi 53686 instead of the pane's new pi 55321.)
+  NEW=$(pgrep -x pi | grep -vxF "$OLD" | sort -n | tail -1)
   [ -n "$NEW" ] && break
   sleep 2
 done
