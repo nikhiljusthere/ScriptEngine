@@ -19,6 +19,7 @@ an in-memory BM25 index) and two corrections:
 from __future__ import annotations
 
 import logging
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -344,6 +345,33 @@ class HybridRetriever:
             passages.sort(key=lambda p: p.score, reverse=True)
 
         deduplicated = _deduplicate(passages)
+        # WHY (d5, 2026-09-09): a cross-encoder scores topical fit, so it
+        # reorders the shortlist by how name-dense a passage is and evicts the
+        # chunk that verbatim contains the query's own words. The d5 sweep
+        # measured exactly that: for every miss row (csmd5-*, gate400-*) the
+        # target chunk was the lexical-rank-0/1, RRF-rank-0/2 entry of the
+        # shortlist and survived dedup -- the rerank was the only step that
+        # lost it. A passage that covers the question's words is the answer by
+        # construction, so the reranker is a tie-breaker, not a veto: re-admit
+        # query-covering passages the cut dropped, at the tail (they fill
+        # trailing budget, the way the subject floor does), without growing
+        # the beam past top_k.
+        recovered = [
+            passage
+            for passage in deduplicated[top_k:]
+            if _query_covered(query, passage.text)
+        ]
+        if recovered:
+            # Council R-2+R-3 (2026-09-09): cap so the splice is always a tail
+            # fill. Uncapped, a tail with more than top_k - 1 query-covering
+            # passages made the slice negative (L > top_k: re-admission
+            # silently no-ops, the internal list grows past top_k) or, at
+            # L == top_k, replaced the rerank top entirely. Order-preserving:
+            # `recovered` keeps rerank order as a subsequence of
+            # `deduplicated` -- no re-sort (a re-sort would demote the
+            # rerank's verdict to the pre-rerank fused score).
+            recovered = recovered[: top_k - 1]
+            deduplicated = deduplicated[: top_k - len(recovered)] + recovered
         passages, result.dropped = deduplicated[:top_k], deduplicated[top_k:]
 
         # 7. Expand each survivor to its section, so a quoted passage carries the
@@ -384,6 +412,25 @@ class HybridRetriever:
                 searches["vector_focused"] = narrowed
 
         return searches
+
+
+def _query_covered(query: str, text: str, threshold: float = 0.8) -> bool:
+    """Whether `text` covers the query's own words (a verbatim or near-verbatim
+    hit).
+
+    Only sentence-length queries qualify (three or more content words of four
+    letters or more): a short writer question ("Who is Aki Hayakawa?") has too
+    few words for containment to mean anything, and the guard must stay inert
+    for them. Substring matching is deliberate and in the recall direction:
+    it lets "devils" cover the query's "devil".
+    """
+    words = {
+        word for word in re.findall(r"[a-z0-9]+", query.lower()) if len(word) >= 4
+    }
+    if len(words) < 3:
+        return False
+    covered = {word for word in words if word in text.lower()}
+    return len(covered) / len(words) >= threshold
 
 
 def _deduplicate(passages: list[Passage]) -> list[Passage]:

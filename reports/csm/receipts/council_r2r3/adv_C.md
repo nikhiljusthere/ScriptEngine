@@ -1,0 +1,12 @@
+Verified on disk: both diffs, both receipts, red list, queue stamps, all 8 series overrides, both test files (36/36, model-free).
+
+R-2. Re-admission is tail-only: it frees exactly `len(recovered)` trailing slots, so the rerank's true top is untouched. Degenerate case: the beam is ≤4·top_k; if ≥top_k passages covered the query, `deduplicated[:top_k-len(recovered)]` becomes a negative slice and the fix silently degrades to pre-fix — inert, not a new failure mode. The <3-word guard keeps writer questions on the old path; 0.8 is a generic constant. The floor SQL has exactly one consumer (context.py:409); level-0 is a compact doc card, not the whole document. Right fix class: the rerank-veto debt is a retrieval-path property, a per-wiki override could not express it.
+
+R-3. No-op claim holds: only series/csm declares the three fields; all 8 wikis declare ability_sections, and the JJK pins (Divine Dogs/Nue) guard the union path. The umbrella/row-section split is exactly the decisive cross-check (char-01 keeps Denji's two prose rows, set-01 excludes them). The residuals split *inside* one group (Enhanced X is kept in some golds, dropped in others), so no fourth knob can separate them without encoding bank gold — bank curation is the right call. closed_members does not touch the relations door (separate store path); candidates stays 14, scoped-out members stay reported.
+
+THE TRAP: the council's "red list R-3 entries" is mislabelled. On disk, red list R-3 = the roster-door 31/88 budget floor (already landed at f93d396); the G-CSM-3 scoping debt is **R-4**. The R-3 receipt and the test-file docstring both cite "red list R-3" for the scoping debt, and the queue stamps both `red-R-3` and the scoping rows `fix_class R-3` — two spellings of one ID are about to be committed. The receipt's "expect 1,296" is stale (pre-R-2); the council's 1,303 = 1,283+1+6+13 checks out.
+
+VERDICT R-2: SHIP
+VERDICT R-3: AMEND — reconcile the red-list ID before commit: the test-file docstring (line 1) and the receipt cite "red list R-3" for the G-CSM-3 scoping debt, which is R-4 in red_list_csm.md; renumber the red list or fix the citations — one spelling
+FIRST STEP AFTER VERDICT: apply the R-3 citation fix, then start the shared four-gate re-run expecting 1,303 collected
+CHANGE-OF-MIND IF: gate-time collect ≠ 1,303, a probe/eval miss beyond opm-set-16, or a JJK floor regression from the level-0 cards (the last one flips R-2 to AMEND)

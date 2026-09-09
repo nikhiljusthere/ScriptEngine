@@ -107,6 +107,29 @@ class TestGCSM2SubjectPassageFloorIsIntact:
                if p["doc_title"] == subject or p["doc_title"].startswith(subject + "/")]
         assert own, f"the passage floor for {subject!r} is led by other documents"
 
+    def test_the_floor_carries_the_pages_own_lead_card(self):
+        """csm-fact-06 / red-list R-2: the debt line is in the subject's lead.
+
+        \"What is Denji's hybrid transformation trigger?\" returned 0 passages
+        with an explicit subject, because the trigger (\"pulling a cord on his
+        chest\") is documented only in Denji's level-0 document card -- the
+        title/facts/lead chunk -- and the floor was level-2 only, while the
+        lexical and graph legs are level-2 too, so the card was structurally
+        unreachable for a subject-named qa question. The card is now part of
+        the floor; this guards that the exact debt line is structurally
+        reachable from it (model-free; the bundle leg is the model-bound half
+        of the closure loop)."""
+        paths = _csm_paths()
+        with FactStore(paths.facts_db) as store:
+            floor = store.passages_for_subject("Denji")
+        cards = [p for p in floor if p["level"] == 0]
+        assert cards, "the subject's own lead (the level-0 document card) is not in the floor"
+        assert cards[0]["breadcrumb"] == "Denji", "the card is the subject page's own lead"
+        assert any("pulling a cord" in p["text"] for p in cards), (
+            "the G-CSM-2 debt line (Denji's trigger, documented only in the "
+            "lead) is not in the subject floor"
+        )
+
 
 class TestGCSM1RosterDoorServesPagelessMembers:
     """The declared-roster door must serve members that have no page of their

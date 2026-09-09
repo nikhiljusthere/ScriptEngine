@@ -1,0 +1,9 @@
+# Council R-2+R-3, peer reviewer 2 (invariance-delta weighting)
+
+**1. Strongest: D.** Every claim verified on disk: the CRLF no-op hunk (roster.py:2421); the scoped-fold guard correctly inside `if asked & {TECHNIQUE,TRANSFORMATION}`; csmdoor-01 missing from the receipt's re-sweep list. Only response with an executable gate sequence + failure semantics (stash one draft; halt on combination-only). B close: the L>top_k no-op regime + the dangling docstring.
+
+**2. Biggest blind spot: E.** SHIPs both drafts while missing B's R-2 defects (the L>top_k negative-slice no-op regime; the facts.py dangling "see docstring above"), the closed-members warning misreport on the empty-intersection data-error path, and csmdoor-01. Its "pure option" framing has no JJK-side check of the level-0 card.
+
+**3. What ALL five missed:**
+- **R-2:** the level-0 card changes the subject bundle of every subject-named question on every wiki, but the gates sample JJK subject behavior only at 31 eval + 400 probe lines, and the probe's reachability floor is exactly the 390/400 baseline (zero headroom). A composition delta (card in, tail passage evicted, line still reachable) passes all four gates green — the JJK-100% invariant for unsampled questions is not gate-covered. Document the residual or diff a pre/post JJK subject bundle (the pinned-panel mechanism exists).
+- **R-3:** the no-op guarantee is declaration-contingent and unenforced — a yaml-only declaration on a gated wiki is not an engine change, so nothing forces a gate re-run on that wiki's roster door. Rule to add: declaring any of the three fields on a gated wiki = gates + re-sweep. C's ID collision is bidirectional: red list R-4 (G-CSM-3 scoping) vs queue red-R-4 (d5 class).

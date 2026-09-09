@@ -1,0 +1,7 @@
+# Council R-2+R-3, peer review 3 (2026-09-09)
+
+**1. Strongest: B.** Only one to stress-test the R-2 splice: `recovered` is uncapped — for L ≥ top_k, `deduplicated[:top_k−L]` is a negative slice, so re-admission no-ops (L == top_k: full swap), contradicting "beam-bounded, no top_k growth." B gives a working one-line cap (`rrf_score`, hybrid.py:56), also found facts.py's dangling "see docstring above" (line 1983 never mentions level-0) + Roster.warning miswording on the closed-members data-error path. D is second (gate sequence, sweep-scope gap, CRLF hunk); its R-2 stops at "tail only."
+
+**2. Biggest blind spot: A.** Asserts "no new failure mode" after checking only top-crowding — the claim B's L ≥ top_k simulation disproves; also misses the dangling docstring + warning miswording, and overweights the CRLF hunk as an AMEND blocker. D shares this blind spot; elsewhere the strongest operational response.
+
+**3. All five missed (per draft).** R-2: (a) at L == top_k the splice fully replaces the rerank top (swap, not tail fill) — even with B's cap the council should accept or bound it; (b) `_query_covered`'s content words are `[a-z0-9]+`, so CJK queries score zero → re-admission is inert on non-Latin queries: E's "inherit for free" holds only for the floor leg — record it. R-3: the receipt calls R-2's files "pre-existing, other waves"; at the single shared commit, both receipts, the queue closures, and flagged record fixes (incl. csmdoor-01/red-R-3) should ship as one record package.

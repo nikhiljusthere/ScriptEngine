@@ -234,6 +234,12 @@ class RosterDefinition:
     # the fallthrough. It is the narrow exception, not a way around the rule:
     # without it the general path still wins, as it should.
     subject: str = ""
+    # G-CSM-3 (csm-set-17 vs csm-set-08, `Tokyo Special Division 4`): a set
+    # this wiki keeps *open*. `members:` is the full named roster; this is the
+    # closed membership the wiki's own section lists. A plain "members of X"
+    # question serves the closed list; a question asking for the *named*
+    # members (the qualifier word `named`) keeps the full roster.
+    closed_members: tuple[str, ...] = ()
 
     @classmethod
     def parse(cls, raw: dict) -> "RosterDefinition | None":
@@ -255,6 +261,9 @@ class RosterDefinition:
             group_by=str(raw.get("group_by") or ""),
             groups={str(k): str(v) for k, v in (raw.get("groups") or {}).items()},
             subject=str(raw.get("subject") or "").strip(),
+            closed_members=tuple(
+                _declared_name(m) for m in (raw.get("closed_members") or []) if m
+            ),
         )
 
     def matched_phrase(self, query: str) -> str:
@@ -416,6 +425,21 @@ class Roster:
             # old, narrower reason, and reusing it told a caller that `quincy`
             # was unknown on a wiki with fifty-four of them. What is true in
             # every case reaching here is that the word changed nothing.
+            # Gate (council R-2+R-3, 2026-09-09): on the documented
+            # empty-intersection data-error path the full list is served,
+            # so members == candidates and the closed-members wording
+            # would mis-report "14 of 14". The scoping path (14 -> 7)
+            # is 7 < 14, and only it may claim the closed membership
+            # served.
+            if any(entry.get("rule") == "closed-members" for entry in self.rejected) and len(self.members) < self.candidates:
+                # G-CSM-3 (csm-set-17): the qualifier narrowed the set to the
+                # closed membership the wiki declared, so "every member was kept"
+                # is not true and would mislead the caller.
+                return (
+                    f"{self.unverified} did not narrow this set; the closed "
+                    f"membership is served, {len(self.members)} of "
+                    f"{self.candidates} named members"
+                )
             return (
                 f"{self.unverified} did not narrow this set; every member was "
                 f"kept, so this is all of {self.basis!r}"
@@ -1475,7 +1499,13 @@ def build_roster(
         # `Transformations` narrowed by his name. Taken before the declared and
         # discovered paths because both of them resolve to a set filed by kind,
         # and no amount of filtering one turns it into the other.
-        kinds = widen_umbrella(words, _asked_kinds(words, overrides))
+        asked_kinds = _asked_kinds(words, overrides)
+        kinds = widen_umbrella(words, asked_kinds)
+        # G-CSM-3 (csm-set-01/02, csm-char-01/02/03): whether the topic used an
+        # umbrella word, i.e. whether `widen_umbrella` actually added kinds.
+        # Umbrella questions keep every kind's extracted rows; only an explicit-
+        # kind question may be scoped to the sections a kind is filed under.
+        umbrella = kinds != asked_kinds
         character = (
             _character_subject(
                 store, words, overrides, race_vocabulary(store), vocabulary
@@ -1558,10 +1588,12 @@ def build_roster(
             # it wrote, and the abilities named in the prose under them.
             extracted = _combine(
                 _section_roster(
-                    store, character, kinds, overrides, member_chars, constraints
+                    store, character, kinds, overrides, member_chars, constraints,
+                    umbrella=umbrella,
                 ),
                 _extracted_roster(
-                    store, character, kinds, member_chars, overrides, constraints
+                    store, character, kinds, member_chars, overrides, constraints,
+                    umbrella=umbrella,
                 ),
             )
             if owned is not None:
@@ -1603,9 +1635,41 @@ def build_roster(
                 # for less of it. `Transformations` holds Black Frieza because
                 # it is one; "Saiyan" is the part only validation can enforce.
                 candidates = len(names)
+                # G-CSM-3 (csm-set-17 vs csm-set-08, `Tokyo Special Division 4`):
+                # a set may keep a wider named roster than its closed
+                # membership -- the wiki's own section lists the core, and
+                # `closed_members:` declares it. A plain "members of" question
+                # serves the core; a question asking for the *named* members
+                # keeps the full list. Scoped-out members are reported in
+                # `rejected`, never dropped silently; an empty intersection is
+                # a data error and serves the full list rather than nothing.
+                closed_rejected = []
+                if declared.closed_members and "named" not in constraints.qualifier:
+                    core = {name.lower() for name in declared.closed_members}
+                    closed_rejected = [
+                        {
+                            "name": name,
+                            "reason": "outside the closed membership the wiki "
+                                      "declares for this set",
+                            "rule": "closed-members",
+                        }
+                        for name in names
+                        if name.lower() not in core
+                    ]
+                    kept = [name for name in names if name.lower() in core]
+                    if kept:
+                        names = kept
                 names, rejected = apply_constraints(
                     store, names, constraints, declared.name, overrides=overrides
                 )
+                # Gate (council R-2+R-3, 2026-09-09): on the documented
+                # empty-intersection data-error path `closed_rejected`
+                # holds every served member (14 of 14), and logging all
+                # of them as rejected while serving them contradicts
+                # the report-don't-hide record. Nothing was actually
+                # scoped out, so nothing goes in `rejected`.
+                if closed_rejected and len(closed_rejected) < candidates:
+                    rejected = list(rejected) + closed_rejected
                 members = _render_all(
                     store, episodes, names[:max_members], declared.group_by,
                     member_chars,
@@ -1687,7 +1751,8 @@ def build_roster(
         # what the wiki never gave a page to.
         if character and kinds:
             extra = _extracted_roster(
-                store, character, kinds, member_chars, overrides, discovered
+                store, character, kinds, member_chars, overrides, discovered,
+                umbrella=umbrella,
             )
             if extra is not None:
                 index = {m.name.strip().lower(): i for i, m in enumerate(members)}
@@ -2721,6 +2786,21 @@ def _outside_the_story(
     return _game_only(store, profile, constraints.works)
 
 
+def _row_sections(overrides: dict | None, kind: str) -> frozenset[str]:
+    """The sections a wiki says one kind's extracted rows live in, if it says.
+
+    G-CSM-3 (csm-set-01): `ability_row_sections` maps a kind to the section
+    names its extracted rows are filed under, the way `ability_sections` maps a
+    kind to the sections its *headings* live in. A kind with no entry is read
+    whole, exactly as before the key existed, so every series that does not
+    declare the field answers identically.
+    """
+    declared = ((overrides or {}).get("ability_row_sections") or {}).get(kind) or []
+    return frozenset(
+        str(section).strip().lower() for section in declared if str(section).strip()
+    )
+
+
 def _extracted_roster(
     store: FactStore,
     character: str,
@@ -2728,6 +2808,7 @@ def _extracted_roster(
     member_chars: int,
     overrides: dict | None = None,
     constraints: Constraints | None = None,
+    umbrella: bool = False,
 ) -> Roster | None:
     """A character's kit as read out of prose at index time.
 
@@ -2770,8 +2851,40 @@ def _extracted_roster(
         off = store.abilities_of(character, sorted(folded)) if folded else []
         # No asked-kind rows at all means the kind field is telling us nothing
         # about this character, so take what there is rather than nothing.
-        if off and (not rows or len(off) <= len(rows) * _KIND_NOISE):
+        #
+        # G-CSM-3 (csm-set-01): not when the wiki declared where the asked
+        # kinds' rows live and none are stored there -- `ability_row_sections`
+        # makes an empty read a statement (the wiki files the kind as headings,
+        # not prose rows), not model wobble, so the fold must not fill it.
+        scoped = all(
+            _row_sections(overrides, kind)
+            for kind in asked & {ontology.TECHNIQUE, ontology.TRANSFORMATION}
+        )
+        if off and ((not rows and not scoped) or len(off) <= len(rows) * _KIND_NOISE):
             rows = list(rows) + list(off)
+    # G-CSM-3 (csm-set-01 vs csm-char-01): an explicit-kind question ("Every
+    # form of X") reads a kind's rows only from the sections the wiki declares
+    # for that kind (`ability_row_sections`). Denji's `Hybrid Transformation`
+    # row is prose under `Abilities / Hybrid Powers`, so it answers his
+    # abilities but must not answer his forms, which the wiki files as
+    # headings under `Appearance`. Umbrella questions keep every kind's rows
+    # (csm-char-01's gold includes both of his transformation rows), so the
+    # filter is off for them.
+    if not umbrella:
+        sections: dict[str, frozenset[str]] = {}
+
+        def _row_in_declared(row: Any) -> bool:
+            declared = sections.setdefault(
+                row["kind"], _row_sections(overrides, row["kind"])
+            )
+            if not declared:
+                return True
+            return any(
+                part.strip().lower() in declared
+                for part in (row["section"] or "").split("/")
+            )
+
+        rows = [row for row in rows if _row_in_declared(row)]
     if not rows:
         return None
     # Ten and Ren are how Nen works, not what Killua can do. The same list now
@@ -2984,6 +3097,7 @@ def _section_roster(
     overrides: dict,
     member_chars: int,
     constraints: Constraints | None = None,
+    umbrella: bool = False,
 ) -> Roster | None:
     """A character's kit where the wiki wrote it as headings rather than pages.
 
@@ -3000,12 +3114,28 @@ def _section_roster(
     `Fighting Style` come back beside real ones: worth returning, never worth
     claiming as an exact set.
     """
-    wanted = [
+    # G-CSM-3 (csm-set-02, csm-char-02/03): an umbrella question ("Every
+    # ability of X") may name the sections its section pass reads in
+    # `ability_sections_umbrella`, separate from the per-kind map. That wiki
+    # files a character's forms under a section the ability gold never carries
+    # (its form headings are answers to form questions, not ability
+    # questions), so the umbrella pass reads the declared sections alone.
+    # Explicit-kind questions and every wiki without the key use the per-kind
+    # union, exactly as before.
+    umbrella_sections = [
         str(section).strip().lower()
-        for kind in kinds
-        for section in ((overrides or {}).get("ability_sections") or {}).get(kind, [])
+        for section in ((overrides or {}).get("ability_sections_umbrella") or [])
         if str(section).strip()
     ]
+    if umbrella and umbrella_sections:
+        wanted = umbrella_sections
+    else:
+        wanted = [
+            str(section).strip().lower()
+            for kind in kinds
+            for section in ((overrides or {}).get("ability_sections") or {}).get(kind, [])
+            if str(section).strip()
+        ]
     if not wanted:
         return None
 

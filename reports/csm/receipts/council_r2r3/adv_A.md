@@ -1,0 +1,12 @@
+First principles: the framed question ("ship each draft?") hides a sharper one — *is each debt in the right place, and does the diff do exactly what it claims?* I re-derived both debts from disk before touching a verdict.
+
+**R-2** is a *retrieval-behavior* debt (the qa bundle leg drops the verbatim-covering chunk at rerank and misses the level-0 lead card), not a wiki-shape debt — so the generic engine fix is the right class (verified: `_query_covered` + the floor query are series-agnostic; only the csm fixtures carry the CSM expectation). The two layers aren't redundant: re-admission rescues *in-shortlist-dropped* chunks (the 13 d5 rows, all proven in-shortlist), the level-0 floor rescues *not-in-shortlist* (csm-fact-06's trigger lives only in the lead card → pre-fix 0 passages). The cross-wiki behavior change is exactly what the four gates guard; tail-fill preserves the top rerank slots and stays beam-bounded. No new failure mode.
+
+**R-3** is a *wiki-shape* debt (CSM files forms under `Appearance`, keeps an open 14-roster for a closed-7 question). Three no-op-when-undeclared knobs are the right class: generic hooks in `.py`, per-wiki data in `overrides.yaml` (verified: only csm declares the three fields; all 8 wikis declare `ability_sections`, so a blanket restriction was rightly rejected; JJK pins + 13 tests pass, model-free). The set-02/char-03/char-01 residuals are genuinely bank-level — the kept-vs-dropped split sits *within one group, per character*, so a 4th engine knob would have to encode bank gold (forbidden). `closed_members` is read only in `build_roster`+parse; the G4 relations door never reads it.
+
+**One flaw:** the R-3 diff carries an *undisclosed* whitespace-only hunk in `rank_relations` (the G4 relations door — an unrelated function); the diff summary lists only M1/M2/M3. It muddies gate attribution.
+
+VERDICT R-2: SHIP
+VERDICT R-3: AMEND
+FIRST STEP AFTER VERDICT: B reverts the stray whitespace-only `return (primary, ...)` line in `rank_relations` (roster.py ~2421); confirm `git diff -w` shows no unrelated-function change before the shared four-gate re-run.
+CHANGE-OF-MIND IF: that hunk proves functional under `git diff -w` (it does not: 136→128), or a JJK/canon gate regresses (span-recall or canon-opm drop) — flip R-2 to halt.

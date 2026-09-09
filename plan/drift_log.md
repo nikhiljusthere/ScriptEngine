@@ -742,6 +742,66 @@ entry.
   work_log.md` (append-only); unit 4 (phase close) after iteration 1's
   classes close or the halt meter trips.
 
+### D19 — CSM R-2 + R-3 council verdict + the P1.1 gate legs (all four green on CUDA) (2026-09-09 → 2026-09-10, A/B bay)
+
+- **What:** wave-2 serial-fix iteration 1 (the R-2 G-CSM-2 qa-passage-leg +
+  R-3 G-CSM-3 roster-scoping drafts, staged at D18's tail) ran through a
+  **combined §3 council** (`reports/csm/receipts/council_r2r3/`, 5 advisors +
+  5 peer reviewers + chairman, sequential 11, zero-GPU/read-only; COUNCIL_
+  HISTORY #23). Verdicts: **R-2 = AMEND (3), R-3 = AMEND (4 code/test + 5-item
+  records package)**; both land in ONE commit only if both verdicts clear, and
+  the shared gate-1 pin recomputes 1,303 → **1,305** (2 new tests).
+  - R-2: the draft's uncapped-`recovered` splice was defective — with L =
+    len(recovered) > top_k the splice `deduplicated[:top_k - L]` goes negative
+    (the re-admission silently no-ops, the internal list grows past top_k), and
+    at L == top_k the whole bundle is replaced by the re-admitted tail, evicting
+    the rerank #1. **Amendment: order-preserving `top_k - 1` tail-fill cap, no
+    re-sort** (recovered keeps rerank order as a subsequence; `rrf_score` is the
+    pre-rerank fused score). Plus the `facts.py` **level-0 lead-card floor**
+    (G-CSM-2 / csm-fact-06, 0 passages pre-fix) + docstring + 17-distractor
+    guard test (beam stays 8, no full swap, tail 7 slots re-admitted in rerank
+    order).
+  - R-3: **LF-restore at `roster.py:2421`** (the one CR-only no-op hunk; stat
+    back to +126/−8) + `Roster.warning` / rejected-append **empty-intersection**
+    gates + 1 model-free test. The residuals (set-02: 3, char-03: 5, char-01: 5
+    intruders) are **bank-level curation, not a 4th engine knob** (the
+    kept-vs-dropped split sits inside one group per character — a 4th knob would
+    encode bank gold). Records package incl. the **queue↔red-list ID join**
+    (queue `fix_class R-3` = red-list **R-4** = G-CSM-3 scoping; queue `red-R-4`
+    = the d5 line-miss class csmd5-01..07 / gate400-*).
+  - Blind spots caught: the L == top_k swap; tail-fill × subject-floor budget
+    interaction; **CJK inertness** of the re-admission leg (`_query_covered`
+    tokenizes `[a-z0-9]+`, so pure-CJK queries score zero coverage — recorded,
+    not fixed); R-2 × R-1 blast radius (csm-set-14/15 sit inside R-2's
+    re-admission, invariant expected); declaration-contingent no-op unenforced →
+    new standing rule (declaring any of the 3 fields on a gated wiki = four
+    gates + class re-sweep); **R-6 floor-inheritance question pre-registered**
+    (do alias-resolved subjects inherit the level-0 card via the floor).
+- **Gate legs (P1.1 step 3, live CUDA `:8000` pid 58239, post-reboot owner
+  override — grade the 400-row window → gate 4 → the re-sweep, in that order):**
+  all four GREEN. gate-3 seed-7 400-probe **398/400 (99.5%)** (≥ 390 bar; 1
+  MISS_DOC + 1 MISS_SPAN; ledger `reports/span-recall/jjk/recall_verbatim.jsonl`);
+  gate-4 canon opm **236/236 canon (100 %), 10/16 exact, 79.0 %** (`reports/
+  2026-09-09-2051/`); R-2 Part-A panel (rebuilt post-reboot, `reports/csm/
+  panel_csm_parta.json`, 13 rows, hash `a4b1d02d`) **7/13 (53.8 %)** — csmd5
+  own-new 2/7 HIT (csmd5-04/-07) so the R-2 closure bar (≥1) is met, the 5 d5 +
+  gate400-320 residuals stay open (D5 / Phase-2; gate400-320 = the chunker
+  inner-colon split, dual-stamped R-4/R-2); csm-fact-06 `/context` probe
+  **0 → 8 beats**, hybrid trigger line served (beat 5). R-3 Part-B re-sweep
+  **15/15** (set-17 7 / set-01 5 / char-02 16 all HIT; set-14/15 invariants;
+  csmdoor-01 31/88 floor HELD; r1blast-tokyo/blizzard/marines all mode=roster,
+  zero new misses on stamped rows). Post-run Qwen pid 58178 + `:8000` pid 58239
+  both alive (co-location safe; GPU 29,169/32,607 MiB).
+- **Queue stamp (C2):** 12 rows closed under the close-only-HIT rule — R-2:
+  csm-fact-06 + csmd5-04/-07 + gate400-188/189/211/490/542 + red-R-2; R-3:
+  csm-set-17 + csm-set-01 + red-R-3 (csm-char-02 is a sweep case, not a queue
+  row). Residuals/floors stay open: csmd5-01/02/03/05/06, gate400-320,
+  csm-set-02/char-01/char-03, csmdoor-01.
+- **Return address:** `reports/master-work/work_log.md` (P1.1 step-4 checkpoint)
+  + `reports/csm/miss_queue_csm_iter1.jsonl`; next P1.2 (the R-5 relations-mode
+  wave: the 4th series-agnostic router mode + budgeted bundle builder, then the
+  §3 council, four gates, R5-meter re-sweep).
+
 ### D20 — CSM Phase 1 under the A/B bay: 100k switch via the safe helper, bay booted, directing session stands down (2026-09-10 00:3x–00:5x, post-reboot)
 
 - **What:** (1) the 262k→100k switch ran through the new detached helper

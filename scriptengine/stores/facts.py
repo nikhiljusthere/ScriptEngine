@@ -1980,7 +1980,8 @@ class FactStore:
         ).fetchall()
 
     def passages_for_subject(self, subject: str) -> list[sqlite3.Row]:
-        """Every level-2 passage of the page `subject` names, in the wiki's own
+        """Every level-0 (the document's lead card) and level-2 passage of the
+        page `subject` names, in the wiki's own
         section order.
 
         The entity-anchored recall floor (R6): a question authored against a
@@ -1993,6 +1994,11 @@ class FactStore:
         below the beam at once. A store lookup, not a similarity search: the
         beam still decides what *else* fills the budget, never whether the
         subject's own page shows up at all.
+
+        The level-0 card is part of the floor by construction (G-CSM-2 /
+        csm-fact-06, 2026-09-09): a subject whose key line lives only in the
+        lead paragraph is reachable through the floor even when no section
+        passage of the page ever enters the beam.
 
         A subject that resolves to no document (a bare alias, an un-crawled
         page, a misspelling) yields an empty list and the caller's ranked
@@ -2024,10 +2030,12 @@ class FactStore:
             return []
         # The parent join is what keeps the floor's passages the same shape as
         # the beam's: a quoted passage carries its section, not just itself.
+        # Level 0 (the document card) and level 2: see the docstring above for
+        # why the card is part of the floor.
         return self.connection.execute(
             "SELECT c.*, p.text AS parent_text"
             " FROM chunks c LEFT JOIN chunks p ON p.id = c.parent_id"
-            " WHERE c.document_id = ? AND c.level = 2"
+            " WHERE c.document_id = ? AND c.level IN (0, 2)"
             " ORDER BY c.ordinal",
             (row["id"],),
         ).fetchall()

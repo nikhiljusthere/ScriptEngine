@@ -1,0 +1,10 @@
+# Peer review 4 — council R-2+R-3 (CSM, 2026-09-09)
+
+**1. Strongest: D.** Only response making the shared re-run enforceable — explicit failure semantics (flake→re-run the leg; single-draft regression→stash that draft's files, re-run, ship the other; combination-only→halt) + full one-copy ordering; and the most verified facts: EOL hunk pinned (roster.py:2421, +127/−9 vs +126/−8 under `--ignore-cr-at-eol`, verified), csmdoor-01 absent from the receipt's R5 sweep list (receipt:232; queue R-3/open).
+
+**2. Biggest blind spot: B.** Only response missing the EOL hunk A/D/E all caught; and B's AMENDs add 2 tests, breaking the pinned 1,303 expectation (→1,305) — B's "land amendments, re-run" contradicts the constraint B cites. B's uncapped-`recovered` finding (negative slice `[:top_k−L]` no-ops the fix when L>top_k=8, hybrid.py:365) is the council's best code defect; the process layer is the blind spot.
+
+**3. What ALL five missed (per draft where it matters):**
+- Baseline↔verdict map: 1,303 holds only if no amendment adds tests; B's AMENDs → 1,305 — the gate-1 pin must recompute per verdict; nobody computed it.
+- Split-commit/ledger: D's "ship the other" is a de-facto split commit with unspecified consequences (GATES ledger, opm-set-16 pre-registration, next-draft pytest count all pinned to the combined commit); R5's halt rule (≥1 own-HIT or halt) has no partial-closure path — an R-3 sweep halt leaves R-2's HIT rows unclosed, or a full revert re-opens a green R-2 class. The council needs an explicit split-commit or separate-sweep plan.
+- Asymmetry: R-3's trigger (canon-opm drop outside opm-set-16) is cleanly attributable; R-2 has none — eval/probe JJK legs are shared with R-3, and span-recall offline cannot regress from either draft (neither touches chunking), so A's "span-recall drop flips R-2 to halt" misattributes.

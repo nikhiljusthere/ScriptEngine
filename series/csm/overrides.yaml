@@ -71,6 +71,28 @@ ability_sections:
 ability_kinds:
   technique: [contract, contracts]
 
+# G-CSM-3 (2026-09-09, red list R-4): the door scopes each question to its own
+# shape. Both knobs below are read by series-agnostic engine code; a wiki that
+# declares neither answers exactly as before.
+#
+# Umbrella questions ("Every ability of X") read only this section's tree on
+# their section pass. This wiki files a character's forms under `Appearance`,
+# and the bank's ability gold carries no form heading (csm-set-02, csm-char-02,
+# csm-char-03), so `Appearance`'s form headings stop diluting an ability
+# answer. Explicit-kind questions still use the per-kind `ability_sections`
+# map above, and the extracted pass is untouched: csm-char-01's gold includes
+# Denji's two transformation *rows*, and umbrella questions keep them.
+ability_sections_umbrella: [Abilities]
+
+# An explicit-kind question reads a kind's extracted rows only from the
+# sections this wiki files that kind under. Denji's `Hybrid Transformation`
+# and `Devil Transformation` rows are prose under `Abilities / Hybrid Powers`,
+# so "Every form of Denji" (csm-set-01) reads forms from `Appearance` only --
+# his five form headings -- while the two prose rows stay answers to his
+# abilities (csm-char-01), not to his forms.
+ability_row_sections:
+  transformation: [Appearance]
+
 rosters:
 
   # The Public Safety special divisions
@@ -168,6 +190,13 @@ rosters:
     members: [Makima, Kishibe, Denji, Aki Hayakawa, Power, Himeno,
               Kobeni Higashiyama, Hirokazu Arai, Angel Devil, Beam, Galgali,
               Princi, Fushi, Madoka]
+    # G-CSM-3 (csm-set-17 vs csm-set-08): the wiki's Members section is the
+    # closed Part-1 membership (seven humans); `members:` above is the full
+    # named roster, later-arc fiends included. A plain "members of" question
+    # serves the closed seven; "named member" asks for the full list and keeps
+    # all fourteen.
+    closed_members: [Makima, Aki Hayakawa, Denji, Power, Himeno,
+                     Kobeni Higashiyama, Hirokazu Arai]
 
   # "Every Weapon Devil" resolved to the whole `Devils` category and returned 88
   # members for 7 canon items -- the worst precision in the run, and 0% recall

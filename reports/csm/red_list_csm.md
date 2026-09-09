@@ -67,6 +67,17 @@ Sources (all on-disk receipts from the 2026-09-08 cycle):
   `effective_boilerplate_sections` + section scoping (CSM-3's item). The intruders
   are *real* wiki rows; the fix scopes the door to the question, it does not
   delete members.
+- **ID-mapping addendum (council R-2+R-3, 2026-09-09).** The miss queue
+  (`reports/csm/miss_queue_csm_iter1.jsonl`) and this red list use colliding
+  `R-3`/`R-4` spellings, so the join is pinned here once: queue `fix_class R-3`
+  scoping rows (`csm-set-17/02/01`, `csm-char-03`, `red-R-3`) = this row
+  (**R-4**, G-CSM-3); queue `fix_class R-3` row `csmdoor-01` = red-list **R-3**
+  (the 31/88 roster-door budget floor, landed `f93d396` — expected *invariant*
+  at sweep time, a regression on it is a new miss = halt); queue
+  `fix_class R-4` / `R-4/R-2` rows (`red-R-4`, `csmd5-01..07`,
+  `gate400-188/189/211/320/490/542`) = the d5 line-miss class (override-first;
+  fix leg = the R-2 qa-passage leg; no red-list row of its own). One spelling
+  per debt; the queue↔red-list join can no longer be read two ways.
 
 ## R-5 · G-CSM-4 — the relations door is unreachable through auto-routing
 
