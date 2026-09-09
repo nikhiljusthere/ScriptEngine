@@ -1,0 +1,7 @@
+# Peer review 3/5 — council session audit (2026-09-09)
+
+**1. Strongest: B.** Only B's reframe survives disk checks: GATE.md + DONE_DECLARATION.md (09-07) declare JJK D6 CLOSED ("terminal state: done"), so CSM is the P6 successor and "faster than JJK?" is the wrong question — JJK ran without bays, monitors, or per-change councils. A's risk diagnosis is sharpest (uncommitted R-2/R-3, /tmp loss, 685 ERROR rows, all confirmed on disk), but "JJK D6 still open/unfalsifiable" repeats the audit's stale premise; C's "first D6 done-declaration" is likewise contradicted by disk. E is strongest on next-steps, not assessment. D's hash finding (bc73795 = CSM-3b, not CSM-3) is correct but low-leverage.
+
+**2. Shared blind spot:** All five take the D1–D6 bar as fixed; none asks whether "100% comprehension" transfers to CSM's 17,181 short panel lines or pre-registers what "understood" means per dimension there — "100%" risks being a vacuous checkbox. None reconciles the miss-queue counts (A: 55 rows / 22 extraction floors; E: 58 / 30).
+
+**3. I'd add:** a bar audit before Phase 2 (51 GPU-h): 3–5 pre-registered CSM panel-line cases per D6 dimension + an owner-accepted residual cap; and grade the A/B bay by owner interventions (09-09 owner override + B close) before E's "KEEP".

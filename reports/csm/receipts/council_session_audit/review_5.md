@@ -1,0 +1,7 @@
+# Peer review 5 (council_session_audit)
+
+**Q1 — Strongest:** B. It is the only response that corrects the load-bearing false premise — "JJK D6 still open" — which is wrong on disk (GATE.md:697 "the terminal state is **done**"; DONE_DECLARATION.md 09-07 exists). That reframe makes "can CSM close faster than JJK?" a P6 successor question, and B answers all three review questions with concrete recommendations. A is close second on verification density — its claims verify on disk (missing `/tmp/csm_iter1_records`, 685 ERROR rows in `recall_verbatim.jsonl`, 16/133 commits touching `scriptengine/`) — but its 1.5–2 week close estimate inherits the false JJK-D6-open premise. D is the sharpest outsider critique (slogan-vs-number gates; stale docs); E the most actionable; C drifts to cross-corpus scope.
+
+**Q2 — Shared blind spot:** none of the five ties D1–D10 "100%" to the end user. The done-set is entirely internal (census, gates, receipts, miss-queue); no response asks what "comprehension" means for the writer consuming `/context` or for shipped script quality — the engine's actual product.
+
+**Q3 — What I'd add:** (1) a writer-facing acceptance leg in the done-set — one `script-gen` + `verify` against CSM — so D6 means something to the consumer; (2) an explicit answer to the owner's "what did we do right with JJK?", which A, C, D, E leave unanswered (only B's carry list gestures at it).
