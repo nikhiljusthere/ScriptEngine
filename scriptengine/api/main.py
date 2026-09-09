@@ -76,7 +76,7 @@ def _sweep_idle_models() -> None:
 class ContextRequest(BaseModel):
     series: str
     query: str
-    mode: Literal["qa", "narrative", "roster", "auto"] = "qa"
+    mode: Literal["qa", "narrative", "roster", "relations", "auto"] = "qa"
     # The page the question is authored against, when the query's own words do
     # not name it: "What kind of motif does the King of Curses have, per the
     # page's Trivia?" asks about Angel's page but names only Sukuna's title, so
@@ -233,6 +233,21 @@ def context(request: ContextRequest) -> dict[str, Any]:
             token_budget=request.token_budget,
             top_k=request.top_k,
             subject=request.subject,
+        )
+    # A relations bundle with no rows is not an answer (a pair the wiki never
+    # recorded): fall back to the qa passage search, whose side channel still
+    # unions the relation rows when they exist. Auto-only, like the roster
+    # fallback above, so an explicit mode=relations surfaces the empty case.
+    # Uses the routed `subject` local above, not request.subject, so the
+    # fallback keeps the router's read (council_r5 amendment A3).
+    if mode == "relations" and not bundle.get("relations") and request.mode == "auto":
+        bundle = build_context(
+            paths,
+            request.query,
+            mode="qa",
+            token_budget=request.token_budget,
+            top_k=request.top_k,
+            subject=subject,
         )
 
     # Why this mode was chosen, so a misroute is visible to the caller rather

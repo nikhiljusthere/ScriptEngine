@@ -844,3 +844,56 @@ entry.
   `reports/master-work/work_log.md` (B) + `plan/state.md` (B→A
   escalations, new appends only — the pre-boot 37 lines are stale 150k-era);
   the directing session relays and reports.
+
+### D20 — CSM R-5 relations-mode council (AMEND, A1–A5) + gates + commit (2026-09-09, b session)
+
+- **What:** the R-5 (G-CSM-4) relations-mode wave closed. The 11-member §3
+  council ran per the 2026-09-08 one-at-a-time owner rule (5 advisor rulings
+  recovered from disk after the boot-session crash; 5 reviewers + chairman as
+  one serial async workflow @100k high-thinking, disk-seeded): **verdict AMEND**
+  (A=OBJECTION, B=OBJECTION-amend, C=APPROVE, D=OBJECTION, E=APPROVE),
+  COUNCIL_HISTORY #27, record `reports/csm/COUNCIL_csm_r5_relations.md`,
+  receipts `reports/csm/receipts/council_r5/`.
+  - **A1** `_RELATIONS` tightened to 4 alternatives (dropped `\bconnection\b`,
+    the bare-`\brelationship\b` and the who-branch verb-phrase over-captures);
+    bank sweep 233 → 79 firings, 0 new official+eval hits.
+  - **A2** `context.py` budget-unit bug (char-unit budget 3.6× over-permissive
+    in token costs) → token-units.
+  - **A3/A4** empty-pair relations→qa fallback at the 3 real caller sites
+    (main.py auto-only, cli.py unconditional, writer.py auto-gated; mcp is a
+    thin proxy inheriting A3 — D's "4 sites" corrected by rev-4).
+  - **A5** store-free trigger-boundary test + budget-units test; gate-1 pin
+    1,305 → **1,315** (chairman's post-revision pin matched exactly at
+    `pytest --collect-only`).
+  - **Residual 4:** 68 rows (39 qa + 29 roster) re-pinned `expect_mode:
+    relations` across 25 `_`-batch files (re-bind debt 222 → 0; the chairman's
+    "~34" estimate was corrected to the measured 68 — b_session_verification.md).
+- **Gates** (receipts `reports/csm/receipts/iter1_r5_gate.md` +
+  `iter1_r5_relations_sweep.md`): all four GREEN after the amendments —
+  pytest 1,315 collected / 0 R-5 failures (one mcp bare-name failure **proven
+  pre-existing at HEAD** via stash + fresh `:8000`; carried, not fixed —
+  fixing it changes JJK routing vs the baseline-exact invariant), eval jjk
+  31/31, span-recall jjk offline unreachable 0 + probe 398/400 (99.5%),
+  canon opm 10/16 exact 236/236 79.0%; **R-5 meter 0/11 → 5/11 complete**
+  (the ≥1-HIT wave bar). The 5 partial rows are proven harness budget-trim
+  (all expected names present at `token_budget=60000`; facts.db holds e.g.
+  168 Denji relation rows) + 1 content gap (Chocolate, 1 relation row in the
+  store → Phase-2 extraction).
+- **Window structure (GPU discipline):** W1 in-process pytest+eval ran with
+  `:8000` STOPPED (announced to the owner pre-stop); W2 (probe + meter +
+  canon) over HTTP with `:8000` UP on CUDA. Qwen pid 58178 alive throughout;
+  the one in-process model job happened in the stopped window. canon-run is
+  an HTTP client, not an in-process job — the W1 attempt failed in 15 s
+  (connection refused) and was re-run with `:8000` up.
+- **Carried to the close council** (numbered, in `COUNCIL_csm_r5_relations.md`
+  §Carried): (1) pre-existing mcp bare-name narrative-vs-qa contract mismatch;
+  (2) meter harness budget-trim (sizing the harness budget is a tooling fix);
+  (3) R-6 floor-inheritance (council_r2r3/chairman.md findings 6/8);
+  (4) the governance-addendum answer (slim 4-member form for narrow classes,
+  20-turn checkpoints) recorded in chairman.md.
+- **Stamps:** `miss_queue_csm_iter1.jsonl` csm-rel-02/05/08/09 + red-R-5 →
+  closed (notes per row: 08/09 complete HITs, 02/05 budget-trim-closed with
+  proof, red-R-5 class closed with residuals carried); `red_list_csm.md` R-5
+  section close stamp; COUNCIL_HISTORY #27.
+- **Commit:** the 2-commit path-limited close (C1 engine+tests+council
+  package+records; C2 queue stamps+gate receipts+logs), `git add .` banned.

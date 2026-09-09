@@ -1699,6 +1699,15 @@ def _show_bundle(paths, question: str, mode: str, top_k: int) -> None:
     if mode == "roster" and not bundle["members"]:
         console.print("[yellow]No such set on this wiki; falling back to narrative.[/yellow]")
         bundle = build_context(paths, question, mode="narrative", token_budget=24000)
+    # A relations bundle with no rows is not an answer (a pair the wiki never
+    # recorded): fall back to the qa passage search. Unconditional, matching
+    # the local roster block - an explicit --mode relations still gets the
+    # qa prose instead of an empty bundle (council_r5 amendment A4).
+    if mode == "relations" and not bundle.get("relations"):
+        console.print("[yellow]No documented relationships; falling back to qa.[/yellow]")
+        bundle = build_context(
+            paths, question, mode="qa", token_budget=24000, top_k=top_k or None
+        )
 
     console.print(f"[dim]mode:[/dim] {bundle['mode']}   [dim]subject:[/dim] {bundle['subject']}")
     if bundle.get("basis"):

@@ -16,7 +16,7 @@ from __future__ import annotations
 import pytest
 
 from scriptengine.retrieve import semantics
-from scriptengine.retrieve.router import _NARRATIVE_VERBS, _WH, Route, route
+from scriptengine.retrieve.router import _NARRATIVE_VERBS, _RELATIONS, _WH, Route, route
 
 
 class TestSignals:
@@ -47,6 +47,35 @@ class TestSignals:
         head = " ".join(query.split()[:4])
         assert _NARRATIVE_VERBS.search(query)
         assert not _NARRATIVE_VERBS.search(head)
+
+
+class TestRelationsTrigger:
+    """The _RELATIONS trigger, store-free: no series, no index, no model.
+
+    council_r5 amendment A5(a) - the frame claimed a store-free trigger test
+    that the as-landed diff lacked; this one is the catching check for the
+    trigger's boundaries (the over-matches that falsified the as-landed
+    regex: "connection" prose, the who-X-to class, "relationship status").
+    """
+
+    def test_relations_trigger_boundaries(self):
+        for q in (
+            "Every documented relationship of Denji",
+            "What is the relationship between Denji and Makima?",
+            "How is Meowy related to Denji?",
+            "What is Makima's relationship with Denji?",
+        ):
+            assert _RELATIONS.search(q), q
+        for q in (
+            "What is the sword Mai left Maki her last connection to?",
+            "Who is left to stand against Mahito, per Chapter 131?",
+            "Who was revealed to be a shapeshifting monster?",
+            "What is enough to leave King winded?",
+            "What does Megumi confirm about Yuji's relationship status in Episode 30?",
+            "Every jujutsu sorcerer",
+            "Who is Sukuna?",
+        ):
+            assert not _RELATIONS.search(q), q
 
 
 class TestRoute:
@@ -110,6 +139,39 @@ class TestRoute:
         if not paths.facts_db.exists():
             pytest.skip(f"{series} is not indexed")
         assert route(paths, query).mode == "roster"
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Every documented relationship of Denji",
+            "What is the relationship between Denji and Makima?",
+            "How is Meowy related to Denji?",
+        ],
+    )
+    def test_relations_phrasings_reach_relations(self, query):
+        """R-5 (G-CSM-4): the relations door, reachable through auto-routing."""
+        from scriptengine.config import series_paths
+
+        paths = series_paths("csm")
+        if not paths.facts_db.exists():
+            pytest.skip("csm is not indexed")
+        assert route(paths, query).mode == "relations"
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Every jujutsu sorcerer",  # a set, not relationships
+            "Who is Sukuna?",          # a single-character lookup
+        ],
+    )
+    def test_non_relationship_phrasings_do_not_reach_relations(self, query):
+        """The trigger must not swallow non-relationship phrasings."""
+        from scriptengine.config import series_paths
+
+        paths = series_paths("csm")
+        if not paths.facts_db.exists():
+            pytest.skip("csm is not indexed")
+        assert route(paths, query).mode != "relations"
 
     @pytest.mark.parametrize(
         "series,query",

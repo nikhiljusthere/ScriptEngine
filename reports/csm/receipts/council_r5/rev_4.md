@@ -1,0 +1,7 @@
+Review 4.
+
+1. **Strongest: A.** Load-bearing and correct: `\bconnection\b` (router.py:481) fires under rule 2d (router.py:662); 20 bank questions in 15 `_`-batches contain it (verified: maki_zenin, flashy_flash, god). All 8 official banks hold zero such questions (bleach's only hit: "Ice-Rope Connection"), so gates 2/4 cannot see the misroute; only the R5 re-sweep can. A's one-line deletion is bank-safe (verified).
+
+2. **Biggest blind spot: C.** It calls the trigger over-match "gate-catchable" and APPROVEs — false. Disputed: the 20 misrouted questions sit in `_`-batches, outside the four gates. E item 4 repeats the same false claim. D: main.py:228-235 roster fallback verified (no relations equivalent), but "mcp/server.py:86-89 same block" is disputed — mcp is a thin /context client, no fallback (3 sites, not 4), and its fallback rescues only the empty case.
+
+3. **All five missed:** alternative 1 (`\brelationship\b`, router.py:477). A called it "sound" unevidenced. It steals pinned prose: "What does Megumi confirm about Yuji's relationship status in Episode 30?" (_jjk_page_episode_30.json L598, active) + "What relationship had Megumi built, per Episode 51?" (_jjk_page_episode_51.json L671) — episode-anchored, stolen ahead of the F2/F4 rescue (router.py:732); voice-actress trivia (mimiko/nanako) links nothing → empty bundle (context.py:379 fallback matches of/with only, not between). The check: run A's "connection" bank grep against "relationship" too.

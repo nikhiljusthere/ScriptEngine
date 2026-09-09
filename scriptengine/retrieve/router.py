@@ -52,7 +52,7 @@ from scriptengine.retrieve.roster import (
 )
 from scriptengine.stores.facts import FactStore, rank_subjects
 
-MODES = ("roster", "qa", "narrative")
+MODES = ("roster", "qa", "narrative", "relations")
 
 _WH = re.compile(
     r"^\s*\W*(what|whats|what's|who|whom|whose|whos|who's|which|when|where|why|how)\b",
@@ -466,8 +466,23 @@ class Route:
         return {"mode": self.mode, "why": self.why, "signals": self.signals}
 
 
+# R-5 (G-CSM-4): relationship phrasings route to the relations door. The words
+# are the relationship vocabulary, not a per-wiki list, so the trigger carries
+# no series name. "Every documented relationship of X" is set-shaped ("Every"),
+# which is exactly why the rule below must win over the enumeration rule; "What
+# is the relationship between X and Y?" is a wh-question that would otherwise
+# fall to the qa passage search, which the relation rows never reach.
+_RELATIONS = re.compile(
+    r"\bdocumented\s+relationship(?:s)?\b"
+    r"|\brelationship(?:s)?\s+(?:of|with|to|between)\b"
+    r"|\bhow\s+(?:is|are)\s+[^?]*\brelated\b"
+    r"|\bhow\s+does\s+\w+\s+relate\b",
+    re.IGNORECASE,
+)
+
+
 def route(paths: SeriesPaths, query: str, settings=None, subject: str | None = None) -> Route:
-    """Pick roster, qa or narrative for `query`.
+    """Pick roster, qa, narrative or relations for `query`.
 
     Order matters and is set by what was measured, not by preference: a
     wh-question that names one thing beats the enumeration cue, because
@@ -634,6 +649,19 @@ def route(paths: SeriesPaths, query: str, settings=None, subject: str | None = N
         return Route(
             "roster",
             "asks for a fight's result, which the wiki records in its battle table",
+            signals,
+        )
+
+    # 2d (R-5, G-CSM-4): a relationship phrasing wants the relations door -- the
+    #     wiki's own relation rows -- not a roster set (rule 4 swallows the
+    #     "Every documented relationship of X" form) and not the qa passage
+    #     search (rule 3, which the relation rows never reach). Placed after the
+    #     battle/count probes and before the wh-lookup rule, so it owns every
+    #     relationship phrasing, enumeration-shaped or not.
+    if _RELATIONS.search(query or ""):
+        return Route(
+            "relations",
+            "asks for relationships, which the wiki records as relation rows",
             signals,
         )
 

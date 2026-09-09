@@ -88,6 +88,17 @@ Sources (all on-disk receipts from the 2026-09-08 cycle):
 - **Gate.** door (relations).
 - **Fix class.** **engine** — a `relations` router mode (named owner = CSM-7 fix
   phase, council COUNCIL_csm-1b-2 Ruling 3).
+- **CLOSED 2026-09-09 (iter-1 R-5 wave, council_r5, 11 members + addendum, AMEND
+  with A1–A5).** The `relations` router mode + budgeted bundle builder landed
+  (router.py `_RELATIONS`, context.py `_relations_context`, main.py MODES/door);
+  amendments A1–A5 (tightened trigger, budget-unit fix, empty-pair qa fallback,
+  store-free tests) + the 68-row bank re-pin. Four standing gates + eval jjk
+  GREEN; R-5 meter 0/11 → 5/11 complete (≥1 HIT bar met). Residuals, carried to
+  the close council: (a) the meter harness's small default `token_budget`
+  budget-trims 5 rows (proven: all expected names present at `token_budget=60000`);
+  (b) csm-rel-03 Chocolate content gap (1 relation row in the store → Phase-2
+  extraction). Raw: `reports/csm/receipts/iter1_r5_gate.md` +
+  `iter1_r5_relations_sweep.md`; council: `reports/csm/receipts/council_r5/`.
 
 ---
 

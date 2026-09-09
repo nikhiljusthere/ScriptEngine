@@ -495,6 +495,13 @@ def generate_script(
         bundle = build_context(
             paths, subject, mode="narrative", token_budget=budget, top_k=TOP_K
         )
+    # A relations bundle with no rows is not an answer (a pair the wiki never
+    # recorded): fall back to the qa passage search. Auto-gated, matching the
+    # local roster block (council_r5 amendment A4).
+    if mode == "relations" and not bundle.get("relations") and asked == "auto":
+        bundle = build_context(
+            paths, subject, mode="qa", token_budget=budget, top_k=TOP_K
+        )
     if routed is not None:
         bundle["routed"] = routed.as_dict()
 

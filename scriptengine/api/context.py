@@ -57,7 +57,7 @@ MAX_BEAT_CHARS = 2800
 # entry stops being a section and starts being the whole page.
 MAX_MEMBER_CHARS = 4000
 
-MODES = {"qa", "narrative", "roster"}
+MODES = {"qa", "narrative", "roster", "relations"}
 
 
 def estimate_tokens(text: str) -> int:
@@ -152,6 +152,8 @@ def build_context(
         return _narrative_context(paths, query, token_budget, top_k, settings, subject)
     if mode == "roster":
         return _roster_context(paths, query, token_budget, settings)
+    if mode == "relations":
+        return _relations_context(paths, query, token_budget, top_k, settings, subject)
     return _qa_context(paths, query, token_budget, top_k, settings, subject)
 
 
@@ -333,6 +335,115 @@ def _roster_context(
         "rejected": roster.rejected,
         "scope": roster.scope,
         "capped": roster.capped,
+        "tokens_used": used,
+    }
+
+
+def _relations_context(
+    paths: SeriesPaths,
+    query: str,
+    token_budget: int,
+    top_k: int | None,
+    settings: Settings,
+    subject: str | None = None,
+) -> dict[str, Any]:
+    """The character's relationships, as the primary answer.
+
+    R-5 (G-CSM-4): "Every documented relationship of X" and its interrogative
+    twins route here instead of to a roster set (the "Every" makes it
+    set-shaped, so the enumeration rule grabs it) or the qa passage search
+    (rule 3, which the relation rows never reach), because the wiki records
+    relationships as relation rows -- the extracted `relations` table and the
+    graph `edges` -- that neither path serves. The rows lead the bundle; the
+    ranked order (the edge the question names first) is paid in order and cut
+    at the budget, so a busy character's one relevant row is not buried behind
+    forty unrelated ones.
+    """
+    from scriptengine.stores.facts import FactStore
+    from scriptengine.retrieve.roster import rank_relations
+
+    with FactStore(paths.facts_db) as store:
+        # The character: the authored subject when the caller named it, else the
+        # query's own linked entity ("...relationship of Denji" -> Denji).
+        probe = subject or query
+        linked = store.link_entities(probe)
+        ids = [int(row["id"]) for row in linked[:3]]
+        if subject:
+            names = [subject]
+        elif linked:
+            names = [row["name"] for row in linked]
+        else:
+            # Fallback: the "relationship of X" object, when the query's words
+            # linked no known entity. The LLM `relations` table is a keyed
+            # lookup, so it still answers even with no node id to walk edges.
+            m = re.search(
+                r"relationship(?:s)?\s+(?:of|with)\s+([\w ]+)$",
+                query or "", re.IGNORECASE,
+            )
+            names = [m.group(1).strip()[:60]] if m else []
+        names = names[:3]
+        # Both ways a relationship is recorded: the LLM-extracted rows (verbatim
+        # quote + era, the wiki's own words) and the graph edges (resolved
+        # infobox links). The qa path already unions the two (hybrid, 3b/3c);
+        # here the union IS the answer, so it leads the bundle.
+        relations: list[dict[str, Any]] = []
+        for row in store.edges_for(ids, min_confidence=0.9, limit=40):
+            relations.append({
+                "source": row["source"], "relation": row["relation"],
+                "target": row["target"], "confidence": row["confidence"],
+                "quote": "", "era": "",
+            })
+        seen = {(r["source"], r["relation"], r["target"], r["quote"])
+                for r in relations}
+        for name in names:
+            for row in store.relations_of(name, both_ways=True):
+                key = (row["character"], row["relation"], row["other"],
+                       row["quote"] or "")
+                if key in seen:
+                    continue
+                seen.add(key)
+                relations.append({
+                    "source": row["character"], "relation": row["relation"],
+                    "target": row["other"], "confidence": 1.0,
+                    "quote": row["quote"] or "", "era": row["era"] or "",
+                })
+        ranked = rank_relations(relations, query)
+
+    if top_k:
+        ranked = ranked[:top_k]
+
+    # The rows are cheap; pay for them in rank order and cut at the budget, so a
+    # long character's tail is what drops, never the edge that answers the
+    # question. The first row is never dropped, the way a roster's first member
+    # is not. The cost is in tokens (estimate_tokens), so the guard compares
+    # against token_budget like every other mode - charging tokens against a
+    # char budget made the effective cap 3.6x the requested budget (council_r5
+    # amendment A2, caught by rev_2).
+    used = 0
+    included: list[dict[str, Any]] = []
+    for order, relation in enumerate(ranked, start=1):
+        line = f"{relation['source']} / {relation['relation']} / {relation['target']}"
+        if relation.get("era"):
+            line += f" ({relation['era']})"
+        if relation.get("quote"):
+            line += f": {relation['quote']}"
+        cost = estimate_tokens(line) + 5
+        if included and used + cost > token_budget:
+            break
+        relation = dict(relation, order=order)
+        included.append(relation)
+        used += cost
+
+    return {
+        "series": paths.name,
+        "mode": "relations",
+        "subject": names[0] if names else query,
+        "relations": included,
+        "participants": names,
+        "facts": [],
+        "beats": [],
+        "truncated": len(included) < len(ranked),
+        "relations_available": len(ranked),
         "tokens_used": used,
     }
 

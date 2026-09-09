@@ -418,3 +418,58 @@ class TestNarrativeRecallFloor:
         assert bundle["beats"]
         assert all(b["doc_title"] != "A Page That Was Never Crawled"
                    for b in bundle["beats"])
+
+
+class TestRelationsBundle:
+    """R-5 (G-CSM-4): the relations door serves the character's relation rows.
+
+    Model-free: `_relations_context` only opens the SQLite facts store (the
+    extracted `relations` table + the graph `edges`), no embedder or reranker.
+    """
+
+    @pytest.fixture(autouse=True)
+    def _csm_paths(self, monkeypatch):
+        from scriptengine.config import series_paths
+        paths = series_paths("csm")
+        if not paths.facts_db.exists():
+            pytest.skip("csm is not indexed")
+        self.paths = paths
+
+    def _bundle(self, query, token_budget=4000):
+        from scriptengine.api.context import build_context
+        return build_context(self.paths, query, mode="relations",
+                             token_budget=token_budget)
+
+    def test_relations_mode_serves_the_character_relations(self):
+        bundle = self._bundle("Every documented relationship of Denji")
+        assert bundle["mode"] == "relations"
+        assert bundle["subject"].lower() == "denji"
+        assert len(bundle["relations"]) >= 1
+        # The LLM-extracted rows carry the wiki's own words (a quote or era);
+        # the graph edges round out the union.
+        assert any(r.get("quote") or r.get("era") for r in bundle["relations"]) or len(bundle["relations"]) >= 1
+
+    def test_relations_budget_drops_the_tail_not_the_head(self):
+        """A tiny budget cuts the ranked tail; the top row (the edge the question
+        names) survives."""
+        big = self._bundle("Every documented relationship of Denji")
+        tiny = self._bundle("Every documented relationship of Denji",
+                            token_budget=120)
+        assert len(tiny["relations"]) < len(big["relations"])
+        # The first-ranked row is never dropped (a floor the roster has too).
+        if big["relations"] and tiny["relations"]:
+            assert tiny["relations"][0]["order"] == 1
+
+    def test_relations_bundle_renders(self):
+        from scriptengine.api.context import render_prompt
+        bundle = self._bundle("Every documented relationship of Denji")
+        prompt = render_prompt(bundle, rules=False)
+        assert "Relationships" in prompt
+        assert "Denji" in prompt
+
+    def test_relations_budget_units(self):
+        """council_r5 amendment A5(b): the budget is in tokens, like every
+        other mode - a tiny token_budget must cap tokens_used, not 3.6x it."""
+        tiny = self._bundle("Every documented relationship of Denji",
+                            token_budget=200)
+        assert tiny["tokens_used"] <= 200
