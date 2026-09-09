@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "scriptengine": {
+      "command": "/home/goblin/ScriptEngine/scriptengine/.venv/bin/python",
+      "args": ["-m", "scriptengine.mcp.server"],
+      "env": {"PYTHONPATH": "/home/goblin/ScriptEngine"},
+      "transport": "stdio",
+      "lifecycle": "lazy"
+    }
+  }
+}

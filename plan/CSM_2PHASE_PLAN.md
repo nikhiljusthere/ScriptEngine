@@ -57,10 +57,18 @@ survival; cross-page edges 11,261 (96.7 % cross-document).
 
 ## Process layer v2 (council #24 rulings; replaces the v1 standing cadence)
 
-1. **Council trigger, shrunk:** councils only at **(a) the R-5 class,
-   (b) the unit-4/phase close, (c) P6**. Pre-registered items (R-6, R-7,
-   the close-steps, the gate legs) are **no-council checklists**. Sequential
-   11, zero-GPU, fresh context (owner rule 2026-09-08 stands).
+1. **Council trigger (owner 2026-09-10, expanded over council #24):** the
+   council (llm-council skill; sequential 11 per owner rule 2026-09-08,
+   zero-GPU, fresh context) runs **(a) after every phase completion**
+   (Phase 1 close = unit-4 close, Phase 2 close), **(b) on
+   over-steering: ≥ 2 `[STEER]`-tagged owner directives in one phase**
+   (out-of-plan directives typed by the directing session into the A/B
+   panes; A logs each as `[STEER] <iso-ts> <gist>` in decisions.md — the
+   count is `grep -c '^\[STEER\]'` per phase) — the council lands *before*
+   that phase boundary, and **(c) the R-5 class + P6** as before. Pre-
+   registered items (R-6, R-7, the close-steps, the gate legs) remain
+   **no-council checklists**. The directing session runs/commissions the
+   council at each trigger; a triggered council blocks the phase boundary.
 2. **Worker timeout: 90 min, or split** — verify/record as a separate short
    pass (wave-2 lesson: both workers died at 60 min in the final loop).
 3. **Gate-green ⇒ auto-commit.** Verified state + ledgers + records commit
@@ -185,6 +193,70 @@ dial-down only if VRAM demands (measure, don't guess).
 documented floor (extraction-gated reds + named residuals); the red list +
 frozen sets synced; campaign todos section synced; ledger-of-record shows
 *everything* committed.
+
+## P1.5 — MCP bridge (between Phase-1 close and Phase-2 start; owner task 2026-09-10)
+
+Goal: pi sessions get the ScriptEngine engine as native MCP tools, and the
+one slow leg of the MCP server (in-process model load) is removed.
+**Owner reassignment 2026-09-10 (`[STEER]`, supersedes "B takes P1.5"): the
+directing session executes P1.5; B skips it entirely** and, after the
+Phase-1 close council passes, goes straight to Phase 2. ~1–2 h total.
+**No four-gate re-run:**
+touches only the MCP surface (`scriptengine/mcp/server.py`, `.pi/mcp.json`,
+the pi package install) — no chunking/fusion/retrieval/parser change; the
+close gate is the last full re-run. JJK baseline untouched.
+
+**P1.5.1 — Install the MCP client.** `pi install -l npm:pi-mcp-extension`
+(project scope → `.pi/settings.json`, shared with the repo; user scope if the
+owner prefers). The extension (irahardianto/pi-mcp-extension, v1.5.0) gives
+pi a full MCP client: stdio subprocess transport, live tool refresh, `/mcp`
+status commands. Verify in a fresh pi: `/mcp` shows the extension loaded.
+
+**P1.5.2 — Make `research` fast (HTTP-delegated, no in-process model leg).**
+Today `research()` runs `build_context` *inside* the MCP server process:
+first call loads embedder+reranker (~30–60 s), takes VRAM, and conflicts
+with the one-copy rule while Qwen owns the card. New behavior: POST to the
+running `:8000` service with **httpx (already in the venv — zero new
+dep)**:
+`POST /context {"series", "query": <subject>, "mode", "token_budget":
+<words*8 clamped 6000–60000>, "top_k": 12, "as_prompt": true, "words",
+"intro", "rules": true}` and return the bundle **with the prompt rendered
+server-side** (`as_prompt` is a `/context` field — no local rendering
+needed). `:8000` down → a clear error that says to start it; **never an
+in-process fallback** — that is exactly the slow path this step removes.
+`verify_script` (raw-crawl tag gate, model-free) and `script_path` (path
+logic) stay unchanged — already fast.
+
+**P1.5.3 — Register the server in `.pi/mcp.json` (project scope):**
+```json
+{
+  "mcpServers": {
+    "scriptengine": {
+      "command": "/home/goblin/ScriptEngine/scriptengine/.venv/bin/python",
+      "args": ["-m", "scriptengine.mcp.server"],
+      "env": {"PYTHONPATH": "/home/goblin/ScriptEngine"},
+      "transport": "stdio",
+      "lifecycle": "lazy"
+    }
+  }
+}
+```
+(`lazy` = spawned on demand only — no session-startup cost, no port.)
+
+**P1.5.4 — End-to-end verify (one fresh pi, ~20 min).** `:8000` up
+(campaign: the CUDA instance; quiet window: CPU service per the GPU rules).
+In a fresh pi: `/mcp` shows `scriptengine`; call
+`mcp_scriptengine_research("What is Sukuna's plan?", "jjk")` → bundle +
+prompt in <30 s on a warm service; `mcp_scriptengine_verify_script` on a
+known-good script → `passed`; `mcp_scriptengine_script_path("…")` → numbered
+folder. Record the receipts in `reports/master-work/`; git commit
+(server.py + `.pi/mcp.json`).
+
+**Exit:** receipts in `reports/master-work/MCP_BRIDGE_P1_5.md` + the
+directing session's commit. **The P1.5 dependency on Phase-2 start is
+WAIVED (owner 2026-09-10):** P2.1 starts on the Phase-1 close council's
+PASS alone — P1.5 runs on the directing session's own clock and blocks
+nothing.
 
 ## Phase 2 — exhaustive & extraction (same 100k dial; gpu-handoff authorized)
 

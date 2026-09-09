@@ -2,11 +2,19 @@
 
     python -m scriptengine.mcp.server
 
-Speaks the Model Context Protocol over stdio, so an agent host (opencode,
+Speaks the Model Context Protocol over stdio, so an agent host (pi, opencode,
 Claude Desktop, anything MCP-speaking) can register it and let the assistant
 research a topic and verify a finished script through the same code the HTTP
-API serves on :8000. There is no second implementation to drift: the tools
-wrap `build_context`, `verify_script` and `script_destination` directly.
+API serves on :8000. There is no second implementation to drift: `research`
+delegates to that running service, and the other two tools wrap
+`verify_script` and `script_destination` directly.
+
+`research` goes over HTTP rather than calling `build_context` in this process
+because the embedder and reranker must live in exactly one place: loading
+them here cost 30-60 s on the first call and took VRAM the extraction model
+needs (the one-copy rule). So this module never imports the retrieval stack —
+the service it talks to owns the models, and a session that only calls
+`script_path` or `verify_script` pays nothing.
 
 Three tools, sized for the script-writing workflow:
 
@@ -27,12 +35,11 @@ from __future__ import annotations
 
 from typing import Any
 
+import httpx
 from fastmcp import FastMCP
 
-from scriptengine.api.context import build_context, render_prompt
 from scriptengine.config import get_settings, script_destination, series_paths
 from scriptengine.eval.verify import verify_script as check_script
-from scriptengine.script.writer import route_script
 
 mcp = FastMCP("scriptengine")
 
@@ -65,33 +72,35 @@ def research(
     roster, anything else is a narrative), narrative, roster or qa. `words` is
     the target script length; the context budget is `words * 8` unless
     `token_budget` is given.
+
+    Needs the API up: `python -m scriptengine.api.main`.
     """
     settings = get_settings()
-    paths = series_paths(series, settings)
-    if not paths.facts_db.exists():
+    url = f"http://{settings.api_host}:{settings.api_port}/context"
+    payload = {
+        "series": series,
+        "query": subject,
+        "mode": mode,
+        "token_budget": token_budget or _budget_for(words),
+        "top_k": 12,
+        "as_prompt": True,
+        "words": words,
+        "intro": intro,
+        "rules": True,
+    }
+    try:
+        # Generous: a service that has not answered since it started loads the
+        # embedder and reranker on this first call.
+        response = httpx.post(url, json=payload, timeout=180.0)
+    except httpx.ConnectError as error:
         raise ValueError(
-            f"Series {series!r} is not indexed. Run: "
-            f"python -m scriptengine.cli index --series {series}"
-        )
+            f"The ScriptEngine API is not answering on {url}. Start it with: "
+            "python -m scriptengine.api.main"
+        ) from error
 
-    asked = mode
-    routed = None
-    if mode == "auto":
-        mode, routed = route_script(paths, subject, settings)
-
-    budget = token_budget or _budget_for(words)
-    bundle = build_context(
-        paths, subject, mode=mode, token_budget=budget, top_k=12
-    )
-    if mode == "roster" and not bundle.get("members") and asked == "auto":
-        bundle = build_context(
-            paths, subject, mode="narrative", token_budget=budget, top_k=12
-        )
-    if routed is not None:
-        bundle["routed"] = routed.as_dict()
-
-    bundle["prompt"] = render_prompt(bundle, intro=intro, words=words, rules=True)
-    return bundle
+    if response.status_code != 200:
+        raise ValueError(f"POST /context returned {response.status_code}: {response.text}")
+    return response.json()
 
 
 @mcp.tool()

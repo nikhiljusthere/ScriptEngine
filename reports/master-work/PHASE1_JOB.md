@@ -74,10 +74,22 @@ gate. B's last act of Phase 1 is the marker + a stop.
    **A regression halt = no marker, no Phase 2** (council state; return to
    the halt-meter loop).
 
-## B's last act (Phase 1 end)
+## B's last act (Phase 1 end) — AMENDED (owner directive 2026-09-10, `[STEER]`)
+
+**P1.5 (the MCP bridge) is NOT B's work — the directing session took it.**
+Drop it from the queue: no `pi install`, no edits to
+`scriptengine/mcp/server.py` or `.pi/mcp.json`, and the work_log
+`P1.5 START` trigger is void for B. Receipts land in
+`reports/master-work/MCP_BRIDGE_P1_5.md`, committed by the directing
+session.
 
 Write the marker (floor only), append the final `work_log.md` line
-("PHASE 1 COMPLETE — marker written at floor; awaiting the phase-close
-reviewer"), and **STOP** (B idles; A keeps watching). Phase 2 starts only
-after `reports/master-work/PHASE1_CLOSE_REVIEW.md`'s gate has been run and
-passed — see that file. B never starts Phase 2 on its own.
+("PHASE 1 COMPLETE — marker written at floor"), then run the **Phase-1
+close council** (the §3 trigger: a council after every phase completion).
+**On the council's PASS, continue straight into Phase 2** — P2.1 step 0
+first (the bounded per-door sanity-100, before any panel spend). No
+stop-and-wait for a separate owner go, and no waiting on P1.5.
+
+Unchanged and still binding: the marker is written **only at floor, never
+at a regression** (A20). A regression halt = no marker, no Phase 2 — return
+to the halt-meter loop and escalate to A.
