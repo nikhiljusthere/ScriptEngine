@@ -845,6 +845,20 @@ def _resolves_a_set(
     as the wh-object ("What battles was X in?", "What are X's cursed
     techniques"), which survives the strip; only the scope trigger goes.
 
+    A counting topic is probed the other way (G-CSM-1, red list R-1,
+    csm-set-14/15): its set name sits inside the prepositional phrase
+    ("members are in the Four Horsemen", "gods of destruction exist across the
+    multiverse"), so the G1 strip removed the name, the declared phrase could
+    not match, and the orphaned leftovers ("exist", "Hunters") read as
+    constraints a shorter match left behind. The count phrasing's own `many`
+    is the same bug one word shorter: it survives into `parse_constraints` as
+    a qualifier nothing could be checked against, the roster comes back
+    partial, and the R1-d gate below refuses it. So the counting probe keeps
+    the prepositional phrase -- a scope the set does not cover stays a
+    constraint through `parse_constraints` (unverified -> partial -> qa) -- and
+    removes only the `how many` itself; the G1 strip stays on the non-counting
+    path.
+
     `counting` sharpens the `matched` short-circuit (R1-d): a count is a set
     only when the count *is* the set's size, and a partial match is precisely
     the topic asking for less of the set than the wiki holds -- "How many of
@@ -855,7 +869,14 @@ def _resolves_a_set(
     whatever the confidence: its only unverified words are the interrogative,
     so the short-circuit stands for it.
     """
-    probe = _SCOPE_PHRASE.sub(" ", query or "")
+    # G-CSM-1 (red list R-1, csm-set-14/15): see the docstring -- the counting
+    # probe keeps the prepositional phrase and drops the `how many`; the G1
+    # scope strip is the non-counting path only.
+    probe = (
+        _COUNT.sub(" ", query or "")
+        if counting
+        else _SCOPE_PHRASE.sub(" ", query or "")
+    )
     try:
         roster = build_roster(paths, probe, settings, max_members=1, member_chars=0)
     except Exception:

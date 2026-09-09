@@ -695,3 +695,49 @@ entry.
   "this current session will restart first, because i started ninfer with
   ninfer-start"); the fresh session dials 150k (plan §2) and launches the bay.
 - **Return address:** the A/B bay + Wave 2 per `plan/CSM_WAVE2_RESUME.md`.
+
+### D18 — CSM unit-3 §9a iteration 1: the 400-gate, the frozen miss queue, and the R-1 council verdict (2026-09-09, A/B bay)
+
+- **What:** unit 3 of `reports/master-work/CSM_WAVE2_JOB.md` (the §9a closure
+  loop, iteration 1) ran to its first engine-class decision under the A/B bay:
+  (1) the **device-path fork went to a §3 council** (`reports/csm/
+  COUNCIL_unit3_sweep.md`, 11 sequential members) — verdict **C-deferred-
+  panel** (unanimous core): stay 150k, the 400-probe gate runs on the live CPU
+  `:8000` (bounded, LONG-flagged), the exhaustive 17,181-row panel defers to
+  Phase B (pre-extraction control arm, the planned `PHASE_A_COMPLETE` → 100k
+  switch is the only switch); the 21 extraction-gated census reds are the
+  documented Phase-1 floor; (2) the **400-gate ran** (CPU `:8000`, ~57 min,
+  rate ≈8.5 s/probe measured): ledger `sweep_qa_e3d73720.jsonl` 172 → 572 rows
+  (559 HIT / 5 MISS_DOC / 8 MISS_SPAN; the 168-probe datapoint re-confirmed
+  CUDA, not CPU); (3) the **miss queue froze** (`reports/csm/
+  miss_queue_csm_iter1.jsonl`, 55 rows = 33 fixable / 22 floor, every row
+  stamped fix_class + ruling = the halt meter per the council's R2); (4)
+  **wave-1 serial fix**: the R-1 router count-rule draft (`router.py` +22/−1,
+  11-test CSM file) + the no-council override package (closed 0 rows — all 13
+  d5 line-misses verified retrieval-side R-2; two engine hooks recorded:
+  `subject_aliases` (R-6) + `identity_fields` (R-7)); (5) **council R-1**
+  (`reports/csm/receipts/council_r1_router/`, 11 members) ruled **AMEND**:
+  the hunk ships exactly as drafted (the mechanical discovery-side guard is
+  verified infeasible without breaking the Geto/hxh pins), B applied the three
+  blast-radius test pins (csm-Tokyo / opm-Blizzard opm-set-16 /
+  onepiece-Marines, 11 → 14 tests), the receipt corrections (gate-1 1,265 →
+  1,283 collect-only; census 9 → 11; the "theoretical" residual is **live** —
+  the kept phrase completes *discovered* set names; two named cases), the
+  three queue stamp rows (55 → 58), the gate-4 pre-registration (an opm-set-
+  16-confined canon drop = the documented R-1 delta → halt to council with the
+  gold-shape decision the 2026-08-15 bank note sets up), and the red-list +
+  this entry's records (db-flip pinned-not-stamped; class boundary =
+  `\bhow many\b` only; the rejected layers: a roster-side stopword cannot close
+  the phantom `many` — it is a content word, `roster.py` stopword list — and a
+  mechanical name-guard breaks the Geto/hxh basis shapes).
+- **Why:** §3 trigger (every big engine change) + the unit-3 halt meter; the
+  amendment set is what makes the closure protocol enforceable (close-only-
+  HIT rows; zero new misses on stamped rows; gate-time collect-only as
+  source of truth).
+- **Position:** the four standing gates (one-copy 150k ordering) are next,
+  then the R-1 class re-sweep (set-14/15 + the 3 stamps), then the selective
+  commit; wave 2 (R-2 qa-passage-leg + R-3 roster-scoping drafts, 2 workers)
+  is staged (`/tmp/csm_iter1_wave2.js`), launches only after R-1 clears.
+- **Return address:** `plan/state.md` §B (live) + `reports/master-work/
+  work_log.md` (append-only); unit 4 (phase close) after iteration 1's
+  classes close or the halt meter trips.

@@ -92,3 +92,54 @@ Sources (all on-disk receipts from the 2026-09-08 cycle):
 - No LLM-judged entry may be added to this list. A failure whose expected output
   cannot be stated as a mechanical check (count / substring / mode) is a finding
   for the council, not a red-list row.
+---
+
+## Addendum — council R-1 records (2026-09-09, after the R-1 draft's §3 council)
+
+These are records about R-1's blast radius, not new red-list rows (a red row
+is a pre-registered mechanical debt; these are post-hoc records per the
+council R-1 chairman's amendment 4).
+
+- **db-flip record.** `series/db/overrides.yaml:291` ("how many gods of
+  destruction exist across the multiverse") flipped qa→roster as a positive
+  same-bug-shape delta. It is **pinned** (the db param row in
+  `tests/test_csm_router_count_rule.py`) but **not stamped** in the miss
+  queue: a stamp would unfreeze the R2 halt meter beyond the gate400
+  precedent for a delta that is already tripwired and positively shaped
+  (chairman's ruling, `reports/csm/receipts/council_r1_router/chairman.md`).
+  The db suite has no count-question gold row in the four gates — an accepted
+  residual.
+- **Class boundary.** The fix fires only on `\bhow many\b` (`_COUNT`,
+  `router.py:170`). "what is the number of X" / "how much" retain both
+  sub-bug shapes (phantom `many` on the declared path; scope-stripping on the
+  discovery path) and are **out of R-1 closure scope** — a future class.
+- **Discovery-counting residual (named open item).** The kept prepositional
+  phrase also completes *discovered* set names. Two live cases, both accepted
+  with tripwires (pin + stamp + zero-new-miss pass criterion): onepiece
+  "How many Sweet Commanders are in the Marines?" (serves the discovered 7-
+  member "Marine Commanders" set — a wrong-set serving, no gate covers
+  onepiece) and opm-set-16 (Blizzard; the only delta inside a standing gate,
+  gate-4 pre-registered in the receipt). **Re-probe after R-7's key-map
+  widening lands** (the `identity_fields` hook grows the discovered-set
+  surface — the R-1×R-7 interaction). R-1×R-5: csm's declared "Every devil
+  contract Denji has made" (3 members) will also route through the count rule
+  before the CSM-7 relations mode lands — ordering to settle when R-5 is
+  drafted.
+- **Rejected layers (recorded so the search does not repeat).** (a) Roster-
+  side stopword: the phantom is `many`, a **content word** in the roster
+  matcher's stopword list (`scriptengine/retrieve/roster.py`) — a stopword
+  list cannot close the csm-set-14 phantom (the door receipt's pre-fix
+  `rejected: [__unverified__'many']` is the mechanism). (b) Mechanical
+  name-guard for the discovery side: infeasible without breaking the pinned
+  JJK/hxh wins — the Geto pin's basis "Suguru Geto Techniques" is not a
+  contiguous substring of "named techniques does Suguru Geto have" (word
+  order), the hxh Nen pin's basis "Nen Types" is a non-contiguous synonym of
+  the asked "levels of Nen", and the Blizzard basis "The Blizzard Group"
+  **is** contiguous — no name-presence/containment rule accepts {Geto, hxh}
+  while rejecting {Marines, Blizzard} (chair-verified basis shapes).
+- **Closure rule (as amended).** Pass = csm-set-14 AND csm-set-15 both HIT
+  and zero new misses on the stamped rows; close only HIT rows; `red-R-1`
+  closes when the class goes green; any open recall-row miss = halt to
+  council (no partial close). The first-draft rule (≥ 1 HIT, then close all
+  three) was unenforceable — a 1-of-2 partial satisfied it while closing a
+  failing row (reviewer 4's finding, chair-adopted).
