@@ -8,41 +8,56 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
-- **2026-09-09 (CSM resume — the session restarts first, then the A/B bay; drift D17):**
-  - **Owner directive (this session):** resume the CSM campaign ("carry it
-    back up") under the A/B terminal bay — **A monitors shells**
-    (csm-control.sh as its eyes), **B works** (Wave-2 units). New standing
-    rules: **council after every CSM phase completes, at every big decision,
-    and at every big engine change** (sequential, one agent at a time, on
-    disk + ledger; supersedes "every 2–3 todos" for CSM); **JJK stays at
-    100%** (four standing gates re-run after every engine change; CSM work in
-    CSM-centric files only, JJK baseline untouched).
-  - **State at handoff:** post-reboot (owner powered off at the Toji/Gojo
-    session's end, booted, started Qwen 262k via `ninfer-start` — pid 3550,
-    `--vision`, 30.3 GB on card); `:8000` down; no tmux; CSM progress = Wave 1
-    + CSM-3b (council ledger #20) + the 19:45 Wave-2 pre-step (graded PASS)
-    all done — next = **Wave 2 (CSM-6 instrument + CSM-5 remainder) → §9a
-    closure loop iteration 1 → phase close (gates + council)**.
-  - **The current session (pi pid 3702, window 54525962) restarts first**
-    (owner: "i started ninfer with ninfer-start" — the fresh process
-    reconnects to the new server). Self-restart convention: detached helper,
-    never ask the owner.
-  - **Progress (02:00-02:02, this session):** (1)-(2) done — dial 150k
-    (qwen pid 4348, 26.5 GB, 5397 MiB free, `--vision` verified in
-    `serve_ctx_150000.sh`), `:8000` up on **CPU** (venv python — a bare
-    `python` launch fails: not on PATH); **(3) the bay is UP**: tmux
-    `control` (A, pi 4576, boot line logged, monitor `csm-control.sh`
-    4867 polling B's shells) + `work` (B, pi 4699, reading the job spec,
-    units in order). Both visible windows open (pilot-control 54657750,
-    pilot-work 54662792). (4) B works now; (5) council per the trigger.
-  - **After Phase 1 (A) completes → 100k switch for GPU tasks** (owner
-    2026-09-09): `qwen-switch.sh 100k --force` + **restart this session +
-    terminal immediately via `tools/master-work/pi_restart.sh` (grace ≤10 s
-    — owner rule: no 45 s waits)**; at 100k the :8000 embeds may go back on
-    CUDA (headroom rule).
-  - If the owner wants Wave 2 at 262k instead of the 150k dial: the wave rule
-    degrades to one worker subagent at a time (say so; default = 150k per the
-    2-phase plan).
+- **2026-09-09 (CSM Phase 1 under the A/B bay — 262k→100k switch now; drift D20):**
+  - **Owner directive (this session, 2026-09-09 night):** (1) switch to the
+    100k context by reloading ninfer (qwen-switch skill); (2) close this pi
+    agent + session as ninfer restarts (pi_restart.sh, grace ≤10 s — the
+    owner convention: the agent never asks the owner to restart); (3) come
+    back to this session; (4) from here launch the A/B bay — A continuously
+    watches every shell B launches, B works. **Phase A is GPU-only for
+    shells (owner 2026-09-09 night):** every model-bearing shell runs on
+    CUDA; if B's shell is caught on CPU, A stops it immediately and sends
+    the standard instruction ("Control A killed your shell (pid …). Re-run
+    on GPU: …") — B auto-reruns on CUDA (the 2026-09-07 convention, now
+    documented in the ab-bay skill §"The CPU-kill → auto-rerun
+    convention"). B works **Phase 1 only** (plan v2.2 P1.1–P1.4).
+  - **Phase-boundary gate (owner: "prepare a checking/reviewer that will
+    check the phase 1's end, then only will move to phase 2"):**
+    `reports/master-work/PHASE1_CLOSE_REVIEW.md` — a fresh-context
+    reviewer re-runs the four standing gates on the committed tree +
+    verifies every P1.4 close condition + the marker-at-floor; **Phase 2
+    starts only on its PASS + the owner's go.** B never starts Phase 2 on
+    its own.
+  - **State at handoff:** Qwen 262k (pid 3584, ~30.5 GB / ~1.6 GB free),
+    `:8000` down, no tmux bay (the 150k-era bay is gone with the reboot).
+    CSM = plan `plan/CSM_2PHASE_PLAN.md` **v2.2** (P1 council 14 amendments
+    + P2 council 13, ledger #25/#26) is the working plan; the 9-file
+    R-2/R-3 package is on disk, uncommitted (its gate legs = P1.1 step 3);
+    `/tmp/csm_iter1_records` was lost in the reboot → P1.1 step 1
+    (model-free rebuild). Miss queue 58 rows (33 fixable / 22 floors / 3
+    stamped); census 39/60 (21 red, extraction-gated floor).
+  - **This session's sequence (executed 2026-09-09 night):** (a) ab-bay
+    skill updated with the CPU-kill → auto-rerun convention; (b)
+    `reports/master-work/PHASE1_JOB.md` (B's spec) +
+    `reports/master-work/PHASE1_CLOSE_REVIEW.md` (the close gate) on disk;
+    (c) this checkpoint + commit; (d) `qwen-switch.sh 100k --api` (one
+    atomic call) — the session self-restarts via `pi_restart.sh` (tmux
+    `pi-csm`; attach: `DISPLAY=:0 setsid gnome-terminal -- tmux attach -t
+    pi-csm`); (e) the NEW session (this campaign, come back) opens the bay
+    per the ab-bay skill: A boot line (monitor `csm-control.sh` on B's pid,
+    GPU-only-shell rule, standard kill message), B boot line
+    (`reports/master-work/PHASE1_JOB.md`), the directing session stands
+    down and relays.
+  - **Next (the new session, in order):** boot A + B per ab-bay step 5 (A
+    boot line carries the live-verified state snapshot + the monitor
+    launch; B boot line carries the job spec + the contract). B's first
+    units: P1.1 step 0 (zero-GPU baseline re-verify) + step 1 (model-free
+    rebuild) → A brings `:8000` to CUDA → the four gate legs → C1/C2/C3
+    (path-limited adds, `git add .` banned) → P1.2 R-5 wave (council per
+    the kept trigger) → P1.3 halt meter (33 fixable only) → P1.4 close +
+    marker (floor only) → **the phase-close reviewer gate** → owner go →
+    Phase 2 (P2.1 step 0 sanity-100 first — the 51-GPU-h number is
+    unmeasured and must not be spent before it).
 - **2026-09-09 (Gojo script v2 — ESSENCE-driven; machine powers off at end of that session):**
 - **2026-09-09 (Gojo script v2 — ESSENCE-driven; machine powers off at end of this session):**
   - **Gojo script rewritten per owner essence** (`E:\Personal\Plot Works\Video 2 - Gojo\Script\Gojo.md`,
@@ -306,3 +321,5 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-08T22:41:06+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6967MiB
 - 2026-09-08T23:35:06+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1486MiB
 - 2026-09-09T01:53:56+05:30 qwen-switch: ctx=150000 (mode 150000), api=off, free=5397MiB
+- 2026-09-09T22:03:52+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1563MiB
+- 2026-09-09T23:29:19+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1606MiB
