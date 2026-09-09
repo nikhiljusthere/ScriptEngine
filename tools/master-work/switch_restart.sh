@@ -55,18 +55,31 @@ tmux kill-session -t "$SESS" 2>/dev/null
 tmux new-session -d -s "$SESS" -c "$DIR" pi
 say "tmux session $SESS launched"
 NEW=""
-for _ in $(seq 1 30); do
-  # newest pi (max pid) = the one we just spawned; the owner's older pi
-  # loses on pid order, not on name. (2026-09-10 00:58 incident: head -1
-  # = oldest surviving pi, which typed the resume line into the owner's
-  # pi 53686 instead of the pane's new pi 55321.)
-  NEW=$(pgrep -x pi | grep -vxF "$OLD" | sort -n | tail -1)
-  [ -n "$NEW" ] && break
-  sleep 2
+for _ in $(seq 1 60); do
+  # The pane's own process (tmux runs the pane command; sh -c 'pi' execs
+  # to pi, same pid). Wait until comm is actually 'pi'. A plain pgrep
+  # iteration can fire BEFORE the pane's pi has spawned and mislabels the
+  # owner's older pi (2026-09-10 00:58/01:01: log said "new pi pid=53686"
+  # = the owner's pi; delivery was still fine — send-keys targets the
+  # session, only the label was wrong).
+  PANE=$(tmux display-message -p -t "$SESS" '#{pane_pid}' 2>/dev/null || true)
+  if [ -n "$PANE" ] && [ "$(ps -o comm= -p "$PANE" 2>/dev/null)" = "pi" ]; then
+    NEW=$PANE; break
+  fi
+  sleep 1
 done
+[ -z "$NEW" ] && NEW=$(pgrep -x pi | grep -vxF "$OLD" | sort -n | tail -1)
 if [ -z "$NEW" ]; then say "ERROR: no new pi process after 60 s — check the tmux session"; exit 1; fi
 say "new pi pid=$NEW"
-sleep 12   # let the TUI come up before typing
+# wait for the TUI to be ready before typing: the status line carries the
+# model name. The old fixed 12 s sleep lost the race both times — the
+# 2026-09-10 00:58/01:01 resume lines were typed before the input handler
+# was live and were swallowed (the owner's own message was the first that
+# landed, which is exactly what "the agent does it itself" must not need).
+for _ in $(seq 1 30); do
+  tmux capture-pane -t "$SESS" -p 2>/dev/null | grep -q 'qwen3.8' && break
+  sleep 2
+done
 if [ -f "$MSG" ]; then
   LINE=$(head -1 "$MSG")
   tmux send-keys -t "$SESS" "$LINE" Enter

@@ -370,3 +370,12 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
     then stop). Helper bug fixed + committed (new-pi detection was `head -1`
     = oldest surviving pi → typed into the owner's pi; now `sort -n | tail -1`
     = newest = the spawned one).
+- 2026-09-10T01:01:47+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1610MiB
+  - **01:0x (helper hardening, commit pending→done):** two latent defects
+    found via the 01:01 262k run — (a) the "new pi pid" log label raced the
+    pane's spawn (pgrep before exec) and printed the owner's pi 53686;
+    (b) the fixed 12 s pre-type sleep lost the TUI race both times, so the
+    typed resume line was swallowed and the owner had to type the first
+    message that landed. Fix: label from the pane pid (wait comm=pi) + poll
+    for the TUI status line (model name) before typing. Next switch's
+    resume line should land unassisted.
