@@ -110,6 +110,13 @@ session.
 Write the marker (floor only), append the final `work_log.md` line
 ("PHASE 1 COMPLETE — marker written at floor"), then run the **Phase-1
 close council** (the §3 trigger: a council after every phase completion).
+
+**The close council MUST carry `reports/csm/CLOSE_COUNCIL_PREREGISTERED.md`
+as a numbered item** (owner-raised 2026-09-10: the coverage denominator —
+CSM's own tracker reads 0/537 pages and 0 questions against JJK's 893/987 and
+29,819, and the 60-question dimension census is character-only). Its
+questions 1–4 must be answered on disk, with reasons, **before any Phase-2
+GPU-day is committed.**
 **On the council's PASS, continue straight into Phase 2** — P2.1 step 0
 first (the bounded per-door sanity-100, before any panel spend). No
 stop-and-wait for a separate owner go, and no waiting on P1.5.

@@ -51,6 +51,17 @@ gate shells the same way it supervises B's — GPU-only rule applies).
    green; R-6/R-7 no-council passes + receipts.
 6. **JJK-100 % invariant:** item 2 IS the invariant check — every engine
    change in Phase 1 left the JJK gates baseline-exact.
+7. **The coverage denominator (pre-registered, owner 2026-09-10):**
+   `reports/csm/CLOSE_COUNCIL_PREREGISTERED.md` was carried into the close
+   council as a numbered item, and its **questions 1–4 are answered on disk
+   with reasons**. The finding it registers: CSM's own
+   `tools/coverage_report.py` reads **0/537 pages, 0 active questions**
+   (JJK: 893/987, 29,819), the 227-page in-scope remainder is untouched, and
+   the 60-question dimension census is character-only — no chapter, volume,
+   episode or organization item, though `chapter_box` is 232 of 537 pages.
+   **Unanswered = FAIL**, because P2.3's null branch can otherwise de-scope
+   extraction on that census alone. This item gates the Phase-2 GPU spend,
+   not the marker.
 
 ## The verdict (the reviewer's output)
 
@@ -60,7 +71,15 @@ path: regression → council, no Phase 2; missing condition → the named fix
 + re-run of this gate). PASS → the directing session reports to the owner;
 **Phase 2 (plan v2.2 P2.1 step 0 — the per-door sanity-100) starts only
 after the owner's go** (the owner gates the phase boundary; the reviewer
-gates the evidence).
+gates the evidence). **P1.5 (the MCP bridge) is DONE** — executed by the
+directing session and committed at `b11efef`, receipts in
+`reports/master-work/MCP_BRIDGE_P1_5.md`; the owner reassigned it away from
+B on 2026-09-10 and waived its hold on Phase-2 start, so it gates nothing
+here. **Owner pre-go (2026-09-10):** on this gate's PASS the directing
+session starts Phase 2 without waiting for a further owner go at this
+boundary; the owner's next gate is Phase-2 completion — **except** that
+item 7 (the coverage denominator) must be answered on disk before any
+Phase-2 GPU-day is spent.
 
 ## Why this shape (decision record)
 
