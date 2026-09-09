@@ -342,3 +342,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-09T23:29:19+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1606MiB
 - 2026-09-10T00:29:26+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7077MiB
 - 2026-09-10T00:30:38+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1607MiB
+- 2026-09-10T00:37:25+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7084MiB

@@ -741,3 +741,46 @@ entry.
 - **Return address:** `plan/state.md` §B (live) + `reports/master-work/
   work_log.md` (append-only); unit 4 (phase close) after iteration 1's
   classes close or the halt meter trips.
+
+### D20 — CSM Phase 1 under the A/B bay: 100k switch via the safe helper, bay booted, directing session stands down (2026-09-10 00:3x–00:5x, post-reboot)
+
+- **What:** (1) the 262k→100k switch ran through the new detached helper
+  `tools/master-work/switch_restart.sh` (commit `39f18ab`): kill pi (grace 5 s)
+  → `qwen-switch.sh 100k --api --force` → relaunch pi in tmux `pi-csm` +
+  resume line; switch log 00:37:25 (ctx=102400, api=cuda, free=7084 MiB;
+  Qwen pid 53406; `:8000` pid 53467 on CUDA, parented by the
+  qwen-switch `--api` wrapper 53465 — the wrapper is not a stray). The 00:1x
+  inline-switch stranding (262k restored by hand 00:30, owner) is the root
+  cause this helper retires. (2) the A/B bay opened per the `ab-bay` skill:
+  A = tmux `control` (A-pi 53776; BOOT line 00:41:22 in
+  `reports/master-work/decisions.md` with the live-verified snapshot; monitor
+  `csm-control.sh` pointed at B main pi 53912; the stray 150k-era idle pi
+  53686 (ppid 3451, old visible terminal) is NOT bay — ignored, not killed),
+  B = tmux `work` (B-pi 53912; job spec
+  `reports/master-work/PHASE1_JOB.md`, **Phase 1 only, P1.1–P1.4**). The
+  directing session (tmux `pi-csm`, pi 53523) stands down: bounded status
+  polls, relay escalations, report to the owner. (3) the phase-1 close is
+  gated by `reports/master-work/PHASE1_CLOSE_REVIEW.md` (fresh-context
+  reviewer re-runs the four standing gates + verifies every P1.4 close
+  condition + marker-at-floor) **plus the owner's go — never the marker
+  alone**; B's last act is marker-at-floor + final work_log line + STOP.
+- **Why:** owner directive (2026-09-09 night): switch 100k, close this
+  agent as ninfer restarts, come back and open the bay — A watches every
+  shell B launches (GPU-only-shell rule: every model-bearing shell on CUDA;
+  CPU-caught → immediate kill + the standard "Control A killed your shell…
+  Re-run on GPU" message; B auto-reruns), B works Phase 1 only; the phase
+  boundary gets a checking/reviewer before Phase 2 starts.
+- **Position:** B's first units = P1.1 step 0 (zero-GPU baseline
+  re-verify: pytest collect 1,305 + span-recall offline 48,572/48,572 +
+  red-list recount) + step 1 (model-free rebuild of the reboot-lost
+  `/tmp/csm_iter1_records`; the Part-A panel was never DONE pre-reboot,
+  rebuild don't assume); then the four gate legs on the CUDA `:8000` (one-
+  copy ordering) → C1/C2/C3 selective commits (path-limited `git add` by
+  named paths, `git add .` banned; the dirty tree carries the 9-file
+  R-2/R-3 package + unrelated files) → P1.2 R-5 wave (council per the kept
+  trigger) → P1.3 halt meter (33 fixable only) → P1.4 close + marker
+  (floor only) → the phase-close reviewer gate → owner go → Phase 2.
+- **Return address:** `reports/master-work/decisions.md` (A) +
+  `reports/master-work/work_log.md` (B) + `plan/state.md` (B→A
+  escalations, new appends only — the pre-boot 37 lines are stale 150k-era);
+  the directing session relays and reports.
