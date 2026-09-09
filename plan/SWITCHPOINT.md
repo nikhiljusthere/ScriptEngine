@@ -18,6 +18,16 @@ edit those.
     wheel = tmux copy-mode scrollback, `Esc` = live pane. Owner then directed:
     demo 262k→100k switch pair (both inline; session fit 85k est < 102k), then
     re-launch A/B per ab-bay step 5 with the fixed windows.
+  - **Owner mandate 2026-09-10 (supersedes the 2026-09-08 "never ask the
+    owner to restart" convention):** EVERY context switch = exit the pi
+    agent, then relaunch into the same session — the agent never chats
+    across a model recycle (the 00:5x inline 100k switch died mid-reload;
+    the owner restored 262k by hand, then restarted it). The qwen-switch
+    skill made this MANDATORY (commit 8f3b0c5: "the agent always exits, the
+    owner relaunches"); `switch_restart.sh` is the only sanctioned path.
+    The 262k→100k demo therefore runs: `switch_restart.sh 100k
+    /tmp/resume_msg.txt 53523` (my pid; the owner's pi 53686 untouched),
+    resume line = stop-and-wait.
   - **Owner directive (this session, 2026-09-09 night):** (1) switch to the
     100k context by reloading ninfer (qwen-switch skill); (2) close this pi
     agent + session as ninfer restarts (pi_restart.sh, grace ≤10 s — the
@@ -352,3 +362,5 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-10T00:29:26+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7077MiB
 - 2026-09-10T00:30:38+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1607MiB
 - 2026-09-10T00:37:25+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7084MiB
+- 2026-09-10T00:52:47+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1610MiB
+- 2026-09-10T00:54:16+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1610MiB

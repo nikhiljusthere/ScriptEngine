@@ -49,20 +49,35 @@ phase boundary; never thrash.
 3. **No extraction in flight**: `pgrep -af 'events[-_]extract'` empty (the
    script refuses too).
 
-## The switch — ONE atomic tool call
+## The switch — the agent always exits, the owner relaunches (MANDATORY, owner 2026-09-10)
+
+**Every context switch ends the pi agent.** Owner's words: "every time you
+switch the context, you will have to exit pi agent, then come back to this
+session, you cant just change context and start chatting here." So the ONLY
+sanctioned flow is the detached all-in-one helper (kill pi → switch →
+relaunch pi → typed resume line → capture-pane verify — the only safe order):
 
 ```bash
-cd /home/goblin/ninfer-work && ./qwen-switch.sh 100k
+setsid nohup bash tools/master-work/switch_restart.sh <mode> /tmp/resume_msg.txt <my_pi_pid> < /dev/null > /dev/null 2>&1 &
 ```
 
-- Invoke via the `bash` tool with **`timeout: 300000`** (ms). The default
-  120 s is shorter than the reload; a timeout is *fine* — the load is
-  detached and survives, then poll `curl -s -m 2 http://127.0.0.1:18080/v1/models`
-  with a bounded status-printing loop.
-- **Never split pkill / reload / verify across tool calls**: the harness makes
-  a model call between calls, and that call dies mid-reload.
-- During the call: no model, no thinking, no editing — by design. The pi
-  process survives; only the model server recycles (same model-id, same port).
+- `<my_pi_pid>` = the pi serving THIS session, verified live (the pane pid
+  whose pi child is the directing session — `tmux list-panes -a` + `pgrep -x
+  pi` with a ppid check). Never from memory, and never `pgrep -x pi | head -1`
+  when other pi processes exist (the owner runs a second pi).
+- The helper switches with `--force` by design: the flow is always a
+  handoff, and the fit guard cannot be consulted after pi is gone. The
+  pre-flight fit measurement (above) decides what the resume line says:
+  session fits the new dial → "come back to this session, then <next step or
+  stop>"; it does NOT fit → the fresh-session handoff one-liner (below).
+- The invoking session dies at the grace (5 s) mid-tool-call — expected;
+  the helper is setsid-detached and finishes the whole flow alone (log
+  `/tmp/switch_restart.log`, including a capture-pane proof of the resume
+  line).
+- Inline `./qwen-switch.sh` from a running session is RETIRED (2026-09-10,
+  this mandate): even when the transcript fits, the agent never chats across
+  a model recycle — the 00:5x 100k attempt that died mid-reload (the owner
+  restored 262k by hand) is the second incident behind the rule.
 
 ## Post-flight (model back)
 
@@ -72,14 +87,23 @@ cd /home/goblin/ninfer-work && ./qwen-switch.sh 100k
    `contextWindow` to the mode (header + proactive auto-compact threshold).
 3. Continue the plan from the switchpoint. First turn is a cold prefill (~1–2 min).
 
-## Overflow is self-handling (no user action)
+## Overflow: when it is self-handling, and when it strands you
 
-The fit guard is conservative (bytes/4 overstates the real token count ~2.7x).
-If the running session's context actually exceeds the server cap mid-work,
-ninfer returns `400 context_length_exceeded`; pi-ai's generic overflow
-pattern matches it and the session auto-compacts + retries the turn — no
-approval, no session switch, no user involvement. A fresh-session handoff is
-for clean state, not survival.
+The fit guard is conservative (bytes/4 overstates the real token count
+~2.7x). If the running session's context exceeds the server cap mid-work
+BUT the auto-compaction itself fits the cap, ninfer returns `400
+context_length_exceeded`; pi-ai's generic overflow pattern matches it and
+the session auto-compacts + retries the turn — no approval, no user
+involvement.
+
+**It does NOT self-handle when the compaction itself doesn't fit** (the
+2026-09-10 00:3x incident: a ~400k session switched to 100k; the prepared
+prompt was 242k tokens vs the 102k cap — the compact call itself 400'd, the
+turn died, and the session was stranded model-less; the owner restored 262k
+by hand). That is exactly the case the pre-flight fit guard predicts: if
+`wc -c/4` of THIS session > the target ctx, do not switch inline — use
+`tools/master-work/switch_restart.sh` (kill → switch → relaunch pi, one
+detached helper).
 
 ## The overflow handoff (only if you want clean state)
 
@@ -94,10 +118,14 @@ overflows the new cap). Everything is on disk — hand off with:
 
 - Switch before the checkpoint is complete.
 - `--force` past a fit refusal without a full checkpoint (the handoff one-
-  liner is still owed if you want clean state; the running session itself
-  survives via auto-compaction).
+  liner is still owed if you want clean state).
+- Run the switch inline at all, or let the agent chat across a switch:
+  every context switch exits the pi agent and the owner relaunches into the
+  same session (owner mandate 2026-09-10; the 00:3x + 00:5x incidents) —
+  `tools/master-work/switch_restart.sh` is the only path.
 - Rely on *proactive* compaction in a session started under a different mode
   than the current one (its declared contextWindow is stale; the sync now
   happens per switch, but pre-existing sessions need the real transcript
-  size measured). Reactive overflow is different and IS automatic: ninfer's
-  `400 context_length_exceeded` triggers pi's built-in compact-and-retry.
+  size measured). Reactive overflow is different and IS automatic when it
+  fits: ninfer's `400 context_length_exceeded` triggers pi's built-in
+  compact-and-retry.
