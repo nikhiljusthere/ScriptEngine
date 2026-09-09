@@ -1,0 +1,7 @@
+# Review 4 — Phase-1 plan council (peer)
+
+**Q1 — Strongest: A.** The only response that turns the review into an executable ordering: rebuild the lost /tmp artifacts (C1/C2 lists, R-5 brief, Part-A rows) model-free, *then* the 262k→100k switch, *then* bring up the CUDA `:8000`. Its load-bearing claims are verified (queue 58 = 33 fixable / 22 floor / 3 stamped; /tmp loss; dirty tree); unique catches: C1/C2 cover neither the plan/SWITCHPOINT/hygiene files (→ add a C3), ledger row #23, and the GATE.md skeleton. C is runner-up (wrong-noun / bar-audit ordering); D broadest.
+
+**Q2 — Shared blind spot:** all five treat the 100k switch as a given, not a risk. It is the plan's SPOF: the SWITCHPOINT checkpoint sits uncommitted in the dirty tree, /tmp is already proved lost across one reboot, and no response defines an abort/rollback path if the qwen-switch or pi_restart fails — model-down, no CUDA `:8000`, campaign stalled, and no P1.1 completion branch for it.
+
+**Q3 — I would add:** price the council legs into the schedule. P1.2's kept §3 trigger plus a P1.3 halt trigger = up to two sequential 5+5+1 council cycles on the 100k dial; the 2–3-day estimate excludes them. Also commit the pre-registered extraction-pass test shape and the #21 R3 halt scoping as ledger-of-record rows in C1 so Phase 2 cannot retrofit either.

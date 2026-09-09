@@ -1,0 +1,7 @@
+# Review 1 — Phase-1 plan (council_p1_plan)
+
+**Q1 Strongest: A.** Only response that verified disk state (`/tmp` records lost, 262k dial, 33/22/3 queue math — all confirmed) and answers all six scope questions with concrete amendments (C3 commit, model-free rebuild before switch, halt-meter scoping line, P1.4 gaps) plus a machine-level done criterion. C is the close runner-up: "certifies the wrong noun" (D1–D10 is JJK's reachability done-set; D1 vacuous on CSM's 11-item census, confirmed) is the sharpest goal-anchor argument and belongs in the Q1 amendment.
+
+**Q2 Shared blind spot: gate baselines taken at face value.** None checks the plan's inlined four-leg values against the latest receipts (`GATE_REBASELINE_2`, `CSM3B_GATES`). The suite-count mismatch (plan's 1,303+2xp vs CLAUDE.md's 1,254) is flagged by D only as doc hygiene; if any inlined baseline is stale, P1.1's first gate leg fails for the wrong reason, and the plan's "baseline-exact" claim is unverifiable from disk.
+
+**Q3 Missed by all five:** (a) C1/C2/C3 must be path-limited adds — `git add .` is exactly the contamination bug the dirty tree exposes; the plan must ban it and quarantine `E:\...` and `sample scripts/`. (b) P1.4's PHASE_A_COMPLETE must record the R-6 floor-inheritance verdict from the R-5 council so Phase 2 can't relitigate it.

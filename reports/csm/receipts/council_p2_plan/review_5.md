@@ -1,0 +1,7 @@
+# Peer review 5 — Phase-2 plan council
+
+**Q1 Strongest: D** — answers all six, findings verified on disk: the 15,400-vs-panel collision (panel_csm.json = 17,181), gpu-handoff doc's 262k→100k handoff vs 100k phases, P2.2 double-scheduled against P1.4(d), undefined pilot numbers, no JJK baseline reference. B is second: the sharpest null branch (P1.4 can close all 21 reds → P2.3 never fires, P2.5 signs "100 %" on triage rows) and the on-disk 8.5 s/probe → ~122 h ceiling (a CPU rate, so a flag, not a re-estimate). A skipped Q2; C skipped Q1; E's adds are fresh but its Q2/Q3 thinnest.
+
+**Q2 Shared blind spot:** none raises the per-door sanity floor/halt policy COUNCIL_csm-3(d)(3) mandated before CSM-4: G-CSM-2 says the qa leg is dead wholesale on CSM, roster/narrative are structurally low-yield, so "miss file empty" is unattainable on 2 of 3 doors. The 51-GPU-h arm needs that floor or it false-halts; v2.1's P2.1 dropped it, like the sanity re-estimate.
+
+**Q3 I would add:** "51 GPU-h ≈ 2 GPU-days" presumes the single-threaded urllib client; csm-3(d) leaves 2–4 workers undecided (2–4× wall-clock swing), so the cost line is untrustworthy even serially. And P2.5 should grade on the 200-row held-out, not just the panel — a memorised panel looks green.

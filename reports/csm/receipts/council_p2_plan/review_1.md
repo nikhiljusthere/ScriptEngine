@@ -1,0 +1,5 @@
+1. **B** — the only one with a measured counter: 8.5 s/probe on disk (f81a1af) → ≈122 GPU-h, 2.5× the budget, so sanity-100 must be a gate, not a suggestion. And the only one giving A14's deferred call an actionable ruling: null branch (all 21 reds closed) must *void* P2.5, not pass it. D runner-up (marker has no machine check; gpu-handoff chain unexplained at 100k mode).
+
+2. Shared blind spot: all five fix the cost and ordering of the 51-GPU-h arm; none fixes its acceptance. P2.1's exit (plan L189) is "miss file empty **or** every residual miss triaged with a documented floor" — floor undefined, no pre-registered cap, no named grader. The plan's most expensive item has the weakest bar and can always "pass" via executor-written triage. Pre-register P2.1's floor before the run, P2.2-style.
+
+3. All five missed: "commit-stamped Phase-1 rows resume forward" (plan L185) makes the control arm a mixed-engine-state measurement — stamps predating P1.1–P1.3 fixes get reused, so P2.3's pre/post-extraction delta attributes parser fixes to extraction. Control arm = fresh full-panel run after PHASE_A_COMPLETE (or stamp-commit ≥ last engine change, at minimum).
