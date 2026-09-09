@@ -36,18 +36,35 @@ edit those.
     `/tmp/csm_iter1_records` was lost in the reboot → P1.1 step 1
     (model-free rebuild). Miss queue 58 rows (33 fixable / 22 floors / 3
     stamped); census 39/60 (21 red, extraction-gated floor).
-  - **This session's sequence (executed 2026-09-09 night):** (a) ab-bay
-    skill updated with the CPU-kill → auto-rerun convention; (b)
+  - **This session's sequence (2026-09-09 night → 09-10 00:3x):** (a)
+    ab-bay skill updated with the CPU-kill → auto-rerun convention; (b)
     `reports/master-work/PHASE1_JOB.md` (B's spec) +
-    `reports/master-work/PHASE1_CLOSE_REVIEW.md` (the close gate) on disk;
-    (c) this checkpoint + commit; (d) `qwen-switch.sh 100k --api` (one
-    atomic call) — the session self-restarts via `pi_restart.sh` (tmux
-    `pi-csm`; attach: `DISPLAY=:0 setsid gnome-terminal -- tmux attach -t
-    pi-csm`); (e) the NEW session (this campaign, come back) opens the bay
-    per the ab-bay skill: A boot line (monitor `csm-control.sh` on B's pid,
-    GPU-only-shell rule, standard kill message), B boot line
-    (`reports/master-work/PHASE1_JOB.md`), the directing session stands
-    down and relays.
+    `reports/master-work/PHASE1_CLOSE_REVIEW.md` (the close gate) on disk
+    (commit `958ce93`); (c) **the 100k switch was run INLINE from this
+    ~400k session (00:1x) and STRANDED it** — the reloaded 100k model
+    could not serve it (242k prepared prompt > 102k cap; the auto-compact
+    itself did not fit), the turn died, and the restart helper never
+    launched. **The owner restored 262k by hand at 00:30**
+    (`ninfer-start-262k --force`; qwen pid 53071, free 1607 MiB, `:8000` on
+    CPU — current state). Root cause + the fix: the safe order is kill pi
+    FIRST, then switch, then relaunch pi — one detached helper
+    (`tools/master-work/switch_restart.sh`, new, repo-committed); both
+    skills updated (ab-bay step 2; qwen-switch "the switch" + "overflow"
+    sections + Never list).
+  - **NEXT (this session's final act, scripted):** launch the helper
+    detached — `setsid nohup bash tools/master-work/switch_restart.sh 100k
+    /tmp/resume_msg.txt $(pgrep -x pi | head -1) < /dev/null > /dev/null
+    2>&1 &`. It: kills this pi (grace 5 s) → `qwen-switch.sh 100k --api
+    --force` (30–60 s; `:8000` lands on CUDA at 100k per the headroom
+    rule) → launches `pi` in tmux `pi-csm` → types the resume line from
+    `/tmp/resume_msg.txt` → verifies via capture-pane (log
+    `/tmp/switch_restart.log`). The new pi (attach: `DISPLAY=:0 setsid
+    gnome-terminal -- tmux attach -t pi-csm`) reads THIS section and opens
+    the bay per the ab-bay skill: A boot line (tmux `control`,
+    `csm-control.sh` monitor on B's pid, the GPU-only-shell rule, the
+    standard kill message), B boot line (tmux `work`,
+    `reports/master-work/PHASE1_JOB.md`); the directing session (the new
+    pi) stands down and relays.
   - **Next (the new session, in order):** boot A + B per ab-bay step 5 (A
     boot line carries the live-verified state snapshot + the monitor
     launch; B boot line carries the job spec + the contract). B's first
@@ -323,3 +340,5 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-09T01:53:56+05:30 qwen-switch: ctx=150000 (mode 150000), api=off, free=5397MiB
 - 2026-09-09T22:03:52+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1563MiB
 - 2026-09-09T23:29:19+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1606MiB
+- 2026-09-10T00:29:26+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7077MiB
+- 2026-09-10T00:30:38+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1607MiB
