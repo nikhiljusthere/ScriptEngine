@@ -263,7 +263,10 @@ while [ "$CY" -lt "$CYCLES" ]; do
       [ -n "$line" ] && scan_state_line "$line"
     done <<< "$NEW_STATE"
   fi
-  if grep -q "PHASE 1 COMPLETE" "$WLOG" 2>/dev/null; then P1=1; fi
+  # PHASE 1 COMPLETE marker = the string leading a line (after the [ts] / [$TSI] prefix).
+  # Unanchored grep matched the quoted directive inside B's P1.1 step-4 note
+  # ("after writing 'PHASE 1 COMPLETE' B does NOT stop") — false close 2026-09-10 03:05.
+  if grep -Eq '^(PHASE 1 COMPLETE|\[[^]]*\] ?PHASE 1 COMPLETE)' "$WLOG" 2>/dev/null; then P1=1; fi
   commit_batch
   next=watch
   [ "$P1" = 1 ] && next="CLOSE-LOGGED-exit"
