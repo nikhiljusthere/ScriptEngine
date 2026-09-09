@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "series": "csm",
+  "purpose": "ledger-of-record v1 (council #24) — the committed machine-readable gate state so a reboot costs zero. Read this FIRST after any reboot. If the reboot_rule check passes, the four gates stand: do NOT re-run them. If it fails, re-run all four on the new tree (one-copy 100k + CUDA :8000) before the next fix-class.",
+  "last_green": {
+    "unit": "P1.1 (§9a iter-1: R-2 passage leg + R-3 roster scoping)",
+    "fix_classes": ["R-2", "R-3"],
+    "fixes_commit": "3ee45f0",
+    "receipts_commit": "5c8237a",
+    "ts": "2026-09-09T21:05:00Z",
+    "gates": {
+      "gate1_pytest": {
+        "value": "1305",
+        "note": "1,303 baseline + 2 new R-2/R-3 tests (council #23)",
+        "status": "green"
+      },
+      "gate2_eval_jjk": {
+        "value": "31/31",
+        "status": "green"
+      },
+      "gate3_span_recall_jjk": {
+        "value": "48572/48572 offline rc=0 + 398/400 live probe (99.5%)",
+        "probe": "seed-7, 398/400 >= the 390/400 (97.5%) bar; ledger reports/span-recall/jjk/recall_verbatim.jsonl",
+        "status": "green"
+      },
+      "gate4_canon_opm": {
+        "value": "236/236 canon (100%), 10/16 exact, 79.0% precision, 0 confident-wrong",
+        "report": "reports/2026-09-09-2051/",
+        "status": "green"
+      }
+    },
+    "class_sweeps": {
+      "r2_parta_panel": "7/13 HIT (53.8%); csmd5 own-new 2/7 (csmd5-04/-07) -> R-2 closure bar (>=1 own-new HIT) met; 5 d5 + gate400-320 stay open (D5/Phase-2); ledger reports/span-recall/csm/sweep_qa_a4b1d02d.jsonl",
+      "r3_partb_resweep": "15/15; set-17 7 / set-01 5 / char-02 16 all HIT; set-14/15 invariants; csmdoor-01 31/88 floor HELD; r1blast-* zero new misses on stamped rows"
+    },
+    "queue_stamps": {
+      "rows_closed_this_unit": 12,
+      "closed": 15,
+      "open": 43,
+      "total": 58
+    }
+  },
+  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after receipts_commit 5c8237a, AND (b) no gate-relevant file changed between 5c8237a and HEAD — check: `git diff --name-only 5c8237a..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, CLAUDE.md, plan/CSM_WAVE2_RESUME.md) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 21 D6-extraction rows + the invariant floor rows (csmdoor-01 31/88, D5 reachability residuals) are the Phase-2/extraction-gated floor and stay open by design."
+}

@@ -11,19 +11,17 @@ the contract travels with the context.
 
 ## Start here
 
-1. **Active work: completing JJK D6 comprehension** (JJK only; this run stops
-   before P6). "JJK 100%" here means full D6 comprehension — the corpus
-   *understands* everything about a character (what each line/fact/prose/event
-   means, whether it is an event, where it sits on the timeline, all
-   structured dimensions), not just line retrieval (D5 is the separate
-   reachability layer; `docs/ROADMAP.md` "current goal" states the exit
-   condition). Live checkpoint: `plan/drift_log.md` §4 (current position) +
-   `reports/comprehension/GATE.md` (gate state) + `reports/comprehension/
-   COMPREHENSION_REMAINDER.md` (the remainder plan + the two-100%s + the
-   checkable definition of 100% comprehension). The JJK prose pass is
-   **complete** (100% on every in-scope narrative page type) — its single
-   final record is `reports/page-campaign/PROSE_PASS_FINAL.md` (method, the
-   crucial engine fixes, final state).
+1. **Active work: the CSM (Chainsaw Man) 100% campaign, Phase 1** (JJK D6 is
+   DONE — D1–D10, 2026-09-07, `reports/page-campaign/PROSE_PASS_FINAL.md`;
+   CSM is the P6 successor corpus, not the finisher of JJK's open work).
+   Phase 1 = the §9a closure loop on the frozen miss queue (fix the
+   pre-registered fix-classes; four standing gates after each; halt at the
+   extraction-gated floor). Live checkpoint: `plan/drift_log.md` (current
+   position, D19) + `reports/csm/GATE.md` (CSM gate state) +
+   `reports/master-work/PHASE1_JOB.md` (the P1.1–P1.4 job spec, owner
+   2026-09-09). JJK remains at 100% (its prose pass is complete on every
+   in-scope narrative page type) and is the baseline-exact reference every
+   CSM engine change must not regress.
 2. Read `docs/ARCHITECTURE.md`, the design and why it is this way.
 3. Read `graphify-out/GRAPH_REPORT.md`, the knowledge graph of this codebase:
    god nodes, communities, and the legacy→current supersession map.
@@ -288,18 +286,20 @@ can borrow it — verified 2026-09-05 (a span-recall probe ran to completion wit
 throughout). The rule still stands for `events-extract` and any long,
 load-sustaining LLM batch.
 
-**Qwen context modes (262k exploratory ↔ 100k service ↔ 150k Phase-1).** Qwen's `--kv-capacity`
+**Qwen context modes (262k exploratory ↔ 100k Phase-1/service).** Qwen's `--kv-capacity`
 pre-reserves its int8 KV pool, so context length is a VRAM dial: the 262k
 profile leaves ~3.5 GiB headroom (`:8000` must run on CPU — the old "short
 CUDA probe" exception above was measured at a smaller KV pool and does not
 apply to the current 262k profile), while the 100k service profile frees
 ~7–8 GB so the embedder+reranker co-locate on CUDA and up to 2 subagents run
 in parallel (llm-council runs one agent at a time in any mode — owner rule
-2026-09-08). The **150k Phase-1 mode** (owner rule 2026-09-08, CSM two-phase
-plan `plan/CSM_2PHASE_PLAN.md`) sits between: the campaign's *fixing process*
-runs at 150k with **up to 2 parallel working subagents per wave** (deploy 2 →
-access results → deploy the next 2, never queued) and **all model/GPU work on
-CUDA — no CPU shell command may exceed 15 s**. The gpu-handoff switching plan
+2026-09-08). **Phase 1 runs at 100k** (the live CSM dial, switched from the
+draft 150k at the P1.1 boundary, council #24/#25): the campaign's *fixing
+process* runs at 100k with **up to 2 parallel working subagents per wave**
+(deploy 2 → access results → deploy the next 2, never queued) and **all
+model/GPU work on CUDA — no CPU shell command may exceed 15 s**. The 150k
+profile is retained for a heavier single-pass context if a Phase-2 extraction
+leg needs it. The gpu-handoff switching plan
 is **reserved for Phase 2 (extraction)**; it is not used per-step in Phase 1.
 Switching is
 checkpoint (`plan/SWITCHPOINT.md`) → `ninfer-work/qwen-switch.sh` (one atomic
@@ -338,24 +338,24 @@ router or chunker) — never rephrase the question to dodge it. Coverage is a
 regenerated list, not a number stated here — see
 `reports/page-campaign/COVERAGE.md` (`tools/coverage_report.py`).
 
-**Now active: JJK D6-comprehension completion (JJK only; stops before P6).**
-The goal: the corpus *understands* everything about a character — what each
-line/fact/prose/event means, whether it is an event, where it sits on the
-anime's timeline, all structured dimensions (facts, history, fights); new
-tables/modules (`relations`, `abilities`, a meaning layer, …) are in scope
-where prose cannot do the job. Live remainder + the checkable definition of
-"100% comprehension": `reports/comprehension/COMPREHENSION_REMAINDER.md`;
-gate state: `reports/comprehension/GATE.md`; current position:
-`plan/drift_log.md` §4. P6 (cross-corpus, `plan/Plan_to_perfection.md` §7)
-waits until this run closes.
+**Now active: the CSM (Chainsaw Man) 100% campaign, Phase 1 (the §9a closure
+loop).** JJK D6 is DONE (D1–D10, 2026-09-07) and is the baseline-exact
+reference every CSM engine change must not regress. The goal: CSM reaches the
+same checkable 100% bar over its own corpus — the §9a closure loop fixes the
+pre-registered fix-classes (R-1…R-7), re-runs the four standing gates after
+each, and halts at the extraction-gated floor (22 floor rows + the 21-red
+extraction class, Phase 2). Live state: `reports/csm/GATE.md` (CSM gate state)
++ `plan/drift_log.md` (current position, D19) + `reports/csm/
+miss_queue_csm_iter1.jsonl` (the frozen miss queue). P6 (cross-corpus,
+`plan/Plan_to_perfection.md` §7) waits until Phase 1 closes.
 
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
 gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
-`pytest tests/ -q` = 1,249 (15:19–15:22, CUDA; the 1,242 baseline was stale —
-CSM-2 added 7 tests). Suite since: **1,254** = 1,249 + 4 CSM-3 tests + 1
-CSM-3b roster-door test (`f93d396` + COUNCIL_csm-3 Ruling 1); per Ruling 5e a
-known +N test delta does not re-run the gates — the full four-gate re-run
-happens at CSM-4's start. `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
+`pytest tests/ -q` = **1,305** (the current gate-1 pin; the 1,303 baseline +
+2 new R-2/R-3 tests, council #23). Per Ruling 5e a known +N test delta does
+not re-run the gates — the full four-gate re-run happens at each fix-class's
+closure. (Historical: 1,249 re-baselined 2026-09-08; 1,254 = 1,249 + 4 CSM-3
++ 1 CSM-3b roster-door test @ `f93d396`.) `eval --series jjk` = 31/31 (15:22–15:23); `span-recall
 --series jjk` = 48,572/48,572 offline (rc=0) + 390/400 live probe (97.5%;
 15:23–15:26, CUDA `:8000`); `canon-run --series opm` = 10/16 exact,
 236/236 canon, 79.0% (15:26, `--skip-eval` one-copy rule).

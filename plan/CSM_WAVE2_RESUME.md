@@ -10,7 +10,7 @@ trigger** (§3) and the **JJK-100% invariant** (§4).
 
 | Item | State | Receipt |
 |---|---|---|
-| CSM-3 — D5 measurement infrastructure | done, `bc73795` | four §2a traps closed; pinned hashed panel keyed (title, section, sentence) with held-out split; CLI resume; hit_rate over the full panel denominator; all three doors; `span-recall` → `chunk-containment` rename (alias kept) |
+| CSM-3 — D5 measurement infrastructure | done, `f93d396` | four §2a traps closed; pinned hashed panel keyed (title, section, sentence) with held-out split; CLI resume; hit_rate over the full panel denominator; all three doors; `span-recall` → `chunk-containment` rename (alias kept) |
 | Wave-1 gates + 39-question seed bank | done | `reports/csm/CSM3B_GATES.md` @ `78b5cf3`; four standing gates re-baselined 2026-09-08 15:22–15:26: pytest 1,254 / eval jjk 31/31 / span-recall 48,572 offline + 390/400 probe / canon opm 10/16 · 236/236 · 79.0% |
 | CSM-3b (post-council fixes) | done, ratified — council ledger row #20 | `reports/csm/COUNCIL_csm-3b.md`, rulings R-CSM3B-1..7 |
 | Wave-2 pre-step (F1 ledger fix + live roster probe) | graded PASS 2026-09-08 19:45 | live interleaved 2-panel survival (pinned 168→172, held-out 9→13, both keyed ledgers retain own rows); F1 closed; roster-door 31/88 members (0 pre-fix) |
