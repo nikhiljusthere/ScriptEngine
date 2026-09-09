@@ -143,22 +143,30 @@ subagents). Full method: `docs/ops/QWEN_MODES.md`. Protocol:
    up** when the GPU phase ends. One switch per phase — no thrashing.
    A heavy Qwen LLM batch is the *opposite* rule (stop `:8000`, no switch).
 2. **Pre-flight (model alive):** `switchpoint` checkpoint (commit +
-   SWITCHPOINT); fit check `wc -c $PI_SESSION_FILE / 4 < target ctx`;
-   confirm no `events-extract` in flight.
-3. **The switch is ONE atomic tool call:**
-   `cd /home/goblin/ninfer-work && ./qwen-switch.sh 100k` via `bash` with
-   `timeout: 300000`. Never split it across calls (a harness model call
-   between calls would die mid-reload). For ~30–60 s of the call there is
-   **no model** — by design; the pi process survives, the transcript is on
-   disk, the same model-id/port comes back.
-4. **Post-flight:** read `qwen_mode.txt` + `nvidia-smi`; the script already
-   placed `:8000` on the right device; continue from the switchpoint (first
-   turn is a cold prefill).
-5. **Overflow handoff:** if the transcript doesn't fit the target context,
-   the switcher hard-refuses (exit 2). Do a full checkpoint, re-run with
-   `--force`, and hand the user the fresh-session one-liner (*"Read
-   plan/SWITCHPOINT.md and continue from there"*). A fresh session's tiny
-   transcript always fits.
+   SWITCHPOINT); fit check `wc -c $PI_SESSION_FILE / 4` — the estimate is
+   conservative (~2.7x overstated): estimate > target ctx but the real count
+   fits → `FORCE=1`; real doesn't fit → fresh-session handoff (step 5).
+   Confirm no `events-extract` in flight.
+3. **The switch is ONE detached 3-part shell** (the agent's last act; the
+   helper survives the agent's death — full spec in the `qwen-switch` skill):
+   ```bash
+   setsid nohup bash tools/master-work/switch_restart3.sh <mode> <session_file> <my_pi_pid> <old_shell|none> < /dev/null > /dev/null 2>&1 &
+   ```
+   part 1 unloads (`ninfer-stop.sh`); part 2 loads + places `:8000` + syncs
+   `models.json` (`qwen-switch.sh <mode> --api [--force]`); part 3 is an
+   INTERNAL LLM call (HTTP :18080 — never typed into any pane, owner
+   correction 2026-09-10) which triggers `relaunch_term.sh`: a new
+   gnome-terminal window running `pi --session <session_file>`, then the old
+   pi + old window are closed (TERM → verify → KILL -9 — this machine's
+   interactive bash survives a bare TERM).
+4. **Post-flight (the new pi, same session):** verify the status line (new
+   window), `qwen_mode.txt`, the tail of `/tmp/switch_restart3.log`, and
+   `pgrep -P 3439`; report the state (mode/ctx/free/api) + flow-OK to the
+   owner in ONE line; then stop. First turn is a cold prefill (~1–2 min).
+5. **Overflow handoff:** if the REAL transcript doesn't fit the target
+   context, do not FORCE — do a full checkpoint and hand the user the
+   fresh-session one-liner (*"Read plan/SWITCHPOINT.md and continue from
+   there"*). A fresh session's tiny transcript always fits.
 
 **Subagent policy:** 262k → linear, no parallel subagents. 100k → ≤2
 parallel. 150k (CSM Phase 1, 2026-09-08) → up to 2 parallel *working*
