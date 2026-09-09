@@ -71,6 +71,14 @@ done
 [ -z "$NEW" ] && NEW=$(pgrep -x pi | grep -vxF "$OLD" | sort -n | tail -1)
 if [ -z "$NEW" ]; then say "ERROR: no new pi process after 60 s — check the tmux session"; exit 1; fi
 say "new pi pid=$NEW"
+# Any pi process that survived the switch holds the PRE-switch context
+# window in memory (pi snapshots contextWindow at startup and never
+# re-reads models.json — 2026-09-10 01:0x: the owner's pi, started in the
+# 100k era, kept showing /102k after the 262k switch). The helper cannot
+# restart them (their terminals are not tmux panes): warn so the owner
+# exits each and runs `pi -c`.
+STALE=$(pgrep -x pi | grep -vx "$NEW" | grep -vx "$OLD" | tr '\n' ' ')
+[ -n "$STALE" ] && say "WARNING: stale pi(s) on the pre-switch window: $STALE — exit each, then 'pi -c'"
 # wait for the TUI to be ready before typing: the status line carries the
 # model name. The old fixed 12 s sleep lost the race both times — the
 # 2026-09-10 00:58/01:01 resume lines were typed before the input handler

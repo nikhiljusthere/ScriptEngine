@@ -79,6 +79,22 @@ setsid nohup bash tools/master-work/switch_restart.sh <mode> /tmp/resume_msg.txt
   a model recycle — the 00:5x 100k attempt that died mid-reload (the owner
   restored 262k by hand) is the second incident behind the rule.
 
+## The window is per pi-process (owner 2026-09-10)
+
+pi snapshots the model's contextWindow at STARTUP. A pi process started
+under one mode keeps that mode's window in memory for its whole life — its
+status line (`X%/Yk`) and its auto-compact threshold stay on the old dial;
+the switch only rewrites `~/.pi/agent/models.json`, which live pi's never
+re-read. So after EVERY switch, EVERY pi running the session must exit and
+come back: the helper restarts the tmux directing pi; any OTHER pi (the
+owner's terminal pi, a subagent host started pre-switch) is manual —
+`exit`, then `pi -c` in the project dir. The helper prints a
+`WARNING: stale pi(s)` line for the ones it cannot restart. Before trusting
+work in the restarted pi, verify its status line shows the NEW window.
+Incident (2026-09-10 01:0x): the owner's pi (started 00:38, 100k era) still
+showed `/102k` after the 262k switch while the helper-restarted pane pi
+showed `/262k` — the owner read the stale pi and ruled the switch failed.
+
 ## Post-flight (model back)
 
 1. `cat /home/goblin/ninfer-work/qwen_mode.txt` (mode, ctx, free MiB, api device).
@@ -129,3 +145,6 @@ overflows the new cap). Everything is on disk — hand off with:
   size measured). Reactive overflow is different and IS automatic when it
   fits: ninfer's `400 context_length_exceeded` triggers pi's built-in
   compact-and-retry.
+- Trust a pi process that was started before the latest switch — its window
+  is a startup snapshot (see "The window is per pi-process"): restart it
+  (`exit` + `pi -c`) or treat its `X%/Yk` line as wrong.
