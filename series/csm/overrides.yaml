@@ -512,3 +512,14 @@ remainder_note: |
   (chapter_box, story_arcs_box, saga_box), release pages (volume_box,
   music, anime, blu_ray_dvd) and the excluded `unknown` list/author/
   meta/release pages are out of scope.
+
+# The narrative door resolves subjects through the wiki's `aliases` table,
+# which for CSM carries only the full arc titles ("Bomb Girl arc"); the bare
+# display names questions actually use resolve to nothing (miss queue
+# door-nar-None x3, fix class R-6, 2026-09-10). Display name -> canonical node,
+# consulted at query time by retrieve/narrative.py (config.subject_aliases):
+# no reindex.
+subject_aliases:
+  Introduction: Introduction arc
+  Bomb Girl: Bomb Girl arc
+  International Assassins: International Assassins arc

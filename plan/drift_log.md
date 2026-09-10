@@ -897,3 +897,39 @@ entry.
   section close stamp; COUNCIL_HISTORY #27.
 - **Commit:** the 2-commit path-limited close (C1 engine+tests+council
   package+records; C2 queue stamps+gate receipts+logs), `git add .` banned.
+### D21 — CSM R-6 subject_aliases short pass (no council): the narrative door's per-wiki display-name map + four gates + queue stamps (2026-09-10, csm-phase1-worker)
+
+- **What:** the three open `door-nar-None` rows (Introduction / Bomb Girl /
+  International Assassins) — the narrative door misses on the bare arc display
+  names because CSM's alias table carries only the full `… arc` titles. Fix per
+  the iter-1 override package (preferred form): a per-wiki `subject_aliases`
+  map in `series/csm/overrides.yaml` (3 rows, display name → canonical node),
+  consulted at query time by `retrieve/narrative.py` via the new
+  `config.subject_aliases` (sibling of `subject_ranking`): `timeline` feeds
+  the query through `_alias_text` (display names the query mentions append
+  their canonical names before `link_entities`), and `authored_floor` consults
+  the map before `node_by_name`. No series name in `.py`, no reindex. Owner
+  steer: short pass, no council.
+- **Gates (one-copy 100k + CUDA; W1 in-process with :8000 stopped, W2 with
+  :8000 restarted on CUDA, pid 167823):** pytest **1,318 collected** (1,315
+  R-5 pin + 3 new R-6 tests) — 1,313 passed, 3 failed = the known env-mcp trio
+  that needs :8000 (same set as the R-5 record), 2 xpassed; eval jjk **31/31**;
+  span-recall jjk offline **rc=0 (48,572, 100.0000%)** + live 400-probe
+  **398/400 (99.5%)**; canon opm (`--skip-eval`) **236/236 canon, 10/16 exact,
+  79.0%, 0 confident-wrong** (report `reports/2026-09-10-0820/REPORT.md`).
+- **Floor-inheritance verdict (council_r2r3 chairman item 8, carried to P1.4):**
+  an alias-resolved subject **inherits the level-0 card via the floor** — the
+  floor is computed from the resolved node and R-6 resolves before floor
+  computation at every seam it is consulted (narrative `authored_floor` +
+  `timeline`). Residual: the qa seam's `passages_for_subject` resolves
+  title → DB alias only, so a qa subject written as a bare display name gets no
+  level-0 card (documented in the red-list R-6 section + receipt; re-probe at
+  Phase 2, not a new queue row).
+- **Stamps:** `miss_queue_csm_iter1.jsonl` `door-nar-None` ×3 → closed (open
+  38 → 35, closed 20 → 23, total 58); `red_list_csm.md` R-6 section + close
+  stamp + floor verdict; `GATE_LEDGER.json` last_green → R-6 (hash fill in the
+  follow-up doc-only commit; the R-5 wave verified gates but never updated the
+  ledger — noted in the ledger).
+- **Commit:** path-limited close (engine + tests + yaml + stamps + receipt +
+  ledger + this entry), `git add .` banned; census v2 (author-only, item #3 of
+  the boot panel) closed in its own earlier path-limited commit.

@@ -100,6 +100,36 @@ Sources (all on-disk receipts from the 2026-09-08 cycle):
   extraction). Raw: `reports/csm/receipts/iter1_r5_gate.md` +
   `iter1_r5_relations_sweep.md`; council: `reports/csm/receipts/council_r5/`.
 
+## R-6 — the narrative door misses on bare arc display names (arc aliasing)
+
+- **Mechanical expectation.** The three arc display names CSM questions
+  actually use (`Introduction`, `Bomb Girl`, `International Assassins`) are
+  not in the wiki's `aliases` table — only the full titles (`… arc`) are — so
+  `link_entities` resolves nothing and the narrative door misses all three
+  (miss-queue `door-nar-None` ×3, door census 2026-09-10).
+- **Gate.** door (narrative).
+- **Fix class.** per-wiki override (the preferred first attempt): a
+  `subject_aliases` display-name → canonical-node map in
+  `series/csm/overrides.yaml`, consulted at query time by
+  `retrieve/narrative.py` (seam: `config.subject_aliases`, sibling of
+  `config.subject_ranking`) — no series name in `.py`, no reindex.
+- **CLOSED 2026-09-10 (iter-1 R-6 short pass, no council per owner steer).**
+  Map lands (3 rows) + `timeline` `_alias_text` + `authored_floor` alias
+  consult. All three display names now resolve to their `… arc` nodes with
+  beats (model-free probe). Four standing gates GREEN (pytest 1,318 = 1,315 +
+  3 new R-6 tests, 0 R-6 failures; eval jjk 31/31; span-recall 48,572 rc=0 +
+  398/400; canon opm 236/236, 10/16 exact, 79.0%). Queue `door-nar-None` ×3
+  closed (open 38 → 35). Raw: `reports/csm/receipts/r6_subject_aliases_run.md`.
+- **Floor-inheritance verdict (council_r2r3 chairman item 8; recorded for the
+  P1.4 close council).** An alias-resolved subject **does inherit** the
+  level-0 card via the floor: the floor is computed from the resolved node,
+  and R-6 resolves the display name *before* floor computation (`authored_floor`
+  consults the map before `node_by_name`). The qa path's `passages_for_subject`
+  resolves title → DB alias, which the query-time map does not touch, so a
+  qa-door subject written as a bare display name still gets no level-0 card —
+  a documented residual (not in the frozen queue; re-probe at Phase 2 if the
+  qa door surfaces bare display names), not a new queue row.
+
 ---
 
 ### Notes for the §9a executor

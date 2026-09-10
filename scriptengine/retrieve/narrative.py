@@ -32,6 +32,7 @@ from scriptengine.config import (
     Settings,
     get_settings,
     load_overrides,
+    subject_aliases,
     subject_ranking,
 )
 from scriptengine.retrieve import citations as cite
@@ -248,7 +249,9 @@ class NarrativeRetriever:
         self.paths = paths
         self.settings = settings or get_settings()
         self.store = FactStore(paths.facts_db)
-        self.demote, self.priority = subject_ranking(load_overrides(paths))
+        overrides = load_overrides(paths)
+        self.demote, self.priority = subject_ranking(overrides)
+        self.aliases = subject_aliases(overrides)
         self._episodes: cite.EpisodeIndex | None = None
 
     @property
@@ -276,7 +279,9 @@ class NarrativeRetriever:
         "The Shibuya Incident" reach the same page.
         """
         entities = rank_subjects(
-            self.store.link_entities(subject), self.demote, self.priority
+            self.store.link_entities(self._alias_text(subject)),
+            self.demote,
+            self.priority,
         )
 
         # `rank_subjects` already put the likeliest subject first: pages that
@@ -374,6 +379,20 @@ class NarrativeRetriever:
 
         return narrative
 
+    def _alias_text(self, subject: str) -> str:
+        """``subject`` plus the canonical names its per-wiki display names resolve to.
+
+        The alias table carries only full page titles (CSM's "Bomb Girl arc"),
+        so a question that names the arc by its bare display name links nothing.
+        The per-wiki map (``config.subject_aliases``) resolves the display name,
+        and the canonical name links through its own alias row.
+        """
+        if not self.aliases:
+            return subject
+        norm = " " + re.sub(r"[^a-z0-9]+", " ", subject.lower()) + " "
+        hits = [c for d, c in self.aliases.items() if f" {d} " in norm]
+        return " ".join([subject, *hits]) if hits else subject
+
     def authored_floor(self, subject: str, max_beats: int) -> list[Beat]:
         """The page a question is authored against, as its own section beats.
 
@@ -390,7 +409,9 @@ class NarrativeRetriever:
         and Personality sections are a biography -- so a non-event subject
         yields no floor and the query-driven timeline stands unchanged.
         """
-        node = self.store.node_by_name(subject)
+        node = self.store.node_by_name(
+            self.aliases.get(subject.strip().lower()) or subject
+        )
         if node is None or not node["is_resolved"] or node["label"] not in EVENT_TYPES:
             return []
         return self._beats_from_page(node["name"], max_beats)

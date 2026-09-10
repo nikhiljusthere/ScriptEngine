@@ -19,13 +19,15 @@ The four gates (re-run after every fix-class, before calling it done):
 
 ## Live state
 
-**GREEN at `5c8237a`** (P1.1, §9a iter-1 R-2 + R-3 closure, 2026-09-09).
-All four gates green on CUDA against the live 100k dial; the R-2 Part-A
-panel mini-sweep (7/13 HIT, csmd5 own-new 2/7) and R-3 Part-B re-sweep
-(15/15) cleared; 12 miss-queue rows stamped closed (open 55 → 43, closed 3 →
-15). Raw receipts: `reports/2026-09-09-2051/` (gate-4),
-`reports/span-recall/jjk/recall_verbatim.jsonl` (gate-3 ledger),
-`reports/span-recall/csm/sweep_qa_a4b1d02d.jsonl` (Part-A mini-sweep).
+**GREEN at the R-6 subject_aliases pass** (P1.2, §9a iter-1 R-6 closure,
+2026-09-10). All four gates green on CUDA (one-copy 100k dial): pytest
+**1,318 collected** (1,315 R-5 pin + 3 new R-6 tests; the only failures are
+the known env-mcp trio under a stopped :8000), eval jjk **31/31**, span-recall
+**48,572 rc=0 + 398/400 (99.5%)**, canon opm **236/236, 10/16 exact, 79.0%**.
+Queue `door-nar-None` ×3 closed (open 35 / closed 23 / total 58).
+Raw receipts: `reports/csm/receipts/r6_subject_aliases_run.md` +
+`reports/2026-09-10-0820/REPORT.md` (gate-4); commit hashes in
+`reports/master-work/work_log.md` (2026-09-10 gate line).
 
 **Machine-readable ledger-of-record v1:** `reports/csm/GATE_LEDGER.json` —
 read it *first* after a reboot; if `HEAD == last_green.commit` the four gates

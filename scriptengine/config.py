@@ -209,6 +209,19 @@ def subject_ranking(overrides: dict | None = None) -> tuple[list[str], list[str]
     )
 
 
+def subject_aliases(overrides: dict | None = None) -> dict[str, str]:
+    """Display-name -> canonical-node map for this wiki, keys lowercased.
+
+    Some wikis alias only the full page title (CSM's alias table carries
+    "Bomb Girl arc" but not the bare "Bomb Girl"), so a question that uses
+    the display name resolves to nothing and the narrative door misses on it
+    (CSM miss queue door-nar-None x3, fix class R-6). The map is consulted
+    from per-wiki overrides at query time: no reindex.
+    """
+    aliases = (overrides or {}).get("subject_aliases")
+    return {str(d).lower(): str(c) for d, c in dict(aliases or {}).items()}
+
+
 @dataclass(frozen=True)
 class SeriesPaths:
     """Filesystem layout for a single series.
