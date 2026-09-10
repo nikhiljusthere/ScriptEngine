@@ -1,0 +1,776 @@
+{
+  "meta": {
+    "series": "csm",
+    "generated": "2026-09-10",
+    "seed": "author-derived (no sampling: each class's 10 subjects chosen by corpus rank - page word count, spread across the class's page range)",
+    "dimensions": [
+      "chapter_box",
+      "episode",
+      "volume_box",
+      "story_arcs_box",
+      "organization"
+    ],
+    "expect_verified": "all 150 expect terms verbatim in series/csm/facts.db (sections.text + facts.value + abilities.name + documents.title), checked 2026-09-10",
+    "revid_note": "documents.revid all 0 on CSM (crawl predates revid pinning); the corpus pin is questions/csm.json `revids` (19 pages, stamped 2026-09-09)",
+    "source": "v2 census: 5 non-character page-type classes (232 chapter_box + 12 episode + 26 volume_box + 14 story_arcs_box + 11 organization pages); generated fresh from series/csm; v1 census_dimensions_csm.json (character dimensions) is a shape reference only, never copied",
+    "denominator": {
+      "chapter_box": 232,
+      "episode": 12,
+      "volume_box": 26,
+      "story_arcs_box": 14,
+      "organization": 11
+    }
+  },
+  "items": [
+    {
+      "id": "csm-dim-chap-01",
+      "class": "chapter_box",
+      "subject": "Chapter 1",
+      "q": "What happens in Chapter 1?",
+      "expect": [
+        "kill a Tomato Devil as part of his devil hunting job for the Yakuza",
+        "turning into Chainsaw Man, ripping the zombies",
+        "become her pet, and as a pet she would feed him"
+      ],
+      "source": {
+        "page": "Chapter 1",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-02",
+      "class": "chapter_box",
+      "subject": "Chapter 2",
+      "q": "What happens in Chapter 2?",
+      "expect": [
+        "a man enters wanting help since a devil took his daughter",
+        "the girl runs away with the devil so that he may also be spared",
+        "proceeds chopping the Muscle Devil to pieces"
+      ],
+      "source": {
+        "page": "Chapter 2",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-03",
+      "class": "chapter_box",
+      "subject": "Chapter 52",
+      "q": "What happens in Chapter 52?",
+      "expect": [
+        "Reze was one of those children",
+        "impaled by a spear thrown from a rooftop by Angel Devil",
+        "Denji quickly shoves them into his mouth"
+      ],
+      "source": {
+        "page": "Chapter 52",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-04",
+      "class": "chapter_box",
+      "subject": "Chapter 84",
+      "q": "What happens in Chapter 84?",
+      "expect": [
+        "to control any being that she believes is lesser than herself",
+        "the Chainsaw Devil emerges, showered in blood and organs",
+        "Kishibe, alongside humanity at large, has no knowledge of Nazism"
+      ],
+      "source": {
+        "page": "Chapter 84",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-05",
+      "class": "chapter_box",
+      "subject": "Chapter 97",
+      "q": "What happens in Chapter 97?",
+      "expect": [
+        "her eyes also had the same target-like pattern as Makima's",
+        "her name was Nayuta",
+        "she wanted to eat sliced bread"
+      ],
+      "source": {
+        "page": "Chapter 97",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-06",
+      "class": "chapter_box",
+      "subject": "Chapter 115",
+      "q": "What happens in Chapter 115?",
+      "expect": [
+        "the starter on his chest is actually a surgical implant",
+        "massive fan",
+        "an edible creature that doesn't resemble a living animal"
+      ],
+      "source": {
+        "page": "Chapter 115",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-07",
+      "class": "chapter_box",
+      "subject": "Chapter 146",
+      "q": "What happens in Chapter 146?",
+      "expect": [
+        "catches on fire and begins billowing smoke out of a window",
+        "the church's Chinese and Canadian locations held mass weddings",
+        "make everyone on Earth afraid of Chainsaw Man and war"
+      ],
+      "source": {
+        "page": "Chapter 146",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-08",
+      "class": "chapter_box",
+      "subject": "Chapter 165",
+      "q": "What happens in Chapter 165?",
+      "expect": [
+        "the group will have to settle with a budget restaurant, Sushishi",
+        "if they break his contract with Pochita, they can beat the devil",
+        "a place that will cheer any man up in an instant"
+      ],
+      "source": {
+        "page": "Chapter 165",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-09",
+      "class": "chapter_box",
+      "subject": "Chapter 191",
+      "q": "What happens in Chapter 191?",
+      "expect": [
+        "She finally reveals her role as the War Devil",
+        "defeated him and levelled a large chunk of Tokyo using the Statue of Liberty",
+        "the gun is revealed to be unloaded"
+      ],
+      "source": {
+        "page": "Chapter 191",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-chap-10",
+      "class": "chapter_box",
+      "subject": "Chapter 232",
+      "q": "What happens in Chapter 232?",
+      "expect": [
+        "he had experienced both a good and a bad dream",
+        "feeds him her blood in exchange for lifelong servitude",
+        "Denji rushes forward and catches her just in time"
+      ],
+      "source": {
+        "page": "Chapter 232",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-01",
+      "class": "episode",
+      "subject": "Episode 1",
+      "q": "What happens in Episode 1?",
+      "expect": [
+        "he gives Denji only 70,000 yen",
+        "Denji spits out the cigarette",
+        "he heard people put jam on it, but that's just a dream for them"
+      ],
+      "source": {
+        "page": "Episode 1",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-02",
+      "class": "episode",
+      "subject": "Episode 2",
+      "q": "What happens in Episode 2?",
+      "expect": [
+        "Denji orders udon and sausage, while Makima orders curry udon",
+        "Makima then feeds him the udon",
+        "also gives him his coat as he is shirtless"
+      ],
+      "source": {
+        "page": "Episode 2",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-03",
+      "class": "episode",
+      "subject": "Episode 4",
+      "q": "What happens in Episode 4?",
+      "expect": [
+        "When the Bat Devil captures Meowy and requests a human in return",
+        "The Leech Devil then picks up his arm and eats it",
+        "Denji pulls the cord on his chest, but only a small chainsaw comes out"
+      ],
+      "source": {
+        "page": "Episode 4",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-04",
+      "class": "episode",
+      "subject": "Episode 5",
+      "q": "What happens in Episode 5?",
+      "expect": [
+        "Power reveals its pads that make her breasts bigger",
+        "Denji explains he got what he always wanted, but it didn't feel great when he got it",
+        "Makima places his hand on her chest"
+      ],
+      "source": {
+        "page": "Episode 5",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-05",
+      "class": "episode",
+      "subject": "Episode 6",
+      "q": "What happens in Episode 6?",
+      "expect": [
+        "Aki then realizes they are stuck on the 8th floor",
+        "The windows lead to the rooms across them and elevators don't work",
+        "Kobeni cries, stating they will all die"
+      ],
+      "source": {
+        "page": "Episode 6",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-06",
+      "class": "episode",
+      "subject": "Episode 7",
+      "q": "What happens in Episode 7?",
+      "expect": [
+        "he bites the Eternity Devil and drinks its blood",
+        "Himeno pulls his cord with the Ghost Devil's arm",
+        "Denji's chainsaw arms retract"
+      ],
+      "source": {
+        "page": "Episode 7",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-07",
+      "class": "episode",
+      "subject": "Episode 8",
+      "q": "What happens in Episode 8?",
+      "expect": [
+        "An inebriated Himeno takes Denji to her place and lays him on her bed",
+        "Himeno proceeds to take off his pants but finds a Chupa Chups in his pocket",
+        "his first indirect kiss tastes like a cola-flavored Chupa Chups"
+      ],
+      "source": {
+        "page": "Episode 8",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-08",
+      "class": "episode",
+      "subject": "Episode 10",
+      "q": "What happens in Episode 10?",
+      "expect": [
+        "Aki takes his sword and asks Curse Devil how many years he has left",
+        "Denji reveals that Kobeni survived and the guy with glasses, but he quit",
+        "Aki had lost many friends in the past, including Himeno"
+      ],
+      "source": {
+        "page": "Episode 10",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-09",
+      "class": "episode",
+      "subject": "Episode 11",
+      "q": "What happens in Episode 11?",
+      "expect": [
+        "he wants to live in Aki's right eye, granting him his power",
+        "Kishibe beats Denji and Power once again",
+        "they will be doing live combat training"
+      ],
+      "source": {
+        "page": "Episode 11",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-ep-10",
+      "class": "episode",
+      "subject": "Episode 12",
+      "q": "What happens in Episode 12?",
+      "expect": [
+        "Aki takes the cigarette and sees \"easy revenge\" written on it",
+        "Power states that meat is meat, and that pork, beef and human, are all the same",
+        "Denji states their job is to capture the Katana Man"
+      ],
+      "source": {
+        "page": "Episode 12",
+        "section": "Summary"
+      }
+    },
+    {
+      "id": "csm-dim-vol-01",
+      "class": "volume_box",
+      "subject": "Volume 1",
+      "q": "Which chapters are in Volume 1?",
+      "expect": [
+        "01. Dog & Chainsaw",
+        "04. Power",
+        "07. Meowy's Whereabouts"
+      ],
+      "source": {
+        "page": "Volume 1",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-02",
+      "class": "volume_box",
+      "subject": "Volume 4",
+      "q": "Which chapters are in Volume 4?",
+      "expect": [
+        "26. The Gun is Mightier",
+        "31. The Future Rules",
+        "34. Full Team"
+      ],
+      "source": {
+        "page": "Volume 4",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-03",
+      "class": "volume_box",
+      "subject": "Volume 9",
+      "q": "Which chapters are in Volume 9?",
+      "expect": [
+        "75. 9, 12",
+        "76. Don't Open It",
+        "78. Snowball Fight"
+      ],
+      "source": {
+        "page": "Volume 9",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-04",
+      "class": "volume_box",
+      "subject": "Volume 13",
+      "q": "Which chapters are in Volume 13?",
+      "expect": [
+        "106. Bonfire",
+        "108. Something Important to Asa",
+        "112. Between Cat and Criminal"
+      ],
+      "source": {
+        "page": "Volume 13",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-05",
+      "class": "volume_box",
+      "subject": "Volume 15",
+      "q": "Which chapters are in Volume 15?",
+      "expect": [
+        "125. Apple Thief",
+        "129. Save Me, Chainsaw Man",
+        "132. Protection"
+      ],
+      "source": {
+        "page": "Volume 15",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-06",
+      "class": "volume_box",
+      "subject": "Volume 18",
+      "q": "Which chapters are in Volume 18?",
+      "expect": [
+        "157. College Fund",
+        "161. Chainsaw Man Puzzle",
+        "164. Charred Remains"
+      ],
+      "source": {
+        "page": "Volume 18",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-07",
+      "class": "volume_box",
+      "subject": "Volume 20",
+      "q": "Which chapters are in Volume 20?",
+      "expect": [
+        "178. Gun Goddess",
+        "181. Trees on the Mind",
+        "184. Run, Denji"
+      ],
+      "source": {
+        "page": "Volume 20",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-08",
+      "class": "volume_box",
+      "subject": "Volume 22",
+      "q": "Which chapters are in Volume 22?",
+      "expect": [
+        "200. Toxic Couple",
+        "207. Budda Budda Budda Budda!",
+        "210. Peace"
+      ],
+      "source": {
+        "page": "Volume 22",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-09",
+      "class": "volume_box",
+      "subject": "Volume 24",
+      "q": "Which chapters are in Volume 24?",
+      "expect": [
+        "223. Ultimate Armor",
+        "231. Goodbye, Pochita",
+        "232. Thank You, Chainsaw Man"
+      ],
+      "source": {
+        "page": "Volume 24",
+        "section": "Chapters"
+      }
+    },
+    {
+      "id": "csm-dim-vol-10",
+      "class": "volume_box",
+      "subject": "Love, Flower, Chainsaw Guide",
+      "q": "What is contained in the Love, Flower, Chainsaw Guide booklet?",
+      "expect": [
+        "Newly drawn original 4-panel manga by Tatsuki Fujimoto",
+        "Special making-of commentary featuring rough storyboards and draft sketches from Chainsaw Man - The Movie: Reze Arc",
+        "Valuable setting materials and storyboards from Chainsaw Man - The Movie: Reze Arc"
+      ],
+      "source": {
+        "page": "Love, Flower, Chainsaw Guide",
+        "section": "Contents"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-01",
+      "class": "story_arcs_box",
+      "subject": "Introduction arc",
+      "q": "What happens in the Introduction arc?",
+      "expect": [
+        "Pochita becomes his heart and Denji turns into Chainsaw Man",
+        "the Debt Collector, manipulated by the Zombie Devil, tricks them and kills them",
+        "Denji is put to work with Aki Hayakawa"
+      ],
+      "source": {
+        "page": "Introduction arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-02",
+      "class": "story_arcs_box",
+      "subject": "Bat Devil arc",
+      "q": "What happens in the Bat Devil arc?",
+      "expect": [
+        "a devil kidnapped her cat",
+        "the Bat Devil then drinks some of Denji's blood and regenerates his arm and back",
+        "Denji grabs his leg and goes with him, transforming into Chainsaw Man to fight him"
+      ],
+      "source": {
+        "page": "Bat Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-03",
+      "class": "story_arcs_box",
+      "subject": "Eternity Devil arc",
+      "q": "What happens in the Eternity Devil arc?",
+      "expect": [
+        "the Gun Devil's flesh they had doesn't react strongly",
+        "she will reward the one who kills the devil with a kiss on the cheek",
+        "they are always on the 8th floor"
+      ],
+      "source": {
+        "page": "Eternity Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-04",
+      "class": "story_arcs_box",
+      "subject": "Gun Devil arc",
+      "q": "What happens in the Gun Devil arc?",
+      "expect": [
+        "Makima asked Denji if he wanted to go on their trip, just the two of them",
+        "the Gun Devil has already been defeated and confined",
+        "him and Power will be killed by Denji in the future"
+      ],
+      "source": {
+        "page": "Gun Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-05",
+      "class": "story_arcs_box",
+      "subject": "Katana Man arc",
+      "q": "What happens in the Katana Man arc?",
+      "expect": [
+        "the Katana Man explains his connection to Denji before shooting him in the head",
+        "Sawatari uses her Snake Devil to eat the Ghost Devil",
+        "Makima's train arrives in Kyoto"
+      ],
+      "source": {
+        "page": "Katana Man arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-06",
+      "class": "story_arcs_box",
+      "subject": "Falling Devil arc",
+      "q": "What happens in the Falling Devil arc?",
+      "expect": [
+        "Yoshida takes Asa to the Devil Hunter's Club council room",
+        "a middle-aged man falls to his death beside her",
+        "the orphanage lady kills her pet cat Crambon out of jealousy"
+      ],
+      "source": {
+        "page": "Falling Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-07",
+      "class": "story_arcs_box",
+      "subject": "Bomb Girl arc",
+      "q": "What happens in the Bomb Girl arc?",
+      "expect": [
+        "Denji is suddenly uppercutted by Power",
+        "Makima proposes a date with him for the following day",
+        "a serial killer working with the Typhoon Devil plans on targeting Reze to lure Denji out for his heart"
+      ],
+      "source": {
+        "page": "Bomb Girl arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-08",
+      "class": "story_arcs_box",
+      "subject": "Justice Devil arc",
+      "q": "What happens in the Justice Devil arc?",
+      "expect": [
+        "in three months the class will have to kill Bucky and eat him",
+        "the class president then takes on a monstrous form, revealing that she has made a contract with the Justice Devil",
+        "a beige potoo-like bird appears on a traffic light and revives Asa"
+      ],
+      "source": {
+        "page": "Justice Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-09",
+      "class": "story_arcs_box",
+      "subject": "Control Devil arc",
+      "q": "What happens in the Control Devil arc?",
+      "expect": [
+        "Makima gives Denji tea and a dessert",
+        "Kishibe commands the Anti-Makima Squad to fire",
+        "the Hell Devil regenerates after drinking a devil hunter's blood and casts Pochita into Hell"
+      ],
+      "source": {
+        "page": "Control Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-arcb-10",
+      "class": "story_arcs_box",
+      "subject": "War Devil arc",
+      "q": "What happens in the War Devil arc?",
+      "expect": [
+        "Yoshida reveals that Public Safety has Katana Man, Haruka, Nobana, and Seigi as prisoners",
+        "Yoru reveals her role as the War Devil",
+        "the two decide to eat potstickers Yoru cooked on top of a building"
+      ],
+      "source": {
+        "page": "War Devil arc",
+        "section": "Synopsis"
+      }
+    },
+    {
+      "id": "csm-dim-org-01",
+      "class": "organization",
+      "subject": "Four Horsemen",
+      "q": "What are the Four Horsemen?",
+      "expect": [
+        "four particularly powerful Devils who take on the form of human females",
+        "Death is the eldest and most powerful",
+        "Fami (Famine) is the second-eldest"
+      ],
+      "source": {
+        "page": "Four Horsemen",
+        "section": "Overview"
+      }
+    },
+    {
+      "id": "csm-dim-org-02",
+      "class": "organization",
+      "subject": "Chainsaw Man Church",
+      "q": "Who led the Chainsaw Man Church, and what were the leaders' roles?",
+      "expect": [
+        "the true leader of the group",
+        "Barem being the one who enlisted people to make contracts with the Fire Devil",
+        "Haruka's role was solely to attract more people to the cause"
+      ],
+      "source": {
+        "page": "Chainsaw Man Church",
+        "section": "Overview"
+      }
+    },
+    {
+      "id": "csm-dim-org-03",
+      "class": "organization",
+      "subject": "Prophecy of Nostradamus",
+      "q": "What does the original Nostradamus quatrain (Quatrain X.72) say?",
+      "expect": [
+        "Nostradamus' original writings were written in archaic French",
+        "From the sky will come a great King of Alarm",
+        "To bring back to life the great King of Angoulmois"
+      ],
+      "source": {
+        "page": "Prophecy of Nostradamus",
+        "section": "Origin"
+      }
+    },
+    {
+      "id": "csm-dim-org-04",
+      "class": "organization",
+      "subject": "American Thugs",
+      "q": "Who are the American Thugs, and why did they go to Japan?",
+      "expect": [
+        "Joey, the middle brother and Aldo, the youngest brother",
+        "they ended up becoming an assassin as their way of living",
+        "employed by the US Government to find, and retrieve the chainsaw heart back to the USA for two million dollars"
+      ],
+      "source": {
+        "page": "American Thugs",
+        "section": "History"
+      }
+    },
+    {
+      "id": "csm-dim-org-05",
+      "class": "organization",
+      "subject": "Tokyo Special Division 5",
+      "q": "What happened to the members of Tokyo Special Division 5 during the Control Devil arc?",
+      "expect": [
+        "most members, including Katana Man, Quanxi, and Reze, seemed to have lost all semblance of their original personality",
+        "Pochita ruthlessly tearing through them one by one",
+        "all members allegedly survived the battle"
+      ],
+      "source": {
+        "page": "Tokyo Special Division 5",
+        "section": "Control Devil arc"
+      }
+    },
+    {
+      "id": "csm-dim-org-06",
+      "class": "organization",
+      "subject": "Yakuza",
+      "q": "How is the Yakuza connected to Denji's story?",
+      "expect": [
+        "Denji's father sustained an enormous debt to the Yakuza for unknown reasons",
+        "they were all murdered by Denji as revenge for betraying him",
+        "Katana Man sought revenge against Denji on behalf of the Yakuza for killing his grandfather"
+      ],
+      "source": {
+        "page": "Yakuza",
+        "section": "History"
+      }
+    },
+    {
+      "id": "csm-dim-org-07",
+      "class": "organization",
+      "subject": "Devil Hunter Club",
+      "q": "What is the Devil Hunter Club, and who belongs to it?",
+      "expect": [
+        "one of many in various schools, popularized by the public's increased interest in Devils",
+        "Asa Mitaka and Yoru joined the club to find the Chainsaw Man",
+        "many of the members of the Devil Hunter Club would join the Chainsaw Man Church"
+      ],
+      "source": {
+        "page": "Devil Hunter Club",
+        "section": "History"
+      }
+    },
+    {
+      "id": "csm-dim-org-08",
+      "class": "organization",
+      "subject": "Weapon Devils",
+      "q": "What is known about the Weapon Devils?",
+      "expect": [
+        "The Weapon Devils once fought alongside the Four Horsemen against Pochita",
+        "Pochita vanished and is reduced to a completely changed, near-death state and ended up on Earth",
+        "they later become fused with different humans all throughout the world, thus creating 7 new Weapon Humans"
+      ],
+      "source": {
+        "page": "Weapon Devils",
+        "section": "History"
+      }
+    },
+    {
+      "id": "csm-dim-org-09",
+      "class": "organization",
+      "subject": "Anti-Makima Squad",
+      "q": "What did the Anti-Makima Squad do to stop Makima?",
+      "expect": [
+        "They opened a hole in the side of the building with a rocket launcher before Saito and Suzuki squad entered",
+        "the Anti-Makima Squad killed themselves as they created a contract with the Hell Devil to send Makima to Hell",
+        "Sacrificed their lives to summon the Hell Devil"
+      ],
+      "source": {
+        "page": "Anti-Makima Squad",
+        "section": "Control Devil arc"
+      }
+    },
+    {
+      "id": "csm-dim-org-10",
+      "class": "organization",
+      "subject": "Tokyo Special Division 4",
+      "q": "Why were divisions placed in Tokyo Special Division 4 after the Katana Man arc?",
+      "expect": [
+        "divisions that had suffered from the conflict were put in Tokyo Special Division 4",
+        "as a means to bolster the group",
+        "Katana Man and Sawatari"
+      ],
+      "source": {
+        "page": "Tokyo Special Division 4",
+        "section": "Katana Man Arc"
+      }
+    }
+  ]
+}
