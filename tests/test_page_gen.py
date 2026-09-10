@@ -78,7 +78,7 @@ def test_parse_page_missing_page_raises(tmp_path):
         parse_page(paths, "Angel2")
 
 
-def _build_store(paths, title="Angel"):
+def _build_store(paths, title="Angel", extra_facts=()):
     """The Angel page in `facts.db`, shaped like the campaign's fixture data.
 
     The document-level `infobox` chunk carries the identity values the
@@ -129,6 +129,7 @@ def _build_store(paths, title="Angel"):
         ("alias", "Alias", "Hana Kurusu"),
         ("affiliation", "Affiliation", "Jujutsu Sorcerers\nMaki Zenin Group"),
     ]
+    facts.extend(extra_facts)
     for key, label, value in facts:
         store.add_fact(node_id=node, key=key, label=label, value=value, citation="")
     store.add_chunk(
@@ -272,6 +273,36 @@ def test_alias_and_affiliation_become_rosters(series_with_store):
     q = by_note["page-gen:affiliation"]
     assert q["kind"] == "set" and q["expect_mode"] == "roster"
     assert [a["item"] for a in q["answer"]] == ["Jujutsu Sorcerers", "Maki Zenin Group"]
+
+
+def test_identity_fields_override_extends_the_identity_catalog(tmp_path):
+    # R-7: keys the shared engine vocabulary never names are questioned from
+    # the per-wiki identity_fields map (config.identity_fields), merged ahead
+    # of the engine dict; a map entry redefining an engine key wins.
+    from scriptengine.eval.page_gen import generate_structured
+
+    paths = _mini_series(tmp_path)
+    store = _build_store(paths, extra_facts=[
+        ("species", "Species", "Devil"),
+        ("contracted humans", "Contracted Humans", "Kishibe"),
+    ])
+    try:
+        out = generate_structured(paths, "Angel", overrides={
+            "identity_fields": {
+                "species": "What species is {name}?",
+                "contracted humans": "Which humans is {name} contracted to?",
+                "status": "What exactly is {name}'s status?",
+            }
+        })
+        by_note = {q["note"]: q for q in out.questions}
+        assert by_note["page-gen:identity:species"]["question"] == "What species is Angel?"
+        assert by_note["page-gen:identity:contracted humans"]["answer"] == [
+            {"item": "Kishibe", "aliases": []}]
+        # Distinct from the engine dict's "What is the status of ...?": the
+        # map's wording proves the per-wiki entry won over the engine key.
+        assert by_note["page-gen:identity:status"]["question"] == "What exactly is Angel's status?"
+    finally:
+        store.close()
 
 
 def test_phrasing_traps_hold_on_generated_questions(series_with_store):

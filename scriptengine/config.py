@@ -222,6 +222,18 @@ def subject_aliases(overrides: dict | None = None) -> dict[str, str]:
     return {str(d).lower(): str(c) for d, c in dict(aliases or {}).items()}
 
 
+def identity_fields(overrides: dict | None = None) -> dict[str, str]:
+    """Per-wiki infobox-key -> identity-question-template map, keys lowercased.
+
+    The engine's shared IDENTITY_FIELDS vocabulary (page_gen) cannot name
+    every wiki's infobox keys; the rest are silently left uncovered (CSM:
+    61 unmatched keys, T0 pilot 2026-09-09, fix class R-7). A per-wiki map in
+    overrides (`identity_fields:`) is merged ahead of the engine dict by the
+    page-sweep identity builder: no series name in .py, model-free."""
+    fields = (overrides or {}).get("identity_fields")
+    return {str(k).lower(): str(v) for k, v in dict(fields or {}).items()}
+
+
 @dataclass(frozen=True)
 class SeriesPaths:
     """Filesystem layout for a single series.

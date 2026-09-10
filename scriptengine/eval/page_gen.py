@@ -20,7 +20,7 @@ from pathlib import Path
 
 import yaml
 
-from scriptengine.config import SeriesPaths
+from scriptengine.config import SeriesPaths, identity_fields
 from scriptengine.eval import questions as Q
 from scriptengine.ingest.crawler import load_manifest, sanitise_filename
 from scriptengine.retrieve.abilities import collect_abilities
@@ -137,6 +137,10 @@ def _retire(out: PageGenOutput, question: str, value: str, reason: str, note: st
     })
 
 def _identity_builder(store, paths, title, aliases, overrides, wiki, out, verified):
+    # Per-wiki map (R-7) ahead of the engine dict: a wiki whose infobox
+    # vocabulary the shared IDENTITY_FIELDS does not name still gets its
+    # questions from series/<name>/overrides.yaml, not silent fall-through.
+    fields = {**IDENTITY_FIELDS, **identity_fields(overrides)}
     facts: dict[str, dict] = {}
     for row in store.facts_for(title):
         key = (row["key"] or "").lower()
@@ -159,8 +163,8 @@ def _identity_builder(store, paths, title, aliases, overrides, wiki, out, verifi
                     question, "fact", title, [value], wiki, title,
                     f"{PROV}identity:{key}", verified))
             continue
-        if key in IDENTITY_FIELDS:
-            question = IDENTITY_FIELDS[key].format(name=title)
+        if key in fields:
+            question = fields[key].format(name=title)
             if not value:
                 _retire(out, question, "", "field is empty on the page", f"{PROV}identity:{key}")
             else:
