@@ -7,8 +7,8 @@
     "fix_classes": [
       "R-6"
     ],
-    "fixes_commit": "",
-    "receipts_commit": "",
+    "fixes_commit": "1e00ac1",
+    "receipts_commit": "1e00ac1",
     "ts": "2026-09-10T08:40:00Z",
     "gates": {
       "gate1_pytest": {
@@ -40,7 +40,7 @@
       "open": 35,
       "total": 58
     },
-    "note": "First ledger update after P1.1: the R-5 wave (ec60587/35c16c9) verified the four gates but never updated this ledger, so the R-6 gate window also re-verified the R-5 engine changes (all green, same window). fixes_commit/receipts_commit filled in the doc-only follow-up commit (recorded in reports/master-work/work_log.md, 2026-09-10 gate line)."
+    "note": "First ledger update after P1.1: the R-5 wave (ec60587/35c16c9) verified the four gates but never updated this ledger, so the R-6 gate window also re-verified the R-5 engine changes (all green, same window). fixes_commit/receipts_commit = 1e00ac1 (filled in the doc-only ledger-fill commit); census v2 authoring closed in 3dbc3ef (not gate-relevant)."
   },
-  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after the R-6 close commit (hashes recorded in the doc-only ledger-fill commit, see work_log 2026-09-10 gate line), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only <R-6-close-commit>..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 21 D6-extraction rows + the invariant floor rows (csmdoor-01 31/88, D5 reachability residuals) are the Phase-2/extraction-gated floor and stay open by design."
+  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after the R-6 close commit (1e00ac1), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only <R-6-close-commit>..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 21 D6-extraction rows + the invariant floor rows (csmdoor-01 31/88, D5 reachability residuals) are the Phase-2/extraction-gated floor and stay open by design."
 }
