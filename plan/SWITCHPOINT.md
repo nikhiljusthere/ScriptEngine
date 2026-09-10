@@ -8,6 +8,17 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-10 POWER LOSS — work stopped mid-run. READ
+  `reports/master-work/POWER_CHECKPOINT.md` FIRST, then
+  `reports/master-work/HANDOFF_STATE.md`.** Phase 1, after P1.2.
+  R-5 closed + committed (`ec60587`/`35c16c9`/`3ee6bd0`); miss queue 38 open /
+  20 closed. Census v2 authored + committed (`60e568f`) = close-council Q1's
+  artifact. **R-7 is in the tree but UNGATED** (same commit, gates not run,
+  no queue stamps) — it owes gates + stamps before it counts. R-6, P1.3, P1.4,
+  Phase 2 unstarted. Restart ritual: single terminal (A/B bay retired), fresh
+  `pi`, read ONLY those two files (lean boot = 23.8% context vs 61.3% verbose),
+  rebuild the 8-item todo panel. Qwen + `:8000` will both need restarting —
+  verify, never trust the recorded pids.
 - **2026-09-09 (CSM Phase 1 under the A/B bay — 262k→100k switch now; drift D20):**
   - **00:5x addendum (directing session pi 53523):** the bay was opened 00:38–00:39
     (tmux `control` = A, `work` = B + `csm-control.sh` monitor) and terminated on
@@ -384,3 +395,6 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
   - **01:2x (owner's new idea — the model-driven switch flow, TRIED this turn):** "when you switch and see the model loaded, send a call to the llm through that shell; that call tells the model to terminate this shell and restart the pi agent." Implemented as `tools/master-work/switch_restart2.sh <mode> <old_pi_pid>` + `tools/master-work/relaunch_pi.sh <old_pid> <resume_msg>`: (1) the detached switch shell switches Qwen and waits for the model to load — the pi agent STAYS ALIVE through the switch (requires the session to fit the target context; a not-fitting down-switch stays on the legacy kill-first `switch_restart.sh`); (2) the shell types an LLM call into the directing pane (tmux send-keys) instructing the model to (a) pkill the switch shell, (b) launch `relaunch_pi.sh` (grace-kill self → tmux relaunch → TUI-ready poll → typed resume line → capture-pane proof); (3) the model executes the call with its own tools and ends its turn — it dies at the grace by design; (4) the switch shell waits bounded (600 s) for the pkill, else self-exits. The model (not a blind bash loop) does the restart. First live try: 262k re-switch, directing pid 56461, launched ~01:2x.
 - 2026-09-10T01:18:01+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1609MiB
   - **01:2x (owner: "model reloads in 3-7 s, why wait this long — show a perfect 100k"):** tightened relaunch_pi.sh (GRACE 5->2 s, TUI poll 2 s->1 s, post-resume blind sleep 8 s->2 s — the slow parts were my sleeps, not the model) + made the LLM-call text mode-agnostic. Re-running the model-driven flow for a REAL mode change 262k->100k (:8000 lands on CUDA per the headroom rule), directing pid 56926 (session ~4k tokens, fits 100k). Target: whole switch ~10-20 s wall, verified by capture-pane, zero owner input.
+- 2026-09-10T01:21:08+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7081MiB
+- 2026-09-10T01:36:52+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1610MiB
+- 2026-09-10T01:42:55+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7060MiB
