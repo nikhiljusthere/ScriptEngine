@@ -8,6 +8,39 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-12 02:4x (owner-directed: 262k → 120k mode switch — switchpoint BEFORE the 3-part flow):**
+  - **Mode: 262k → 120k (ctx 122880).** Pre-switch card state: ninfer pid 7190 on the
+    262k profile (30,344 MiB used / 1,533 MiB free), `:8000` off. `qwen-switch.sh
+    122880 --api` generates `serve_ctx_122880.sh` from the `serve.sh` template
+    (kv=ctx, no --vision). Expected headroom ≈ 6.3 GB → `:8000` should land on
+    CUDA (the --api headroom rule decides; 100k-era precedent = CUDA).
+  - **Fit guard: PASSES without FORCE.** This session file 77,336 B ≈ 19.3k est.
+    tokens (conservative bytes/4) << 122880 target. No extraction in flight
+    (`pgrep events[-_]extract` empty).
+  - **Processes (verified live, 02:4x):** single pi = **7263** (serves this
+    session 01a09247, started under 262k). Window chain: gnome-terminal-server
+    3394 → bash **3406** → pi 7263 ⇒ helper args old_pi=7263, old_shell=3406.
+  - **Campaign position UNCHANGED by this switch** (work parked since the
+    2026-09-10 power loss): CSM Phase 1 after P1.2 — R-5 closed + committed
+    (`ec60587`/`35c16c9`/`3ee6bd0`), census v2 authored + committed
+    (`60e568f`), **R-7 in-tree but UNGATED** (owes gates + stamps + its own
+    commit), miss queue 38 open / 20 closed of 58. R-6/P1.3/P1.4/Phase 2
+    unstarted. Restart ritual unchanged: READ
+    `reports/master-work/POWER_CHECKPOINT.md` FIRST, then
+    `reports/master-work/HANDOFF_STATE.md`.
+  - **Clean commit sha:** below (this checkpoint). Switch helper (agent's last
+    act, detached): `setsid nohup bash tools/master-work/switch_restart3.sh
+    122880 <session_file> 7263 3406 … &`; log `/tmp/switch_restart3.log`;
+    `qwen-switch.sh` appends the machine line to the switch log below.
+  - **FIRST ACTION ON RESUME (new pi, same session, post-flight per the
+    qwen-switch skill):** (1) status line shows the new window (≈ `/120k` —
+    this pi is freshly spawned, so its window is trustworthy); (2) `cat
+    /home/goblin/ninfer-work/qwen_mode.txt` (expect ctx=122880, free ≈ 6.3 GB,
+    api=cuda); (3) `tail /tmp/switch_restart3.log` — part3 LLM answered, new
+    pi pid, old pi gone, relaunch_term done; (4) report ONE line + **STOP**.
+    Then resume the CSM parked ritual (POWER_CHECKPOINT + HANDOFF_STATE) when
+    the owner speaks. Note: any OTHER pi alive before this switch holds a
+    stale window snapshot — `exit` + `pi -c` it (none known 2026-09-12).
 - **2026-09-10 POWER LOSS — work stopped mid-run. READ
   `reports/master-work/POWER_CHECKPOINT.md` FIRST, then
   `reports/master-work/HANDOFF_STATE.md`.** Phase 1, after P1.2.
@@ -398,3 +431,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-10T01:21:08+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7081MiB
 - 2026-09-10T01:36:52+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1610MiB
 - 2026-09-10T01:42:55+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=7060MiB
+- 2026-09-12T02:29:15+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1535MiB

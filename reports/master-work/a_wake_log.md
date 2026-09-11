@@ -213,3 +213,35 @@ B-DOWN ruled. Summary of the wake:
 Write-order invariant held: `state.md §state` edited first (5 lines updated), then the NOTE line prepended to `decisions.md` (newest first, ends with newline, carries `re ESC unit-t0-1: APPROVED 11:17:27, none pending`). Stopping here.
 [2026-09-08T12:47:01+05:30] EVENT B-DOWN (fit-check §6.2: resume pi --session <b_session> if it fits, else fresh spawn §4.3) → a_session=a-1788851748
 Warning: No project session found with id 'a-1788852805'; creating a new session with that id.
+B-DOWN 13:04:16 ruled: **RESUME-on-relaunch, record-only** (no A-side respawn — STOP still on disk).
+
+- Fit check §6.2: b_session 43,411B/4 ≈ 10.9k ≤ 135k dial-down fallback (qwen_mode.txt still missing) → **FITS** → RESUME path, not fresh spawn §4.3 (43,411B << ~540kB threshold).
+- Same shape as 12:46:15: tmux server down, no pcloop; new work_log lines (gpu-live1 chain 12:52/12:59 all C-gates PASS, A-pi restart 13:05) are supervisor-side, not from the stopped B.
+- Committed 12:41:01 VETO stands: owner relaunch is explicit (clear STOP → RESUME via tmux, fresh MAX_TICKS).
+
+Write-order invariant held: `plan/state.md` §state first (position/next-unit/ETA/loop/open-risks updated, model: cell left to the poller), then the NOTE line prepended to `plan/decisions.md` with trailing newline. No campaign work executed. Stopping.
+[2026-09-08T13:08:09+05:30] EVENT B-DOWN (fit-check §6.2: resume pi --session <b_session> if it fits, else fresh spawn §4.3) → a_session=a-1788852805
+[2026-09-08T13:08:09+05:30] EVENT STOP: [2026-09-08T12:41:01+05:30] VETO unit-loop-launch (A, 21st B-STALE fire): 18th-fire HARD trigger fired (≥12:40:54, no B/pcloop line since 11:48:03, no FAIL/HALT, model up). Escalated to owner — relaunch is explicit (fresh B boot or resume, fresh MAX_TICKS budget; B's first line: unit ETA + §5.4 PC loop launch + session-org record).
+[2026-09-08T13:47:10+05:30] EVENT MODEL-DOWN (restart launched) → a_session=-
+[2026-09-08T13:48:10+05:30] EVENT MODEL-UP → a_session=-
+Warning: No project session found with id 'a-1788855490'; creating a new session with that id.
+Done. B-DOWN @ 13:48:39 ruled:
+
+- **Ruling:** RESUME-on-relaunch re-confirmed — fit check §6.2 FITS (43,411B/4 ≈ 10.9k ≤ live 262k; qwen_mode.txt still missing, live-inferred 262k per the 13:05:00/13:10:00 work_log lines). **Record only, no respawn**: STOP unchanged on disk (338B, mtime 12:42) and the owner parked MASTER_WORK at 13:10:00.
+- **state.md §state** written first: position/next-unit/ETA/loop + open-risks (1) and (3) updated (park, poller 48027→58188 no-unit B-STALE guard, fit basis 135k→262k).
+- **decisions.md**: NOTE line prepended (newest first), ESC token `re ESC unit-t0-1: APPROVED 11:17:27, none pending`, trailing newline. No ESC pending → NOTE, not DEC.
+
+No campaign work executed. Stopping.
+[2026-09-08T13:49:21+05:30] EVENT B-DOWN (pane down since model-down; fit-check §6.2) → a_session=a-1788855490
+Warning: No project session found with id 'a-1788855561'; creating a new session with that id.
+B-DOWN ruled and recorded. Stopping (one-shot).
+
+**Ruling: RESUME-on-relaunch, record-only (no respawn).**
+- Fit check §6.2: b_session 43,411B (mtime 11:46:31, unchanged)/4 ≈ 10.9k ≤ live 262k (qwen_mode.txt still missing → live-inferred from 13:05:00 A-pi restart + 13:10:00 CSM-CAMPAIGN) → **FITS** → RESUME path, not fresh spawn §4.3.
+- No respawn executed: STOP still on disk (338B, mtime 12:42) and owner parked MASTER_WORK at 13:10:00 → per the committed 12:41:01 VETO, B-DOWN wakes are record-only until the owner clears STOP.
+- This wake is a duplicate ~55s after the 13:48:39 B-DOWN — zero state delta (tmux down, no pcloop, model up, work_log unchanged).
+
+Writes (order: state.md first, then decisions.md):
+- `plan/state.md` §state: position → 13:49:34 record-only re-confirmation; ETA record-only list +1; loop/open-risks re-confirm timestamps bumped.
+- `plan/decisions.md`: NOTE line prepended (no ESC pending → NOTE, keeping poller ESC detection honest; trailing-newline hygiene pre-verified, no fix needed).
+[2026-09-08T13:50:05+05:30] EVENT B-DOWN (fit-check §6.2: resume pi --session <b_session> if it fits, else fresh spawn §4.3) → a_session=a-1788855561
