@@ -1008,3 +1008,38 @@ entry.
   env-mcp trio's live proof (:8000 up) — + the 34 s one-copy 5.4
   re-adjudication of the 22-row floor + the P2.2 bar-audit pull-in + close
   conditions (a)–(e), then the `PHASE_A_COMPLETE_AT_FLOOR` marker).
+
+### D24 — CSM P1.4 four-gate copy: all four re-run green @407c016 + env-mc trio live proof (2026-09-12, opencode)
+
+- **What:** the P1.4 one-copy four-gate re-run on the current tree (did NOT
+  lean on the `GATE_LEDGER.json` reboot_rule). W1 (:8000 stopped, in-process
+  CUDA): `pytest tests/ -q` **1,321** (1,318 R-6 pin + 3 R-7 tests), 3 failed
+  = the env-mc trio (ConnectError, as expected with :8000 down), 1,316 passed,
+  2 xpassed; `eval --series jjk` **31/31**. W2 (:8000 back on CUDA, pid 33380,
+  co-located with Qwen 25.6 GB — Qwen survived, 31,083 MiB = the exact R-7
+  number): span-recall jjk **48,572 offline rc=0 (100.0000%) + 398/400 live
+  (99.5%)**; canon opm (`--skip-eval`) **236/236 / 10/16 / 79.0% / 0
+  confident-wrong** (`reports/2026-09-11-2218/`). All four green — the R-7
+  window's state holds at HEAD=`407c016`.
+- **env-mc trio live proof (chairman A4 debt, discharged): 2/3 pass live.**
+  `test_research_returns_bundle_and_prompt` PASS, `test_research_rejects_
+  unindexed_series` PASS; **`test_research_bare_character_name_is_narrative`
+  FAILS for a REAL reason** (not a connection error): the router returns
+  `mode=qa` for the bare character name "Maki Zenin"; the test (added
+  `d531329`, 2026-09-03) expects `narrative`. Root cause: pre-existing
+  test/router mismatch — the router's bare-name→qa rule
+  (`router.py:809-812`, "a bare name is a lookup, not a story") landed
+  `8d07487` (2026-08-03), a month BEFORE the test. It was hidden all month
+  behind "needs a live :8000" (in W1 it always failed with a ConnectError and
+  was counted as an 'env' failure). NOT a campaign regression; NOT a P1.4
+  close condition (a)–(e); the gate-1 pin (1,321) is unchanged (defined under
+  W1 :8000-down). **Disposition: defer the fix to P1.5 (MCP bridge)** — the
+  natural home for an MCP-door bug. Recorded in `GATE_LEDGER.json`
+  `p14_close_copy.env_mc_live_proof`.
+- **Gates:** all four re-run green (this IS the P1.4 gate copy; supersedes the
+  reboot_rule stand for P1.4).
+- **Stamps:** `GATE_LEDGER.json` +`p14_close_copy`; `work_log.md` B-append;
+  this entry.
+- **NEXT:** the 34 s one-copy 5.4 re-adjudication of the 22-row floor →
+  P2.2 bar-audit pull-in → close conditions (a)–(e) + the P1.4 close council
+  → `PHASE_A_COMPLETE_AT_FLOOR` marker → Phase 2 (P2.1 step 0).
