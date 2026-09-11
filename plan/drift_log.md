@@ -975,3 +975,36 @@ entry.
   fills `GATE_LEDGER.json` receipts_commit + the work_log ACT-commit line.
   Next: P1.3 finalize (halt meter final) → P1.4 close (council +
   PHASE_A_COMPLETE_AT_FLOOR.md) → Phase 2 (P2.1 step 0).
+
+### D23 — CSM P1.3 finalize: halt-meter convergence PASS, all fix-classes green, halt condition met (2026-09-12, opencode)
+
+- **What:** P1.3 (halt-meter convergence) finalized on the FINAL meter
+  (`reports/csm/HALT_METER_P13.md`, re-issued at the R-7 close). Mechanical
+  convergence check (model-free, queue↔meter): `miss_queue_csm_iter1.jsonl`
+  open=35 ≡ the meter's 35-row table exactly (set equivalence both ways, no
+  orphans); buckets (a)=22 extraction-gated floor (21 D6-extraction +
+  csm-char-04 R-7x) / (b)=13 stamped-by-design open (10 documented
+  invariant/residual + 3 r1blast-* stamps) / (c)=0 fixable. The 10
+  `ruling=fixable` open rows are exactly the (b) residual set (stamped by
+  design; R-3/L43–52, ID-mapping addendum, red-R-2 close note). Class
+  audit: R-1…R-7 all closed/green — R-5 CLOSED 2026-09-09 (red_list L91),
+  R-6 CLOSED 2026-09-10 (L116), R-7 CLOSED 2026-09-12 (addendum L176);
+  R-1/R-2/R-3/R-4 closed with documented residuals carried to (b)/(a).
+  Every non-floor, non-extraction fix-class is green → **(c)=0, the halt is
+  no longer blocked** (meter §Blockers).
+- **Gates:** no gate re-run needed (doc-only step; the R-7 window 4/4
+  @`81df799` stands via `GATE_LEDGER.json` reboot_rule — zero
+  gate-relevant diff since `81df799`).
+- **Stamps:** `work_log.md` B-append (this entry); no queue/ledger edits
+  (the meter + queue + ledger already agree — that agreement is the
+  convergence check).
+- **Commit:** this entry + work_log, path-limited.
+- **Verdict — the halt condition is MET (chairman final wording):** every
+  non-floor, non-extraction fix-class (R-1…R-7) is green; the 33-fixable
+  meter reads 33/33 (the 10 documented residual rows stamped by-design
+  open); the queue's remaining 35 open rows are all extraction-gated floor
+  (22), stamped (3 r1blast-*), or invariant/residual (10). Phase 1 now
+  closes via P1.4 (the one four-gate copy at the final commit — owed the
+  env-mcp trio's live proof (:8000 up) — + the 34 s one-copy 5.4
+  re-adjudication of the 22-row floor + the P2.2 bar-audit pull-in + close
+  conditions (a)–(e), then the `PHASE_A_COMPLETE_AT_FLOOR` marker).
