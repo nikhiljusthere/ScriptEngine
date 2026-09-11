@@ -171,12 +171,18 @@ council R-1 chairman's amendment 4).
   "How many Sweet Commanders are in the Marines?" (serves the discovered 7-
   member "Marine Commanders" set — a wrong-set serving, no gate covers
   onepiece) and opm-set-16 (Blizzard; the only delta inside a standing gate,
-  gate-4 pre-registered in the receipt). **Re-probe after R-7's key-map
-  widening lands** (the `identity_fields` hook grows the discovered-set
-  surface — the R-1×R-7 interaction). R-1×R-5: csm's declared "Every devil
-  contract Denji has made" (3 members) will also route through the count rule
-  before the CSM-7 relations mode lands — ordering to settle when R-5 is
-  drafted.
+gate-4 pre-registered in the receipt). **Re-probe after R-7's key-map
+   widening lands** (the `identity_fields` hook grows the discovered-set
+   surface — the R-1×R-7 interaction) — **DONE 2026-09-12 (R-7 close):**
+   live re-probe of `r1blast-tokyo` (qa→roster, all 5 Tokyo divisions served,
+   0 new misses); `r1blast-blizzard`/`r1blast-marines` direct re-probes
+   skipped by council (chairman, `receipts/r7_council/chairman.md`) — held by
+   gate-4 baseline-identity (236/236 · 10/16 · 79.0% in the same window) +
+   the CSM-scoped R-7 hunk; stamps on the three queue rows, full record in
+`reports/csm/receipts/r7_class_resweep.md` §2. R-1×R-5: csm's declared
+    "Every devil contract Denji has made" (3 members) will also route through
+    the count rule before the CSM-7 relations mode lands — ordering to settle
+    when R-5 is drafted.
 - **Rejected layers (recorded so the search does not repeat).** (a) Roster-
   side stopword: the phantom is `many`, a **content word** in the roster
   matcher's stopword list (`scriptengine/retrieve/roster.py`) — a stopword

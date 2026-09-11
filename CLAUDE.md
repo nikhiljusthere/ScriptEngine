@@ -17,7 +17,7 @@ the contract travels with the context.
    Phase 1 = the §9a closure loop on the frozen miss queue (fix the
    pre-registered fix-classes; four standing gates after each; halt at the
    extraction-gated floor). Live checkpoint: `plan/drift_log.md` (current
-   position, D19) + `reports/csm/GATE.md` (CSM gate state) +
+   position, D22) + `reports/csm/GATE.md` (CSM gate state) +
    `reports/master-work/PHASE1_JOB.md` (the P1.1–P1.4 job spec, owner
    2026-09-09). JJK remains at 100% (its prose pass is complete on every
    in-scope narrative page type) and is the baseline-exact reference every
@@ -345,14 +345,15 @@ same checkable 100% bar over its own corpus — the §9a closure loop fixes the
 pre-registered fix-classes (R-1…R-7), re-runs the four standing gates after
 each, and halts at the extraction-gated floor (22 floor rows + the 21-red
 extraction class, Phase 2). Live state: `reports/csm/GATE.md` (CSM gate state)
-+ `plan/drift_log.md` (current position, D19) + `reports/csm/
++ `plan/drift_log.md` (current position, D22) + `reports/csm/
 miss_queue_csm_iter1.jsonl` (the frozen miss queue). P6 (cross-corpus,
 `plan/Plan_to_perfection.md` §7) waits until Phase 1 closes.
 
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
 gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
-`pytest tests/ -q` = **1,305** (the current gate-1 pin; the 1,303 baseline +
-2 new R-2/R-3 tests, council #23). Per Ruling 5e a known +N test delta does
+`pytest tests/ -q` = **1,321** (the current gate-1 pin; the 1,318 R-6 pin +
+3 new R-7 tests; the known env-mcp trio fails under a stopped :8000,
+council #25 close). Per Ruling 5e a known +N test delta does
 not re-run the gates — the full four-gate re-run happens at each fix-class's
 closure. (Historical: 1,249 re-baselined 2026-09-08; 1,254 = 1,249 + 4 CSM-3
 + 1 CSM-3b roster-door test @ `f93d396`.) `eval --series jjk` = 31/31 (15:22–15:23); `span-recall

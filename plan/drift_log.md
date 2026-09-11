@@ -933,3 +933,45 @@ entry.
 - **Commit:** path-limited close (engine + tests + yaml + stamps + receipt +
   ledger + this entry), `git add .` banned; census v2 (author-only, item #3 of
   the boot panel) closed in its own earlier path-limited commit.
+### D22 — CSM R-7 identity_fields class close: gate window 4/4 @81df799 + class re-sweep + doc-only stamps (2026-09-12, csm-phase1-worker + opencode)
+
+- **What:** R-7 (identity_fields) closed as class-targeted re-sweep GREEN.
+  Engine hunk `60e568f` (generation-only: `config.identity_fields` +
+  `eval/page_gen.py` + 61-key map in `series/csm/overrides.yaml`; no `/context`
+  path touched → csm-char-04 retrieval shape bit-identical pre/post window).
+  Gate window 4/4 GREEN @`81df799` (receipts/r7_gate_window.md): pytest
+  **1,321** (1,318 R-6 pin + 3 new R-7 tests; 3 failed = the known env-mcp trio
+  that needs a live :8000; 2 xpassed) · eval jjk **31/31** · span-recall jjk
+  offline **48,572 rc=0 (100.0000%) + 398/400 live (99.5%)** (probe ledger
+  +400 rows, 03:05) · canon opm **236/236, 10/16, 79.0%, 0 confident-wrong**
+  (`reports/2026-09-11-2135/`). Class re-sweep
+  (receipts/r7_class_resweep.md): csm-char-04 ("Every ability of Makima") =
+  the 22nd extraction-gated floor row — the PM-contract ability name sits in
+  section prose, the corpus never names it as an ability, abilities path stays
+  7/8 (documented; 5.4 re-adjudication gate LIVE, Phase 2); r1blast-tokyo
+  re-probed live (qa→roster, 5/5 divisions, 0 new misses); r1blast-blizzard /
+  r1blast-marines direct re-probes SKIPPED by council (chairman) — held by
+  gate-4 baseline-identity + the CSM-scoped hunk (no onepiece standing gate).
+  Zero rows closed by design (rows_closed_this_unit 0). Council: 4 slim
+  advisors + chairman (owner directive 2026-09-12: council all 5, the 2-at-a-
+  time limit covers other tasks) — **SHIP-AMENDED**, amendments A1–A7
+  (receipts/r7_council/chairman.md), all executed in this close.
+- **Gates:** the 4/4 above stand via `GATE_LEDGER.json` reboot_rule (anchor
+  81df799; doc-only commits invalidate nothing). Env-mcp live-API caveat
+  (chairman A4): the trio's live proof is owed at P1.4's four-gate copy
+  (:8000 up) — no new GPU work in this doc-only close.
+- **Stamps:** `miss_queue_csm_iter1.jsonl` r1blast-tokyo/blizzard/marines notes
+  (csm-char-04 needs no edit — it stays open as floor); `red_list_csm.md`
+  addendum "re-probe after R-7" stamp; `GATE_LEDGER.json` last_green → R-7
+  (receipts_commit filled in the follow-up, R-6 pattern); `GATE.md` live state
+  → R-7 + L12 pin 1,305→1,321; `CLAUDE.md` gate-1 pin line 1,305→1,321;
+  `HALT_METER_P13.md` re-issued from DRAFT at (a)=22/(b)=13/(c)=0 (csm-char-04
+  moved to the 22-row floor; the 10 invariant/residual rows stamped by-design
+  open; halt residual 35, superseding the DRAFT's 34); `COUNCIL_HISTORY.md`
+  row #28; `work_log.md` B-append (ACT commit line in the follow-up).
+- **Commit:** path-limited close (receipts + council record + stamps + ledger +
+  this entry + CLAUDE.md pin + recall_verbatim ledger + run dir
+  `reports/2026-09-11-2135/`), `git add .` banned; follow-up doc-only commit
+  fills `GATE_LEDGER.json` receipts_commit + the work_log ACT-commit line.
+  Next: P1.3 finalize (halt meter final) → P1.4 close (council +
+  PHASE_A_COMPLETE_AT_FLOOR.md) → Phase 2 (P2.1 step 0).

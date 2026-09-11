@@ -1,19 +1,19 @@
 {
   "version": 1,
   "series": "csm",
-  "purpose": "ledger-of-record v1 (council #24) \u2014 the committed machine-readable gate state so a reboot costs zero. Read this FIRST after any reboot. If the reboot_rule check passes, the four gates stand: do NOT re-run them. If it fails, re-run all four on the new tree (one-copy 100k + CUDA :8000) before the next fix-class.",
+  "purpose": "ledger-of-record v1 (council #24) — the committed machine-readable gate state so a reboot costs zero. Read this FIRST after any reboot. If the reboot_rule check passes, the four gates stand: do NOT re-run them. If it fails, re-run all four on the new tree (one-copy 100k + CUDA :8000) before the next fix-class.",
   "last_green": {
-    "unit": "P1.2 (\u00a79a iter-1 R-6 subject_aliases)",
+    "unit": "P1.2 (§9a iter-1 R-7 identity_fields)",
     "fix_classes": [
-      "R-6"
+      "R-7"
     ],
-    "fixes_commit": "1e00ac1",
-    "receipts_commit": "1e00ac1",
-    "ts": "2026-09-10T08:40:00Z",
+    "fixes_commit": "60e568f",
+    "receipts_commit": null,
+    "ts": "2026-09-12T03:35:00+05:30",
     "gates": {
       "gate1_pytest": {
-        "value": "1318",
-        "note": "1,315 R-5 chairman pin + 3 new R-6 tests; 3 failed = the known env-mcp trio that needs a live :8000 (same set as the R-5 record); 2 xpassed",
+        "value": "1321",
+        "note": "1,318 R-6 pin + 3 new R-7 tests (test_r7_identity_fields.py + test_page_gen.py); 3 failed = the known env-mcp trio that needs a live :8000 (same set as the R-5/R-6 records); 2 xpassed",
         "status": "green"
       },
       "gate2_eval_jjk": {
@@ -22,25 +22,25 @@
       },
       "gate3_span_recall_jjk": {
         "value": "48,572 offline rc=0 (100.0000%) + 398/400 live probe (99.5%)",
-        "probe": "398/400 >= the 390/400 (97.5%) bar; ledger reports/span-recall/jjk/recall_verbatim.jsonl",
+        "probe": "398/400 >= the 390/400 (97.5%) bar; ledger reports/span-recall/jjk/recall_verbatim.jsonl (+400 R-7 probe rows, 2026-09-12 03:05)",
         "status": "green"
       },
       "gate4_canon_opm": {
         "value": "236/236 canon (100%), 10/16 exact, 79.0% precision, 0 confident-wrong",
-        "report": "reports/2026-09-10-0820/",
+        "report": "reports/2026-09-11-2135/",
         "status": "green"
       }
     },
     "class_sweeps": {
-      "r6_door_nar": "door-nar-None x3 (Introduction / Bomb Girl / International Assassins): all three resolve to their canonical arc node with beats (model-free probe); 0 new misses"
+      "r7_identity_fields": "class-targeted re-sweep GREEN (receipts/r7_class_resweep.md): csm-char-04 (R-7x) stays OPEN as the 22nd extraction-gated floor row (the 8th Makima ability — the PM contract — sits in section prose; the corpus never names it as an ability; the R-7 hunk is generation-only so the retrieval shape is bit-identical pre/post); r1blast-tokyo re-probed live (qa->roster, 5/5 divisions, 0 new misses); r1blast-blizzard/marines direct re-probes skipped by council (chairman, receipts/r7_council/chairman.md) — held by gate-4 baseline-identity (236/236 · 10/16 · 79.0% same window) + the CSM-scoped hunk; zero new misses, zero new queue rows, no miss-count regression. Class closes; rows_closed_this_unit 0 (no status flips, by design)."
     },
     "queue_stamps": {
-      "rows_closed_this_unit": 3,
+      "rows_closed_this_unit": 0,
       "closed": 23,
       "open": 35,
       "total": 58
     },
-    "note": "First ledger update after P1.1: the R-5 wave (ec60587/35c16c9) verified the four gates but never updated this ledger, so the R-6 gate window also re-verified the R-5 engine changes (all green, same window). fixes_commit/receipts_commit = 1e00ac1 (filled in the doc-only ledger-fill commit); census v2 authoring closed in 3dbc3ef (not gate-relevant)."
+    "note": "First ledger update since R-6 (1e00ac1): the R-7 gate window is the first green at 81df799 (the R-6 window never re-ran since 1e00ac1). receipts_commit (null) is filled in the doc-only ledger-fill commit (R-6 pattern 36e59c1). GATE.md live state + L12 pin (1,305 -> 1,321) and the CLAUDE.md gate-1 pin line moved to R-7 in the same close commit (chairman A1/A7). Env-mcp live-API caveat (chairman A4): the trio's live proof is owed at P1.4's four-gate copy (:8000 up) — no new GPU work in this doc-only close."
   },
-  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after the R-6 close commit (1e00ac1), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only <R-6-close-commit>..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 21 D6-extraction rows + the invariant floor rows (csmdoor-01 31/88, D5 reachability residuals) are the Phase-2/extraction-gated floor and stay open by design."
+  "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after the R-7 close commit (81df799), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only 81df799..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts, COUNCIL_HISTORY, CLAUDE.md, HALT_METER_P13*) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 22 extraction-gated floor rows (the 21 D6-extraction rows + csm-char-04, whose close lever is the Phase-2 extraction track / 5.4 re-adjudication) + the 10 invariant/residual rows (csmdoor-01 31/88; the D5 reachability residuals csmd5-01/02/03/05/06 + gate400-320 + red-R-4; the closed-class curation residuals csm-char-03 + csm-set-02; governing stamps: the red_list R-2/R-3 close notes) stay open by design. The 3 r1blast-* stamped rows stay open as stamps (never fix targets)."
 }
