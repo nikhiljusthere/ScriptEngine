@@ -125,3 +125,61 @@ no-uniform-rate rule mattered: a uniform estimate off qa alone would have read
   empty".
 
 "Miss file empty" applies to the qa door alone.
+
+## P2.1 step-0 addendum — the auto door measured (2026-09-12)
+
+The council's decisive test: the same 100 panel probes through **`--door auto`**,
+the path `/context` actually serves. 19.20 s wall (0.192 s/probe), rc=0.
+
+**auto = 37/100 HIT. Forced qa = 95/100.** A 58-point gap, on identical probes.
+
+The router's own choices explain all of it:
+
+| router picked | probes | HIT | rate |
+|---|---:|---:|---:|
+| narrative | **81** | 28 | 34.6 % |
+| qa | 9 | **9** | **100 %** |
+| roster | 9 | 0 | 0 % |
+| relations | 1 | 0 | 0 % |
+
+**When the router picks qa it is perfect (9/9). It picks qa 9 % of the time.**
+It sends **81 %** of verbatim line-retrieval probes to narrative, which serves
+about a third of them, and 9 % to roster, which serves none.
+
+### What this overturns
+
+The Contrarian's prediction — that the panel's synthetic verbatim lookups are
+"shapes the router would send to qa essentially always", making narrative 35/100
+and roster 2/100 forcing artifacts with no referent — is **falsified**. The
+router sends 9 % to qa. The forced narrative/roster numbers were not artifacts:
+they are close to what the live router actually produces (35 forced vs 34.6
+routed on narrative), because the router is genuinely choosing those doors.
+
+The earlier "17 of 21 recover by routing" claim is also further undercut from the
+other side: routing is not the rescue, it is the leak.
+
+### What this promotes
+
+**R-8 is no longer bookkeeping — it is the largest measured lever in the
+system.** For this probe class, door choice alone is worth 58 points of recall
+(37 % → 95 %). No extraction campaign is competitive with that: extraction was
+scoped to close ~21 census rows, while the router is losing ~58 of every 100
+lines on the served path.
+
+Reviewer-4's reframe stays live and is now partly answered: roster serves 0/9
+and narrative 28/81, so those doors *are* weak on verbatim lookups — but the
+proximate defect is that the router hands them 91 % of the traffic.
+
+### Scope caveat, stated so it is not over-read
+
+These are panel probes (verbatim/scoped sentence lookups), not writer questions.
+The claim is bounded: **for line-retrieval shapes**, the router misroutes 91 %
+away from the door that answers perfectly. Whether the same gap holds for
+script-writing questions is a separate measurement and is not claimed here.
+
+### Consequence for the sweep
+
+The 3-door sweep is **not** run. qa-full (2.41 h) is deferred until R-8 lands:
+a qa-forced ledger measures a door the router almost never picks, and the A17
+bar (≥ 97.5 %, sanity measured 95 %) should be re-taken on the post-R-8 auto
+path, which is the number that describes the product.
