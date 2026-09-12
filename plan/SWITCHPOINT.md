@@ -8,6 +8,77 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-13 ~03:4x (owner-directed: 262k → 100k, OPENCODE session — Creator Research work; CSM parked):**
+  - **Mode: 262k (ctx 262144) → 100k (ctx 102400).** Pre-switch card state: qwen
+    pid 23351, 30,673 MiB used / 1,430 MiB free; `:8000` up on CPU (pid 23419);
+    no extraction in flight (the script refuses anyway while an
+    events-extract batch holds the card).
+  - **This is an OPENCODE session, not pi** — opencode runs on this same Qwen
+    server, so the in-flight turn dies mid-reload (expected; the script header
+    says never switch inside an agent session). The opencode process survives;
+    the owner resumes with `opencode -c` (or `-s <id>`). If the fit guard
+    refuses on a stale pi session file (the 09-13 02:33 pi transcript, ~150k
+    est. tokens), `--force` is safe: this commit is a full checkpoint and the
+    opencode session auto-compacts to 100k on overflow.
+  - **Campaign: PARKED, nothing pending.** CSM Phase 1 §9a closure loop DONE
+    (halted at the extraction-gated floor, D23 `407c016`); Phase 2 unstarted;
+    JJK baseline at 100%. HEAD `aada154` + this checkpoint commit.
+  - **Active work (opencode session, outside the repo) — read
+    `/home/goblin/Creator Research/HANDOFF.md` first:** §2 a–c fixed (Tech-sheet
+    second/third tables, dedupe pop bug + min-7 1-to-1 prefix rule) and
+    `Creator_Mapping.xlsx` formatted (262 creators, 8 categories, colored
+    headers, content-based widths, zebra, tab colors); §3 WriterAgent 0.8.75
+    installed (`~/.config/libreoffice/4/user/`), Qwen endpoint pre-configured in
+    `writeragent.json` (`mcp.mcp_enabled=true`, :18765); opencode MCP entry
+    `writeragent` in `~/.config/opencode/opencode.jsonc`.
+  - **OPEN ISSUE at switch time:** the WriterAgent MCP server never bound
+    :18765 under the LO 26.8 deb build (`~/Applications/LibreOffice`, python
+    bootstrap warning "Could not find platform independent libraries" → the
+    extension's Python never bootstrapped, no writeragent_debug.log). Next step
+    queued: try the system LO 24.2 (`/usr/bin/soffice`) with the xlsx open and
+    poll :18765; if it still doesn't bind, check LO's python loader next.
+  - **Clean commit sha:** below (this checkpoint). Switch: `qwen-switch.sh 100k
+    --api` (100k service profile: ~7-8 GiB headroom → `:8000` co-locates on
+    CUDA; `--force` only if the fit guard trips on the stale pi transcript).
+  - **FIRST ACTION ON RESUME (opencode -c):** (1) `cat
+    ~/ninfer-work/qwen_mode.txt` (expect mode=100k ctx=102400, api=cuda, free
+    ≈ 7 GB); (2) `nvidia-smi` (Qwen only on the card); (3) `curl -s
+    localhost:8000/health` (expect device=cuda); (4) tail this file's switch log
+    for the machine line; (5) continue the open MCP issue above.
+- **2026-09-13 ~02:5x (owner-directed: 100k → 262k full-context switch, then Creator Research work):**
+  - **Mode: 100k (ctx 102400) → 262k (ctx 262144).** Pre-switch card state: qwen
+    pid 7760, 6,996 MiB free, `:8000` off, no extraction in flight
+    (`pgrep events[-_]extract` empty).
+  - **Fit guard: PASSES without FORCE.** Session file 600,029 B ≈ 150,007 est.
+    tokens (bytes/4, conservative) < 262144 target.
+  - **Processes (verified live):** pi **5378** (serves this session 01a09753)
+    ← bash **5364** ← gnome-terminal-server **3432** ⇒ helper args
+    old_pi=5378, old_shell=5364. Single pi on the machine.
+  - **In-tree before switch:** R-8 fix-class landed + committed at `aada154`
+    (wants_chronology_set in chronology.py, router split: set-in-order → roster,
+    one-subject order → narrative; 152 router tests green).
+  - **Owner directive for after the switch (Creator Research, non-campaign work
+    — todos #1–#5 in the session's todo panel):** (1) make a "Creator Research"
+    working folder OUTSIDE the ScriptEngine repo; (2) map creators by
+    niche/category from three sources — Google sheet 1 (id
+    `1-zkuoTRLIEfkDJk1SWfW2WfOwlt15nZTD6aSLDMgupc`, public, already fetched to
+    `/tmp/sheet1.xlsx`), Google sheet 2 (id `19G2vQFv6tV0oUQ4F6CSRcIZUXBm4bCM5xcW0WgRBOHs`,
+    behind Google sign-in → fetch through the OpenCLI browser bridge on the
+    user's Brave session, profile `m4e85p8v`; opencli `download` step forwards
+    browser cookies to the `/export?format=xlsx` URL), and the local
+    `/home/goblin/Downloads/Finnet Media Exclusive Roster .xlsx`;
+    (3) build one new Excel sheet of the category mapping (LibreOffice already
+    installed at /usr/bin/libreoffice; openpyxl in venv /tmp/xlsxenv). The
+    opencli instagram `user` adapter is locally overridden (works via rendered-
+    grid fallback; `~/.opencli/clis/instagram/user.js`, undo = rm the dir).
+  - **Clean commit sha:** `aada154` (this checkpoint).
+  - **FIRST ACTION ON RESUME (new pi, same session):** post-flight — (1) status
+    line shows the new window (`/262k`); (2) `cat
+    /home/goblin/ninfer-work/qwen_mode.txt` (expect ctx=262144, api=off, free
+    ≈1.5 GiB); (3) `tail /tmp/switch_restart3.log` (part3 answered, new pi pid,
+    old pi gone, relaunch_term done); (4) `pgrep -P 3432` — only the new pi's
+    window remains. THEN, per owner directive, proceed straight into Creator
+    Research todos #1–#5 (do not stop and wait).
 - **2026-09-12 02:4x (owner-directed: 262k → 120k mode switch — switchpoint BEFORE the 3-part flow):**
   - **Mode: 262k → 120k (ctx 122880).** Pre-switch card state: ninfer pid 7190 on the
     262k profile (30,344 MiB used / 1,533 MiB free), `:8000` off. `qwen-switch.sh
@@ -434,3 +505,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-12T02:29:15+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1535MiB
 - 2026-09-12T02:34:50+05:30 qwen-switch: ctx=122880 (mode 122880), api=cuda, free=6303MiB
 - 2026-09-13T02:00:23+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=6996MiB
+- 2026-09-13T02:34:53+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1437MiB
