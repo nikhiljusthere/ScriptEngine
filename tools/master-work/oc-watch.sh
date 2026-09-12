@@ -87,7 +87,14 @@ while :; do
     age=$(( $(date +%s) - $(stat -c %Y "$LOG" 2>/dev/null || echo 0) ))
     qconn=0; ss -tnp 2>/dev/null | grep -q ":18080.*pid=$OC" && qconn=1
     now=$(date +%s)
-    if [ "$age" -gt "$STALL_S" ] && [ "$qconn" -eq 0 ]; then
+    # A finished run sits at the idle prompt: silent, no qwen conn - NORMAL, never nudge.
+    # Only a turn that is mid-flight (last big event is stream/process, not "exiting loop")
+    # counts as stalled.
+    idle=0
+    li=$(grep -an 'exiting loop' "$LOG" 2>/dev/null | tail -1 | cut -d: -f1)
+    la=$(grep -an 'message=stream\|message=process' "$LOG" 2>/dev/null | tail -1 | cut -d: -f1)
+    [ -n "$li" ] && [ "${li:-0}" -gt "${la:-0}" ] && idle=1
+    if [ "$age" -gt "$STALL_S" ] && [ "$qconn" -eq 0 ] && [ "$idle" -eq 0 ]; then
       if [ $((now - last_nudge)) -gt "$NUDGE_COOLDOWN_S" ]; then
         last_nudge=$now
         nudge_fails=$((nudge_fails + 1))

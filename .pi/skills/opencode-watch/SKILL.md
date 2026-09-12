@@ -84,8 +84,10 @@ Behavior (10 s poll, all in `tools/master-work/oc-watch.sh`):
   (set `OC_WATCH_NO_AUTO=1` to wake pi instead of auto-answering).
 - last log line `asking que_…` → wakes pi by typing a one-line prompt into the
   `π - ScriptEngine` window (pi then answers the question).
-- no log activity for 300 s AND no `:18080` connection from the opencode pid → types a
-  "Continue the current task…" nudge (cooldown 300 s); after 2 failed nudges → wakes pi.
+- no log activity for 300 s AND no `:18080` connection from the opencode pid AND the last
+  big log event is **not** `exiting loop` (a finished run sits at the idle prompt — silent
+  with no qwen conn is *normal*, never nudge it) → types a "Continue the current task…"
+  nudge (cooldown 300 s); after 2 failed nudges → wakes pi.
 - opencode not running → idle-polls (re-engages automatically on restart).
 
 Wake lines typed into pi look like:
@@ -129,3 +131,7 @@ If the same pattern keeps prompting across *new* requests (a minute apart, each 
   "Continue …" message, not keys.
 - `tracking` with nothing after it is NOT proof of death (a long bash tool is quiet) — the
   stall check requires BOTH no log activity AND no `:18080` connection.
+- Neither is enough (2026-09-13 bug, fixed same day): a *finished* run at the idle prompt is
+  also silent + no qwen conn — the watcher must additionally require the last big event to be
+  `stream`/`process` (not `exiting loop`) before nudging, or it types "Continue" into an
+  opencode that is merely waiting for its next task.
