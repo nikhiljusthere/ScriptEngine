@@ -105,6 +105,7 @@ They appear in pi's startup header; force-load with `/skill:<name>`.
 |---|---|
 | `qwen-switch` | before/after any GPU phase; the autonomous mode switch |
 | `switchpoint` | before a switch, at council cadence, on "checkpoint" |
+| `opencode-watch` | keep an opencode TUI running autonomously: watcher auto-answers permission prompts (always-allow), wakes pi on MCQ / dead runs |
 | `scriptengine-gates` | after any build / before calling a pass done |
 | `humanscope` | every script: the voice contract — Structure Sheet before drafting, 30-feature audit on the finished draft (served in compact form as `VOICE_RULES`) |
 | `llm-council` | every fork, big build, phase gate — **5 advisors one at a time, then 5 peers one at a time** (owner rule 2026-09-08; sequential in any mode — 5-parallel retired, 262k KV contention); record + commit |
