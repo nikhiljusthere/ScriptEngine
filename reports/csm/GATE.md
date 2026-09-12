@@ -67,3 +67,61 @@ non-floor, non-extraction fix-class is green and the queue's remaining open
 rows are all extraction/floor (halt residual 35 = 22 floor + 10 residual +
 3 `r1blast-*` stamps), B writes
 `reports/csm/PHASE_A_COMPLETE_AT_FLOOR.md` and stops.
+---
+
+## P2.1 step-0 — the sanity-100 timer, A17 floor policy, A26 hashes (2026-09-12)
+
+Run by the directing session with **Qwen stopped and the whole card free**
+(31.9 GB), `:8000` on CUDA, one consumer. Tier-0 first: **17,382/17,382
+sentences present in a chunk, 0 unreachable, 100.0000%** (11 link-list
+boilerplate lines excluded).
+
+### A26 — control-arm inputs, frozen before the sweep
+
+| input | value |
+|---|---|
+| `panel_csm.json` stored hash | `e3d737205cd07245a8a3677dc03b0eb1f3c08d43ed7d8ab0b308bf97e73ebe6d` |
+| panel / held-out size | 17,181 / 200 (seed 42, min_words 6) |
+| `panel_csm.json` sha256 | `cf72135fb03ef82cbe3cfeb4d943442d165b6fa8cf1f34058bbcda98c6ab25ec` |
+| `panel_csm.json.heldout.json` sha256 | `604dc8ca14b177701511b73b27d64170de792f3b0d212846f66b2756264124e8` |
+
+A18 satisfied: the qa ledger was wiped to zero before this window (`ba3a866`),
+so the 100 rows in `sweep_qa_e3d73720.jsonl` are a post-P1-engine control arm,
+not a resume of the 572 pre-fix rows stamped `5c424f3`.
+
+### The measurement (100 probes per door, first-run-only `--sanity`)
+
+| door | wall | s/probe | HIT | MISS_DOC | MISS_SPAN | TRUNCATED | full sweep (17,181) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| qa | 50.56 s | **0.506** | **95** | 3 | 2 | 0 | **2.41 h** |
+| narrative | 2.31 s | **0.023** | 35 | 40 | 3 | 22 | 0.11 h |
+| roster | 4.43 s | **0.044** | 2 | 51 | 6 | 41 | 0.21 h |
+| **total** | | | | | | | **2.73 h** |
+
+No dead-door halt fired (all rc=0); roster cleared the zero-hit bar by 2 rows.
+
+### Go/no-go — **GO**
+
+Pre-registered threshold: re-estimate > 2 GPU-days (48 h) ⇒ abort/shrink/council.
+**Measured 2.73 h — 17.6× under budget.** The break-even rate was 3.350 s/probe;
+the worst measured door is 0.506. The 51-GPU-h figure the plan called fiction
+was ~19× too high, because it priced an unmeasured 4 s/probe against what is
+actually 0.506 on a free card. Per-door rates differ by 22×, so the
+no-uniform-rate rule mattered: a uniform estimate off qa alone would have read
+7.2 h.
+
+### A17 — per-door floor policy, declared BEFORE the sweep
+
+- **qa — a regression target.** Bar: JJK's standing band, ≥ 97.5 %. **The
+  sanity window measured 95 % (95/100), which is UNDER that bar** — recorded
+  here as the pre-sweep finding rather than discovered mid-run. The 5 misses
+  (3 MISS_DOC + 2 MISS_SPAN) are the first rows to triage; the full-panel rate
+  decides whether 95 % is the sanity sample or the corpus.
+- **narrative — documented floor, not a regression target.** 35 %. The 22
+  TRUNCATED rows are budget design, not misses.
+- **roster — documented floor, not a regression target.** 2 %. Structurally
+  low-yield on verbatim-line probes exactly as A17 predicted; closure is
+  floor + every residual triaged with class and reason, never "miss file
+  empty".
+
+"Miss file empty" applies to the qa door alone.
