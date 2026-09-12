@@ -20,23 +20,33 @@ The four gates (re-run after every fix-class, before calling it done):
 
 ## Live state
 
-**GREEN at the R-7 identity_fields pass** (P1.2, §9a iter-1 R-7 closure,
-2026-09-12, @`81df799`). All four gates green on CUDA (one-copy 100k dial):
-pytest **1,321** (1,318 R-6 pin + 3 new R-7 tests; the only failures are the
-known env-mcp trio under a stopped :8000, 2 xpassed), eval jjk **31/31**,
-span-recall **48,572 rc=0 + 398/400 (99.5%)**, canon opm **236/236, 10/16
-exact, 79.0%**. R-7 class close re-sweep (council SHIP-AMENDED, A1–A7):
-`csm-char-04` confirmed as the **22nd extraction-gated floor row** (stays
-open; Phase-2 extraction track / 5.4 re-adjudication); `r1blast-tokyo`
-live re-probed (qa→roster, 5/5 divisions, 0 new misses);
-`r1blast-blizzard`/`r1blast-marines` held by gate-4 baseline-identity (direct
-re-probes skipped by council — no onepiece standing gate; the R-7 hunk is
-CSM-scoped). Queue unchanged: open 35 / closed 23 / total 58
-(rows_closed_this_unit 0, by design). Raw receipts:
-`reports/csm/receipts/r7_gate_window.md` + `r7_class_resweep.md` +
-`r7_council/{advisors,chairman}.md` + `reports/2026-09-11-2135/REPORT.md`
-(gate-4); commit hashes in `reports/master-work/work_log.md` (2026-09-12 gate
-line).
+**GREEN at the P1.4 four-gate copy** (P1.4 close, 2026-09-12, @`407c016`;
+copy stamp commit `af382ee`). All four gates re-run green on CUDA (one-copy
+100k dial): pytest **1,321** (1,316 passed + 3 known env-mcp trio failures
+under a stopped :8000, 2 xpassed), eval jjk **31/31**, span-recall **48,572
+rc=0 + 398/400 (99.5%)**, canon opm **236/236, 10/16 exact, 79.0%** (run dir
+`reports/2026-09-11-2218/`). The env-mcp trio was live-proven 2/3 against a
+running :8000 (the 1 failure is a **REAL pre-existing finding**: bare
+character name "Maki Zenin" routes `qa` via `router.py:809-812`, mismatching
+the test's narrative intent; the mismatch predates the test by a month —
+deferred to P1.5, not a campaign regression; the gate-1 pin stays 1,321).
+**5.4 re-adjudication (council R6):** 34 s one-copy census re-run (CUDA,
+co-located with Qwen, 33 s, RC=0, Qwen alive) — 21/21 reds identical to the
+09-09 run, **0 closed, 0 new regressions** => no de-scope; the 22-row
+extraction-gated floor stands in full (21 `csm-dim-*` + `csm-char-04`), the
+5.4 gate stays LIVE, P2.3 stays in scope. Raw receipts:
+`reports/csm/receipts/census_5_4_readjudication_p14.md` (this run overwrote
+`census_dimensions_csm_results.jsonl` in place; the 09-09 version is in git
+at `af382ee`) + `reports/2026-09-11-2218/` (gate-4) +
+`reports/span-recall/jjk/recall_verbatim.jsonl` (gate-3 live) +
+`GATE_LEDGER.json` `p14_close_copy` + drift D24. **Bar-audit pre-registration
+(close condition d):** `reports/csm/bar_audit_p14_preregistered.json` — 26
+panel-line cases over the 6 D6 classes (3–5 each), 78/78 expect terms
+verbatim-verified vs `series/csm/facts.db` (model-free, authoring subagent,
+receipt `reports/csm/receipts/bar_audit_p14_author.md`).
+
+Previous live state (R-7 @`81df799`, queue 35 open / 23 closed) stands in
+`GATE_LEDGER.json` + drift D22; its receipts are unchanged.
 
 **Machine-readable ledger-of-record v1:** `reports/csm/GATE_LEDGER.json` —
 read it *first* after a reboot; if `HEAD == last_green.commit` the four gates

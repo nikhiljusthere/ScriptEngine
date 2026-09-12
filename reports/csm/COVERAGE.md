@@ -9,18 +9,18 @@
 > (`scriptengine/eval/page_gen.py`) — lowercase, non-alphanumeric runs
 > become `_` (so `&` collapses away).
 >
-> Generated: 2026-09-08
+> Generated: 2026-09-12
 
 ## Headline
 
-**0 / 537 pages covered (0.0%) · 0 active questions** across the committed batches.
+**175 / 537 pages covered (32.6%) · 1,260 active questions** across the committed batches.
 
 ## Per-type coverage
 
 | page_type | pages | covered | % | questions |
 |---|---:|---:|---:|---:|
 | chapter_box | 232 | 0 | 0.0% | 0 |
-| character | 175 | 0 | 0.0% | 0 |
+| character | 175 | 175 | 100.0% | 1,260 |
 | volume_box | 26 | 0 | 0.0% | 0 |
 | character_history | 22 | 0 | 0.0% | 0 |
 | music | 20 | 0 | 0.0% | 0 |
@@ -32,7 +32,7 @@
 | establishment | 3 | 0 | 0.0% | 0 |
 | anime | 2 | 0 | 0.0% | 0 |
 | saga_box | 2 | 0 | 0.0% | 0 |
-| **TOTAL** | **537** | **0** | 0.0% | **0** |
+| **TOTAL** | **537** | **175** | 32.6% | **1,260** |
 
 ## In-scope content remainder
 
@@ -43,13 +43,12 @@ meta/release pages are out of scope.
 
 | source | pages |
 |---|---:|
-| character | 175 |
 | character_history | 22 |
 | episode | 12 |
 | organization | 11 |
 | establishment | 3 |
 | `unknown` (Aging's World, Contract, Hell, World) | 4 |
-| **total** | **227** |
+| **total** | **52** |
 
 ## Uncovered titles
 
@@ -287,184 +286,6 @@ meta/release pages are out of scope.
 - Chapter 97
 - Chapter 98
 - Chapter 99
-
-### character (175)
-
-- AIDS Devil
-- Accident Devil
-- Aging Devil
-- Aging Devil's Victim
-- Akane Sawatari
-- Aki Hayakawa
-- Aldo
-- Angel Devil
-- Arnolone Syndrome Devil
-- Asa Mitaka
-- Asa Mitaka's Father
-- Asa Mitaka's Mother
-- Asa Mitaka's caretaker
-- Barem Bridge
-- Bat Devil
-- Beam
-- Bitterness Devil
-- Bucky
-- Car Devil
-- Carpenter Bee Devil
-- Centipede Devil
-- Chocolate
-- Class President
-- Claw Devil
-- Cockroach Devil
-- Coffee Devil
-- Cosmo
-- Crambon
-- Curse Devil
-- Darkness Devil
-- Death Devil
-- Debt Collector
-- Denji
-- Denji's Father
-- Devil
-- Devil Hunter
-- Division 2 Vice Captain
-- Division 4 Female Member
-- Division 4 Male Member
-- Doll Devil
-- Dominion
-- Ear Devil
-- Equality Devil
-- Eternity Devil
-- Fairness Devil
-- Fake Chainsaw Man
-- Falling Devil
-- Fami
-- Famine Devil
-- Fiend
-- Fire Devil
-- Fish Devil
-- Fox Devil
-- Frog Devil
-- Fumiko Mifune
-- Furio
-- Furuno
-- Fushi
-- Future Devil
-- Galgali
-- Ghost Devil
-- Grape Devil
-- Gravity Devil
-- Guillotine Devil
-- Gun Devil
-- Hadaji Sakagami
-- Haruka Iseumi
-- Hell Devil
-- Himeno
-- Hirofumi Yoshida
-- Hirokazu Arai
-- House Devil
-- Hybrid
-- Joey
-- Justice Devil
-- Kanbayashi
-- Katana Man
-- Kato
-- Kentaro Ishita
-- Kenzo
-- Kishibe
-- Knife Devil
-- Kobeni Higashiyama
-- Kobeni's car
-- Kusakabe
-- Leech Devil
-- Legs Devil
-- Light of a Star That Breaks Children's Minds Devil
-- Lion Devil
-- Locust Devil
-- Loneliness Fiend
-- Long
-- Madoka
-- Makima
-- Mannequin Devil
-- Mantis Devil
-- Marshmallow Devil
-- Masaki Ando
-- Meowy
-- Michiko Tendo
-- Miki Takanashi
-- Minami Nakano
-- Miri Sugo
-- Mold Devil
-- Moon Devil
-- Moray Eel Devil
-- Mount Hio Eruption Devil
-- Mouth Devil
-- Muscle Devil
-- Mysterious Man
-- Nail Fiend
-- Nakamura
-- Nayuta
-- Nazi Devil
-- Needle Devil
-- Nobana Higashiyama
-- Nomo
-- Nuclear Weapons Devil
-- Octopus Devil
-- People Devil
-- Pig Devil
-- Pillbug Devil
-- Pingtsi
-- Pochita
-- Power
-- Princi
-- Punishment Devil
-- Quanxi
-- Reze
-- SOA Devil
-- STD Devil
-- Santa Claus
-- Sato
-- Sato (Buddy Stories)
-- Sea Cucumber Devil
-- Seigi Akoku
-- Seraphim
-- Shiina
-- Shin Toma
-- Shinohara
-- Shuzo Mishima
-- Sickness Devil
-- Sixth Sense Devil
-- Skin Devil
-- Snake Devil
-- Snow Devil
-- Spear Hybrid
-- Stag Beetle Devil
-- Stone Devil
-- Subaru
-- Suicide Devil
-- Tadashi Hasegawa
-- Taiyo Hayakawa
-- Takagi
-- Takashi Inoue
-- Tamaoki
-- Tanabe
-- Tanaka
-- Tank Devil
-- Teeth Devil
-- Tolka
-- Tomato Devil
-- Tomono
-- Trauma Devil
-- Tsugihagi
-- Typhoon Devil
-- Virtue
-- Whip Hybrid
-- World War II Devil
-- Yokota
-- Yoru
-- Yuki Tomoda
-- Yuko
-- Yutaro Kurose
-- Zombie Devil
 
 ### volume_box (26)
 

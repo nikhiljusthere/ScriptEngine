@@ -59,5 +59,14 @@
       "root_cause": "Pre-existing test/router mismatch, NOT a campaign regression: the router's bare-name->qa rule (router.py:809-812, 'a bare name is a lookup, not a story') landed in 8d07487 (2026-08-03, 'Route to three destinations, not two'); the test landed in d531329 (2026-09-03) expecting narrative for a bare character name. It was hidden for a month behind 'needs a live :8000' (in W1 it always fails with a ConnectError and is counted as an 'env' failure); the W2 live proof exposed the real cause.",
       "disposition": "Deferred to P1.5 (MCP bridge, the natural home for an MCP-door bug). The gate-1 pin (1,321) is UNCHANGED — the pin is defined under W1 (:8000 down) where all three fail with a connection error. Not a P1.4 close condition (a)-(e)."
     }
+  },
+  "p14_close": {
+    "ts": "2026-09-12T11:51:10+05:30",
+    "council": "#29 (reports/csm/COUNCIL_csm_p14_close.md) — CONDITIONAL APPROVE; all three on-disk conditions landed in the close commit (rulings file + substantive marker + PHASE_A_COMPLETE_AT_FLOOR.md, same commit)",
+    "marker": "reports/master-work/phase_status.txt PHASE_A_COMPLETE 2026-09-12T11:51:10+05:30 (substance: gate head 407c016 + the four receipt paths + this file's sha256 + floor 22 + rulings path + denominator caveat + env-mc known open)",
+    "floor": "22 extraction-gated rows (21 csm-dim-* + csm-char-04 R-7x); halt meter 33/33 fixable, (c)=0; 35 open = 22 floor + 10 stamped-residual + 3 r1blast stamps",
+    "rulings": "reports/csm/CLOSE_COUNCIL_RULINGS_Q1_Q4.md — Q1 No (widen census to the 5 in-scope page types), Q2 No (size the pool to the 376 ability rows), Q3 Yes (re-gate the P2.3 null branch on the widened census), Q4 Yes alongside P2.1 (175/537, 1,260 q, remainder 52), Q5 out-of-gate (D-only: in-parts long-prose = Phase-2 scope item)",
+    "env_mc": "deferred to P1.5; test-side fix (expect qa per the router's documented bare-name rule, router.py:809-812 / 8d07487); pin 1,321 unchanged",
+    "phase2_gate": "verify this file's sha256 (as recorded in the marker) + the 22-row floor before any panel spend; P2.1 step-0 on-disk re-estimate (17,181 x measured s/probe per door + A17 floor policy) precedes the go"
   }
 }

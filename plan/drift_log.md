@@ -1043,3 +1043,68 @@ entry.
 - **NEXT:** the 34 s one-copy 5.4 re-adjudication of the 22-row floor →
   P2.2 bar-audit pull-in → close conditions (a)–(e) + the P1.4 close council
   → `PHASE_A_COMPLETE_AT_FLOOR` marker → Phase 2 (P2.1 step 0).
+
+### D25 — CSM P1.4 close council (#29) + `PHASE_A_COMPLETE_AT_FLOOR` marker (2026-09-12, opencode)
+- 11-member council (5 advisors + 5 reviewers + chairman) on the P1.4 close:
+  evidence = four-gate copy @`407c016` ALL GREEN (ledger `p14_close_copy`,
+  run dir `reports/2026-09-11-2218/`) + 5.4 re-adjudication (21R/39G of 60,
+  red-ID set identical to 09-09, 0 closed / 0 new) + P2.2 bar-audit pull-in
+  (26 cases / 78 expect terms, model-free) + close conditions (a)–(e) on disk
+  + pre-registered Q1–Q5. All 10 members ran **in parallel** (owner directive
+  2026-09-12: "council's all 5 at a time"); the batches expired before
+  capture → the 10 finals were **restored verbatim from opencode.db session
+  transcripts** (`/tmp/opencode/council_close/`; letter↔session map in
+  `receipts/council_p14_close/{advisors,reviews}.md`; one cancelled 4-line
+  early advisor run discarded + noted). Chairman = single fresh-context
+  subagent (`ses_f6bbd1bddffehoEVKHeI8xZNWH`), zero-GPU/read-only, every
+  load-bearing claim re-verified against disk.
+- **Verdict: CONDITIONAL APPROVE** — 3 model-free on-disk conditions, all
+  landed in the close commit: (1) `CLOSE_COUNCIL_RULINGS_Q1_Q4.md` (Q1 No —
+  widen the 60-q character-only census to the 5 in-scope page types, P2.1
+  entry condition; Q2 No — 10 q vs 376 ability rows, size the pool to the
+  rows; Q3 Yes — re-gate the P2.3 null branch on the widened census; Q4 Yes —
+  the per-page campaign runs **alongside** P2.1, already at 175/537 (32.6%),
+  1,260 q, remainder 52; Q5 D-only, recorded explicitly out-of-gate: in-parts
+  long-prose = Phase-2 scope item); (2) the `PHASE_A_COMPLETE <ts>` marker in
+  `reports/master-work/phase_status.txt` **with substance** (head `407c016` +
+  the four receipt paths + ledger sha256 + floor 22 + rulings path +
+  denominator caveat + env-mc known open — not a boolean, A20/E2); (3)
+  `reports/csm/PHASE_A_COMPLETE_AT_FLOOR.md` in the same commit.
+- **Contradictions formally resolved** (chairman): B's `af382ee` misquote
+  (ledger `p14_close_copy.head` = `407c016`, the P1.3-finalize commit;
+  `af382ee` = the later doc-only stamp, zero gate-relevant diff); A's two
+  HOLD grounds refuted on disk (queue arithmetic 58 = 22+33+3 / 35 = 22+10+3;
+  the 200-row held-out leg IS declared in `heldout_declaration_csm.md`
+  A24/A26); R3's error on that same declared leg; E's 1,321→1,324 re-pin
+  incoherent (1,321 is the W1 collect count with the trio failing on
+  connection errors; the fix adds no tests; **pin stays 1,321**).
+- **22-vs-21 reconciled:** 22-row floor = 21 `csm-dim-*` (1:1 with the 21
+  census reds re-verified in the 5.4 pass) + `csm-char-04` (R-7x, not in the
+  60-q census; floor-confirmed by the R-7 close re-sweep,
+  `receipts/r7_class_resweep.md`).
+- **env-mc disposition (P1.5):** test-side fix — correct the test's narrative
+  expectation to `qa` (the router's documented bare-name→`qa` rule,
+  `router.py:809-812`, `8d07487`); router-side forbidden mid-wave (JJK
+  baseline-freeze); P1.5 exit = live proof 3/3 with `:8000` up + ledger note;
+  no re-pin.
+- **P2.1 step-0 gate (post-marker, on disk before any panel hour):** 51-GPU-h
+  is double-stale (17,181×3 at an unmeasured 4 s/probe JJK figure = fiction;
+  on-disk ceiling 8.5 s/probe CPU@150k ≈122 h; the A17 per-door floor policy
+  is not yet on disk). P2.1 step-0: per-door sanity-100 → re-estimate
+  17,181 × measured s/probe per door into `reports/csm/GATE.md` + record the
+  A17 floor policy pre-sweep → go/no-go (>2 GPU-days ⇒ abort/shrink/council).
+- **No Qwen-switch chain in the close act** (R5 point (b) rejected by the
+  chairman): the plan's single dial switch was already executed (D20
+  262k→100k; owner-directed 262k→122880/120k at `81df799`); the "100k dial"
+  heading is a stale label for the 120k dial. The close is a zero-GPU,
+  model-free marker act at the live 122880 dial.
+- **Gates:** no re-run owed (all four green @`407c016` stand via ledger
+  `p14_close_copy`; the close act is doc-only).
+- **Stamps:** `GATE_LEDGER.json` +`p14_close` (marker ts + ledger sha256 +
+  floor 22 + rulings path); `PHASE_A_COMPLETE_AT_FLOOR.md`; the
+  `PHASE_A_COMPLETE <ts>` marker in `reports/master-work/phase_status.txt`;
+  `COUNCIL_HISTORY.md` #29; `work_log.md` B-append; this entry.
+- **NEXT:** Phase 2 — restart `:8000` in a Qwen quiet window → P2.1 step-0
+  per-door sanity-100 + on-disk re-estimate → go/no-go → 200-row held-out leg
+  → P2.3 extraction (closes the 22 floor rows; per Q3, re-gate the null
+  branch on the widened census).

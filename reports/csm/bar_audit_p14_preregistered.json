@@ -1,0 +1,541 @@
+{
+  "meta": {
+    "series": "csm",
+    "generated": "2026-09-12",
+    "spec": "plan/CSM_2PHASE_PLAN.md P2.2/A21 (close condition d, pre-marker)",
+    "classes": [
+      "arc-narrative",
+      "abilities",
+      "state-over-time",
+      "appearance",
+      "causality",
+      "personality"
+    ],
+    "cases_per_class": "<3-5>",
+    "panel_source": "reports/csm/panel_csm.json (17,181 panel lines; hash e3d737205cd07245a8a3677dc03b0eb1f3c08d43ed7d8ab0b308bf97e73ebe6d)",
+    "expect_verified": "all 78 terms verbatim in series/csm/facts.db (sections.text + facts.value + abilities.name + documents.title), checked 2026-09-12",
+    "purpose": "pre-registered oracle: P2.2 grades these mechanically per JJK 3b (\">=2 of 3 expect terms in the served bundle => GREEN\") against the panel 400-gate control arm; re-grades only if P2.1's misses change a dimension"
+  },
+  "items": [
+    {
+      "id": "csm-bar-arcn-01",
+      "class": "arc-narrative",
+      "subject": "Denji",
+      "q": "What happened to Denji during the War Devil arc, in order?",
+      "expect": [
+        "After Yoru manages to emerge victorious, she attempts to turn Pochita into a weapon.",
+        "A guilt-ridden Denji reverts back to his human form and is sent falling upwards into the sky.",
+        "After transforming, Denji watches Yoru readying herself to kill more civilians and attempts to distract her with thoughts of food."
+      ],
+      "panel_line": [
+        "Denji/History",
+        "Synopsis / Academy Saga / War Devil arc",
+        "After Yoru manages to emerge victorious, she attempts to turn Pochita into a weapon."
+      ],
+      "source": {
+        "page": "Denji/History",
+        "section": "Synopsis / Academy Saga / War Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-arcn-02",
+      "class": "arc-narrative",
+      "subject": "Yoru",
+      "q": "What happened to Yoru during the War Devil arc, in order?",
+      "expect": [
+        "After forcibly giving Denji another kiss and questioning if he wants sex, Yoru makes a proposal that if he defeats the Death Devil, he can have sex with her.",
+        "After that short win, Yoru tears up, hesitating—questioning if she \"forgot something\", while off-guard, Falling Devil twists her arms by force manipulation but she manages to counter-attack and blow up Falling Devil's torso in to pieces.",
+        "After sacrificing the people of Oregon, Yoru slashes at Pochita with her blade, cleaving through the Chainsaw Devil and tearing apart the battlefield around them."
+      ],
+      "panel_line": [
+        "Yoru/History",
+        "Synopsis / Academy Saga / War Devil arc",
+        "After forcibly giving Denji another kiss and questioning if he wants sex, Yoru makes a proposal that if he defeats the Death Devil, he can have sex with her."
+      ],
+      "source": {
+        "page": "Yoru/History",
+        "section": "Synopsis / Academy Saga / War Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-arcn-03",
+      "class": "arc-narrative",
+      "subject": "Power",
+      "q": "What happened to Power during the International Assassins arc, in order?",
+      "expect": [
+        "Denji is happy to be seen on TV, while Makima is visibly infuriated, and comments on the prospect of Reze fulfilling her task and talks about how other countries are going to want to steal his heart.",
+        "Denji gets back up, and wonders if Power and the rest of the Devil Hunters are okay and tells Santa Claus she will get it for sending them to Hell.",
+        "Aki suggests she can drink Denji's blood after they handle the assassins."
+      ],
+      "panel_line": [
+        "Power/History",
+        "Synopsis / Public Safety Saga / International Assassins arc",
+        "Denji is happy to be seen on TV, while Makima is visibly infuriated, and comments on the prospect of Reze fulfilling her task and talks about how other countries are going to want to steal his heart."
+      ],
+      "source": {
+        "page": "Power/History",
+        "section": "Synopsis / Public Safety Saga / International Assassins arc"
+      }
+    },
+    {
+      "id": "csm-bar-arcn-04",
+      "class": "arc-narrative",
+      "subject": "Chainsaw Man Church",
+      "q": "What happened to the Chainsaw Man Church during the War Devil arc, in order?",
+      "expect": [
+        "Asa then shoots herself in the head at the same moment Miri Sugo slices Yoru in half, while the Death Devil summons the Guillotine Devil to shred Yoru’s body.",
+        "After their conversation is over, he tells him that he's a switch, as the school is engulfed in an explosion.",
+        "A bandaged student comes and tries to cheer her up and asks her to help them with the school festival."
+      ],
+      "panel_line": [
+        "Chainsaw Man Church",
+        "Plot / War Devil arc",
+        "Asa then shoots herself in the head at the same moment Miri Sugo slices Yoru in half, while the Death Devil summons the Guillotine Devil to shred Yoru’s body."
+      ],
+      "source": {
+        "page": "Chainsaw Man Church",
+        "section": "Plot / War Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-arcn-05",
+      "class": "arc-narrative",
+      "subject": "Fake Chainsaw Man",
+      "q": "What happened to the Fake Chainsaw Man during the War Devil arc, in order?",
+      "expect": [
+        "Although confused by how easy it was to take down \"Death\" herself, the imposter assures himself that he did the right thing.",
+        "Believing him to be another Pseudo-Chainsaw person, Yoru attempts to shoot his head off but the imposter deflects the gunshot right into a building above him.",
+        "Both Famine and the Fake Chainsaw Man attempt to convince Death to stop her madness, not wanting humanity to perish."
+      ],
+      "panel_line": [
+        "Fake Chainsaw Man",
+        "Plot / War Devil arc",
+        "Although confused by how easy it was to take down \"Death\" herself, the imposter assures himself that he did the right thing."
+      ],
+      "source": {
+        "page": "Fake Chainsaw Man",
+        "section": "Plot / War Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-abl-01",
+      "class": "abilities",
+      "subject": "Pochita",
+      "q": "Every ability of Pochita",
+      "expect": [
+        "Body Assimilation: Pochita can fuse with a human body, restoring it to full health in the process.",
+        "Devil Erasure",
+        "Chain Entanglement"
+      ],
+      "panel_line": [
+        "Pochita",
+        "Abilities / Devil Powers",
+        "Body Assimilation: Pochita can fuse with a human body, restoring it to full health in the process."
+      ],
+      "source": {
+        "table": "abilities",
+        "character": "Pochita"
+      }
+    },
+    {
+      "id": "csm-bar-abl-02",
+      "class": "abilities",
+      "subject": "Power",
+      "q": "Every ability of Power",
+      "expect": [
+        "Blood Manipulation: Power can freely manipulate the blood in her body to form weapons.(Chapter 5)",
+        "Blood Axe",
+        "Blood Transfer"
+      ],
+      "panel_line": [
+        "Power",
+        "Abilities / Devil Powers",
+        "Blood Manipulation: Power can freely manipulate the blood in her body to form weapons.(Chapter 5)"
+      ],
+      "source": {
+        "table": "abilities",
+        "character": "Power"
+      }
+    },
+    {
+      "id": "csm-bar-abl-03",
+      "class": "abilities",
+      "subject": "Falling Devil",
+      "q": "Every ability of the Falling Devil",
+      "expect": [
+        "Gravity Manipulation: The Falling Devil can selectively manipulate gravity on herself, the environment, multiple objects or individual people.",
+        "Area Denial",
+        "Levitation"
+      ],
+      "panel_line": [
+        "Falling Devil",
+        "Abilities / Devil Powers",
+        "Gravity Manipulation: The Falling Devil can selectively manipulate gravity on herself, the environment, multiple objects or individual people."
+      ],
+      "source": {
+        "table": "abilities",
+        "character": "Falling Devil"
+      }
+    },
+    {
+      "id": "csm-bar-abl-04",
+      "class": "abilities",
+      "subject": "Death Devil",
+      "q": "Every ability of the Death Devil",
+      "expect": [
+        "Death herself possesses all the standard Devil abilities.",
+        "Absolute Immortality",
+        "Resurrection"
+      ],
+      "panel_line": [
+        "Death Devil",
+        "Abilities",
+        "Death herself possesses all the standard Devil abilities."
+      ],
+      "source": {
+        "table": "abilities",
+        "character": "Death Devil"
+      }
+    },
+    {
+      "id": "csm-bar-state-01",
+      "class": "state-over-time",
+      "subject": "Nayuta",
+      "q": "What was true of Nayuta during the Control Devil arc?",
+      "expect": [
+        "By then, she abandons Makima's plans of bringing out Pochita and instead lives out her life with Denji and their pets.(Chapter 155)",
+        "However, as time passed by, Nayuta realizes that she genuinely enjoys spending time with Denji as his little sister.",
+        "She even begins to adopt many of Denji's mannerisms and develops a protective instinct towards him."
+      ],
+      "panel_line": [
+        "Nayuta/History",
+        "Synopsis / Public Safety Saga / Control Devil arc",
+        "By then, she abandons Makima's plans of bringing out Pochita and instead lives out her life with Denji and their pets.(Chapter 155)"
+      ],
+      "source": {
+        "page": "Nayuta/History",
+        "section": "Synopsis / Public Safety Saga / Control Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-state-02",
+      "class": "state-over-time",
+      "subject": "Power",
+      "q": "What was true of Power during the Control Devil arc?",
+      "expect": [
+        "Denji and Power are left alone with half of Aki’s money in a new apartment, which he left to Denji, spending it on food to cope with Aki’s demise.",
+        "Denji and Power are seen playing video games and watching movies, before Denji goes out shopping for him and Power, after which he is met up by Makima, who invites him to her apartment.(Chapter 80)",
+        "Before disappearing, Power tells Denji that even if a devil dies, it'll always just be revived in Hell and be reincarnated in the surface world again."
+      ],
+      "panel_line": [
+        "Power/History",
+        "Synopsis / Public Safety Saga / Control Devil arc",
+        "Denji and Power are left alone with half of Aki’s money in a new apartment, which he left to Denji, spending it on food to cope with Aki’s demise."
+      ],
+      "source": {
+        "page": "Power/History",
+        "section": "Synopsis / Public Safety Saga / Control Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-state-03",
+      "class": "state-over-time",
+      "subject": "Kobeni Higashiyama",
+      "q": "What was true of Kobeni Higashiyama during the Eternity Devil arc?",
+      "expect": [
+        "After waiting over the course of three days for the battle between Denji and the Eternity Devil to be over, Kobeni sits in the corner in an exhausted state.(Chapter 19)",
+        "Aki questioned Himeno on the two newcomers and Himeno stated that Kobeni was pretty talented but also timid.(Chapter 14)",
+        "Inside the hotel, Kobeni follows the others while growing more nervous and muttering to herself."
+      ],
+      "panel_line": [
+        "Kobeni Higashiyama/History",
+        "Synopsis / Eternity Devil arc",
+        "After waiting over the course of three days for the battle between Denji and the Eternity Devil to be over, Kobeni sits in the corner in an exhausted state.(Chapter 19)"
+      ],
+      "source": {
+        "page": "Kobeni Higashiyama/History",
+        "section": "Synopsis / Eternity Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-state-04",
+      "class": "state-over-time",
+      "subject": "Denji",
+      "q": "What was true of Denji during the Bat Devil arc?",
+      "expect": [
+        "Denji also agrees with Aki on forgetting about the Bat Devil incident, and plays dumb to prevent Power from being executed.",
+        "Denji recovers in a hospital room and learns from Aki that Devil Hunters make contracts with devils, giving up parts of their bodies for power.",
+        "Denji initially isn’t interested in helping Power until being promised that he could touch her chest if he helps her out.(Chapter 5)"
+      ],
+      "panel_line": [
+        "Denji/History",
+        "Synopsis / Public Safety Saga / Bat Devil arc",
+        "Denji also agrees with Aki on forgetting about the Bat Devil incident, and plays dumb to prevent Power from being executed."
+      ],
+      "source": {
+        "page": "Denji/History",
+        "section": "Synopsis / Public Safety Saga / Bat Devil arc"
+      }
+    },
+    {
+      "id": "csm-bar-appr-01",
+      "class": "appearance",
+      "subject": "Asa Mitaka",
+      "q": "What does Asa Mitaka look like?",
+      "expect": [
+        "Asa is a high school girl of average height.",
+        "She has dark blue eyes that are usually pitch dark, though the irises become much brighter in some situations.",
+        "Her hair is black and is sometimes colored with a brown tint."
+      ],
+      "panel_line": [
+        "Asa Mitaka",
+        "Appearance",
+        "Asa is a high school girl of average height."
+      ],
+      "source": {
+        "page": "Asa Mitaka",
+        "section": "Appearance"
+      }
+    },
+    {
+      "id": "csm-bar-appr-02",
+      "class": "appearance",
+      "subject": "Fumiko Mifune",
+      "q": "What does Fumiko Mifune look like?",
+      "expect": [
+        "Fumiko Mifune is a jolly young woman with short black hair.",
+        "Fumiko's eyes are unusually large with giant black irises, containing a red circle within them.",
+        "Her hair has a rather unkempt appearance though her bangs are tied into two ponytails at each side of her face."
+      ],
+      "panel_line": [
+        "Fumiko Mifune",
+        "Appearance",
+        "Fumiko Mifune is a jolly young woman with short black hair."
+      ],
+      "source": {
+        "page": "Fumiko Mifune",
+        "section": "Appearance"
+      }
+    },
+    {
+      "id": "csm-bar-appr-03",
+      "class": "appearance",
+      "subject": "Santa Claus",
+      "q": "What does Santa Claus look like?",
+      "expect": [
+        "Santa Claus’s main body is presumed to be a dark blue-haired, green eyed woman with a mole under her eye.",
+        "She also grew horns just like the Darkness Devil has and sharp teeth.",
+        "She has 40 eyes on her monstrous form in total, with 10 arms at day and even more arms at night."
+      ],
+      "panel_line": [
+        "Santa Claus",
+        "Appearance",
+        "Santa Claus’s main body is presumed to be a dark blue-haired, green eyed woman with a mole under her eye."
+      ],
+      "source": {
+        "page": "Santa Claus",
+        "section": "Appearance"
+      }
+    },
+    {
+      "id": "csm-bar-appr-04",
+      "class": "appearance",
+      "subject": "Locust Devil",
+      "q": "What does the Locust Devil look like?",
+      "expect": [
+        "The Locust Devil appears as a tall, broad-shouldered humanoid with a heavily segmented, insect-like body.",
+        "Four large, rigid wings resembling those of a locust extend from its back.",
+        "Its head is small relative to its torso and lacks distinct human features, instead resembling an insectoid mask, and a pair of long, thin antennae extend from its head, further emphasizing its insectoid nature."
+      ],
+      "panel_line": [
+        "Locust Devil",
+        "Appearance",
+        "The Locust Devil appears as a tall, broad-shouldered humanoid with a heavily segmented, insect-like body."
+      ],
+      "source": {
+        "page": "Locust Devil",
+        "section": "Appearance"
+      }
+    },
+    {
+      "id": "csm-bar-caus-01",
+      "class": "causality",
+      "subject": "Denji",
+      "q": "Why did Denji kill his father?",
+      "expect": [
+        "At some point, Denji killed his father out of self-defense, as the latter was in a drunken aggressive state and he feared for his life.",
+        "Due to the sheer trauma gained from killing his own father, Denji began to repress this memory behind a psychological barrier, which took on the form of a closed door.(Chapter 82)",
+        "Seeing the injuries Pochita has suffered from, Denji decides to save him by offering him some of his blood."
+      ],
+      "panel_line": [
+        "Denji/History",
+        "Synopsis / History",
+        "At some point, Denji killed his father out of self-defense, as the latter was in a drunken aggressive state and he feared for his life."
+      ],
+      "source": {
+        "page": "Denji/History",
+        "section": "Synopsis / History"
+      }
+    },
+    {
+      "id": "csm-bar-caus-02",
+      "class": "causality",
+      "subject": "Yoru",
+      "q": "Why did Yoru come to Earth?",
+      "expect": [
+        "This drove her to Earth where she would begin searching for a new body to possess in a last-ditch effort to save herself, as well as getting her revenge on Chainsaw Man.(Chapter 104)",
+        "Eventually Yoru got to the point where she was under real threat of being completely forgotten about which would mean permanent death for her.",
+        "Because of this, there hasn't been a single war since \"the world war\" which further diminished her strength."
+      ],
+      "panel_line": [
+        "Yoru/History",
+        "Synopsis / History",
+        "This drove her to Earth where she would begin searching for a new body to possess in a last-ditch effort to save herself, as well as getting her revenge on Chainsaw Man.(Chapter 104)"
+      ],
+      "source": {
+        "page": "Yoru/History",
+        "section": "Synopsis / History"
+      }
+    },
+    {
+      "id": "csm-bar-caus-03",
+      "class": "causality",
+      "subject": "Crambon",
+      "q": "Why did Asa's caretaker kill Crambon?",
+      "expect": [
+        "It turned out that the caretaker had lied to Asa and killed Crambon because she was jealous that Asa still had someone she considered family.(Chapter 123)",
+        "There, her caretaker, whose mother also (allegedly) died because of the Typhoon Devil, convinced her to give Crambon away to give him a happier home.",
+        "However, another orphan later told Asa that the children found Crambon drowned in a river."
+      ],
+      "panel_line": [
+        "Crambon",
+        "Plot / History",
+        "It turned out that the caretaker had lied to Asa and killed Crambon because she was jealous that Asa still had someone she considered family.(Chapter 123)"
+      ],
+      "source": {
+        "page": "Crambon",
+        "section": "Plot / History"
+      }
+    },
+    {
+      "id": "csm-bar-caus-04",
+      "class": "causality",
+      "subject": "Gun Devil",
+      "q": "Why has the worldwide fear of guns increased?",
+      "expect": [
+        "Due to heavy media coverage of gun crimes in every country, worldwide fear of guns has increased drastically.(Chapter 13)",
+        "This led to an increase in gun use during crimes and civil revolts.",
+        "An international law has been prepared to strictly control the manufacturing of arms in every country to lower the fear of guns.(Chapter 73)"
+      ],
+      "panel_line": [
+        "Gun Devil",
+        "Plot / History",
+        "Due to heavy media coverage of gun crimes in every country, worldwide fear of guns has increased drastically.(Chapter 13)"
+      ],
+      "source": {
+        "page": "Gun Devil",
+        "section": "Plot / History"
+      }
+    },
+    {
+      "id": "csm-bar-caus-05",
+      "class": "causality",
+      "subject": "Makima",
+      "q": "Why did Makima capture the Angel Devil?",
+      "expect": [
+        "Following this incident, Makima had the Angel Devil captured and enlisted him as a member of Public Safety.(Chapter 42)",
+        "While the Angel Devil initially refused as it would mean siphoning the lifespan of others, Makima ordered him to do so and forced him to unconsciously siphon the lives of everyone within his village.(Chapter 74)",
+        "At another point in time, Makima traveled to a coastal village and encountered the Angel Devil, and requested that he show her his power."
+      ],
+      "panel_line": [
+        "Makima/History",
+        "Synopsis / History",
+        "Following this incident, Makima had the Angel Devil captured and enlisted him as a member of Public Safety.(Chapter 42)"
+      ],
+      "source": {
+        "page": "Makima/History",
+        "section": "Synopsis / History"
+      }
+    },
+    {
+      "id": "csm-bar-pers-01",
+      "class": "personality",
+      "subject": "Denji",
+      "q": "What is Denji's personality like?",
+      "expect": [
+        "Denji is both brash and naïve as a result of being unable to have a formal education and socialize due to living in severe poverty, making him generally crass and vulgar.",
+        "Denji also harbors a fear that his seeming lack of empathy and attachment after his transformation is a sign that he is losing his sense of humanity.",
+        "Due to his desire to have intercourse with a woman, he generally treats women with more kindness and respect than men."
+      ],
+      "panel_line": [
+        "Denji",
+        "Personality",
+        "Denji is both brash and naïve as a result of being unable to have a formal education and socialize due to living in severe poverty, making him generally crass and vulgar."
+      ],
+      "source": {
+        "page": "Denji",
+        "section": "Personality"
+      }
+    },
+    {
+      "id": "csm-bar-pers-02",
+      "class": "personality",
+      "subject": "Asa Mitaka",
+      "q": "What is Asa Mitaka's personality like?",
+      "expect": [
+        "Asa is a quiet and unsociable girl, who dislikes her classmates, frequently wishing they would drop dead and spurning any offers of friendship.(Chapter 98)",
+        "Asa is fairly altruistic, putting herself in harm's way to save others even when she is afraid.",
+        "Asa later admits to herself that her mean-spirited attitude towards her peers was a result of jealousy and a lack of belonging."
+      ],
+      "panel_line": [
+        "Asa Mitaka",
+        "Personality",
+        "Asa is a quiet and unsociable girl, who dislikes her classmates, frequently wishing they would drop dead and spurning any offers of friendship.(Chapter 98)"
+      ],
+      "source": {
+        "page": "Asa Mitaka",
+        "section": "Personality"
+      }
+    },
+    {
+      "id": "csm-bar-pers-03",
+      "class": "personality",
+      "subject": "Power",
+      "q": "What is Power's personality like?",
+      "expect": [
+        "Power is an insatiable glutton, eating all of the stored food that the team needed in order to survive the Eternity Devil's trap and hoarding food for herself at the Division 4's newbie welcoming party.(Chapter 17)(Chapter 20)",
+        "Power is a compulsive habitual liar; after getting in trouble with Makima for killing a Devil when she wasn't supposed to, Power immediately blamed Denji and claimed he told her to kill it.(Chapter 5)",
+        "Power is also rude, unkempt, and feels as though those around her should clean up after her."
+      ],
+      "panel_line": [
+        "Power",
+        "Personality",
+        "Power is an insatiable glutton, eating all of the stored food that the team needed in order to survive the Eternity Devil's trap and hoarding food for herself at the Division 4's newbie welcoming party.(Chapter 17)(Chapter 20)"
+      ],
+      "source": {
+        "page": "Power",
+        "section": "Personality"
+      }
+    },
+    {
+      "id": "csm-bar-pers-04",
+      "class": "personality",
+      "subject": "Fami",
+      "q": "What is Fami's personality like?",
+      "expect": [
+        "Befitting her status as the Famine Devil, Fami is also a major glutton, frequently ordering inhuman levels of food to consume in a single setting and sometimes eating it without any utensils, seen when she messily eats a giant plate of spaghetti with her bare hands and no thought of the mess on her face from the marinara sauce.(Chapter 122)(Chapter 163)",
+        "Fami also calls the Guillotine Devil by an affectionate nickname.",
+        "Fami also seems affectionate towards Yoru, saying that she would do anything for her \"little sister\".(Chapter 108)"
+      ],
+      "panel_line": [
+        "Fami",
+        "Personality",
+        "Befitting her status as the Famine Devil, Fami is also a major glutton, frequently ordering inhuman levels of food to consume in a single setting and sometimes eating it without any utensils, seen when she messily eats a giant plate of spaghetti with her bare hands and no thought of the mess on her face from the marinara sauce.(Chapter 122)(Chapter 163)"
+      ],
+      "source": {
+        "page": "Fami",
+        "section": "Personality"
+      }
+    }
+  ]
+}
