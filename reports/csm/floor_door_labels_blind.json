@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "what": "Hand-labelled correct door for each of the 21 extraction-floor rows",
+    "labelled_by": "directing session (Claude), by question shape and door purpose",
+    "method": "BLIND — labelled before running route() on any row, deliberately, because this session already made an oracle-contamination error (hand-feeding gold subjects) and anchoring on the router's answer would make these labels worthless",
+    "date": "2026-09-12",
+    "door_purposes": {
+      "qa": "passage search for a specific factual answer",
+      "narrative": "what happened, in order — chronological beats",
+      "roster": "enumeration / set membership",
+      "relations": "the relationship between two named entities"
+    },
+    "rationale_by_class": {
+      "arc-narrative": "narrative. 'What happened to X during arc Y, in order?' is explicitly chronological and scoped — the literal purpose of narrative mode.",
+      "state-over-time": "qa, with narrative a defensible second. 'What was true of X during arc Y' asks for a STATE over an interval, not a sequence. The JJK precedent is decisive: P4's interval facts (extra_facts, state_during_culling_game) were served through the subject's qa fact floor, not the narrative walk.",
+      "abilities": "roster. 'Every ability of X' is the canonical enumeration shape the roster door exists for.",
+      "appearance": "qa. A description lookup from the page's Appearance section.",
+      "causality": "qa. A 'why' question answered by reasoning over passages."
+    },
+    "confidence_notes": "The 5 state-over-time rows are the only genuinely ambiguous set; if the council disagrees there, the guard-vs-redesign verdict shifts by at most 5 rows."
+  },
+  "labels": {
+    "csm-dim-arcn-01": "narrative",
+    "csm-dim-arcn-02": "narrative",
+    "csm-dim-arcn-03": "narrative",
+    "csm-dim-arcn-04": "narrative",
+    "csm-dim-arcn-06": "narrative",
+    "csm-dim-arcn-07": "narrative",
+    "csm-dim-arcn-08": "narrative",
+    "csm-dim-arcn-10": "narrative",
+    "csm-dim-state-01": "qa",
+    "csm-dim-state-02": "qa",
+    "csm-dim-state-03": "qa",
+    "csm-dim-state-08": "qa",
+    "csm-dim-state-09": "qa",
+    "csm-dim-abl-01": "roster",
+    "csm-dim-abl-02": "roster",
+    "csm-dim-abl-04": "roster",
+    "csm-dim-abl-05": "roster",
+    "csm-dim-abl-06": "roster",
+    "csm-dim-abl-09": "roster",
+    "csm-dim-appr-06": "qa",
+    "csm-dim-caus-03": "qa"
+  },
+  "tally": {"narrative": 8, "qa": 7, "roster": 6, "relations": 0}
+}
