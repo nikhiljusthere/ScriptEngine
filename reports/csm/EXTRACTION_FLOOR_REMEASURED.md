@@ -1,4 +1,36 @@
-# The extraction-gated floor, re-measured: 21 rows → ~2 genuine content gaps
+# The extraction-gated floor, re-measured: the instrument is broken
+
+> ## ⚠ CORRECTED 2026-09-12 — read this first
+>
+> A council (3 fresh-context advisors, record
+> `reports/csm/receipts/council_floor_remeasure/chairman.md`) **confirmed this
+> document's defect finding and rejected its sizing.** Three claims below are
+> wrong and are struck:
+>
+> 1. **"17 of 21 are ROUTING, 2 are CONTENT" — WRONG.** That split came from a
+>    best-of-4 oracle in which `census_v2_triage.py:59` hand-feeds the gold
+>    `subject`. No real caller has that. Measured through the actual auto door:
+>    **8/21 green, ~13 still open** (advisor A, receipt
+>    `adv_A_auto_door_21rows.json`). The triage never tried **roster**, which
+>    `route()` picks for **13 of the 21** rows. The arc-narrative class this
+>    doc calls "8/8 routing" is **0/8 green** under true auto.
+> 2. **"CONTENT 0" on the v2 census — OVERSTATED.** That bucket required *zero*
+>    hits across all attempts, so PARTIAL rows scoring 1/3 are content misses
+>    under the census's own ≥2-of-3 bar.
+> 3. **Recommendation 1 ("run it at `mode='auto'`") — UNCALLABLE.**
+>    `build_context` accepts only `{qa, narrative, roster, relations}`
+>    (`api/context.py:60`) and raises on `"auto"` (`:148`); routing lives only
+>    in `api/main.py:207-249`. The fix is to share that code, not to pass a flag.
+>
+> Also struck: the inference "~2 gaps, therefore no extraction". **A22**
+> (`plan/CSM_2PHASE_PLAN.md` §Phase 2(3)) had already pre-registered that the
+> null branch *voids P2.5 rather than passing it*, and de-contingents P2.3 into
+> **P2.3b** so the comprehension layer fires even at zero reds.
+>
+> **What survives:** the instrument defect (§"How the floor was measured"), the
+> conclusion that the 21-row floor is untrustworthy, and the halt on
+> P2.3-as-scoped. **P2.3 is not de-scoped.** The corrected plan is the
+> chairman's §8 sequence.
 
 **Status: BLOCKING finding for Phase 2. Raised 2026-09-12 by the directing
 session while executing P2.1 step-0, before any GPU-day was spent.**
