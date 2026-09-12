@@ -606,3 +606,30 @@ def wants_chronology(query: str) -> bool:
     # "Every arc of One Punch Man" is a list of arcs, and the useful list of
     # arcs is the ordered one. One arc by name is not a list of anything.
     return bool(_NAMES_AN_ARC.search(lowered) or _ASKS_FOR_ARCS.search(lowered))
+
+
+# A timeline or a chronology *of* something is that thing's own chain -- a set,
+# rendered in order. "In order" alone is not: it modifies whatever was asked.
+_TIMELINE_ASK = re.compile(r"\b(?:timeline|chronolog\w*)\b", re.IGNORECASE)
+
+
+def wants_chronology_set(query: str) -> bool:
+    """Whether an ordered ask wants *the set* in order, or one subject's story.
+
+    R-8. `wants_chronology` answers "is order being asked for", and the router
+    sent every yes to the roster door. That is right for "Every arc in order"
+    and "Timeline of X" -- a list whose only useful property is its order -- and
+    wrong for "What happened to Hirokazu Arai during the Eternity Devil arc, in
+    order?", which is one character's beats inside one arc and is exactly what
+    the narrative door is for. Hand-labelling the 21 CSM floor rows found the
+    router correct on 13 and wrong on 8, every miss this one case
+    (`reports/csm/floor_door_labels_vs_routed.json`).
+
+    The split follows the distinction `_NAMES_AN_ARC` already draws: naming an
+    arc names a subject, asking for arc*s* asks for the set. A bare `in order`
+    cue carries no set on its own.
+    """
+    lowered = (query or "").lower()
+    if _ASKS_FOR_ARCS.search(lowered) or _NAMES_AN_ARC.search(lowered):
+        return True
+    return bool(_TIMELINE_ASK.search(lowered))

@@ -422,6 +422,45 @@ class TestArcsAreASetOnlyWhenAsked:
 
         assert not wants_chronology(query)
 
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "Every arc in order",
+            "Every arc of One Punch Man",
+            "All arcs",
+            "How many arcs are there",
+            "Timeline of Dragon Ball",
+            "all the sagas in order",
+        ],
+    )
+    def test_the_set_in_order_is_still_a_roster(self, query):
+        """R-8 must not undo the case rule 1 was written for."""
+        from scriptengine.retrieve.chronology import wants_chronology_set
+
+        assert wants_chronology_set(query)
+
+    @pytest.mark.parametrize(
+        "query",
+        [
+            "What happened to Hirokazu Arai during the Eternity Devil arc, in order?",
+            "What happened to the Gun Devil during the Gun Devil arc, in order?",
+            "Tell me the story of Power in order",
+            "What happens in the Katana Man arc, in order?",
+        ],
+    )
+    def test_one_subjects_story_in_order_is_not_a_set(self, query):
+        """R-8: `in order` modifies the ask; it does not make it a set.
+
+        These eight shapes were the whole of the router's error on the CSM
+        extraction floor -- hand-labelling put agreement at 13/21, every miss
+        this case, and routing them to roster returned a member list that
+        cannot express what happened to anyone.
+        """
+        from scriptengine.retrieve.chronology import wants_chronology, wants_chronology_set
+
+        assert wants_chronology(query)  # order IS being asked for
+        assert not wants_chronology_set(query)  # but the answer is not a set
+
     def test_the_gold_narrative_case_routes_narrative(self):
         """`narrative-02` in gold_jjk.json. It failed through the router while
         every path-level test passed, which is the failure this catches."""

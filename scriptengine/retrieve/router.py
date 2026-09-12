@@ -624,7 +624,14 @@ def route(paths: SeriesPaths, query: str, settings=None, subject: str | None = N
     #    answered by something that cannot express order at all: the first with
     #    one arc's 84 chapters, the second with eight loose beats.
     if chronology.wants_chronology(query):
-        return Route("roster", "asks for the story in order", signals)
+        # R-8: order still beats every other reading, but it does not decide the
+        # door by itself. The set in order ("Every arc in order", "Timeline of
+        # X") is a roster; one subject's story in order ("What happened to X
+        # during the Y arc, in order?") is a narrative, and routing it to roster
+        # returned a member list that cannot express what happened to anyone.
+        if chronology.wants_chronology_set(query):
+            return Route("roster", "asks for the story in order", signals)
+        return Route("narrative", "asks for one subject's story in order", signals)
 
     # 2. A count is a set even though it opens like a question -- when this
     #    wiki holds one for it. An undeclared count falls through to rule 3,
