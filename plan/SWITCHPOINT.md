@@ -8,6 +8,36 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-13 ~04:5x (owner-directed: 100k → 262k full-context switch, OPENCODE session — Creator Research work; CSM parked):**
+  - **Mode: 100k (ctx 102400) → 262k (ctx 262144), "full context".** Pre-switch
+    card state: Qwen 100k pid 108527 (up ~7 min, **serving this opencode
+    session**), `:8000` on CUDA pid 53671 (up ~91 min), GPU 25,783/32,607 MiB
+    used @100 % util. `qwen_mode.txt` was STALE (`mode=off` @04:46:42); the
+    03:23 100k switch's bash script (pid 53669) sat stuck in `do_wait` 91 min
+    @0 % CPU — killed before this switch (its :8000 child is in its own
+    session and survived).
+  - **This is an OPENCODE session, not pi** — the in-flight opencode turn dies
+    mid-reload (expected; same as the 03:4x entry). The opencode process
+    survives; the owner resumes with `opencode -c` (or `-s <id>`). Fit guard:
+    262k is the max ctx and the opencode session is not a pi session; if the
+    newest pi transcript still trips the guard, `--force` is safe (this commit
+    is a full checkpoint; the opencode session auto-compacts on
+    context_length_exceeded).
+  - **Campaign: PARKED, nothing pending.** CSM Phase 1 §9a closure loop DONE
+    (halted at the extraction-gated floor, D23 `407c016`); JJK baseline 100 %.
+  - **Active work (opencode session, outside the repo):** the online
+    Google-sheet reorg — state + re-run recipe in
+    `/home/goblin/Creator Research/HANDOFF.md` §5 (Instagram values written;
+    `mergeCells` 400 fix pending: drop the `"fields"` key; the other 5 tabs
+    untouched; scans in `/tmp/scan_<tab>.json`).
+  - **Clean commit sha:** below (this checkpoint). Switch: `qwen-switch.sh 262k
+    --api` (262k exploratory: ~3.4 GiB headroom → `:8000` lands on CPU;
+    `--force` only if the fit guard trips).
+  - **FIRST ACTION ON RESUME (opencode -c):** (1) `cat
+    ~/ninfer-work/qwen_mode.txt` (expect mode=262k ctx=262144, api=cpu, free
+    ≈ 3.4 GB); (2) `nvidia-smi` (Qwen only on the card); (3) `curl -s
+    localhost:8000/health` (expect device=cpu); (4) tail this file's switch log
+    for the machine line; (5) HANDOFF.md §5 → finish the sheet reorg.
 - **2026-09-13 ~03:4x (owner-directed: 262k → 100k, OPENCODE session — Creator Research work; CSM parked):**
   - **Mode: 262k (ctx 262144) → 100k (ctx 102400).** Pre-switch card state: qwen
     pid 23351, 30,673 MiB used / 1,430 MiB free; `:8000` up on CPU (pid 23419);
@@ -506,3 +536,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-12T02:34:50+05:30 qwen-switch: ctx=122880 (mode 122880), api=cuda, free=6303MiB
 - 2026-09-13T02:00:23+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=6996MiB
 - 2026-09-13T02:34:53+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1437MiB
+- 2026-09-13T03:23:02+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6902MiB
