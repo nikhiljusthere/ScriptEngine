@@ -1108,3 +1108,45 @@ entry.
   per-door sanity-100 + on-disk re-estimate → go/no-go → 200-row held-out leg
   → P2.3 extraction (closes the 22 floor rows; per Q3, re-gate the null
   branch on the widened census).
+
+### D26 — CSM P2.1 step-0 start (warm-up probe) + owner-directed handoff to the Claude session (2026-09-12, opencode)
+- **Phase A is closed on disk** (D25: council #29 CONDITIONAL APPROVE + all
+  three on-disk conditions in `fcda614`; marker `PHASE_A_COMPLETE
+  2026-09-12T11:51:10+05:30`).
+- **P2.1 step-0 began in the directing session, then stopped at the owner's
+  direction (~12:10)** — Phase 2 now runs in the Claude session, which owns
+  all the VRAM.
+- **What landed:** quiet-window check (Qwen 7759 idle 3–5% between bursts, no
+  extraction batch, ~7 GB headroom at the live 122880 dial) → `:8000` up on
+  CUDA in the quiet window (pid 89782, log `/tmp/scriptengine_api_p21.log`;
+  the sanctioned short co-located run, `:8000`-service clause) → **warm-up
+  1-probe on the qa door: 1/1 HIT, 17.0 s wall (model load included), cuda,
+  wrote `reports/span-recall/csm/recall_verbatim.jsonl`** (committed with
+  this entry). The panel sweep ledgers were NOT touched by the warm-up.
+- **Steady state restored at the stop:** `:8000` down (killed 89782); Qwen
+  7759 alive, 25,576 MiB, 3% util (idle) — the full card is free for the
+  Claude session.
+- **Next-session pre-flight (recorded so the handoff is one read):**
+  (1) **wipe the tracked qa ledger** `reports/span-recall/csm/sweep_qa_e3d73720.jsonl`
+  — it holds **572 Phase-1 rows stamped `commit 5c424f3`** (f81a1af window,
+  pre the P1 engine changes C1/C2/C3): per A18 the control arm "starts from
+  zero" — a pre-fix stamp would attribute P1 parser fixes to P2.3 in the
+  pre/post delta (the commit history of that file is the git-recoverable
+  record; the wipe is the working-tree file only). Narrative/roster have no
+  ledgers yet. (2) restart `:8000` on CUDA in a quiet window. (3) per-door
+  `--sanity 100` (qa → narrative → roster, first-run-only) → measure per-door
+  s/probe → re-estimate 17,181 × s/probe **per door** (no uniform-rate
+  assumption) into `reports/csm/GATE.md` + record the **A17 per-door floor
+  policy pre-sweep** + the **A26 panel/heldout hashes** → **go/no-go vs the
+  2-GPU-day budget** (re-estimate > 2 GPU-days ⇒ abort/shrink/council; the
+  plan's 51-GPU-h stays fiction until this lands). (4) then the 200-row
+  held-out leg (`heldout_declaration_csm.md`, A24/A26) + P2.3 extraction
+  (closes the 22 floor rows; per Q3, re-gate the null branch on the widened
+  census).
+- **Gates:** no re-run owed (all four green @`407c016` stand via ledger
+  `p14_close` + `p14_close_copy`; the warm-up probe is a 1-line tier-1
+  sample, not a gate).
+- **Stamps:** this entry; `work_log.md` B-append; `plan/COMPACTION_PROOF.md`
+  live-state + P2.1-handoff block + dated note; `recall_verbatim.jsonl`
+  committed.
+- **NEXT:** the Claude session runs P2.1 step-0 per the pre-flight above.

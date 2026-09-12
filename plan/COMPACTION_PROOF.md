@@ -47,14 +47,17 @@ instructions that a summary tends to drop. Newest note at the bottom.
   new 2-at-a-time steer, try 2 small members at a time and check Qwen health
   (full_reset rate / memory) between pairs; fall back to serial if it thrashes.
 
-## Live system state (2026-09-12 ~11:55 +0530)
+## Live system state (2026-09-12 ~12:10 +0530)
 
-- Qwen 27B (ninfer) pid **7759**, 120k dial: ctx=kv=**122880**, GPU ~25.9 GB,
-  ~6.2 GB free headroom. `ninfer-work/qwen_mode.txt`: mode=122880 api=cuda.
-- `:8000` API **STOPPED** (P1.4 W2 window closed after the canon opm copy).
-  Restart on **CUDA in a Qwen quiet window** before the P2.1 probes (short,
-  co-located — verified twice: R-7 and P1.4 windows, Qwen survived at
-  31,083/32,607 MiB). Log convention `/tmp/scriptengine_api_*.log`.
+- Qwen 27B (ninfer) pid **7759**, 120k dial: ctx=kv=**122880**, GPU 25,576 MiB
+  (~7 GB free headroom, util 3% idle at the stop). Healthy (`kill -0` alive).
+- `:8000` API **STOPPED** again (the P2.1 step-0 warm-up window, started
+  ~11:58 on CUDA, was stopped ~12:10 at the owner's direction so the Claude
+  session that runs Phase 2 can own all the VRAM). The next session restarts
+  it on **CUDA in a Qwen quiet window** before the probes (short, co-located —
+  verified twice: R-7 and P1.4 windows, Qwen survived at 31,083/32,607 MiB).
+  Log convention `/tmp/scriptengine_api_*.log` (the stopped one:
+  `/tmp/scriptengine_api_p21.log`).
 - `opencode.json` limit.context = **122880** (synced by the pi switch session;
   `qwen-switch.sh` now auto-syncs BOTH pi `models.json` and opencode.json on
   every dial switch — no more stale context).
@@ -100,8 +103,27 @@ instructions that a summary tends to drop. Newest note at the bottom.
   env-mc known open). Rulings Q1–Q5 on disk: `CLOSE_COUNCIL_RULINGS_Q1_Q4.md`
   (Q1 No / Q2 No / Q3 Yes / Q4 Yes alongside P2.1 / Q5 out-of-gate). env-mc
   deferred to P1.5 (test-side fix, pin 1,321 unchanged). Denominator caveat:
-  "100%" = 33/33 fixable at the extraction-gated floor, not 100% of pages —
-  CSM 175/537 (32.6%), 1,260 q, remainder 52.
+"100%" = 33/33 fixable at the extraction-gated floor, not 100% of pages —
+   CSM 175/537 (32.6%), 1,260 q, remainder 52.
+- **P2.1 step-0 STARTED then HANDOFF (owner stop ~12:10; the Claude session
+  owns Phase 2 + the VRAM).** Done in the directing session: quiet-window
+  check (Qwen idle 3–5% between bursts, no extraction batch, ~7 GB headroom)
+  → `:8000` up on CUDA (`/tmp/scriptengine_api_p21.log`, pid was 89782) →
+  **warm-up 1-probe (qa door): 1/1 HIT, 17.0 s wall, cuda,
+  `reports/span-recall/csm/recall_verbatim.jsonl` written** (committed).
+  NOT done: the per-door sanity-100 + the on-disk s/probe re-estimate + the
+  A17 per-door floor policy in `reports/csm/GATE.md` + the go/no-go.
+  **Next session's pre-flight (A18, the plan's "start from zero"): the
+  tracked qa ledger `reports/span-recall/csm/sweep_qa_e3d73720.jsonl` holds
+  572 Phase-1 rows stamped `commit 5c424f3` (pre-fix, f81a1af window) —
+  WIPE it before the sanity-100/full sweep so probes start at panel row 1
+  (the warm-up probe did not touch the panel ledger). Narrative/roster have
+  no ledgers yet. Then: restart `:8000` (CUDA, quiet window) → `--sanity 100`
+  qa → narrative → roster (plan order; `--sanity` first-run-only) → measure
+  per-door s/probe → re-estimate 17,181 × s/probe per door into GATE.md
+  (record A17 floor policy pre-sweep + the A26 panel/heldout hashes) →
+  go/no-go vs the 2-GPU-day budget (re-estimate > 2 GPU-days ⇒
+  abort/shrink/council) → then the 200-row held-out leg + P2.3 extraction.
 - **Open queue: 35 rows = (a) 22 extraction-gated floor** (21 D6-extraction +
   `csm-char-04`) **+ (b) 13 invariant floor/residual, stamped by-design open**
   (csmdoor-01 31/88; D5 residuals csmd5-01/02/03/05/06 + gate400-320 +
@@ -126,18 +148,22 @@ instructions that a summary tends to drop. Newest note at the bottom.
    landed in the close commit; `PHASE_A_COMPLETE 2026-09-12T11:51:10+05:30`
    marker in `reports/master-work/phase_status.txt`;
    `reports/csm/PHASE_A_COMPLETE_AT_FLOOR.md`; drift D25.
-3. **Phase 2, straight in** (owner steer 2026-09-10: no pause):
-   (a) restart `:8000` on CUDA in a Qwen quiet window (short co-located run);
-   (b) **P2.1 step 0 before any panel hour**: per-door sanity-100 →
-   re-estimate 17,181 × measured s/probe per door into `reports/csm/GATE.md`
-   + record the A17 per-door floor policy pre-sweep → go/no-go
-   (>2 GPU-days ⇒ abort/shrink/council). The plan's 51-GPU-h is double-stale
-   (4 s/probe = fiction; on-disk ceiling 8.5 s/probe CPU@150k ≈122 h).
-   (c) 200-row held-out leg (`heldout_declaration_csm.md`, A24/A26).
-   (d) P2.3 extraction (closes the 22 floor rows; per Q3, re-gate the null
+3. **Phase 2 — now owned by the Claude session (owner stop 2026-09-12 ~12:10;
+   it frees all the VRAM). Straight in** (owner steer 2026-09-10: no pause):
+   (a) wipe the tracked qa ledger (572 pre-fix rows, A18 "start from zero");
+   (b) restart `:8000` on CUDA in a Qwen quiet window (short co-located run;
+   warm-up probe already done in the directing session, 17 s wall);
+   (c) **P2.1 step 0 before any panel hour**: per-door sanity-100 (qa →
+   narrative → roster) → re-estimate 17,181 × measured s/probe per door into
+   `reports/csm/GATE.md` + record the A17 per-door floor policy pre-sweep +
+   the A26 panel/heldout hashes → go/no-go (>2 GPU-days ⇒
+   abort/shrink/council). The plan's 51-GPU-h is double-stale (4 s/probe =
+   fiction; on-disk ceiling 8.5 s/probe CPU@150k ≈122 h).
+   (d) 200-row held-out leg (`heldout_declaration_csm.md`, A24/A26).
+   (e) P2.3 extraction (closes the 22 floor rows; per Q3, re-gate the null
    branch on the widened census — the 5 in-scope page types, not the 60-q
    character census).
-   (e) P1.5 (MCP bridge): env-mc test-side fix, live proof 3/3, ledger note.
+   (f) P1.5 (MCP bridge): env-mc test-side fix, live proof 3/3, ledger note.
 4. Keep this file current at each step (append a dated note at the bottom).
 
 ## Dated notes
@@ -168,3 +194,14 @@ instructions that a summary tends to drop. Newest note at the bottom.
   COUNCIL_HISTORY #29, drift D25, work_log ACT. env-mc → P1.5 (test-side, no
   re-pin, pin stays 1,321). 51-GPU-h double-stale → P2.1 step-0 owes the
   on-disk re-estimate before any panel hour. NEXT: Phase 2 as above.
+- 2026-09-12 ~12:10: **P2.1 step-0 started, then owner-directed handoff.**
+  Quiet window verified (Qwen idle 3–5%, no extraction batch) → `:8000` up
+  on CUDA (pid 89782, `/tmp/scriptengine_api_p21.log`) → warm-up 1-probe on
+  the qa door: 1/1 HIT, 17.0 s wall (model load included), cuda, wrote
+  `reports/span-recall/csm/recall_verbatim.jsonl` (committed). Owner stop:
+  Phase 2 goes to the Claude session, which owns all the VRAM. Steady state
+  restored: `:8000` down (killed 89782), Qwen 7759 alive (25,576 MiB, 3%
+  util, idle). Next session pre-flight: wipe the 572-row pre-fix qa ledger
+  (`sweep_qa_e3d73720.jsonl`, stamped 5c424f3; A18 start-from-zero), restart
+  `:8000`, per-door sanity-100 + on-disk re-estimate + A17 floor policy +
+  A26 hashes → go/no-go → held-out leg → P2.3.
