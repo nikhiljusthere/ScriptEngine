@@ -183,3 +183,64 @@ The 3-door sweep is **not** run. qa-full (2.41 h) is deferred until R-8 lands:
 a qa-forced ledger measures a door the router almost never picks, and the A17
 bar (≥ 97.5 %, sanity measured 95 %) should be re-taken on the post-R-8 auto
 path, which is the number that describes the product.
+
+## R-8 sized: the 21 floor rows hand-labelled (2026-09-12)
+
+Reviewer-3's cheap decisive test — label the correct door for each floor row by
+hand (n=21, zero GPU), then compare with what `route()` actually picks. Labels
+were written and **committed blind** (`ff96f58`) before any measurement, because
+this session had already been burned once by oracle contamination.
+
+**Agreement: 13/21 (62 %). Every one of the 8 mismatches is the same defect.**
+
+| labelled | routed | rows | |
+|---|---|---:|---|
+| qa | qa | 7 | correct |
+| roster | roster | 6 | correct |
+| **narrative** | **roster** | **8** | all arc-narrative, all `why="asks for the story in order"` |
+
+### Verdict: a GUARD, not a redesign
+
+The router is right on 13 of 21 and wrong on exactly one class through exactly
+one rule — `router.py:627`:
+
+```python
+if chronology.wants_chronology(query):
+    return Route("roster", "asks for the story in order", signals)
+```
+
+Its comment records why it exists: *"Every arc in order" is set-shaped and
+"Timeline of Dragon Ball" opens like a question*, and narrative answered the
+latter with "eight loose beats". For genuinely **set-shaped** chronology the
+rule is correct and must be preserved.
+
+It over-claims on **per-subject** chronology. "What happened to Fake Chainsaw
+Man during the War Devil arc, in order?" is one character's beats inside one
+arc — narrative's exact purpose — and there is no set behind it. Rule 1 fires
+before any other reading, so all 8 land in roster.
+
+**R-8 shape:** gate rule 1 on set-shape as well as chronology; chronology
+without a set falls through to narrative. Preserve "Every arc in order" and
+"Timeline of X".
+
+### Reviewer-4's reframe, answered
+
+"Maybe roster's *serving* is the defect, not the router." On these 21 rows: no.
+Roster is chosen correctly for all 6 rows where roster was the right door. The
+defect is the choice, not the serving.
+
+### A second, distinct misroute — recorded, not yet labelled
+
+The auto sweep showed the router sending **81 of 100 verbatim line-lookup
+probes to narrative** (34.6 % hit) while qa scored 9/9 when picked. That is the
+opposite over-selection from the one above, on a different question shape, and
+it is **not** covered by the rule-1 guard. R-8 may therefore be two guards. The
+panel probes have not been hand-labelled, so this stays a finding rather than a
+sized fix.
+
+### Cost owed
+
+`router.py` is series-agnostic and on the served path, so R-8 owes the four
+standing gates **plus `eval --series jjk` 31/31** — not pytest alone. The
+"Timeline of Dragon Ball" and "Every arc in order" cases are the regression
+pins the guard must not break.

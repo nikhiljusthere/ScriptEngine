@@ -1,0 +1,191 @@
+[
+ {
+  "id": "csm-dim-arcn-01",
+  "class": "arc-narrative",
+  "q": "What happened to the Fake Chainsaw Man during the War Devil arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-02",
+  "class": "arc-narrative",
+  "q": "What happened to Hirokazu Arai during the Eternity Devil arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-03",
+  "class": "arc-narrative",
+  "q": "What happened to Santa Claus during the International Assassins arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-04",
+  "class": "arc-narrative",
+  "q": "What happened to Yuko during the Justice Devil arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-06",
+  "class": "arc-narrative",
+  "q": "What happened to Yutaro Kurose during the Katana Man arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-07",
+  "class": "arc-narrative",
+  "q": "What happened to the Gun Devil during the Gun Devil arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-08",
+  "class": "arc-narrative",
+  "q": "What happened to Beam during the Bomb Girl arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-arcn-10",
+  "class": "arc-narrative",
+  "q": "What happened to the Bat Devil during the Bat Devil arc, in order?",
+  "label": "narrative",
+  "routed": "roster",
+  "match": false,
+  "why": "asks for the story in order"
+ },
+ {
+  "id": "csm-dim-state-01",
+  "class": "state-over-time",
+  "q": "What was true of Nobana Higashiyama during the Aging Devil arc?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Nobana Higashiyama', a character"
+ },
+ {
+  "id": "csm-dim-state-02",
+  "class": "state-over-time",
+  "q": "What was true of Haruka Iseumi during the Aging Devil arc?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Haruka Iseumi', a character"
+ },
+ {
+  "id": "csm-dim-state-03",
+  "class": "state-over-time",
+  "q": "What was true of the Nail Fiend during the Aging Devil arc?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Aging Devil', a character"
+ },
+ {
+  "id": "csm-dim-state-08",
+  "class": "state-over-time",
+  "q": "What was true of Seigi Akoku during the Dating Denji arc?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Seigi Akoku', a character"
+ },
+ {
+  "id": "csm-dim-state-09",
+  "class": "state-over-time",
+  "q": "What was true of Tolka during the International Assassins arc?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Tolka', a character"
+ },
+ {
+  "id": "csm-dim-abl-01",
+  "class": "abilities",
+  "q": "Every ability of Yoru",
+  "label": "roster",
+  "routed": "roster",
+  "match": true,
+  "why": "asks for a set"
+ },
+ {
+  "id": "csm-dim-abl-02",
+  "class": "abilities",
+  "q": "Every ability of Denji",
+  "label": "roster",
+  "routed": "roster",
+  "match": true,
+  "why": "asks for a set"
+ },
+ {
+  "id": "csm-dim-abl-04",
+  "class": "abilities",
+  "q": "Every ability of Aki Hayakawa",
+  "label": "roster",
+  "routed": "roster",
+  "match": true,
+  "why": "asks for a set"
+ },
+ {
+  "id": "csm-dim-abl-05",
+  "class": "abilities",
+  "q": "Every ability of Power",
+  "label": "roster",
+  "routed": "roster",
+  "match": true,
+  "why": "asks for a set"
+ },
+ {
+  "id": "csm-dim-abl-06",
+  "class": "abilities",
+  "q": "Every ability of Reze",
+  "label": "roster",
+  "routed": "roster",
+  "match": true,
+  "why": "asks for a set"
+ },
+ {
+  "id": "csm-dim-abl-09",
+  "class": "abilities",
+  "q": "Every ability of Asa Mitaka",
+  "label": "roster",
+  "routed": "roster",
+  "match": true,
+  "why": "asks for a set"
+ },
+ {
+  "id": "csm-dim-appr-06",
+  "class": "appearance",
+  "q": "What does the Falling Devil look like?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Falling Devil', a character"
+ },
+ {
+  "id": "csm-dim-caus-03",
+  "class": "causality",
+  "q": "Why can Asa not bring herself to kill Denji?",
+  "label": "qa",
+  "routed": "qa",
+  "match": true,
+  "why": "question about 'Denji', a character"
+ }
+]
