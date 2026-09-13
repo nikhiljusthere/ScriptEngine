@@ -87,7 +87,10 @@ Behavior (10 s poll, all in `tools/master-work/oc-watch.sh`):
 - no log activity for 300 s AND no `:18080` connection from the opencode pid AND the last
   big log event is **not** `exiting loop` (a finished run sits at the idle prompt — silent
   with no qwen conn is *normal*, never nudge it) → types a "Continue the current task…"
-  nudge (cooldown 300 s); after 2 failed nudges → wakes pi.
+  nudge. Two hard stops: a session whose last turn ended in `level=ERROR` is **never**
+  nudged (turns keep failing the same way — it wakes pi once instead, marker
+  `/tmp/oc_watch_woken`), and the nudge count is capped at **3 per watcher lifetime**
+  (persisted in `/tmp/oc_watch_nudges`) so a bad state can never spam the prompt.
 - opencode not running → idle-polls (re-engages automatically on restart).
 
 Wake lines typed into pi look like:
@@ -131,7 +134,12 @@ If the same pattern keeps prompting across *new* requests (a minute apart, each 
   "Continue …" message, not keys.
 - `tracking` with nothing after it is NOT proof of death (a long bash tool is quiet) — the
   stall check requires BOTH no log activity AND no `:18080` connection.
-- Neither is enough (2026-09-13 bug, fixed same day): a *finished* run at the idle prompt is
-  also silent + no qwen conn — the watcher must additionally require the last big event to be
+- Neither is enough (2026-09-13 bug #1): a *finished* run at the idle prompt is also
+  silent + no qwen conn — the watcher must additionally require the last big event to be
   `stream`/`process` (not `exiting loop`) before nudging, or it types "Continue" into an
   opencode that is merely waiting for its next task.
+- And again (bug #2, same day): a *crashed* session's last big event is `message=process`
+  with `level=ERROR` (no `exiting loop`) — that looks "mid-turn" to the stall check, every
+  nudge starts a turn that fails the same way, and the loop runs forever (22 spam messages
+  observed). Hence the two hard stops: no nudge after an ERROR last event (wake pi once),
+  and an absolute 3-nudge lifetime cap persisted to disk.

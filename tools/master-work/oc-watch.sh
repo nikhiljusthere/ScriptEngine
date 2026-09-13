@@ -53,7 +53,7 @@ answer_always() { # type "always allow" into the opencode window (default sel = 
   xdotool key Return; sleep 0.4
   xdotool key Return
 }
-hb=0; last_nudge=0; nudge_fails=0
+hb=0; last_nudge=0
 while :; do
   OC=$(pgrep -x opencode | head -1)
   if [ -z "$OC" ]; then
@@ -94,25 +94,30 @@ while :; do
     li=$(grep -an 'exiting loop' "$LOG" 2>/dev/null | tail -1 | cut -d: -f1)
     la=$(grep -an 'message=stream\|message=process' "$LOG" 2>/dev/null | tail -1 | cut -d: -f1)
     [ -n "$li" ] && [ "${li:-0}" -gt "${la:-0}" ] && idle=1
-    if [ "$age" -gt "$STALL_S" ] && [ "$qconn" -eq 0 ] && [ "$idle" -eq 0 ]; then
+    # A session whose last turn ended in ERROR never recovers by typing (new turns fail
+    # the same way) - never nudge it; wake pi once for a human instead.
+    broken=0
+    [ -n "$la" ] && sed -n "${la}p" "$LOG" | grep -qa 'level=ERROR' && broken=1
+    if [ "$broken" -eq 1 ] && [ ! -e /tmp/oc_watch_woken ]; then
+      touch /tmp/oc_watch_woken
+      wake_pi "opencode session looks broken (last turn ended in ERROR, no log activity ${age}s) - inspect $LOG tail"
+    fi
+    # Hard cap: at most 3 nudges per watcher lifetime (persisted in a file), no loops.
+    nudge_total=$(cat /tmp/oc_watch_nudges 2>/dev/null)
+    case "$nudge_total" in ''|*[!0-9]*) nudge_total=0 ;; esac
+    if [ "$age" -gt "$STALL_S" ] && [ "$qconn" -eq 0 ] && [ "$idle" -eq 0 ] && [ "$broken" -eq 0 ] && [ "$nudge_total" -lt 3 ]; then
       if [ $((now - last_nudge)) -gt "$NUDGE_COOLDOWN_S" ]; then
         last_nudge=$now
-        nudge_fails=$((nudge_fails + 1))
+        nudge_total=$((nudge_total + 1)); echo "$nudge_total" > /tmp/oc_watch_nudges
         W=$(oc_window)
         if [ -n "$W" ]; then
           xdotool windowactivate --sync "$W" 2>/dev/null; sleep 0.4
           xdotool type --clearmodifiers --delay 20 -- "Continue the current task. Any permission you need is pre-approved (always-allow) - retry failed tool calls."
           sleep 0.3
           xdotool key Return
-          echo "$(date +%T) stall ${age}s - continue nudge #$nudge_fails" >> "$HB"
+          echo "$(date +%T) stall ${age}s - continue nudge ${nudge_total}/3" >> "$HB"
         fi
       fi
-      if [ "$nudge_fails" -ge 2 ]; then
-        wake_pi "opencode run appears dead (no log activity ${age}s, no qwen conn, ${nudge_fails} nudges sent)"
-        nudge_fails=0
-      fi
-    else
-      nudge_fails=0
     fi
   fi
   [ $((hb++ % 6)) -eq 0 ] && echo "$(date +%T) ok oc=$OC last=$(tail -1 "$LOG" 2>/dev/null | cut -c1-100)" >> "$HB"
