@@ -1,6 +1,6 @@
 ---
 name: opencode-watch
-description: Keep a local opencode TUI (PID via `pgrep -x opencode`, window title `OC | …`) running autonomously — the watcher (tools/master-work/oc-watch.sh) watches opencode's log for blocked prompts and auto-answers permission dialogs with "always allow" (typing into the window), wakes the pi session for MCQ questions, and nudges dead runs. Use when the user wants opencode left alone to work, when an opencode run stalls on a permission prompt, or when setting up/tearing down the opencode watcher.
+description: Keep a local opencode TUI (PID via `pgrep -x opencode`, window title `OC | …`) running autonomously — the watcher (tools/master-work/oc-watch.sh) watches opencode's log for blocked prompts and auto-answers permission dialogs with "always allow" (typing into the window) and wakes the pi session for MCQ questions. It never sends continue-messages for finished or crashed runs (owner rule 2026-09-13). Use when the user wants opencode left alone to work, when an opencode run stalls on a permission prompt, or when setting up/tearing down the opencode watcher.
 ---
 
 # opencode-watch — autonomous opencode TUI supervision
@@ -84,13 +84,10 @@ Behavior (10 s poll, all in `tools/master-work/oc-watch.sh`):
   (set `OC_WATCH_NO_AUTO=1` to wake pi instead of auto-answering).
 - last log line `asking que_…` → wakes pi by typing a one-line prompt into the
   `π - ScriptEngine` window (pi then answers the question).
-- no log activity for 300 s AND no `:18080` connection from the opencode pid AND the last
-  big log event is **not** `exiting loop` (a finished run sits at the idle prompt — silent
-  with no qwen conn is *normal*, never nudge it) → types a "Continue the current task…"
-  nudge. Two hard stops: a session whose last turn ended in `level=ERROR` is **never**
-  nudged (turns keep failing the same way — it wakes pi once instead, marker
-  `/tmp/oc_watch_woken`), and the nudge count is capped at **3 per watcher lifetime**
-  (persisted in `/tmp/oc_watch_nudges`) so a bad state can never spam the prompt.
+- **Nothing else** (owner rule 2026-09-13): the watcher never types a continue-message —
+  a finished task or a crashed session is not a stall. No nudges, no stall detection,
+  no broken-session wakes; it only heartbeats. If a run dies, the user sees it in the
+  terminal and starts the next task themselves.
 - opencode not running → idle-polls (re-engages automatically on restart).
 
 Wake lines typed into pi look like:
@@ -130,16 +127,9 @@ If the same pattern keeps prompting across *new* requests (a minute apart, each 
   for the first key sequences; the fixed sequence (activate + plain keys) landed immediately.
 - Two stacked `asking` lines = two dialogs; one key sequence answers only the shown one.
 - A run can *end* (not just block) after rejected/denied tool calls: last assistant turn
-  `finish=tool-calls` with tool states `error`, then log silence. Revival = a typed
-  "Continue …" message, not keys.
-- `tracking` with nothing after it is NOT proof of death (a long bash tool is quiet) — the
-  stall check requires BOTH no log activity AND no `:18080` connection.
-- Neither is enough (2026-09-13 bug #1): a *finished* run at the idle prompt is also
-  silent + no qwen conn — the watcher must additionally require the last big event to be
-  `stream`/`process` (not `exiting loop`) before nudging, or it types "Continue" into an
-  opencode that is merely waiting for its next task.
-- And again (bug #2, same day): a *crashed* session's last big event is `message=process`
-  with `level=ERROR` (no `exiting loop`) — that looks "mid-turn" to the stall check, every
-  nudge starts a turn that fails the same way, and the loop runs forever (22 spam messages
-  observed). Hence the two hard stops: no nudge after an ERROR last event (wake pi once),
-  and an absolute 3-nudge lifetime cap persisted to disk.
+  `finish=tool-calls` with tool states `error`, then log silence.
+- **The continue-nudge feature was built, ran into two live bugs (idle-prompt false
+  positives; an ERROR-crashed session read as "mid-turn" → 22-message spam loop), and was
+  then retired by owner rule (2026-09-13): a finished or crashed session is not something
+  the watcher may push back into work. Only permission dialogs are auto-handled; MCQs
+  wake pi. Don't reintroduce stall nudging without the owner asking for it.**

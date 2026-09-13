@@ -9,8 +9,10 @@
 #        unless OC_WATCH_NO_AUTO=1 (then it wakes pi instead).
 #   que_* (MCQ question)      -> wakes pi (types a one-line prompt into the pi
 #        window) so the pi agent reads the question from opencode.db and answers.
-# It also detects a dead run (no log activity AND no qwen connection) and
-# types a "Continue" nudge, waking pi if two nudges fail to revive it.
+# Owner rule 2026-09-13: NO continue-messages otherwise. A finished task or a
+# crashed session is NOT a stall - the watcher never types into opencode except
+# for dialog keys. It only heartbeats; if a run dies, the user sees it in the
+# terminal and starts the next task themselves.
 #
 # Start:  setsid nohup bash tools/master-work/oc-watch.sh >/tmp/oc_watch.out 2>&1 </dev/null &
 # Stop:   kill $(cat /tmp/oc_watch.pid)
@@ -21,8 +23,6 @@ PIDF=/tmp/oc_watch.pid
 STATE=/tmp/oc_watch_state
 HB=/tmp/oc_watch.log
 INTERVAL="${OC_WATCH_INTERVAL:-10}"
-STALL_S="${OC_WATCH_STALL:-300}"          # no log activity for this long
-NUDGE_COOLDOWN_S="${OC_WATCH_NUDGE_COOLDOWN:-300}"
 
 echo $$ > "$PIDF"
 oc_window() { # opencode window: title is set by opencode as "OC | <task>"
@@ -53,7 +53,7 @@ answer_always() { # type "always allow" into the opencode window (default sel = 
   xdotool key Return; sleep 0.4
   xdotool key Return
 }
-hb=0; last_nudge=0
+hb=0
 while :; do
   OC=$(pgrep -x opencode | head -1)
   if [ -z "$OC" ]; then
@@ -80,44 +80,6 @@ while :; do
           echo "$(date +%T) $AID MCQ - pi woken" >> "$HB"
           ;;
       esac
-    fi
-  fi
-  # --- dead run? no log activity for STALL_S and no qwen connection ---
-  if ! tail -1 "$LOG" 2>/dev/null | grep -qa 'message=asking'; then
-    age=$(( $(date +%s) - $(stat -c %Y "$LOG" 2>/dev/null || echo 0) ))
-    qconn=0; ss -tnp 2>/dev/null | grep -q ":18080.*pid=$OC" && qconn=1
-    now=$(date +%s)
-    # A finished run sits at the idle prompt: silent, no qwen conn - NORMAL, never nudge.
-    # Only a turn that is mid-flight (last big event is stream/process, not "exiting loop")
-    # counts as stalled.
-    idle=0
-    li=$(grep -an 'exiting loop' "$LOG" 2>/dev/null | tail -1 | cut -d: -f1)
-    la=$(grep -an 'message=stream\|message=process' "$LOG" 2>/dev/null | tail -1 | cut -d: -f1)
-    [ -n "$li" ] && [ "${li:-0}" -gt "${la:-0}" ] && idle=1
-    # A session whose last turn ended in ERROR never recovers by typing (new turns fail
-    # the same way) - never nudge it; wake pi once for a human instead.
-    broken=0
-    [ -n "$la" ] && sed -n "${la}p" "$LOG" | grep -qa 'level=ERROR' && broken=1
-    if [ "$broken" -eq 1 ] && [ ! -e /tmp/oc_watch_woken ]; then
-      touch /tmp/oc_watch_woken
-      wake_pi "opencode session looks broken (last turn ended in ERROR, no log activity ${age}s) - inspect $LOG tail"
-    fi
-    # Hard cap: at most 3 nudges per watcher lifetime (persisted in a file), no loops.
-    nudge_total=$(cat /tmp/oc_watch_nudges 2>/dev/null)
-    case "$nudge_total" in ''|*[!0-9]*) nudge_total=0 ;; esac
-    if [ "$age" -gt "$STALL_S" ] && [ "$qconn" -eq 0 ] && [ "$idle" -eq 0 ] && [ "$broken" -eq 0 ] && [ "$nudge_total" -lt 3 ]; then
-      if [ $((now - last_nudge)) -gt "$NUDGE_COOLDOWN_S" ]; then
-        last_nudge=$now
-        nudge_total=$((nudge_total + 1)); echo "$nudge_total" > /tmp/oc_watch_nudges
-        W=$(oc_window)
-        if [ -n "$W" ]; then
-          xdotool windowactivate --sync "$W" 2>/dev/null; sleep 0.4
-          xdotool type --clearmodifiers --delay 20 -- "Continue the current task. Any permission you need is pre-approved (always-allow) - retry failed tool calls."
-          sleep 0.3
-          xdotool key Return
-          echo "$(date +%T) stall ${age}s - continue nudge ${nudge_total}/3" >> "$HB"
-        fi
-      fi
     fi
   fi
   [ $((hb++ % 6)) -eq 0 ] && echo "$(date +%T) ok oc=$OC last=$(tail -1 "$LOG" 2>/dev/null | cut -c1-100)" >> "$HB"
