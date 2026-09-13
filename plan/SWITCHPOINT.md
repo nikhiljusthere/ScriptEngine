@@ -8,6 +8,51 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-13 ~15:3x (owner-directed: 262k → 170k, NEW opencode session — Creator Research campaign continues; CSM parked):**
+  - **Mode: 262k (ctx 262144) → 170k (ctx 174080, raw-token dial-down).** Pre-switch
+    card state: `qwen_mode.txt` = `mode=262k ctx=262144 qwen_pid=65114 api=off
+    free_mib=1613`; `:8000` off, no extraction in flight. The 170k profile is
+    auto-generated (`serve_ctx_174080.sh` from the serve.sh template, kv=174080,
+    expected headroom ≈ 5 GiB). Switch: `qwen-switch.sh 174080 --force`
+    (fit guard trips on the stale 09-13 pi transcript ≈293k tokens > 174080;
+    force is safe — this commit is the full checkpoint).
+  - **This is an OPENCODE session, not pi** — the in-flight turn dies
+    mid-reload (expected). The owner continues in a **NEW opencode session**
+    (owner directive 15:3x: "continue this experiment in a new session").
+  - **Campaign: Creator Research (outside the repo) — full resume state in
+    `/home/goblin/Creator Research/HANDOFF.md` (§6, updated this session).**
+    CSM parked (Phase 1 at the extraction-gated floor; JJK baseline 100%).
+  - **Done in this opencode session (all on disk, none in the transcript):**
+    (1) 262-creator mapping analyzed (online `Analysis_262` tab);
+    (2) 15-day reel+brand research: all 218 IG creators (905 in-window reels,
+    371 brand rows) + 44 YT-only creators (47 uploads) — online campaign
+    sheet `1JScUInkANwXKZTEXhbnzh2taafraTXRiz-0Wud3_59Y`;
+    (3) expansion discovery wave 1: 8 accepted creators; new sheet
+    **"Expansion Creators Reels 15D & Brands (2026-09-13)"**
+    (`1dk6VUjeYW49kp3Y_SUAEhN4usM6l65KVTJlWXoK2Lgw`, Creator folder) with 21
+    in-window reels / 2 brand rows / per-creator summary;
+    (4) parallel-worker experiment: `reel_parallel.py` (per-reel CDP workers,
+    1 persistent tab each; 16-worker wall ~29 s; 32-worker runs degrade IG
+    hydration → data-quality recipe = 12 workers × up to 3 passes with a 24 s
+    hydration poll; **hard cap MAX_TABS=12 + end-of-job tab cleanup** per
+    owner rules "reduce the limit / PC is lagging").
+  - **EXACT NEXT STEPS (new session, in order):** (1) read
+    `/home/goblin/Creator Research/HANDOFF.md` §6; (2) launch Brave (CDP
+    `--remote-debugging-port=9222 --remote-allow-origins=*`, wipe session-
+    restore files first to avoid window duplication); (3) **finish the
+    candidate analysis of the mapping sheet**: discovery with `india` removed
+    from the search keywords (owner rule 15:0x — "don't search india, it will
+    most probably show you indian shorts already"), 4-worker discovery
+    (expand_driver.py, per-worker state files), then `reel_parallel.py` scan
+    of all accepted expansion creators (12-tab cap), merge + sheet
+    consolidation; (4) report the final per-category coverage
+    (targets: Tech 16, C&E 30, H&B 31, Business 38, Other 41, Entertainment 48
+    still short of 50).
+  - **Open risks:** IG checkpoint wall (abort → owner re-login in Brave);
+    OpenCLI bridge drops when the daemon restarts (restart Brave to
+    reconnect); Brave session-restore respawns stale windows (wipe
+    `Sessions/` while stopped).
+  - **Clean commit sha:** below (this checkpoint).
 - **2026-09-13 ~04:5x (owner-directed: 100k → 262k full-context switch, OPENCODE session — Creator Research work; CSM parked):**
   - **Mode: 100k (ctx 102400) → 262k (ctx 262144), "full context".** Pre-switch
     card state: Qwen 100k pid 108527 (up ~7 min, **serving this opencode
@@ -537,3 +582,6 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-13T02:00:23+05:30 qwen-switch: ctx=102400 (mode 100k), api=off, free=6996MiB
 - 2026-09-13T02:34:53+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1437MiB
 - 2026-09-13T03:23:02+05:30 qwen-switch: ctx=102400 (mode 100k), api=cuda, free=6902MiB
+- 2026-09-13T04:57:03+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=847MiB
+- 2026-09-13T14:15:33+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1534MiB
+- 2026-09-13T15:15:08+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1613MiB
