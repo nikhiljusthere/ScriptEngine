@@ -10,7 +10,7 @@
 # this run and the pre-checks cannot see it): the R-8 four standing gates +
 # eval --series jjk 31/31 green at the current pin, then Qwen :18080 DOWN
 # and :8000 up on CUDA with the whole card. Pre-checks 11/12 enforce the
-# service state only.
+# service state (up + CUDA device) only.
 #
 # Launch (directing session, from the repo root):
 #   setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &
@@ -18,8 +18,9 @@
 # (every 100 rows, the CLI's on_progress) -> p21_sweep_<stamp>_door_<label>.log.
 #
 # Exit codes: 0 done. 4 :8000 health halt. 5 ERROR-rate halt. 10-12 pre-check
-# failure (panel hash / service down / Qwen up). 20-23 door rc (2 ledger
-# corrupt or tier-0 miss, 3 dead-door, 1 crash). 30 integrity (row count).
+# failure (panel hash / service down or non-CUDA device / Qwen up). 20-23 door
+# or sanity pre-pass rc (2 ledger corrupt or tier-0 miss, 3 dead-door,
+# 1 crash). 30 integrity (row count).
 
 set -u -o pipefail
 
@@ -60,6 +61,12 @@ heldout_sha_now="$(panel_sha "$HELDOUT")"
 panel_rows_now=$("$VENV" -c 'import json,sys; d=json.load(open(sys.argv[1])); print(len(d["panel"]))' "$PANEL")
 heldout_rows_now=$("$VENV" -c 'import json,sys; print(len(json.load(open(sys.argv[1]))))' "$HELDOUT")
 
+# :8000 device (/health, main.py): a CPU service passes every other pre-check
+# and would turn the A17 floors and the wall estimate into CPU numbers, so a
+# non-CUDA device halts like a down service.
+health_body="$(curl -s -m 10 "$BASE/health" || true)"
+device="$(printf '%s' "$health_body" | "$VENV" -c 'import json,sys; print(json.load(sys.stdin).get("device","?"))' 2>/dev/null || echo down)"
+
 {
   echo "# CSM P2.1 sweep receipt — $(date -Is)"
   echo
@@ -67,6 +74,7 @@ heldout_rows_now=$("$VENV" -c 'import json,sys; print(len(json.load(open(sys.arg
   echo "- panel sha256: ${panel_sha_now} (frozen ${PANEL_SHA_EXPECT})"
   echo "- heldout sha256: ${heldout_sha_now} (frozen ${HELDOUT_SHA_EXPECT})"
   echo "- panel rows: ${panel_rows_now} (expect ${PANEL_ROWS}) | heldout rows: ${heldout_rows_now} (expect ${HELDOUT_ROWS})"
+  echo "- :8000 /health: device ${device}"
   echo "- Qwen :18080: $(if ss -ltn 2>/dev/null | grep -q ':18080 '; then echo UP; else echo down; fi)"
   echo "- VRAM: $(nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader 2>/dev/null | head -1)"
   echo
@@ -80,17 +88,19 @@ if [ "$panel_rows_now" != "$PANEL_ROWS" ] || [ "$heldout_rows_now" != "$HELDOUT_
   log "HALT pre-check: panel/heldout row count changed — exit 10"
   exit 10
 fi
-if curl -s -m 10 -o /dev/null "$BASE/health"; then
-  log ":8000 /health ok"
-else
-  log "HALT pre-check: :8000 /health failed — start the CUDA service first, then re-run — exit 11"
+if [ "$device" = "down" ]; then
+  log "HALT pre-check: :8000 /health failed or unparsable — start the CUDA service first, then re-run — exit 11"
+  exit 11
+fi
+if [ "$device" != "cuda" ]; then
+  log "HALT pre-check: :8000 device=${device} (expect cuda — a CPU service makes the floors/estimates CPU numbers) — exit 11"
   exit 11
 fi
 if ss -ltn 2>/dev/null | grep -q ':18080 '; then
   log "HALT pre-check: Qwen :18080 is UP — the sweep leg wants the whole card (PHASE2_JOB.md 93-103): stop Qwen, then re-run — exit 12"
   exit 12
 fi
-log "pre-checks passed (panel+heldout frozen, :8000 up, Qwen down)"
+log "pre-checks passed (panel+heldout frozen, :8000 up on ${device}, Qwen down)"
 
 # heldout ledger path (the CLI recomputes the same 8-char panel hash at load)
 h8=$("$VENV" -c 'import json,sys; sys.path.insert(0,"."); from scriptengine.eval.span_recall import _panel_hash; print(_panel_hash([list(r) for r in json.load(open(sys.argv[1]))])[:8])' "$HELDOUT")
@@ -137,6 +147,30 @@ manage_ledger "$HLEDGER"
 receipt
 log "A18: ${wipe_count} ledger(s) wiped (stale stamp), ${resume_count} resumed (stamped ${HEAD7})"
 
+# PHASE2_JOB.md 66-67: the first-run-only sanity-100 per door, zero panel
+# spend. A ledger wiped/fresh after the A18 pass (0 rows) gets the pre-pass;
+# a resumed ledger already carries its sanity rows, so the pre-pass is
+# skipped — the CLI's --sanity limit applies to UNPROBED rows, so capping a
+# resumed run at 100 would leave 17,081 rows and trip the exit-30 check.
+sanity_prepass() { # $1=label $2=api-door $3=panel-file $4=ledger
+  local label="$1" door="$2" panel="$3" ledger="$4"
+  local side="${ledger}.new" n rc
+  n=$(( $(wc -l 2>/dev/null < "$ledger" || echo 0) + $(wc -l 2>/dev/null < "$side" || echo 0) ))
+  if [ "$n" -gt 0 ]; then
+    log "sanity: ${label} resumes from ${n} rows — pre-pass skipped (first-run only)"
+    return 0
+  fi
+  local slog="$OUT/p21_sweep_${STAMP}_sanity_${label}.log"
+  log "sanity: ${label} pre-pass (100 probes, zero panel spend)"
+  "$VENV" -m scriptengine.cli span-recall --series csm --panel "$panel" --door "$door" --sanity 100 > "$slog" 2>&1
+  rc=$?
+  if [ "$rc" -ne 0 ]; then
+    log "HALT: sanity pre-pass ${label} rc=${rc} (2=tamper/tier-0 miss, 3=dead-door, 1=crash) — log: ${slog##*/} — exit $((20 + rc))"
+    exit $((20 + rc))
+  fi
+  log "sanity: ${label} pre-pass ok (100 rows into ${ledger##*/}; log: ${slog##*/})"
+}
+
 run_door() { # $1=label $2=api-door $3=panel-file $4=ledger $5=expected-rows
   # label names the receipt row / door log (e.g. "auto-heldout"); api-door is
   # what the CLI POSTs as the request mode (api/main.py:79 only accepts
@@ -147,11 +181,23 @@ run_door() { # $1=label $2=api-door $3=panel-file $4=ledger $5=expected-rows
   local side="${ledger}.new"
   local doorlog="$OUT/p21_sweep_${STAMP}_door_${label}.log"
   DOORLOGS+=("$doorlog")
-  local start end rc lines err pct main_l side_l total
+  local start end rc lines err pct main_l side_l total base_main base_side main_new side_new
   log "door ${label}: start (${rows} rows, ledger ${ledger##*/}, api door ${door})"
+  # A18 resume: rows already in the ledger/sidecar (e.g. a pre-halt .new burst)
+  # are not this run's rows — the ERROR window counts only rows written after
+  # the baseline, or a stale ERROR burst from a prior halted run trips exit 5
+  # on resume (span_recall.py keeps the sidecar until the clean-exit merge).
+  base_main=$([ -f "$ledger" ] && wc -l < "$ledger" || echo 0)
+  base_side=$([ -f "$side" ] && wc -l < "$side" || echo 0)
   start=$(date +%s)
   nohup "$VENV" -m scriptengine.cli span-recall --series csm --panel "$panel" --door "$door" > "$doorlog" 2>&1 &
-  local pid=$!
+  pid=$!
+  # pid is script-global: the EXIT trap (set below, per door) must see it after
+  # run_door returns.
+  # If this shell dies (reboot, OOM kill of the runner), the nohup'ed CLI keeps
+  # sweeping into the same sidecar — the EXIT trap kills it so a re-run of the
+  # launch line is the only resume path.
+  trap 'kill "$pid" 2>/dev/null' EXIT
   local health_fails=0 last_seen=0
   while kill -0 "$pid" 2>/dev/null; do
     sleep "$SLEEP"
@@ -174,7 +220,9 @@ run_door() { # $1=label $2=api-door $3=panel-file $4=ledger $5=expected-rows
     total=$((main_l + side_l))
     if [ "$total" -gt "$last_seen" ]; then
       last_seen=$total
-      err=$({ [ -f "$ledger" ] && tail -n "$ERROR_WINDOW" "$ledger"; [ -f "$side" ] && tail -n "$ERROR_WINDOW" "$side"; } | tail -n "$ERROR_WINDOW" | grep -c '"verdict": "ERROR"' || true)
+      main_new=$((main_l - base_main))
+      side_new=$((side_l - base_side))
+      err=$({ [ "$main_new" -gt 0 ] && tail -n +$((base_main + 1)) "$ledger" | tail -n "$ERROR_WINDOW"; [ "$side_new" -gt 0 ] && tail -n +$((base_side + 1)) "$side" | tail -n "$ERROR_WINDOW"; } | tail -n "$ERROR_WINDOW" | grep -c '"verdict": "ERROR"' || true)
       err=${err:-0}
       pct=$(( total * 100 / rows ))
       log "door ${label}: ${total}/${rows} (${pct}%) [main ${main_l} + live ${side_l}], last-${ERROR_WINDOW} ERROR=${err}, $(($(date +%s) - start))s"
@@ -219,7 +267,7 @@ DOORLOGS=()
   receipt "## Halt conditions (declared before the run, so a halted receipt carries them)"
   receipt
   receipt "- :8000 /health: ${HEALTH_FAILS_MAX} consecutive failures -> kill + exit 4 (resume after service recovery)"
-  receipt "- ERROR rate: > ${ERROR_BOUND} of last ${ERROR_WINDOW} rows (main + .new sidecar) -> kill + exit 5 (the .new sidecar survives the kill; ERROR rows re-probe on resume)"
+  receipt "- ERROR rate: > ${ERROR_BOUND} of the last ${ERROR_WINDOW} rows THIS RUN WROTE (main + .new sidecar, past the door's baseline) -> kill + exit 5 (a stale .new burst from a prior halted run is excluded; ERROR rows re-probe on resume)"
   receipt
   receipt "## Resuming after a halt"
   receipt
@@ -229,6 +277,13 @@ DOORLOGS=()
   receipt "any older-stamp row is wiped, sidecar included, and restarts (A18 — a mid-run"
   receipt "commit move invalidates the mixed-stamp ledger, full restart)."
 } >> "$RECEIPT"
+
+# first-run-only sanity pre-pass per wiped panel door (PHASE2_JOB.md 66-67);
+# the heldout leg is the 200-row out-of-sample run itself — no pre-pass
+sanity_prepass qa qa "$PANEL" "$LEDGER_DIR/sweep_qa_e3d73720.jsonl"
+sanity_prepass narrative narrative "$PANEL" "$LEDGER_DIR/sweep_narrative_e3d73720.jsonl"
+sanity_prepass roster roster "$PANEL" "$LEDGER_DIR/sweep_roster_e3d73720.jsonl"
+sanity_prepass auto auto "$PANEL" "$LEDGER_DIR/sweep_auto_e3d73720.jsonl"
 
 log "sweep sequence: qa -> narrative -> roster -> auto (full panel), then auto heldout"
 run_door qa qa "$PANEL" "$LEDGER_DIR/sweep_qa_e3d73720.jsonl" "$PANEL_ROWS"

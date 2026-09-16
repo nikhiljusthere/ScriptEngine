@@ -13,10 +13,16 @@ The four gates (re-run after every fix-class, before calling it done):
     are the known env-mcp trio under a stopped :8000, 2 xpassed). **R-8 debt
     (2026-09-16):** post-R-8 expected pin **1,331** (1,321 + 10 new R-8 router
     tests); the gate window is undischarged — see "R-8 landed" below.
-    **Order (2026-09-16 runner fix-up): discharge the gate window FIRST, then
-    stop Qwen and bring `:8000` up on the whole card, then launch the sweep —
-    the runner's pre-checks (exit 11/12) enforce the service state only, they
-    cannot see the gates.**
+    **W-state pin (council #30, 2026-09-17):** W1 (`:8000` down) = 1,331
+    collected with the 3 known env-mc failures
+    (`tests/test_mcp_server.py:20,35,46`); W2 (`:8000` up) = 1,331/0.
+    (SITUATION/R4's 1,334/0 is a +3 arithmetic drift — verified collect-only
+    = 1,331.)
+    **Order (council #30): stop Qwen (`ninfer-stop.sh`, verify `mode=off`) →
+    W1 in-process, whole card → `:8000` up on CUDA → W2 gates → move
+    `GATE_LEDGER` + re-stamp `phase_status` sha → launch the runner against
+    the same service. The runner's pre-checks (exit 11/12) see service state
+    only, not the gates.**
 2. **gate-2 — `eval --series jjk`**: **31/31 (100%)** gold.
 3. **gate-3 — `span-recall --series jjk`**: **48,572/48,572 offline (rc=0)**
    + a 400-probe (seed-rotated; the live window must clear the 390/400 =
@@ -290,8 +296,8 @@ and the whole 32 GB on `:8000`):
     setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &
 
 - **Pre-checks** (exit 10/11/12): panel+heldout sha256 vs the A26 frozen
-  values (`cf72135f…` / `604dc8ca…`), row counts 17,181/200, `:8000` /health,
-  Qwen `:18080` down.
+  values (`cf72135f…` / `604dc8ca…`), row counts 17,181/200, `:8000` /health
+  (records `device`; non-cuda → exit 11), Qwen `:18080` down.
 - **A18 pre-wipe, stamp-based**: a ledger resumes forward after a halt only
   when every row (main + `.new` sidecar) is stamped with the current HEAD;
   any older stamp (the pre-R-8 `f2a611d`/`2f67222` sanity rows) — in the main
@@ -304,12 +310,15 @@ and the whole 32 GB on `:8000`):
   out-of-sample number; `api/main.py:79` accepts only the five fixed modes,
   extra heldout doors are a one-liner if wanted).
 - **Halt codes**: `exit 4` = `:8000` health failure ×2 rolling (PHASE2_JOB
-  line 78); `exit 5` = ERROR > 10 of last 50 ledger rows (rolling window,
-  line 79; ERROR rows re-probe on resume); `exit 20+rc` = CLI rc (2 ledger
-  corrupt/tier-0 miss, 1 crash); `exit 30` = row-count integrity.
+  line 78); `exit 5` = ERROR > 10 of the last 50 rows THIS RUN wrote (rolling
+  window from the door's resume baseline, line 79; ERROR rows re-probe on
+  resume); `exit 20+rc` = CLI rc (2 ledger corrupt/tier-0 miss, 3 dead-door
+  (`--sanity` found 0 hits on the door's 100 probes; `cli.py:2196-2202`),
+  1 crash); `exit 30` = row-count integrity.
 - **Receipts**: `reports/master-work/p21_sweep_<stamp>_RECEIPT.md` (pre-checks,
   A18 state, per-door verdict table, halt bounds) + `_run.log` + per-door logs.
-- Wall estimate ≈ 2.7 h panel (step-0 timer) + ~4 min heldout.
+- Wall estimate ≈ 3.7 h panel (2.73 h + 17,181 × 0.192 s auto ≈ 0.9 h,
+  the "P2.1 step-0 addendum — the auto door measured" section) + ~4 min heldout.
 
 ### Runner fix-up (council-1 findings, disk-verified 2026-09-16)
 
@@ -339,11 +348,59 @@ receipt carries them), and the A18 bullet above is corrected: the auto sanity
 ledger was stamped `2f67222`, not `f2a611d` (qa/narrative/roster were
 `f2a611d` — all four stale vs HEAD, so the A18 wipe set is unchanged).
 
-**Launch order (the undischarged gate window):** (1) discharge R-8's gate
-window — the four standing gates + `eval --series jjk` 31/31 at pin 1,331,
-then move `GATE_LEDGER.json` `last_green` to the R-8 commit; (2) stop Qwen
-(`ninfer-work/qwen-switch.sh`, `docs/ops/PC_GPU_HANDOFF.md`, the GPU working
-agreement in CLAUDE.md) and bring `:8000` up on CUDA with the whole card;
-(3) launch the runner (exit 12 enforces Qwen-down). **Do not commit while the
-sweep runs**: a HEAD move makes every ledger's stamp stale and the next
-launch wipes all five ledgers (A18) — full restart.
+### Runner audit (council #30, 2026-09-17, pre-GPU)
+
+Council #30 (5 advisors + 5 reviewers + chairman, `reports/csm/receipts/
+council_p21_audit/`) re-audited the runner before the GPU session and returned
+**SHIP-WITH-CHANGES**. Resolved:
+
+1. **Resume-boundary defect (R5, verified on disk):** after a burst-halt,
+   `span_recall.py:408-411` reads the stale `.new` sidecar into `prior` and
+   :469 appends after it, so a pre-halt ERROR burst sits in the watchdog's
+   50-row window on resume → false exit 5. `run_door` now records
+   `base_main`/`base_side` at door start and the ERROR window counts only
+   rows THIS RUN wrote (`tail -n +$((base+1))`).
+2. **Orphan-CLI guard:** `trap 'kill "$pid"' EXIT` — a non-reboot runner death
+   no longer orphans the nohup'ed CLI into a second sweep on the same sidecar.
+3. **Sanity pre-pass:** a first-run-only `--sanity 100` CLI call per panel
+   door before the sweep (PHASE2_JOB.md:66-67, zero panel spend); resumed
+   ledgers skip it (a capped resume would trip exit 30). rc maps to exit
+   21/22/23 (crash/ledger/dead-door).
+4. **Device pre-check:** the `/health` receipt records `device`; non-cuda →
+   exit 11 (a CPU `:8000` passed all pre-checks before this).
+5. **Wall estimate corrected** 2.7 h → ≈ 3.7 h (the 2.7 h sum omitted the
+   auto full-panel door, 17,181 × 0.192 s ≈ 0.9 h).
+
+Verification: the 16-assert dry-run (`/tmp/p21test2/run.sh`, T1–T5) is green;
+T5 (a 11-ERROR-row sidecar at resume → no false exit 5) fails against the
+pre-patch window logic (exit 5 at 12/20, `last-50 ERROR=11`) and passes
+post-patch. No CLI change.
+
+**Launch order (the undischarged gate window, council #30 A2):**
+
+1. **W1 — in-process, whole card:** stop Qwen FIRST via
+   `~/ninfer-work/ninfer-stop.sh` (writes `mode=off`; blocks the
+   `ninfer_restart.sh` poller — a bare kill lets it resurrect Qwen mid-sweep;
+   `qwen-switch.sh` has no stop mode, the pre-#30 text mislabeled it). Verify
+   `mode=off` + :18080 free. Then `pytest tests/ -q` (W1 expectation, A5:
+   1,331 collected, 3 known env-mc failures) + `eval --series jjk` 31/31.
+2. **Service:** `:8000` up on CUDA from the current tree (setsid-detached);
+   record HEAD; confirm `/health` `device=cuda` (models load lazily).
+3. **W2 — gates against that one service:** `span-recall --series jjk`
+   (offline rc=0 + 400-probe ≥ 390/400) + `canon-run --series opm --skip-eval`
+   (236/236, 79.0%).
+4. **Ledger + re-stamp:** move `GATE_LEDGER.json` `last_green` to the R-8
+   commit, then re-stamp `phase_status.txt:4`'s `ledger_sha256` (the :9 pin is
+   otherwise unsatisfiable; a literal executor reads the drift as ledger drift
+   and re-runs the window — 1–2 GPU-h).
+5. **Canary:** count HITs in the 4 pre-wipe sanity ledgers (qa 95 /
+   narrative 35 / roster 2 / auto 37 per 100; A18 wipes at launch). At ~10 min
+   in, HIT% must sit near the qa floor (~90+); a large deficit = a
+   quietly-wrong `:8000` (MISS_DOC floods the 10/50 bound can't catch) →
+   kill + diagnose.
+6. **Launch the runner** against the same service (no restart; exit 12
+   enforces Qwen-down). **No mid-sweep commits** (A18 wipes all 5 ledgers;
+   ~3.7 h restart).
+
+Post-sweep: restart Qwen via `qwen-switch.sh 100k` (plan A19), not the 262k
+default `ninfer-stop.sh` restarts.
