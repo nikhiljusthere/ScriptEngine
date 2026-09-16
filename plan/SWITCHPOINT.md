@@ -8,6 +8,34 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-14 ~03:3x (owner-directed: 174k → 120k, PI session — Creator Research campaign; CSM parked):**
+  - **Mode: 174k (ctx 174080) → 120k (ctx 122880, raw-token dial-down).** Pre-switch
+    card state: `qwen_mode.txt` = `mode=174080 ctx=174080 qwen_pid=42381
+    ts=2026-09-14T03:11:11+05:30 api=off free_mib=4293`; `:8000` off, no
+    extraction in flight. Expected headroom ≈ 6.2–6.3 GB (measured 6,303 MiB
+    at 122880 on 2026-09-12). `:8000` stays off (no `--api`).
+  - **This is a PI session** — the agent runs the switch as ONE blocking bash
+    call (`cd /home/goblin/ninfer-work && ./qwen-switch.sh 122880`,
+    timeout 300 s; the autonomous protocol, QWEN_MODES.md §3). The model is
+    back on the turn after the reload; this session's transcript (≈10–15k
+    tokens) fits 122880, fit guard passes without `--force`.
+  - **Owner directive: update BOTH json configs** — `qwen-switch.sh` does both
+    automatically: `~/.pi/agent/models.json` (ninfer-27b `contextWindow` →
+    122880) + `/home/goblin/ScriptEngine/opencode.json` (ninfer-27b
+    `limit.context` → 122880). The ninfer-35b provider (229376) is untouched.
+    VERIFY both files after the switch.
+  - **Campaign state unchanged: Creator Research (opencode, outside the repo)
+    — full resume state in `/home/goblin/Creator Research/HANDOFF.md`** (§6:
+    finish the candidate analysis w/ india-free keywords + 12-worker capped
+    parallel scan). CSM parked (Phase 1 at the extraction-gated floor, D23
+    `407c016`; JJK baseline 100%).
+  - **Clean commit sha:** below (this checkpoint).
+  - **FIRST ACTION ON RESUME / POST-FLIGHT:** (1) `cat
+    /home/goblin/ninfer-work/qwen_mode.txt` (expect mode=122880 ctx=122880,
+    api=off, free ≈ 6.2 GB); (2) `nvidia-smi` (Qwen only on the card); (3)
+    verify BOTH json files now read 122880 (models.json ninfer-27b +
+    opencode.json ninfer-27b); (4) continue whatever work the owner points at
+    (Creator Research HANDOFF §6 if none).
 - **2026-09-13 ~15:3x (owner-directed: 262k → 170k, NEW opencode session — Creator Research campaign continues; CSM parked):**
   - **Mode: 262k (ctx 262144) → 170k (ctx 174080, raw-token dial-down).** Pre-switch
     card state: `qwen_mode.txt` = `mode=262k ctx=262144 qwen_pid=65114 api=off
@@ -585,3 +613,5 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-13T04:57:03+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=847MiB
 - 2026-09-13T14:15:33+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1534MiB
 - 2026-09-13T15:15:08+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1613MiB
+- 2026-09-13T15:31:47+05:30 qwen-switch: ctx=174080 (mode 174080), api=off, free=4539MiB
+- 2026-09-14T03:11:11+05:30 qwen-switch: ctx=174080 (mode 174080), api=off, free=4293MiB
