@@ -272,6 +272,9 @@ util, idle). Next session pre-flight: wipe the 572-row pre-fix qa ledger
   runner-audit section. Verified: `bash -n` + 16-assert scratch
   dry-run green (`/tmp/p21test2/run.sh`, T5: stale 11-ERROR burst on
   resume — pre-patch logic false-halts exit 5, patched passes).
-  NEXT: council 2 (leftover coding: `route()` bucketing basis,
-  Q1/Q2 census bank, R3 SKIP pricing) + council 3 (GPU-phase
-  dimensions) → minimal-thinking Claude GPU handoff prompt.
+  NEXT: ~~council 2 (leftover coding) + council 3 (GPU-phase
+  dimensions)~~ SUPERNUMERARY — council #30 itself priced them
+  (chairman item 4: route() bucketing SKIP pre-sweep, subsumed by the
+  pre-pass; Q1/Q2 census bank rides the GPU session in parallel and
+  gates P2.3, not the sweep) — no re-litigation council. The minimal-
+  thinking Claude GPU handoff prompt is `plan/gpu_p21_task.md`.
