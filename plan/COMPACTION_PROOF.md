@@ -47,22 +47,16 @@ instructions that a summary tends to drop. Newest note at the bottom.
   new 2-at-a-time steer, try 2 small members at a time and check Qwen health
   (full_reset rate / memory) between pairs; fall back to serial if it thrashes.
 
-## Live system state (2026-09-12 ~12:10 +0530)
+## Live system state (2026-09-17 ~00:40 +0530)
 
-- Qwen 27B (ninfer) pid **7759**, 120k dial: ctx=kv=**122880**, GPU 25,576 MiB
-  (~7 GB free headroom, util 3% idle at the stop). Healthy (`kill -0` alive).
-- `:8000` API **STOPPED** again (the P2.1 step-0 warm-up window, started
-  ~11:58 on CUDA, was stopped ~12:10 at the owner's direction so the Claude
-  session that runs Phase 2 can own all the VRAM). The next session restarts
-  it on **CUDA in a Qwen quiet window** before the probes (short, co-located —
-  verified twice: R-7 and P1.4 windows, Qwen survived at 31,083/32,607 MiB).
-  Log convention `/tmp/scriptengine_api_*.log` (the stopped one:
-  `/tmp/scriptengine_api_p21.log`).
-- `opencode.json` limit.context = **122880** (synced by the pi switch session;
-  `qwen-switch.sh` now auto-syncs BOTH pi `models.json` and opencode.json on
-  every dial switch — no more stale context).
-- pi pid 7914 (session 01a0924e) was idle since 02:49; treat as the switch
-  session's owner pane — do not type into it.
+- Qwen 27B (ninfer) pid **5625**, 120k dial: ctx=kv=**122880**, GPU
+  25,576 MiB (~6.2 GB free headroom). Healthy.
+- `:8000` API **STOPPED** (steady state before the GPU session; the GPU
+  session starts it on CUDA whole-card per GATE.md council-#30 launch
+  order). Log convention `/tmp/scriptengine_api_*.log`.
+- HEAD = **`22d3ac2`** (council #30 SHIP-WITH-CHANGES patch); branch
+  `character-scoped-questions`.
+- `opencode.json` limit.context = **122880** (qwen-switch auto-syncs both).
 
 ## Campaign position (CSM Phase 1, §9a closure loop)
 
@@ -251,3 +245,33 @@ util, idle). Next session pre-flight: wipe the 572-row pre-fix qa ledger
   down, `:8000` on the whole card, launch; no commits mid-sweep) —
   `work_log.md` + `GATE.md` "Runner fix-up (council-1 findings)" for the
   full record.**
+- 2026-09-17 ~00:40: **Council #30 (P2.1 runner pre-GPU audit) —
+  SHIP-WITH-CHANGES, A1–A6 landed @ `22d3ac2`** (8 paths, zero GPU;
+  5+5 advisors/reviews IN PARALLEL + fresh-context chairman,
+  `reports/csm/receipts/council_p21_audit/`, COUNCIL_HISTORY #30,
+  work_log 2026-09-17T00:34). A1 (runner, `tools/csm/p21_sweep.sh`):
+  (a) **R5 resume-boundary fix** — the exit-5 ERROR window now counts
+  only rows THIS RUN wrote (baseline = main + `.new` line count captured
+  before nohup; a stale `.new` burst from a prior halted run can no
+  longer false-halt a resume); (b) per-door EXIT trap kills the
+  nohup'd CLI if the runner dies (orphan-CLI guard; pid kept
+  script-global so the trap fires after `run_door` returns); (c)
+  `sanity_prepass()` — first-run-only `--sanity 100` per panel door
+  before the full sweep (skipped on resume), rc → exit 21/22/23;
+  (d) `/health` device receipt + pre-check: non-cuda/down device →
+  exit 11 (receipt line `- :8000 /health: device ${device}`).
+  GATE.md (A2–A6): council-#30 launch order (ninfer-stop.sh FIRST +
+  mode=off verify → W1 gates whole-card (pytest **1,331** + eval jjk
+  31/31) → :8000 up on CUDA → W2 gates (span-recall jjk + canon opm) →
+  move GATE_LEDGER to R-8 + re-stamp `phase_status.txt:4` sha →
+  canary ≥90 HITs @ 10 min → `setsid` launch, no mid-sweep commits;
+  post-sweep `qwen-switch.sh 100k`), W-state pin (W1 = 1,331 + 3
+  env-mc fails, W2 = 1,331/0 — the SITUATION/R4 1,334/0 was a drift
+  error), rc-3 dead-door halt row (`cli.py:2196-2202`), wall
+  estimate 2.7 h → ≈3.7 h panel (auto 17,181 × 0.192 s ≈ 0.9 h),
+  runner-audit section. Verified: `bash -n` + 16-assert scratch
+  dry-run green (`/tmp/p21test2/run.sh`, T5: stale 11-ERROR burst on
+  resume — pre-patch logic false-halts exit 5, patched passes).
+  NEXT: council 2 (leftover coding: `route()` bucketing basis,
+  Q1/Q2 census bank, R3 SKIP pricing) + council 3 (GPU-phase
+  dimensions) → minimal-thinking Claude GPU handoff prompt.
