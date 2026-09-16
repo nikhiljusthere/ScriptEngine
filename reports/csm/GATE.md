@@ -13,6 +13,10 @@ The four gates (re-run after every fix-class, before calling it done):
     are the known env-mcp trio under a stopped :8000, 2 xpassed). **R-8 debt
     (2026-09-16):** post-R-8 expected pin **1,331** (1,321 + 10 new R-8 router
     tests); the gate window is undischarged — see "R-8 landed" below.
+    **Order (2026-09-16 runner fix-up): discharge the gate window FIRST, then
+    stop Qwen and bring `:8000` up on the whole card, then launch the sweep —
+    the runner's pre-checks (exit 11/12) enforce the service state only, they
+    cannot see the gates.**
 2. **gate-2 — `eval --series jjk`**: **31/31 (100%)** gold.
 3. **gate-3 — `span-recall --series jjk`**: **48,572/48,572 offline (rc=0)**
    + a 400-probe (seed-rotated; the live window must clear the 390/400 =
@@ -288,13 +292,17 @@ and the whole 32 GB on `:8000`):
 - **Pre-checks** (exit 10/11/12): panel+heldout sha256 vs the A26 frozen
   values (`cf72135f…` / `604dc8ca…`), row counts 17,181/200, `:8000` /health,
   Qwen `:18080` down.
-- **A18 pre-wipe, stamp-based**: ledger rows stamped with the current HEAD
-  resume forward after a halt; any older stamp (the pre-R-8 `f2a611d` sanity
-  rows) is wiped and the door restarts, so P1 parser fixes are never
-  attributed to P2.3.
+- **A18 pre-wipe, stamp-based**: a ledger resumes forward after a halt only
+  when every row (main + `.new` sidecar) is stamped with the current HEAD;
+  any older stamp (the pre-R-8 `f2a611d`/`2f67222` sanity rows) — in the main
+  file or the sidecar — is wiped and the door restarts, so P1 parser fixes
+  are never attributed to P2.3 (a mixed-stamp ledger, i.e. a mid-run commit
+  move, restarts in full).
 - **Sequence**: qa → narrative → roster → auto (full 17,181-row panel, 30 s
-  per-door watchdog), then the 200-row heldout through **auto only** (the
-  A24(a) out-of-sample number; extra heldout doors are a one-liner if wanted).
+  per-door watchdog over main + live-sidecar rows), then the 200-row heldout
+  under label **auto-heldout** running api door **auto** (the A24(a)
+  out-of-sample number; `api/main.py:79` accepts only the five fixed modes,
+  extra heldout doors are a one-liner if wanted).
 - **Halt codes**: `exit 4` = `:8000` health failure ×2 rolling (PHASE2_JOB
   line 78); `exit 5` = ERROR > 10 of last 50 ledger rows (rolling window,
   line 79; ERROR rows re-probe on resume); `exit 20+rc` = CLI rc (2 ledger
@@ -302,3 +310,40 @@ and the whole 32 GB on `:8000`):
 - **Receipts**: `reports/master-work/p21_sweep_<stamp>_RECEIPT.md` (pre-checks,
   A18 state, per-door verdict table, halt bounds) + `_run.log` + per-door logs.
 - Wall estimate ≈ 2.7 h panel (step-0 timer) + ~4 min heldout.
+
+### Runner fix-up (council-1 findings, disk-verified 2026-09-16)
+
+The pre-bake had two real defects, both found by the first audit council and
+verified against the engine before fixing:
+
+1. **The heldout leg would 422**: `--door` is POSTed as the request's `mode`
+   (`span_recall.py:214`) and `api/main.py:79` accepts only
+   `qa/narrative/roster/relations/auto` — `auto-heldout` would 422 on all 200
+   heldout probes (all-ERROR, A24(a) unmeasurable), and the CLI's ledger name
+   (`sweep_{door}_{h8}.jsonl`, `span_recall.py:287`) would have missed the
+   watched `sweep_auto_{h8}.jsonl` anyway. `run_door` now takes a **label**
+   (receipt row, door log) and an **api door** separately; the heldout leg
+   runs `run_door auto-heldout auto …` and the heldout panel's distinct 8-char
+   hash keeps its ledger apart.
+2. **Exit 5 was unreachable and A18 ignored the sidecar**: the CLI writes
+   live rows to the `<ledger>.new` sidecar and merges only on a clean exit
+   (`span_recall.py:469-489`), so for a wiped ledger the main file is absent
+   for the whole door — the old main-file-only watchdog never saw progress or
+   the ERROR bound, and a stale-stamp sidecar would be re-merged into the
+   fresh door. The watchdog now counts main + sidecar and tails the sidecar
+   for the ERROR window; the A18 wipe manages all five ledgers (the heldout's
+   `sweep_auto_{h8}.jsonl` included) and wipes stale-stamp sidecars.
+
+The receipt's halt/resume sections now precede the door sequence (a halted
+receipt carries them), and the A18 bullet above is corrected: the auto sanity
+ledger was stamped `2f67222`, not `f2a611d` (qa/narrative/roster were
+`f2a611d` — all four stale vs HEAD, so the A18 wipe set is unchanged).
+
+**Launch order (the undischarged gate window):** (1) discharge R-8's gate
+window — the four standing gates + `eval --series jjk` 31/31 at pin 1,331,
+then move `GATE_LEDGER.json` `last_green` to the R-8 commit; (2) stop Qwen
+(`ninfer-work/qwen-switch.sh`, `docs/ops/PC_GPU_HANDOFF.md`, the GPU working
+agreement in CLAUDE.md) and bring `:8000` up on CUDA with the whole card;
+(3) launch the runner (exit 12 enforces Qwen-down). **Do not commit while the
+sweep runs**: a HEAD move makes every ledger's stamp stale and the next
+launch wipes all five ledgers (A18) — full restart.

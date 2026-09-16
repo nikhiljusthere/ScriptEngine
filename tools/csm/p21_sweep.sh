@@ -6,9 +6,16 @@
 # per-door watchdog and the receipt are all in this file (PHASE2_JOB.md 69-88:
 # "a batch with no agent has no judgement, so the script must carry it").
 #
+# Preconditions (discharge BEFORE launching — the gate window is not part of
+# this run and the pre-checks cannot see it): the R-8 four standing gates +
+# eval --series jjk 31/31 green at the current pin, then Qwen :18080 DOWN
+# and :8000 up on CUDA with the whole card. Pre-checks 11/12 enforce the
+# service state only.
+#
 # Launch (directing session, from the repo root):
 #   setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &
-# then poll the newest reports/master-work/p21_sweep_*_run.log.
+# Poll: halt + watchdog lines -> p21_sweep_<stamp>_run.log; per-door progress
+# (every 100 rows, the CLI's on_progress) -> p21_sweep_<stamp>_door_<label>.log.
 #
 # Exit codes: 0 done. 4 :8000 health halt. 5 ERROR-rate halt. 10-12 pre-check
 # failure (panel hash / service down / Qwen up). 20-23 door rc (2 ledger
@@ -85,46 +92,63 @@ if ss -ltn 2>/dev/null | grep -q ':18080 '; then
 fi
 log "pre-checks passed (panel+heldout frozen, :8000 up, Qwen down)"
 
-# A18 control arm: rows stamped with the current HEAD resume forward; any
-# other stamp (e.g. the pre-R-8 f2a611d sanity rows) would attribute P1
-# parser fixes to P2.3, so those ledgers start from zero. Wipe is per-ledger
-# and only touches stale-stamp rows, so a halt + re-run on an unchanged tree
-# resumes instead of restarting.
-# (cli.py _sweep_stamps stamps with `git rev-parse --short HEAD`, 7 chars)
-HEAD7="$(git rev-parse --short HEAD)"
-wipe_count=0
-resume_count=0
-receipt "## A18 pre-wipe state"
-receipt
-for d in qa narrative roster auto; do
-  L="$LEDGER_DIR/sweep_${d}_e3d73720.jsonl"
-  if [ ! -f "$L" ] || [ ! -s "$L" ]; then
-    receipt "- ${L##*/}: absent (fresh)"
-    continue
-  fi
-  rows_l=$(wc -l < "$L")
-  if grep -q "\"commit\": \"${HEAD7}\"" "$L"; then
-    receipt "- ${L##*/}: ${rows_l} rows stamped ${HEAD7} — resume forward"
-    resume_count=$((resume_count + 1))
-  else
-    receipt "- ${L##*/}: ${rows_l} rows, last stamp $(tail -1 "$L" | grep -o '"commit": "[a-f0-9]*"' | head -1) — wiped (stale stamp)"
-    rm -f "$L"
-    wipe_count=$((wipe_count + 1))
-  fi
-done
-receipt
-log "A18: ${wipe_count} ledger(s) wiped (stale stamp), ${resume_count} resumed (stamped ${HEAD7})"
-
 # heldout ledger path (the CLI recomputes the same 8-char panel hash at load)
 h8=$("$VENV" -c 'import json,sys; sys.path.insert(0,"."); from scriptengine.eval.span_recall import _panel_hash; print(_panel_hash([list(r) for r in json.load(open(sys.argv[1]))])[:8])' "$HELDOUT")
 HLEDGER="$LEDGER_DIR/sweep_auto_${h8}.jsonl"
 
-run_door() { # $1=door $2=panel-file $3=ledger $4=expected-rows
-  local door="$1" panel="$2" ledger="$3" rows="$4"
-  local doorlog="$OUT/p21_sweep_${STAMP}_door_${door}.log"
+# A18 control arm: a ledger resumes forward only when EVERY row (main file +
+# .new sidecar) is stamped with the current HEAD. Any older stamp (e.g. the
+# pre-R-8 f2a611d/2f67222 sanity rows) would attribute P1 parser fixes to
+# P2.3, so those ledgers start from zero — and the .new sidecar counts: the
+# CLI writes live rows there until the clean-exit merge (span_recall.py), so
+# a stale-stamp sidecar is residue a re-merge would pull into the fresh door,
+# while a current-stamp sidecar is resume state and is kept. A mid-run commit
+# move leaves a mixed-stamp ledger: full restart.
+# (cli.py _sweep_stamps stamps with `git rev-parse --short HEAD`, 7 chars)
+HEAD7="$(git rev-parse --short HEAD)"
+wipe_count=0
+resume_count=0
+count_stale() { # $1=ledger or sidecar -> rows NOT stamped HEAD7 (0 if absent)
+  grep -v "\"commit\": \"${HEAD7}\"" "$1" 2>/dev/null | wc -l
+}
+manage_ledger() { # $1=main ledger path — A18 verdict over main + .new sidecar
+  local L="$1" side="${1}.new" rows_l stale_l
+  if [ ! -f "$L" ] && [ ! -f "$side" ]; then
+    receipt "- ${L##*/}: absent (fresh)"
+    return 0
+  fi
+  rows_l=$(( $(wc -l 2>/dev/null < "$L" || echo 0) + $(wc -l 2>/dev/null < "$side" || echo 0) ))
+  stale_l=$(( $(count_stale "$L") + $(count_stale "$side") ))
+  if [ "$rows_l" -gt 0 ] && [ "$stale_l" -eq 0 ]; then
+    receipt "- ${L##*/}: ${rows_l} rows stamped ${HEAD7} — resume forward"
+    resume_count=$((resume_count + 1))
+  else
+    receipt "- ${L##*/}: ${rows_l} rows, ${stale_l} stale — wiped (main + sidecar, stale stamp)"
+    rm -f "$L" "$side"
+    wipe_count=$((wipe_count + 1))
+  fi
+}
+receipt "## A18 pre-wipe state"
+receipt
+for d in qa narrative roster auto; do
+  manage_ledger "$LEDGER_DIR/sweep_${d}_e3d73720.jsonl"
+done
+manage_ledger "$HLEDGER"
+receipt
+log "A18: ${wipe_count} ledger(s) wiped (stale stamp), ${resume_count} resumed (stamped ${HEAD7})"
+
+run_door() { # $1=label $2=api-door $3=panel-file $4=ledger $5=expected-rows
+  # label names the receipt row / door log (e.g. "auto-heldout"); api-door is
+  # what the CLI POSTs as the request mode (api/main.py:79 only accepts
+  # qa/narrative/roster/relations/auto — a free-form label would 422), so the
+  # heldout leg runs api-door "auto" under label "auto-heldout" and the
+  # heldout panel's distinct 8-char hash keeps its ledger apart.
+  local label="$1" door="$2" panel="$3" ledger="$4" rows="$5"
+  local side="${ledger}.new"
+  local doorlog="$OUT/p21_sweep_${STAMP}_door_${label}.log"
   DOORLOGS+=("$doorlog")
-  local start end rc lines err pct
-  log "door ${door}: start (${rows} rows, ledger ${ledger##*/})"
+  local start end rc lines err pct main_l side_l total
+  log "door ${label}: start (${rows} rows, ledger ${ledger##*/}, api door ${door})"
   start=$(date +%s)
   nohup "$VENV" -m scriptengine.cli span-recall --series csm --panel "$panel" --door "$door" > "$doorlog" 2>&1 &
   local pid=$!
@@ -135,38 +159,41 @@ run_door() { # $1=door $2=panel-file $3=ledger $4=expected-rows
       health_fails=0
     else
       health_fails=$((health_fails + 1))
-      log "door ${door}: :8000 health FAIL (${health_fails}/${HEALTH_FAILS_MAX})"
+      log "door ${label}: :8000 health FAIL (${health_fails}/${HEALTH_FAILS_MAX})"
       if [ "$health_fails" -ge "$HEALTH_FAILS_MAX" ]; then
         kill "$pid" 2>/dev/null
         log "HALT: :8000 health failure x${HEALTH_FAILS_MAX} — sweep killed, resume after service recovery (exit 4)"
         exit 4
       fi
     fi
-    if [ -f "$ledger" ]; then
-      lines=$(wc -l < "$ledger")
-      if [ "$lines" -gt "$last_seen" ]; then
-        last_seen=$lines
-        err=$(tail -n "$ERROR_WINDOW" "$ledger" | grep -c '"verdict": "ERROR"' || true)
-        err=${err:-0}
-        pct=$(( lines * 100 / rows ))
-        log "door ${door}: ${lines}/${rows} (${pct}%), last-${ERROR_WINDOW} ERROR=${err}, $(($(date +%s) - start))s"
-        if [ "$err" -gt "$ERROR_BOUND" ]; then
-          kill "$pid" 2>/dev/null
-          log "HALT: ERROR ${err}/${ERROR_WINDOW} > bound ${ERROR_BOUND} — sweep killed (ERROR rows re-probe on resume) (exit 5)"
-          exit 5
-        fi
+    # Live rows land in the .new sidecar until the CLI's clean-exit merge
+    # (span_recall.py), so the watchdog counts main + sidecar and the ERROR
+    # window tails the sidecar (the newest rows) last.
+    main_l=$([ -f "$ledger" ] && wc -l < "$ledger" || echo 0)
+    side_l=$([ -f "$side" ] && wc -l < "$side" || echo 0)
+    total=$((main_l + side_l))
+    if [ "$total" -gt "$last_seen" ]; then
+      last_seen=$total
+      err=$({ [ -f "$ledger" ] && tail -n "$ERROR_WINDOW" "$ledger"; [ -f "$side" ] && tail -n "$ERROR_WINDOW" "$side"; } | tail -n "$ERROR_WINDOW" | grep -c '"verdict": "ERROR"' || true)
+      err=${err:-0}
+      pct=$(( total * 100 / rows ))
+      log "door ${label}: ${total}/${rows} (${pct}%) [main ${main_l} + live ${side_l}], last-${ERROR_WINDOW} ERROR=${err}, $(($(date +%s) - start))s"
+      if [ "$err" -gt "$ERROR_BOUND" ]; then
+        kill "$pid" 2>/dev/null
+        log "HALT: ERROR ${err}/${ERROR_WINDOW} > bound ${ERROR_BOUND} — sweep killed (the .new sidecar survives the kill; ERROR rows re-probe on resume) (exit 5)"
+        exit 5
       fi
     fi
   done
   wait "$pid"; rc=$?
   end=$(date +%s)
   if [ "$rc" -ne 0 ]; then
-    log "door ${door}: CLI rc=${rc} (2=ledger corrupt/tier-0 miss, 3=dead-door, 1=crash) — log: ${doorlog##*/}"
+    log "door ${label}: CLI rc=${rc} (2=ledger corrupt/tier-0 miss, 3=dead-door, 1=crash) — log: ${doorlog##*/}"
     exit $((20 + rc))
   fi
-  lines=$(wc -l < "$ledger")
+  lines=$(wc -l 2>/dev/null < "$ledger" || echo 0)
   if [ "$lines" -ne "$rows" ]; then
-    log "INTEGRITY: door ${door} ledger has ${lines}/${rows} rows — exit 30"
+    log "INTEGRITY: door ${label} ledger has ${lines}/${rows} rows — exit 30"
     exit 30
   fi
   local hit mdoc mspan trunc errs rate
@@ -176,8 +203,8 @@ run_door() { # $1=door $2=panel-file $3=ledger $4=expected-rows
   trunc=$(grep -c '"verdict": "TRUNCATED"' "$ledger" || true)
   errs=$(grep -c '"verdict": "ERROR"' "$ledger" || true)
   rate=$(awk -v h="$hit" -v r="$rows" 'BEGIN { printf "%.4f", (h / r) * 100 }')
-  log "door ${door}: done — HIT ${hit} / MISS_DOC ${mdoc} / MISS_SPAN ${mspan} / TRUNCATED ${trunc} / ERROR ${errs}, hit_rate ${rate} %, $(( (end - start) / 60 ))m"
-  receipt "| ${door} | ${ledger##*/} | ${lines} | ${hit} | ${mdoc} | ${mspan} | ${trunc} | ${errs} | ${rate} % | $(( (end - start) / 60 ))m |"
+  log "door ${label}: done — HIT ${hit} / MISS_DOC ${mdoc} / MISS_SPAN ${mspan} / TRUNCATED ${trunc} / ERROR ${errs}, hit_rate ${rate} %, $(( (end - start) / 60 ))m"
+  receipt "| ${label} | ${ledger##*/} | ${lines} | ${hit} | ${mdoc} | ${mspan} | ${trunc} | ${errs} | ${rate} % | $(( (end - start) / 60 ))m |"
   return 0
 }
 
@@ -188,16 +215,31 @@ DOORLOGS=()
   receipt
   receipt "| door | ledger | rows | HIT | MISS_DOC | MISS_SPAN | TRUNCATED | ERROR | hit_rate | wall |"
   receipt "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"
+  receipt
+  receipt "## Halt conditions (declared before the run, so a halted receipt carries them)"
+  receipt
+  receipt "- :8000 /health: ${HEALTH_FAILS_MAX} consecutive failures -> kill + exit 4 (resume after service recovery)"
+  receipt "- ERROR rate: > ${ERROR_BOUND} of last ${ERROR_WINDOW} rows (main + .new sidecar) -> kill + exit 5 (the .new sidecar survives the kill; ERROR rows re-probe on resume)"
+  receipt
+  receipt "## Resuming after a halt"
+  receipt
+  receipt "Re-run the same launch line: pre-checks re-verify the frozen inputs, and a ledger"
+  receipt "whose rows are all stamped with the current HEAD resumes forward (only ERROR rows"
+  receipt "re-probe; live rows sit in the .new sidecar, merged on clean exit). A ledger with"
+  receipt "any older-stamp row is wiped, sidecar included, and restarts (A18 — a mid-run"
+  receipt "commit move invalidates the mixed-stamp ledger, full restart)."
 } >> "$RECEIPT"
 
 log "sweep sequence: qa -> narrative -> roster -> auto (full panel), then auto heldout"
-run_door qa "$PANEL" "$LEDGER_DIR/sweep_qa_e3d73720.jsonl" "$PANEL_ROWS"
-run_door narrative "$PANEL" "$LEDGER_DIR/sweep_narrative_e3d73720.jsonl" "$PANEL_ROWS"
-run_door roster "$PANEL" "$LEDGER_DIR/sweep_roster_e3d73720.jsonl" "$PANEL_ROWS"
-run_door auto "$PANEL" "$LEDGER_DIR/sweep_auto_e3d73720.jsonl" "$PANEL_ROWS"
+run_door qa qa "$PANEL" "$LEDGER_DIR/sweep_qa_e3d73720.jsonl" "$PANEL_ROWS"
+run_door narrative narrative "$PANEL" "$LEDGER_DIR/sweep_narrative_e3d73720.jsonl" "$PANEL_ROWS"
+run_door roster roster "$PANEL" "$LEDGER_DIR/sweep_roster_e3d73720.jsonl" "$PANEL_ROWS"
+run_door auto auto "$PANEL" "$LEDGER_DIR/sweep_auto_e3d73720.jsonl" "$PANEL_ROWS"
 
+# label "auto-heldout", api door "auto" (the heldout panel's distinct 8-char
+# hash keeps sweep_auto_<h8>.jsonl separate from the full-panel auto ledger)
 log "heldout: 200 rows through auto (out-of-sample, A24(a))"
-run_door auto-heldout "$HELDOUT" "$HLEDGER" "$HELDOUT_ROWS"
+run_door auto-heldout auto "$HELDOUT" "$HLEDGER" "$HELDOUT_ROWS"
 
 {
   receipt
@@ -207,11 +249,6 @@ run_door auto-heldout "$HELDOUT" "$HLEDGER" "$HELDOUT_ROWS"
     receipt "- ${dl##*/}"
   done
   receipt
-  receipt "## Halt conditions (declared before the run)"
-  receipt
-  receipt "- :8000 /health: 2 consecutive failures -> kill + exit 4 (none fired)"
-  receipt "- ERROR rate: > ${ERROR_BOUND} of last ${ERROR_WINDOW} rows -> kill + exit 5 (none fired; ERROR rows re-probe on resume)"
-  receipt
   receipt "## A17 grading inputs (Claude, after this run)"
   receipt
   receipt "- auto full-panel rate vs the 97.5 % bar (the post-R-8 product number)"
@@ -219,13 +256,6 @@ run_door auto-heldout "$HELDOUT" "$HLEDGER" "$HELDOUT_ROWS"
   receipt "- narrative / roster: documented floors; every residual triaged with class + reason"
   receipt "- heldout auto rate: out-of-sample check (a memorised panel looks green)"
   receipt "- second R-8 misroute decision: post-measurement, per the A17 bar"
-  receipt
-  receipt "## Resuming after a halt"
-  receipt
-  receipt "Re-run the same launch line: pre-checks re-verify the frozen inputs, and ledgers"
-  receipt "stamped with the current HEAD resume forward (only ERROR rows re-probe); a"
-  receipt "ledger whose rows carry an older stamp is wiped and restarts (A18 — a"
-  receipt "mid-run commit move invalidates the mixed-stamp ledger, full restart)."
 } >> "$RECEIPT"
 
 log "P2.1 sweep complete — receipt: ${RECEIPT##*/}"

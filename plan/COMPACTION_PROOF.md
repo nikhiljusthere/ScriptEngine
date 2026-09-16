@@ -233,10 +233,21 @@ util, idle). Next session pre-flight: wipe the 572-row pre-fix qa ledger
   `reports/master-work/p21_sweep_<stamp>_{RECEIPT.md,_run.log}`. Pre-check +
   wipe/resume logic verified against a scratch copy. **Ledger disk state
   (supersedes the "572 rows" note above):** 4 × 100-row
-  `sweep_{qa,narrative,roster,auto}_e3d73720.jsonl`, all stamped `f2a611d`
-  (pre-R-8, the `ba3a866` wipe + sanity-100 recreation) → the runner wipes
-  all four at run start (stale stamp). **Owed (GPU, Claude session, Qwen
+  `sweep_{qa,narrative,roster,auto}_e3d73720.jsonl` — qa/narrative/roster
+  stamped `f2a611d`, auto stamped `2f67222` (pre-R-8, the `ba3a866` wipe +
+  sanity-100 recreation; all four stale vs HEAD) → the runner wipes all four
+  at run start (stale stamp). **Owed (GPU, Claude session, Qwen
   down): the R-8 four standing gates + `eval --series jjk` 31/31 at pin 1,331,
   then `setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &`
   for P2.1 (receipt → A17 bar ≥ 97.5 % on the post-R-8 auto path), then P2.3
-  widened census + D6 extraction.**
+  widened census + D6 extraction.** **R-8 window fix-up (2026-09-16,
+  council-1 audit, disk-verified, zero GPU): the runner was hardened — the
+  heldout leg ran api-door `auto` under label `auto-heldout` (`auto-heldout`
+  as an API mode would 422, `api/main.py:79`), the watchdog now watches main +
+  the `.new` live-sidecar (merged on clean exit, `span_recall.py:469-489`) so
+  exit 5 is reachable on wiped ledgers, and the A18 wipe manages all five
+  ledgers + sidecars (resume iff every row stamped with HEAD); GATE.md's R-8
+  section now carries the explicit launch order (gate window FIRST, then Qwen
+  down, `:8000` on the whole card, launch; no commits mid-sweep) —
+  `work_log.md` + `GATE.md` "Runner fix-up (council-1 findings)" for the
+  full record.**
