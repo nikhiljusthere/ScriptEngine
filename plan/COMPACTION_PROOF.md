@@ -201,7 +201,42 @@ instructions that a summary tends to drop. Newest note at the bottom.
   `reports/span-recall/csm/recall_verbatim.jsonl` (committed). Owner stop:
   Phase 2 goes to the Claude session, which owns all the VRAM. Steady state
   restored: `:8000` down (killed 89782), Qwen 7759 alive (25,576 MiB, 3%
-  util, idle). Next session pre-flight: wipe the 572-row pre-fix qa ledger
-  (`sweep_qa_e3d73720.jsonl`, stamped 5c424f3; A18 start-from-zero), restart
-  `:8000`, per-door sanity-100 + on-disk re-estimate + A17 floor policy +
-  A26 hashes → go/no-go → held-out leg → P2.3.
+util, idle). Next session pre-flight: wipe the 572-row pre-fix qa ledger
+   (`sweep_qa_e3d73720.jsonl`, stamped 5c424f3; A18 start-from-zero), restart
+   `:8000`, per-door sanity-100 + on-disk re-estimate + A17 floor policy +
+   A26 hashes → go/no-go → held-out leg → P2.3.
+- 2026-09-16 ~22:50: **R-8 gap window closed (coding-only, opencode; the
+  GPU leg is the Claude handoff).** R-8 = `aada154` (the `wants_chronology_set`
+  guard in `retrieve/chronology.py` + `retrieve/router.py` that splits
+  set-in-order → roster from one-subject-in-order → narrative; 39 diff lines =
+  10 collected router tests). It landed on tree `852916e` with its gate window
+  **undischarged**: `GATE_LEDGER.json` `last_green` is still P1.2/R-7
+  (`60e568f`, pin 1,321) and `git log 407c016..HEAD -- scriptengine/ tests/` =
+  `aada154` only. (1) **Pin corrected to 1,331** (1,321 + 10 R-8 tests;
+  verified `pytest tests/ --collect-only -q` = 1,331). (2) **env-mc deferral
+  discharged (count-neutral)**: the P1.4 live-prove finding (bare "Maki Zenin"
+  → `qa`) is the intended router behavior (bare-name→qa rule, `router.py:
+  816-820`, landed 8d07487); the stale test now asserts it —
+  `tests/test_mcp_server.py::test_research_bare_character_name_is_qa`
+  (renamed from `..._is_narrative`). (3) **P2.1 sweep runner pre-baked** at
+  `tools/csm/p21_sweep.sh` (sweep needs no Qwen inference → runs with Qwen
+  DOWN, whole 32 GB on `:8000`): pre-checks (A26 frozen hashes
+  `cf72135f…`/`604dc8ca…`, row counts 17,181/200, `:8000` /health, Qwen
+  `:18080` down → exit 10/11/12) + **stamp-based A18 pre-wipe** (ledger rows
+  stamped with current `git rev-parse --short HEAD` (7 chars) resume forward;
+  any older stamp — the pre-R-8 `f2a611d` sanity rows — wipes and the door
+  restarts, so P1 parser fixes are never attributed to P2.3) + sequence qa →
+  narrative → roster → auto (full panel) then auto-heldout (200-row
+  out-of-sample, the A24(a) number) + 30 s watchdog + halt codes (exit 4 =
+  health ×2 rolling, exit 5 = ERROR >10/last-50 rows rolling, exit 20+rc =
+  CLI rc, exit 30 = row-count integrity) + receipts
+  `reports/master-work/p21_sweep_<stamp>_{RECEIPT.md,_run.log}`. Pre-check +
+  wipe/resume logic verified against a scratch copy. **Ledger disk state
+  (supersedes the "572 rows" note above):** 4 × 100-row
+  `sweep_{qa,narrative,roster,auto}_e3d73720.jsonl`, all stamped `f2a611d`
+  (pre-R-8, the `ba3a866` wipe + sanity-100 recreation) → the runner wipes
+  all four at run start (stale stamp). **Owed (GPU, Claude session, Qwen
+  down): the R-8 four standing gates + `eval --series jjk` 31/31 at pin 1,331,
+  then `setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &`
+  for P2.1 (receipt → A17 bar ≥ 97.5 % on the post-R-8 auto path), then P2.3
+  widened census + D6 extraction.**

@@ -43,8 +43,11 @@ async def test_research_rejects_unindexed_series():
 
 
 @pytest.mark.asyncio
-async def test_research_bare_character_name_is_narrative():
-    # A bare name is a lookup for /context but a story for a script.
+async def test_research_bare_character_name_is_qa():
+    # A bare name routes qa (the router's bare-name rule: a name that asks
+    # nothing is a lookup, not a story - router.py "A bare name ... is a
+    # lookup, not a story"). Auto mode delegates to the router, so the
+    # bundle's mode is qa, not narrative.
     result = await mcp.call_tool(
         "research",
         {"subject": "Maki Zenin", "series": "jjk", "words": 2000},
@@ -52,7 +55,7 @@ async def test_research_bare_character_name_is_narrative():
     assert result.is_error is False
     data = result.structured_content
     assert data is not None
-    assert data["mode"] == "narrative"
+    assert data["mode"] == "qa"
     assert data["subject"] == "Maki Zenin"
 
 

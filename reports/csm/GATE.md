@@ -9,8 +9,10 @@ do not judge.
 The four gates (re-run after every fix-class, before calling it done):
 
 1. **gate-1 — `pytest tests/ -q`** (in-process, CUDA): the full suite green.
-   Current pin **1,321** (1,318 R-6 pin + 3 new R-7 tests; the only failures
-   are the known env-mcp trio under a stopped :8000, 2 xpassed).
+    Current pin **1,321** (1,318 R-6 pin + 3 new R-7 tests; the only failures
+    are the known env-mcp trio under a stopped :8000, 2 xpassed). **R-8 debt
+    (2026-09-16):** post-R-8 expected pin **1,331** (1,321 + 10 new R-8 router
+    tests); the gate window is undischarged — see "R-8 landed" below.
 2. **gate-2 — `eval --series jjk`**: **31/31 (100%)** gold.
 3. **gate-3 — `span-recall --series jjk`**: **48,572/48,572 offline (rc=0)**
    + a 400-probe (seed-rotated; the live window must clear the 390/400 =
@@ -244,3 +246,59 @@ sized fix.
 standing gates **plus `eval --series jjk` 31/31** — not pytest alone. The
 "Timeline of Dragon Ball" and "Every arc in order" cases are the regression
 pins the guard must not break.
+
+## R-8 landed: `aada154` (2026-09-16) + P2.1 runner pre-baked
+
+### The fix, as landed
+
+`wants_chronology_set` (chronology.py +27) splits the two shapes rule 1 was
+conflating: a **set in order** ("Every arc in order", "Timeline of X" —
+roster, preserved) vs. **one subject's beats in order** (one character's span
+inside one arc — narrative, falls through). `router.py` rule 1 (+9/−1) gates on
+the set shape. 10 new router tests (the "+39" in the fix log is 39 diff lines:
+`test_the_set_in_order_is_still_a_roster`, 6 params, +
+`test_one_subjects_story_in_order_is_not_a_set`, 4 params). The 8 mislabelled
+floor rows (labelled narrative, routed roster, `why="asks for the story in
+order"`) are the class this closes.
+
+### The env-mc deferral, discharged
+
+The P1.4 live-prove finding (bare character name "Maki Zenin" routes `qa`,
+mismatching the test's narrative intent, deferred to P1.5) is resolved: the
+bare-name → qa rule (`router.py:816-820`, landed 8d07487) is the intended
+behavior; the stale test now asserts it
+(`tests/test_mcp_server.py::test_research_bare_character_name_is_qa`,
+count-neutral — no pin change).
+
+### Gate debt (undischarged — Claude's gate window)
+
+`GATE_LEDGER.json` `last_green` is still P1.2/R-7 (`60e568f`, pin 1,321).
+R-8 owes: the four standing gates **plus `eval --series jjk` 31/31**, at the
+post-R-8 pin **1,331**. Reboot-rule check is non-empty:
+`git log 407c016..HEAD -- scriptengine/ tests/` = `aada154` only.
+
+### P2.1 sweep runner pre-baked
+
+`tools/csm/p21_sweep.sh` — the whole P2.1 sweep as one launch line (pre-baked
+per PHASE2_JOB: the sweep needs no Qwen inference, so it runs with Qwen DOWN
+and the whole 32 GB on `:8000`):
+
+    setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &
+
+- **Pre-checks** (exit 10/11/12): panel+heldout sha256 vs the A26 frozen
+  values (`cf72135f…` / `604dc8ca…`), row counts 17,181/200, `:8000` /health,
+  Qwen `:18080` down.
+- **A18 pre-wipe, stamp-based**: ledger rows stamped with the current HEAD
+  resume forward after a halt; any older stamp (the pre-R-8 `f2a611d` sanity
+  rows) is wiped and the door restarts, so P1 parser fixes are never
+  attributed to P2.3.
+- **Sequence**: qa → narrative → roster → auto (full 17,181-row panel, 30 s
+  per-door watchdog), then the 200-row heldout through **auto only** (the
+  A24(a) out-of-sample number; extra heldout doors are a one-liner if wanted).
+- **Halt codes**: `exit 4` = `:8000` health failure ×2 rolling (PHASE2_JOB
+  line 78); `exit 5` = ERROR > 10 of last 50 ledger rows (rolling window,
+  line 79; ERROR rows re-probe on resume); `exit 20+rc` = CLI rc (2 ledger
+  corrupt/tier-0 miss, 1 crash); `exit 30` = row-count integrity.
+- **Receipts**: `reports/master-work/p21_sweep_<stamp>_RECEIPT.md` (pre-checks,
+  A18 state, per-door verdict table, halt bounds) + `_run.log` + per-door logs.
+- Wall estimate ≈ 2.7 h panel (step-0 timer) + ~4 min heldout.

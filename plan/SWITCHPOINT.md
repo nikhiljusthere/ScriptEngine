@@ -8,6 +8,40 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-16 ~22:5x (opencode session — CSM coding-only; GPU work handed to Claude, no Qwen switch in this session):**
+  - **No mode switch happened** — this is a coding-only opencode session on
+    tree `852916e`. Mode/dial state is whatever the last recorded switch left
+    (120k ctx=122880 per the 09-14 entry). Qwen (27B, `:18080`) resident on
+    the card; `:8000` down.
+  - **CSM position: Phase 1 CLOSED (extraction-gated floor, marker
+    `407c016`); Phase 2 (P2.1 sweep) pre-baked, GPU leg unstarted.** All
+    detail on disk: `plan/COMPACTION_PROOF.md` (newest dated note 2026-09-16
+    ~22:50 — READ THIS FIRST on resume) + `reports/master-work/work_log.md`
+    (newest line, R-8 gate-debt window) + `reports/csm/GATE.md` (R-8 landed
+    section at the bottom).
+  - **What landed this session (all committed):** (1) the P2.1 sweep runner
+    `tools/csm/p21_sweep.sh` — pre-checks (frozen A26 hashes / row counts /
+    `:8000` /health / Qwen-down → exit 10/11/12), stamp-based A18 pre-wipe
+    (HEAD-stamped rows resume; pre-R-8 `f2a611d` sanity ledgers wipe), qa →
+    narrative → roster → auto + 200-row auto-heldout, 30 s watchdog, halt
+    codes exit 4/5/20+rc/30, receipts under `reports/master-work/`; (2) the
+    env-mc test fix (`test_research_bare_character_name_is_qa`, count-neutral);
+    (3) GATE.md / work_log / COMPACTION_PROOF stamps.
+  - **Owed GPU work (Claude session, Qwen DOWN, whole 32 GB for `:8000`):**
+    (1) R-8 gate window: 4 standing gates + `eval --series jjk` 31/31 at the
+    post-R-8 pin **1,331** (the 407c016 window is pre-R-8; `GATE_LEDGER.json`
+    `last_green` still R-7 `60e568f`); (2) launch the sweep:
+    `setsid nohup bash tools/csm/p21_sweep.sh > /dev/null 2>&1 < /dev/null &`
+    (wall ≈ 2.7 h + ~4 min heldout; poll `p21_sweep_<stamp>_run.log` +
+    `nvidia-smi`); (3) on GREEN receipt: P2.3 widened census authoring (Q1–Q4
+    rulings, `tools/census_dimensions.py`) + D6 extraction (Qwen owns the
+    card) → completion declaration + pilot memo (A24 receipt).
+  - **Clean commit sha:** below (this checkpoint).
+  - **FIRST ACTION ON RESUME:** (1) `cat plan/COMPACTION_PROOF.md` (newest
+    note) + `reports/master-work/work_log.md` tail; (2) `git log --oneline
+    407c016..HEAD` (expect `aada154` + this checkpoint only); (3)
+    `nvidia-smi` (Qwen only on the card, `:8000` down); (4) run the R-8 gate
+    window, then the sweep.
 - **2026-09-14 ~03:3x (owner-directed: 174k → 120k, PI session — Creator Research campaign; CSM parked):**
   - **Mode: 174k (ctx 174080) → 120k (ctx 122880, raw-token dial-down).** Pre-switch
     card state: `qwen_mode.txt` = `mode=174080 ctx=174080 qwen_pid=42381
@@ -615,3 +649,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-13T15:15:08+05:30 qwen-switch: ctx=262144 (mode 262k), api=off, free=1613MiB
 - 2026-09-13T15:31:47+05:30 qwen-switch: ctx=174080 (mode 174080), api=off, free=4539MiB
 - 2026-09-14T03:11:11+05:30 qwen-switch: ctx=174080 (mode 174080), api=off, free=4293MiB
+- 2026-09-16T22:26:58+05:30 qwen-switch: ctx=122880 (mode 122880), api=off, free=6279MiB
