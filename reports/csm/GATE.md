@@ -632,7 +632,20 @@ They are not CSM quality bars; CSM's own bar is the (a)–(h) done-declaration
   (tree `2419a01`) stand as written (`reports/master-work/phase_status.txt`);
   the 22 floor rows are the floor (a regression halt), not a new gate.
 - **P6 unlocks at this closure commit, scoped to the §7 method addendum**
-  (Ruling 4): Census v1 schema + grader + 200-row held-out, one drift-log
-  pointer (D37), ≤1 week (by 2026-09-25), conditioned on the register proving
-  the schema complete on CSM. The D6 design lock and the 7-wiki rollout are
-  **refused now** (R3's under-scoped ×7 risk); they return post-register.
+(Ruling 4): Census v1 schema + grader + 200-row held-out, one drift-log
+   pointer (D37), ≤1 week (by 2026-09-25), conditioned on the register proving
+   the schema complete on CSM. The D6 design lock and the 7-wiki rollout are
+   **refused now** (R3's under-scoped ×7 risk); they return post-register.
+
+## Steps 4–6 double-check (council #34, 2026-09-18): 5/5 PASS
+
+Bounded read-only auditor (fresh context) over the steps 4–6 closure:
+(1) every GATE.md block present + internally consistent; (2) D37 drift entry
+complete (register buckets, N=22, 8/8, RULINGS 1–5, no-new-marker, P6 §7
+pointer, item-7 D26 pre-flight); (3) commit `d53fe40` changed exactly 10 files,
+zero excluded (no run-folder / GPU / master-work file staged), the 3 council
+artifacts created by it; (4) `p25_done_audit.md` 8/8 (one noted: (e)) matches
+the step-4 block; (5) the ratified "0 open" hard-gate reading is uncontradicted.
+All 5 PASS. The full 58/58 close (the 22 floor rows) is the Phase-2 D6
+extraction leg — out of scope for this re-assertion; next leg = item 7 (D26
+pre-flight).
