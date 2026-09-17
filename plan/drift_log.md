@@ -1475,3 +1475,50 @@ entry.
   window receipts + regenerated COVERAGE. The `PHASE_B_COMPLETE` marker
   (pre-registered `plan/CSM_2PHASE_PLAN.md` P2.5-5(h), form per the PHASE_A
   block) lands in the doc-only stamp commit after this one.
+
+ ## D37 — council #34: CSM 100% closure — 233-row register + one-pager + P2.5 (a)–(h) 8/8 re-assertion @ pin 1,331 + writer-statement (2026-09-18, opencode)
+
+ - **What:** council #34 (R-1..R-5 + chair, `reports/csm/COUNCIL_csm_100p.md` +
+   ledger #34) ruled the §9a closure loop's end. Extended the census floor
+   register 22 → **233 rows** (the full open population: 134 setrel + 42 dim +
+   6 abl + 16 empty + 22 floor + 10 bydesign + 3 r1blast), each row carrying
+   class / root-cause / owning-phase / named-closer / re-test-trigger (Ruling 2);
+   filed the open-population one-pager; reconciled **22/21 → canonical N = 22**
+   (the "35" halt residual = 22 + 10 + 3, D25's arithmetic); re-asserted **P2.5
+   (e) @ pin 1,331**; filed the writer-facing statement. Register + one-pager
+   committed `da599fd`; step-3 double-check **5/5 PASS**; P2.5 (a)–(h)
+   re-asserted **8/8 PASS (one noted)** — the note is (e): the plan's named
+   1,305 is superseded by the R-8 window pin 1,331 (known +26 R-7/R-8 test
+   additions; Ruling 5e), and the gates stand on the **D36 re-run receipts**
+   (all four green on the post-patch tree) — JJK stays diff-empty *in results*
+   vs the named 2026-09-08/09 re-baseline.
+ - **Verdict (council #34):** RULINGS 1–5. The #33 scope holds: the
+   set/relation class ("all X of Y") is **NOT a Phase-1 router lever** — the 134
+   are known failures (424 relation questions) with **no closer until D6**,
+   register rows with a named owning phase, not auto-floor; the floor is the
+   reconciled N = 22 (not 22 or 35); **A20 stamps against the register diff,
+   not 35** (a regression voids the stamp). **No new marker is owed:**
+   `PHASE_A_COMPLETE 2026-09-12T11:51:10+05:30` (tree `407c016`) and
+   `PHASE_B_COMPLETE 2026-09-17T22:02:05+05:30` (tree `2419a01`) stand as
+   written (both predate the FAIL8/D36 close; the 22 floor rows are *the floor*,
+   a regression halt, not a new gate). **P6 unlocks at this closure commit**,
+   scoped to the §7 method addendum (Census v1 schema + grader + 200-row
+   held-out; one drift-log pointer; ≤1 week), conditioned on the register
+   proving the schema complete on CSM; the D6 design lock + 7-wiki rollout are
+   refused now (R3's ×7 risk) and return post-register. **Writer-facing:**
+   narrative/character/fight context is complete, cited, usable today;
+   set/relation has 424 known failures (no closer until D6 — cross-check
+   against the wiki); 22 extraction-gated facts stay missing until Phase 2.
+ - **Return:** this commit = the 233-row register + one-pager [`da599fd`] +
+   council record + csm100 inventory + P2.5 done-audit + GATE.md (four-pilot-
+   numbers block + 22/21 section + step-3 double-check + step-4 (e) re-assertion
+   + writer-statement + A20 stamps + P6-unlock) + COUNCIL_HISTORY #34 + this
+   entry. The six-week floor diff = register (22 → 233) + commit `da599fd`.
+   **P6 §7 method-addendum pointer (Ruling 4, ≤1 week):** the §7 addendum
+   (Census v1 schema + grader + 200-row held-out) is authored at
+   `plan/Plan_to_perfection.md` §7, due ≤1 week (by 2026-09-25); this entry is
+   the drift-log pointer the unlock required. **Next leg (item 7) = Phase-2
+   D26 pre-flight:** wipe the span-recall/csm `sweep_qa` ledger, restart :8000
+   on CUDA in a quiet window, per-door `--sanity 100`; the full 58/58 close
+   (close the 22 floor rows) is the Phase-2 D6 extraction leg, out of scope for
+   this re-assertion.

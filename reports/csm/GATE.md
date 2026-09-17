@@ -475,3 +475,164 @@ artifacts (0 reds flip under apostrophe/whitespace normalization). On the
 26-case bar the auto door beats forced-qa by only 3 cases and both doors are
 red on state-over-time (0/4) — **R-9 is not the lever for these reds**; the
 evidence call waits on P2.4.
+
+## Four pilot numbers (council #34 step 1, 2026-09-18)
+
+Item-8 spec: `COUNCIL_csm-campaign.md` L372–379 — "plus §7's four pilot
+numbers (T0 emergence, T0 survival, new numbered gaps, human round-trips)".
+
+| # | Pilot number | Value | Source |
+|---|--------------|-------|--------|
+| 1 | T0 emergence | **843** (council expectation ~535) | `reports/csm/t0_pilot_csm.json` (pilot_1) + `T0_PILOT_CSM.md` |
+| 2 | T0 survival | **843/843 (100.0%)** | `reports/csm/t0_pilot_csm.json` (pilot_2, dead []) + `T0_PILOT_CSM.md` |
+| 3 | New numbered gaps | **5 submitted, 0 open** | below |
+| 4 | Human round-trips | **27** | below |
+
+### #3 — new numbered gaps: 5 submitted, all closed (hard gate does not fire)
+
+Registry scan (2026-09-18): `grep -rhoE "G-CSM-[0-9]+" plan/ reports/ tools/ scriptengine/ | sort | uniq -c | sort -rn` → G-CSM-1:**106**, G-CSM-2:**89**, G-CSM-3:**64**, G-CSM-4:**54**, G-CSM-5:**4**, G-CSM-7:**1** (G-CSM-6/8+ absent; full doc scope; `reports/` only 100/79/54/50/4/1).
+
+- **Submitted (5):** G-CSM-1..4 — `COUNCIL_csm-1b-2.md` L42 ("four numbered engine gaps were filed (G-CSM-1..4)"); G-CSM-7 — `work_log.md` L114 (R-7 entry).
+- **G-CSM-5 was never filed** — all 4 mentions in the corpus are "not filed" variants: `work_log.md` L54, `reports/csm/receipts/waveB_csm6_instrument.md` L14, `reports/csm/crosspage_census_csm.md` L55, `reports/csm/CSM6_INSTRUMENT.md` L100.
+- **All 5 closed on disk:** R-1 G-CSM-1 (`work_log.md` L76, `b84445f`); R-2 G-CSM-2 + R-3 G-CSM-3 (`work_log.md` L78, receipts `iter1_r2_passageleg.md` / `iter1_r3_roster_scoping_run.md`); R-5 G-CSM-4 (`work_log.md` L106, `ec60587` + `35c16c9`, meter 0/11→5/11); R-7 G-CSM-7 (`work_log.md` L114, `4f5d075`, gate window 4/4 @ `81df799`).
+- **Hard-gate ruling** (`COUNCIL_csm_100p.md` L155–157 + L322–323: "if #3 is non-zero → floor is moving, A20 precondition fails; halt, no marker, council reconvenes with the new count"): the gate's concern is a *moving* floor — new gaps still open or still emerging. #3 = 5 submitted, **0 open** (all 5 closed by the R-class), and no new gap ID since G-CSM-7 (registry max ID = 7; G-CSM-6/8+ absent) ⇒ floor is not moving ⇒ the gate does not fire ⇒ step 1 may stamp.
+
+### #4 — human round-trips: 27
+
+Count rule: owner instruction/correction/decision/halt = 1; distinct asks within a single entry count each; restatements of an earlier owner rule count once; machine-state acts (power-offs, hand model restores) are excluded. Source: `plan/drift_log.md` D1–D36, re-verified by owner-mention scan (case-insensitive) 2026-09-18.
+
+| Era | Count | Entries (drift_log lines) |
+|-----|-------|---------------------------|
+| JJK D1–D11 | 2 | D5 "user directed (2026-09-07)" (L221–226); §4/D11 2026-09-07 halt + CSM approval (L159/172) |
+| Off-campaign D12–D16 | 15 | D12 (L442); D13 (L474); D14 ×8 (L502/515/521/527/539/561/587/594; L574–575 restatements); D15 (L625); D16 ×4 (L631/634/639/650; L643/651/653 restatements) |
+| CSM D17–D36 | 10 | D17 ×3 (L664/673/694; L688 power-off + L690 rationale excluded); D19 (L780); D20 (L827); D21 (L911 "Owner steer"); D22 (L956); D25 ×2 (L1053/1098 @ `81df799`); D26 (L1116); D20b + D27–D36 = 0 (post-L1116 lines are "NEXT (owner return)" markers / decision-path references, not interventions) |
+
+**27** = 2 + 15 + 10.
+
+**Double-check (read-only reviewer, 2026-09-18): 8/8 PASS.** Note: the
+"0 open" reading of the hard gate is a re-reading (a literalist "5 filed ≠ 0"
+would fire it); ratify it explicitly at sequence step 4 before the P2.5
+re-assertion. Registry scan delta after this block landed: +20 self-references
+(18 in this block + 2 in `p25_done_audit.md` (d)); the pre-append counts
+above are the baseline for future scans.
+
+## 22/21 floor reconciliation (council #34 step 2, 2026-09-18)
+
+Canonical floor N = **22** = the 21 `csm-dim-*` Census-v1 red rows
+(arc-narrative 8 · state-over-time 5 · abilities 6 · appearance 1 ·
+causality 1) + `csm-char-04` (R-7x, "Every ability of Makima", recall 7/8 —
+the 8th, "Contract with the Prime Minister of Japan", is prose-only /
+never-extracted ⇒ close lever = Phase-2 D6 / 5.4 re-adjudication). "21" = the
+Census-v1 subset (the row count of `census_v1_floor_triage.jsonl` pre-diff);
+"35" = 22 floor + 10 by-design open + 3 `r1blast-*` stamps (the halt
+residual; A20 stamps against the register diff, **not** 35).
+
+One-line diff: `csm-char-04` appended as row 22 of
+`reports/csm/census_v1_floor_triage.jsonl` — triage **PARTIAL** (7/8
+recovered, 1 extraction-gated), `recovered_by` qa+anchor, `best_hits` = the
+7 found abilities per receipt `reports/2026-09-08-0752/canon_scores.json`
+(set "Makima, by section and prose"; recall 0.875, precision 1.0, exact
+false). Note: `csm-char-04` is a full-set **bank** row, not a Census 3-item
+sample row, so its `expect` carries the full 8-item gold set (the 21
+`csm-dim-*` rows keep the 3-item sample convention). The file has no
+programmatic consumer (governance record only) — the schema departure is
+inert.
+
+**Step-3 double-check (read-only reviewer, 2026-09-18): 5/5 PASS.**
+Register = 233 rows, all valid JSON; bucket counts setrel 134 / dim 42 /
+abl 6 / empty 16 / floor 22 / bydesign 10 / r1blast 3 sum to 233, ids
+unique, every row carries the 7 governance fields; the one-pager's 7-bucket
+table, the 233 formula, the 424 breakdown, the 42-dim breakdown and the
+halt-35 formula all match the register; commit `da599fd` contains exactly
+the register + one-pager (no EXCLUDE run-folder or GPU file; the other CSM
+governance files ride step 5); the 22 floor rows (21 `csm-dim-*` +
+`csm-char-04` full 8-item set) are intact. STEP-3 PASS.
+
+## P2.5 (e) re-assertion @ pin 1,331 (council #34 step 4, 2026-09-18)
+
+Re-asserts P2.5 item (e) — the JJK baseline diff-empty against the named
+2026-09-08/09 re-baseline — against the current gate-1 pin, per
+`p25_done_audit.md` re-assertion recipe step 2. Read-only: it cites
+on-disk receipts, it does not re-run the gates (Ruling 5e: a known +N test
+delta does not re-run the gates).
+
+**Pin = 1,331** (`reports/csm/GATE_LEDGER.json` `gate1_pytest`, R-8 window
+receipts commit `4b60043`: 1,321 R-7 pin + 10 R-8 router tests). The plan's
+named **1,305** (the 2026-09-08/09 re-baseline) is a *test count*; it moved
+to 1,331 by the documented +26 known additions (R-7 +16, R-8 +10). Ruling
+5e exempts a known +N delta from a full re-run — the pin grew, JJK did not
+regress.
+
+**"0 open" hard-gate reading — ratified (before the re-assertion).** The
+step-1 double-check (above) flagged that #3's "0 open" is a *re-reading* (a
+literalist "5 filed ≠ 0" would fire the halt). Ratified here on the ground
+the gate's stated concern is a *moving* floor — new gaps still open or
+still emerging. On disk: G-CSM-1..4 + G-CSM-7 all closed by the R-class (R-1
+`b84445f` · R-2/R-3 iter1 receipts · R-5 `ec60587`+`35c16c9` · R-7
+`4f5d075`), the registry's max ID is 7 (G-CSM-6/8+ absent), so no new gap ID
+since G-CSM-7 ⇒ floor not moving ⇒ #3 = 5 submitted, **0 open** ⇒ the gate
+does not fire. This is the reading the re-assertion stands on.
+
+**JJK baseline diff-empty (result comparison) — the D36 window receipts.**
+The fast diff-empty path does *not* apply: `git diff --name-only b8b0ed5..HEAD --
+scriptengine series/csm/overrides.yaml tests` is non-empty (`context.py`,
+`overrides.yaml`, `test_coverage_scope.py` — the R-class work itself). The
+gates therefore stand on the **D36 re-run**, which re-ran all four standing
+gates green on the post-patch tree (`reports/csm/receipts/model_window_d36/state.*`):
+- eval: `rc=0` (31/31 = named 31/31).
+- span-recall: offline `rc=0` (48,572/48,572 = 100 %) + live probe `rc=0`
+  (398/400 = 99.5 % ≥ the 390/400 / 97.5 % named bar).
+- canon opm: `rc=0` (236/236 = 100 %, 79.0 % precision — matches named).
+- coverage: `rc=0`.
+- pytest: first-pass `rc=1` (1328p + 1 failed + 2xp = 1,331 collected) →
+  post-patch `1329 passed, 2 xpassed` `rc=0` (= the 1,331 pin; the single
+  first-pass failure `test_csm_scope_classifies_the_whole_store` was fixed
+  post-patch, `pytest_postfix_d35.log`).
+- p23 bank (f): `rc=0`, 417/486 reproduced.
+
+Result: the four JJK standing gates are green at/beside the named
+re-baseline levels — JJK stays at 100 %, the baseline-exact reference the
+CSM engine must not regress. **P2.5 (e): PASS @ pin 1,331** (evidence: D36
+re-run receipts; pin: `GATE_LEDGER.json` R-8 window `4b60043`).
+
+## Writer-facing statement (council #34 Ruling 5, 2026-09-18)
+
+What is and is not ready for a writer drawing CSM context from the engine:
+
+- **Complete, cited, usable today:** narrative / character / fight context —
+  the prose pass is 100 % on every in-scope narrative page type; every line
+  is traceable to a chapter (episode where the anime adapted it). This is the
+  content a script can build on now.
+- **Set / relation ("all X of Y"): 424 known failures, no closer until D6.**
+  #33 established this class is *not* a Phase-1 router lever — the 134
+  rc=2 set/relation pages (and their 424 relation questions) are known,
+  pre-registered failures owned by the Phase-2 D6 extraction leg. **Cross-check
+  any "all X of Y" answer against the wiki until D6 lands** — the engine will
+  under-report the set.
+- **22 extraction-gated facts stay missing until Phase 2:** the 21
+  `csm-dim-*` box rows + `csm-char-04` (8-item expect set). These are the
+  §9a extraction-gated floor — content the prose pass cannot author because
+  the facts are not in the crawl.
+
+**Standing-gates scope note:** the four standing gates (pytest / eval-jjk /
+span-recall-jjk / canon-opm) are JJK **no-regression guards** by documented
+design — they prove the CSM engine changes did not move the JJK baseline.
+They are not CSM quality bars; CSM's own bar is the (a)–(h) done-declaration
+(re-asserted 8/8 this closure).
+
+## A20 stamps + P6 unlock (council #34 Rulings 2 + 4, 2026-09-18)
+
+- **A20 stamps against the register diff, not 35** (Ruling 2). The six-week
+  floor diff = the census register `census_v1_floor_triage.jsonl` (22 → 233
+  rows) + commit `da599fd` + the one-pager `census_v1_open_population.md`. A
+  regression (a row regressing, or a new gap ID past G-CSM-7) voids the stamp;
+  the floor count is the reconciled N = 22, not 22-or-35.
+- **No new marker owed.** `PHASE_A_COMPLETE 2026-09-12T11:51:10+05:30`
+  (tree `407c016`) and `PHASE_B_COMPLETE 2026-09-17T22:02:05+05:30`
+  (tree `2419a01`) stand as written (`reports/master-work/phase_status.txt`);
+  the 22 floor rows are the floor (a regression halt), not a new gate.
+- **P6 unlocks at this closure commit, scoped to the §7 method addendum**
+  (Ruling 4): Census v1 schema + grader + 200-row held-out, one drift-log
+  pointer (D37), ≤1 week (by 2026-09-25), conditioned on the register proving
+  the schema complete on CSM. The D6 design lock and the 7-wiki rollout are
+  **refused now** (R3's under-scoped ×7 risk); they return post-register.
