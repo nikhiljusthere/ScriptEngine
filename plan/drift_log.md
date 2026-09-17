@@ -1306,3 +1306,53 @@ entry.
   (3) model window (Qwen down, whole card): page-run the new 4,013
   questions + re-run the 486 bank + 26 bar post box-fix;
   (4) `PHASE_B_COMPLETE` (§P2.5 + P-4 scope sign-off).
+
+## D31 — P2.4 writer leg complete: CSM Video 3 "Bat Devil arc" (2026-09-17, opencode)
+
+- **Fired + completed** (switchpoint `00430a1`):
+  `script-gen "Bat Devil arc" --series csm --words 6000` →
+  `scripts output/Video 3 - Bat Devil arc/Script/Bat Devil arc.md`
+  (+ the words-only companion `Bat Devil arc-clean.md`). Routed narrative
+  (subject `Bat Devil`), 25 tags / 8 distinct, **every tag verified against
+  the raw wiki**, 6333/6000 words (1 length pass, expanded). The script
+  tree is gitignored — this log line is the receipt.
+- **Writer URL fix (machine-local, `.env`):** the first launch died at
+  `http://localhost:1234/v1` (the LM-Studio default) because nothing had
+  ever pointed the writer at the resident Qwen. `.env` now carries
+  `SCRIPTENGINE_WRITER_BASE_URL=http://127.0.0.1:18080/v1` +
+  `SCRIPTENGINE_WRITER_MODEL=qwen3.8-27b-ninfer` (pydantic auto-loads
+  `.env`). Qwen survived the generation (health ok post-run).
+- **P2.4 is the evidence leg for the R-9 call (P-8):** a writer-shaped
+  script over the arc→chapter narrative door exists and is tag-verified.
+- **NEXT:** the model window (below) → R-9 evidence call →
+  `PHASE_B_COMPLETE`.
+
+## D32 — red-fix leg design: the 37 box reds are a ranking failure the P23 grader made stricter than the campaign instrument (2026-09-17, opencode)
+
+- **All 37 box-class reds are ranking/bundle-width failures, not content
+  gaps** (verified against `facts.db`): the expected sentences ARE chunked
+  on the right page — "kill a Tomato Devil…" in `Chapter 1/Summary`
+  (493 words), "gives Denji only 70,000…" in `Episode 1/Summary`
+  (1,128 words), "kidnapped her cat" in `Bat Devil arc/Synopsis`,
+  "Pochita becomes his heart" in `Introduction arc/Synopsis`, the
+  chapter list in `Volume 1/Chapters`. The grader served a wrong page or
+  the page's infobox header instead.
+- **Instrument gap found:** `tools/csm/p23_grader.py` probes
+  `context_endpoint` WITHOUT `subject`, so the qa door runs with an empty
+  R6 recall floor (`api/context.py::_qa_context` →
+  `passages_for_subject(subject)`). The campaign's own scorer
+  (`eval/canon_gold.py::ask`) DOES send the question's `subject` — the
+  page hint the D6 device was built on. So the 37 reds may be
+  no-hint-only failures: the split (green-with-hint vs still-red) is
+  measured in the model window before any fix is written.
+- **Model window plan (Qwen down, whole card, one stop):**
+  (1) in-process CUDA probe of the 37 box + 27 width reds WITH `subject`
+  (p23 grader pattern, `grade_item(item, mode, subject)`); (2) per-wiki
+  fixes (`series/csm/overrides.yaml`: subject aliases / type priority /
+  demote) for the still-red ranking subset, `extra_facts` or floor stamp
+  for the 5 state-over-time; (3) `:8000` on CUDA: `page-run` the 298 new
+  batches (4,013 Qs, the D2 leg's own instrument) + re-run the 486 bank +
+  26 bar; (4) commit receipts; (5) Qwen back up @170k, `:8000` → CPU.
+- **P-7 (106-question pilot re-run) subsumed:** the 106 list was
+  session-scratchpad-only (not on disk); the 298-batch page-run in step 3
+  is the same instrument at scale (page hint, 4,013 Qs) and covers it.
