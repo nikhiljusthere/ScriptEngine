@@ -1,0 +1,43 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:type",
+        "page-gen:identity:services",
+        "page-gen:identity:employees",
+        "page-gen:identity:manga_debut",
+        "page-gen:identity:anime_debut"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Name & Logo",
+      "covered_by": []
+    },
+    {
+      "path": "Name & Logo / Name",
+      "covered_by": []
+    },
+    {
+      "path": "Name & Logo / Logo",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Name & Logo",
+    "Name & Logo / Name",
+    "Name & Logo / Logo"
+  ],
+  "retired_sections": []
+}

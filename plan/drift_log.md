@@ -1216,3 +1216,93 @@ entry.
 - **NEXT (owner return, Qwen up):** P2.4 writer leg → the R-9-vs-writer-bar
   evidence call (the pre-analysis above is its input) → `PHASE_B_COMPLETE`
   (§P2.5 + P-4 scope, all triage logs on disk).
+
+## D29 — council #32: the prose-pass reversal verified; re-scope + no-formation completion ruled (2026-09-17, opencode)
+
+- **Trigger:** the session report claimed (1) CSM "skipped" the JJK-style
+  prose pass (1,260 machine infobox questions, character-only; 232 chapter +
+  14 arc pages out of scope, JJK's in scope), (2) the skip is not the cause
+  of CSM's reds (the failing shapes are the 17k-line auto sweep at 15.43 %
+  and the P2.3 box-class wrong-page reds — shapes JJK was never put
+  through), (3) a 19-page/106-question JJK-style pilot scored 106/106
+  (page-hint instrument) / 103/106 bare, (4) running the JJK pass on CSM
+  would raise the coverage number but not touch the reds.
+- **Council #32** (sequential one-agent-at-a-time, record
+  `reports/csm/COUNCIL_csm_prosepass_verify.md`):
+  - **D1 reversal sound on its verifiable core.** Every disk-checkable claim
+    verified: 1,260 character-only infobox questions (batch files),
+    232/14 box pages at 0 questions (`COVERAGE.md`), 98.48 %/15.43 %/89.1 %
+    sweep numbers (`GATE.md` P2.1), 37/27/5 red split (`p23_red_triage.md`).
+    Two corrections: claim 1 is a misframe — CSM ran a cheaper
+    scope-flagged machine pass, not a skipped pipeline (the sweep already
+    measures the out-of-scope pages: `panel_csm.json` spans all 232 chapter +
+    12 episode + 19 arc/saga pages); claim 3 (106/106) is scratchpad-only —
+    discounted until re-run (P-7). **New finding (flag-semantics):**
+    `series/jjk/overrides.yaml` also marks `chapter`/`story_arcs`
+    `in_scope: false` — reason "Measured in the prose-campaign batches (not
+    the content remainder)" — vs CSM's reason "nav page". Same flag value,
+    different meaning (JJK: done; CSM: never measured). The report's JJK
+    half is correct for the pass (PROSE_PASS_FINAL: chapter 304/304,
+    story_arcs 9/9) but not readable from the current flags.
+  - **D2:** "complete without question formation" = no *hand* authoring;
+    machine-generated per-type questions are acceptable. Coverage leg:
+    extend the existing generator (the one that produced the 1,260) with
+    per-type narrative templates + page-run + `COVERAGE.md` regen →
+    in-scope remainder 0. Red-fixing leg is separate and pre-registered: 37
+    box-class → per-wiki `series/csm/overrides.yaml` (no JJK-gate trigger);
+    27 width → council assigns; 5 state-over-time → `extra_facts` else
+    floor; 237 both-misses/22 floor → Phase-2 extraction.
+  - **D3:** the pass reaches **coverage 100 %, not campaign 100 %**.
+    Campaign halt-rule 100 % = fix-classes closed with the frozen **32-row**
+    remainder (22 extraction-gated + 10 by-design open — advisors under-
+    quoted "22"; corrected). Literal served-path 100 % is unreachable by
+    design (P-1: perfect router tops out ~98.62 %). Gate on the
+    qa/miss-queue instrument; auto stays descriptive-only (P-9).
+  - **Re-scope ruling: YES** — flip `chapter_box` + `story_arcs_box` to
+    `in_scope: true` in `series/csm/overrides.yaml` (P-6): aligns scope with
+    the instrument (the sweep already measures those pages), halt-safe
+    (frozen 32-row residual untouched; the 237 both-misses are descriptive-
+    only, review 3's "floor inflation" concern refuted).
+  - **R-9 evidence call is unblocked and required** (P-8): the P2.3 bank
+    (D28) IS the writer-shaped evidence that deferred R-9; it is the
+    close-order gate after the P2.4 writer leg; pre-analysis expectation is
+    that R-9 is NOT the box-class lever.
+- **Pre-registrations landed in the record:** P-6 (re-scope), P-7 (pilot
+  re-run before any reliance on 106/106), P-8 (R-9 call), P-9 (100 %
+  instrument = qa/miss-queue; literal served-path 100 % declared
+  unreachable, not a target).
+- **Gates:** no re-run owed (no engine change this entry — council record +
+  this log only; the R-8 window `4b60043` stands).
+- **NEXT (owner return):** (1) P-6 re-scope flip (one line, no gate
+  trigger); (2) P-7 pilot re-run (page-run, 106 questions, commit results +
+  classify the 3 residual misses); (3) the D2 coverage leg (generator
+  templates + page-run + `COVERAGE.md` regen); (4) P2.4 writer leg (Qwen up)
+  → the R-9 evidence call (P-8) → `PHASE_B_COMPLETE`.
+
+## D30 — D2 coverage leg executed: P-6 rescope + machine page-gen over the 298 uncovered in-scope pages (2026-09-17, opencode)
+
+- **P-6 rescope landed** (`series/csm/overrides.yaml`): `chapter_box` +
+  `story_arcs_box` → `in_scope: true` (council #32 P-6); `remainder_note`
+  updated (saga_box stays out). No engine change, no gate trigger.
+- **Coverage leg, machine-only (no hand question formation, D2):**
+  `page-sweep --series csm --tier a --include <298 titles>` (the existing
+  per-wiki generator + CSM's `identity_fields` map — no engine or map
+  change) generated the 246 box pages + the 52 in-scope remainder; 26
+  prose-only pages (22 `*/History` + 4 setting pages) got one
+  machine template question each via the new `tools/csm/prose_coverage.py`
+  (`What is the history of X?` / `What is X?`, gold = first chunked
+  first-sentence, G3-checked, merged through the `page-gen:` reconciler).
+- **Result:** `reports/csm/COVERAGE.md` regenerated — **473/537 pages
+  covered (88.1 %), 4,013 active questions, in-scope content remainder 0,
+  orphans 0.** The 64 excluded pages are the excluded-in-writing types
+  (saga_box, release, unknown-excluded).
+- **Known accepted shape:** the box batches carry the generic identity
+  template ("In which chapter does Chapter N appear?" — circular but
+  fact-true); the 27 width + 37 box-ranking reds are NOT touched by this
+  leg (separate red-fix leg, P-3 route: per-wiki first).
+- **NEXT:** (1) P2.4 writer leg (Qwen up) → R-9 evidence call (P-8);
+  (2) red-fix leg: 37 box-class wrong-page via per-wiki route, 27 width →
+  lever at the R-9 call, 5 state-over-time → `extra_facts` or floor;
+  (3) model window (Qwen down, whole card): page-run the new 4,013
+  questions + re-run the 486 bank + 26 bar post box-fix;
+  (4) `PHASE_B_COMPLETE` (§P2.5 + P-4 scope sign-off).

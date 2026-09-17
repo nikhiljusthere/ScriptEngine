@@ -1,0 +1,61 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:type",
+        "page-gen:identity:services",
+        "page-gen:identity:manga_debut",
+        "page-gen:identity:title1"
+      ]
+    },
+    {
+      "path": "Appearance and details",
+      "covered_by": []
+    },
+    {
+      "path": "Staff & Students",
+      "covered_by": []
+    },
+    {
+      "path": "Staff & Students / Staff",
+      "covered_by": []
+    },
+    {
+      "path": "Staff & Students / Students",
+      "covered_by": []
+    },
+    {
+      "path": "Staff & Students / Class Pet",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance and details",
+    "Staff & Students",
+    "Staff & Students / Staff",
+    "Staff & Students / Students",
+    "Staff & Students / Class Pet",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    }
+  ]
+}

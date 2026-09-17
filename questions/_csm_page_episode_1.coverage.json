@@ -1,0 +1,77 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:season number",
+        "page-gen:identity:ep number",
+        "page-gen:identity:ep title",
+        "page-gen:identity:kanji",
+        "page-gen:identity:romaji",
+        "page-gen:identity:air date",
+        "page-gen:identity:adapted from",
+        "page-gen:identity:arc",
+        "page-gen:identity:opening song",
+        "page-gen:identity:ending song",
+        "page-gen:identity:previous",
+        "page-gen:identity:next"
+      ]
+    },
+    {
+      "path": "Synopsis",
+      "covered_by": []
+    },
+    {
+      "path": "Summary",
+      "covered_by": []
+    },
+    {
+      "path": "Characters",
+      "covered_by": []
+    },
+    {
+      "path": "Gallery",
+      "covered_by": []
+    },
+    {
+      "path": "Gallery / Episode Previews",
+      "covered_by": []
+    },
+    {
+      "path": "Gallery / Video Preview",
+      "covered_by": []
+    },
+    {
+      "path": "Gallery / Staff Illustrations",
+      "covered_by": []
+    },
+    {
+      "path": "Site Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Synopsis",
+    "Summary",
+    "Characters",
+    "Gallery / Episode Previews",
+    "Gallery / Video Preview",
+    "Gallery / Staff Illustrations"
+  ],
+  "retired_sections": [
+    {
+      "path": "Gallery",
+      "reason": "no prose: gallery"
+    },
+    {
+      "path": "Site Navigation",
+      "reason": "no prose: site navigation"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:saga",
+        "page-gen:identity:chapters",
+        "page-gen:identity:previous",
+        "page-gen:identity:next"
+      ]
+    },
+    {
+      "path": "Synopsis",
+      "covered_by": []
+    },
+    {
+      "path": "Characters Introduced",
+      "covered_by": []
+    },
+    {
+      "path": "Characters Introduced / Mentioned",
+      "covered_by": []
+    },
+    {
+      "path": "Battles & Events",
+      "covered_by": []
+    },
+    {
+      "path": "Manga Chapters",
+      "covered_by": []
+    },
+    {
+      "path": "Site Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Synopsis",
+    "Characters Introduced",
+    "Characters Introduced / Mentioned",
+    "Battles & Events",
+    "Manga Chapters"
+  ],
+  "retired_sections": [
+    {
+      "path": "Site Navigation",
+      "reason": "no prose: site navigation"
+    }
+  ]
+}

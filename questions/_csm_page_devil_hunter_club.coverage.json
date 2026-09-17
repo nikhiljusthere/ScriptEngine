@@ -1,0 +1,32 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:title",
+        "page-gen:identity:notable_members",
+        "page-gen:identity:manga_debut",
+        "page-gen:identity:type"
+      ]
+    },
+    {
+      "path": "History",
+      "covered_by": []
+    },
+    {
+      "path": "Members",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "History",
+    "Members"
+  ],
+  "retired_sections": []
+}

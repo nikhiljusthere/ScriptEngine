@@ -9,283 +9,43 @@
 > (`scriptengine/eval/page_gen.py`) — lowercase, non-alphanumeric runs
 > become `_` (so `&` collapses away).
 >
-> Generated: 2026-09-12
+> Generated: 2026-09-17
 
 ## Headline
 
-**175 / 537 pages covered (32.6%) · 1,260 active questions** across the committed batches.
+**473 / 537 pages covered (88.1%) · 4,013 active questions** across the committed batches.
 
 ## Per-type coverage
 
 | page_type | pages | covered | % | questions |
 |---|---:|---:|---:|---:|
-| chapter_box | 232 | 0 | 0.0% | 0 |
+| chapter_box | 232 | 232 | 100.0% | 2,468 |
 | character | 175 | 175 | 100.0% | 1,260 |
 | volume_box | 26 | 0 | 0.0% | 0 |
-| character_history | 22 | 0 | 0.0% | 0 |
+| character_history | 22 | 22 | 100.0% | 22 |
 | music | 20 | 0 | 0.0% | 0 |
-| story_arcs_box | 14 | 0 | 0.0% | 0 |
-| unknown | 14 | 0 | 0.0% | 0 |
-| episode | 12 | 0 | 0.0% | 0 |
-| organization | 11 | 0 | 0.0% | 0 |
+| story_arcs_box | 14 | 14 | 100.0% | 61 |
+| unknown | 14 | 4 | 28.6% | 4 |
+| episode | 12 | 12 | 100.0% | 144 |
+| organization | 11 | 11 | 100.0% | 40 |
 | blu_ray_dvd | 4 | 0 | 0.0% | 0 |
-| establishment | 3 | 0 | 0.0% | 0 |
+| establishment | 3 | 3 | 100.0% | 14 |
 | anime | 2 | 0 | 0.0% | 0 |
 | saga_box | 2 | 0 | 0.0% | 0 |
-| **TOTAL** | **537** | **175** | 32.6% | **1,260** |
+| **TOTAL** | **537** | **473** | 88.1% | **4,013** |
 
 ## In-scope content remainder
 
-Content-bearing pages not yet covered (authorable prose). Nav boxes
-(chapter_box, story_arcs_box, saga_box), release pages (volume_box,
-music, anime, blu_ray_dvd) and the excluded `unknown` list/author/
-meta/release pages are out of scope.
+Content-bearing pages not yet covered (authorable prose). The saga_box
+nav box, release pages (volume_box, music, anime, blu_ray_dvd) and the
+excluded `unknown` list/author/meta/release pages are out of scope
+(chapter_box and story_arcs_box are in scope per council #32 P-6).
 
 | source | pages |
 |---|---:|
-| character_history | 22 |
-| episode | 12 |
-| organization | 11 |
-| establishment | 3 |
-| `unknown` (Aging's World, Contract, Hell, World) | 4 |
-| **total** | **52** |
+| **total** | **0** |
 
 ## Uncovered titles
-
-### chapter_box (232)
-
-- Chapter 1
-- Chapter 10
-- Chapter 100
-- Chapter 101
-- Chapter 102
-- Chapter 103
-- Chapter 104
-- Chapter 105
-- Chapter 106
-- Chapter 107
-- Chapter 108
-- Chapter 109
-- Chapter 11
-- Chapter 110
-- Chapter 111
-- Chapter 112
-- Chapter 113
-- Chapter 114
-- Chapter 115
-- Chapter 116
-- Chapter 117
-- Chapter 118
-- Chapter 119
-- Chapter 12
-- Chapter 120
-- Chapter 121
-- Chapter 122
-- Chapter 123
-- Chapter 124
-- Chapter 125
-- Chapter 126
-- Chapter 127
-- Chapter 128
-- Chapter 129
-- Chapter 13
-- Chapter 130
-- Chapter 131
-- Chapter 132
-- Chapter 133
-- Chapter 134
-- Chapter 135
-- Chapter 136
-- Chapter 137
-- Chapter 138
-- Chapter 139
-- Chapter 14
-- Chapter 140
-- Chapter 141
-- Chapter 142
-- Chapter 143
-- Chapter 144
-- Chapter 145
-- Chapter 146
-- Chapter 147
-- Chapter 148
-- Chapter 149
-- Chapter 15
-- Chapter 150
-- Chapter 151
-- Chapter 152
-- Chapter 153
-- Chapter 154
-- Chapter 155
-- Chapter 156
-- Chapter 157
-- Chapter 158
-- Chapter 159
-- Chapter 16
-- Chapter 160
-- Chapter 161
-- Chapter 162
-- Chapter 163
-- Chapter 164
-- Chapter 165
-- Chapter 166
-- Chapter 167
-- Chapter 168
-- Chapter 169
-- Chapter 17
-- Chapter 170
-- Chapter 171
-- Chapter 172
-- Chapter 173
-- Chapter 174
-- Chapter 175
-- Chapter 176
-- Chapter 177
-- Chapter 178
-- Chapter 179
-- Chapter 18
-- Chapter 180
-- Chapter 181
-- Chapter 182
-- Chapter 183
-- Chapter 184
-- Chapter 185
-- Chapter 186
-- Chapter 187
-- Chapter 188
-- Chapter 189
-- Chapter 19
-- Chapter 190
-- Chapter 191
-- Chapter 192
-- Chapter 193
-- Chapter 194
-- Chapter 195
-- Chapter 196
-- Chapter 197
-- Chapter 198
-- Chapter 199
-- Chapter 2
-- Chapter 20
-- Chapter 200
-- Chapter 201
-- Chapter 202
-- Chapter 203
-- Chapter 204
-- Chapter 205
-- Chapter 206
-- Chapter 207
-- Chapter 208
-- Chapter 209
-- Chapter 21
-- Chapter 210
-- Chapter 211
-- Chapter 212
-- Chapter 213
-- Chapter 214
-- Chapter 215
-- Chapter 216
-- Chapter 217
-- Chapter 218
-- Chapter 219
-- Chapter 22
-- Chapter 220
-- Chapter 221
-- Chapter 222
-- Chapter 223
-- Chapter 224
-- Chapter 225
-- Chapter 226
-- Chapter 227
-- Chapter 228
-- Chapter 229
-- Chapter 23
-- Chapter 230
-- Chapter 231
-- Chapter 232
-- Chapter 24
-- Chapter 25
-- Chapter 26
-- Chapter 27
-- Chapter 28
-- Chapter 29
-- Chapter 3
-- Chapter 30
-- Chapter 31
-- Chapter 32
-- Chapter 33
-- Chapter 34
-- Chapter 35
-- Chapter 36
-- Chapter 37
-- Chapter 38
-- Chapter 39
-- Chapter 4
-- Chapter 40
-- Chapter 41
-- Chapter 42
-- Chapter 43
-- Chapter 44
-- Chapter 45
-- Chapter 46
-- Chapter 47
-- Chapter 48
-- Chapter 49
-- Chapter 5
-- Chapter 50
-- Chapter 51
-- Chapter 52
-- Chapter 53
-- Chapter 54
-- Chapter 55
-- Chapter 56
-- Chapter 57
-- Chapter 58
-- Chapter 59
-- Chapter 6
-- Chapter 60
-- Chapter 61
-- Chapter 62
-- Chapter 63
-- Chapter 64
-- Chapter 65
-- Chapter 66
-- Chapter 67
-- Chapter 68
-- Chapter 69
-- Chapter 7
-- Chapter 70
-- Chapter 71
-- Chapter 72
-- Chapter 73
-- Chapter 74
-- Chapter 75
-- Chapter 76
-- Chapter 77
-- Chapter 78
-- Chapter 79
-- Chapter 8
-- Chapter 80
-- Chapter 81
-- Chapter 82
-- Chapter 83
-- Chapter 84
-- Chapter 85
-- Chapter 86
-- Chapter 87
-- Chapter 88
-- Chapter 89
-- Chapter 9
-- Chapter 90
-- Chapter 91
-- Chapter 92
-- Chapter 93
-- Chapter 94
-- Chapter 95
-- Chapter 96
-- Chapter 97
-- Chapter 98
-- Chapter 99
 
 ### volume_box (26)
 
@@ -316,31 +76,6 @@ meta/release pages are out of scope.
 - Volume 8
 - Volume 9
 
-### character_history (22)
-
-- Aki Hayakawa/History
-- Angel Devil/History
-- Asa Mitaka/History
-- Barem Bridge/History
-- Death Devil/History
-- Denji/History
-- Fami/History
-- Famine Devil/History
-- Fumiko Mifune/History
-- Himeno/History
-- Hirofumi Yoshida/History
-- Katana Man/History
-- Kishibe/History
-- Kobeni Higashiyama/History
-- Makima/History
-- Miri Sugo/History
-- Nayuta/History
-- Pochita/History
-- Power/History
-- Quanxi/History
-- Reze/History
-- Yoru/History
-
 ### music (20)
 
 - CHAINSAW MAN THE MOVIE: REZE ARC original soundtrack -summer's end-
@@ -364,68 +99,18 @@ meta/release pages are out of scope.
 - Violence
 - Zanki
 
-### story_arcs_box (14)
+### unknown (10)
 
-- Aging Devil arc
-- Bat Devil arc
-- Bomb Girl arc
-- Chainsaw Man Church arc
-- Control Devil arc
-- Dating Denji arc
-- Eternity Devil arc
-- Falling Devil arc
-- Gun Devil arc
-- International Assassins arc
-- Introduction arc
-- Justice Devil arc
-- Katana Man arc
-- War Devil arc
-
-### unknown (14)
-
-- Aging's World
 - Chain Run
 - Chainsaw Man (Manga)
 - Chainsaw Man The Stage
 - Chainsaw Man x BanG Dream!
 - Chainsaw Man x Monster Strike
-- Contract
-- Hell
 - Popularity Polls
 - Real Chainsaw Man
 - Story Arcs
 - Tatsuki Fujimoto
 - Timeline
-- World
-
-### episode (12)
-
-- Episode 1
-- Episode 10
-- Episode 11
-- Episode 12
-- Episode 2
-- Episode 3
-- Episode 4
-- Episode 5
-- Episode 6
-- Episode 7
-- Episode 8
-- Episode 9
-
-### organization (11)
-
-- American Thugs
-- Anti-Makima Squad
-- Chainsaw Man Church
-- Devil Hunter Club
-- Four Horsemen
-- Prophecy of Nostradamus
-- Quanxi and the Fiends
-- Tokyo Special Division 4
-- Tokyo Special Division 5
-- Weapon Devils
-- Yakuza
 
 ### blu_ray_dvd (4)
 
@@ -433,12 +118,6 @@ meta/release pages are out of scope.
 - Blu-ray & DVD Vol.2
 - Blu-ray & DVD Vol.3
 - Blu-ray & DVD Vol.4
-
-### establishment (3)
-
-- Family Burger Restaurant
-- Fourth East High School
-- Tokyo Devil Detention Center
 
 ### anime (2)
 

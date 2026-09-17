@@ -1,0 +1,52 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:title1",
+        "page-gen:identity:allegiance",
+        "page-gen:identity:notable_members",
+        "page-gen:identity:manga_debut"
+      ]
+    },
+    {
+      "path": "Plot",
+      "covered_by": []
+    },
+    {
+      "path": "Plot / Control Devil arc",
+      "covered_by": []
+    },
+    {
+      "path": "Plot / Aging Devil arc",
+      "covered_by": []
+    },
+    {
+      "path": "Members",
+      "covered_by": []
+    },
+    {
+      "path": "Members / First Iteration",
+      "covered_by": []
+    },
+    {
+      "path": "Members / Second Iteration",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Plot",
+    "Plot / Control Devil arc",
+    "Plot / Aging Devil arc",
+    "Members",
+    "Members / First Iteration",
+    "Members / Second Iteration"
+  ],
+  "retired_sections": []
+}

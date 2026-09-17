@@ -1,0 +1,52 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:title",
+        "page-gen:identity:volume",
+        "page-gen:identity:chapter",
+        "page-gen:identity:jname",
+        "page-gen:identity:rname",
+        "page-gen:identity:page",
+        "page-gen:identity:date",
+        "page-gen:identity:arc",
+        "page-gen:identity:previous",
+        "page-gen:identity:next"
+      ]
+    },
+    {
+      "path": "Summary",
+      "covered_by": []
+    },
+    {
+      "path": "Characters",
+      "covered_by": []
+    },
+    {
+      "path": "Trivia",
+      "covered_by": []
+    },
+    {
+      "path": "Site Navigation",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Summary",
+    "Characters",
+    "Trivia"
+  ],
+  "retired_sections": [
+    {
+      "path": "Site Navigation",
+      "reason": "no prose: site navigation"
+    }
+  ]
+}

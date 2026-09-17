@@ -727,3 +727,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-17T09:39:53+05:30 qwen-switch: ctx=174080 (mode 174080), api=cpu, free=4503MiB
 - 2026-09-17T09:41:12+05:30 manual: :8000 restarted on cpu after qwen-switch left it down (same-device restart defect)
 - 2026-09-17T10:37:49+05:30 qwen-switch: ctx=174080 (mode 174080), api=cpu, free=4393MiB
+- 2026-09-17T11:05:22+05:30 qwen-switch: ctx=174080 (mode 174080), api=cpu (restarted by hand after), free=4493MiB

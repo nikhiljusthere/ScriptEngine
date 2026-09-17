@@ -1,0 +1,57 @@
+{
+  "sections": [
+    {
+      "path": "lead",
+      "covered_by": [
+        "page-gen:lead"
+      ]
+    },
+    {
+      "path": "infobox",
+      "covered_by": [
+        "page-gen:identity:title1",
+        "page-gen:identity:type",
+        "page-gen:identity:services",
+        "page-gen:identity:employees",
+        "page-gen:identity:manga_debut"
+      ]
+    },
+    {
+      "path": "Appearance",
+      "covered_by": []
+    },
+    {
+      "path": "Plot",
+      "covered_by": []
+    },
+    {
+      "path": "Plot / History",
+      "covered_by": []
+    },
+    {
+      "path": "Plot / Aging Devil arc",
+      "covered_by": []
+    },
+    {
+      "path": "List of Known Prisoners",
+      "covered_by": []
+    },
+    {
+      "path": "References",
+      "covered_by": []
+    }
+  ],
+  "uncovered": [
+    "Appearance",
+    "Plot",
+    "Plot / History",
+    "Plot / Aging Devil arc",
+    "List of Known Prisoners"
+  ],
+  "retired_sections": [
+    {
+      "path": "References",
+      "reason": "no prose: references"
+    }
+  ]
+}
