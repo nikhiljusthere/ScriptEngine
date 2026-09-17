@@ -8,6 +8,16 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-17 ~09:50 (Claude session C — owner-directed switch 262k → 170k, ctx 174080):**
+  - **Switch:** `qwen-switch.sh 174080 --force` (owner correction: 170k, not
+    full context; same dead 09-12 pi transcript trips the fit guard). Configs
+    to 174080: pi `models.json` + repo `opencode.json` (the main one, by the
+    script) + global `~/.config/opencode/opencode.jsonc` (by hand, back to its
+    pre-09:38 value). `:8000` device follows the 174080 headroom; if the
+    script leaves it down (same-device restart defect, work_log 09:27), it is
+    restarted by hand.
+  - **CSM position unchanged:** P2.1 measured
+    (`reports/csm/p21_sweep_2026-09-17/REPORT.md`), tree clean at `5117740`.
 - **2026-09-17 ~09:40 (Claude session C — owner-directed switch 100k → 262k full context):**
   - **Switch:** `qwen-switch.sh 262k --force` (the fit guard reads the dead
     2026-09-12 pi transcript, ≈264k > 262,144; no pi process alive). At 262k
