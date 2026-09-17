@@ -8,6 +8,20 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-17 (opencode session — post-P2.1-sweep council #31, model-free work done):**
+  - **CSM position: post-P2.1-sweep, pre-P2.3/P2.4.** Council #31 verdict +
+    pre-registrations P-1…P-5 on disk (`reports/csm/COUNCIL_p21_post_sweep.md`
+    + `GATE.md` + `plan/flow.md` + drift D27, commits `3a1af4f` + `f1619d4`).
+    qa-miss triage done (261 rows: 83 rank / 75 span defect, 103 residual,
+    24 auto-served — `p21_sweep_2026-09-17/triage/`); floor triage pre-
+    registered + sampled (289 rows / 64 cells).
+  - **FIRST ACTION ON RESUME (Claude session): `reports/master-work/P23_HANDOFF.md`**
+    — one launch line (`setsid nohup bash tools/csm/p23_handoff.sh …`), the
+    model-unloaded GPU batch: stops Qwen, in-process CUDA grader (widened 486
+    qa + bar-audit 26 × {qa,auto}), leaves Qwen DOWN. No :8000 needed; the
+    CPU :8000 (if running) stays.
+  - **Owner return (Qwen up):** commit the grader results + receipt → P2.4
+    writer leg → R-9-vs-writer-bar evidence call (P-3) → `PHASE_B_COMPLETE`.
 - **2026-09-17 ~09:50 (Claude session C — owner-directed switch 262k → 170k, ctx 174080):**
   - **Switch:** `qwen-switch.sh 174080 --force` (owner correction: 170k, not
     full context; same dead 09-12 pi transcript trips the fit guard). Configs
