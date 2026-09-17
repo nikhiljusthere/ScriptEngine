@@ -1,0 +1,74 @@
+{
+ "auto_full": {
+  "narrative": {
+   "TRUNCATED": 5188,
+   "MISS_SPAN": 100,
+   "MISS_DOC": 8393,
+   "HIT": 1621,
+   "n": 15302,
+   "share": 89.06,
+   "hit_rate": 10.59
+  },
+  "qa": {
+   "HIT": 1007,
+   "MISS_SPAN": 8,
+   "MISS_DOC": 9,
+   "TRUNCATED": 6,
+   "n": 1030,
+   "share": 5.99,
+   "hit_rate": 97.77
+  },
+  "roster": {
+   "TRUNCATED": 312,
+   "MISS_DOC": 465,
+   "MISS_SPAN": 16,
+   "HIT": 22,
+   "n": 815,
+   "share": 4.74,
+   "hit_rate": 2.7
+  },
+  "relations": {
+   "MISS_DOC": 26,
+   "HIT": 1,
+   "TRUNCATED": 7,
+   "n": 34,
+   "share": 0.2,
+   "hit_rate": 2.94
+  }
+ },
+ "auto_heldout": {
+  "narrative": {
+   "TRUNCATED": 61,
+   "MISS_DOC": 99,
+   "HIT": 18,
+   "n": 178,
+   "share": 89.0,
+   "hit_rate": 10.11
+  },
+  "roster": {
+   "MISS_DOC": 7,
+   "TRUNCATED": 4,
+   "n": 11,
+   "share": 5.5,
+   "hit_rate": 0.0
+  },
+  "qa": {
+   "HIT": 10,
+   "n": 10,
+   "share": 5.0,
+   "hit_rate": 100.0
+  },
+  "relations": {
+   "MISS_DOC": 1,
+   "n": 1,
+   "share": 0.5,
+   "hit_rate": 0.0
+  }
+ },
+ "auto_vs_forced_qa": {
+  "auto_miss_but_qa_hit": 14293,
+  "auto_hit_but_qa_miss": 24,
+  "both_hit": 2627,
+  "both_miss": 237
+ }
+}

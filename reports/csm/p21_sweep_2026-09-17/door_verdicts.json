@@ -1,0 +1,70 @@
+{
+ "qa": {
+  "HIT": 16920,
+  "MISS_DOC": 160,
+  "MISS_SPAN": 101,
+  "rows": 17181,
+  "hit_rate": 98.4809,
+  "commits": {
+   "4b60043": 17181
+  },
+  "devices": {
+   "cuda": 17181
+  }
+ },
+ "narrative": {
+  "TRUNCATED": 5888,
+  "MISS_SPAN": 105,
+  "MISS_DOC": 9342,
+  "HIT": 1846,
+  "rows": 17181,
+  "hit_rate": 10.7444,
+  "commits": {
+   "4b60043": 17181
+  },
+  "devices": {
+   "cuda": 17181
+  }
+ },
+ "roster": {
+  "TRUNCATED": 4242,
+  "MISS_DOC": 12542,
+  "HIT": 133,
+  "MISS_SPAN": 264,
+  "rows": 17181,
+  "hit_rate": 0.7741,
+  "commits": {
+   "4b60043": 17181
+  },
+  "devices": {
+   "cuda": 17181
+  }
+ },
+ "auto": {
+  "TRUNCATED": 5513,
+  "MISS_SPAN": 124,
+  "MISS_DOC": 8893,
+  "HIT": 2651,
+  "rows": 17181,
+  "hit_rate": 15.4298,
+  "commits": {
+   "4b60043": 17181
+  },
+  "devices": {
+   "cuda": 17181
+  }
+ },
+ "auto-heldout": {
+  "TRUNCATED": 65,
+  "MISS_DOC": 107,
+  "HIT": 28,
+  "rows": 200,
+  "hit_rate": 14.0,
+  "commits": {
+   "4b60043": 200
+  },
+  "devices": {
+   "cuda": 200
+  }
+ }
+}

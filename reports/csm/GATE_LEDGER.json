@@ -9,7 +9,7 @@
     ],
     "fixes_commit": "aada154",
     "gate_tree": "8661850 (last gate-relevant commit b8b0ed5: the env-mc test rename, count-neutral)",
-    "receipts_commit": null,
+    "receipts_commit": "4b60043",
     "ts": "2026-09-17T07:22:01+05:30",
     "gates": {
       "gate1_pytest": {
@@ -34,9 +34,9 @@
     },
     "receipt": "reports/csm/receipts/r8_gate_window.md",
     "class_sweeps": {
-      "r8_wants_chronology_set": "pending — the class measurement is the P2.1 full-panel sweep (tools/csm/p21_sweep.sh; the post-R-8 auto door vs the A17 97.5% bar), launched against the same W2 :8000 service with no restart"
+      "r8_wants_chronology_set": "MEASURED 2026-09-17 (P2.1 full-panel sweep, runner exit 0, reports/csm/p21_sweep_2026-09-17/REPORT.md): qa 98.48% (>= 97.5% bar; 261-row miss file owed), narrative 10.74%, roster 0.77%, auto 15.43% (FAILS the 97.5% bar; heldout 14.00% agrees). R-8 changed 0/100 auto routing decisions on the sanity lines vs pre-R-8 2f67222: the auto gap is the second misroute (router sends 89.1% of line lookups to narrative, 10.6% served; forced qa serves 98.48%). Gate state unaffected (the sweep is a measurement, not a gate)."
     },
-    "note": "Supersedes last_green P1.2/R-7 (fixes 60e568f, receipts 4f5d075, pin 1,321; git-recoverable). The R-7 queue stamps (23 closed / 35 open / 58) are not re-stamped here — this window grades no queue rows; post-sweep A17 grading owns that. receipts_commit is filled at the post-sweep commit (no mid-sweep commits: a HEAD move makes A18 wipe all five sweep ledgers). reboot_rule anchor moved 81df799 -> b8b0ed5 in the same edit (anchored on 81df799 the check is non-empty — R-8 touched router.py/chronology.py — and would read as false drift)."
+    "note": "Supersedes last_green P1.2/R-7 (fixes 60e568f, receipts 4f5d075, pin 1,321; git-recoverable). The R-7 queue stamps (23 closed / 35 open / 58) are not re-stamped here — this window grades no queue rows; post-sweep A17 grading owns that. receipts_commit = 4b60043 (the gate-window receipts commit; filled at the post-sweep commit — no mid-sweep commits, A18). reboot_rule anchor moved 81df799 -> b8b0ed5 in the same edit (anchored on 81df799 the check is non-empty — R-8 touched router.py/chronology.py — and would read as false drift)."
   },
   "reboot_rule": "The four gates STAND iff: (a) HEAD is at or after b8b0ed5 (the last gate-relevant commit inside the R-8 gate window's tree 8661850), AND (b) no gate-relevant file changed between that commit and HEAD -- check: `git diff --name-only b8b0ed5..HEAD -- scriptengine series/csm/overrides.yaml tests` is empty. Doc-only commits (this ledger, reports/csm/GATE.md, work_log, drift_log, receipts, COUNCIL_HISTORY, CLAUDE.md, HALT_METER_P13*) pass the check and do NOT invalidate the gates. If either (a) or (b) fails, re-run all four gates on the new tree (one-copy 100k + CUDA :8000) before the next fix-class. The 22 extraction-gated floor rows (the 21 D6-extraction rows + csm-char-04, whose close lever is the Phase-2 extraction track / 5.4 re-adjudication) + the 10 invariant/residual rows (csmdoor-01 31/88; the D5 reachability residuals csmd5-01/02/03/05/06 + gate400-320 + red-R-4; the closed-class curation residuals csm-char-03 + csm-set-02; governing stamps: the red_list R-2/R-3 close notes) stay open by design. The 3 r1blast-* stamped rows stay open as stamps (never fix targets).",
   "p14_close_copy": {
