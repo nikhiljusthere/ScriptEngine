@@ -8,6 +8,27 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-17 ~09:35 (Claude GPU session C — post-sweep switch off → 100k, plan A19):**
+  - **Switch:** Qwen `off` → `100k` (`qwen-switch.sh 100k --force`). The fit
+    guard refused on the newest pi transcript (2026-09-12 session, ≈264k
+    tokens) — no pi/opencode process is alive, so that transcript is dead;
+    **the next pi/opencode session must start FRESH** (resume from this entry +
+    `reports/master-work/work_log.md` newest lines). `:8000` is restarted by
+    the switch on CUDA if the 100k headroom allows (≥ 6 GiB), else CPU.
+  - **CSM position: Phase 2 P2.1 MEASURED.** R-8 gate window green @`4b60043`
+    (pytest 1,331 / eval jjk 31/31 / span-recall jjk 48,572 + 398/400 / canon
+    opm 236/236; `GATE_LEDGER.json` last_green = R-8). P2.1 sweep runner exit
+    0: **qa 98.48 %** (≥ 97.5 % bar, 261-row miss file), narrative 10.74 %,
+    roster 0.77 %, **auto 15.43 % — fails the bar** (heldout 14.00 %); R-8
+    moved 0/100 auto routes — the second misroute sends 89 % of line lookups
+    to narrative. Report: `reports/csm/p21_sweep_2026-09-17/REPORT.md`.
+    Widened census bank (Q1/Q2): `reports/csm/census_widened_csm.json`.
+  - **Clean commit sha:** `93043d6` (sweep + census) → this checkpoint commit.
+  - **FIRST ACTION ON RESUME:** read the REPORT.md "Owed / for A" list —
+    (1) the second-misroute decision, (2) qa miss-file triage, (3) narrative /
+    roster residual triage, (4) P2.2 bar audit never graded (A7 open),
+    (5) A14 / P2.3 grader for the widened bank, (6) GATE.md + CLAUDE.md pin
+    stamps (1,321 → 1,331).
 - **2026-09-16 ~22:5x (opencode session — CSM coding-only; GPU work handed to Claude, no Qwen switch in this session):**
   - **No mode switch happened** — this is a coding-only opencode session on
     tree `852916e`. Mode/dial state is whatever the last recorded switch left
