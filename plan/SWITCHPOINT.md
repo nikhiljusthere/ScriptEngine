@@ -8,20 +8,23 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
-- **2026-09-17 (opencode session — post-P2.1-sweep council #31, model-free work done):**
-  - **CSM position: post-P2.1-sweep, pre-P2.3/P2.4.** Council #31 verdict +
-    pre-registrations P-1…P-5 on disk (`reports/csm/COUNCIL_p21_post_sweep.md`
-    + `GATE.md` + `plan/flow.md` + drift D27, commits `3a1af4f` + `f1619d4`).
-    qa-miss triage done (261 rows: 83 rank / 75 span defect, 103 residual,
-    24 auto-served — `p21_sweep_2026-09-17/triage/`); floor triage pre-
-    registered + sampled (289 rows / 64 cells).
-  - **FIRST ACTION ON RESUME (Claude session): `reports/master-work/P23_HANDOFF.md`**
-    — one launch line (`setsid nohup bash tools/csm/p23_handoff.sh …`), the
-    model-unloaded GPU batch: stops Qwen, in-process CUDA grader (widened 486
-    qa + bar-audit 26 × {qa,auto}), leaves Qwen DOWN. No :8000 needed; the
-    CPU :8000 (if running) stays.
-  - **Owner return (Qwen up):** commit the grader results + receipt → P2.4
-    writer leg → R-9-vs-writer-bar evidence call (P-3) → `PHASE_B_COMPLETE`.
+- **2026-09-17 (opencode session — post-P2.1-sweep council #31; P2.3+P2.2
+  graded via the Claude model-unloaded handoff):**
+  - **CSM position: post-sweep close, P2.3+P2.2 DONE, pre-P2.4.** Council #31
+    verdict + pre-registrations P-1…P-5 on disk (`reports/csm/
+    COUNCIL_p21_post_sweep.md` + `GATE.md` + `plan/flow.md` + drift D27,
+    commits `3a1af4f` + `f1619d4`). The P23 handoff fired in the Claude
+    session: widened 486 (qa) = 417 MECH_GREEN (85.8%, 69 reds), bar audit
+    qa 11/26 (pre-fix control arm, P-2) + auto 14/26 (R-9 supplement),
+    0/538 probe errors — results + receipt `3d43a21`, red triage + P-3
+    pre-analysis in `reports/csm/p23_red_triage.md` (37 box-class wrong-page
+    ranking, 27 width/enumeration, 5 state-over-time content, 0 judge
+    artifacts; **R-9 is not the lever for these reds**). Drift D28.
+    Qwen left DOWN (mode=off); CPU `:8000` untouched.
+  - **FIRST ACTION ON RESUME (owner, Qwen up):** P2.4 writer leg (one
+    `script-gen` + `cli verify` on CSM) → the R-9-vs-writer-bar evidence
+    call (input: `p23_red_triage.md` + the P2.4 output) → residual triage
+    sign-off (P-4, all logs on disk) → `PHASE_B_COMPLETE`.
 - **2026-09-17 ~09:50 (Claude session C — owner-directed switch 262k → 170k, ctx 174080):**
   - **Switch:** `qwen-switch.sh 174080 --force` (owner correction: 170k, not
     full context; same dead 09-12 pi transcript trips the fit guard). Configs
@@ -710,3 +713,4 @@ should hold (eval 31/31, span-recall 100%); a deviation is a real signal.
 - 2026-09-17T09:38:40+05:30 qwen-switch: ctx=262144 (mode 262k), api=cpu, free=1477MiB
 - 2026-09-17T09:39:53+05:30 qwen-switch: ctx=174080 (mode 174080), api=cpu, free=4503MiB
 - 2026-09-17T09:41:12+05:30 manual: :8000 restarted on cpu after qwen-switch left it down (same-device restart defect)
+- 2026-09-17T10:37:49+05:30 qwen-switch: ctx=174080 (mode 174080), api=cpu, free=4393MiB

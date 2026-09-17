@@ -351,15 +351,21 @@ under a new deployment + two standing rules. Structure only — status lives in
   `CSM_2PHASE_PLAN.md`: checkpoint → `qwen-switch.sh 150000 --force` → verify
   `--vision` → `:8000` CPU service, in-process CUDA one-copy). The gpu-handoff
   switching plan stays reserved for Phase 2.
-- **Post-P2.1-sweep state (2026-09-17, council #31).** The full-panel sweep is
+- **Post-P2.1-sweep state (2026-09-17, council #31; P2.2+P2.3 graded 2026-09-17).** The full-panel sweep is
   complete (`reports/csm/p21_sweep_2026-09-17/`): qa **98.48 %** (PASS, A17
   bar ≥ 97.5 %; 261 misses triaged), narrative 10.74 % / roster 0.77 %
   (A17 documented floors, triaged per P-4), auto 15.43 % (heldout 14.0 %) =
   descriptive raw, **not a bar** (P-1: clearing 97.5 % on this panel would
-  need ~99.7 % qa routing). R-9 (the second misroute: 89.1 % of line lookups →
-  narrative) is deferred to the writer-shaped evidence of P2.4 + P2.3, with
-  `series/csm/overrides.yaml` checked before any `router.py` change (P-3).
-  Close order: P2.2+P2.3 grade (model-unloaded GPU handoff,
-  `reports/master-work/P23_HANDOFF.md`) → P2.4 writer leg (Qwen up) →
+  need ~99.7 % qa routing). The model-unloaded grader handoff has fired
+  (results `3d43a21`): P2.3/A14 widened 486 (qa) = **417/486 (85.8 %)**, 69
+  reds triaged in `reports/csm/p23_red_triage.md` (37 box-class wrong-page
+  ranking, 27 width/enumeration, 5 state-over-time content, 0 judge
+  artifacts); P2.2 bar audit pre-fix (P-2): qa control arm **11/26** (the
+  P1.4 bar does not pass pre-fix), auto 14/26 (R-9-contingent supplement).
+  R-9 (the second misroute: 89.1 % of line lookups → narrative) is deferred
+  to the writer-shaped evidence of P2.4 + P2.3, with
+  `series/csm/overrides.yaml` checked before any `router.py` change (P-3);
+  the red triage pre-analysis says R-9 is **not** the lever for the
+  writer-question reds. Remaining close order: P2.4 writer leg (Qwen up) →
   R-9-vs-writer-bar evidence call → `PHASE_B_COMPLETE` (§P2.5 + P-4 scope;
   pre-registrations in `reports/csm/COUNCIL_p21_post_sweep.md`).

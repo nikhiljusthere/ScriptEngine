@@ -1193,3 +1193,26 @@ entry.
   → in-process CUDA grader: widened 486 (qa) + 26 bar-audit × {qa, auto} →
   receipts; Qwen left down). Owner return: P2.4 writer leg (Qwen up), the
   R-9-vs-writer-bar evidence call, `PHASE_B_COMPLETE`.
+
+## D28 — P2.3 + P2.2 graded (2026-09-17, model-unloaded)
+
+- **The P23 handoff fired** (Claude session, `P23_HANDOFF.md`): Qwen was
+  already down (mode file `off` @ 10:31:09 — no stop needed), 31,800 MiB
+  free, in-process CUDA grader 155 s, **0/538 probe errors**, results +
+  receipt committed `3d43a21` (Qwen left down, CPU `:8000` untouched).
+- **P2.3 / A14 (P-5): widened 486 (qa door) = 417 MECH_GREEN (85.8%)**,
+  69 reds. **P2.2 (P-2, pre-fix): bar audit qa control arm 11/26** (the
+  P1.4 bar does not pass pre-fix); auto door 14/26 (R-9-contingent
+  supplement; routed 17 qa / 5 narrative / 4 roster).
+- **Red triage** (`reports/csm/p23_red_triage.md`): 37 box-class wrong-page
+  ranking (Ch/Ep/Vol numeric-title collisions; arc page vs character/game
+  page) + 27 width/enumeration + 5 state-over-time content (no interval
+  facts in CSM) + others; 0 judge artifacts (0/69 flip under quote/
+  whitespace normalization). Bar audit: auto beats qa by 3 cases; both
+  doors 0/4 on state-over-time → **R-9 is not the lever for the
+  writer-question reds** (pre-analysis for the P-3 evidence call).
+- **Gates:** no re-run owed (no engine change — results + docs only; the
+  R-8 window `4b60043` stands).
+- **NEXT (owner return, Qwen up):** P2.4 writer leg → the R-9-vs-writer-bar
+  evidence call (the pre-analysis above is its input) → `PHASE_B_COMPLETE`
+  (§P2.5 + P-4 scope, all triage logs on disk).

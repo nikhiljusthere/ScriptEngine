@@ -91,3 +91,21 @@ P2.4 writer leg (one `script-gen` + `cli verify` on CSM) → the
 R-9-vs-writer-bar evidence call (council or owner, per the trigger rules) →
 residual triage sign-off (P-4) → `PHASE_B_COMPLETE`
 (`plan/CSM_2PHASE_PLAN.md` §P2.5 checklist + P-4 scope).
+## P-2 / P-5 results addendum (2026-09-17, model-unloaded)
+
+The handoff fired (`p23_grader_20260917-103148`, results `3d43a21`, 0/538
+probe errors):
+
+- **P-5 (P2.3):** widened 486 (qa door) = **417/486 MECH_GREEN (85.8%)**,
+  69 reds.
+- **P-2 (P2.2, pre-fix as pre-registered):** bar audit **qa control arm
+  11/26** (primary verdict: the P1.4 bar does not pass pre-fix); **auto
+  door 14/26** (R-9-contingent supplement; routed 17 qa / 5 narrative /
+  4 roster).
+
+Red triage + P-3 pre-analysis: `reports/csm/p23_red_triage.md` — the reds
+are 37 box-class wrong-page ranking + 27 width/enumeration + 5
+state-over-time content (no interval facts); 0 judge artifacts; auto
+beats qa by only 3 bar cases and both doors are 0/4 on state-over-time,
+so **R-9 is not the lever for these reds**. The P-3 firing condition still
+awaits the P2.4 writer leg (owner return, Qwen up).

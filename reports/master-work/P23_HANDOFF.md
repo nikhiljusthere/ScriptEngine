@@ -62,7 +62,12 @@ estimate 5–10 min (model load + 538 in-process probes; the P2.1 sweep ran
 
 ## After it lands (owner return, Qwen up)
 
-1. Commit the results + receipt.
+1. ~~Commit the results + receipt.~~ **DONE 2026-09-17** — run
+   `p23_grader_20260917-103148` (155 s, 0/538 errors, Qwen was already
+   down): widened 486 (qa) = 417 MECH_GREEN (85.8%); bar audit qa 11/26
+   (pre-fix control arm, P-2), auto 14/26 (R-9 supplement). Results +
+   receipt committed `3d43a21`; red triage in
+   `reports/csm/p23_red_triage.md`.
 2. **P2.4 writer leg:** one `script-gen` + `cli verify` on CSM (needs Qwen +
    the CUDA `:8000` research path).
 3. **The R-9-vs-writer-bar evidence call** (council or owner, per the trigger

@@ -454,3 +454,24 @@ auto-only hits.
 Close order: P2.2+P2.3 grade (the model-unloaded GPU handoff) → P2.4 writer
 leg (Qwen up) → R-9-vs-writer-bar evidence call → `PHASE_B_COMPLETE`
 (§P2.5 checklist + P-4 scope).
+
+## P2.3 + P2.2 graded (2026-09-17, model-unloaded, `3d43a21`)
+
+The handoff batch (`p23_grader_20260917-103148`, receipt + results committed)
+ran clean: 0/538 probe errors, in-process CUDA, whole card (Qwen down,
+31,800 MiB free — it was already stopped when the session arrived).
+
+- **P2.3 / A14 widened census (qa door): 417/486 MECH_GREEN (85.8%)**, 69 reds.
+- **P2.2 bar audit (pre-fix, P-2): qa control arm 11/26** (the primary
+  verdict — the P1.4 bar does not pass pre-fix), **auto door 14/26**
+  (the R-9-contingent supplement; routed: 17 qa / 5 narrative / 4 roster).
+
+Red triage + P-3 pre-analysis: `reports/csm/p23_red_triage.md`. Headline:
+the 69 reds are 37 box-class **wrong-page ranking** (numeric-title
+collisions, arc page vs character/game page — the same family as the
+sweep triage's 83 defect-rank rows), 27 width/enumeration, 5 state-over-time
+**content** (CSM has no interval facts; JJK `extra_facts` precedent), 0 judge
+artifacts (0 reds flip under apostrophe/whitespace normalization). On the
+26-case bar the auto door beats forced-qa by only 3 cases and both doors are
+red on state-over-time (0/4) — **R-9 is not the lever for these reds**; the
+evidence call waits on P2.4.
