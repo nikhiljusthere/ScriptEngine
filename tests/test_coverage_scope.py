@@ -66,7 +66,9 @@ def test_missing_page_scope_raises(monkeypatch):
 def test_csm_scope_classifies_the_whole_store():
     """The CSM declarations (CSM-2) cover the entire CSM store: 0
     unclassified, 0 undisposed unknown pages, and the declared in-scope
-    set is 223 type pages + 4 unknown pages = 227."""
+    set is 469 type pages + 4 unknown pages = 473. (Council #32 P-6, drift
+    D30, flipped chapter_box (232) + story_arcs_box (14) in-scope: the
+    pre-D2 227 + 246 = 473 -- COVERAGE.md 473/537.)"""
     paths = series_paths("csm")
     ps = cr.load_page_scope(paths)
     docs = [
@@ -77,7 +79,7 @@ def test_csm_scope_classifies_the_whole_store():
     assert len(docs) == 537
     assert cr.scope_violations(docs, ps) == []
     in_scope = sum(1 for title, pt in docs if cr.in_scope(pt, title, ps))
-    assert in_scope == 227
+    assert in_scope == 473
     unknown_titles = {t for t, pt in docs if pt == "unknown"}
     assert len(unknown_titles) == 14
     assert unknown_titles <= set(ps["unknown_pages"])
