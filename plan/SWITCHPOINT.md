@@ -8,6 +8,17 @@ every switch; `qwen-switch.sh` appends machine lines to the switch log — never
 edit those.
 
 ## Current position (hand-written — fill BEFORE every switch)
+- **2026-09-17 ~09:40 (Claude session C — owner-directed switch 100k → 262k full context):**
+  - **Switch:** `qwen-switch.sh 262k --force` (the fit guard reads the dead
+    2026-09-12 pi transcript, ≈264k > 262,144; no pi process alive). At 262k
+    `:8000` runs on CPU (≈3.5 GiB headroom). Configs synced to 262144: pi
+    `~/.pi/agent/models.json` + repo `opencode.json` (by the script) + global
+    `~/.config/opencode/opencode.jsonc` (by hand — the script does not sync it;
+    it was stale at 174080). A running opencode session keeps its start-time
+    limit until reopened.
+  - **CSM position unchanged since the entry below:** P2.1 measured
+    (`reports/csm/p21_sweep_2026-09-17/REPORT.md`), tree clean at `fb20145`.
+    FIRST ACTION ON RESUME: the REPORT.md "Owed / for A" list.
 - **2026-09-17 ~09:35 (Claude GPU session C — post-sweep switch off → 100k, plan A19):**
   - **Switch:** Qwen `off` → `100k` (`qwen-switch.sh 100k --force`). The fit
     guard refused on the newest pi transcript (2026-09-12 session, ≈264k
