@@ -64,12 +64,31 @@ BAR_RESULTS = ROOT / "reports/csm/bar_audit_p14_results.jsonl"
 SERIES = "csm"
 
 
-def grade_item(item: dict, mode: str) -> dict:
-    """One probe through the endpoint function (the product path)."""
+def grade_item(
+    item: dict,
+    mode: str,
+    subject: str | None = None,
+    token_budget: int | None = None,
+    top_k: int | None = None,
+) -> dict:
+    """One probe through the endpoint function (the product path).
+
+    `subject` (the page the question is authored against) is what the
+    campaign's own scorer sends (`eval/canon_gold.py::ask`); the no-hint
+    P2.3 run left it None, which is the stricter instrument the D32
+    red-split re-probes against. `token_budget`/`top_k` unset = the
+    endpoint defaults (the P2.3 shape); pass 60000/50 for the campaign
+    instrument (`page_campaign.py::score_facts`).
+    """
     rec = {k: item[k] for k in ("id", "class", "subject", "q", "expect")}
     rec["door"] = mode
     try:
-        bundle = context_endpoint(ContextRequest(series=SERIES, query=item["q"], mode=mode))
+        req = {"series": SERIES, "query": item["q"], "mode": mode, "subject": subject}
+        if token_budget is not None:
+            req["token_budget"] = token_budget
+        if top_k is not None:
+            req["top_k"] = top_k
+        bundle = context_endpoint(ContextRequest(**req))
         routed = bundle.get("routed")
         if routed:
             rec["routed_mode"] = routed.get("mode")

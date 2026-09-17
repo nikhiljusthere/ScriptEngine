@@ -53,6 +53,17 @@ content_sections:
   - Notes
   - References
 
+# The qa recall floor keeps the leading chunk(s) of each section of the
+# subject's own page (api/context.py `_qa_context`). The default is one
+# chunk per section (the F2b contract, tuned on JJK's 220-passage character
+# floors). This wiki's box/episode pages answer "What happens in X?" from
+# MID-section Summary/Synopsis chunks: Chapter 97's Nayuta reveal sits in
+# Summary chunks 4-5, never chunk 2, so the one-chunk floor dropped the
+# answer (census csm-dim-chap-05/chap-07/ep-04/ep-10, campaign-instrument
+# re-probe 2026-09-17: cap 4 flips all four green, JJK keeps the default).
+# Thin pages, so a wider floor is a few extra chunks, not a budget blowout.
+floor_section_cap: 4
+
 # The sets this wiki maintains, declared so an enumeration topic resolves the
 # same way every time instead of being scored against category names at query
 # time. Anything not declared here still goes through discovery.

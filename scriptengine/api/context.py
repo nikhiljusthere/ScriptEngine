@@ -35,7 +35,7 @@ import re
 from typing import Any
 
 from scriptengine.api.rules import writing_rules
-from scriptengine.config import SeriesPaths, Settings, get_settings
+from scriptengine.config import SeriesPaths, Settings, get_settings, load_overrides
 from scriptengine.retrieve import citations as cite
 from scriptengine.retrieve import roster
 
@@ -505,19 +505,27 @@ def _qa_context(
         # keep the leading chunk of each section (the store returns ordinal order,
         # so the first is the section's head), bounding the footprint to the number
         # of sections. Query-independent and beam-untouched (B1 holds).
-        def _cap_sections(passages):
+        def _cap_sections(passages, cap: int = 1):
+            # cap 1 is the F2b recall contract (the section's head, one chunk).
+            # A wiki whose answer prose sits mid-section (CSM's box/episode
+            # pages: "What happens in Chapter 97?" reads Summary chunks 4-5,
+            # never chunk 2) raises `floor_section_cap` in its overrides.yaml;
+            # the walk still pays in the wiki's section order, so a bigger cap
+            # only widens the floor, never reorders the beam.
             kept: list = []
-            seen: set[str] = set()
+            counts: dict[str, int] = {}
             for p in passages:
                 key = p.breadcrumb or p.doc_title
-                if key in seen:
+                if counts.get(key, 0) >= cap:
                     continue
-                seen.add(key)
+                counts[key] = counts.get(key, 0) + 1
                 kept.append(p)
             return kept
 
+        floor_cap = int(load_overrides(paths).get("floor_section_cap") or 1)
         floor = _cap_sections(
-            [_to_passage(row) for row in (store.passages_for_subject(subject) if subject else [])]
+            [_to_passage(row) for row in (store.passages_for_subject(subject) if subject else [])],
+            floor_cap,
         )
         # F2: a character whose story beats the wiki filed off the main page (its
         # /Synopsis subpage) -- e.g. a "history of X" question authored on a
@@ -527,7 +535,8 @@ def _qa_context(
         # double-served.
         if subject:
             sub = _cap_sections(
-                [_to_passage(row) for row in store.synopsis_subpage_passages(subject)]
+                [_to_passage(row) for row in store.synopsis_subpage_passages(subject)],
+                floor_cap,
             )
             if sub:
                 have = {_section(p.breadcrumb) for p in floor}

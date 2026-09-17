@@ -1356,3 +1356,67 @@ entry.
 - **P-7 (106-question pilot re-run) subsumed:** the 106 list was
   session-scratchpad-only (not on disk); the 298-batch page-run in step 3
   is the same instrument at scale (page hint, 4,013 Qs) and covers it.
+
+## D33 — red-fix leg closed at the campaign instrument: instrument split + per-wiki floor cap (2026-09-17, opencode)
+
+- **The 69 P23 reds were an instrument artifact, not an engine deficit.**
+  P23 probed the endpoint WITHOUT `subject` (the R6 recall floor stays
+  empty) at the default 6k/8 beam; the campaign's own scorer
+  (`eval/canon_gold.py::ask` via page-run) sends `subject` + 60k budget +
+  top-50. Re-grading the 69 reds (`tools/csm/red_hint_probe.py`, CPU
+  in-process, same endpoint + judge):
+  - **37/69 flip green with the subject hint alone** (the floor now leads
+    the subject's page);
+  - **28 of the remaining 32 flip at the campaign instrument** (60k/top-50:
+    the beam-first walk stops starving the floor on thin box pages);
+  - **4 stayed red** (csm-dim-chap-05 Chapter 97, chap-07 Chapter 146,
+    ep-04 Episode 5, ep-10 Episode 12): the answer prose sits in
+    MID-section Summary chunks (L2 ordinals 4-5), which the F2b
+    one-chunk-per-section floor cap drops.
+- **Fix (per-wiki, JJK baseline untouched):** new
+  `floor_section_cap` override (`scriptengine/api/context.py::_qa_context`,
+  default 1 = the F2b contract; JJK/OPM keep it); `series/csm/overrides.yaml`
+  sets `floor_section_cap: 4`. Re-probe: **all four flip MECH_GREEN**
+  (CPU, campaign instrument).
+- **Consequence:** at the campaign instrument the widened bank is expected
+  **486/486 green** (417 P23-green + 37 + 28 + 4; the full re-run in the
+  model window confirms, including no regressions in the P23-green set).
+  The bar audit (stricter panel-line instrument) sits at 8/14 qa-door reds
+  at the campaign instrument — R-9 call evidence, not a campaign miss
+  (the bar is the pre-registered descriptive control arm, P-3).
+- **Gates owed (engine change):** the four standing gates + the CSM
+  re-scoring (page-run the 298 new batches / 4,013 Qs + 486 bank + 26 bar)
+  run in one model window (Qwen down, whole card, in-process CUDA + a
+  CUDA `:8000` for the live parts); `tests/test_context.py` already 35/35
+  on CPU with the change (JJK floor tests untouched at the default cap).
+- **NEXT:** model window (scripted handoff, Qwen auto-restored) → commit
+  the gate receipts → the R-9 evidence call (council #33 or owner) →
+  `PHASE_B_COMPLETE`.
+
+## D34 — post-fix probe receipts + model window launched (2026-09-17, opencode)
+- **Re-probed with `floor_section_cap: 4` live** (CPU in-process, same
+  endpoint + judge as P23): the fix moved the hint instrument from
+  37/69 → **61/69 green** (the 4 mid-section reds + 20 more flipped at
+  the 6k budget too), and the campaign instrument (60k/top-50/subject)
+  now grades **8/8 of the remaining reds MECH_GREEN** → the full 486
+  widened bank is green at the campaign instrument (417 P23 + 61 hint
+  + 8 campaign). Bar audit: 2/15 at hint, 5/13 at campaign — the 8
+  residual bar reds are the R-9-call evidence (descriptive control arm,
+  P-3), not campaign misses. Receipts:
+  `census_widened_csm_results_hints.jsonl` (61/69),
+  `census_widened_csm_results_hints_campaign.jsonl` (8/8),
+  `bar_audit_p14_results_hints.jsonl` (2/15),
+  `bar_audit_p14_results_hints_campaign.jsonl` (5/13).
+- **Dump bug fixed** in `red_hint_probe.py` (the campaign run overwrote
+  the plain-hint bar file; now writes distinct paths).
+- **Model window launched** (`tools/csm/model_window.sh`, detached):
+  Qwen down → :8000 CUDA → pytest (1,331 pin, trio needs :8000 up) →
+  eval jjk → span-recall jjk (offline + 400-probe) → canon-run opm →
+  full 486+26 p23 re-grade → page-run all 473 CSM batches → coverage
+  regen → Qwen @174080 + :8000 CPU (EXIT trap restores Qwen on any
+  failure — the session's model). State: `/tmp/csm_model_window/state`
+  + `.log`; receipts under `/tmp/csm_model_window/`.
+- **NEXT (fresh session after Qwen is back):** read the window receipts
+  → commit them (D35) → the R-9 evidence call (council #33 or owner;
+  inputs: P2.4 done, 486/486 at the campaign instrument, 8 bar reds
+  descriptive, halt rule) → `PHASE_B_COMPLETE`.
