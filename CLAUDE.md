@@ -351,9 +351,10 @@ miss_queue_csm_iter1.jsonl` (the frozen miss queue). P6 (cross-corpus,
 
 **Gates (re-run before calling any pass done; re-baselined 2026-09-08 via the
 gpu-gate3 100k+CUDA side session — raw receipts `reports/csm/GATE_REBASELINE_2.md`):**
-`pytest tests/ -q` = **1,321** (the current gate-1 pin; the 1,318 R-6 pin +
-3 new R-7 tests; the known env-mcp trio fails under a stopped :8000,
-council #25 close). Per Ruling 5e a known +N test delta does
+`pytest tests/ -q` = **1,331** (the current gate-1 pin: the 1,321 R-7 pin +
+10 new R-8 router tests; the known env-mcp trio fails under a stopped :8000,
+council #25 close; R-8 window discharged 2026-09-17 @ tree `8661850`,
+receipts `4b60043`). Per Ruling 5e a known +N test delta does
 not re-run the gates — the full four-gate re-run happens at each fix-class's
 closure. (Historical: 1,249 re-baselined 2026-09-08; 1,254 = 1,249 + 4 CSM-3
 + 1 CSM-3b roster-door test @ `f93d396`.) `eval --series jjk` = 31/31 (15:22–15:23); `span-recall

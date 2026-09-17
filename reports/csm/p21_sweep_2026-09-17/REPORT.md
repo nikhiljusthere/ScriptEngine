@@ -111,20 +111,29 @@ outright, is A's call.
 
 ## Owed / for A
 
-1. **The second misroute decision** (receipt's A17 input): 89 % of line lookups
-   go to narrative and 10.6 % of those are served. The data to size a guard is
-   here. The design is closed only for the sweep; a router change owes the four
-   gates + `eval --series jjk` again.
-2. **qa miss file**: 261 rows to triage row by row (A17 "miss file empty").
-3. **narrative / roster residual triage** (class + reason) per A17. The
-   mechanical tables are the starting point.
-4. **P2.2 bar audit**: never graded, so A7 cannot be settled (above).
-5. **A14 / P2.3**: the widened census bank is on disk (`census_widened_csm.json`,
-   486 items, `receipts/census_widened_author.md`), and it needs a grader pointed
-   at it. The A14 comprehension step must fire before `PHASE_B_COMPLETE`.
-6. **Stale docs**: `GATE.md` "Gate debt (undischarged)" and the CLAUDE.md
-   gate-1 pin (1,321) predate the R-8 window. The ledger (`GATE_LEDGER.json`)
-   is current.
+1. **The second misroute decision** (receipt's A17 input) — *council #31
+   (P-3): deferred, not pre-committed.* Fires on writer-shaped evidence
+   (P2.4 + P2.3); check the per-wiki route in `series/csm/overrides.yaml`
+   first. The routing data to size a guard is in `auto_routing.json`.
+2. **qa miss file** — *in progress, this session:* 261 rows pre-binned
+   (rank 120 / span 88 / corpus-dup 17 / near-page 16 / table-row 13 /
+   short 7), 237 both-misses triaged first; triage logs under `triage/`
+   (council P-4 scope).
+3. **narrative / roster residual triage** — *pre-registered (P-4):* complete
+   histogram (`residuals_by_type.json`) + first-5-per-cell sample with
+   deterministic class/reason (`triage/floor_sample.jsonl`: 289 rows / 64
+   cells / 32,383 residual rows; builder `tools/csm/p23_triage_inputs.py`).
+4. **P2.2 bar audit** — *protocol pre-registered (P-2):* qa control-arm
+   grade, pre-fix, in-process (JJK 3b), auto door recorded as the
+   R-9-contingent supplement; grader `tools/csm/p23_grader.py` fires in the
+   GPU handoff.
+5. **A14 / P2.3** — *grader pre-baked (P-5):* `tools/csm/p23_grader.py`
+   pointed at the 486-item widened bank (writer-shaped, no re-authoring);
+   fires in `reports/master-work/P23_HANDOFF.md` (model-unloaded, whole
+   card). The A14 comprehension step lands with that run.
+6. **Stale docs** — *discharged this session:* `GATE.md` carries the
+   "Gate debt — DISCHARGED" section; the CLAUDE.md gate-1 pin is 1,331
+   (both stamped in the commit that closes this item).
 
 ## Files in this directory
 

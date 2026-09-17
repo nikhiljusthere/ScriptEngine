@@ -9,10 +9,11 @@ do not judge.
 The four gates (re-run after every fix-class, before calling it done):
 
 1. **gate-1 — `pytest tests/ -q`** (in-process, CUDA): the full suite green.
-    Current pin **1,321** (1,318 R-6 pin + 3 new R-7 tests; the only failures
-    are the known env-mcp trio under a stopped :8000, 2 xpassed). **R-8 debt
-    (2026-09-16):** post-R-8 expected pin **1,331** (1,321 + 10 new R-8 router
-    tests); the gate window is undischarged — see "R-8 landed" below.
+    Current pin **1,331** (1,321 R-7 pin + 10 new R-8 router tests; the only
+    failures are the known env-mcp trio under a stopped :8000, 2 xpassed).
+    **R-8 window DISCHARGED (2026-09-17):** the four gates + `eval --series jjk`
+    31/31 re-ran green on the post-R-8 tree `8661850` (receipts `4b60043`,
+    `receipts/r8_gate_window.md`); `GATE_LEDGER` `last_green` = R-8 `aada154`.
     **W-state pin (council #30, 2026-09-17):** W1 (`:8000` down) = 1,331
     collected with the 3 known env-mc failures
     (`tests/test_mcp_server.py:20,35,46`); W2 (`:8000` up) = 1,331/0.
@@ -31,6 +32,11 @@ The four gates (re-run after every fix-class, before calling it done):
    **236/236 canon (100%)**, 79.0% closed-set precision, 0 confident-wrong.
 
 ## Live state
+
+> **Superseded 2026-09-17:** the R-8 gate window has since been DISCHARGED
+> (tree `8661850`, pin 1,331, receipts `4b60043`) — see the "Gate debt —
+> DISCHARGED" section below. The P1.4 copy recorded here is the historical
+> baseline, not the current pin.
 
 **GREEN at the P1.4 four-gate copy** (P1.4 close, 2026-09-12, @`407c016`;
 copy stamp commit `af382ee`). All four gates re-run green on CUDA (one-copy
@@ -280,12 +286,14 @@ behavior; the stale test now asserts it
 (`tests/test_mcp_server.py::test_research_bare_character_name_is_qa`,
 count-neutral — no pin change).
 
-### Gate debt (undischarged — Claude's gate window)
+### Gate debt — DISCHARGED (R-8 window, 2026-09-17)
 
-`GATE_LEDGER.json` `last_green` is still P1.2/R-7 (`60e568f`, pin 1,321).
-R-8 owes: the four standing gates **plus `eval --series jjk` 31/31**, at the
-post-R-8 pin **1,331**. Reboot-rule check is non-empty:
-`git log 407c016..HEAD -- scriptengine/ tests/` = `aada154` only.
+The R-8 gate window is discharged: W1 (Qwen down, whole card) pytest
+**1,331** + `eval --series jjk` **31/31** → `:8000` up on CUDA → W2
+span-recall **48,572/48,572 + 398/400** + canon **236/236**, all green on tree
+`8661850` (receipts `4b60043`). `GATE_LEDGER.json` `last_green` = R-8
+`aada154` (pin 1,331, gate tree `8661850`; receipts_commit `4b60043`).
+No open gate debt.
 
 ### P2.1 sweep runner pre-baked
 
@@ -404,3 +412,45 @@ post-patch. No CLI change.
 
 Post-sweep: restart Qwen via `qwen-switch.sh 100k` (plan A19), not the 262k
 default `ninfer-stop.sh` restarts.
+
+## P2.1 full-panel sweep result (2026-09-17, tree `4b60043`, device cuda) + post-sweep council (#31)
+
+All five ledgers complete (panel 17,181 + heldout 200; A26 shas
+`cf72135f…` / `604dc8ca…`; report `reports/csm/p21_sweep_2026-09-17/REPORT.md`):
+
+| door | HIT | rate | A17 disposition |
+|---|---:|---:|---|
+| qa | 16,920 | **98.48 %** | **PASS** (bar ≥ 97.5 %; 261 misses → triage `p21_sweep_2026-09-17/triage/`) |
+| narrative | 1,846 | 10.74 % | documented floor (histogram + sample triaged, P-4) |
+| roster | 133 | 0.77 % | documented floor (same) |
+| auto | 2,651 | 15.43 % | descriptive raw (heldout 28/200 = 14.0 %) |
+
+Routing: 89.1 % of line lookups → narrative (serves 10.6 % of those),
+6.0 % → qa (97.8 %), 4.7 % → roster (2.7 %), 0.2 % relations; 14,293
+auto-miss/qa-hit; **237 both-misses (a router fix cannot reach them)**; 24
+auto-only hits.
+
+**Council #31 pre-registrations** (full record `reports/csm/COUNCIL_p21_post_sweep.md`):
+
+- **P-1** auto is not a gate number on this panel (clearing 97.5 % needs ~99.7 %
+  qa routing; a perfect router tops out at ~98.62 %). Descriptive raw only;
+  any future bar is set on the heldout (14.0 %).
+- **P-2** P2.2 bar audit (26 lines) graded pre-fix on the qa control arm
+  (JJK 3b in-process, the `tools/census_dimensions_csm_v2_grade.py` pattern),
+  auto door recorded as the R-9-contingent supplement; verdict R-9-contingent.
+- **P-3** R-9 (the second misroute, 89.1 % → narrative) deferred, not
+  pre-committed; fires on writer-shaped evidence (P2.4 + P2.3); check the
+  per-wiki route in `series/csm/overrides.yaml` before any series-agnostic
+  `router.py` change (which owes the four gates + the JJK debt).
+- **P-4** `PHASE_B_COMPLETE` residual scope: full class + reason on the qa 261
+  (237 both-misses first) / 24 auto-only / 26 bar-audit lines; narrative +
+  roster floors by complete histogram + first-5-per-cell sample with
+  deterministic class/reason (`tools/csm/p23_triage_inputs.py`, outputs in
+  `p21_sweep_2026-09-17/triage/`).
+- **P-5** P2.3 = pointer grader over the writer-shaped 486-item widened bank
+  (no re-authoring); in-process CUDA, whole card, Qwen down
+  (`tools/csm/p23_grader.py`; handoff `reports/master-work/P23_HANDOFF.md`).
+
+Close order: P2.2+P2.3 grade (the model-unloaded GPU handoff) → P2.4 writer
+leg (Qwen up) → R-9-vs-writer-bar evidence call → `PHASE_B_COMPLETE`
+(§P2.5 checklist + P-4 scope).

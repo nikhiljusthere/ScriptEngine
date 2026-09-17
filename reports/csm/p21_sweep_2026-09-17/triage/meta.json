@@ -1,0 +1,107 @@
+{
+ "ts": "2026-09-17T10:06:54+05:30",
+ "panel_h8": "e3d73720",
+ "heldout_h8": "ec15e0d8",
+ "ledger_commits": {
+  "narrative": {
+   "4b60043": 17181
+  },
+  "roster": {
+   "4b60043": 17181
+  },
+  "qa": {
+   "4b60043": 17181
+  },
+  "auto": {
+   "4b60043": 17181
+  }
+ },
+ "qa_misses": 261,
+ "both_miss": 237,
+ "auto_only": 24,
+ "split": {
+  "qa_p1": 118,
+  "qa_p2": 143
+ },
+ "floor": {
+  "doors": [
+   "narrative",
+   "roster"
+  ],
+  "cells": 64,
+  "sampled_rows": 289,
+  "cap_per_cell": 5,
+  "residual_rows": 32383,
+  "histogram": {
+   "narrative|anime|MISS_DOC": 38,
+   "narrative|anime|TRUNCATED": 7,
+   "narrative|blu_ray_dvd|MISS_DOC": 20,
+   "narrative|blu_ray_dvd|TRUNCATED": 1,
+   "narrative|chapter_box|MISS_DOC": 2079,
+   "narrative|chapter_box|MISS_SPAN": 1,
+   "narrative|chapter_box|TRUNCATED": 1529,
+   "narrative|character|MISS_DOC": 2656,
+   "narrative|character|MISS_SPAN": 98,
+   "narrative|character|TRUNCATED": 1438,
+   "narrative|character_history|MISS_DOC": 2199,
+   "narrative|character_history|TRUNCATED": 1699,
+   "narrative|episode|MISS_DOC": 620,
+   "narrative|episode|MISS_SPAN": 2,
+   "narrative|episode|TRUNCATED": 370,
+   "narrative|establishment|MISS_DOC": 20,
+   "narrative|establishment|TRUNCATED": 9,
+   "narrative|music|MISS_DOC": 118,
+   "narrative|music|TRUNCATED": 41,
+   "narrative|organization|MISS_DOC": 259,
+   "narrative|organization|TRUNCATED": 193,
+   "narrative|saga_box|MISS_DOC": 17,
+   "narrative|saga_box|TRUNCATED": 15,
+   "narrative|story_arcs_box|MISS_DOC": 597,
+   "narrative|story_arcs_box|TRUNCATED": 409,
+   "narrative|unknown|MISS_DOC": 431,
+   "narrative|unknown|MISS_SPAN": 3,
+   "narrative|unknown|TRUNCATED": 101,
+   "narrative|volume_box|MISS_DOC": 288,
+   "narrative|volume_box|MISS_SPAN": 1,
+   "narrative|volume_box|TRUNCATED": 76,
+   "roster|anime|MISS_DOC": 41,
+   "roster|anime|TRUNCATED": 5,
+   "roster|blu_ray_dvd|MISS_DOC": 20,
+   "roster|blu_ray_dvd|TRUNCATED": 1,
+   "roster|chapter_box|MISS_DOC": 2921,
+   "roster|chapter_box|MISS_SPAN": 2,
+   "roster|chapter_box|TRUNCATED": 694,
+   "roster|character|MISS_DOC": 3726,
+   "roster|character|MISS_SPAN": 240,
+   "roster|character|TRUNCATED": 1909,
+   "roster|character_history|MISS_DOC": 3058,
+   "roster|character_history|TRUNCATED": 838,
+   "roster|episode|MISS_DOC": 814,
+   "roster|episode|MISS_SPAN": 2,
+   "roster|episode|TRUNCATED": 172,
+   "roster|establishment|MISS_DOC": 21,
+   "roster|establishment|TRUNCATED": 7,
+   "roster|music|MISS_DOC": 131,
+   "roster|music|MISS_SPAN": 1,
+   "roster|music|TRUNCATED": 30,
+   "roster|organization|MISS_DOC": 321,
+   "roster|organization|MISS_SPAN": 7,
+   "roster|organization|TRUNCATED": 135,
+   "roster|saga_box|MISS_DOC": 25,
+   "roster|saga_box|TRUNCATED": 7,
+   "roster|story_arcs_box|MISS_DOC": 802,
+   "roster|story_arcs_box|TRUNCATED": 203,
+   "roster|unknown|MISS_DOC": 360,
+   "roster|unknown|MISS_SPAN": 5,
+   "roster|unknown|TRUNCATED": 201,
+   "roster|volume_box|MISS_DOC": 302,
+   "roster|volume_box|MISS_SPAN": 7,
+   "roster|volume_box|TRUNCATED": 40
+  }
+ },
+ "shas": {
+  "floor_sample.jsonl": "ddea61f3e5ec89449ec6ff3bbe87adbfa958f3a149c37bf0f1b8ec3235a4dfb1",
+  "qa_p1.jsonl": "933689a71ce035f9888cace5ba0863334271697b0bbba06ddcaa2b0e932749a9",
+  "qa_p2.jsonl": "255a5929492c5a26b24d3f0e239fcaf9bb75557cb13a6421976a7b3c9a296863"
+ }
+}

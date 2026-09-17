@@ -1150,3 +1150,46 @@ entry.
   live-state + P2.1-handoff block + dated note; `recall_verbatim.jsonl`
   committed.
 - **NEXT:** the Claude session runs P2.1 step-0 per the pre-flight above.
+
+### D27 — CSM P2.1 full-panel sweep COMPLETE + post-sweep council #31 verdict (2026-09-17, Claude sweep + opencode)
+- **Sweep (Claude session, `93043d6`):** all five ledgers complete on tree
+  `4b60043`, device cuda, A26 shas intact (`cf72135f…` panel / `604dc8ca…`
+  heldout). qa **16,920/17,181 = 98.48 % (PASS, A17 bar ≥ 97.5 %)**; 261
+  misses pre-binned (rank 120 / span 88 / corpus-dup 17 / near-page 16 /
+  table-row 13 / short 7). narrative 1,846 (10.74 %) + roster 133 (0.77 %) =
+  the A17 documented floors (32,383 residual rows). auto 2,651 (15.43 %),
+  heldout 28/200 (14.0 %).
+- **Routing (the R-9 input):** 89.1 % of line lookups → narrative (serves
+  10.6 % of those), 6.0 % → qa (97.8 %), 4.7 % → roster (2.7 %), 0.2 %
+  relations; 14,293 auto-miss/qa-hit; **237 both-misses** (a router fix
+  cannot reach them); 24 auto-only hits.
+- **Council #31** (post-sweep, sequential, record
+  `reports/csm/COUNCIL_p21_post_sweep.md`): (1) auto 15.43 % is **not a gate
+  number on this panel** — clearing 97.5 % needs ~99.7 % qa routing, a
+  perfect router tops out at ~98.62 %; descriptive raw only, any future bar
+  on the heldout (P-1). (2) P2.2 bar audit is owed before
+  `PHASE_B_COMPLETE`: grade **pre-fix on the qa control arm** (JJK 3b
+  in-process), auto door as the R-9-contingent supplement (P-2). (3) **R-9
+  deferred, not pre-committed**: fires on writer-shaped evidence (P2.4 +
+  P2.3); check `series/csm/overrides.yaml` (per-wiki route, no JJK debt)
+  before any `router.py` change (P-3). (4) **Residual scope pre-registered**
+  (the construction blocker): full class+reason for the qa 261 (237
+  both-misses first) / 24 auto-only / 26 bar-audit lines; floors by complete
+  histogram + first-5-per-cell sample with deterministic class/reason (P-4).
+  (5) Widened census bank is writer-shaped as-is → **P2.3 is a pointer**
+  grader, no re-authoring (P-5).
+- **Landed this entry:** council record + the P-1…P-5 pre-registrations in
+  `GATE.md` + `plan/flow.md` + this entry; Owed-6 discharged (pin 1,331
+  stamps: `CLAUDE.md` gate-1 line + `GATE.md`, committed with this entry);
+  qa-miss triage inputs + floor sample built
+  (`tools/csm/p23_triage_inputs.py` → `p21_sweep_2026-09-17/triage/`, 261 =
+  237 + 24 asserted against the committed `misses_qa.jsonl`); P2.3+P2.2
+  grader pre-baked (`tools/csm/p23_grader.py`), firing in the model-unloaded
+  GPU handoff (`reports/master-work/P23_HANDOFF.md` + runner
+  `tools/csm/p23_handoff.sh`).
+- **Gates:** no re-run owed (no engine change this entry — docs + tools +
+  triage data only; the R-8 window `4b60043` stands).
+- **NEXT:** the Claude session runs `P23_HANDOFF.md` (stop Qwen → whole card
+  → in-process CUDA grader: widened 486 (qa) + 26 bar-audit × {qa, auto} →
+  receipts; Qwen left down). Owner return: P2.4 writer leg (Qwen up), the
+  R-9-vs-writer-bar evidence call, `PHASE_B_COMPLETE`.
