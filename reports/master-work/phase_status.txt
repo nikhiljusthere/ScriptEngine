@@ -1,7 +1,7 @@
 PHASE_A_COMPLETE 2026-09-12T11:51:10+05:30
 commit 407c016 (gate-tree head); af382ee = the P1.4 doc-only stamp (zero gate-relevant diff)
 receipts reports/2026-09-11-2218/ + reports/csm/receipts/census_5_4_readjudication_p14.md + reports/csm/bar_audit_p14_preregistered.json + reports/csm/HALT_METER_P13.md
-ledger_sha256 c61b0a3fd3cf56317c4e2a19d83b5a35b93da58150dfb63f97bd2d377bbc446e (reports/csm/GATE_LEDGER.json, incl. the p14_close stamp)
+ledger_sha256 d7bd7d99f2f331e889c356103b4bb64fa8bcaca991fe81b0577758c41ac778db (reports/csm/GATE_LEDGER.json, incl. the p14_close stamp + the R-8 last_green move 2026-09-17, receipt reports/csm/receipts/r8_gate_window.md)
 floor 22 extraction-gated rows (21 csm-dim-* + csm-char-04 R-7x); halt meter 33/33 fixable, (c)=0
 rulings reports/csm/CLOSE_COUNCIL_RULINGS_Q1_Q4.md (council #29, CONDITIONAL APPROVE; record reports/csm/COUNCIL_csm_p14_close.md)
 caveat "100%" = 100% of the pre-registered fixable classes at the extraction-gated floor (33/33), not 100% of pages — CSM 175/537 (32.6%), 1,260 q, remainder 52; JJK 893/987 (90.5%); the 22-floor is a halt, not a completion
